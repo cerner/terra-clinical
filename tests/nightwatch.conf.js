@@ -5,5 +5,5 @@ const resolve = require('path').resolve;
 const nightwatchConfiguration = require('../packages/terra-toolkit/lib/nightwatch.json');
 
 module.exports = (settings => (
-  testSettings(resolve('../../packages/terra-site/webpack.config'), settings)
+  testSettings(resolve('../../packages/terra-clinical-site/webpack.config'), settings)
 ))(nightwatchConfiguration);
