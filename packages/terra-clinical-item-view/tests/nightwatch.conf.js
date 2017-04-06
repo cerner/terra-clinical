@@ -1,8 +1,8 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 
-const testSettings = require('../packages/terra-toolkit/').testSettings;
+const testSettings = require('../node_modules/terra-toolkit').testSettings;
 const resolve = require('path').resolve;
-const nightwatchConfiguration = require('../packages/terra-toolkit/lib/nightwatch.json');
+const nightwatchConfiguration = require('../node_modules/terra-toolkit/lib/nightwatch.json');
 
 module.exports = (settings => (
   testSettings(resolve('../../webpack.config'), settings)
