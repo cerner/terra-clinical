@@ -3,12 +3,12 @@
 @import './mixins';
 
 // Temporary until it is added to application.
-.terra-ClinicalItemView {
+.terraClinical-ItemView {
   word-break: break-word;
   word-wrap: break-word;
 }
 
-.terra-ClinicalItemView {
+.terraClinical-ItemView {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -17,7 +17,7 @@
 
 // Accessory
 
-.terra-ClinicalItemView-accessory {
+.terraClinical-ItemView-accessory {
   // Accessory is of fixed size and does not shrink or grow.
   flex: 0 0 auto;
   margin: 5px;
@@ -27,79 +27,79 @@
   overflow: hidden;
 }
 
-.terra-ClinicalItemView-accessory--alignTop {
+.terraClinical-ItemView-accessory--alignTop {
   align-items: flex-start;
 }
 
-.terra-ClinicalItemView-accessory--alignCenter {
+.terraClinical-ItemView-accessory--alignCenter {
   align-items: center;
 }
 
 // Content Layout
 
-.terra-ClinicalItemView-body {
+.terraClinical-ItemView-body {
   flex: 1 1 auto;
   margin: 5px;
   min-width: 0;
   overflow: hidden; // VERY IMPORTANT FOR IE10
 }
 
-.terra-ClinicalItemView-row {
+.terraClinical-ItemView-row {
   display: flex;
   width: 100%;
 }
 
-.terra-ClinicalItemView-content {
+.terraClinical-ItemView-content {
   align-items: center;
   display: flex;
   overflow: hidden; // VERY IMPORTANT FOR IE10
 }
 
-.terra-ClinicalItemView-text {
+.terraClinical-ItemView-text {
   flex: 1 1 auto;
   min-width: 10px; // Need min-width, as IE10 will completely squish display
 }
 
-.terra-ClinicalItemView-text--inlineIcon {
+.terraClinical-ItemView-text--inlineIcon {
   @include terra-padding-end(5px);
   flex: 0 0 auto;
   height: 20px;
   max-width: 20px;
 }
 
-.terra-ClinicalItemView-text--inlineIcon > .terra-Icon {
+.terraClinical-ItemView-text--inlineIcon > * {
   font-size: 1rem;
 }
 
 // Truncation
 
-.terra-ClinicalItemView--isTruncated .terra-ClinicalItemView-text,
-.terra-ClinicalItemView-text--isTruncated {
+.terraClinical-ItemView--isTruncated .terraClinical-ItemView-text,
+.terraClinical-ItemView-text--isTruncated {
   @include terra-clinical-text-truncate;
 }
 
 // Layouts
 
-.terra-ClinicalItemView--oneColumn {
-  .terra-ClinicalItemView-rowContainer {
-    .terra-ClinicalItemView-row {
+.terraClinical-ItemView--oneColumn {
+  .terraClinical-ItemView-rowContainer {
+    .terraClinical-ItemView-row {
       flex-flow: column nowrap;
       justify-content: flex-start;
     }
 
-    .terra-ClinicalItemView-content {
+    .terraClinical-ItemView-content {
       width: 100%;
     }
   }
 }
 
-.terra-ClinicalItemView--twoColumns {
-  .terra-ClinicalItemView-content:nth-child(odd) {
+.terraClinical-ItemView--twoColumns {
+  .terraClinical-ItemView-content:nth-child(odd) {
     flex: 1 1 auto;
     text-align: left;
   }
 
-  .terra-ClinicalItemView-content:nth-child(even) {
+  .terraClinical-ItemView-content:nth-child(even) {
     @include terra-padding-start(5px);
 
     flex: 1 0 auto;
@@ -109,7 +109,7 @@
     // prematurely squished and maximize the available space for all labels.
     max-width: 60%;
 
-    .terra-ClinicalItemView-text {
+    .terraClinical-ItemView-text {
       flex: 0 1 auto;
       min-width: 10px; // Need min-width, as IE10 will completely squish display
     }
@@ -117,54 +117,54 @@
 }
 
 // We need to style content that appears out of the rowContainer (i.e. the comment).
-.terra-ClinicalItemView-content {
-  .terra-ClinicalItemView-text,
-  .terra-ClinicalItemView-text--inlineIcon {
+.terraClinical-ItemView-content {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
     @include terra-clinical-text-body;
     color: $terra-clinical-item-view-content-secondary-color;
   }
 }
 
 //Emphasis Content Styles
-.terra-ClinicalItemView-content--primaryColor {
-  .terra-ClinicalItemView-text,
-  .terra-ClinicalItemView-text--inlineIcon {
+.terraClinical-ItemView-content--primaryColor {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
     color: $terra-clinical-item-view-content-primary-color;
   }
 }
 
-.terra-ClinicalItemView-content--primarySize {
-  .terra-ClinicalItemView-text,
-  .terra-ClinicalItemView-text--inlineIcon {
+.terraClinical-ItemView-content--primarySize {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
     @include terra-clinical-tiny-heading;
   }
 }
 
-.terra-ClinicalItemView-content--secondaryColor {
-  .terra-ClinicalItemView-text,
-  .terra-ClinicalItemView-text--inlineIcon {
+.terraClinical-ItemView-content--secondaryColor {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
     color: $terra-clinical-item-view-content-secondary-color;
   }
 }
 
-.terra-ClinicalItemView-content--secondarySize {
-  .terra-ClinicalItemView-text,
-  .terra-ClinicalItemView-text--inlineIcon {
+.terraClinical-ItemView-content--secondarySize {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
     @include terra-clinical-text-body;
   }
 }
 
 // Text Styles
 
-.terra-ClinicalItemView-text--secondary {
+.terraClinical-ItemView-text--secondary {
   color: $terra-clinical-item-view-text-secondary-color !important;
 }
 
-.terra-ClinicalItemView-text--attention {
+.terraClinical-ItemView-text--attention {
   color: $terra-clinical-item-view-text-attention-color !important;
   font-weight: $terra-clinical-item-view-text-attention-weight !important;
 }
 
-.terra-ClinicalItemView-text--strikeThrough {
+.terraClinical-ItemView-text--strikeThrough {
   text-decoration: line-through !important;
 }

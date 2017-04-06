@@ -26,7 +26,11 @@
     "react-dom": "^15.4.2",
     "react-intl": "^2.2.3",
     "react-router": "^3.0.2",
-    "terra-clinical-item-view": "^0.x"
+    "terra-base": "^0.1.0",
+    "terra-clinical-item-view": "^0.x",
+    "terra-legacy-theme": "^0.2.0",
+    "terra-markdown": "^0.1.0",
+    "terra-props-table": "^0.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",

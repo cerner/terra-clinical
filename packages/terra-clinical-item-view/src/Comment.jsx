@@ -27,7 +27,7 @@ const Comment = ({
     ...customProps
   }) => {
   const commentClassNames = classNames([
-    'terra-ClinicalItemView-comment',
+    'terraClinical-ItemView-comment',
     customProps.className,
   ]);
 

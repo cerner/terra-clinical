@@ -1,6 +1,6 @@
 ## Themeable Variables
 
-Variables to `theme` the Terra ClinicalItemView component.
+Variables to `theme` the Terra Clinical ItemView component.
 
 | Variable Name | Default Value | Usage |
 |---|---|---|

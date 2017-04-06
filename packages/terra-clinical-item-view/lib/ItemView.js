@@ -16,7 +16,7 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-require('./ClinicalItemView.scss');
+require('./ItemView.scss');
 
 var _Display = require('./Display');
 
@@ -84,16 +84,16 @@ var defaultProps = {
   comment: undefined
 };
 
-var ClinicalItemView = function (_React$Component) {
-  _inherits(ClinicalItemView, _React$Component);
+var ItemView = function (_React$Component) {
+  _inherits(ItemView, _React$Component);
 
-  function ClinicalItemView() {
-    _classCallCheck(this, ClinicalItemView);
+  function ItemView() {
+    _classCallCheck(this, ItemView);
 
-    return _possibleConstructorReturn(this, (ClinicalItemView.__proto__ || Object.getPrototypeOf(ClinicalItemView)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ItemView.__proto__ || Object.getPrototypeOf(ItemView)).apply(this, arguments));
   }
 
-  _createClass(ClinicalItemView, [{
+  _createClass(ItemView, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -107,19 +107,19 @@ var ClinicalItemView = function (_React$Component) {
           comment = _props.comment,
           customProps = _objectWithoutProperties(_props, ['layout', 'textEmphasis', 'isTruncated', 'accessoryAlignment', 'startAccessory', 'endAccessory', 'displays', 'comment']);
 
-      var viewClassNames = (0, _classnames2.default)(['terra-ClinicalItemView', { 'terra-ClinicalItemView--isTruncated': isTruncated }, _defineProperty({}, 'terra-ClinicalItemView--' + layout, layout), _defineProperty({}, 'terra-ClinicalItemView-accessory--' + accessoryAlignment, accessoryAlignment), customProps.className]);
+      var viewClassNames = (0, _classnames2.default)(['terraClinical-ItemView', { 'terraClinical-ItemView--isTruncated': isTruncated }, _defineProperty({}, 'terraClinical-ItemView--' + layout, layout), _defineProperty({}, 'terraClinical-ItemView-accessory--' + accessoryAlignment, accessoryAlignment), customProps.className]);
 
       return _react2.default.createElement(
         'div',
         _extends({}, customProps, { className: viewClassNames }),
-        ClinicalItemView.renderAccessory(startAccessory),
+        ItemView.renderAccessory(startAccessory),
         _react2.default.createElement(
           'div',
-          { className: 'terra-ClinicalItemView-body' },
-          ClinicalItemView.renderRows(displays, layout, textEmphasis),
+          { className: 'terraClinical-ItemView-body' },
+          ItemView.renderRows(displays, layout, textEmphasis),
           comment
         ),
-        ClinicalItemView.renderAccessory(endAccessory)
+        ItemView.renderAccessory(endAccessory)
       );
     }
   }], [{
@@ -127,7 +127,7 @@ var ClinicalItemView = function (_React$Component) {
     value: function renderAccessory(accessory) {
       return _react2.default.createElement(
         'div',
-        { className: 'terra-ClinicalItemView-accessory' },
+        { className: 'terraClinical-ItemView-accessory' },
         accessory
       );
     }
@@ -158,9 +158,9 @@ var ClinicalItemView = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'terra-ClinicalItemView-rowContainer' },
+        { className: 'terraClinical-ItemView-rowContainer' },
         displayGroups.map(function (group, index) {
-          var row = ClinicalItemView.renderRow(group, index, displayGroups.length, emphasis);
+          var row = ItemView.renderRow(group, index, displayGroups.length, emphasis);
           return row;
         })
       );
@@ -171,10 +171,10 @@ var ClinicalItemView = function (_React$Component) {
       var rowKey = rowIndex;
       return _react2.default.createElement(
         'div',
-        { className: 'terra-ClinicalItemView-row', key: rowKey },
+        { className: 'terraClinical-ItemView-row', key: rowKey },
         row.map(function (display, contentIndex) {
           var contentKey = contentIndex;
-          var contentClasses = ClinicalItemView.classesForContent(rowIndex, rowCount, contentIndex, emphasis);
+          var contentClasses = ItemView.classesForContent(rowIndex, rowCount, contentIndex, emphasis);
           return _react2.default.createElement(
             'div',
             { className: contentClasses, key: contentKey },
@@ -188,26 +188,26 @@ var ClinicalItemView = function (_React$Component) {
     value: function classesForContent(rowIndex, rowCount, contentIndex, emphasis) {
       var classes = void 0;
       if (emphasis === 'start') {
-        classes = ClinicalItemView.startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
+        classes = ItemView.startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
       } else {
-        classes = ClinicalItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
+        classes = ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
       }
-      return ['terra-ClinicalItemView-content'].concat(classes).join(' ');
+      return ['terraClinical-ItemView-content'].concat(classes).join(' ');
     }
   }, {
     key: 'defaultEmphasisContentClassesFromIndexes',
     value: function defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-      var contentSize = 'terra-ClinicalItemView-content--primarySize';
-      var contentColor = 'terra-ClinicalItemView-content--primaryColor';
+      var contentSize = 'terraClinical-ItemView-content--primarySize';
+      var contentColor = 'terraClinical-ItemView-content--primaryColor';
 
       if (rowIndex > 0) {
-        contentSize = 'terra-ClinicalItemView-content--secondarySize';
+        contentSize = 'terraClinical-ItemView-content--secondarySize';
       }
 
       if (rowCount === 2 && rowIndex === 1) {
-        contentColor = 'terra-ClinicalItemView-content--secondaryColor';
+        contentColor = 'terraClinical-ItemView-content--secondaryColor';
       } else if (rowIndex >= 2) {
-        contentColor = 'terra-ClinicalItemView-content--secondaryColor';
+        contentColor = 'terraClinical-ItemView-content--secondaryColor';
       }
 
       return [contentSize, contentColor];
@@ -216,19 +216,19 @@ var ClinicalItemView = function (_React$Component) {
     key: 'startEmphasisContentClassesFromIndexes',
     value: function startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
       if (contentIndex === 1) {
-        return ['terra-ClinicalItemView-content--secondarySize', 'terra-ClinicalItemView-content--secondaryColor'];
+        return ['terraClinical-ItemView-content--secondarySize', 'terraClinical-ItemView-content--secondaryColor'];
       }
 
-      return ClinicalItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
+      return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
     }
   }]);
 
-  return ClinicalItemView;
+  return ItemView;
 }(_react2.default.Component);
 
-ClinicalItemView.propTypes = propTypes;
-ClinicalItemView.defaultProps = defaultProps;
-ClinicalItemView.Display = _Display2.default;
-ClinicalItemView.Comment = _Comment2.default;
+ItemView.propTypes = propTypes;
+ItemView.defaultProps = defaultProps;
+ItemView.Display = _Display2.default;
+ItemView.Comment = _Comment2.default;
 
-exports.default = ClinicalItemView;
+exports.default = ItemView;

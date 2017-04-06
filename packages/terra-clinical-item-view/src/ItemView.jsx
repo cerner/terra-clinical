@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import './ClinicalItemView.scss';
+import './ItemView.scss';
 import Display from './Display';
 import Comment from './Comment';
 
@@ -50,11 +50,11 @@ const defaultProps = {
   comment: undefined,
 };
 
-class ClinicalItemView extends React.Component {
+class ItemView extends React.Component {
 
   static renderAccessory(accessory) {
     return (
-      <div className="terra-ClinicalItemView-accessory">
+      <div className="terraClinical-ItemView-accessory">
         {accessory}
       </div>
     );
@@ -84,9 +84,9 @@ class ClinicalItemView extends React.Component {
     }
 
     return (
-      <div className="terra-ClinicalItemView-rowContainer">
+      <div className="terraClinical-ItemView-rowContainer">
         {displayGroups.map((group, index) => {
-          const row = ClinicalItemView.renderRow(group, index, displayGroups.length, emphasis);
+          const row = ItemView.renderRow(group, index, displayGroups.length, emphasis);
           return row;
         })}
       </div>
@@ -96,13 +96,13 @@ class ClinicalItemView extends React.Component {
   static renderRow(row, rowIndex, rowCount, emphasis) {
     const rowKey = rowIndex;
     return (
-      <div className="terra-ClinicalItemView-row" key={rowKey}>
+      <div className="terraClinical-ItemView-row" key={rowKey}>
         {row.map((display, contentIndex) => {
           const contentKey = contentIndex;
-          const contentClasses = ClinicalItemView.classesForContent(rowIndex,
-                                                               rowCount,
-                                                               contentIndex,
-                                                               emphasis);
+          const contentClasses = ItemView.classesForContent(rowIndex,
+                                                            rowCount,
+                                                            contentIndex,
+                                                            emphasis);
           return (
             <div className={contentClasses} key={contentKey}>
               {display}
@@ -116,25 +116,25 @@ class ClinicalItemView extends React.Component {
   static classesForContent(rowIndex, rowCount, contentIndex, emphasis) {
     let classes;
     if (emphasis === 'start') {
-      classes = ClinicalItemView.startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
+      classes = ItemView.startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
     } else {
-      classes = ClinicalItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
+      classes = ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
     }
-    return ['terra-ClinicalItemView-content'].concat(classes).join(' ');
+    return ['terraClinical-ItemView-content'].concat(classes).join(' ');
   }
 
   static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-    let contentSize = 'terra-ClinicalItemView-content--primarySize';
-    let contentColor = 'terra-ClinicalItemView-content--primaryColor';
+    let contentSize = 'terraClinical-ItemView-content--primarySize';
+    let contentColor = 'terraClinical-ItemView-content--primaryColor';
 
     if (rowIndex > 0) {
-      contentSize = 'terra-ClinicalItemView-content--secondarySize';
+      contentSize = 'terraClinical-ItemView-content--secondarySize';
     }
 
     if (rowCount === 2 && rowIndex === 1) {
-      contentColor = 'terra-ClinicalItemView-content--secondaryColor';
+      contentColor = 'terraClinical-ItemView-content--secondaryColor';
     } else if (rowIndex >= 2) {
-      contentColor = 'terra-ClinicalItemView-content--secondaryColor';
+      contentColor = 'terraClinical-ItemView-content--secondaryColor';
     }
 
     return [contentSize, contentColor];
@@ -142,10 +142,10 @@ class ClinicalItemView extends React.Component {
 
   static startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
     if (contentIndex === 1) {
-      return ['terra-ClinicalItemView-content--secondarySize', 'terra-ClinicalItemView-content--secondaryColor'];
+      return ['terraClinical-ItemView-content--secondarySize', 'terraClinical-ItemView-content--secondaryColor'];
     }
 
-    return ClinicalItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
+    return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
   }
 
   render() {
@@ -160,30 +160,30 @@ class ClinicalItemView extends React.Component {
             ...customProps } = this.props;
 
     const viewClassNames = classNames([
-      'terra-ClinicalItemView',
-      { 'terra-ClinicalItemView--isTruncated': isTruncated },
-      { [`terra-ClinicalItemView--${layout}`]: layout },
-      { [`terra-ClinicalItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
+      'terraClinical-ItemView',
+      { 'terraClinical-ItemView--isTruncated': isTruncated },
+      { [`terraClinical-ItemView--${layout}`]: layout },
+      { [`terraClinical-ItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
       customProps.className,
     ]);
 
     return (
       <div {...customProps} className={viewClassNames}>
-        {ClinicalItemView.renderAccessory(startAccessory)}
-        <div className="terra-ClinicalItemView-body">
-          {ClinicalItemView.renderRows(displays, layout, textEmphasis)}
+        {ItemView.renderAccessory(startAccessory)}
+        <div className="terraClinical-ItemView-body">
+          {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>
-        {ClinicalItemView.renderAccessory(endAccessory)}
+        {ItemView.renderAccessory(endAccessory)}
       </div>
     );
   }
 }
 
-ClinicalItemView.propTypes = propTypes;
-ClinicalItemView.defaultProps = defaultProps;
-ClinicalItemView.Display = Display;
-ClinicalItemView.Comment = Comment;
+ItemView.propTypes = propTypes;
+ItemView.defaultProps = defaultProps;
+ItemView.Display = Display;
+ItemView.Comment = Comment;
 
-export default ClinicalItemView;
+export default ItemView;
 

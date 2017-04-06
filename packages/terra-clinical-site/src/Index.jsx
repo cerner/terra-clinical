@@ -5,13 +5,13 @@ import App from './App';
 import Home from './Home';
 
 // Examples
-import ClinicalItemViewExamples from './examples/clinical-item-view/Index';
+import ItemViewExamples from './examples/item-view/Index';
 
 // Test
 /* eslint-disable import/first */
-import ClinicalItemViewTestRoutes from 'terra-clinical-item-view/tests/nightwatch/clinical-item-view/ClinicalItemViewTestRoutes';
-import CommentTestRoutes from 'terra-clinical-item-view/tests/nightwatch/comment/CommentTestRoutes';
-import DisplayTestRoutes from 'terra-clinical-item-view/tests/nightwatch/display/DisplayTestRoutes';
+import ItemViewTestRoutes from 'terra-clinical-item-view/tests/nightwatch/item-view/ItemViewTestRoutes';
+import ItemViewCommentTestRoutes from 'terra-clinical-item-view/tests/nightwatch/comment/CommentTestRoutes';
+import ItemViewDisplayTestRoutes from 'terra-clinical-item-view/tests/nightwatch/display/DisplayTestRoutes';
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
@@ -20,9 +20,11 @@ ReactDOM.render((
     <Redirect from="/" to="/site" />
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
-      <Route path="clinical-item-view" component={ClinicalItemViewExamples} />
+      <Route path="item-view" component={ItemViewExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
-    {ClinicalItemViewTestRoutes}
+    {ItemViewTestRoutes}
+    {ItemViewCommentTestRoutes}
+    {ItemViewDisplayTestRoutes}
   </Router>
 ), document.getElementById('root'));

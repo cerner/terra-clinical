@@ -1,6 +1,6 @@
 {
   "name": "terra-clinical-item-view",
-  "main": "lib/ClinicalItemView.js",
+  "main": "lib/ItemView.js",
   "version": "0.0.0",
   "description": "terra-clinical-item-view",
   "repository": {
@@ -10,8 +10,9 @@
   "keywords": [
     "Cerner",
     "Terra",
+    "Clinical",
     "terra-clinical-item-view",
-    "TerraClinicalItemView",
+    "ItemView",
     "UI"
   ],
   "author": "Cerner Corporation",
