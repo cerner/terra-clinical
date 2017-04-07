@@ -9,8 +9,7 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    // screenshot(browser, 'terra-clinical-item-view', done);
-    screenshot(browser, done);
+    screenshot(browser, 'terra-clinical-item-view', done);
   },
 
   'Displays text as default': (browser) => {
