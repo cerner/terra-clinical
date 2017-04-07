@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 /* eslint-disable no-unused-expressions */
 
-const screenshot = require('../../../node_modules/terra-toolkit').screenshot;
+const screenshot = require('terra-toolkit').screenshot;
 
 module.exports = {
   before: (browser, done) => {
@@ -9,16 +9,17 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-item-view', done);
+    // screenshot(browser, 'terra-clinical-item-view', done);
+    screenshot(browser, done);
   },
 
   'Displays text as default': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-display-tests/default`);
-    browser.expect.element('.terra-ItemView-display').to.be.present;
+    browser.expect.element('.terraClinical-ItemView-display').to.be.present;
   },
   'Displays text with different styles': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-display-tests/text-style`);
-    browser.expect.element('.terra-ItemView-display').to.be.present;
+    browser.expect.element('.terraClinical-ItemView-display').to.be.present;
 
     browser.assert.cssClassPresent('#test-display-secondary .terraClinical-ItemView-text', 'terraClinical-ItemView-text--secondary');
     browser.assert.cssClassPresent('#test-display-attention .terraClinical-ItemView-text', 'terraClinical-ItemView-text--attention');

@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 /* eslint-disable no-unused-expressions */
 
-const screenshot = require('../../../node_modules/terra-toolkit').screenshot;
+const screenshot = require('terra-toolkit').screenshot;
 
 module.exports = {
   before: (browser, done) => {
@@ -9,7 +9,8 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-item-view', done);
+    // screenshot(browser, 'terra-clinical-item-view', done);
+    screenshot(browser, done);
   },
 
   'Displays a clinical item view with default props': (browser) => {
@@ -18,7 +19,7 @@ module.exports = {
   },
   'Displays a clinical item view with displays present': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/clinical-item-view-tests/displays`)
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-tests/displays`)
       .assert.containsText('#test-displays .terraClinical-ItemView-row:nth-child(1)', 'display1display1display1display1display1display1display1display1display1display1display1display1display1display1')
       .assert.containsText('#test-displays .terraClinical-ItemView-row:nth-child(2)', 'display2display2display2display2display2display2display2display2display2display2display2display2display2display2')
       .assert.containsText('#test-displays .terraClinical-ItemView-row:nth-child(3)', 'display 3')
@@ -36,7 +37,7 @@ module.exports = {
       .assert.cssClassPresent('#test-displays-two-left .terraClinical-ItemView-row:nth-child(3) .terraClinical-ItemView-content:nth-child(2)', 'terraClinical-ItemView-content--secondaryColor');
   },
   'Displays a clinical item view with accessories set': (browser) => {
-    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/clinical-item-view-tests/accessory`);
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-tests/accessory`);
     browser.expect.element('#test-start-accessory .terraClinical-ItemView-accessory:nth-child(1) > :first-child').to.be.present;
     browser.expect.element('#test-start-accessory .terraClinical-ItemView-accessory:nth-child(3) > :first-child').to.not.be.present;
     browser.expect.element('#test-end-accessory .terraClinical-ItemView-accessory:nth-child(1) > :first-child').to.not.be.present;
@@ -46,7 +47,7 @@ module.exports = {
     browser.assert.cssClassPresent('#test-both-accessory-top', 'terraClinical-ItemView-accessory--alignTop');
   },
   'Displays a clinical item view with a comment set': (browser) => {
-    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/clinical-item-view-tests/comment`);
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-tests/comment`);
     browser.expect.element('.terraClinical-ItemView-body .terraClinical-ItemView-comment').to.be.present;
   },
 };

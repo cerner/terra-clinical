@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 /* eslint-disable no-unused-expressions */
 
-const screenshot = require('../../../node_modules/terra-toolkit').screenshot;
+const screenshot = require('terra-toolkit').screenshot;
 
 module.exports = {
   before: (browser, done) => {
@@ -9,7 +9,8 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-item-view', done);
+    // screenshot(browser, 'terra-clinical-item-view', done);
+    screenshot(browser, done);
   },
 
   'Displays a clinical item view with default props': (browser) => {
