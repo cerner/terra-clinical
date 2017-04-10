@@ -147,10 +147,11 @@ var ItemView = function (_React$Component) {
       var displayGroups = [];
       var displayGroup = [];
       var sliceLength = displaysSlice.length;
+      debugger;
       for (var i = 0; i < sliceLength; i += 1) {
         displayGroup.push(displaysSlice[i]);
 
-        if ((i + 1) % sliceValue === 0) {
+        if ((i + 1) % sliceValue === 0 || i + 1 === sliceLength) {
           displayGroups.push(displayGroup);
           displayGroup = [];
         }
