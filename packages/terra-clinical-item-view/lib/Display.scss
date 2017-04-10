@@ -1,0 +1,5 @@
+.terraClinical-ItemView-display {
+  align-items: center;
+  display: flex;
+  overflow: hidden; // VERY IMPORTANT FOR IE10
+}

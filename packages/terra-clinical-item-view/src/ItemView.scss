@@ -1,0 +1,171 @@
+@import '~terra-mixins';
+@import './variables';
+@import './mixins';
+
+// Temporary until it is added to application.
+.terraClinical-ItemView {
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.terraClinical-ItemView {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+// Accessory
+
+.terraClinical-ItemView-accessory {
+  // Accessory is of fixed size and does not shrink or grow.
+  flex: 0 0 auto;
+  margin: 5px;
+  max-height: 60px;
+  max-width: 60px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.terraClinical-ItemView-accessory--alignTop {
+  align-items: flex-start;
+}
+
+.terraClinical-ItemView-accessory--alignCenter {
+  align-items: center;
+}
+
+// Content Layout
+
+.terraClinical-ItemView-body {
+  flex: 1 1 auto;
+  margin: 5px;
+  min-width: 0;
+  overflow: hidden; // VERY IMPORTANT FOR IE10
+}
+
+.terraClinical-ItemView-row {
+  display: flex;
+  width: 100%;
+}
+
+.terraClinical-ItemView-content {
+  align-items: center;
+  display: flex;
+  overflow: hidden; // VERY IMPORTANT FOR IE10
+}
+
+.terraClinical-ItemView-text {
+  flex: 1 1 auto;
+  min-width: 10px; // Need min-width, as IE10 will completely squish display
+}
+
+.terraClinical-ItemView-text--inlineIcon {
+  @include terra-padding-end(5px);
+  flex: 0 0 auto;
+  height: 20px;
+  max-width: 20px;
+  overflow: hidden;
+}
+
+.terraClinical-ItemView-text--inlineIcon > * {
+  font-size: 1rem;
+}
+
+// Truncation
+
+.terraClinical-ItemView--isTruncated .terraClinical-ItemView-text,
+.terraClinical-ItemView-text--isTruncated {
+  @include terra-clinical-text-truncate;
+}
+
+// Layouts
+
+.terraClinical-ItemView--oneColumn {
+  .terraClinical-ItemView-rowContainer {
+    .terraClinical-ItemView-row {
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+    }
+
+    .terraClinical-ItemView-content {
+      width: 100%;
+    }
+  }
+}
+
+.terraClinical-ItemView--twoColumns {
+  .terraClinical-ItemView-content:nth-child(odd) {
+    flex: 1 1 auto;
+    text-align: left;
+  }
+
+  .terraClinical-ItemView-content:nth-child(even) {
+    @include terra-padding-start(5px);
+
+    flex: 1 0 auto;
+    justify-content: flex-end;
+
+    // Set a max-width and disable flexbox-squishing on the right-most displays. This will ensure that they aren't
+    // prematurely squished and maximize the available space for all labels.
+    max-width: 60%;
+
+    .terraClinical-ItemView-text {
+      flex: 0 1 auto;
+      min-width: 10px; // Need min-width, as IE10 will completely squish display
+    }
+  }
+}
+
+// We need to style content that appears out of the rowContainer (i.e. the comment).
+.terraClinical-ItemView-content {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
+    @include terra-clinical-text-body;
+    color: $terra-clinical-item-view-content-secondary-color;
+  }
+}
+
+//Emphasis Content Styles
+.terraClinical-ItemView-content--primaryColor {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
+    color: $terra-clinical-item-view-content-primary-color;
+  }
+}
+
+.terraClinical-ItemView-content--primarySize {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
+    @include terra-clinical-tiny-heading;
+  }
+}
+
+.terraClinical-ItemView-content--secondaryColor {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
+    color: $terra-clinical-item-view-content-secondary-color;
+  }
+}
+
+.terraClinical-ItemView-content--secondarySize {
+  .terraClinical-ItemView-text,
+  .terraClinical-ItemView-text--inlineIcon {
+    @include terra-clinical-text-body;
+  }
+}
+
+// Text Styles
+
+.terraClinical-ItemView-text--secondary {
+  color: $terra-clinical-item-view-text-secondary-color !important;
+}
+
+.terraClinical-ItemView-text--attention {
+  color: $terra-clinical-item-view-text-attention-color !important;
+  font-weight: $terra-clinical-item-view-text-attention-weight !important;
+}
+
+.terraClinical-ItemView-text--strikeThrough {
+  text-decoration: line-through !important;
+}
