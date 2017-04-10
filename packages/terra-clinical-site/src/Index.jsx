@@ -21,10 +21,12 @@ ReactDOM.render((
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
       <Route path="item-view" component={ItemViewExamples} />
+      <Route path="no-data-view" component={NoDataViewExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
     {ItemViewTestRoutes}
     {ItemViewCommentTestRoutes}
     {ItemViewDisplayTestRoutes}
+    {NoDataViewTestRoutes}
   </Router>
 ), document.getElementById('root'));

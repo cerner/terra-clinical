@@ -1,0 +1,41 @@
+@import '~terra-mixins';
+
+.terraClinical-NoDataView {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0 20px;
+  width: 100%;
+}
+
+.terraClinical-NoDataView-heading {
+  @include terra-text-align-center();
+  color: $terra-grey-25;
+  flex: 0 0 auto;
+  font-size: 20px;
+  // font-size: 1.4285714285714286rem;
+  line-height: 30px;
+  // line-height: 2.142857142857143rem;
+  padding-top: 20px;
+}
+
+.terraClinical-NoDataView-subtext {
+  @include terra-text-align-center();
+  color: $terra-grey-65;
+  flex: 0 0 auto;
+  font-size: 14px;
+  // // font-size: 1.4285714285714286rem;
+  line-height: 15px;
+  // // line-height: 2.142857142857143rem;
+  padding-top: 4px;
+}
+
+.terraClinical-NoDataView-glyph {
+  flex: 0 0 auto;
+}
+
+.terraClinical-NoDataView-subtextContent {
+  flex: 0 0 auto;
+  padding-top: 4px;
+}
+
