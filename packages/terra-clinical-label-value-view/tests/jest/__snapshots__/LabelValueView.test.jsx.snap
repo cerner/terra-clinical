@@ -1,0 +1,58 @@
+exports[`LabelValueView should render LabelValueView for multiple inputs 1`] = `
+<div
+  className="terraClinical-LabelValueView">
+  <div
+    className="terraClinical-LabelValueView-label">
+    Label
+  </div>
+  <div
+    className="terraClinical-LabelValueView-value">
+    Sample Text
+    <div>
+      More Sample Text
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LabelValueView should render a LabelValueView for integer input 1`] = `
+<div
+  className="terraClinical-LabelValueView">
+  <div
+    className="terraClinical-LabelValueView-label">
+    Label
+  </div>
+  <div
+    className="terraClinical-LabelValueView-value">
+    5
+  </div>
+</div>
+`;
+
+exports[`LabelValueView should render a LabelValueView for text input 1`] = `
+<div
+  className="terraClinical-LabelValueView">
+  <div
+    className="terraClinical-LabelValueView-label">
+    Label
+  </div>
+  <div
+    className="terraClinical-LabelValueView-value">
+    Sample Text
+  </div>
+</div>
+`;
+
+exports[`LabelValueView should render a default LabelValueView 1`] = `
+<div
+  className="terraClinical-LabelValueView">
+  <div
+    className="terraClinical-LabelValueView-label">
+    Label
+  </div>
+  <div
+    className="terraClinical-LabelValueView-value">
+    --
+  </div>
+</div>
+`;
