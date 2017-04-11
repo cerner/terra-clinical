@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -32,11 +36,11 @@ var propTypes = {
   /**
    * The text to be displayed for the comment.
    */
-  text: _react.PropTypes.string,
+  text: _propTypes2.default.string,
   /**
    * Whether or not the text should be truncated in display.
    */
-  isTruncated: _react.PropTypes.bool
+  isTruncated: _propTypes2.default.bool
 };
 
 var defaultProps = {

@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -42,35 +46,35 @@ var propTypes = {
   /**
    * The column layout in which to present the displays.
    */
-  layout: _react.PropTypes.oneOf(['oneColumn', 'twoColumns']),
+  layout: _propTypes2.default.oneOf(['oneColumn', 'twoColumns']),
   /**
    * The text color emphasis when using two columns.
    */
-  textEmphasis: _react.PropTypes.oneOf(['default', 'start']),
+  textEmphasis: _propTypes2.default.oneOf(['default', 'start']),
   /**
    * Whether or not all text on the view should be truncated.
    */
-  isTruncated: _react.PropTypes.bool,
+  isTruncated: _propTypes2.default.bool,
   /**
    * The vertical alignment of the start and end accesories.
    */
-  accessoryAlignment: _react.PropTypes.oneOf(['alignTop', 'alignCenter']),
+  accessoryAlignment: _propTypes2.default.oneOf(['alignTop', 'alignCenter']),
   /**
    * The react element to be placed in the start aligned accessory position.
    */
-  startAccessory: _react.PropTypes.element,
+  startAccessory: _propTypes2.default.element,
   /**
    * The react element to be placed in the end aligned accessory position.
    */
-  endAccessory: _react.PropTypes.element,
+  endAccessory: _propTypes2.default.element,
   /**
    * An array of react display elements to be presented.
    */
-  displays: _react.PropTypes.arrayOf(_react.PropTypes.element),
+  displays: _propTypes2.default.arrayOf(_propTypes2.default.element),
   /**
    * The react element for the comment element.
    */
-  comment: _react.PropTypes.element
+  comment: _propTypes2.default.element
 };
 
 var defaultProps = {
