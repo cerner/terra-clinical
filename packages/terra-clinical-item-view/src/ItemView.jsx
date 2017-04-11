@@ -65,13 +65,10 @@ class ItemView extends React.Component {
       return undefined;
     }
 
-    const displaysSlice = displays.slice(0, 7);
-    let spliceValue = 1;
-    if (layout === 'twoColumns') {
-      spliceValue = 2;
-    }
-
     const displayGroups = [];
+    const displaysSlice = displays.slice(0, 7);
+    const spliceValue = layout === 'twoColumns' ? 2 : 1;
+    
     while (displaysSlice.length) {
       displayGroups.push(displaysSlice.splice(0, spliceValue));
     }
