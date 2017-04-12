@@ -69,7 +69,7 @@ var DetailView = function DetailView(_ref) {
       customProps = _objectWithoutProperties(_ref, ['title', 'subtitles', 'graph', 'details', 'footer', 'isDivided']);
 
   var attributes = _extends({}, customProps);
-  attributes.className = (0, _classnames2.default)(['terra-DetailView', attributes.className]);
+  attributes.className = (0, _classnames2.default)(['terraClinical-DetailView', attributes.className]);
 
   var divider = null;
   var dividedDetails = [];
