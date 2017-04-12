@@ -138,22 +138,12 @@ var ItemView = function (_React$Component) {
         return undefined;
       }
 
-      var displaysSlice = displays.slice(0, 7);
-      var sliceValue = 1;
-      if (layout === 'twoColumns') {
-        sliceValue = 2;
-      }
-
       var displayGroups = [];
-      var displayGroup = [];
-      var sliceLength = displaysSlice.length;
-      for (var i = 0; i < sliceLength; i += 1) {
-        displayGroup.push(displaysSlice[i]);
+      var displaysSlice = displays.slice(0, 7);
+      var spliceValue = layout === 'twoColumns' ? 2 : 1;
 
-        if ((i + 1) % sliceValue === 0) {
-          displayGroups.push(displayGroup);
-          displayGroup = [];
-        }
+      while (displaysSlice.length) {
+        displayGroups.push(displaysSlice.splice(0, spliceValue));
       }
 
       return _react2.default.createElement(
