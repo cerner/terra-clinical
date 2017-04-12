@@ -5,8 +5,8 @@ import NoDataView from 'terra-clinical-no-data-view';
 const view = () => (
   <NoDataView
     heading="test heading"
-    subtextContent={<p>this content was insert into the content container</p>}
-    isGlyphHidden={false}
+    subtext="test subtext"
+    isGlyphHidden
   />);
 
 export default view;

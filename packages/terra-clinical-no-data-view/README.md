@@ -1,4 +1,4 @@
-# Terra NoDataView
+# Terra Clinical NoDataView
 
 
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-no-data-view.svg)](https://www.npmjs.org/package/terra-clinical-no-data-view)

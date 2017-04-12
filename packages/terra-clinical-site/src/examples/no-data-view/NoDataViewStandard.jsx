@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NoDataView from 'terra-no-data-view';
+import NoDataView from 'terra-clinical-no-data-view';
 
 const view = () => (
   <NoDataView
