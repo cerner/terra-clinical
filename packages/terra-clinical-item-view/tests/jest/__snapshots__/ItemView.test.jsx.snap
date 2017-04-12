@@ -280,6 +280,46 @@ exports[`test should render two columns 1`] = `
 </div>
 `;
 
+exports[`test should render two columns with odd number of displays 1`] = `
+<div
+  className="terraClinical-ItemView terraClinical-ItemView--twoColumns terraClinical-ItemView-accessory--alignCenter">
+  <div
+    className="terraClinical-ItemView-accessory" />
+  <div
+    className="terraClinical-ItemView-body">
+    <div
+      className="terraClinical-ItemView-rowContainer">
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
+          <Display
+            isTruncated={false}
+            text="display 1" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
+          <Display
+            isTruncated={false}
+            text="display 2" />
+        </div>
+      </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 3" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="terraClinical-ItemView-accessory" />
+</div>
+`;
+
 exports[`test should render with 1 display 1`] = `
 <div
   className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
