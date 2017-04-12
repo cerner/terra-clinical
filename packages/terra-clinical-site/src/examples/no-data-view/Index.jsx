@@ -21,7 +21,7 @@ const NoDataViewExamples = () => (
     <PropsTable id="props-noDataView" src={NoDataViewSrc} />
     <h2 id="noDataView">No Data View</h2>
     <NoDataViewStandard />
-    <h2 id="noDataView">No Data View With Glyph Hidden</h2>
+    <h2 id="noDataView-hidden-glyph">No Data View With Glyph Hidden</h2>
     <NoDataViewHiddenGlyph />
     <h2 id="noDataView-content">No Data View With Content</h2>
     <NoDataViewContent />
