@@ -11,6 +11,7 @@ import ErrorViewSrc from '!raw-loader!terra-clinical-error-view/src/ErrorView.js
 
 // Example Files
 import ErrorViewStandard from './ErrorViewStandard';
+import ErrorViewHiddenGlyph from './ErrorViewHiddenGlyph';
 
 const ErrorViewExamples = () => (
   <div>
@@ -19,6 +20,8 @@ const ErrorViewExamples = () => (
     <PropsTable id="props-errorView" src={ErrorViewSrc} />
     <h2 id="errorView">Error View</h2>
     <ErrorViewStandard />
+    <h2 id="errorView">Error View With Glyph Hidden</h2>
+    <ErrorViewHiddenGlyph />
   </div>
 );
 
