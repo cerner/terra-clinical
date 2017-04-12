@@ -20,7 +20,7 @@ const ErrorViewExamples = () => (
     <PropsTable id="props-errorView" src={ErrorViewSrc} />
     <h2 id="errorView">Error View</h2>
     <ErrorViewStandard />
-    <h2 id="errorView">Error View With Glyph Hidden</h2>
+    <h2 id="errorView-glyph-hidden">Error View With Glyph Hidden</h2>
     <ErrorViewHiddenGlyph />
   </div>
 );
