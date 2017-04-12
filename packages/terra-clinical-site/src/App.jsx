@@ -16,6 +16,7 @@ const App = props => (
     </div>
     <ul className="terraClinical-Site-links" dir="ltr">
       <li><Link to="/">Home</Link></li>
+      <li><Link to="/site/detail-view">Detail View</Link></li>
       <li><Link to="/site/item-view">Item View</Link></li>
       <li><Link to="/tests">Tests</Link></li>
     </ul>
