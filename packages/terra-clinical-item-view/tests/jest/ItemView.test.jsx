@@ -147,3 +147,12 @@ it('should render two columns', () => {
   const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
   expect(itemView).toMatchSnapshot();
 });
+
+it('should render two columns with odd number of displays', () => {
+  const display1 = <ItemView.Display text="display 1" />;
+  const display2 = <ItemView.Display text="display 2" />;
+  const display3 = <ItemView.Display text="display 3" />;
+  const displays = [display1, display2, display3];
+  const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
+  expect(itemView).toMatchSnapshot();
+});
