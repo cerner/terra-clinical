@@ -12,10 +12,8 @@
   @include terra-text-align-center();
   color: $terra-grey-25;
   flex: 0 0 auto;
-  font-size: 20px;
-  // font-size: 1.4285714285714286rem;
-  line-height: 30px;
-  // line-height: 2.142857142857143rem;
+  font-size: 1.7142857142857142rem;
+  line-height: 2.142857142857143rem;
   padding-top: 20px;
 }
 
@@ -23,10 +21,8 @@
   @include terra-text-align-center();
   color: $terra-grey-65;
   flex: 0 0 auto;
-  font-size: 14px;
-  // // font-size: 1.4285714285714286rem;
-  line-height: 15px;
-  // // line-height: 2.142857142857143rem;
+  font-size: 1rem;
+  line-height: 1.0714285714285714rem;
   padding-top: 4px;
 }
 
