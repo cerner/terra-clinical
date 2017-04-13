@@ -17,13 +17,13 @@ import LabelValueView from 'terra-clinical-label-value-view';
 
 <LabelValueView label="Reporter" />
 
-<LabelValueView label="Reporter">
-  John Doe
-</LabelValueView>
+<LabelValueView label="Reporter" textValue="John Doe" />
 
 <LabelValueView label="Heart Rate">
-  <Icon />
-  <Icon />
-  120 bmp
+  <List>
+    <Icon />
+    <Icon />
+    120 bmp
+  <List />
 </LabelValueView>
 ```

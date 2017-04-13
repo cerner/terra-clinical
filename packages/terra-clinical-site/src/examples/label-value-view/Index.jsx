@@ -10,27 +10,20 @@ import { version } from 'terra-clinical-label-value-view/package.json';
 import LabelValueViewSrc from '!raw-loader!terra-clinical-label-value-view/src/LabelValueView';
 
 // Example Files
-import LabelValueViewNoValue from './LabelValueViewNoValue';
 import LabelValueViewSingle from './LabelValueViewSingle';
-import LabelValueViewMultiple from './LabelValueViewMultiple';
-import LabelValueViewFormatted from './LabelValueViewFormatted';
+import LabelValueViewElement from './LabelValueViewElement';
 
 const LabelValueViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={LabelValueViewSrc} />
-    <h2 id="no_value">Label Value View with No Value Input</h2>
-    <LabelValueViewNoValue />
-    <br />
-    <h2 id="one_value">Label Value View with a Single Value Input</h2>
+    <h2 id="text_value">Label Value View with a Text Input</h2>
     <LabelValueViewSingle />
     <br />
-    <h2 id="multiple_values">Label Value View with Multiple Value Inputs</h2>
-    <LabelValueViewMultiple />
+    <h2 id="element_value">Label Value View with an Element Input</h2>
+    <LabelValueViewElement />
     <br />
-    <h2 id="formatted_value">Label Value View with Formated Value Input</h2>
-    <LabelValueViewFormatted />
   </div>
 );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
 
-const LabelValueViewMultiple = () => (
+const LabelValueViewElement = () => (
   <div>
     <LabelValueView label="Label">
       <div>
@@ -12,4 +12,4 @@ const LabelValueViewMultiple = () => (
   </div>
 );
 
-export default LabelValueViewMultiple;
+export default LabelValueViewElement;

@@ -32,21 +32,42 @@ var propTypes = {
    */
   label: _propTypes2.default.string.isRequired,
   /**
+  * The text to be displayed underneath the label with the provided styling.
+  */
+  textValue: _propTypes2.default.string,
+  /**
    *  Child component(s) to display underneath the label.
    */
-  children: _propTypes2.default.node
+  children: _propTypes2.default.element
 };
 
 var defaultProps = {
-  children: '--'
+  textValue: '',
+  children: undefined
 };
 
 var LabelValueView = function LabelValueView(_ref) {
   var label = _ref.label,
+      textValue = _ref.textValue,
       children = _ref.children,
-      customProps = _objectWithoutProperties(_ref, ['label', 'children']);
+      customProps = _objectWithoutProperties(_ref, ['label', 'textValue', 'children']);
 
   var labelValueViewClassNames = (0, _classnames2.default)('terraClinical-LabelValueView', _defineProperty({}, '' + customProps.className, customProps.className));
+
+  var textValueSection = void 0;
+  if (!textValue && !children) {
+    textValueSection = _react2.default.createElement(
+      'div',
+      { className: 'terraClinical-LabelValueView-value' },
+      '--'
+    );
+  } else if (textValue) {
+    textValueSection = _react2.default.createElement(
+      'div',
+      { className: 'terraClinical-LabelValueView-value' },
+      textValue
+    );
+  }
 
   return _react2.default.createElement(
     'div',
@@ -56,11 +77,8 @@ var LabelValueView = function LabelValueView(_ref) {
       { className: 'terraClinical-LabelValueView-label' },
       label
     ),
-    _react2.default.createElement(
-      'div',
-      { className: 'terraClinical-LabelValueView-value' },
-      children
-    )
+    textValueSection,
+    children
   );
 };
 

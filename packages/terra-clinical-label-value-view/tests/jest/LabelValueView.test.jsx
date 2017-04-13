@@ -12,22 +12,25 @@ describe('LabelValueView', () => {
 
   it('should render a LabelValueView for text input', () => {
     const textInputView = (
-      <LabelValueView label="Label">Sample Text</LabelValueView>
+      <LabelValueView label="Label" textValue="Sample Text" />
     );
     const wrapper = shallow(textInputView);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render a LabelValueView for integer input', () => {
-    const integerInputView = <LabelValueView label="Label">5</LabelValueView>;
-    const wrapper = shallow(integerInputView);
+  it('should render LabelValueView for an element input', () => {
+    const elementInputView = (
+      <LabelValueView label="Label">
+        <div>More Sample Text</div>
+      </LabelValueView>
+    );
+    const wrapper = shallow(elementInputView);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render LabelValueView for multiple inputs', () => {
+  it('should render LabelValueView for text and element inputs', () => {
     const multipleInputsView = (
-      <LabelValueView label="Label">
-        Sample Text
+      <LabelValueView label="Label" textValue="Sample Text 1">
         <div>More Sample Text</div>
       </LabelValueView>
     );
@@ -43,8 +46,7 @@ describe('LabelValueView', () => {
 
   it('should use the default value when no value is given', () => {
     const wrapper = shallow(defaultView);
-    expect(wrapper.unrendered.props.children).toEqual('--');
-    expect(wrapper.childAt(1).text()).toEqual('--');
+    expect(wrapper.find('.terraClinical-LabelValueView-value').text()).toEqual('--');
   });
 
   // Structure Tests
@@ -58,8 +60,11 @@ describe('LabelValueView', () => {
     expect(wrapper.childAt(0).prop('className')).toContain('terraClinical-LabelValueView-label');
   });
 
-  it('should have the class terraClinical-LabelValueView-value', () => {
-    const wrapper = shallow(defaultView);
+  it('should have the class terraClinical-LabelValueView-value when given a text value', () => {
+    const textInputView = (
+      <LabelValueView label="Label" textValue="Sample Text" />
+    );
+    const wrapper = shallow(textInputView);
     expect(wrapper.childAt(1).prop('className')).toContain('terraClinical-LabelValueView-value');
   });
 });

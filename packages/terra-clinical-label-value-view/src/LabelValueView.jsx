@@ -9,25 +9,38 @@ const propTypes = {
    */
   label: PropTypes.string.isRequired,
   /**
+  * The text to be displayed underneath the label with the provided styling.
+  */
+  textValue: PropTypes.string,
+  /**
    *  Child component(s) to display underneath the label.
    */
-  children: PropTypes.node,
+  children: PropTypes.element,
 };
 
 const defaultProps = {
-  children: '--',
+  textValue: '',
+  children: undefined,
 };
 
-const LabelValueView = ({ label, children, ...customProps }) => {
+const LabelValueView = ({ label, textValue, children, ...customProps }) => {
   const labelValueViewClassNames = classNames(
     'terraClinical-LabelValueView',
     { [`${customProps.className}`]: customProps.className },
   );
 
+  let textValueSection;
+  if (!textValue && !children) {
+    textValueSection = <div className="terraClinical-LabelValueView-value">--</div>;
+  } else if (textValue) {
+    textValueSection = <div className="terraClinical-LabelValueView-value">{textValue}</div>;
+  }
+
   return (
     <div {...customProps} className={labelValueViewClassNames}>
       <div className="terraClinical-LabelValueView-label">{label}</div>
-      <div className="terraClinical-LabelValueView-value">{children}</div>
+      {textValueSection}
+      {children}
     </div>
   );
 };

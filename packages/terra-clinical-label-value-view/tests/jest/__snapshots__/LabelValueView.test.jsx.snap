@@ -1,21 +1,17 @@
-exports[`LabelValueView should render LabelValueView for multiple inputs 1`] = `
+exports[`LabelValueView should render LabelValueView for an element input 1`] = `
 <div
   className="terraClinical-LabelValueView">
   <div
     className="terraClinical-LabelValueView-label">
     Label
   </div>
-  <div
-    className="terraClinical-LabelValueView-value">
-    Sample Text
-    <div>
-      More Sample Text
-    </div>
+  <div>
+    More Sample Text
   </div>
 </div>
 `;
 
-exports[`LabelValueView should render a LabelValueView for integer input 1`] = `
+exports[`LabelValueView should render LabelValueView for text and element inputs 1`] = `
 <div
   className="terraClinical-LabelValueView">
   <div
@@ -24,7 +20,10 @@ exports[`LabelValueView should render a LabelValueView for integer input 1`] = `
   </div>
   <div
     className="terraClinical-LabelValueView-value">
-    5
+    Sample Text 1
+  </div>
+  <div>
+    More Sample Text
   </div>
 </div>
 `;

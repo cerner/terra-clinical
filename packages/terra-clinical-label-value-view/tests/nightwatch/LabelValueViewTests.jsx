@@ -7,9 +7,9 @@ const LabelValueViewTests = () => (
   <div>
     <ul>
       <li><Link to="/tests/label-value-view-tests/default">Default LabelValueView</Link></li>
-      <li><Link to="/tests/label-value-view-tests/text-value">LabelValueView with Text Input</Link></li>
-      <li><Link to="/tests/label-value-view-tests/integer-value">LabelValueView with Integer Input</Link></li>
-      <li><Link to="/tests/label-value-view-tests/node-value">LabelValueView with Node Input</Link></li>
+      <li><Link to="/tests/label-value-view-tests/text-value">LabelValueView with a Text Input</Link></li>
+      <li><Link to="/tests/label-value-view-tests/element-value">LabelValueView with an Element Input</Link></li>
+      <li><Link to="/tests/label-value-view-tests/multiple-values">LabelValueView with Text and Element Inputs</Link></li>
     </ul>
   </div>
 );
