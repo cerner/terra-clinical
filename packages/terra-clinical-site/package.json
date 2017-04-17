@@ -30,6 +30,8 @@
     "terra-button": "^0.x",
     "terra-clinical-header": "^0.x",
     "terra-clinical-item-view": "^0.x",
+    "terra-clinical-detail-view": "^0.x",
+    "terra-grid": "^2.x",
     "terra-legacy-theme": "^0.x",
     "terra-markdown": "^0.x",
     "terra-props-table": "^0.x"
