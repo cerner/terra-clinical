@@ -1,0 +1,186 @@
+exports[`test should render a default component 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText" />
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div
+    className="terraClinical-DetailView-footerText" />
+</div>
+`;
+
+exports[`test should render a title 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText">
+      Header
+    </h1>
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div
+    className="terraClinical-DetailView-footerText" />
+</div>
+`;
+
+exports[`test should render details 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText">
+      Header
+    </h1>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 1
+    </div>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 2
+    </div>
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <p>
+     Detail information 
+  </p>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div
+    className="terraClinical-DetailView-footerText" />
+</div>
+`;
+
+exports[`test should render footer 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText">
+      Header
+    </h1>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 1
+    </div>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 2
+    </div>
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <p>
+     Detail information 
+  </p>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div
+    className="terraClinical-DetailView-footerText">
+    Footer text
+  </div>
+</div>
+`;
+
+exports[`test should render graph 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText">
+      Header
+    </h1>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 1
+    </div>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 2
+    </div>
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div>
+     This is where a graph would go 
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div
+    className="terraClinical-DetailView-footerText" />
+</div>
+`;
+
+exports[`test should render subtitles 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText">
+      Header
+    </h1>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 1
+    </div>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 2
+    </div>
+  </div>
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <hr
+    className="terraClinical-DetailView-divider" />
+  <div
+    className="terraClinical-DetailView-footerText" />
+</div>
+`;
+
+exports[`test should render without a divider when indicated 1`] = `
+<div
+  className="terraClinical-DetailView">
+  <div
+    className="terraClinical-DetailView-title">
+    <h1
+      className="terraClinical-DetailView-primaryText">
+      Header
+    </h1>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 1
+    </div>
+    <div
+      className="terraClinical-DetailView-subtitle">
+      Subtitle 2
+    </div>
+  </div>
+  <p>
+     Detail information 
+  </p>
+  <div
+    className="terraClinical-DetailView-footerText">
+    Footer text
+  </div>
+</div>
+`;

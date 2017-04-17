@@ -5,11 +5,13 @@ import App from './App';
 import Home from './Home';
 
 // Examples
+import DetailViewExamples from './examples/detail-view/Index';
 import ItemViewExamples from './examples/item-view/Index';
 import LabelValueViewExamples from './examples/label-value-view/Index';
 
 // Test
 /* eslint-disable import/first */
+import DetailViewTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailViewTestRoutes';
 import ItemViewTestRoutes from 'terra-clinical-item-view/tests/nightwatch/item-view/ItemViewTestRoutes';
 import ItemViewCommentTestRoutes from 'terra-clinical-item-view/tests/nightwatch/comment/CommentTestRoutes';
 import ItemViewDisplayTestRoutes from 'terra-clinical-item-view/tests/nightwatch/display/DisplayTestRoutes';
@@ -22,10 +24,12 @@ ReactDOM.render((
     <Redirect from="/" to="/site" />
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
+      <Route path="detail-view" component={DetailViewExamples} />
       <Route path="item-view" component={ItemViewExamples} />
       <Route path="label-value-view" component={LabelValueViewExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
+    {DetailViewTestRoutes}
     {ItemViewTestRoutes}
     {ItemViewCommentTestRoutes}
     {ItemViewDisplayTestRoutes}
