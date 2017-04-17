@@ -1,0 +1,25 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import React from 'react';
+import { Route } from 'react-router';
+import HeaderTests from './HeaderTests';
+import DefaultHeader from './DefaultHeader';
+import TitleHeader from './TitleHeader';
+import LongTitleHeader from './LongTitleHeader';
+import RightContentHeader from './RightContentHeader';
+import LeftContentHeader from './LeftContentHeader';
+import LeftAndRightContentHeader from './LeftAndRightContentHeader';
+
+const routes = (
+  <div>
+    <Route path="/tests/header-tests" component={HeaderTests} />
+    <Route path="/tests/header-tests/default" component={DefaultHeader} />
+    <Route path="/tests/header-tests/title" component={TitleHeader} />
+    <Route path="/tests/header-tests/long-title" component={LongTitleHeader} />
+    <Route path="/tests/header-tests/right-content" component={RightContentHeader} />
+    <Route path="/tests/header-tests/left-content" component={LeftContentHeader} />
+    <Route path="/tests/header-tests/left-and-right-content" component={LeftAndRightContentHeader} />
+  </div>
+);
+
+export default routes;
