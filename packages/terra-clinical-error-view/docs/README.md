@@ -17,7 +17,8 @@ import ErrorView from 'terra-clinical-error-view';
 <ErrorView
   name="test name"
   description="test description"
-  button={<Button />}
+  buttonText="test button"
+  buttonOnClick={this.handleClick();}
   isGlyphHidden={false}
  />
 ```
