@@ -16,6 +16,14 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 require('./DetailView.scss');
 
+var _DetailList = require('./DetailList');
+
+var _DetailList2 = _interopRequireDefault(_DetailList);
+
+var _DetailListItem = require('./DetailListItem');
+
+var _DetailListItem2 = _interopRequireDefault(_DetailListItem);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -124,5 +132,7 @@ var DetailView = function DetailView(_ref) {
 DetailView.propTypes = propTypes;
 
 DetailView.defaultProps = defaultProps;
+DetailView.DetailList = _DetailList2.default;
+DetailView.DetailListItem = _DetailListItem2.default;
 
 exports.default = DetailView;

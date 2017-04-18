@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import ClinicalItemView from 'terra-clinical-item-view';
-import DetailView from 'terra-clinical-detail-view';
 
-const item = (<ClinicalItemView comment={<ClinicalItemView.Comment text="A Detail List Item" />} />);
-const item2 = (<ClinicalItemView comment={<ClinicalItemView.Comment text="A Detail List Item to prove float concept when screen readjusts smaller." />} />);
+import DetailView from '../../../lib/DetailView';
+
+const item = (<p>A Detail List Item</p>);
+const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
 
 const DetailViewDivided = () => (
   <DetailView

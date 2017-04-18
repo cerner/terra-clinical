@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import ClinicalItemView from 'terra-clinical-item-view';
-import DetailView from 'terra-clinical-detail-view';
 
-const item = (<ClinicalItemView comment={<ClinicalItemView.Comment text="A Detail List Item" />} />);
-const item2 = (<ClinicalItemView comment={<ClinicalItemView.Comment text="A Detail List Item to prove float concept when screen readjusts smaller." />} />);
+import DetailView from '../../../lib/DetailView';
 
-const DetailViewDivided = () => (
+const item = (<p>A Detail List Item</p>);
+const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
+
+const DetailViewNoDivider = () => (
   <DetailView
     title="Header"
     subtitles={['Subtitle 1', 'Subtitle 2']}
@@ -21,7 +21,8 @@ const DetailViewDivided = () => (
       </DetailView.DetailList>),
     ]}
     footer="Footer Text"
+    isDivided={false}
   />
 );
 
-export default DetailViewDivided;
+export default DetailViewNoDivider;
