@@ -8,17 +8,17 @@
   width: 100%;
 }
 
+.terraClinical-ErrorView-glyph {
+  flex: 0 0 auto;
+  padding-bottom: 0.2857rem;
+}
+
 .terraClinical-ErrorView-text {
   @include terra-text-align-center();
   color: $terra-grey-25;
   flex: 0 0 auto;
   font-size: 1.7142857142857142rem;
   line-height: 1.284;
-  padding-top: 0.2857rem;
-}
-
-.terraClinical-ErrorView-glyph {
-  flex: 0 0 auto;
 }
 
 .terraClinical-ErrorView-button {
