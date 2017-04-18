@@ -4,8 +4,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding: 40px 0 20px;
+  padding: 2.857rem 0 1.429rem;
   width: 100%;
+}
+
+.terraClinical-NoDataView-glyph {
+  flex: 0 0 auto;
+  padding-bottom: 1.429rem;
 }
 
 .terraClinical-NoDataView-heading {
@@ -14,7 +19,6 @@
   flex: 0 0 auto;
   font-size: 1.7142857142857142rem;
   line-height: 1.284;
-  padding-top: 20px;
 }
 
 .terraClinical-NoDataView-subtext {
@@ -23,15 +27,11 @@
   flex: 0 0 auto;
   font-size: 1rem;
   line-height: 1.142;
-  padding-top: 4px;
-}
-
-.terraClinical-NoDataView-glyph {
-  flex: 0 0 auto;
+  padding-top: 0.2857rem;
 }
 
 .terraClinical-NoDataView-subtextContent {
   flex: 0 0 auto;
-  padding-top: 4px;
+  padding-top: 0.2857rem;
 }
 
