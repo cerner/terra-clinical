@@ -28,13 +28,13 @@ module.exports = {
       .assert.containsText('.terraClinical-LabelValueView-value', 'Sample Text');
   },
 
-  'Displays a LabelValueView when a elment input is provided': (browser) => {
+  'Displays a LabelValueView when a node input is provided': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/element-value`)
       .assert.elementNotPresent('.terraClinical-LabelValueView-value');
   },
 
-  'Displays a LabelValueView when text and elment input is provided': (browser) => {
+  'Displays a LabelValueView when text and node input is provided': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/multiple-values`)
       .assert.elementPresent('.terraClinical-LabelValueView-value')

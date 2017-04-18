@@ -38,7 +38,7 @@ var propTypes = {
   /**
    *  Child component(s) to display underneath the label.
    */
-  children: _propTypes2.default.element
+  children: _propTypes2.default.node
 };
 
 var defaultProps = {

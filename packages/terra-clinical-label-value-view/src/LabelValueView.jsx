@@ -15,7 +15,7 @@ const propTypes = {
   /**
    *  Child component(s) to display underneath the label.
    */
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 const defaultProps = {

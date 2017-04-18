@@ -18,17 +18,17 @@ describe('LabelValueView', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render LabelValueView for an element input', () => {
-    const elementInputView = (
+  it('should render LabelValueView for an node input', () => {
+    const nodeInputView = (
       <LabelValueView label="Label">
         <div>More Sample Text</div>
       </LabelValueView>
     );
-    const wrapper = shallow(elementInputView);
+    const wrapper = shallow(nodeInputView);
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render LabelValueView for text and element inputs', () => {
+  it('should render LabelValueView for text and node inputs', () => {
     const multipleInputsView = (
       <LabelValueView label="Label" textValue="Sample Text 1">
         <div>More Sample Text</div>

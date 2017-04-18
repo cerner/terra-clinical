@@ -10,8 +10,8 @@ import { version } from 'terra-clinical-label-value-view/package.json';
 import LabelValueViewSrc from '!raw-loader!terra-clinical-label-value-view/src/LabelValueView';
 
 // Example Files
-import LabelValueViewSingle from './LabelValueViewSingle';
-import LabelValueViewElement from './LabelValueViewElement';
+import LabelValueViewText from './LabelValueViewText';
+import LabelValueViewNode from './LabelValueViewNode';
 
 const LabelValueViewExamples = () => (
   <div>
@@ -19,10 +19,10 @@ const LabelValueViewExamples = () => (
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={LabelValueViewSrc} />
     <h2 id="text_value">Label Value View with a Text Input</h2>
-    <LabelValueViewSingle />
+    <LabelValueViewText />
     <br />
-    <h2 id="element_value">Label Value View with an Element Input</h2>
-    <LabelValueViewElement />
+    <h2 id="element_value">Label Value View with an Node Input</h2>
+    <LabelValueViewNode />
     <br />
   </div>
 );

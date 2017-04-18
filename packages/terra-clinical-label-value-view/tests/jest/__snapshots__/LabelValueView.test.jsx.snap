@@ -1,4 +1,4 @@
-exports[`LabelValueView should render LabelValueView for an element input 1`] = `
+exports[`LabelValueView should render LabelValueView for an node input 1`] = `
 <div
   className="terraClinical-LabelValueView">
   <div
@@ -11,7 +11,7 @@ exports[`LabelValueView should render LabelValueView for an element input 1`] = 
 </div>
 `;
 
-exports[`LabelValueView should render LabelValueView for text and element inputs 1`] = `
+exports[`LabelValueView should render LabelValueView for text and node inputs 1`] = `
 <div
   className="terraClinical-LabelValueView">
   <div
