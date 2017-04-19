@@ -1,0 +1,89 @@
+exports[`test should not render a glyph 1`] = `
+<div
+  className="terraClinical-ErrorView">
+  <p
+    className="terraClinical-ErrorView-text" />
+</div>
+`;
+
+exports[`test should render a button with text 1`] = `
+<div
+  className="terraClinical-ErrorView">
+  <div
+    className="terraClinical-ErrorView-glyph">
+    <IconError
+      height="170"
+      viewBox="0 0 48 48"
+      width="170"
+      xmlns="http://www.w3.org/2000/svg" />
+  </div>
+  <p
+    className="terraClinical-ErrorView-text" />
+  <div
+    className="terraClinical-ErrorView-button">
+    <Button
+      isBlock={false}
+      isCompact={false}
+      isDisabled={false}
+      isReversed={false}
+      onClick={[Function]}
+      text="test button text"
+      variant="secondary" />
+  </div>
+</div>
+`;
+
+exports[`test should render a default component 1`] = `
+<div
+  className="terraClinical-ErrorView">
+  <div
+    className="terraClinical-ErrorView-glyph">
+    <IconError
+      height="170"
+      viewBox="0 0 48 48"
+      width="170"
+      xmlns="http://www.w3.org/2000/svg" />
+  </div>
+  <p
+    className="terraClinical-ErrorView-text" />
+</div>
+`;
+
+exports[`test should render a description 1`] = `
+<div
+  className="terraClinical-ErrorView">
+  <div
+    className="terraClinical-ErrorView-glyph">
+    <IconError
+      height="170"
+      viewBox="0 0 48 48"
+      width="170"
+      xmlns="http://www.w3.org/2000/svg" />
+  </div>
+  <p
+    className="terraClinical-ErrorView-text">
+    test description.
+  </p>
+</div>
+`;
+
+exports[`test should render a name 1`] = `
+<div
+  className="terraClinical-ErrorView">
+  <div
+    className="terraClinical-ErrorView-glyph">
+    <IconError
+      height="170"
+      viewBox="0 0 48 48"
+      width="170"
+      xmlns="http://www.w3.org/2000/svg" />
+  </div>
+  <p
+    className="terraClinical-ErrorView-text">
+    <b
+      className="terraClinical-ErrorView-name">
+      test error name:
+    </b>
+  </p>
+</div>
+`;
