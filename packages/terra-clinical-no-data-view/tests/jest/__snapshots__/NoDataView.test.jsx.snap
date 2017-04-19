@@ -8,11 +8,7 @@ exports[`test should render a default component 1`] = `
   className="terraClinical-NoDataView">
   <div
     className="terraClinical-NoDataView-glyph">
-    <IconGlasses
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <NoDataIcon />
   </div>
 </div>
 `;
@@ -22,11 +18,7 @@ exports[`test should render a heading 1`] = `
   className="terraClinical-NoDataView">
   <div
     className="terraClinical-NoDataView-glyph">
-    <IconGlasses
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <NoDataIcon />
   </div>
   <p
     className="terraClinical-NoDataView-heading">
@@ -40,11 +32,7 @@ exports[`test should render a subtext 1`] = `
   className="terraClinical-NoDataView">
   <div
     className="terraClinical-NoDataView-glyph">
-    <IconGlasses
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <NoDataIcon />
   </div>
   <p
     className="terraClinical-NoDataView-subtext">
@@ -58,11 +46,7 @@ exports[`test should render a with subtext content 1`] = `
   className="terraClinical-NoDataView">
   <div
     className="terraClinical-NoDataView-glyph">
-    <IconGlasses
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <NoDataIcon />
   </div>
   <div
     className="terraClinical-NoDataView-subtextContent">

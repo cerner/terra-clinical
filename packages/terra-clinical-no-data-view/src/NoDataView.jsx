@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import IconNoData from 'terra-icon/lib/icon/IconGlasses';
+import IconNoData from './NoDataIcon';
 import './NoDataView.scss';
 
 const propTypes = {
@@ -43,7 +43,7 @@ const NoDataView = ({
 
   let glyphSection;
   if (!isGlyphHidden) {
-    const noDataIcon = <IconNoData height="170" width="170" />;
+    const noDataIcon = <IconNoData />;
     glyphSection = <div className="terraClinical-NoDataView-glyph">{noDataIcon}</div>;
   }
 

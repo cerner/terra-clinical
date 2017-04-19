@@ -14,9 +14,9 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _IconGlasses = require('terra-icon/lib/icon/IconGlasses');
+var _NoDataIcon = require('./NoDataIcon');
 
-var _IconGlasses2 = _interopRequireDefault(_IconGlasses);
+var _NoDataIcon2 = _interopRequireDefault(_NoDataIcon);
 
 require('./NoDataView.scss');
 
@@ -61,7 +61,7 @@ var NoDataView = function NoDataView(_ref) {
 
   var glyphSection = void 0;
   if (!isGlyphHidden) {
-    var noDataIcon = _react2.default.createElement(_IconGlasses2.default, { height: '170', width: '170' });
+    var noDataIcon = _react2.default.createElement(_NoDataIcon2.default, null);
     glyphSection = _react2.default.createElement(
       'div',
       { className: 'terraClinical-NoDataView-glyph' },
