@@ -1,0 +1,17 @@
+@import '~terra-mixins';
+
+.terraClinical-LabelValueView {
+  border: 0;
+  padding: 0.1785rem;
+}
+
+.terraClinical-LabelValueView-label {
+  color: $terra-grey-50;
+  font-size: 1rem;
+  line-height: 1.428;
+}
+
+.terraClinical-LabelValueView-value {
+  font-size: 1.428rem;
+  line-height: 1.428;
+}
