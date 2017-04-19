@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-header.svg)](https://www.npmjs.org/package/terra-clinical-header)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-The Terra ClinicalItemView component allows displays to be organized into rows and column and themed, while providing means to add accessory elements.
+A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. 
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-header/docs)
