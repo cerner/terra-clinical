@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-detail-view",
   "main": "lib/DetailView.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The Detail View component allows you to create a view with text at different levels of importance. A detail view can contain a title, subtitles, a data visualization, and a list of elements that can display information at a more detailed level.",
   "repository": {
     "type": "git",
