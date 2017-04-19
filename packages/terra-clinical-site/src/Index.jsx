@@ -8,6 +8,7 @@ import Home from './Home';
 import DetailViewExamples from './examples/detail-view/Index';
 import ItemViewExamples from './examples/item-view/Index';
 import HeaderExamples from './examples/header/Index';
+import LabelValueViewExamples from './examples/label-value-view/Index';
 
 // Test
 /* eslint-disable import/first */
@@ -16,6 +17,7 @@ import ItemViewTestRoutes from 'terra-clinical-item-view/tests/nightwatch/item-v
 import ItemViewCommentTestRoutes from 'terra-clinical-item-view/tests/nightwatch/comment/CommentTestRoutes';
 import ItemViewDisplayTestRoutes from 'terra-clinical-item-view/tests/nightwatch/display/DisplayTestRoutes';
 import HeaderTestRoutes from 'terra-clinical-header/tests/nightwatch/HeaderTestRoutes';
+import LabelValueViewTestRoutes from 'terra-clinical-label-value-view/tests/nightwatch/LabelValueViewTestRoutes';
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
@@ -27,6 +29,7 @@ ReactDOM.render((
       <Route path="detail-view" component={DetailViewExamples} />
       <Route path="header" component={HeaderExamples} />
       <Route path="item-view" component={ItemViewExamples} />
+      <Route path="label-value-view" component={LabelValueViewExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
     {DetailViewTestRoutes}
@@ -34,5 +37,6 @@ ReactDOM.render((
     {ItemViewTestRoutes}
     {ItemViewCommentTestRoutes}
     {ItemViewDisplayTestRoutes}
+    {LabelValueViewTestRoutes}
   </Router>
 ), document.getElementById('root'));
