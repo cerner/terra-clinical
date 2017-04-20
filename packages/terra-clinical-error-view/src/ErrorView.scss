@@ -1,0 +1,27 @@
+@import '~terra-mixins';
+
+.terraClinical-ErrorView {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2.857rem 0 1.429rem;
+  width: 100%;
+}
+
+.terraClinical-ErrorView-glyph {
+  flex: 0 0 auto;
+  padding-bottom: 0.2857rem;
+}
+
+.terraClinical-ErrorView-text {
+  @include terra-text-align-center();
+  color: $terra-grey-25;
+  flex: 0 0 auto;
+  font-size: 1.7142857142857142rem;
+  line-height: 1.284;
+}
+
+.terraClinical-ErrorView-button {
+  flex: 0 0 auto;
+  padding-top: 0.2857rem;
+}

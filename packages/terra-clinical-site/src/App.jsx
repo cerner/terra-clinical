@@ -17,7 +17,10 @@ const App = props => (
     <ul className="terraClinical-Site-links" dir="ltr">
       <li><Link to="/">Home</Link></li>
       <li><Link to="/site/detail-view">Detail View</Link></li>
+      <li><Link to="/site/error-view">Error View</Link></li>
       <li><Link to="/site/item-view">Item View</Link></li>
+      <li><Link to="/site/label-value-view">Label Value View</Link></li>
+      <li><Link to="/site/no-data-view">No Data View</Link></li>
       <li><Link to="/tests">Tests</Link></li>
     </ul>
     {props.children}

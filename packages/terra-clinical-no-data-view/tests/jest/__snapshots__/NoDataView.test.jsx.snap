@@ -1,0 +1,58 @@
+exports[`test should not render a glyph 1`] = `
+<div
+  className="terraClinical-NoDataView" />
+`;
+
+exports[`test should render a default component 1`] = `
+<div
+  className="terraClinical-NoDataView">
+  <div
+    className="terraClinical-NoDataView-glyph">
+    <NoDataIcon />
+  </div>
+</div>
+`;
+
+exports[`test should render a heading 1`] = `
+<div
+  className="terraClinical-NoDataView">
+  <div
+    className="terraClinical-NoDataView-glyph">
+    <NoDataIcon />
+  </div>
+  <p
+    className="terraClinical-NoDataView-heading">
+    test heading
+  </p>
+</div>
+`;
+
+exports[`test should render a subtext 1`] = `
+<div
+  className="terraClinical-NoDataView">
+  <div
+    className="terraClinical-NoDataView-glyph">
+    <NoDataIcon />
+  </div>
+  <p
+    className="terraClinical-NoDataView-subtext">
+    test subtext.
+  </p>
+</div>
+`;
+
+exports[`test should render a with subtext content 1`] = `
+<div
+  className="terraClinical-NoDataView">
+  <div
+    className="terraClinical-NoDataView-glyph">
+    <NoDataIcon />
+  </div>
+  <div
+    className="terraClinical-NoDataView-subtextContent">
+    <p>
+      test subtextContent
+    </p>
+  </div>
+</div>
+`;
