@@ -20,7 +20,7 @@ const DetailListItem = ({ item, ...customProps }) => {
   ]);
 
   return (
-    <div className={detailListItemClassNames}>
+    <div {...customProps} className={detailListItemClassNames}>
       {item}
     </div>
   );

@@ -35,7 +35,7 @@ const DetailList = ({ title, children, ...customProps }) => {
   }
 
   return (
-    <div className={detailListClassNames}>
+    <div {...customProps} className={detailListClassNames}>
       {titleContent}
       <div className="terraClinical-DetailList-list">
         {children}
