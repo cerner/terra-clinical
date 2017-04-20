@@ -21,6 +21,7 @@ const App = props => (
       <li><Link to="/site/header">Header</Link></li>
       <li><Link to="/site/item-view">Item View</Link></li>
       <li><Link to="/site/label-value-view">Label Value View</Link></li>
+      <li><Link to="/site/no-data-view">No Data View</Link></li>
       <li><Link to="/tests">Tests</Link></li>
     </ul>
     {props.children}
