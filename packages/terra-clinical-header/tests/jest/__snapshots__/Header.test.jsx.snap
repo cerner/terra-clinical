@@ -2,7 +2,7 @@ exports[`test should render a default component 1`] = `
 <header
   className="terraClinical-Header">
   <h1
-    className="terraClinical-Header--title" />
+    className="terraClinical-Header-title" />
 </header>
 `;
 
@@ -13,7 +13,7 @@ exports[`test should render a header with all content 1`] = `
     align="center"
     fill={
       <h1
-        className="terraClinical-Header--title">
+        className="terraClinical-Header-title">
         Title
       </h1>
     }
@@ -37,7 +37,7 @@ exports[`test should render a header with content on the left 1`] = `
     align="center"
     fill={
       <h1
-        className="terraClinical-Header--title" />
+        className="terraClinical-Header-title" />
     }
     fitEnd={null}
     fitStart={
@@ -55,7 +55,7 @@ exports[`test should render a header with content on the right 1`] = `
     align="center"
     fill={
       <h1
-        className="terraClinical-Header--title" />
+        className="terraClinical-Header-title" />
     }
     fitEnd={
       <div>
@@ -70,7 +70,7 @@ exports[`test should render a header with title only 1`] = `
 <header
   className="terraClinical-Header">
   <h1
-    className="terraClinical-Header--title">
+    className="terraClinical-Header-title">
     title
   </h1>
 </header>

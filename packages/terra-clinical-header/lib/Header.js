@@ -58,7 +58,7 @@ var Header = function Header(_ref) {
 
   var titleElement = _react2.default.createElement(
     'h1',
-    { className: 'terraClinical-Header--title' },
+    { className: 'terraClinical-Header-title' },
     title
   );
   var headerContent = void 0;

@@ -5,15 +5,15 @@ A Header component that allows elements to be placed on the left and right ends 
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-header`
-  - `yarn add terra-header`
+  - `npm install terra-clinical-header`
+  - `yarn add terra-clinical-header`
 
 ## Usage
 
 ```jsx
 import React from 'react';
 import Button from 'terra-button'
-import Header from 'terra-header';
+import Header from 'terra-clinical-header';
 
 <Header 
   startContent={<div><Button text="Button" /></div>}

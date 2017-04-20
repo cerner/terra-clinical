@@ -33,7 +33,7 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
     attributes.className,
   ]);
 
-  const titleElement = <h1 className="terraClinical-Header--title">{title}</h1>;
+  const titleElement = <h1 className="terraClinical-Header-title">{title}</h1>;
   let headerContent;
 
   if (startContent || endContent) {
