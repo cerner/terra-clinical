@@ -18,11 +18,11 @@ module.exports = {
   },
   'Displays a header with a title only': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/title`);
-    browser.expect.element('.terraClinical-Header--title').text.to.equal('Title');
+    browser.expect.element('.terraClinical-Header-title').text.to.equal('Title');
   },
   'Displays a header with a long title that truncates': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/long-title`);
-    browser.expect.element('.terraClinical-Header--title').text.to.contain('LongTitle');
+    browser.expect.element('.terraClinical-Header-title').text.to.contain('LongTitle');
   },
   'Displays a header with content on the left': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/left-content`);
