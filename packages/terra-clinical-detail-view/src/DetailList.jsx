@@ -5,7 +5,7 @@ import DetailListItem from './DetailListItem';
 
 const propTypes = {
   /**
-   * The title to be displayed abo list.
+   * The title to be displayed above the list items.
    **/
   title: PropTypes.string,
 
