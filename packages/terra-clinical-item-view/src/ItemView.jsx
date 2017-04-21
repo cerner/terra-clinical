@@ -66,7 +66,7 @@ class ItemView extends React.Component {
     }
 
     const displayGroups = [];
-    const displaysSlice = displays.slice(0, 7);
+    const displaysSlice = displays.slice(0, 8);
     const spliceValue = layout === 'twoColumns' ? 2 : 1;
 
     while (displaysSlice.length) {
