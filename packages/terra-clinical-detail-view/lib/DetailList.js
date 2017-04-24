@@ -26,7 +26,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 var propTypes = {
   /**
-   * The title to be displayed abo list.
+   * The title to be displayed above the list items.
    **/
   title: _react.PropTypes.string,
 
