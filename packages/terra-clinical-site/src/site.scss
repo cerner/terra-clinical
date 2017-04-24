@@ -18,6 +18,9 @@
   padding-bottom: 10px;
 }
 
-.terraClinical-Site-links {
-  padding-bottom: 40px;
-}
+.terraClinical-Site-Nav {
+  & > li {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+   }
+ }
