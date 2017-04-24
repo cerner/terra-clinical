@@ -249,7 +249,7 @@ exports[`test should render truncated display 1`] = `
 </div>
 `;
 
-exports[`test should render two columns 1`] = `
+exports[`test should render two columns with 8 displays 1`] = `
 <div
   className="terraClinical-ItemView terraClinical-ItemView--twoColumns terraClinical-ItemView-accessory--alignCenter">
   <div
@@ -271,6 +271,51 @@ exports[`test should render two columns 1`] = `
           <Display
             isTruncated={false}
             text="display 2" />
+        </div>
+      </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
+          <Display
+            isTruncated={false}
+            text="display 3" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
+          <Display
+            isTruncated={false}
+            text="display 4" />
+        </div>
+      </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 5" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 6" />
+        </div>
+      </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 7" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 8" />
         </div>
       </div>
     </div>

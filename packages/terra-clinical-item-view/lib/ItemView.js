@@ -139,7 +139,7 @@ var ItemView = function (_React$Component) {
       }
 
       var displayGroups = [];
-      var displaysSlice = displays.slice(0, 7);
+      var displaysSlice = displays.slice(0, 8);
       var spliceValue = layout === 'twoColumns' ? 2 : 1;
 
       while (displaysSlice.length) {
