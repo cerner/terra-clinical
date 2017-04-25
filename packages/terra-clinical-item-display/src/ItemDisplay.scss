@@ -1,0 +1,46 @@
+@import '~terra-mixins';
+@import './variables';
+@import './mixins';
+
+.terraClinical-ItemDisplay {
+  align-items: center;
+  display: flex;
+  overflow: hidden; // VERY IMPORTANT FOR IE10
+}
+
+.terraClinical-ItemDisplay-text {
+  flex: 1 1 auto;
+  min-width: 10px; // Need min-width, as IE10 will completely squish display
+}
+
+.terraClinical-ItemDisplay-text--inlineIcon {
+  @include terra-padding-end(5px);
+  flex: 0 0 auto;
+  height: 20px;
+  max-width: 20px;
+  overflow: hidden;
+}
+
+.terraClinical-ItemDisplay-text--inlineIcon > * {
+  font-size: 1rem;
+}
+
+.terraClinical-ItemDisplay-text,
+.terraClinical-ItemDisplay-text--isTruncated {
+  @include terra-clinical-text-truncate;
+}
+
+// Text Styles
+
+.terraClinical-ItemDisplay-text--secondary {
+  color: $terra-clinical-item-display-text-secondary-color !important;
+}
+
+.terraClinical-ItemDisplay-text--attention {
+  color: $terra-clinical-item-display-text-attention-color !important;
+  font-weight: $terra-clinical-item-display-text-attention-weight !important;
+}
+
+.terraClinical-ItemDisplay-text--strikeThrough {
+  text-decoration: line-through !important;
+}

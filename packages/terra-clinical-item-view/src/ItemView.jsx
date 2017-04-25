@@ -176,4 +176,3 @@ ItemView.Display = Display;
 ItemView.Comment = Comment;
 
 export default ItemView;
-

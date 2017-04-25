@@ -1,0 +1,7 @@
+@mixin terra-clinical-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
+  word-wrap: normal;
+}
