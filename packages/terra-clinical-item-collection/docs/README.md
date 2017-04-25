@@ -1,0 +1,32 @@
+# Terra Clinical Item Collection
+
+A Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size. Initially data is displayed in a tabular format that flexes the rendered component, but as the container is resized and the indicated breakpoint is hit, the display changes to shows the data as a list of items. The terra-table and terra-clinical-item react components will be utilized for displaying the data in these two ways.
+
+Ultimately, the Item Collection component component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
+
+The TableHeaderCell is a subcomponent of Item Collection. This component creates an empty table header cell that contains a defined width. This allows the user to specify column withs on the table, without providing headers.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-item-collection`
+  - `yarn add terra-clinical-item-collection`
+
+## Usage
+
+```jsx
+import React from 'react';
+import ItemCollection from 'terra-clinical-item-collection';
+
+const columnWidths = { startAccessoryWidth: 'tiny', displayWidths: ['small', 'medium'], commentWidth: 'large', endAccessoryWidth: 'tiny' };
+const row1 = {startAccessory: <Icon/>, displays: [<Display/>, <Display/>], comment: <Comment/>, endAccessory: <Icon/>, itemStyles={{ layout: 'twoColumns' }} };
+const row2 = {startAccessory: <Icon/>, displays: [<Display/>, <Display/>], comment: <Comment/>, endAccessory: <Icon/> };
+
+<ItemCollection
+  breakpoint="tiny"
+  columnWidths={columnWidths}
+  listStyles={{ isDivided: true }}
+  tableStyles={{ isPadded: false, isStriped: false }}
+  rows={[row1, row2]}
+/>
+```
