@@ -18,14 +18,6 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 require('./ItemView.scss');
 
-var _Display = require('./Display');
-
-var _Display2 = _interopRequireDefault(_Display);
-
-var _Comment = require('./Comment');
-
-var _Comment2 = _interopRequireDefault(_Comment);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -218,7 +210,5 @@ var ItemView = function (_React$Component) {
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
-ItemView.Display = _Display2.default;
-ItemView.Comment = _Comment2.default;
 
 exports.default = ItemView;

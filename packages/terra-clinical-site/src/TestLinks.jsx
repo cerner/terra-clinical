@@ -7,10 +7,9 @@ const TestLinks = () => (
     <ul>
       <li><Link to="/tests/detail-view-tests">DetailView Tests</Link></li>
       <li><Link to="/tests/error-view-tests">Error View Tests</Link></li>
-      <li><Link to="/tests/item-view-tests">ItemView Tests</Link></li>
       <li><Link to="/tests/item-comment-tests">ItemComment Tests</Link></li>
       <li><Link to="/tests/item-display-tests">ItemDisplay Tests</Link></li>
-      <li><Link to="/tests/item-view-comment-tests">ItemView.Comment Tests</Link></li>
+      <li><Link to="/tests/item-view-tests">ItemView Tests</Link></li>
       <li><Link to="/tests/header-tests">Header Tests</Link></li>
       <li><Link to="/tests/label-value-view-tests">Label Value View Tests</Link></li>
       <li><Link to="/tests/no-data-view-tests">NoDataView Tests</Link></li>

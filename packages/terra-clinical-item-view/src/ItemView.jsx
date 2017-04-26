@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import './ItemView.scss';
-import Display from './Display';
-import Comment from './Comment';
 
 const propTypes = {
   /**
@@ -172,7 +170,5 @@ class ItemView extends React.Component {
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
-ItemView.Display = Display;
-ItemView.Comment = Comment;
 
 export default ItemView;

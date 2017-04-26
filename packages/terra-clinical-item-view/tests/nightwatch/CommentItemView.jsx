@@ -1,7 +1,7 @@
 import React from 'react';
-
-import ItemView from 'terra-clinical-item-view';
 import ItemComment from 'terra-clinical-item-comment';
+import ItemView from '../../lib/ItemView';
+
 
 const comment1 = <ItemComment text="comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1" />;
 
