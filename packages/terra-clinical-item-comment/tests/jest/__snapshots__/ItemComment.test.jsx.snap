@@ -1,0 +1,92 @@
+exports[`test should render a comment with text 1`] = `
+<ItemDisplay
+  className="terraClinical-ItemComment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg" />
+  }
+  isTruncated={false}
+  text="comment" />
+`;
+
+exports[`test should render a comment with the attention textStyle on text 1`] = `
+<ItemDisplay
+  className="terraClinical-ItemComment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg" />
+  }
+  isTruncated={false}
+  text="ItemComment"
+  textStyle="attention" />
+`;
+
+exports[`test should render a comment with the secondary textStyle on text 1`] = `
+<ItemDisplay
+  className="terraClinical-ItemComment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg" />
+  }
+  isTruncated={false}
+  text="ItemComment"
+  textStyle="secondary" />
+`;
+
+exports[`test should render a comment with the strikeThrough textStyle on text 1`] = `
+<ItemDisplay
+  className="terraClinical-ItemComment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg" />
+  }
+  isTruncated={false}
+  text="ItemComment"
+  textStyle="strikeThrough" />
+`;
+
+exports[`test should render a default component 1`] = `
+<ItemDisplay
+  className="terraClinical-ItemComment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg" />
+  }
+  isTruncated={false}
+  text="" />
+`;
+
+exports[`test should render a truncated comment 1`] = `
+<ItemDisplay
+  className="terraClinical-ItemComment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg" />
+  }
+  isTruncated={true}
+  text="comment1comment1comment1comment1comment1comment1comment1comment1" />
+`;
