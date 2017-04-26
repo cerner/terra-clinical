@@ -16,6 +16,8 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+require('terra-base/lib/baseStyles');
+
 require('./ItemView.scss');
 
 var _Display = require('./Display');
