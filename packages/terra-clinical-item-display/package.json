@@ -2,7 +2,7 @@
   "name": "terra-clinical-item-display",
   "main": "lib/ItemDisplay.js",
   "version": "0.0.0",
-  "description": "The Terra Clinical ItemDisplay component creates an display for text and an optional graphic.",
+  "description": "The Item Display component creates an display for text and an optional graphic.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"

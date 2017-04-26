@@ -1,6 +1,6 @@
 # Terra Clinical Item Comment
 
-The Terra Clinical ItemComment creates a display for a comment icon and text.
+The Item Comment component creates a display for a comment icon and text.
 
 ## Getting Started
 

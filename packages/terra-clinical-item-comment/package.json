@@ -2,7 +2,7 @@
   "name": "terra-clinical-item-comment",
   "main": "lib/ItemComment.js",
   "version": "0.0.0",
-  "description": "The Terra Clinical ItemComment creates a display for a comment icon and text.",
+  "description": "The Item Comment component creates a display for a comment icon and text.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"

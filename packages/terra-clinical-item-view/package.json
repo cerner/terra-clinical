@@ -2,7 +2,7 @@
   "name": "terra-clinical-item-view",
   "main": "lib/ItemView.js",
   "version": "0.0.0",
-  "description": "The Terra Clinical ItemView component allows displays to be organized into rows and column and themed, while providing means to add accessory elements.",
+  "description": "The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"

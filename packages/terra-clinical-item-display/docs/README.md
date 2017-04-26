@@ -1,6 +1,6 @@
 # Terra Clinical Item Display
 
-The Terra Clinical ItemDisplay component creates an display for text and an optional graphic.
+The Item Display component creates an display for text and an optional graphic.
 
 ## Getting Started
 

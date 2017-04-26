@@ -1,6 +1,6 @@
 # Terra Clinical Item View
 
-The Terra Clinical ItemView component allows displays to be organized into rows and column and themed, while providing means to add accessory elements.
+The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.
 
 ## Getting Started
 
@@ -19,21 +19,9 @@ import ItemView from 'terra-clinical-item-view';
   textEmphasis="default"
   isTruncated
   accessoryAlignment="top"
-  leftAccesory=<img alt="Graphic" />
-  displays={[<ItemView.Display text="display 1" />, <ItemView.Display text="display 2" />]}
-  comment=<ItemView.Comment text="comment" />
+  leftAccessory=<img alt="Graphic" />
+  displays={[<Display text="display 1" />, <Display text="display 2" />]}
+  comment=<Comment text="comment" />
 />
 
-<Display
-  text="display text"
-  textStyle="attention"
-  isTruncated
-  icon=<img alt="Graphic" />
-/>
-
-<Comment
-  text="display text"
-  textStyle="attention"
-  isTruncated
-/>
 ```
