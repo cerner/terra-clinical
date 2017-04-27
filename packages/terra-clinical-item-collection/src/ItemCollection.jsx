@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import classNames from 'classnames';
+import 'terra-base/lib/baseStyles';
 import './ItemCollection.scss';
 
 import getBreakpoint from './breakpoint';
@@ -9,11 +10,11 @@ import createTableView from './CreateTableView';
 
 const propTypes = {
   /**
-  * The breakpoint to switch from a table view to a list view. Breakpoint options are 'tiny', 'small', 'medium', 'large', 'huge'.
+  * The breakpoint to switch from a table view to a list view. Breakpoint options are tiny, small, medium, large, or huge.
   */
   breakpoint: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
   /**
-   * The widths to apply to the table columns. Widths options are 'tiny', 'small', 'medium', 'large', 'huge'.
+   * The columsn and widths to apply to the table columns. Widths options are tiny, small, medium, large, or huge.
    **/
   columnWidths: PropTypes.shape({
     startAccessoryWidth: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
@@ -22,46 +23,42 @@ const propTypes = {
     endAccessoryWidth: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
   }).isRequired,
   /**
-   * The item styles to spread to the table:
-   *    isPadded: Whether or not the table cells should be padded.
-   *    isStriped: Whether or not the rows should be zebra striped.
+   * The styles to spread to the table. Table style options are isPadded and isStriped.
    **/
-  itemStyles: PropTypes.shape({
+  tableStyles: PropTypes.shape({
     isPadded: PropTypes.bool,
     isStriped: PropTypes.bool,
   }),
   /**
-   * The item styles to spread to the clincial items:
-   *    layout: The column layout in which to present the displays.
-   *    textEmphasis: The text color emphasis when using two columns.
-   *    isTruncated: Whether or not all text on the view should be truncated.
-   *    accessoryAlignment: The vertical alignment of the start and end accesories.
+   * The styles to spread to the list. List style options are isDivided and hasChevrons.
    **/
-  tableStyles: PropTypes.shape({
-    layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
-    textEmphasis: PropTypes.oneOf(['default', 'start']),
-    isTruncated: PropTypes.bool,
-    accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
+  listStyles: PropTypes.shape({
+    isDivided: PropTypes.bool,
+    hasChevrons: PropTypes.bool,
   }),
   /**
-   * The rows to display:
-   *    startAccessory: The react element to be placed in the first column.
-   *    displays:
-   *    comment:
-   *    endAccessory: The react element to be placed in the last column.
+   * The array of hashes to be displayed as rows. Each hash can contain a startAccessory, endAccessory,
+   * comment, array of displays and a itemStyles hash. The item style options are layout, textEmphasis,
+   * isTruncated and accessoryAlignment.
    **/
   rows: PropTypes.arrayOf(PropTypes.shape({
     startAccessory: PropTypes.element,
     displays: PropTypes.arrayOf(PropTypes.element),
     comment: PropTypes.element,
     endAccessory: PropTypes.element,
+    itemStyles: PropTypes.shape({
+      layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
+      textEmphasis: PropTypes.oneOf(['default', 'start']),
+      isTruncated: PropTypes.bool,
+      accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
+    }),
   })),
 };
 
 const defaultProps = {
-  columnWidths: null,
-  itemStyles: null,
-  tableStyles: null,
+  columnWidths: {},
+  listStyles: undefined,
+  tableStyles: undefined,
   rows: [],
   breakpoint: 'small',
 };
@@ -72,26 +69,16 @@ class ItemCollection extends React.Component {
     this.state = { display: 'table' };
     this.setContainer = this.setContainer.bind(this);
     this.handleResize = this.handleResize.bind(this);
-    this.handleWindowResize = this.handleWindowResize.bind(this);
   }
 
   componentDidMount() {
-    if (this.container) {
-      this.resizeObserver = new ResizeObserver((entries) => { this.handleResize(entries[0].contentRect.width); });
-      this.resizeObserver.observe(this.container);
-    } else {
-      this.handleResize(window.innerWidth);
-      window.addEventListener('resize', this.handleWindowResize);
-    }
+    this.resizeObserver = new ResizeObserver((entries) => { this.handleResize(entries[0].contentRect.width); });
+    this.resizeObserver.observe(this.container);
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      this.resizeObserver.disconnect(this.container);
-      this.container = null;
-    } else {
-      window.removeEventListener('resize', this.handleWindowResize);
-    }
+    this.resizeObserver.disconnect(this.container);
+    this.container = null;
   }
 
   setContainer(node) {
@@ -113,14 +100,11 @@ class ItemCollection extends React.Component {
     }
   }
 
-  handleWindowResize() {
-    this.handleResize(window.innerWidth);
-  }
-
   render() {
-    const { columnWidths, itemStyles, tableStyles, rows, breakpoint, ...customProps } = this.props;
+    const { columnWidths, listStyles, tableStyles, rows, breakpoint, ...customProps } = this.props;
     const attributes = Object.assign({}, customProps);
     attributes.className = classNames(['terraClinical-ItemCollection',
+      `terraClinical-ItemCollection--${this.state.display}View`,
       attributes.className,
     ]);
 
@@ -128,11 +112,12 @@ class ItemCollection extends React.Component {
     if (this.state.display === 'table') {
       collectionDisplay = createTableView(columnWidths, rows, tableStyles);
     } else if (this.state.display === 'list') {
-      collectionDisplay = createListView(rows, itemStyles);
+      // collectionDisplay = createListView(rows, listStyles);
+      collectionDisplay = createListView(rows);
     }
 
     return (
-      <div {...attributes}>
+      <div ref={this.setContainer} {...attributes}>
         <h2>Item Collection - {this.state.display}</h2>
         {collectionDisplay}
       </div>

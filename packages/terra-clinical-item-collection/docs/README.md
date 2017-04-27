@@ -19,8 +19,8 @@ import React from 'react';
 import ItemCollection from 'terra-clinical-item-collection';
 
 const columnWidths = { startAccessoryWidth: 'tiny', displayWidths: ['small', 'medium'], commentWidth: 'large', endAccessoryWidth: 'tiny' };
-const row1 = {startAccessory: <Icon/>, displays: [<Display/>, <Display/>], comment: <Comment/>, endAccessory: <Icon/>, itemStyles={{ layout: 'twoColumns' }} };
-const row2 = {startAccessory: <Icon/>, displays: [<Display/>, <Display/>], comment: <Comment/>, endAccessory: <Icon/> };
+const row1 = {startAccessory: <Icon/>, displays: [<ItemDisplay/>, <ItemDisplay/>], comment: <ItemComment/>, endAccessory: <Icon/>, itemStyles={{ layout: 'twoColumns' }} };
+const row2 = {startAccessory: <Icon/>, displays: [<ItemDisplay/>, <ItemDisplay/>], comment: <ItemComment/>, endAccessory: <Icon/> };
 
 <ItemCollection
   breakpoint="tiny"

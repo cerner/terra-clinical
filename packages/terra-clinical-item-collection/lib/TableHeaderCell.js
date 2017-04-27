@@ -20,6 +20,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var propTypes = {
   /**
    * The column width of the header cell.
@@ -32,10 +34,11 @@ var defaultProps = {
 };
 
 var TableHeaderCell = function TableHeaderCell(_ref) {
-  var columnWidth = _ref.columnWidth;
+  var columnWidth = _ref.columnWidth,
+      customProps = _objectWithoutProperties(_ref, ['columnWidth']);
 
-  var attributes = _extends({});
-  attributes.className = (0, _classnames2.default)(['terraClinical-ItemCollection', _defineProperty({}, 'terraClinical-ItemCollection-column-width-' + columnWidth, columnWidth)]);
+  var attributes = _extends({}, customProps);
+  attributes.className = (0, _classnames2.default)(['terraClinical-ItemCollection-column-width', _defineProperty({}, 'terraClinical-ItemCollection-column-width-' + columnWidth, columnWidth)]);
 
   return _react2.default.createElement('th', attributes);
 };

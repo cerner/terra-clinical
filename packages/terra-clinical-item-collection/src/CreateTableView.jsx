@@ -32,7 +32,7 @@ function createTableHeader(columnWidths) {
   }
 
   return (
-    <Table.Header>
+    <Table.Header style={{ display: 'none' }} >
       { startAccessoryHeader }
       { displayHeaders }
       { commentHeader }
@@ -43,7 +43,7 @@ function createTableHeader(columnWidths) {
 
 function createTableRows(rows, columnStructure) {
   const tableRows = rows.map((row, rowIndex) => {
-    const { startAccessory, displays, comment, endAccessory, ...customProps } = row;
+    const { startAccessory, displays, comment, endAccessory, itemStyles, ...customProps } = row;
     const { startAccessoryWidth, displayWidths, commentWidth, endAccessoryWidth } = columnStructure;
 
     let startAccessoryContent;
@@ -103,29 +103,3 @@ function createTableView(columnWidths, rows, tableStyles) {
 }
 
 export default createTableView;
-
-// let startAccessoryContent;
-// if (startAccessory) {
-//   startAccessoryContent = <Table.Cell content={startAccessory} key={'end_accessory'} />;
-// }
-
-
-// let displayContent;
-// if (displays) {
-//   displayContent = (
-//     displays.map((display, index) => {
-//       const contentKey = `display_${index}`;
-//       return (<Table.Cell content={display} key={contentKey} />);
-//     })
-//   );
-// }
-
-// let commentContent;
-// if (comment) {
-//   commentContent = <Table.Cell content={comment} key={'end_accessory'} />;
-// }
-
-// let endAccessoryContent;
-// if (endAccessory) {
-//   endAccessoryContent = <Table.Cell content={endAccessory} key={'end_accessory'} />;
-// }

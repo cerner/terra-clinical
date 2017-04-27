@@ -56,7 +56,7 @@ function createTableHeader(columnWidths) {
 
   return _react2.default.createElement(
     _terraTable2.default.Header,
-    null,
+    { style: { display: 'none' } },
     startAccessoryHeader,
     displayHeaders,
     commentHeader,
@@ -70,7 +70,8 @@ function createTableRows(rows, columnStructure) {
         displays = row.displays,
         comment = row.comment,
         endAccessory = row.endAccessory,
-        customProps = _objectWithoutProperties(row, ['startAccessory', 'displays', 'comment', 'endAccessory']);
+        itemStyles = row.itemStyles,
+        customProps = _objectWithoutProperties(row, ['startAccessory', 'displays', 'comment', 'endAccessory', 'itemStyles']);
 
     var startAccessoryWidth = columnStructure.startAccessoryWidth,
         displayWidths = columnStructure.displayWidths,
@@ -106,8 +107,6 @@ function createTableRows(rows, columnStructure) {
     }
 
     var rowKey = rowIndex;
-    var isSelected = rowKey === 0;
-    console.log(isSelected);
     return _react2.default.createElement(
       _terraTable2.default.Row,
       _extends({}, customProps, { key: rowKey }),

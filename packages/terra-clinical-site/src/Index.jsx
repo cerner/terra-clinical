@@ -23,7 +23,8 @@ import ItemViewDisplayTestRoutes from 'terra-clinical-item-view/tests/nightwatch
 import HeaderTestRoutes from 'terra-clinical-header/tests/nightwatch/HeaderTestRoutes';
 import LabelValueViewTestRoutes from 'terra-clinical-label-value-view/tests/nightwatch/LabelValueViewTestRoutes';
 import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/NoDataViewTestRoutes';
-import ItemCollectionRoutes from 'terra-clinical-item-collection/tests/nightwatch/ItemCollectionTestRoutes';
+import ItemCollectionTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTestRoutes';
+import TableHeaderCellTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/table-header-cell/TableHeaderCellTestRoutes';
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
@@ -49,6 +50,7 @@ ReactDOM.render((
     {ItemViewDisplayTestRoutes}
     {LabelValueViewTestRoutes}
     {NoDataViewTestRoutes}
-    {ItemCollectionRoutes}
+    {ItemCollectionTestRoutes}
+    {TableHeaderCellTestRoutes}
   </Router>
 ), document.getElementById('root'));

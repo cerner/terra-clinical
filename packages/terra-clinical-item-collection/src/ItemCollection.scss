@@ -2,11 +2,6 @@
 @import './variables';
 @import './mixins';
 
-
-thead {
-  display: none;
-}
-
 .terraClinical-ItemCollection-column-width-tiny {
   width: $terra-clinical-table-header-cell-tiny;
 }

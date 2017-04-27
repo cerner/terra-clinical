@@ -13,9 +13,9 @@ const defaultProps = {
   columnWidth: 'small',
 };
 
-const TableHeaderCell = ({ columnWidth }) => {
-  const attributes = Object.assign({});
-  attributes.className = classNames(['terraClinical-ItemCollection',
+const TableHeaderCell = ({ columnWidth, ...customProps }) => {
+  const attributes = Object.assign({}, customProps);
+  attributes.className = classNames(['terraClinical-ItemCollection-column-width',
     { [`terraClinical-ItemCollection-column-width-${columnWidth}`]: columnWidth },
   ]);
 

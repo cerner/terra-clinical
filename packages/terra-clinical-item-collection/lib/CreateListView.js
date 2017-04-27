@@ -16,11 +16,37 @@ var _terraClinicalItemView2 = _interopRequireDefault(_terraClinicalItemView);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function createListView(rows, itemStyles) {
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+// import List from 'terra-list';
+
+
+// function createListView(rows, listStyles) {
+function createListView(rows) {
   return rows.map(function (row, rowIndex) {
     var contentKey = rowIndex;
-    return _react2.default.createElement(_terraClinicalItemView2.default, _extends({ key: contentKey }, row, itemStyles));
+
+    var itemStyles = row.itemStyles,
+        itemElements = _objectWithoutProperties(row, ['itemStyles']);
+
+    return _react2.default.createElement(_terraClinicalItemView2.default, _extends({ key: contentKey }, itemElements, itemStyles));
   });
 }
 
 exports.default = createListView;
+
+// function createListView(rows, listStyles) {
+//   const listContent = rows.map((row, rowIndex) => {
+//     const contentKey = rowIndex;
+//     const { itemStyles, ...itemElements } = row;
+//     return (
+//       <SingleSelectList.Item content={<ItemView key={contentKey} {...itemElements} {...itemStyles} />} key={contentKey} />
+//     );
+//   })
+//
+//   return (
+//     <List {...listStyles}>
+//       {listContent}
+//     </List>
+//
+//   );
+// }
