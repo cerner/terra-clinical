@@ -26,6 +26,6 @@ module.exports = {
   },
   'Displays text with an icon': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/icon`);
-    browser.expect.element('.terraClinical-ItemDisplay .terraClinical-ItemDisplay-text--inlineIcon > :first-child').to.be.present;
+    browser.expect.element('.terraClinical-ItemDisplay .terraClinical-ItemDisplay-inlineIcon > :first-child').to.be.present;
   },
 };

@@ -67,7 +67,7 @@ var ItemDisplay = function ItemDisplay(_ref) {
   if (icon) {
     displayIcon = _react2.default.createElement(
       'div',
-      { className: 'terraClinical-ItemDisplay-text--inlineIcon' },
+      { className: 'terraClinical-ItemDisplay-inlineIcon' },
       icon
     );
   }

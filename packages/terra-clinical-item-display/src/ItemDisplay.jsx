@@ -55,7 +55,7 @@ const ItemDisplay = ({
 
   let displayIcon;
   if (icon) {
-    displayIcon = <div className="terraClinical-ItemDisplay-text--inlineIcon">{icon}</div>;
+    displayIcon = <div className="terraClinical-ItemDisplay-inlineIcon">{icon}</div>;
   }
 
   return (

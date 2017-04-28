@@ -100,8 +100,7 @@
 
 // We need to style content that appears out of the rowContainer (i.e. the comment).
 .terraClinical-ItemView-content {
-  .terraClinical-ItemDisplay-text,
-  .terraClinical-ItemDisplay-text--inlineIcon {
+  .terraClinical-ItemDisplay {
     @include terra-clinical-text-body;
     color: $terra-grey-70;
   }
@@ -109,29 +108,25 @@
 
 //Emphasis Content Styles
 .terraClinical-ItemView-content--primaryColor {
-  .terraClinical-ItemDisplay-text,
-  .terraClinical-ItemDisplay-text--inlineIcon {
+  .terraClinical-ItemDisplay {
     color: $terra-dark;
   }
 }
 
 .terraClinical-ItemView-content--primarySize {
-  .terraClinical-ItemDisplay-text,
-  .terraClinical-ItemDisplay-text--inlineIcon {
+  .terraClinical-ItemDisplay {
     @include terra-clinical-tiny-heading;
   }
 }
 
 .terraClinical-ItemView-content--secondaryColor {
-  .terraClinical-ItemDisplay-text,
-  .terraClinical-ItemDisplay-text--inlineIcon {
+  .terraClinical-ItemDisplay {
     color: $terra-grey-70;
   }
 }
 
 .terraClinical-ItemView-content--secondarySize {
-  .terraClinical-ItemDisplay-text,
-  .terraClinical-ItemDisplay-text--inlineIcon {
+  .terraClinical-ItemDisplay {
     @include terra-clinical-text-body;
   }
 }

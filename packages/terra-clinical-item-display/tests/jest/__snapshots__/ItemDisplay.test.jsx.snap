@@ -50,7 +50,7 @@ exports[`test should render with a graphic 1`] = `
 <div
   className="terraClinical-ItemDisplay">
   <div
-    className="terraClinical-ItemDisplay-text--inlineIcon">
+    className="terraClinical-ItemDisplay-inlineIcon">
     <img
       alt="Graphic" />
   </div>
@@ -73,7 +73,7 @@ exports[`test should render with text and graphic 1`] = `
 <div
   className="terraClinical-ItemDisplay">
   <div
-    className="terraClinical-ItemDisplay-text--inlineIcon">
+    className="terraClinical-ItemDisplay-inlineIcon">
     <img
       alt="Graphic" />
   </div>
