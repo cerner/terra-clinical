@@ -1,4 +1,4 @@
-# Terra Client Item View
+# Terra Clinical Item View
 
 
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-comment.svg)](https://www.npmjs.org/package/terra-clinical-item-comment)

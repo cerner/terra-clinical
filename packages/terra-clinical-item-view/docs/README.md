@@ -13,6 +13,8 @@ The Item View component allows displays to be organized into rows and column and
 The React component can be initialized like so:
 ```
 import ItemView from 'terra-clinical-item-view';
+import ItemComment from 'terra-clinical-item-comment';
+import ItemDisplay from 'terra-clinical-item-display';
 
 <ItemView
   layout="oneColumn"
@@ -20,8 +22,8 @@ import ItemView from 'terra-clinical-item-view';
   isTruncated
   accessoryAlignment="top"
   leftAccessory=<img alt="Graphic" />
-  displays={[<Display text="display 1" />, <Display text="display 2" />]}
-  comment=<Comment text="comment" />
+  displays={[<ItemDisplay text="display 1" />, <ItemDisplay text="display 2" />]}
+  comment=<ItemComment text="comment" />
 />
 
 ```

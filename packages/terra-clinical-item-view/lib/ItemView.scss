@@ -1,5 +1,4 @@
 @import '~terra-mixins';
-@import './variables';
 @import './mixins';
 
 // Temporary until it is added to application.
@@ -104,7 +103,7 @@
   .terraClinical-ItemDisplay-text,
   .terraClinical-ItemDisplay-text--inlineIcon {
     @include terra-clinical-text-body;
-    color: $terra-clinical-item-view-content-secondary-color;
+    color: $terra-grey-70;
   }
 }
 
@@ -112,7 +111,7 @@
 .terraClinical-ItemView-content--primaryColor {
   .terraClinical-ItemDisplay-text,
   .terraClinical-ItemDisplay-text--inlineIcon {
-    color: $terra-clinical-item-view-content-primary-color;
+    color: $terra-dark;
   }
 }
 
@@ -126,7 +125,7 @@
 .terraClinical-ItemView-content--secondaryColor {
   .terraClinical-ItemDisplay-text,
   .terraClinical-ItemDisplay-text--inlineIcon {
-    color: $terra-clinical-item-view-content-secondary-color;
+    color: $terra-grey-70;
   }
 }
 

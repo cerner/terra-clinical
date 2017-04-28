@@ -1,5 +1,4 @@
 @import '~terra-mixins';
-@import './variables';
 @import './mixins';
 
 .terraClinical-ItemDisplay {
@@ -33,12 +32,12 @@
 // Text Styles
 
 .terraClinical-ItemDisplay-text--secondary {
-  color: $terra-clinical-item-display-text-secondary-color !important;
+  color: $terra-grey-70 !important;
 }
 
 .terraClinical-ItemDisplay-text--attention {
-  color: $terra-clinical-item-display-text-attention-color !important;
-  font-weight: $terra-clinical-item-display-text-attention-weight !important;
+  color: $terra-clinical-critical-color !important;
+  font-weight: 700 !important;
 }
 
 .terraClinical-ItemDisplay-text--strikeThrough {
