@@ -14,6 +14,8 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+require('terra-base/lib/baseStyles');
+
 var _IconComment = require('terra-icon/lib/icon/IconComment');
 
 var _IconComment2 = _interopRequireDefault(_IconComment);
