@@ -9,6 +9,7 @@ import IconChevronUp from 'terra-icon/lib/icon/IconChevronUp';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import Header from 'terra-clinical-header';
 import ResponsiveElement from 'terra-responsive-element';
+import 'terra-base/lib/baseStyles';
 import './ActionHeader.scss';
 
 const propTypes = {
