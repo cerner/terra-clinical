@@ -25,19 +25,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var propTypes = {
-  /*
+  /**
    * Content to be displayed at the start of the header, placed before the title
-   */
+   **/
   startContent: _react.PropTypes.element,
 
-  /*
+  /**
    * Text to be displayed as the title in the header bar
-   */
+   **/
   title: _react.PropTypes.string,
 
-  /*
+  /**
    * Content to be displayed at the end of the header
-   */
+   **/
   endContent: _react.PropTypes.element
 };
 

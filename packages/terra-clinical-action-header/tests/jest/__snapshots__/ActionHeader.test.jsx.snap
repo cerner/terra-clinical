@@ -1,0 +1,263 @@
+exports[`test should render ActionHeader with back button 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons">
+          <Button
+            icon={
+              <IconLeft
+                className=""
+                data-name="Layer 1"
+                isBidi={true}
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg" />
+            }
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isReversed={false}
+            onClick={[Function]}
+            variant="default" />
+        </div>
+      }
+      title="" />
+  }
+  responsiveTo="window"
+  small={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons">
+          <Button
+            icon={
+              <IconLeft
+                className=""
+                data-name="Layer 1"
+                isBidi={true}
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg" />
+            }
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isReversed={false}
+            onClick={[Function]}
+            variant="default" />
+        </div>
+      }
+      title="" />
+  } />
+`;
+
+exports[`test should render ActionHeader with close button 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons">
+          <Button
+            icon={
+              <IconLeft
+                className=""
+                data-name="Layer 1"
+                isBidi={true}
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg" />
+            }
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isReversed={false}
+            onClick={[Function]}
+            variant="default" />
+        </div>
+      }
+      title="" />
+  }
+  responsiveTo="window"
+  small={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons">
+          <Button
+            icon={
+              <IconClose
+                data-name="Layer 1"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg" />
+            }
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isReversed={false}
+            onClick={[Function]}
+            variant="default" />
+        </div>
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="" />
+  } />
+`;
+
+exports[`test should render ActionHeader with expand button 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="" />
+  }
+  responsiveTo="window"
+  small={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons">
+          <Button
+            icon={
+              <IconMaximize
+                data-name="Layer 1"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg" />
+            }
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isReversed={false}
+            onClick={[Function]}
+            variant="default" />
+        </div>
+      }
+      title="" />
+  } />
+`;
+
+exports[`test should render ActionHeader with minimize button 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="" />
+  }
+  responsiveTo="window"
+  small={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons">
+          <Button
+            icon={
+              <IconMinimize
+                data-name="Layer 1"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg" />
+            }
+            isBlock={false}
+            isCompact={false}
+            isDisabled={false}
+            isReversed={false}
+            onClick={[Function]}
+            variant="default" />
+        </div>
+      }
+      title="" />
+  } />
+`;
+
+exports[`test should render ActionHeader with title 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="Title" />
+  }
+  responsiveTo="window"
+  small={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="Title" />
+  } />
+`;
+
+exports[`test should render default component 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="" />
+  }
+  responsiveTo="window"
+  small={
+    <Header
+      endContent={
+        <div
+          className="terraClinical-ActionHeader-rightButtons" />
+      }
+      startContent={
+        <div
+          className="terraClinical-ActionHeader-leftButtons" />
+      }
+      title="" />
+  } />
+`;
