@@ -1,9 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import DetailView from 'terra-clinical-detail-view';
+
+import DetailView from '../../../lib/DetailView';
 
 const item = (<p>A Detail List Item</p>);
-const item2 = (<p>A Detail List Item to prove float concept when screen readjusts.</p>);
+const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
 
 const DetailViewDivided = () => (
   <DetailView
