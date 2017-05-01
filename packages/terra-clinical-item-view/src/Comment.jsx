@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+import 'terra-base/lib/baseStyles';
 import CommentIndicator from 'terra-icon/lib/icon/IconComment';
 import Display from './Display';
 import './Comment.scss';
