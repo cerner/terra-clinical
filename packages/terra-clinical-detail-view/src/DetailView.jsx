@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import 'terra-base/lib/baseStyles';
 import './DetailView.scss';
+import DetailList from './DetailList';
+import DetailListItem from './DetailListItem';
 
 const propTypes = {
   /**
@@ -87,6 +89,7 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
 DetailView.propTypes = propTypes;
 
 DetailView.defaultProps = defaultProps;
+DetailView.DetailList = DetailList;
+DetailView.DetailListItem = DetailListItem;
 
 export default DetailView;
-
