@@ -16,6 +16,8 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+require('terra-base/lib/baseStyles');
+
 require('./ItemView.scss');
 
 var _Display = require('./Display');
@@ -139,7 +141,7 @@ var ItemView = function (_React$Component) {
       }
 
       var displayGroups = [];
-      var displaysSlice = displays.slice(0, 7);
+      var displaysSlice = displays.slice(0, 8);
       var spliceValue = layout === 'twoColumns' ? 2 : 1;
 
       while (displaysSlice.length) {

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+import 'terra-base/lib/baseStyles';
 import './ItemView.scss';
 import Display from './Display';
 import Comment from './Comment';
@@ -66,7 +67,7 @@ class ItemView extends React.Component {
     }
 
     const displayGroups = [];
-    const displaysSlice = displays.slice(0, 7);
+    const displaysSlice = displays.slice(0, 8);
     const spliceValue = layout === 'twoColumns' ? 2 : 1;
 
     while (displaysSlice.length) {
