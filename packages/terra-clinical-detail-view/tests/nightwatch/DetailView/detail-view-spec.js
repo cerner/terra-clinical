@@ -21,4 +21,3 @@ module.exports = {
     browser.assert.elementNotPresent('.terraCLinical-DetailView-divider');
   },
 };
-
