@@ -54,11 +54,15 @@ const defaultProps = {
 class ItemView extends React.Component {
 
   static renderAccessory(accessory) {
-    return (
-      <div className="terraClinical-ItemView-accessory">
-        {accessory}
-      </div>
-    );
+    let accessorySection;
+    if (accessory) {
+      accessorySection = (
+        <div className="terraClinical-ItemView-accessory">
+          {accessory}
+        </div>
+      );
+    }
+    return accessorySection;
   }
 
   static renderRows(displays, layout, emphasis) {

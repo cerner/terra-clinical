@@ -127,11 +127,15 @@ var ItemView = function (_React$Component) {
   }], [{
     key: 'renderAccessory',
     value: function renderAccessory(accessory) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'terraClinical-ItemView-accessory' },
-        accessory
-      );
+      var accessorySection = void 0;
+      if (accessory) {
+        accessorySection = _react2.default.createElement(
+          'div',
+          { className: 'terraClinical-ItemView-accessory' },
+          accessory
+        );
+      }
+      return accessorySection;
     }
   }, {
     key: 'renderRows',
