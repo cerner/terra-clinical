@@ -11,6 +11,7 @@ import ExpandActionHeader from './ExpandActionHeader';
 import MinimizeActionHeader from './MinimizeActionHeader';
 import BackCloseActionHeader from './BackCloseActionHeader';
 import PreviousNextActionHeader from './PreviousNextActionHeader';
+import ChildrenActionHeader from './ChildrenActionHeader';
 
 const routes = (
   <div>
@@ -23,6 +24,7 @@ const routes = (
     <Route path="/tests/action-header-tests/action-header-close" component={CloseActionHeader} />
     <Route path="/tests/action-header-tests/action-header-back-close" component={BackCloseActionHeader} />
     <Route path="/tests/action-header-tests/action-header-previous-next" component={PreviousNextActionHeader} />
+    <Route path="/tests/action-header-tests/action-header-child" component={ChildrenActionHeader} />
   </div>
 );
 

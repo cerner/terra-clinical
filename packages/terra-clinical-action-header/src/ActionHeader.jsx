@@ -82,8 +82,19 @@ const ActionHeader = ({
   ...customProps
 }) => {
   const attributes = Object.assign({}, customProps);
-  let closeButton = onClose ? <Button icon={<IconClose />} onClick={onClose} /> : null;
-  let backButton = onBack ? <Button icon={<IconLeft />} onClick={onBack} /> : null;
+  const closeButton = onClose ? <Button icon={<IconClose />} onClick={onClose} /> : null;
+  const backButton = onBack ? <Button icon={<IconLeft />} onClick={onBack} /> : null;
+
+  let closeButtonSmall;
+  let backButtonSmall;
+  if (onClose && !onBack) {
+    backButtonSmall = <Button icon={<IconLeft />} onClick={onClose} />;
+    closeButtonSmall = null;
+  } else {
+    closeButtonSmall = closeButton;
+    backButtonSmall = backButton;
+  }
+
 
   let expandButton;
   if (!backButton) {
@@ -98,8 +109,8 @@ const ActionHeader = ({
   if (onPrevious || onNext) {
     previousNextButtonGroup = (
       <ButtonGroup>
-        <ButtonGroup.Button icon={<IconChevronUp />} onClick={onPrevious} />
-        <ButtonGroup.Button icon={<IconChevronDown />} onClick={onNext} />
+        <ButtonGroup.Button icon={<IconChevronUp />} onClick={onPrevious} key="ActionHeaderPrevious" />
+        <ButtonGroup.Button icon={<IconChevronDown />} onClick={onNext} key="ActionHeaderNext" />
       </ButtonGroup>
     );
   }
@@ -119,14 +130,9 @@ const ActionHeader = ({
     </div>
   );
 
-  if (onClose && !onBack) {
-    backButton = <Button icon={<IconLeft />} onClick={onClose} />;
-    closeButton = null;
-  }
-
   const leftButtonsSmall = (
     <div className="terraClinical-ActionHeader-leftButtons">
-      {backButton}
+      {backButtonSmall}
       {previousNextButtonGroup}
     </div>
   );
@@ -134,7 +140,7 @@ const ActionHeader = ({
   const rightButtonsSmall = (
     <div className="terraClinical-ActionHeader-rightButtons">
       {children}
-      {closeButton}
+      {closeButtonSmall}
     </div>
   );
 

@@ -131,6 +131,16 @@ var ActionHeader = function ActionHeader(_ref) {
   var closeButton = onClose ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconClose2.default, null), onClick: onClose }) : null;
   var backButton = onBack ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, null), onClick: onBack }) : null;
 
+  var closeButtonSmall = void 0;
+  var backButtonSmall = void 0;
+  if (onClose && !onBack) {
+    backButtonSmall = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, null), onClick: onClose });
+    closeButtonSmall = null;
+  } else {
+    closeButtonSmall = closeButton;
+    backButtonSmall = backButton;
+  }
+
   var expandButton = void 0;
   if (!backButton) {
     if (onExpand) {
@@ -145,8 +155,8 @@ var ActionHeader = function ActionHeader(_ref) {
     previousNextButtonGroup = _react2.default.createElement(
       _terraButtonGroup2.default,
       null,
-      _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronUp2.default, null), onClick: onPrevious }),
-      _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronDown2.default, null), onClick: onNext })
+      _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronUp2.default, null), onClick: onPrevious, key: 'ActionHeaderPrevious' }),
+      _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronDown2.default, null), onClick: onNext, key: 'ActionHeaderNext' })
     );
   }
 
@@ -165,15 +175,10 @@ var ActionHeader = function ActionHeader(_ref) {
     closeButton
   );
 
-  if (onClose && !onBack) {
-    backButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, null), onClick: onClose });
-    closeButton = null;
-  }
-
   var leftButtonsSmall = _react2.default.createElement(
     'div',
     { className: 'terraClinical-ActionHeader-leftButtons' },
-    backButton,
+    backButtonSmall,
     previousNextButtonGroup
   );
 
@@ -181,7 +186,7 @@ var ActionHeader = function ActionHeader(_ref) {
     'div',
     { className: 'terraClinical-ActionHeader-rightButtons' },
     children,
-    closeButton
+    closeButtonSmall
   );
 
   var actionHeader = _react2.default.createElement(_terraClinicalHeader2.default, _extends({}, attributes, {
