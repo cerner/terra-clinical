@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Arrange from 'terra-arrange';
 import classNames from 'classnames';
+import 'terra-base/lib/baseStyles';
 import './Header.scss';
 
 const propTypes = {

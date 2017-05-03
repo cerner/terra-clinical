@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+import 'terra-base/lib/baseStyles';
 import './ItemView.scss';
 import Display from './Display';
 import Comment from './Comment';
@@ -52,12 +53,21 @@ const defaultProps = {
 
 class ItemView extends React.Component {
 
-  static renderAccessory(accessory) {
-    return (
-      <div className="terraClinical-ItemView-accessory">
-        {accessory}
-      </div>
-    );
+  static renderAccessory(accessory, accessoryAlignment) {
+    const accessoryClassNames = classNames([
+      'terraClinical-ItemView-accessory',
+      { [`terraClinical-ItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
+    ]);
+
+    let accessorySection;
+    if (accessory) {
+      accessorySection = (
+        <div className={accessoryClassNames}>
+          {accessory}
+        </div>
+      );
+    }
+    return accessorySection;
   }
 
   static renderRows(displays, layout, emphasis) {
@@ -66,7 +76,7 @@ class ItemView extends React.Component {
     }
 
     const displayGroups = [];
-    const displaysSlice = displays.slice(0, 7);
+    const displaysSlice = displays.slice(0, 8);
     const spliceValue = layout === 'twoColumns' ? 2 : 1;
 
     while (displaysSlice.length) {
@@ -153,18 +163,17 @@ class ItemView extends React.Component {
       'terraClinical-ItemView',
       { 'terraClinical-ItemView--isTruncated': isTruncated },
       { [`terraClinical-ItemView--${layout}`]: layout },
-      { [`terraClinical-ItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
       customProps.className,
     ]);
 
     return (
       <div {...customProps} className={viewClassNames}>
-        {ItemView.renderAccessory(startAccessory)}
+        {ItemView.renderAccessory(startAccessory, accessoryAlignment)}
         <div className="terraClinical-ItemView-body">
           {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>
-        {ItemView.renderAccessory(endAccessory)}
+        {ItemView.renderAccessory(endAccessory, accessoryAlignment)}
       </div>
     );
   }

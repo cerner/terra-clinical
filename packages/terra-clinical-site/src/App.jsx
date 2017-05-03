@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Base from 'terra-base';
+import 'terra-base/lib/baseStyles';
 import React from 'react';
 import { Link } from 'react-router';
 import './site.scss';

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+import 'terra-base/lib/baseStyles';
 import IconError from 'terra-icon/lib/icon/IconError';
 import Button from 'terra-button';
 import './ErrorView.scss';

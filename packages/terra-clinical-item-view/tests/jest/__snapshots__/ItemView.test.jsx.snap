@@ -1,8 +1,6 @@
 exports[`test should render 1 start theme display 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -18,16 +16,12 @@ exports[`test should render 1 start theme display 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render 2 start theme displays 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -52,16 +46,12 @@ exports[`test should render 2 start theme displays 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render 3 start theme displays 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -95,16 +85,12 @@ exports[`test should render 3 start theme displays 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render a comment 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <Comment
@@ -113,32 +99,24 @@ exports[`test should render a comment 1`] = `
       text="comment"
       textStyle="attention" />
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render a default component 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body" />
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render a end accessory 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body" />
   <div
-    className="terraClinical-ItemView-accessory">
+    className="terraClinical-ItemView-accessory terraClinical-ItemView-accessory--alignCenter">
     <img
       alt="Graphic" />
   </div>
@@ -147,54 +125,46 @@ exports[`test should render a end accessory 1`] = `
 
 exports[`test should render a start accessory 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
-    className="terraClinical-ItemView-accessory">
+    className="terraClinical-ItemView-accessory terraClinical-ItemView-accessory--alignCenter">
     <img
       alt="Graphic" />
   </div>
   <div
     className="terraClinical-ItemView-body" />
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render an accessory center aligned 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
-    className="terraClinical-ItemView-accessory">
+    className="terraClinical-ItemView-accessory terraClinical-ItemView-accessory--alignCenter">
     <img
       alt="Graphic" />
   </div>
   <div
     className="terraClinical-ItemView-body" />
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render an accessory top aligned 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignTop">
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
-    className="terraClinical-ItemView-accessory">
+    className="terraClinical-ItemView-accessory terraClinical-ItemView-accessory--alignTop">
     <img
       alt="Graphic" />
   </div>
   <div
     className="terraClinical-ItemView-body" />
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render one column 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -219,16 +189,12 @@ exports[`test should render one column 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render truncated display 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -244,16 +210,12 @@ exports[`test should render truncated display 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
-exports[`test should render two columns 1`] = `
+exports[`test should render two columns with 8 displays 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--twoColumns terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--twoColumns">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -273,18 +235,59 @@ exports[`test should render two columns 1`] = `
             text="display 2" />
         </div>
       </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
+          <Display
+            isTruncated={false}
+            text="display 3" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
+          <Display
+            isTruncated={false}
+            text="display 4" />
+        </div>
+      </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 5" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 6" />
+        </div>
+      </div>
+      <div
+        className="terraClinical-ItemView-row">
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 7" />
+        </div>
+        <div
+          className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
+          <Display
+            isTruncated={false}
+            text="display 8" />
+        </div>
+      </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render two columns with odd number of displays 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--twoColumns terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--twoColumns">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -315,16 +318,12 @@ exports[`test should render two columns with odd number of displays 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render with 1 display 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -340,16 +339,12 @@ exports[`test should render with 1 display 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render with 2 displays 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -374,16 +369,12 @@ exports[`test should render with 2 displays 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render with 3 displays 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -417,16 +408,12 @@ exports[`test should render with 3 displays 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;
 
 exports[`test should render with a display and graphic 1`] = `
 <div
-  className="terraClinical-ItemView terraClinical-ItemView--oneColumn terraClinical-ItemView-accessory--alignCenter">
-  <div
-    className="terraClinical-ItemView-accessory" />
+  className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
     <div
@@ -446,7 +433,5 @@ exports[`test should render with a display and graphic 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="terraClinical-ItemView-accessory" />
 </div>
 `;

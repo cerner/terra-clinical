@@ -15,6 +15,7 @@ import ItemViewTwoColumn from './ItemViewTwoColumn';
 import ItemViewTwoColumnStart from './ItemViewTwoColumnStart';
 import ItemViewComment from './ItemViewComment';
 import ItemViewAll from './ItemViewAll';
+import ItemViewAllTopAligned from './ItemViewAllTopAligned';
 
 const ItemViewExamples = () => (
   <div>
@@ -31,6 +32,8 @@ const ItemViewExamples = () => (
     <ItemViewComment />
     <h2 id="all-elements">All Elements ItemView</h2>
     <ItemViewAll />
+    <h2 id="all-elements-top">All Elements ItemView Top Aligned</h2>
+    <ItemViewAllTopAligned />
   </div>
 );
 

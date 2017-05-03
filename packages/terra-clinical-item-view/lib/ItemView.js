@@ -16,6 +16,8 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+require('terra-base/lib/baseStyles');
+
 require('./ItemView.scss');
 
 var _Display = require('./Display');
@@ -107,29 +109,35 @@ var ItemView = function (_React$Component) {
           comment = _props.comment,
           customProps = _objectWithoutProperties(_props, ['layout', 'textEmphasis', 'isTruncated', 'accessoryAlignment', 'startAccessory', 'endAccessory', 'displays', 'comment']);
 
-      var viewClassNames = (0, _classnames2.default)(['terraClinical-ItemView', { 'terraClinical-ItemView--isTruncated': isTruncated }, _defineProperty({}, 'terraClinical-ItemView--' + layout, layout), _defineProperty({}, 'terraClinical-ItemView-accessory--' + accessoryAlignment, accessoryAlignment), customProps.className]);
+      var viewClassNames = (0, _classnames2.default)(['terraClinical-ItemView', { 'terraClinical-ItemView--isTruncated': isTruncated }, _defineProperty({}, 'terraClinical-ItemView--' + layout, layout), customProps.className]);
 
       return _react2.default.createElement(
         'div',
         _extends({}, customProps, { className: viewClassNames }),
-        ItemView.renderAccessory(startAccessory),
+        ItemView.renderAccessory(startAccessory, accessoryAlignment),
         _react2.default.createElement(
           'div',
           { className: 'terraClinical-ItemView-body' },
           ItemView.renderRows(displays, layout, textEmphasis),
           comment
         ),
-        ItemView.renderAccessory(endAccessory)
+        ItemView.renderAccessory(endAccessory, accessoryAlignment)
       );
     }
   }], [{
     key: 'renderAccessory',
-    value: function renderAccessory(accessory) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'terraClinical-ItemView-accessory' },
-        accessory
-      );
+    value: function renderAccessory(accessory, accessoryAlignment) {
+      var accessoryClassNames = (0, _classnames2.default)(['terraClinical-ItemView-accessory', _defineProperty({}, 'terraClinical-ItemView-accessory--' + accessoryAlignment, accessoryAlignment)]);
+
+      var accessorySection = void 0;
+      if (accessory) {
+        accessorySection = _react2.default.createElement(
+          'div',
+          { className: accessoryClassNames },
+          accessory
+        );
+      }
+      return accessorySection;
     }
   }, {
     key: 'renderRows',
@@ -139,7 +147,7 @@ var ItemView = function (_React$Component) {
       }
 
       var displayGroups = [];
-      var displaysSlice = displays.slice(0, 7);
+      var displaysSlice = displays.slice(0, 8);
       var spliceValue = layout === 'twoColumns' ? 2 : 1;
 
       while (displaysSlice.length) {
