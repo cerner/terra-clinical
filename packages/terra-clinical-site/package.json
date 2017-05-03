@@ -37,6 +37,7 @@
     "terra-clinical-error-view": "^0.x",
     "terra-clinical-label-value-view": "^0.x",
     "terra-clinical-no-data-view": "^0.x",
+    "terra-icon": "^0.x",
     "terra-grid": "^2.x",
     "terra-legacy-theme": "^0.x",
     "terra-markdown": "^0.x",
