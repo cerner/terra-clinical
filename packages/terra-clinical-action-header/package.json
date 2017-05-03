@@ -3,7 +3,7 @@
   "main": "lib/ActionHeader.js",
   "private": true,
   "version": "0.0.0",
-  "description": "A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. ",
+  "description": "An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"
@@ -30,6 +30,7 @@
     "react-dom": "15.4.2",
     "terra-base": "^0.x",
     "terra-button": "^0.x",
+    "terra-button-group": "^0.x",
     "terra-icon": "0.x",
     "terra-mixins": "^1.0.0",
     "terra-clinical-header": "^0.x",
