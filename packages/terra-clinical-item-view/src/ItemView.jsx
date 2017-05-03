@@ -53,11 +53,16 @@ const defaultProps = {
 
 class ItemView extends React.Component {
 
-  static renderAccessory(accessory) {
+  static renderAccessory(accessory, accessoryAlignment) {
+    const accessoryClassNames = classNames([
+      'terraClinical-ItemView-accessory',
+      { [`terraClinical-ItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
+    ]);
+
     let accessorySection;
     if (accessory) {
       accessorySection = (
-        <div className="terraClinical-ItemView-accessory">
+        <div className={accessoryClassNames}>
           {accessory}
         </div>
       );
@@ -158,18 +163,17 @@ class ItemView extends React.Component {
       'terraClinical-ItemView',
       { 'terraClinical-ItemView--isTruncated': isTruncated },
       { [`terraClinical-ItemView--${layout}`]: layout },
-      { [`terraClinical-ItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
       customProps.className,
     ]);
 
     return (
       <div {...customProps} className={viewClassNames}>
-        {ItemView.renderAccessory(startAccessory)}
+        {ItemView.renderAccessory(startAccessory, accessoryAlignment)}
         <div className="terraClinical-ItemView-body">
           {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>
-        {ItemView.renderAccessory(endAccessory)}
+        {ItemView.renderAccessory(endAccessory, accessoryAlignment)}
       </div>
     );
   }
