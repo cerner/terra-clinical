@@ -3,6 +3,8 @@ import React from 'react';
 import ItemView from 'terra-clinical-item-view';
 import ItemComment from 'terra-clinical-item-comment';
 import ItemDisplay from 'terra-clinical-item-display';
+import IconPanelLeft from 'terra-icon/lib/icon/IconPanelLeft';
+import IconPanelRight from 'terra-icon/lib/icon/IconPanelRight';
 
 
 const display1 = <ItemDisplay text="display1display1display1display1display1display1display1display1display1display1display1display1display1display1" />;
@@ -13,8 +15,8 @@ const display5 = <ItemDisplay text="display 5" />;
 
 const displays = [display1, display2, display3, display4, display5];
 
-const accessoryStart = <img alt="Graphic Start" />;
-const accessoryEnd = <img alt="Graphic End" />;
+const accessoryStart = <IconPanelLeft />;
+const accessoryEnd = <IconPanelRight />;
 
 const comment = <ItemComment text="test comment" />;
 
