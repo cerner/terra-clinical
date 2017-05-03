@@ -22,6 +22,7 @@ export default () => <ItemView
   layout="twoColumns"
   isTruncated
   textEmphasis="start"
+  accessoryAlignment="alignTop"
   startAccessory={accessoryStart}
   endAccessory={accessoryEnd}
   comment={comment}
