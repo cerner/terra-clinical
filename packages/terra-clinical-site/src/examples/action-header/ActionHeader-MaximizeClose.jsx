@@ -7,7 +7,7 @@ const ActionHeaderExample = () => (
     <ActionHeader
       title="Action Header"
       onClose={() => alert('You clicked close!')}
-      onExpand={() => alert('You clicked expand!')}
+      onMaximize={() => alert('You clicked expand!')}
     />
     <br />
   </div>

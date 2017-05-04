@@ -32,14 +32,14 @@ const propTypes = {
   /**
    * Callback function for when the expand button is clicked.
    * The expand button will not display if this is not set or on small viewports.
-   * Only the expand button will be rendered if onExpand and onMinimize are set.
+   * Only the expand button will be rendered if onMaximize and onMinimize are set.
    **/
-  onExpand: PropTypes.func,
+  onMaximize: PropTypes.func,
 
   /**
    * Callback function for when the minimize button is clicked.
    * The minimize button will not display if this is not set or on small viewports.
-   * Only the expand button will be rendered if both onExpand and onMinimize are set.
+   * Only the expand button will be rendered if both onMaximize and onMinimize are set.
    **/
   onMinimize: PropTypes.func,
 
@@ -63,7 +63,7 @@ const defaultProps = {
   title: '',
   onClose: null,
   onBack: null,
-  onExpand: null,
+  onMaximize: null,
   onMinimize: null,
   onNext: null,
   onPrevious: null,
@@ -74,7 +74,7 @@ const ActionHeader = ({
   title,
   onClose,
   onBack,
-  onExpand,
+  onMaximize,
   onMinimize,
   onPrevious,
   onNext,
@@ -98,8 +98,8 @@ const ActionHeader = ({
 
   let expandButton;
   if (!backButton) {
-    if (onExpand) {
-      expandButton = <Button icon={<IconMaximize />} onClick={onExpand} />;
+    if (onMaximize) {
+      expandButton = <Button icon={<IconMaximize />} onClick={onMaximize} />;
     } else if (onMinimize) {
       expandButton = <Button icon={<IconMinimize />} onClick={onMinimize} />;
     }

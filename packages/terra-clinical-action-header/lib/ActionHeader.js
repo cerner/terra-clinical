@@ -78,14 +78,14 @@ var propTypes = {
   /**
    * Callback function for when the expand button is clicked.
    * The expand button will not display if this is not set or on small viewports.
-   * Only the expand button will be rendered if onExpand and onMinimize are set.
+   * Only the expand button will be rendered if onMaximize and onMinimize are set.
    **/
-  onExpand: _react.PropTypes.func,
+  onMaximize: _react.PropTypes.func,
 
   /**
    * Callback function for when the minimize button is clicked.
    * The minimize button will not display if this is not set or on small viewports.
-   * Only the expand button will be rendered if both onExpand and onMinimize are set.
+   * Only the expand button will be rendered if both onMaximize and onMinimize are set.
    **/
   onMinimize: _react.PropTypes.func,
 
@@ -109,7 +109,7 @@ var defaultProps = {
   title: '',
   onClose: null,
   onBack: null,
-  onExpand: null,
+  onMaximize: null,
   onMinimize: null,
   onNext: null,
   onPrevious: null,
@@ -120,12 +120,12 @@ var ActionHeader = function ActionHeader(_ref) {
   var title = _ref.title,
       onClose = _ref.onClose,
       onBack = _ref.onBack,
-      onExpand = _ref.onExpand,
+      onMaximize = _ref.onMaximize,
       onMinimize = _ref.onMinimize,
       onPrevious = _ref.onPrevious,
       onNext = _ref.onNext,
       children = _ref.children,
-      customProps = _objectWithoutProperties(_ref, ['title', 'onClose', 'onBack', 'onExpand', 'onMinimize', 'onPrevious', 'onNext', 'children']);
+      customProps = _objectWithoutProperties(_ref, ['title', 'onClose', 'onBack', 'onMaximize', 'onMinimize', 'onPrevious', 'onNext', 'children']);
 
   var attributes = _extends({}, customProps);
   var closeButton = onClose ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconClose2.default, null), onClick: onClose }) : null;
@@ -143,8 +143,8 @@ var ActionHeader = function ActionHeader(_ref) {
 
   var expandButton = void 0;
   if (!backButton) {
-    if (onExpand) {
-      expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMaximize2.default, null), onClick: onExpand });
+    if (onMaximize) {
+      expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMaximize2.default, null), onClick: onMaximize });
     } else if (onMinimize) {
       expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMinimize2.default, null), onClick: onMinimize });
     }

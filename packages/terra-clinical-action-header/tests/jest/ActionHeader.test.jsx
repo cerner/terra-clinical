@@ -29,7 +29,7 @@ it('should render ActionHeader with back button', () => {
 });
 
 it('should render ActionHeader with expand button', () => {
-  const expandActionHeader = <ActionHeader onExpand={() => 1} />;
+  const expandActionHeader = <ActionHeader onMaximize={() => 1} />;
   const wrapper = shallow(expandActionHeader);
   expect(wrapper).toMatchSnapshot();
 });

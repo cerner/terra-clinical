@@ -1,11 +1,11 @@
 import React from 'react';
 import ActionHeader from '../../src/ActionHeader';
 
-const ExpandHeader = () => (
+const MaximizeHeader = () => (
   <ActionHeader
     title="Action Header"
-    onExpand={() => 1}
+    onMaximize={() => 1}
   />
 );
 
-export default ExpandHeader;
+export default MaximizeHeader;

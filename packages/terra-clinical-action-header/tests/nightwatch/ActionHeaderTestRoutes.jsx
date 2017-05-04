@@ -7,7 +7,7 @@ import ActionHeaderDefault from './DefaultActionHeader';
 import ActionHeaderTitle from './TitleActionHeader';
 import BackActionHeader from './BackActionHeader';
 import CloseActionHeader from './CloseActionHeader';
-import ExpandActionHeader from './ExpandActionHeader';
+import MaximizeActionHeader from './MaximizeActionHeader';
 import MinimizeActionHeader from './MinimizeActionHeader';
 import BackCloseActionHeader from './BackCloseActionHeader';
 import PreviousNextActionHeader from './PreviousNextActionHeader';
@@ -18,7 +18,7 @@ const routes = (
     <Route path="/tests/action-header-tests" component={ActionHeaderTests} />
     <Route path="/tests/action-header-tests/action-header" component={ActionHeaderDefault} />
     <Route path="/tests/action-header-tests/action-header-title" component={ActionHeaderTitle} />
-    <Route path="/tests/action-header-tests/action-header-expand" component={ExpandActionHeader} />
+    <Route path="/tests/action-header-tests/action-header-maximize" component={MaximizeActionHeader} />
     <Route path="/tests/action-header-tests/action-header-minimize" component={MinimizeActionHeader} />
     <Route path="/tests/action-header-tests/action-header-back" component={BackActionHeader} />
     <Route path="/tests/action-header-tests/action-header-close" component={CloseActionHeader} />

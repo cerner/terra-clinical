@@ -10,7 +10,7 @@ import HeaderSrc from '!raw-loader!terra-clinical-action-header/src/ActionHeader
 
 // Example Files
 import ActionHeaderBackNextPreviousClose from './ActionHeader-BackNextPreviousClose';
-import ActionHeaderExpandClose from './ActionHeader-ExpandClose';
+import ActionHeaderExpandClose from './ActionHeader-MaximizeClose';
 import ActionHeaderMinimizeCustomClose from './ActionHeader-MinimizeCustomClose';
 
 const HeaderExamples = () => (
@@ -20,7 +20,7 @@ const HeaderExamples = () => (
     <PropsTable id="props" src={HeaderSrc} />
     <h2>Back, Previous-Next, Close</h2>
     <ActionHeaderBackNextPreviousClose />
-    <h2>Expand, Close</h2>
+    <h2>Maximize, Close</h2>
     <ActionHeaderExpandClose />
     <h2>Minimize, Custom Content, Close </h2>
     <ActionHeaderMinimizeCustomClose />

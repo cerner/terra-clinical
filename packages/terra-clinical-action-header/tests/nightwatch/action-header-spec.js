@@ -51,11 +51,11 @@ module.exports = {
     const width = browser.globals.width;
     if (width < windowSizes.small[0]) {
       browser
-        .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-expand`)
+        .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-maximize`)
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.not.be.present;
     } else {
       browser
-        .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-expand`)
+        .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-maximize`)
         .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
     }
