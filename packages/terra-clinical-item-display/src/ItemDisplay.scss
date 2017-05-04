@@ -12,7 +12,7 @@
   min-width: 10px; // Need min-width, as IE10 will completely squish display
 }
 
-.terraClinical-ItemDisplay-text--inlineIcon {
+.terraClinical-ItemDisplay-inlineIcon {
   @include terra-padding-end(5px);
   flex: 0 0 auto;
   height: 20px;

@@ -14,7 +14,7 @@ The React component can be initialized like so:
 ```
 import ItemDisplay from 'terra-clinical-item-display';
 
-<Display
+<ItemDisplay
   text="display text"
   textStyle="attention"
   isTruncated
