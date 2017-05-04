@@ -28,11 +28,11 @@
 }
 
 .terraClinical-ItemView-accessory--alignTop {
-  align-items: flex-start;
+  align-self: flex-start;
 }
 
 .terraClinical-ItemView-accessory--alignCenter {
-  align-items: center;
+  align-self: center;
 }
 
 // Content Layout
