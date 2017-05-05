@@ -1,6 +1,6 @@
 # Terra Clinical Item Display
 
-The Item Display component creates an display for text and an optional graphic.
+The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.
 
 ## Getting Started
 
@@ -21,4 +21,9 @@ import ItemDisplay from 'terra-clinical-item-display';
   icon=<img alt="Graphic" />
 />
 
+<ItemDisplay.Comment
+  text="display text"
+  textStyle="attention"
+  isTruncated"
+/>
 ```

@@ -1,5 +1,5 @@
 import React from 'react';
 
-import ItemComment from '../../lib/ItemComment';
+import ItemComment from '../../../lib/ItemComment';
 
 export default () => <ItemComment />;

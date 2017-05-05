@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ItemDisplay from '../../lib/ItemDisplay';
+import ItemDisplay from '../../../lib/ItemDisplay';
 
 const views = () => (
   <div>

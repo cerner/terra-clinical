@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import 'terra-base/lib/baseStyles';
 import './ItemDisplay.scss';
+import ItemComment from './ItemComment';
 
 const textStyles = [
   'secondary',
@@ -68,5 +69,6 @@ const ItemDisplay = ({
 
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
+ItemDisplay.Comment = ItemComment;
 
 export default ItemDisplay;

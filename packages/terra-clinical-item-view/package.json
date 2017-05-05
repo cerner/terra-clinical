@@ -36,7 +36,6 @@
     "terra-base": "^0.x",
     "terra-icon": "^0.x",
     "terra-mixins": "^1.0.0",
-    "terra-clinical-item-comment": "^0.x",
     "terra-clinical-item-display": "^0.x"
   },
   "scripts": {

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ItemView from 'terra-clinical-item-view';
-import ItemComment from 'terra-clinical-item-comment';
 import ItemDisplay from 'terra-clinical-item-display';
 import IconPanelLeft from 'terra-icon/lib/icon/IconPanelLeft';
 import IconPanelRight from 'terra-icon/lib/icon/IconPanelRight';
@@ -18,7 +17,7 @@ const displays = [display1, display2, display3, display4, display5];
 const accessoryStart = <IconPanelLeft />;
 const accessoryEnd = <IconPanelRight />;
 
-const comment = <ItemComment text="test comment" />;
+const comment = <ItemDisplay.Comment text="test comment" />;
 
 export default () => <ItemView
   displays={displays}

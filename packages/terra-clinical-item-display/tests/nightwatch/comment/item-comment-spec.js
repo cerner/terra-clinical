@@ -9,7 +9,7 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-item-comment', done);
+    screenshot(browser, 'terra-clinical-item-display', done);
   },
 
   'Displays a clinical item view with default props': (browser) => {

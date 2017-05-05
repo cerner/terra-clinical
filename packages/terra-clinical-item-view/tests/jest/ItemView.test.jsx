@@ -1,5 +1,4 @@
 import React from 'react';
-import ItemComment from 'terra-clinical-item-comment';
 import ItemDisplay from 'terra-clinical-item-display';
 import ItemView from '../../src/ItemView';
 
@@ -49,7 +48,7 @@ it('should render truncated display', () => {
 });
 
 it('should render a comment', () => {
-  const comment = <ItemComment text="comment" textStyle="attention" isTruncated={false} />;
+  const comment = <ItemDisplay.Comment text="comment" textStyle="attention" isTruncated={false} />;
   const params = {
     layout: 'oneColumn',
     textEmphasis: 'default',

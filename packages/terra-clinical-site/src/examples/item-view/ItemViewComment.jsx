@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ItemView from 'terra-clinical-item-view';
-import ItemComment from 'terra-clinical-item-comment';
+import ItemDisplay from 'terra-clinical-item-display';
 
-const comment1 = <ItemComment text="comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1" />;
+const comment1 = <ItemDisplay.Comment text="comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1" />;
 
 export default () => <ItemView comment={comment1} />;

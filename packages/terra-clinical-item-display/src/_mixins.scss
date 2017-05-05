@@ -5,3 +5,12 @@
   word-break: normal;
   word-wrap: normal;
 }
+
+@mixin terra-clinical-text-body {
+  font-size: 1.1428571428571428rem;
+  line-height: 1.4285714285714286;
+
+  @media screen and (min-width: 760px) {
+    font-size: 1rem;
+  }
+}

@@ -20,9 +20,9 @@ var _IconComment = require('terra-icon/lib/icon/IconComment');
 
 var _IconComment2 = _interopRequireDefault(_IconComment);
 
-var _terraClinicalItemDisplay = require('terra-clinical-item-display');
+var _ItemDisplay = require('./ItemDisplay');
 
-var _terraClinicalItemDisplay2 = _interopRequireDefault(_terraClinicalItemDisplay);
+var _ItemDisplay2 = _interopRequireDefault(_ItemDisplay);
 
 require('./ItemComment.scss');
 
@@ -55,7 +55,7 @@ var ItemComment = function ItemComment(_ref) {
 
   var commentIcon = _react2.default.createElement(_IconComment2.default, null);
 
-  return _react2.default.createElement(_terraClinicalItemDisplay2.default, _extends({
+  return _react2.default.createElement(_ItemDisplay2.default, _extends({
     text: text,
     isTruncated: isTruncated,
     icon: commentIcon
