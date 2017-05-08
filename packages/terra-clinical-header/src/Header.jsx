@@ -5,19 +5,19 @@ import 'terra-base/lib/baseStyles';
 import './Header.scss';
 
 const propTypes = {
-  /*
+  /**
    * Content to be displayed at the start of the header, placed before the title
-   */
+   **/
   startContent: PropTypes.element,
 
-  /*
+  /**
    * Text to be displayed as the title in the header bar
-   */
+   **/
   title: PropTypes.string,
 
-  /*
+  /**
    * Content to be displayed at the end of the header
-   */
+   **/
   endContent: PropTypes.element,
 };
 
