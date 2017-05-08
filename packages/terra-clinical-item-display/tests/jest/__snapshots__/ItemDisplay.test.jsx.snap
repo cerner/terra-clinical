@@ -1,0 +1,85 @@
+exports[`test should render a default component 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-text" />
+</div>
+`;
+
+exports[`test should render a display with the attention textStyle on text 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--attention">
+    Display
+  </div>
+</div>
+`;
+
+exports[`test should render a display with the secondary textStyle on text 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--secondary">
+    Display
+  </div>
+</div>
+`;
+
+exports[`test should render a display with the strikeThrough textStyle on text 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--strikeThrough">
+    Display
+  </div>
+</div>
+`;
+
+exports[`test should render a truncated display 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--isTruncated">
+    display1display1display1display1display1display1display1display1
+  </div>
+</div>
+`;
+
+exports[`test should render with a graphic 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-inlineIcon">
+    <img
+      alt="Graphic" />
+  </div>
+  <div
+    className="terraClinical-ItemDisplay-text" />
+</div>
+`;
+
+exports[`test should render with text 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-text">
+    Display
+  </div>
+</div>
+`;
+
+exports[`test should render with text and graphic 1`] = `
+<div
+  className="terraClinical-ItemDisplay">
+  <div
+    className="terraClinical-ItemDisplay-inlineIcon">
+    <img
+      alt="Graphic" />
+  </div>
+  <div
+    className="terraClinical-ItemDisplay-text">
+    Display
+  </div>
+</div>
+`;

@@ -1,0 +1,10 @@
+@import './mixins';
+
+.terraClinical-ItemComment {
+  @include terra-clinical-text-body;
+  color: $terra-grey-70;
+}
+
+.terraClinical-ItemComment--icon {
+  fill: $terra-grey-30;
+}

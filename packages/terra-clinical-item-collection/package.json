@@ -37,6 +37,7 @@
     "terra-mixins": "^1.0.0",
     "resize-observer-polyfill": "^1.4.1",
     "terra-table": "^0.x",
+    "terra-clinical-item-display": "^0.x",
     "terra-clinical-item-view": "^0.x"
   },
   "scripts": {

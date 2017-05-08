@@ -9,7 +9,7 @@ exports[`test should render 1 start theme display 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -30,7 +30,7 @@ exports[`test should render 2 start theme displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -39,7 +39,7 @@ exports[`test should render 2 start theme displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -60,7 +60,7 @@ exports[`test should render 3 start theme displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -69,7 +69,7 @@ exports[`test should render 3 start theme displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -78,7 +78,7 @@ exports[`test should render 3 start theme displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 3" />
         </div>
@@ -93,8 +93,7 @@ exports[`test should render a comment 1`] = `
   className="terraClinical-ItemView terraClinical-ItemView--oneColumn">
   <div
     className="terraClinical-ItemView-body">
-    <Comment
-      className=""
+    <ItemComment
       isTruncated={false}
       text="comment"
       textStyle="attention" />
@@ -173,7 +172,7 @@ exports[`test should render one column 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -182,7 +181,7 @@ exports[`test should render one column 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -203,7 +202,7 @@ exports[`test should render truncated display 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={true}
             text="display1display1display1display1display1display1display1display1" />
         </div>
@@ -224,13 +223,13 @@ exports[`test should render two columns with 8 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -239,13 +238,13 @@ exports[`test should render two columns with 8 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 3" />
         </div>
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 4" />
         </div>
@@ -254,13 +253,13 @@ exports[`test should render two columns with 8 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 5" />
         </div>
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 6" />
         </div>
@@ -269,13 +268,13 @@ exports[`test should render two columns with 8 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 7" />
         </div>
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 8" />
         </div>
@@ -296,13 +295,13 @@ exports[`test should render two columns with odd number of displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -311,7 +310,7 @@ exports[`test should render two columns with odd number of displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 3" />
         </div>
@@ -332,7 +331,7 @@ exports[`test should render with 1 display 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -353,7 +352,7 @@ exports[`test should render with 2 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -362,7 +361,7 @@ exports[`test should render with 2 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -383,7 +382,7 @@ exports[`test should render with 3 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 1" />
         </div>
@@ -392,7 +391,7 @@ exports[`test should render with 3 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 2" />
         </div>
@@ -401,7 +400,7 @@ exports[`test should render with 3 displays 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--secondarySize terraClinical-ItemView-content--secondaryColor">
-          <Display
+          <ItemDisplay
             isTruncated={false}
             text="display 3" />
         </div>
@@ -422,7 +421,7 @@ exports[`test should render with a display and graphic 1`] = `
         className="terraClinical-ItemView-row">
         <div
           className="terraClinical-ItemView-content terraClinical-ItemView-content--primarySize terraClinical-ItemView-content--primaryColor">
-          <Display
+          <ItemDisplay
             icon={
               <img
                 alt="Graphic" />
