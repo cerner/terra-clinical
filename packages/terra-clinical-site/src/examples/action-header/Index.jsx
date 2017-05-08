@@ -3,6 +3,7 @@ import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-action-header/docs/README.md';
+import { version } from 'terra-clinical-action-header/package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
@@ -15,6 +16,7 @@ import ActionHeaderMinimizeCustomClose from './ActionHeader-MinimizeCustomClose'
 
 const HeaderExamples = () => (
   <div>
+    <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <h2>Action Header</h2>
     <PropsTable id="props" src={HeaderSrc} />
