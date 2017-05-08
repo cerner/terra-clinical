@@ -4,20 +4,18 @@ import './ItemCollection.scss';
 
 const propTypes = {
   /**
-   * The column width of the header cell.
+   * The column type of the header cell.
    **/
-  columnWidth: PropTypes.string,
+  columnType: PropTypes.string,
 };
 
 const defaultProps = {
-  columnWidth: 'small',
+  columnType: '',
 };
 
-const TableHeaderCell = ({ columnWidth, ...customProps }) => {
+const TableHeaderCell = ({ columnType, ...customProps }) => {
   const attributes = Object.assign({}, customProps);
-  attributes.className = classNames(['terraClinical-ItemCollection-column-width',
-    { [`terraClinical-ItemCollection-column-width-${columnWidth}`]: columnWidth },
-  ]);
+  attributes.className = classNames({ [`terraClinical-ItemCollection-column--${columnType}`]: columnType });
 
   return (
     <th {...attributes} />

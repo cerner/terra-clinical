@@ -52,15 +52,6 @@ var propTypes = {
   */
   breakpoint: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
   /**
-   * The columsn and widths to apply to the table columns. Widths options are tiny, small, medium, large, or huge.
-   **/
-  columnWidths: _react.PropTypes.shape({
-    startAccessoryWidth: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
-    displayWidths: _react.PropTypes.arrayOf(_react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge'])),
-    commentWidth: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
-    endAccessoryWidth: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge'])
-  }).isRequired,
-  /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
    **/
   tableStyles: _react.PropTypes.shape({
@@ -94,7 +85,6 @@ var propTypes = {
 };
 
 var defaultProps = {
-  columnWidths: {},
   listStyles: undefined,
   tableStyles: undefined,
   rows: [],
@@ -158,19 +148,18 @@ var ItemCollection = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
-          columnWidths = _props.columnWidths,
           listStyles = _props.listStyles,
           tableStyles = _props.tableStyles,
           rows = _props.rows,
           breakpoint = _props.breakpoint,
-          customProps = _objectWithoutProperties(_props, ['columnWidths', 'listStyles', 'tableStyles', 'rows', 'breakpoint']);
+          customProps = _objectWithoutProperties(_props, ['listStyles', 'tableStyles', 'rows', 'breakpoint']);
 
       var attributes = _extends({}, customProps);
       attributes.className = (0, _classnames2.default)(['terraClinical-ItemCollection', 'terraClinical-ItemCollection--' + this.state.display + 'View', attributes.className]);
 
       var collectionDisplay = void 0;
       if (this.state.display === 'table') {
-        collectionDisplay = (0, _CreateTableView2.default)(columnWidths, rows, tableStyles);
+        collectionDisplay = (0, _CreateTableView2.default)(rows, tableStyles);
       } else if (this.state.display === 'list') {
         collectionDisplay = (0, _CreateListView2.default)(rows, listStyles);
       }

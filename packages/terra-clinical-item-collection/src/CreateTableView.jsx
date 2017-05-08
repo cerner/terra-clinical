@@ -3,32 +3,42 @@ import Table from 'terra-table';
 import TableHeaderCell from './TableHeaderCell';
 import './ItemCollection.scss';
 
-function createTableHeader(columnWidths) {
-  const { startAccessoryWidth, displayWidths, commentWidth, endAccessoryWidth } = columnWidths;
+function determineTableColumns(row) {
+  const { startAccessory, displays, comment, endAccessory } = row;
+
+  const columns = {};
+  columns.startAccessoryColumn = startAccessory !== undefined;
+  columns.displayColumns = displays && displays.length < 8 ? displays.length : 8;
+  columns.commentColumn = comment !== undefined;
+  columns.endAccessoryColumn = endAccessory !== undefined;
+
+  return columns;
+}
+
+function createTableHeader(tableColumns) {
+  const { startAccessoryColumn, displayColumns, commentColumn, endAccessoryColumn } = tableColumns;
 
   let startAccessoryHeader;
-  if (startAccessoryWidth) {
-    startAccessoryHeader = <TableHeaderCell columnWidth={startAccessoryWidth} key={'start_accessory'} />;
+  if (startAccessoryColumn) {
+    startAccessoryHeader = <TableHeaderCell columnType="accessory" key="start_accessory" />;
   }
 
-  let displayHeaders;
-  if (displayWidths) {
-    displayHeaders = (
-      displayWidths.slice(0, 8).map((displayWidth, index) => {
-        const contentKey = `display_${index}`;
-        return (<TableHeaderCell columnWidth={displayWidth} key={contentKey} />);
-      })
-    );
+  const displayHeaders = [];
+  if (displayColumns) {
+    for (let index = 1; index <= displayColumns; index += 1) {
+      const contentKey = `display_header_${index}`;
+      displayHeaders[index - 1] = (<TableHeaderCell columnType="display" key={contentKey} />);
+    }
   }
 
   let commentHeader;
-  if (commentWidth) {
-    commentHeader = <TableHeaderCell columnWidth={commentWidth} key={'comment'} />;
+  if (commentColumn) {
+    commentHeader = <TableHeaderCell columnType="comment" key="comment" />;
   }
 
   let endAccessoryHeader;
-  if (endAccessoryWidth) {
-    endAccessoryHeader = <TableHeaderCell columnWidth={endAccessoryWidth} key={'end_accessory'} />;
+  if (endAccessoryColumn) {
+    endAccessoryHeader = <TableHeaderCell columnType="accessory" key="end_accessory" />;
   }
 
   return (
@@ -41,38 +51,36 @@ function createTableHeader(columnWidths) {
   );
 }
 
-function createTableRows(rows, columnStructure) {
+function createTableRows(rows, tableColumns) {
   const tableRows = rows.map((row, rowIndex) => {
     const { startAccessory, displays, comment, endAccessory, itemStyles, ...customProps } = row;
-    const { startAccessoryWidth, displayWidths, commentWidth, endAccessoryWidth } = columnStructure;
+    const { startAccessoryColumn, displayColumns, commentColumn, endAccessoryColumn } = tableColumns;
 
     let startAccessoryContent;
-    if (startAccessoryWidth) {
+    if (startAccessoryColumn) {
       const content = startAccessory != null ? startAccessory : ' ';
-      startAccessoryContent = <Table.Cell content={content} key={'start_accessory'} />;
+      startAccessoryContent = <Table.Cell content={content} key="start_accessory" />;
     }
 
-    let displayContent;
-    if (displayWidths) {
-      displayContent = (
-        displayWidths.slice(0, 8).map((display, index) => {
-          const contentKey = `display_${index}`;
-          const content = row.displays[index] != null ? row.displays[index] : ' ';
-          return (<Table.Cell content={content} key={contentKey} />);
-        })
-      );
+    const displayContent = [];
+    if (displayColumns) {
+      for (let index = 1; index <= displayColumns; index += 1) {
+        const contentKey = `display_${index}`;
+        const content = row.displays[index] != null ? row.displays[index] : ' ';
+        displayContent[index - 1] = (<Table.Cell content={content} key={contentKey} />);
+      }
     }
 
     let commentContent;
-    if (commentWidth) {
+    if (commentColumn) {
       const content = comment != null ? comment : ' ';
-      commentContent = <Table.Cell content={content} key={'comment'} />;
+      commentContent = <Table.Cell content={content} key="comment" />;
     }
 
     let endAccessoryContent;
-    if (endAccessoryWidth) {
+    if (endAccessoryColumn) {
       const content = endAccessory != null ? endAccessory : ' ';
-      endAccessoryContent = <Table.Cell content={content} key={'end_accessory'} />;
+      endAccessoryContent = <Table.Cell content={content} key="end_accessory" />;
     }
 
     const rowKey = rowIndex;
@@ -89,9 +97,10 @@ function createTableRows(rows, columnStructure) {
   return tableRows;
 }
 
-function createTableView(columnWidths, rows, tableStyles) {
-  const tableHeader = createTableHeader(columnWidths);
-  const tableRows = createTableRows(rows, columnWidths);
+function createTableView(rows, tableStyles) {
+  const tableColumns = determineTableColumns(rows[0]);
+  const tableHeader = createTableHeader(tableColumns);
+  const tableRows = createTableRows(rows, tableColumns);
   return (
     <Table {...tableStyles}>
       {tableHeader}

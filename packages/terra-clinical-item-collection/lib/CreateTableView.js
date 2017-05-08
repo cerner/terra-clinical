@@ -24,34 +24,50 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-function createTableHeader(columnWidths) {
-  var startAccessoryWidth = columnWidths.startAccessoryWidth,
-      displayWidths = columnWidths.displayWidths,
-      commentWidth = columnWidths.commentWidth,
-      endAccessoryWidth = columnWidths.endAccessoryWidth;
+function determineTableColumns(row) {
+  var startAccessory = row.startAccessory,
+      displays = row.displays,
+      comment = row.comment,
+      endAccessory = row.endAccessory;
+
+
+  var columns = {};
+  columns.startAccessoryColumn = startAccessory !== undefined;
+  columns.displayColumns = displays && displays.length < 8 ? displays.length : 8;
+  columns.commentColumn = comment !== undefined;
+  columns.endAccessoryColumn = endAccessory !== undefined;
+
+  return columns;
+}
+
+function createTableHeader(tableColumns) {
+  var startAccessoryColumn = tableColumns.startAccessoryColumn,
+      displayColumns = tableColumns.displayColumns,
+      commentColumn = tableColumns.commentColumn,
+      endAccessoryColumn = tableColumns.endAccessoryColumn;
 
 
   var startAccessoryHeader = void 0;
-  if (startAccessoryWidth) {
-    startAccessoryHeader = _react2.default.createElement(_TableHeaderCell2.default, { columnWidth: startAccessoryWidth, key: 'start_accessory' });
+  if (startAccessoryColumn) {
+    startAccessoryHeader = _react2.default.createElement(_TableHeaderCell2.default, { columnType: 'accessory', key: 'start_accessory' });
   }
 
-  var displayHeaders = void 0;
-  if (displayWidths) {
-    displayHeaders = displayWidths.slice(0, 8).map(function (displayWidth, index) {
-      var contentKey = 'display_' + index;
-      return _react2.default.createElement(_TableHeaderCell2.default, { columnWidth: displayWidth, key: contentKey });
-    });
+  var displayHeaders = [];
+  if (displayColumns) {
+    for (var index = 1; index <= displayColumns; index += 1) {
+      var contentKey = 'display_header_' + index;
+      displayHeaders[index - 1] = _react2.default.createElement(_TableHeaderCell2.default, { columnType: 'display', key: contentKey });
+    }
   }
 
   var commentHeader = void 0;
-  if (commentWidth) {
-    commentHeader = _react2.default.createElement(_TableHeaderCell2.default, { columnWidth: commentWidth, key: 'comment' });
+  if (commentColumn) {
+    commentHeader = _react2.default.createElement(_TableHeaderCell2.default, { columnType: 'comment', key: 'comment' });
   }
 
   var endAccessoryHeader = void 0;
-  if (endAccessoryWidth) {
-    endAccessoryHeader = _react2.default.createElement(_TableHeaderCell2.default, { columnWidth: endAccessoryWidth, key: 'end_accessory' });
+  if (endAccessoryColumn) {
+    endAccessoryHeader = _react2.default.createElement(_TableHeaderCell2.default, { columnType: 'accessory', key: 'end_accessory' });
   }
 
   return _react2.default.createElement(
@@ -64,7 +80,7 @@ function createTableHeader(columnWidths) {
   );
 }
 
-function createTableRows(rows, columnStructure) {
+function createTableRows(rows, tableColumns) {
   var tableRows = rows.map(function (row, rowIndex) {
     var startAccessory = row.startAccessory,
         displays = row.displays,
@@ -73,37 +89,37 @@ function createTableRows(rows, columnStructure) {
         itemStyles = row.itemStyles,
         customProps = _objectWithoutProperties(row, ['startAccessory', 'displays', 'comment', 'endAccessory', 'itemStyles']);
 
-    var startAccessoryWidth = columnStructure.startAccessoryWidth,
-        displayWidths = columnStructure.displayWidths,
-        commentWidth = columnStructure.commentWidth,
-        endAccessoryWidth = columnStructure.endAccessoryWidth;
+    var startAccessoryColumn = tableColumns.startAccessoryColumn,
+        displayColumns = tableColumns.displayColumns,
+        commentColumn = tableColumns.commentColumn,
+        endAccessoryColumn = tableColumns.endAccessoryColumn;
 
 
     var startAccessoryContent = void 0;
-    if (startAccessoryWidth) {
+    if (startAccessoryColumn) {
       var content = startAccessory != null ? startAccessory : ' ';
       startAccessoryContent = _react2.default.createElement(_terraTable2.default.Cell, { content: content, key: 'start_accessory' });
     }
 
-    var displayContent = void 0;
-    if (displayWidths) {
-      displayContent = displayWidths.slice(0, 8).map(function (display, index) {
+    var displayContent = [];
+    if (displayColumns) {
+      for (var index = 1; index <= displayColumns; index += 1) {
         var contentKey = 'display_' + index;
-        var content = row.displays[index] != null ? row.displays[index] : ' ';
-        return _react2.default.createElement(_terraTable2.default.Cell, { content: content, key: contentKey });
-      });
+        var _content = row.displays[index] != null ? row.displays[index] : ' ';
+        displayContent[index - 1] = _react2.default.createElement(_terraTable2.default.Cell, { content: _content, key: contentKey });
+      }
     }
 
     var commentContent = void 0;
-    if (commentWidth) {
-      var _content = comment != null ? comment : ' ';
-      commentContent = _react2.default.createElement(_terraTable2.default.Cell, { content: _content, key: 'comment' });
+    if (commentColumn) {
+      var _content2 = comment != null ? comment : ' ';
+      commentContent = _react2.default.createElement(_terraTable2.default.Cell, { content: _content2, key: 'comment' });
     }
 
     var endAccessoryContent = void 0;
-    if (endAccessoryWidth) {
-      var _content2 = endAccessory != null ? endAccessory : ' ';
-      endAccessoryContent = _react2.default.createElement(_terraTable2.default.Cell, { content: _content2, key: 'end_accessory' });
+    if (endAccessoryColumn) {
+      var _content3 = endAccessory != null ? endAccessory : ' ';
+      endAccessoryContent = _react2.default.createElement(_terraTable2.default.Cell, { content: _content3, key: 'end_accessory' });
     }
 
     var rowKey = rowIndex;
@@ -120,9 +136,10 @@ function createTableRows(rows, columnStructure) {
   return tableRows;
 }
 
-function createTableView(columnWidths, rows, tableStyles) {
-  var tableHeader = createTableHeader(columnWidths);
-  var tableRows = createTableRows(rows, columnWidths);
+function createTableView(rows, tableStyles) {
+  var tableColumns = determineTableColumns(rows[0]);
+  var tableHeader = createTableHeader(tableColumns);
+  var tableRows = createTableRows(rows, tableColumns);
   return _react2.default.createElement(
     _terraTable2.default,
     tableStyles,

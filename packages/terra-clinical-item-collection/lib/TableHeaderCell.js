@@ -24,21 +24,21 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 var propTypes = {
   /**
-   * The column width of the header cell.
+   * The column type of the header cell.
    **/
-  columnWidth: _react.PropTypes.string
+  columnType: _react.PropTypes.string
 };
 
 var defaultProps = {
-  columnWidth: 'small'
+  columnType: ''
 };
 
 var TableHeaderCell = function TableHeaderCell(_ref) {
-  var columnWidth = _ref.columnWidth,
-      customProps = _objectWithoutProperties(_ref, ['columnWidth']);
+  var columnType = _ref.columnType,
+      customProps = _objectWithoutProperties(_ref, ['columnType']);
 
   var attributes = _extends({}, customProps);
-  attributes.className = (0, _classnames2.default)(['terraClinical-ItemCollection-column-width', _defineProperty({}, 'terraClinical-ItemCollection-column-width-' + columnWidth, columnWidth)]);
+  attributes.className = (0, _classnames2.default)(_defineProperty({}, 'terraClinical-ItemCollection-column--' + columnType, columnType));
 
   return _react2.default.createElement('th', attributes);
 };

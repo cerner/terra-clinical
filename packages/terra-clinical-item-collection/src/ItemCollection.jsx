@@ -14,15 +14,6 @@ const propTypes = {
   */
   breakpoint: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
   /**
-   * The columsn and widths to apply to the table columns. Widths options are tiny, small, medium, large, or huge.
-   **/
-  columnWidths: PropTypes.shape({
-    startAccessoryWidth: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
-    displayWidths: PropTypes.arrayOf(PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge'])),
-    commentWidth: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
-    endAccessoryWidth: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
-  }).isRequired,
-  /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
    **/
   tableStyles: PropTypes.shape({
@@ -56,7 +47,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  columnWidths: {},
   listStyles: undefined,
   tableStyles: undefined,
   rows: [],
@@ -101,7 +91,7 @@ class ItemCollection extends React.Component {
   }
 
   render() {
-    const { columnWidths, listStyles, tableStyles, rows, breakpoint, ...customProps } = this.props;
+    const { listStyles, tableStyles, rows, breakpoint, ...customProps } = this.props;
     const attributes = Object.assign({}, customProps);
     attributes.className = classNames(['terraClinical-ItemCollection',
       `terraClinical-ItemCollection--${this.state.display}View`,
@@ -110,7 +100,7 @@ class ItemCollection extends React.Component {
 
     let collectionDisplay;
     if (this.state.display === 'table') {
-      collectionDisplay = createTableView(columnWidths, rows, tableStyles);
+      collectionDisplay = createTableView(rows, tableStyles);
     } else if (this.state.display === 'list') {
       collectionDisplay = createListView(rows, listStyles);
     }
