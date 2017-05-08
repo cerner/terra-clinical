@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _SingleSelectList = require('terra-list/lib/SingleSelectList');
+
+var _SingleSelectList2 = _interopRequireDefault(_SingleSelectList);
+
 var _terraClinicalItemView = require('terra-clinical-item-view');
 
 var _terraClinicalItemView2 = _interopRequireDefault(_terraClinicalItemView);
@@ -17,36 +21,23 @@ var _terraClinicalItemView2 = _interopRequireDefault(_terraClinicalItemView);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-// import List from 'terra-list';
 
-
-// function createListView(rows, listStyles) {
-function createListView(rows) {
-  return rows.map(function (row, rowIndex) {
+function createListView(rows, listStyles) {
+  var listContent = rows.map(function (row, rowIndex) {
     var contentKey = rowIndex;
 
     var itemStyles = row.itemStyles,
         itemElements = _objectWithoutProperties(row, ['itemStyles']);
 
-    return _react2.default.createElement(_terraClinicalItemView2.default, _extends({ key: contentKey }, itemElements, itemStyles));
+    var listItemContent = _react2.default.createElement(_terraClinicalItemView2.default, _extends({}, itemElements, itemStyles));
+    return _react2.default.createElement(_SingleSelectList2.default.Item, { key: contentKey, content: listItemContent, isSelectable: true });
   });
+
+  return _react2.default.createElement(
+    _SingleSelectList2.default,
+    listStyles,
+    listContent
+  );
 }
 
 exports.default = createListView;
-
-// function createListView(rows, listStyles) {
-//   const listContent = rows.map((row, rowIndex) => {
-//     const contentKey = rowIndex;
-//     const { itemStyles, ...itemElements } = row;
-//     return (
-//       <SingleSelectList.Item content={<ItemView key={contentKey} {...itemElements} {...itemStyles} />} key={contentKey} />
-//     );
-//   })
-//
-//   return (
-//     <List {...listStyles}>
-//       {listContent}
-//     </List>
-//
-//   );
-// }

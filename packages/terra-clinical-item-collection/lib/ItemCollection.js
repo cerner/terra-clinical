@@ -172,8 +172,7 @@ var ItemCollection = function (_React$Component) {
       if (this.state.display === 'table') {
         collectionDisplay = (0, _CreateTableView2.default)(columnWidths, rows, tableStyles);
       } else if (this.state.display === 'list') {
-        // collectionDisplay = createListView(rows, listStyles);
-        collectionDisplay = (0, _CreateListView2.default)(rows);
+        collectionDisplay = (0, _CreateListView2.default)(rows, listStyles);
       }
 
       return _react2.default.createElement(

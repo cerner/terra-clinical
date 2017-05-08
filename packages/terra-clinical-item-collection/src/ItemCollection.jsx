@@ -112,8 +112,7 @@ class ItemCollection extends React.Component {
     if (this.state.display === 'table') {
       collectionDisplay = createTableView(columnWidths, rows, tableStyles);
     } else if (this.state.display === 'list') {
-      // collectionDisplay = createListView(rows, listStyles);
-      collectionDisplay = createListView(rows);
+      collectionDisplay = createListView(rows, listStyles);
     }
 
     return (
