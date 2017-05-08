@@ -17,7 +17,7 @@ import ActionHeader from 'terra-clinical-action-header';
 <ActionHeader 
   title="Header Text"
   onClose={ () => alert('Close') }
-  onExpand={ () => alert('Expand') }
+  onMaximize={ () => alert('Maximize') }
   onBack={ () => alert('Back') }
   onNext={ () => alert('Next') }
   onPrevious={ () => alert('Previous') }
