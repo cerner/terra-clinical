@@ -1,18 +1,18 @@
-# Terra Client Item View
+# Terra Client Item Display
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-clinical-item-view.svg)](https://www.npmjs.org/package/terra-clinical-item-view)
+[![NPM version](http://img.shields.io/npm/v/terra-clinical-item-display.svg)](https://www.npmjs.org/package/terra-clinical-item-display)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.
+The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-view/docs)
+- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-display/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-clinical-item-view`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-clinical-item-display`
 
 ## LICENSE
 

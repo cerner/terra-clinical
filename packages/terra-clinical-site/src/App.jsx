@@ -26,6 +26,7 @@ const App = props => (
             <List.Item content={<Link to="/site/detail-view">Detail View</Link>} />
             <List.Item content={<Link to="/site/error-view">Error View</Link>} />
             <List.Item content={<Link to="/site/header">Header</Link>} />
+            <List.Item content={<Link to="/site/item-display">Item Display</Link>} />
             <List.Item content={<Link to="/site/item-view">Item View</Link>} />
             <List.Item content={<Link to="/site/label-value-view">Label Value View</Link>} />
             <List.Item content={<Link to="/site/no-data-view">No Data View</Link>} />
