@@ -5,6 +5,7 @@ import App from './App';
 import Home from './Home';
 
 // Examples
+import ActionHeaderExamples from './examples/action-header/Index';
 import DetailViewExamples from './examples/detail-view/Index';
 import ErrorViewExamples from './examples/error-view/Index';
 import ItemDisplayExamples from './examples/item-display/Index';
@@ -15,6 +16,8 @@ import NoDataViewExamples from './examples/no-data-view/Index';
 
 // Test
 /* eslint-disable import/first */
+
+import ActionHeaderTestRoutes from 'terra-clinical-action-header/tests/nightwatch/ActionHeaderTestRoutes';
 import DetailViewTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewTestRoutes';
 import DetailListTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailList/DetailListTestRoutes';
 import DetailListItemTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailListItem/ListItemTestRoutes';
@@ -33,6 +36,7 @@ ReactDOM.render((
     <Redirect from="/" to="/site" />
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
+      <Route path="action-header" component={ActionHeaderExamples} />
       <Route path="detail-view" component={DetailViewExamples} />
       <Route path="error-view" component={ErrorViewExamples} />
       <Route path="header" component={HeaderExamples} />
@@ -42,6 +46,7 @@ ReactDOM.render((
       <Route path="no-data-view" component={NoDataViewExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
+    {ActionHeaderTestRoutes}
     {DetailViewTestRoutes}
     {DetailListTestRoutes}
     {DetailListItemTestRoutes}

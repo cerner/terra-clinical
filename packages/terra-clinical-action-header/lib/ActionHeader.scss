@@ -1,0 +1,17 @@
+@import '~terra-mixins';
+
+.terraClinical-Header .terraClinical-ActionHeader-rightButtons > * {
+  @include terra-margin-start(1.429rem);
+  @include terra-margin-end(0);
+
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.terraClinical-Header .terraClinical-ActionHeader-leftButtons > * {
+  @include terra-margin-start(0);
+  @include terra-margin-end(1.429rem);
+
+  margin-bottom: 0;
+  margin-top: 0;
+}
