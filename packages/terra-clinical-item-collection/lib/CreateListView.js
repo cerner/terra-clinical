@@ -22,20 +22,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-function createListView(rows, listStyles) {
+function createListView(rows, listStyles, selectedIndex, handleSelection) {
   var listContent = rows.map(function (row, rowIndex) {
+    var selected = rowIndex === selectedIndex;
     var contentKey = rowIndex;
 
     var itemStyles = row.itemStyles,
         itemElements = _objectWithoutProperties(row, ['itemStyles']);
 
     var listItemContent = _react2.default.createElement(_terraClinicalItemView2.default, _extends({}, itemElements, itemStyles));
-    return _react2.default.createElement(_SingleSelectList2.default.Item, { key: contentKey, content: listItemContent, isSelectable: true });
+    return _react2.default.createElement(_SingleSelectList2.default.Item, { key: contentKey, content: listItemContent, isSelectable: true, isSelected: selected });
   });
 
   return _react2.default.createElement(
     _SingleSelectList2.default,
-    listStyles,
+    _extends({ onChange: handleSelection }, listStyles),
     listContent
   );
 }

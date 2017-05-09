@@ -80,7 +80,7 @@ function createTableHeader(tableColumns) {
   );
 }
 
-function createTableRows(rows, tableColumns) {
+function createTableRows(rows, tableColumns, selectedIndex) {
   var tableRows = rows.map(function (row, rowIndex) {
     var startAccessory = row.startAccessory,
         displays = row.displays,
@@ -123,9 +123,10 @@ function createTableRows(rows, tableColumns) {
     }
 
     var rowKey = rowIndex;
+    var selected = rowIndex === selectedIndex;
     return _react2.default.createElement(
       _terraTable2.default.Row,
-      _extends({}, customProps, { key: rowKey }),
+      _extends({}, customProps, { key: rowKey, isSelectable: true, isSelected: selected }),
       startAccessoryContent,
       displayContent,
       commentContent,
@@ -136,17 +137,17 @@ function createTableRows(rows, tableColumns) {
   return tableRows;
 }
 
-function createTableView(rows, tableStyles) {
+function createTableView(rows, tableStyles, selectedIndex, handleSelection) {
   var tableColumns = determineTableColumns(rows[0]);
   var tableHeader = createTableHeader(tableColumns);
-  var tableRows = createTableRows(rows, tableColumns);
+  var tableRows = createTableRows(rows, tableColumns, selectedIndex);
   return _react2.default.createElement(
     _terraTable2.default,
     tableStyles,
     tableHeader,
     _react2.default.createElement(
       _terraTable2.default.SingleSelectableRows,
-      null,
+      { onChange: handleSelection },
       tableRows
     )
   );

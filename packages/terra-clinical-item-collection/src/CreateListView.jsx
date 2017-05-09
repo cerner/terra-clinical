@@ -2,21 +2,21 @@ import React from 'react';
 import SingleSelectList from 'terra-list/lib/SingleSelectList';
 import ItemView from 'terra-clinical-item-view';
 
-function createListView(rows, listStyles) {
+function createListView(rows, listStyles, selectedIndex, handleSelection) {
   const listContent = rows.map((row, rowIndex) => {
+    const selected = rowIndex === selectedIndex;
     const contentKey = rowIndex;
     const { itemStyles, ...itemElements } = row;
     const listItemContent = <ItemView {...itemElements} {...itemStyles} />;
     return (
-      <SingleSelectList.Item key={contentKey} content={listItemContent} isSelectable />
+      <SingleSelectList.Item key={contentKey} content={listItemContent} isSelectable isSelected={selected} />
     );
   });
 
   return (
-    <SingleSelectList {...listStyles}>
+    <SingleSelectList onChange={handleSelection} {...listStyles}>
       {listContent}
     </SingleSelectList>
-
   );
 }
 

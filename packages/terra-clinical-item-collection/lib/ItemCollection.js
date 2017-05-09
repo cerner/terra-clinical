@@ -81,7 +81,11 @@ var propTypes = {
       isTruncated: _react.PropTypes.bool,
       accessoryAlignment: _react.PropTypes.oneOf(['alignTop', 'alignCenter'])
     })
-  }))
+  })),
+  /**
+   * A callback event that will be triggered when selection state changes.
+   */
+  onChange: _react.PropTypes.func
 };
 
 var defaultProps = {
@@ -99,9 +103,10 @@ var ItemCollection = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ItemCollection.__proto__ || Object.getPrototypeOf(ItemCollection)).call(this, props));
 
-    _this.state = { display: 'table' };
+    _this.state = { display: 'table', selectedIndex: -1 };
     _this.setContainer = _this.setContainer.bind(_this);
     _this.handleResize = _this.handleResize.bind(_this);
+    _this.handleSelection = _this.handleSelection.bind(_this);
     return _this;
   }
 
@@ -128,6 +133,14 @@ var ItemCollection = function (_React$Component) {
         return;
       } // Ref callbacks happen on mount and unmount, element will be null on unmount
       this.container = node.parentNode;
+    }
+  }, {
+    key: 'handleSelection',
+    value: function handleSelection(event, selectedIndex) {
+      this.setState({ selectedIndex: selectedIndex });
+      if (this.props.onChange) {
+        this.props.onChange(event, index);
+      }
     }
   }, {
     key: 'handleResize',
@@ -159,9 +172,9 @@ var ItemCollection = function (_React$Component) {
 
       var collectionDisplay = void 0;
       if (this.state.display === 'table') {
-        collectionDisplay = (0, _CreateTableView2.default)(rows, tableStyles);
+        collectionDisplay = (0, _CreateTableView2.default)(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
       } else if (this.state.display === 'list') {
-        collectionDisplay = (0, _CreateListView2.default)(rows, listStyles);
+        collectionDisplay = (0, _CreateListView2.default)(rows, listStyles, this.state.selectedIndex, this.handleSelection);
       }
 
       return _react2.default.createElement(
@@ -172,6 +185,13 @@ var ItemCollection = function (_React$Component) {
           null,
           'Item Collection - ',
           this.state.display
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          ' Item Selection is: ',
+          this.state.selectedIndex,
+          ' '
         ),
         collectionDisplay
       );

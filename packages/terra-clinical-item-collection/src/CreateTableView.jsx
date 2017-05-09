@@ -51,7 +51,7 @@ function createTableHeader(tableColumns) {
   );
 }
 
-function createTableRows(rows, tableColumns) {
+function createTableRows(rows, tableColumns, selectedIndex) {
   const tableRows = rows.map((row, rowIndex) => {
     const { startAccessory, displays, comment, endAccessory, itemStyles, ...customProps } = row;
     const { startAccessoryColumn, displayColumns, commentColumn, endAccessoryColumn } = tableColumns;
@@ -84,8 +84,9 @@ function createTableRows(rows, tableColumns) {
     }
 
     const rowKey = rowIndex;
+    const selected = rowIndex === selectedIndex;
     return (
-      <Table.Row {...customProps} key={rowKey}>
+      <Table.Row {...customProps} key={rowKey} isSelectable isSelected={selected}>
         {startAccessoryContent}
         {displayContent}
         {commentContent}
@@ -97,14 +98,14 @@ function createTableRows(rows, tableColumns) {
   return tableRows;
 }
 
-function createTableView(rows, tableStyles) {
+function createTableView(rows, tableStyles, selectedIndex, handleSelection) {
   const tableColumns = determineTableColumns(rows[0]);
   const tableHeader = createTableHeader(tableColumns);
-  const tableRows = createTableRows(rows, tableColumns);
+  const tableRows = createTableRows(rows, tableColumns, selectedIndex);
   return (
     <Table {...tableStyles}>
       {tableHeader}
-      <Table.SingleSelectableRows>
+      <Table.SingleSelectableRows onChange={handleSelection}>
         {tableRows}
       </Table.SingleSelectableRows>
     </Table>

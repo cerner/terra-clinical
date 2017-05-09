@@ -44,6 +44,10 @@ const propTypes = {
       accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
     }),
   })),
+  /**
+   * A callback event that will be triggered when selection state changes.
+   */
+  onChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -56,9 +60,10 @@ const defaultProps = {
 class ItemCollection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { display: 'table' };
+    this.state = { display: 'table', selectedIndex: -1 };
     this.setContainer = this.setContainer.bind(this);
     this.handleResize = this.handleResize.bind(this);
+    this.handleSelection = this.handleSelection.bind(this);
   }
 
   componentDidMount() {
@@ -74,6 +79,13 @@ class ItemCollection extends React.Component {
   setContainer(node) {
     if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
     this.container = node.parentNode;
+  }
+
+  handleSelection(event, selectedIndex) {
+    this.setState({ selectedIndex });
+    if (this.props.onChange) {
+      this.props.onChange(event, index);
+    }
   }
 
   handleResize(width) {
@@ -100,14 +112,15 @@ class ItemCollection extends React.Component {
 
     let collectionDisplay;
     if (this.state.display === 'table') {
-      collectionDisplay = createTableView(rows, tableStyles);
+      collectionDisplay = createTableView(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
     } else if (this.state.display === 'list') {
-      collectionDisplay = createListView(rows, listStyles);
+      collectionDisplay = createListView(rows, listStyles, this.state.selectedIndex, this.handleSelection);
     }
 
     return (
       <div ref={this.setContainer} {...attributes}>
         <h2>Item Collection - {this.state.display}</h2>
+        <h2> Item Selection is: {this.state.selectedIndex} </h2>
         {collectionDisplay}
       </div>
     );
