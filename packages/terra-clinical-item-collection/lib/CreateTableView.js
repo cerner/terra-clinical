@@ -33,7 +33,9 @@ function determineTableColumns(row) {
 
   var columns = {};
   columns.startAccessoryColumn = startAccessory !== undefined;
-  columns.displayColumns = displays && displays.length < 8 ? displays.length : 8;
+  if (displays) {
+    columns.displayColumns = displays.length < 8 ? displays.length : 8;
+  }
   columns.commentColumn = comment !== undefined;
   columns.endAccessoryColumn = endAccessory !== undefined;
 
@@ -54,9 +56,9 @@ function createTableHeader(tableColumns) {
 
   var displayHeaders = [];
   if (displayColumns) {
-    for (var index = 1; index <= displayColumns; index += 1) {
-      var contentKey = 'display_header_' + index;
-      displayHeaders[index - 1] = _react2.default.createElement(_TableHeaderCell2.default, { columnType: 'display', key: contentKey });
+    for (var index = 0; index < displayColumns; index += 1) {
+      var contentKey = 'display_header_' + (index + 1);
+      displayHeaders[index] = _react2.default.createElement(_TableHeaderCell2.default, { columnType: 'display', key: contentKey });
     }
   }
 
@@ -72,7 +74,7 @@ function createTableHeader(tableColumns) {
 
   return _react2.default.createElement(
     _terraTable2.default.Header,
-    { style: { display: 'none' } },
+    { style: { visibility: 'hidden' } },
     startAccessoryHeader,
     displayHeaders,
     commentHeader,
@@ -103,10 +105,10 @@ function createTableRows(rows, tableColumns, selectedIndex) {
 
     var displayContent = [];
     if (displayColumns) {
-      for (var index = 1; index <= displayColumns; index += 1) {
-        var contentKey = 'display_' + index;
+      for (var index = 0; index < displayColumns; index += 1) {
+        var contentKey = 'display_' + (index + 1);
         var _content = row.displays[index] != null ? row.displays[index] : ' ';
-        displayContent[index - 1] = _react2.default.createElement(_terraTable2.default.Cell, { content: _content, key: contentKey });
+        displayContent[index] = _react2.default.createElement(_terraTable2.default.Cell, { content: _content, key: contentKey });
       }
     }
 
@@ -143,7 +145,7 @@ function createTableView(rows, tableStyles, selectedIndex, handleSelection) {
   var tableRows = createTableRows(rows, tableColumns, selectedIndex);
   return _react2.default.createElement(
     _terraTable2.default,
-    tableStyles,
+    _extends({ style: { tableLayout: 'fixed' } }, tableStyles),
     tableHeader,
     _react2.default.createElement(
       _terraTable2.default.SingleSelectableRows,

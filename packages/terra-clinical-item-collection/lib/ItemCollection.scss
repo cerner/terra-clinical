@@ -1,28 +1,6 @@
 @import '~terra-mixins';
-@import './variables';
 @import './mixins';
 
-
-thead {
-  display: none;
-}
-
-.terraClinical-ItemCollection-column-width-tiny {
-  width: $terra-clinical-table-header-cell-tiny;
-}
-
-.terraClinical-ItemCollection-column-width-small {
-  width: $terra-clinical-table-header-cell-small;
-}
-
-.terraClinical-ItemCollection-column-width-medium {
-  width: $terra-clinical-table-header-cell-medium;
-}
-
-.terraClinical-ItemCollection-column-width-large {
-  width: $terra-clinical-table-header-cell-large;
-}
-
-.terraClinical-ItemCollection-column-width-huge {
-  width: $terra-clinical-table-header-cell-huge;
+.terraClinical-ItemCollection-column--accessory {
+  width: 40px;
 }

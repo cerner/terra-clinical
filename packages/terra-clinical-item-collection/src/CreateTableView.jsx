@@ -8,7 +8,9 @@ function determineTableColumns(row) {
 
   const columns = {};
   columns.startAccessoryColumn = startAccessory !== undefined;
-  columns.displayColumns = displays && displays.length < 8 ? displays.length : 8;
+  if(displays) {
+    columns.displayColumns = displays.length < 8 ? displays.length : 8;
+  }
   columns.commentColumn = comment !== undefined;
   columns.endAccessoryColumn = endAccessory !== undefined;
 
@@ -25,9 +27,9 @@ function createTableHeader(tableColumns) {
 
   const displayHeaders = [];
   if (displayColumns) {
-    for (let index = 1; index <= displayColumns; index += 1) {
-      const contentKey = `display_header_${index}`;
-      displayHeaders[index - 1] = (<TableHeaderCell columnType="display" key={contentKey} />);
+    for (let index = 0; index < displayColumns; index += 1) {
+      const contentKey = `display_header_${index + 1}`;
+      displayHeaders[index] = (<TableHeaderCell columnType="display" key={contentKey} />);
     }
   }
 
@@ -42,7 +44,7 @@ function createTableHeader(tableColumns) {
   }
 
   return (
-    <Table.Header style={{ display: 'none' }} >
+    <Table.Header style={{ visibility: 'hidden' }} >
       { startAccessoryHeader }
       { displayHeaders }
       { commentHeader }
@@ -64,10 +66,10 @@ function createTableRows(rows, tableColumns, selectedIndex) {
 
     const displayContent = [];
     if (displayColumns) {
-      for (let index = 1; index <= displayColumns; index += 1) {
-        const contentKey = `display_${index}`;
+      for (let index = 0; index < displayColumns; index += 1) {
+        const contentKey = `display_${index + 1}`;
         const content = row.displays[index] != null ? row.displays[index] : ' ';
-        displayContent[index - 1] = (<Table.Cell content={content} key={contentKey} />);
+        displayContent[index] = (<Table.Cell content={content} key={contentKey} />);
       }
     }
 
@@ -103,7 +105,7 @@ function createTableView(rows, tableStyles, selectedIndex, handleSelection) {
   const tableHeader = createTableHeader(tableColumns);
   const tableRows = createTableRows(rows, tableColumns, selectedIndex);
   return (
-    <Table {...tableStyles}>
+    <Table style={{ tableLayout: 'fixed' }} {...tableStyles} >
       {tableHeader}
       <Table.SingleSelectableRows onChange={handleSelection}>
         {tableRows}
