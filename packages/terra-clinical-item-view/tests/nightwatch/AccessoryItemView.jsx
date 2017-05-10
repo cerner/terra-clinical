@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ItemView from '../../lib/ItemView';
 
 const accessoryStart = <img alt="Graphic Start" />;

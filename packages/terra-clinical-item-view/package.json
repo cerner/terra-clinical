@@ -29,7 +29,8 @@
     "react-dom": "15.4.2",
     "terra-base": "^0.x",
     "terra-icon": "^0.x",
-    "terra-mixins": "^1.0.0"
+    "terra-mixins": "^1.0.0",
+    "terra-clinical-item-display": "^0.x"
   },
   "dependencies": {
     "classnames": "^2.2.5",
