@@ -16,6 +16,10 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _terraClinicalItemDisplay = require('terra-clinical-item-display');
+
+var _terraClinicalItemDisplay2 = _interopRequireDefault(_terraClinicalItemDisplay);
+
 require('terra-base/lib/baseStyles');
 
 require('./ItemView.scss');
@@ -218,5 +222,7 @@ var ItemView = function (_React$Component) {
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
+ItemView.Display = _terraClinicalItemDisplay2.default;
+ItemView.Comment = _terraClinicalItemDisplay2.default.Comment;
 
 exports.default = ItemView;

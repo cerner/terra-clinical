@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react';
 import Button from 'terra-button';
 import ActionHeader from 'terra-clinical-action-header';
