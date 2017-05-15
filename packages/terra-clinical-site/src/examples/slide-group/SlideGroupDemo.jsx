@@ -4,8 +4,6 @@ import SlideGroup from 'terra-clinical-slide-group';
 const containerStyles = {
   height: '250px',
   width: '400px',
-  overflow: 'hidden',
-  position: 'relative',
 };
 
 const slideStyles = {
@@ -55,9 +53,7 @@ class SlideGroupDemo extends React.Component {
     }
 
     return (
-      <div style={containerStyles}>
-        <SlideGroup items={slides} animationIsDisabled={this.props.animationIsDisabled} />
-      </div>
+      <SlideGroup items={slides} animationIsDisabled={this.props.animationIsDisabled} style={containerStyles} />
     );
   }
 }

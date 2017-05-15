@@ -23,6 +23,7 @@ const App = props => (
           <List className="terraClinical-Site-Nav">
             <List.Item content={<Link to="/">Home</Link>} />
             <List.Item content={<Link to="/site/action-header">Action Header</Link>} />
+            <List.Item content={<Link to="/site/app-delegate">App Delegate</Link>} />
             <List.Item content={<Link to="/site/application">Application</Link>} />
             <List.Item content={<Link to="/site/detail-view">Detail View</Link>} />
             <List.Item content={<Link to="/site/error-view">Error View</Link>} />

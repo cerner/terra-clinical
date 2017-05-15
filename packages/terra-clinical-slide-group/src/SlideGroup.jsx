@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import Slide from './Slide';
+
+import './SlideGroup.scss';
 
 const propTypes = {
   /**
@@ -14,34 +17,41 @@ const propTypes = {
   animationIsDisabled: PropTypes.bool,
 };
 
-const SlideGroup = (props) => {
+const SlideGroup = ({ items, animationIsDisabled, ...customProps }) => {
   // We don't want to render the transition group when no children exist. Doing so will cause the first child to
   // animate into place, which in most cases we do not want.
-  if (!props.items || !props.items.length) {
+  if (!items || !items.length) {
     return null;
   }
 
+  const slideGroupClassNames = classNames([
+    'terraClinical-SlideGroup',
+    customProps.className,
+  ]);
+
   // We use the key from the first child as the key for the transition group. This will cause the transition group to
   // rerender when the root child changes and subsequently prevent that child from animating into position.
-  const transitionGroupKey = props.items[0].key;
+  const transitionGroupKey = items[0].key;
 
-  const itemCount = props.items.length;
+  const itemCount = items.length;
 
   return (
-    <CSSTransitionGroup
-      key={transitionGroupKey}
-      transitionEnter={!props.animationIsDisabled}
-      transitionLeave={!props.animationIsDisabled}
-      transitionName="terraClinical-Slide"
-      transitionEnterTimeout={300}
-      transitionLeaveTimeout={300}
-    >
-      {props.items.map((item, index) => (
-        <Slide key={item.key} isHidden={index !== itemCount - 1}>
-          {item}
-        </Slide>
-      ))}
-    </CSSTransitionGroup>
+    <div {...customProps} className={slideGroupClassNames}>
+      <CSSTransitionGroup
+        key={transitionGroupKey}
+        transitionEnter={!animationIsDisabled}
+        transitionLeave={!animationIsDisabled}
+        transitionName="terraClinical-Slide"
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}
+      >
+        {items.map((item, index) => (
+          <Slide key={item.key} isHidden={index !== itemCount - 1}>
+            {item}
+          </Slide>
+        ))}
+      </CSSTransitionGroup>
+    </div>
   );
 };
 

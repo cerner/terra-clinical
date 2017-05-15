@@ -6,6 +6,7 @@ import Home from './Home';
 
 // Examples
 import ActionHeaderExamples from './examples/action-header/Index';
+import AppDelegateExamples from './examples/app-delegate/Index';
 import ApplicationExamples from './examples/application/Index';
 import DetailViewExamples from './examples/detail-view/Index';
 import ErrorViewExamples from './examples/error-view/Index';
@@ -41,6 +42,7 @@ ReactDOM.render((
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
       <Route path="action-header" component={ActionHeaderExamples} />
+      <Route path="app-delegate" component={AppDelegateExamples} />
       <Route path="application" component={ApplicationExamples} />
       <Route path="detail-view" component={DetailViewExamples} />
       <Route path="error-view" component={ErrorViewExamples} />
