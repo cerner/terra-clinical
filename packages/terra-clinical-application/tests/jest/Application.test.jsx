@@ -1,24 +1,40 @@
 import React from 'react';
+import AppDelegate from 'terra-clinical-app-delegate';
+
 import Application from '../../src/Application';
 
-describe('Application', () => {
-  const defaultRender = <Application />;
+it('should render default component', () => {
+  const application = (
+    <Application>
+      <div>TestApp</div>
+    </Application>
+  );
 
-  // Snapshot Tests
-  it('should render a default component', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  // Prop Tests
-  it('should use the default value when no value is given', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper.find('.terraClinical-Application').text()).toEqual('defualt');
-  });
-
-  // Structure Tests
-  it('should have the class terraClinical-Application', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper.prop('className')).toContain('terraClinical-Application');
-  });
+  const wrapper = shallow(application);
+  expect(wrapper).toMatchSnapshot();
 });
+
+it('should render custom properties on component', () => {
+  const application = (
+    <Application className="custom-class" id="my-id">
+      <div>TestApp</div>
+    </Application>
+  );
+
+  const wrapper = shallow(application);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render children with app prop', () => {
+  const appDelegate = AppDelegate.create({});
+
+  const application = (
+    <Application app={appDelegate}>
+      <div>TestApp</div>
+    </Application>
+  );
+
+  const wrapper = shallow(application);
+  expect(wrapper).toMatchSnapshot();
+});
+

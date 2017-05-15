@@ -11,9 +11,18 @@ module.exports = {
     screenshot(browser, 'terra-clinical-application', done);
   },
 
-  'Displays a default application': (browser) => {
+  'Renders the Application with provided AppDelegate': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/application-tests/default`)
-      .assert.elementPresent('.terraClinical-Application');
+      .assert.elementPresent('.terraClinical-Application')
+      .assert.containsText('.test-ContainerComponent', 'App is present');
+  },
+
+  'Renders the Application without provided AppDelegate': (browser) => {
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/application-tests/no-app-delegate`)
+      .assert.elementPresent('.terraClinical-Application')
+      .assert.containsText('.test-ContainerComponent', 'App is not present');
   },
 };
+

@@ -2,17 +2,24 @@
 
 
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-application.svg)](https://www.npmjs.org/package/terra-clinical-application)
-[![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
+[![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)
 
 {insert description}
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-application/docs)
+- [Documentation](#documentation)
 - [LICENSE](#license)
 
 ## Getting Started
 
 - Install from [npmjs](https://www.npmjs.com): `npm install terra-clinical-application`
+
+## Documentation
+
+Documentation for this component is spilt into individual files.
+One file for the main component and one file for each component modifier.
+
+See the [documentation](docs/).
 
 ## LICENSE
 

@@ -1,31 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import 'terra-base/lib/baseStyles';
+import Base from 'terra-base';
+import AppDelegate from 'terra-clinical-app-delegate';
+
 import './Application.scss';
 
 const propTypes = {
- /*
- * Content to be displayed as the name
- */
-  name: PropTypes.string,
+  /**
+   * The AppDelegate instance that will be propagated to the Application's children.
+   **/
+  app: AppDelegate.propType,
+
+  /**
+   * The components to display within the Application.
+   **/
+  children: PropTypes.node.isRequired,
 };
 
-const defaultProps = {
-  name: 'default',
-};
+const Application = ({ app, children, ...customProps }) => {
+  let childrenToRender = children;
 
-const Application = ({ name, ...customProps }) => {
-  const attributes = Object.assign({}, customProps);
-  const ApplicationClassNames = classNames([
-    'terraClinical-Application',
-    attributes.className,
-  ]);
+  if (app) {
+    childrenToRender = React.Children.map(children, child => (
+      React.cloneElement(child, { app })
+    ));
+  }
 
-  return (<div {...attributes} className={ApplicationClassNames} />)
+  return (
+    <Base {...customProps} className={classNames([customProps.className, 'terraClinical-Application'])}>
+      {childrenToRender}
+    </Base>
+  );
 };
 
 Application.propTypes = propTypes;
-Application.defaultProps = defaultProps;
 
 export default Application;

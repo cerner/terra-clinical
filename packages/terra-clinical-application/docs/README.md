@@ -1,6 +1,6 @@
 # Terra Clinical Application
 
-{insert description}
+The Application is a wrapper component around `terra-base` that provides clinical application-specific properties.
 
 ## Getting Started
 
@@ -11,7 +11,13 @@
 
 ```jsx
 import React from 'react';
+import AppDelegate from 'terra-clinical-app-delegate';
 import Application from 'terra-clinical-application';
 
-<Application {props...} />
+<Application
+  app={AppDelegate.create({...})}
+>
+  <InnerComponent />
+</Application>
+
 ```

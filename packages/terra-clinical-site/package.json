@@ -28,6 +28,7 @@
     "react-router": "^3.0.2",
     "terra-base": "^0.x",
     "terra-clinical-action-header": "^0.x",
+    "terra-clinical-application": "^0.x",
     "terra-button": "^0.x",
     "terra-clinical-header": "^0.x",
     "terra-clinical-detail-view": "^0.x",
