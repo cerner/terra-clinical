@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _terraArrange = require('terra-arrange');
 
 var _terraArrange2 = _interopRequireDefault(_terraArrange);
@@ -30,17 +34,17 @@ var propTypes = {
   /**
    * Content to be displayed at the start of the header, placed before the title
    **/
-  startContent: _react.PropTypes.element,
+  startContent: _propTypes2.default.element,
 
   /**
    * Text to be displayed as the title in the header bar
    **/
-  title: _react.PropTypes.string,
+  title: _propTypes2.default.string,
 
   /**
    * Content to be displayed at the end of the header
    **/
-  endContent: _react.PropTypes.element
+  endContent: _propTypes2.default.element
 };
 
 var defaultProps = {
