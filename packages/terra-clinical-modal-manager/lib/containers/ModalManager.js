@@ -23,11 +23,11 @@ var _terraClinicalAppDelegate = require('terra-clinical-app-delegate');
 
 var _terraClinicalAppDelegate2 = _interopRequireDefault(_terraClinicalAppDelegate);
 
-var _modalController = require('../reducers/modalController');
+var _modalManager = require('../reducers/modalManager');
 
-var _modalController2 = _interopRequireDefault(_modalController);
+var _modalManager2 = _interopRequireDefault(_modalManager);
 
-var _modalController3 = require('../actions/modalController');
+var _modalManager3 = require('../actions/modalManager');
 
 var _ModalPresenter = require('../components/ModalPresenter');
 
@@ -192,22 +192,22 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     discloseModal: function discloseModal(data) {
-      dispatch((0, _modalController3.disclose)(data));
+      dispatch((0, _modalManager3.disclose)(data));
     },
     dismissModal: function dismissModal(data) {
-      dispatch((0, _modalController3.dismiss)(data));
+      dispatch((0, _modalManager3.dismiss)(data));
     },
     pushModal: function pushModal(data) {
-      dispatch((0, _modalController3.push)(data));
+      dispatch((0, _modalManager3.push)(data));
     },
     popModal: function popModal(data) {
-      dispatch((0, _modalController3.pop)(data));
+      dispatch((0, _modalManager3.pop)(data));
     },
     maximizeModal: function maximizeModal(data) {
-      dispatch((0, _modalController3.maximize)(data));
+      dispatch((0, _modalManager3.maximize)(data));
     },
     minimizeModal: function minimizeModal(data) {
-      dispatch((0, _modalController3.minimize)(data));
+      dispatch((0, _modalManager3.minimize)(data));
     }
   };
 };
@@ -216,7 +216,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 
 var reducers = {
-  modalController: _modalController2.default
+  modalController: _modalManager2.default
 };
 
 exports.reducers = reducers;

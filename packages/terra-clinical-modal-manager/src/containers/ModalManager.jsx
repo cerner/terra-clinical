@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
 import AppDelegate from 'terra-clinical-app-delegate';
 
-import modalReducers from '../reducers/modalController';
-import { disclose, dismiss, push, pop, maximize, minimize } from '../actions/modalController';
+import modalReducers from '../reducers/modalManager';
+import { disclose, dismiss, push, pop, maximize, minimize } from '../actions/modalManager';
 import ModalPresenter from '../components/ModalPresenter';
 
 class ModalManager extends React.Component {

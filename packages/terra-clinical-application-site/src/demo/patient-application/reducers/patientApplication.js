@@ -1,4 +1,4 @@
-import { DISCLOSE_MODAL } from 'terra-clinical-modal-controller/lib/actions/modalController';
+import { DISCLOSE_MODAL } from 'terra-clinical-modal-manager/lib/actions/modalManager';
 
 const patientApplication = (state = { modalCounter: 0 }, action) => {
   const newState = Object.assign({}, state);
