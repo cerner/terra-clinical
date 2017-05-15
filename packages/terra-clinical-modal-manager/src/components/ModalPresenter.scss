@@ -1,0 +1,63 @@
+.terraClinical-ModalPresenter {
+  color: #000;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+}
+
+.terraClinical-ModalPresenter-content {
+  height: 100%;
+  width: 100%;
+}
+
+.terraClinical-ModalPresenter-modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.terraClinical-ModalPresenter-modal {
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+}
+
+.terraClinical-ModalPresenter-modal--large {
+  height: 75%;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.terraClinical-ModalPresenter-modal--small {
+  height: 60%;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.terraClinical-ModalPresenter-modal--fullscreen {
+  height: calc(100% - 45px);
+  width: calc(100% - 45px);
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  marginRight: -50%;
+  transform: translate(-50%, -50%);
+}
