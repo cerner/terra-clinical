@@ -97,8 +97,9 @@ ExampleDisclosureComponent.propTypes = {
 
 export default ExampleDisclosureComponent;
 
-// Register the ExampleDisclosureComponent with the AppDelegate. We'll also export the disclosureName so that consuming components have access to it.
-// By doing that, we ensure that consumers will import this file, thus ensuring that the component is registered for use.
+// Register the ExampleDisclosureComponent with the AppDelegate. We'll also export the disclosureName so that
+// consuming components have access to it. By doing that, we ensure that consumers will import this file,
+// thus ensuring that the component is registered for use.
 
 const disclosureName = 'ExampleDisclosureComponent';
 AppDelegate.registerComponentForDisclosure(disclosureName, ExampleDisclosureComponent);
