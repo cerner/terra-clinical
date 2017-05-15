@@ -1,6 +1,6 @@
 # Terra Clinical App Delegate
 
-The AppDelegate is a object that provides a set of functions used to facilitate communcation between Containers and
+The AppDelegate is an object that provides a set of functions used to facilitate communcation between Containers and
 their consuming Containers/Applications.
 
 ## Getting Started
@@ -41,6 +41,8 @@ const clonedAppDelegateInstance = AppDelegate.clone(newAppDelegateInstance, {
 });
 
 ```
+
+
 The implementations of the AppDelegate APIs are completely determined by the component creating the AppDelegate instance. However,
 the suggested use of each function is as follows:
 
@@ -53,17 +55,20 @@ the suggested use of each function is as follows:
 |`maximize`|Optional|Used to maximize the calling component. Should only be present if the disclosure method is maximizable and not currently maximized.|
 |`minimize`|Optional|Used to minimize the calling component. Should only be present if the disclosure method is minimizable and not currently minimized.|
 
+
 ### Recommended Disclose Argument API
 
 While the other functions have generic Object-based argument APIs, the `disclose` function has a recommended, extensible argument API that will support Redux-based workflows.
 
 Disclose API:
+
 |Key|Type|Description|
 |---|---|---|
 |preferredType|String|A String describing the component's desired disclosure method. This may or may not be honored, depending on the consuming Application's configuration.|
 |content|Object|An Object containing data describing the component that is to be disclosed.|
 
 Disclose Content API:
+
 |Key|Type|Description|
 |---|---|---|
 |key|String|An identifying String that will be used as the React `key` for the disclosed component. Should be as specific as possible.|
