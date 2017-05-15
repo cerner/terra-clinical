@@ -10,10 +10,4 @@ module.exports = {
   afterEach: (browser, done) => {
     screenshot(browser, 'terra-clinical-app-delegate', done);
   },
-
-  'Displays a default app-delegate': (browser) => {
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/app-delegate-tests/default`)
-      .assert.elementPresent('.terraClinical-AppDelegate');
-  },
 };

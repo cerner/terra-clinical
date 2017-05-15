@@ -2,17 +2,21 @@
 
 
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-app-delegate.svg)](https://www.npmjs.org/package/terra-clinical-app-delegate)
-[![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
+[![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)
 
 {insert description}
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-app-delegate/docs)
+- [Documentation](#documentation)
 - [LICENSE](#license)
 
 ## Getting Started
 
 - Install from [npmjs](https://www.npmjs.com): `npm install terra-clinical-app-delegate`
+
+## Documentation
+
+See the [documentation](docs/).
 
 ## LICENSE
 
