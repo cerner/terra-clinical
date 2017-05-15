@@ -3,8 +3,6 @@
 import React from 'react';
 import { Route } from 'react-router';
 import SlideGroupTests from './SlideGroupTests';
-
-// Test Cases
 import DefaultSlideGroup from './DefaultSlideGroup';
 
 const routes = (

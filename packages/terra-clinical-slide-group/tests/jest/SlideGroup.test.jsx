@@ -1,24 +1,22 @@
 import React from 'react';
 import SlideGroup from '../../src/SlideGroup';
 
-describe('SlideGroup', () => {
-  const defaultRender = <SlideGroup />;
+const slideGroup = (
+  <SlideGroup
+    items={[
+      <div key="1">First</div>,
+      <div key="2">Second</div>,
+      <div key="3">Third</div>,
+    ]}
+  />
+);
 
-  // Snapshot Tests
-  it('should render a default component', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper).toMatchSnapshot();
-  });
+it('should render a default SlideGroup', () => {
+  const wrapper = shallow(slideGroup);
+  expect(wrapper).toMatchSnapshot();
+});
 
-  // Prop Tests
-  it('should use the default value when no value is given', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper.find('.terraClinical-SlideGroup').text()).toEqual('defualt');
-  });
-
-  // Structure Tests
-  it('should have the class terraClinical-SlideGroup', () => {
-    const wrapper = shallow(defaultRender);
-    expect(wrapper.prop('className')).toContain('terraClinical-SlideGroup');
-  });
+it('should render a SlideGroup with animation disabled', () => {
+  const wrapper = shallow(React.cloneElement(slideGroup, { animationIsDisabled: true }));
+  expect(wrapper).toMatchSnapshot();
 });
