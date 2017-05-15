@@ -4,7 +4,8 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-app-delegate.svg)](https://www.npmjs.org/package/terra-clinical-app-delegate)
 [![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)
 
-{insert description}
+The AppDelegate is an object that provides a set of functions used to facilitate communcation between Containers and
+their consuming Containers/Applications.
 
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)

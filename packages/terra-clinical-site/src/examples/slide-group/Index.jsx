@@ -10,7 +10,7 @@ import { version } from 'terra-clinical-slide-group/package.json';
 import SlideGroupSrc from '!raw-loader!terra-clinical-slide-group/src/SlideGroup.jsx';
 
 // Example Files
-import SlideGroupDemo from './SlideGroupDemo.jsx';
+import SlideGroupDemo from './SlideGroupDemo';
 
 const SlideGroupExamples = () => (
   <div>

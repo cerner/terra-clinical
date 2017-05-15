@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-application.svg)](https://www.npmjs.org/package/terra-clinical-application)
 [![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)
 
-{insert description}
+The Application is a wrapper component around `terra-base` that provides clinical application-specific properties.
 
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
