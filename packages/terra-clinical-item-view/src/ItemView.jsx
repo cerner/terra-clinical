@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+import ItemDisplay from 'terra-clinical-item-display';
 import 'terra-base/lib/baseStyles';
 import './ItemView.scss';
-import Display from './Display';
-import Comment from './Comment';
 
 const propTypes = {
   /**
@@ -181,8 +180,7 @@ class ItemView extends React.Component {
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
-ItemView.Display = Display;
-ItemView.Comment = Comment;
+ItemView.Display = ItemDisplay;
+ItemView.Comment = ItemDisplay.Comment;
 
 export default ItemView;
-

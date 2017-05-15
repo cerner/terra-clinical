@@ -16,17 +16,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _terraClinicalItemDisplay = require('terra-clinical-item-display');
+
+var _terraClinicalItemDisplay2 = _interopRequireDefault(_terraClinicalItemDisplay);
+
 require('terra-base/lib/baseStyles');
 
 require('./ItemView.scss');
-
-var _Display = require('./Display');
-
-var _Display2 = _interopRequireDefault(_Display);
-
-var _Comment = require('./Comment');
-
-var _Comment2 = _interopRequireDefault(_Comment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -226,7 +222,7 @@ var ItemView = function (_React$Component) {
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
-ItemView.Display = _Display2.default;
-ItemView.Comment = _Comment2.default;
+ItemView.Display = _terraClinicalItemDisplay2.default;
+ItemView.Comment = _terraClinicalItemDisplay2.default.Comment;
 
 exports.default = ItemView;

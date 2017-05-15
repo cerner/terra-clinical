@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-view.svg)](https://www.npmjs.org/package/terra-clinical-item-view)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-The Terra ClinicalItemView component allows displays to be organized into rows and column and themed, while providing means to add accessory elements.
+The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-view/docs)
