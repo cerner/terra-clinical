@@ -12,13 +12,15 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _reactModal = require('react-modal');
+var _terraModal = require('terra-Modal');
 
-var _reactModal2 = _interopRequireDefault(_reactModal);
+var _terraModal2 = _interopRequireDefault(_terraModal);
 
 var _terraClinicalSlideGroup = require('terra-clinical-slide-group');
 
 var _terraClinicalSlideGroup2 = _interopRequireDefault(_terraClinicalSlideGroup);
+
+require('terra-base/lib/baseStyles');
 
 require('./ModalPresenter.scss');
 
@@ -31,19 +33,19 @@ var ModalPresenter = function ModalPresenter(_ref) {
       isMaximized = _ref.isMaximized,
       children = _ref.children;
 
-  var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalPresenter-modal', { 'terraClinical-ModalPresenter-modal--small': !isMaximized && (size === 'small' || !size) }, { 'terraClinical-ModalPresenter-modal--large': !isMaximized && size === 'large' }, { 'terraClinical-ModalPresenter-modal--fullscreen': isMaximized }]);
+  var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalPresenter-modal', { 'terraClinical-ModalPresenter-modal--small': !isMaximized && (size === 'small' || !size) }, { 'terraClinical-ModalPresenter-modal--large': !isMaximized && size === 'large' }]);
 
   return _react2.default.createElement(
     'div',
     { className: 'terraClinical-ModalPresenter' },
     children,
     _react2.default.createElement(
-      _reactModal2.default,
+      _terraModal2.default,
       {
-        isOpen: isOpen,
-        className: modalClassNames,
-        overlayClassName: 'terraClinical-ModalPresenter-modalOverlay',
-        contentLabel: ''
+        isOpened: isOpen,
+        isFullscreen: isMaximized,
+        classNameModal: modalClassNames,
+        ariaLabel: ''
       },
       _react2.default.createElement(_terraClinicalSlideGroup2.default, { items: componentStack })
     )

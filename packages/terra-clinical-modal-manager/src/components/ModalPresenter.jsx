@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import Modal from 'react-modal';
+import Modal from 'terra-Modal';
 import SlideGroup from 'terra-clinical-slide-group';
 
+import 'terra-base/lib/baseStyles';
 import './ModalPresenter.scss';
 
 const ModalPresenter = ({ componentStack, size, isOpen, isMaximized, children }) => {
@@ -10,17 +11,16 @@ const ModalPresenter = ({ componentStack, size, isOpen, isMaximized, children })
     'terraClinical-ModalPresenter-modal',
     { 'terraClinical-ModalPresenter-modal--small': !isMaximized && (size === 'small' || !size) },
     { 'terraClinical-ModalPresenter-modal--large': !isMaximized && size === 'large' },
-    { 'terraClinical-ModalPresenter-modal--fullscreen': isMaximized },
   ]);
 
   return (
     <div className="terraClinical-ModalPresenter">
       {children}
       <Modal
-        isOpen={isOpen}
-        className={modalClassNames}
-        overlayClassName="terraClinical-ModalPresenter-modalOverlay"
-        contentLabel=""
+        isOpened={isOpen}
+        isFullscreen={isMaximized}
+        classNameModal={modalClassNames}
+        ariaLabel=""
       >
         <SlideGroup items={componentStack} />
       </Modal>

@@ -36,7 +36,7 @@
     "classnames": "^2.2.5",
     "terra-base": "^0.x",
     "terra-mixins": "^1.0.0",
-    "react-modal": "^1.6.5",
+    "terra-modal": "file:../../../terra-ui/packages/terra-modal",
     "terra-responsive-element": "^0.x",
     "terra-clinical-app-delegate": "^0.x",
     "terra-clinical-slide-group": "^0.x"
