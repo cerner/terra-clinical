@@ -2,7 +2,7 @@
   "name": "terra-clinical-application",
   "main": "lib/Application.js",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "terra-clinical-application",
   "repository": {
     "type": "git",
