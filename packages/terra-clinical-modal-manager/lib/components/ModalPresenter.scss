@@ -25,25 +25,30 @@
 
 .terraClinical-ModalPresenter-modal--huge {
   height: 85%;
-  width: 60%;
+  min-width: 560px;
+  width: 75%;
 }
 
 .terraClinical-ModalPresenter-modal--large {
   height: 75%;
+  min-width: 560px;
   width: 55%;
 }
 
 .terraClinical-ModalPresenter-modal--medium {
   height: 65%;
+  min-width: 560px;
   width: 55%;
 }
 
 .terraClinical-ModalPresenter-modal--small {
   height: 50%;
+  min-width: 560px;
   width: 50%;
 }
 
 .terraClinical-ModalPresenter-modal--tiny {
   height: 40%;
+  min-width: 560px;
   width: 50%;
 }
