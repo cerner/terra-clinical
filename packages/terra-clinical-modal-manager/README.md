@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-modal-manager.svg)](https://www.npmjs.org/package/terra-clinical-modal-manager)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-{insert description}
+The ModalManager is a Redux-backed Container component that presents a single or multiple components using the `terra-modal`.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-modal-manager/docs)
