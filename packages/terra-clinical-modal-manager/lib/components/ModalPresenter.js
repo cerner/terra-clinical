@@ -12,7 +12,7 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _terraModal = require('terra-Modal');
+var _terraModal = require('terra-modal');
 
 var _terraModal2 = _interopRequireDefault(_terraModal);
 
@@ -26,14 +26,20 @@ require('./ModalPresenter.scss');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var supportedModalSizes = ['tiny', 'small', 'medium', 'large', 'huge'];
+
 var ModalPresenter = function ModalPresenter(_ref) {
-  var componentStack = _ref.componentStack,
+  var modalContent = _ref.modalContent,
       size = _ref.size,
       isOpen = _ref.isOpen,
       isMaximized = _ref.isMaximized,
       children = _ref.children;
 
-  var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalPresenter-modal', { 'terraClinical-ModalPresenter-modal--small': !isMaximized && (size === 'small' || !size) }, { 'terraClinical-ModalPresenter-modal--large': !isMaximized && size === 'large' }]);
+  var sizeClass = 'terraClinical-ModalPresenter-modal--' + (supportedModalSizes.indexOf(size) > 0 ? size : 'small');
+
+  var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalPresenter-modal', _defineProperty({}, sizeClass, !isMaximized)]);
 
   return _react2.default.createElement(
     'div',
@@ -43,17 +49,18 @@ var ModalPresenter = function ModalPresenter(_ref) {
       _terraModal2.default,
       {
         isOpened: isOpen,
+        onRequestClose: function onRequestClose() {},
         isFullscreen: isMaximized,
         classNameModal: modalClassNames,
         ariaLabel: ''
       },
-      _react2.default.createElement(_terraClinicalSlideGroup2.default, { items: componentStack })
+      _react2.default.createElement(_terraClinicalSlideGroup2.default, { items: modalContent })
     )
   );
 };
 
 ModalPresenter.propTypes = {
-  componentStack: _react.PropTypes.array,
+  modalContent: _react.PropTypes.array,
   size: _react.PropTypes.string,
   isOpen: _react.PropTypes.bool,
   isMaximized: _react.PropTypes.bool,

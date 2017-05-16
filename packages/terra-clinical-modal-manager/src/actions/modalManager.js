@@ -1,16 +1,16 @@
-export const DISCLOSE_MODAL = 'MM_DISCLOSE_MODAL';
-export const DISMISS_MODAL = 'MM_DISMISS_MODAL';
+export const OPEN_MODAL = 'MM_OPEN_MODAL';
+export const CLOSE_MODAL = 'MM_CLOSE_MODAL';
 export const PUSH_MODAL = 'MM_PUSH_MODAL';
 export const POP_MODAL = 'MM_POP_MODAL';
 export const MAXIMIZE_MODAL = 'MM_MAXIMIZE_MODAL';
 export const MINIMIZE_MODAL = 'MM_MINIMIZE_MODAL';
 
-export function disclose(data) {
-  return { type: DISCLOSE_MODAL, data };
+export function open(data) {
+  return { type: OPEN_MODAL, data };
 }
 
-export function dismiss(data) {
-  return { type: DISMISS_MODAL, data };
+export function close(data) {
+  return { type: CLOSE_MODAL, data };
 }
 
 export function push(data) {

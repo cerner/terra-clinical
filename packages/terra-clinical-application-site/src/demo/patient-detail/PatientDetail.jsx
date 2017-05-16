@@ -52,8 +52,10 @@ class PatientDetail extends React.Component {
         id="orion-PatientDetail"
         header={(
           <NavigationHeader app={this.props.app}>
-            {this.props.onRefresh && <Button onClick={this.props.onRefresh} icon={<IconRefresh isSpin={this.props.isLoading} />} />}
-            <Button icon={<IconEdit />} onClick={this.showPatientUpdate(patient, 'modal')} />
+            <span>
+              {this.props.onRefresh && <Button onClick={this.props.onRefresh} icon={<IconRefresh isSpin={this.props.isLoading} />} />}
+              <Button style={{ marginLeft: '5px' }} icon={<IconEdit />} onClick={this.showPatientUpdate(patient, 'modal')} />
+            </span>
           </NavigationHeader>
         )}
         fill

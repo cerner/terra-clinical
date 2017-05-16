@@ -39,7 +39,7 @@
     "terra-clinical-no-data-view": "^0.x",
     "terra-icon": "^0.x",
     "terra-grid": "^2.x",
-    "terra-legacy-theme": "^0.x",
+    "terra-legacy-theme": "0.3.0",
     "terra-markdown": "^0.x",
     "terra-props-table": "^0.x",
     "terra-slide-panel": "^0.x",

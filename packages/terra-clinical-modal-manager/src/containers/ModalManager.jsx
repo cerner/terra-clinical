@@ -5,25 +5,95 @@ import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
 import AppDelegate from 'terra-clinical-app-delegate';
 
 import modalReducers from '../reducers/modalManager';
-import { disclose, dismiss, push, pop, maximize, minimize } from '../actions/modalManager';
+import { open, close, push, pop, maximize, minimize } from '../actions/modalManager';
 import ModalPresenter from '../components/ModalPresenter';
+
+const propTypes = {
+  /**
+   * The AppDelegate instance provided by the containing component. If present, its properties will propagate to the children components.
+   **/
+  app: AppDelegate.propType,
+
+  /**
+   * Components that will receive the ModalManager's AppDelegate configuration. Components given as children must appropriately handle an `app` prop.
+   **/
+  children: PropTypes.node,
+
+  /**
+   * From Redux. The Array of component keys that will be used to instantiate the Modal's inner components.
+   **/
+  componentKeysToDisclose: PropTypes.array,
+
+  /**
+   * From Redux. An Object containing component data used to instantiate the Modal's inner components.
+   **/
+  componentDataToDisclose: PropTypes.object,
+
+  /**
+   * From Redux. The desired size of the modal.
+   **/
+  size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
+
+  /**
+   * From Redux. The presentation state of the modal.
+   **/
+  isOpen: PropTypes.bool,
+
+  /**
+   * From Redux. The maximization state of the modal.
+   **/
+  isMaximized: PropTypes.bool,
+
+  /**
+   * From Redux. A function that dispatches an `open` action.
+   **/
+  openModal: PropTypes.func,
+
+  /**
+   * From Redux. A function that dispatches a `close` action.
+   **/
+  closeModal: PropTypes.func,
+
+  /**
+   * From Redux. A function that dispatches a `push` action.
+   **/
+  pushModal: PropTypes.func,
+
+  /**
+   * From Redux. A function that dispatches a `pop` action.
+   **/
+  popModal: PropTypes.func,
+
+  /**
+   * From Redux. A function that dispatches a `maximize` action.
+   **/
+  maximizeModal: PropTypes.func,
+
+  /**
+   * From Redux. A function that dispatches a `minimize` action.
+   **/
+  minimizeModal: PropTypes.func,
+};
 
 class ModalManager extends React.Component {
   constructor(props) {
     super(props);
 
+    // I'm tracking the responsive-fullscreen state outside of React and Redux state to limit the number of
+    // renderings that occur.
     this.forceFullscreenModal = false;
 
     this.updateFullscreenState = this.updateFullscreenState.bind(this);
-    this.componentsFromModalState = this.componentsFromModalState.bind(this);
+    this.modalContent = this.modalContent.bind(this);
   }
 
   componentDidMount() {
     this.updateFullscreenState();
+    window.addEventListener('resize', this.updateFullscreenState);
+  }
 
-    window.addEventListener('resize', () => {
-      this.updateFullscreenState();
-    });
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateFullscreenState);
   }
 
   updateFullscreenState() {
@@ -31,19 +101,19 @@ class ModalManager extends React.Component {
 
     this.forceFullscreenModal = window.innerWidth < getBreakpoints().small;
 
-    // Only update if the modal isn't maximized, if it's currently open, and if it's changing states.
+    // Only update the modal if it's minimized, open, and changing states.
     if (!this.props.isMaximized && this.props.isOpen && previousFullscreenState !== this.forceFullscreenModal) {
       this.forceUpdate();
     }
   }
 
-  componentsFromModalState() {
-    if (!this.props.componentKeys || !this.props.componentKeys.length) {
+  modalContent() {
+    if (!this.props.componentKeysToDisclose || !this.props.componentKeysToDisclose.length) {
       return null;
     }
 
-    return this.props.componentKeys.map((componentKey, index) => {
-      const componentData = this.props.componentDirectory[componentKey];
+    return this.props.componentKeysToDisclose.map((componentKey, index) => {
+      const componentData = this.props.componentDataToDisclose[componentKey];
 
       const ComponentClass = AppDelegate.getComponentForDisclosure(componentData.name);
 
@@ -56,14 +126,14 @@ class ModalManager extends React.Component {
           this.props.pushModal(data);
         },
         dismiss: (index > 0 ?
-          () => {
-            this.props.popModal();
+          (data) => {
+            this.props.popModal(data);
           } :
-          () => {
-            this.props.dismissModal();
+          (data) => {
+            this.props.closeModal(data);
           }
         ),
-        closeDisclosure: () => { this.props.dismissModal(); },
+        closeDisclosure: () => { this.props.closeModal(); },
         goBack: index > 0 ? () => { this.props.popModal(); } : null,
         maximize: !this.props.isMaximized ? () => { this.props.maximizeModal(); } : null,
         minimize: this.props.isMaximized ? () => { this.props.minimizeModal(); } : null,
@@ -74,11 +144,11 @@ class ModalManager extends React.Component {
   }
 
   render() {
-    const { app, discloseModal, size, isOpen, isMaximized, children } = this.props;
+    const { app, openModal, size, isOpen, isMaximized, children } = this.props;
 
     return (
       <ModalPresenter
-        componentStack={this.componentsFromModalState()}
+        modalContent={this.modalContent()}
         size={size}
         isOpen={isOpen}
         isMaximized={isMaximized || this.forceFullscreenModal}
@@ -86,7 +156,7 @@ class ModalManager extends React.Component {
         {React.Children.map(children, (child) => {
           const childAppDelegate = AppDelegate.clone(app, {
             disclose: (data) => {
-              discloseModal(data);
+              openModal(data);
             },
           });
 
@@ -97,28 +167,12 @@ class ModalManager extends React.Component {
   }
 }
 
-ModalManager.propTypes = {
-  app: AppDelegate.propType,
-  children: PropTypes.node,
-
-  componentKeys: PropTypes.array,
-  componentDirectory: PropTypes.object,
-  size: PropTypes.string,
-  isOpen: PropTypes.bool,
-  isMaximized: PropTypes.bool,
-
-  discloseModal: PropTypes.func,
-  dismissModal: PropTypes.func,
-  pushModal: PropTypes.func,
-  popModal: PropTypes.func,
-  maximizeModal: PropTypes.func,
-  minimizeModal: PropTypes.func,
-};
+ModalManager.propTypes = propTypes;
 
 const mapStateToProps = state => (
   (disclosureState => ({
-    componentKeys: disclosureState.componentKeys,
-    componentDirectory: disclosureState.components,
+    componentKeysToDisclose: disclosureState.componentKeys,
+    componentDataToDisclose: disclosureState.components,
     size: disclosureState.size,
     isOpen: disclosureState.isOpen,
     isMaximized: disclosureState.isMaximized,
@@ -126,8 +180,8 @@ const mapStateToProps = state => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  discloseModal: (data) => { dispatch(disclose(data)); },
-  dismissModal: (data) => { dispatch(dismiss(data)); },
+  openModal: (data) => { dispatch(open(data)); },
+  closeModal: (data) => { dispatch(close(data)); },
   pushModal: (data) => { dispatch(push(data)); },
   popModal: (data) => { dispatch(pop(data)); },
   maximizeModal: (data) => { dispatch(maximize(data)); },

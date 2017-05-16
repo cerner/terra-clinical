@@ -21,7 +21,7 @@ var defaultState = Object.freeze({
   components: {}
 });
 
-var disclose = function disclose(state, action) {
+var open = function open(state, action) {
   var newState = cloneDisclosureState(state);
 
   newState.isOpen = true;
@@ -32,6 +32,10 @@ var disclose = function disclose(state, action) {
   };
 
   return newState;
+};
+
+var close = function close() {
+  return defaultState;
 };
 
 var push = function push(state, action) {
@@ -71,7 +75,8 @@ var minimize = function minimize(state) {
 };
 
 exports.defaultState = defaultState;
-exports.disclose = disclose;
+exports.open = open;
+exports.close = close;
 exports.push = push;
 exports.pop = pop;
 exports.maximize = maximize;

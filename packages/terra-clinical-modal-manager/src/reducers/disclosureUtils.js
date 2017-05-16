@@ -13,7 +13,7 @@ const defaultState = Object.freeze({
   components: {},
 });
 
-const disclose = (state, action) => {
+const open = (state, action) => {
   const newState = cloneDisclosureState(state);
 
   newState.isOpen = true;
@@ -25,6 +25,8 @@ const disclose = (state, action) => {
 
   return newState;
 };
+
+const close = () => (defaultState);
 
 const push = (state, action) => {
   const newState = cloneDisclosureState(state);
@@ -62,4 +64,4 @@ const minimize = (state) => {
   return newState;
 };
 
-export { defaultState, disclose, push, pop, maximize, minimize };
+export { defaultState, open, close, push, pop, maximize, minimize };

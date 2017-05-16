@@ -26,9 +26,9 @@ var modalManager = function modalManager() {
   var action = arguments[1];
 
   switch (action.type) {
-    case _modalManager.DISCLOSE_MODAL:
-      return _extends({}, (0, _disclosureUtils.disclose)(state, action), { size: action.data.size || supportedSizes.small });
-    case _modalManager.DISMISS_MODAL:
+    case _modalManager.OPEN_MODAL:
+      return _extends({}, (0, _disclosureUtils.open)(state, action), { size: action.data.size || supportedSizes.small });
+    case _modalManager.CLOSE_MODAL:
       return defaultModalState;
     case _modalManager.PUSH_MODAL:
       return (0, _disclosureUtils.push)(state, action);

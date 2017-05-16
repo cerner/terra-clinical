@@ -1,16 +1,19 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
-import Modal from 'terra-Modal';
+import Modal from 'terra-modal';
 import SlideGroup from 'terra-clinical-slide-group';
 
 import 'terra-base/lib/baseStyles';
 import './ModalPresenter.scss';
 
-const ModalPresenter = ({ componentStack, size, isOpen, isMaximized, children }) => {
+const supportedModalSizes = ['tiny', 'small', 'medium', 'large', 'huge'];
+
+const ModalPresenter = ({ modalContent, size, isOpen, isMaximized, children }) => {
+  const sizeClass = `terraClinical-ModalPresenter-modal--${supportedModalSizes.indexOf(size) > 0 ? size : 'small'}`;
+
   const modalClassNames = classNames([
     'terraClinical-ModalPresenter-modal',
-    { 'terraClinical-ModalPresenter-modal--small': !isMaximized && (size === 'small' || !size) },
-    { 'terraClinical-ModalPresenter-modal--large': !isMaximized && size === 'large' },
+    { [sizeClass]: !isMaximized },
   ]);
 
   return (
@@ -18,18 +21,19 @@ const ModalPresenter = ({ componentStack, size, isOpen, isMaximized, children })
       {children}
       <Modal
         isOpened={isOpen}
+        onRequestClose={() => {}}
         isFullscreen={isMaximized}
         classNameModal={modalClassNames}
         ariaLabel=""
       >
-        <SlideGroup items={componentStack} />
+        <SlideGroup items={modalContent} />
       </Modal>
     </div>
   );
 };
 
 ModalPresenter.propTypes = {
-  componentStack: PropTypes.array,
+  modalContent: PropTypes.array,
   size: PropTypes.string,
   isOpen: PropTypes.bool,
   isMaximized: PropTypes.bool,
