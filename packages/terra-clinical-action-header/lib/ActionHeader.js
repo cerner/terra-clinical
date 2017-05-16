@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -50,6 +52,8 @@ var _terraResponsiveElement = require('terra-responsive-element');
 
 var _terraResponsiveElement2 = _interopRequireDefault(_terraResponsiveElement);
 
+var _terraI18n = require('terra-i18n');
+
 require('terra-base/lib/baseStyles');
 
 require('./ActionHeader.scss');
@@ -57,6 +61,12 @@ require('./ActionHeader.scss');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var propTypes = {
   /**
@@ -99,6 +109,8 @@ var propTypes = {
    **/
   onPrevious: _react.PropTypes.func,
 
+  locale: _react.PropTypes.string,
+
   /**
    * Child element to be displayed on the right end of the header.
    **/
@@ -113,100 +125,145 @@ var defaultProps = {
   onMinimize: null,
   onNext: null,
   onPrevious: null,
-  children: null
+  children: null,
+  locale: 'en-US'
 };
 
-var ActionHeader = function ActionHeader(_ref) {
-  var title = _ref.title,
-      onClose = _ref.onClose,
-      onBack = _ref.onBack,
-      onMaximize = _ref.onMaximize,
-      onMinimize = _ref.onMinimize,
-      onPrevious = _ref.onPrevious,
-      onNext = _ref.onNext,
-      children = _ref.children,
-      customProps = _objectWithoutProperties(_ref, ['title', 'onClose', 'onBack', 'onMaximize', 'onMinimize', 'onPrevious', 'onNext', 'children']);
+var ActionHeader = function (_React$Component) {
+  _inherits(ActionHeader, _React$Component);
 
-  var attributes = _extends({}, customProps);
-  var closeButton = onClose ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconClose2.default, null), onClick: onClose }) : null;
-  var backButton = onBack ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, null), onClick: onBack }) : null;
+  function ActionHeader(props) {
+    _classCallCheck(this, ActionHeader);
 
-  var closeButtonSmall = void 0;
-  var backButtonSmall = void 0;
-  if (onClose && !onBack) {
-    backButtonSmall = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, null), onClick: onClose });
-    closeButtonSmall = null;
-  } else {
-    closeButtonSmall = closeButton;
-    backButtonSmall = backButton;
+    var _this = _possibleConstructorReturn(this, (ActionHeader.__proto__ || Object.getPrototypeOf(ActionHeader)).call(this, props));
+
+    _this.state = {
+      areTranslationsLoaded: false,
+      locale: _this.props.locale,
+      messages: {}
+    };
+    return _this;
   }
 
-  var expandButton = void 0;
-  if (!backButton) {
-    if (onMaximize) {
-      expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMaximize2.default, null), onClick: onMaximize });
-    } else if (onMinimize) {
-      expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMinimize2.default, null), onClick: onMinimize });
+  _createClass(ActionHeader, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      (0, _terraI18n.i18nLoader)(this.state.locale, this.setState, this);
     }
-  }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          title = _props.title,
+          onClose = _props.onClose,
+          onBack = _props.onBack,
+          onMaximize = _props.onMaximize,
+          onMinimize = _props.onMinimize,
+          onPrevious = _props.onPrevious,
+          onNext = _props.onNext,
+          children = _props.children,
+          locale = _props.locale,
+          customProps = _objectWithoutProperties(_props, ['title', 'onClose', 'onBack', 'onMaximize', 'onMinimize', 'onPrevious', 'onNext', 'children', 'locale']);
 
-  var previousNextButtonGroup = null;
-  if (onPrevious || onNext) {
-    previousNextButtonGroup = _react2.default.createElement(
-      _terraButtonGroup2.default,
-      null,
-      _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronUp2.default, null), onClick: onPrevious, key: 'ActionHeaderPrevious' }),
-      _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronDown2.default, null), onClick: onNext, key: 'ActionHeaderNext' })
-    );
-  }
+      var attributes = _extends({}, customProps);
 
-  var leftButtonsDefault = _react2.default.createElement(
-    'div',
-    { className: 'terraClinical-ActionHeader-leftButtons' },
-    backButton,
-    expandButton,
-    previousNextButtonGroup
-  );
+      var closeButton = onClose ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconClose2.default, { 'aria-label': 'Close' }), onClick: onClose }) : null;
+      var backButton = onBack ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, { 'aria-label': BackAltText }), onClick: onBack }) : null;
 
-  var rightButtonsDefault = _react2.default.createElement(
-    'div',
-    { className: 'terraClinical-ActionHeader-rightButtons' },
-    children,
-    closeButton
-  );
+      var closeButtonSmall = void 0;
+      var backButtonSmall = void 0;
+      if (onClose && !onBack) {
+        backButtonSmall = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, { 'aria-label': 'Back' }), onClick: onClose });
+        closeButtonSmall = null;
+      } else {
+        closeButtonSmall = closeButton;
+        backButtonSmall = backButton;
+      }
 
-  var leftButtonsSmall = _react2.default.createElement(
-    'div',
-    { className: 'terraClinical-ActionHeader-leftButtons' },
-    backButtonSmall,
-    previousNextButtonGroup
-  );
+      var expandButton = void 0;
+      if (!backButton) {
+        if (onMaximize) {
+          expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMaximize2.default, { 'aria-label': 'Maximize' }), onClick: onMaximize });
+        } else if (onMinimize) {
+          expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMinimize2.default, { 'aria-label': 'Minimize' }), onClick: onMinimize });
+        }
+      }
 
-  var rightButtonsSmall = _react2.default.createElement(
-    'div',
-    { className: 'terraClinical-ActionHeader-rightButtons' },
-    children,
-    closeButtonSmall
-  );
+      var previousNextButtonGroup = null;
+      if (onPrevious || onNext) {
+        previousNextButtonGroup = _react2.default.createElement(
+          _terraButtonGroup2.default,
+          null,
+          _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronUp2.default, { 'aria-label': 'Previous' }), onClick: onPrevious, key: 'ActionHeaderPrevious' }),
+          _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronDown2.default, { 'aria-label': 'Next' }), onClick: onNext, key: 'ActionHeaderNext' })
+        );
+      }
 
-  var actionHeader = _react2.default.createElement(_terraClinicalHeader2.default, _extends({}, attributes, {
-    startContent: leftButtonsDefault,
-    title: title,
-    endContent: rightButtonsDefault
-  }));
+      var leftButtonsDefault = _react2.default.createElement(
+        'div',
+        { className: 'terraClinical-ActionHeader-leftButtons' },
+        backButton,
+        expandButton,
+        previousNextButtonGroup
+      );
 
-  var smallActionHeader = _react2.default.createElement(_terraClinicalHeader2.default, _extends({}, attributes, {
-    startContent: leftButtonsSmall,
-    title: title,
-    endContent: rightButtonsSmall
-  }));
+      var rightButtonsDefault = _react2.default.createElement(
+        'div',
+        { className: 'terraClinical-ActionHeader-rightButtons' },
+        children,
+        closeButton
+      );
 
-  return _react2.default.createElement(_terraResponsiveElement2.default, {
-    responsiveTo: 'window',
-    defaultElement: smallActionHeader,
-    small: actionHeader
-  });
-};
+      var leftButtonsSmall = _react2.default.createElement(
+        'div',
+        { className: 'terraClinical-ActionHeader-leftButtons' },
+        backButtonSmall,
+        previousNextButtonGroup
+      );
+
+      var rightButtonsSmall = _react2.default.createElement(
+        'div',
+        { className: 'terraClinical-ActionHeader-rightButtons' },
+        children,
+        closeButtonSmall
+      );
+
+      var actionHeader = _react2.default.createElement(
+        _terraI18n.I18nProvider,
+        {
+          locale: this.state.locale,
+          messages: this.state.messages
+        },
+        _react2.default.createElement(_terraClinicalHeader2.default, _extends({}, attributes, {
+          startContent: leftButtonsDefault,
+          title: title,
+          endContent: rightButtonsDefault
+        }))
+      );
+
+      var smallActionHeader = _react2.default.createElement(
+        _terraI18n.I18nProvider,
+        {
+          locale: this.state.locale,
+          messages: this.state.messages
+        },
+        _react2.default.createElement(_terraClinicalHeader2.default, _extends({}, attributes, {
+          startContent: leftButtonsSmall,
+          title: title,
+          endContent: rightButtonsSmall
+        }))
+      );
+
+      return _react2.default.createElement(_terraResponsiveElement2.default, {
+        responsiveTo: 'window',
+        defaultElement: smallActionHeader,
+        small: actionHeader
+      });
+    }
+  }]);
+
+  return ActionHeader;
+}(_react2.default.Component);
 
 ActionHeader.propTypes = propTypes;
 ActionHeader.defaultProps = defaultProps;

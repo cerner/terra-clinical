@@ -9,6 +9,7 @@ import IconChevronUp from 'terra-icon/lib/icon/IconChevronUp';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import Header from 'terra-clinical-header';
 import ResponsiveElement from 'terra-responsive-element';
+import { I18nProvider, i18nLoader } from 'terra-i18n';
 import 'terra-base/lib/baseStyles';
 import './ActionHeader.scss';
 
@@ -53,6 +54,8 @@ const propTypes = {
    **/
   onPrevious: PropTypes.func,
 
+  locale: PropTypes.string,
+
   /**
    * Child element to be displayed on the right end of the header.
    **/
@@ -68,108 +71,139 @@ const defaultProps = {
   onNext: null,
   onPrevious: null,
   children: null,
+  locale: 'en-US',
 };
 
-const ActionHeader = ({
-  title,
-  onClose,
-  onBack,
-  onMaximize,
-  onMinimize,
-  onPrevious,
-  onNext,
-  children,
-  ...customProps
-}) => {
-  const attributes = Object.assign({}, customProps);
-  const closeButton = onClose ? <Button icon={<IconClose />} onClick={onClose} /> : null;
-  const backButton = onBack ? <Button icon={<IconLeft />} onClick={onBack} /> : null;
-
-  let closeButtonSmall;
-  let backButtonSmall;
-  if (onClose && !onBack) {
-    backButtonSmall = <Button icon={<IconLeft />} onClick={onClose} />;
-    closeButtonSmall = null;
-  } else {
-    closeButtonSmall = closeButton;
-    backButtonSmall = backButton;
+class ActionHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      areTranslationsLoaded: false,
+      locale: this.props.locale,
+      messages: {},
+    };
   }
 
+  componentDidMount() {
+    i18nLoader(this.state.locale, this.setState, this);
+  }
 
-  let expandButton;
-  if (!backButton) {
-    if (onMaximize) {
-      expandButton = <Button icon={<IconMaximize />} onClick={onMaximize} />;
-    } else if (onMinimize) {
-      expandButton = <Button icon={<IconMinimize />} onClick={onMinimize} />;
+  render() {
+    const {
+      title,
+      onClose,
+      onBack,
+      onMaximize,
+      onMinimize,
+      onPrevious,
+      onNext,
+      children,
+      locale,
+      ...customProps
+    } = this.props;
+
+    const attributes = Object.assign({}, customProps);
+
+    const closeButton = onClose ? <Button icon={<IconClose aria-label="Close" />} onClick={onClose} /> : null;
+    const backButton = onBack ? <Button icon={<IconLeft aria-label={BackAltText} />} onClick={onBack} /> : null;
+
+    let closeButtonSmall;
+    let backButtonSmall;
+    if (onClose && !onBack) {
+      backButtonSmall = <Button icon={<IconLeft aria-label="Back"/>} onClick={onClose} />;
+      closeButtonSmall = null;
+    } else {
+      closeButtonSmall = closeButton;
+      backButtonSmall = backButton;
     }
-  }
 
-  let previousNextButtonGroup = null;
-  if (onPrevious || onNext) {
-    previousNextButtonGroup = (
-      <ButtonGroup>
-        <ButtonGroup.Button icon={<IconChevronUp />} onClick={onPrevious} key="ActionHeaderPrevious" />
-        <ButtonGroup.Button icon={<IconChevronDown />} onClick={onNext} key="ActionHeaderNext" />
-      </ButtonGroup>
+
+    let expandButton;
+    if (!backButton) {
+      if (onMaximize) {
+        expandButton = <Button icon={<IconMaximize aria-label="Maximize" />} onClick={onMaximize} />;
+      } else if (onMinimize) {
+        expandButton = <Button icon={<IconMinimize aria-label="Minimize" />} onClick={onMinimize} />;
+      }
+    }
+
+    let previousNextButtonGroup = null;
+    if (onPrevious || onNext) {
+      previousNextButtonGroup = (
+        <ButtonGroup>
+          <ButtonGroup.Button icon={<IconChevronUp aria-label="Previous" />} onClick={onPrevious} key="ActionHeaderPrevious" />
+          <ButtonGroup.Button icon={<IconChevronDown aria-label="Next"/>} onClick={onNext} key="ActionHeaderNext" />
+        </ButtonGroup>
+      );
+    }
+
+    const leftButtonsDefault = (
+      <div className="terraClinical-ActionHeader-leftButtons">
+        {backButton}
+        {expandButton}
+        {previousNextButtonGroup}
+      </div>
     );
+
+    const rightButtonsDefault = (
+      <div className="terraClinical-ActionHeader-rightButtons">
+        {children}
+        {closeButton}
+      </div>
+    );
+
+    const leftButtonsSmall = (
+      <div className="terraClinical-ActionHeader-leftButtons">
+        {backButtonSmall}
+        {previousNextButtonGroup}
+      </div>
+    );
+
+    const rightButtonsSmall = (
+      <div className="terraClinical-ActionHeader-rightButtons">
+        {children}
+        {closeButtonSmall}
+      </div>
+    );
+
+    const actionHeader = (
+      <I18nProvider
+        locale={this.state.locale}
+        messages={this.state.messages}
+      >
+        <Header
+          {...attributes}
+          startContent={leftButtonsDefault}
+          title={title}
+          endContent={rightButtonsDefault}
+        />
+      </I18nProvider>
+    );
+
+    const smallActionHeader = (
+      <I18nProvider
+        locale={this.state.locale}
+        messages={this.state.messages}
+      >
+        <Header
+          {...attributes}
+          startContent={leftButtonsSmall}
+          title={title}
+          endContent={rightButtonsSmall}
+        />
+      </I18nProvider>
+    );
+
+    return (
+      <ResponsiveElement
+        responsiveTo="window"
+        defaultElement={smallActionHeader}
+        small={actionHeader}
+      />
+    );
+
   }
-
-  const leftButtonsDefault = (
-    <div className="terraClinical-ActionHeader-leftButtons">
-      {backButton}
-      {expandButton}
-      {previousNextButtonGroup}
-    </div>
-  );
-
-  const rightButtonsDefault = (
-    <div className="terraClinical-ActionHeader-rightButtons">
-      {children}
-      {closeButton}
-    </div>
-  );
-
-  const leftButtonsSmall = (
-    <div className="terraClinical-ActionHeader-leftButtons">
-      {backButtonSmall}
-      {previousNextButtonGroup}
-    </div>
-  );
-
-  const rightButtonsSmall = (
-    <div className="terraClinical-ActionHeader-rightButtons">
-      {children}
-      {closeButtonSmall}
-    </div>
-  );
-
-  const actionHeader = (
-    <Header
-      {...attributes}
-      startContent={leftButtonsDefault}
-      title={title}
-      endContent={rightButtonsDefault}
-    />
-  );
-
-  const smallActionHeader = (
-    <Header
-      {...attributes}
-      startContent={leftButtonsSmall}
-      title={title}
-      endContent={rightButtonsSmall}
-    />
-  );
-
-  return (
-    <ResponsiveElement
-      responsiveTo="window"
-      defaultElement={smallActionHeader}
-      small={actionHeader}
-    />
-  );
-};
+}
 
 ActionHeader.propTypes = propTypes;
 ActionHeader.defaultProps = defaultProps;

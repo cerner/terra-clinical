@@ -6,6 +6,8 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const I18nAggregatorPlugin = require('terra-i18n-plugin');
+const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
 
 module.exports = {
   entry: {
@@ -44,6 +46,10 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
       chunks: ['terra-clinical'],
     }),
+    new I18nAggregatorPlugin({
+      baseDirectory: __dirname,
+      supportedLocales: i18nSupportedLocales,
+    }),
   ],
   postcss: [
     autoprefixer({
@@ -58,6 +64,7 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
+    modules: [path.resolve(__dirname, 'aggregated-translations'), 'node_modules'],
   },
   output: {
     filename: '[name].js',
