@@ -158,6 +158,11 @@ var ActionHeader = function (_React$Component) {
       (0, _terraI18n.i18nLoader)(this.state.locale, this.setState, this);
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      (0, _terraI18n.i18nLoader)(nextProps.locale, this.setState, this);
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
