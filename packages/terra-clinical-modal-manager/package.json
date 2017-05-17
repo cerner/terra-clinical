@@ -2,7 +2,7 @@
   "name": "terra-clinical-modal-manager",
   "main": "lib/containers/ModalManager.js",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "terra-clinical-modal-manager",
   "repository": {
     "type": "git",
