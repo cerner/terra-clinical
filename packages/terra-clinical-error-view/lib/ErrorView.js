@@ -20,13 +20,13 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 require('terra-base/lib/baseStyles');
 
-var _IconError = require('terra-icon/lib/icon/IconError');
-
-var _IconError2 = _interopRequireDefault(_IconError);
-
 var _terraButton = require('terra-button');
 
 var _terraButton2 = _interopRequireDefault(_terraButton);
+
+var _ErrorIcon = require('./ErrorIcon');
+
+var _ErrorIcon2 = _interopRequireDefault(_ErrorIcon);
 
 require('./ErrorView.scss');
 
@@ -77,7 +77,7 @@ var ErrorView = function ErrorView(_ref) {
 
   var glyphSection = void 0;
   if (!isGlyphHidden) {
-    var errorIcon = _react2.default.createElement(_IconError2.default, { height: '170', width: '170' });
+    var errorIcon = _react2.default.createElement(_ErrorIcon2.default, null);
     glyphSection = _react2.default.createElement(
       'div',
       { className: 'terraClinical-ErrorView-glyph' },
