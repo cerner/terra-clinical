@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _terraButton = require('terra-button');
 
 var _terraButton2 = _interopRequireDefault(_terraButton);
@@ -62,47 +66,47 @@ var propTypes = {
   /**
    * Text to be displayed as the title in the header bar
    **/
-  title: _react.PropTypes.string,
+  title: _propTypes2.default.string,
 
   /**
    * Callback function for when the close button is clicked. The back button will not display if this is not set.
    * On small viewports a back button will be displayed instead of a close button when a separate onBack callback is not set.
    **/
-  onClose: _react.PropTypes.func,
+  onClose: _propTypes2.default.func,
 
   /**
    * Callback function for when the back button is clicked. The back button will not display if this is not set.
    **/
-  onBack: _react.PropTypes.func,
+  onBack: _propTypes2.default.func,
 
   /**
    * Callback function for when the expand button is clicked.
    * The expand button will not display if this is not set or on small viewports.
    * Only the expand button will be rendered if onMaximize and onMinimize are set.
    **/
-  onMaximize: _react.PropTypes.func,
+  onMaximize: _propTypes2.default.func,
 
   /**
    * Callback function for when the minimize button is clicked.
    * The minimize button will not display if this is not set or on small viewports.
    * Only the expand button will be rendered if both onMaximize and onMinimize are set.
    **/
-  onMinimize: _react.PropTypes.func,
+  onMinimize: _propTypes2.default.func,
 
   /**
    * Callback function for when the next button is clicked. The previous-next button group will not display if neither this or onPrevious are set.
    **/
-  onNext: _react.PropTypes.func,
+  onNext: _propTypes2.default.func,
 
   /**
    * Callback function for when the previous button is clicked. The previous-next button group will not display if neither this or onNext are set.
    **/
-  onPrevious: _react.PropTypes.func,
+  onPrevious: _propTypes2.default.func,
 
   /**
    * Child element to be displayed on the right end of the header.
    **/
-  children: _react.PropTypes.element
+  children: _propTypes2.default.element
 };
 
 var defaultProps = {

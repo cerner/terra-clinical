@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -34,23 +38,23 @@ var propTypes = {
   /**
    * The name of the error to display.
    */
-  name: _react.PropTypes.string,
+  name: _propTypes2.default.string,
   /**
    * The error description to display.
    */
-  description: _react.PropTypes.string,
+  description: _propTypes2.default.string,
   /**
    * The display text for the button.
    */
-  buttonText: _react.PropTypes.string,
+  buttonText: _propTypes2.default.string,
   /**
    * The click callback function that should be applied to the button.
    */
-  buttonOnClick: _react.PropTypes.func,
+  buttonOnClick: _propTypes2.default.func,
   /**
    * Whether or not the error glyph should be displayed.
    */
-  isGlyphHidden: _react.PropTypes.bool
+  isGlyphHidden: _propTypes2.default.bool
 };
 
 var defaultProps = {
