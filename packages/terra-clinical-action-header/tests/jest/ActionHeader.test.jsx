@@ -62,3 +62,27 @@ it('should render ActionHeader with children', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render ActionHeader with locale set', () => {
+  const localizedActionHeader1 = (
+    <ActionHeader
+      title="Action Header"
+      onClose={() => 1}
+      onBack={() => 1}
+      onNext={() => 1}
+      onPrevious={() => 1}
+      locale="en-US"
+    />
+  );
+  const wrapper = shallow(localizedActionHeader1);
+  expect(wrapper).toMatchSnapshot();
+
+  const localizedActionHeader2 = <ActionHeader onMaximize={() => 1} />;
+
+  const wrapper2 = shallow(localizedActionHeader2);
+  expect(wrapper2).toMatchSnapshot();
+
+  const localizedActionHeader3 = <ActionHeader onMinimize={() => 1} />;
+  const wrapper3 = shallow(localizedActionHeader3);
+  expect(wrapper3).toMatchSnapshot();
+});
+

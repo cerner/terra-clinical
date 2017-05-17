@@ -54,6 +54,9 @@ const propTypes = {
    **/
   onPrevious: PropTypes.func,
 
+  /**
+   * Locale for i18n of accessability text.
+   **/ 
   locale: PropTypes.string,
 
   /**
@@ -103,14 +106,20 @@ class ActionHeader extends React.Component {
     } = this.props;
 
     const attributes = Object.assign({}, customProps);
+    const backText = this.state.messages['Terra.Clinical.ActionHeader.back'];
+    const closeText = this.state.messages['Terra.Clinical.ActionHeader.close'];
+    const minimizeText = this.state.messages['Terra.Clinical.ActionHeader.minimize'];
+    const maximizeText = this.state.messages['Terra.Clinical.ActionHeader.maximize'];
+    const previousText = this.state.messages['Terra.Clinical.ActionHeader.previous'];
+    const nextText = this.state.messages['Terra.Clinical.ActionHeader.next'];
 
-    const closeButton = onClose ? <Button icon={<IconClose aria-label="Close" />} onClick={onClose} /> : null;
-    const backButton = onBack ? <Button icon={<IconLeft aria-label={BackAltText} />} onClick={onBack} /> : null;
+    const closeButton = onClose ? <Button icon={<IconClose ariaLabel={closeText} />} onClick={onClose} /> : null;
+    const backButton = onBack ? <Button icon={<IconLeft ariaLabel={backText} />} onClick={onBack} /> : null;
 
     let closeButtonSmall;
     let backButtonSmall;
     if (onClose && !onBack) {
-      backButtonSmall = <Button icon={<IconLeft aria-label="Back"/>} onClick={onClose} />;
+      backButtonSmall = <Button icon={<IconLeft ariaLabel={backText} />} onClick={onClose} />;
       closeButtonSmall = null;
     } else {
       closeButtonSmall = closeButton;
@@ -121,9 +130,9 @@ class ActionHeader extends React.Component {
     let expandButton;
     if (!backButton) {
       if (onMaximize) {
-        expandButton = <Button icon={<IconMaximize aria-label="Maximize" />} onClick={onMaximize} />;
+        expandButton = <Button icon={<IconMaximize ariaLabel={maximizeText} />} onClick={onMaximize} />;
       } else if (onMinimize) {
-        expandButton = <Button icon={<IconMinimize aria-label="Minimize" />} onClick={onMinimize} />;
+        expandButton = <Button icon={<IconMinimize ariaLabel={minimizeText} />} onClick={onMinimize} />;
       }
     }
 
@@ -131,8 +140,8 @@ class ActionHeader extends React.Component {
     if (onPrevious || onNext) {
       previousNextButtonGroup = (
         <ButtonGroup>
-          <ButtonGroup.Button icon={<IconChevronUp aria-label="Previous" />} onClick={onPrevious} key="ActionHeaderPrevious" />
-          <ButtonGroup.Button icon={<IconChevronDown aria-label="Next"/>} onClick={onNext} key="ActionHeaderNext" />
+          <ButtonGroup.Button icon={<IconChevronUp ariaLabel={previousText} />} onClick={onPrevious} key="ActionHeaderPrevious" />
+          <ButtonGroup.Button icon={<IconChevronDown ariaLabel={nextText} />} onClick={onNext} key="ActionHeaderNext" />
         </ButtonGroup>
       );
     }
@@ -201,7 +210,6 @@ class ActionHeader extends React.Component {
         small={actionHeader}
       />
     );
-
   }
 }
 

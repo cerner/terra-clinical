@@ -64,7 +64,7 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    modules: [path.resolve(__dirname, 'aggregated-translations'), 'node_modules'],
+    modulesDirectories: [path.resolve(__dirname, 'aggregated-translations'), 'node_modules'],
   },
   output: {
     filename: '[name].js',

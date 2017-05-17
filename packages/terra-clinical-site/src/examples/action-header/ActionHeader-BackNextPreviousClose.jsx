@@ -11,6 +11,7 @@ const ActionHeaderExample = () => (
       onBack={() => alert('You clicked back!')}
       onNext={() => alert('You clicked next!')}
       onPrevious={() => alert('You clicked previous!')}
+      locale="en-US"
     />
     <br />
   </div>

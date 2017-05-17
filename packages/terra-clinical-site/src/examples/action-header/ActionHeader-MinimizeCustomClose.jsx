@@ -10,6 +10,7 @@ const ActionHeaderExample = () => (
       title="Action Header"
       onClose={() => alert('You clicked close!')}
       onMinimize={() => alert('You clicked minimize!')}
+      locale="en-US"
     >
       <Button text="Custom" />
     </ActionHeader>

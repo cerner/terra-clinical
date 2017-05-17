@@ -166,14 +166,15 @@ var ActionHeader = function (_React$Component) {
           customProps = _objectWithoutProperties(_props, ['title', 'onClose', 'onBack', 'onMaximize', 'onMinimize', 'onPrevious', 'onNext', 'children', 'locale']);
 
       var attributes = _extends({}, customProps);
+      var backAltText = this.state.messages['Terra.Clinical.ActionHeader.back'];
 
-      var closeButton = onClose ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconClose2.default, { 'aria-label': 'Close' }), onClick: onClose }) : null;
-      var backButton = onBack ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, { 'aria-label': BackAltText }), onClick: onBack }) : null;
+      var closeButton = onClose ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconClose2.default, { ariaLabel: 'Close' }), onClick: onClose }) : null;
+      var backButton = onBack ? _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, { ariaLabel: backAltText }), onClick: onBack }) : null;
 
       var closeButtonSmall = void 0;
       var backButtonSmall = void 0;
       if (onClose && !onBack) {
-        backButtonSmall = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, { 'aria-label': 'Back' }), onClick: onClose });
+        backButtonSmall = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconLeft2.default, { ariaLabel: backAltText }), onClick: onClose });
         closeButtonSmall = null;
       } else {
         closeButtonSmall = closeButton;
@@ -183,9 +184,9 @@ var ActionHeader = function (_React$Component) {
       var expandButton = void 0;
       if (!backButton) {
         if (onMaximize) {
-          expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMaximize2.default, { 'aria-label': 'Maximize' }), onClick: onMaximize });
+          expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMaximize2.default, { ariaLabel: 'Maximize' }), onClick: onMaximize });
         } else if (onMinimize) {
-          expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMinimize2.default, { 'aria-label': 'Minimize' }), onClick: onMinimize });
+          expandButton = _react2.default.createElement(_terraButton2.default, { icon: _react2.default.createElement(_IconMinimize2.default, { ariaLabel: 'Minimize' }), onClick: onMinimize });
         }
       }
 
@@ -194,8 +195,8 @@ var ActionHeader = function (_React$Component) {
         previousNextButtonGroup = _react2.default.createElement(
           _terraButtonGroup2.default,
           null,
-          _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronUp2.default, { 'aria-label': 'Previous' }), onClick: onPrevious, key: 'ActionHeaderPrevious' }),
-          _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronDown2.default, { 'aria-label': 'Next' }), onClick: onNext, key: 'ActionHeaderNext' })
+          _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronUp2.default, { ariaLabel: 'Previous' }), onClick: onPrevious, key: 'ActionHeaderPrevious' }),
+          _react2.default.createElement(_terraButtonGroup2.default.Button, { icon: _react2.default.createElement(_IconChevronDown2.default, { ariaLabel: 'Next' }), onClick: onNext, key: 'ActionHeaderNext' })
         );
       }
 
