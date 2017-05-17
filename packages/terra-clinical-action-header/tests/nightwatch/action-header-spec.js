@@ -46,38 +46,39 @@ module.exports = {
   'Displays an action header with back button': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-back`)
+      .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
 
     browser
       .waitForElementVisible('select', 1000)
       .click('select option[value="de"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-      .which.equals(deTranslations['Terra.Clinical.ActionHeader.back']);
+      .which.equals(deTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
     browser
       .click('select option[value="en-GB"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-      .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.back']);
+      .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
     browser
       .click('select option[value="en-US"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-      .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.back']);
+      .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
     browser
       .click('select option[value="es"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-      .which.equals(esTranslations['Terra.Clinical.ActionHeader.back']);
+      .which.equals(esTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
     browser
       .click('select option[value="fr"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-      .which.equals(frTranslations['Terra.Clinical.ActionHeader.back']);
+      .which.equals(frTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
     browser
       .click('select option[value="pt"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-      .which.equals(ptTranslations['Terra.Clinical.ActionHeader.back']);
+      .which.equals(ptTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
   },
   'Displays an action header with close button': (browser) => {
     const width = browser.globals.width;
@@ -91,32 +92,32 @@ module.exports = {
         .waitForElementVisible('select', 1000)
         .click('select option[value="de"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(deTranslations['Terra.Clinical.ActionHeader.back']);
+        .which.equals(deTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
       browser
         .click('select option[value="en-GB"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.back']);
+        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
       browser
         .click('select option[value="en-US"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.back']);
+        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
       browser
         .click('select option[value="es"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(esTranslations['Terra.Clinical.ActionHeader.back']);
+        .which.equals(esTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
       browser
         .click('select option[value="fr"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(frTranslations['Terra.Clinical.ActionHeader.back']);
+        .which.equals(frTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
 
       browser
         .click('select option[value="pt"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.back']);
+        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.back']).before(1000);
     } else {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-close`)
@@ -127,32 +128,32 @@ module.exports = {
         .waitForElementVisible('select', 1000)
         .click('select option[value="de"]')
         .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(deTranslations['Terra.Clinical.ActionHeader.close']);
+        .which.equals(deTranslations['Terra.Clinical.ActionHeader.close']).before(1000);
 
       browser
         .click('select option[value="en-GB"]')
         .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.close']);
+        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.close']).before(1000);
 
       browser
         .click('select option[value="en-US"]')
         .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.close']);
+        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.close']).before(1000);
 
       browser
         .click('select option[value="es"]')
         .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(esTranslations['Terra.Clinical.ActionHeader.close']);
+        .which.equals(esTranslations['Terra.Clinical.ActionHeader.close']).before(1000);
 
       browser
         .click('select option[value="fr"]')
         .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(frTranslations['Terra.Clinical.ActionHeader.close']);
+        .which.equals(frTranslations['Terra.Clinical.ActionHeader.close']).before(1000);
 
       browser
         .click('select option[value="pt"]')
         .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.close']);
+        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.close']).before(1000);
     }
   },
   'Displays an action header with maximize button': (browser) => {
@@ -171,32 +172,32 @@ module.exports = {
         .waitForElementVisible('select', 1000)
         .click('select option[value="de"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(deTranslations['Terra.Clinical.ActionHeader.maximize']);
+        .which.equals(deTranslations['Terra.Clinical.ActionHeader.maximize']).before(1000);
 
       browser
         .click('select option[value="en-GB"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.maximize']);
+        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.maximize']).before(1000);
 
       browser
         .click('select option[value="en-US"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.maximize']);
+        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.maximize']).before(1000);
 
       browser
         .click('select option[value="es"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(esTranslations['Terra.Clinical.ActionHeader.maximize']);
+        .which.equals(esTranslations['Terra.Clinical.ActionHeader.maximize']).before(1000);
 
       browser
         .click('select option[value="fr"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(frTranslations['Terra.Clinical.ActionHeader.maximize']);
+        .which.equals(frTranslations['Terra.Clinical.ActionHeader.maximize']).before(1000);
 
       browser
         .click('select option[value="pt"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.maximize']);
+        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.maximize']).before(1000);
     }
   },
   'Displays an action header with minimize button': (browser) => {
@@ -215,32 +216,32 @@ module.exports = {
         .waitForElementVisible('select', 1000)
         .click('select option[value="de"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(deTranslations['Terra.Clinical.ActionHeader.minimize']);
+        .which.equals(deTranslations['Terra.Clinical.ActionHeader.minimize']).before(1000);
 
       browser
         .click('select option[value="en-GB"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.minimize']);
+        .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.minimize']).before(1000);
 
       browser
         .click('select option[value="en-US"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.minimize']);
+        .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.minimize']).before(1000);
 
       browser
         .click('select option[value="es"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(esTranslations['Terra.Clinical.ActionHeader.minimize']);
+        .which.equals(esTranslations['Terra.Clinical.ActionHeader.minimize']).before(1000);
 
       browser
         .click('select option[value="fr"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(frTranslations['Terra.Clinical.ActionHeader.minimize']);
+        .which.equals(frTranslations['Terra.Clinical.ActionHeader.minimize']).before(1000);
 
       browser
         .click('select option[value="pt"]')
         .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child').to.have.attribute('aria-label')
-        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.minimize']);
+        .which.equals(ptTranslations['Terra.Clinical.ActionHeader.minimize']).before(1000);
     }
   },
   'Displays an action header with a back button and a close button': (browser) => {
@@ -262,62 +263,62 @@ module.exports = {
       .click('select option[value="de"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(deTranslations['Terra.Clinical.ActionHeader.previous']);
+      .which.equals(deTranslations['Terra.Clinical.ActionHeader.previous']).before(1000);
 
     browser
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :last-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(deTranslations['Terra.Clinical.ActionHeader.next']);
+      .which.equals(deTranslations['Terra.Clinical.ActionHeader.next']).before(1000);
 
     browser
       .click('select option[value="en-GB"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.previous']);
+      .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.previous']).before(1000);
 
     browser
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :last-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.next']);
+      .which.equals(enGBTranslations['Terra.Clinical.ActionHeader.next']).before(1000);
 
     browser
       .click('select option[value="en-US"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.previous']);
+      .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.previous']).before(1000);
 
     browser
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :last-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.next']);
+      .which.equals(enUSTranslations['Terra.Clinical.ActionHeader.next']).before(1000);
 
     browser
       .click('select option[value="es"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(esTranslations['Terra.Clinical.ActionHeader.previous']);
+      .which.equals(esTranslations['Terra.Clinical.ActionHeader.previous']).before(1000);
 
     browser
       .click('select option[value="fr"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(frTranslations['Terra.Clinical.ActionHeader.previous']);
+      .which.equals(frTranslations['Terra.Clinical.ActionHeader.previous']).before(1000);
 
     browser
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :last-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(frTranslations['Terra.Clinical.ActionHeader.next']);
+      .which.equals(frTranslations['Terra.Clinical.ActionHeader.next']).before(1000);
 
     browser
       .click('select option[value="pt"]')
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(ptTranslations['Terra.Clinical.ActionHeader.previous']);
+      .which.equals(ptTranslations['Terra.Clinical.ActionHeader.previous']).before(1000);
 
     browser
       .expect.element('.terraClinical-ActionHeader-leftButtons > * > :last-child > *')
       .to.have.attribute('aria-label')
-      .which.equals(ptTranslations['Terra.Clinical.ActionHeader.next']);
+      .which.equals(ptTranslations['Terra.Clinical.ActionHeader.next']).before(1000);
   },
   'Displays an action header with custom content': (browser) => {
     browser
