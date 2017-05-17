@@ -21,22 +21,23 @@ var supportedSizes = {
 var defaultModalState = _extends({}, _disclosureUtils.defaultState, {
   size: supportedSizes.small
 });
+
 var modalManager = function modalManager() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultModalState;
   var action = arguments[1];
 
   switch (action.type) {
-    case _modalManager.OPEN_MODAL:
+    case _modalManager.OPEN:
       return _extends({}, (0, _disclosureUtils.open)(state, action), { size: action.data.size || supportedSizes.small });
-    case _modalManager.CLOSE_MODAL:
+    case _modalManager.CLOSE:
       return defaultModalState;
-    case _modalManager.PUSH_MODAL:
+    case _modalManager.PUSH:
       return (0, _disclosureUtils.push)(state, action);
-    case _modalManager.POP_MODAL:
+    case _modalManager.POP:
       return (0, _disclosureUtils.pop)(state, action);
-    case _modalManager.MAXIMIZE_MODAL:
+    case _modalManager.MAXIMIZE:
       return (0, _disclosureUtils.maximize)(state, action);
-    case _modalManager.MINIMIZE_MODAL:
+    case _modalManager.MINIMIZE:
       return (0, _disclosureUtils.minimize)(state, action);
     default:
       return state;

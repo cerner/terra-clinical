@@ -55,12 +55,12 @@ var propTypes = {
   /**
    * From Redux. The Array of component keys that will be used to instantiate the Modal's inner components.
    **/
-  componentKeysToDisclose: _react.PropTypes.array,
+  modalContentKeys: _react.PropTypes.array,
 
   /**
    * From Redux. An Object containing component data used to instantiate the Modal's inner components.
    **/
-  componentDataToDisclose: _react.PropTypes.object,
+  modalContentData: _react.PropTypes.object,
 
   /**
    * From Redux. The desired size of the modal.
@@ -121,7 +121,7 @@ var ModalManager = function (_React$Component) {
     _this.forceFullscreenModal = false;
 
     _this.updateFullscreenState = _this.updateFullscreenState.bind(_this);
-    _this.modalContent = _this.modalContent.bind(_this);
+    _this.buildModalContent = _this.buildModalContent.bind(_this);
     return _this;
   }
 
@@ -149,16 +149,16 @@ var ModalManager = function (_React$Component) {
       }
     }
   }, {
-    key: 'modalContent',
-    value: function modalContent() {
+    key: 'buildModalContent',
+    value: function buildModalContent() {
       var _this2 = this;
 
-      if (!this.props.componentKeysToDisclose || !this.props.componentKeysToDisclose.length) {
+      if (!this.props.modalContentKeys || !this.props.modalContentKeys.length) {
         return null;
       }
 
-      return this.props.componentKeysToDisclose.map(function (componentKey, index) {
-        var componentData = _this2.props.componentDataToDisclose[componentKey];
+      return this.props.modalContentKeys.map(function (componentKey, index) {
+        var componentData = _this2.props.modalContentData[componentKey];
 
         var ComponentClass = _terraClinicalAppDelegate2.default.getComponentForDisclosure(componentData.name);
 
@@ -207,7 +207,7 @@ var ModalManager = function (_React$Component) {
       return _react2.default.createElement(
         _ModalPresenter2.default,
         {
-          modalContent: this.modalContent(),
+          modalContent: this.buildModalContent(),
           size: size,
           isOpen: isOpen,
           isMaximized: isMaximized || this.forceFullscreenModal
@@ -233,8 +233,8 @@ ModalManager.propTypes = propTypes;
 var mapStateToProps = function mapStateToProps(state) {
   return function (disclosureState) {
     return {
-      componentKeysToDisclose: disclosureState.componentKeys,
-      componentDataToDisclose: disclosureState.components,
+      modalContentKeys: disclosureState.componentKeys,
+      modalContentData: disclosureState.components,
       size: disclosureState.size,
       isOpen: disclosureState.isOpen,
       isMaximized: disclosureState.isMaximized

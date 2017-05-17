@@ -1,12 +1,12 @@
 import { open, push, pop, maximize, minimize, defaultState } from './disclosureUtils';
 
 import {
-  OPEN_MODAL,
-  CLOSE_MODAL,
-  PUSH_MODAL,
-  POP_MODAL,
-  MAXIMIZE_MODAL,
-  MINIMIZE_MODAL,
+  OPEN,
+  CLOSE,
+  PUSH,
+  POP,
+  MAXIMIZE,
+  MINIMIZE,
 } from '../actions/modalManager';
 
 const supportedSizes = {
@@ -20,19 +20,20 @@ const supportedSizes = {
 const defaultModalState = Object.assign({}, defaultState, {
   size: supportedSizes.small,
 });
+
 const modalManager = (state = defaultModalState, action) => {
   switch (action.type) {
-    case OPEN_MODAL:
+    case OPEN:
       return Object.assign({}, open(state, action), { size: action.data.size || supportedSizes.small });
-    case CLOSE_MODAL:
+    case CLOSE:
       return defaultModalState;
-    case PUSH_MODAL:
+    case PUSH:
       return push(state, action);
-    case POP_MODAL:
+    case POP:
       return pop(state, action);
-    case MAXIMIZE_MODAL:
+    case MAXIMIZE:
       return maximize(state, action);
-    case MINIMIZE_MODAL:
+    case MINIMIZE:
       return minimize(state, action);
     default:
       return state;

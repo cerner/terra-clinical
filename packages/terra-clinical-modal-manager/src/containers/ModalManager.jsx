@@ -22,12 +22,12 @@ const propTypes = {
   /**
    * From Redux. The Array of component keys that will be used to instantiate the Modal's inner components.
    **/
-  componentKeysToDisclose: PropTypes.array,
+  modalContentKeys: PropTypes.array,
 
   /**
    * From Redux. An Object containing component data used to instantiate the Modal's inner components.
    **/
-  componentDataToDisclose: PropTypes.object,
+  modalContentData: PropTypes.object,
 
   /**
    * From Redux. The desired size of the modal.
@@ -84,7 +84,7 @@ class ModalManager extends React.Component {
     this.forceFullscreenModal = false;
 
     this.updateFullscreenState = this.updateFullscreenState.bind(this);
-    this.modalContent = this.modalContent.bind(this);
+    this.buildModalContent = this.buildModalContent.bind(this);
   }
 
   componentDidMount() {
@@ -107,13 +107,13 @@ class ModalManager extends React.Component {
     }
   }
 
-  modalContent() {
-    if (!this.props.componentKeysToDisclose || !this.props.componentKeysToDisclose.length) {
+  buildModalContent() {
+    if (!this.props.modalContentKeys || !this.props.modalContentKeys.length) {
       return null;
     }
 
-    return this.props.componentKeysToDisclose.map((componentKey, index) => {
-      const componentData = this.props.componentDataToDisclose[componentKey];
+    return this.props.modalContentKeys.map((componentKey, index) => {
+      const componentData = this.props.modalContentData[componentKey];
 
       const ComponentClass = AppDelegate.getComponentForDisclosure(componentData.name);
 
@@ -148,7 +148,7 @@ class ModalManager extends React.Component {
 
     return (
       <ModalPresenter
-        modalContent={this.modalContent()}
+        modalContent={this.buildModalContent()}
         size={size}
         isOpen={isOpen}
         isMaximized={isMaximized || this.forceFullscreenModal}
@@ -171,8 +171,8 @@ ModalManager.propTypes = propTypes;
 
 const mapStateToProps = state => (
   (disclosureState => ({
-    componentKeysToDisclose: disclosureState.componentKeys,
-    componentDataToDisclose: disclosureState.components,
+    modalContentKeys: disclosureState.componentKeys,
+    modalContentData: disclosureState.components,
     size: disclosureState.size,
     isOpen: disclosureState.isOpen,
     isMaximized: disclosureState.isMaximized,
