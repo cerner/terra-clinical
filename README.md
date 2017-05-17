@@ -26,6 +26,8 @@
 
 | Terra Package      | Version | Status |
 |--------------------|---------|--------|
+| terra-clinical-detail-view  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-detail-view.svg)](https://www.npmjs.org/package/terra-clinical-detail-view) | :large_orange_diamond: |
+| terra-clinical-label-value-view       | [![NPM version](http://img.shields.io/npm/v/terra-clinical-label-value-view.svg)](https://www.npmjs.org/package/terra-clinical-label-value-view) | :large_orange_diamond: |
 
 
 ## Supported Browsers

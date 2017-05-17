@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -30,19 +34,19 @@ var propTypes = {
   /**
    * The title of the no data view.
    */
-  heading: _react.PropTypes.string,
+  heading: _propTypes2.default.string,
   /**
    * The subtext description of the no data view.
    */
-  subtext: _react.PropTypes.string,
+  subtext: _propTypes2.default.string,
   /**
    * The element to be dispaly in the subtext content container.
    */
-  subtextContent: _react.PropTypes.element,
+  subtextContent: _propTypes2.default.element,
   /**
    * Whether or not the no data glyph should be displayed.
    */
-  isGlyphHidden: _react.PropTypes.bool
+  isGlyphHidden: _propTypes2.default.bool
 };
 
 var defaultProps = {

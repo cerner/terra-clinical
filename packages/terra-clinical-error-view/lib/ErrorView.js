@@ -10,19 +10,23 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
 require('terra-base/lib/baseStyles');
 
-var _IconError = require('terra-icon/lib/icon/IconError');
-
-var _IconError2 = _interopRequireDefault(_IconError);
-
 var _terraButton = require('terra-button');
 
 var _terraButton2 = _interopRequireDefault(_terraButton);
+
+var _ErrorIcon = require('./ErrorIcon');
+
+var _ErrorIcon2 = _interopRequireDefault(_ErrorIcon);
 
 require('./ErrorView.scss');
 
@@ -34,23 +38,23 @@ var propTypes = {
   /**
    * The name of the error to display.
    */
-  name: _react.PropTypes.string,
+  name: _propTypes2.default.string,
   /**
    * The error description to display.
    */
-  description: _react.PropTypes.string,
+  description: _propTypes2.default.string,
   /**
    * The display text for the button.
    */
-  buttonText: _react.PropTypes.string,
+  buttonText: _propTypes2.default.string,
   /**
    * The click callback function that should be applied to the button.
    */
-  buttonOnClick: _react.PropTypes.func,
+  buttonOnClick: _propTypes2.default.func,
   /**
    * Whether or not the error glyph should be displayed.
    */
-  isGlyphHidden: _react.PropTypes.bool
+  isGlyphHidden: _propTypes2.default.bool
 };
 
 var defaultProps = {
@@ -73,7 +77,7 @@ var ErrorView = function ErrorView(_ref) {
 
   var glyphSection = void 0;
   if (!isGlyphHidden) {
-    var errorIcon = _react2.default.createElement(_IconError2.default, { height: '170', width: '170' });
+    var errorIcon = _react2.default.createElement(_ErrorIcon2.default, null);
     glyphSection = _react2.default.createElement(
       'div',
       { className: 'terraClinical-ErrorView-glyph' },
