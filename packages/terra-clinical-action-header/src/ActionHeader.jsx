@@ -57,7 +57,7 @@ const propTypes = {
 
   /**
    * Locale for i18n of accessability text.
-   **/ 
+   **/
   locale: PropTypes.string,
 
   /**
@@ -90,6 +90,10 @@ class ActionHeader extends React.Component {
 
   componentDidMount() {
     i18nLoader(this.state.locale, this.setState, this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    i18nLoader(nextProps.locale, this.setState, this);
   }
 
   render() {
