@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -34,32 +38,32 @@ var propTypes = {
   /**
    * The title to display
    **/
-  title: _react.PropTypes.string,
+  title: _propTypes2.default.string,
 
   /**
    * List of subtitle strings
    **/
-  subtitles: _react.PropTypes.arrayOf(_react.PropTypes.string),
+  subtitles: _propTypes2.default.arrayOf(_propTypes2.default.string),
 
   /**
    * Display for visualization data
    **/
-  graph: _react.PropTypes.element,
+  graph: _propTypes2.default.element,
 
   /**
    * Array of elements to display detail information
    **/
-  details: _react.PropTypes.arrayOf(_react.PropTypes.element),
+  details: _propTypes2.default.arrayOf(_propTypes2.default.element),
 
   /**
    * Text to be displayed at the footer of the view
    **/
-  footer: _react.PropTypes.string,
+  footer: _propTypes2.default.string,
 
   /**
    * Indicates if sections should be devided
    **/
-  isDivided: _react.PropTypes.bool
+  isDivided: _propTypes2.default.bool
 };
 
 var defaultProps = {
