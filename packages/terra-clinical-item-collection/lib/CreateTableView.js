@@ -23,6 +23,8 @@ require('./ItemCollection.scss');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+
 
 function determineTableColumns(row) {
   var startAccessory = row.startAccessory,

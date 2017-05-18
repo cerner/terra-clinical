@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './ItemCollection.scss';
 
@@ -15,7 +16,10 @@ const defaultProps = {
 
 const TableHeaderCell = ({ columnType, ...customProps }) => {
   const attributes = Object.assign({}, customProps);
-  attributes.className = classNames({ [`terraClinical-ItemCollection-column--${columnType}`]: columnType });
+  attributes.className = classNames([
+    'terraClinical-ItemCollection-column',
+    { [`terraClinical-ItemCollection-column--${columnType}`]: columnType },
+  ]);
 
   return (
     <th {...attributes} />

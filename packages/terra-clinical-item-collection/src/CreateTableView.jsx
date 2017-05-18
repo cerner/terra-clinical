@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from 'terra-table';
+// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import TableHeaderCell from './TableHeaderCell';
 import './ItemCollection.scss';
 
@@ -8,7 +9,7 @@ function determineTableColumns(row) {
 
   const columns = {};
   columns.startAccessoryColumn = startAccessory !== undefined;
-  if(displays) {
+  if (displays) {
     columns.displayColumns = displays.length < 8 ? displays.length : 8;
   }
   columns.commentColumn = comment !== undefined;

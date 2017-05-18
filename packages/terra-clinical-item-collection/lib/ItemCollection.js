@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _resizeObserverPolyfill = require('resize-observer-polyfill');
 
 var _resizeObserverPolyfill2 = _interopRequireDefault(_resizeObserverPolyfill);
@@ -20,13 +24,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _breakpoints = require('terra-responsive-element/lib/breakpoints');
+
+var _breakpoints2 = _interopRequireDefault(_breakpoints);
+
 require('terra-base/lib/baseStyles');
 
 require('./ItemCollection.scss');
-
-var _breakpoint = require('./breakpoint');
-
-var _breakpoint2 = _interopRequireDefault(_breakpoint);
 
 var _CreateListView = require('./CreateListView');
 
@@ -50,49 +54,50 @@ var propTypes = {
   /**
   * The breakpoint to switch from a table view to a list view. Breakpoint options are tiny, small, medium, large, or huge.
   */
-  breakpoint: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
+  breakpoint: _propTypes2.default.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
   /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
    **/
-  tableStyles: _react.PropTypes.shape({
-    isPadded: _react.PropTypes.bool,
-    isStriped: _react.PropTypes.bool
+  tableStyles: _propTypes2.default.shape({
+    isPadded: _propTypes2.default.bool,
+    isStriped: _propTypes2.default.bool
   }),
   /**
    * The styles to spread to the list. List style options are isDivided and hasChevrons.
    **/
-  listStyles: _react.PropTypes.shape({
-    isDivided: _react.PropTypes.bool,
-    hasChevrons: _react.PropTypes.bool
+  listStyles: _propTypes2.default.shape({
+    isDivided: _propTypes2.default.bool,
+    hasChevrons: _propTypes2.default.bool
   }),
   /**
    * The array of hashes to be displayed as rows. Each hash can contain a startAccessory, endAccessory,
    * comment, array of displays and a itemStyles hash. The item style options are layout, textEmphasis,
    * isTruncated and accessoryAlignment.
    **/
-  rows: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    startAccessory: _react.PropTypes.element,
-    displays: _react.PropTypes.arrayOf(_react.PropTypes.element),
-    comment: _react.PropTypes.element,
-    endAccessory: _react.PropTypes.element,
-    itemStyles: _react.PropTypes.shape({
-      layout: _react.PropTypes.oneOf(['oneColumn', 'twoColumns']),
-      textEmphasis: _react.PropTypes.oneOf(['default', 'start']),
-      isTruncated: _react.PropTypes.bool,
-      accessoryAlignment: _react.PropTypes.oneOf(['alignTop', 'alignCenter'])
+  rows: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    startAccessory: _propTypes2.default.element,
+    displays: _propTypes2.default.arrayOf(_propTypes2.default.element),
+    comment: _propTypes2.default.element,
+    endAccessory: _propTypes2.default.element,
+    itemStyles: _propTypes2.default.shape({
+      layout: _propTypes2.default.oneOf(['oneColumn', 'twoColumns']),
+      textEmphasis: _propTypes2.default.oneOf(['default', 'start']),
+      isTruncated: _propTypes2.default.bool,
+      accessoryAlignment: _propTypes2.default.oneOf(['alignTop', 'alignCenter'])
     })
   })),
   /**
    * A callback event that will be triggered when selection state changes.
    */
-  onChange: _react.PropTypes.func
+  onChange: _propTypes2.default.func
 };
 
 var defaultProps = {
   listStyles: undefined,
   tableStyles: undefined,
   rows: [],
-  breakpoint: 'small'
+  breakpoint: 'small',
+  onChange: undefined
 };
 
 var ItemCollection = function (_React$Component) {
@@ -139,15 +144,15 @@ var ItemCollection = function (_React$Component) {
     value: function handleSelection(event, selectedIndex) {
       this.setState({ selectedIndex: selectedIndex });
       if (this.props.onChange) {
-        this.props.onChange(event, index);
+        this.props.onChange(event, selectedIndex);
       }
     }
   }, {
     key: 'handleResize',
     value: function handleResize(width) {
       var display = void 0;
-      var breakpoint = (0, _breakpoint2.default)(this.props.breakpoint);
-      if (width < breakpoint) {
+      var breakpoints = (0, _breakpoints2.default)();
+      if (width < breakpoints[this.props.breakpoint]) {
         display = 'list';
       } else {
         display = 'table';
@@ -166,6 +171,10 @@ var ItemCollection = function (_React$Component) {
           rows = _props.rows,
           breakpoint = _props.breakpoint,
           customProps = _objectWithoutProperties(_props, ['listStyles', 'tableStyles', 'rows', 'breakpoint']);
+
+      if (!rows || !rows.length) {
+        return null;
+      }
 
       var attributes = _extends({}, customProps);
       attributes.className = (0, _classnames2.default)(['terraClinical-ItemCollection', 'terraClinical-ItemCollection--' + this.state.display + 'View', attributes.className]);

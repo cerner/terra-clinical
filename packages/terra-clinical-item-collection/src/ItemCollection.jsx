@@ -1,10 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ResizeObserver from 'resize-observer-polyfill';
 import classNames from 'classnames';
+import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
 import 'terra-base/lib/baseStyles';
 import './ItemCollection.scss';
 
-import getBreakpoint from './breakpoint';
 import createListView from './CreateListView';
 import createTableView from './CreateTableView';
 
@@ -55,6 +56,7 @@ const defaultProps = {
   tableStyles: undefined,
   rows: [],
   breakpoint: 'small',
+  onChange: undefined,
 };
 
 class ItemCollection extends React.Component {
@@ -84,14 +86,14 @@ class ItemCollection extends React.Component {
   handleSelection(event, selectedIndex) {
     this.setState({ selectedIndex });
     if (this.props.onChange) {
-      this.props.onChange(event, index);
+      this.props.onChange(event, selectedIndex);
     }
   }
 
   handleResize(width) {
     let display;
-    const breakpoint = getBreakpoint(this.props.breakpoint);
-    if (width < breakpoint) {
+    const breakpoints = getBreakpoints();
+    if (width < breakpoints[this.props.breakpoint]) {
       display = 'list';
     } else {
       display = 'table';
@@ -104,6 +106,11 @@ class ItemCollection extends React.Component {
 
   render() {
     const { listStyles, tableStyles, rows, breakpoint, ...customProps } = this.props;
+
+    if (!rows || !rows.length) {
+      return null;
+    }
+
     const attributes = Object.assign({}, customProps);
     attributes.className = classNames(['terraClinical-ItemCollection',
       `terraClinical-ItemCollection--${this.state.display}View`,

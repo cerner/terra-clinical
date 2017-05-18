@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -26,7 +30,7 @@ var propTypes = {
   /**
    * The column type of the header cell.
    **/
-  columnType: _react.PropTypes.string
+  columnType: _propTypes2.default.string
 };
 
 var defaultProps = {
@@ -38,7 +42,7 @@ var TableHeaderCell = function TableHeaderCell(_ref) {
       customProps = _objectWithoutProperties(_ref, ['columnType']);
 
   var attributes = _extends({}, customProps);
-  attributes.className = (0, _classnames2.default)(_defineProperty({}, 'terraClinical-ItemCollection-column--' + columnType, columnType));
+  attributes.className = (0, _classnames2.default)(['terraClinical-ItemCollection-column', _defineProperty({}, 'terraClinical-ItemCollection-column--' + columnType, columnType)]);
 
   return _react2.default.createElement('th', attributes);
 };

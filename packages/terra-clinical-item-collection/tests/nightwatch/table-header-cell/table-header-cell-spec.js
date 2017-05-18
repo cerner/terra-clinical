@@ -12,13 +12,11 @@ module.exports = {
     screenshot(browser, 'terra-clinical-item-collection', done);
   },
 
-  'Displays text as default': (browser) => {
+  'Displays the correct column class name': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-table-header-cell-tests/examples`);
-    browser.expect.element('.terraClinical-ItemCollection-column-width').to.be.present;
-    browser.assert.cssClassPresent('#tiny', 'terraClinical-ItemCollection-column-width-tiny');
-    browser.assert.cssClassPresent('#small', 'terraClinical-ItemCollection-column-width-small');
-    browser.assert.cssClassPresent('#medium', 'terraClinical-ItemCollection-column-width-medium');
-    browser.assert.cssClassPresent('#large', 'terraClinical-ItemCollection-column-width-large');
-    browser.assert.cssClassPresent('#huge', 'terraClinical-ItemCollection-column-width-huge');
+    browser.expect.element('.terraClinical-ItemCollection-column').to.be.present;
+    browser.assert.cssClassPresent('#accessory', 'terraClinical-ItemCollection-column--accessory');
+    browser.assert.cssClassPresent('#comment', 'terraClinical-ItemCollection-column--comment');
+    browser.assert.cssClassPresent('#display', 'terraClinical-ItemCollection-column--display');
   },
 };
