@@ -8,32 +8,32 @@
   -webkit-overflow-scrolling: touch;
 }
 
+// When not fullscreen, set a minimum width so that smaller percentages are still usable in smaller viewports.
+.terraClinical-ModalManager-modal:not(.terra-Modal--fullscreen) {
+  min-width: 560px;
+}
+
 .terraClinical-ModalManager-modal--huge {
   height: 85%;
-  min-width: 560px;
   width: 75%;
 }
 
 .terraClinical-ModalManager-modal--large {
   height: 75%;
-  min-width: 560px;
   width: 55%;
 }
 
 .terraClinical-ModalManager-modal--medium {
   height: 65%;
-  min-width: 560px;
   width: 55%;
 }
 
 .terraClinical-ModalManager-modal--small {
   height: 50%;
-  min-width: 560px;
   width: 50%;
 }
 
 .terraClinical-ModalManager-modal--tiny {
   height: 40%;
-  min-width: 560px;
   width: 50%;
 }

@@ -13,7 +13,7 @@ module.exports = {
 
   'Displays a default modal-manager': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/modal-manager-tests/default`)
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/modal-manager-tests/demo`)
       .assert.elementPresent('.terraClinical-ModalManager');
   },
 };

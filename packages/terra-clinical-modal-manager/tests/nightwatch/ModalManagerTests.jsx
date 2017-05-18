@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 const ModalManagerTests = () => (
   <div>
     <ul>
-      <li><Link to="/tests/modal-manager-tests/default">Default ModalManager</Link></li>
+      <li><Link to="/tests/modal-manager-tests/demo">Demo ModalManager</Link></li>
     </ul>
   </div>
 );

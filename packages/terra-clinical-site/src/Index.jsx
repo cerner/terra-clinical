@@ -33,6 +33,8 @@ import HeaderTestRoutes from 'terra-clinical-header/tests/nightwatch/HeaderTestR
 import LabelValueViewTestRoutes from 'terra-clinical-label-value-view/tests/nightwatch/LabelValueViewTestRoutes';
 import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/NoDataViewTestRoutes';
 import SlideGroupTestRoutes from 'terra-clinical-slide-group/tests/nightwatch/SlideGroupTestRoutes';
+import ModalManagerTestRoutes from 'terra-clinical-modal-manager/tests/nightwatch/ModalManagerTestRoutes';
+
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
@@ -67,5 +69,6 @@ ReactDOM.render((
     {LabelValueViewTestRoutes}
     {NoDataViewTestRoutes}
     {SlideGroupTestRoutes}
+    {ModalManagerTestRoutes}
   </Router>
 ), document.getElementById('root'));

@@ -19,13 +19,15 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _terraClinicalAppDelegate = require('terra-clinical-app-delegate');
-
-var _terraClinicalAppDelegate2 = _interopRequireDefault(_terraClinicalAppDelegate);
-
 var _terraModal = require('terra-modal');
 
 var _terraModal2 = _interopRequireDefault(_terraModal);
+
+require('terra-base/lib/baseStyles');
+
+var _terraClinicalAppDelegate = require('terra-clinical-app-delegate');
+
+var _terraClinicalAppDelegate2 = _interopRequireDefault(_terraClinicalAppDelegate);
 
 var _terraClinicalSlideGroup = require('terra-clinical-slide-group');
 
@@ -40,8 +42,6 @@ var _modalManager = require('../reducers/modalManager');
 var _modalManager2 = _interopRequireDefault(_modalManager);
 
 var _modalManager3 = require('../actions/modalManager');
-
-require('terra-base/lib/baseStyles');
 
 require('./ModalManager.scss');
 
@@ -67,59 +67,67 @@ var propTypes = {
   children: _react.PropTypes.node,
 
   /**
-   * From Redux. The Array of component keys that will be used to instantiate the Modal's inner components.
+   * From `connect`. The Array of component keys that will be used to instantiate the Modal's inner components.
    **/
-  modalContentKeys: _react.PropTypes.array,
+  modalComponentKeys: _react.PropTypes.array,
 
   /**
-   * From Redux. An Object containing component data used to instantiate the Modal's inner components.
+   * From `connect`. An Object containing component data used to instantiate the Modal's inner components.
    **/
-  modalContentData: _react.PropTypes.object,
+  modalComponentData: _react.PropTypes.object,
 
   /**
-   * From Redux. The desired size of the modal.
+   * From `connect`. The desired size of the modal.
    **/
   size: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
 
   /**
-   * From Redux. The presentation state of the modal.
+   * From `connect`. The presentation state of the modal.
    **/
   isOpen: _react.PropTypes.bool,
 
   /**
-   * From Redux. The maximization state of the modal.
+   * From `connect`. The maximization state of the modal.
    **/
   isMaximized: _react.PropTypes.bool,
 
   /**
-   * From Redux. A function that dispatches an `open` action.
+   * From `connect`. A function that dispatches an `open` action.
    **/
-  openModal: _react.PropTypes.func,
+  openModal: _react.PropTypes.func.isRequired,
 
   /**
-   * From Redux. A function that dispatches a `close` action.
+   * From `connect`. A function that dispatches a `close` action.
    **/
-  closeModal: _react.PropTypes.func,
+  closeModal: _react.PropTypes.func.isRequired,
 
   /**
-   * From Redux. A function that dispatches a `push` action.
+   * From `connect`. A function that dispatches a `push` action.
    **/
-  pushModal: _react.PropTypes.func,
+  pushModal: _react.PropTypes.func.isRequired,
 
   /**
-   * From Redux. A function that dispatches a `pop` action.
+   * From `connect`. A function that dispatches a `pop` action.
    **/
-  popModal: _react.PropTypes.func,
+  popModal: _react.PropTypes.func.isRequired,
 
   /**
-   * From Redux. A function that dispatches a `maximize` action.
+   * From `connect`. A function that dispatches a `maximize` action.
    **/
-  maximizeModal: _react.PropTypes.func,
+  maximizeModal: _react.PropTypes.func.isRequired,
 
   /**
-   * From Redux. A function that dispatches a `minimize` action.
+   * From `connect`. A function that dispatches a `minimize` action.
    **/
-  minimizeModal: _react.PropTypes.func
+  minimizeModal: _react.PropTypes.func.isRequired
+};
+
+var defaultProps = {
+  isOpen: false,
+  isMaximized: false,
+  size: 'small',
+  modalContentKeys: [],
+  modalContentData: {}
 };
 
 var ModalManager = function (_React$Component) {
@@ -167,12 +175,12 @@ var ModalManager = function (_React$Component) {
     value: function buildModalComponents() {
       var _this2 = this;
 
-      if (!this.props.modalContentKeys || !this.props.modalContentKeys.length) {
+      if (!this.props.modalComponentKeys || !this.props.modalComponentKeys.length) {
         return null;
       }
 
-      return this.props.modalContentKeys.map(function (componentKey, index) {
-        var componentData = _this2.props.modalContentData[componentKey];
+      return this.props.modalComponentKeys.map(function (componentKey, index) {
+        var componentData = _this2.props.modalComponentData[componentKey];
 
         var ComponentClass = _terraClinicalAppDelegate2.default.getComponentForDisclosure(componentData.name);
 
@@ -219,7 +227,7 @@ var ModalManager = function (_React$Component) {
           children = _props.children;
 
 
-      var sizeClass = 'terraClinical-ModalManager-modal--' + (size || 'small');
+      var sizeClass = 'terraClinical-ModalManager-modal--' + size;
 
       var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalManager-modal', _defineProperty({}, sizeClass, !(isMaximized || this.forceFullscreenModal))]);
 
@@ -260,6 +268,7 @@ var ModalManager = function (_React$Component) {
 }(_react2.default.Component);
 
 ModalManager.propTypes = propTypes;
+ModalManager.defaultProps = defaultProps;
 
 exports.ModalManager = ModalManager;
 
@@ -267,8 +276,8 @@ exports.ModalManager = ModalManager;
 var mapStateToProps = function mapStateToProps(state) {
   return function (disclosureState) {
     return {
-      modalContentKeys: disclosureState.componentKeys,
-      modalContentData: disclosureState.components,
+      modalComponentKeys: disclosureState.componentKeys,
+      modalComponentData: disclosureState.components,
       size: disclosureState.size,
       isOpen: disclosureState.isOpen,
       isMaximized: disclosureState.isMaximized

@@ -5,12 +5,12 @@ import { Route } from 'react-router';
 import ModalManagerTests from './ModalManagerTests';
 
 // Test Cases
-import DefaultModalManager from './DefaultModalManager';
+import ModalManagerDemo from './ModalManagerDemo';
 
 const routes = (
   <div>
     <Route path="/tests/modal-manager-tests" component={ModalManagerTests} />
-    <Route path="/tests/modal-manager-tests/default" component={DefaultModalManager} />
+    <Route path="/tests/modal-manager-tests/demo" component={ModalManagerDemo} />
   </div>
 );
 

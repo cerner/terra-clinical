@@ -1,6 +1,6 @@
 # Terra Clinical Modal Manager
 
-The ModalManager is a Redux-backed Container component that presents a single or multiple components using the `terra-modal`.
+The ModalManager is a Redux-backed Container component that dynamically presents components in a Terra Modal.
 
 ## Getting Started
 
@@ -11,10 +11,9 @@ The ModalManager is a Redux-backed Container component that presents a single or
 
 |Name|Type|Description|
 |---|---|---|
-|`ModalManager`|Component|The `connect`-ed Component that utilizes the standard Redux state mappings.|
-|`{ ModalManager }`|Component|The standard Component. This should only be used with a custom Redux implementation or for testing.|
-|`{ reducers }`|Object|An Object containing the ModalManager's default reducer. Can be used directly with `combineReducers` or otherwise used to
-construct the root reducer function of an application.|
+|`ModalManager`|Component|The `connect`-ed component that utilizes the standard Redux state mappings.|
+|`{ ModalManager }`|Component|The standard component. This should only be used with a custom Redux implementation or for testing.|
+|`{ reducers }`|Object|An Object containing the ModalManager's default reducer. Can be used directly with `combineReducers` or otherwise used to construct the root reducer function of an application.|
 
 ## Prerequisites
 
@@ -27,9 +26,9 @@ construct the root reducer function of an application.
 It works like this:
 * One or many components are provided to the ModalManager as children.
 * The ModalManager clones those children and adds an AppDelegate prop to each.
-* The added AppDelegate's `disclose` function, when called with a `preferredType` of `modal`, will dispatch the ModalManager's `OPEN` action.
+* The added AppDelegate's `disclose` function, when called with a `preferredType` of `'modal'`, will dispatch the ModalManager's `OPEN` action.
 * The ModalManager will use the data from the `OPEN` action to open the modal and present the specified component within it.
-* The modally-presented component will also recieve an AppDelegate prop, with it configured to further manipulate the modal state.
+* The modally-presented component will also recieve an AppDelegate prop configured to further manipulate the modal state.
 
 Components presented in the Modal still have the ability to disclose additional modal content; the ModalManager will maintain both components
 in a stack and give the top-most component the APIs necessary to navigate back (through its AppDelegate).

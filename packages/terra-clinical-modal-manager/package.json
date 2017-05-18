@@ -29,17 +29,20 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
     "terra-base": "^0.x",
     "terra-mixins": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
     "terra-base": "^0.x",
+    "terra-clinical-app-delegate": "^0.x",
+    "terra-clinical-slide-group": "^0.x",
     "terra-mixins": "^1.0.0",
     "terra-modal": "file:../../../terra-ui/packages/terra-modal",
-    "terra-responsive-element": "^0.x",
-    "terra-clinical-app-delegate": "^0.x",
-    "terra-clinical-slide-group": "^0.x"
+    "terra-responsive-element": "^0.x"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
