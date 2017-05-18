@@ -8,7 +8,7 @@ import {
   MINIMIZE,
 } from '../../../src/actions/modalManager';
 
-describe('modalManager', () => {
+describe('modalManager reducer', () => {
   it('should return the given state when action type is not recognized', () => {
     const initialState = { state: 'initial' };
 
@@ -32,7 +32,7 @@ describe('modalManager', () => {
       key: 'test_key',
       name: 'TestComponent',
       props: { prop1: 'test', prop2: 'test' },
-    }
+    };
 
     const initialState = modalManager(undefined, {});
     const result = modalManager(initialState, {
@@ -40,7 +40,7 @@ describe('modalManager', () => {
       data: {
         preferredType: 'modal',
         size: 'tiny',
-        content
+        content,
       },
     });
 
@@ -55,7 +55,7 @@ describe('modalManager', () => {
       isMaximized: false,
       isOpen: true,
       size: 'tiny',
-    }
+    };
 
     expect(result).toEqual(expected);
   });
@@ -65,14 +65,14 @@ describe('modalManager', () => {
       key: 'test_key',
       name: 'TestComponent',
       props: { prop1: 'test', prop2: 'test' },
-    }
+    };
 
     const initialState = modalManager(undefined, {});
     const result = modalManager(initialState, {
       type: OPEN,
       data: {
         preferredType: 'modal',
-        content
+        content,
       },
     });
 
@@ -87,7 +87,7 @@ describe('modalManager', () => {
       isMaximized: false,
       isOpen: true,
       size: 'small',
-    }
+    };
 
     expect(result).toEqual(expected);
   });
@@ -107,7 +107,7 @@ describe('modalManager', () => {
       key: 'test_key',
       name: 'TestComponent',
       props: { prop1: 'test', prop2: 'test' },
-    }
+    };
 
     const initialState = {
       componentKeys: ['COMPONENT_1', 'COMPONENT_2'],
@@ -119,18 +119,18 @@ describe('modalManager', () => {
         COMPONENT_2: {
           name: 'Component2',
           props: {},
-        }
+        },
       },
       isOpen: true,
       isMaximized: false,
       size: 'large',
-    }
+    };
 
     const result = modalManager(initialState, {
       type: PUSH,
       data: {
         preferredType: 'modal',
-        content
+        content,
       },
     });
 
@@ -140,12 +140,12 @@ describe('modalManager', () => {
         [`${content.key}`]: {
           name: content.name,
           props: content.props,
-        }
+        },
       }),
       isMaximized: false,
       isOpen: true,
       size: 'large',
-    }
+    };
 
     expect(result).toEqual(expected);
   });
@@ -161,12 +161,12 @@ describe('modalManager', () => {
         COMPONENT_2: {
           name: 'Component2',
           props: {},
-        }
+        },
       },
       isOpen: true,
       isMaximized: false,
       size: 'large',
-    }
+    };
 
     const result = modalManager(initialState, {
       type: POP,
@@ -179,12 +179,12 @@ describe('modalManager', () => {
         COMPONENT_1: {
           name: 'Component1',
           props: {},
-        }
+        },
       },
       isMaximized: false,
       isOpen: true,
       size: 'large',
-    }
+    };
 
     expect(result).toEqual(expected);
   });
@@ -200,19 +200,19 @@ describe('modalManager', () => {
         COMPONENT_2: {
           name: 'Component2',
           props: {},
-        }
+        },
       },
       isOpen: true,
       isMaximized: false,
       size: 'large',
-    }
+    };
 
     const result = modalManager(initialState, {
       type: MAXIMIZE,
       data: {},
     });
 
-    const expected = Object.assign({}, initialState, { isMaximized: true })
+    const expected = Object.assign({}, initialState, { isMaximized: true });
 
     expect(result).toEqual(expected);
   });
@@ -228,19 +228,19 @@ describe('modalManager', () => {
         COMPONENT_2: {
           name: 'Component2',
           props: {},
-        }
+        },
       },
       isOpen: true,
       isMaximized: true,
       size: 'large',
-    }
+    };
 
     const result = modalManager(initialState, {
       type: MINIMIZE,
       data: {},
     });
 
-    const expected = Object.assign({}, initialState, { isMaximized: false })
+    const expected = Object.assign({}, initialState, { isMaximized: false });
 
     expect(result).toEqual(expected);
   });
