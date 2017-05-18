@@ -2,20 +2,6 @@
 
 The ModalManager is a Redux-backed Container component that presents a single or multiple components using the `terra-modal`.
 
-It works like this:
-* One or many components are provided to the ModalManager as children.
-* The ModalManager clones those children and adds an AppDelegate prop to each.
-* The added AppDelegate's `disclose` function, when called with a `preferredType` of `modal`, will dispatch the ModalManager's `OPEN` action.
-* The ModalManager will use the data from the `OPEN` action to display the modal and present the specified component within it.
-* The modally-presented component will also recieve an AppDelegate with its APIs configured to further manipulate the modal state.
-
-Components presented in the Modal still have the ability to disclose additional modal content; the ModalManager will maintain both components
-in a stack and present the top-most component (through its AppDelegate) the APIs necessary to go back.
-
-Since ModalManager manages its state using Redux, its reducer must be included when the Redux store is created. To make
-this easier, the ModalManager exports a `reducers` object that can be used with `combineReducers` or otherwise used to
-construct the root reducer function of an application.
-
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
@@ -30,7 +16,42 @@ construct the root reducer function of an application.
 |`{ reducers }`|Object|An Object containing the ModalManager's default reducer. Can be used directly with `combineReducers` or otherwise used to
 construct the root reducer function of an application.|
 
+## Prerequisites
+
+Since ModalManager manages its state using Redux, its reducer must be included when the Redux store is initially created. To make
+this easier, the ModalManager exports a `reducers` object that can be used with `combineReducers` or otherwise used to
+construct the root reducer function of an application.
+
 ## Usage
+
+It works like this:
+* One or many components are provided to the ModalManager as children.
+* The ModalManager clones those children and adds an AppDelegate prop to each.
+* The added AppDelegate's `disclose` function, when called with a `preferredType` of `modal`, will dispatch the ModalManager's `OPEN` action.
+* The ModalManager will use the data from the `OPEN` action to open the modal and present the specified component within it.
+* The modally-presented component will also recieve an AppDelegate prop, with it configured to further manipulate the modal state.
+
+Components presented in the Modal still have the ability to disclose additional modal content; the ModalManager will maintain both components
+in a stack and give the top-most component the APIs necessary to navigate back (through its AppDelegate).
+
+The disclose APIs for the ModalManager children follow the standard AppDelegate disclose API, with the only addition being a 'size' property that
+will determine the size of the modal.
+
+```jsx
+app.disclose({
+  preferredType: 'modal',
+  size: 'small',
+  content: {...},
+})
+```
+
+|Key|Type|Description|
+|---|---|---|
+|preferredType|String|A String describing the component's desired disclosure method. Should be 'modal' if ModalManager usage is desired.|
+|content|Object|An Object containing data describing the component that is to be disclosed. See AppDelegate documentation for more.|
+|size|String|The desired modal size. One of: `tiny`, `small`, `medium`, `large`, `huge`.|
+
+A more thorough example would look something like this:
 
 ```jsx
 // DemoApplication.jsx
@@ -65,23 +86,48 @@ export default DemoApplication;
 // DemoContainer.jsx
 
 import React, { PropTypes } from 'react';
+import ModalContent, { disclosureName } from './ModalContent';
 
-class DemoContainer extends React.Component {
-  render() {
-    return (
-      <button
-        onClick={() => {
-          this.props.app.disclose({
-            preferredType: 'modal',
-            content: {...},
-          })
-        }
-      >
-        Click Me To Launch Modal!
-      </button>
-    );
-  }
-}
+const DemoContainer = ({ app }) => (
+  <div>
+    <button
+      onClick={() => {
+        this.props.app.disclose({
+          preferredType: 'modal',
+          size: 'small',
+          content: {
+            key: 'DEMO_CONTAINER_MODAL_CONTENT',
+            name: disclosureName,
+            props: {
+              contentText: 'Modal content'
+            },
+          },
+        })
+      }}
+    >
+      Launch Modal
+    </button>
+  </div>
+)
 
-export default DemoApplication;
+export default DemoContainer;
+```
+
+```jsx
+// ModalContent.jsx
+
+import AppDelegate from 'terra-clinical-app-delegate';
+
+const ModalContent = ({ app, contentText }) => (
+  <div>
+    <div>{contentText}</div>
+    <button onClick={app.closeDisclosure}>Close Modal</button>
+  </div>
+)
+
+export default ModalContent;
+
+const disclosureName = 'ModalContent';
+AppDelegate.registerComponentForDisclosure(disclosureName, ModalContent);
+export { disclosureName };
 ```
