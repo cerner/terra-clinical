@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.reducers = undefined;
+exports.reducers = exports.ModalManager = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -15,13 +15,25 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = require('react-redux');
 
-var _breakpoints = require('terra-responsive-element/lib/breakpoints');
+var _classnames = require('classnames');
 
-var _breakpoints2 = _interopRequireDefault(_breakpoints);
+var _classnames2 = _interopRequireDefault(_classnames);
 
 var _terraClinicalAppDelegate = require('terra-clinical-app-delegate');
 
 var _terraClinicalAppDelegate2 = _interopRequireDefault(_terraClinicalAppDelegate);
+
+var _terraModal = require('terra-modal');
+
+var _terraModal2 = _interopRequireDefault(_terraModal);
+
+var _terraClinicalSlideGroup = require('terra-clinical-slide-group');
+
+var _terraClinicalSlideGroup2 = _interopRequireDefault(_terraClinicalSlideGroup);
+
+var _breakpoints = require('terra-responsive-element/lib/breakpoints');
+
+var _breakpoints2 = _interopRequireDefault(_breakpoints);
 
 var _modalManager = require('../reducers/modalManager');
 
@@ -29,11 +41,13 @@ var _modalManager2 = _interopRequireDefault(_modalManager);
 
 var _modalManager3 = require('../actions/modalManager');
 
-var _ModalPresenter = require('../components/ModalPresenter');
+require('terra-base/lib/baseStyles');
 
-var _ModalPresenter2 = _interopRequireDefault(_ModalPresenter);
+require('./ModalManager.scss');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -121,7 +135,7 @@ var ModalManager = function (_React$Component) {
     _this.forceFullscreenModal = false;
 
     _this.updateFullscreenState = _this.updateFullscreenState.bind(_this);
-    _this.buildModalContent = _this.buildModalContent.bind(_this);
+    _this.buildModalComponents = _this.buildModalComponents.bind(_this);
     return _this;
   }
 
@@ -149,8 +163,8 @@ var ModalManager = function (_React$Component) {
       }
     }
   }, {
-    key: 'buildModalContent',
-    value: function buildModalContent() {
+    key: 'buildModalComponents',
+    value: function buildModalComponents() {
       var _this2 = this;
 
       if (!this.props.modalContentKeys || !this.props.modalContentKeys.length) {
@@ -198,29 +212,46 @@ var ModalManager = function (_React$Component) {
       var _props = this.props,
           app = _props.app,
           openModal = _props.openModal,
+          closeModal = _props.closeModal,
           size = _props.size,
           isOpen = _props.isOpen,
           isMaximized = _props.isMaximized,
           children = _props.children;
 
 
+      var sizeClass = 'terraClinical-ModalManager-modal--' + (size || 'small');
+
+      var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalManager-modal', _defineProperty({}, sizeClass, !(isMaximized || this.forceFullscreenModal))]);
+
       return _react2.default.createElement(
-        _ModalPresenter2.default,
-        {
-          modalContent: this.buildModalContent(),
-          size: size,
-          isOpen: isOpen,
-          isMaximized: isMaximized || this.forceFullscreenModal
-        },
+        'div',
+        { className: 'terraClinical-ModalManager' },
         _react2.default.Children.map(children, function (child) {
           var childAppDelegate = _terraClinicalAppDelegate2.default.clone(app, {
             disclose: function disclose(data) {
-              openModal(data);
+              if (data.preferredType === 'modal' || !app) {
+                openModal(data);
+              } else {
+                app.disclose(data);
+              }
             }
           });
 
           return _react2.default.cloneElement(child, { app: childAppDelegate });
-        })
+        }),
+        _react2.default.createElement(
+          _terraModal2.default,
+          {
+            isOpened: isOpen,
+            isFullscreen: isMaximized || this.forceFullscreenModal,
+            classNameModal: modalClassNames,
+            onRequestClose: closeModal,
+            closeOnEsc: true,
+            closeOnOutsideClick: false,
+            ariaLabel: 'Modal'
+          },
+          _react2.default.createElement(_terraClinicalSlideGroup2.default, { items: this.buildModalComponents() })
+        )
       );
     }
   }]);
@@ -229,6 +260,9 @@ var ModalManager = function (_React$Component) {
 }(_react2.default.Component);
 
 ModalManager.propTypes = propTypes;
+
+exports.ModalManager = ModalManager;
+
 
 var mapStateToProps = function mapStateToProps(state) {
   return function (disclosureState) {
@@ -239,7 +273,7 @@ var mapStateToProps = function mapStateToProps(state) {
       isOpen: disclosureState.isOpen,
       isMaximized: disclosureState.isMaximized
     };
-  }(state.modalController);
+  }(state.modalManager);
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -269,7 +303,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 
 var reducers = {
-  modalController: _modalManager2.default
+  modalManager: _modalManager2.default
 };
 
 exports.reducers = reducers;

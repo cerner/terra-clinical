@@ -1,38 +1,38 @@
-.terraClinical-ModalPresenter {
+.terraClinical-ModalManager {
   height: 100%;
 }
 
-.terraClinical-ModalPresenter-modal {
+.terraClinical-ModalManager-modal {
   overflow: auto;
   position: absolute;
   -webkit-overflow-scrolling: touch;
 }
 
-.terraClinical-ModalPresenter-modal--huge {
+.terraClinical-ModalManager-modal--huge {
   height: 85%;
   min-width: 560px;
   width: 75%;
 }
 
-.terraClinical-ModalPresenter-modal--large {
+.terraClinical-ModalManager-modal--large {
   height: 75%;
   min-width: 560px;
   width: 55%;
 }
 
-.terraClinical-ModalPresenter-modal--medium {
+.terraClinical-ModalManager-modal--medium {
   height: 65%;
   min-width: 560px;
   width: 55%;
 }
 
-.terraClinical-ModalPresenter-modal--small {
+.terraClinical-ModalManager-modal--small {
   height: 50%;
   min-width: 560px;
   width: 50%;
 }
 
-.terraClinical-ModalPresenter-modal--tiny {
+.terraClinical-ModalManager-modal--tiny {
   height: 40%;
   min-width: 560px;
   width: 50%;

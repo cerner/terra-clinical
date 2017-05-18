@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
-import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
 import AppDelegate from 'terra-clinical-app-delegate';
+import Modal from 'terra-modal';
+import SlideGroup from 'terra-clinical-slide-group';
+import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
 
 import modalReducers from '../reducers/modalManager';
 import { open, close, push, pop, maximize, minimize } from '../actions/modalManager';
-import ModalPresenter from '../components/ModalPresenter';
+
+import 'terra-base/lib/baseStyles';
+import './ModalManager.scss';
 
 const propTypes = {
   /**
@@ -84,7 +89,7 @@ class ModalManager extends React.Component {
     this.forceFullscreenModal = false;
 
     this.updateFullscreenState = this.updateFullscreenState.bind(this);
-    this.buildModalContent = this.buildModalContent.bind(this);
+    this.buildModalComponents = this.buildModalComponents.bind(this);
   }
 
   componentDidMount() {
@@ -107,7 +112,7 @@ class ModalManager extends React.Component {
     }
   }
 
-  buildModalContent() {
+  buildModalComponents() {
     if (!this.props.modalContentKeys || !this.props.modalContentKeys.length) {
       return null;
     }
@@ -144,30 +149,49 @@ class ModalManager extends React.Component {
   }
 
   render() {
-    const { app, openModal, size, isOpen, isMaximized, children } = this.props;
+    const { app, openModal, closeModal, size, isOpen, isMaximized, children } = this.props;
+
+    const sizeClass = `terraClinical-ModalManager-modal--${size || 'small'}`;
+
+    const modalClassNames = classNames([
+      'terraClinical-ModalManager-modal',
+      { [sizeClass]: !(isMaximized || this.forceFullscreenModal) },
+    ]);
 
     return (
-      <ModalPresenter
-        modalContent={this.buildModalContent()}
-        size={size}
-        isOpen={isOpen}
-        isMaximized={isMaximized || this.forceFullscreenModal}
-      >
+      <div className="terraClinical-ModalManager">
         {React.Children.map(children, (child) => {
           const childAppDelegate = AppDelegate.clone(app, {
             disclose: (data) => {
-              openModal(data);
+              if (data.preferredType === 'modal' || !app) {
+                openModal(data);
+              } else {
+                app.disclose(data);
+              }
             },
           });
 
           return React.cloneElement(child, { app: childAppDelegate });
         })}
-      </ModalPresenter>
+        <Modal
+          isOpened={isOpen}
+          isFullscreen={isMaximized || this.forceFullscreenModal}
+          classNameModal={modalClassNames}
+          onRequestClose={closeModal}
+          closeOnEsc
+          closeOnOutsideClick={false}
+          ariaLabel="Modal"
+        >
+          <SlideGroup items={this.buildModalComponents()} />
+        </Modal>
+      </div>
     );
   }
 }
 
 ModalManager.propTypes = propTypes;
+
+export { ModalManager };
 
 const mapStateToProps = state => (
   (disclosureState => ({
@@ -176,7 +200,7 @@ const mapStateToProps = state => (
     size: disclosureState.size,
     isOpen: disclosureState.isOpen,
     isMaximized: disclosureState.isMaximized,
-  }))(state.modalController)
+  }))(state.modalManager)
 );
 
 const mapDispatchToProps = dispatch => ({
@@ -191,7 +215,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(ModalManager);
 
 const reducers = {
-  modalController: modalReducers,
+  modalManager: modalReducers,
 };
 
 export { reducers };
