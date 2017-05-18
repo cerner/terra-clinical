@@ -1,20 +1,371 @@
-exports[`test should render a default component 1`] = `
+exports[`test should render a default component 1`] = `null`;
+
+exports[`test should render with a given breakpoint 1`] = `
 <div
   className="terraClinical-ItemCollection terraClinical-ItemCollection--tableView">
   <h2>
     Item Collection - 
     table
   </h2>
+  <h2>
+     Item Selection is: 
+    -1
+     
+  </h2>
   <Table
     isPadded={true}
-    isStriped={true}>
+    isStriped={true}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }>
     <TableHeader
       style={
         Object {
-          "display": "none",
+          "visibility": "hidden",
         }
-      } />
-    <SingleSelectableRows />
+      }>
+      <TableHeaderCell
+        columnType="accessory" />
+      <TableHeaderCell
+        columnType="display" />
+      <TableHeaderCell
+        columnType="display" />
+      <TableHeaderCell
+        columnType="comment" />
+      <TableHeaderCell
+        columnType="accessory" />
+    </TableHeader>
+    <SingleSelectableRows
+      onChange={[Function]}>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+    </SingleSelectableRows>
+  </Table>
+</div>
+`;
+
+exports[`test should render with multiple rows 1`] = `
+<div
+  className="terraClinical-ItemCollection terraClinical-ItemCollection--tableView">
+  <h2>
+    Item Collection - 
+    table
+  </h2>
+  <h2>
+     Item Selection is: 
+    -1
+     
+  </h2>
+  <Table
+    isPadded={true}
+    isStriped={true}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }>
+    <TableHeader
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }>
+      <TableHeaderCell
+        columnType="accessory" />
+      <TableHeaderCell
+        columnType="display" />
+      <TableHeaderCell
+        columnType="display" />
+      <TableHeaderCell
+        columnType="comment" />
+      <TableHeaderCell
+        columnType="accessory" />
+    </TableHeader>
+    <SingleSelectableRows
+      onChange={[Function]}>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+    </SingleSelectableRows>
+  </Table>
+</div>
+`;
+
+exports[`test should render with one row 1`] = `
+<div
+  className="terraClinical-ItemCollection terraClinical-ItemCollection--tableView">
+  <h2>
+    Item Collection - 
+    table
+  </h2>
+  <h2>
+     Item Selection is: 
+    -1
+     
+  </h2>
+  <Table
+    isPadded={true}
+    isStriped={true}
+    style={
+      Object {
+        "tableLayout": "fixed",
+      }
+    }>
+    <TableHeader
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }>
+      <TableHeaderCell
+        columnType="accessory" />
+      <TableHeaderCell
+        columnType="display" />
+      <TableHeaderCell
+        columnType="display" />
+      <TableHeaderCell
+        columnType="comment" />
+      <TableHeaderCell
+        columnType="accessory" />
+    </TableHeader>
+    <SingleSelectableRows
+      onChange={[Function]}>
+      <TableRow
+        isSelectable={true}
+        isSelected={false}>
+        <TableCell
+          content={
+            <p>
+              Start Accessory
+            </p>
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 1" />
+          } />
+        <TableCell
+          content={
+            <ItemDisplay
+              isTruncated={false}
+              text="Display 2" />
+          } />
+        <TableCell
+          content={
+            <ItemComment
+              isTruncated={false}
+              text="test comment" />
+          } />
+        <TableCell
+          content={
+            <p>
+              End Accessory
+            </p>
+          } />
+      </TableRow>
+    </SingleSelectableRows>
   </Table>
 </div>
 `;
