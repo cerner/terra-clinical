@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 const TableHeaderCellTests = () => (
   <div>
     <ul>
-      <li><Link to="/tests/item-collection-table-header-cell-tests/examples">ItemCollection Table Header Cell Examples</Link></li>
+      <li><Link to="/tests/item-collection-table-header-cell-tests/examples">ItemCollection.TableHeaderCell - Default</Link></li>
     </ul>
   </div>
 );
