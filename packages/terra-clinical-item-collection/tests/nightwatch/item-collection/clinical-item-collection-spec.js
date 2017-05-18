@@ -1,14 +1,14 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+/* eslint-disable no-unused-expressions */
 
 const screenshot = require('terra-toolkit').screenshot;
-
-const windowSizes = {
-  default: [470, 768],
-  tiny: [622, 768],
-  small: [838, 768],
-  medium: [1000, 768],
-  large: [1300, 768],
-  huge: [1500, 768],
+// widths are breakpoint width + 40 to account for padding on the root div
+const windowWidths = {
+  tiny: 584,
+  small: 808,
+  medium: 1032,
+  large: 1256,
+  huge: 1480,
 };
 
 module.exports = {
@@ -20,59 +20,103 @@ module.exports = {
     screenshot(browser, 'terra-clinical-item-collection', done);
   },
 
+  'Displays a default item collection': (browser) => {
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/default`);
+  },
+
   'Displays the correct collection responsive to window size for tiny breakpoint': (browser) => {
     const width = browser.globals.width;
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/tiny-breakpoint`)
-      .waitForElementVisible('.terraClinical-ItemCollection', 1000);
-    if (width < windowSizes.tiny[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--listView');
-    } else if (width >= windowSizes.tiny[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--tableView');
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/tiny-breakpoint`);
+    if (width < windowWidths.tiny) {
+      browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
+    } else {
+      browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
     }
   },
+
   'Displays the correct collection responsive to window size for small breakpoint': (browser) => {
     const width = browser.globals.width;
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/small-breakpoint`)
-      .waitForElementVisible('.terraClinical-ItemCollection', 1000);
-    if (width < windowSizes.small[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--listView');
-    } else if (width >= windowSizes.small[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--tableView');
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/small-breakpoint`);
+    if (width < windowWidths.small) {
+      browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
+    } else {
+      browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
     }
   },
+
   'Displays the correct collection responsive to window size for medium breakpoint': (browser) => {
     const width = browser.globals.width;
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/medium-breakpoint`)
-      .waitForElementVisible('.terraClinical-ItemCollection', 1000);
-    if (width < windowSizes.medium[0]) {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/medium-breakpoint`);
+    if (width < windowWidths.medium) {
       browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--listView');
-    } else if (width >= windowSizes.medium[0]) {
+      browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
+    } else {
       browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--tableView');
+      browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
     }
   },
+
   'Displays the correct collection responsive to window size for large breakpoint': (browser) => {
     const width = browser.globals.width;
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/large-breakpoint`)
-      .waitForElementVisible('.terraClinical-ItemCollection', 1000);
-    if (width < windowSizes.large[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--listView');
-    } else if (width >= windowSizes.large[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--tableView');
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/large-breakpoint`);
+    if (width < windowWidths.large) {
+      browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
+    } else {
+      browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
     }
   },
+
   'Displays the correct collection responsive to window size for huge breakpoint': (browser) => {
     const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/huge-breakpoint`);
+    if (width < windowWidths.huge) {
+      browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
+    } else {
+      browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
+    }
+  },
+
+  'Displays an item collection with table styles': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/huge-breakpoint`)
-      .waitForElementVisible('.terraClinical-ItemCollection', 1000);
-    if (width < windowSizes.huge[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--listView');
-    } else if (width >= windowSizes.huge[0]) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--tableView');
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/table-styles`);
+  },
+
+  'Displays an item collection with list styles': (browser) => {
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/list-styles`);
+  },
+
+  'Displays an item collection with styles applied to list items': (browser) => {
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/item-styles`);
+  },
+
+  'Triggers onChange function when list or row is selected upon clicking': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
+    if (width < windowWidths.small) {
+      browser
+      .click('.terra-List .terra-ListItem:nth-child(1)')
+      .acceptAlert();
+    } else {
+      browser
+      .click('.terra-Table-row:nth-child(1)')
+      .acceptAlert();
+    }
+  },
+
+  'Triggers onChange function when list or row is selected upon pressing enter': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
+    if (width < windowWidths.small) {
+      browser
+      .sendKeys('.terra-List .terra-ListItem:nth-child(1)', browser.Keys.ENTER)
+      .acceptAlert();
+    } else {
+      browser
+      .sendKeys('.terra-Table-row:nth-child(1)', browser.Keys.ENTER)
+      .acceptAlert();
     }
   },
 };
