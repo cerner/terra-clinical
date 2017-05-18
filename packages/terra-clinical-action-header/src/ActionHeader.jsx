@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import ButtonGroup from 'terra-button-group';
 import IconLeft from 'terra-icon/lib/icon/IconLeft';
