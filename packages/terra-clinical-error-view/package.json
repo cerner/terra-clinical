@@ -26,7 +26,7 @@
     "terra-toolkit": "^0.x"
   },
   "peerDependencies": {
-    "react": "^5.4.2",
+    "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-base": "^0.x",
     "terra-mixins": "^1.0.0",
