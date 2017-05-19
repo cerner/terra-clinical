@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import AppDelegate from 'terra-clinical-app-delegate';
 
@@ -9,6 +10,12 @@ import PatientLoader from '../data/PatientLoader';
 import patientListController from './reducers/patientListController';
 
 import { disclosureName as patientDetailDisclosureName, reducers as patientDetailReducers } from '../patient-detail/PatientDetailController';
+
+const propTypes = {
+  app: AppDelegate.propType,
+  physicianId: PropTypes.string,
+  patientListData: PropTypes.object,
+};
 
 class PatientListController extends React.Component {
   constructor(props) {
@@ -81,11 +88,7 @@ class PatientListController extends React.Component {
   }
 }
 
-PatientListController.propTypes = {
-  app: AppDelegate.propType,
-  physicianId: PropTypes.string,
-  patientListData: PropTypes.object,
-};
+PatientListController.propTypes = propTypes;
 
 export default PatientListController;
 

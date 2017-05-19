@@ -7,8 +7,6 @@ class Loader {
     this.isLoading = false;
   }
 
-  destroy() {}
-
   initiateRequest(requestCallback) {
     this.isLoading = true;
 

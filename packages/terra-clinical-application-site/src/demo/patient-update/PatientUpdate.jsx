@@ -1,10 +1,19 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
 import AppDelegate from 'terra-clinical-app-delegate';
 
 import NavigationHeader from '../navigation-header/NavigationHeader';
 import ActivityOverlay from '../activity-overlay/ActivityOverlay';
+
+const propTypes = {
+  app: AppDelegate.propType,
+  patient: PropTypes.object,
+  isLoading: PropTypes.bool,
+  onSubmit: PropTypes.func,
+  onCancel: PropTypes.func,
+};
 
 class PatientUpdate extends React.Component {
   constructor(props) {
@@ -65,12 +74,6 @@ class PatientUpdate extends React.Component {
   }
 }
 
-PatientUpdate.propTypes = {
-  app: AppDelegate.propType,
-  patient: PropTypes.object,
-  isLoading: PropTypes.bool,
-  onSubmit: PropTypes.func,
-  onCancel: PropTypes.func,
-};
+PatientUpdate.propTypes = propTypes;
 
 export default PatientUpdate;

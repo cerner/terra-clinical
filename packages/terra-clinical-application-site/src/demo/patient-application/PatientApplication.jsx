@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
@@ -18,11 +18,13 @@ const store = createStore(
     modalManagerReducers,
     panelControllerReducers,
   )),
+  // eslint-disable-next-line no-underscore-dangle
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 const physicianId = 'physician1';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class PatientApplication extends React.Component {
   render() {
     return (

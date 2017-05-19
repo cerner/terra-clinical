@@ -1,7 +1,14 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import ActionHeader from 'terra-clinical-action-header';
 import AppDelegate from 'terra-clinical-app-delegate';
+
+const propTypes = {
+  app: AppDelegate.propType,
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
 
 class NavigationHeader extends React.Component {
   constructor(props) {
@@ -47,10 +54,6 @@ class NavigationHeader extends React.Component {
   }
 }
 
-NavigationHeader.propTypes = {
-  app: AppDelegate.propType,
-  title: PropTypes.string,
-  children: PropTypes.node,
-};
+NavigationHeader.propTypes = propTypes;
 
 export default NavigationHeader;

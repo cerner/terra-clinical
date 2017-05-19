@@ -1,10 +1,29 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import AppDelegate from 'terra-clinical-app-delegate';
 import PanelPresenter from './PanelPresenter';
 
 import panelControllerReducers from './reducers/panelController';
 import { open, close, push, pop, maximize, minimize } from './actions/panelController';
+
+const propTypes = {
+  app: AppDelegate.propType,
+  children: PropTypes.node,
+
+  componentKeysToDisclose: PropTypes.array,
+  componentDataToDisclose: PropTypes.object,
+  size: PropTypes.string,
+  isOpen: PropTypes.bool,
+  isMaximized: PropTypes.bool,
+
+  openPanel: PropTypes.func,
+  closePanel: PropTypes.func,
+  pushPanel: PropTypes.func,
+  popPanel: PropTypes.func,
+  maximizePanel: PropTypes.func,
+  minimizePanel: PropTypes.func,
+};
 
 class PanelController extends React.Component {
   constructor(props) {
@@ -82,23 +101,7 @@ class PanelController extends React.Component {
   }
 }
 
-PanelController.propTypes = {
-  app: AppDelegate.propType,
-  children: PropTypes.node,
-
-  componentKeysToDisclose: PropTypes.array,
-  componentDataToDisclose: PropTypes.object,
-  size: PropTypes.string,
-  isOpen: PropTypes.bool,
-  isMaximized: PropTypes.bool,
-
-  openPanel: PropTypes.func,
-  closePanel: PropTypes.func,
-  pushPanel: PropTypes.func,
-  popPanel: PropTypes.func,
-  maximizePanel: PropTypes.func,
-  minimizePanel: PropTypes.func,
-};
+PanelController.propTypes = propTypes;
 
 const mapStateToProps = state => (
   (disclosureState => ({

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import ButtonGroup from 'terra-button-group';
 import List from 'terra-list';
@@ -16,6 +17,14 @@ import NavigationHeader from '../navigation-header/NavigationHeader';
 import ActivityOverlay from '../activity-overlay/ActivityOverlay';
 
 let patientListId = 0;
+
+const propTypes = {
+  app: AppDelegate.propType,
+  patients: PropTypes.object,
+  isLoading: PropTypes.bool,
+  onRefresh: PropTypes.func,
+  onSelectPatientDetail: PropTypes.func,
+};
 
 class PatientList extends React.PureComponent {
   constructor(props) {
@@ -90,12 +99,6 @@ class PatientList extends React.PureComponent {
   }
 }
 
-PatientList.propTypes = {
-  app: AppDelegate.propType,
-  patients: PropTypes.object,
-  isLoading: PropTypes.bool,
-  onRefresh: PropTypes.func,
-  onSelectPatientDetail: PropTypes.func,
-};
+PatientList.propTypes = propTypes;
 
 export default PatientList;
