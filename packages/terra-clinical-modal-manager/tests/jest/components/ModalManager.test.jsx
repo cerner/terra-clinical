@@ -1,6 +1,6 @@
 import React from 'react';
 import AppDelegate from 'terra-clinical-app-delegate';
-import { ModalManager } from '../../../src/containers/ModalManager';
+import ModalManager from '../../../src/components/ModalManager';
 
 const TestContainer = () => (
   <div>Hello World</div>

@@ -7,14 +7,6 @@ The ModalManager is a Redux-backed Container component that dynamically presents
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-modal-manager`
 
-## Exports
-
-|Name|Type|Description|
-|---|---|---|
-|`ModalManager`|Component|The `connect`-ed component that utilizes the standard Redux state mappings.|
-|`{ ModalManager }`|Component|The standard component. This should only be used with a custom Redux implementation or for testing.|
-|`{ reducers }`|Object|An Object containing the ModalManager's default reducer. Can be used directly with `combineReducers` or otherwise used to construct the root reducer function of an application.|
-
 ## Prerequisites
 
 Since ModalManager manages its state using Redux, its reducer must be included when the Redux store is initially created. To make
