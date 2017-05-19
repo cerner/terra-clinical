@@ -18,10 +18,13 @@
   height: 20px;
   max-width: 20px;
   overflow: hidden;
+  position: relative;
 }
 
 .terraClinical-ItemDisplay-inlineIcon > * {
   font-size: 1rem;
+  height: 20px;
+  width: 16px;
 }
 
 .terraClinical-ItemDisplay-text,
