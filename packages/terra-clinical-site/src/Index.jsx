@@ -17,6 +17,7 @@ import HeaderExamples from './examples/header/Index';
 import LabelValueViewExamples from './examples/label-value-view/Index';
 import NoDataViewExamples from './examples/no-data-view/Index';
 import SlideGroupExamples from './examples/slide-group/Index';
+import ModalManagerExamples from './examples/modal-manager/Index';
 
 // Test
 /* eslint-disable import/first */
@@ -55,6 +56,7 @@ ReactDOM.render((
       <Route path="label-value-view" component={LabelValueViewExamples} />
       <Route path="no-data-view" component={NoDataViewExamples} />
       <Route path="slide-group" component={SlideGroupExamples} />
+      <Route path="modal-manager" component={ModalManagerExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
     {ActionHeaderTestRoutes}
