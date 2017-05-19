@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -32,11 +36,11 @@ var propTypes = {
   /**
    * The array of components for the group. Only the last component is visible. The others are hidden but still mounted.
    */
-  items: _react.PropTypes.array,
+  items: _propTypes2.default.array,
   /**
    * When true, the transition between slides is not animated.
    */
-  animationIsDisabled: _react.PropTypes.bool
+  animationIsDisabled: _propTypes2.default.bool
 };
 
 var SlideGroup = function SlideGroup(_ref) {

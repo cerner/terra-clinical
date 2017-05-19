@@ -8,13 +8,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 require('./Slide.scss');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var propTypes = {
-  isHidden: _react.PropTypes.bool,
-  children: _react.PropTypes.node
+  isHidden: _propTypes2.default.bool,
+  children: _propTypes2.default.node
 };
 
 var Slide = function Slide(props) {
