@@ -16,7 +16,7 @@ it('should render a default SlideGroup', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render a SlideGroup with animation disabled', () => {
-  const wrapper = shallow(React.cloneElement(slideGroup, { animationIsDisabled: true }));
+it('should render a SlideGroup with animation enabled', () => {
+  const wrapper = shallow(React.cloneElement(slideGroup, { isAnimated: true }));
   expect(wrapper).toMatchSnapshot();
 });

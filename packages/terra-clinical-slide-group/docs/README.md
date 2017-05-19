@@ -23,5 +23,6 @@ import SlideGroup from 'terra-clinical-slide-group';
     <div key="SECOND">Second Component (I'm hidden, too)</div>,
     <div key="THIRD">Third Component (I'm visible, because I'm the last component in the stack)</div>,
   ]}
+  isAnimated
 >
 ```
