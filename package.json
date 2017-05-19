@@ -45,9 +45,8 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "lerna run lint:scss",
-    "prepush": "node scripts/prepush/index.js",
     "pretest": "npm run lint",
-    "postinstall": "npm run bootstrap",
+    "postinstall": "npm run compile && npm run bootstrap",
     "start": "cd packages/terra-clinical-site && npm run start",
     "test": "jest && npm run test:nightwatch-default",
     "test:nightwatch-default": "WEBPACK_CONFIG_PATH=../../../packages/terra-clinical-site/webpack.config node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --env default-tiny,default-small,default-medium,default-large,default-huge,default-enormous"
@@ -68,7 +67,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "glob": "^7.1.1",
-    "husky": "^0.13.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^18.0.0",
     "lerna": "2.0.0-rc.4",
