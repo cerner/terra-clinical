@@ -11,11 +11,7 @@ exports[`test should render a button with text 1`] = `
   className="terraClinical-ErrorView">
   <div
     className="terraClinical-ErrorView-glyph">
-    <IconError
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <ErrorIcon />
   </div>
   <p
     className="terraClinical-ErrorView-text" />
@@ -38,11 +34,7 @@ exports[`test should render a default component 1`] = `
   className="terraClinical-ErrorView">
   <div
     className="terraClinical-ErrorView-glyph">
-    <IconError
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <ErrorIcon />
   </div>
   <p
     className="terraClinical-ErrorView-text" />
@@ -54,11 +46,7 @@ exports[`test should render a description 1`] = `
   className="terraClinical-ErrorView">
   <div
     className="terraClinical-ErrorView-glyph">
-    <IconError
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <ErrorIcon />
   </div>
   <p
     className="terraClinical-ErrorView-text">
@@ -72,11 +60,7 @@ exports[`test should render a name 1`] = `
   className="terraClinical-ErrorView">
   <div
     className="terraClinical-ErrorView-glyph">
-    <IconError
-      height="170"
-      viewBox="0 0 48 48"
-      width="170"
-      xmlns="http://www.w3.org/2000/svg" />
+    <ErrorIcon />
   </div>
   <p
     className="terraClinical-ErrorView-text">

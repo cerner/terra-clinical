@@ -2,13 +2,14 @@
 import Base from 'terra-base';
 import 'terra-base/lib/baseStyles';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import Grid from 'terra-grid';
 import List from 'terra-list';
 import './site.scss';
 
 const propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 const App = props => (

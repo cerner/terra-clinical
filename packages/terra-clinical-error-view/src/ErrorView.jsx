@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import 'terra-base/lib/baseStyles';
-import IconError from 'terra-icon/lib/icon/IconError';
 import Button from 'terra-button';
+import ErrorIcon from './ErrorIcon';
 import './ErrorView.scss';
 
 const propTypes = {
@@ -52,13 +52,17 @@ const ErrorView = ({
 
   let glyphSection;
   if (!isGlyphHidden) {
-    const errorIcon = <IconError height="170" width="170" />;
+    const errorIcon = <ErrorIcon />;
     glyphSection = <div className="terraClinical-ErrorView-glyph">{errorIcon}</div>;
   }
 
   let nameSection;
   if (name) {
-    nameSection = <b className="terraClinical-ErrorView-name">{name}</b>;
+    let nameDisplay = name;
+    if (name && description) {
+      nameDisplay += '.  ';
+    }
+    nameSection = <b className="terraClinical-ErrorView-name">{nameDisplay}</b>;
   }
 
   let buttonSection;

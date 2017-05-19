@@ -27,6 +27,9 @@
 | Terra Package      | Version | Status |
 |--------------------|---------|--------|
 | terra-clinical-detail-view  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-detail-view.svg)](https://www.npmjs.org/package/terra-clinical-detail-view) | :large_orange_diamond: |
+| terra-clinical-header  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-header.svg)](https://www.npmjs.org/package/terra-clinical-header) | :large_orange_diamond: |
+| terra-clinical-item-display  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-display.svg)](https://www.npmjs.org/package/terra-clinical-item-display) | :large_orange_diamond: |
+| terra-clinical-item-view  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-view.svg)](https://www.npmjs.org/package/terra-clinical-item-view) | :large_orange_diamond: |
 | terra-clinical-label-value-view       | [![NPM version](http://img.shields.io/npm/v/terra-clinical-label-value-view.svg)](https://www.npmjs.org/package/terra-clinical-label-value-view) | :large_orange_diamond: |
 
 
