@@ -13,12 +13,16 @@ const propTypes = {
    */
   items: PropTypes.array,
   /**
-   * When true, the transition between slides is not animated.
+   * When true, the transition between slides is animated.
    */
-  animationIsDisabled: PropTypes.bool,
+  isAnimated: PropTypes.bool,
 };
 
-const SlideGroup = ({ items, animationIsDisabled, ...customProps }) => {
+const defaultProps = {
+  isAnimated: false,
+};
+
+const SlideGroup = ({ items, isAnimated, ...customProps }) => {
   // We don't want to render the transition group when no children exist. Doing so will cause the first child to
   // animate into place, which in most cases we do not want.
   if (!items || !items.length) {
@@ -40,8 +44,8 @@ const SlideGroup = ({ items, animationIsDisabled, ...customProps }) => {
     <div {...customProps} className={slideGroupClassNames}>
       <CSSTransitionGroup
         key={transitionGroupKey}
-        transitionEnter={!animationIsDisabled}
-        transitionLeave={!animationIsDisabled}
+        transitionEnter={isAnimated}
+        transitionLeave={isAnimated}
         transitionName="terraClinical-Slide"
         transitionEnterTimeout={300}
         transitionLeaveTimeout={300}
@@ -57,5 +61,7 @@ const SlideGroup = ({ items, animationIsDisabled, ...customProps }) => {
 };
 
 SlideGroup.propTypes = propTypes;
+SlideGroup.defaultProps = defaultProps;
+
 
 export default SlideGroup;

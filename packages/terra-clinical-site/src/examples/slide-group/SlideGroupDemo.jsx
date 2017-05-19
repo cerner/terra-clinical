@@ -1,9 +1,12 @@
 import React from 'react';
+
 import SlideGroup from 'terra-clinical-slide-group';
 
 const containerStyles = {
   height: '250px',
   width: '400px',
+  overflow: 'hidden',
+  position: 'relative',
 };
 
 const slideStyles = {
@@ -53,13 +56,15 @@ class SlideGroupDemo extends React.Component {
     }
 
     return (
-      <SlideGroup items={slides} animationIsDisabled={this.props.animationIsDisabled} style={containerStyles} />
+      <div style={containerStyles}>
+        <SlideGroup items={slides} isAnimated={this.props.isAnimated} />
+      </div>
     );
   }
 }
 
 SlideGroupDemo.propTypes = {
-  animationIsDisabled: React.PropTypes.bool,
+  isAnimated: React.PropTypes.bool,
 };
 
 export default SlideGroupDemo;

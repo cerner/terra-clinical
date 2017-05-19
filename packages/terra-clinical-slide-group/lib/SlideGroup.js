@@ -38,15 +38,19 @@ var propTypes = {
    */
   items: _propTypes2.default.array,
   /**
-   * When true, the transition between slides is not animated.
+   * When true, the transition between slides is animated.
    */
-  animationIsDisabled: _propTypes2.default.bool
+  isAnimated: _propTypes2.default.bool
+};
+
+var defaultProps = {
+  isAnimated: false
 };
 
 var SlideGroup = function SlideGroup(_ref) {
   var items = _ref.items,
-      animationIsDisabled = _ref.animationIsDisabled,
-      customProps = _objectWithoutProperties(_ref, ['items', 'animationIsDisabled']);
+      isAnimated = _ref.isAnimated,
+      customProps = _objectWithoutProperties(_ref, ['items', 'isAnimated']);
 
   // We don't want to render the transition group when no children exist. Doing so will cause the first child to
   // animate into place, which in most cases we do not want.
@@ -69,8 +73,8 @@ var SlideGroup = function SlideGroup(_ref) {
       _CSSTransitionGroup2.default,
       {
         key: transitionGroupKey,
-        transitionEnter: !animationIsDisabled,
-        transitionLeave: !animationIsDisabled,
+        transitionEnter: isAnimated,
+        transitionLeave: isAnimated,
         transitionName: 'terraClinical-Slide',
         transitionEnterTimeout: 300,
         transitionLeaveTimeout: 300
@@ -87,5 +91,6 @@ var SlideGroup = function SlideGroup(_ref) {
 };
 
 SlideGroup.propTypes = propTypes;
+SlideGroup.defaultProps = defaultProps;
 
 exports.default = SlideGroup;

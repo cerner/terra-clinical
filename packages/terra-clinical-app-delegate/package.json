@@ -3,7 +3,7 @@
   "main": "lib/app-delegate/AppDelegate.js",
   "private": true,
   "version": "0.0.0",
-  "description": "terra-clinical-app-delegate",
+  "description": "An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"

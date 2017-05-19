@@ -49,16 +49,16 @@ the suggested use of each function is as follows:
 |Name|Status|Description|
 |---|---|---|
 |`disclose`|Required|Used to progressively disclose content in various ways (modal, inline, etc.)|
-|`dismiss`|Optional|Used to dismiss the calling component. Should only be present if the component is being presented in a closable disclosure.|
-|`closeDisclosure`|Optional|Used to close the disclosure method in which the calling component is presented. Should only be present if the component is being presented in a closable disclosure.|
-|`goBack`|Optional|Used to dismiss the calling component. Should only be present if the component is being presented in a navigation stack.|
+|`dismiss`|Optional|Used to remove the calling component from the application. Dismiss may additionally close the calling component's disclosure mechanism. Dismiss should only be present if the component is dismissible (i.e. presented within a disclosure mechanism).|
+|`closeDisclosure`|Optional|Used to close the calling component's disclosure mechanism. Should only be present if the component is presented within a disclosure mechanism.|
+|`goBack`|Optional|Used to dismiss the calling component. Should only be present if the ability to go back is available (for example, due to a navigation structure present in the disclosure mechanism).|
 |`maximize`|Optional|Used to maximize the calling component. Should only be present if the disclosure method is maximizable and not currently maximized.|
 |`minimize`|Optional|Used to minimize the calling component. Should only be present if the disclosure method is minimizable and not currently minimized.|
 
 
-### Recommended Disclose Argument API
+### Disclose Argument API
 
-While the other functions have generic Object-based argument APIs, the `disclose` function has a recommended, extensible argument API that will support Redux-based workflows.
+While the other functions have generic Object-based argument APIs, the `disclose` function has an extensible argument API designed to support Redux-based workflows.
 
 Disclose API:
 

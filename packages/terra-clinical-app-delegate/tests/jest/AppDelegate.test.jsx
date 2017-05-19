@@ -26,7 +26,7 @@ describe('create', () => {
     expect(appDelegateInstance.goBack).toBe(goBack);
     expect(appDelegateInstance.maximize).toBe(maximize);
     expect(appDelegateInstance.minimize).toBe(minimize);
-    expect(appDelegateInstance.notSupported).toBe(undefined);
+    expect(appDelegateInstance.thisIsATestWhatAmIDoing).toBe(undefined);
   });
 });
 

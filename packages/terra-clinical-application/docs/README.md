@@ -2,6 +2,9 @@
 
 The Application is a wrapper component around `terra-base` that provides clinical application-specific properties.
 
+Since the Application will pass the AppDelegate instance it received as an `app` prop to its children, any child components
+given to the Application should be able to handle that `app` prop appropriately.
+
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):

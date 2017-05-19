@@ -3,7 +3,7 @@
   "main": "lib/Application.js",
   "private": true,
   "version": "0.0.0",
-  "description": "terra-clinical-application",
+  "description": "A wrapper component around `terra-base` that provides clinical application-specific properties",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"

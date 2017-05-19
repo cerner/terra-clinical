@@ -1,11 +1,11 @@
-exports[`test should render a SlideGroup with animation disabled 1`] = `
+exports[`test should render a SlideGroup with animation enabled 1`] = `
 <div
   className="terraClinical-SlideGroup">
   <CSSTransitionGroup
     transitionAppear={false}
-    transitionEnter={false}
+    transitionEnter={true}
     transitionEnterTimeout={300}
-    transitionLeave={false}
+    transitionLeave={true}
     transitionLeaveTimeout={300}
     transitionName="terraClinical-Slide">
     <Slide
@@ -35,9 +35,9 @@ exports[`test should render a default SlideGroup 1`] = `
   className="terraClinical-SlideGroup">
   <CSSTransitionGroup
     transitionAppear={false}
-    transitionEnter={true}
+    transitionEnter={false}
     transitionEnterTimeout={300}
-    transitionLeave={true}
+    transitionLeave={false}
     transitionLeaveTimeout={300}
     transitionName="terraClinical-Slide">
     <Slide

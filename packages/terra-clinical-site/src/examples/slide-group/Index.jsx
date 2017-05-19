@@ -21,9 +21,9 @@ const SlideGroupExamples = () => (
     <br />
     <SlideGroupDemo />
     <br />
-    <h2 id="slideGroup">Animation Disabled</h2>
+    <h2 id="slideGroup-animated">isAnimated</h2>
     <br />
-    <SlideGroupDemo animationIsDisabled />
+    <SlideGroupDemo isAnimated />
   </div>
 );
 
