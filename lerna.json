@@ -1,7 +1,19 @@
 {
-  "lerna": "2.0.0-beta.36",
+  "lerna": "2.0.0-rc.4",
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "publish": {
+      "ignore": [
+        "terra-clinical-action-header",
+        "terra-clinical-error-view",
+        "terra-clinical-item-display",
+        "terra-clinical-item-view",
+        "terra-clinical-no-data-view",
+        "terra-clinical-site"
+      ]
+    }
+  },
   "version": "independent"
 }

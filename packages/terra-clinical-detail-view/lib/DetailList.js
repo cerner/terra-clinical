@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -30,13 +34,13 @@ var propTypes = {
   /**
    * The title to be displayed above the list items.
    **/
-  title: _react.PropTypes.string,
+  title: _propTypes2.default.string,
 
   /**
    * The detail item(s) to display information. Must be a
    * DetailListItem element.
    **/
-  children: _react.PropTypes.oneOfType([_react.PropTypes.objectOf(_DetailListItem2.default), _react.PropTypes.arrayOf(_react.PropTypes.objectOf(_DetailListItem2.default))])
+  children: _propTypes2.default.oneOfType([_propTypes2.default.objectOf(_DetailListItem2.default), _propTypes2.default.arrayOf(_propTypes2.default.objectOf(_DetailListItem2.default))])
 };
 
 var defaultProps = {

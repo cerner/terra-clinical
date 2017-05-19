@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Base from 'terra-base';
 import AppDelegate from 'terra-clinical-app-delegate';
