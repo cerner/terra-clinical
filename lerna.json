@@ -8,8 +8,6 @@
       "ignore": [
         "terra-clinical-action-header",
         "terra-clinical-error-view",
-        "terra-clinical-item-display",
-        "terra-clinical-item-view",
         "terra-clinical-no-data-view",
         "terra-clinical-site"
       ]
