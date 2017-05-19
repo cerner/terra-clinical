@@ -87,10 +87,14 @@ var ErrorView = function ErrorView(_ref) {
 
   var nameSection = void 0;
   if (name) {
+    var nameDisplay = name;
+    if (name && description) {
+      nameDisplay += '.  ';
+    }
     nameSection = _react2.default.createElement(
       'b',
       { className: 'terraClinical-ErrorView-name' },
-      name
+      nameDisplay
     );
   }
 

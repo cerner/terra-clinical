@@ -58,7 +58,11 @@ const ErrorView = ({
 
   let nameSection;
   if (name) {
-    nameSection = <b className="terraClinical-ErrorView-name">{name}</b>;
+    let nameDisplay = name;
+    if (name && description) {
+      nameDisplay += '.  ';
+    }
+    nameSection = <b className="terraClinical-ErrorView-name">{nameDisplay}</b>;
   }
 
   let buttonSection;
