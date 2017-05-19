@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "description": "terra-clinical",
+  "engines": {
+    "node": "6.9.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"
@@ -39,7 +42,10 @@
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "lerna run compile",
+    "compile:heroku": "cd packages/terra-clinical-site && npm run compile:heroku",
     "deploy": "lerna run --scope terra-clinical-site deploy",
+    "heroku-prebuild": "npm install -g lerna@2.0.0-rc.4",
+    "heroku-postbuild": "npm install --only=dev && npm run compile:heroku",
     "jest": "jest",
     "jest:coverage": "jest --coverage",
     "lint": "npm run lint:js && npm run lint:scss",
@@ -49,6 +55,7 @@
     "pretest": "npm run lint",
     "postinstall": "npm run bootstrap",
     "start": "cd packages/terra-clinical-site && npm run start",
+    "start:express": "node scripts/express/app.js",
     "test": "jest && npm run test:nightwatch-default",
     "test:nightwatch-default": "WEBPACK_CONFIG_PATH=../../../packages/terra-clinical-site/webpack.config node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --env default-tiny,default-small,default-medium,default-large,default-huge,default-enormous"
   },
@@ -67,6 +74,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
+    "express": "^4.15.2",
     "glob": "^7.1.1",
     "husky": "^0.13.3",
     "identity-obj-proxy": "^3.0.0",
