@@ -11,7 +11,7 @@ module.exports = {
     screenshot(browser, 'terra-clinical-modal-manager', done);
   },
 
-  'Displays a default modal-manager': (browser) => {
+  'Displays a modal': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/modal-manager-tests/demo`)
       .assert.elementPresent('.terraClinical-ModalManager');
