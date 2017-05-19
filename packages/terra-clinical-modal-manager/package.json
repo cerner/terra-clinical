@@ -35,14 +35,15 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "terra-base": "^0.x",
-    "terra-clinical-app-delegate": "^0.x",
-    "terra-clinical-slide-group": "^0.x",
     "terra-mixins": "^1.0.0",
-    "terra-modal": "file:../../../terra-ui/packages/terra-modal",
-    "terra-responsive-element": "^0.x"
+    "terra-modal": "^0.x",
+    "terra-responsive-element": "^0.x",
+    "terra-clinical-app-delegate": "^0.x",
+    "terra-clinical-slide-group": "^0.x"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -51,9 +52,6 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "$(cd ..; npm bin)/eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "$(cd ..; npm bin)/stylelint src/**/*.scss",
-    "release:major": "npm test && node ../../scripts/release/release.js major",
-    "release:minor": "npm test && node ../../scripts/release/release.js minor",
-    "release:patch": "npm test && node ../../scripts/release/release.js patch",
     "test": "npm run test:spec && npm run test:nightwatch-default",
     "test:spec": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
     "test:all": "npm run test:nightwatch-default && npm run test:nightwatch-chrome && npm run test:nightwatch-firefox && npm run test:nightwatch-safari",

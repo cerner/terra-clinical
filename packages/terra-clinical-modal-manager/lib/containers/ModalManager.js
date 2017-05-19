@@ -13,6 +13,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactRedux = require('react-redux');
 
 var _classnames = require('classnames');
@@ -64,62 +68,62 @@ var propTypes = {
   /**
    * Components that will receive the ModalManager's AppDelegate configuration. Components given as children must appropriately handle an `app` prop.
    **/
-  children: _react.PropTypes.node,
+  children: _propTypes2.default.node,
 
   /**
    * From `connect`. The Array of component keys that will be used to instantiate the Modal's inner components.
    **/
-  modalComponentKeys: _react.PropTypes.array,
+  modalComponentKeys: _propTypes2.default.array,
 
   /**
    * From `connect`. An Object containing component data used to instantiate the Modal's inner components.
    **/
-  modalComponentData: _react.PropTypes.object,
+  modalComponentData: _propTypes2.default.object,
 
   /**
    * From `connect`. The desired size of the modal.
    **/
-  size: _react.PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
+  size: _propTypes2.default.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
 
   /**
    * From `connect`. The presentation state of the modal.
    **/
-  isOpen: _react.PropTypes.bool,
+  isOpen: _propTypes2.default.bool,
 
   /**
    * From `connect`. The maximization state of the modal.
    **/
-  isMaximized: _react.PropTypes.bool,
+  isMaximized: _propTypes2.default.bool,
 
   /**
    * From `connect`. A function that dispatches an `open` action.
    **/
-  openModal: _react.PropTypes.func.isRequired,
+  openModal: _propTypes2.default.func.isRequired,
 
   /**
    * From `connect`. A function that dispatches a `close` action.
    **/
-  closeModal: _react.PropTypes.func.isRequired,
+  closeModal: _propTypes2.default.func.isRequired,
 
   /**
    * From `connect`. A function that dispatches a `push` action.
    **/
-  pushModal: _react.PropTypes.func.isRequired,
+  pushModal: _propTypes2.default.func.isRequired,
 
   /**
    * From `connect`. A function that dispatches a `pop` action.
    **/
-  popModal: _react.PropTypes.func.isRequired,
+  popModal: _propTypes2.default.func.isRequired,
 
   /**
    * From `connect`. A function that dispatches a `maximize` action.
    **/
-  maximizeModal: _react.PropTypes.func.isRequired,
+  maximizeModal: _propTypes2.default.func.isRequired,
 
   /**
    * From `connect`. A function that dispatches a `minimize` action.
    **/
-  minimizeModal: _react.PropTypes.func.isRequired
+  minimizeModal: _propTypes2.default.func.isRequired
 };
 
 var defaultProps = {
