@@ -54,14 +54,17 @@ class DemoContainer extends React.Component {
     const { app, identifier } = this.props;
 
     return (
-      <div id={identifier} className="nested-component" style={{ height: '100%' }}>
+      <div id={identifier} className="nested-component" style={{ height: '100%', padding: '10px' }}>
+        <h2>Content Component</h2>
+        <br />
+        <h4>id: {identifier}</h4>
+        <br />
         <button className="disclose" onClick={this.disclose}>Disclose</button>
         {app && app.dismiss ? <button className="dismiss" onClick={this.dismiss}>Dismiss</button> : null }
         {app && app.closeDisclosure ? <button className="close-disclosure" onClick={this.closeDisclosure}>Close Disclosure</button> : null }
         {app && app.goBack ? <button className="go-back" onClick={this.goBack}>Go Back</button> : null }
         {app && app.maximize ? <button className="maximize" onClick={this.maximize}>Maximize</button> : null }
         {app && app.minimize ? <button className="minimize" onClick={this.minimize}>Minimize</button> : null }
-        <p>{identifier}</p>
       </div>
     );
   }

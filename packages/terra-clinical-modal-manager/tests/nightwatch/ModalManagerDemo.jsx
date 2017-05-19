@@ -14,7 +14,7 @@ const store = createStore(
 const ModalManagerDemo = () => (
   <Provider store={store}>
     <ModalManager>
-      <DemoContainer identifier="root" />
+      <DemoContainer identifier="root-component" />
     </ModalManager>
   </Provider>
 );
