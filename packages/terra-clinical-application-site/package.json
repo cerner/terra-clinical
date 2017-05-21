@@ -54,9 +54,9 @@
     "terra-clinical-modal-manager": "^0.x",
     "terra-clinical-action-header": "^0.x",
     "terra-clinical-item-display": "^0.x",
-    "terra-list": "file:../../../terra-ui/packages/terra-list",
-    "terra-button-group": "file:../../../terra-ui/packages/terra-button-group",
-    "terra-content-container": "file:../../../terra-ui/packages/terra-content-container"
+    "terra-list": "^0.x",
+    "terra-button-group": "^0.x",
+    "terra-content-container": "^0.x"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

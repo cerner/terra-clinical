@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-application-site.svg)](https://www.npmjs.org/package/terra-clinical-application-site)
 [![Build Status](https://travis-ci.org/cerner/terra-ui.svg?branch=master)](https://travis-ci.org/cerner/terra-ui)
 
-{insert description}
+Demo Site for Application Design and Implementation
 
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
