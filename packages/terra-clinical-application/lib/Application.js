@@ -26,6 +26,8 @@ var _terraClinicalAppDelegate = require('terra-clinical-app-delegate');
 
 var _terraClinicalAppDelegate2 = _interopRequireDefault(_terraClinicalAppDelegate);
 
+require('terra-base/lib/baseStyles');
+
 require('./Application.scss');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Base from 'terra-base';
 import AppDelegate from 'terra-clinical-app-delegate';
+import 'terra-base/lib/baseStyles';
 
 import './Application.scss';
 

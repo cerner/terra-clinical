@@ -22,6 +22,8 @@ var _CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
 var _CSSTransitionGroup2 = _interopRequireDefault(_CSSTransitionGroup);
 
+require('terra-base/lib/baseStyles');
+
 var _Slide = require('./Slide');
 
 var _Slide2 = _interopRequireDefault(_Slide);
