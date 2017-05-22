@@ -1,0 +1,46 @@
+// Styles specific to development only
+// @import 'node_modules/terra-legacy-theme/src/terra-legacy-theme';
+// @import 'node_modules/terra-application/src/terra-application';
+// $terra-bidi: true;
+
+// html {
+//   height: 100%;
+//   width: 100%;
+//   overflow: hidden;
+//   // -webkit-overflow-scrolling: touch;
+// }
+
+body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+  width: 100vw;
+  // postion: fixed;
+  // -webkit-overflow-scrolling: touch;
+}
+
+#terra-ApplicationMount {
+  height: 100%;
+  width: 100%;
+}
+
+.ReactModal__Overlay {
+  z-index: 1040;
+}
+
+.terraClinical-ItemView-accessory {
+  max-width: 70%;
+}
+
+[dir='ltr'] .terra-ButtonGroupButton {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.terra-ListItem {
+  border-color: lightgrey;
+}
+
+.terra-List-divided:first-child {
+  border-color: lightgrey;
+}
