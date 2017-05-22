@@ -20,7 +20,7 @@ let patientListId = 0;
 
 const propTypes = {
   app: AppDelegate.propType,
-  patients: PropTypes.object,
+  patients: PropTypes.array,
   isLoading: PropTypes.bool,
   onRefresh: PropTypes.func,
   onSelectPatientDetail: PropTypes.func,
@@ -52,8 +52,8 @@ class PatientList extends React.PureComponent {
     const patientList = this.props.patients;
 
     const patientListItems = [];
-    if (patientList && patientList.patients && patientList.patients.length) {
-      patientList.patients.forEach((patient) => {
+    if (patientList && patientList.length) {
+      patientList.forEach((patient) => {
         patientListItems.push((
           <List.Item
             key={patient.id}

@@ -1,20 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
 import AppDelegate from 'terra-clinical-app-delegate';
+
+import { loadPatients } from '../patient-application/actions/patientActions';
+import patientReducers from '../patient-application/reducers/patientReducers';
 
 // import Placeholder from '../../generic-components/placeholder/Placeholder';
 
 import PatientList from './PatientList';
-import PatientLoader from '../data/PatientLoader';
-import patientListController from './reducers/patientListController';
+// import PatientLoader from '../data/PatientLoader';
+// import patientListController from './reducers/patientListController';
 
 import { disclosureName as patientDetailDisclosureName, reducers as patientDetailReducers } from '../patient-detail/PatientDetailController';
 
 const propTypes = {
   app: AppDelegate.propType,
   physicianId: PropTypes.string,
-  patientListData: PropTypes.object,
+  patients: PropTypes.array,
+  refreshPatients: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 class PatientListController extends React.Component {
@@ -23,35 +29,20 @@ class PatientListController extends React.Component {
 
     this.refresh = this.refresh.bind(this);
     this.presentPatientDetail = this.presentPatientDetail.bind(this);
-
-    this.state = {
-      isLoading: false,
-      patientListData: props.patientListData,
-    };
-
-    this.loader = new PatientLoader({
-      dataKey: 'patientListData',
-      onStoreUpdate: () => {
-        this.refresh();
-      },
-      onChange: (loaderState) => {
-        this.setState(loaderState);
-      },
-    });
   }
 
   componentDidMount() {
-    if (!this.state.patientListData) {
+    if (!this.props.patients || !this.props.patients.length) {
       this.refresh();
     }
   }
 
-  componentWillUnmount() {
-    this.loader.destroy();
-  }
+  // componentWillUnmount() {
+  //   this.loader.destroy();
+  // }
 
   refresh() {
-    this.loader.getPatientList(this.props.physicianId);
+    this.props.refreshPatients();
   }
 
   presentPatientDetail(patient, type) {
@@ -69,9 +60,9 @@ class PatientListController extends React.Component {
   }
 
   render() {
-    const { app, physicianId, patientListData, ...customProps } = this.props;
+    const { app, physicianId, patients, ...customProps } = this.props;
 
-    if (!this.state.patientListData) {
+    if (!this.props.patients) {
       return null; // <Placeholder app={app} headerText="Patient List" loadingText="Loading patients..." />;
     }
 
@@ -79,8 +70,8 @@ class PatientListController extends React.Component {
       <PatientList
         {...customProps}
         app={app}
-        patients={{ patients: this.state.patientListData }}
-        isLoading={this.state.isLoading}
+        patients={this.props.patients}
+        isLoading={this.props.isLoading}
         onRefresh={this.refresh}
         onSelectPatientDetail={this.presentPatientDetail}
       />
@@ -90,11 +81,22 @@ class PatientListController extends React.Component {
 
 PatientListController.propTypes = propTypes;
 
-export default PatientListController;
+const mapStateToProps = state => ({
+  patients: Object.keys(state.patientState.patients).map(key => state.patientState.patients[key]),
+  isLoading: state.patientState.isLoading,
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  refreshPatients: () => { dispatch(loadPatients(ownProps.physicianId)); },
+});
+
+const connectedPatientListController = connect(mapStateToProps, mapDispatchToProps)(PatientListController);
+
+export default connectedPatientListController;
 
 const disclosureName = 'PatientListController';
-AppDelegate.registerComponentForDisclosure(disclosureName, PatientListController);
+AppDelegate.registerComponentForDisclosure(disclosureName, connectedPatientListController);
 export { disclosureName };
 
-const reducers = Object.assign({}, { patientListController }, patientDetailReducers);
+const reducers = Object.assign({}, { patientState: patientReducers }, patientDetailReducers);
 export { reducers };
