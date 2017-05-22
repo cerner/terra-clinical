@@ -91,7 +91,7 @@ module.exports = {
     browser.click('#DemoContainer-1 .disclose');
 
     // Waiting here to ensure new component is presented and back button is clickable
-    browser.pause(310);
+    browser.waitForElementPresent('.terraClinical-Slide:not(.terraClinical-Slide-enter-active):nth-child(2)', 350);
 
     browser.expect.element('.terraClinical-ModalManager-modal .terraClinical-SlideGroup #DemoContainer-1').to.be.present;
     browser.expect.element('.terraClinical-ModalManager-modal .terraClinical-SlideGroup #DemoContainer-2').to.be.present;
