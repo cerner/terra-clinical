@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-toolkit": "0.3.0"
+    "terra-toolkit": "^0.x",
+    "terra-clinical-app-delegate": "^0.x"
   },
   "peerDependencies": {
     "react": "^15.4.2",
@@ -31,7 +32,8 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "terra-base": "^0.x",
-    "terra-mixins": "^1.0.0"
+    "terra-mixins": "^1.0.0",
+    "terra-clinical-app-delegate": "^0.x"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -42,7 +44,6 @@
     "terra-mixins": "^1.0.0",
     "terra-modal": "^0.x",
     "terra-responsive-element": "^0.x",
-    "terra-clinical-app-delegate": "^0.x",
     "terra-clinical-slide-group": "^0.x"
   },
   "scripts": {
