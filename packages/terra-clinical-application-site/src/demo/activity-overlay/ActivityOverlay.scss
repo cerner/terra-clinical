@@ -1,0 +1,16 @@
+.terraClinical-ActivityOverlay {
+  background: lightgrey;
+  height: 100%;
+  opacity: 0.9;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.terraClinical-ActivityOverlay-content {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+}
