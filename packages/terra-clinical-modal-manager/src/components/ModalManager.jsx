@@ -185,7 +185,7 @@ class ModalManager extends React.Component {
           closeOnOutsideClick={false}
           ariaLabel="Modal"
         >
-          <SlideGroup items={this.buildModalComponents()} />
+          <SlideGroup items={this.buildModalComponents()} isAnimated />
         </Modal>
       </div>
     );

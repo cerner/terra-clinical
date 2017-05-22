@@ -251,7 +251,7 @@ var ModalManager = function (_React$Component) {
             closeOnOutsideClick: false,
             ariaLabel: 'Modal'
           },
-          _react2.default.createElement(_terraClinicalSlideGroup2.default, { items: this.buildModalComponents() })
+          _react2.default.createElement(_terraClinicalSlideGroup2.default, { items: this.buildModalComponents(), isAnimated: true })
         )
       );
     }

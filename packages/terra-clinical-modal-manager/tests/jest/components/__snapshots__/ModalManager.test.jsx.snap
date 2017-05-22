@@ -20,6 +20,7 @@ exports[`ModalManger - app - should render the ModalManager with given AppDelega
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -46,6 +47,7 @@ exports[`ModalManger - isMaximized - should render the ModalManager as maximized
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -72,6 +74,7 @@ exports[`ModalManger - isOpen - should render the ModalManager as open 1`] = `
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -98,6 +101,7 @@ exports[`ModalManger - modal components - should render the ModalManager with gi
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={
         Array [
           <TestContainer
@@ -148,6 +152,7 @@ exports[`ModalManger - modal components - should render the ModalManager with gi
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={
         Array [
           undefined,
@@ -179,6 +184,7 @@ exports[`ModalManger - modal components - should render the ModalManager with gi
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={
         Array [
           <TestContainer
@@ -229,6 +235,7 @@ exports[`ModalManger - sizes - should render the ModalManager with huge size 1`]
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -255,6 +262,7 @@ exports[`ModalManger - sizes - should render the ModalManager with large size 1`
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -281,6 +289,7 @@ exports[`ModalManger - sizes - should render the ModalManager with medium size 1
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -307,6 +316,7 @@ exports[`ModalManger - sizes - should render the ModalManager with small size 1`
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -333,6 +343,7 @@ exports[`ModalManger - sizes - should render the ModalManager with tiny size 1`]
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
@@ -359,6 +370,7 @@ exports[`ModalManger should render the ModalManager with defaults 1`] = `
     onRequestClose={[Function]}
     role="document">
     <SlideGroup
+      isAnimated={true}
       items={null} />
   </Modal>
 </div>
