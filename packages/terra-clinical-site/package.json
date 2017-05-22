@@ -15,6 +15,7 @@
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "scripts": {
     "start": "webpack-dev-server --progress",
+    "compile:heroku": "webpack --config webpack.prod.config --progress",
     "compile:prod": "webpack --config webpack.prod.config -p",
     "compile:prod-stats": "webpack --config webpack.prod.config -p --json > stats.json",
     "deploy": "npm run compile:prod && gh-pages -d build",
