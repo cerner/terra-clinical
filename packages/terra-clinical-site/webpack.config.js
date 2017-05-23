@@ -85,7 +85,7 @@ module.exports = {
   devtool: 'cheap-source-map',
   devServer: {
     host: '0.0.0.0',
-    disableHostcheck: true,
+    disableHostCheck: true,
     stats: {
       assert: true,
       children: false,
