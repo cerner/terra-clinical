@@ -53,4 +53,4 @@ function* updatePatientSaga() {
   yield takeLatest(UPDATE_PATIENT, updatePatient);
 }
 
-export { fetchPatientsSaga, fetchPatientSaga, updatePatientSaga };
+export default [fetchPatientsSaga, fetchPatientSaga, updatePatientSaga];

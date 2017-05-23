@@ -10,8 +10,7 @@ import ModalManager, { reducers as modalManagerReducers } from 'terra-clinical-m
 import PanelController, { reducers as panelControllerReducers } from '../panel-controller/PanelController';
 import PatientListController, { reducers as patientListReducers } from '../patient-list/PatientListController';
 
-import { fetchPatientsSaga, fetchPatientSaga, updatePatientSaga } from './sagas/patientSagas';
-import patientReducers from './reducers/patientReducers';
+import patientSagas from '../patient-concept/sagas/patientSagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,7 +18,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   combineReducers(Object.assign({},
-    { patientState: patientReducers },
     patientListReducers,
     modalManagerReducers,
     panelControllerReducers,
@@ -27,9 +25,7 @@ const store = createStore(
   composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
 
-sagaMiddleware.run(fetchPatientsSaga);
-sagaMiddleware.run(fetchPatientSaga);
-sagaMiddleware.run(updatePatientSaga);
+patientSagas.map(saga => (sagaMiddleware.run(saga)));
 
 const physicianId = 'physician1';
 
