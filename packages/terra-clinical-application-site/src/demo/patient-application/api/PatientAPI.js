@@ -59,12 +59,16 @@ const patientListData = {
   ],
 };
 
-let listeners = [];
-
 const copy = object => JSON.parse(JSON.stringify(object));
 
-const PatientStore = {
-  getPatientList: physicianId => (copy(patientListData[physicianId])),
+const PatientAPI = {
+  getPatientList: physicianId => (
+    new Promise((resolve) => {
+      setTimeout(() => { resolve(); }, 2500);
+    }).then(() => (
+      copy(patientListData[physicianId])
+    ))
+  ),
   getPatient: (physicianId, patientId) => {
     const patientList = copy(patientListData[physicianId]);
 
@@ -75,9 +79,13 @@ const PatientStore = {
       }
     });
 
-    return patientData;
+    return new Promise((resolve) => {
+      setTimeout(() => { resolve(); }, 2500);
+    }).then(() => (
+      patientData
+    ));
   },
-  update: (physicianId, patientId, data) => {
+  updatePatient: (physicianId, patientId, data) => {
     const patientList = patientListData[physicianId];
 
     let patientToUpdate;
@@ -99,14 +107,12 @@ const PatientStore = {
       patientToUpdate.comment = data.comment;
     }
 
-    listeners.map(listener => listener());
-  },
-  subscribe: (listener) => {
-    listeners.push(listener);
-    return () => {
-      listeners = listeners.filter(l => (l !== listener));
-    };
+    return new Promise((resolve) => {
+      setTimeout(() => { resolve(); }, 2500);
+    }).then(() => (
+      copy(patientToUpdate)
+    ));
   },
 };
 
-export default PatientStore;
+export default PatientAPI;

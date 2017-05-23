@@ -7,11 +7,7 @@ import AppDelegate from 'terra-clinical-app-delegate';
 import { loadPatients } from '../patient-application/actions/patientActions';
 import patientReducers from '../patient-application/reducers/patientReducers';
 
-// import Placeholder from '../../generic-components/placeholder/Placeholder';
-
 import PatientList from './PatientList';
-// import PatientLoader from '../data/PatientLoader';
-// import patientListController from './reducers/patientListController';
 
 import { disclosureName as patientDetailDisclosureName, reducers as patientDetailReducers } from '../patient-detail/PatientDetailController';
 
@@ -36,10 +32,6 @@ class PatientListController extends React.Component {
       this.refresh();
     }
   }
-
-  // componentWillUnmount() {
-  //   this.loader.destroy();
-  // }
 
   refresh() {
     this.props.refreshPatients();

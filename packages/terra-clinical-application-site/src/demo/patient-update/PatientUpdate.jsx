@@ -10,7 +10,7 @@ import ActivityOverlay from '../activity-overlay/ActivityOverlay';
 const propTypes = {
   app: AppDelegate.propType,
   patient: PropTypes.object,
-  isLoading: PropTypes.bool,
+  isUpdating: PropTypes.bool,
   onSubmit: PropTypes.func,
   onCancel: PropTypes.func,
 };
@@ -45,8 +45,8 @@ class PatientUpdate extends React.Component {
     const patient = this.props.patient;
 
     let loadingIndicator;
-    if (this.props.isLoading) {
-      loadingIndicator = <ActivityOverlay />;
+    if (this.props.isUpdating) {
+      loadingIndicator = <ActivityOverlay text="Updating" />;
     }
 
     return (

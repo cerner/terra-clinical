@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
 import AppDelegate from 'terra-clinical-app-delegate';
 
+import { loadPatient } from '../patient-application/actions/patientActions';
+import patientReducers from '../patient-application/reducers/patientReducers';
+
 import PatientDetail from './PatientDetail';
-import PatientLoader from '../data/PatientLoader';
-import patientDetailController from './reducers/patientDetailController';
 
 import { disclosureName as patientUpdateDisclosureName, reducers as patientUpdateReducers } from '../patient-update/PatientUpdateController';
 
@@ -14,6 +16,8 @@ const propTypes = {
   physicianId: PropTypes.string,
   patientId: PropTypes.string,
   patient: PropTypes.object,
+  refreshPatient: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 class PatientDetailController extends React.Component {
@@ -22,35 +26,16 @@ class PatientDetailController extends React.Component {
 
     this.refresh = this.refresh.bind(this);
     this.presentPatientUpdate = this.presentPatientUpdate.bind(this);
-
-    this.state = {
-      isLoading: false,
-      patient: props.patient,
-    };
-
-    this.loader = new PatientLoader({
-      dataKey: 'patient',
-      onStoreUpdate: () => {
-        this.refresh();
-      },
-      onChange: (loaderState) => {
-        this.setState(loaderState);
-      },
-    });
   }
 
   componentDidMount() {
-    if (!this.state.patient) {
+    if (!this.props.patient) {
       this.refresh();
     }
   }
 
-  componentWillUnmount() {
-    this.loader.destroy();
-  }
-
   refresh() {
-    this.loader.getPatient(this.props.physicianId, this.props.patientId);
+    this.props.refreshPatient();
   }
 
   presentPatientUpdate(patient, type) {
@@ -70,7 +55,7 @@ class PatientDetailController extends React.Component {
   render() {
     const { app, patient, physicianId, patientId, ...customProps } = this.props;
 
-    if (!this.state.patient) {
+    if (!this.props.patient) {
       return null; // <Placeholder app={app} headerText="Patient Detail" loadingText="Loading patient..." />;
     }
 
@@ -78,8 +63,8 @@ class PatientDetailController extends React.Component {
       <PatientDetail
         {...customProps}
         app={app}
-        patient={this.state.patient}
-        isLoading={this.state.isLoading}
+        patient={this.props.patient}
+        isLoading={this.props.isLoading}
         onRefresh={this.refresh}
         onSelectPatientUpdate={this.presentPatientUpdate}
       />
@@ -89,11 +74,31 @@ class PatientDetailController extends React.Component {
 
 PatientDetailController.propTypes = propTypes;
 
-export default PatientDetailController;
+const mapStateToProps = (state, ownProps) => {
+  let foundPatient;
+  Object.keys(state.patientState.patients).forEach((key) => {
+    if (state.patientState.patients[key].id === ownProps.patientId) {
+      foundPatient = state.patientState.patients[key];
+    }
+  });
+
+  return {
+    patient: foundPatient,
+    isLoading: state.patientState.isLoading,
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  refreshPatient: () => { dispatch(loadPatient(ownProps.physicianId, ownProps.patientId)); },
+});
+
+const connectedPatientDetailController = connect(mapStateToProps, mapDispatchToProps)(PatientDetailController);
+
+export default connectedPatientDetailController;
 
 const disclosureName = 'PatientDetailController';
-AppDelegate.registerComponentForDisclosure(disclosureName, PatientDetailController);
+AppDelegate.registerComponentForDisclosure(disclosureName, connectedPatientDetailController);
 export { disclosureName };
 
-const reducers = Object.assign({}, { patientDetailController }, patientUpdateReducers);
+const reducers = Object.assign({}, { patientState: patientReducers }, patientUpdateReducers);
 export { reducers };

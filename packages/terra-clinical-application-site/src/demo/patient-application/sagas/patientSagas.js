@@ -7,14 +7,16 @@ import {
   LOAD_PATIENT,
   LOAD_PATIENT_SUCCEEDED,
   LOAD_PATIENT_FAILED,
+  UPDATE_PATIENT,
+  UPDATE_PATIENT_SUCCEEDED,
+  UPDATE_PATIENT_FAILED,
 } from '../actions/patientActions';
 
-import PatientStore from '../../data/PatientStore';
+import PatientAPI from '../api/PatientAPI';
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchPatients(action) {
   try {
-    const patients = yield call(PatientStore.getPatientList, action.data.physicianId);
+    const patients = yield call(PatientAPI.getPatientList, action.data.physicianId);
     yield put({ type: LOAD_PATIENTS_SUCCEEDED, patients });
   } catch (e) {
     yield put({ type: LOAD_PATIENTS_FAILED, message: e.message });
@@ -23,10 +25,19 @@ function* fetchPatients(action) {
 
 function* fetchPatient(action) {
   try {
-    const patient = yield call(PatientStore.getPatient, action.data.physicianId, action.data.patientId);
+    const patient = yield call(PatientAPI.getPatient, action.data.physicianId, action.data.patientId);
     yield put({ type: LOAD_PATIENT_SUCCEEDED, patient });
   } catch (e) {
     yield put({ type: LOAD_PATIENT_FAILED, message: e.message });
+  }
+}
+
+function* updatePatient(action) {
+  try {
+    const patient = yield call(PatientAPI.updatePatient, action.data.physicianId, action.data.patientId, action.data.changeData);
+    yield put({ type: UPDATE_PATIENT_SUCCEEDED, patient });
+  } catch (e) {
+    yield put({ type: UPDATE_PATIENT_FAILED, message: e.message });
   }
 }
 
@@ -38,4 +49,8 @@ function* fetchPatientSaga() {
   yield takeLatest(LOAD_PATIENT, fetchPatient);
 }
 
-export { fetchPatientsSaga, fetchPatientSaga };
+function* updatePatientSaga() {
+  yield takeLatest(UPDATE_PATIENT, updatePatient);
+}
+
+export { fetchPatientsSaga, fetchPatientSaga, updatePatientSaga };
