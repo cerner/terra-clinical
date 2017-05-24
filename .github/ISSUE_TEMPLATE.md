@@ -1,14 +1,3 @@
-<!--- Please fill out the appropriate template below as best you can. -->
-<!-------------------------------------------------------->
-
-<!--- New Component / Enhancement Request Template -->
-
-# Feature / Enhancement Request
-<!--- Describe the feature / enhancement as best you can. We love screenshots! -->
-
-## Expected Behavior
-<!--- Tell us how it should work -->
-
 ## Progress
 - [ ] Design Input
 - [ ] Expected Behaviour
@@ -17,6 +6,17 @@
 - [ ] Functional Validation
 - [ ] UX Validation
 - [ ] Released
+<!--- Please fill out the appropriate template below as best you can. Keep the Progress checklist. -->
+
+------------------------------------------------------------
+
+<!--- New Component / Enhancement Request Template -->
+
+# Feature / Enhancement Request
+<!--- Describe the feature / enhancement as best you can. We love screenshots! -->
+
+## Expected Behavior
+<!--- Tell us how it should work -->
 
 ------------------------------------------------------------
 
@@ -44,3 +44,4 @@
 * Component Version:
 * Browser Name and Version:
 * Operating System and version (desktop or mobile):
+
