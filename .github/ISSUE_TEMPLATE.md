@@ -1,5 +1,5 @@
-Please fill out the appropriate template below as best you can.
---------------------------------------------------------
+<!--- Please fill out the appropriate template below as best you can. -->
+<!-------------------------------------------------------->
 
 <!--- New Component / Enhancement Request Template -->
 
