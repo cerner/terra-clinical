@@ -65,19 +65,10 @@ class PatientUpdateController extends React.Component {
 
 PatientUpdateController.propTypes = propTypes;
 
-const mapStateToProps = (state, ownProps) => {
-  let foundPatient;
-  Object.keys(state.patientState.patients).forEach((key) => {
-    if (state.patientState.patients[key].id === ownProps.patientId) {
-      foundPatient = state.patientState.patients[key];
-    }
-  });
-
-  return {
-    patient: foundPatient,
-    isUpdating: state.patientState.isUpdating,
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  patient: state.patientState.patients[ownProps.patientId],
+  isUpdating: state.patientState.isUpdating,
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   refreshPatient: () => { dispatch(loadPatient(ownProps.physicianId, ownProps.patientId)); },
