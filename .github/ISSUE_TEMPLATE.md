@@ -9,7 +9,7 @@ Please fill out the appropriate template below as best you can.
 ## Expected Behavior
 <!--- Tell us how it should work -->
 
-# Progress
+## Progress
 - [ ] Design Input
 - [ ] Expected Behaviour
 - [ ] Tech Design
