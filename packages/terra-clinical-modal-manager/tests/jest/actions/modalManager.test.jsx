@@ -5,13 +5,16 @@ import {
   POP,
   MAXIMIZE,
   MINIMIZE,
+} from '../../../src/actionTypes';
+
+import {
   open,
   close,
   push,
   pop,
   maximize,
   minimize,
-} from '../../../src/actions/modalManager';
+} from '../../../src/actions';
 
 const actionData = { data: 'wooo' };
 

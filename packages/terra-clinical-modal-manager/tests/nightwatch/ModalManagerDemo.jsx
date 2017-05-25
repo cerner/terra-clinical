@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import ModalManager, { reducers as modalManagerReducers } from '../../lib/containers/ModalManager';
+import ModalManager, { reducers as modalManagerReducers } from '../../lib/index';
 import DemoContainer from './DemoContainer';
 
 const store = createStore(

@@ -1,4 +1,4 @@
-import { open, push, pop, maximize, minimize, defaultState } from './disclosureUtils';
+import { open, push, pop, maximize, minimize, defaultState } from './shared/disclosureReducerUtils';
 
 import {
   OPEN,
@@ -7,7 +7,7 @@ import {
   POP,
   MAXIMIZE,
   MINIMIZE,
-} from '../actions/modalManager';
+} from './actionTypes';
 
 const supportedSizes = {
   tiny: 'tiny',

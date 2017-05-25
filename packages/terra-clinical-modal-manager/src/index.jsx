@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
-import ModalManagerComponent from '../components/ModalManager';
+import ModalManager from './ModalManager';
 
-import modalManagerReducers from '../reducers/modalManager';
-import { open, close, push, pop, maximize, minimize } from '../actions/modalManager';
+import modalManagerReducers from './reducers';
+import { open, close, push, pop, maximize, minimize } from './actions';
 
 const mapStateToProps = state => (
   (disclosureState => ({
@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
   minimizeModal: (data) => { dispatch(minimize(data)); },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalManagerComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalManager);
 
 const reducers = {
   modalManager: modalManagerReducers,

@@ -1,6 +1,6 @@
 {
   "name": "terra-clinical-modal-manager",
-  "main": "lib/containers/ModalManager.js",
+  "main": "lib/index.js",
   "private": true,
   "version": "0.0.0",
   "description": "A Redux-backed Container component that dynamically presents components in a Terra Modal",

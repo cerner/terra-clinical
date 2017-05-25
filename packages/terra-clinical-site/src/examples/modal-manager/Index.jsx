@@ -7,7 +7,7 @@ import { version } from 'terra-clinical-modal-manager/package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
-import ModalManagerSrc from '!raw-loader!terra-clinical-modal-manager/src/components/ModalManager';
+import ModalManagerSrc from '!raw-loader!terra-clinical-modal-manager/src';
 
 import ModalManagerDemo from './ModalManagerDemo';
 

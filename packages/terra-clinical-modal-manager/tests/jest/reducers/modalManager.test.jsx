@@ -1,4 +1,4 @@
-import modalManager from '../../../src/reducers/modalManager';
+import modalManager from '../../../src/reducers';
 import {
   OPEN,
   CLOSE,
@@ -6,7 +6,7 @@ import {
   POP,
   MAXIMIZE,
   MINIMIZE,
-} from '../../../src/actions/modalManager';
+} from '../../../src/actionTypes';
 
 describe('modalManager reducer', () => {
   it('should return the given state when action type is not recognized', () => {

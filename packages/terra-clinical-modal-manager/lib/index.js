@@ -7,15 +7,15 @@ exports.reducers = undefined;
 
 var _reactRedux = require('react-redux');
 
-var _ModalManager = require('../components/ModalManager');
+var _ModalManager = require('./ModalManager');
 
 var _ModalManager2 = _interopRequireDefault(_ModalManager);
 
-var _modalManager = require('../reducers/modalManager');
+var _reducers = require('./reducers');
 
-var _modalManager2 = _interopRequireDefault(_modalManager);
+var _reducers2 = _interopRequireDefault(_reducers);
 
-var _modalManager3 = require('../actions/modalManager');
+var _actions = require('./actions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34,22 +34,22 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     openModal: function openModal(data) {
-      dispatch((0, _modalManager3.open)(data));
+      dispatch((0, _actions.open)(data));
     },
     closeModal: function closeModal(data) {
-      dispatch((0, _modalManager3.close)(data));
+      dispatch((0, _actions.close)(data));
     },
     pushModal: function pushModal(data) {
-      dispatch((0, _modalManager3.push)(data));
+      dispatch((0, _actions.push)(data));
     },
     popModal: function popModal(data) {
-      dispatch((0, _modalManager3.pop)(data));
+      dispatch((0, _actions.pop)(data));
     },
     maximizeModal: function maximizeModal(data) {
-      dispatch((0, _modalManager3.maximize)(data));
+      dispatch((0, _actions.maximize)(data));
     },
     minimizeModal: function minimizeModal(data) {
-      dispatch((0, _modalManager3.minimize)(data));
+      dispatch((0, _actions.minimize)(data));
     }
   };
 };
@@ -58,7 +58,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 
 var reducers = {
-  modalManager: _modalManager2.default
+  modalManager: _reducers2.default
 };
 
 exports.reducers = reducers;
