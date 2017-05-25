@@ -5,7 +5,7 @@ import {
   POP,
   MAXIMIZE,
   MINIMIZE,
-} from '../../../src/actionTypes';
+} from '../../src/actionTypes';
 
 import {
   open,
@@ -14,7 +14,7 @@ import {
   pop,
   maximize,
   minimize,
-} from '../../../src/actions';
+} from '../../src/actions';
 
 const actionData = { data: 'wooo' };
 
