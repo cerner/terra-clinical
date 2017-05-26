@@ -160,21 +160,19 @@ describe('ModalManger', () => {
 
       const modalManager = (
         <ModalManager
-          modalComponentKeys={['KEY_1', 'KEY_2']}
-          modalComponentData={{
-            KEY_1: {
-              name: 'TestContainer',
-              props: {
-                display: 'NUMBER 1',
-              },
+          modalComponentData={[{
+            name: 'TestContainer',
+            props: {
+              display: 'NUMBER 1',
             },
-            KEY_2: {
-              name: 'TestContainer',
-              props: {
-                display: 'NUMBER 2',
-              },
+            key: 'KEY_1',
+          }, {
+            name: 'TestContainer',
+            props: {
+              display: 'NUMBER 2',
             },
-          }}
+            key: 'KEY_2',
+          }]}
           isOpen
           {...requiredProps}
         >
@@ -193,21 +191,19 @@ describe('ModalManger', () => {
 
       const modalManager = (
         <ModalManager
-          modalComponentKeys={['KEY_1', 'KEY_2']}
-          modalComponentData={{
-            KEY_1: {
-              name: 'TestContainer',
-              props: {
-                display: 'NUMBER 1',
-              },
+          modalComponentData={[{
+            name: 'TestContainer',
+            props: {
+              display: 'NUMBER 1',
             },
-            KEY_2: {
-              name: 'TestContainer',
-              props: {
-                display: 'NUMBER 2',
-              },
+            key: 'KEY_1',
+          }, {
+            name: 'TestContainer',
+            props: {
+              display: 'NUMBER 2',
             },
-          }}
+            key: 'KEY_2',
+          }]}
           isOpen
           isMaximized
           {...requiredProps}
@@ -227,21 +223,19 @@ describe('ModalManger', () => {
 
       const modalManager = (
         <ModalManager
-          modalComponentKeys={['KEY_1', 'KEY_2']}
-          modalComponentData={{
-            KEY_1: {
-              name: 'TestContainer',
-              props: {
-                display: 'NUMBER 1',
-              },
+          modalComponentData={[{
+            name: 'TestContainer',
+            props: {
+              display: 'NUMBER 1',
             },
-            KEY_2: {
-              name: 'TestContainer',
-              props: {
-                display: 'NUMBER 2',
-              },
+            key: 'KEY_1',
+          }, {
+            name: 'TestContainer',
+            props: {
+              display: 'NUMBER 2',
             },
-          }}
+            key: 'KEY_2',
+          }]}
           isOpen
           isMaximized
           {...requiredProps}

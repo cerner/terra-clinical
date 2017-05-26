@@ -7,8 +7,7 @@ import { open, close, push, pop, maximize, minimize } from './actions';
 
 const mapStateToProps = state => (
   (disclosureState => ({
-    modalComponentKeys: disclosureState.componentKeys,
-    modalComponentData: disclosureState.components,
+    modalComponents: disclosureState.componentKeys.map(key => (disclosureState.components[key])),
     size: disclosureState.size,
     isOpen: disclosureState.isOpen,
     isMaximized: disclosureState.isMaximized,

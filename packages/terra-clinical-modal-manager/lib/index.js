@@ -22,8 +22,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return function (disclosureState) {
     return {
-      modalComponentKeys: disclosureState.componentKeys,
-      modalComponentData: disclosureState.components,
+      modalComponents: disclosureState.componentKeys.map(function (key) {
+        return disclosureState.components[key];
+      }),
       size: disclosureState.size,
       isOpen: disclosureState.isOpen,
       isMaximized: disclosureState.isMaximized

@@ -62,14 +62,13 @@ var propTypes = {
   children: _propTypes2.default.node,
 
   /**
-   * From `connect`. The Array of component keys that will be used to instantiate the Modal's inner components.
+   * From `connect`. The Array of component data (key, name, and props) that will be used to instantiate the Modal's inner components.
    **/
-  modalComponentKeys: _propTypes2.default.array,
-
-  /**
-   * From `connect`. An Object containing component data used to instantiate the Modal's inner components.
-   **/
-  modalComponentData: _propTypes2.default.object,
+  modalComponentData: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    key: _propTypes2.default.string.isRequired,
+    name: _propTypes2.default.string.isRequired,
+    props: _propTypes2.default.object
+  })),
 
   /**
    * From `connect`. The desired size of the modal.
@@ -120,7 +119,8 @@ var propTypes = {
 var defaultProps = {
   isOpen: false,
   isMaximized: false,
-  size: 'small'
+  size: 'small',
+  modalComponentData: []
 };
 
 var ModalManager = function (_React$Component) {
@@ -166,15 +166,17 @@ var ModalManager = function (_React$Component) {
   }, {
     key: 'buildModalComponents',
     value: function buildModalComponents() {
-      var _this2 = this;
+      var _props = this.props,
+          modalComponentData = _props.modalComponentData,
+          isMaximized = _props.isMaximized,
+          pushModal = _props.pushModal,
+          popModal = _props.popModal,
+          closeModal = _props.closeModal,
+          maximizeModal = _props.maximizeModal,
+          minimizeModal = _props.minimizeModal;
 
-      if (!this.props.modalComponentKeys || !this.props.modalComponentKeys.length) {
-        return null;
-      }
 
-      return this.props.modalComponentKeys.map(function (componentKey, index) {
-        var componentData = _this2.props.modalComponentData[componentKey];
-
+      return modalComponentData.map(function (componentData, index) {
         var ComponentClass = _terraClinicalAppDelegate2.default.getComponentForDisclosure(componentData.name);
 
         if (!ComponentClass) {
@@ -183,63 +185,76 @@ var ModalManager = function (_React$Component) {
 
         var appDelegate = _terraClinicalAppDelegate2.default.create({
           disclose: function disclose(data) {
-            _this2.props.pushModal(data);
+            pushModal(data);
           },
           dismiss: index > 0 ? function (data) {
-            _this2.props.popModal(data);
+            popModal(data);
           } : function (data) {
-            _this2.props.closeModal(data);
+            closeModal(data);
           },
-          closeDisclosure: function closeDisclosure() {
-            _this2.props.closeModal();
+          closeDisclosure: function closeDisclosure(data) {
+            closeModal(data);
           },
-          goBack: index > 0 ? function () {
-            _this2.props.popModal();
+          goBack: index > 0 ? function (data) {
+            popModal(data);
           } : null,
-          maximize: !_this2.props.isMaximized ? function () {
-            _this2.props.maximizeModal();
+          maximize: !isMaximized ? function (data) {
+            maximizeModal(data);
           } : null,
-          minimize: _this2.props.isMaximized ? function () {
-            _this2.props.minimizeModal();
+          minimize: isMaximized ? function (data) {
+            minimizeModal(data);
           } : null
         });
 
-        return _react2.default.createElement(ComponentClass, _extends({ key: componentKey }, componentData.props, { app: appDelegate }));
+        return _react2.default.createElement(ComponentClass, _extends({ key: componentData.key }, componentData.props, { app: appDelegate }));
+      });
+    }
+
+    /**
+     * The provided child components are cloned and provided with an AppDelegate instance that contains a new disclose
+     * function that will allow for modal presentation. If an AppDelegate was already provided to the ModalManager through
+     * props, its implementations will be used for APIs not implemented by the ModalManager.
+     */
+
+  }, {
+    key: 'buildChildren',
+    value: function buildChildren() {
+      var _props2 = this.props,
+          app = _props2.app,
+          children = _props2.children,
+          openModal = _props2.openModal;
+
+
+      return _react2.default.Children.map(children, function (child) {
+        var childAppDelegate = _terraClinicalAppDelegate2.default.clone(app, {
+          disclose: function disclose(data) {
+            if (data.preferredType === 'modal' || !app) {
+              openModal(data);
+            } else {
+              app.disclose(data);
+            }
+          }
+        });
+
+        return _react2.default.cloneElement(child, { app: childAppDelegate });
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          app = _props.app,
-          openModal = _props.openModal,
-          closeModal = _props.closeModal,
-          size = _props.size,
-          isOpen = _props.isOpen,
-          isMaximized = _props.isMaximized,
-          children = _props.children;
+      var _props3 = this.props,
+          closeModal = _props3.closeModal,
+          size = _props3.size,
+          isOpen = _props3.isOpen,
+          isMaximized = _props3.isMaximized;
 
 
-      var sizeClass = 'terraClinical-ModalManager-modal--' + size;
-
-      var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalManager-modal', _defineProperty({}, sizeClass, !(isMaximized || this.forceFullscreenModal))]);
+      var modalClassNames = (0, _classnames2.default)(['terraClinical-ModalManager-modal', _defineProperty({}, 'terraClinical-ModalManager-modal--' + size, !(isMaximized || this.forceFullscreenModal))]);
 
       return _react2.default.createElement(
         'div',
         { className: 'terraClinical-ModalManager' },
-        _react2.default.Children.map(children, function (child) {
-          var childAppDelegate = _terraClinicalAppDelegate2.default.clone(app, {
-            disclose: function disclose(data) {
-              if (data.preferredType === 'modal' || !app) {
-                openModal(data);
-              } else {
-                app.disclose(data);
-              }
-            }
-          });
-
-          return _react2.default.cloneElement(child, { app: childAppDelegate });
-        }),
+        this.buildChildren(),
         _react2.default.createElement(
           _terraModal2.default,
           {
