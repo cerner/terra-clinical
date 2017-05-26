@@ -1,4 +1,4 @@
-import modalManager from '../../../src/reducers/modalManager';
+import modalManager from '../../src/reducers';
 import {
   OPEN,
   CLOSE,
@@ -6,7 +6,7 @@ import {
   POP,
   MAXIMIZE,
   MINIMIZE,
-} from '../../../src/actions/modalManager';
+} from '../../src/actionTypes';
 
 describe('modalManager reducer', () => {
   it('should return the given state when action type is not recognized', () => {
@@ -50,6 +50,7 @@ describe('modalManager reducer', () => {
         [`${content.key}`]: {
           name: content.name,
           props: content.props,
+          key: `${content.key}`,
         },
       },
       isMaximized: false,
@@ -82,6 +83,7 @@ describe('modalManager reducer', () => {
         [`${content.key}`]: {
           name: content.name,
           props: content.props,
+          key: `${content.key}`,
         },
       },
       isMaximized: false,
@@ -115,10 +117,12 @@ describe('modalManager reducer', () => {
         COMPONENT_1: {
           name: 'Component1',
           props: {},
+          key: 'COMPONENT_1',
         },
         COMPONENT_2: {
           name: 'Component2',
           props: {},
+          key: 'COMPONENT_2',
         },
       },
       isOpen: true,
@@ -140,6 +144,7 @@ describe('modalManager reducer', () => {
         [`${content.key}`]: {
           name: content.name,
           props: content.props,
+          key: `${content.key}`,
         },
       }),
       isMaximized: false,
@@ -157,10 +162,12 @@ describe('modalManager reducer', () => {
         COMPONENT_1: {
           name: 'Component1',
           props: {},
+          key: 'COMPONENT_1',
         },
         COMPONENT_2: {
           name: 'Component2',
           props: {},
+          key: 'COMPONENT_2',
         },
       },
       isOpen: true,
@@ -179,6 +186,7 @@ describe('modalManager reducer', () => {
         COMPONENT_1: {
           name: 'Component1',
           props: {},
+          key: 'COMPONENT_1',
         },
       },
       isMaximized: false,
@@ -196,10 +204,12 @@ describe('modalManager reducer', () => {
         COMPONENT_1: {
           name: 'Component1',
           props: {},
+          key: 'COMPONENT_1',
         },
         COMPONENT_2: {
           name: 'Component2',
           props: {},
+          key: 'COMPONENT_2',
         },
       },
       isOpen: true,
@@ -224,10 +234,12 @@ describe('modalManager reducer', () => {
         COMPONENT_1: {
           name: 'Component1',
           props: {},
+          key: 'COMPONENT_1',
         },
         COMPONENT_2: {
           name: 'Component2',
           props: {},
+          key: 'COMPONENT_2',
         },
       },
       isOpen: true,

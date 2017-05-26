@@ -28,7 +28,8 @@ var open = function open(state, action) {
   newState.componentKeys = [action.data.content.key];
   newState.components[action.data.content.key] = {
     name: action.data.content.name,
-    props: action.data.content.props
+    props: action.data.content.props,
+    key: action.data.content.key
   };
 
   return newState;
@@ -44,7 +45,8 @@ var push = function push(state, action) {
   newState.componentKeys.push(action.data.content.key);
   newState.components[action.data.content.key] = {
     name: action.data.content.name,
-    props: action.data.content.props
+    props: action.data.content.props,
+    key: action.data.content.key
   };
 
   return newState;

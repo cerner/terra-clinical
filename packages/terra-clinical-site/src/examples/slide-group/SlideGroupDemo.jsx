@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import SlideGroup from 'terra-clinical-slide-group';
 
@@ -64,7 +65,7 @@ class SlideGroupDemo extends React.Component {
 }
 
 SlideGroupDemo.propTypes = {
-  isAnimated: React.PropTypes.bool,
+  isAnimated: PropTypes.bool,
 };
 
 export default SlideGroupDemo;

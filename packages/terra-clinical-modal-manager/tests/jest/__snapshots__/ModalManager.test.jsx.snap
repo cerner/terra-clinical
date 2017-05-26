@@ -21,7 +21,7 @@ exports[`ModalManger - app - should render the ModalManager with given AppDelega
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -48,7 +48,7 @@ exports[`ModalManger - isMaximized - should render the ModalManager as maximized
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -75,7 +75,7 @@ exports[`ModalManger - isOpen - should render the ModalManager as open 1`] = `
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -236,7 +236,7 @@ exports[`ModalManger - sizes - should render the ModalManager with huge size 1`]
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -263,7 +263,7 @@ exports[`ModalManger - sizes - should render the ModalManager with large size 1`
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -290,7 +290,7 @@ exports[`ModalManger - sizes - should render the ModalManager with medium size 1
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -317,7 +317,7 @@ exports[`ModalManger - sizes - should render the ModalManager with small size 1`
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -344,7 +344,7 @@ exports[`ModalManger - sizes - should render the ModalManager with tiny size 1`]
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;
@@ -371,7 +371,7 @@ exports[`ModalManger should render the ModalManager with defaults 1`] = `
     role="document">
     <SlideGroup
       isAnimated={true}
-      items={null} />
+      items={Array []} />
   </Modal>
 </div>
 `;

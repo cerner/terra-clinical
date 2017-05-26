@@ -1,6 +1,6 @@
 {
   "name": "terra-clinical-modal-manager",
-  "main": "lib/containers/ModalManager.js",
+  "main": "lib/index.js",
   "private": true,
   "version": "0.0.0",
   "description": "A Redux-backed Container component that dynamically presents components in a Terra Modal",
@@ -24,7 +24,9 @@
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
     "terra-toolkit": "^0.x",
-    "terra-clinical-app-delegate": "^0.x"
+    "terra-clinical-app-delegate": "^0.x",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",
@@ -38,11 +40,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-redux": "^5.0.4",
-    "redux": "^3.6.0",
     "terra-base": "^0.x",
     "terra-mixins": "^1.0.0",
-    "terra-modal": "^0.x",
+    "terra-modal": "0.1.1",
     "terra-responsive-element": "^0.x",
     "terra-clinical-slide-group": "^0.x"
   },

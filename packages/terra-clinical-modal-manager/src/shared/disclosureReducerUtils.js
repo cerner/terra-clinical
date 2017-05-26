@@ -21,6 +21,7 @@ const open = (state, action) => {
   newState.components[action.data.content.key] = {
     name: action.data.content.name,
     props: action.data.content.props,
+    key: action.data.content.key,
   };
 
   return newState;
@@ -35,6 +36,7 @@ const push = (state, action) => {
   newState.components[action.data.content.key] = {
     name: action.data.content.name,
     props: action.data.content.props,
+    key: action.data.content.key,
   };
 
   return newState;
