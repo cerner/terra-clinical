@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-error-view",
   "main": "lib/ErrorView.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The Terra ErrorView is a display presented with an error message and location for a button.",
   "repository": {
     "type": "git",
@@ -29,17 +28,17 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-base": "^0.x",
-    "terra-mixins": "^1.0.0",
+    "terra-button": "^0.x",
     "terra-icon": "^0.x",
-    "terra-button": "^0.x"
+    "terra-mixins": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^0.x",
-    "terra-mixins": "^1.0.0",
+    "terra-button": "^0.x",
     "terra-icon": "^0.x",
-    "terra-button": "^0.x"
+    "terra-mixins": "^1.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
