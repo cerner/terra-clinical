@@ -87,7 +87,7 @@ module.exports = {
     host: '0.0.0.0',
     disableHostCheck: true,
     stats: {
-      assert: true,
+      assets: true,
       children: false,
       chunks: false,
       hash: false,
