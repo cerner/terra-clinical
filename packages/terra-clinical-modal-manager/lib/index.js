@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.reducers = undefined;
+exports.reducers = exports.mapDispatchToProps = exports.mapStateToProps = undefined;
 
 var _reactRedux = require('react-redux');
 
@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return function (disclosureState) {
     return {
-      modalComponents: disclosureState.componentKeys.map(function (key) {
+      modalComponentData: disclosureState.componentKeys.map(function (key) {
         return disclosureState.components[key];
       }),
       size: disclosureState.size,
@@ -31,6 +31,9 @@ var mapStateToProps = function mapStateToProps(state) {
     };
   }(state.modalManager);
 };
+
+exports.mapStateToProps = mapStateToProps;
+
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -55,6 +58,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
+exports.mapDispatchToProps = mapDispatchToProps;
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_ModalManager2.default);
 
 
