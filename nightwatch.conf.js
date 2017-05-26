@@ -4,9 +4,9 @@ const path = require('path');
 const fs = require('fs');
 const loadJsonFile = require('load-json-file');
 const globSync = require('glob').sync;
-const testSettings = require('./node_modules/terra-toolkit/lib/index').testSettings;
+const testSettings = require('terra-toolkit/lib/index').testSettings;
 const resolve = require('path').resolve;
-const nightwatchConfiguration = require('./node_modules/terra-toolkit/lib/nightwatch.json');
+const nightwatchConfiguration = require('terra-toolkit/lib/nightwatch.json');
 
 module.exports = ((settings) => {
   const updatedSettings = testSettings(resolve('./packages/terra-clinical-site/webpack.config'), settings);
