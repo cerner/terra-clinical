@@ -7,6 +7,7 @@ their consuming Containers/Applications.
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-app-delegate`
+  - `yarn add terra-clinical-app-delegate`
 
 ## Usage
 

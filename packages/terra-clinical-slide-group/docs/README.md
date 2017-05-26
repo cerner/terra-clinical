@@ -10,6 +10,7 @@ marked with the `aria-hidden` attribute, they are not actually unmounted.
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-slide-group`
+  - `yarn add terra-clinical-slide-group`
 
 ## Usage
 
