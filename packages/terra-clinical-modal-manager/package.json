@@ -42,7 +42,7 @@
     "prop-types": "^15.5.8",
     "terra-base": "^0.x",
     "terra-mixins": "^1.0.0",
-    "terra-modal": "^0.x",
+    "terra-modal": "0.1.1",
     "terra-responsive-element": "^0.x",
     "terra-clinical-slide-group": "^0.x"
   },
