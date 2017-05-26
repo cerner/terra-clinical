@@ -1,4 +1,4 @@
-import { open, push, pop, maximize, minimize, defaultState } from 'terra-clinical-modal-manager/lib/reducers/disclosureUtils';
+import { open, push, pop, maximize, minimize, defaultState } from 'terra-clinical-modal-manager/lib/shared/disclosureReducerUtils';
 
 import {
   OPEN_PANEL,
