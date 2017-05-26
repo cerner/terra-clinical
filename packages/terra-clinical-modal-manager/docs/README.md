@@ -6,6 +6,7 @@ The ModalManager is a Redux-backed Container component that dynamically presents
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-modal-manager`
+  - `yarn add terra-clinical-modal-manager`
 
 ## Prerequisites
 

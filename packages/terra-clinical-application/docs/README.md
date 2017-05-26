@@ -9,6 +9,7 @@ given to the Application should be able to handle that `app` prop appropriately.
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-application`
+  - `yarn add terra-clinical-application`
 
 ## Usage
 

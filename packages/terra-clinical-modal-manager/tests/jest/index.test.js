@@ -75,16 +75,6 @@ describe('mapStateToProps', () => {
   });
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   openModal: (data) => { dispatch(open(data)); },
-//   closeModal: (data) => { dispatch(close(data)); },
-//   pushModal: (data) => { dispatch(push(data)); },
-//   popModal: (data) => { dispatch(pop(data)); },
-//   maximizeModal: (data) => { dispatch(maximize(data)); },
-//   minimizeModal: (data) => { dispatch(minimize(data)); },
-// });
-
-
 describe('mapDispatchToProps', () => {
   it('should properly map the dispatch state to props', () => {
     const testDispatch = jest.fn();
