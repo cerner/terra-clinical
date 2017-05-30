@@ -10,7 +10,7 @@ import ModalManager, { reducers as modalManagerReducers } from 'terra-clinical-m
 import PanelController, { reducers as panelControllerReducers } from '../panel-controller/PanelController';
 import PatientListController, { reducers as patientListReducers } from '../patient-list/PatientListController';
 
-import patientSagas from '../patient-concept/sagas/patientSagas';
+import patientSagas from '../patient-concept/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 

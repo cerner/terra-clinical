@@ -10,9 +10,9 @@ import {
   UPDATE_PATIENT,
   UPDATE_PATIENT_SUCCEEDED,
   UPDATE_PATIENT_FAILED,
-} from '../actions/patientActions';
+} from './actions';
 
-import PatientAPI from '../api/PatientAPI';
+import PatientAPI from './PatientAPI';
 
 function* fetchPatients(action) {
   try {

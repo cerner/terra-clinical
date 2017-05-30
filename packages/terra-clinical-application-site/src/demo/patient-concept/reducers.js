@@ -8,7 +8,7 @@ import {
   UPDATE_PATIENT,
   UPDATE_PATIENT_SUCCEEDED,
   UPDATE_PATIENT_FAILED,
-} from '../actions/patientActions';
+} from './actions';
 
 const patientReducers = (state = { patientIds: [], patients: {} }, action) => {
   const newState = Object.assign({}, state);

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import AppDelegate from 'terra-clinical-app-delegate';
 
-import { loadPatient, updatePatient } from '../patient-concept/actions/patientActions';
-import patientReducers from '../patient-concept/reducers/patientReducers';
+import { loadPatient, updatePatient } from '../patient-concept/actions';
+import patientReducers from '../patient-concept/reducers';
 
 import PatientUpdate from './PatientUpdate';
 
