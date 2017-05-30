@@ -7,7 +7,7 @@ import Application from 'terra-clinical-application';
 import AppDelegate from 'terra-clinical-app-delegate';
 import ModalManager, { reducers as modalManagerReducers } from 'terra-clinical-modal-manager';
 
-import PanelController, { reducers as panelControllerReducers } from '../panel-controller/PanelController';
+import PanelManager, { reducers as panelManagerReducers } from '../panel-manager';
 import PatientListController, { reducers as patientListReducers } from '../patient-list/PatientListController';
 
 import patientSagas from '../patient-concept/sagas';
@@ -21,7 +21,7 @@ const store = createStore(
   combineReducers(Object.assign({},
     patientListReducers,
     modalManagerReducers,
-    panelControllerReducers,
+    panelManagerReducers,
   )),
   composeEnhancers(applyMiddleware(sagaMiddleware)),
 );
@@ -37,12 +37,12 @@ class PatientApplication extends React.Component {
       <Provider store={store}>
         <Application>
           <ModalManager>
-            <PanelController>
+            <PanelManager>
               <PatientListController
                 physicianId={physicianId}
                 key={'PATIENT_LIST_APP'}
               />
-            </PanelController>
+            </PanelManager>
           </ModalManager>
         </Application>
       </Provider>

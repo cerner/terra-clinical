@@ -65,5 +65,4 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 var reducers = {
   modalManager: _reducers2.default
 };
-
 exports.reducers = reducers;

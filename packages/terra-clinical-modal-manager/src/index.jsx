@@ -32,5 +32,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(ModalManager);
 const reducers = {
   modalManager: modalManagerReducers,
 };
-
-export { reducers };
+ export { reducers };
