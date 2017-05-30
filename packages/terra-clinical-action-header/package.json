@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-action-header",
   "main": "lib/ActionHeader.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side.",
   "repository": {
     "type": "git",
@@ -31,9 +30,9 @@
     "terra-base": "^0.x",
     "terra-button": "^0.x",
     "terra-button-group": "^0.x",
+    "terra-clinical-header": "^0.1.2",
     "terra-icon": "0.x",
     "terra-mixins": "^1.0.0",
-    "terra-clinical-header": "^0.x",
     "terra-responsive-element": "^0.x"
   },
   "dependencies": {
@@ -42,9 +41,9 @@
     "terra-base": "^0.x",
     "terra-button": "^0.x",
     "terra-button-group": "^0.x",
+    "terra-clinical-header": "^0.1.2",
     "terra-icon": "^0.x",
     "terra-mixins": "^1.0.0",
-    "terra-clinical-header": "^0.x",
     "terra-responsive-element": "^0.x"
   },
   "scripts": {
