@@ -18,6 +18,7 @@ import LabelValueViewExamples from './examples/label-value-view/Index';
 import NoDataViewExamples from './examples/no-data-view/Index';
 import ItemCollectionExamples from './examples/item-collection/Index';
 import SlideGroupExamples from './examples/slide-group/Index';
+import ModalManagerExamples from './examples/modal-manager/Index';
 
 // Test
 /* eslint-disable import/first */
@@ -37,6 +38,8 @@ import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/N
 import ItemCollectionTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTestRoutes';
 import TableHeaderCellTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/table-header-cell/TableHeaderCellTestRoutes';
 import SlideGroupTestRoutes from 'terra-clinical-slide-group/tests/nightwatch/SlideGroupTestRoutes';
+import ModalManagerTestRoutes from 'terra-clinical-modal-manager/tests/nightwatch/ModalManagerTestRoutes';
+
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
@@ -57,6 +60,7 @@ ReactDOM.render((
       <Route path="no-data-view" component={NoDataViewExamples} />
       <Route path="item-collection" component={ItemCollectionExamples} />
       <Route path="slide-group" component={SlideGroupExamples} />
+      <Route path="modal-manager" component={ModalManagerExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
     {ActionHeaderTestRoutes}
@@ -74,5 +78,6 @@ ReactDOM.render((
     {ItemCollectionTestRoutes}
     {TableHeaderCellTestRoutes}
     {SlideGroupTestRoutes}
+    {ModalManagerTestRoutes}
   </Router>
 ), document.getElementById('root'));
