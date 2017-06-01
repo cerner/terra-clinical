@@ -11,8 +11,13 @@ const displays = [display1, display2, display3, display4, display5, display6];
 
 const views = () => (
   <div>
+    <h2>One Column Layout</h2>
     <ItemView displays={displays} id="test-displays" />
+    <br />
+    <h2>Two Column Layout </h2>
     <ItemView displays={displays} layout="twoColumns" id="test-displays-two" />
+    <br />
+    <h2>Two Column Layout with Start TextEmphasis</h2>
     <ItemView displays={displays} layout="twoColumns" textEmphasis="start" id="test-displays-two-left" />
   </div>
 );
