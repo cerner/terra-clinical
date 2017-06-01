@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-toolkit": "^0.x",
     "terra-clinical-app-delegate": "^0.x",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"

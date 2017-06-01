@@ -20,9 +20,6 @@
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
-  "devDependencies": {
-    "terra-toolkit": "^0.x"
-  },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

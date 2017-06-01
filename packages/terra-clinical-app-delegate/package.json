@@ -22,9 +22,6 @@
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
-  "devDependencies": {
-    "terra-toolkit": "^0.x"
-  },
   "dependencies": {
     "prop-types": "^15.5.8"
   },
