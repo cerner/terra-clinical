@@ -11,9 +11,10 @@ import './site.scss';
 const propTypes = {
   children: PropTypes.node,
 };
+const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
 const App = props => (
-  <Base>
+  <Base locale={locale}>
     <Grid>
       <Grid.Row>
         <Grid.Column small={2}>
