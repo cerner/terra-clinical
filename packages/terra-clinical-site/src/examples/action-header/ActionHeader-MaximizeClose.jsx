@@ -9,7 +9,6 @@ const ActionHeaderExample = () => (
       title="Action Header"
       onClose={() => alert('You clicked close!')}
       onMaximize={() => alert('You clicked expand!')}
-      locale="en-US"
     />
     <br />
   </div>
