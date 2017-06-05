@@ -1,0 +1,31 @@
+exports[`test should render children with app prop 1`] = `
+<Base
+  className="terraClinical-Application"
+  customMessages={Object {}}>
+  <div
+    app={AppDelegateInstance {}}>
+    TestApp
+  </div>
+</Base>
+`;
+
+exports[`test should render custom properties on component 1`] = `
+<Base
+  className="custom-class terraClinical-Application"
+  customMessages={Object {}}
+  id="my-id">
+  <div>
+    TestApp
+  </div>
+</Base>
+`;
+
+exports[`test should render default component 1`] = `
+<Base
+  className="terraClinical-Application"
+  customMessages={Object {}}>
+  <div>
+    TestApp
+  </div>
+</Base>
+`;

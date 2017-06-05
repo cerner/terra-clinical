@@ -1,9 +1,11 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
-const testSettings = require('../node_modules/terra-toolkit').testSettings;
+// eslint-disable-next-line import/no-extraneous-dependencies
+const testSettings = require('terra-toolkit').testSettings;
 const resolve = require('path').resolve;
-const nightwatchConfiguration = require('../node_modules/terra-toolkit/lib/nightwatch.json');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const nightwatchConfiguration = require('terra-toolkit/lib/nightwatch.json');
 
-module.exports = (settings => (
-  testSettings(resolve('../../webpack.config'), settings)
-))(nightwatchConfiguration);
+module.exports = ((settings) => {
+  const modifiedSettings = settings;
+  modifiedSettings.globals_path = resolve('..', '..', 'node_modules', 'terra-toolkit', 'lib', 'globals');
+  return testSettings(resolve('../../webpack.config'), modifiedSettings);
+})(nightwatchConfiguration);

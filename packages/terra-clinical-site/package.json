@@ -15,6 +15,7 @@
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "scripts": {
     "start": "webpack-dev-server --progress",
+    "compile:heroku": "webpack --config webpack.prod.config --progress",
     "compile:prod": "webpack --config webpack.prod.config -p",
     "compile:prod-stats": "webpack --config webpack.prod.config -p --json > stats.json",
     "deploy": "npm run compile:prod && gh-pages -d build",
@@ -30,9 +31,13 @@
     "react-dom": "^15.4.2",
     "react-intl": "^2.3.0",
     "react-router": "^3.0.5",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
     "terra-base": "^0.x",
     "terra-button": "^0.x",
     "terra-clinical-action-header": "^0.x",
+    "terra-clinical-app-delegate": "^0.x",
+    "terra-clinical-application": "^0.x",
     "terra-clinical-header": "^0.x",
     "terra-clinical-detail-view": "^0.x",
     "terra-clinical-item-display": "^0.x",
@@ -40,9 +45,12 @@
     "terra-clinical-error-view": "^0.x",
     "terra-clinical-label-value-view": "^0.x",
     "terra-clinical-no-data-view": "^0.x",
+    "terra-clinical-slide-group": "^0.x",
+    "terra-clinical-modal-manager": "^0.x",
     "terra-i18n": "^0.x",
     "terra-icon": "^0.x",
     "terra-grid": "^2.x",
+    "terra-i18n-plugin": "^0.x",
     "terra-legacy-theme": "^0.x",
     "terra-list": "^0.x",
     "terra-markdown": "^0.x",
@@ -64,7 +72,7 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "terra-i18n-plugin": "^0.x",
-    "webpack": "^2.4.1",
+    "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   }
 }

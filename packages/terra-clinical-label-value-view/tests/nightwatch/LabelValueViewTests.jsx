@@ -6,10 +6,10 @@ import { Link } from 'react-router';
 const LabelValueViewTests = () => (
   <div>
     <ul>
-      <li><Link to="/tests/label-value-view-tests/default">Default LabelValueView</Link></li>
-      <li><Link to="/tests/label-value-view-tests/text-value">LabelValueView with a Text Input</Link></li>
-      <li><Link to="/tests/label-value-view-tests/element-value">LabelValueView with an Node Input</Link></li>
-      <li><Link to="/tests/label-value-view-tests/multiple-values">LabelValueView with Text and Node Inputs</Link></li>
+      <li><Link to="/tests/label-value-view-tests/default">LabelValueView - Default </Link></li>
+      <li><Link to="/tests/label-value-view-tests/text-value">LabelValueView - Text Input</Link></li>
+      <li><Link to="/tests/label-value-view-tests/element-value">LabelValueView -  Node Input</Link></li>
+      <li><Link to="/tests/label-value-view-tests/multiple-values">LabelValueView - Text and Node Inputs</Link></li>
     </ul>
   </div>
 );
