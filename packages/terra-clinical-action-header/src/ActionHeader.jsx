@@ -10,7 +10,6 @@ import IconChevronUp from 'terra-icon/lib/icon/IconChevronUp';
 import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import Header from 'terra-clinical-header';
 import ResponsiveElement from 'terra-responsive-element';
-import { I18nProvider, i18nLoader } from 'terra-i18n';
 import 'terra-base/lib/baseStyles';
 import './ActionHeader.scss';
 
@@ -75,150 +74,129 @@ const defaultProps = {
   onNext: null,
   onPrevious: null,
   children: null,
-  locale: 'en-US',
 };
 
-class ActionHeader extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      areTranslationsLoaded: false,
-      locale: this.props.locale,
-      messages: {},
-    };
-  }
-
-  componentDidMount() {
-    i18nLoader(this.state.locale, this.setState, this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    i18nLoader(nextProps.locale, this.setState, this);
-  }
-
-  render() {
-    const {
-      title,
-      onClose,
-      onBack,
-      onMaximize,
-      onMinimize,
-      onPrevious,
-      onNext,
-      children,
-      locale,
-      ...customProps
-    } = this.props;
-
-    const attributes = Object.assign({}, customProps);
-    const backText = this.state.messages['Terra.Clinical.ActionHeader.back'];
-    const closeText = this.state.messages['Terra.Clinical.ActionHeader.close'];
-    const minimizeText = this.state.messages['Terra.Clinical.ActionHeader.minimize'];
-    const maximizeText = this.state.messages['Terra.Clinical.ActionHeader.maximize'];
-    const previousText = this.state.messages['Terra.Clinical.ActionHeader.previous'];
-    const nextText = this.state.messages['Terra.Clinical.ActionHeader.next'];
-
-    const closeButton = onClose ? <Button icon={<IconClose ariaLabel={closeText} />} onClick={onClose} /> : null;
-    const backButton = onBack ? <Button icon={<IconLeft ariaLabel={backText} />} onClick={onBack} /> : null;
-
-    let closeButtonSmall;
-    let backButtonSmall;
-    if (onClose && !onBack) {
-      backButtonSmall = <Button icon={<IconLeft ariaLabel={backText} />} onClick={onClose} />;
-      closeButtonSmall = null;
-    } else {
-      closeButtonSmall = closeButton;
-      backButtonSmall = backButton;
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Please add locale prop to Base component to load translations');
     }
+  },
+};
+
+const ActionHeader = ({
+  title,
+  onClose,
+  onBack,
+  onMaximize,
+  onMinimize,
+  onPrevious,
+  onNext,
+  children,
+  locale,
+  ...customProps }, {
+  intl,
+}) => {
+  const attributes = Object.assign({}, customProps);
+  const backText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.back' });
+  const closeText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.close' });
+  const minimizeText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.minimize' });
+  const maximizeText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.maximize' });
+  const previousText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.previous' });
+  const nextText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.next' });
+
+  const closeButton = onClose ? <Button icon={<IconClose ariaLabel={closeText} />} onClick={onClose} /> : null;
+  const backButton = onBack ? <Button icon={<IconLeft ariaLabel={backText} />} onClick={onBack} /> : null;
+
+  let closeButtonSmall;
+  let backButtonSmall;
+  if (onClose && !onBack) {
+    backButtonSmall = <Button icon={<IconLeft ariaLabel={backText} />} onClick={onClose} />;
+    closeButtonSmall = null;
+  } else {
+    closeButtonSmall = closeButton;
+    backButtonSmall = backButton;
+  }
 
 
-    let expandButton;
-    if (!backButton) {
-      if (onMaximize) {
-        expandButton = <Button icon={<IconMaximize ariaLabel={maximizeText} />} onClick={onMaximize} />;
-      } else if (onMinimize) {
-        expandButton = <Button icon={<IconMinimize ariaLabel={minimizeText} />} onClick={onMinimize} />;
-      }
+  let expandButton;
+  if (!backButton) {
+    if (onMaximize) {
+      expandButton = <Button icon={<IconMaximize ariaLabel={maximizeText} />} onClick={onMaximize} />;
+    } else if (onMinimize) {
+      expandButton = <Button icon={<IconMinimize ariaLabel={minimizeText} />} onClick={onMinimize} />;
     }
+  }
 
-    let previousNextButtonGroup = null;
-    if (onPrevious || onNext) {
-      previousNextButtonGroup = (
-        <ButtonGroup>
-          <ButtonGroup.Button icon={<IconChevronUp ariaLabel={previousText} />} onClick={onPrevious} key="ActionHeaderPrevious" />
-          <ButtonGroup.Button icon={<IconChevronDown ariaLabel={nextText} />} onClick={onNext} key="ActionHeaderNext" />
-        </ButtonGroup>
-      );
-    }
-
-    const leftButtonsDefault = (
-      <div className="terraClinical-ActionHeader-leftButtons">
-        {backButton}
-        {expandButton}
-        {previousNextButtonGroup}
-      </div>
-    );
-
-    const rightButtonsDefault = (
-      <div className="terraClinical-ActionHeader-rightButtons">
-        {children}
-        {closeButton}
-      </div>
-    );
-
-    const leftButtonsSmall = (
-      <div className="terraClinical-ActionHeader-leftButtons">
-        {backButtonSmall}
-        {previousNextButtonGroup}
-      </div>
-    );
-
-    const rightButtonsSmall = (
-      <div className="terraClinical-ActionHeader-rightButtons">
-        {children}
-        {closeButtonSmall}
-      </div>
-    );
-
-    const actionHeader = (
-      <I18nProvider
-        locale={this.state.locale}
-        messages={this.state.messages}
-      >
-        <Header
-          {...attributes}
-          startContent={leftButtonsDefault}
-          title={title}
-          endContent={rightButtonsDefault}
-        />
-      </I18nProvider>
-    );
-
-    const smallActionHeader = (
-      <I18nProvider
-        locale={this.state.locale}
-        messages={this.state.messages}
-      >
-        <Header
-          {...attributes}
-          startContent={leftButtonsSmall}
-          title={title}
-          endContent={rightButtonsSmall}
-        />
-      </I18nProvider>
-    );
-
-    return (
-      <ResponsiveElement
-        responsiveTo="window"
-        defaultElement={smallActionHeader}
-        small={actionHeader}
-      />
+  let previousNextButtonGroup = null;
+  if (onPrevious || onNext) {
+    previousNextButtonGroup = (
+      <ButtonGroup>
+        <ButtonGroup.Button icon={<IconChevronUp ariaLabel={previousText} />} onClick={onPrevious} key="ActionHeaderPrevious" />
+        <ButtonGroup.Button icon={<IconChevronDown ariaLabel={nextText} />} onClick={onNext} key="ActionHeaderNext" />
+      </ButtonGroup>
     );
   }
-}
+
+  const leftButtonsDefault = (
+    <div className="terraClinical-ActionHeader-leftButtons">
+      {backButton}
+      {expandButton}
+      {previousNextButtonGroup}
+    </div>
+  );
+
+  const rightButtonsDefault = (
+    <div className="terraClinical-ActionHeader-rightButtons">
+      {children}
+      {closeButton}
+    </div>
+  );
+
+  const leftButtonsSmall = (
+    <div className="terraClinical-ActionHeader-leftButtons">
+      {backButtonSmall}
+      {previousNextButtonGroup}
+    </div>
+  );
+
+  const rightButtonsSmall = (
+    <div className="terraClinical-ActionHeader-rightButtons">
+      {children}
+      {closeButtonSmall}
+    </div>
+  );
+
+  const actionHeader = (
+    <Header
+      {...attributes}
+      startContent={leftButtonsDefault}
+      title={title}
+      endContent={rightButtonsDefault}
+    />
+  );
+
+  const smallActionHeader = (
+    <Header
+      {...attributes}
+      startContent={leftButtonsSmall}
+      title={title}
+      endContent={rightButtonsSmall}
+    />
+  );
+
+  return (
+    <ResponsiveElement
+      responsiveTo="window"
+      defaultElement={smallActionHeader}
+      small={actionHeader}
+    />
+  );
+};
 
 ActionHeader.propTypes = propTypes;
 ActionHeader.defaultProps = defaultProps;
+ActionHeader.contextTypes = contextTypes;
 
 export default ActionHeader;

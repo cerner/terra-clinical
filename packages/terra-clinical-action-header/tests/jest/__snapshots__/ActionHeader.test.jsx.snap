@@ -1,819 +1,105 @@
 exports[`test should render ActionHeader with Previous-Next button when onNext is givien 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <ButtonGroup
-              buttons={Array []}
-              isCompact={false}
-              isSelectable={false}
-              variant="default">
-              <ButtonGroupButton
-                icon={
-                  <IconChevronUp
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={null} />
-              <ButtonGroupButton
-                icon={
-                  <IconChevronDown
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-            </ButtonGroup>
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <ButtonGroup
-              buttons={Array []}
-              isCompact={false}
-              isSelectable={false}
-              variant="default">
-              <ButtonGroupButton
-                icon={
-                  <IconChevronUp
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={null} />
-              <ButtonGroupButton
-                icon={
-                  <IconChevronDown
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-            </ButtonGroup>
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={[Function]}
+  onPrevious={null}
+  title="" />
 `;
 
 exports[`test should render ActionHeader with Previous-Next button when onPrevious is givien 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <ButtonGroup
-              buttons={Array []}
-              isCompact={false}
-              isSelectable={false}
-              variant="default">
-              <ButtonGroupButton
-                icon={
-                  <IconChevronUp
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-              <ButtonGroupButton
-                icon={
-                  <IconChevronDown
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={null} />
-            </ButtonGroup>
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <ButtonGroup
-              buttons={Array []}
-              isCompact={false}
-              isSelectable={false}
-              variant="default">
-              <ButtonGroupButton
-                icon={
-                  <IconChevronUp
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-              <ButtonGroupButton
-                icon={
-                  <IconChevronDown
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={null} />
-            </ButtonGroup>
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={[Function]}
+  title="" />
 `;
 
 exports[`test should render ActionHeader with back button 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconLeft
-                  className=""
-                  data-name="Layer 1"
-                  isBidi={true}
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconLeft
-                  className=""
-                  data-name="Layer 1"
-                  isBidi={true}
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={[Function]}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={null}
+  title="" />
 `;
 
 exports[`test should render ActionHeader with children 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons">
-            <Button
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              variant="default" />
-          </div>
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons">
-            <Button
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              variant="default" />
-          </div>
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={null}
+  title="">
+  <Button
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isReversed={false}
+    variant="default" />
+</ActionHeader>
 `;
 
 exports[`test should render ActionHeader with close button 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconLeft
-                  className=""
-                  data-name="Layer 1"
-                  isBidi={true}
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons">
-            <Button
-              icon={
-                <IconClose
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={[Function]}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={null}
+  title="" />
 `;
 
 exports[`test should render ActionHeader with expand button 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconMaximize
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
-`;
-
-exports[`test should render ActionHeader with locale set 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons">
-            <Button
-              icon={
-                <IconClose
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconLeft
-                  className=""
-                  data-name="Layer 1"
-                  isBidi={true}
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-            <ButtonGroup
-              buttons={Array []}
-              isCompact={false}
-              isSelectable={false}
-              variant="default">
-              <ButtonGroupButton
-                icon={
-                  <IconChevronUp
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-              <ButtonGroupButton
-                icon={
-                  <IconChevronDown
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-            </ButtonGroup>
-          </div>
-        }
-        title="Action Header" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons">
-            <Button
-              icon={
-                <IconClose
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconLeft
-                  className=""
-                  data-name="Layer 1"
-                  isBidi={true}
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-            <ButtonGroup
-              buttons={Array []}
-              isCompact={false}
-              isSelectable={false}
-              variant="default">
-              <ButtonGroupButton
-                icon={
-                  <IconChevronUp
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-              <ButtonGroupButton
-                icon={
-                  <IconChevronDown
-                    className=""
-                    data-name="Layer 1"
-                    isBidi={true}
-                    viewBox="0 0 48 48"
-                    xmlns="http://www.w3.org/2000/svg" />
-                }
-                isReversed={false}
-                isSelected={false}
-                onClick={[Function]} />
-            </ButtonGroup>
-          </div>
-        }
-        title="Action Header" />
-    </I18nProvider>
-  } />
-`;
-
-exports[`test should render ActionHeader with locale set 2`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconMaximize
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
-`;
-
-exports[`test should render ActionHeader with locale set 3`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconMinimize
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={[Function]}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={null}
+  title="" />
 `;
 
 exports[`test should render ActionHeader with minimize button 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons">
-            <Button
-              icon={
-                <IconMinimize
-                  data-name="Layer 1"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              }
-              isBlock={false}
-              isCompact={false}
-              isDisabled={false}
-              isReversed={false}
-              onClick={[Function]}
-              variant="default" />
-          </div>
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={[Function]}
+  onNext={null}
+  onPrevious={null}
+  title="" />
 `;
 
 exports[`test should render ActionHeader with title 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="Title" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="Title" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={null}
+  title="Title" />
 `;
 
 exports[`test should render default component 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  }
-  responsiveTo="window"
-  small={
-    <I18nProvider
-      locale="en-US"
-      messages={Object {}}>
-      <Header
-        endContent={
-          <div
-            className="terraClinical-ActionHeader-rightButtons" />
-        }
-        startContent={
-          <div
-            className="terraClinical-ActionHeader-leftButtons" />
-        }
-        title="" />
-    </I18nProvider>
-  } />
+<ActionHeader
+  onBack={null}
+  onClose={null}
+  onMaximize={null}
+  onMinimize={null}
+  onNext={null}
+  onPrevious={null}
+  title="" />
 `;
