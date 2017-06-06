@@ -1,7 +1,8 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 /* eslint-disable no-unused-expressions */
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 const screenshot = require('terra-toolkit').screenshot;
+
 // widths are breakpoint width + 40 to account for padding on the root div
 const windowWidths = {
   tiny: 584,
@@ -92,31 +93,21 @@ module.exports = {
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/item-styles`);
   },
 
-  'Triggers onChange function when list or row is selected upon clicking': (browser) => {
+  'Triggers onChange function when list or row is selected upon selection': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
     if (width < windowWidths.small) {
-      browser
-      .click('.terra-List .terra-ListItem:nth-child(1)')
-      .acceptAlert();
-    } else {
-      browser
-      .click('.terra-Table-row:nth-child(1)')
-      .acceptAlert();
-    }
-  },
+      browser.click('.terra-List .terra-ListItem:nth-child(1)');
+      browser.assert.containsText('#selected-index', '0');
 
-  'Triggers onChange function when list or row is selected upon pressing enter': (browser) => {
-    const width = browser.globals.width;
-    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
-    if (width < windowWidths.small) {
-      browser
-      .sendKeys('.terra-List .terra-ListItem:nth-child(1)', browser.Keys.ENTER)
-      .acceptAlert();
+      browser.sendKeys('.terra-List .terra-ListItem:nth-child(2)', browser.Keys.ENTER);
+      browser.assert.containsText('#selected-index', '1');
     } else {
-      browser
-      .sendKeys('.terra-Table-row:nth-child(1)', browser.Keys.ENTER)
-      .acceptAlert();
+      browser.click('.terra-Table-row:nth-child(1)');
+      browser.assert.containsText('#selected-index', '0');
+
+      browser.sendKeys('.terra-Table-row:nth-child(2)', browser.Keys.ENTER);
+      browser.assert.containsText('#selected-index', '1');
     }
   },
 };

@@ -10,15 +10,15 @@ import { version } from 'terra-clinical-item-collection/package.json';
 import ItemCollectionSrc from '!raw-loader!terra-clinical-item-collection/src/ItemCollection';
 
 // Example Files
-import DefaultTable from './DefaultItemCollection';
+import ItemCollectionExample from './ItemCollectionExample';
 
 const ItemCollectionExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={ItemCollectionSrc} />
-    <h1>Default Item Collection </h1>
-    <DefaultTable />
+    <h1>Item Collection Example</h1>
+    <ItemCollectionExample />
   </div>
 );
 
