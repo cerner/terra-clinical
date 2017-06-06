@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-slide-group",
   "main": "lib/SlideGroup.js",
-  "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion",
   "repository": {
     "type": "git",
