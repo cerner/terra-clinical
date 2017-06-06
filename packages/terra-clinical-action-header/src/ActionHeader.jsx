@@ -55,11 +55,6 @@ const propTypes = {
   onPrevious: PropTypes.func,
 
   /**
-   * Locale for i18n of accessability text.
-   **/
-  locale: PropTypes.string,
-
-  /**
    * Child element to be displayed on the right end of the header.
    **/
   children: PropTypes.element,
@@ -94,7 +89,6 @@ const ActionHeader = ({
   onPrevious,
   onNext,
   children,
-  locale,
   ...customProps }, {
   intl,
 }) => {
