@@ -1,6 +1,6 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 /* eslint-disable no-unused-expressions */
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 const screenshot = require('terra-toolkit').screenshot;
 
 module.exports = {
@@ -91,7 +91,7 @@ module.exports = {
     browser.click('#DemoContainer-1 .disclose');
 
     // Waiting here to ensure new component is presented and back button is clickable
-    browser.waitForElementPresent('.terraClinical-Slide:not(.terraClinical-Slide-enter-active):nth-child(2)', 350);
+    browser.waitForElementPresent('.terraClinical-Slide:not(.terraClinical-Slide-enter-active):nth-child(2)', 1000);
 
     browser.expect.element('.terraClinical-ModalManager-modal .terraClinical-SlideGroup #DemoContainer-1').to.be.present;
     browser.expect.element('.terraClinical-ModalManager-modal .terraClinical-SlideGroup #DemoContainer-2').to.be.present;
@@ -105,4 +105,3 @@ module.exports = {
     browser.expect.element('.terraClinical-ModalManager-modal .terraClinical-SlideGroup #DemoContainer-2').to.not.be.present;
   },
 };
-

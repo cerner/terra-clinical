@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-action-header",
   "main": "lib/ActionHeader.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side.",
   "repository": {
     "type": "git",
@@ -22,18 +21,15 @@
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
-  "devDependencies": {
-    "terra-toolkit": "^0.x"
-  },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-base": "^0.x",
     "terra-button": "^0.x",
     "terra-button-group": "^0.x",
+    "terra-clinical-header": "^0.1.2",
     "terra-icon": "0.x",
     "terra-mixins": "^1.0.0",
-    "terra-clinical-header": "^0.x",
     "terra-responsive-element": "^0.x"
   },
   "dependencies": {
@@ -42,9 +38,9 @@
     "terra-base": "^0.x",
     "terra-button": "^0.x",
     "terra-button-group": "^0.x",
+    "terra-clinical-header": "^0.1.2",
     "terra-icon": "^0.x",
     "terra-mixins": "^1.0.0",
-    "terra-clinical-header": "^0.x",
     "terra-responsive-element": "^0.x"
   },
   "scripts": {
@@ -57,11 +53,11 @@
     "test": "npm run test:spec && npm run test:nightwatch-default",
     "test:spec": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
     "test:all": "npm run test:nightwatch-default && npm run test:nightwatch-chrome && npm run test:nightwatch-firefox && npm run test:nightwatch-safari",
-    "test:nightwatch-default": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ./node_modules/terra-toolkit/lib/scripts/nightwatch.js",
-    "test:nightwatch-chrome": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ./node_modules/terra-toolkit/lib/scripts/nightwatch.js chrome",
-    "test:nightwatch-firefox": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ./node_modules/terra-toolkit/lib/scripts/nightwatch.js firefox",
-    "test:nightwatch-safari": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ./node_modules/terra-toolkit/lib/scripts/nightwatch-non-parallel.js safari",
-    "test:remote": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config REMOTE=true node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --config tests/nightwatch.conf.js",
-    "test:remote:all": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config REMOTE=true node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --config tests/nightwatch.conf.js --env chrome-tiny,chrome-small,chrome-medium,chrome-large,chrome-huge,chrome-enormous,firefox-tiny,firefox-small,firefox-medium,firefox-large,firefox-huge,firefox-enormous,ie10-tiny,ie10-small,ie10-medium,ie10-large,ie10-huge,ie10-enormous,ie11-tiny,ie11-small,ie11-medium,ie11-large,ie11-huge,ie11-enormous,edge-tiny,edge-small,edge-medium,edge-large,edge-huge,edge-enormous,safari-tiny,safari-small,safari-medium,safari-large,safari-huge,safari-enormous"
+    "test:nightwatch-default": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js",
+    "test:nightwatch-chrome": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js chrome",
+    "test:nightwatch-firefox": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js firefox",
+    "test:nightwatch-safari": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-action-header node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-non-parallel.js safari",
+    "test:remote": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config REMOTE=true SPECTRE_TEST_SUITE=terra-clinical-action-header node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --config tests/nightwatch.conf.js",
+    "test:remote:all": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config REMOTE=true SPECTRE_TEST_SUITE=terra-clinical-action-header node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --config tests/nightwatch.conf.js --env chrome-tiny,chrome-small,chrome-medium,chrome-large,chrome-huge,chrome-enormous,firefox-tiny,firefox-small,firefox-medium,firefox-large,firefox-huge,firefox-enormous,ie10-tiny,ie10-small,ie10-medium,ie10-large,ie10-huge,ie10-enormous,ie11-tiny,ie11-small,ie11-medium,ie11-large,ie11-huge,ie11-enormous,edge-tiny,edge-small,edge-medium,edge-large,edge-huge,edge-enormous,safari-tiny,safari-small,safari-medium,safari-large,safari-huge,safari-enormous"
   }
 }
