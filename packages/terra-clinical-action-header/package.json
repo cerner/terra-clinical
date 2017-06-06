@@ -21,6 +21,9 @@
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "devDependencies": {
+    "react-intl": "^2.3.0"
+  },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -29,8 +32,7 @@
     "terra-button-group": "^0.x",
     "terra-clinical-header": "^0.1.2",
     "terra-icon": "0.x",
-    "terra-mixins": "^1.0.0",
-    "terra-responsive-element": "^0.x"
+    "terra-mixins": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
