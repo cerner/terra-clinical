@@ -110,4 +110,14 @@ module.exports = {
       browser.assert.containsText('#selected-index', '1');
     }
   },
+
+  'Maintains selection in list and table view as screen is resized': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
+    if (width < windowWidths.small) {
+      browser.assert.containsText('#selected-index', '2');
+    } else {
+      browser.assert.containsText('#selected-index', '2');
+    }
+  },
 };

@@ -30,14 +30,15 @@ const propTypes = {
   }),
   /**
    * The array of hashes to be displayed as rows. Each hash can contain a startAccessory, endAccessory,
-   * comment, array of displays and a itemStyles hash. The item style options are layout, textEmphasis,
-   * isTruncated and accessoryAlignment.
+   * comment, array of displays, isSelected, and a itemStyles hash. The item style options are layout,
+   * textEmphasis, isTruncated and accessoryAlignment.
    **/
   rows: PropTypes.arrayOf(PropTypes.shape({
     startAccessory: PropTypes.element,
     displays: PropTypes.arrayOf(PropTypes.element),
     comment: PropTypes.element,
     endAccessory: PropTypes.element,
+    isSelected: PropTypes.bool,
     itemStyles: PropTypes.shape({
       layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
       textEmphasis: PropTypes.oneOf(['default', 'start']),
@@ -60,9 +61,21 @@ const defaultProps = {
 };
 
 class ItemCollection extends React.Component {
+  static selectedIndexFromRows(rows) {
+    if (!rows || !rows.length) {
+      return -1;
+    }
+    for (let i = 0; i < rows.length; i += 1) {
+      if (rows[i].isSelected) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   constructor(props) {
     super(props);
-    this.state = { display: 'table', selectedIndex: -1 };
+    this.state = { display: 'table', selectedIndex: ItemCollection.selectedIndexFromRows(this.props.rows) };
     this.setContainer = this.setContainer.bind(this);
     this.handleResize = this.handleResize.bind(this);
     this.handleSelection = this.handleSelection.bind(this);
@@ -126,8 +139,6 @@ class ItemCollection extends React.Component {
 
     return (
       <div ref={this.setContainer} {...attributes}>
-        <h2>Item Collection - {this.state.display}</h2>
-        <h2> Item Selection is: {this.state.selectedIndex} </h2>
         {collectionDisplay}
       </div>
     );
