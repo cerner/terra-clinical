@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from 'terra-table';
-import TableHeaderCell from '../../../lib/TableHeaderCell';
+import TableHeaderCell from '../../../lib/_TableHeaderCell';
 
 const HeaderExample = () => (
   <div>

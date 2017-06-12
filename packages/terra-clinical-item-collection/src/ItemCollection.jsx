@@ -6,8 +6,8 @@ import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
 import 'terra-base/lib/baseStyles';
 import './ItemCollection.scss';
 
-import createListView from './CreateListView';
-import createTableView from './CreateTableView';
+import createListView from './_CreateListView';
+import createTableView from './_CreateTableView';
 
 const propTypes = {
   /**

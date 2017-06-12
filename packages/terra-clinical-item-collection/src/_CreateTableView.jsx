@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from 'terra-table';
 // eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
-import TableHeaderCell from './TableHeaderCell';
+import TableHeaderCell from './_TableHeaderCell';
 import './ItemCollection.scss';
 
 function determineTableColumns(row) {

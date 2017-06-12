@@ -7,8 +7,6 @@ A Item Collection is a wrapper component designed to display data as either a ta
 
 Ultimately, the Item Collection component component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
 
-The TableHeaderCell is a subcomponent of Item Collection. This component creates an empty table header cell that contains a defined width for accessory items.
-
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-clinical-item-collection/docs)
 - [LICENSE](#license)
