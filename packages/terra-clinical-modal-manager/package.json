@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-modal-manager",
   "main": "lib/index.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "A Redux-backed Container component that dynamically presents components in a Terra Modal",
   "repository": {
     "type": "git",
@@ -23,9 +22,9 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-clinical-app-delegate": "^0.x",
     "react-redux": "^5.0.4",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "terra-clinical-app-delegate": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^15.4.2",
@@ -33,17 +32,17 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "terra-base": "^0.x",
-    "terra-mixins": "^1.0.0",
-    "terra-clinical-app-delegate": "^0.x"
+    "terra-clinical-app-delegate": "^0.1.1",
+    "terra-mixins": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^0.x",
+    "terra-clinical-slide-group": "^0.1.1",
     "terra-mixins": "^1.0.0",
     "terra-modal": "0.1.1",
-    "terra-responsive-element": "^0.x",
-    "terra-clinical-slide-group": "^0.x"
+    "terra-responsive-element": "^0.x"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

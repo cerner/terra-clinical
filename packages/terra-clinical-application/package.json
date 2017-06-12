@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-application",
   "main": "lib/Application.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "A wrapper component around `terra-base` that provides clinical application-specific properties",
   "repository": {
     "type": "git",
@@ -23,13 +22,13 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-clinical-app-delegate": "^0.x"
+    "terra-clinical-app-delegate": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-base": "^0.x",
-    "terra-clinical-app-delegate": "^0.x"
+    "terra-clinical-app-delegate": "^0.1.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
