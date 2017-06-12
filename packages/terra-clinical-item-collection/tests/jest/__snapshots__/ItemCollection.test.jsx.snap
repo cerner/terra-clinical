@@ -3,15 +3,6 @@ exports[`test should render a default component 1`] = `null`;
 exports[`test should render with a given breakpoint 1`] = `
 <div
   className="terraClinical-ItemCollection terraClinical-ItemCollection--tableView">
-  <h2>
-    Item Collection - 
-    table
-  </h2>
-  <h2>
-     Item Selection is: 
-    -1
-     
-  </h2>
   <Table
     isPadded={true}
     isStriped={true}
@@ -149,15 +140,6 @@ exports[`test should render with a given breakpoint 1`] = `
 exports[`test should render with multiple rows 1`] = `
 <div
   className="terraClinical-ItemCollection terraClinical-ItemCollection--tableView">
-  <h2>
-    Item Collection - 
-    table
-  </h2>
-  <h2>
-     Item Selection is: 
-    -1
-     
-  </h2>
   <Table
     isPadded={true}
     isStriped={true}
@@ -295,15 +277,6 @@ exports[`test should render with multiple rows 1`] = `
 exports[`test should render with one row 1`] = `
 <div
   className="terraClinical-ItemCollection terraClinical-ItemCollection--tableView">
-  <h2>
-    Item Collection - 
-    table
-  </h2>
-  <h2>
-     Item Selection is: 
-    -1
-     
-  </h2>
   <Table
     isPadded={true}
     isStriped={true}

@@ -3,13 +3,12 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const screenshot = require('terra-toolkit').screenshot;
 
-// widths are breakpoint width + 40 to account for padding on the root div
-const windowWidths = {
-  tiny: 584,
-  small: 808,
-  medium: 1032,
-  large: 1256,
-  huge: 1480,
+const breakpoints = {
+  tiny: 544,
+  small: 768,
+  medium: 992,
+  large: 1216,
+  huge: 1440,
 };
 
 module.exports = {
@@ -29,7 +28,9 @@ module.exports = {
   'Displays the correct collection responsive to window size for tiny breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/tiny-breakpoint`);
-    if (width < windowWidths.tiny) {
+    browser.execute("document.getElementById('root').style.padding = 0;");
+
+    if (width < breakpoints.tiny) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
     } else {
       browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
@@ -39,7 +40,9 @@ module.exports = {
   'Displays the correct collection responsive to window size for small breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/small-breakpoint`);
-    if (width < windowWidths.small) {
+    browser.execute("document.getElementById('root').style.padding = 0;");
+
+    if (width < breakpoints.small) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
     } else {
       browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
@@ -49,11 +52,11 @@ module.exports = {
   'Displays the correct collection responsive to window size for medium breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/medium-breakpoint`);
-    if (width < windowWidths.medium) {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--listView');
+    browser.execute("document.getElementById('root').style.padding = 0;");
+
+    if (width < breakpoints.medium) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
     } else {
-      browser.assert.cssClassPresent('.terraClinical-ItemCollection', 'terraClinical-ItemCollection--tableView');
       browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
     }
   },
@@ -61,7 +64,9 @@ module.exports = {
   'Displays the correct collection responsive to window size for large breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/large-breakpoint`);
-    if (width < windowWidths.large) {
+    browser.execute("document.getElementById('root').style.padding = 0;");
+
+    if (width < breakpoints.large) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
     } else {
       browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
@@ -71,7 +76,9 @@ module.exports = {
   'Displays the correct collection responsive to window size for huge breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/huge-breakpoint`);
-    if (width < windowWidths.huge) {
+    browser.execute("document.getElementById('root').style.padding = 0;");
+
+    if (width < breakpoints.huge) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
     } else {
       browser.expect.element('.terraClinical-ItemCollection--tableView').to.be.present;
@@ -96,7 +103,7 @@ module.exports = {
   'Triggers onChange function when list or row is selected upon selection': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
-    if (width < windowWidths.small) {
+    if (width < breakpoints.small) {
       browser.click('.terra-List .terra-ListItem:nth-child(1)');
       browser.assert.containsText('#selected-index', '0');
 
@@ -114,7 +121,9 @@ module.exports = {
   'Maintains selection in list and table view as screen is resized': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/onchange`);
-    if (width < windowWidths.small) {
+    browser.execute("document.getElementById('root').style.padding = 0;");
+
+    if (width < breakpoints.small) {
       browser.assert.containsText('#selected-index', '2');
     } else {
       browser.assert.containsText('#selected-index', '2');
