@@ -30,8 +30,6 @@
     "prop-types": "^15.5.8",
     "react-intl": "^2.3.0",
     "terra-clinical-action-header": "^0.x",
-    "terra-clinical-app-delegate": "^0.x",
-    "terra-clinical-application": "^0.x",
     "terra-clinical-header": "^0.x",
     "terra-clinical-detail-view": "^0.x",
     "terra-clinical-item-display": "^0.x",
@@ -39,8 +37,6 @@
     "terra-clinical-error-view": "^0.x",
     "terra-clinical-label-value-view": "^0.x",
     "terra-clinical-no-data-view": "^0.x",
-    "terra-clinical-slide-group": "^0.x",
-    "terra-clinical-modal-manager": "^0.x",
     "terra-i18n-plugin": "^0.x",
     "terra-legacy-theme": "^0.x",
     "terra-markdown": "^0.x",
@@ -53,6 +49,10 @@
     "react-redux": "^5.0.4"
   },
   "devDependencies": {
+    "terra-clinical-app-delegate": "^0.x",
+    "terra-clinical-application": "^0.x",
+    "terra-clinical-modal-manager": "^0.x",
+    "terra-clinical-slide-group": "^0.x",
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
