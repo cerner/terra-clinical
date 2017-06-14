@@ -17,13 +17,13 @@
 
 .terraClinical-DetailView-footerText {
   @include terra-text-align-center();
-  color: $terra-grey-50;
+  color: #909496;
   font-size: 1rem;
   line-height: 1.428;
 }
 
 .terraClinical-DetailView-divider {
-  border-color: $terra-grey-20;
+  border-color: #d3d4d5;
   border-style: solid;
   border-width: 1px 0 0;
   margin: 0;
@@ -31,7 +31,7 @@
 }
 
 .terraClinical-DetailView-subtitle {
-  color: $terra-grey-30;
+  color: #bcbfc0;
   font-size: 1.286rem;
   line-height: 1.428;
   margin-bottom: 0.357rem;
