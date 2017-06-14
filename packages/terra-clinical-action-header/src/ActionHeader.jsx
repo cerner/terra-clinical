@@ -71,6 +71,15 @@ const defaultProps = {
   children: null,
 };
 
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Please add locale prop to Base component to load translations');
+    }
+  },
+};
+
 const ActionHeader = ({
   title,
   onClose,
@@ -80,16 +89,24 @@ const ActionHeader = ({
   onPrevious,
   onNext,
   children,
-  ...customProps
+  ...customProps }, {
+  intl,
 }) => {
   const attributes = Object.assign({}, customProps);
-  const closeButton = onClose ? <Button icon={<IconClose />} onClick={onClose} /> : null;
-  const backButton = onBack ? <Button icon={<IconLeft />} onClick={onBack} /> : null;
+  const backText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.back' });
+  const closeText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.close' });
+  const minimizeText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.minimize' });
+  const maximizeText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.maximize' });
+  const previousText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.previous' });
+  const nextText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.next' });
+
+  const closeButton = onClose ? <Button icon={<IconClose ariaLabel={closeText} />} onClick={onClose} /> : null;
+  const backButton = onBack ? <Button icon={<IconLeft ariaLabel={backText} />} onClick={onBack} /> : null;
 
   let closeButtonSmall;
   let backButtonSmall;
   if (onClose && !onBack) {
-    backButtonSmall = <Button icon={<IconLeft />} onClick={onClose} />;
+    backButtonSmall = <Button icon={<IconLeft ariaLabel={backText} />} onClick={onClose} />;
     closeButtonSmall = null;
   } else {
     closeButtonSmall = closeButton;
@@ -100,9 +117,9 @@ const ActionHeader = ({
   let expandButton;
   if (!backButton) {
     if (onMaximize) {
-      expandButton = <Button icon={<IconMaximize />} onClick={onMaximize} />;
+      expandButton = <Button icon={<IconMaximize ariaLabel={maximizeText} />} onClick={onMaximize} />;
     } else if (onMinimize) {
-      expandButton = <Button icon={<IconMinimize />} onClick={onMinimize} />;
+      expandButton = <Button icon={<IconMinimize ariaLabel={minimizeText} />} onClick={onMinimize} />;
     }
   }
 
@@ -110,8 +127,8 @@ const ActionHeader = ({
   if (onPrevious || onNext) {
     previousNextButtonGroup = (
       <ButtonGroup>
-        <ButtonGroup.Button icon={<IconChevronUp />} onClick={onPrevious} key="ActionHeaderPrevious" />
-        <ButtonGroup.Button icon={<IconChevronDown />} onClick={onNext} key="ActionHeaderNext" />
+        <ButtonGroup.Button icon={<IconChevronUp ariaLabel={previousText} />} onClick={onPrevious} key="ActionHeaderPrevious" />
+        <ButtonGroup.Button icon={<IconChevronDown ariaLabel={nextText} />} onClick={onNext} key="ActionHeaderNext" />
       </ButtonGroup>
     );
   }
@@ -174,5 +191,6 @@ const ActionHeader = ({
 
 ActionHeader.propTypes = propTypes;
 ActionHeader.defaultProps = defaultProps;
+ActionHeader.contextTypes = contextTypes;
 
 export default ActionHeader;

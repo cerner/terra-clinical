@@ -47,6 +47,7 @@
     "terra-clinical-no-data-view": "^0.x",
     "terra-clinical-slide-group": "^0.x",
     "terra-clinical-modal-manager": "^0.x",
+    "terra-i18n": "^0.x",
     "terra-icon": "^0.x",
     "terra-grid": "^2.x",
     "terra-i18n-plugin": "^0.x",
@@ -70,6 +71,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
+    "terra-i18n-plugin": "^0.x",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   }

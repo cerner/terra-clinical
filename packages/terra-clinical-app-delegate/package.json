@@ -1,8 +1,7 @@
 {
   "name": "terra-clinical-app-delegate",
   "main": "lib/app-delegate/AppDelegate.js",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "An object that provides a set of functions used to facilitate communcation between Containers and their consuming Containers/Applications",
   "repository": {
     "type": "git",
