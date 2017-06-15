@@ -102,14 +102,14 @@
 .terraClinical-ItemView-content {
   .terraClinical-ItemDisplay {
     @include terra-clinical-text-body;
-    color: $terra-grey-70;
+    color: #64696c;
   }
 }
 
 //Emphasis Content Styles
 .terraClinical-ItemView-content--primaryColor {
   .terraClinical-ItemDisplay {
-    color: $terra-dark;
+    color: #1c1f21;
   }
 }
 
@@ -121,7 +121,7 @@
 
 .terraClinical-ItemView-content--secondaryColor {
   .terraClinical-ItemDisplay {
-    color: $terra-grey-70;
+    color: #64696c;
   }
 }
 
