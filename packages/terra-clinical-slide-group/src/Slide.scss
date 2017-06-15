@@ -1,7 +1,7 @@
 @import '~terra-mixins';
 
 .terraClinical-Slide {
-  background-color: $terra-white;
+  background-color: #fff;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -59,4 +59,3 @@
     transition: opacity 300ms ease-in-out;
   }
 }
-
