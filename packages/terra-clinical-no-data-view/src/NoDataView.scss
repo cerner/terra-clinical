@@ -16,7 +16,7 @@
 
 .terraClinical-NoDataView-heading {
   @include terra-text-align-center();
-  color: $terra-grey-25;
+  color: #c8cacb;
   flex: 0 0 auto;
   font-size: 1.7142857142857142rem;
   line-height: 1.284;
@@ -24,7 +24,7 @@
 
 .terraClinical-NoDataView-subtext {
   @include terra-text-align-center();
-  color: $terra-grey-65;
+  color: #6f7477;
   flex: 0 0 auto;
   font-size: 1rem;
   line-height: 1.142;
@@ -35,4 +35,3 @@
   flex: 0 0 auto;
   padding-top: 0.2857rem;
 }
-

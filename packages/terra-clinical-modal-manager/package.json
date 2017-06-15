@@ -41,7 +41,7 @@
     "terra-base": "^0.x",
     "terra-clinical-slide-group": "^0.1.1",
     "terra-mixins": "^1.0.0",
-    "terra-modal": "0.1.1",
+    "terra-modal": "0.3.0",
     "terra-responsive-element": "^0.x"
   },
   "scripts": {

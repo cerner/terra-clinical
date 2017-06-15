@@ -182,7 +182,7 @@ class ModalManager extends React.Component {
       <div className="terraClinical-ModalManager">
         {this.buildChildren()}
         <Modal
-          isOpened={isOpen}
+          isOpen={isOpen}
           isFullscreen={isMaximized || this.forceFullscreenModal}
           classNameModal={modalClassNames}
           onRequestClose={closeModal}
