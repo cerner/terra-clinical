@@ -1,8 +1,8 @@
 # Terra Clinical Item Collection
 
-A Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size. Initially data is displayed in a tabular format that flexes the rendered component, but as the container is resized and the indicated breakpoint is hit, the display changes to shows the data as a list of items. The terra-table and terra-clinical-item react components will be utilized for displaying the data in these two ways.
+An Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size. Initially data is displayed in a tabular format that flexes the rendered component, but as the container is resized and the indicated breakpoint is hit, the display changes to shows the data as a list of items. The terra-table and terra-clinical-item react components will be utilized for displaying the data in these two ways.
 
-Ultimately, the Item Collection component component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
+Ultimately, the Item Collection component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
 
 The TableHeaderCell is a 'private' subcomponent of Item Collection. This component creates an empty table header cell that contains a defined width for accessory items.
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import Table from 'terra-table';
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import TableHeaderCell from './_TableHeaderCell';
-import './ItemCollection.scss';
 
 function determineTableColumns(row) {
   const { startAccessory, displays, comment, endAccessory } = row;
@@ -54,6 +52,11 @@ function createTableHeader(tableColumns) {
   );
 }
 
+function createTableCell(content, keyValue) {
+  const cellContent = content != null ? content : ' ';
+  return <Table.Cell content={cellContent} key={keyValue} />;
+}
+
 function createTableRows(rows, tableColumns, selectedIndex) {
   const tableRows = rows.map((row, rowIndex) => {
     const { startAccessory, displays, comment, endAccessory, itemStyles, ...customProps } = row;
@@ -61,29 +64,25 @@ function createTableRows(rows, tableColumns, selectedIndex) {
 
     let startAccessoryContent;
     if (startAccessoryColumn) {
-      const content = startAccessory != null ? startAccessory : ' ';
-      startAccessoryContent = <Table.Cell content={content} key="start_accessory" />;
+      startAccessoryContent = createTableCell(startAccessory, 'start_accessory');
     }
 
-    const displayContent = [];
+    let displayContent = [];
     if (displayColumns) {
-      for (let index = 0; index < displayColumns; index += 1) {
-        const contentKey = `display_${index + 1}`;
-        const content = row.displays[index] != null ? row.displays[index] : ' ';
-        displayContent[index] = (<Table.Cell content={content} key={contentKey} />);
-      }
+      displayContent = row.displays.map((display, index) => {
+        const displayKey = `display_${index + 1}`;
+        return createTableCell(display, displayKey);
+      });
     }
 
     let commentContent;
     if (commentColumn) {
-      const content = comment != null ? comment : ' ';
-      commentContent = <Table.Cell content={content} key="comment" />;
+      commentContent = createTableCell(comment, 'comment');
     }
 
     let endAccessoryContent;
     if (endAccessoryColumn) {
-      const content = endAccessory != null ? endAccessory : ' ';
-      endAccessoryContent = <Table.Cell content={content} key="end_accessory" />;
+      endAccessoryContent = createTableCell(endAccessory, 'end_accessory');
     }
 
     const rowKey = rowIndex;

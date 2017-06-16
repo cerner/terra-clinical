@@ -9,7 +9,7 @@ function createListView(rows, listStyles, selectedIndex, handleSelection) {
     const { itemStyles, isSelected, ...itemElements } = row;
     const listItemContent = <ItemView {...itemElements} {...itemStyles} />;
     return (
-      <SingleSelectList.Item key={contentKey} content={listItemContent} isSelectable isSelected={selected} />
+      <SingleSelectList.Item key={contentKey} content={listItemContent} isSelected={selected} />
     );
   });
 
