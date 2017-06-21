@@ -35,7 +35,7 @@ class PatientApplication extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <Application>
+        <Application locale="en-US" className="test">
           <ModalManager>
             <PanelManager>
               <PatientListController

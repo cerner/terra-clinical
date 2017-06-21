@@ -24,6 +24,10 @@ body {
   width: 100%;
 }
 
+#terra-ApplicationMount > div[data-reactroot] {
+  height: 100%;
+}
+
 .ReactModal__Overlay {
   z-index: 1040;
 }
