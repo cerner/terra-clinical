@@ -24,6 +24,7 @@ exports[`test should render a button with text 1`] = `
       isReversed={false}
       onClick={[Function]}
       text="test button text"
+      type="button"
       variant="secondary" />
   </div>
 </div>

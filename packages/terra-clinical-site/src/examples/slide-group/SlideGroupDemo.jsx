@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import SlideGroup from 'terra-clinical-slide-group';
 
 const containerStyles = {

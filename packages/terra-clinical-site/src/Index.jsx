@@ -1,6 +1,6 @@
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Router, Route, hashHistory, IndexRoute, Redirect } from 'react-router';
 import App from './App';
 import Home from './Home';
@@ -23,7 +23,6 @@ import ModalManagerExamples from './examples/modal-manager/Index';
 /* eslint-disable import/first */
 
 import ActionHeaderTestRoutes from 'terra-clinical-action-header/tests/nightwatch/ActionHeaderTestRoutes';
-import ApplicationTestRoutes from 'terra-clinical-application/tests/nightwatch/ApplicationTestRoutes';
 import DetailViewTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewTestRoutes';
 import DetailListTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailList/DetailListTestRoutes';
 import DetailListItemTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailListItem/ListItemTestRoutes';
@@ -34,8 +33,13 @@ import ItemCommentTestRoutes from 'terra-clinical-item-display/tests/nightwatch/
 import HeaderTestRoutes from 'terra-clinical-header/tests/nightwatch/HeaderTestRoutes';
 import LabelValueViewTestRoutes from 'terra-clinical-label-value-view/tests/nightwatch/LabelValueViewTestRoutes';
 import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/NoDataViewTestRoutes';
-import SlideGroupTestRoutes from 'terra-clinical-slide-group/tests/nightwatch/SlideGroupTestRoutes';
+
+// Remove eslint rule when these packages have been released.
+/* eslint-disable import/no-extraneous-dependencies */
+import ApplicationTestRoutes from 'terra-clinical-application/tests/nightwatch/ApplicationTestRoutes';
 import ModalManagerTestRoutes from 'terra-clinical-modal-manager/tests/nightwatch/ModalManagerTestRoutes';
+import SlideGroupTestRoutes from 'terra-clinical-slide-group/tests/nightwatch/SlideGroupTestRoutes';
+/* eslint-enable import/no-extraneous-dependencies */
 
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */

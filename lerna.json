@@ -6,11 +6,6 @@
   "command": {
     "publish": {
       "ignore": [
-        "terra-clinical-app-delegate",
-        "terra-clinical-application",
-        "terra-clinical-modal-manager",
-        "terra-clinical-site",
-        "terra-clinical-slide-group"
       ]
     }
   },
