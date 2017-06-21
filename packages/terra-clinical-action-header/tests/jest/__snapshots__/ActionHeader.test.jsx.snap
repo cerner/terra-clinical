@@ -45,6 +45,7 @@ exports[`test should render ActionHeader with children 1`] = `
     isCompact={false}
     isDisabled={false}
     isReversed={false}
+    type="button"
     variant="default" />
 </ActionHeader>
 `;
