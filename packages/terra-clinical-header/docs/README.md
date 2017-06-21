@@ -1,4 +1,4 @@
-# Terra Header
+# Terra Clinical Header
 
 A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. 
 
