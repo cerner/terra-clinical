@@ -2,8 +2,8 @@ import React from 'react';
 import ItemCollection from '../../../lib/ItemCollection';
 import item from './Item';
 
-const itemOneColumn = { ...item, layout: 'oneColumn' };
-const itemTwoColumn = { ...item, layout: 'twoColumns' };
+const itemOneColumn = { ...item, itemStyles: { layout: 'oneColumn' } };
+const itemTwoColumn = { ...item, itemStyles: { layout: 'twoColumns' } };
 
 const OneColumnDisplay = () => (
   <ItemCollection

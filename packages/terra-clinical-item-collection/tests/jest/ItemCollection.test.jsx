@@ -29,14 +29,3 @@ it('should render with a given breakpoint', () => {
   const itemCollection = shallow(<ItemCollection breakpoint="medium" rows={[item, item, item]} />);
   expect(itemCollection).toMatchSnapshot();
 });
-
-// Structure Tests
-it('should have the class terraClinical-ItemCollection', () => {
-  const itemCollection = shallow(<ItemCollection rows={[item]} />);
-  expect(itemCollection.prop('className')).toContain('terraClinical-ItemCollection');
-});
-
-it('should have the inital class terraClinical-ItemCollection--tableView', () => {
-  const itemCollection = shallow(<ItemCollection rows={[item]} />);
-  expect(itemCollection.prop('className')).toContain('terraClinical-ItemCollection--tableView');
-});

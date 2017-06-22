@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ResizeObserver from 'resize-observer-polyfill';
 import classNames from 'classnames';
-import getBreakpoints from 'terra-responsive-element/lib/breakpoints';
+import ResponsiveElement from 'terra-responsive-element';
 import 'terra-base/lib/baseStyles';
 import './ItemCollection.scss';
 
@@ -76,44 +75,13 @@ class ItemCollection extends React.Component {
   constructor(props) {
     super(props);
     this.state = { display: 'table', selectedIndex: ItemCollection.selectedIndexFromRows(this.props.rows) };
-    this.setContainer = this.setContainer.bind(this);
-    this.handleResize = this.handleResize.bind(this);
     this.handleSelection = this.handleSelection.bind(this);
-  }
-
-  componentDidMount() {
-    this.resizeObserver = new ResizeObserver((entries) => { this.handleResize(entries[0].contentRect.width); });
-    this.resizeObserver.observe(this.container);
-  }
-
-  componentWillUnmount() {
-    this.resizeObserver.disconnect(this.container);
-    this.container = null;
-  }
-
-  setContainer(node) {
-    if (node === null) { return; } // Ref callbacks happen on mount and unmount, element will be null on unmount
-    this.container = node.parentNode;
   }
 
   handleSelection(event, selectedIndex) {
     this.setState({ selectedIndex });
     if (this.props.onChange) {
       this.props.onChange(event, selectedIndex);
-    }
-  }
-
-  handleResize(width) {
-    let display;
-    const breakpoints = getBreakpoints();
-    if (width < breakpoints[this.props.breakpoint]) {
-      display = 'list';
-    } else {
-      display = 'table';
-    }
-
-    if (this.state.display !== display) {
-      this.setState({ display });
     }
   }
 
@@ -124,23 +92,41 @@ class ItemCollection extends React.Component {
       return null;
     }
 
-    const attributes = Object.assign({}, customProps);
-    attributes.className = classNames(['terraClinical-ItemCollection',
-      `terraClinical-ItemCollection--${this.state.display}View`,
-      attributes.className,
+    const tableAttributes = Object.assign({}, customProps);
+    tableAttributes.className = classNames(['terraClinical-ItemCollection',
+      'terraClinical-ItemCollection--tableView',
+      customProps.className,
     ]);
 
-    let collectionDisplay;
-    if (this.state.display === 'table') {
-      collectionDisplay = createTableView(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
-    } else if (this.state.display === 'list') {
-      collectionDisplay = createListView(rows, listStyles, this.state.selectedIndex, this.handleSelection);
-    }
+    const tableView = createTableView(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
+    const tableDisplay = (
+      <div {...tableAttributes}>
+        {tableView}
+      </div>
+    );
+
+    const listAttributes = Object.assign({}, customProps);
+    listAttributes.className = classNames(['terraClinical-ItemCollection',
+      'terraClinical-ItemCollection--listView',
+      customProps.className,
+    ]);
+
+    const listView = createListView(rows, listStyles, this.state.selectedIndex, this.handleSelection);
+    const listDisplay = (
+      <div {...listAttributes}>
+        {listView}
+      </div>
+    );
+
+    const breakpointDisplay = {};
+    breakpointDisplay[breakpoint] = tableDisplay;
 
     return (
-      <div ref={this.setContainer} {...attributes}>
-        {collectionDisplay}
-      </div>
+      <ResponsiveElement
+        responsiveTo="parent"
+        defaultElement={listDisplay}
+        {...breakpointDisplay}
+      />
     );
   }
 }
