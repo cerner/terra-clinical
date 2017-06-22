@@ -64,7 +64,7 @@ const copy = object => JSON.parse(JSON.stringify(object));
 const PatientAPI = {
   getPatientList: physicianId => (
     new Promise((resolve) => {
-      setTimeout(() => { resolve(); }, 2500);
+      setTimeout(() => { resolve(); }, 0);
     }).then(() => (
       copy(patientListData[physicianId])
     ))
@@ -80,7 +80,7 @@ const PatientAPI = {
     });
 
     return new Promise((resolve) => {
-      setTimeout(() => { resolve(); }, 2500);
+      setTimeout(() => { resolve(); }, 0);
     }).then(() => (
       patientData
     ));
