@@ -101,6 +101,7 @@
 // We need to style content that appears out of the rowContainer (i.e. the comment).
 .terraClinical-ItemView-content {
   .terraClinical-ItemDisplay {
+    @include terra-clinical-text-body;
     color: #64696c;
   }
 }
