@@ -1,0 +1,6 @@
+export const OPEN = 'PANEL_MANAGER_OPEN';
+export const CLOSE = 'PANEL_MANAGER_CLOSE';
+export const PUSH = 'PANEL_MANAGER_PUSH';
+export const POP = 'PANEL_MANAGER_POP';
+export const MAXIMIZE = 'PANEL_MANAGER_MAXIMIZE';
+export const MINIMIZE = 'PANEL_MANAGER_MINIMIZE';
