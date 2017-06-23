@@ -28,7 +28,6 @@
   width: 16px;
 }
 
-.terraClinical-ItemDisplay-text,
 .terraClinical-ItemDisplay-text--isTruncated {
   @include terra-clinical-text-truncate;
 }
