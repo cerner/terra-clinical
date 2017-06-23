@@ -148,30 +148,35 @@ exports[`test should render with a given breakpoint 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory
@@ -182,30 +187,35 @@ exports[`test should render with a given breakpoint 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory
@@ -216,30 +226,35 @@ exports[`test should render with a given breakpoint 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory
@@ -402,30 +417,35 @@ exports[`test should render with multiple rows 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory
@@ -436,30 +456,35 @@ exports[`test should render with multiple rows 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory
@@ -470,30 +495,35 @@ exports[`test should render with multiple rows 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory
@@ -587,30 +617,35 @@ exports[`test should render with one row 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 1" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--display"
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--comment"
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               } />
             <TableCell
+              className="terraClinical-ItemCollection--accessory"
               content={
                 <p>
                   End Accessory

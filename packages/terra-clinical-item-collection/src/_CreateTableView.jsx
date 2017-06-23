@@ -52,9 +52,10 @@ function createTableHeader(tableColumns) {
   );
 }
 
-function createTableCell(content, keyValue) {
+function createTableCell(content, keyValue, contentType) {
   const cellContent = content != null ? content : ' ';
-  return <Table.Cell content={cellContent} key={keyValue} />;
+  const cellName = `terraClinical-ItemCollection--${contentType}`;
+  return <Table.Cell content={cellContent} key={keyValue} className={cellName} />;
 }
 
 function createTableRows(rows, tableColumns, selectedIndex) {
@@ -64,25 +65,25 @@ function createTableRows(rows, tableColumns, selectedIndex) {
 
     let startAccessoryContent;
     if (startAccessoryColumn) {
-      startAccessoryContent = createTableCell(startAccessory, 'start_accessory');
+      startAccessoryContent = createTableCell(startAccessory, 'start_accessory', 'accessory');
     }
 
     let displayContent = [];
     if (displayColumns) {
       displayContent = row.displays.map((display, index) => {
         const displayKey = `display_${index + 1}`;
-        return createTableCell(display, displayKey);
+        return createTableCell(display, displayKey, 'display');
       });
     }
 
     let commentContent;
     if (commentColumn) {
-      commentContent = createTableCell(comment, 'comment');
+      commentContent = createTableCell(comment, 'comment', 'comment');
     }
 
     let endAccessoryContent;
     if (endAccessoryColumn) {
-      endAccessoryContent = createTableCell(endAccessory, 'end_accessory');
+      endAccessoryContent = createTableCell(endAccessory, 'end_accessory', 'accessory');
     }
 
     const rowKey = rowIndex;
