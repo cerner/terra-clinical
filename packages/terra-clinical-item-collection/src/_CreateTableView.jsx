@@ -44,10 +44,10 @@ function createTableHeader(tableColumns) {
 
   return (
     <Table.Header style={{ visibility: 'hidden' }} >
-      { startAccessoryHeader }
-      { displayHeaders }
-      { commentHeader }
-      { endAccessoryHeader }
+      {startAccessoryHeader}
+      {displayHeaders}
+      {commentHeader}
+      {endAccessoryHeader}
     </Table.Header>
   );
 }
