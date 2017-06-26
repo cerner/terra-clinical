@@ -52,4 +52,5 @@ screenshots
 target
 **/aggregated-translations/*.*
 lib
-**/aggregated-translations/*.*
+props-table
+
