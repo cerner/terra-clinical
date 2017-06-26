@@ -53,7 +53,8 @@
     "lint:scss": "lerna run lint:scss",
     "pretest": "npm run lint",
     "postinstall": "npm run compile && npm run bootstrap",
-    "publish": "check-installed-dependencies && npm run compile && npm test && lerna publish",
+    "props-table": "lerna run props-table",
+    "publish": "check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
     "start": "cd packages/terra-clinical-site && npm run start",
     "start:express": "node scripts/express/app.js",
     "test": "jest && npm run test:nightwatch-default",
@@ -89,6 +90,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "^7.10.1",
     "stylelint-config-sass-guidelines": "^2.1.0",
+    "terra-props-table": "^0.9.0",
     "terra-toolkit": "^0.x"
   }
 }
