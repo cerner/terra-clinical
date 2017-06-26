@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const TestLinks = () => (
   <div>
-    <ul>
+    <ul className="terraClinical-Site-Nav">
       <li><Link to="/tests/action-header-tests">ActionHeader Tests</Link></li>
       <li><Link to="/tests/application-tests">Application Tests</Link></li>
       <li><Link to="/tests/detail-view-tests">DetailView Tests</Link></li>
