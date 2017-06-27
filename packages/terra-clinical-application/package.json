@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-clinical-app-delegate": "^0.1.1"
+    "terra-app-delegate": "^0.x"
   },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "terra-base": "^0.x",
-    "terra-clinical-app-delegate": "^0.1.1"
+    "terra-app-delegate": "^0.x"
   },
   "dependencies": {
     "classnames": "^2.2.5",

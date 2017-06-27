@@ -5,7 +5,7 @@
 
 <!-- Name -->
 <h1 align="center">
-  Terra Clinical  
+  Terra Clinical
 </h1>
 
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)

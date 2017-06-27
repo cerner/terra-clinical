@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import SlidePanel from 'terra-slide-panel';
-import SlideGroup from 'terra-clinical-slide-group';
-import AppDelegate from 'terra-clinical-app-delegate';
+import SlideGroup from 'terra-slide-group';
+import AppDelegate from 'terra-app-delegate';
 
 const propTypes = {
   app: AppDelegate.propType,

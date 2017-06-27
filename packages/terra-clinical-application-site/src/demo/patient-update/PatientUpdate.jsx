@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import ContentContainer from 'terra-content-container';
-import AppDelegate from 'terra-clinical-app-delegate';
+import AppDelegate from 'terra-app-delegate';
 
 import NavigationHeader from '../navigation-header/NavigationHeader';
 import ActivityOverlay from '../activity-overlay/ActivityOverlay';

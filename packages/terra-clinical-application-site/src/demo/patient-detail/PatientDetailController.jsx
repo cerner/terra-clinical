@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import AppDelegate from 'terra-clinical-app-delegate';
+import AppDelegate from 'terra-app-delegate';
 
 import { loadPatient } from '../patient-concept/actions';
 import patientReducers from '../patient-concept/reducers';
