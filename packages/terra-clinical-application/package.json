@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-application",
   "main": "lib/Application.js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A wrapper component around `terra-base` that provides clinical application-specific properties",
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^0.x",
-    "terra-app-delegate": "^0.x"
+    "terra-app-delegate": "^0.x",
+    "terra-base": "^0.x"
   },
   "dependencies": {
     "classnames": "^2.2.5",
