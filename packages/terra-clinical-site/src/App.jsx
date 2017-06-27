@@ -25,7 +25,6 @@ const App = props => (
           <List className="terraClinical-Site-Nav">
             <List.Item content={<Link to="/">Home</Link>} />
             <List.Item content={<Link to="/site/action-header">Action Header</Link>} />
-            <List.Item content={<Link to="/site/app-delegate">App Delegate</Link>} />
             <List.Item content={<Link to="/site/application">Application</Link>} />
             <List.Item content={<Link to="/site/detail-view">Detail View</Link>} />
             <List.Item content={<Link to="/site/error-view">Error View</Link>} />
@@ -34,9 +33,7 @@ const App = props => (
             <List.Item content={<Link to="/site/item-display">Item Display</Link>} />
             <List.Item content={<Link to="/site/item-view">Item View</Link>} />
             <List.Item content={<Link to="/site/label-value-view">Label Value View</Link>} />
-            <List.Item content={<Link to="/site/slide-group">Slide Group</Link>} />
             <List.Item content={<Link to="/site/no-data-view">No Data View</Link>} />
-            <List.Item content={<Link to="/site/modal-manager">Modal Manager</Link>} />
             <List.Item content={<Link to="/tests">Tests</Link>} />
             <List.Item content={<Link to="/demo">Demo</Link>} />
           </List>

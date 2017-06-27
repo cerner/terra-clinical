@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 
 import Application from 'terra-clinical-application';
-import AppDelegate from 'terra-clinical-app-delegate';
-import ModalManager, { reducers as modalManagerReducers } from 'terra-clinical-modal-manager';
+import AppDelegate from 'terra-app-delegate';
+import ModalManager, { reducers as modalManagerReducers } from 'terra-modal-manager';
 
 import PanelManager, { reducers as panelManagerReducers } from '../panel-manager';
 import PatientListController, { reducers as patientListReducers } from '../patient-list/PatientListController';
