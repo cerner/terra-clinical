@@ -11,7 +11,7 @@ import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
 import IconRefresh from 'terra-icon/lib/icon/IconRefresh';
 import IconInformation from 'terra-icon/lib/icon/IconInformationInverse';
 import IconPanelRight from 'terra-icon/lib/icon/IconPanelRight';
-import AppDelegate from 'terra-clinical-app-delegate';
+import AppDelegate from 'terra-app-delegate';
 
 import NavigationHeader from '../navigation-header/NavigationHeader';
 import ActivityOverlay from '../activity-overlay/ActivityOverlay';

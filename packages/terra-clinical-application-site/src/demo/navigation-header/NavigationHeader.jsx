@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ActionHeader from 'terra-clinical-action-header';
-import AppDelegate from 'terra-clinical-app-delegate';
+import AppDelegate from 'terra-app-delegate';
 
 const propTypes = {
   app: AppDelegate.propType,

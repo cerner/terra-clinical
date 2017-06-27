@@ -29,9 +29,9 @@
   "dependencies": {
     "prop-types": "^15.5.8",
     "react-intl": "^2.3.0",
-    "terra-button": "0.6.0",
+    "terra-app-delegate": "^0.x",
+    "terra-button": "^0.x",
     "terra-clinical-action-header": "^0.1.2",
-    "terra-clinical-app-delegate": "^0.x",
     "terra-clinical-application": "^0.x",
     "terra-clinical-application-site": "^0.x",
     "terra-clinical-detail-view": "^0.1.4",
@@ -40,15 +40,15 @@
     "terra-clinical-item-display": "^0.1.3",
     "terra-clinical-item-view": "^0.1.3",
     "terra-clinical-label-value-view": "^0.1.4",
-    "terra-clinical-modal-manager": "^0.1.2",
     "terra-clinical-no-data-view": "^0.1.2",
-    "terra-clinical-slide-group": "^0.1.2",
-    "terra-grid": "3.0.0",
+    "terra-grid": "^3.0.0",
     "terra-i18n": "^0.x",
-    "terra-icon": "^0.6.0",
-    "terra-list": "^0.6.0",
+    "terra-icon": "^0.x",
+    "terra-list": "^0.x",
     "terra-markdown": "^0.x",
-    "terra-props-table": "^0.x"
+    "terra-modal-manager": "^0.x",
+    "terra-props-table": "^0.x",
+    "terra-slide-group": "^0.x"
   },
   "peerDependencies": {
     "react": "^15.4.2",
