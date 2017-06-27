@@ -17,8 +17,6 @@ const TestLinks = () => (
       <li><Link to="/tests/header-tests">Header Tests</Link></li>
       <li><Link to="/tests/label-value-view-tests">Label Value View Tests</Link></li>
       <li><Link to="/tests/no-data-view-tests">NoDataView Tests</Link></li>
-      <li><Link to="/tests/slide-group-tests">SlideGroup Tests</Link></li>
-      <li><Link to="/tests/modal-manager-tests">ModalManager Tests</Link></li>
     </ul>
   </div>
 );

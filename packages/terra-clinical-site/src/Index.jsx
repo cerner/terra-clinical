@@ -7,7 +7,6 @@ import Home from './Home';
 
 // Examples
 import ActionHeaderExamples from './examples/action-header/Index';
-import AppDelegateExamples from './examples/app-delegate/Index';
 import ApplicationExamples from './examples/application/Index';
 import DetailViewExamples from './examples/detail-view/Index';
 import ErrorViewExamples from './examples/error-view/Index';
@@ -16,8 +15,6 @@ import ItemViewExamples from './examples/item-view/Index';
 import HeaderExamples from './examples/header/Index';
 import LabelValueViewExamples from './examples/label-value-view/Index';
 import NoDataViewExamples from './examples/no-data-view/Index';
-import SlideGroupExamples from './examples/slide-group/Index';
-import ModalManagerExamples from './examples/modal-manager/Index';
 import DemoApplicationExamples from './examples/demo-application/Index';
 
 // Test
@@ -38,8 +35,6 @@ import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/N
 // Remove eslint rule when these packages have been released.
 /* eslint-disable import/no-extraneous-dependencies */
 import ApplicationTestRoutes from 'terra-clinical-application/tests/nightwatch/ApplicationTestRoutes';
-import ModalManagerTestRoutes from 'terra-clinical-modal-manager/tests/nightwatch/ModalManagerTestRoutes';
-import SlideGroupTestRoutes from 'terra-clinical-slide-group/tests/nightwatch/SlideGroupTestRoutes';
 /* eslint-enable import/no-extraneous-dependencies */
 
 import TestLinks from './TestLinks';
@@ -51,7 +46,6 @@ ReactDOM.render((
     <Route path="/site" component={App}>
       <IndexRoute component={Home} />
       <Route path="action-header" component={ActionHeaderExamples} />
-      <Route path="app-delegate" component={AppDelegateExamples} />
       <Route path="application" component={ApplicationExamples} />
       <Route path="detail-view" component={DetailViewExamples} />
       <Route path="error-view" component={ErrorViewExamples} />
@@ -60,8 +54,6 @@ ReactDOM.render((
       <Route path="item-view" component={ItemViewExamples} />
       <Route path="label-value-view" component={LabelValueViewExamples} />
       <Route path="no-data-view" component={NoDataViewExamples} />
-      <Route path="slide-group" component={SlideGroupExamples} />
-      <Route path="modal-manager" component={ModalManagerExamples} />
     </Route>
     <Route path="/tests" component={TestLinks} />
     {ActionHeaderTestRoutes}
@@ -76,8 +68,6 @@ ReactDOM.render((
     {ItemViewTestRoutes}
     {LabelValueViewTestRoutes}
     {NoDataViewTestRoutes}
-    {SlideGroupTestRoutes}
-    {ModalManagerTestRoutes}
     <Route path="/demo" component={DemoApplicationExamples} />
   </Router>
 ), document.getElementById('root'));
