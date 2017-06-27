@@ -22,17 +22,22 @@ const ItemViewExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={ItemViewSrc} />
-    <h2 id="standard">Standard Displays</h2>
+    <h2 id="standard">ItemView - Default</h2>
     <ItemViewStandard />
-    <h2 id="two-column">Two Column ItemView</h2>
+    <br />
+    <h2 id="two-column">ItemView - Two Column Layout</h2>
     <ItemViewTwoColumn />
-    <h2 id="start-emphasis">Start Emphasis ItemView</h2>
+    <br />
+    <h2 id="start-emphasis">ItemView - Start Emphasis</h2>
     <ItemViewTwoColumnStart />
-    <h2 id="comment">Comment ItemView</h2>
+    <br />
+    <h2 id="comment">ItemView - Comment</h2>
     <ItemViewComment />
-    <h2 id="all-elements">All Elements ItemView</h2>
+    <br />
+    <h2 id="all-elements">ItemView - All Elements</h2>
     <ItemViewAll />
-    <h2 id="all-elements-top">All Elements ItemView Top Aligned</h2>
+    <br />
+    <h2 id="all-elements-top">ItemView - All Elements Top Aligned</h2>
     <ItemViewAllTopAligned />
   </div>
 );
