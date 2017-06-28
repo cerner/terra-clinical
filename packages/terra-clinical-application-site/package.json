@@ -1,6 +1,6 @@
 {
   "name": "terra-clinical-application-site",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Demo Site for Application Design and Implementation",
   "repository": {
     "type": "git",
@@ -47,7 +47,7 @@
     "terra-clinical-label-value-view": "^0.2.0",
     "terra-clinical-no-data-view": "^0.2.0",
     "terra-content-container": "^0.x",
-    "terra-grid": "^2.x",
+    "terra-grid": "^3.0.0",
     "terra-icon": "^0.x",
     "terra-legacy-theme": "^0.x",
     "terra-list": "^0.x",
