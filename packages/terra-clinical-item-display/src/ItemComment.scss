@@ -1,7 +1,7 @@
 @import './mixins';
 
 .terraClinical-ItemComment {
-  @include terra-clinical-text-body;
+  @include terra-clinical-item-body;
   color: #64696c;
 }
 

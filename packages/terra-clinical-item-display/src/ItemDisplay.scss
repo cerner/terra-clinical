@@ -2,6 +2,7 @@
 @import './mixins';
 
 .terraClinical-ItemDisplay {
+  @include terra-clinical-item-body;
   align-items: center;
   display: flex;
   overflow: hidden; // VERY IMPORTANT FOR IE10
@@ -27,7 +28,6 @@
   width: 16px;
 }
 
-.terraClinical-ItemDisplay-text,
 .terraClinical-ItemDisplay-text--isTruncated {
   @include terra-clinical-text-truncate;
 }
