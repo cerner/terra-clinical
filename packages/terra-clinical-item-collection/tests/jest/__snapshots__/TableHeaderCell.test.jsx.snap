@@ -1,0 +1,20 @@
+exports[`test should render accessory, comment and display table headers 1`] = `
+<thead
+  style={
+    Object {
+      "visibility": "hidden",
+    }
+  }>
+  <tr>
+    <TableHeaderCell
+      columnType="accessory"
+      id="accessory" />
+    <TableHeaderCell
+      columnType="comment"
+      id="comment" />
+    <TableHeaderCell
+      columnType="display"
+      id="display" />
+  </tr>
+</thead>
+`;

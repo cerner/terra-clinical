@@ -17,6 +17,8 @@ const TestLinks = () => (
       <li><Link to="/tests/header-tests">Header Tests</Link></li>
       <li><Link to="/tests/label-value-view-tests">Label Value View Tests</Link></li>
       <li><Link to="/tests/no-data-view-tests">NoDataView Tests</Link></li>
+      <li><Link to="/tests/item-collection-tests">ItemCollection Tests</Link></li>
+      <li><Link to="/tests/item-collection-table-header-cell-tests">Item Collection Table Header Cell Test</Link></li>
     </ul>
   </div>
 );
