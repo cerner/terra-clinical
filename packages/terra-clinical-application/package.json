@@ -22,18 +22,18 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-app-delegate": "^0.x"
+    "terra-app-delegate": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-app-delegate": "^0.x",
-    "terra-base": "^0.x"
+    "terra-app-delegate": "^1.0.0",
+    "terra-base": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^0.x"
+    "terra-base": "^1.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

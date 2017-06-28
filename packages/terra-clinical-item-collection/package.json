@@ -24,18 +24,18 @@
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^0.x",
+    "terra-base": "^1.0.0",
     "terra-mixins": "^1.0.0"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
     "classnames": "^2.2.5",
-    "terra-base": "^0.x",
-    "terra-list": "^0.x",
+    "terra-base": "^1.0.0",
+    "terra-list": "^1.0.0",
     "terra-mixins": "^1.0.0",
-    "terra-responsive-element": "^0.x",
-    "terra-table": "^0.x",
-    "terra-clinical-item-view": "^0.x"
+    "terra-responsive-element": "^1.0.0",
+    "terra-table": "^1.0.0",
+    "terra-clinical-item-view": "^0.2.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
