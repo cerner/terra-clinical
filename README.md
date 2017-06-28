@@ -26,19 +26,20 @@
 
 | Terra Package      | Version | Status |
 |--------------------|---------|--------|
-| [terra-clinical-action-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-action-header.svg)](https://www.npmjs.org/package/terra-clinical-action-header) | :large_orange_diamond:|
-| [terra-clinical-app-delegate](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-app-delegate) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-app-delegate.svg)](https://www.npmjs.org/package/terra-clinical-app-delegate) | :large_orange_diamond:|
-| [terra-clinical-application](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-application) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-application.svg)](https://www.npmjs.org/package/terra-clinical-application) | :large_orange_diamond:|
-| [terra-clinical-detail-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-detail-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-detail-view.svg)](https://www.npmjs.org/package/terra-clinical-detail-view) | :large_orange_diamond: |
-| [terra-clinical-error-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-error-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-error-view.svg)](https://www.npmjs.org/package/terra-clinical-error-view) | :large_orange_diamond:|
-| [terra-clinical-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-header) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-header.svg)](https://www.npmjs.org/package/terra-clinical-header) | :large_orange_diamond: |
-| [terra-clinical-item-display](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-display)  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-display.svg)](https://www.npmjs.org/package/terra-clinical-item-display) | :large_orange_diamond: |
-| [terra-clinical-item-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-view.svg)](https://www.npmjs.org/package/terra-clinical-item-view) | :large_orange_diamond: |
-| [terra-clinical-label-value-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-label-value-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-label-value-view.svg)](https://www.npmjs.org/package/terra-clinical-label-value-view) | :large_orange_diamond: |
-| [terra-clinical-modal-manager](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-modal-manager) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-modal-manager.svg)](https://www.npmjs.org/package/terra-clinical-modal-manager) | :large_orange_diamond:|
-| [terra-clinical-no-data-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-no-data-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-no-data-view.svg)](https://www.npmjs.org/package/terra-clinical-no-data-view) | :large_orange_diamond:|
-| [terra-clinical-site](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-site) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-site.svg)](https://www.npmjs.org/package/terra-clinical-site) | :large_orange_diamond:|
-| [terra-clinical-slide-group](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-slide-group) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-slide-group.svg)](https://www.npmjs.org/package/terra-clinical-slide-group) | :large_orange_diamond:|
+| [terra-clinical-action-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-action-header.svg)](https://www.npmjs.org/package/terra-clinical-action-header) | :white_check_mark:|
+| terra-clinical-app-delegate |[![NPM version](http://img.shields.io/npm/v/terra-clinical-app-delegate.svg)](https://www.npmjs.org/package/terra-clinical-app-delegate) | :x:|
+| [terra-clinical-application](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-application) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-application.svg)](https://www.npmjs.org/package/terra-clinical-application) | :white_check_mark:|
+| [terra-clinical-detail-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-detail-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-detail-view.svg)](https://www.npmjs.org/package/terra-clinical-detail-view) | :white_check_mark: |
+| [terra-clinical-error-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-error-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-error-view.svg)](https://www.npmjs.org/package/terra-clinical-error-view) | :white_check_mark:|
+| [terra-clinical-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-header) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-header.svg)](https://www.npmjs.org/package/terra-clinical-header) | :white_check_mark: |
+| [terra-clinical-item-collection](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-collection) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-collection.svg)](https://www.npmjs.org/package/terra-clinical-item-collection) | :white_check_mark: |
+| [terra-clinical-item-display](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-display)  | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-display.svg)](https://www.npmjs.org/package/terra-clinical-item-display) | :white_check_mark: |
+| [terra-clinical-item-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-item-view.svg)](https://www.npmjs.org/package/terra-clinical-item-view) | :white_check_mark: |
+| [terra-clinical-label-value-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-label-value-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-label-value-view.svg)](https://www.npmjs.org/package/terra-clinical-label-value-view) | :white_check_mark: |
+| terra-clinical-modal-manager |[![NPM version](http://img.shields.io/npm/v/terra-clinical-modal-manager.svg)](https://www.npmjs.org/package/terra-clinical-modal-manager) | :x:|
+| [terra-clinical-no-data-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-no-data-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-no-data-view.svg)](https://www.npmjs.org/package/terra-clinical-no-data-view) | :white_check_mark:|
+| [terra-clinical-site](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-site) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-site.svg)](https://www.npmjs.org/package/terra-clinical-site) | :white_check_mark:|
+| terra-clinical-slide-group |[![NPM version](http://img.shields.io/npm/v/terra-clinical-slide-group.svg)](https://www.npmjs.org/package/terra-clinical-slide-group) | :x:|
 
 
 ## Supported Browsers
@@ -50,6 +51,30 @@
 | Firefox                     | Current |
 | Internet Explorer           | 10 & 11 |
 | Safari & Mobile Safari      | Current |
+
+## Internationalization (I18n)
+
+1. Please follow [Base Getting Started](packages/terra-base/README.md#getting-started) to install `Base`, and consume it with `locale` props.
+2. Install and config `terra-i18n-plugin`:
+    - Follow [terra-i18n-plugin Getting Started](packages/terra-i18n-plugin#getting-started) to install `terra-i18n-plugin` to aggregate translations in `node_modules`.
+    - Follow [terra-i18n-plugin Wiki Guide](https://github.com/cerner/terra-core/wiki/Terra-i18n-plugin-Guide) to config i18n plugin.
+3. Install and config `react-intl`
+    - Install it `npm install --save react-intl`.
+    - Add alias webpack config to avoid importing duplicate `react-intl`.
+        ```
+        resolve: {
+          extensions: ['.js', '.jsx'],
+          alias: {
+            'react-intl': path.resolve(__dirname, 'node_modules/react-intl'),
+          },
+        },
+        ```
+4. Provide values for `locale` and `customMessages` prop of `Base`.
+5. Follow [react-intl wiki](https://github.com/yahoo/react-intl/wiki/API) to use `injectIntl`([pass translations to props](https://github.com/cerner/terra-core/wiki/terra-i18n-Guide#pass-translated-message-as-props)) or `FormattedMessage`([render translations](https://github.com/cerner/terra-core/wiki/terra-i18n-Guide#display-transalated-message-without-default-message-fallback)) to consume translations.
+
+### Packages Requiring I18n
+
+- [terra-clinical-action-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header)
 
 ## Contributing
 
