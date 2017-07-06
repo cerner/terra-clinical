@@ -41,4 +41,10 @@ module.exports = {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/long-title-content`)
     .assert.containsText('#Header h1', 'LongTitle');
   },
+  'Displays a subsection header with content on the left and right': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/left-and-right-content-subheader`)
+    .assert.elementPresent('header[class*="flexSubheader"]');
+    browser.expect.element('#headerTest--startContent').to.be.present;
+    browser.expect.element('#headerTest--endContent').to.be.present;
+  },
 };

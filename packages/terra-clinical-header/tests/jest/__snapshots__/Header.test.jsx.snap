@@ -70,3 +70,41 @@ exports[`test should render a header with title only 1`] = `
   </div>
 </header>
 `;
+
+exports[`test should render a subheader with title only 1`] = `
+<header
+  class="subheader">
+  <h1
+    class="title">
+    title
+  </h1>
+</header>
+`;
+
+exports[`test should render a subheader with all content 1`] = `
+<header
+  class="subheader">
+  <div
+    class="arrange">
+    <div
+      class="fit center">
+      <div>
+        start content
+      </div>
+    </div>
+    <div
+      class="fill center">
+      <h1
+        class="title">
+        Title
+      </h1>
+    </div>
+    <div
+      class="fit center">
+      <div>
+        end content
+      </div>
+    </div>
+  </div>
+</header>
+`;

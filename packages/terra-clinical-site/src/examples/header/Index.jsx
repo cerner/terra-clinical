@@ -14,6 +14,7 @@ import TitleHeader from './TitleHeader';
 import ContentHeader from './ContentHeader';
 import HeaderLongText from './HeaderLongText';
 import HeaderLongTextWithContent from './HeaderLongTextWithContent';
+import Subheader from './Subheader';
 
 const HeaderExamples = () => (
   <div>
@@ -28,6 +29,8 @@ const HeaderExamples = () => (
     <HeaderLongText />
     <h1> Header With Long Title And Content </h1>
     <HeaderLongTextWithContent />
+    <h1> Subheader with content </h1>
+    <Subheader />
   </div>
 );
 

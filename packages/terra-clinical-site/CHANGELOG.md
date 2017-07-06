@@ -18,6 +18,7 @@ Unreleased
 
 ### Changed
 * Update Header example
+* Added Subheader example
 
 1.1.0 - (July 18, 2017)
 -----------------
