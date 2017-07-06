@@ -5,6 +5,7 @@ before_script:
   - sudo apt-get update && sudo apt-get install oracle-java8-installer
 script:
   - npm test
+  - npm run danger
 branches:
   only:
     - master
@@ -24,4 +25,3 @@ deploy:
   local_dir: packages/terra-clinical-site/build
   on:
     branch: master
-    
