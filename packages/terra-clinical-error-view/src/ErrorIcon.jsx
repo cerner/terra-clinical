@@ -2,6 +2,7 @@
 import React from 'react';
 
 const fillColor = '#e8e9ea';
+console.log('Test modifying src file');
 
 const ErrorIcon = () => {
   return (
