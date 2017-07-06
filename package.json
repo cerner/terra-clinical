@@ -58,7 +58,7 @@
     "start": "cd packages/terra-clinical-site && npm run start",
     "start:express": "node scripts/express/app.js",
     "test": "jest && npm run test:nightwatch-default",
-    "test:nightwatch-default": "WEBPACK_CONFIG_PATH=../../../packages/terra-clinical-site/webpack.config node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --env default-tiny,default-small,default-medium,default-large,default-huge,default-enormous"
+    "test:nightwatch-default": "node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --env default-tiny,default-small,default-medium,default-large,default-huge,default-enormous"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
