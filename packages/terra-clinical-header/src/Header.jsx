@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Arrange from 'terra-arrange';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import './Header.scss';
+import styles from './Header.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -30,12 +32,12 @@ const defaultProps = {
 
 const Header = ({ title, startContent, endContent, ...customProps }) => {
   const attributes = Object.assign({}, customProps);
-  const headerClassNames = classNames([
-    'terraClinical-Header',
+  const headerClassNames = cx([
+    'header',
     attributes.className,
   ]);
 
-  const titleElement = <h1 className="terraClinical-Header-title">{title}</h1>;
+  const titleElement = <h1 className={cx('title')}>{title}</h1>;
   let headerContent;
 
   if (startContent || endContent) {
