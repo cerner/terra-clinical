@@ -31,12 +31,6 @@ const defaultProps = {
 };
 
 const Header = ({ title, startContent, endContent, ...customProps }) => {
-  const attributes = Object.assign({}, customProps);
-  const headerClassNames = cx([
-    'header',
-    attributes.className,
-  ]);
-
   const titleElement = <h1 className={cx('title')}>{title}</h1>;
   let headerContent;
 
@@ -54,7 +48,7 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
   }
 
   return (
-    <header {...attributes} className={headerClassNames}>
+    <header {...customProps} className={cx('header', customProps.className)}>
       {headerContent}
     </header>
   );
