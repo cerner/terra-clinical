@@ -40,11 +40,6 @@ const NoDataView = ({
     isGlyphHidden,
     ...customProps
   }) => {
-  const noDataClassNames = cx([
-    'no-data-view',
-    customProps.className,
-  ]);
-
   let glyphSection;
   if (!isGlyphHidden) {
     const noDataIcon = <IconNoData />;
@@ -67,7 +62,7 @@ const NoDataView = ({
   }
 
   return (
-    <div {...customProps} className={noDataClassNames}>
+    <div {...customProps} className={cx('no-data-view', customProps.className)}>
       {glyphSection}
       {headingSection}
       {subtextSection}

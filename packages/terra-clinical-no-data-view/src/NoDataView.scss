@@ -1,4 +1,3 @@
-@import '~terra-mixins';
 /* stylelint-disable selector-class-pattern  */
 :local {
   .no-data-view {
@@ -16,20 +15,20 @@
   }
 
   .heading {
-    @include terra-text-align-center();
     color: #c8cacb;
     flex: 0 0 auto;
     font-size: 1.7142857142857142rem;
     line-height: 1.284;
+    text-align: center;
   }
 
   .subtext {
-    @include terra-text-align-center();
     color: #6f7477;
     flex: 0 0 auto;
     font-size: 1rem;
     line-height: 1.142;
     padding-top: 0.2857rem;
+    text-align: center;
   }
 
   .subtext-content {
