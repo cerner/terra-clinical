@@ -27,11 +27,6 @@ const defaultProps = {
 };
 
 const LabelValueView = ({ label, textValue, children, ...customProps }) => {
-  const labelValueViewClassNames = cx(
-    'label-value-view',
-    customProps.className,
-  );
-
   let textValueSection;
   if (!textValue && !children) {
     textValueSection = <div className={cx('value')}>--</div>;
@@ -40,7 +35,7 @@ const LabelValueView = ({ label, textValue, children, ...customProps }) => {
   }
 
   return (
-    <div {...customProps} className={labelValueViewClassNames}>
+    <div {...customProps} className={cx('label-value-view', customProps.className)}>
       <div className={cx('label')}>{label}</div>
       {textValueSection}
       {children}
