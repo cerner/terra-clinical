@@ -92,8 +92,7 @@ exports[`test should render a name 1`] = `
   </div>
   <p
     class="text">
-    <b
-      class="name">
+    <b>
       test error name:
     </b>
   </p>

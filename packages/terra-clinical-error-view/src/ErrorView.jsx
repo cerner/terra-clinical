@@ -59,7 +59,7 @@ const ErrorView = ({
     if (name && description) {
       nameDisplay += '.  ';
     }
-    nameSection = <b className={cx('name')}>{nameDisplay}</b>;
+    nameSection = <b>{nameDisplay}</b>;
   }
 
   let buttonSection;

@@ -12,18 +12,23 @@ module.exports = {
 
   'Displays a default error view': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/default`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/default`)
+      .assert.elementPresent('#ErrorView');
   },
   'Displays an error view with text for name and description': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/text`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/text`)
+      .assert.containsText('#ErrorView p', 'test name. test description');
   },
   'Displays an error with a button': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/button`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/button`)
+      .assert.elementPresent('#ErrorView button')
+      .assert.containsText('#ErrorView button', 'test button');
   },
   'Displays an error view with glyph hidden': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/hidden`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/hidden`)
+      .assert.elementNotPresent('#ErrorView svg');
   },
 };
