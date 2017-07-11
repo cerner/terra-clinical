@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import './DetailListItem.scss';
+import styles from './DetailListItem.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -16,8 +18,8 @@ const defaultProps = {
 };
 
 const DetailListItem = ({ item, ...customProps }) => {
-  const detailListItemClassNames = classNames([
-    'terraClinical-DetailListItem',
+  const detailListItemClassNames = cx([
+    'detail-list-item',
     customProps.className,
   ]);
 
