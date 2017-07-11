@@ -47,11 +47,6 @@ const ErrorView = ({
     isGlyphHidden,
     ...customProps
   }) => {
-  const errorClassNames = cx([
-    'error-view',
-    customProps.className,
-  ]);
-
   let glyphSection;
   if (!isGlyphHidden) {
     const errorIcon = <ErrorIcon />;
@@ -74,7 +69,7 @@ const ErrorView = ({
   }
 
   return (
-    <div {...customProps} className={errorClassNames}>
+    <div {...customProps} className={cx('error-view', customProps.className)}>
       {glyphSection}
       <p className={cx('text')}>
         {nameSection}
