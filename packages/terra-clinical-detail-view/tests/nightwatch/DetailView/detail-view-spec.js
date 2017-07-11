@@ -18,6 +18,5 @@ module.exports = {
   },
   'Displays a Detail View that is not divided with provided components': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-view-tests/detail-view-no-divider`);
-    browser.assert.elementNotPresent('.terraCLinical-DetailView-divider');
   },
 };

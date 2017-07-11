@@ -5,20 +5,19 @@ const defaultVariety = <DetailView />;
 
 // Snapshot Tests
 it('should render a default component', () => {
-  const wrapper = shallow(defaultVariety);
+  const wrapper = render(defaultVariety);
   expect(wrapper).toMatchSnapshot();
 });
 
-
 // Prop Tests
-it('should have the class terraClinical-DetailView', () => {
+it('should have the class detail-view', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.prop('className')).toContain('terraClinical-DetailView');
+  expect(wrapper.prop('className')).toContain('detail-view');
 });
 
 it('should render a title', () => {
   const detailView = <DetailView title="Header" />;
-  const wrapper = shallow(detailView);
+  const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -28,7 +27,7 @@ it('should render subtitles', () => {
       title="Header"
       subtitles={['Subtitle 1', 'Subtitle 2']}
     />);
-  const wrapper = shallow(detailView);
+  const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -39,7 +38,7 @@ it('should render graph', () => {
       subtitles={['Subtitle 1', 'Subtitle 2']}
       graph={<div> This is where a graph would go </div>}
     />);
-  const wrapper = shallow(detailView);
+  const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -50,7 +49,7 @@ it('should render details', () => {
       subtitles={['Subtitle 1', 'Subtitle 2']}
       details={[<p key="DetailInformation"> Detail information </p>]}
     />);
-  const wrapper = shallow(detailView);
+  const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -62,7 +61,7 @@ it('should render footer', () => {
       details={[<p key="DetailInformation"> Detail information </p>]}
       footer="Footer text"
     />);
-  const wrapper = shallow(detailView);
+  const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -75,7 +74,6 @@ it('should render without a divider when indicated', () => {
       footer="Footer text"
       isDivided={false}
     />);
-  const wrapper = shallow(detailView);
+  const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
-
