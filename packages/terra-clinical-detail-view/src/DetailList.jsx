@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import './DetailList.scss';
+import styles from './DetailList.scss';
 import DetailListItem from './DetailListItem';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -26,20 +28,15 @@ const defaultProps = {
 };
 
 const DetailList = ({ title, children, ...customProps }) => {
-  const detailListClassNames = classNames([
-    'terraClinical-DetailList',
-    customProps.className,
-  ]);
-
   let titleContent;
   if (title) {
-    titleContent = (<div className="terraClinical-DetailList-title">{title}</div>);
+    titleContent = (<div className={cx('title')}>{title}</div>);
   }
 
   return (
-    <div {...customProps} className={detailListClassNames}>
+    <div {...customProps} className={cx('detail-list', customProps.className)}>
       {titleContent}
-      <div className="terraClinical-DetailList-list">
+      <div className={cx('list')}>
         {children}
       </div>
     </div>
