@@ -1,76 +1,88 @@
 exports[`test should render a default component 1`] = `
 <header
-  className="terraClinical-Header">
+  class="header">
   <h1
-    className="terraClinical-Header-title" />
+    class="title" />
 </header>
 `;
 
 exports[`test should render a header with all content 1`] = `
 <header
-  className="terraClinical-Header">
-  <Arrange
-    align="center"
-    fill={
-      <h1
-        className="terraClinical-Header-title">
-        Title
-      </h1>
-    }
-    fitEnd={
-      <div>
-        end content
-      </div>
-    }
-    fitStart={
+  class="header">
+  <div
+    class="terra-Arrange">
+    <div
+      class="terra-Arrange-fitStart terra-Arrange-fitStart--center">
       <div>
         start content
       </div>
-    } />
+    </div>
+    <div
+      class="terra-Arrange-fill terra-Arrange-fill--center">
+      <h1
+        class="title">
+        Title
+      </h1>
+    </div>
+    <div
+      class="terra-Arrange-fitEnd terra-Arrange-fitEnd--center">
+      <div>
+        end content
+      </div>
+    </div>
+  </div>
 </header>
 `;
 
 exports[`test should render a header with content on the left 1`] = `
 <header
-  className="terraClinical-Header">
-  <Arrange
-    align="center"
-    fill={
-      <h1
-        className="terraClinical-Header-title" />
-    }
-    fitEnd={null}
-    fitStart={
+  class="header">
+  <div
+    class="terra-Arrange">
+    <div
+      class="terra-Arrange-fitStart terra-Arrange-fitStart--center">
       <div>
         start content
       </div>
-    } />
+    </div>
+    <div
+      class="terra-Arrange-fill terra-Arrange-fill--center">
+      <h1
+        class="title" />
+    </div>
+    <div
+      class="terra-Arrange-fitEnd terra-Arrange-fitEnd--center" />
+  </div>
 </header>
 `;
 
 exports[`test should render a header with content on the right 1`] = `
 <header
-  className="terraClinical-Header">
-  <Arrange
-    align="center"
-    fill={
+  class="header">
+  <div
+    class="terra-Arrange">
+    <div
+      class="terra-Arrange-fitStart terra-Arrange-fitStart--center" />
+    <div
+      class="terra-Arrange-fill terra-Arrange-fill--center">
       <h1
-        className="terraClinical-Header-title" />
-    }
-    fitEnd={
+        class="title" />
+    </div>
+    <div
+      class="terra-Arrange-fitEnd terra-Arrange-fitEnd--center">
       <div>
         end content
       </div>
-    }
-    fitStart={null} />
+    </div>
+  </div>
 </header>
 `;
 
 exports[`test should render a header with title only 1`] = `
 <header
-  className="terraClinical-Header">
+  class="header">
   <h1
-    className="terraClinical-Header-title">
+    class="title">
     title
   </h1>
 </header>
