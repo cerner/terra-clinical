@@ -18,7 +18,7 @@ const views = () => (
     <ItemView displays={displays} layout="twoColumns" id="test-displays-two" />
     <br />
     <h2>Two Column Layout with Start TextEmphasis</h2>
-    <ItemView displays={displays} layout="twoColumns" textEmphasis="start" id="test-displays-two-left" />
+    <ItemView displays={displays} layout="twoColumns" textEmphasis="start" id="test-displays-two-start" />
   </div>
 );
 
