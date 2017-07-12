@@ -1,15 +1,16 @@
-@import '~terra-mixins';
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .header {
+    background-color: #f4f4f4;
+    border-bottom-color: #dedfe0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    height: 3.587rem;
+    padding: 0.714rem;
+    width: 100%;
+  }
 
-.terraClinical-Header {
-  background-color: #f4f4f4;
-  border-bottom-color: #dedfe0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  height: 3.587rem;
-  padding: 0.714rem;
-  width: 100%;
-
-  .terraClinical-Header-title {
+  .title {
     font-size: 1.285rem;
     font-weight: normal;
     line-height: 1.75;
