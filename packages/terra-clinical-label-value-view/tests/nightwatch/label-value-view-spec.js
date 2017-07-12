@@ -12,17 +12,20 @@ module.exports = {
 
   'Displays a default LabelValueView when no value input is provided': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/default`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/default`)
+      .assert.elementPresent('#LabelValueView');
   },
 
   'Displays a LabelValueView when a text input is provided': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/text-value`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/text-value`)
+      .assert.elementPresent('#LabelValueView');
   },
 
   'Displays a LabelValueView when a node input is provided': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/element-value`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/element-value`)
+      .assert.elementPresent('#child');
   },
 
   'Displays a LabelValueView when text and node input is provided': (browser) => {
