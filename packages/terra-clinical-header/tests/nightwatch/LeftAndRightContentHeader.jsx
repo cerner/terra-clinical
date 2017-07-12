@@ -2,8 +2,8 @@ import React from 'react';
 
 import Header from '../../lib/Header';
 
-const startContent = <div className="terraClinical-HeaderTest--startContent" style={{ backgroundColor: 'black', height: '30px', width: '100px', margin: '0 10px 0 0' }} />;
-const endContent = <div className="terraClinical-HeaderTest--endContent" style={{ backgroundColor: 'black', height: '30px', width: '100px', margin: '0 0 0 10px' }} />;
+const startContent = <div id="headerTest--startContent" style={{ backgroundColor: 'black', height: '30px', width: '100px', margin: '0 10px 0 0' }} />;
+const endContent = <div id="headerTest--endContent" style={{ backgroundColor: 'black', height: '30px', width: '100px', margin: '0 0 0 10px' }} />;
 
 export default () => (
   <Header

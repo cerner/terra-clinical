@@ -23,8 +23,7 @@ module.exports = {
 
   'Displays a default action header': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header`)
-      .expect.element('.terraClinical-Header').to.be.present;
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header`);
   },
   'Displays an action header with title': (browser) => {
     browser
