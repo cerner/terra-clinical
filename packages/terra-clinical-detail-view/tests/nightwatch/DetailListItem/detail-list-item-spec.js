@@ -14,7 +14,8 @@ module.exports = {
 
   'Displays a Detail List Item as expected': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-item-tests/default`);
-    browser.assert.cssProperty('#DetailListItem', 'min-width', '50%');
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-item-tests/default`)
+      .assert.elementPresent('#DetailListItem')
+      .assert.cssProperty('#DetailListItem', 'min-width', '50%');
   },
 };
