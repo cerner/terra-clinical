@@ -1,16 +1,16 @@
 exports[`test should render a default component 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-text" />
+    className="text" />
 </div>
 `;
 
 exports[`test should render a display with the attention textStyle on text 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--attention">
+    className="text attention">
     Display
   </div>
 </div>
@@ -18,9 +18,9 @@ exports[`test should render a display with the attention textStyle on text 1`] =
 
 exports[`test should render a display with the secondary textStyle on text 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--secondary">
+    className="text secondary">
     Display
   </div>
 </div>
@@ -28,9 +28,9 @@ exports[`test should render a display with the secondary textStyle on text 1`] =
 
 exports[`test should render a display with the strikeThrough textStyle on text 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--strikeThrough">
+    className="text strikeThrough">
     Display
   </div>
 </div>
@@ -38,9 +38,9 @@ exports[`test should render a display with the strikeThrough textStyle on text 1
 
 exports[`test should render a truncated display 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-text terraClinical-ItemDisplay-text--isTruncated">
+    className="text is-truncated">
     display1display1display1display1display1display1display1display1
   </div>
 </div>
@@ -48,22 +48,22 @@ exports[`test should render a truncated display 1`] = `
 
 exports[`test should render with a graphic 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-inlineIcon">
+    className="inline-icon">
     <img
       alt="Graphic" />
   </div>
   <div
-    className="terraClinical-ItemDisplay-text" />
+    className="text" />
 </div>
 `;
 
 exports[`test should render with text 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-text">
+    className="text">
     Display
   </div>
 </div>
@@ -71,14 +71,14 @@ exports[`test should render with text 1`] = `
 
 exports[`test should render with text and graphic 1`] = `
 <div
-  className="terraClinical-ItemDisplay">
+  className="item-display">
   <div
-    className="terraClinical-ItemDisplay-inlineIcon">
+    className="inline-icon">
     <img
       alt="Graphic" />
   </div>
   <div
-    className="terraClinical-ItemDisplay-text">
+    className="text">
     Display
   </div>
 </div>
