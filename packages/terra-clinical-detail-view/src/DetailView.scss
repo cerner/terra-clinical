@@ -8,10 +8,13 @@
     }
   }
 
-  .primary-text {
-    font-size: 1.428rem;
+  .title {
     line-height: 1.428;
     margin-bottom: 0.357rem;
+  }
+
+  .primary-text {
+    font-size: 1.428rem;
     margin-top: 0;
   }
 
@@ -33,8 +36,6 @@
   .subtitle {
     color: #bcbfc0;
     font-size: 1.286rem;
-    line-height: 1.428;
-    margin-bottom: 0.357rem;
 
     &:last-child {
       margin: 0;

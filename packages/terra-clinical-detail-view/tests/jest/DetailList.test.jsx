@@ -44,7 +44,7 @@ it('should set the title text', () => {
 // Structure Tests
 it('should have the class detail-list', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.prop('className')).toContain('detail-list');
+  expect(wrapper.prop('data-class')).toContain('detail-list');
 });
 
 it('should have the class title when title is provided', () => {
