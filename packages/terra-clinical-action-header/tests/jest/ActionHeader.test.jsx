@@ -104,4 +104,3 @@ it('throws error on missing locale prop in Base', () => {
     expect(e.message).toContain('add locale prop to Base component');
   }
 });
-
