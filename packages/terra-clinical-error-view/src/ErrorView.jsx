@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import Button from 'terra-button';
 import ErrorIcon from './ErrorIcon';
-import './ErrorView.scss';
+import styles from './ErrorView.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -45,15 +47,10 @@ const ErrorView = ({
     isGlyphHidden,
     ...customProps
   }) => {
-  const errorClassNames = classNames([
-    'terraClinical-ErrorView',
-    customProps.className,
-  ]);
-
   let glyphSection;
   if (!isGlyphHidden) {
     const errorIcon = <ErrorIcon />;
-    glyphSection = <div className="terraClinical-ErrorView-glyph">{errorIcon}</div>;
+    glyphSection = <div className={cx('glyph')}>{errorIcon}</div>;
   }
 
   let nameSection;
@@ -62,19 +59,19 @@ const ErrorView = ({
     if (name && description) {
       nameDisplay += '.  ';
     }
-    nameSection = <b className="terraClinical-ErrorView-name">{nameDisplay}</b>;
+    nameSection = <b>{nameDisplay}</b>;
   }
 
   let buttonSection;
   if (buttonText) {
     const button = <Button variant="secondary" text={buttonText} onClick={buttonOnClick} />;
-    buttonSection = <div className="terraClinical-ErrorView-button">{button}</div>;
+    buttonSection = <div className={cx('button')}>{button}</div>;
   }
 
   return (
-    <div {...customProps} className={errorClassNames}>
+    <div {...customProps} className={cx('error-view', customProps.className)}>
       {glyphSection}
-      <p className="terraClinical-ErrorView-text">
+      <p className={cx('text')}>
         {nameSection}
         {description}
       </p>
