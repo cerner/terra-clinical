@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import IconNoData from './NoDataIcon';
-import './NoDataView.scss';
+import styles from './NoDataView.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -38,34 +40,29 @@ const NoDataView = ({
     isGlyphHidden,
     ...customProps
   }) => {
-  const noDataClassNames = classNames([
-    'terraClinical-NoDataView',
-    customProps.className,
-  ]);
-
   let glyphSection;
   if (!isGlyphHidden) {
     const noDataIcon = <IconNoData />;
-    glyphSection = <div className="terraClinical-NoDataView-glyph">{noDataIcon}</div>;
+    glyphSection = <div className={cx('glyph')}>{noDataIcon}</div>;
   }
 
   let headingSection;
   if (heading) {
-    headingSection = <p className="terraClinical-NoDataView-heading">{heading}</p>;
+    headingSection = <p className={cx('heading')}>{heading}</p>;
   }
 
   let subtextSection;
   if (subtext) {
-    subtextSection = <p className="terraClinical-NoDataView-subtext">{subtext}</p>;
+    subtextSection = <p className={cx('subtext')}>{subtext}</p>;
   }
 
   let subtextContentSection;
   if (subtextContent) {
-    subtextContentSection = <div className="terraClinical-NoDataView-subtextContent">{subtextContent}</div>;
+    subtextContentSection = <div className={cx('subtext-content')}>{subtextContent}</div>;
   }
 
   return (
-    <div {...customProps} className={noDataClassNames}>
+    <div {...customProps} className={cx('no-data-view', customProps.className)}>
       {glyphSection}
       {headingSection}
       {subtextSection}

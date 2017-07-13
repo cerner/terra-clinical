@@ -1,17 +1,18 @@
-@import '~terra-mixins';
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .label-value-view {
+    border: 0;
+    padding: 0.1785rem;
+  }
 
-.terraClinical-LabelValueView {
-  border: 0;
-  padding: 0.1785rem;
-}
+  .label {
+    color: #909496;
+    font-size: 1rem;
+    line-height: 1.428;
+  }
 
-.terraClinical-LabelValueView-label {
-  color: #909496;
-  font-size: 1rem;
-  line-height: 1.428;
-}
-
-.terraClinical-LabelValueView-value {
-  font-size: 1.428rem;
-  line-height: 1.428;
+  .value {
+    font-size: 1.428rem;
+    line-height: 1.428;
+  }
 }
