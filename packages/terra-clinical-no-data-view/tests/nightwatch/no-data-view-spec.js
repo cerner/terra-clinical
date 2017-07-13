@@ -13,24 +13,23 @@ module.exports = {
   'Displays a default no data view': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/no-data-view-tests/default`)
-      .assert.elementPresent('.terraClinical-NoDataView');
+      .assert.elementPresent('#NoDataView');
   },
   'Displays a no data view with text for name and description': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/no-data-view-tests/text`)
-      .assert.containsText('.terraClinical-NoDataView .terraClinical-NoDataView-heading', 'test heading')
-      .assert.containsText('.terraClinical-NoDataView .terraClinical-NoDataView-subtext', 'test subtext')
-      .assert.elementPresent('.terraClinical-NoDataView');
+      .assert.elementPresent('#NoDataView')
+      .assert.containsText('#NoDataView p:nth-of-type(1)', 'test heading')
+      .assert.containsText('#NoDataView p:nth-of-type(2)', 'test subtext');
   },
-  'Displays a no data with a button': (browser) => {
+  'Displays a no data view with content': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/no-data-view-tests/content`)
-      .assert.elementPresent('.terraClinical-NoDataView')
-      .assert.containsText('.terraClinical-NoDataView-subtextContent', 'content inserted here');
+      .assert.containsText('#NoDataView p', 'content inserted here');
   },
   'Displays a no data view with glyph hidden': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/no-data-view-tests/hidden`)
-      .assert.elementNotPresent('.terraClinical-NoDataView-glyph');
+      .assert.elementNotPresent('#NoDataView svg');
   },
 };

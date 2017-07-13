@@ -1,37 +1,38 @@
-@import '~terra-mixins';
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .no-data-view {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1.429rem 0;
+    width: 100%;
+  }
 
-.terraClinical-NoDataView {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 1.429rem 0;
-  width: 100%;
-}
+  .glyph {
+    flex: 0 0 auto;
+    padding-bottom: 0.2857rem;
+    padding-top: 1.429rem;
+  }
 
-.terraClinical-NoDataView-glyph {
-  flex: 0 0 auto;
-  padding-bottom: 0.2857rem;
-  padding-top: 1.429rem;
-}
+  .heading {
+    color: #c8cacb;
+    flex: 0 0 auto;
+    font-size: 1.7142857142857142rem;
+    line-height: 1.284;
+    text-align: center;
+  }
 
-.terraClinical-NoDataView-heading {
-  @include terra-text-align-center();
-  color: #c8cacb;
-  flex: 0 0 auto;
-  font-size: 1.7142857142857142rem;
-  line-height: 1.284;
-}
+  .subtext {
+    color: #6f7477;
+    flex: 0 0 auto;
+    font-size: 1rem;
+    line-height: 1.142;
+    padding-top: 0.2857rem;
+    text-align: center;
+  }
 
-.terraClinical-NoDataView-subtext {
-  @include terra-text-align-center();
-  color: #6f7477;
-  flex: 0 0 auto;
-  font-size: 1rem;
-  line-height: 1.142;
-  padding-top: 0.2857rem;
-}
-
-.terraClinical-NoDataView-subtextContent {
-  flex: 0 0 auto;
-  padding-top: 0.2857rem;
+  .subtext-content {
+    flex: 0 0 auto;
+    padding-top: 0.2857rem;
+  }
 }

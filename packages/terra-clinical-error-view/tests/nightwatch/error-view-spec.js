@@ -13,24 +13,22 @@ module.exports = {
   'Displays a default error view': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/default`)
-      .assert.elementPresent('.terraClinical-ErrorView');
+      .assert.elementPresent('#ErrorView');
   },
   'Displays an error view with text for name and description': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/text`)
-      .assert.containsText('.terraClinical-ErrorView .terraClinical-ErrorView-text', 'test description')
-      .assert.containsText('.terraClinical-ErrorView .terraClinical-ErrorView-text .terraClinical-ErrorView-name', 'test name')
-      .assert.elementPresent('.terraClinical-ErrorView');
+      .assert.containsText('#ErrorView p', 'test name. test description');
   },
   'Displays an error with a button': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/button`)
-      .assert.elementPresent('.terra-Button')
-      .assert.containsText('.terra-Button', 'test button');
+      .assert.elementPresent('#ErrorView button')
+      .assert.containsText('#ErrorView button', 'test button');
   },
   'Displays an error view with glyph hidden': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/error-view-tests/hidden`)
-      .assert.elementNotPresent('.terraClinical-ErrorView-glyph');
+      .assert.elementNotPresent('#ErrorView svg');
   },
 };
