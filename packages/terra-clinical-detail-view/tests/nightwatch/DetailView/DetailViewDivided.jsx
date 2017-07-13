@@ -21,6 +21,7 @@ const DetailViewDivided = () => (
       </DetailView.DetailList>),
     ]}
     footer="Footer Text"
+    id="DetailView"
   />
 );
 
