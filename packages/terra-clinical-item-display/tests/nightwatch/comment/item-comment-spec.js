@@ -13,13 +13,14 @@ module.exports = {
   },
 
   'Displays a clinical item view with default props': (browser) => {
-    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-comment-tests/default`);
-    browser.expect.element('.terraClinical-ItemComment').to.be.present;
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-comment-tests/default`)
+      .assert.elementPresent('#ItemComment');
   },
 
   'Displays a clinical item view with displays present': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-comment-tests/text`)
-      .assert.containsText('.terraClinical-ItemComment', 'test comment');
+      .assert.containsText('#ItemComment', 'test comment');
   },
 };

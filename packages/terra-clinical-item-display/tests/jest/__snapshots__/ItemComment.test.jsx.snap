@@ -1,6 +1,6 @@
 exports[`test should render a comment with text 1`] = `
 <ItemDisplay
-  className="terraClinical-ItemComment"
+  className="item-comment"
   icon={
     <IconComment
       className=""
@@ -15,7 +15,7 @@ exports[`test should render a comment with text 1`] = `
 
 exports[`test should render a comment with the attention textStyle on text 1`] = `
 <ItemDisplay
-  className="terraClinical-ItemComment"
+  className="item-comment"
   icon={
     <IconComment
       className=""
@@ -31,7 +31,7 @@ exports[`test should render a comment with the attention textStyle on text 1`] =
 
 exports[`test should render a comment with the secondary textStyle on text 1`] = `
 <ItemDisplay
-  className="terraClinical-ItemComment"
+  className="item-comment"
   icon={
     <IconComment
       className=""
@@ -47,7 +47,7 @@ exports[`test should render a comment with the secondary textStyle on text 1`] =
 
 exports[`test should render a comment with the strikeThrough textStyle on text 1`] = `
 <ItemDisplay
-  className="terraClinical-ItemComment"
+  className="item-comment"
   icon={
     <IconComment
       className=""
@@ -63,7 +63,7 @@ exports[`test should render a comment with the strikeThrough textStyle on text 1
 
 exports[`test should render a default component 1`] = `
 <ItemDisplay
-  className="terraClinical-ItemComment"
+  className="item-comment"
   icon={
     <IconComment
       className=""
@@ -78,7 +78,7 @@ exports[`test should render a default component 1`] = `
 
 exports[`test should render a truncated comment 1`] = `
 <ItemDisplay
-  className="terraClinical-ItemComment"
+  className="item-comment"
   icon={
     <IconComment
       className=""
