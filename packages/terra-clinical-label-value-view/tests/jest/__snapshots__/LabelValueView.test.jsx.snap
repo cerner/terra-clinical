@@ -1,8 +1,8 @@
 exports[`LabelValueView should render LabelValueView for an node input 1`] = `
 <div
-  className="terraClinical-LabelValueView">
+  className="label-value-view">
   <div
-    className="terraClinical-LabelValueView-label">
+    className="label">
     Label
   </div>
   <div>
@@ -13,13 +13,13 @@ exports[`LabelValueView should render LabelValueView for an node input 1`] = `
 
 exports[`LabelValueView should render LabelValueView for text and node inputs 1`] = `
 <div
-  className="terraClinical-LabelValueView">
+  className="label-value-view">
   <div
-    className="terraClinical-LabelValueView-label">
+    className="label">
     Label
   </div>
   <div
-    className="terraClinical-LabelValueView-value">
+    className="value">
     Sample Text 1
   </div>
   <div>
@@ -30,13 +30,13 @@ exports[`LabelValueView should render LabelValueView for text and node inputs 1`
 
 exports[`LabelValueView should render a LabelValueView for text input 1`] = `
 <div
-  className="terraClinical-LabelValueView">
+  className="label-value-view">
   <div
-    className="terraClinical-LabelValueView-label">
+    className="label">
     Label
   </div>
   <div
-    className="terraClinical-LabelValueView-value">
+    className="value">
     Sample Text
   </div>
 </div>
@@ -44,13 +44,13 @@ exports[`LabelValueView should render a LabelValueView for text input 1`] = `
 
 exports[`LabelValueView should render a default LabelValueView 1`] = `
 <div
-  className="terraClinical-LabelValueView">
+  className="label-value-view">
   <div
-    className="terraClinical-LabelValueView-label">
+    className="label">
     Label
   </div>
   <div
-    className="terraClinical-LabelValueView-value">
+    className="value">
     --
   </div>
 </div>
