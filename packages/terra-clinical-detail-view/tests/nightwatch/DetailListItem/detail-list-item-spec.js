@@ -14,8 +14,8 @@ module.exports = {
 
   'Displays a Detail List Item as expected': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-item-tests/default`);
-    browser.expect.element('.terraClinical-DetailListItem').to.be.present;
-    browser.assert.cssProperty('.terraClinical-DetailListItem', 'min-width', '50%');
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-item-tests/default`)
+      .assert.elementPresent('#DetailListItem')
+      .assert.cssProperty('#DetailListItem', 'min-width', '50%');
   },
 };
