@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import './LabelValueView.scss';
+import styles from './LabelValueView.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -25,21 +27,16 @@ const defaultProps = {
 };
 
 const LabelValueView = ({ label, textValue, children, ...customProps }) => {
-  const labelValueViewClassNames = classNames(
-    'terraClinical-LabelValueView',
-    { [`${customProps.className}`]: customProps.className },
-  );
-
   let textValueSection;
   if (!textValue && !children) {
-    textValueSection = <div className="terraClinical-LabelValueView-value">--</div>;
+    textValueSection = <div className={cx('value')}>--</div>;
   } else if (textValue) {
-    textValueSection = <div className="terraClinical-LabelValueView-value">{textValue}</div>;
+    textValueSection = <div className={cx('value')}>{textValue}</div>;
   }
 
   return (
-    <div {...customProps} className={labelValueViewClassNames}>
-      <div className="terraClinical-LabelValueView-label">{label}</div>
+    <div {...customProps} className={cx('label-value-view', customProps.className)}>
+      <div className={cx('label')}>{label}</div>
       {textValueSection}
       {children}
     </div>
