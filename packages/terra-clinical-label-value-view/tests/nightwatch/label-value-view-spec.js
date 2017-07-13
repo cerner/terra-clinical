@@ -13,30 +13,24 @@ module.exports = {
   'Displays a default LabelValueView when no value input is provided': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/default`)
-      .assert.elementPresent('.terraClinical-LabelValueView')
-      .assert.elementPresent('.terraClinical-LabelValueView-label')
-      .assert.elementPresent('.terraClinical-LabelValueView-value')
-      .assert.containsText('.terraClinical-LabelValueView-label', 'Label')
-      .assert.containsText('.terraClinical-LabelValueView-value', '--');
+      .assert.elementPresent('#LabelValueView');
   },
 
   'Displays a LabelValueView when a text input is provided': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/text-value`)
-      .assert.elementPresent('.terraClinical-LabelValueView-value')
-      .assert.containsText('.terraClinical-LabelValueView-value', 'Sample Text');
+      .assert.elementPresent('#LabelValueView');
   },
 
   'Displays a LabelValueView when a node input is provided': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/element-value`)
-      .assert.elementNotPresent('.terraClinical-LabelValueView-value');
+      .assert.elementPresent('#child');
   },
 
   'Displays a LabelValueView when text and node input is provided': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/label-value-view-tests/multiple-values`)
-      .assert.elementPresent('.terraClinical-LabelValueView-value')
       .assert.elementPresent('#child');
   },
 };
