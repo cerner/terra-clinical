@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Consumer from 'xfc';
-import './EmbeddedContent.scss';
+import './EmbeddedContentConsumer.scss';
 
 const propTypes = {
   /**
@@ -9,7 +9,7 @@ const propTypes = {
    **/
   src: PropTypes.string.isRequired,
   /**
-   *
+   * The authorization secret to be used if the embedded app does not know which domain to trust.
    **/
   secret: PropTypes.string,
   /**
@@ -24,7 +24,7 @@ const defaultProps = {
   eventHandlers: {},
 };
 
-class EmbeddedContent extends React.Component {
+class EmbeddedContentConsumer extends React.Component {
 
   componentDidMount() {
     if (this.embeddedContentWrapper) {
@@ -40,13 +40,13 @@ class EmbeddedContent extends React.Component {
   render() {
     return (
       <div
-        className="terraClinical-EmbeddedContent"
+        className="terraClinical-EmbeddedContentConsumer"
         ref={(element) => { this.embeddedContentWrapper = element; }}
       />);
   }
 }
 
-EmbeddedContent.propTypes = propTypes;
-EmbeddedContent.defaultProps = defaultProps;
+EmbeddedContentConsumer.propTypes = propTypes;
+EmbeddedContentConsumer.defaultProps = defaultProps;
 
-export default EmbeddedContent;
+export default EmbeddedContentConsumer;
