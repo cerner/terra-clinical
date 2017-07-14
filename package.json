@@ -91,6 +91,6 @@
     "stylelint": "^7.10.1",
     "stylelint-config-sass-guidelines": "^2.1.0",
     "terra-props-table": "^1.0.0",
-    "terra-toolkit": "^1.0.0"
+    "terra-toolkit": "^1.2.2"
   }
 }
