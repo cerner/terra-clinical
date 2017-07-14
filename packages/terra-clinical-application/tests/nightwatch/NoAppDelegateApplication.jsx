@@ -4,7 +4,7 @@ import Application from '../../lib/Application';
 import ContainerComponent from './ContainerComponent';
 
 export default () => (
-  <Application>
+  <Application id="Application">
     <ContainerComponent />
   </Application>
 );

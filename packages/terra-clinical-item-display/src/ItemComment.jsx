@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import CommentIndicator from 'terra-icon/lib/icon/IconComment';
 import ItemDisplay from './ItemDisplay';
-import './ItemComment.scss';
+import styles from './ItemComment.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -26,24 +28,15 @@ const ItemComment = ({
     text,
     isTruncated,
     ...customProps
-  }) => {
-  const commentClassNames = classNames([
-    'terraClinical-ItemComment',
-    customProps.className,
-  ]);
-
-  const commentIcon = <CommentIndicator />;
-
-  return (
+  }) => (
     <ItemDisplay
       text={text}
       isTruncated={isTruncated}
-      icon={commentIcon}
+      icon={<CommentIndicator />}
       {...customProps}
-      className={commentClassNames}
+      className={cx('item-comment', customProps.className)}
     />
   );
-};
 
 ItemComment.propTypes = propTypes;
 ItemComment.defaultProps = defaultProps;
