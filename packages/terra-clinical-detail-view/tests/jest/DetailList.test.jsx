@@ -9,13 +9,13 @@ const defaultVariety = (
 // Snapshot Tests
 it('should render a default component', () => {
   const detailList = <DetailView.DetailList />;
-  const wrapper = shallow(detailList);
+  const wrapper = render(detailList);
   expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a title', () => {
   const detailList = <DetailView.DetailList title="Title" />;
-  const wrapper = shallow(detailList);
+  const wrapper = render(detailList);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -25,34 +25,34 @@ it('should render a list', () => {
       <DetailView.DetailListItem item={<p>Test</p>} />
       <DetailView.DetailListItem item={<p>Test</p>} />
     </DetailView.DetailList>);
-  const wrapper = shallow(detailList);
+  const wrapper = render(detailList);
   expect(wrapper).toMatchSnapshot();
 });
 
 
 it('should render a title and a list', () => {
-  const wrapper = shallow(defaultVariety);
+  const wrapper = render(defaultVariety);
   expect(wrapper).toMatchSnapshot();
 });
 
 // Prop Tests
 it('should set the title text', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.find('.terraClinical-DetailList-title').text()).toEqual('Title');
+  expect(wrapper.find('.title').text()).toEqual('Title');
 });
 
 // Structure Tests
-it('should have the class terraClinical-DetailList', () => {
+it('should have the class detail-list', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.prop('className')).toContain('terraClinical-DetailList');
+  expect(wrapper.prop('data-class')).toContain('detail-list');
 });
 
-it('should have the class terraClinical-DetailList-title when title is provided', () => {
+it('should have the class title when title is provided', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.childAt(0).prop('className')).toContain('terraClinical-DetailList-title');
+  expect(wrapper.childAt(0).prop('className')).toContain('title');
 });
 
-it('should have the class terraClinical-DetailList-list', () => {
+it('should have the class list', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.childAt(1).prop('className')).toContain('terraClinical-DetailList-list');
+  expect(wrapper.childAt(1).prop('className')).toContain('list');
 });

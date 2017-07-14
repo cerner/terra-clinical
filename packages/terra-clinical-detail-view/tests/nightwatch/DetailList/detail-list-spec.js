@@ -14,11 +14,10 @@ module.exports = {
 
   'Displays a default Detail List with a title and list': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-tests/noraml-item-size`);
-    browser.expect.element('.terraClinical-DetailList').to.be.present;
-    browser.expect.element('.terraClinical-DetailList-title').to.be.present;
-    browser.expect.element('.terraClinical-DetailList-list').to.be.present;
-    browser.assert.cssProperty('.terraClinical-DetailList-list', 'display', '-webkit-flex');
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-tests/noraml-item-size`)
+      .assert.elementPresent('#DetailList')
+      .assert.containsText('#DetailList div:nth-child(1)', 'Detail List Title')
+      .assert.cssProperty('#DetailList div:nth-child(2)', 'display', '-webkit-flex');
   },
 
 };

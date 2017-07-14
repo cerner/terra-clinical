@@ -5,7 +5,7 @@ import Application from '../../lib/Application';
 import ContainerComponent from './ContainerComponent';
 
 export default () => (
-  <Application app={AppDelegate.create({})}>
+  <Application app={AppDelegate.create({})} id="Application">
     <ContainerComponent />
   </Application>
 );

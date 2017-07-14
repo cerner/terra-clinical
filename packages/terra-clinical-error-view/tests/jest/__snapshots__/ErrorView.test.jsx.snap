@@ -1,22 +1,22 @@
 exports[`test should not render a glyph 1`] = `
 <div
-  className="terraClinical-ErrorView">
+  class="error-view">
   <p
-    className="terraClinical-ErrorView-text" />
+    class="text" />
 </div>
 `;
 
 exports[`test should render a button with text 1`] = `
 <div
-  className="terraClinical-ErrorView">
+  className="error-view">
   <div
-    className="terraClinical-ErrorView-glyph">
+    className="glyph">
     <ErrorIcon />
   </div>
   <p
-    className="terraClinical-ErrorView-text" />
+    className="text" />
   <div
-    className="terraClinical-ErrorView-button">
+    className="button">
     <Button
       isBlock={false}
       isCompact={false}
@@ -32,25 +32,43 @@ exports[`test should render a button with text 1`] = `
 
 exports[`test should render a default component 1`] = `
 <div
-  className="terraClinical-ErrorView">
+  class="error-view">
   <div
-    className="terraClinical-ErrorView-glyph">
-    <ErrorIcon />
+    class="glyph">
+    <svg
+      data-name="Layer 1"
+      height="170px"
+      id="Layer_1"
+      viewbox="0 0 251.7 251.8"
+      width="170px">
+      <path
+        d="M125.9,0C56.1,0,0,56.2,0,125.9s56,125.9,125.8,125.9s125.9-56.1,125.9-125.9S195.6,0,125.9,0z M36.7,139 v-26.2H215V139H36.7z"
+        style="fill:#e8e9ea;" />
+    </svg>
   </div>
   <p
-    className="terraClinical-ErrorView-text" />
+    class="text" />
 </div>
 `;
 
 exports[`test should render a description 1`] = `
 <div
-  className="terraClinical-ErrorView">
+  class="error-view">
   <div
-    className="terraClinical-ErrorView-glyph">
-    <ErrorIcon />
+    class="glyph">
+    <svg
+      data-name="Layer 1"
+      height="170px"
+      id="Layer_1"
+      viewbox="0 0 251.7 251.8"
+      width="170px">
+      <path
+        d="M125.9,0C56.1,0,0,56.2,0,125.9s56,125.9,125.8,125.9s125.9-56.1,125.9-125.9S195.6,0,125.9,0z M36.7,139 v-26.2H215V139H36.7z"
+        style="fill:#e8e9ea;" />
+    </svg>
   </div>
   <p
-    className="terraClinical-ErrorView-text">
+    class="text">
     test description.
   </p>
 </div>
@@ -58,15 +76,23 @@ exports[`test should render a description 1`] = `
 
 exports[`test should render a name 1`] = `
 <div
-  className="terraClinical-ErrorView">
+  class="error-view">
   <div
-    className="terraClinical-ErrorView-glyph">
-    <ErrorIcon />
+    class="glyph">
+    <svg
+      data-name="Layer 1"
+      height="170px"
+      id="Layer_1"
+      viewbox="0 0 251.7 251.8"
+      width="170px">
+      <path
+        d="M125.9,0C56.1,0,0,56.2,0,125.9s56,125.9,125.8,125.9s125.9-56.1,125.9-125.9S195.6,0,125.9,0z M36.7,139 v-26.2H215V139H36.7z"
+        style="fill:#e8e9ea;" />
+    </svg>
   </div>
   <p
-    className="terraClinical-ErrorView-text">
-    <b
-      className="terraClinical-ErrorView-name">
+    class="text">
+    <b>
       test error name:
     </b>
   </p>
