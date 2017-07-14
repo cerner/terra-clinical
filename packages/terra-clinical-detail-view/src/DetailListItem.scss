@@ -1,9 +1,9 @@
-@import '~terra-mixins';
-
-.terraClinical-DetailListItem {
-  min-width: 50%;
-
-  @include terra-padding-end(0.714rem);
-  padding-bottom: 0.714rem;
-  padding-top: 0.714rem;
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .detail-list-item {
+    min-width: 50%;
+    padding-bottom: 0.714rem;
+    padding-right: 0.714rem;
+    padding-top: 0.714rem;
+  }
 }

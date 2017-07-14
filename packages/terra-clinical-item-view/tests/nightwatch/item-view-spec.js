@@ -44,6 +44,6 @@ module.exports = {
 
   'Displays a clinical item view with a comment set': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-tests/comment`);
-    browser.assert.elementPresent('#ItemView .terraClinical-ItemComment');
+    browser.assert.elementPresent('#ItemView #ItemComment');
   },
 };

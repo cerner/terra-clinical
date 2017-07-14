@@ -22,6 +22,7 @@ const DetailViewNoDivider = () => (
     ]}
     footer="Footer Text"
     isDivided={false}
+    id="DetailView"
   />
 );
 
