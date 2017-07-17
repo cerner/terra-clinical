@@ -6,6 +6,7 @@ const MediumBreakpointItemCollection = () => (
   <ItemCollection
     breakpoint="medium"
     rows={[item, item, item]}
+    id="ItemCollection"
   />
 );
 

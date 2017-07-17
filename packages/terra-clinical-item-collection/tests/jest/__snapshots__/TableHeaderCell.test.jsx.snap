@@ -1,19 +1,15 @@
 exports[`test should render accessory, comment and display table headers 1`] = `
 <thead
-  style={
-    Object {
-      "visibility": "hidden",
-    }
-  }>
+  style="visibility:hidden;">
   <tr>
-    <TableHeaderCell
-      columnType="accessory"
+    <th
+      class="column-accessory"
       id="accessory" />
-    <TableHeaderCell
-      columnType="comment"
+    <th
+      data-class="column-comment"
       id="comment" />
-    <TableHeaderCell
-      columnType="display"
+    <th
+      data-class="column-display"
       id="display" />
   </tr>
 </thead>
