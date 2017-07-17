@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Consumer from 'xfc';
+import { Consumer } from 'xfc';
 import './EmbeddedContentConsumer.scss';
 
 const propTypes = {
