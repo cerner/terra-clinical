@@ -28,7 +28,7 @@ module.exports = {
   'Displays the correct collection responsive to window size for tiny breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/tiny-breakpoint`);
-    browser.execute("document.getElementById('root').style.padding = 0;");
+    browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.tiny) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
@@ -40,7 +40,7 @@ module.exports = {
   'Displays the correct collection responsive to window size for small breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/small-breakpoint`);
-    browser.execute("document.getElementById('root').style.padding = 0;");
+    browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.small) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
@@ -52,7 +52,7 @@ module.exports = {
   'Displays the correct collection responsive to window size for medium breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/medium-breakpoint`);
-    browser.execute("document.getElementById('root').style.padding = 0;");
+    browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.medium) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
@@ -64,7 +64,7 @@ module.exports = {
   'Displays the correct collection responsive to window size for large breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/large-breakpoint`);
-    browser.execute("document.getElementById('root').style.padding = 0;");
+    browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.large) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;
@@ -76,7 +76,7 @@ module.exports = {
   'Displays the correct collection responsive to window size for huge breakpoint': (browser) => {
     const width = browser.globals.width;
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/huge-breakpoint`);
-    browser.execute("document.getElementById('root').style.padding = 0;");
+    browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.huge) {
       browser.expect.element('.terraClinical-ItemCollection--listView').to.be.present;

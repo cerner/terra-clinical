@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute, Redirect } from 'react-router';
 import App from './App';
 import Home from './Home';
+import styles from './site.scss';
 
 // Examples
 import ActionHeaderExamples from './examples/action-header/Index';
@@ -44,36 +45,38 @@ import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
 ReactDOM.render((
-  <Router history={hashHistory}>
-    <Redirect from="/" to="/site" />
-    <Route path="/site" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="action-header" component={ActionHeaderExamples} />
-      <Route path="application" component={ApplicationExamples} />
-      <Route path="detail-view" component={DetailViewExamples} />
-      <Route path="error-view" component={ErrorViewExamples} />
-      <Route path="header" component={HeaderExamples} />
-      <Route path="item-display" component={ItemDisplayExamples} />
-      <Route path="item-view" component={ItemViewExamples} />
-      <Route path="label-value-view" component={LabelValueViewExamples} />
-      <Route path="no-data-view" component={NoDataViewExamples} />
-      <Route path="item-collection" component={ItemCollectionExamples} />
-    </Route>
-    <Route path="/tests" component={TestLinks} />
-    {ActionHeaderTestRoutes}
-    {ApplicationTestRoutes}
-    {DetailViewTestRoutes}
-    {DetailListTestRoutes}
-    {DetailListItemTestRoutes}
-    {ErrorViewTestRoutes}
-    {HeaderTestRoutes}
-    {ItemCommentTestRoutes}
-    {ItemDisplayTestRoutes}
-    {ItemViewTestRoutes}
-    {LabelValueViewTestRoutes}
-    {NoDataViewTestRoutes}
-    {ItemCollectionTestRoutes}
-    {TableHeaderCellTestRoutes}
-    <Route path="/demo" component={DemoApplicationExamples} />
-  </Router>
+  <div className={styles.application} id="siteApplication">
+    <Router history={hashHistory}>
+      <Redirect from="/" to="/site" />
+      <Route path="/site" component={App}>
+        <IndexRoute component={Home} />
+        <Route path="action-header" component={ActionHeaderExamples} />
+        <Route path="application" component={ApplicationExamples} />
+        <Route path="detail-view" component={DetailViewExamples} />
+        <Route path="error-view" component={ErrorViewExamples} />
+        <Route path="header" component={HeaderExamples} />
+        <Route path="item-display" component={ItemDisplayExamples} />
+        <Route path="item-view" component={ItemViewExamples} />
+        <Route path="label-value-view" component={LabelValueViewExamples} />
+        <Route path="no-data-view" component={NoDataViewExamples} />
+        <Route path="item-collection" component={ItemCollectionExamples} />
+      </Route>
+      <Route path="/tests" component={TestLinks} />
+      {ActionHeaderTestRoutes}
+      {ApplicationTestRoutes}
+      {DetailViewTestRoutes}
+      {DetailListTestRoutes}
+      {DetailListItemTestRoutes}
+      {ErrorViewTestRoutes}
+      {HeaderTestRoutes}
+      {ItemCommentTestRoutes}
+      {ItemDisplayTestRoutes}
+      {ItemViewTestRoutes}
+      {LabelValueViewTestRoutes}
+      {NoDataViewTestRoutes}
+      {ItemCollectionTestRoutes}
+      {TableHeaderCellTestRoutes}
+      <Route path="/demo" component={DemoApplicationExamples} />
+    </Router>
+  </div>
 ), document.getElementById('root'));
