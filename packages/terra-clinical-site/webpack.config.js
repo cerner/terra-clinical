@@ -15,7 +15,7 @@ const rtl = require('postcss-rtl');
 module.exports = {
   entry: {
     'babel-polyfill': 'babel-polyfill',
-    'terra-clinical': path.resolve(path.join(__dirname, 'src', 'Index')),
+    'terra-clinical': path.resolve(path.join(__dirname, 'src/Index')),
   },
   module: {
     loaders: [
@@ -78,7 +78,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('[name]-[hash].css'),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html'),
+      template: path.join(__dirname, 'src/index.html'),
       chunks: ['babel-polyfill', 'terra-clinical'],
     }),
     new I18nAggregatorPlugin({
@@ -93,7 +93,7 @@ module.exports = {
     modules: [path.resolve(__dirname, 'aggregated-translations'), 'node_modules'],
     alias: {
       moment: path.resolve(__dirname, 'node_modules/moment'),
-      react: path.resolve(__dirname, 'node_modules', 'react'),
+      react: path.resolve(__dirname, 'node_modules/react'),
       'react-intl': path.resolve(__dirname, 'node_modules/react-intl'),
       'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
     },
