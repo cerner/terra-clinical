@@ -1,8 +1,8 @@
 import React from 'react';
 import ItemView from '../../lib/ItemView';
 
-const accessoryStart = <img alt="Graphic Start" />;
-const accessoryEnd = <img alt="Graphic End" />;
+const accessoryStart = <img alt="Graphic Start" id="StartAccessory" />;
+const accessoryEnd = <img alt="Graphic End" id="EndAccessory" />;
 
 const views = () => (
   <div>

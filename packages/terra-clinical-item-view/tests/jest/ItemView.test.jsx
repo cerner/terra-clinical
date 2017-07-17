@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemView from '../../src/ItemView';
+import ItemView from '../../lib/ItemView';
 
 // Snapshot Tests
 it('should render a default component', () => {
