@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed accessory styling to scale with font size.
 
 1.1.0 - (July 18, 2017)
 -----------------
