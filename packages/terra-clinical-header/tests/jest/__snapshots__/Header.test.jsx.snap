@@ -10,22 +10,22 @@ exports[`test should render a header with all content 1`] = `
 <header
   class="header">
   <div
-    class="terra-Arrange">
+    class="arrange">
     <div
-      class="terra-Arrange-fitStart terra-Arrange-fitStart--center">
+      class="fit center">
       <div>
         start content
       </div>
     </div>
     <div
-      class="terra-Arrange-fill terra-Arrange-fill--center">
+      class="fill center">
       <h1
         class="title">
         Title
       </h1>
     </div>
     <div
-      class="terra-Arrange-fitEnd terra-Arrange-fitEnd--center">
+      class="fit center">
       <div>
         end content
       </div>
@@ -38,20 +38,20 @@ exports[`test should render a header with content on the left 1`] = `
 <header
   class="header">
   <div
-    class="terra-Arrange">
+    class="arrange">
     <div
-      class="terra-Arrange-fitStart terra-Arrange-fitStart--center">
+      class="fit center">
       <div>
         start content
       </div>
     </div>
     <div
-      class="terra-Arrange-fill terra-Arrange-fill--center">
+      class="fill center">
       <h1
         class="title" />
     </div>
     <div
-      class="terra-Arrange-fitEnd terra-Arrange-fitEnd--center" />
+      class="fit center" />
   </div>
 </header>
 `;
@@ -60,16 +60,16 @@ exports[`test should render a header with content on the right 1`] = `
 <header
   class="header">
   <div
-    class="terra-Arrange">
+    class="arrange">
     <div
-      class="terra-Arrange-fitStart terra-Arrange-fitStart--center" />
+      class="fit center" />
     <div
-      class="terra-Arrange-fill terra-Arrange-fill--center">
+      class="fill center">
       <h1
         class="title" />
     </div>
     <div
-      class="terra-Arrange-fitEnd terra-Arrange-fitEnd--center">
+      class="fit center">
       <div>
         end content
       </div>
