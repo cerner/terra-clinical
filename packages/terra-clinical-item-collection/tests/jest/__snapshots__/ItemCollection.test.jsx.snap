@@ -148,7 +148,7 @@ exports[`test should render with a given breakpoint 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -160,23 +160,23 @@ exports[`test should render with a given breakpoint 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory
@@ -187,7 +187,7 @@ exports[`test should render with a given breakpoint 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -199,23 +199,23 @@ exports[`test should render with a given breakpoint 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory
@@ -226,7 +226,7 @@ exports[`test should render with a given breakpoint 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -238,23 +238,23 @@ exports[`test should render with a given breakpoint 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory
@@ -417,7 +417,7 @@ exports[`test should render with multiple rows 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -429,23 +429,23 @@ exports[`test should render with multiple rows 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory
@@ -456,7 +456,7 @@ exports[`test should render with multiple rows 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -468,23 +468,23 @@ exports[`test should render with multiple rows 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory
@@ -495,7 +495,7 @@ exports[`test should render with multiple rows 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -507,23 +507,23 @@ exports[`test should render with multiple rows 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory
@@ -617,7 +617,7 @@ exports[`test should render with one row 1`] = `
             isSelectable={true}
             isSelected={false}>
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   Start Accessory
@@ -629,23 +629,23 @@ exports[`test should render with one row 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content--display" />
+              data-class="content-display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content--comment" />
+              data-class="content-comment" />
             <TableCell
-              className="content--accessory"
+              className="content-accessory"
               content={
                 <p>
                   End Accessory

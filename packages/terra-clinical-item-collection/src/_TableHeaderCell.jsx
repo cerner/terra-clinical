@@ -18,9 +18,9 @@ const defaultProps = {
 
 const TableHeaderCell = ({ columnType, ...customProps }) => {
   if (columnType === 'accessory') {
-    return (<th {...customProps} className={cx(`column--${columnType}`)} />);
+    return (<th {...customProps} className={cx(`column-${columnType}`)} />);
   }
-  return (<th {...customProps} data-class={cx(`column--${columnType}`)} />);
+  return (<th {...customProps} data-class={cx(`column-${columnType}`)} />);
 };
 
 TableHeaderCell.propTypes = propTypes;

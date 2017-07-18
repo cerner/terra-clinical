@@ -59,9 +59,9 @@ function createTableHeader(tableColumns) {
 function createTableCell(content, keyValue, contentType) {
   const cellContent = content != null ? content : ' ';
   if (contentType === 'accessory') {
-    return (<Table.Cell content={cellContent} key={keyValue} className={cx(`content--${contentType}`)} />);
+    return (<Table.Cell content={cellContent} key={keyValue} className={cx(`content-${contentType}`)} />);
   }
-  return (<Table.Cell content={cellContent} key={keyValue} data-class={cx(`content--${contentType}`)} />);
+  return (<Table.Cell content={cellContent} key={keyValue} data-class={cx(`content-${contentType}`)} />);
 }
 
 function createTableRows(rows, tableColumns, selectedIndex) {
