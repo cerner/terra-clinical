@@ -27,6 +27,12 @@ module.exports = {
   'Displays text with an icon': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/icon`)
-      .assert.elementPresent('#ItemDisplay svg');
+      .assert.elementPresent('#ItemDisplay [class*="inline-icon"]');
+  },
+  'Icon scales as font-size adjusts': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/scaling`);
+    browser.assert.elementPresent('#Default');
+    browser.assert.elementPresent('#Larger');
+    browser.assert.elementPresent('#Smaller');
   },
 };
