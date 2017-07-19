@@ -11,19 +11,27 @@
     word-wrap: break-word;
   }
 
-  // Accessory-- is of fixed size and does not shrink or grow.
+  // Accessory is of fixed size and does not shrink or grow.
   .accessory {
     flex: 0 0 auto;
     margin: 5px;
+    max-height: 60px;
+    max-width: 60px;
     min-width: 0;
     overflow: hidden;
   }
 
-  .accessory--alignTop {
+  .accessory > * {
+    vertical-align: 0 !important;
+    max-height: 60px;
+    max-width: 60px;
+  }
+
+  .accessory-alignTop {
     align-self: flex-start;
   }
 
-  .accessory--alignCenter {
+  .accessory-alignCenter {
     align-self: center;
   }
 
@@ -42,11 +50,11 @@
 
   .content {
     align-items: center;
+    color: #64696c;
     display: flex;
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
-
-  .is-truncated {
+  .is-truncated, .is-truncated [class*="ItemDisplay__text"] {
     @include terra-clinical-text-truncate;
   }
 
@@ -54,10 +62,8 @@
   /* stylelint-disable selector-max-compound-selectors */
   .oneColumn {
     .row-container {
-      .row {
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-      }
+      display: flex;
+      flex-flow: row wrap;
 
       .content {
         width: 100%;
@@ -65,11 +71,10 @@
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
-
   .twoColumns {
     .content:nth-child(odd) {
       flex: 1 1 auto;
-      text-align: left;
+      justify-content: flex-start;
     }
 
     .content:nth-child(even) {
@@ -82,25 +87,20 @@
     }
   }
 
-  // We need to style content that appears out of the rowContainer (i.e. the comment).
-  .content {
-    color: #64696c;
-  }
-
   //Emphasis Content Styles
-  .content--primaryColor {
+  .content-primaryColor {
     color: #1c1f21;
   }
 
-  .content--primarySize {
+  .content-primarySize {
     @include terra-clinical-tiny-heading;
   }
 
-  .content--secondaryColor {
+  .content-secondaryColor {
     color: #64696c;
   }
 
-  .content--secondarySize {
+  .content-secondarySize {
     @include terra-clinical-text-body;
   }
 }
