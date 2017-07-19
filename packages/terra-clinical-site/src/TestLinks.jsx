@@ -1,10 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { Link } from 'react-router';
+import styles from './site.scss';
 
 const TestLinks = () => (
   <div>
-    <ul className="terraClinical-Site-Nav">
+    <ul className={styles.navigation}>
       <li><Link to="/tests/action-header-tests">ActionHeader Tests</Link></li>
       <li><Link to="/tests/application-tests">Application Tests</Link></li>
       <li><Link to="/tests/detail-view-tests">DetailView Tests</Link></li>

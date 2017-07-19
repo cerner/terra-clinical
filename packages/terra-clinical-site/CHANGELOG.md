@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+* Converted component to use CSS modules
+
+### Changed
+* Update Header example
 
 1.1.0 - (July 18, 2017)
 -----------------

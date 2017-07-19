@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import Grid from 'terra-grid';
 import List from 'terra-list';
-import './site.scss';
+import styles from './site.scss';
 
 const propTypes = {
   children: PropTypes.node,
@@ -30,7 +30,7 @@ class App extends React.Component {
         <Grid>
           <Grid.Row>
             <Grid.Column small={2}>
-              <div className="terraClinical-Site-directionality" dir="ltr">
+              <div data-class="directionality" dir="ltr">
                 <button onClick={() => document.getElementsByTagName('html')[0].setAttribute('dir', 'ltr')} >ltr</button>
                 <button onClick={() => document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl')} >rtl</button>
               </div>
@@ -47,7 +47,7 @@ class App extends React.Component {
                   <option value="fi-FI">fi-FI</option>
                 </select>
               </div>
-              <List className="terraClinical-Site-Nav">
+              <List className={styles.navigation}>
                 <List.Item content={<Link to="/">Home</Link>} />
                 <List.Item content={<Link to="/site/action-header">Action Header</Link>} />
                 <List.Item content={<Link to="/site/application">Application</Link>} />
