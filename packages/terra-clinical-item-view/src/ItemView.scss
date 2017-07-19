@@ -22,7 +22,7 @@
   }
 
   .accessory > * {
-    vertical-align: 0 !important;
+    display: flex !important;
     max-height: 60px;
     max-width: 60px;
   }
@@ -54,7 +54,9 @@
     display: flex;
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
-  .is-truncated, .is-truncated [class*="ItemDisplay__text"] {
+
+  .is-truncated,
+  .is-truncated [class*='ItemDisplay__text'] {
     @include terra-clinical-text-truncate;
   }
 
