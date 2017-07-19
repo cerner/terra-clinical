@@ -1,35 +1,32 @@
 // Styles specific to development only
 // stylelint-disable
-
-#root {
-  padding: 20px;
-}
-
-.markdown-body {
-  margin-bottom: 20px;
-}
-
-.terraClinical-Site-Nav {
-  & > li {
-    font-size: 1.25rem;
-    padding: 0.5rem 0;
+:local {
+  .application {
+    padding: 1.25rem;
   }
-}
+
+  .navigation {
+    & > li {
+      font-size: 1.25rem;
+      padding: 0.5rem 0;
+    }
+  }
 
 // Doing a bit of positioning here to override other site styling that the demo does not need
-.terraClinical-DemoApplicationExample {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100vh;
+  .demoApplication {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
 
-  > div {
-    height: 100%;
-  }
+    > div {
+      height: 100%;
+    }
 
-  .terraClinical-ItemView-accessory {
-    max-width: 70%;
+    [class*="ItemView__accessory"] {
+      max-width: 70%;
+    }
   }
 }
