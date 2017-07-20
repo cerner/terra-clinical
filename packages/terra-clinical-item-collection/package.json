@@ -23,8 +23,7 @@
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^1.0.0",
-    "terra-mixins": "^1.0.0"
+    "terra-base": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -32,7 +31,6 @@
     "terra-base": "^1.0.0",
     "terra-clinical-item-view": "^1.0.0",
     "terra-list": "^1.0.0",
-    "terra-mixins": "^1.0.0",
     "terra-responsive-element": "^1.0.0",
     "terra-table": "^1.0.0"
   },
