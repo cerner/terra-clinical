@@ -17,8 +17,8 @@ const TwoColumnDisplay = () => (
   />
 );
 
-const TableStyles = () => (
-  <div>
+const ItemStyles = () => (
+  <div id="ItemStyles">
     <h3>List Item Style - One Column </h3>
     <OneColumnDisplay />
     <br />
@@ -28,4 +28,4 @@ const TableStyles = () => (
   </div>
 );
 
-export default TableStyles;
+export default ItemStyles;

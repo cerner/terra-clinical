@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import ResponsiveElement from 'terra-responsive-element';
 import 'terra-base/lib/baseStyles';
 import './ItemCollection.scss';
@@ -92,28 +91,16 @@ class ItemCollection extends React.Component {
       return null;
     }
 
-    const tableAttributes = Object.assign({}, customProps);
-    tableAttributes.className = classNames(['terraClinical-ItemCollection',
-      'terraClinical-ItemCollection--tableView',
-      customProps.className,
-    ]);
-
     const tableView = createTableView(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
     const tableDisplay = (
-      <div {...tableAttributes}>
+      <div {...customProps} data-class="item-collection table-view" className={customProps.className}>
         {tableView}
       </div>
     );
 
-    const listAttributes = Object.assign({}, customProps);
-    listAttributes.className = classNames(['terraClinical-ItemCollection',
-      'terraClinical-ItemCollection--listView',
-      customProps.className,
-    ]);
-
     const listView = createListView(rows, listStyles, this.state.selectedIndex, this.handleSelection);
     const listDisplay = (
-      <div {...listAttributes}>
+      <div {...customProps} data-class="item-collection list-view" className={customProps.className}>
         {listView}
       </div>
     );
