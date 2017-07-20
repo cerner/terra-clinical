@@ -31,9 +31,11 @@ class EmbeddedContentConsumer extends React.Component {
       Consumer.init();
       this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, { secret: this.props.secret });
 
-      Object.keys(this.props.eventHandlers).forEach((event) => {
-        this.xfcFrame.on(event, this.props.eventHandlers[event]);
-      });
+      if (this.props.eventHandlers) {
+        Object.keys(this.props.eventHandlers).forEach((event) => {
+          this.xfcFrame.on(event, this.props.eventHandlers[event]);
+        });
+      }
     }
   }
 
@@ -42,7 +44,8 @@ class EmbeddedContentConsumer extends React.Component {
       <div
         className="terraClinical-EmbeddedContentConsumer"
         ref={(element) => { this.embeddedContentWrapper = element; }}
-      />);
+      />
+    );
   }
 }
 
