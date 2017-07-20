@@ -24,7 +24,7 @@ const AllStylesTable = () => (
 );
 
 const TableStyles = () => (
-  <div>
+  <div id="TableStyles">
     <h3>Table Style - Padding </h3>
     <PaddedTable />
     <br />

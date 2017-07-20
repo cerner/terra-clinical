@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Table from 'terra-table';
 import TableHeaderCell from './_TableHeaderCell';
+import styles from './ItemCollection.scss';
+
+const cx = classNames.bind(styles);
 
 function determineTableColumns(row) {
   const { startAccessory, displays, comment, endAccessory } = row;
@@ -54,8 +58,10 @@ function createTableHeader(tableColumns) {
 
 function createTableCell(content, keyValue, contentType) {
   const cellContent = content != null ? content : ' ';
-  const cellName = `terraClinical-ItemCollection--${contentType}`;
-  return <Table.Cell content={cellContent} key={keyValue} className={cellName} />;
+  if (contentType === 'accessory') {
+    return (<Table.Cell content={cellContent} key={keyValue} className={cx(`content-${contentType}`)} />);
+  }
+  return (<Table.Cell content={cellContent} key={keyValue} data-class={cx(`content-${contentType}`)} />);
 }
 
 function createTableRows(rows, tableColumns, selectedIndex) {
