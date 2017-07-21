@@ -59,6 +59,7 @@ class App extends React.Component {
                 <List.Item content={<Link to="/site/item-view">Item View</Link>} />
                 <List.Item content={<Link to="/site/label-value-view">Label Value View</Link>} />
                 <List.Item content={<Link to="/site/no-data-view">No Data View</Link>} />
+                <List.Item content={<Link to="/site/onset-picker">Onset Picker</Link>} />
                 <List.Item content={<Link to="/tests">Tests</Link>} />
                 <List.Item content={<Link to="/demo">Demo</Link>} />
               </List>
