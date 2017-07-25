@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The item to be displayed.
-   **/
+   */
   item: PropTypes.element.isRequired,
 };
 

@@ -19,47 +19,47 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * Text to be displayed as the title in the header bar
-   **/
+   */
   title: PropTypes.string,
 
   /**
    * Callback function for when the close button is clicked. The back button will not display if this is not set.
    * On small viewports a back button will be displayed instead of a close button when a separate onBack callback is not set.
-   **/
+   */
   onClose: PropTypes.func,
 
   /**
    * Callback function for when the back button is clicked. The back button will not display if this is not set.
-   **/
+   */
   onBack: PropTypes.func,
 
   /**
    * Callback function for when the expand button is clicked.
    * The expand button will not display if this is not set or on small viewports.
    * Only the expand button will be rendered if onMaximize and onMinimize are set.
-   **/
+   */
   onMaximize: PropTypes.func,
 
   /**
    * Callback function for when the minimize button is clicked.
    * The minimize button will not display if this is not set or on small viewports.
    * Only the expand button will be rendered if both onMaximize and onMinimize are set.
-   **/
+   */
   onMinimize: PropTypes.func,
 
   /**
    * Callback function for when the next button is clicked. The previous-next button group will not display if neither this or onPrevious are set.
-   **/
+   */
   onNext: PropTypes.func,
 
   /**
    * Callback function for when the previous button is clicked. The previous-next button group will not display if neither this or onNext are set.
-   **/
+   */
   onPrevious: PropTypes.func,
 
   /**
    * Child element to be displayed on the right end of the header.
-   **/
+   */
   children: PropTypes.element,
 };
 
