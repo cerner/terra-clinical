@@ -10,6 +10,7 @@ const ItemViewTests = () => (
       <li><Link to="/tests/item-view-tests/displays">ItemView - Displays</Link></li>
       <li><Link to="/tests/item-view-tests/accessory">ItemView - Accesory</Link></li>
       <li><Link to="/tests/item-view-tests/comment">ItemView - Comment</Link></li>
+      <li><Link to="/tests/item-view-tests/overflow">ItemView - Word Wrap vs Truncated</Link></li>
     </ul>
   </div>
 );
