@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed accessory styling to scale with font size.
+* Fixed truncation styling to correctly apply an ellipse.
+
+## Changed
+* Updated Accessory nightwatch examples to include an icon.
 
 1.1.0 - (July 18, 2017)
 -----------------
