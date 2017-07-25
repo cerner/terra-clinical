@@ -59,7 +59,7 @@ class ItemView extends React.Component {
     let accessorySection;
     if (accessory) {
       accessorySection = (
-        <div className={cx('accessory', { [`accessory--${accessoryAlignment}`]: accessoryAlignment })}>
+        <div className={cx('accessory', { [`accessory-${accessoryAlignment}`]: accessoryAlignment })}>
           {accessory}
         </div>
       );
@@ -118,17 +118,17 @@ class ItemView extends React.Component {
   }
 
   static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-    let contentSize = 'content--primarySize';
-    let contentColor = 'content--primaryColor';
+    let contentSize = 'content-primarySize';
+    let contentColor = 'content-primaryColor';
 
     if (rowIndex > 0) {
-      contentSize = 'content--secondarySize';
+      contentSize = 'content-secondarySize';
     }
 
     if (rowCount === 2 && rowIndex === 1) {
-      contentColor = 'content--secondaryColor';
+      contentColor = 'content-secondaryColor';
     } else if (rowIndex >= 2) {
-      contentColor = 'content--secondaryColor';
+      contentColor = 'content-secondaryColor';
     }
 
     return [contentSize, contentColor];
@@ -136,7 +136,7 @@ class ItemView extends React.Component {
 
   static startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
     if (contentIndex === 1) {
-      return ['content--secondarySize', 'content--secondaryColor'];
+      return ['content-secondarySize', 'content-secondaryColor'];
     }
 
     return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
