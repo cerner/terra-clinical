@@ -10,13 +10,13 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The title to be displayed above the list items.
-   **/
+   */
   title: PropTypes.string,
 
   /**
    * The detail item(s) to display information. Must be a
    * DetailListItem element.
-   **/
+   */
   children: PropTypes.oneOfType([
     PropTypes.objectOf(DetailListItem),
     PropTypes.arrayOf(PropTypes.objectOf(DetailListItem)),

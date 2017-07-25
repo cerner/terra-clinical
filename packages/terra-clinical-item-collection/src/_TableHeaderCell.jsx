@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The column type of the header cell.
-   **/
+   */
   columnType: PropTypes.string,
 };
 
