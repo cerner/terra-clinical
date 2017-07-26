@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 * Converted component to use CSS modules
+* Fix table cell create for item displays
 
 ### Changed
 * Update Header example
