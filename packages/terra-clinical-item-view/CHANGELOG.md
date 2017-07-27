@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.2.0 - (July 27, 2017)
+-----------------
 ### Fixed
 * Fixed accessory styling to scale with font size.
 * Fixed truncation styling to correctly apply an ellipse.
