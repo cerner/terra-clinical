@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.2.0 - (July 27, 2017)
+-----------------
 * Converted component to use CSS modules
 
 ### Changed
