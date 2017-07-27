@@ -18,7 +18,9 @@ Unreleased
 
 ### Changed
 * Update Header example
-* Added Subheader example
+
+### Added
+* Example to render subheader component
 
 1.1.0 - (July 18, 2017)
 -----------------

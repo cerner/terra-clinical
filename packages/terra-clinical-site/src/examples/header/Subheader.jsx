@@ -6,7 +6,7 @@ const Subheader = () => (
   <div>
     <Header
       startContent={<div><Button text="Button" style={{ margin: '0 10px 0 0' }} /></div>}
-      title="Default Header"
+      title="Default Subheader"
       endContent={<div><Button text="Button" style={{ margin: '0 0 0 10px' }} /></div>}
       isSubheader
     />
