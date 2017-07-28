@@ -15,6 +15,7 @@ import TableStyles from './ItemCollectionTableStyles';
 import ListStyles from './ItemCollectionListStyles';
 import ItemStyles from './ItemCollectionItemStyles';
 import OnChangeItemCollection from './OnChangeItemCollection';
+import ItemCollectionVaryingItems from './ItemCollectionVaryingItems';
 
 const routes = (
   <div>
@@ -30,6 +31,7 @@ const routes = (
     <Route path="/tests/item-collection-tests/list-styles" component={ListStyles} />
     <Route path="/tests/item-collection-tests/item-styles" component={ItemStyles} />
     <Route path="/tests/item-collection-tests/onchange" component={OnChangeItemCollection} />
+    <Route path="/tests/item-collection-tests/varying-items" component={ItemCollectionVaryingItems} />
   </div>
 );
 

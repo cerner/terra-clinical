@@ -77,9 +77,17 @@ function createTableRows(rows, tableColumns, selectedIndex) {
     let displayContent = [];
     if (displayColumns) {
       displayContent = row.displays.map((display, index) => {
-        const displayKey = `display_${index + 1}`;
-        return createTableCell(display, displayKey, 'display');
+        if (index < displayColumns) {
+          const displayKey = `display_${index + 1}`;
+          return createTableCell(display, displayKey, 'display');
+        }
+        return null;
       });
+      // Ensure the correct number to table cells are created if the number of displays provided are fewer than
+      // than the display columns expected.
+      while (displayContent.length < displayColumns) {
+        displayContent.push(createTableCell(null, `display_${displayContent.length + 1}`, 'display'));
+      }
     }
 
     let commentContent;
