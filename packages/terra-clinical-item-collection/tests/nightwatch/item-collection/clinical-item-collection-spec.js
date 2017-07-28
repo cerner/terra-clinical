@@ -133,4 +133,62 @@ module.exports = {
       browser.assert.containsText('#selected-index', '2');
     }
   },
+
+  'Correctly displays a row missing a start accessory when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)');
+    }
+  },
+
+  'Correctly displays a row missing a end accessory when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)');
+    }
+  },
+
+  'Correctly displays a row missing a comment when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(4) > td[data-class*="content-comment"]:nth-child(5)');
+    }
+  },
+
+  'Correctly displays a row missing displays when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(5) > td[data-class*="content-display"]:nth-child(3)');
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(5) > td[data-class*="content-display"]:nth-child(4)');
+    }
+  },
+
+  'Correctly displays a row with too many displays when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-class*="content-display"]:nth-child(5)');
+      browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-class*="content-display"]:nth-child(6)');
+    }
+  },
+
+  'Correctly displays a row missing many elements when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(7) > td[data-class*="content-display"]:nth-child(4)');
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(7) > td[data-class*="content-comment"]:nth-child(5)');
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(7) > td[class*="content-accessory"]:nth-child(6)');
+    }
+  },
 };
