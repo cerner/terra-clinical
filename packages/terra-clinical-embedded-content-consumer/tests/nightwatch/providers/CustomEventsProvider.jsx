@@ -8,7 +8,7 @@ function CustomEventsProvider() {
 
   setTimeout(() => {
     Provider.trigger('invokeCustomEvent');
-  }, 3000);
+  }, 1000);
 
   return (
     <div>
