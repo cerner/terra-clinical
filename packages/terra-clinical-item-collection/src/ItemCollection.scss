@@ -1,9 +1,10 @@
-@import '~terra-mixins';
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .column-accessory {
+    width: 40px;
+  }
 
-.terraClinical-ItemCollection-column--accessory {
-  width: 40px;
-}
-
-.terraClinical-ItemCollection--accessory {
-  vertical-align: middle !important;
+  .content-accessory {
+    vertical-align: middle !important;
+  }
 }

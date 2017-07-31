@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-detail-view",
   "main": "lib/DetailView.js",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Detail Views allows you to create a view with text at different levels of importance. A detail view can contain a title, subtitles, a graph, a footer and a list of elements that can display information at a more detailed level. A Detail List is a structural subcomponent of Detail View indented to be used within the details prop. A Detail List accepts and arranges DetailListItem elements in a flexbox layout that wraps the list of items by row. Detail List Items are the elements to be placed within a Detail List. A Detail List Item accepts one element item and applies a minimum width of 50% so that the element spans at minimum half of the Detail List. This allows the Detail List to have either one or two items per row depending on the width of the item content in each item.",
   "repository": {
     "type": "git",
@@ -23,14 +23,12 @@
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^1.0.0",
-    "terra-mixins": "^1.0.0"
+    "terra-base": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^1.0.0",
-    "terra-mixins": "^1.0.0"
+    "terra-base": "^1.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
@@ -43,11 +41,9 @@
     "test": "npm run test:spec && npm run test:nightwatch-default",
     "test:spec": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
     "test:all": "npm run test:nightwatch-default && npm run test:nightwatch-chrome && npm run test:nightwatch-firefox && npm run test:nightwatch-safari",
-    "test:nightwatch-default": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js",
-    "test:nightwatch-chrome": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js chrome",
-    "test:nightwatch-firefox": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js firefox",
-    "test:nightwatch-safari": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-non-parallel.js safari",
-    "test:remote": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config REMOTE=true node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --config tests/nightwatch.conf.js",
-    "test:remote:all": "WEBPACK_CONFIG_PATH=../../../../terra-clinical-site/webpack.config REMOTE=true node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --config tests/nightwatch.conf.js --env chrome-tiny,chrome-small,chrome-medium,chrome-large,chrome-huge,chrome-enormous,firefox-tiny,firefox-small,firefox-medium,firefox-large,firefox-huge,firefox-enormous,ie10-tiny,ie10-small,ie10-medium,ie10-large,ie10-huge,ie10-enormous,ie11-tiny,ie11-small,ie11-medium,ie11-large,ie11-huge,ie11-enormous,edge-tiny,edge-small,edge-medium,edge-large,edge-huge,edge-enormous,safari-tiny,safari-small,safari-medium,safari-large,safari-huge,safari-enormous"
+    "test:nightwatch-default": "SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js",
+    "test:nightwatch-chrome": "SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js chrome",
+    "test:nightwatch-firefox": "SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js firefox",
+    "test:nightwatch-safari": "SPECTRE_TEST_SUITE=terra-clinical-detail-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-non-parallel.js safari"
   }
 }

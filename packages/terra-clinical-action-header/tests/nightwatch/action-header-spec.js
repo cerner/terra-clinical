@@ -24,45 +24,31 @@ module.exports = {
   'Displays a default action header': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header`)
-      .expect.element('.terraClinical-Header').to.be.present;
+      .assert.elementPresent('#ActionHeader');
   },
   'Displays an action header with title': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-title`);
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-title`)
+      .assert.elementPresent('#ActionHeader');
   },
   'Displays an action header with back button': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-back`)
-      .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
-      .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
-
-    browser
-      .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child')
-      .to.have.attribute('aria-label')
-      .which.equals('Back');
+      .assert.elementPresent('[class*="left-buttons"] > button')
+      .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Back');
   },
   'Displays an action header with close button': (browser) => {
     const width = browser.globals.width;
     if (width < windowSizes.small[0]) {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-close`)
-        .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
-
-      browser
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child')
-        .to.have.attribute('aria-label')
-        .which.equals('Back');
+        .assert.elementPresent('[class*="left-buttons"] > button')
+        .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Back');
     } else {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-close`)
-        .waitForElementVisible('.terraClinical-ActionHeader-rightButtons > :first-child', 1000)
-        .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child').to.be.present;
-
-      browser
-        .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child > :first-child')
-        .to.have.attribute('aria-label')
-        .which.equals('Close');
+        .assert.elementPresent('[class*="right-buttons"] > button')
+        .assert.attributeContains('[class*="right-buttons"] > button', 'aria-label', 'Close');
     }
   },
   'Displays an action header with maximize button': (browser) => {
@@ -70,17 +56,12 @@ module.exports = {
     if (width < windowSizes.small[0]) {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-maximize`)
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.not.be.present;
+        .assert.elementNotPresent('[class*="left-buttons"] > button');
     } else {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-maximize`)
-        .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
-
-      browser
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child')
-        .to.have.attribute('aria-label')
-        .which.equals('Maximize');
+        .assert.elementPresent('button')
+        .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Maximize');
     }
   },
   'Displays an action header with minimize button': (browser) => {
@@ -88,46 +69,37 @@ module.exports = {
     if (width < windowSizes.small[0]) {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-minimize`)
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.not.be.present;
+        .assert.elementNotPresent('[class*="left-buttons"] > button');
     } else {
       browser
         .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-minimize`)
-        .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
-
-      browser
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child > :first-child')
-        .to.have.attribute('aria-label')
-        .which.equals('Minimize');
+        .assert.elementPresent('[class*="left-buttons"] > button')
+        .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Minimize');
     }
   },
   'Displays an action header with a back button and a close button': (browser) => {
     browser
-        .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-back-close`)
-        .waitForElementVisible('.terraClinical-ActionHeader-leftButtons > :first-child', 1000)
-        .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-back-close`);
     browser
-        .waitForElementVisible('.terraClinical-ActionHeader-rightButtons > :first-child', 1000)
-        .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child').to.be.present;
+      .assert.elementPresent('#ActionHeader [class*="left-buttons"] > button')
+      .assert.attributeContains('#ActionHeader [class*="left-buttons"] > button', 'aria-label', 'Back');
+    browser
+      .assert.elementPresent('#ActionHeader [class*="right-buttons"] > button')
+      .assert.attributeContains('#ActionHeader [class*="right-buttons"] > button', 'aria-label', 'Close');
   },
   'Displays an action header with a previous-next button-group': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-previous-next`)
-      .expect.element('.terraClinical-ActionHeader-leftButtons > :first-child').to.be.present;
-
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-previous-next`);
     browser
-      .expect.element('.terraClinical-ActionHeader-leftButtons > * > :first-child > *')
-      .to.have.attribute('aria-label')
-      .which.equals('Previous');
-
+      .assert.elementPresent('[class*="left-buttons"] button:first-child')
+      .assert.attributeContains('[class*="left-buttons"] button:first-child', 'aria-label', 'Previous');
     browser
-      .expect.element('.terraClinical-ActionHeader-leftButtons > * > :last-child > *')
-      .to.have.attribute('aria-label')
-      .which.equals('Next');
+      .assert.elementPresent('[class*="left-buttons"] button:last-child')
+      .assert.attributeContains('[class*="left-buttons"] button:last-child', 'aria-label', 'Next');
   },
   'Displays an action header with custom content': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/action-header-tests/action-header-child`)
-      .expect.element('.terraClinical-ActionHeader-rightButtons > :first-child').to.be.present;
+      .assert.elementPresent('#CustomContent');
   },
 };

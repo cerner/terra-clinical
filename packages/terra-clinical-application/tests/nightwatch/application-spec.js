@@ -13,15 +13,14 @@ module.exports = {
   'Renders the Application with provided AppDelegate': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/application-tests/default`)
-      .assert.elementPresent('.terraClinical-Application')
+      .assert.elementPresent('#Application')
       .assert.containsText('.test-ContainerComponent', 'App is present');
   },
 
   'Renders the Application without provided AppDelegate': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/application-tests/no-app-delegate`)
-      .assert.elementPresent('.terraClinical-Application')
+      .assert.elementPresent('#Application')
       .assert.containsText('.test-ContainerComponent', 'App is not present');
   },
 };
-

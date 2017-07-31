@@ -11,6 +11,6 @@ const header = [headerData1, headerData2, headerData3];
 // Snapshot test
 it('should render accessory, comment and display table headers', () => {
   const defaultTableHeader = <Table.Header style={{ visibility: 'hidden' }}>{header}</Table.Header>;
-  const tableHeader = shallow(defaultTableHeader);
+  const tableHeader = render(defaultTableHeader);
   expect(tableHeader).toMatchSnapshot();
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import ResponsiveElement from 'terra-responsive-element';
 import 'terra-base/lib/baseStyles';
 import './ItemCollection.scss';
@@ -15,14 +14,14 @@ const propTypes = {
   breakpoint: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
   /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
-   **/
+   */
   tableStyles: PropTypes.shape({
     isPadded: PropTypes.bool,
     isStriped: PropTypes.bool,
   }),
   /**
    * The styles to spread to the list. List style options are isDivided and hasChevrons.
-   **/
+   */
   listStyles: PropTypes.shape({
     isDivided: PropTypes.bool,
     hasChevrons: PropTypes.bool,
@@ -31,7 +30,7 @@ const propTypes = {
    * The array of hashes to be displayed as rows. Each hash can contain a startAccessory, endAccessory,
    * comment, array of displays, isSelected, and a itemStyles hash. The item style options are layout,
    * textEmphasis, isTruncated and accessoryAlignment.
-   **/
+   */
   rows: PropTypes.arrayOf(PropTypes.shape({
     startAccessory: PropTypes.element,
     displays: PropTypes.arrayOf(PropTypes.element),
@@ -92,28 +91,16 @@ class ItemCollection extends React.Component {
       return null;
     }
 
-    const tableAttributes = Object.assign({}, customProps);
-    tableAttributes.className = classNames(['terraClinical-ItemCollection',
-      'terraClinical-ItemCollection--tableView',
-      customProps.className,
-    ]);
-
     const tableView = createTableView(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
     const tableDisplay = (
-      <div {...tableAttributes}>
+      <div {...customProps} data-class="item-collection table-view" className={customProps.className}>
         {tableView}
       </div>
     );
 
-    const listAttributes = Object.assign({}, customProps);
-    listAttributes.className = classNames(['terraClinical-ItemCollection',
-      'terraClinical-ItemCollection--listView',
-      customProps.className,
-    ]);
-
     const listView = createListView(rows, listStyles, this.state.selectedIndex, this.handleSelection);
     const listDisplay = (
-      <div {...listAttributes}>
+      <div {...customProps} data-class="item-collection list-view" className={customProps.className}>
         {listView}
       </div>
     );

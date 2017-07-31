@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Button from 'terra-button';
 import ButtonGroup from 'terra-button-group';
@@ -11,52 +12,54 @@ import IconChevronDown from 'terra-icon/lib/icon/IconChevronDown';
 import Header from 'terra-clinical-header';
 import ResponsiveElement from 'terra-responsive-element';
 import 'terra-base/lib/baseStyles';
-import './ActionHeader.scss';
+import styles from './ActionHeader.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
    * Text to be displayed as the title in the header bar
-   **/
+   */
   title: PropTypes.string,
 
   /**
    * Callback function for when the close button is clicked. The back button will not display if this is not set.
    * On small viewports a back button will be displayed instead of a close button when a separate onBack callback is not set.
-   **/
+   */
   onClose: PropTypes.func,
 
   /**
    * Callback function for when the back button is clicked. The back button will not display if this is not set.
-   **/
+   */
   onBack: PropTypes.func,
 
   /**
    * Callback function for when the expand button is clicked.
    * The expand button will not display if this is not set or on small viewports.
    * Only the expand button will be rendered if onMaximize and onMinimize are set.
-   **/
+   */
   onMaximize: PropTypes.func,
 
   /**
    * Callback function for when the minimize button is clicked.
    * The minimize button will not display if this is not set or on small viewports.
    * Only the expand button will be rendered if both onMaximize and onMinimize are set.
-   **/
+   */
   onMinimize: PropTypes.func,
 
   /**
    * Callback function for when the next button is clicked. The previous-next button group will not display if neither this or onPrevious are set.
-   **/
+   */
   onNext: PropTypes.func,
 
   /**
    * Callback function for when the previous button is clicked. The previous-next button group will not display if neither this or onNext are set.
-   **/
+   */
   onPrevious: PropTypes.func,
 
   /**
    * Child element to be displayed on the right end of the header.
-   **/
+   */
   children: PropTypes.element,
 };
 
@@ -100,13 +103,13 @@ const ActionHeader = ({
   const previousText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.previous' });
   const nextText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.next' });
 
-  const closeButton = onClose ? <Button icon={<IconClose ariaLabel={closeText} />} onClick={onClose} /> : null;
-  const backButton = onBack ? <Button icon={<IconLeft ariaLabel={backText} />} onClick={onBack} /> : null;
+  const closeButton = onClose ? <Button icon={<IconClose />} aria-label={closeText} onClick={onClose} /> : null;
+  const backButton = onBack ? <Button icon={<IconLeft />} aria-label={backText} onClick={onBack} /> : null;
 
   let closeButtonSmall;
   let backButtonSmall;
   if (onClose && !onBack) {
-    backButtonSmall = <Button icon={<IconLeft ariaLabel={backText} />} onClick={onClose} />;
+    backButtonSmall = <Button icon={<IconLeft />} aria-label={backText} onClick={onClose} />;
     closeButtonSmall = null;
   } else {
     closeButtonSmall = closeButton;
@@ -117,9 +120,9 @@ const ActionHeader = ({
   let expandButton;
   if (!backButton) {
     if (onMaximize) {
-      expandButton = <Button icon={<IconMaximize ariaLabel={maximizeText} />} onClick={onMaximize} />;
+      expandButton = <Button icon={<IconMaximize />} aria-label={maximizeText} onClick={onMaximize} />;
     } else if (onMinimize) {
-      expandButton = <Button icon={<IconMinimize ariaLabel={minimizeText} />} onClick={onMinimize} />;
+      expandButton = <Button icon={<IconMinimize />} aria-label={minimizeText} onClick={onMinimize} />;
     }
   }
 
@@ -127,14 +130,14 @@ const ActionHeader = ({
   if (onPrevious || onNext) {
     previousNextButtonGroup = (
       <ButtonGroup>
-        <ButtonGroup.Button icon={<IconChevronUp ariaLabel={previousText} />} onClick={onPrevious} key="ActionHeaderPrevious" />
-        <ButtonGroup.Button icon={<IconChevronDown ariaLabel={nextText} />} onClick={onNext} key="ActionHeaderNext" />
+        <ButtonGroup.Button icon={<IconChevronUp />} aria-label={previousText} onClick={onPrevious} key="ActionHeaderPrevious" />
+        <ButtonGroup.Button icon={<IconChevronDown />} aria-label={nextText} onClick={onNext} key="ActionHeaderNext" />
       </ButtonGroup>
     );
   }
 
   const leftButtonsDefault = (
-    <div className="terraClinical-ActionHeader-leftButtons">
+    <div className={cx('left-buttons')}>
       {backButton}
       {expandButton}
       {previousNextButtonGroup}
@@ -142,21 +145,21 @@ const ActionHeader = ({
   );
 
   const rightButtonsDefault = (
-    <div className="terraClinical-ActionHeader-rightButtons">
+    <div className={cx('right-buttons')}>
       {children}
       {closeButton}
     </div>
   );
 
   const leftButtonsSmall = (
-    <div className="terraClinical-ActionHeader-leftButtons">
+    <div className={cx('left-buttons')}>
       {backButtonSmall}
       {previousNextButtonGroup}
     </div>
   );
 
   const rightButtonsSmall = (
-    <div className="terraClinical-ActionHeader-rightButtons">
+    <div className={cx('right-buttons')}>
       {children}
       {closeButtonSmall}
     </div>
@@ -165,6 +168,7 @@ const ActionHeader = ({
   const actionHeader = (
     <Header
       {...attributes}
+      data-class="action-header"
       startContent={leftButtonsDefault}
       title={title}
       endContent={rightButtonsDefault}
@@ -174,6 +178,7 @@ const ActionHeader = ({
   const smallActionHeader = (
     <Header
       {...attributes}
+      data-class="action-header"
       startContent={leftButtonsSmall}
       title={title}
       endContent={rightButtonsSmall}

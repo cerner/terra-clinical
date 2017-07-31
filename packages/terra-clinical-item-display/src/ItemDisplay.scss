@@ -1,48 +1,44 @@
-@import '~terra-mixins';
 @import './mixins';
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .item-display {
+    @include terra-clinical-item-body;
+    align-items: center;
+    display: flex;
+    overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
 
-.terraClinical-ItemDisplay {
-  @include terra-clinical-item-body;
-  align-items: center;
-  display: flex;
-  overflow: hidden; // VERY IMPORTANT FOR IE10
-}
+  .text {
+    flex: 1 1 auto;
+    min-width: 10px; // Need min-width, as IE10 will completely squish display
+  }
 
-.terraClinical-ItemDisplay-text {
-  flex: 1 1 auto;
-  min-width: 10px; // Need min-width, as IE10 will completely squish display
-}
+  .inline-icon {
+    flex: 0 0 auto;
+    overflow: hidden;
+    padding-right: 5px;
+  }
 
-.terraClinical-ItemDisplay-inlineIcon {
-  @include terra-padding-end(5px);
-  flex: 0 0 auto;
-  height: 20px;
-  max-width: 20px;
-  overflow: hidden;
-  position: relative;
-}
+  .inline-icon > * {
+    min-height: 20px;
+    min-width: 16px;
+  }
 
-.terraClinical-ItemDisplay-inlineIcon > * {
-  font-size: 1rem;
-  height: 20px;
-  width: 16px;
-}
+  .is-truncated {
+    @include terra-clinical-text-truncate;
+  }
 
-.terraClinical-ItemDisplay-text--isTruncated {
-  @include terra-clinical-text-truncate;
-}
+  // Text Styles
+  .secondary {
+    color: #64696c !important;
+  }
 
-// Text Styles
+  .attention {
+    color: #c00 !important;
+    font-weight: 700 !important;
+  }
 
-.terraClinical-ItemDisplay-text--secondary {
-  color: #64696c !important;
-}
-
-.terraClinical-ItemDisplay-text--attention {
-  color: #c00 !important;
-  font-weight: 700 !important;
-}
-
-.terraClinical-ItemDisplay-text--strikeThrough {
-  text-decoration: line-through !important;
+  .strikeThrough {
+    text-decoration: line-through !important;
+  }
 }

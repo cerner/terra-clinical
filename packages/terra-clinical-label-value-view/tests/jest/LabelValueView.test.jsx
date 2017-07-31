@@ -41,23 +41,23 @@ describe('LabelValueView', () => {
   // Prop Tests
   it('should set the label text', () => {
     const wrapper = shallow(defaultView);
-    expect(wrapper.find('.terraClinical-LabelValueView-label').text()).toEqual('Label');
+    expect(wrapper.find('.label').text()).toEqual('Label');
   });
 
   it('should use the default value when no value is given', () => {
     const wrapper = shallow(defaultView);
-    expect(wrapper.find('.terraClinical-LabelValueView-value').text()).toEqual('--');
+    expect(wrapper.find('.value').text()).toEqual('--');
   });
 
   // Structure Tests
   it('should have the class terraClinical-LabelValueView', () => {
     const wrapper = shallow(defaultView);
-    expect(wrapper.prop('className')).toContain('terraClinical-LabelValueView');
+    expect(wrapper.prop('className')).toContain('label-value-view');
   });
 
   it('should have the class terraClinical-LabelValueView-label', () => {
     const wrapper = shallow(defaultView);
-    expect(wrapper.childAt(0).prop('className')).toContain('terraClinical-LabelValueView-label');
+    expect(wrapper.childAt(0).prop('className')).toContain('label');
   });
 
   it('should have the class terraClinical-LabelValueView-value when given a text value', () => {
@@ -65,6 +65,6 @@ describe('LabelValueView', () => {
       <LabelValueView label="Label" textValue="Sample Text" />
     );
     const wrapper = shallow(textInputView);
-    expect(wrapper.childAt(1).prop('className')).toContain('terraClinical-LabelValueView-value');
+    expect(wrapper.childAt(1).prop('className')).toContain('value');
   });
 });

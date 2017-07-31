@@ -1,40 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import './DetailView.scss';
+import styles from './DetailView.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
    * The title to display
-   **/
+   */
   title: PropTypes.string,
 
   /**
    * List of subtitle strings
-   **/
+   */
   subtitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
    * Display for visualization data
-   **/
+   */
   graph: PropTypes.element,
 
   /**
    * Array of elements to display detail information
-   **/
+   */
   details: PropTypes.arrayOf(PropTypes.element),
 
   /**
    * Text to be displayed at the footer of the view
-   **/
+   */
   footer: PropTypes.string,
 
   /**
    * Indicates if sections should be devided
-   **/
+   */
   isDivided: PropTypes.bool,
 };
 
@@ -47,7 +49,7 @@ const defaultProps = {
 
 const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...customProps }) => {
   const attributes = Object.assign({}, customProps);
-  attributes.className = classNames(['terraClinical-DetailView',
+  attributes.className = cx(['detail-view',
     attributes.className,
   ]);
 
@@ -56,11 +58,11 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
 
   const subtitleElements = subtitles.map((subtitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
-    <div className="terraClinical-DetailView-subtitle" key={i}>{subtitle}</div>
+    <div className={cx('subtitle')} key={i}>{subtitle}</div>
   ));
 
   if (isDivided) {
-    divider = (<hr className="terraClinical-DetailView-divider" />);
+    divider = (<hr className={cx('divider')} />);
 
     for (let i = 0; i < details.length; i += 1) {
       dividedDetails.push(details[i]);
@@ -72,15 +74,15 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
 
   return (
     <div {...attributes}>
-      <div className="terraClinical-DetailView-title">
-        <h1 className="terraClinical-DetailView-primaryText">{title}</h1>
+      <div className={cx('title')}>
+        <h1 className={cx('primary-text')}>{title}</h1>
         {subtitleElements}
       </div>
       {divider}
       {graph}
       {divider}
       {dividedDetails}
-      <div className="terraClinical-DetailView-footerText">
+      <div className={cx('footer-text')}>
         {footer}
       </div>
     </div>

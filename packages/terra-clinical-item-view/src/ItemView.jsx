@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import ItemDisplay from 'terra-clinical-item-display';
 import 'terra-base/lib/baseStyles';
-import './ItemView.scss';
+import styles from './ItemView.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -54,15 +56,10 @@ const defaultProps = {
 class ItemView extends React.Component {
 
   static renderAccessory(accessory, accessoryAlignment) {
-    const accessoryClassNames = classNames([
-      'terraClinical-ItemView-accessory',
-      { [`terraClinical-ItemView-accessory--${accessoryAlignment}`]: accessoryAlignment },
-    ]);
-
     let accessorySection;
     if (accessory) {
       accessorySection = (
-        <div className={accessoryClassNames}>
+        <div className={cx('accessory', { [`accessory-${accessoryAlignment}`]: accessoryAlignment })}>
           {accessory}
         </div>
       );
@@ -84,7 +81,7 @@ class ItemView extends React.Component {
     }
 
     return (
-      <div className="terraClinical-ItemView-rowContainer">
+      <div className={cx('row-container')}>
         {displayGroups.map((group, index) => {
           const row = ItemView.renderRow(group, index, displayGroups.length, emphasis);
           return row;
@@ -96,15 +93,12 @@ class ItemView extends React.Component {
   static renderRow(row, rowIndex, rowCount, emphasis) {
     const rowKey = rowIndex;
     return (
-      <div className="terraClinical-ItemView-row" key={rowKey}>
+      <div className={cx('row')} key={rowKey}>
         {row.map((display, contentIndex) => {
           const contentKey = contentIndex;
-          const contentClasses = ItemView.classesForContent(rowIndex,
-                                                            rowCount,
-                                                            contentIndex,
-                                                            emphasis);
+          const contentClasses = ItemView.classesForContent(rowIndex, rowCount, contentIndex, emphasis);
           return (
-            <div className={contentClasses} key={contentKey}>
+            <div className={cx(contentClasses)} key={contentKey}>
               {display}
             </div>
           );
@@ -120,21 +114,21 @@ class ItemView extends React.Component {
     } else {
       classes = ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
     }
-    return ['terraClinical-ItemView-content'].concat(classes).join(' ');
+    return ['content'].concat(classes);
   }
 
   static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-    let contentSize = 'terraClinical-ItemView-content--primarySize';
-    let contentColor = 'terraClinical-ItemView-content--primaryColor';
+    let contentSize = 'content-primarySize';
+    let contentColor = 'content-primaryColor';
 
     if (rowIndex > 0) {
-      contentSize = 'terraClinical-ItemView-content--secondarySize';
+      contentSize = 'content-secondarySize';
     }
 
     if (rowCount === 2 && rowIndex === 1) {
-      contentColor = 'terraClinical-ItemView-content--secondaryColor';
+      contentColor = 'content-secondaryColor';
     } else if (rowIndex >= 2) {
-      contentColor = 'terraClinical-ItemView-content--secondaryColor';
+      contentColor = 'content-secondaryColor';
     }
 
     return [contentSize, contentColor];
@@ -142,7 +136,7 @@ class ItemView extends React.Component {
 
   static startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
     if (contentIndex === 1) {
-      return ['terraClinical-ItemView-content--secondarySize', 'terraClinical-ItemView-content--secondaryColor'];
+      return ['content-secondarySize', 'content-secondaryColor'];
     }
 
     return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
@@ -159,17 +153,17 @@ class ItemView extends React.Component {
             comment,
             ...customProps } = this.props;
 
-    const viewClassNames = classNames([
-      'terraClinical-ItemView',
-      { 'terraClinical-ItemView--isTruncated': isTruncated },
-      { [`terraClinical-ItemView--${layout}`]: layout },
+    const viewClassNames = cx([
+      'item-view',
+      { 'is-truncated': isTruncated },
+      { [`${layout}`]: layout },
       customProps.className,
     ]);
 
     return (
       <div {...customProps} className={viewClassNames}>
         {ItemView.renderAccessory(startAccessory, accessoryAlignment)}
-        <div className="terraClinical-ItemView-body">
+        <div className={cx('body')}>
           {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>

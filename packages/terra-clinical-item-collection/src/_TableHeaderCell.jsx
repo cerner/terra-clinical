@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
+import styles from './ItemCollection.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
    * The column type of the header cell.
-   **/
+   */
   columnType: PropTypes.string,
 };
 
@@ -14,15 +17,10 @@ const defaultProps = {
 };
 
 const TableHeaderCell = ({ columnType, ...customProps }) => {
-  const attributes = Object.assign({}, customProps);
-  attributes.className = classNames([
-    'terraClinical-ItemCollection-column',
-    { [`terraClinical-ItemCollection-column--${columnType}`]: columnType },
-  ]);
-
-  return (
-    <th {...attributes} />
-  );
+  if (columnType === 'accessory') {
+    return (<th {...customProps} className={cx(`column-${columnType}`)} />);
+  }
+  return (<th {...customProps} data-class={cx(`column-${columnType}`)} />);
 };
 
 TableHeaderCell.propTypes = propTypes;

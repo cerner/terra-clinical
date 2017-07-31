@@ -9,11 +9,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const I18nAggregatorPlugin = require('terra-i18n-plugin');
 const i18nSupportedLocales = require('terra-i18n/lib/i18nSupportedLocales');
+const CustomProperties = require('postcss-custom-properties');
+const rtl = require('postcss-rtl');
 
 module.exports = {
   entry: {
     'babel-polyfill': 'babel-polyfill',
-    'terra-clinical': path.resolve(path.join(__dirname, 'src', 'Index')),
+    'terra-clinical': path.resolve(path.join(__dirname, 'src/Index')),
   },
   module: {
     loaders: [
@@ -32,6 +34,11 @@ module.exports = {
           fallback: 'style-loader',
           use: [{
             loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              importLoaders: 2,
+              localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+            },
           }, {
             loader: 'postcss-loader',
             options: {
@@ -46,6 +53,8 @@ module.exports = {
                       'iOS >= 8',
                     ],
                   }),
+                  CustomProperties(),
+                  rtl(),
                 ];
               },
             },
@@ -58,12 +67,18 @@ module.exports = {
         test: /\.md$/,
         loader: 'raw-loader',
       },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
+      },
     ],
   },
   plugins: [
     new ExtractTextPlugin('[name]-[hash].css'),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html'),
+      template: path.join(__dirname, 'src/index.html'),
       chunks: ['babel-polyfill', 'terra-clinical'],
     }),
     new I18nAggregatorPlugin({
@@ -78,7 +93,7 @@ module.exports = {
     modules: [path.resolve(__dirname, 'aggregated-translations'), 'node_modules'],
     alias: {
       moment: path.resolve(__dirname, 'node_modules/moment'),
-      react: path.resolve(__dirname, 'node_modules', 'react'),
+      react: path.resolve(__dirname, 'node_modules/react'),
       'react-intl': path.resolve(__dirname, 'node_modules/react-intl'),
       'react-dom': path.resolve(__dirname, 'node_modules/react-dom'),
     },

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import './ItemDisplay.scss';
+import styles from './ItemDisplay.scss';
 import ItemComment from './ItemComment';
+
+const cx = classNames.bind(styles);
 
 const textStyles = [
   'secondary',
@@ -44,24 +46,19 @@ const ItemDisplay = ({
     icon,
     ...customProps
   }) => {
-  const displayClassNames = classNames([
-    'terraClinical-ItemDisplay',
-    customProps.className,
-  ]);
-
-  const textClassNames = classNames([
-    'terraClinical-ItemDisplay-text',
-    { 'terraClinical-ItemDisplay-text--isTruncated': isTruncated },
-    { [`terraClinical-ItemDisplay-text--${textStyle}`]: textStyle },
+  const textClassNames = cx([
+    'text',
+    { 'is-truncated': isTruncated },
+    { [`${textStyle}`]: textStyle },
   ]);
 
   let displayIcon;
   if (icon) {
-    displayIcon = <div className="terraClinical-ItemDisplay-inlineIcon">{icon}</div>;
+    displayIcon = <div className={cx('inline-icon')}>{icon}</div>;
   }
 
   return (
-    <div {...customProps} className={displayClassNames}>
+    <div {...customProps} className={cx('item-display', customProps.className)}>
       {displayIcon}
       <div className={textClassNames}>{text}</div>
     </div>

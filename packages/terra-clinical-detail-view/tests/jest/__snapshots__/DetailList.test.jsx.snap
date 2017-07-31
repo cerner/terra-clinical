@@ -1,59 +1,59 @@
 exports[`test should render a default component 1`] = `
 <div
-  className="terraClinical-DetailList">
+  data-class="detail-list">
   <div
-    className="terraClinical-DetailList-list" />
+    class="list" />
 </div>
 `;
 
 exports[`test should render a list 1`] = `
 <div
-  className="terraClinical-DetailList">
+  data-class="detail-list">
   <div
-    className="terraClinical-DetailList-list">
-    <DetailListItem
-      item={
-        <p>
-          Test
-        </p>
-      } />
-    <DetailListItem
-      item={
-        <p>
-          Test
-        </p>
-      } />
+    class="list">
+    <div
+      class="detail-list-item">
+      <p>
+        Test
+      </p>
+    </div>
+    <div
+      class="detail-list-item">
+      <p>
+        Test
+      </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`test should render a title 1`] = `
 <div
-  className="terraClinical-DetailList">
+  data-class="detail-list">
   <div
-    className="terraClinical-DetailList-title">
+    class="title">
     Title
   </div>
   <div
-    className="terraClinical-DetailList-list" />
+    class="list" />
 </div>
 `;
 
 exports[`test should render a title and a list 1`] = `
 <div
-  className="terraClinical-DetailList">
+  data-class="detail-list">
   <div
-    className="terraClinical-DetailList-title">
+    class="title">
     Title
   </div>
   <div
-    className="terraClinical-DetailList-list">
-    <DetailListItem
-      item={
-        <p>
-          Test
-        </p>
-      } />
+    class="list">
+    <div
+      class="detail-list-item">
+      <p>
+        Test
+      </p>
+    </div>
   </div>
 </div>
 `;

@@ -10,6 +10,7 @@ const BackCloseHeader = () => (
       title="Action Header"
       onClose={() => 1}
       onBack={() => 1}
+      id="ActionHeader"
     />
   </Base>
 );

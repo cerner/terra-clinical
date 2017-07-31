@@ -8,6 +8,7 @@ const TitleHeader = () => (
   <Base locale={locale}>
     <ActionHeader
       title="Action Header"
+      id="ActionHeader"
     />
   </Base>
 );

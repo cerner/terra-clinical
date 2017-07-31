@@ -1,7 +1,7 @@
 import React from 'react';
 import AppDelegate from 'terra-app-delegate';
 
-import Application from '../../src/Application';
+import Application from '../../lib/Application';
 
 it('should render default component', () => {
   const application = (
@@ -37,4 +37,3 @@ it('should render children with app prop', () => {
   const wrapper = shallow(application);
   expect(wrapper).toMatchSnapshot();
 });
-

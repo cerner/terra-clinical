@@ -1,10 +1,8 @@
 @import './mixins';
-
-.terraClinical-ItemComment {
-  @include terra-clinical-item-body;
-  color: #64696c;
-}
-
-.terraClinical-ItemComment--icon {
-  fill: #bcbfc0;
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .item-comment {
+    @include terra-clinical-item-body;
+    color: #64696c;
+  }
 }

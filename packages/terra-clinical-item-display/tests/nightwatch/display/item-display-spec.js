@@ -13,19 +13,26 @@ module.exports = {
   },
 
   'Displays text as default': (browser) => {
-    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/default`);
-    browser.expect.element('.terraClinical-ItemDisplay').to.be.present;
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/default`)
+      .assert.elementPresent('#ItemDisplay');
   },
   'Displays text with different styles': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/text-style`);
-    browser.expect.element('.terraClinical-ItemDisplay').to.be.present;
 
-    browser.assert.cssClassPresent('#test-display-secondary .terraClinical-ItemDisplay-text', 'terraClinical-ItemDisplay-text--secondary');
-    browser.assert.cssClassPresent('#test-display-attention .terraClinical-ItemDisplay-text', 'terraClinical-ItemDisplay-text--attention');
-    browser.assert.cssClassPresent('#test-display-strike-through .terraClinical-ItemDisplay-text', 'terraClinical-ItemDisplay-text--strikeThrough');
+    browser.assert.cssProperty('#test-display-secondary > :first-child', 'color', 'rgba(100, 105, 108, 1)'); // Browser computes #64696c to rgba(100, 105, 108, 1)
+    browser.assert.cssProperty('#test-display-attention > :first-child', 'color', 'rgba(204, 0, 0, 1)'); // Browser computes #c00 to rgba(204, 0, 0, 1)
+    browser.assert.cssProperty('#test-display-strike-through > :first-child', 'text-decoration', 'line-through');
   },
   'Displays text with an icon': (browser) => {
-    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/icon`);
-    browser.expect.element('.terraClinical-ItemDisplay .terraClinical-ItemDisplay-inlineIcon > :first-child').to.be.present;
+    browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/icon`)
+      .assert.elementPresent('#ItemDisplay [class*="inline-icon"]');
+  },
+  'Icon scales as font-size adjusts': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-display-tests/scaling`);
+    browser.assert.elementPresent('#Default');
+    browser.assert.elementPresent('#Larger');
+    browser.assert.elementPresent('#Smaller');
   },
 };

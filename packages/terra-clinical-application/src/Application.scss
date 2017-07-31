@@ -1,3 +1,6 @@
-.terraClinical-Application {
-  height: 100%;
+/* stylelint-disable selector-class-pattern  */
+:local {
+  .application {
+    height: 100%;
+  }
 }
