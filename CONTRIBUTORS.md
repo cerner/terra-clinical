@@ -13,3 +13,4 @@ Cerner Corporation
 [@neilpfeiffer]: https://github.com/neilpfeiffer
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
+[@rasthana]: https://github.com/rasthana
