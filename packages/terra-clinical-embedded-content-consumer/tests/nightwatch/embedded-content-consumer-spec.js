@@ -9,15 +9,23 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-detail-view', done);
+    screenshot(browser, 'terra-clinical-embedded-content-consumer', done);
   },
 
-  'Displays a default Detail List with a title and list': (browser) => {
+  'Displays a provider embedded in the consumer that contains title text.': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/embedded-content-consumer-tests/basic-consumer`)
+    .assert.elementPresent('iframe');
+  },
+
+  'Displays a provider embedded in the consumer that triggers after initialization is complete.': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/detail-list-tests/noraml-item-size`)
-      .assert.elementPresent('#DetailList')
-      .assert.containsText('#DetailList div:nth-child(1)', 'Detail List Title')
-      .assert.cssProperty('#DetailList div:nth-child(2)', 'display', '-webkit-flex');
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/embedded-content-consumer-tests/on-ready-consumer`)
+      .assert.elementPresent('iframe');
+  },
+
+  'Displays a provider embedded in the consumer that triggers a custom event.': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/embedded-content-consumer-tests/custom-event-consumer`)
+    .assert.elementPresent('iframe');
   },
 
 };

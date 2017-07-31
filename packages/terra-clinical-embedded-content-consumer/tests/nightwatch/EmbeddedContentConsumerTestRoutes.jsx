@@ -3,14 +3,16 @@
 import React from 'react';
 import { Route } from 'react-router';
 import EmbeddedContentConsumerTests from './EmbeddedContentConsumerTests';
-import BasicProvider from './providers/BasicProvider';
-import EmbeddedContentConsumerOnReady from './EmbeddedContentConsumerOnReady';
-import OnReadyProvider from './providers/OnReadyProvider';
-import EmbeddedContentConsumerCustomEvents from './EmbeddedContentConsumerCustomEvents';
-import CustomEventsProvider from './providers/CustomEventsProvider';
 
-// Component
-import EmbeddedContentConsumerBasic from './EmbeddedContentConsumerBasic';
+// Content consumer components.
+import EmbeddedContentConsumerBasic from './consumers/EmbeddedContentConsumerBasic';
+import EmbeddedContentConsumerOnReady from './consumers/EmbeddedContentConsumerOnReady';
+import EmbeddedContentConsumerCustomEvents from './consumers/EmbeddedContentConsumerCustomEvents';
+
+// Content provider components.
+import BasicProvider from './providers/BasicProvider';
+import CustomEventsProvider from './providers/CustomEventsProvider';
+import OnReadyProvider from './providers/OnReadyProvider';
 
 const routes = (
   <div>

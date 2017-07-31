@@ -1,5 +1,5 @@
 import React from 'react';
-import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
+import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
 
 const eventHandlers = { invokeCustomEvent: () => {
   document.getElementById('CustomEvents').style.border = 'thick dashed #0000FF';
