@@ -1,5 +1,5 @@
 import React from 'react';
-import EmbeddedContentConsumer from '../../src/EmbeddedContentConsumer';
+import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 // Snapshot Tests
 it('should render the terraClinical-EmbeddedContentConsumer wrapper', () => {
