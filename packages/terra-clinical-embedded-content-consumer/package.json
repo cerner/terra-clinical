@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-embedded-content-consumer",
   "main": "lib/EmbeddedContentConsumer.js",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "The Embedded Content Consumer is the applicaiton component which is embedding content within it.",
   "repository": {
     "type": "git",
