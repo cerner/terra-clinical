@@ -1,6 +1,6 @@
 # Terra Clinical Embedded Content Consumer
 
-The Embedded Content Consumer is the applicaiton component which is embedding content within it.
+The Embedded Content Consumer is the application component which is embedding content within it.
 
 ## Getting Started
 
@@ -15,7 +15,8 @@ import React from 'react';
 import EmbeddedContentConsumer from 'terra-clinical-embedded-content-consumer';
 
 <EmbeddedContentConsumer
-  source="URL"
+  source="content url"
+  eventHandlers={ 'handlerKey': () => {} };
 />
 ```
 

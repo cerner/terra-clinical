@@ -28,6 +28,7 @@ const App = props => (
             <List.Item content={<Link to="/site/application">Application</Link>} />
             <List.Item content={<Link to="/site/detail-view">Detail View</Link>} />
             <List.Item content={<Link to="/site/error-view">Error View</Link>} />
+            <List.Item content={<Link to="/site/embedded-content-consumer">Embedded Content Consumer</Link>} />
             <List.Item content={<Link to="/site/header">Header</Link>} />
             <List.Item content={<Link to="/site/item-collection">Item Collection</Link>} />
             <List.Item content={<Link to="/site/item-display">Item Display</Link>} />

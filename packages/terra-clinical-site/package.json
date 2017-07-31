@@ -35,6 +35,7 @@
     "terra-clinical-application": "^1.0.0",
     "terra-clinical-application-site": "^1.0.0",
     "terra-clinical-detail-view": "^1.0.0",
+    "terra-clinical-embedded-content-consumer": "^0.x",
     "terra-clinical-error-view": "^1.0.0",
     "terra-clinical-header": "^1.0.0",
     "terra-clinical-item-collection": "^1.0.0",

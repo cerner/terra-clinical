@@ -14,14 +14,4 @@
       width: 100%;
     }
   }
-
-  /* Hide mounted apps that haven't loaded or authorized */
-  .xfc[data-status='mounted'][data-status='launched'] { // stylelint-disable-line selector-class-pattern
-    display: none;
-  }
-
-  /* Reveal the app once its been authorized */
-  .xfc[data-status='authorized'] { // stylelint-disable-line selector-class-pattern
-    display: block;
-  }
 }
