@@ -24,7 +24,7 @@ class EmbeddedContentConsumer extends React.Component {
 
   componentDidMount() {
     Consumer.init();
-    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
+    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src);
 
     if (this.props.eventHandlers) {
       Object.keys(this.props.eventHandlers).forEach((event) => {
