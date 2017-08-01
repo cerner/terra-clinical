@@ -23,15 +23,13 @@ const defaultProps = {
 class EmbeddedContentConsumer extends React.Component {
 
   componentDidMount() {
-    if (this.embeddedContentWrapper) {
-      Consumer.init();
-      this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src);
+    Consumer.init();
+    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
 
-      if (this.props.eventHandlers) {
-        Object.keys(this.props.eventHandlers).forEach((event) => {
-          this.xfcFrame.on(event, this.props.eventHandlers[event]);
-        });
-      }
+    if (this.props.eventHandlers) {
+      Object.keys(this.props.eventHandlers).forEach((event) => {
+        this.xfcFrame.on(event, this.props.eventHandlers[event]);
+      });
     }
   }
 
