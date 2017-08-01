@@ -25,7 +25,8 @@
       height: 100%;
     }
 
-    [class*="ItemView__accessory"] {
+    [class*="ItemView__accessory"],
+    [class*="ItemView__accessory"] > * {
       max-width: 70%;
     }
   }

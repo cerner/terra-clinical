@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixes
+* Fix application-site demo styling
 
 1.2.0 - (July 27, 2017)
 -----------------
