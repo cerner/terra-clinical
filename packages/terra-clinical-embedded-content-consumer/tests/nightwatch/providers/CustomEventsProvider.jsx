@@ -18,7 +18,7 @@ function CustomEventsProvider() {
       <div>
         <h1>Custom Events</h1>
         <p>A custom event can be registered with the consumer and intiated by the provider.</p>
-        <p>After a three second delay the provider sends the message and consumer handles the message by adding a border.</p>
+        <p>After a one second delay the provider sends the message and consumer handles the message by adding a border.</p>
       </div>
     </div>
   );
