@@ -2,7 +2,7 @@ import React from 'react';
 import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 // Snapshot Tests
-it('should render the terraClinical-EmbeddedContentConsumer wrapper', () => {
+it('should render the embedded content consumer container', () => {
   const embeddedContentConsumer = <EmbeddedContentConsumer src="https://www.google.com/" />;
 
   const wrapper = shallow(embeddedContentConsumer);
