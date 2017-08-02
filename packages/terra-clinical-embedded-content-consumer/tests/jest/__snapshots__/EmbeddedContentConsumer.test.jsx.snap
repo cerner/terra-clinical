@@ -1,4 +1,4 @@
-exports[`test should render the terraClinical-EmbeddedContentConsumer wrapper 1`] = `
+exports[`test should render the embedded content consumer container 1`] = `
 <div
   className="container" />
 `;
