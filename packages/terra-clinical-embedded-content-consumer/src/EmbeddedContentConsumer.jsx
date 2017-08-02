@@ -9,15 +9,12 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
-   * An object containing event handlers keyed by the event name.
-   * (e.g. {'eventA': function() {}, 'eventB': function() {}})
-   */
-  eventHandlers: PropTypes.object,
-};
-
-const defaultProps = {
-  src: undefined,
-  eventHandlers: {},
+  * A list of event handlers keyed by the event name.
+  */
+  eventHandlers: PropTypes.arrayOf(PropTypes.shape({
+    key: PropTypes.string,
+    handler: PropTypes.func,
+  })),
 };
 
 class EmbeddedContentConsumer extends React.Component {
@@ -27,8 +24,8 @@ class EmbeddedContentConsumer extends React.Component {
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src);
 
     if (this.props.eventHandlers) {
-      Object.keys(this.props.eventHandlers).forEach((event) => {
-        this.xfcFrame.on(event, this.props.eventHandlers[event]);
+      this.props.eventHandlers.forEach((event) => {
+        this.xfcFrame.on(event.key, event.handler);
       });
     }
   }
@@ -44,6 +41,5 @@ class EmbeddedContentConsumer extends React.Component {
 }
 
 EmbeddedContentConsumer.propTypes = propTypes;
-EmbeddedContentConsumer.defaultProps = defaultProps;
 
 export default EmbeddedContentConsumer;

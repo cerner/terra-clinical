@@ -2,8 +2,8 @@
 import React from 'react';
 import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
 
-const EmbeddedContentConsumerOnReady = () => (
+const OnReadyConsumer = () => (
   <EmbeddedContentConsumer src="#/tests/embedded-content-consumer-tests/on-ready-provider" />
 );
 
-export default EmbeddedContentConsumerOnReady;
+export default OnReadyConsumer;

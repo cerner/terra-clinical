@@ -11,11 +11,14 @@ it('should render the terraClinical-EmbeddedContentConsumer wrapper', () => {
 
 it('should validate the inputs', () => {
   const src = 'https://www.google.com/';
-  const eventHandlers = {};
+  const handlers = [{ key: 'eventKey', handler: () => {} }];
 
-  const embeddedContentConsumer = <EmbeddedContentConsumer src={src} eventHandlers={eventHandlers} />;
+  const embeddedContentConsumer = (<EmbeddedContentConsumer
+    src={src}
+    handlers={handlers}
+  />);
   const wrapper = mount(embeddedContentConsumer);
 
   expect(wrapper.props().src).toBe(src);
-  expect(wrapper.props().eventHandlers).toBe(eventHandlers);
+  expect(wrapper.props().handlers).toBe(handlers);
 });

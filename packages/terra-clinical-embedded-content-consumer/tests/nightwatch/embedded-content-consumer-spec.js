@@ -53,6 +53,21 @@ module.exports = {
   },
 
   'Displays a provider embedded in the consumer that triggers a custom event.': (browser) => {
+    const consumerSrc = '#/tests/embedded-content-consumer-tests/custom-event-consumer';
+    const providerSrc = '#/tests/embedded-content-consumer-tests/custom-event-provider';
+
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
+    // Wait for the consumer to load the provider.
+    .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
+    // Validate the provider before the custom event handler is invoked.
+    .expect.element('div#CustomEvent').to.have.css('border').which.equals('0px none rgb(28, 31, 33)');
+    // Pause the test briefly till the custom handler is invoked.
+    browser.pause(1000);
+    // Validate the provider after the custom event handler is invoked.
+    browser.expect.element('div#CustomEvent').to.have.css('border').which.equals('5px dashed rgb(0, 0, 255)');
+  },
+
+  'Displays a provider embedded in the consumer that triggers multiple custom event.': (browser) => {
     const consumerSrc = '#/tests/embedded-content-consumer-tests/custom-events-consumer';
     const providerSrc = '#/tests/embedded-content-consumer-tests/custom-events-provider';
 
@@ -62,8 +77,12 @@ module.exports = {
     // Validate the provider before the custom event handler is invoked.
     .expect.element('div#CustomEvents').to.have.css('border').which.equals('0px none rgb(28, 31, 33)');
     // Pause the test briefly till the custom handler is invoked.
-    browser.pause(1000);
+    browser.pause(1000)
     // Validate the provider after the custom event handler is invoked.
-    browser.expect.element('div#CustomEvents').to.have.css('border').which.equals('5px dashed rgb(0, 0, 255)');
+    .expect.element('div#CustomEvents').to.have.css('border').which.equals('5px dashed rgb(0, 0, 255)');
+    // Pause the test briefly till the second custom handler is invoked.
+    browser.pause(1000)
+    // Validate the provider after the second custom event handler is invoked.
+    .expect.element('div#CustomEvents').to.have.css('border').which.equals('5px dashed rgb(0, 255, 0)');
   },
 };

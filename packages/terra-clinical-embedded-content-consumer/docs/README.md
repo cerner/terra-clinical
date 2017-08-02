@@ -16,7 +16,7 @@ import EmbeddedContentConsumer from 'terra-clinical-embedded-content-consumer';
 
 <EmbeddedContentConsumer
   src="content url"
-  eventHandlers={ 'handlerKey': () => {} };
+  eventHandlers=[{ key: 'eventKeyA', handler: () => {} }]
 />
 ```
 
