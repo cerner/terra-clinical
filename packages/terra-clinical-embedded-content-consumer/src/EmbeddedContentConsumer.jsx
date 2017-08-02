@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Consumer } from 'xfc';
-import './EmbeddedContentConsumer.scss';
+import styles from './EmbeddedContentConsumer.scss';
 
 const propTypes = {
   /**
@@ -9,7 +9,7 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
-  * A list of event handlers keyed by the event name.
+  * A set of event handlers keyed by the event name.
   */
   eventHandlers: PropTypes.arrayOf(PropTypes.shape({
     key: PropTypes.string,
@@ -33,7 +33,7 @@ class EmbeddedContentConsumer extends React.Component {
   render() {
     return (
       <div
-        className="terraClinical-EmbeddedContentConsumer"
+        className={styles.container}
         ref={(element) => { this.embeddedContentWrapper = element; }}
       />
     );

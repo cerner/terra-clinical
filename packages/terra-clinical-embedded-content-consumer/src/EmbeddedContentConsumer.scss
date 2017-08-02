@@ -1,15 +1,20 @@
-.terraClinical-EmbeddedContentConsumer {
-  height: 100%;
-  width: 100%;
-
-  .xfc { // stylelint-disable-line selector-class-pattern
+/* stylelint-disable max-nesting-depth */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable selector-max-compound-selectors */
+:local {
+  .container {
     height: 100%;
-    width: 100%;
 
-    iframe {
-      border: 0;
-      height: 100%;
-      width: 100%;
+    :global {
+      .xfc {
+        height: 100%;
+     
+        iframe {
+          border: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
   }
 }
