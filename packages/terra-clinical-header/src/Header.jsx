@@ -32,14 +32,14 @@ const defaultProps = {
 const Header = ({ title, startContent, endContent, ...customProps }) => {
   let startElement;
   if (startContent) {
-    startElement = <div className={cx('fit')}>{startContent}</div>;
+    startElement = <div className={cx('flexEnd')}>{startContent}</div>;
   }
 
   let titleElement;
   if (title) {
     titleElement = (
-      <div className={cx('titleContainer')}>
-        <div className={cx('titleInner')}>
+      <div className={cx('flexFill')}>
+        <div className={cx('titleContainer')}>
           <h1 className={cx('title')}>
             {title}
           </h1>
@@ -50,12 +50,12 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
 
   let endElement;
   if (endContent) {
-    endElement = <div className={cx('fit')}>{endContent}</div>;
+    endElement = <div className={cx('flexEnd')}>{endContent}</div>;
   }
 
   return (
     <header {...customProps} className={cx('header', customProps.className)}>
-      <div className={cx('alignment', customProps.className)}>
+      <div className={cx('flexContainer', customProps.className)}>
         {startElement}
         {titleElement}
         {endElement}
