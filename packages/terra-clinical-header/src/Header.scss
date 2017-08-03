@@ -7,17 +7,60 @@
     border-bottom-width: 1px;
     height: 3.587rem;
     padding: 0.714rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .alignment {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .titleContainer {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .titleInner {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
     width: 100%;
   }
 
   .title {
     font-size: 1.285rem;
     font-weight: normal;
+    height: 100%;
     line-height: 1.75;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: 100%;
     word-break: normal;
     word-wrap: normal;
+  }
+
+  .fill {
+    align-self: center;
+    flex: 1 1 auto;
+    height: 100%;
+    min-width: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .fit {
+    align-self: center;
+    flex: 0 0 auto;
+    height: 100%;
+    position: relative;
   }
 }

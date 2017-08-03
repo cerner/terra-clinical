@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Arrange from 'terra-arrange';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import styles from './Header.scss';
@@ -31,25 +30,36 @@ const defaultProps = {
 };
 
 const Header = ({ title, startContent, endContent, ...customProps }) => {
-  const titleElement = <h1 className={cx('title')}>{title}</h1>;
-  let headerContent;
+  let startElement;
+  if (startContent) {
+    startElement = <div className={cx('fit')}>{startContent}</div>;
+  }
 
-  if (startContent || endContent) {
-    headerContent = (
-      <Arrange
-        fitStart={startContent}
-        fitEnd={endContent}
-        fill={titleElement}
-        align="center"
-      />
+  let titleElement;
+  if (title) {
+    titleElement = (
+      <div className={cx('titleContainer')}>
+        <div className={cx('titleInner')}>
+          <h1 className={cx('title')}>
+            {title}
+          </h1>
+        </div>
+      </div>
     );
-  } else {
-    headerContent = titleElement;
+  }
+
+  let endElement;
+  if (endContent) {
+    endElement = <div className={cx('fit')}>{endContent}</div>;
   }
 
   return (
     <header {...customProps} className={cx('header', customProps.className)}>
-      {headerContent}
+      <div className={cx('alignment', customProps.className)}>
+        {startElement}
+        {titleElement}
+        {endElement}
+      </div>
     </header>
   );
 };
