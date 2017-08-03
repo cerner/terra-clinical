@@ -13,8 +13,6 @@ import HeaderSrc from '!raw-loader!terra-clinical-action-header/src/ActionHeader
 import ActionHeaderBackNextPreviousClose from './ActionHeader-BackNextPreviousClose';
 import ActionHeaderExpandClose from './ActionHeader-MaximizeClose';
 import ActionHeaderMinimizeCustomClose from './ActionHeader-MinimizeCustomClose';
-import ActionHeaderLongText from './ActionHeader-LongText';
-import ActionHeaderLongTextWithButtons from './ActionHeader-LongTextWithButtons';
 
 const HeaderExamples = () => (
   <div>
@@ -28,10 +26,6 @@ const HeaderExamples = () => (
     <ActionHeaderExpandClose />
     <h2>Minimize, Custom Content, Close </h2>
     <ActionHeaderMinimizeCustomClose />
-    <h2>Long Text </h2>
-    <ActionHeaderLongText />
-    <h2>Long Text With Buttons </h2>
-    <ActionHeaderLongTextWithButtons />
   </div>
 );
 
