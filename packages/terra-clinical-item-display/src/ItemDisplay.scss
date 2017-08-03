@@ -15,17 +15,13 @@
 
   .inline-icon {
     flex: 0 0 auto;
-    height: 20px;
-    max-width: 20px;
     overflow: hidden;
     padding-right: 5px;
-    position: relative;
   }
 
   .inline-icon > * {
-    font-size: 1rem;
-    height: 20px;
-    width: 16px;
+    min-height: 20px;
+    min-width: 16px;
   }
 
   .is-truncated {
@@ -33,7 +29,6 @@
   }
 
   // Text Styles
-
   .secondary {
     color: #64696c !important;
   }

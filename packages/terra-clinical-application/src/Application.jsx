@@ -11,12 +11,12 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The AppDelegate instance that will be propagated to the Application's children.
-   **/
+   */
   app: AppDelegate.propType,
 
   /**
    * The components to display within the Application.
-   **/
+   */
   children: PropTypes.node.isRequired,
 };
 

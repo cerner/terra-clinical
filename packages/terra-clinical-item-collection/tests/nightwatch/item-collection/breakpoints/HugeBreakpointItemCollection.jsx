@@ -6,6 +6,7 @@ const HugeBreakpointItemCollection = () => (
   <ItemCollection
     breakpoint="huge"
     rows={[item, item, item]}
+    id="ItemCollection"
   />
 );
 

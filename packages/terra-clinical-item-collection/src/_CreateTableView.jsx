@@ -1,6 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Table from 'terra-table';
 import TableHeaderCell from './_TableHeaderCell';
+import styles from './ItemCollection.scss';
+
+const cx = classNames.bind(styles);
 
 function determineTableColumns(row) {
   const { startAccessory, displays, comment, endAccessory } = row;
@@ -54,8 +58,10 @@ function createTableHeader(tableColumns) {
 
 function createTableCell(content, keyValue, contentType) {
   const cellContent = content != null ? content : ' ';
-  const cellName = `terraClinical-ItemCollection--${contentType}`;
-  return <Table.Cell content={cellContent} key={keyValue} className={cellName} />;
+  if (contentType === 'accessory') {
+    return (<Table.Cell content={cellContent} key={keyValue} className={cx(`content-${contentType}`)} />);
+  }
+  return (<Table.Cell content={cellContent} key={keyValue} data-class={cx(`content-${contentType}`)} />);
 }
 
 function createTableRows(rows, tableColumns, selectedIndex) {
@@ -71,9 +77,17 @@ function createTableRows(rows, tableColumns, selectedIndex) {
     let displayContent = [];
     if (displayColumns) {
       displayContent = row.displays.map((display, index) => {
-        const displayKey = `display_${index + 1}`;
-        return createTableCell(display, displayKey, 'display');
+        if (index < displayColumns) {
+          const displayKey = `display_${index + 1}`;
+          return createTableCell(display, displayKey, 'display');
+        }
+        return null;
       });
+      // Ensure the correct number to table cells are created if the number of displays provided are fewer than
+      // than the display columns expected.
+      while (displayContent.length < displayColumns) {
+        displayContent.push(createTableCell(null, `display_${displayContent.length + 1}`, 'display'));
+      }
     }
 
     let commentContent;
