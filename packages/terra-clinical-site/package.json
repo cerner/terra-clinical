@@ -30,8 +30,10 @@
     "prop-types": "^15.5.8",
     "react-intl": "^2.3.0",
     "terra-app-delegate": "^1.0.0",
+    "terra-alert": "file:../../../terra-core/packages/terra-alert",
     "terra-button": "^1.0.0",
     "terra-clinical-action-header": "^1.0.0",
+    "terra-clinical-alert": "^0.x",
     "terra-clinical-application": "^1.0.0",
     "terra-clinical-application-site": "^1.0.1",
     "terra-clinical-detail-view": "^1.0.0",
@@ -49,6 +51,7 @@
     "terra-markdown": "^1.0.0",
     "terra-modal-manager": "^1.0.0",
     "terra-props-table": "^1.0.0",
+    "terra-toggle": "^1.0.0",
     "terra-slide-group": "^1.0.0"
   },
   "peerDependencies": {

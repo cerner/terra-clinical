@@ -1,0 +1,909 @@
+exports[`11. Alert of type custom with custom title and text content should render an Alert component of type custom 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.Clinical.alert.gapChecking": "Required Action.",
+      "Terra.Clinical.alert.outsideRecords": "Outside Records.",
+    }
+  }>
+  <Alert
+    alertAction={null}
+    customIcon={
+      <IconHelp
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg" />
+    }
+    customStatusColor="orange"
+    onDismiss={null}
+    title="Help!"
+    type="custom">
+    <Alert
+      alertAction={null}
+      customIcon={
+        <IconHelp
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg" />
+      }
+      customStatusColor="orange"
+      onDismiss={null}
+      title="Help!"
+      type="custom">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="custom narrow"
+            style={
+              Object {
+                "color": "orange",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconHelp
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Help!
+                </strong>
+                <div
+                  className="content">
+                  This is a custom alert.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="custom wide"
+            style={
+              Object {
+                "color": "orange",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconHelp
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Help!
+                </strong>
+                <div
+                  className="content">
+                  This is a custom alert.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Alert of type gap-checking with text content should render an Alert component of type gap-checking 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.Clinical.alert.gapChecking": "Required Action.",
+      "Terra.Clinical.alert.outsideRecords": "Outside Records.",
+    }
+  }>
+  <Alert
+    alertAction={null}
+    customIcon={null}
+    customStatusColor=""
+    onDismiss={null}
+    title=""
+    type="gapChecking">
+    <Alert
+      alertAction={null}
+      customIcon={
+        <IconRequired
+          className="gap-checking-icon"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg" />
+      }
+      customStatusColor="#e50000"
+      onDismiss={null}
+      title="Required Action."
+      type="custom">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="custom narrow"
+            style={
+              Object {
+                "color": "#e50000",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconRequired
+                  className="gap-checking-icon"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Required Action.
+                </strong>
+                <div
+                  className="content">
+                  This is a gap-checking alert.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="custom wide"
+            style={
+              Object {
+                "color": "#e50000",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconRequired
+                  className="gap-checking-icon"
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Required Action.
+                </strong>
+                <div
+                  className="content">
+                  This is a gap-checking alert.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Alert of type info with custom title and HTML content should render an Alert component of type info with custom title and HTML content 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.alert.advisory": "Advisory.",
+      "Terra.alert.alert": "Alert.",
+      "Terra.alert.dismiss": "Dismiss",
+      "Terra.alert.error": "Error.",
+      "Terra.alert.info": "Information.",
+      "Terra.alert.success": "Success.",
+      "Terra.alert.warning": "Warning.",
+    }
+  }>
+  <Alert
+    alertAction={null}
+    customIcon={null}
+    customStatusColor=""
+    onDismiss={null}
+    title="Gettysburg Address"
+    type="info">
+    <Alert
+      alertAction={null}
+      customIcon={null}
+      customStatusColor={null}
+      onDismiss={null}
+      title="Gettysburg Address"
+      type="info">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="info narrow"
+            style={Object {}}>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconInformation
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Gettysburg Address
+                </strong>
+                <div
+                  className="content">
+                  <span>
+                    Four score and seven years ago . . .
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="info wide"
+            style={Object {}}>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconInformation
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Gettysburg Address
+                </strong>
+                <div
+                  className="content">
+                  <span>
+                    Four score and seven years ago . . .
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Alert of type outside records with text content should render an Alert component of type confirmation 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.Clinical.alert.gapChecking": "Required Action.",
+      "Terra.Clinical.alert.outsideRecords": "Outside Records.",
+    }
+  }>
+  <Alert
+    alertAction={null}
+    customIcon={null}
+    customStatusColor=""
+    onDismiss={null}
+    title=""
+    type="outsideRecords">
+    <Alert
+      alertAction={null}
+      customIcon={
+        <IconDiamond
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg" />
+      }
+      customStatusColor="#78288c"
+      onDismiss={null}
+      title="Outside Records."
+      type="custom">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="custom narrow"
+            style={
+              Object {
+                "color": "#78288c",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconDiamond
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Outside Records.
+                </strong>
+                <div
+                  className="content">
+                  This is an outside records alert.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="custom wide"
+            style={
+              Object {
+                "color": "#78288c",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconDiamond
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Outside Records.
+                </strong>
+                <div
+                  className="content">
+                  This is an outside records alert.
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Alert of type success with an action button text content should render an Alert component of type success with an action button 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.alert.advisory": "Advisory.",
+      "Terra.alert.alert": "Alert.",
+      "Terra.alert.dismiss": "Dismiss",
+      "Terra.alert.error": "Error.",
+      "Terra.alert.info": "Information.",
+      "Terra.alert.success": "Success.",
+      "Terra.alert.warning": "Warning.",
+    }
+  }>
+  <Alert
+    alertAction={
+      <Button
+        isBlock={false}
+        isCompact={false}
+        isDisabled={false}
+        isReversed={false}
+        onClick={[Function]}
+        size="medium"
+        text="Action"
+        type="button"
+        variant="primary" />
+    }
+    customIcon={null}
+    customStatusColor=""
+    onDismiss={null}
+    title=""
+    type="success">
+    <Alert
+      alertAction={
+        <Button
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isReversed={false}
+          onClick={[Function]}
+          size="medium"
+          text="Action"
+          type="button"
+          variant="primary" />
+      }
+      customIcon={null}
+      customStatusColor={null}
+      onDismiss={null}
+      title={null}
+      type="success">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="success narrow"
+            style={Object {}}>
+            <div
+              className="bodyNarrow">
+              <div
+                className="icon">
+                <IconSuccess
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Success.
+                </strong>
+                <div
+                  className="content">
+                  This is a success alert.
+                </div>
+              </div>
+            </div>
+            <div
+              className="actions">
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Action"
+                type="button"
+                variant="primary" />
+              
+            </div>
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="success wide"
+            style={Object {}}>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconSuccess
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Success.
+                </strong>
+                <div
+                  className="content">
+                  This is a success alert.
+                </div>
+              </div>
+            </div>
+            <div
+              className="actions">
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Action"
+                type="button"
+                variant="primary" />
+              
+            </div>
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Alert with no props should render a default component 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.alert.advisory": "Advisory.",
+      "Terra.alert.alert": "Alert.",
+      "Terra.alert.dismiss": "Dismiss",
+      "Terra.alert.error": "Error.",
+      "Terra.alert.info": "Information.",
+      "Terra.alert.success": "Success.",
+      "Terra.alert.warning": "Warning.",
+    }
+  }>
+  <Alert
+    alertAction={null}
+    customIcon={null}
+    customStatusColor=""
+    onDismiss={null}
+    title=""
+    type="alert">
+    <Alert
+      alertAction={null}
+      customIcon={null}
+      customStatusColor={null}
+      onDismiss={null}
+      title={null}
+      type="alert">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="alert narrow"
+            style={Object {}}>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconAlert
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Alert.
+                </strong>
+                <div
+                  className="content" />
+              </div>
+            </div>
+            
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="alert wide"
+            style={Object {}}>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconAlert
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Alert.
+                </strong>
+                <div
+                  className="content" />
+              </div>
+            </div>
+            
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Dismissable Alert of type custom with action button, custom title and text content should render an Alert component of type custom with an action button 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.alert.advisory": "Advisory.",
+      "Terra.alert.alert": "Alert.",
+      "Terra.alert.dismiss": "Dismiss",
+      "Terra.alert.error": "Error.",
+      "Terra.alert.info": "Information.",
+      "Terra.alert.success": "Success.",
+      "Terra.alert.warning": "Warning.",
+    }
+  }>
+  <Alert
+    alertAction={
+      <Button
+        isBlock={false}
+        isCompact={false}
+        isDisabled={false}
+        isReversed={false}
+        onClick={[Function]}
+        size="medium"
+        text="Action"
+        type="button"
+        variant="primary" />
+    }
+    customIcon={
+      <IconHelp
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg" />
+    }
+    customStatusColor="orange"
+    onDismiss={[Function]}
+    title="Help!"
+    type="custom">
+    <Alert
+      alertAction={
+        <Button
+          isBlock={false}
+          isCompact={false}
+          isDisabled={false}
+          isReversed={false}
+          onClick={[Function]}
+          size="medium"
+          text="Action"
+          type="button"
+          variant="primary" />
+      }
+      customIcon={
+        <IconHelp
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg" />
+      }
+      customStatusColor="orange"
+      onDismiss={[Function]}
+      title="Help!"
+      type="custom">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="custom narrow"
+            style={
+              Object {
+                "color": "orange",
+              }
+            }>
+            <div
+              className="bodyNarrow">
+              <div
+                className="icon">
+                <IconHelp
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Help!
+                </strong>
+                <div
+                  className="content">
+                  This is a custom alert.
+                </div>
+              </div>
+            </div>
+            <div
+              className="actionsCustom">
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Action"
+                type="button"
+                variant="primary" />
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Dismiss"
+                type="button"
+                variant="secondary" />
+            </div>
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="custom wide"
+            style={
+              Object {
+                "color": "orange",
+              }
+            }>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconHelp
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="sectionCustom">
+                <strong
+                  className="title">
+                  Help!
+                </strong>
+                <div
+                  className="content">
+                  This is a custom alert.
+                </div>
+              </div>
+            </div>
+            <div
+              className="actionsCustom">
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Action"
+                type="button"
+                variant="primary" />
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Dismiss"
+                type="button"
+                variant="secondary" />
+            </div>
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;
+
+exports[`Dismissible Alert that includes actions section should render an alert component with a dismiss button 1`] = `
+<IntlProvider
+  locale="en-US"
+  messages={
+    Object {
+      "Terra.alert.advisory": "Advisory.",
+      "Terra.alert.alert": "Alert.",
+      "Terra.alert.dismiss": "Dismiss",
+      "Terra.alert.error": "Error.",
+      "Terra.alert.info": "Information.",
+      "Terra.alert.success": "Success.",
+      "Terra.alert.warning": "Warning.",
+    }
+  }>
+  <Alert
+    alertAction={null}
+    customIcon={null}
+    customStatusColor=""
+    onDismiss={[Function]}
+    title=""
+    type="alert">
+    <Alert
+      alertAction={null}
+      customIcon={null}
+      customStatusColor={null}
+      onDismiss={[Function]}
+      title={null}
+      type="alert">
+      <ResponsiveElement
+        defaultElement={
+          <div
+            className="alert narrow"
+            style={Object {}}>
+            <div
+              className="bodyNarrow">
+              <div
+                className="icon">
+                <IconAlert
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Alert.
+                </strong>
+                <div
+                  className="content">
+                  This is a test
+                </div>
+              </div>
+            </div>
+            <div
+              className="actions">
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Dismiss"
+                type="button"
+                variant="secondary" />
+            </div>
+          </div>
+        }
+        responsiveTo="parent"
+        tiny={
+          <div
+            className="alert wide"
+            style={Object {}}>
+            <div
+              className="bodyStd">
+              <div
+                className="icon">
+                <IconAlert
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg" />
+              </div>
+              <div
+                className="section">
+                <strong
+                  className="title">
+                  Alert.
+                </strong>
+                <div
+                  className="content">
+                  This is a test
+                </div>
+              </div>
+            </div>
+            <div
+              className="actions">
+              <Button
+                isBlock={false}
+                isCompact={false}
+                isDisabled={false}
+                isReversed={false}
+                onClick={[Function]}
+                size="medium"
+                text="Dismiss"
+                type="button"
+                variant="secondary" />
+            </div>
+          </div>
+        }>
+        <div />
+      </ResponsiveElement>
+    </Alert>
+  </Alert>
+</IntlProvider>
+`;

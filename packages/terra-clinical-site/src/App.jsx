@@ -50,6 +50,7 @@ class App extends React.Component {
               <List className={styles.navigation}>
                 <List.Item content={<Link to="/">Home</Link>} />
                 <List.Item content={<Link to="/site/action-header">Action Header</Link>} />
+                <List.Item content={<Link to="/site/alert">Alert</Link>} />
                 <List.Item content={<Link to="/site/application">Application</Link>} />
                 <List.Item content={<Link to="/site/detail-view">Detail View</Link>} />
                 <List.Item content={<Link to="/site/error-view">Error View</Link>} />

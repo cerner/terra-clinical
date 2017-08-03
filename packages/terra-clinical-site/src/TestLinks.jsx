@@ -7,6 +7,7 @@ const TestLinks = () => (
   <div>
     <ul className={styles.navigation}>
       <li><Link to="/tests/action-header-tests">ActionHeader Tests</Link></li>
+      <li><Link to="/tests/alert-tests">Alert Tests</Link></li>
       <li><Link to="/tests/application-tests">Application Tests</Link></li>
       <li><Link to="/tests/detail-view-tests">DetailView Tests</Link></li>
       <li><Link to="/tests/detail-list-tests">DetailList Tests</Link></li>
