@@ -35,10 +35,10 @@ module.exports = {
         'Alert.',
         'Check default Alert has default title for Alert of type alert')
       .assert.elementPresent(
-        '#defaultAlert > div[class*="_body"] > div[class*="_section"]  div[class*="_content"]',
+        '#defaultAlert > div[class*="_body"] > div[class*="_section"]  div',
         'Check default Alert content structure')
       .assert.containsText(
-        '#defaultAlert > div[class*="_body"] > div[class*="_section"]  div[class*="_content"]',
+        '#defaultAlert > div[class*="_body"] > div[class*="_section"]  div',
         'Default Alert',
         'Check text content provided to default Alert');
   },
@@ -58,7 +58,7 @@ module.exports = {
         'Required Action.',
         'Check default title for Alert of type gap-checking')
       .assert.containsText(
-        '#gapCheckingAlert > div[class*="_body"] > div[class*="_section"]  div[class*="_content"]',
+        '#gapCheckingAlert > div[class*="_body"] > div[class*="_section"]  div',
         'Alert of type Gap Checking',
         'Check text content provided to Alert of type gap-checking');
   },
@@ -73,7 +73,7 @@ module.exports = {
         'Outside Records.',
         'Check default title for Alert of type outside-records')
       .assert.containsText(
-        '#outsideRecordsAlert > div[class*="_body"] > div[class*="_section"]  div[class*="_content"]',
+        '#outsideRecordsAlert > div[class*="_body"] > div[class*="_section"]  div',
         'Alert of type Outside Records',
         'Check text content provided to Alert of type outside-records');
   },

@@ -8,7 +8,7 @@ exports[`11. Alert of type custom with custom title and text content should rend
     }
   }>
   <Alert
-    alertAction={null}
+    action={null}
     customIcon={
       <IconHelp
         viewBox="0 0 48 48"
@@ -19,7 +19,7 @@ exports[`11. Alert of type custom with custom title and text content should rend
     title="Help!"
     type="custom">
     <Alert
-      alertAction={null}
+      action={null}
       customIcon={
         <IconHelp
           viewBox="0 0 48 48"
@@ -39,7 +39,7 @@ exports[`11. Alert of type custom with custom title and text content should rend
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconHelp
@@ -47,13 +47,12 @@ exports[`11. Alert of type custom with custom title and text content should rend
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Help!
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a custom alert.
                 </div>
               </div>
@@ -71,7 +70,7 @@ exports[`11. Alert of type custom with custom title and text content should rend
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconHelp
@@ -79,13 +78,12 @@ exports[`11. Alert of type custom with custom title and text content should rend
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Help!
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a custom alert.
                 </div>
               </div>
@@ -110,14 +108,14 @@ exports[`Alert of type gap-checking with text content should render an Alert com
     }
   }>
   <Alert
-    alertAction={null}
+    action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title=""
     type="gapChecking">
     <Alert
-      alertAction={null}
+      action={null}
       customIcon={
         <IconRequired
           className="gap-checking-icon"
@@ -138,7 +136,7 @@ exports[`Alert of type gap-checking with text content should render an Alert com
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconRequired
@@ -147,13 +145,12 @@ exports[`Alert of type gap-checking with text content should render an Alert com
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Required Action.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a gap-checking alert.
                 </div>
               </div>
@@ -171,7 +168,7 @@ exports[`Alert of type gap-checking with text content should render an Alert com
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconRequired
@@ -180,13 +177,12 @@ exports[`Alert of type gap-checking with text content should render an Alert com
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Required Action.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a gap-checking alert.
                 </div>
               </div>
@@ -216,14 +212,14 @@ exports[`Alert of type info with custom title and HTML content should render an 
     }
   }>
   <Alert
-    alertAction={null}
+    action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title="Gettysburg Address"
     type="info">
     <Alert
-      alertAction={null}
+      action={null}
       customIcon={null}
       customStatusColor={null}
       onDismiss={null}
@@ -235,7 +231,7 @@ exports[`Alert of type info with custom title and HTML content should render an 
             className="info narrow"
             style={Object {}}>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconInformation
@@ -248,8 +244,7 @@ exports[`Alert of type info with custom title and HTML content should render an 
                   className="title">
                   Gettysburg Address
                 </strong>
-                <div
-                  className="content">
+                <div>
                   <span>
                     Four score and seven years ago . . .
                   </span>
@@ -265,7 +260,7 @@ exports[`Alert of type info with custom title and HTML content should render an 
             className="info wide"
             style={Object {}}>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconInformation
@@ -278,8 +273,7 @@ exports[`Alert of type info with custom title and HTML content should render an 
                   className="title">
                   Gettysburg Address
                 </strong>
-                <div
-                  className="content">
+                <div>
                   <span>
                     Four score and seven years ago . . .
                   </span>
@@ -306,14 +300,14 @@ exports[`Alert of type outside records with text content should render an Alert 
     }
   }>
   <Alert
-    alertAction={null}
+    action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title=""
     type="outsideRecords">
     <Alert
-      alertAction={null}
+      action={null}
       customIcon={
         <IconDiamond
           viewBox="0 0 48 48"
@@ -333,7 +327,7 @@ exports[`Alert of type outside records with text content should render an Alert 
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconDiamond
@@ -341,13 +335,12 @@ exports[`Alert of type outside records with text content should render an Alert 
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Outside Records.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is an outside records alert.
                 </div>
               </div>
@@ -365,7 +358,7 @@ exports[`Alert of type outside records with text content should render an Alert 
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconDiamond
@@ -373,13 +366,12 @@ exports[`Alert of type outside records with text content should render an Alert 
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Outside Records.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is an outside records alert.
                 </div>
               </div>
@@ -409,7 +401,7 @@ exports[`Alert of type success with an action button text content should render 
     }
   }>
   <Alert
-    alertAction={
+    action={
       <Button
         isBlock={false}
         isCompact={false}
@@ -427,7 +419,7 @@ exports[`Alert of type success with an action button text content should render 
     title=""
     type="success">
     <Alert
-      alertAction={
+      action={
         <Button
           isBlock={false}
           isCompact={false}
@@ -450,7 +442,7 @@ exports[`Alert of type success with an action button text content should render 
             className="success narrow"
             style={Object {}}>
             <div
-              className="bodyNarrow">
+              className="body-narrow">
               <div
                 className="icon">
                 <IconSuccess
@@ -463,8 +455,7 @@ exports[`Alert of type success with an action button text content should render 
                   className="title">
                   Success.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a success alert.
                 </div>
               </div>
@@ -491,7 +482,7 @@ exports[`Alert of type success with an action button text content should render 
             className="success wide"
             style={Object {}}>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconSuccess
@@ -504,8 +495,7 @@ exports[`Alert of type success with an action button text content should render 
                   className="title">
                   Success.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a success alert.
                 </div>
               </div>
@@ -548,14 +538,14 @@ exports[`Alert with no props should render a default component 1`] = `
     }
   }>
   <Alert
-    alertAction={null}
+    action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title=""
     type="alert">
     <Alert
-      alertAction={null}
+      action={null}
       customIcon={null}
       customStatusColor={null}
       onDismiss={null}
@@ -567,7 +557,7 @@ exports[`Alert with no props should render a default component 1`] = `
             className="alert narrow"
             style={Object {}}>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconAlert
@@ -580,8 +570,7 @@ exports[`Alert with no props should render a default component 1`] = `
                   className="title">
                   Alert.
                 </strong>
-                <div
-                  className="content" />
+                <div />
               </div>
             </div>
             
@@ -593,7 +582,7 @@ exports[`Alert with no props should render a default component 1`] = `
             className="alert wide"
             style={Object {}}>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconAlert
@@ -606,8 +595,7 @@ exports[`Alert with no props should render a default component 1`] = `
                   className="title">
                   Alert.
                 </strong>
-                <div
-                  className="content" />
+                <div />
               </div>
             </div>
             
@@ -635,7 +623,7 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
     }
   }>
   <Alert
-    alertAction={
+    action={
       <Button
         isBlock={false}
         isCompact={false}
@@ -657,7 +645,7 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
     title="Help!"
     type="custom">
     <Alert
-      alertAction={
+      action={
         <Button
           isBlock={false}
           isCompact={false}
@@ -688,7 +676,7 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
               }
             }>
             <div
-              className="bodyNarrow">
+              className="body-narrow">
               <div
                 className="icon">
                 <IconHelp
@@ -696,19 +684,18 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Help!
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a custom alert.
                 </div>
               </div>
             </div>
             <div
-              className="actionsCustom">
+              className="actions-custom">
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -742,7 +729,7 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
               }
             }>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconHelp
@@ -750,19 +737,18 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
                   xmlns="http://www.w3.org/2000/svg" />
               </div>
               <div
-                className="sectionCustom">
+                className="section-custom">
                 <strong
                   className="title">
                   Help!
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a custom alert.
                 </div>
               </div>
             </div>
             <div
-              className="actionsCustom">
+              className="actions-custom">
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -808,14 +794,14 @@ exports[`Dismissible Alert that includes actions section should render an alert 
     }
   }>
   <Alert
-    alertAction={null}
+    action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={[Function]}
     title=""
     type="alert">
     <Alert
-      alertAction={null}
+      action={null}
       customIcon={null}
       customStatusColor={null}
       onDismiss={[Function]}
@@ -827,7 +813,7 @@ exports[`Dismissible Alert that includes actions section should render an alert 
             className="alert narrow"
             style={Object {}}>
             <div
-              className="bodyNarrow">
+              className="body-narrow">
               <div
                 className="icon">
                 <IconAlert
@@ -840,8 +826,7 @@ exports[`Dismissible Alert that includes actions section should render an alert 
                   className="title">
                   Alert.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a test
                 </div>
               </div>
@@ -867,7 +852,7 @@ exports[`Dismissible Alert that includes actions section should render an alert 
             className="alert wide"
             style={Object {}}>
             <div
-              className="bodyStd">
+              className="body-std">
               <div
                 className="icon">
                 <IconAlert
@@ -880,8 +865,7 @@ exports[`Dismissible Alert that includes actions section should render an alert 
                   className="title">
                   Alert.
                 </strong>
-                <div
-                  className="content">
+                <div>
                   This is a test
                 </div>
               </div>
