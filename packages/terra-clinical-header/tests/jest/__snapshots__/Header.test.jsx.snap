@@ -1,8 +1,8 @@
 exports[`test should render a default component 1`] = `
 <header
   class="header">
-  <h1
-    class="title" />
+  <div
+    class="flexContainer" />
 </header>
 `;
 
@@ -10,22 +10,25 @@ exports[`test should render a header with all content 1`] = `
 <header
   class="header">
   <div
-    class="arrange">
+    class="flexContainer">
     <div
-      class="fit center">
+      class="flexEnd">
       <div>
         start content
       </div>
     </div>
     <div
-      class="fill center">
-      <h1
-        class="title">
-        Title
-      </h1>
+      class="flexFill">
+      <div
+        class="titleContainer">
+        <h1
+          class="title">
+          Title
+        </h1>
+      </div>
     </div>
     <div
-      class="fit center">
+      class="flexEnd">
       <div>
         end content
       </div>
@@ -38,20 +41,13 @@ exports[`test should render a header with content on the left 1`] = `
 <header
   class="header">
   <div
-    class="arrange">
+    class="flexContainer">
     <div
-      class="fit center">
+      class="flexEnd">
       <div>
         start content
       </div>
     </div>
-    <div
-      class="fill center">
-      <h1
-        class="title" />
-    </div>
-    <div
-      class="fit center" />
   </div>
 </header>
 `;
@@ -60,16 +56,9 @@ exports[`test should render a header with content on the right 1`] = `
 <header
   class="header">
   <div
-    class="arrange">
+    class="flexContainer">
     <div
-      class="fit center" />
-    <div
-      class="fill center">
-      <h1
-        class="title" />
-    </div>
-    <div
-      class="fit center">
+      class="flexEnd">
       <div>
         end content
       </div>
@@ -81,9 +70,18 @@ exports[`test should render a header with content on the right 1`] = `
 exports[`test should render a header with title only 1`] = `
 <header
   class="header">
-  <h1
-    class="title">
-    title
-  </h1>
+  <div
+    class="flexContainer">
+    <div
+      class="flexFill">
+      <div
+        class="titleContainer">
+        <h1
+          class="title">
+          title
+        </h1>
+      </div>
+    </div>
+  </div>
 </header>
 `;
