@@ -18,7 +18,7 @@ const propTypes = {
   /**
    * An action element to be added to the action section of the alert.
    */
-  alertAction: PropTypes.element,
+  action: PropTypes.element,
   /**
    * Child Nodes providing the message content for the alert. Can contain text and HTML.
    */
@@ -58,7 +58,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  alertAction: null,
+  action: null,
   children: '',
   customIcon: null,
   customStatusColor: '',
