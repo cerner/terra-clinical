@@ -14,8 +14,8 @@ module.exports = {
 
   'Displays the correct column class name': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-table-header-cell-tests/examples`);
-    browser.assert.elementPresent('#accessory');
-    browser.assert.attributeEquals('#comment', 'data-class', 'column-comment');
-    browser.assert.attributeEquals('#display', 'data-class', 'column-display');
+    browser.expect.element('#accessory').to.be.present;
+    browser.expect.element('#comment').to.have.attribute('data-terra-clinical-item-collection-column').which.equals('comment');
+    browser.expect.element('#display').to.have.attribute('data-terra-clinical-item-collection-column').which.equals('display');
   },
 };
