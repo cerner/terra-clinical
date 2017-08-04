@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Change data-class to be name spaced
+
 ### Fixes
 * Fix application-site demo styling
 

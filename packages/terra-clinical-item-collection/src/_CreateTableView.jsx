@@ -61,7 +61,7 @@ function createTableCell(content, keyValue, contentType) {
   if (contentType === 'accessory') {
     return (<Table.Cell content={cellContent} key={keyValue} className={cx(`content-${contentType}`)} />);
   }
-  return (<Table.Cell content={cellContent} key={keyValue} data-class={cx(`content-${contentType}`)} />);
+  return (<Table.Cell content={cellContent} key={keyValue} data-terra-clinical-item-collection-content={`${contentType}`} />);
 }
 
 function createTableRows(rows, tableColumns, selectedIndex) {

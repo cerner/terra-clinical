@@ -93,14 +93,14 @@ class ItemCollection extends React.Component {
 
     const tableView = createTableView(rows, tableStyles, this.state.selectedIndex, this.handleSelection);
     const tableDisplay = (
-      <div {...customProps} data-class="item-collection table-view" className={customProps.className}>
+      <div {...customProps} data-terra-clinical-item-collection-table-view className={customProps.className}>
         {tableView}
       </div>
     );
 
     const listView = createListView(rows, listStyles, this.state.selectedIndex, this.handleSelection);
     const listDisplay = (
-      <div {...customProps} data-class="item-collection list-view" className={customProps.className}>
+      <div {...customProps} data-terra-clinical-item-collection-list-view className={customProps.className}>
         {listView}
       </div>
     );
