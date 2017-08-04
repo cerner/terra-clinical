@@ -30,7 +30,7 @@ class App extends React.Component {
         <Grid>
           <Grid.Row>
             <Grid.Column small={2}>
-              <div data-class="directionality" dir="ltr">
+              <div data-terra-clinical-site-directionality dir="ltr">
                 <button onClick={() => document.getElementsByTagName('html')[0].setAttribute('dir', 'ltr')} >ltr</button>
                 <button onClick={() => document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl')} >rtl</button>
               </div>

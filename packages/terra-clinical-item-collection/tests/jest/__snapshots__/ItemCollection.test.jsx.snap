@@ -4,7 +4,7 @@ exports[`test should render with a given breakpoint 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
-      data-class="item-collection list-view">
+      data-terra-clinical-item-collection-list-view={true}>
       <SingleSelectList
         hasChevrons={false}
         isDivided={false}
@@ -116,7 +116,7 @@ exports[`test should render with a given breakpoint 1`] = `
   }
   medium={
     <div
-      data-class="item-collection table-view">
+      data-terra-clinical-item-collection-table-view={true}>
       <Table
         isPadded={true}
         isStriped={true}
@@ -160,21 +160,21 @@ exports[`test should render with a given breakpoint 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
@@ -199,21 +199,21 @@ exports[`test should render with a given breakpoint 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
@@ -238,21 +238,21 @@ exports[`test should render with a given breakpoint 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
@@ -272,7 +272,7 @@ exports[`test should render with multiple rows 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
-      data-class="item-collection list-view">
+      data-terra-clinical-item-collection-list-view={true}>
       <SingleSelectList
         hasChevrons={false}
         isDivided={false}
@@ -385,7 +385,7 @@ exports[`test should render with multiple rows 1`] = `
   responsiveTo="parent"
   small={
     <div
-      data-class="item-collection table-view">
+      data-terra-clinical-item-collection-table-view={true}>
       <Table
         isPadded={true}
         isStriped={true}
@@ -429,21 +429,21 @@ exports[`test should render with multiple rows 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
@@ -468,21 +468,21 @@ exports[`test should render with multiple rows 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
@@ -507,21 +507,21 @@ exports[`test should render with multiple rows 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
@@ -540,7 +540,7 @@ exports[`test should render with one row 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
-      data-class="item-collection list-view">
+      data-terra-clinical-item-collection-list-view={true}>
       <SingleSelectList
         hasChevrons={false}
         isDivided={false}
@@ -585,7 +585,7 @@ exports[`test should render with one row 1`] = `
   responsiveTo="parent"
   small={
     <div
-      data-class="item-collection table-view">
+      data-terra-clinical-item-collection-table-view={true}>
       <Table
         isPadded={true}
         isStriped={true}
@@ -629,21 +629,21 @@ exports[`test should render with one row 1`] = `
                   isTruncated={false}
                   text="Display 1" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
                   text="Display 2" />
               }
-              data-class="content-display" />
+              data-terra-clinical-item-collection-content="display" />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
                   text="test comment" />
               }
-              data-class="content-comment" />
+              data-terra-clinical-item-collection-content="comment" />
             <TableCell
               className="content-accessory"
               content={
