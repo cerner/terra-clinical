@@ -34,7 +34,7 @@ const DetailList = ({ title, children, ...customProps }) => {
   }
 
   return (
-    <div {...customProps} data-class="detail-list" className={customProps.className}>
+    <div {...customProps} data-terra-clincial-detail-list className={customProps.className}>
       {titleContent}
       <div className={cx('list')}>
         {children}
