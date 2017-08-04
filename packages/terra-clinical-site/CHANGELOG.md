@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Change data-class to be name spaced
 * Updated DetailView site examples to be more realistic.
 
 1.2.0 - (July 27, 2017)
