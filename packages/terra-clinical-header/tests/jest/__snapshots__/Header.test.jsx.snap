@@ -1,37 +1,31 @@
 exports[`test should render a default component 1`] = `
 <header
-  class="header">
-  <div
-    class="flexContainer" />
-</header>
+  class="flexHeader" />
 `;
 
 exports[`test should render a header with all content 1`] = `
 <header
-  class="header">
+  class="flexHeader">
   <div
-    class="flexContainer">
-    <div
-      class="flexEnd">
-      <div>
-        start content
-      </div>
+    class="flexEnd">
+    <div>
+      start content
     </div>
+  </div>
+  <div
+    class="flexFill">
     <div
-      class="flexFill">
-      <div
-        class="titleContainer">
-        <h1
-          class="title">
-          Title
-        </h1>
-      </div>
+      class="titleContainer">
+      <h1
+        class="title">
+        Title
+      </h1>
     </div>
-    <div
-      class="flexEnd">
-      <div>
-        end content
-      </div>
+  </div>
+  <div
+    class="flexEnd">
+    <div>
+      end content
     </div>
   </div>
 </header>
@@ -39,14 +33,11 @@ exports[`test should render a header with all content 1`] = `
 
 exports[`test should render a header with content on the left 1`] = `
 <header
-  class="header">
+  class="flexHeader">
   <div
-    class="flexContainer">
-    <div
-      class="flexEnd">
-      <div>
-        start content
-      </div>
+    class="flexEnd">
+    <div>
+      start content
     </div>
   </div>
 </header>
@@ -54,14 +45,11 @@ exports[`test should render a header with content on the left 1`] = `
 
 exports[`test should render a header with content on the right 1`] = `
 <header
-  class="header">
+  class="flexHeader">
   <div
-    class="flexContainer">
-    <div
-      class="flexEnd">
-      <div>
-        end content
-      </div>
+    class="flexEnd">
+    <div>
+      end content
     </div>
   </div>
 </header>
@@ -69,18 +57,15 @@ exports[`test should render a header with content on the right 1`] = `
 
 exports[`test should render a header with title only 1`] = `
 <header
-  class="header">
+  class="flexHeader">
   <div
-    class="flexContainer">
+    class="flexFill">
     <div
-      class="flexFill">
-      <div
-        class="titleContainer">
-        <h1
-          class="title">
-          title
-        </h1>
-      </div>
+      class="titleContainer">
+      <h1
+        class="title">
+        title
+      </h1>
     </div>
   </div>
 </header>
