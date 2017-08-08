@@ -12,6 +12,7 @@ const HeaderTests = () => (
       <li><Link to="/tests/header-tests/right-content">Header - Right Content</Link></li>
       <li><Link to="/tests/header-tests/left-content">Header - Left Content</Link></li>
       <li><Link to="/tests/header-tests/left-and-right-content">Header - Left and Right Content</Link></li>
+      <li><Link to="/tests/header-tests/long-title-content">Header - Long Title and Content</Link></li>
     </ul>
   </div>
 );
