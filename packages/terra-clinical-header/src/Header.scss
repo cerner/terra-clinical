@@ -1,21 +1,15 @@
 /* stylelint-disable selector-class-pattern  */
 :local {
-  .header {
+  .flexHeader {
     background-color: #f4f4f4;
     border-bottom-color: #dedfe0;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    height: 3.587rem;
-    padding: 0.714rem;
-    position: relative;
-    width: 100%;
-  }
-
-  .flexContainer {
     display: flex;
-    height: 100%;
+    height: 3.587rem;
     justify-content: space-between;
     overflow: hidden;
+    padding: 0.714rem;
     position: relative;
     width: 100%;
   }

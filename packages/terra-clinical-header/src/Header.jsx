@@ -54,12 +54,10 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
   }
 
   return (
-    <header {...customProps} className={cx('header', customProps.className)}>
-      <div className={cx('flexContainer', customProps.className)}>
-        {startElement}
-        {titleElement}
-        {endElement}
-      </div>
+    <header {...customProps} className={cx('flexHeader', customProps.className)}>
+      {startElement}
+      {titleElement}
+      {endElement}
     </header>
   );
 };
