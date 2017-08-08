@@ -8,8 +8,6 @@ exports[`test should render a default component 1`] = `
   </div>
   <hr
     class="divider" />
-  <hr
-    class="divider" />
   <div
     class="footer-text" />
 </div>
@@ -25,8 +23,6 @@ exports[`test should render a title 1`] = `
       Header
     </h1>
   </div>
-  <hr
-    class="divider" />
   <hr
     class="divider" />
   <div
@@ -52,8 +48,6 @@ exports[`test should render details 1`] = `
       Subtitle 2
     </div>
   </div>
-  <hr
-    class="divider" />
   <hr
     class="divider" />
   <p>
@@ -84,8 +78,6 @@ exports[`test should render footer 1`] = `
       Subtitle 2
     </div>
   </div>
-  <hr
-    class="divider" />
   <hr
     class="divider" />
   <p>
@@ -148,8 +140,6 @@ exports[`test should render subtitles 1`] = `
       Subtitle 2
     </div>
   </div>
-  <hr
-    class="divider" />
   <hr
     class="divider" />
   <div
