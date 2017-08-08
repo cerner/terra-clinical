@@ -15,25 +15,36 @@ The Terra Clinical Alert component is a notification banner that can be rendered
 import React from 'react';
 import Alert from 'terra-clinical-alert';
 
-<Alert type={Alert.Opts.Types.ALERT} >
+<Alert type={Alert.Opts.Types.ALERT}>
   This is an alert with the default title.
 </Alert>
 
 <Alert type={Alert.Opts.Types.SUCCESS} 
        title="Success!" 
-       onDismiss={this.handleDismiss} >
+       onDismiss={this.handleDismiss} 
+>
   This is a success alert with a custom title. It is configured to be dismissible. 
 </Alert>
 
 <Alert type={Alert.Opts.Types.WARNING} 
-       action={<Button text="Action" size="medium" variant="primary" onClick={actionFunc} />} >
+       action={<Button text="Action" size="medium" variant="primary" onClick={actionFunc} />} 
+>
   This is a warning with the default title. A Terra Button component is passed as the action.
 </Alert>
 
 <Alert type={Alert.Opts.Types.CUSTOM} 
        title="Help!" 
        customStatusColor="orange" 
-       customIcon={<IconHelp height="1.3333rem" width="1.3333rem" />} >
+       customIcon={<IconHelp height="1.3333rem" width="1.3333rem" />} 
+>
   <span>This is a <u>custom</u> alert with a custom title and icon and the content is HTML instead of text.</span>
+</Alert>
+
+<Alert type={Alert.Opts.Types.GAP_CHECKING}>
+  This is a gap checking alert with Default text
+</Alert>
+
+<Alert type={Alert.Opts.Types.OUTSIDE_RECORDS}>
+  This is an outside records alert with Default text
 </Alert>
 ```

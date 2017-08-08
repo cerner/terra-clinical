@@ -4,7 +4,8 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-alert.svg)](https://www.npmjs.org/package/terra-clinical-alert)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-{insert description}
+The Terra Clinical Alert component is a notification banner that can be rendered in your application when there is information that you want to bring to the user's attention. The Clinical Alert component supports a number of built-in notification types that render with pre-defined colors and icons that help the user understand the severity and meaning of the notification. A custom notification type is also supported that allows your application to customize an alert that may not fit into the pre-defined types. The Clinical Alert expands on the base Terra Alert component providing additional clinical specific alert types.
+
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-alert/docs)
