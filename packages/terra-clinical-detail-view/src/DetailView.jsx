@@ -78,7 +78,7 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
         <h1 className={cx('primary-text')}>{title}</h1>
         {subtitleElements}
       </div>
-      {divider}
+      {graph && divider}
       {graph}
       {divider}
       {dividedDetails}
