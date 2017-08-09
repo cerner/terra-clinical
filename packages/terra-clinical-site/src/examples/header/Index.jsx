@@ -13,7 +13,7 @@ import HeaderSrc from '!raw-loader!terra-clinical-header/src/Header';
 import TitleHeader from './TitleHeader';
 import ContentHeader from './ContentHeader';
 import HeaderLongText from './HeaderLongText';
-import HeaderLongTextWithButtons from './HeaderLongTextWithButtons';
+import HeaderLongTextWithContent from './HeaderLongTextWithContent';
 
 const HeaderExamples = () => (
   <div>
@@ -24,10 +24,10 @@ const HeaderExamples = () => (
     <TitleHeader />
     <h1> Header With Content </h1>
     <ContentHeader />
-    <h2>Long Text </h2>
+    <h1> Header With Long Title </h1>
     <HeaderLongText />
-    <h2>Long Text With Buttons </h2>
-    <HeaderLongTextWithButtons />
+    <h1> Header With Long Title And Content </h1>
+    <HeaderLongTextWithContent />
   </div>
 );
 
