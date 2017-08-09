@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Change data-class to be name spaced
+
+### Fixes
+* Fixed divider rendering for when graphic is not present which caused double dividers
+* Fixed styling that applied padding-bottom on all children
 
 1.1.1 - (July 27, 2017)
 -----------------

@@ -16,6 +16,7 @@ body {
   height: 100%;
 }
 
-.terraClinical-ItemView-accessory {
+[class*="ItemView__accessory"],
+[class*="ItemView__accessory"] > * {
   max-width: 70%;
 }
