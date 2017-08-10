@@ -1,4 +1,4 @@
-# Terra Clinical Embedded Content Consumer Site
+# Terra Clinical Embedded Content Consumer
 
 
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-application-site.svg)](https://www.npmjs.org/package/terra-clinical-embedded-content-consumer)
