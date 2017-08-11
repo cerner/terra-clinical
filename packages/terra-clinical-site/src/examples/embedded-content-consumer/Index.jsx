@@ -3,6 +3,7 @@ import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-clinical-embedded-content-consumer/docs/README.md';
 import { version } from 'terra-clinical-embedded-content-consumer/package.json';
+import { Consumer } from 'xfc';
 
 // Component Source
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
@@ -15,6 +16,8 @@ import CustomEventConsumer from './consumers/CustomEventConsumer';
 import CustomEventsConsumer from './consumers/CustomEventsConsumer';
 import OnReadyConsumer from './consumers/OnReadyConsumer';
 
+Consumer.init();
+
 const EmbeddedContentConsumerExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
@@ -25,7 +28,7 @@ const EmbeddedContentConsumerExamples = () => (
     <BasicConsumer />
     <h2 id="Custom Event Embedded Content">Custom Event Embedded Content</h2>
     <CustomEventConsumer />
-    <h2 id="Custom Events Embedded Content">Custom Event Embedded Content</h2>
+    <h2 id="Custom Events Embedded Content">Custom Events Embedded Content</h2>
     <CustomEventsConsumer />
     <h2 id="On Ready Embedded Content">On Ready Embedded Content</h2>
     <OnReadyConsumer />

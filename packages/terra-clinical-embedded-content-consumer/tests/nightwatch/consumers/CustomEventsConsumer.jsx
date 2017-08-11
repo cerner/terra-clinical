@@ -1,5 +1,8 @@
 import React from 'react';
 import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
+import { Consumer } from 'xfc';
+
+Consumer.init();
 
 const eventHandlers = [
   {

@@ -1,5 +1,6 @@
 import React from 'react';
 import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
+import { Consumer } from 'xfc';
 
 // Snapshot Tests
 it('should render the embedded content consumer container', () => {
@@ -17,6 +18,8 @@ it('should validate the inputs', () => {
     src={src}
     eventHandlers={customEvents}
   />);
+
+  Consumer.init();
   const wrapper = mount(embeddedContentConsumer);
 
   expect(wrapper.props().src).toBe(src);
