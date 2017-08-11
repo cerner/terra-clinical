@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconRequired from 'terra-icon/lib/icon/IconRequired';
 import IconDiamond from 'terra-icon/lib/icon/IconDiamond';
 import BaseAlert from 'terra-alert';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import styles from './Alert.scss';
 
@@ -88,6 +88,7 @@ const Alert = (
     intl,
   },
 ) => {
+  const attributes = Object.assign({}, customProps);
   let alertTitle = null;
   let typeToUse = type;
   let alertStatusColor;
@@ -99,12 +100,14 @@ const Alert = (
       typeToUse = AlertTypes.CUSTOM;
       alertIcon = (<IconRequired className={cx('gap-checking-icon')} />);
       alertStatusColor = '#e50000';
+      attributes['data-terra-clinical-alert-type'] = AlertTypes.GAP_CHECKING;
       break;
     case AlertTypes.OUTSIDE_RECORDS:
       alertTitle = intl.formatMessage({ id: 'Terra.Clinical.alert.outsideRecords' });
       typeToUse = AlertTypes.CUSTOM;
       alertIcon = (<IconDiamond />);
       alertStatusColor = '#78288c';
+      attributes['data-terra-clinical-alert-type'] = AlertTypes.OUTSIDE_RECORDS;
       break;
     case AlertTypes.CUSTOM:
       alertTitle = title;
@@ -115,8 +118,6 @@ const Alert = (
       alertIcon = null;
       alertStatusColor = null;
   }
-
-  const attributes = Object.assign({}, customProps);
 
   return (
     <BaseAlert

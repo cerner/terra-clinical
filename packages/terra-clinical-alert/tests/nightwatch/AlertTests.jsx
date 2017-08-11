@@ -7,8 +7,8 @@ const AlertTests = () => (
   <div>
     <ul>
       <li><Link to="/tests/alert-tests/default">Alert Default</Link></li>
-      <li><Link to="/tests/alert-tests/type">Alert Type</Link></li>
-      <li><Link to="/tests/alert-tests/title">Alert Title</Link></li>
+      <li><Link to="/tests/alert-tests/type">Alert - Types with default titles</Link></li>
+      <li><Link to="/tests/alert-tests/title">Alert - Custom title text</Link></li>
     </ul>
   </div>
 );

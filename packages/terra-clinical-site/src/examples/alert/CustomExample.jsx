@@ -4,7 +4,7 @@ import IconHelp from 'terra-icon/lib/icon/IconHelp';
 
 const alertStartTagStr = '<Alert type={Alert.Opts.Types.CUSTOM} title="Help!" customStatusColor="orange" customIcon={<IconHelp />} >';
 const alertEndTagStr = '</Alert>';
-const alertContentStr = 'This is a <u>custom</u> alert';
+const alertContentStr = 'This is a <i>custom</i> alert';
 
 const CustomExample = () => (
   <div>

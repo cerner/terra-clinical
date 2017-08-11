@@ -71,13 +71,13 @@ describe('Alert of type outside records with text content', () => {
   );
 
   // Snapshot Tests
-  it('should render an Alert component of type confirmation', () => {
+  it('should render an Alert component of type outside records', () => {
     const wrapper = mount(basicOutsideRecordsRender);
     expect(wrapper).toMatchSnapshot();
   });
 });
 
-describe('11. Alert of type custom with custom title and text content', () => {
+describe('Alert of type custom with custom title and text content', () => {
   const alertText = 'This is a custom alert.';
   const alertCustomTitle = 'Help!';
   const basicCustomRender = (
