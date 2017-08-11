@@ -11,14 +11,14 @@ it('should render the embedded content consumer container', () => {
 
 it('should validate the inputs', () => {
   const src = 'https://www.google.com/';
-  const handlers = [{ key: 'eventKey', handler: () => {} }];
+  const customEvents = [{ key: 'eventKey', handler: () => {} }];
 
   const embeddedContentConsumer = (<EmbeddedContentConsumer
     src={src}
-    handlers={handlers}
+    eventHandlers={customEvents}
   />);
   const wrapper = mount(embeddedContentConsumer);
 
   expect(wrapper.props().src).toBe(src);
-  expect(wrapper.props().handlers).toBe(handlers);
+  expect(wrapper.props().eventHandlers).toBe(customEvents);
 });
