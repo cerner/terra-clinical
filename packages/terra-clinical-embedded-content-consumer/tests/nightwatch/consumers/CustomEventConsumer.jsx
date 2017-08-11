@@ -1,6 +1,6 @@
 import React from 'react';
-import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
 import { Consumer } from 'xfc';
+import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
 
 Consumer.init();
 
