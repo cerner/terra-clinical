@@ -1,4 +1,4 @@
-exports[`11. Alert of type custom with custom title and text content should render an Alert component of type custom 1`] = `
+exports[`Alert of type custom with custom title and text content should render an Alert component of type custom 1`] = `
 <IntlProvider
   locale="en-US"
   messages={
@@ -123,6 +123,7 @@ exports[`Alert of type gap-checking with text content should render an Alert com
           xmlns="http://www.w3.org/2000/svg" />
       }
       customStatusColor="#e50000"
+      data-terra-clinical-alert-type="gapChecking"
       onDismiss={null}
       title="Required Action."
       type="custom">
@@ -130,6 +131,7 @@ exports[`Alert of type gap-checking with text content should render an Alert com
         defaultElement={
           <div
             className="custom narrow"
+            data-terra-clinical-alert-type="gapChecking"
             style={
               Object {
                 "color": "#e50000",
@@ -162,6 +164,7 @@ exports[`Alert of type gap-checking with text content should render an Alert com
         tiny={
           <div
             className="custom wide"
+            data-terra-clinical-alert-type="gapChecking"
             style={
               Object {
                 "color": "#e50000",
@@ -290,7 +293,7 @@ exports[`Alert of type info with custom title and HTML content should render an 
 </IntlProvider>
 `;
 
-exports[`Alert of type outside records with text content should render an Alert component of type confirmation 1`] = `
+exports[`Alert of type outside records with text content should render an Alert component of type outside records 1`] = `
 <IntlProvider
   locale="en-US"
   messages={
@@ -314,6 +317,7 @@ exports[`Alert of type outside records with text content should render an Alert 
           xmlns="http://www.w3.org/2000/svg" />
       }
       customStatusColor="#78288c"
+      data-terra-clinical-alert-type="outsideRecords"
       onDismiss={null}
       title="Outside Records."
       type="custom">
@@ -321,6 +325,7 @@ exports[`Alert of type outside records with text content should render an Alert 
         defaultElement={
           <div
             className="custom narrow"
+            data-terra-clinical-alert-type="outsideRecords"
             style={
               Object {
                 "color": "#78288c",
@@ -352,6 +357,7 @@ exports[`Alert of type outside records with text content should render an Alert 
         tiny={
           <div
             className="custom wide"
+            data-terra-clinical-alert-type="outsideRecords"
             style={
               Object {
                 "color": "#78288c",

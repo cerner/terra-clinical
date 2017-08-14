@@ -37,7 +37,7 @@ import Alert from 'terra-clinical-alert';
        customStatusColor="orange" 
        customIcon={<IconHelp height="1.3333rem" width="1.3333rem" />} 
 >
-  <span>This is a <u>custom</u> alert with a custom title and icon and the content is HTML instead of text.</span>
+  <span>This is a <i>custom</i> alert with a custom title and icon and the content is HTML instead of text.</span>
 </Alert>
 
 <Alert type={Alert.Opts.Types.GAP_CHECKING}>
