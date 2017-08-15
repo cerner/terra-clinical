@@ -40,13 +40,6 @@ const propTypes = {
 };
 
 class EmbeddedContentConsumer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.addEventListener = this.addEventListener.bind(this);
-    this.addEventListeners = this.addEventListeners.bind(this);
-  }
-
   componentDidMount() {
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
