@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Text Truncation in IE10 and IE11.
 
 1.1.1 - (July 27, 2017)
 -----------------
