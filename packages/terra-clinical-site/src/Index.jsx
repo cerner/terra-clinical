@@ -10,6 +10,7 @@ import styles from './site.scss';
 import ActionHeaderExamples from './examples/action-header/Index';
 import ApplicationExamples from './examples/application/Index';
 import DetailViewExamples from './examples/detail-view/Index';
+import EmbeddedContentConsumerExamples from './examples/embedded-content-consumer/Index';
 import ErrorViewExamples from './examples/error-view/Index';
 import ItemDisplayExamples from './examples/item-display/Index';
 import ItemViewExamples from './examples/item-view/Index';
@@ -26,6 +27,7 @@ import ActionHeaderTestRoutes from 'terra-clinical-action-header/tests/nightwatc
 import DetailViewTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewTestRoutes';
 import DetailListTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailList/DetailListTestRoutes';
 import DetailListItemTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailListItem/ListItemTestRoutes';
+import EmbeddedContentConsumerTestRoutes from 'terra-clinical-embedded-content-consumer/tests/nightwatch/EmbeddedContentConsumerTestRoutes';
 import ErrorViewTestRoutes from 'terra-clinical-error-view/tests/nightwatch/ErrorViewTestRoutes';
 import ItemViewTestRoutes from 'terra-clinical-item-view/tests/nightwatch/ItemViewTestRoutes';
 import ItemDisplayTestRoutes from 'terra-clinical-item-display/tests/nightwatch/comment/ItemCommentTestRoutes';
@@ -53,6 +55,7 @@ ReactDOM.render((
         <Route path="action-header" component={ActionHeaderExamples} />
         <Route path="application" component={ApplicationExamples} />
         <Route path="detail-view" component={DetailViewExamples} />
+        <Route path="embedded-content-consumer" component={EmbeddedContentConsumerExamples} />
         <Route path="error-view" component={ErrorViewExamples} />
         <Route path="header" component={HeaderExamples} />
         <Route path="item-display" component={ItemDisplayExamples} />
@@ -67,6 +70,7 @@ ReactDOM.render((
       {DetailViewTestRoutes}
       {DetailListTestRoutes}
       {DetailListItemTestRoutes}
+      {EmbeddedContentConsumerTestRoutes}
       {ErrorViewTestRoutes}
       {HeaderTestRoutes}
       {ItemCommentTestRoutes}

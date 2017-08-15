@@ -1,0 +1,4 @@
+exports[`test should render the embedded content consumer container 1`] = `
+<div
+  className="container" />
+`;
