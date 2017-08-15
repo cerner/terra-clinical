@@ -41,12 +41,8 @@ module.exports = {
       browser.frame({ ELEMENT: frame.value.ELEMENT }, () => {
         // Validate the provider has been accurately loaded.
         browser.expect.element('h1').text.to.equal('On Ready Events');
-        // Validate the provider before onReady is invoked.
-        browser.expect.element('p#ready').text.to.equal('');
-        // Pause the test briefly till the onReady callback is invoked.
-        browser.pause(1000);
         // Validate the provider after onReady is invoked.
-        browser.expect.element('p#ready').text.to.equal('onReady function being executed after a 1 second delay.');
+        browser.expect.element('p#ready').text.to.equal('onReady function being executed after the consumer has been authorized.');
       });
     // Reset the frame back to the parent frame.
     }).frame(null);
@@ -91,9 +87,12 @@ module.exports = {
     const providerSrc = '#/tests/embedded-content-consumer-tests/data-status-provider';
 
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
+    // Wait for the consumer to load the provider application.
     .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
+    // Identify the embedded iframe.
     .element('css selector', `iframe[src*="${providerSrc}"]`, (frame) => {
       browser.frame({ ELEMENT: frame.value.ELEMENT }, () => {
+        // Validate the lifecycle has completed.
         browser.assert.elementPresent('li#Mounted');
         browser.assert.elementPresent('li#Launched');
         browser.assert.elementPresent('li#Authorized');

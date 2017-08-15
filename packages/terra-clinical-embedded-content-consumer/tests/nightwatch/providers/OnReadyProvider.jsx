@@ -5,9 +5,7 @@ function OnReadyProvider() {
   Provider.init({
     acls: ['http://localhost:8080'],
     onReady: () => {
-      setTimeout(() => {
-        document.getElementById('ready').innerHTML = 'onReady function being executed after a 1 second delay.';
-      }, 1000);
+      document.getElementById('ready').innerHTML = 'onReady function being executed after the consumer has been authorized.';
     },
   });
 
