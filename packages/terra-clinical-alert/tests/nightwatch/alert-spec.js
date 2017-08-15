@@ -15,11 +15,8 @@ module.exports = {
   'Default alert test - Displays a default alert with the provided text': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/default`)
-      .waitForElementVisible('#defaultAlert', 1000)
-      .assert.elementPresent(
-        '#defaultAlert',
-        'Check the default Alert exists')
-      .assert.attributeContains(
+      .expect.element('#defaultAlert').to.be.present.before(1000);
+    browser.assert.attributeContains(
         '#defaultAlert',
         'class',
         '_alert',
@@ -50,6 +47,7 @@ module.exports = {
 
   'Type attribute tests - Check Alert of type gap checking': (browser) => {
     browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/type`)
       .assert.elementPresent(
         '#gapCheckingAlert',
         'Check that Alert of type gap-checking exists')
@@ -65,6 +63,7 @@ module.exports = {
 
   'Type attribute tests - Check Alert of type outside records': (browser) => {
     browser
+      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/type`)
       .assert.elementPresent(
         '#outsideRecordsAlert',
         'Check that Alert of type outside-records exists')
