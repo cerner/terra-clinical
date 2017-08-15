@@ -34,7 +34,7 @@ module.exports = {
     const providerSrc = '#/tests/embedded-content-consumer-tests/on-ready-provider';
 
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
-    // Wait for the consumer to load the provider.
+    // Wait for the consumer to load the provider application.
     .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
     // Identify the embedded iframe.
     .element('css selector', `iframe[src*="${providerSrc}"]`, (frame) => {
@@ -57,7 +57,7 @@ module.exports = {
     const providerSrc = '#/tests/embedded-content-consumer-tests/custom-event-provider';
 
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
-    // Wait for the consumer to load the provider.
+    // Wait for the consumer to load the provider application.
     .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
     // Validate the provider before the custom event handler is invoked.
     .expect.element('div#CustomEvent').to.have.css('border').which.equals('0px none rgb(28, 31, 33)');
@@ -72,7 +72,7 @@ module.exports = {
     const providerSrc = '#/tests/embedded-content-consumer-tests/custom-events-provider';
 
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
-    // Wait for the consumer to load the provider.
+    // Wait for the consumer to load the provider application.
     .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
     // Validate the provider before the custom event handler is invoked.
     .expect.element('div#CustomEvents').to.have.css('border').which.equals('0px none rgb(28, 31, 33)');
@@ -84,5 +84,40 @@ module.exports = {
     browser.pause(1000)
     // Validate the provider after the second custom event handler is invoked.
     .expect.element('div#CustomEvents').to.have.css('border').which.equals('5px dashed rgb(0, 255, 0)');
+  },
+
+  'Displays the consumer life cycle status.': (browser) => {
+    const consumerSrc = '#/tests/embedded-content-consumer-tests/data-status-consumer';
+    const providerSrc = '#/tests/embedded-content-consumer-tests/data-status-provider';
+
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
+    .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
+    .element('css selector', `iframe[src*="${providerSrc}"]`, (frame) => {
+      browser.frame({ ELEMENT: frame.value.ELEMENT }, () => {
+        browser.assert.elementPresent('li#Mounted');
+        browser.assert.elementPresent('li#Launched');
+        browser.assert.elementPresent('li#Authorized');
+      });
+    // Reset the frame back to the parent frame.
+    }).frame(null);
+  },
+
+  'Displays another provider application in fullscreen.': (browser) => {
+    const consumerSrc = '#/tests/embedded-content-consumer-tests/full-screen-consumer';
+    const providerSrc = '#/tests/embedded-content-consumer-tests/full-screen-provider';
+
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
+    // Wait for the consumer to load the provider application.
+    .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
+    .assert.elementPresent('div#FullscreenWrapper')
+    .element('css selector', `iframe[src*="${providerSrc}"]`, (frame) => {
+      browser.frame({ ELEMENT: frame.value.ELEMENT }, () => {
+        // Click the full screen button to invoke the full screen event.
+        browser.click('button[type=fullscreen]');
+      });
+      // Reset the frame back to the parent frame.
+    }).frame(null);
+    // Validate that the button click inkoved the full screen handler.
+    browser.expect.element('div#FullscreenWrapper').to.have.css('border').which.equals('5px dashed rgb(0, 0, 255)');
   },
 };

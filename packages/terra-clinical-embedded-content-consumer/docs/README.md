@@ -15,8 +15,12 @@ import React from 'react';
 import EmbeddedContentConsumer from 'terra-clinical-embedded-content-consumer';
 
 <EmbeddedContentConsumer
-  src="content url"
-  eventHandlers=[{ key: 'eventKeyA', handler: () => {} }]
+  src="https://google.com"
+  onLaunch={() => { console.log('launched'); }}
+  onAuthorize={() => { console.log('Authorized'); }}
+  onFullscreen={() => { window.open('https://yahoo.com'); }}
+  options={{ secret: 'SecretKey' }}
+  eventHandlers=[{ key: 'customEvent', handler: () => { console.log('Custom event invoked.'); } }]
 />
 ```
 

@@ -14,6 +14,8 @@ import EmbeddedContentConsumerSrc from '!raw-loader!terra-clinical-embedded-cont
 import BasicConsumer from './consumers/BasicConsumer';
 import CustomEventConsumer from './consumers/CustomEventConsumer';
 import CustomEventsConsumer from './consumers/CustomEventsConsumer';
+import DataStatusConsumer from './consumers/DataStatusConsumer';
+import FullscreenConsumer from './consumers/FullscreenConsumer';
 import OnReadyConsumer from './consumers/OnReadyConsumer';
 
 Consumer.init();
@@ -30,6 +32,10 @@ const EmbeddedContentConsumerExamples = () => (
     <CustomEventConsumer />
     <h2 id="Custom Events Embedded Content">Custom Events Embedded Content</h2>
     <CustomEventsConsumer />
+    <h2 id="Data status Embedded Content">Data Status Embedded Content</h2>
+    <DataStatusConsumer />
+    <h2 id="Fullscreen provider Embedded Content">Fullscreen provider Embedded Content</h2>
+    <FullscreenConsumer />
     <h2 id="On Ready Embedded Content">On Ready Embedded Content</h2>
     <OnReadyConsumer />
   </div>

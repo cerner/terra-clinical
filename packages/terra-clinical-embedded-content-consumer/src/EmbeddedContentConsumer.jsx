@@ -9,6 +9,28 @@ const propTypes = {
    */
   src: PropTypes.string.isRequired,
   /**
+   * Notifies the component that the container has been launched.
+   */
+  onLaunch: PropTypes.func,
+  /**
+   * Notifies the component that the container has been authorized.
+   */
+  onAuthorize: PropTypes.func,
+  /**
+   * Allows launching another provider application in fullscreen.
+   */
+  onFullscreen: PropTypes.func,
+  /**
+   * The component can be configured with an authorization secret.
+   * secret - The authorization secret to be used if the embedded app does not know which domain to trust.
+   */
+  options: PropTypes.shape({
+    /**
+     * The authorization secret to be used if the embedded app does not know which domain to trust.
+     */
+    secret: PropTypes.string,
+  }),
+  /**
   * A set of event handlers keyed by the event name.
   */
   eventHandlers: PropTypes.arrayOf(PropTypes.shape({
@@ -18,12 +40,35 @@ const propTypes = {
 };
 
 class EmbeddedContentConsumer extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.addEventListener = this.addEventListener.bind(this);
+    this.addEventListeners = this.addEventListeners.bind(this);
+  }
 
   componentDidMount() {
-    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src);
+    // Mount the provided source as the application into the content wrapper.
+    this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, this.props.options);
 
-    if (this.props.eventHandlers) {
-      this.props.eventHandlers.forEach((event) => {
+    // Attach the event handlers to the xfc frame.
+    this.addEventListener('xfc.launched', this.props.onLaunch);
+    this.addEventListener('xfc.authorized', this.props.onAuthorize);
+    this.addEventListener('xfc.fullscreen', this.props.onFullscreen);
+
+    // Attach the custom event handlers to the xfc frame.
+    this.addEventListeners(this.props.eventHandlers);
+  }
+
+  addEventListener(eventName, eventHandler) {
+    if (eventName && eventHandler) {
+      this.xfcFrame.on(eventName, eventHandler);
+    }
+  }
+
+  addEventListeners(customEvents) {
+    if (customEvents) {
+      customEvents.forEach((event) => {
         this.xfcFrame.on(event.key, event.handler);
       });
     }
