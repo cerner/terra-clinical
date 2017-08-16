@@ -31,6 +31,7 @@
     "react-intl": "^2.3.0",
     "terra-app-delegate": "^1.0.0",
     "terra-button": "^1.0.0",
+    "terra-button-group": "^1.0.0",
     "terra-clinical-action-header": "^1.1.1",
     "terra-clinical-application": "^1.1.1",
     "terra-clinical-application-site": "^1.0.3",
@@ -42,14 +43,15 @@
     "terra-clinical-item-view": "^1.2.1",
     "terra-clinical-label-value-view": "^1.0.0",
     "terra-clinical-no-data-view": "^1.0.0",
-    "terra-grid": "^3.0.0",
+    "terra-content-container": "^1.0.0",
     "terra-i18n": "^1.0.0",
     "terra-icon": "^1.0.0",
     "terra-list": "^1.0.0",
     "terra-markdown": "^1.0.0",
     "terra-modal-manager": "^1.0.0",
     "terra-props-table": "^1.0.0",
-    "terra-slide-group": "^1.0.0"
+    "terra-slide-group": "^1.0.0",
+    "terra-slide-panel": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^15.4.2",
