@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Change data-class to be name spaced
 * Updated DetailView site examples to be more realistic.
+* Update site to use slide panel
 
 ### Fixes
 * Fix application-site demo styling
