@@ -15,6 +15,7 @@ import BasicConsumer from './consumers/BasicConsumer';
 import CustomEventConsumer from './consumers/CustomEventConsumer';
 import CustomEventsConsumer from './consumers/CustomEventsConsumer';
 import DataStatusConsumer from './consumers/DataStatusConsumer';
+import FillConsumer from './consumers/FillConsumer';
 import FullscreenConsumer from './consumers/FullscreenConsumer';
 import OnReadyConsumer from './consumers/OnReadyConsumer';
 
@@ -28,6 +29,8 @@ const EmbeddedContentConsumerExamples = () => (
     <PropsTable id="embedded_content_consumer_props" src={EmbeddedContentConsumerSrc} />
     <h2 id="Basic Embedded Content">Basic Embedded Content</h2>
     <BasicConsumer />
+    <h2 id="Filled Embedded Content">Filled Embedded Content</h2>
+    <FillConsumer />
     <h2 id="Custom Event Embedded Content">Custom Event Embedded Content</h2>
     <CustomEventConsumer />
     <h2 id="Custom Events Embedded Content">Custom Events Embedded Content</h2>

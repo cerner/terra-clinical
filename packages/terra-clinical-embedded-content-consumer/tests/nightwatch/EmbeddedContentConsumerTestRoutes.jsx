@@ -10,6 +10,7 @@ import CustomEventConsumer from './consumers/CustomEventConsumer';
 import CustomEventsConsumer from './consumers/CustomEventsConsumer';
 import DataStatusConsumer from './consumers/DataStatusConsumer';
 import FullScreenConsumer from './consumers/FullScreenConsumer';
+import FillConsumer from './consumers/FillConsumer';
 import OnReadyConsumer from './consumers/OnReadyConsumer';
 
 // Content provider components.
@@ -31,6 +32,7 @@ const routes = (
     <Route path="/tests/embedded-content-consumer-tests/custom-events-provider" component={CustomEventsProvider} />
     <Route path="/tests/embedded-content-consumer-tests/data-status-consumer" component={DataStatusConsumer} />
     <Route path="/tests/embedded-content-consumer-tests/data-status-provider" component={DataStatusProvider} />
+    <Route path="/tests/embedded-content-consumer-tests/fill-consumer" component={FillConsumer} />
     <Route path="/tests/embedded-content-consumer-tests/full-screen-consumer" component={FullScreenConsumer} />
     <Route path="/tests/embedded-content-consumer-tests/full-screen-provider" component={FullScreenProvider} />
     <Route path="/tests/embedded-content-consumer-tests/on-ready-consumer" component={OnReadyConsumer} />

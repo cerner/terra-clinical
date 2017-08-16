@@ -11,6 +11,7 @@ const FullScreenConsumer = () => (
     <EmbeddedContentConsumer
       src="#/tests/embedded-content-consumer-tests/full-screen-provider"
       onFullscreen={onFullscreen}
+      fill
     />
   </div>
 );

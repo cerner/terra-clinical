@@ -29,6 +29,7 @@ const DataStatusConsumer = () => (
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}
     options={options}
+    fill
   />
 );
 

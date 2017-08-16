@@ -13,6 +13,7 @@ const CustomEventConsumer = () => (
     <EmbeddedContentConsumer
       src="#/tests/embedded-content-consumer-tests/custom-event-provider"
       eventHandlers={eventHandlers}
+      fill
     />
   </div>
 );

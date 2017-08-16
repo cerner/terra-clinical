@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import { Consumer } from 'xfc';
 import styles from './EmbeddedContentConsumer.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -22,7 +25,7 @@ const propTypes = {
   onFullscreen: PropTypes.func,
   /**
    * The component can be configured with an authorization secret.
-   * secret - The authorization secret to be used if the embedded app does not know which domain to trust.
+   * secret - The authorization secret to be used if the embedded application does not know which domain to trust.
    */
   options: PropTypes.shape({
     /**
@@ -37,6 +40,10 @@ const propTypes = {
     key: PropTypes.string,
     handler: PropTypes.func,
   })),
+  /**
+   * Whether or not the container should expanded to fill its parent.
+   */
+  fill: PropTypes.bool,
 };
 
 class EmbeddedContentConsumer extends React.Component {
@@ -68,9 +75,25 @@ class EmbeddedContentConsumer extends React.Component {
   }
 
   render() {
+    const {
+      src,
+      onLaunch,
+      onAuthorize,
+      onFullscreen,
+      options,
+      eventHandlers,
+      fill,
+      ...customProps
+    } = this.props;
+
+    const contentLayoutClassNames = cx([
+      { fill },
+      customProps.className,
+    ]);
+
     return (
       <div
-        className={styles.container}
+        className={contentLayoutClassNames}
         ref={(element) => { this.embeddedContentWrapper = element; }}
       />
     );

@@ -1,10 +1,11 @@
 import React from 'react';
 import EmbeddedContentConsumer from 'terra-clinical-embedded-content-consumer';
 
-const BasicConsumer = () => (
+const FillConsumer = () => (
   <EmbeddedContentConsumer
     src="#/tests/embedded-content-consumer-tests/basic-provider"
+    fill
   />
 );
 
-export default BasicConsumer;
+export default FillConsumer;

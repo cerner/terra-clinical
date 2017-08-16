@@ -5,10 +5,11 @@ import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
 
 Consumer.init();
 
-const BasicConsumer = () => (
+const fillConsumer = () => (
   <EmbeddedContentConsumer
     src="#/tests/embedded-content-consumer-tests/basic-provider"
+    fill
   />
 );
 
-export default BasicConsumer;
+export default fillConsumer;

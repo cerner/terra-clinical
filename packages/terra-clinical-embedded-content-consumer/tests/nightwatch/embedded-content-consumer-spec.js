@@ -29,6 +29,23 @@ module.exports = {
     }).frame(null);
   },
 
+  'Displays a provider embedded in the consumer expanded to fill the parent.': (browser) => {
+    const consumerSrc = '#/tests/embedded-content-consumer-tests/fill-consumer';
+    const providerSrc = '#/tests/embedded-content-consumer-tests/basic-provider';
+
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/${consumerSrc}`)
+    // Wait for the consumer to load the provider.
+    .waitForElementPresent(`iframe[src*="${providerSrc}"]`, 1000)
+    .getElementSize('div[class="xfc"]', (parentContainer) => {
+      browser.getElementSize(`iframe[src*="${providerSrc}"]`, (frame) => {
+        const borderWidth = 2;
+        // Validate the provider expanded to fill the parent.
+        browser.assert.equal(frame.value.height, parentContainer.value.height - borderWidth);
+        browser.assert.equal(frame.value.width, parentContainer.value.width);
+      });
+    });
+  },
+
   'Displays a provider embedded in the consumer that triggers after initialization is complete.': (browser) => {
     const consumerSrc = '#/tests/embedded-content-consumer-tests/on-ready-consumer';
     const providerSrc = '#/tests/embedded-content-consumer-tests/on-ready-provider';

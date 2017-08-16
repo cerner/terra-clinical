@@ -4,7 +4,30 @@ import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 // Snapshot Tests
 it('should render the embedded content consumer container', () => {
-  const embeddedContentConsumer = <EmbeddedContentConsumer src="https://www.google.com/" />;
+  const embeddedContentConsumer = (<EmbeddedContentConsumer
+    src="https://www.google.com/"
+  />);
+
+  const wrapper = shallow(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render the embedded content consumer to fill its parent', () => {
+  const embeddedContentConsumer = (<EmbeddedContentConsumer
+    src="https://www.google.com/"
+    fill
+  />);
+
+  const wrapper = shallow(embeddedContentConsumer);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render the embedded content consumer with custom class names', () => {
+  const embeddedContentConsumer = (<EmbeddedContentConsumer
+    src="https://www.google.com/"
+    fill
+    className="container"
+  />);
 
   const wrapper = shallow(embeddedContentConsumer);
   expect(wrapper).toMatchSnapshot();
@@ -25,6 +48,7 @@ it('should validate the inputs', () => {
     onFullscreen={onFullscreen}
     options={options}
     eventHandlers={customEvents}
+    fill
   />);
 
   Consumer.init();
