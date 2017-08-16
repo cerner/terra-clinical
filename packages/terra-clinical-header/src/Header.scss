@@ -56,8 +56,12 @@
     border-bottom-color: initial;
     border-bottom-style: 0;
     border-bottom-width: 0;
+    display: flex;
     height: 2.857rem;
+    justify-content: space-between;
+    overflow: hidden;
     padding: 0.3571rem 0.7143rem;
+    position: relative;
     width: 100%;
   }
 }

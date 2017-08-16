@@ -8,7 +8,7 @@ const endContent = <div id="headerTest--endContent" style={{ backgroundColor: 'b
 export default () => (
   <Header
     startContent={startContent}
-    title="Header with content on the left and right"
+    title="Subheader with content on the left and right"
     endContent={endContent}
     isSubheader
   />

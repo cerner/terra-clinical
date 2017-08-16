@@ -71,39 +71,45 @@ exports[`test should render a header with title only 1`] = `
 </header>
 `;
 
-exports[`test should render a subheader with title only 1`] = `
-<header
-  class="subheader">
-  <h1
-    class="title">
-    title
-  </h1>
-</header>
-`;
-
 exports[`test should render a subheader with all content 1`] = `
 <header
-  class="subheader">
+  class="flexSubheader">
   <div
-    class="arrange">
-    <div
-      class="fit center">
-      <div>
-        start content
-      </div>
+    class="flexEnd">
+    <div>
+      start content
     </div>
+  </div>
+  <div
+    class="flexFill">
     <div
-      class="fill center">
+      class="titleContainer">
       <h1
         class="title">
         Title
       </h1>
     </div>
+  </div>
+  <div
+    class="flexEnd">
+    <div>
+      end content
+    </div>
+  </div>
+</header>
+`;
+
+exports[`test should render a subheader with title only 1`] = `
+<header
+  class="flexSubheader">
+  <div
+    class="flexFill">
     <div
-      class="fit center">
-      <div>
-        end content
-      </div>
+      class="titleContainer">
+      <h1
+        class="title">
+        title
+      </h1>
     </div>
   </div>
 </header>
