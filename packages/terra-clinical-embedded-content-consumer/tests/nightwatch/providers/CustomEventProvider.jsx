@@ -14,7 +14,6 @@ function CustomEventProvider() {
     <div>
       <title>Custom Event Provider</title>
       <meta charSet="utf-8" />
-      <style dangerouslySetInnerHTML={{ __html: '\nbody {\npadding-bottom: 5px;\n}\nhtml[hidden] { display: none; }\n' }} />
       <div>
         <h1>Custom Event</h1>
         <p>A custom event can be registered with the consumer and intiated by the provider.</p>

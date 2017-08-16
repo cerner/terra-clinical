@@ -13,7 +13,6 @@ function OnReadyProvider() {
     <div>
       <title>On Ready Provider</title>
       <meta charSet="utf-8" />
-      <style dangerouslySetInnerHTML={{ __html: '"\nbody {\npadding-bottom: 5px;\n}\nhtml[hidden] { display: none; }\n' }} />
       <div>
         <h1>On Ready Events</h1>
         <p>An On Ready function triggers after initialization is complete.</p>
