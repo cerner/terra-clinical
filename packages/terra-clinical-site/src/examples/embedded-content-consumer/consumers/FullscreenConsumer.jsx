@@ -4,13 +4,13 @@ import EmbeddedContentConsumer from 'terra-clinical-embedded-content-consumer';
 
 Consumer.init();
 
-const onFullscreen = (url) => { window.open(url); };
+const onFullScreen = (url) => { window.open(url); };
 
 const FullScreenConsumer = () => (
-  <div id="FullscreenWrapper">
+  <div id="FullScreenWrapper">
     <EmbeddedContentConsumer
       src="#/tests/embedded-content-consumer-tests/full-screen-provider"
-      onFullscreen={onFullscreen}
+      onFullscreen={onFullScreen}
       fill
     />
   </div>

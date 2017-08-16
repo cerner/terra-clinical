@@ -4,15 +4,15 @@ import EmbeddedContentConsumer from '../../../lib/EmbeddedContentConsumer';
 
 Consumer.init();
 
-const onFullscreen = () => {
-  document.getElementById('FullscreenWrapper').style.border = 'thick dashed #0000FF';
+const onFullScreen = () => {
+  document.getElementById('FullScreenWrapper').style.border = 'thick dashed #0000FF';
 };
 
 const FullScreenConsumer = () => (
-  <div id="FullscreenWrapper">
+  <div id="FullScreenWrapper">
     <EmbeddedContentConsumer
       src="#/tests/embedded-content-consumer-tests/full-screen-provider"
-      onFullscreen={onFullscreen}
+      onFullScreen={onFullScreen}
     />
   </div>
 );

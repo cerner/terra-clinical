@@ -2,7 +2,7 @@
 import React from 'react';
 import { Provider } from 'xfc';
 
-function DataStatusProvider() {
+function FullScreenProvider() {
   Provider.init({ acls: ['http://localhost:8080'] });
 
   const onFullScreen = () => {
@@ -15,11 +15,11 @@ function DataStatusProvider() {
       <meta charSet="utf-8" />
       <div>
         <h1>Full Screen Event</h1>
-        <p>Provide an API for consuming applications to request that an application be launched fullscreen.</p>
+        <p>Provide an API for consuming applications to request that an application be launched full screen.</p>
         <button type="fullscreen" onClick={onFullScreen}>Show Provider</button>
       </div>
     </div>
   );
 }
 
-export default DataStatusProvider;
+export default FullScreenProvider;

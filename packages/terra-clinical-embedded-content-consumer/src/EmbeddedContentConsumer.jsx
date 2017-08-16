@@ -20,9 +20,9 @@ const propTypes = {
    */
   onAuthorize: PropTypes.func,
   /**
-   * Allows launching another provider application in fullscreen.
+   * Allows launching another provider application in full screen.
    */
-  onFullscreen: PropTypes.func,
+  onFullScreen: PropTypes.func,
   /**
    * The component can be configured with an authorization secret.
    * secret - The authorization secret to be used if the embedded application does not know which domain to trust.
@@ -54,7 +54,7 @@ class EmbeddedContentConsumer extends React.Component {
     // Attach the event handlers to the xfc frame.
     this.addEventListener('xfc.launched', this.props.onLaunch);
     this.addEventListener('xfc.authorized', this.props.onAuthorize);
-    this.addEventListener('xfc.fullscreen', this.props.onFullscreen);
+    this.addEventListener('xfc.fullscreen', this.props.onFullScreen);
 
     // Attach the custom event handlers to the xfc frame.
     this.addEventListeners(this.props.eventHandlers);
@@ -79,7 +79,7 @@ class EmbeddedContentConsumer extends React.Component {
       src,
       onLaunch,
       onAuthorize,
-      onFullscreen,
+      onFullScreen,
       options,
       eventHandlers,
       fill,
