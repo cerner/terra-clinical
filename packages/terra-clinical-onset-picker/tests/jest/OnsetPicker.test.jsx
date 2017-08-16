@@ -1,0 +1,81 @@
+import React from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import { IntlProvider } from 'react-intl';
+import OnsetPicker from '../../lib/OnsetPicker';
+import messages from '../../translations/en-US.json';
+
+const locale = 'en-US';
+
+it('should render a default onset picker', () => {
+  const onsetPicker = render(
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate="2011-08-16T17:40:49-05:00"
+        granularitySelectName="test-granularity"
+        precisionSelectName="test-precision"
+        onsetDateInputName="test-onsetDate"
+      />
+    </IntlProvider>);
+  expect(onsetPicker).toMatchSnapshot();
+});
+
+it('should render only a select when supplied with the UNKNOWN precision', () => {
+  const onsetPicker = render(
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate="2011-08-16T17:40:49-05:00"
+        granularitySelectName="test-granularity"
+        precisionSelectName="test-precision"
+        onsetDateInputName="test-onsetDate"
+        precision="UNKNOWN"
+      />
+    </IntlProvider>);
+  expect(onsetPicker).toMatchSnapshot();
+});
+
+it('should render with non default inputs when supplied', () => {
+  const onsetPicker = render(
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate="2011-08-16T17:40:49-05:00"
+        granularitySelectName="test-granularity"
+        precisionSelectName="test-precision"
+        onsetDateInputName="test-onsetDate"
+        precision="BEFORE"
+        granularity="YEAR"
+        onsetDate="2014-08-16T17:40:49-05:00"
+      />
+    </IntlProvider>);
+  expect(onsetPicker).toMatchSnapshot();
+});
+
+it('should render as controlled when onChange functions are supplied', () => {
+  const onsetPicker = render(
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate="2011-08-16T17:40:49-05:00"
+        granularitySelectName="test-granularity"
+        precisionSelectName="test-precision"
+        onsetDateInputName="test-onsetDate"
+        granularitySelectOnChange={() => {}}
+        precisionSelectOnChange={() => {}}
+        onsetDateInputOnChange={() => {}}
+      />
+    </IntlProvider>);
+  expect(onsetPicker).toMatchSnapshot();
+});
+
+it('throws error on missing locale prop in Base', () => {
+  try {
+    shallow(
+      <OnsetPicker
+        birthdate="2011-08-16T17:40:49-05:00"
+        granularitySelectName="test-granularity"
+        precisionSelectName="test-precision"
+        onsetDateInputName="test-onsetDate"
+        name="date-input"
+      />);
+  } catch (e) {
+    expect(e.message).toContain('add locale prop to Base component');
+  }
+});

@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'terra-base/lib/baseStyles';
-import { injectIntl } from 'react-intl';
 import Field from 'terra-form/lib/Field';
 import Fieldset from 'terra-form/lib/Fieldset';
 import NumberField from 'terra-form/lib/NumberField';
 import DatePicker from 'terra-date-picker/lib/DatePicker';
-import SelectField from '/Users/dw034710/Repos/terra-core/packages/terra-form/src/SelectField';
+import SelectField from 'terra-form/lib/SelectField';
 
 
 const propTypes = {
@@ -16,32 +16,74 @@ const propTypes = {
   birthdate: PropTypes.string.isRequired,
 
   /**
-   * The granularity of the onset date. ABOUT, BEFORE, AFTER, and UNKOWN are accepted.
+   * The granularity of the onset date. YEAR, MONTHYEAR, and DATE are accepted.
    */
   granularity: PropTypes.string,
 
   /**
-   * The precision of the onset date. YEAR, MONTHYEAR, and DATE are accepted.
+   * Name of the granularity select. The name should be unique.
    */
+  granularitySelectName: PropTypes.string.isRequired,
+
+  /**
+   * A callback function to execute when a granularity is selected.
+   * The first parameter is the event. The second parameter is the changed granularity value.
+   **/
+  granularitySelectOnChange: PropTypes.func,
+
+   /**
+    * The precision of the onset date. ABOUT, BEFORE, AFTER, and UNKNOWN are accepted.
+    */
   precision: PropTypes.string,
 
   /**
-   * The ISO 8601 string representation of the onset date to view/modify.
+   * Name of the precision select. The name should be unique.
+   */
+  precisionSelectName: PropTypes.string.isRequired,
+
+  /**
+   * A callback function to execute when a precision is selected.
+   * The first parameter is the event. The second parameter is the changed precision value.
+   **/
+  precisionSelectOnChange: PropTypes.func,
+
+  /**
+   * The ISO 8601 string representation of the onset date to view/modify. Defaults to current date.
    */
   onsetDate: PropTypes.string,
 
   /**
-   * The i18n context passed down by the base component
+   * Name of the onsetDate input. The name should be unique.
    */
-  intl: PropTypes.object.isRequired,
+  onsetDateInputName: PropTypes.string.isRequired,
+
+  /**
+   * A callback function to execute when a onsetDate is changed.
+   * The first parameter is the event. The second parameter is the changed onsetDate value.
+   **/
+  onsetDateInputOnChange: PropTypes.func,
 };
 
 const defaultProps = {
   birthdate: undefined,
   granularity: 'MONTHYEAR',
+  granularitySelectName: undefined,
+  granularitySelectOnChange: undefined,
   precision: 'ABOUT',
+  precisionSelectName: undefined,
+  precisionSelectOnChange: undefined,
   onsetDate: moment().format('YYYY-MM-DD'),
-  intl: undefined,
+  onsetDateInputName: undefined,
+  onsetDateInputOnChange: undefined,
+};
+
+const contextTypes = {
+  /* eslint-disable consistent-return */
+  intl: (context) => {
+    if (context.intl === undefined) {
+      return new Error('Please add locale prop to Base component to load translations');
+    }
+  },
 };
 
 class OnsetPicker extends React.Component {
@@ -57,8 +99,8 @@ class OnsetPicker extends React.Component {
     };
 
     // This binding is necessary to make `this` work in the callback
-    this.changePrecision = this.changePrecision.bind(this);
     this.changeGranularity = this.changeGranularity.bind(this);
+    this.changePrecision = this.changePrecision.bind(this);
     this.changeAgeCalcCount = this.changeAgeCalcCount.bind(this);
     this.changeAgeCalcDuration = this.changeAgeCalcDuration.bind(this);
     this.changeYear = this.changeYear.bind(this);
@@ -72,79 +114,119 @@ class OnsetPicker extends React.Component {
   }
 
   /*
-   * Change state for precision
-   */
-  changePrecision(event) {
-    this.setState({ precision: event.target.value });
-  }
-
-  /*
    * Change state for granularity
    */
   changeGranularity(event) {
     this.setState({ granularity: event.target.value });
+
+    if (this.props.granularitySelectOnChange) {
+      this.props.granularitySelectOnChange(event, event.target.value);
+    }
+  }
+
+  /*
+   * Change state for precision
+   */
+  changePrecision(event) {
+    this.setState({ precision: event.target.value });
+
+    if (this.props.precisionSelectOnChange) {
+      this.props.precisionSelectOnChange(event, event.target.value);
+    }
   }
 
   /*
    * Change state for count when using age granularity, and update onset date
    */
   changeAgeCalcCount(event) {
+    const newDate = moment(this.props.birthdate).add(Number(event.target.value), this.state.ageCalcDuration).format('YYYY-MM-DD');
+
     this.setState({
       ageCalcCount: Number(event.target.value),
-      onsetDate: moment(this.props.birthdate).add(Number(event.target.value), this.state.ageCalcDuration).format('YYYY-MM-DD') });
+      onsetDate: newDate });
+
+    if (this.props.onsetDateInputOnChange) {
+      this.props.onsetDateInputOnChange(event, newDate);
+    }
   }
 
   /*
    * Change state for duration when using age granularity, and update onset date
    */
   changeAgeCalcDuration(event) {
+    const newDate = moment(this.props.birthdate).add(1, event.target.value).format('YYYY-MM-DD');
+
     this.setState({
       ageCalcCount: 1,
       ageCalcDuration: event.target.value,
-      onsetDate: moment(this.props.birthdate).add(1, event.target.value).format('YYYY-MM-DD') });
+      onsetDate: newDate });
+
+    if (this.props.onsetDateInputOnChange) {
+      this.props.onsetDateInputOnChange(event, newDate);
+    }
   }
 
   /*
    * Update onset date when year changes
    */
   changeYear(event) {
-    this.setState({ onsetDate: moment(this.state.onsetDate).year(event.target.value).format('YYYY-MM-DD') });
+    const newDate = moment(this.state.onsetDate).year(event.target.value).format('YYYY-MM-DD');
+
+    this.setState({ onsetDate: newDate });
+
+    if (this.props.onsetDateInputOnChange) {
+      this.props.onsetDateInputOnChange(event, newDate);
+    }
   }
 
   /*
    * Update onset date when month changes
    */
   changeMonth(event) {
-    this.setState({ onsetDate: moment(this.state.onsetDate).month(event.target.value).format('YYYY-MM-DD') });
+    const newDate = moment(this.state.onsetDate).month(event.target.value).format('YYYY-MM-DD');
+
+    this.setState({ onsetDate: newDate });
+
+    if (this.props.onsetDateInputOnChange) {
+      this.props.onsetDateInputOnChange(event, newDate);
+    }
   }
 
   /*
    * Update onset date when date changes
    */
   changeDate(event, date) {
-    this.setState({ onsetDate: moment(date).format('YYYY-MM-DD') });
+    const newDate = moment(date);
+
+    this.setState({ onsetDate: newDate });
+
+    if (this.props.onsetDateInputOnChange) {
+      this.props.onsetDateInputOnChange(event, newDate);
+    }
   }
 
   /*
    * Create object to pass to SelectField for month options
    * Filters out months before birth or after the current date.
+   *
+   * intl - locale context to use for translations
    */
-  availableMonths() {
+  availableMonths(intl) {
     const start = moment(this.props.birthdate);
     const end = moment();
     const onsetYear = moment(this.state.onsetDate).year();
-    let possibleMonths = [{ value: 0, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
-                          { value: 1, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
-                          { value: 2, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
-                          { value: 3, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.april' }) },
-                          { value: 4, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.may' }) },
-                          { value: 5, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.june' }) },
-                          { value: 6, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.july' }) },
-                          { value: 7, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.august' }) },
-                          { value: 8, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.september' }) },
-                          { value: 9, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
-                          { value: 10, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
-                          { value: 11, display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
+    let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
+                          { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
+                          { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
+                          { value: '3', display: intl.formatMessage({ id: 'Terra.onsetPicker.april' }) },
+                          { value: '4', display: intl.formatMessage({ id: 'Terra.onsetPicker.may' }) },
+                          { value: '5', display: intl.formatMessage({ id: 'Terra.onsetPicker.june' }) },
+                          { value: '6', display: intl.formatMessage({ id: 'Terra.onsetPicker.july' }) },
+                          { value: '7', display: intl.formatMessage({ id: 'Terra.onsetPicker.august' }) },
+                          { value: '8', display: intl.formatMessage({ id: 'Terra.onsetPicker.september' }) },
+                          { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
+                          { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
+                          { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
 
     // If populating months for the start or end year, exclude months before the starting date or after the ending date
     if (start.year() === onsetYear) {
@@ -169,7 +251,7 @@ class OnsetPicker extends React.Component {
     return Array((end - start) + 1).fill(undefined).map(
       (x, idx) => {
         const year = start + idx;
-        return { value: year, display: year };
+        return { value: year.toString(), display: year.toString() };
       },
     );
   }
@@ -243,16 +325,32 @@ class OnsetPicker extends React.Component {
   }
 
   render() {
+    const {
+      birthdate,
+      granularity,
+      granularitySelectName,
+      granularitySelectOnChange,
+      precision,
+      precisionSelectName,
+      precisionSelectOnChange,
+      onsetDate,
+      onsetDateInputName,
+      onsetDateInputOnChange,
+      ...customProps
+    } = this.props;
+
+    const intl = this.context.intl;
+
     return (
-      (<Fieldset className="terra-onset">
+      (<Fieldset className="terra-OnsetPicker" {...customProps}>
 
         {/* Precision */}
         <SelectField
-          choices={[{ value: 'ABOUT', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) },
-                    { value: 'BEFORE', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) },
-                    { value: 'AFTER', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) },
-                    { value: 'UNKNOWN', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) }]}
-          name="precision"
+          options={[{ value: 'ABOUT', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) },
+                    { value: 'BEFORE', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) },
+                    { value: 'AFTER', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) },
+                    { value: 'UNKNOWN', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) }]}
+          name={this.props.precisionSelectName}
           defaultValue={this.state.precision}
           onChange={this.changePrecision}
           isInline
@@ -261,11 +359,11 @@ class OnsetPicker extends React.Component {
         {/* Granularity */}
         { this.state.precision !== 'UNKNOWN' &&
           <SelectField
-            choices={[{ value: 'MONTHYEAR', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonthYear' }) },
-                      { value: 'YEAR', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
-                      { value: 'AGE', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
-                      { value: 'DATE', display: this.props.intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
-            name="granularity"
+            options={[{ value: 'MONTHYEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonthYear' }) },
+                      { value: 'YEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
+                      { value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
+                      { value: 'DATE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
+            name={this.props.granularitySelectName}
             defaultValue={this.state.granularity}
             onChange={this.changeGranularity}
             isInline
@@ -277,19 +375,19 @@ class OnsetPicker extends React.Component {
           <Fieldset>
             {/* Count */}
             <NumberField
+              className="terra-OnsetPicker-ageCalcCount"
               min={1}
               max={this.maxAgeCount()}
               step={1}
-              name="ageCalcCount"
-              value={this.state.ageCalcCount}
+              value={this.state.ageCalcCount.toString()}
               onChange={this.changeAgeCalcCount}
               isInline
             />
             {/* Duration */}
             <SelectField
-              choices={this.allowedAgeDurations()}
-              name="ageCalcDuration"
-              defaultValue={this.state.ageCalcDuration}
+              className="terra-OnsetPicker-ageCalcDuration"
+              options={this.allowedAgeDurations()}
+              defaultValue={this.state.ageCalcDuration.toString()}
               onChange={this.changeAgeCalcDuration}
               isInline
             />
@@ -301,18 +399,18 @@ class OnsetPicker extends React.Component {
           <Fieldset>
             { this.state.granularity === 'MONTHYEAR' &&
               <SelectField
-                choices={this.availableMonths()}
-                defaultValue={moment(this.state.onsetDate).month()}
+                className="terra-OnsetPicker-month"
+                options={this.availableMonths(intl)}
+                defaultValue={moment(this.state.onsetDate).month().toString()}
                 onChange={this.changeMonth}
-                name="month"
                 isInline
               />
             }
 
             <SelectField
-              choices={this.availableYears()}
-              defaultValue={moment(this.state.onsetDate).year()}
-              name="year"
+              className="terra-OnsetPicker-year"
+              options={this.availableYears()}
+              defaultValue={moment(this.state.onsetDate).year().toString()}
               onChange={this.changeYear}
               isInline
             />
@@ -320,21 +418,17 @@ class OnsetPicker extends React.Component {
         }
 
         {/* Date */}
-        { this.state.granularity === 'DATE' && this.state.precision !== 'UNKNOWN' &&
-          <Field>
+        { (this.state.granularity === 'DATE' && this.state.precision !== 'UNKNOWN') &&
+          <Field >
             <DatePicker
               onChange={this.changeDate}
               minDate={this.props.birthdate}
-              maxDate={moment().format()}
-              selectedDate={moment(this.state.onsetDate).format()}
-              name="date"
+              maxDate={moment().format('YYYY-MM-DD')}
+              selectedDate={moment(this.state.onsetDate).format('YYYY-MM-DD')}
+              name={this.props.onsetDateInputName}
             />
           </Field>
         }
-
-        {/* Output */}
-        <p>Age: {this.props.birthdate}</p>
-        <p>Onset Date: {this.outputDate()}</p>
       </Fieldset>)
     );
   }
@@ -342,5 +436,6 @@ class OnsetPicker extends React.Component {
 
 OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
+OnsetPicker.contextTypes = contextTypes;
 
-export default injectIntl(OnsetPicker);
+export default OnsetPicker;

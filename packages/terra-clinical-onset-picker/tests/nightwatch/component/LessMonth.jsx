@@ -7,5 +7,10 @@ const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
 export default () =>
   <Base locale={locale}>
-    <OnsetPicker birthdate={moment().subtract(3, 'weeks').format()} />
+    <OnsetPicker
+      birthdate={moment().subtract(3, 'weeks').format()}
+      granularitySelectName="test-granularity"
+      precisionSelectName="test-precision"
+      onsetDateInputName="test-onsetDate"
+    />
   </Base>;
