@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* End aligned items with no title.
 
 1.2.0 - (August 16, 2017)
 -----------------
