@@ -15,6 +15,9 @@ Unreleased
 -----------------
 * Updated spacing around react-docgen comments
 
+### Added
+* isSubheader boolean prop to allow rendering of subheader component
+
 1.1.0 - (July 18, 2017)
 -----------------
 ### Changed

@@ -31,3 +31,20 @@ it('should render a header with all content', () => {
   ));
   expect(header).toMatchSnapshot();
 });
+
+it('should render a subheader with title only', () => {
+  const subheader = render(<Header title="title" isSubheader />);
+  expect(subheader).toMatchSnapshot();
+});
+
+it('should render a subheader with all content', () => {
+  const subheader = render((
+    <Header
+      startContent={<div>start content</div>}
+      title="Title"
+      endContent={<div>end content</div>}
+      isSubheader
+    />
+  ));
+  expect(subheader).toMatchSnapshot();
+});
