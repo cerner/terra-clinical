@@ -35,15 +35,13 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
     startElement = <div className={cx('flexEnd')}>{startContent}</div>;
   }
 
-  let fillElement;
+  let titleElement;
   if (title) {
-    fillElement = (
-      <div className={cx('flexFill')}>
-        <div className={cx('titleContainer')}>
-          <h1 className={cx('title')}>
-            {title}
-          </h1>
-        </div>
+    titleElement = (
+      <div className={cx('titleContainer')}>
+        <h1 className={cx('title')}>
+          {title}
+        </h1>
       </div>
     );
   }
@@ -56,7 +54,9 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
   return (
     <header {...customProps} className={cx('flexHeader', customProps.className)}>
       {startElement}
-      {fillElement}
+      <div className={cx('flexFill')}>
+        {titleElement}
+      </div>
       {endElement}
     </header>
   );

@@ -41,4 +41,8 @@ module.exports = {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/long-title-content`)
     .assert.containsText('#Header h1', 'LongTitle');
   },
+  'Displays a header with no title and content on the right': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/no-title-right-content`);
+    browser.expect.element('#headerTest--content').to.be.present;
+  },
 };
