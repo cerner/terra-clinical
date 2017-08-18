@@ -6,6 +6,7 @@ Cerner Corporation
 - Neil Pfeiffer [@neilpfeiffer]
 - Tyler Biethman [@tbiethman]
 - Matt Henkes [@mjhenkes]
+- Douglas Williams [@dwilliams]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -13,3 +14,4 @@ Cerner Corporation
 [@neilpfeiffer]: https://github.com/neilpfeiffer
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
+[@dwilliams]: https://github.com/doogthemushroom
