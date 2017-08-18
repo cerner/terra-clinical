@@ -17,6 +17,7 @@ const ItemCollectionTests = () => (
       <li><Link to="/tests/item-collection-tests/list-styles">Item Collection - List Styles</Link></li>
       <li><Link to="/tests/item-collection-tests/item-styles">Item Collection - Item Styles</Link></li>
       <li><Link to="/tests/item-collection-tests/onchange">Item Collection - OnChange</Link></li>
+      <li><Link to="/tests/item-collection-tests/varying-items">Item Collection - Varying Items</Link></li>
     </ul>
   </div>
 );

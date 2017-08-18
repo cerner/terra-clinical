@@ -32,9 +32,9 @@ module.exports = {
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.tiny) {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection list-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-list-view');
     } else {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection table-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
 
@@ -44,9 +44,9 @@ module.exports = {
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.small) {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection list-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-list-view');
     } else {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection table-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
 
@@ -56,9 +56,9 @@ module.exports = {
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.medium) {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection list-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-list-view');
     } else {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection table-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
 
@@ -68,9 +68,9 @@ module.exports = {
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.large) {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection list-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-list-view');
     } else {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection table-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
 
@@ -80,9 +80,9 @@ module.exports = {
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     if (width < breakpoints.huge) {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection list-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-list-view');
     } else {
-      browser.assert.attributeEquals('#ItemCollection', 'data-class', 'item-collection table-view');
+      browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
 
@@ -131,6 +131,64 @@ module.exports = {
       browser.assert.containsText('#selected-index', '2');
     } else {
       browser.assert.containsText('#selected-index', '2');
+    }
+  },
+
+  'Correctly displays a row missing a start accessory when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)');
+    }
+  },
+
+  'Correctly displays a row missing a end accessory when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)');
+    }
+  },
+
+  'Correctly displays a row missing a comment when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(4) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)');
+    }
+  },
+
+  'Correctly displays a row missing displays when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(3)');
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)');
+    }
+  },
+
+  'Correctly displays a row with too many displays when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(5)');
+      browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(6)');
+    }
+  },
+
+  'Correctly displays a row missing many elements when the first row has all elements': (browser) => {
+    const width = browser.globals.width;
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-collection-tests/varying-items`);
+    browser.execute("document.getElementById('root').style.padding = 0;");
+    if (width >= breakpoints.small) {
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)');
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)');
+      browser.assert.elementPresent('tr[class*="row"]:nth-child(7) > td[class*="content-accessory"]:nth-child(6)');
     }
   },
 };

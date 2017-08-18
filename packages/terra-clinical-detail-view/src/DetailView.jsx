@@ -11,32 +11,32 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The title to display
-   **/
+   */
   title: PropTypes.string,
 
   /**
    * List of subtitle strings
-   **/
+   */
   subtitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
    * Display for visualization data
-   **/
+   */
   graph: PropTypes.element,
 
   /**
    * Array of elements to display detail information
-   **/
+   */
   details: PropTypes.arrayOf(PropTypes.element),
 
   /**
    * Text to be displayed at the footer of the view
-   **/
+   */
   footer: PropTypes.string,
 
   /**
    * Indicates if sections should be devided
-   **/
+   */
   isDivided: PropTypes.bool,
 };
 
@@ -78,7 +78,7 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
         <h1 className={cx('primary-text')}>{title}</h1>
         {subtitleElements}
       </div>
-      {divider}
+      {graph && divider}
       {graph}
       {divider}
       {dividedDetails}

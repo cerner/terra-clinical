@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The column type of the header cell.
-   **/
+   */
   columnType: PropTypes.string,
 };
 
@@ -20,7 +20,7 @@ const TableHeaderCell = ({ columnType, ...customProps }) => {
   if (columnType === 'accessory') {
     return (<th {...customProps} className={cx(`column-${columnType}`)} />);
   }
-  return (<th {...customProps} data-class={cx(`column-${columnType}`)} />);
+  return (<th {...customProps} data-terra-clinical-item-collection-column={`${columnType}`} />);
 };
 
 TableHeaderCell.propTypes = propTypes;

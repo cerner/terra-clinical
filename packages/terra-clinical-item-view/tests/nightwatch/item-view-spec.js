@@ -44,6 +44,14 @@ module.exports = {
 
   'Displays a clinical item view with a comment set': (browser) => {
     browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-tests/comment`);
-    browser.assert.elementPresent('#ItemView #ItemComment');
+    browser.assert.elementPresent('#ItemView1 #ItemComment');
+  },
+
+  'Displays a clinical item view with the word wrap and truncation': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/item-view-tests/overflow`);
+    browser.assert.elementPresent('#ItemView-one-wrap');
+    browser.assert.elementPresent('#ItemView-two-wrap');
+    browser.assert.elementPresent('#ItemView-one-truncate');
+    browser.assert.elementPresent('#ItemView-two-truncate');
   },
 };

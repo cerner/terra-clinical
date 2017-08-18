@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-clinical",
   "engines": {
-    "node": "6.9.4"
+    "node": "8.3.0"
   },
   "repository": {
     "type": "git",
@@ -55,7 +55,7 @@
     "pretest": "npm run lint",
     "postinstall": "npm run compile && npm run bootstrap",
     "props-table": "lerna run props-table",
-    "publish": "check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
+    "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
     "start": "cd packages/terra-clinical-site && npm run start",
     "start:express": "node scripts/express/app.js",
     "test": "jest && npm run test:nightwatch-default",
@@ -90,8 +90,8 @@
     "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.7",
-    "stylelint": "^7.12.0",
-    "stylelint-config-sass-guidelines": "^2.2.0",
+    "stylelint": "~8.0.0",
+    "stylelint-config-sass-guidelines": "^3.0.0",
     "terra-props-table": "^1.0.0",
     "terra-toolkit": "^1.2.2"
   }

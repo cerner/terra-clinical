@@ -23,9 +23,10 @@ const DetailViewExamples = () => (
     <PropsTable id="detail_view_props" src={DetailViewSrc} />
     <PropsTable id="detail_list_props" src={DetailListSrc} />
     <PropsTable id="detail_list_item_props" src={DetailListItemSrc} />
-    <h2 id="Divided">Divided</h2>
+    <br />
+    <h2 id="Divided">Divided Detail View</h2>
     <DetailViewDivided />
-    <h2 id="NoDivider">No Divider</h2>
+    <h2 id="NoDivider">Non-Divided Detail View</h2>
     <DetailViewNoDivider />
   </div>
 );

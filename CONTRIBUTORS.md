@@ -7,6 +7,7 @@ Cerner Corporation
 - Tyler Biethman [@tbiethman]
 - Matt Henkes [@mjhenkes]
 - Douglas Williams [@dwilliams]
+- Nikhil Agrawal [@nagrawal3]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -15,3 +16,4 @@ Cerner Corporation
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
 [@dwilliams]: https://github.com/doogthemushroom
+[@nagrawal3]: https://github.com/nagrawal3
