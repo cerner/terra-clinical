@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.3.0 - (August 16, 2017)
+-----------------
 ### Changed
 * Change data-class to be name spaced
 * Updated DetailView site examples to be more realistic.
@@ -18,6 +21,9 @@ Unreleased
 
 ### Changed
 * Update Header example
+
+### Added
+* Example to render subheader component
 
 1.1.0 - (July 18, 2017)
 -----------------
