@@ -7,6 +7,7 @@ import Fieldset from 'terra-form/lib/Fieldset';
 import NumberField from 'terra-form/lib/NumberField';
 import DatePicker from 'terra-date-picker/lib/DatePicker';
 import SelectField from 'terra-form/lib/SelectField';
+import Select from 'terra-form/lib/Select';
 
 
 const propTypes = {
@@ -341,95 +342,104 @@ class OnsetPicker extends React.Component {
 
     const intl = this.context.intl;
 
-    return (
-      (<Fieldset className="terra-OnsetPicker" {...customProps}>
+    let granularitySelect = null;
+    if (this.state.precision !== 'UNKNOWN') {
+      granularitySelect = (<SelectField
+        options={[{ value: 'MONTHYEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonthYear' }) },
+                  { value: 'YEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
+                  { value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
+                  { value: 'DATE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
+        name={this.props.granularitySelectName}
+        defaultValue={this.state.granularity}
+        onChange={this.changeGranularity}
+        isInline
+      />);
+    }
 
-        {/* Precision */}
-        <SelectField
-          options={[{ value: 'ABOUT', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) },
-                    { value: 'BEFORE', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) },
-                    { value: 'AFTER', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) },
-                    { value: 'UNKNOWN', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) }]}
-          name={this.props.precisionSelectName}
-          defaultValue={this.state.precision}
-          onChange={this.changePrecision}
-          isInline
+    let ageCalcCountSelect = null;
+    let ageCalcDurationSelect = null;
+    if (this.state.granularity === 'AGE' && this.state.precision !== 'UNKNOWN') {
+      ageCalcCountSelect = (<NumberField
+        className="terra-OnsetPicker-ageCalcCount"
+        min={1}
+        max={this.maxAgeCount()}
+        step={1}
+        value={this.state.ageCalcCount.toString()}
+        onChange={this.changeAgeCalcCount}
+        isInline
+      />);
+
+      ageCalcDurationSelect = (<SelectField
+        className="terra-OnsetPicker-ageCalcDuration"
+        options={this.allowedAgeDurations()}
+        defaultValue={this.state.ageCalcDuration.toString()}
+        onChange={this.changeAgeCalcDuration}
+        isInline
+      />);
+    }
+
+    let monthSelect = null;
+    if (this.state.granularity === 'MONTHYEAR' && this.state.precision !== 'UNKNOWN') {
+      monthSelect = (<SelectField
+        className="terra-OnsetPicker-month"
+        options={this.availableMonths(intl)}
+        defaultValue={moment(this.state.onsetDate).month().toString()}
+        onChange={this.changeMonth}
+        isInline
+      />);
+    }
+
+    let yearSelect = null;
+    if ((this.state.granularity === 'YEAR' || this.state.granularity === 'MONTHYEAR') && this.state.precision !== 'UNKNOWN') {
+      yearSelect = (<SelectField
+        className="terra-OnsetPicker-year"
+        options={this.availableYears()}
+        defaultValue={moment(this.state.onsetDate).year().toString()}
+        onChange={this.changeYear}
+        isInline
+      />);
+    }
+
+    let dateSelect = null;
+    if (this.state.granularity === 'DATE' && this.state.precision !== 'UNKNOWN') {
+      dateSelect = (<Field>
+        <DatePicker
+          onChange={this.changeDate}
+          minDate={this.props.birthdate}
+          maxDate={moment().format('YYYY-MM-DD')}
+          selectedDate={moment(this.state.onsetDate).format('YYYY-MM-DD')}
+          name={this.props.onsetDateInputName}
         />
+      </Field>);
+    }
 
-        {/* Granularity */}
-        { this.state.precision !== 'UNKNOWN' &&
+    return (
+      (<div className="terra-OnsetPicker" {...customProps}>
+
+        <Fieldset>
+          {/* Precision */}
           <SelectField
-            options={[{ value: 'MONTHYEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonthYear' }) },
-                      { value: 'YEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
-                      { value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
-                      { value: 'DATE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
-            name={this.props.granularitySelectName}
-            defaultValue={this.state.granularity}
-            onChange={this.changeGranularity}
+            options={[{ value: 'ABOUT', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) },
+                      { value: 'BEFORE', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) },
+                      { value: 'AFTER', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) },
+                      { value: 'UNKNOWN', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) }]}
+            name={this.props.precisionSelectName}
+            defaultValue={this.state.precision}
+            onChange={this.changePrecision}
             isInline
           />
-        }
 
-        {/* Age Calculation */}
-        {this.state.granularity === 'AGE' && this.state.precision !== 'UNKNOWN' &&
-          <Fieldset>
-            {/* Count */}
-            <NumberField
-              className="terra-OnsetPicker-ageCalcCount"
-              min={1}
-              max={this.maxAgeCount()}
-              step={1}
-              value={this.state.ageCalcCount.toString()}
-              onChange={this.changeAgeCalcCount}
-              isInline
-            />
-            {/* Duration */}
-            <SelectField
-              className="terra-OnsetPicker-ageCalcDuration"
-              options={this.allowedAgeDurations()}
-              defaultValue={this.state.ageCalcDuration.toString()}
-              onChange={this.changeAgeCalcDuration}
-              isInline
-            />
-          </Fieldset>
-        }
+          {granularitySelect}
+        </Fieldset>
 
-        {/* Month & Month/Year */}
-        { (this.state.granularity === 'YEAR' || this.state.granularity === 'MONTHYEAR') && this.state.precision !== 'UNKNOWN' &&
-          <Fieldset>
-            { this.state.granularity === 'MONTHYEAR' &&
-              <SelectField
-                className="terra-OnsetPicker-month"
-                options={this.availableMonths(intl)}
-                defaultValue={moment(this.state.onsetDate).month().toString()}
-                onChange={this.changeMonth}
-                isInline
-              />
-            }
-
-            <SelectField
-              className="terra-OnsetPicker-year"
-              options={this.availableYears()}
-              defaultValue={moment(this.state.onsetDate).year().toString()}
-              onChange={this.changeYear}
-              isInline
-            />
-          </Fieldset>
-        }
-
-        {/* Date */}
-        { (this.state.granularity === 'DATE' && this.state.precision !== 'UNKNOWN') &&
-          <Field >
-            <DatePicker
-              onChange={this.changeDate}
-              minDate={this.props.birthdate}
-              maxDate={moment().format('YYYY-MM-DD')}
-              selectedDate={moment(this.state.onsetDate).format('YYYY-MM-DD')}
-              name={this.props.onsetDateInputName}
-            />
-          </Field>
-        }
-      </Fieldset>)
+        <Fieldset>
+          {ageCalcCountSelect}
+          {ageCalcDurationSelect}
+          {monthSelect}
+          {yearSelect}
+          {dateSelect}
+        </Fieldset>
+      </div>)
     );
   }
 }
