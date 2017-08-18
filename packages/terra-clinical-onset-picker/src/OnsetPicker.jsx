@@ -28,12 +28,12 @@ const propTypes = {
   /**
    * A callback function to execute when a granularity is selected.
    * The first parameter is the event. The second parameter is the changed granularity value.
-   **/
+   */
   granularitySelectOnChange: PropTypes.func,
 
-   /**
-    * The precision of the onset date. ABOUT, BEFORE, AFTER, and UNKNOWN are accepted.
-    */
+  /**
+   * The precision of the onset date. ABOUT, BEFORE, AFTER, and UNKNOWN are accepted.
+   */
   precision: PropTypes.string,
 
   /**
@@ -44,10 +44,10 @@ const propTypes = {
   /**
    * A callback function to execute when a precision is selected.
    * The first parameter is the event. The second parameter is the changed precision value.
-   **/
+   */
   precisionSelectOnChange: PropTypes.func,
 
-  /**
+  /*
    * The ISO 8601 string representation of the onset date to view/modify. Defaults to current date.
    */
   onsetDate: PropTypes.string,
@@ -60,7 +60,7 @@ const propTypes = {
   /**
    * A callback function to execute when a onsetDate is changed.
    * The first parameter is the event. The second parameter is the changed onsetDate value.
-   **/
+   */
   onsetDateInputOnChange: PropTypes.func,
 };
 
