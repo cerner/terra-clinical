@@ -7,7 +7,6 @@ import Fieldset from 'terra-form/lib/Fieldset';
 import NumberField from 'terra-form/lib/NumberField';
 import DatePicker from 'terra-date-picker/lib/DatePicker';
 import SelectField from 'terra-form/lib/SelectField';
-import Select from 'terra-form/lib/Select';
 
 
 const propTypes = {
