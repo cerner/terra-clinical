@@ -1,6 +1,9 @@
 exports[`test should render a default component 1`] = `
 <header
-  class="flexHeader" />
+  class="flexHeader">
+  <div
+    class="flexFill" />
+</header>
 `;
 
 exports[`test should render a header with all content 1`] = `
@@ -40,12 +43,16 @@ exports[`test should render a header with content on the left 1`] = `
       start content
     </div>
   </div>
+  <div
+    class="flexFill" />
 </header>
 `;
 
 exports[`test should render a header with content on the right 1`] = `
 <header
   class="flexHeader">
+  <div
+    class="flexFill" />
   <div
     class="flexEnd">
     <div>
