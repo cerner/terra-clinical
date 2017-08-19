@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Change data-class to be name spaced
+* Update nightwatch tests and test scripts.
 
 1.1.1 - (July 27, 2017)
 -----------------

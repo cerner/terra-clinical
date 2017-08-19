@@ -6,6 +6,9 @@ Unreleased
 ### Fixed
 * Text Truncation in IE10 and IE11.
 
+### Changed
+* Update nightwatch tests and test scripts.
+
 1.1.1 - (July 27, 2017)
 -----------------
 * Updated spacing around react-docgen comments

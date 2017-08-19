@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Change data-class to be name spaced
+* Update nightwatch tests and test scripts.
 
 ### Fixes
 * Fixed divider rendering for when graphic is not present which caused double dividers
