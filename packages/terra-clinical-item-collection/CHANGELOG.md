@@ -4,8 +4,12 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Change data-class to be name spaced
 * Update nightwatch tests and test scripts.
+
+1.2.0 - (August 16, 2017)
+-----------------
+### Changed
+* Change data-class to be name spaced
 
 1.1.1 - (July 27, 2017)
 -----------------

@@ -21,29 +21,33 @@ const propTypes = {
    * Content to be displayed at the end of the header
    */
   endContent: PropTypes.element,
+
+  /**
+   * A Boolean indicating if element is a subheader.
+   */
+  isSubheader: PropTypes.bool,
 };
 
 const defaultProps = {
   title: '',
   startContent: null,
   endContent: null,
+  isSubheader: false,
 };
 
-const Header = ({ title, startContent, endContent, ...customProps }) => {
+const Header = ({ title, startContent, endContent, isSubheader, ...customProps }) => {
   let startElement;
   if (startContent) {
     startElement = <div className={cx('flexEnd')}>{startContent}</div>;
   }
 
-  let fillElement;
+  let titleElement;
   if (title) {
-    fillElement = (
-      <div className={cx('flexFill')}>
-        <div className={cx('titleContainer')}>
-          <h1 className={cx('title')}>
-            {title}
-          </h1>
-        </div>
+    titleElement = (
+      <div className={cx('titleContainer')}>
+        <h1 className={cx('title')}>
+          {title}
+        </h1>
       </div>
     );
   }
@@ -53,10 +57,14 @@ const Header = ({ title, startContent, endContent, ...customProps }) => {
     endElement = <div className={cx('flexEnd')}>{endContent}</div>;
   }
 
+  const headerClass = isSubheader ? 'flexSubheader' : 'flexHeader';
+
   return (
-    <header {...customProps} className={cx('flexHeader', customProps.className)}>
+    <header {...customProps} className={cx(headerClass, customProps.className)}>
       {startElement}
-      {fillElement}
+      <div className={cx('flexFill')}>
+        {titleElement}
+      </div>
       {endElement}
     </header>
   );
