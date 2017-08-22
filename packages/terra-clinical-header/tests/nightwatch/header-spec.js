@@ -47,4 +47,8 @@ module.exports = {
     browser.expect.element('#headerTest--startContent').to.be.present;
     browser.expect.element('#headerTest--endContent').to.be.present;
   },
+  'Displays a header with no title and content on the right': (browser) => {
+    browser.url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/header-tests/no-title-right-content`);
+    browser.expect.element('#headerTest--content').to.be.present;
+  },
 };

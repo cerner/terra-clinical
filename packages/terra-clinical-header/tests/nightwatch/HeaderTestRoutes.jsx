@@ -11,6 +11,7 @@ import LeftContentHeader from './LeftContentHeader';
 import LeftAndRightContentHeader from './LeftAndRightContentHeader';
 import LongTitleAndContentHeader from './LongTitleAndContentHeader';
 import LeftAndRightContentSubheader from './LeftAndRightContentSubheader';
+import NoTitleRightContentHeader from './NoTitleRightContentHeader';
 
 const routes = (
   <div>
@@ -23,6 +24,7 @@ const routes = (
     <Route path="/tests/header-tests/left-and-right-content" component={LeftAndRightContentHeader} />
     <Route path="/tests/header-tests/long-title-content" component={LongTitleAndContentHeader} />
     <Route path="/tests/header-tests/left-and-right-content-subheader" component={LeftAndRightContentSubheader} />
+    <Route path="/tests/header-tests/no-title-right-content" component={NoTitleRightContentHeader} />
   </div>
 );
 
