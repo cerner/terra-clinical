@@ -7,7 +7,7 @@ module.exports = {
   },
 
   afterEach: (browser, done) => {
-    screenshot(browser, 'terra-onset-picker', done);
+    screenshot(browser, 'terra-OnsetPicker', done);
   },
 
   'Displays a default Onset picker': (browser) => {

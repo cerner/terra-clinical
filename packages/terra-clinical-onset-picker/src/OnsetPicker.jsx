@@ -11,12 +11,12 @@ import SelectField from 'terra-form/lib/SelectField';
 
 const propTypes = {
   /**
-   * The ISO 8601 string representation of the age date to calculate a onset date from.
+   * The ISO 8601 string representation of the birth date to calculate an onset date from.
    */
   birthdate: PropTypes.string.isRequired,
 
   /**
-   * The granularity of the onset date. YEAR, MONTHYEAR, and DATE are accepted.
+   * The granularity of the onset date. YEAR, MONTH, and DATE are accepted.
    */
   granularity: PropTypes.string,
 
@@ -66,7 +66,7 @@ const propTypes = {
 
 const defaultProps = {
   birthdate: undefined,
-  granularity: 'MONTHYEAR',
+  granularity: 'MONTH',
   granularitySelectName: undefined,
   granularitySelectOnChange: undefined,
   precision: 'ABOUT',
@@ -308,7 +308,7 @@ class OnsetPicker extends React.Component {
     }
 
     switch (this.state.granularity) {
-      case 'MONTHYEAR':
+      case 'MONTH':
         return `${this.state.precision}  ${moment(this.state.onsetDate).format('MMM YYYY')}`;
       case 'YEAR':
         return `${this.state.precision} ${moment(this.state.onsetDate).format('YYYY')}`;
@@ -344,7 +344,7 @@ class OnsetPicker extends React.Component {
     let granularitySelect = null;
     if (this.state.precision !== 'UNKNOWN') {
       granularitySelect = (<SelectField
-        options={[{ value: 'MONTHYEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonthYear' }) },
+        options={[{ value: 'MONTH', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonth' }) },
                   { value: 'YEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
                   { value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
                   { value: 'DATE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
@@ -378,7 +378,7 @@ class OnsetPicker extends React.Component {
     }
 
     let monthSelect = null;
-    if (this.state.granularity === 'MONTHYEAR' && this.state.precision !== 'UNKNOWN') {
+    if (this.state.granularity === 'MONTH' && this.state.precision !== 'UNKNOWN') {
       monthSelect = (<SelectField
         className="terra-OnsetPicker-month"
         options={this.availableMonths(intl)}
@@ -389,7 +389,7 @@ class OnsetPicker extends React.Component {
     }
 
     let yearSelect = null;
-    if ((this.state.granularity === 'YEAR' || this.state.granularity === 'MONTHYEAR') && this.state.precision !== 'UNKNOWN') {
+    if ((this.state.granularity === 'YEAR' || this.state.granularity === 'MONTH') && this.state.precision !== 'UNKNOWN') {
       yearSelect = (<SelectField
         className="terra-OnsetPicker-year"
         options={this.availableYears()}

@@ -3,7 +3,7 @@
   "Terra.onsetPicker.precisionBefore": "~ Before -",
   "Terra.onsetPicker.precisionAfter": "~ After -",
   "Terra.onsetPicker.precisionUnknown": "~ Unknown -",
-  "Terra.onsetPicker.granularityMonthYear": "~ Month/Year -",
+  "Terra.onsetPicker.granularityMonth": "~ Month -",
   "Terra.onsetPicker.granularityYear": "~ Year -",
   "Terra.onsetPicker.granularityAge": "~ Age -",
   "Terra.onsetPicker.granularityDate": "~ Date -",
