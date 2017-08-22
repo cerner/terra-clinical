@@ -7,17 +7,20 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/error-view-tests/default`)
       .assert.elementPresent('#ErrorView');
   },
+
   'Displays an error view with text for name and description': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/error-view-tests/text`)
       .assert.containsText('#ErrorView p', 'test name. test description');
   },
+
   'Displays an error with a button': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/error-view-tests/button`)
       .assert.elementPresent('#ErrorView button')
       .assert.containsText('#ErrorView button', 'test button');
   },
+
   'Displays an error view with glyph hidden': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/error-view-tests/hidden`)

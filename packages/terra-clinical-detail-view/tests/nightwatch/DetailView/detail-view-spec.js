@@ -7,6 +7,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/detail-view-tests/detail-view-divided`)
       .assert.elementPresent('#DetailView hr');
   },
+
   'Displays a Detail View that is not divided with provided components': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/detail-view-tests/detail-view-no-divider`)

@@ -4,24 +4,25 @@ const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsi
 const smallBreakpoint = 768;
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
-  '@disable': true,
-  '@tags': ['action-header'],
   'Displays a default action header': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header`)
       .assert.elementPresent('#ActionHeader');
   },
+
   'Displays an action header with title': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-title`)
       .assert.elementPresent('#ActionHeader');
   },
+
   'Displays an action header with back button': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-back`)
       .assert.elementPresent('[class*="left-buttons"] > button')
       .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Back');
   },
+
   'Displays an action header with close button': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-close`);
     const width = screenWidth(browser);
@@ -35,6 +36,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
         .assert.attributeContains('[class*="right-buttons"] > button', 'aria-label', 'Close');
     }
   },
+
   'Displays an action header with maximize button': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-maximize`);
     const width = screenWidth(browser);
@@ -46,6 +48,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
         .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Maximize');
     }
   },
+
   'Displays an action header with minimize button': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-minimize`);
     const width = screenWidth(browser);
@@ -57,6 +60,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
         .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Minimize');
     }
   },
+
   'Displays an action header with a back button and a close button': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-back-close`);
     browser
@@ -66,6 +70,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .assert.elementPresent('#ActionHeader [class*="right-buttons"] > button')
       .assert.attributeContains('#ActionHeader [class*="right-buttons"] > button', 'aria-label', 'Close');
   },
+
   'Displays an action header with a previous-next button-group': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-previous-next`);
     browser
@@ -75,6 +80,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .assert.elementPresent('[class*="left-buttons"] button:last-child')
       .assert.attributeContains('[class*="left-buttons"] button:last-child', 'aria-label', 'Next');
   },
+
   'Displays an action header with custom content': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-child`)

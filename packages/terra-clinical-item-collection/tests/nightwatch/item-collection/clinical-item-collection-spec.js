@@ -16,6 +16,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/item-collection-tests/default`)
       .assert.elementPresent('#ItemCollection');
   },
+
   'Displays the correct collection responsive to window size for tiny breakpoint': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/tiny-breakpoint`);
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
@@ -27,6 +28,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
+
   'Displays the correct collection responsive to window size for small breakpoint': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/small-breakpoint`);
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
@@ -38,6 +40,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
+
   'Displays the correct collection responsive to window size for medium breakpoint': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/medium-breakpoint`);
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
@@ -49,6 +52,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
+
   'Displays the correct collection responsive to window size for large breakpoint': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/large-breakpoint`);
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
@@ -60,6 +64,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
+
   'Displays the correct collection responsive to window size for huge breakpoint': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/huge-breakpoint`);
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
@@ -71,21 +76,25 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.expect.element('#ItemCollection').to.have.attribute('data-terra-clinical-item-collection-table-view');
     }
   },
+
   'Displays an item collection with table styles': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/item-collection-tests/table-styles`)
       .assert.elementPresent('#TableStyles');
   },
+
   'Displays an item collection with list styles': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/item-collection-tests/list-styles`)
       .assert.elementPresent('#ListStyles');
   },
+
   'Displays an item collection with styles applied to list items': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/item-collection-tests/item-styles`)
       .assert.elementPresent('#ItemStyles');
   },
+
   'Triggers onChange function when list or row is selected upon selection': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/onchange`);
 
@@ -104,6 +113,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.containsText('#selected-index', '1');
     }
   },
+
   'Maintains selection in list and table view as screen is resized': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/onchange`);
     browser.execute("document.getElementById('root').style.padding = 0;");
@@ -115,6 +125,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.containsText('#selected-index', '2');
     }
   },
+
   'Correctly displays a row missing a start accessory when the first row has all elements': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/varying-items`);
     browser.execute("document.getElementById('root').style.padding = 0;");
@@ -124,6 +135,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.elementPresent('tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)');
     }
   },
+
   'Correctly displays a row missing a end accessory when the first row has all elements': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/varying-items`);
     browser.execute("document.getElementById('root').style.padding = 0;");
@@ -133,6 +145,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.elementPresent('tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)');
     }
   },
+
   'Correctly displays a row missing a comment when the first row has all elements': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/varying-items`);
     browser.execute("document.getElementById('root').style.padding = 0;");
@@ -142,6 +155,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.elementPresent('tr[class*="row"]:nth-child(4) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)');
     }
   },
+
   'Correctly displays a row missing displays when the first row has all elements': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/varying-items`);
     browser.execute("document.getElementById('root').style.padding = 0;");
@@ -152,6 +166,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.elementPresent('tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)');
     }
   },
+
   'Correctly displays a row with too many displays when the first row has all elements': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/varying-items`);
     browser.execute("document.getElementById('root').style.padding = 0;");
@@ -162,6 +177,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(6)');
     }
   },
+
   'Correctly displays a row missing many elements when the first row has all elements': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/varying-items`);
     browser.execute("document.getElementById('root').style.padding = 0;");

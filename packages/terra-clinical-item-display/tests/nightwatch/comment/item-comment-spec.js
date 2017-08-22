@@ -7,6 +7,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/item-comment-tests/default`)
       .assert.elementPresent('#ItemComment');
   },
+
   'Displays a clinical item view with displays present': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/item-comment-tests/text`)
