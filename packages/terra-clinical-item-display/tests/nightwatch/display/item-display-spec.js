@@ -10,9 +10,9 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Displays text with different styles': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-display-tests/text-style`);
-    browser.assert.cssProperty('#test-display-secondary > :first-child', 'color', 'rgba(100, 105, 108, 1)'); // Browser computes #64696c to rgba(100, 105, 108, 1)
-    browser.assert.cssProperty('#test-display-attention > :first-child', 'color', 'rgba(204, 0, 0, 1)'); // Browser computes #c00 to rgba(204, 0, 0, 1)
-    browser.assert.cssProperty('#test-display-strike-through > :first-child', 'text-decoration', 'line-through');
+    browser.expect.element('#test-display-secondary > :first-child').to.have.css('color').which.equals('rgba(100, 105, 108, 1)');
+    browser.expect.element('#test-display-attention > :first-child').to.have.css('color').which.equals('rgba(204, 0, 0, 1)');
+    browser.expect.element('#test-display-strike-through > :first-child').to.have.css('text-decoration').which.contains('line-through');
   },
 
   'Displays text with an icon': (browser) => {

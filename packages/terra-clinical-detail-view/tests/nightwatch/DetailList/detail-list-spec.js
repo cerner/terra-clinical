@@ -7,6 +7,6 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/detail-list-tests/noraml-item-size`)
       .assert.elementPresent('#DetailList')
       .assert.containsText('#DetailList div:nth-child(1)', 'Detail List Title')
-      .assert.cssProperty('#DetailList div:nth-child(2)', 'display', '-webkit-flex');
+      .assert.cssProperty('#DetailList div:nth-child(2)', 'display', 'flex');
   },
 });
