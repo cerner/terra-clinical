@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
+const resizeTo = require('terra-toolkit/src/nightwatch/responsive-helpers').resizeTo;
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Displays a Detail List Item as expected': (browser) => {

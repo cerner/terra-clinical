@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsive-helpers');
+const { resizeTo, screenWidth } = require('terra-toolkit/src/nightwatch/responsive-helpers');
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Displays a default action header': (browser) => {

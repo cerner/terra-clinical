@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
+const resizeTo = require('terra-tooklit/src/nightwatch/responsive-helpers').resizeTo;
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Displays an item comment with default props': (browser) => {
