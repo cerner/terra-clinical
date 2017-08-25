@@ -52,7 +52,7 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:scss": "lerna run lint:scss",
-    "pretest": "npm run lint",
+    "pretest-disabe": "npm run lint",
     "postinstall": "npm run compile && npm run bootstrap",
     "props-table": "lerna run props-table",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
