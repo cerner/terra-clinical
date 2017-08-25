@@ -1,0 +1,2345 @@
+
+> terra-clinical@0.1.0 nightwatch /Users/er047227/terra-clinical
+> nightwatch
+
+[1;35mStarting selenium server... [0m[1;35mstarted - PID: [0m 33556
+
+[0;36m[Nightwatch / Action Header Spec] Test Suite[0m
+[0;35m================================================[0m
+
+Running:  [0;32m[@tiny] Displays a default action header[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (14.927s)
+
+Running:  [0;32m[@tiny] Displays an action header with title[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (29ms)
+
+Running:  [0;32m[@tiny] Displays an action header with back button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (66ms)
+
+Running:  [0;32m[@tiny] Displays an action header with close button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (45ms)
+
+Running:  [0;32m[@tiny] Displays an action header with maximize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (31ms)
+
+Running:  [0;32m[@tiny] Displays an action header with minimize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (23ms)
+
+Running:  [0;32m[@tiny] Displays an action header with a back button and a close button[0m
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="left-buttons"] > button> contains "Back".
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (110ms)
+
+Running:  [0;32m[@tiny] Displays an action header with a previous-next button-group[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:first-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:first-child> contains "Previous".
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:last-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:last-child> contains "Next".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (116ms)
+
+Running:  [0;32m[@tiny] Displays an action header with custom content[0m
+ [0;32m✔[0m Testing if element <#CustomContent> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (32ms)
+
+Running:  [0;32m[@small] Displays a default action header[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (772ms)
+
+Running:  [0;32m[@small] Displays an action header with title[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (24ms)
+
+Running:  [0;32m[@small] Displays an action header with back button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (41ms)
+
+Running:  [0;32m[@small] Displays an action header with close button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (47ms)
+
+Running:  [0;32m[@small] Displays an action header with maximize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (31ms)
+
+Running:  [0;32m[@small] Displays an action header with minimize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (28ms)
+
+Running:  [0;32m[@small] Displays an action header with a back button and a close button[0m
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="left-buttons"] > button> contains "Back".
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (66ms)
+
+Running:  [0;32m[@small] Displays an action header with a previous-next button-group[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:first-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:first-child> contains "Previous".
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:last-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:last-child> contains "Next".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (59ms)
+
+Running:  [0;32m[@small] Displays an action header with custom content[0m
+ [0;32m✔[0m Testing if element <#CustomContent> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@medium] Displays a default action header[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (456ms)
+
+Running:  [0;32m[@medium] Displays an action header with title[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (39ms)
+
+Running:  [0;32m[@medium] Displays an action header with back button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (52ms)
+
+Running:  [0;32m[@medium] Displays an action header with close button[0m
+ [0;32m✔[0m Testing if element <[class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (72ms)
+
+Running:  [0;32m[@medium] Displays an action header with maximize button[0m
+ [0;32m✔[0m Testing if element <button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Maximize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (57ms)
+
+Running:  [0;32m[@medium] Displays an action header with minimize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Minimize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (54ms)
+
+Running:  [0;32m[@medium] Displays an action header with a back button and a close button[0m
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="left-buttons"] > button> contains "Back".
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (113ms)
+
+Running:  [0;32m[@medium] Displays an action header with a previous-next button-group[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:first-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:first-child> contains "Previous".
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:last-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:last-child> contains "Next".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (119ms)
+
+Running:  [0;32m[@medium] Displays an action header with custom content[0m
+ [0;32m✔[0m Testing if element <#CustomContent> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (44ms)
+
+Running:  [0;32m[@large] Displays a default action header[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (600ms)
+
+Running:  [0;32m[@large] Displays an action header with title[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (25ms)
+
+Running:  [0;32m[@large] Displays an action header with back button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (37ms)
+
+Running:  [0;32m[@large] Displays an action header with close button[0m
+ [0;32m✔[0m Testing if element <[class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (60ms)
+
+Running:  [0;32m[@large] Displays an action header with maximize button[0m
+ [0;32m✔[0m Testing if element <button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Maximize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (55ms)
+
+Running:  [0;32m[@large] Displays an action header with minimize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Minimize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (34ms)
+
+Running:  [0;32m[@large] Displays an action header with a back button and a close button[0m
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="left-buttons"] > button> contains "Back".
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (102ms)
+
+Running:  [0;32m[@large] Displays an action header with a previous-next button-group[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:first-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:first-child> contains "Previous".
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:last-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:last-child> contains "Next".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (75ms)
+
+Running:  [0;32m[@large] Displays an action header with custom content[0m
+ [0;32m✔[0m Testing if element <#CustomContent> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@huge] Displays a default action header[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (466ms)
+
+Running:  [0;32m[@huge] Displays an action header with title[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (37ms)
+
+Running:  [0;32m[@huge] Displays an action header with back button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (46ms)
+
+Running:  [0;32m[@huge] Displays an action header with close button[0m
+ [0;32m✔[0m Testing if element <[class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (67ms)
+
+Running:  [0;32m[@huge] Displays an action header with maximize button[0m
+ [0;32m✔[0m Testing if element <button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Maximize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (57ms)
+
+Running:  [0;32m[@huge] Displays an action header with minimize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Minimize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (51ms)
+
+Running:  [0;32m[@huge] Displays an action header with a back button and a close button[0m
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="left-buttons"] > button> contains "Back".
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (133ms)
+
+Running:  [0;32m[@huge] Displays an action header with a previous-next button-group[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:first-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:first-child> contains "Previous".
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:last-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:last-child> contains "Next".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (117ms)
+
+Running:  [0;32m[@huge] Displays an action header with custom content[0m
+ [0;32m✔[0m Testing if element <#CustomContent> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (34ms)
+
+Running:  [0;32m[@enormous] Displays a default action header[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (586ms)
+
+Running:  [0;32m[@enormous] Displays an action header with title[0m
+ [0;32m✔[0m Testing if element <#ActionHeader> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (27ms)
+
+Running:  [0;32m[@enormous] Displays an action header with back button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Back".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (34ms)
+
+Running:  [0;32m[@enormous] Displays an action header with close button[0m
+ [0;32m✔[0m Testing if element <[class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (65ms)
+
+Running:  [0;32m[@enormous] Displays an action header with maximize button[0m
+ [0;32m✔[0m Testing if element <button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Maximize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (53ms)
+
+Running:  [0;32m[@enormous] Displays an action header with minimize button[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] > button> contains "Minimize".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (37ms)
+
+Running:  [0;32m[@enormous] Displays an action header with a back button and a close button[0m
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="left-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="left-buttons"] > button> contains "Back".
+ [0;32m✔[0m Testing if element <#ActionHeader [class*="right-buttons"] > button> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <#ActionHeader [class*="right-buttons"] > button> contains "Close".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (52ms)
+
+Running:  [0;32m[@enormous] Displays an action header with a previous-next button-group[0m
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:first-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:first-child> contains "Previous".
+ [0;32m✔[0m Testing if element <[class*="left-buttons"] button:last-child> is present.
+ [0;32m✔[0m Testing if attribute aria-label of <[class*="left-buttons"] button:last-child> contains "Next".
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (77ms)
+
+Running:  [0;32m[@enormous] Displays an action header with custom content[0m
+ [0;32m✔[0m Testing if element <#CustomContent> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+[0;36m[Nightwatch / Application Spec] Test Suite[0m
+[0;35m==============================================[0m
+
+Running:  [0;32m[@tiny] Renders the Application with provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (1.598s)
+
+Running:  [0;32m[@tiny] Renders the Application without provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is not present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (48ms)
+
+Running:  [0;32m[@small] Renders the Application with provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (778ms)
+
+Running:  [0;32m[@small] Renders the Application without provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is not present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (44ms)
+
+Running:  [0;32m[@medium] Renders the Application with provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (477ms)
+
+Running:  [0;32m[@medium] Renders the Application without provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is not present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (47ms)
+
+Running:  [0;32m[@large] Renders the Application with provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (481ms)
+
+Running:  [0;32m[@large] Renders the Application without provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is not present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (43ms)
+
+Running:  [0;32m[@huge] Renders the Application with provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (482ms)
+
+Running:  [0;32m[@huge] Renders the Application without provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is not present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (48ms)
+
+Running:  [0;32m[@enormous] Renders the Application with provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (486ms)
+
+Running:  [0;32m[@enormous] Renders the Application without provided AppDelegate[0m
+ [0;32m✔[0m Testing if element <#Application> is present.
+ [0;32m✔[0m Testing if element <.test-ContainerComponent> contains text: "App is not present".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (47ms)
+
+[0;36m[Nightwatch /  Detail List / Detail List Spec] Test Suite[0m
+[0;35m=============================================================[0m
+
+Running:  [0;32m[@tiny] Displays a default Detail List with a title and list[0m
+ [0;32m✔[0m Testing if element <#DetailList> is present.
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(1)> contains text: "Detail List Title".
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(2)> has css property "display: flex".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (1.609s)
+
+Running:  [0;32m[@small] Displays a default Detail List with a title and list[0m
+ [0;32m✔[0m Testing if element <#DetailList> is present.
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(1)> contains text: "Detail List Title".
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(2)> has css property "display: flex".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (987ms)
+
+Running:  [0;32m[@medium] Displays a default Detail List with a title and list[0m
+ [0;32m✔[0m Testing if element <#DetailList> is present.
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(1)> contains text: "Detail List Title".
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(2)> has css property "display: flex".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (548ms)
+
+Running:  [0;32m[@large] Displays a default Detail List with a title and list[0m
+ [0;32m✔[0m Testing if element <#DetailList> is present.
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(1)> contains text: "Detail List Title".
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(2)> has css property "display: flex".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (515ms)
+
+Running:  [0;32m[@huge] Displays a default Detail List with a title and list[0m
+ [0;32m✔[0m Testing if element <#DetailList> is present.
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(1)> contains text: "Detail List Title".
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(2)> has css property "display: flex".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (521ms)
+
+Running:  [0;32m[@enormous] Displays a default Detail List with a title and list[0m
+ [0;32m✔[0m Testing if element <#DetailList> is present.
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(1)> contains text: "Detail List Title".
+ [0;32m✔[0m Testing if element <#DetailList div:nth-child(2)> has css property "display: flex".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (503ms)
+
+[0;36m[Nightwatch /  Detail List Item / Detail List Item Spec] Test Suite[0m
+[0;35m=======================================================================[0m
+
+Running:  [0;32m[@tiny] Displays a Detail List Item as expected[0m
+ [0;32m✔[0m Testing if element <#DetailListItem> is present.
+ [0;32m✔[0m Testing if element <#DetailListItem> has css property "min-width: 50%".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (1.581s)
+
+Running:  [0;32m[@small] Displays a Detail List Item as expected[0m
+ [0;32m✔[0m Testing if element <#DetailListItem> is present.
+ [0;32m✔[0m Testing if element <#DetailListItem> has css property "min-width: 50%".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (787ms)
+
+Running:  [0;32m[@medium] Displays a Detail List Item as expected[0m
+ [0;32m✔[0m Testing if element <#DetailListItem> is present.
+ [0;32m✔[0m Testing if element <#DetailListItem> has css property "min-width: 50%".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (517ms)
+
+Running:  [0;32m[@large] Displays a Detail List Item as expected[0m
+ [0;32m✔[0m Testing if element <#DetailListItem> is present.
+ [0;32m✔[0m Testing if element <#DetailListItem> has css property "min-width: 50%".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (497ms)
+
+Running:  [0;32m[@huge] Displays a Detail List Item as expected[0m
+ [0;32m✔[0m Testing if element <#DetailListItem> is present.
+ [0;32m✔[0m Testing if element <#DetailListItem> has css property "min-width: 50%".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (505ms)
+
+Running:  [0;32m[@enormous] Displays a Detail List Item as expected[0m
+ [0;32m✔[0m Testing if element <#DetailListItem> is present.
+ [0;32m✔[0m Testing if element <#DetailListItem> has css property "min-width: 50%".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (486ms)
+
+[0;36m[Nightwatch /  Detail View / Detail View Spec] Test Suite[0m
+[0;35m=============================================================[0m
+
+Running:  [0;32m[@tiny] Displays a divided Detail View with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.601s)
+
+Running:  [0;32m[@tiny] Displays a Detail View that is not divided with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (24ms)
+
+Running:  [0;32m[@small] Displays a divided Detail View with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (730ms)
+
+Running:  [0;32m[@small] Displays a Detail View that is not divided with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@medium] Displays a divided Detail View with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (462ms)
+
+Running:  [0;32m[@medium] Displays a Detail View that is not divided with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (22ms)
+
+Running:  [0;32m[@large] Displays a divided Detail View with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (457ms)
+
+Running:  [0;32m[@large] Displays a Detail View that is not divided with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (39ms)
+
+Running:  [0;32m[@huge] Displays a divided Detail View with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (457ms)
+
+Running:  [0;32m[@huge] Displays a Detail View that is not divided with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (17ms)
+
+Running:  [0;32m[@enormous] Displays a divided Detail View with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (466ms)
+
+Running:  [0;32m[@enormous] Displays a Detail View that is not divided with provided components[0m
+ [0;32m✔[0m Testing if element <#DetailView hr> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+[0;36m[Nightwatch / Error View Spec] Test Suite[0m
+[0;35m=============================================[0m
+
+Running:  [0;32m[@tiny] Displays a default error view[0m
+ [0;32m✔[0m Testing if element <#ErrorView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.498s)
+
+Running:  [0;32m[@tiny] Displays an error view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#ErrorView p> contains text: "test name. test description".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (50ms)
+
+Running:  [0;32m[@tiny] Displays an error with a button[0m
+ [0;32m✔[0m Testing if element <#ErrorView button> is present.
+ [0;32m✔[0m Testing if element <#ErrorView button> contains text: "test button".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (73ms)
+
+Running:  [0;32m[@tiny] Displays an error view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#ErrorView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (32ms)
+
+Running:  [0;32m[@small] Displays a default error view[0m
+ [0;32m✔[0m Testing if element <#ErrorView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (760ms)
+
+Running:  [0;32m[@small] Displays an error view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#ErrorView p> contains text: "test name. test description".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (38ms)
+
+Running:  [0;32m[@small] Displays an error with a button[0m
+ [0;32m✔[0m Testing if element <#ErrorView button> is present.
+ [0;32m✔[0m Testing if element <#ErrorView button> contains text: "test button".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (44ms)
+
+Running:  [0;32m[@small] Displays an error view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#ErrorView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@medium] Displays a default error view[0m
+ [0;32m✔[0m Testing if element <#ErrorView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (461ms)
+
+Running:  [0;32m[@medium] Displays an error view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#ErrorView p> contains text: "test name. test description".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@medium] Displays an error with a button[0m
+ [0;32m✔[0m Testing if element <#ErrorView button> is present.
+ [0;32m✔[0m Testing if element <#ErrorView button> contains text: "test button".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (51ms)
+
+Running:  [0;32m[@medium] Displays an error view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#ErrorView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (20ms)
+
+Running:  [0;32m[@large] Displays a default error view[0m
+ [0;32m✔[0m Testing if element <#ErrorView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (455ms)
+
+Running:  [0;32m[@large] Displays an error view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#ErrorView p> contains text: "test name. test description".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (61ms)
+
+Running:  [0;32m[@large] Displays an error with a button[0m
+ [0;32m✔[0m Testing if element <#ErrorView button> is present.
+ [0;32m✔[0m Testing if element <#ErrorView button> contains text: "test button".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (46ms)
+
+Running:  [0;32m[@large] Displays an error view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#ErrorView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+Running:  [0;32m[@huge] Displays a default error view[0m
+ [0;32m✔[0m Testing if element <#ErrorView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (452ms)
+
+Running:  [0;32m[@huge] Displays an error view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#ErrorView p> contains text: "test name. test description".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (35ms)
+
+Running:  [0;32m[@huge] Displays an error with a button[0m
+ [0;32m✔[0m Testing if element <#ErrorView button> is present.
+ [0;32m✔[0m Testing if element <#ErrorView button> contains text: "test button".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (54ms)
+
+Running:  [0;32m[@huge] Displays an error view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#ErrorView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@enormous] Displays a default error view[0m
+ [0;32m✔[0m Testing if element <#ErrorView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (451ms)
+
+Running:  [0;32m[@enormous] Displays an error view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#ErrorView p> contains text: "test name. test description".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (41ms)
+
+Running:  [0;32m[@enormous] Displays an error with a button[0m
+ [0;32m✔[0m Testing if element <#ErrorView button> is present.
+ [0;32m✔[0m Testing if element <#ErrorView button> contains text: "test button".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (47ms)
+
+Running:  [0;32m[@enormous] Displays an error view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#ErrorView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+[0;36m[Nightwatch / Header Spec] Test Suite[0m
+[0;35m=========================================[0m
+
+Running:  [0;32m[@tiny] Displays a default header with no content[0m
+ [0;32m✔[0m Testing if element <#Header> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.504s)
+
+Running:  [0;32m[@tiny] Displays a header with a title only[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "Title".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (52ms)
+
+Running:  [0;32m[@tiny] Displays a header with a long title that truncates[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (40ms)
+
+Running:  [0;32m[@tiny] Displays a header with content on the left[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@tiny] Displays a header with content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+Running:  [0;32m[@tiny] Displays a header with content on the left and right[0m
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (49ms)
+
+Running:  [0;32m[@tiny] Displays a header with a long title that truncates with left and right content[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (39ms)
+
+Running:  [0;32m[@tiny] Displays a subsection header with content on the left and right[0m
+ [0;32m✔[0m Testing if element <header[class*="flexSubheader"]> is present.
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (49ms)
+
+Running:  [0;32m[@tiny] Displays a header with no title and content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (17ms)
+
+Running:  [0;32m[@small] Displays a default header with no content[0m
+ [0;32m✔[0m Testing if element <#Header> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (749ms)
+
+Running:  [0;32m[@small] Displays a header with a title only[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "Title".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@small] Displays a header with a long title that truncates[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (42ms)
+
+Running:  [0;32m[@small] Displays a header with content on the left[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@small] Displays a header with content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (19ms)
+
+Running:  [0;32m[@small] Displays a header with content on the left and right[0m
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (32ms)
+
+Running:  [0;32m[@small] Displays a header with a long title that truncates with left and right content[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@small] Displays a subsection header with content on the left and right[0m
+ [0;32m✔[0m Testing if element <header[class*="flexSubheader"]> is present.
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (35ms)
+
+Running:  [0;32m[@small] Displays a header with no title and content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@medium] Displays a default header with no content[0m
+ [0;32m✔[0m Testing if element <#Header> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (458ms)
+
+Running:  [0;32m[@medium] Displays a header with a title only[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "Title".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (54ms)
+
+Running:  [0;32m[@medium] Displays a header with a long title that truncates[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (52ms)
+
+Running:  [0;32m[@medium] Displays a header with content on the left[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (33ms)
+
+Running:  [0;32m[@medium] Displays a header with content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (34ms)
+
+Running:  [0;32m[@medium] Displays a header with content on the left and right[0m
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (57ms)
+
+Running:  [0;32m[@medium] Displays a header with a long title that truncates with left and right content[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (62ms)
+
+Running:  [0;32m[@medium] Displays a subsection header with content on the left and right[0m
+ [0;32m✔[0m Testing if element <header[class*="flexSubheader"]> is present.
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (59ms)
+
+Running:  [0;32m[@medium] Displays a header with no title and content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (43ms)
+
+Running:  [0;32m[@large] Displays a default header with no content[0m
+ [0;32m✔[0m Testing if element <#Header> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (577ms)
+
+Running:  [0;32m[@large] Displays a header with a title only[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "Title".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (56ms)
+
+Running:  [0;32m[@large] Displays a header with a long title that truncates[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (51ms)
+
+Running:  [0;32m[@large] Displays a header with content on the left[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (35ms)
+
+Running:  [0;32m[@large] Displays a header with content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (27ms)
+
+Running:  [0;32m[@large] Displays a header with content on the left and right[0m
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (54ms)
+
+Running:  [0;32m[@large] Displays a header with a long title that truncates with left and right content[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (65ms)
+
+Running:  [0;32m[@large] Displays a subsection header with content on the left and right[0m
+ [0;32m✔[0m Testing if element <header[class*="flexSubheader"]> is present.
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (60ms)
+
+Running:  [0;32m[@large] Displays a header with no title and content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (42ms)
+
+Running:  [0;32m[@huge] Displays a default header with no content[0m
+ [0;32m✔[0m Testing if element <#Header> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (574ms)
+
+Running:  [0;32m[@huge] Displays a header with a title only[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "Title".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (55ms)
+
+Running:  [0;32m[@huge] Displays a header with a long title that truncates[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (59ms)
+
+Running:  [0;32m[@huge] Displays a header with content on the left[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (33ms)
+
+Running:  [0;32m[@huge] Displays a header with content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (34ms)
+
+Running:  [0;32m[@huge] Displays a header with content on the left and right[0m
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (55ms)
+
+Running:  [0;32m[@huge] Displays a header with a long title that truncates with left and right content[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (58ms)
+
+Running:  [0;32m[@huge] Displays a subsection header with content on the left and right[0m
+ [0;32m✔[0m Testing if element <header[class*="flexSubheader"]> is present.
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (52ms)
+
+Running:  [0;32m[@huge] Displays a header with no title and content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (48ms)
+
+Running:  [0;32m[@enormous] Displays a default header with no content[0m
+ [0;32m✔[0m Testing if element <#Header> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (596ms)
+
+Running:  [0;32m[@enormous] Displays a header with a title only[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "Title".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (53ms)
+
+Running:  [0;32m[@enormous] Displays a header with a long title that truncates[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (57ms)
+
+Running:  [0;32m[@enormous] Displays a header with content on the left[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (34ms)
+
+Running:  [0;32m[@enormous] Displays a header with content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (33ms)
+
+Running:  [0;32m[@enormous] Displays a header with content on the left and right[0m
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (56ms)
+
+Running:  [0;32m[@enormous] Displays a header with a long title that truncates with left and right content[0m
+ [0;32m✔[0m Testing if element <#Header h1> contains text: "LongTitle".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (60ms)
+
+Running:  [0;32m[@enormous] Displays a subsection header with content on the left and right[0m
+ [0;32m✔[0m Testing if element <header[class*="flexSubheader"]> is present.
+ [0;32m✔[0m Expected element <#headerTest--startContent> to be present
+ [0;32m✔[0m Expected element <#headerTest--endContent> to be present
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (60ms)
+
+Running:  [0;32m[@enormous] Displays a header with no title and content on the right[0m
+ [0;32m✔[0m Expected element <#headerTest--content> to be present
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (44ms)
+
+[0;36m[Nightwatch / Item Collection / Clinical Item Collection Spec] Test Suite[0m
+[0;35m=============================================================================[0m
+
+Running:  [0;32m[@tiny] Displays a default item collection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 527 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (2.045s)
+
+Running:  [0;32m[@tiny] Displays the correct collection responsive to window size for tiny breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (556ms)
+
+Running:  [0;32m[@tiny] Displays the correct collection responsive to window size for small breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 8 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (51ms)
+
+Running:  [0;32m[@tiny] Displays the correct collection responsive to window size for medium breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (552ms)
+
+Running:  [0;32m[@tiny] Displays the correct collection responsive to window size for large breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (552ms)
+
+Running:  [0;32m[@tiny] Displays the correct collection responsive to window size for huge breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 518 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (550ms)
+
+Running:  [0;32m[@tiny] Displays an item collection with table styles[0m
+ [0;32m✔[0m Testing if element <#TableStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (35ms)
+
+Running:  [0;32m[@tiny] Displays an item collection with list styles[0m
+ [0;32m✔[0m Testing if element <#ListStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (62ms)
+
+Running:  [0;32m[@tiny] Displays an item collection with styles applied to list items[0m
+ [0;32m✔[0m Testing if element <#ItemStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (72ms)
+
+Running:  [0;32m[@tiny] Triggers onChange function when list or row is selected upon selection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 9 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "0".
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "1".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (204ms)
+
+Running:  [0;32m[@tiny] Maintains selection in list and table view as screen is resized[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "2".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (907ms)
+
+Running:  [0;32m[@tiny] Correctly displays a row missing a start accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 518 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (543ms)
+
+Running:  [0;32m[@tiny] Correctly displays a row missing a end accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 529 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (601ms)
+
+Running:  [0;32m[@tiny] Correctly displays a row missing a comment when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 519 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (594ms)
+
+Running:  [0;32m[@tiny] Correctly displays a row missing displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 525 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (601ms)
+
+Running:  [0;32m[@tiny] Correctly displays a row with too many displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 528 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (602ms)
+
+Running:  [0;32m[@tiny] Correctly displays a row missing many elements when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (599ms)
+
+Running:  [0;32m[@small] Displays a default item collection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (987ms)
+
+Running:  [0;32m[@small] Displays the correct collection responsive to window size for tiny breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 517 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (556ms)
+
+Running:  [0;32m[@small] Displays the correct collection responsive to window size for small breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (552ms)
+
+Running:  [0;32m[@small] Displays the correct collection responsive to window size for medium breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 517 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (552ms)
+
+Running:  [0;32m[@small] Displays the correct collection responsive to window size for large breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (553ms)
+
+Running:  [0;32m[@small] Displays the correct collection responsive to window size for huge breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 525 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (557ms)
+
+Running:  [0;32m[@small] Displays an item collection with table styles[0m
+ [0;32m✔[0m Testing if element <#TableStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (35ms)
+
+Running:  [0;32m[@small] Displays an item collection with list styles[0m
+ [0;32m✔[0m Testing if element <#ListStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (65ms)
+
+Running:  [0;32m[@small] Displays an item collection with styles applied to list items[0m
+ [0;32m✔[0m Testing if element <#ItemStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (68ms)
+
+Running:  [0;32m[@small] Triggers onChange function when list or row is selected upon selection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "0".
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "1".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (717ms)
+
+Running:  [0;32m[@small] Maintains selection in list and table view as screen is resized[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 528 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "2".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (628ms)
+
+Running:  [0;32m[@small] Correctly displays a row missing a start accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (544ms)
+
+Running:  [0;32m[@small] Correctly displays a row missing a end accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 530 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (604ms)
+
+Running:  [0;32m[@small] Correctly displays a row missing a comment when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 531 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (606ms)
+
+Running:  [0;32m[@small] Correctly displays a row missing displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 523 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (600ms)
+
+Running:  [0;32m[@small] Correctly displays a row with too many displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (594ms)
+
+Running:  [0;32m[@small] Correctly displays a row missing many elements when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 523 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (604ms)
+
+Running:  [0;32m[@medium] Displays a default item collection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 518 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (967ms)
+
+Running:  [0;32m[@medium] Displays the correct collection responsive to window size for tiny breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (561ms)
+
+Running:  [0;32m[@medium] Displays the correct collection responsive to window size for small breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (554ms)
+
+Running:  [0;32m[@medium] Displays the correct collection responsive to window size for medium breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (550ms)
+
+Running:  [0;32m[@medium] Displays the correct collection responsive to window size for large breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 519 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (552ms)
+
+Running:  [0;32m[@medium] Displays the correct collection responsive to window size for huge breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 519 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (554ms)
+
+Running:  [0;32m[@medium] Displays an item collection with table styles[0m
+ [0;32m✔[0m Testing if element <#TableStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (35ms)
+
+Running:  [0;32m[@medium] Displays an item collection with list styles[0m
+ [0;32m✔[0m Testing if element <#ListStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (59ms)
+
+Running:  [0;32m[@medium] Displays an item collection with styles applied to list items[0m
+ [0;32m✔[0m Testing if element <#ItemStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (57ms)
+
+Running:  [0;32m[@medium] Triggers onChange function when list or row is selected upon selection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 7 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "0".
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "1".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (213ms)
+
+Running:  [0;32m[@medium] Maintains selection in list and table view as screen is resized[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 523 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "2".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (625ms)
+
+Running:  [0;32m[@medium] Correctly displays a row missing a start accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (561ms)
+
+Running:  [0;32m[@medium] Correctly displays a row missing a end accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 530 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (631ms)
+
+Running:  [0;32m[@medium] Correctly displays a row missing a comment when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(4) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (620ms)
+
+Running:  [0;32m[@medium] Correctly displays a row missing displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 529 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(3)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (642ms)
+
+Running:  [0;32m[@medium] Correctly displays a row with too many displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (597ms)
+
+Running:  [0;32m[@medium] Correctly displays a row missing many elements when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 524 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (651ms)
+
+Running:  [0;32m[@large] Displays a default item collection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 519 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (953ms)
+
+Running:  [0;32m[@large] Displays the correct collection responsive to window size for tiny breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (558ms)
+
+Running:  [0;32m[@large] Displays the correct collection responsive to window size for small breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 516 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (546ms)
+
+Running:  [0;32m[@large] Displays the correct collection responsive to window size for medium breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 517 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (550ms)
+
+Running:  [0;32m[@large] Displays the correct collection responsive to window size for large breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 523 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (554ms)
+
+Running:  [0;32m[@large] Displays the correct collection responsive to window size for huge breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 517 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (551ms)
+
+Running:  [0;32m[@large] Displays an item collection with table styles[0m
+ [0;32m✔[0m Testing if element <#TableStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (33ms)
+
+Running:  [0;32m[@large] Displays an item collection with list styles[0m
+ [0;32m✔[0m Testing if element <#ListStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (100ms)
+
+Running:  [0;32m[@large] Displays an item collection with styles applied to list items[0m
+ [0;32m✔[0m Testing if element <#ItemStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (33ms)
+
+Running:  [0;32m[@large] Triggers onChange function when list or row is selected upon selection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 525 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "0".
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "1".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (733ms)
+
+Running:  [0;32m[@large] Maintains selection in list and table view as screen is resized[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 527 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "2".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (624ms)
+
+Running:  [0;32m[@large] Correctly displays a row missing a start accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (562ms)
+
+Running:  [0;32m[@large] Correctly displays a row missing a end accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 529 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (624ms)
+
+Running:  [0;32m[@large] Correctly displays a row missing a comment when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 523 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(4) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (618ms)
+
+Running:  [0;32m[@large] Correctly displays a row missing displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 528 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(3)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (641ms)
+
+Running:  [0;32m[@large] Correctly displays a row with too many displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 526 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (607ms)
+
+Running:  [0;32m[@large] Correctly displays a row missing many elements when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 519 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (653ms)
+
+Running:  [0;32m[@huge] Displays a default item collection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 23 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (10.325s)
+
+Running:  [0;32m[@huge] Displays the correct collection responsive to window size for tiny breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 530 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (572ms)
+
+Running:  [0;32m[@huge] Displays the correct collection responsive to window size for small breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 520 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (573ms)
+
+Running:  [0;32m[@huge] Displays the correct collection responsive to window size for medium breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 1286 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (1.317s)
+
+Running:  [0;32m[@huge] Displays the correct collection responsive to window size for large breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 525 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (557ms)
+
+Running:  [0;32m[@huge] Displays the correct collection responsive to window size for huge breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 519 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-list-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (555ms)
+
+Running:  [0;32m[@huge] Displays an item collection with table styles[0m
+ [0;32m✔[0m Testing if element <#TableStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (72ms)
+
+Running:  [0;32m[@huge] Displays an item collection with list styles[0m
+ [0;32m✔[0m Testing if element <#ListStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (66ms)
+
+Running:  [0;32m[@huge] Displays an item collection with styles applied to list items[0m
+ [0;32m✔[0m Testing if element <#ItemStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (53ms)
+
+Running:  [0;32m[@huge] Triggers onChange function when list or row is selected upon selection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 14 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "0".
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "1".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (220ms)
+
+Running:  [0;32m[@huge] Maintains selection in list and table view as screen is resized[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 531 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "2".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (633ms)
+
+Running:  [0;32m[@huge] Correctly displays a row missing a start accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 546 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (591ms)
+
+Running:  [0;32m[@huge] Correctly displays a row missing a end accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 584 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (677ms)
+
+Running:  [0;32m[@huge] Correctly displays a row missing a comment when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 545 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(4) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (660ms)
+
+Running:  [0;32m[@huge] Correctly displays a row missing displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 553 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(3)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (665ms)
+
+Running:  [0;32m[@huge] Correctly displays a row with too many displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 528 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (607ms)
+
+Running:  [0;32m[@huge] Correctly displays a row missing many elements when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 531 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (669ms)
+
+Running:  [0;32m[@enormous] Displays a default item collection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 11 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (10.413s)
+
+Running:  [0;32m[@enormous] Displays the correct collection responsive to window size for tiny breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 531 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (566ms)
+
+Running:  [0;32m[@enormous] Displays the correct collection responsive to window size for small breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (558ms)
+
+Running:  [0;32m[@enormous] Displays the correct collection responsive to window size for medium breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 521 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (563ms)
+
+Running:  [0;32m[@enormous] Displays the correct collection responsive to window size for large breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 522 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (561ms)
+
+Running:  [0;32m[@enormous] Displays the correct collection responsive to window size for huge breakpoint[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 535 milliseconds.
+ [0;32m✔[0m Expected element <#ItemCollection> to have attribute "data-terra-clinical-item-collection-table-view"
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (580ms)
+
+Running:  [0;32m[@enormous] Displays an item collection with table styles[0m
+ [0;32m✔[0m Testing if element <#TableStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (34ms)
+
+Running:  [0;32m[@enormous] Displays an item collection with list styles[0m
+ [0;32m✔[0m Testing if element <#ListStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (106ms)
+
+Running:  [0;32m[@enormous] Displays an item collection with styles applied to list items[0m
+ [0;32m✔[0m Testing if element <#ItemStyles> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (61ms)
+
+Running:  [0;32m[@enormous] Triggers onChange function when list or row is selected upon selection[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 11 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "0".
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "1".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (222ms)
+
+Running:  [0;32m[@enormous] Maintains selection in list and table view as screen is resized[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 524 milliseconds.
+ [0;32m✔[0m Testing if element <#selected-index> contains text: "2".
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (735ms)
+
+Running:  [0;32m[@enormous] Correctly displays a row missing a start accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 524 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (568ms)
+
+Running:  [0;32m[@enormous] Correctly displays a row missing a end accessory when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 583 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (692ms)
+
+Running:  [0;32m[@enormous] Correctly displays a row missing a comment when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 526 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(4) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (632ms)
+
+Running:  [0;32m[@enormous] Correctly displays a row missing displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 549 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(3)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(5) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (670ms)
+
+Running:  [0;32m[@enormous] Correctly displays a row with too many displays when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 41 milliseconds.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (118ms)
+
+Running:  [0;32m[@enormous] Correctly displays a row missing many elements when the first row has all elements[0m
+ [0;32m✔[0m Element <#ItemCollection> was present after 534 milliseconds.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(4)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[data-terra-clinical-item-collection-content*="comment"]:nth-child(5)> is present.
+ [0;32m✔[0m Testing if element <tr[class*="row"]:nth-child(7) > td[class*="content-accessory"]:nth-child(6)> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (682ms)
+
+[0;36m[Nightwatch / Table Header Cell / Table Header Cell Spec] Test Suite[0m
+[0;35m========================================================================[0m
+
+Running:  [0;32m[@tiny] Displays the correct column class name[0m
+ [0;32m✔[0m Expected element <#accessory> to be present
+ [0;32m✔[0m Expected element <#comment> to have attribute "data-terra-clinical-item-collection-column" which equals: "comment"
+ [0;32m✔[0m Expected element <#display> to have attribute "data-terra-clinical-item-collection-column" which equals: "display"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (1.658s)
+
+Running:  [0;32m[@small] Displays the correct column class name[0m
+ [0;32m✔[0m Expected element <#accessory> to be present
+ [0;32m✔[0m Expected element <#comment> to have attribute "data-terra-clinical-item-collection-column" which equals: "comment"
+ [0;32m✔[0m Expected element <#display> to have attribute "data-terra-clinical-item-collection-column" which equals: "display"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (768ms)
+
+Running:  [0;32m[@medium] Displays the correct column class name[0m
+ [0;32m✔[0m Expected element <#accessory> to be present
+ [0;32m✔[0m Expected element <#comment> to have attribute "data-terra-clinical-item-collection-column" which equals: "comment"
+ [0;32m✔[0m Expected element <#display> to have attribute "data-terra-clinical-item-collection-column" which equals: "display"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (539ms)
+
+Running:  [0;32m[@large] Displays the correct column class name[0m
+ [0;32m✔[0m Expected element <#accessory> to be present
+ [0;32m✔[0m Expected element <#comment> to have attribute "data-terra-clinical-item-collection-column" which equals: "comment"
+ [0;32m✔[0m Expected element <#display> to have attribute "data-terra-clinical-item-collection-column" which equals: "display"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (486ms)
+
+Running:  [0;32m[@huge] Displays the correct column class name[0m
+ [0;32m✔[0m Expected element <#accessory> to be present
+ [0;32m✔[0m Expected element <#comment> to have attribute "data-terra-clinical-item-collection-column" which equals: "comment"
+ [0;32m✔[0m Expected element <#display> to have attribute "data-terra-clinical-item-collection-column" which equals: "display"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (487ms)
+
+Running:  [0;32m[@enormous] Displays the correct column class name[0m
+ [0;32m✔[0m Expected element <#accessory> to be present
+ [0;32m✔[0m Expected element <#comment> to have attribute "data-terra-clinical-item-collection-column" which equals: "comment"
+ [0;32m✔[0m Expected element <#display> to have attribute "data-terra-clinical-item-collection-column" which equals: "display"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (486ms)
+
+[0;36m[Nightwatch / Comment / Item Comment Spec] Test Suite[0m
+[0;35m=========================================================[0m
+
+Running:  [0;32m[@tiny] Displays an item comment with default props[0m
+ [0;32m✔[0m Testing if element <#ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.498s)
+
+Running:  [0;32m[@tiny] Displays an item comment with the correct text[0m
+ [0;32m✔[0m Testing if element <#ItemComment> contains text: "test comment".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (55ms)
+
+Running:  [0;32m[@small] Displays an item comment with default props[0m
+ [0;32m✔[0m Testing if element <#ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (745ms)
+
+Running:  [0;32m[@small] Displays an item comment with the correct text[0m
+ [0;32m✔[0m Testing if element <#ItemComment> contains text: "test comment".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@medium] Displays an item comment with default props[0m
+ [0;32m✔[0m Testing if element <#ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (464ms)
+
+Running:  [0;32m[@medium] Displays an item comment with the correct text[0m
+ [0;32m✔[0m Testing if element <#ItemComment> contains text: "test comment".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (39ms)
+
+Running:  [0;32m[@large] Displays an item comment with default props[0m
+ [0;32m✔[0m Testing if element <#ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (450ms)
+
+Running:  [0;32m[@large] Displays an item comment with the correct text[0m
+ [0;32m✔[0m Testing if element <#ItemComment> contains text: "test comment".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@huge] Displays an item comment with default props[0m
+ [0;32m✔[0m Testing if element <#ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (508ms)
+
+Running:  [0;32m[@huge] Displays an item comment with the correct text[0m
+ [0;32m✔[0m Testing if element <#ItemComment> contains text: "test comment".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (37ms)
+
+Running:  [0;32m[@enormous] Displays an item comment with default props[0m
+ [0;32m✔[0m Testing if element <#ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (455ms)
+
+Running:  [0;32m[@enormous] Displays an item comment with the correct text[0m
+ [0;32m✔[0m Testing if element <#ItemComment> contains text: "test comment".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (38ms)
+
+[0;36m[Nightwatch / Display / Item Display Spec] Test Suite[0m
+[0;35m=========================================================[0m
+
+Running:  [0;32m[@tiny] Displays text as default[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.498s)
+
+Running:  [0;32m[@tiny] Displays text with different styles[0m
+ [0;32m✔[0m Expected element <#test-display-secondary > :first-child> to have css property "color" which equals: "rgba(100, 105, 108, 1)"
+ [0;32m✔[0m Expected element <#test-display-attention > :first-child> to have css property "color" which equals: "rgba(204, 0, 0, 1)"
+ [0;32m✔[0m Expected element <#test-display-strike-through > :first-child> to have css property "text-decoration" which contains: "line-through"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (107ms)
+
+Running:  [0;32m[@tiny] Displays text with an icon[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay [class*="inline-icon"]> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (32ms)
+
+Running:  [0;32m[@tiny] Icon scales as font-size adjusts[0m
+ [0;32m✔[0m Testing if element <#Default> is present.
+ [0;32m✔[0m Testing if element <#Larger> is present.
+ [0;32m✔[0m Testing if element <#Smaller> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (62ms)
+
+Running:  [0;32m[@small] Displays text as default[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (751ms)
+
+Running:  [0;32m[@small] Displays text with different styles[0m
+ [0;32m✔[0m Expected element <#test-display-secondary > :first-child> to have css property "color" which equals: "rgba(100, 105, 108, 1)"
+ [0;32m✔[0m Expected element <#test-display-attention > :first-child> to have css property "color" which equals: "rgba(204, 0, 0, 1)"
+ [0;32m✔[0m Expected element <#test-display-strike-through > :first-child> to have css property "text-decoration" which contains: "line-through"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (76ms)
+
+Running:  [0;32m[@small] Displays text with an icon[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay [class*="inline-icon"]> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@small] Icon scales as font-size adjusts[0m
+ [0;32m✔[0m Testing if element <#Default> is present.
+ [0;32m✔[0m Testing if element <#Larger> is present.
+ [0;32m✔[0m Testing if element <#Smaller> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (38ms)
+
+Running:  [0;32m[@medium] Displays text as default[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (454ms)
+
+Running:  [0;32m[@medium] Displays text with different styles[0m
+ [0;32m✔[0m Expected element <#test-display-secondary > :first-child> to have css property "color" which equals: "rgba(100, 105, 108, 1)"
+ [0;32m✔[0m Expected element <#test-display-attention > :first-child> to have css property "color" which equals: "rgba(204, 0, 0, 1)"
+ [0;32m✔[0m Expected element <#test-display-strike-through > :first-child> to have css property "text-decoration" which contains: "line-through"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (76ms)
+
+Running:  [0;32m[@medium] Displays text with an icon[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay [class*="inline-icon"]> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (19ms)
+
+Running:  [0;32m[@medium] Icon scales as font-size adjusts[0m
+ [0;32m✔[0m Testing if element <#Default> is present.
+ [0;32m✔[0m Testing if element <#Larger> is present.
+ [0;32m✔[0m Testing if element <#Smaller> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (39ms)
+
+Running:  [0;32m[@large] Displays text as default[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (458ms)
+
+Running:  [0;32m[@large] Displays text with different styles[0m
+ [0;32m✔[0m Expected element <#test-display-secondary > :first-child> to have css property "color" which equals: "rgba(100, 105, 108, 1)"
+ [0;32m✔[0m Expected element <#test-display-attention > :first-child> to have css property "color" which equals: "rgba(204, 0, 0, 1)"
+ [0;32m✔[0m Expected element <#test-display-strike-through > :first-child> to have css property "text-decoration" which contains: "line-through"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (75ms)
+
+Running:  [0;32m[@large] Displays text with an icon[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay [class*="inline-icon"]> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (19ms)
+
+Running:  [0;32m[@large] Icon scales as font-size adjusts[0m
+ [0;32m✔[0m Testing if element <#Default> is present.
+ [0;32m✔[0m Testing if element <#Larger> is present.
+ [0;32m✔[0m Testing if element <#Smaller> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (41ms)
+
+Running:  [0;32m[@huge] Displays text as default[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (535ms)
+
+Running:  [0;32m[@huge] Displays text with different styles[0m
+ [0;32m✔[0m Expected element <#test-display-secondary > :first-child> to have css property "color" which equals: "rgba(100, 105, 108, 1)"
+ [0;32m✔[0m Expected element <#test-display-attention > :first-child> to have css property "color" which equals: "rgba(204, 0, 0, 1)"
+ [0;32m✔[0m Expected element <#test-display-strike-through > :first-child> to have css property "text-decoration" which contains: "line-through"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (76ms)
+
+Running:  [0;32m[@huge] Displays text with an icon[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay [class*="inline-icon"]> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+Running:  [0;32m[@huge] Icon scales as font-size adjusts[0m
+ [0;32m✔[0m Testing if element <#Default> is present.
+ [0;32m✔[0m Testing if element <#Larger> is present.
+ [0;32m✔[0m Testing if element <#Smaller> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (34ms)
+
+Running:  [0;32m[@enormous] Displays text as default[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (451ms)
+
+Running:  [0;32m[@enormous] Displays text with different styles[0m
+ [0;32m✔[0m Expected element <#test-display-secondary > :first-child> to have css property "color" which equals: "rgba(100, 105, 108, 1)"
+ [0;32m✔[0m Expected element <#test-display-attention > :first-child> to have css property "color" which equals: "rgba(204, 0, 0, 1)"
+ [0;32m✔[0m Expected element <#test-display-strike-through > :first-child> to have css property "text-decoration" which contains: "line-through"
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (71ms)
+
+Running:  [0;32m[@enormous] Displays text with an icon[0m
+ [0;32m✔[0m Testing if element <#ItemDisplay [class*="inline-icon"]> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@enormous] Icon scales as font-size adjusts[0m
+ [0;32m✔[0m Testing if element <#Default> is present.
+ [0;32m✔[0m Testing if element <#Larger> is present.
+ [0;32m✔[0m Testing if element <#Smaller> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (38ms)
+
+[0;36m[Nightwatch / Item View Spec] Test Suite[0m
+[0;35m============================================[0m
+
+Running:  [0;32m[@tiny] Displays a clinical item view with default props[0m
+ [0;32m✔[0m Testing if element <#ItemView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.592s)
+
+Running:  [0;32m[@tiny] Displays a clinical item view with displays present[0m
+ [0;32m✔[0m Testing if element <#test-displays> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two-start> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (83ms)
+
+Running:  [0;32m[@tiny] Displays a clinical item view with a start accessory[0m
+ [0;32m✔[0m Testing if element <#test-start-accessory #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-start-accessory #EndAccessory> is not present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (51ms)
+
+Running:  [0;32m[@tiny] Displays a clinical item view with an end accessory[0m
+ [0;32m✔[0m Testing if element <#test-end-accessory #StartAccessory> is not present.
+ [0;32m✔[0m Testing if element <#test-end-accessory #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (374ms)
+
+Running:  [0;32m[@tiny] Displays a clinical item view with a start and end accessory[0m
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (111ms)
+
+Running:  [0;32m[@tiny] Displays a clinical item view with a comment set[0m
+ [0;32m✔[0m Testing if element <#ItemView1 #ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (36ms)
+
+Running:  [0;32m[@tiny] Displays a clinical item view with the word wrap and truncation[0m
+ [0;32m✔[0m Testing if element <#ItemView-one-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-one-truncate> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-truncate> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (120ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with default props[0m
+ [0;32m✔[0m Testing if element <#ItemView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (458ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with displays present[0m
+ [0;32m✔[0m Testing if element <#test-displays> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two-start> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (52ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with a start accessory[0m
+ [0;32m✔[0m Testing if element <#test-start-accessory #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-start-accessory #EndAccessory> is not present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (30ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with an end accessory[0m
+ [0;32m✔[0m Testing if element <#test-end-accessory #StartAccessory> is not present.
+ [0;32m✔[0m Testing if element <#test-end-accessory #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (85ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with a start and end accessory[0m
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (100ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with a comment set[0m
+ [0;32m✔[0m Testing if element <#ItemView1 #ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (23ms)
+
+Running:  [0;32m[@small] Displays a clinical item view with the word wrap and truncation[0m
+ [0;32m✔[0m Testing if element <#ItemView-one-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-one-truncate> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-truncate> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (77ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with default props[0m
+ [0;32m✔[0m Testing if element <#ItemView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (452ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with displays present[0m
+ [0;32m✔[0m Testing if element <#test-displays> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two-start> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (51ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with a start accessory[0m
+ [0;32m✔[0m Testing if element <#test-start-accessory #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-start-accessory #EndAccessory> is not present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (61ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with an end accessory[0m
+ [0;32m✔[0m Testing if element <#test-end-accessory #StartAccessory> is not present.
+ [0;32m✔[0m Testing if element <#test-end-accessory #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (108ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with a start and end accessory[0m
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (93ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with a comment set[0m
+ [0;32m✔[0m Testing if element <#ItemView1 #ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (22ms)
+
+Running:  [0;32m[@medium] Displays a clinical item view with the word wrap and truncation[0m
+ [0;32m✔[0m Testing if element <#ItemView-one-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-one-truncate> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-truncate> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (103ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with default props[0m
+ [0;32m✔[0m Testing if element <#ItemView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (462ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with displays present[0m
+ [0;32m✔[0m Testing if element <#test-displays> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two-start> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (70ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with a start accessory[0m
+ [0;32m✔[0m Testing if element <#test-start-accessory #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-start-accessory #EndAccessory> is not present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (53ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with an end accessory[0m
+ [0;32m✔[0m Testing if element <#test-end-accessory #StartAccessory> is not present.
+ [0;32m✔[0m Testing if element <#test-end-accessory #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (90ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with a start and end accessory[0m
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (89ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with a comment set[0m
+ [0;32m✔[0m Testing if element <#ItemView1 #ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (23ms)
+
+Running:  [0;32m[@large] Displays a clinical item view with the word wrap and truncation[0m
+ [0;32m✔[0m Testing if element <#ItemView-one-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-one-truncate> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-truncate> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (99ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with default props[0m
+ [0;32m✔[0m Testing if element <#ItemView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (462ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with displays present[0m
+ [0;32m✔[0m Testing if element <#test-displays> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two-start> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (84ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with a start accessory[0m
+ [0;32m✔[0m Testing if element <#test-start-accessory #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-start-accessory #EndAccessory> is not present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (35ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with an end accessory[0m
+ [0;32m✔[0m Testing if element <#test-end-accessory #StartAccessory> is not present.
+ [0;32m✔[0m Testing if element <#test-end-accessory #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (90ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with a start and end accessory[0m
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (88ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with a comment set[0m
+ [0;32m✔[0m Testing if element <#ItemView1 #ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (23ms)
+
+Running:  [0;32m[@huge] Displays a clinical item view with the word wrap and truncation[0m
+ [0;32m✔[0m Testing if element <#ItemView-one-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-one-truncate> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-truncate> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (68ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with default props[0m
+ [0;32m✔[0m Testing if element <#ItemView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (458ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with displays present[0m
+ [0;32m✔[0m Testing if element <#test-displays> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two> is present.
+ [0;32m✔[0m Testing if element <#test-displays-two-start> is present.
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (53ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with a start accessory[0m
+ [0;32m✔[0m Testing if element <#test-start-accessory #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-start-accessory #EndAccessory> is not present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (45ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with an end accessory[0m
+ [0;32m✔[0m Testing if element <#test-end-accessory #StartAccessory> is not present.
+ [0;32m✔[0m Testing if element <#test-end-accessory #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (86ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with a start and end accessory[0m
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #StartAccessory> is present.
+ [0;32m✔[0m Testing if element <#test-both-accessory-top #EndAccessory> is present.
+
+[0;32mOK.[0m [0;32m2[0m assertions passed. (93ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with a comment set[0m
+ [0;32m✔[0m Testing if element <#ItemView1 #ItemComment> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (24ms)
+
+Running:  [0;32m[@enormous] Displays a clinical item view with the word wrap and truncation[0m
+ [0;32m✔[0m Testing if element <#ItemView-one-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-wrap> is present.
+ [0;32m✔[0m Testing if element <#ItemView-one-truncate> is present.
+ [0;32m✔[0m Testing if element <#ItemView-two-truncate> is present.
+
+[0;32mOK.[0m [0;32m4[0m assertions passed. (110ms)
+
+[0;36m[Nightwatch / Label Value View Spec] Test Suite[0m
+[0;35m===================================================[0m
+
+Running:  [0;32m[@tiny] Displays a default LabelValueView when no value input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.622s)
+
+Running:  [0;32m[@tiny] Displays a LabelValueView when a text input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (19ms)
+
+Running:  [0;32m[@tiny] Displays a LabelValueView when a node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (31ms)
+
+Running:  [0;32m[@tiny] Displays a LabelValueView when text and node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (20ms)
+
+Running:  [0;32m[@small] Displays a default LabelValueView when no value input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (744ms)
+
+Running:  [0;32m[@small] Displays a LabelValueView when a text input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (16ms)
+
+Running:  [0;32m[@small] Displays a LabelValueView when a node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+Running:  [0;32m[@small] Displays a LabelValueView when text and node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (19ms)
+
+Running:  [0;32m[@medium] Displays a default LabelValueView when no value input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (445ms)
+
+Running:  [0;32m[@medium] Displays a LabelValueView when a text input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (16ms)
+
+Running:  [0;32m[@medium] Displays a LabelValueView when a node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (16ms)
+
+Running:  [0;32m[@medium] Displays a LabelValueView when text and node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (15ms)
+
+Running:  [0;32m[@large] Displays a default LabelValueView when no value input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (491ms)
+
+Running:  [0;32m[@large] Displays a LabelValueView when a text input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (17ms)
+
+Running:  [0;32m[@large] Displays a LabelValueView when a node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (21ms)
+
+Running:  [0;32m[@large] Displays a LabelValueView when text and node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+Running:  [0;32m[@huge] Displays a default LabelValueView when no value input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (440ms)
+
+Running:  [0;32m[@huge] Displays a LabelValueView when a text input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (14ms)
+
+Running:  [0;32m[@huge] Displays a LabelValueView when a node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (14ms)
+
+Running:  [0;32m[@huge] Displays a LabelValueView when text and node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (14ms)
+
+Running:  [0;32m[@enormous] Displays a default LabelValueView when no value input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (451ms)
+
+Running:  [0;32m[@enormous] Displays a LabelValueView when a text input is provided[0m
+ [0;32m✔[0m Testing if element <#LabelValueView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (30ms)
+
+Running:  [0;32m[@enormous] Displays a LabelValueView when a node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (18ms)
+
+Running:  [0;32m[@enormous] Displays a LabelValueView when text and node input is provided[0m
+ [0;32m✔[0m Testing if element <#child> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (30ms)
+
+[0;36m[Nightwatch / No Data View Spec] Test Suite[0m
+[0;35m===============================================[0m
+
+Running:  [0;32m[@tiny] Displays a default no data view[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (1.53s)
+
+Running:  [0;32m[@tiny] Displays a no data view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(1)> contains text: "test heading".
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(2)> contains text: "test subtext".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (96ms)
+
+Running:  [0;32m[@tiny] Displays a no data view with content[0m
+ [0;32m✔[0m Testing if element <#NoDataView p> contains text: "content inserted here".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (51ms)
+
+Running:  [0;32m[@tiny] Displays a no data view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#NoDataView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (27ms)
+
+Running:  [0;32m[@small] Displays a default no data view[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (762ms)
+
+Running:  [0;32m[@small] Displays a no data view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(1)> contains text: "test heading".
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(2)> contains text: "test subtext".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (69ms)
+
+Running:  [0;32m[@small] Displays a no data view with content[0m
+ [0;32m✔[0m Testing if element <#NoDataView p> contains text: "content inserted here".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (37ms)
+
+Running:  [0;32m[@small] Displays a no data view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#NoDataView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (22ms)
+
+Running:  [0;32m[@medium] Displays a default no data view[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (479ms)
+
+Running:  [0;32m[@medium] Displays a no data view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(1)> contains text: "test heading".
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(2)> contains text: "test subtext".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (64ms)
+
+Running:  [0;32m[@medium] Displays a no data view with content[0m
+ [0;32m✔[0m Testing if element <#NoDataView p> contains text: "content inserted here".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (39ms)
+
+Running:  [0;32m[@medium] Displays a no data view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#NoDataView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (20ms)
+
+Running:  [0;32m[@large] Displays a default no data view[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (447ms)
+
+Running:  [0;32m[@large] Displays a no data view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(1)> contains text: "test heading".
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(2)> contains text: "test subtext".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (75ms)
+
+Running:  [0;32m[@large] Displays a no data view with content[0m
+ [0;32m✔[0m Testing if element <#NoDataView p> contains text: "content inserted here".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (38ms)
+
+Running:  [0;32m[@large] Displays a no data view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#NoDataView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (28ms)
+
+Running:  [0;32m[@huge] Displays a default no data view[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (456ms)
+
+Running:  [0;32m[@huge] Displays a no data view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(1)> contains text: "test heading".
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(2)> contains text: "test subtext".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (67ms)
+
+Running:  [0;32m[@huge] Displays a no data view with content[0m
+ [0;32m✔[0m Testing if element <#NoDataView p> contains text: "content inserted here".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (43ms)
+
+Running:  [0;32m[@huge] Displays a no data view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#NoDataView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (20ms)
+
+Running:  [0;32m[@enormous] Displays a default no data view[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (451ms)
+
+Running:  [0;32m[@enormous] Displays a no data view with text for name and description[0m
+ [0;32m✔[0m Testing if element <#NoDataView> is present.
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(1)> contains text: "test heading".
+ [0;32m✔[0m Testing if element <#NoDataView p:nth-of-type(2)> contains text: "test subtext".
+
+[0;32mOK.[0m [0;32m3[0m assertions passed. (67ms)
+
+Running:  [0;32m[@enormous] Displays a no data view with content[0m
+ [0;32m✔[0m Testing if element <#NoDataView p> contains text: "content inserted here".
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (38ms)
+
+Running:  [0;32m[@enormous] Displays a no data view with glyph hidden[0m
+ [0;32m✔[0m Testing if element <#NoDataView svg> is not present.
+
+[0;32mOK.[0m [0;32m1[0m assertions passed. (26ms)
+
+[0;32mOK. 688  total assertions passed.[0m (2m 35s)
