@@ -47,7 +47,7 @@ const propTypes = {
    */
   precisionSelectOnChange: PropTypes.func,
 
-  /*
+  /**
    * The ISO 8601 string representation of the onset date to view/modify. Defaults to current date.
    */
   onsetDate: PropTypes.string,
