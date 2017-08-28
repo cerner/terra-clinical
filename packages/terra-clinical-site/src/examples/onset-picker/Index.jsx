@@ -26,7 +26,11 @@ const OnsetExamples = () => (
       precisionSelectName="doogs-precision"
       onsetDateInputName="doogs-onsetDate"
     />
-    <h2 id="supplied">Controlled onset picker with supplied onset date, granularity, and precision</h2>
+    <h2 id="supplied">Controlled onset picker with supplied data</h2>
+    <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
+    <p>Onset date: {moment().subtract(2, 'years').format('YYYY-MM-DD')}</p>
+    <p>Precision: BEFORE</p>
+    <p>Granularity: YEAR</p>
     <ControlledOnset />
   </div>
 );

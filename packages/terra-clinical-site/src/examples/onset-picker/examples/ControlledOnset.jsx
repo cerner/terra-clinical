@@ -11,7 +11,7 @@ class ControlledOnsetExample extends React.Component {
       formData: {
         granularity: 'YEAR',
         precision: 'BEFORE',
-        onsetDate: moment().subtract(2, 'years').format(),
+        onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
       },
     };
 

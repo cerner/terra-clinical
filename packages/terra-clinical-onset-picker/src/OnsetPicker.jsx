@@ -110,7 +110,6 @@ class OnsetPicker extends React.Component {
     this.availableYears = this.availableYears.bind(this);
     this.maxAgeCount = this.maxAgeCount.bind(this);
     this.allowedAgeDurations = this.allowedAgeDurations.bind(this);
-    this.outputDate = this.outputDate.bind(this);
   }
 
   /*
@@ -196,7 +195,7 @@ class OnsetPicker extends React.Component {
    * Update onset date when date changes
    */
   changeDate(event, date) {
-    const newDate = moment(date);
+    const newDate = moment(date).format('YYYY-MM-DD');
 
     this.setState({ onsetDate: newDate });
 
@@ -300,28 +299,6 @@ class OnsetPicker extends React.Component {
     }
 
     return ageDurations;
-  }
-
-  outputDate() {
-    if (this.state.precision === 'UNKNOWN') {
-      return this.state.precision;
-    }
-
-    switch (this.state.granularity) {
-      case 'MONTH':
-        return `${this.state.precision}  ${moment(this.state.onsetDate).format('MMM YYYY')}`;
-      case 'YEAR':
-        return `${this.state.precision} ${moment(this.state.onsetDate).format('YYYY')}`;
-      case 'AGE':
-        if (this.state.ageCalcDuration === 'years') {
-          return `${this.state.precision} ${moment(this.state.onsetDate).format('YYYY')}`;
-        } else if (this.state.ageCalcDuration === 'months') {
-          return `${this.state.precision}  ${moment(this.state.onsetDate).format('MMM YYYY')}`;
-        }
-        return `${this.state.precision} ${moment(this.state.onsetDate).format('ll')}`;
-      default:
-        return `${this.state.precision} ${moment(this.state.onsetDate).format('ll')}`;
-    }
   }
 
   render() {
