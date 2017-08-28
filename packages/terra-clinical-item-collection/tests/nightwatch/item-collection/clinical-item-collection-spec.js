@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { resizeTo, screenWidth } = require('terra-tooklit/src/nightwatch/responsive-helpers');
+const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsive-helpers');
 
 module.exports = resizeTo(['tiny', 'enormous'], {
   'Displays a default item collection': (browser) => {
