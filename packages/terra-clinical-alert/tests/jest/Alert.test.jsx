@@ -47,21 +47,6 @@ describe('Dismissible Alert that includes actions section', () => {
   });
 });
 
-describe('Alert of type gap-checking with text content', () => {
-  const alertText = 'This is a gap-checking alert.';
-  const basicGapCheckingRender = (
-    <IntlProvider locale={locale} messages={messages}>
-      <Alert type={Alert.Opts.Types.GAP_CHECKING} >{alertText}</Alert>
-    </IntlProvider>
-  );
-
-  // Snapshot Tests
-  it('should render an Alert component of type gap-checking', () => {
-    const wrapper = mount(basicGapCheckingRender);
-    expect(wrapper).toMatchSnapshot();
-  });
-});
-
 describe('Alert of type outside records with text content', () => {
   const alertText = 'This is an outside records alert.';
   const basicOutsideRecordsRender = (

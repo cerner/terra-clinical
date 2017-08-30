@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconRequired from 'terra-icon/lib/icon/IconRequired';
 import IconDiamond from 'terra-icon/lib/icon/IconDiamond';
 import BaseAlert from 'terra-alert';
-import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
-import styles from './Alert.scss';
-
-const cx = classNames.bind(styles);
 
 const AlertTypes = Object.assign({
-  GAP_CHECKING: 'gapChecking',
   OUTSIDE_RECORDS: 'outsideRecords',
 }, BaseAlert.Opts.Types);
 
@@ -41,7 +35,7 @@ const propTypes = {
   title: PropTypes.string,
   /**
    * The type of alert to be rendered. One of Alert.Opts.Types.ALERT, Alert.Opts.Types.ERROR, Alert.Opts.Types.WARNING, Alert.Opts.Types.ADVISORY,
-   * Alert.Opts.Types.INFO, Alert.Opts.Types.SUCCESS, Alert.Opts.Types.GAP_CHECKING, Alert.Opts.Types.OUTSIDE_RECORDS, Alert.Opts.Types.CUSTOM.
+   * Alert.Opts.Types.INFO, Alert.Opts.Types.SUCCESS, Alert.Opts.Types.OUTSIDE_RECORDS, Alert.Opts.Types.CUSTOM.
    * Use the Alert.Opts.Types attribute of the Alert component for access to these type strings.
    */
   type: PropTypes.oneOf([
@@ -51,7 +45,6 @@ const propTypes = {
     AlertTypes.ADVISORY,
     AlertTypes.INFO,
     AlertTypes.SUCCESS,
-    AlertTypes.GAP_CHECKING,
     AlertTypes.OUTSIDE_RECORDS,
     AlertTypes.CUSTOM,
   ]),
@@ -95,13 +88,6 @@ const Alert = (
   let alertIcon;
 
   switch (type) {
-    case AlertTypes.GAP_CHECKING:
-      alertTitle = intl.formatMessage({ id: 'Terra.Clinical.alert.gapChecking' });
-      typeToUse = AlertTypes.CUSTOM;
-      alertIcon = (<IconRequired className={cx('gap-checking-icon')} />);
-      alertStatusColor = '#e50000';
-      attributes['data-terra-clinical-alert-type'] = AlertTypes.GAP_CHECKING;
-      break;
     case AlertTypes.OUTSIDE_RECORDS:
       alertTitle = intl.formatMessage({ id: 'Terra.Clinical.alert.outsideRecords' });
       typeToUse = AlertTypes.CUSTOM;

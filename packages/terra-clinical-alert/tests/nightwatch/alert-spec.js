@@ -40,27 +40,6 @@ module.exports = {
         'Check text content provided to default Alert');
   },
 
-  'Type attribute tests - Displays a basic alert of each type with the provided text': (browser) => {
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/type`);
-  },
-
-  'Type attribute tests - Check Alert of type gap checking': (browser) => {
-    browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/type`)
-      .assert.elementPresent(
-        '#gapCheckingAlert',
-        'Check that Alert of type gap-checking exists')
-      .assert.containsText(
-        '#gapCheckingAlert > div[class*="_body"] > div[class*="_section"] > strong[class*="_title"]',
-        'Required Action.',
-        'Check default title for Alert of type gap-checking')
-      .assert.containsText(
-        '#gapCheckingAlert > div[class*="_body"] > div[class*="_section"]  div',
-        'Alert of type Gap Checking',
-        'Check text content provided to Alert of type gap-checking');
-  },
-
   'Type attribute tests - Check Alert of type outside records': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/type`)
@@ -80,10 +59,6 @@ module.exports = {
   'Title attribute tests - Displays an alert of each type with a custom title': (browser) => {
     browser
       .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/title`)
-      .assert.containsText(
-        '#gapCheckingAlert > div[class*="_body"] > div[class*="_section"] > strong[class*="_title"]',
-        'Gap_Checking_Alert:',
-        'Check custom title for Alert of type gap checking')
       .assert.containsText(
         '#outsideRecordsAlert > div[class*="_body"] > div[class*="_section"] > strong[class*="_title"]',
         'Outside_Records_Alert:',

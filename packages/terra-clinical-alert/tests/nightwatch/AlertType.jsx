@@ -8,7 +8,5 @@ export default () =>
   <Base locale={locale}>
     <h2>Alerts of each of the standard types with default titles</h2>
     <br />
-    <Alert id="gapCheckingAlert" type={Alert.Opts.Types.GAP_CHECKING} >Alert of type Gap Checking</Alert>
-    <br />
     <Alert id="outsideRecordsAlert" type={Alert.Opts.Types.OUTSIDE_RECORDS} >Alert of type Outside Records</Alert>
   </Base>;

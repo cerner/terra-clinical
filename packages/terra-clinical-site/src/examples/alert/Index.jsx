@@ -10,21 +10,7 @@ import { version } from 'terra-clinical-alert/package.json';
 import AlertSrc from '!raw-loader!terra-clinical-alert/src/Alert';
 
 // Example Files
-import AlertExample from './AlertExample';
-import ErrorExample from './ErrorExample';
-import WarningExample from './WarningExample';
-import GapCheckingExample from './GapCheckingExample';
-import AdvisoryExample from './AdvisoryExample';
-import InfoExample from './InfoExample';
-import SuccessExample from './SuccessExample';
 import OutsideRecordsExample from './OutsideRecordsExample';
-import CustomExample from './CustomExample';
-import LongTextExample from './LongTextExample';
-import ActionExample from './ActionExample';
-import SmallContainerExample from './SmallContainerExample';
-import DismissibleExample from './DismissibleExample';
-import ActionAndDismissibleExample from './ActionAndDismissibleExample';
-import BuildYourOwnAlertExample from './BuildYourOwnAlertExample';
 
 const AlertExamples = () => (
   <div>
@@ -35,38 +21,10 @@ const AlertExamples = () => (
     <br />
     <p>
     PLEASE NOTE: The strings that are internationalized in the following examples are the default titles for each of
-    the alert types (except the custom alert type), and the text for the Dismiss button.
+    the alert types.
     </p>
     <br /><hr /><br />
-    <AlertExample />
-    <br /><hr /><br />
-    <ErrorExample />
-    <br /><hr /><br />
-    <WarningExample />
-    <br /><hr /><br />
-    <AdvisoryExample />
-    <br /><hr /><br />
-    <InfoExample />
-    <br /><hr /><br />
-    <SuccessExample />
-    <br /><hr /><br />
-    <GapCheckingExample />
-    <br /><hr /><br />
     <OutsideRecordsExample />
-    <br /><hr /><br />
-    <CustomExample />
-    <br /><hr /><br />
-    <LongTextExample />
-    <br /><hr /><br />
-    <ActionExample />
-    <br /><hr /><br />
-    <SmallContainerExample />
-    <br /><hr /><br />
-    <DismissibleExample />
-    <br /><hr /><br />
-    <ActionAndDismissibleExample />
-    <br /><hr /><br />
-    <BuildYourOwnAlertExample />
     <br /><hr /><br />
   </div>
 );

@@ -3,7 +3,6 @@ exports[`Alert of type custom with custom title and text content should render a
   locale="en-US"
   messages={
     Object {
-      "Terra.Clinical.alert.gapChecking": "Required Action.",
       "Terra.Clinical.alert.outsideRecords": "Outside Records.",
     }
   }>
@@ -85,108 +84,6 @@ exports[`Alert of type custom with custom title and text content should render a
                 </strong>
                 <div>
                   This is a custom alert.
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        }>
-        <div />
-      </ResponsiveElement>
-    </Alert>
-  </Alert>
-</IntlProvider>
-`;
-
-exports[`Alert of type gap-checking with text content should render an Alert component of type gap-checking 1`] = `
-<IntlProvider
-  locale="en-US"
-  messages={
-    Object {
-      "Terra.Clinical.alert.gapChecking": "Required Action.",
-      "Terra.Clinical.alert.outsideRecords": "Outside Records.",
-    }
-  }>
-  <Alert
-    action={null}
-    customIcon={null}
-    customStatusColor=""
-    onDismiss={null}
-    title=""
-    type="gapChecking">
-    <Alert
-      action={null}
-      customIcon={
-        <IconRequired
-          className="gap-checking-icon"
-          viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg" />
-      }
-      customStatusColor="#e50000"
-      data-terra-clinical-alert-type="gapChecking"
-      onDismiss={null}
-      title="Required Action."
-      type="custom">
-      <ResponsiveElement
-        defaultElement={
-          <div
-            className="custom narrow"
-            data-terra-clinical-alert-type="gapChecking"
-            style={
-              Object {
-                "color": "#e50000",
-              }
-            }>
-            <div
-              className="body-std">
-              <div
-                className="icon">
-                <IconRequired
-                  className="gap-checking-icon"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              </div>
-              <div
-                className="section-custom">
-                <strong
-                  className="title">
-                  Required Action.
-                </strong>
-                <div>
-                  This is a gap-checking alert.
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        }
-        responsiveTo="parent"
-        tiny={
-          <div
-            className="custom wide"
-            data-terra-clinical-alert-type="gapChecking"
-            style={
-              Object {
-                "color": "#e50000",
-              }
-            }>
-            <div
-              className="body-std">
-              <div
-                className="icon">
-                <IconRequired
-                  className="gap-checking-icon"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
-              </div>
-              <div
-                className="section-custom">
-                <strong
-                  className="title">
-                  Required Action.
-                </strong>
-                <div>
-                  This is a gap-checking alert.
                 </div>
               </div>
             </div>
@@ -298,7 +195,6 @@ exports[`Alert of type outside records with text content should render an Alert 
   locale="en-US"
   messages={
     Object {
-      "Terra.Clinical.alert.gapChecking": "Required Action.",
       "Terra.Clinical.alert.outsideRecords": "Outside Records.",
     }
   }>
