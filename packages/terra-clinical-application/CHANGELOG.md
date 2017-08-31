@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Change dependency on terra-base to v2.0.0
 
 1.1.1 - (July 27, 2017)
 -----------------
