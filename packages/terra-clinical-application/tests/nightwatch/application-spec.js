@@ -1,26 +1,18 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-const screenshot = require('terra-toolkit').screenshot;
+const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
 
-module.exports = {
-  before: (browser, done) => {
-    browser.resizeWindow(browser.globals.width, browser.globals.height, done);
-  },
-
-  afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-application', done);
-  },
-
+module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Renders the Application with provided AppDelegate': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/application-tests/default`)
+      .url(`${browser.launchUrl}/#/tests/application-tests/default`)
       .assert.elementPresent('#Application')
       .assert.containsText('.test-ContainerComponent', 'App is present');
   },
 
   'Renders the Application without provided AppDelegate': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/application-tests/no-app-delegate`)
+      .url(`${browser.launchUrl}/#/tests/application-tests/no-app-delegate`)
       .assert.elementPresent('#Application')
       .assert.containsText('.test-ContainerComponent', 'App is not present');
   },
-};
+});
