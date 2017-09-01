@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-no-data-view",
   "main": "lib/NoDataView.js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "This component renders a no data glyph with with a message or a content section to display sub-component.",
   "repository": {
     "type": "git",
