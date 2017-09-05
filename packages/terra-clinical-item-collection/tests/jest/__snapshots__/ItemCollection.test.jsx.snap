@@ -29,16 +29,22 @@ exports[`test should render with a given breakpoint 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }
@@ -63,16 +69,22 @@ exports[`test should render with a given breakpoint 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }
@@ -97,16 +109,22 @@ exports[`test should render with a given breakpoint 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }
@@ -297,16 +315,22 @@ exports[`test should render with multiple rows 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }
@@ -331,16 +355,22 @@ exports[`test should render with multiple rows 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }
@@ -365,16 +395,22 @@ exports[`test should render with multiple rows 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }
@@ -565,16 +601,22 @@ exports[`test should render with one row 1`] = `
                 ]
               }
               endAccessory={
-                <p>
-                  End Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    End Accessory
+                  </p>
+                </div>
               }
               isTruncated={false}
               layout="oneColumn"
               startAccessory={
-                <p>
-                  Start Accessory
-                </p>
+                <div
+                  className="list-accessory">
+                  <p>
+                    Start Accessory
+                  </p>
+                </div>
               }
               textEmphasis="default" />
           }

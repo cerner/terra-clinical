@@ -123,7 +123,9 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.execute("document.getElementById('root').style.padding = 0;");
 
     const width = screenWidth(browser);
-    if (width > browser.globals.breakpoints.small[0]) {
+    if (width <= browser.globals.breakpoints.small[0]) {
+      browser.assert.elementPresent('li[class*="list-item"]:nth-child(2) > div > div[class*="accessory"]:nth-child(1)');
+    } else {
       browser.assert.elementPresent('tr[class*="row"]:nth-child(2) > td[class*="content-accessory"]:nth-child(1)');
     }
   },
@@ -133,7 +135,9 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.execute("document.getElementById('root').style.padding = 0;");
 
     const width = screenWidth(browser);
-    if (width > browser.globals.breakpoints.small[0]) {
+    if (width <= browser.globals.breakpoints.small[0]) {
+      browser.assert.elementPresent('li[class*="list-item"]:nth-child(3) > div > div[class*="accessory"]:nth-child(3)');
+    } else {
       browser.assert.elementPresent('tr[class*="row"]:nth-child(3) > td[class*="content-accessory"]:nth-child(6)');
     }
   },
@@ -164,7 +168,10 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.execute("document.getElementById('root').style.padding = 0;");
 
     const width = screenWidth(browser);
-    if (width > browser.globals.breakpoints.small[0]) {
+    if (width <= browser.globals.breakpoints.small[0]) {
+      browser.assert.elementNotPresent('li[class*="list-item"]:nth-child(6) > div > div:nth-child(1) > div[class*="row"]:nth-child(5)');
+      browser.assert.elementNotPresent('li[class*="list-item"]:nth-child(6) > div > div:nth-child(1) > div[class*="row"]:nth-child(6)');
+    } else {
       browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(5)');
       browser.assert.elementNotPresent('tr[class*="row"]:nth-child(6) > td[data-terra-clinical-item-collection-content*="display"]:nth-child(6)');
     }
