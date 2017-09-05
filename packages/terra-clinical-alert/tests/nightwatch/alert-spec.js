@@ -7,7 +7,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   'Default alert test - Displays a default alert with the provided text': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/alert-tests/default`)
-      .expect.element('#defaultAlert').to.be.present.before(1000);
+      .expect.element('#defaultAlert').to.be.present;
     browser.assert.attributeContains(
         '#defaultAlert',
         'class',
