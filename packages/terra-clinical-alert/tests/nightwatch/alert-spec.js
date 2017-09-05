@@ -1,20 +1,12 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
+/* eslint-disable no-unused-expressions */
 // eslint-disable-next-line import/no-extraneous-dependencies
-const screenshot = require('terra-toolkit').screenshot;
+const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
 
-module.exports = {
-  before: (browser, done) => {
-    browser.resizeWindow(browser.globals.width, browser.globals.height, done);
-  },
-
-  afterEach: (browser, done) => {
-    screenshot(browser, 'terra-clinical-alert', done);
-  },
+module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
 
   'Default alert test - Displays a default alert with the provided text': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/default`)
+      .url(`${browser.launchUrl}/#/tests/alert-tests/default`)
       .expect.element('#defaultAlert').to.be.present.before(1000);
     browser.assert.attributeContains(
         '#defaultAlert',
@@ -41,11 +33,10 @@ module.exports = {
   },
 
   'Type attribute tests - Check Alert of type outside records': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/alert-tests/type`);
+    browser.expect.element('#outsideRecordsAlert').to.be.present;
+
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/type`)
-      .assert.elementPresent(
-        '#outsideRecordsAlert',
-        'Check that Alert of type outside-records exists')
       .assert.containsText(
         '#outsideRecordsAlert > div[class*="_body"] > div[class*="_section"] > strong[class*="_title"]',
         'Outside Records.',
@@ -57,8 +48,10 @@ module.exports = {
   },
 
   'Title attribute tests - Displays an alert of each type with a custom title': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/alert-tests/title`);
+    browser.expect.element('#outsideRecordsAlert').to.be.present;
+
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/title`)
       .assert.containsText(
         '#outsideRecordsAlert > div[class*="_body"] > div[class*="_section"] > strong[class*="_title"]',
         'Outside_Records_Alert:',
@@ -67,6 +60,6 @@ module.exports = {
 
   'Custom Alert Tests - Displays custom alerts with varying permutations of title, custom icon and custom status color parameters': (browser) => {
     browser
-      .url(`http://localhost:${browser.globals.webpackDevServerPort}/#/tests/alert-tests/custom`);
+      .url(`${browser.launchUrl}/#/tests/alert-tests/custom`);
   },
-};
+});
