@@ -31,6 +31,7 @@ class OnChangeItemCollection extends React.Component {
         <ItemCollection
           rows={[item, item, selectedItem, item]}
           onChange={this.handleSelection}
+          id="ItemCollection"
         />
       </div>
     );

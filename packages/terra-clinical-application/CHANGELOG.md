@@ -4,6 +4,12 @@ ChangeLog
 Unreleased
 ----------
 
+1.2.0 - (September 1, 2017)
+-----------------
+### Changed
+* Change dependency on terra-base to v2.0.0
+* Update nightwatch tests and test scripts.
+
 1.1.1 - (July 27, 2017)
 -----------------
 * Updated spacing around react-docgen comments

@@ -4,6 +4,12 @@ ChangeLog
 Unreleased
 ----------
 
+1.2.0 - (September 1, 2017)
+-----------------
+### Changed
+* Change dependency on terra-base to v2.0.0
+* Update nightwatch tests and test scripts.
+
 1.1.0 - (July 18, 2017)
 -----------------
 ### Changed
