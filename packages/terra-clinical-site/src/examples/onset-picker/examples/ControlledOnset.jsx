@@ -15,19 +15,19 @@ class ControlledOnsetExample extends React.Component {
       },
     };
 
-    this.handleGran = this.handleGran.bind(this);
-    this.handlePrec = this.handlePrec.bind(this);
+    this.handleGranularity = this.handleGranularity.bind(this);
+    this.handlePrecision = this.handlePrecision.bind(this);
     this.handleOnset = this.handleOnset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleGran(e, granularity) {
+  handleGranularity(e, granularity) {
     const formData = Object.assign({}, this.state.formData);
     formData.granularity = granularity;
     this.setState({ formData });
   }
 
-  handlePrec(e, precision) {
+  handlePrecision(e, precision) {
     const formData = Object.assign({}, this.state.formData);
     formData.precision = precision;
     this.setState({ formData });
@@ -54,10 +54,10 @@ class ControlledOnsetExample extends React.Component {
           birthdate={moment().subtract(6, 'years').format()}
           granularity="YEAR"
           granularitySelectName="doogs-supplied-granularity"
-          granularitySelectOnChange={this.handleGran}
+          granularitySelectOnChange={this.handleGranularity}
           precision="BEFORE"
           precisionSelectName="doogs-supplied-precision"
-          precisionSelectOnChange={this.handlePrec}
+          precisionSelectOnChange={this.handlePrecision}
           onsetDate={moment().subtract(2, 'years').format()}
           onsetDateInputName="doogs-supplied-onsetDate"
           onsetDateInputOnChange={this.handleOnset}
