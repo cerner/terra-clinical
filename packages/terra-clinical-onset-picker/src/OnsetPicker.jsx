@@ -95,15 +95,15 @@ class OnsetPicker extends React.Component {
       granularity: this.props.granularity,
       precision: this.props.precision,
       onsetDate: this.props.onsetDate,
-      ageCalcCount: 1,
-      ageCalcDuration: 'weeks',
+      age: 1,
+      ageUnit: 'weeks',
     };
 
     // This binding is necessary to make `this` work in the callback
     this.changeGranularity = this.changeGranularity.bind(this);
     this.changePrecision = this.changePrecision.bind(this);
-    this.changeAgeCalcCount = this.changeAgeCalcCount.bind(this);
-    this.changeAgeCalcDuration = this.changeAgeCalcDuration.bind(this);
+    this.changeAge = this.changeAge.bind(this);
+    this.changeAgeUnit = this.changeAgeUnit.bind(this);
     this.changeYear = this.changeYear.bind(this);
     this.changeMonth = this.changeMonth.bind(this);
     this.changeDate = this.changeDate.bind(this);
@@ -136,13 +136,13 @@ class OnsetPicker extends React.Component {
   }
 
   /*
-   * Change state for count when using age granularity, and update onset date
+   * Change state for the age when using AGE granularity, and update onset date
    */
-  changeAgeCalcCount(event) {
-    const newDate = moment(this.props.birthdate).add(Number(event.target.value), this.state.ageCalcDuration).format('YYYY-MM-DD');
+  changeAge(event) {
+    const newDate = moment(this.props.birthdate).add(Number(event.target.value), this.state.ageUnit).format('YYYY-MM-DD');
 
     this.setState({
-      ageCalcCount: Number(event.target.value),
+      age: Number(event.target.value),
       onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
@@ -153,12 +153,12 @@ class OnsetPicker extends React.Component {
   /*
    * Change state for duration when using age granularity, and update onset date
    */
-  changeAgeCalcDuration(event) {
+  changeAgeUnit(event) {
     const newDate = moment(this.props.birthdate).add(1, event.target.value).format('YYYY-MM-DD');
 
     this.setState({
-      ageCalcCount: 1,
-      ageCalcDuration: event.target.value,
+      age: 1,
+      ageUnit: event.target.value,
       onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
@@ -262,7 +262,7 @@ class OnsetPicker extends React.Component {
    * Power of two for maximum weeks/months (8 weeks = 2 months, 24 months = 2 years)
    */
   maxAgeCount() {
-    switch (this.state.ageCalcDuration) {
+    switch (this.state.ageUnit) {
       case 'years':
         return moment().diff(moment(this.props.birthdate), 'years');
       case 'months': {
@@ -333,24 +333,24 @@ class OnsetPicker extends React.Component {
       />);
     }
 
-    let ageCalcCountSelect = null;
-    let ageCalcDurationSelect = null;
+    let ageSelect = null;
+    let ageUnitSelect = null;
     if (this.state.granularity === 'AGE' && this.state.precision !== 'UNKNOWN') {
-      ageCalcCountSelect = (<NumberField
-        className="terra-OnsetPicker-ageCalcCount"
+      ageSelect = (<NumberField
+        className="terra-OnsetPicker-age"
         min={1}
         max={this.maxAgeCount()}
         step={1}
-        value={this.state.ageCalcCount.toString()}
-        onChange={this.changeAgeCalcCount}
+        value={this.state.age.toString()}
+        onChange={this.changeAge}
         isInline
       />);
 
-      ageCalcDurationSelect = (<SelectField
-        className="terra-OnsetPicker-ageCalcDuration"
+      ageUnitSelect = (<SelectField
+        className="terra-OnsetPicker-ageUnit"
         options={this.allowedAgeDurations()}
-        defaultValue={this.state.ageCalcDuration.toString()}
-        onChange={this.changeAgeCalcDuration}
+        defaultValue={this.state.ageUnit.toString()}
+        onChange={this.changeAgeUnit}
         isInline
       />);
     }
@@ -410,8 +410,8 @@ class OnsetPicker extends React.Component {
         </Fieldset>
 
         <Fieldset>
-          {ageCalcCountSelect}
-          {ageCalcDurationSelect}
+          {ageSelect}
+          {ageUnitSelect}
           {monthSelect}
           {yearSelect}
           {dateSelect}
