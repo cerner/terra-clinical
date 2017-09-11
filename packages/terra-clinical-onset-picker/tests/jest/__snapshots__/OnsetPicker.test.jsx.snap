@@ -1,4 +1,4 @@
-exports[`test should render a default onset picker 1`] = `
+exports[`test should render a default onset picker with specified onset date 1`] = `
 <div
   class="terra-OnsetPicker">
   <fieldset
@@ -92,9 +92,13 @@ exports[`test should render a default onset picker 1`] = `
             July
           </option>
           <option
-            selected=""
             value="7">
             August
+          </option>
+          <option
+            selected=""
+            value="8">
+            September
           </option>
         </select>
       </div>
@@ -232,9 +236,13 @@ exports[`test should render as controlled when onChange functions are supplied 1
             July
           </option>
           <option
-            selected=""
             value="7">
             August
+          </option>
+          <option
+            selected=""
+            value="8">
+            September
           </option>
         </select>
       </div>

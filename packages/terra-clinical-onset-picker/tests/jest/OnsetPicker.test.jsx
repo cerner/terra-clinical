@@ -6,7 +6,7 @@ import messages from '../../translations/en-US.json';
 
 const locale = 'en-US';
 
-it('should render a default onset picker', () => {
+it('should render a default onset picker with specified onset date', () => {
   const onsetPicker = render(
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
@@ -14,6 +14,7 @@ it('should render a default onset picker', () => {
         granularitySelectName="test-granularity"
         precisionSelectName="test-precision"
         onsetDateInputName="test-onsetDate"
+        onsetDate="2017-09-10T17:40:49-05:00"
       />
     </IntlProvider>);
   expect(onsetPicker).toMatchSnapshot();

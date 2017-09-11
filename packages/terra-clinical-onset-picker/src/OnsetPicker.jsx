@@ -11,14 +11,15 @@ import SelectField from 'terra-form/lib/SelectField';
 
 const propTypes = {
   /**
-   * The ISO 8601 string representation of the birth date to calculate an onset date from.
+   * The ISO 8601 string representation of the birth date to calculate an onset date for the AGE precision.
+   * Also limits the earliest possible date that can be selected for an onset date for YEAR, MONTH, and DATE precision.
    */
   birthdate: PropTypes.string.isRequired,
 
   /**
-   * The granularity of the onset date. YEAR, MONTH, and DATE are accepted.
+   * The granularity of the onset date. AGE, YEAR, MONTH, and DATE are accepted.
    */
-  granularity: PropTypes.string,
+  granularity: PropTypes.oneOf(['AGE', 'YEAR', 'MONTH', 'DATE']),
 
   /**
    * Name of the granularity select. The name should be unique.
@@ -34,7 +35,7 @@ const propTypes = {
   /**
    * The precision of the onset date. ABOUT, BEFORE, AFTER, and UNKNOWN are accepted.
    */
-  precision: PropTypes.string,
+  precision: PropTypes.oneOf(['ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN']),
 
   /**
    * Name of the precision select. The name should be unique.
@@ -321,9 +322,9 @@ class OnsetPicker extends React.Component {
     let granularitySelect = null;
     if (this.state.precision !== 'UNKNOWN') {
       granularitySelect = (<SelectField
-        options={[{ value: 'MONTH', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonth' }) },
+        options={[{ value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
                   { value: 'YEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
-                  { value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
+                  { value: 'MONTH', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonth' }) },
                   { value: 'DATE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
         name={this.props.granularitySelectName}
         defaultValue={this.state.granularity}
