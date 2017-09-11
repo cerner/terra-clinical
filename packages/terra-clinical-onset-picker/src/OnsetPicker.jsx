@@ -5,7 +5,7 @@ import 'terra-base/lib/baseStyles';
 import Field from 'terra-form/lib/Field';
 import Fieldset from 'terra-form/lib/Fieldset';
 import NumberField from 'terra-form/lib/NumberField';
-import DatePicker from 'terra-date-picker/lib/DatePicker';
+import DatePicker from 'terra-date-picker';
 import SelectField from 'terra-form/lib/SelectField';
 
 
