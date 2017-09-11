@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-view",
   "main": "lib/ItemView.js",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.",
   "repository": {
     "type": "git",
@@ -24,15 +24,15 @@
   "peerDependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "terra-base": "^1.0.0",
-    "terra-clinical-item-display": "^1.2.1",
+    "terra-base": "^2.0.0",
+    "terra-clinical-item-display": "^1.3.0",
     "terra-icon": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^1.0.0",
-    "terra-clinical-item-display": "^1.2.1",
+    "terra-base": "^2.0.0",
+    "terra-clinical-item-display": "^1.3.0",
     "terra-icon": "^1.0.0"
   },
   "scripts": {
@@ -43,12 +43,8 @@
     "lint:js": "$(cd ..; npm bin)/eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "props-table": "$(cd ..; npm bin)/props-table ./src/ItemView.jsx --out-dir ./docs/props-table",
     "lint:scss": "$(cd ..; npm bin)/stylelint src/**/*.scss",
-    "test": "npm run test:spec && npm run test:nightwatch-default",
-    "test:spec": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
-    "test:all": "npm run test:nightwatch-default && npm run test:nightwatch-chrome && npm run test:nightwatch-firefox && npm run test:nightwatch-safari",
-    "test:nightwatch-default": "SPECTRE_TEST_SUITE=terra-clinical-item-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js",
-    "test:nightwatch-chrome": "SPECTRE_TEST_SUITE=terra-clinical-item-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js chrome",
-    "test:nightwatch-firefox": "SPECTRE_TEST_SUITE=terra-clinical-item-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch.js firefox",
-    "test:nightwatch-safari": "SPECTRE_TEST_SUITE=terra-clinical-item-view node ../../node_modules/terra-toolkit/lib/scripts/nightwatch-non-parallel.js safari"
+    "test": "npm run test:jest && npm run test:nightwatch",
+    "test:jest": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
+    "test:nightwatch": "$(cd ..; npm bin)/nightwatch -c ../../nightwatch.conf.js"
   }
 }
