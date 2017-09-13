@@ -75,6 +75,7 @@
 ### Packages Requiring I18n
 
 - [terra-clinical-action-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header)
+- [terra-clinical-alert](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-alert)
 
 ## Contributing
 
