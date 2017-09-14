@@ -1,24 +1,32 @@
-exports[`test should render a default component 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a default component 1`] = `
 <div
-  data-terra-clincial-detail-list="true">
+  data-terra-clincial-detail-list="true"
+>
   <div
-    class="list" />
+    class="list"
+  />
 </div>
 `;
 
-exports[`test should render a list 1`] = `
+exports[`should render a list 1`] = `
 <div
-  data-terra-clincial-detail-list="true">
+  data-terra-clincial-detail-list="true"
+>
   <div
-    class="list">
+    class="list"
+  >
     <div
-      class="detail-list-item">
+      class="detail-list-item"
+    >
       <p>
         Test
       </p>
     </div>
     <div
-      class="detail-list-item">
+      class="detail-list-item"
+    >
       <p>
         Test
       </p>
@@ -27,29 +35,36 @@ exports[`test should render a list 1`] = `
 </div>
 `;
 
-exports[`test should render a title 1`] = `
+exports[`should render a title 1`] = `
 <div
-  data-terra-clincial-detail-list="true">
+  data-terra-clincial-detail-list="true"
+>
   <div
-    class="title">
+    class="title"
+  >
     Title
   </div>
   <div
-    class="list" />
+    class="list"
+  />
 </div>
 `;
 
-exports[`test should render a title and a list 1`] = `
+exports[`should render a title and a list 1`] = `
 <div
-  data-terra-clincial-detail-list="true">
+  data-terra-clincial-detail-list="true"
+>
   <div
-    class="title">
+    class="title"
+  >
     Title
   </div>
   <div
-    class="list">
+    class="list"
+  >
     <div
-      class="detail-list-item">
+      class="detail-list-item"
+    >
       <p>
         Test
       </p>

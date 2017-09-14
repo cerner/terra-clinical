@@ -80,7 +80,7 @@
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.15.2",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^18.0.0",
+    "jest": "^21.0.2",
     "lerna": "2.0.0-rc.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

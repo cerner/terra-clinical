@@ -44,7 +44,7 @@
     "props-table": "$(cd ..; npm bin)/props-table ./src/ItemView.jsx --out-dir ./docs/props-table",
     "lint:scss": "$(cd ..; npm bin)/stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:nightwatch",
-    "test:jest": "$(cd ..; npm bin)/jest --config ../../jestconfig.json",
+    "test:jest": "$(cd ..; npm bin)/jest ./tests/jest/* --config ../../jestconfig.json",
     "test:nightwatch": "$(cd ..; npm bin)/nightwatch -c ../../nightwatch.conf.js"
   }
 }

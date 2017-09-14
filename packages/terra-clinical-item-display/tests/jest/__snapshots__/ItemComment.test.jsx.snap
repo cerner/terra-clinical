@@ -1,4 +1,6 @@
-exports[`test should render a comment with text 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a comment with text 1`] = `
 <ItemDisplay
   className="item-comment"
   icon={
@@ -7,13 +9,15 @@ exports[`test should render a comment with text 1`] = `
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg" />
+      xmlns="http://www.w3.org/2000/svg"
+    />
   }
   isTruncated={false}
-  text="comment" />
+  text="comment"
+/>
 `;
 
-exports[`test should render a comment with the attention textStyle on text 1`] = `
+exports[`should render a comment with the attention textStyle on text 1`] = `
 <ItemDisplay
   className="item-comment"
   icon={
@@ -22,30 +26,16 @@ exports[`test should render a comment with the attention textStyle on text 1`] =
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg" />
-  }
-  isTruncated={false}
-  text="ItemComment"
-  textStyle="attention" />
-`;
-
-exports[`test should render a comment with the secondary textStyle on text 1`] = `
-<ItemDisplay
-  className="item-comment"
-  icon={
-    <IconComment
-      className=""
-      data-name="Layer 1"
-      isBidi={true}
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg" />
+      xmlns="http://www.w3.org/2000/svg"
+    />
   }
   isTruncated={false}
   text="ItemComment"
-  textStyle="secondary" />
+  textStyle="attention"
+/>
 `;
 
-exports[`test should render a comment with the strikeThrough textStyle on text 1`] = `
+exports[`should render a comment with the secondary textStyle on text 1`] = `
 <ItemDisplay
   className="item-comment"
   icon={
@@ -54,14 +44,16 @@ exports[`test should render a comment with the strikeThrough textStyle on text 1
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg" />
+      xmlns="http://www.w3.org/2000/svg"
+    />
   }
   isTruncated={false}
   text="ItemComment"
-  textStyle="strikeThrough" />
+  textStyle="secondary"
+/>
 `;
 
-exports[`test should render a default component 1`] = `
+exports[`should render a comment with the strikeThrough textStyle on text 1`] = `
 <ItemDisplay
   className="item-comment"
   icon={
@@ -70,13 +62,16 @@ exports[`test should render a default component 1`] = `
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg" />
+      xmlns="http://www.w3.org/2000/svg"
+    />
   }
   isTruncated={false}
-  text="" />
+  text="ItemComment"
+  textStyle="strikeThrough"
+/>
 `;
 
-exports[`test should render a truncated comment 1`] = `
+exports[`should render a default component 1`] = `
 <ItemDisplay
   className="item-comment"
   icon={
@@ -85,8 +80,27 @@ exports[`test should render a truncated comment 1`] = `
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg" />
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  }
+  isTruncated={false}
+  text=""
+/>
+`;
+
+exports[`should render a truncated comment 1`] = `
+<ItemDisplay
+  className="item-comment"
+  icon={
+    <IconComment
+      className=""
+      data-name="Layer 1"
+      isBidi={true}
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
   }
   isTruncated={true}
-  text="comment1comment1comment1comment1comment1comment1comment1comment1" />
+  text="comment1comment1comment1comment1comment1comment1comment1comment1"
+/>
 `;

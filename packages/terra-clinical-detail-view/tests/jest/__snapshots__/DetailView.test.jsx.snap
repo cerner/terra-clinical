@@ -1,167 +1,215 @@
-exports[`test should render a default component 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a default component 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text" />
+      class="primary-text"
+    />
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div
-    class="footer-text" />
+    class="footer-text"
+  />
 </div>
 `;
 
-exports[`test should render a title 1`] = `
+exports[`should render a title 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text">
+      class="primary-text"
+    >
       Header
     </h1>
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div
-    class="footer-text" />
+    class="footer-text"
+  />
 </div>
 `;
 
-exports[`test should render details 1`] = `
+exports[`should render details 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text">
+      class="primary-text"
+    >
       Header
     </h1>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 1
     </div>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 2
     </div>
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <p>
      Detail information 
   </p>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div
-    class="footer-text" />
+    class="footer-text"
+  />
 </div>
 `;
 
-exports[`test should render footer 1`] = `
+exports[`should render footer 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text">
+      class="primary-text"
+    >
       Header
     </h1>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 1
     </div>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 2
     </div>
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <p>
      Detail information 
   </p>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div
-    class="footer-text">
+    class="footer-text"
+  >
     Footer text
   </div>
 </div>
 `;
 
-exports[`test should render graph 1`] = `
+exports[`should render graph 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text">
+      class="primary-text"
+    >
       Header
     </h1>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 1
     </div>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 2
     </div>
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div>
      This is where a graph would go 
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div
-    class="footer-text" />
+    class="footer-text"
+  />
 </div>
 `;
 
-exports[`test should render subtitles 1`] = `
+exports[`should render subtitles 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text">
+      class="primary-text"
+    >
       Header
     </h1>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 1
     </div>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 2
     </div>
   </div>
   <hr
-    class="divider" />
+    class="divider"
+  />
   <div
-    class="footer-text" />
+    class="footer-text"
+  />
 </div>
 `;
 
-exports[`test should render without a divider when indicated 1`] = `
+exports[`should render without a divider when indicated 1`] = `
 <div
-  class="detail-view">
+  class="detail-view"
+>
   <div
-    class="title">
+    class="title"
+  >
     <h1
-      class="primary-text">
+      class="primary-text"
+    >
       Header
     </h1>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 1
     </div>
     <div
-      class="subtitle">
+      class="subtitle"
+    >
       Subtitle 2
     </div>
   </div>
@@ -169,7 +217,8 @@ exports[`test should render without a divider when indicated 1`] = `
      Detail information 
   </p>
   <div
-    class="footer-text">
+    class="footer-text"
+  >
     Footer text
   </div>
 </div>
