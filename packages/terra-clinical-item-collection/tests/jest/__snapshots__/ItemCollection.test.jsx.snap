@@ -37,7 +37,8 @@ exports[`should render with a given breakpoint 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -47,7 +48,8 @@ exports[`should render with a given breakpoint 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
@@ -82,7 +84,8 @@ exports[`should render with a given breakpoint 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -92,7 +95,8 @@ exports[`should render with a given breakpoint 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
@@ -127,7 +131,8 @@ exports[`should render with a given breakpoint 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -137,7 +142,8 @@ exports[`should render with a given breakpoint 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
@@ -377,7 +383,8 @@ exports[`should render with multiple rows 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -387,7 +394,8 @@ exports[`should render with multiple rows 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
@@ -422,7 +430,8 @@ exports[`should render with multiple rows 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -432,7 +441,8 @@ exports[`should render with multiple rows 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
@@ -467,7 +477,8 @@ exports[`should render with multiple rows 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -477,7 +488,8 @@ exports[`should render with multiple rows 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
@@ -717,7 +729,8 @@ exports[`should render with one row 1`] = `
               }
               endAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     End Accessory
                   </p>
@@ -727,7 +740,8 @@ exports[`should render with one row 1`] = `
               layout="oneColumn"
               startAccessory={
                 <div
-                  className="list-accessory">
+                  className="list-accessory"
+                >
                   <p>
                     Start Accessory
                   </p>
