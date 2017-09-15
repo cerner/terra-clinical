@@ -1,29 +1,35 @@
-exports[`test should render children with app prop 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render children with app prop 1`] = `
 <Base
   className="application"
-  customMessages={Object {}}>
+  customMessages={Object {}}
+>
   <div
-    app={AppDelegateInstance {}}>
+    app={AppDelegateInstance {}}
+  >
     TestApp
   </div>
 </Base>
 `;
 
-exports[`test should render custom properties on component 1`] = `
+exports[`should render custom properties on component 1`] = `
 <Base
   className="application custom-class"
   customMessages={Object {}}
-  id="my-id">
+  id="my-id"
+>
   <div>
     TestApp
   </div>
 </Base>
 `;
 
-exports[`test should render default component 1`] = `
+exports[`should render default component 1`] = `
 <Base
   className="application"
-  customMessages={Object {}}>
+  customMessages={Object {}}
+>
   <div>
     TestApp
   </div>

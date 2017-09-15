@@ -1,32 +1,42 @@
-exports[`test should render a default component 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a default component 1`] = `
 <header
-  class="flexHeader">
+  class="flexHeader"
+>
   <div
-    class="flexFill" />
+    class="flexFill"
+  />
 </header>
 `;
 
-exports[`test should render a header with all content 1`] = `
+exports[`should render a header with all content 1`] = `
 <header
-  class="flexHeader">
+  class="flexHeader"
+>
   <div
-    class="flexEnd">
+    class="flexEnd"
+  >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flexFill">
+    class="flexFill"
+  >
     <div
-      class="titleContainer">
+      class="titleContainer"
+    >
       <h1
-        class="title">
+        class="title"
+      >
         Title
       </h1>
     </div>
   </div>
   <div
-    class="flexEnd">
+    class="flexEnd"
+  >
     <div>
       end content
     </div>
@@ -34,27 +44,33 @@ exports[`test should render a header with all content 1`] = `
 </header>
 `;
 
-exports[`test should render a header with content on the left 1`] = `
+exports[`should render a header with content on the left 1`] = `
 <header
-  class="flexHeader">
+  class="flexHeader"
+>
   <div
-    class="flexEnd">
+    class="flexEnd"
+  >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flexFill" />
+    class="flexFill"
+  />
 </header>
 `;
 
-exports[`test should render a header with content on the right 1`] = `
+exports[`should render a header with content on the right 1`] = `
 <header
-  class="flexHeader">
+  class="flexHeader"
+>
   <div
-    class="flexFill" />
+    class="flexFill"
+  />
   <div
-    class="flexEnd">
+    class="flexEnd"
+  >
     <div>
       end content
     </div>
@@ -62,15 +78,19 @@ exports[`test should render a header with content on the right 1`] = `
 </header>
 `;
 
-exports[`test should render a header with title only 1`] = `
+exports[`should render a header with title only 1`] = `
 <header
-  class="flexHeader">
+  class="flexHeader"
+>
   <div
-    class="flexFill">
+    class="flexFill"
+  >
     <div
-      class="titleContainer">
+      class="titleContainer"
+    >
       <h1
-        class="title">
+        class="title"
+      >
         title
       </h1>
     </div>
@@ -78,27 +98,33 @@ exports[`test should render a header with title only 1`] = `
 </header>
 `;
 
-exports[`test should render a subheader with all content 1`] = `
+exports[`should render a subheader with all content 1`] = `
 <header
-  class="flexSubheader">
+  class="flexSubheader"
+>
   <div
-    class="flexEnd">
+    class="flexEnd"
+  >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flexFill">
+    class="flexFill"
+  >
     <div
-      class="titleContainer">
+      class="titleContainer"
+    >
       <h1
-        class="title">
+        class="title"
+      >
         Title
       </h1>
     </div>
   </div>
   <div
-    class="flexEnd">
+    class="flexEnd"
+  >
     <div>
       end content
     </div>
@@ -106,15 +132,19 @@ exports[`test should render a subheader with all content 1`] = `
 </header>
 `;
 
-exports[`test should render a subheader with title only 1`] = `
+exports[`should render a subheader with title only 1`] = `
 <header
-  class="flexSubheader">
+  class="flexSubheader"
+>
   <div
-    class="flexFill">
+    class="flexFill"
+  >
     <div
-      class="titleContainer">
+      class="titleContainer"
+    >
       <h1
-        class="title">
+        class="title"
+      >
         title
       </h1>
     </div>
