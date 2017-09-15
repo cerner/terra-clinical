@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Alert of type custom with custom title and text content should render an Alert component of type custom 1`] = `
 <IntlProvider
   locale="en-US"
@@ -5,29 +7,34 @@ exports[`Alert of type custom with custom title and text content should render a
     Object {
       "Terra.Clinical.alert.outsideRecords": "Outside Records.",
     }
-  }>
+  }
+>
   <Alert
     action={null}
     customIcon={
       <IconHelp
         viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg" />
+        xmlns="http://www.w3.org/2000/svg"
+      />
     }
     customStatusColor="orange"
     onDismiss={null}
     title="Help!"
-    type="custom">
+    type="custom"
+  >
     <Alert
       action={null}
       customIcon={
         <IconHelp
           viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg" />
+          xmlns="http://www.w3.org/2000/svg"
+        />
       }
       customStatusColor="orange"
       onDismiss={null}
       title="Help!"
-      type="custom">
+      type="custom"
+    >
       <ResponsiveElement
         defaultElement={
           <div
@@ -36,19 +43,25 @@ exports[`Alert of type custom with custom title and text content should render a
               Object {
                 "color": "orange",
               }
-            }>
+            }
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconHelp
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section-custom">
+                className="section-custom"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Help!
                 </strong>
                 <div>
@@ -67,19 +80,25 @@ exports[`Alert of type custom with custom title and text content should render a
               Object {
                 "color": "orange",
               }
-            }>
+            }
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconHelp
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section-custom">
+                className="section-custom"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Help!
                 </strong>
                 <div>
@@ -89,7 +108,8 @@ exports[`Alert of type custom with custom title and text content should render a
             </div>
             
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
@@ -110,38 +130,47 @@ exports[`Alert of type info with custom title and HTML content should render an 
       "Terra.alert.success": "Success.",
       "Terra.alert.warning": "Warning.",
     }
-  }>
+  }
+>
   <Alert
     action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title="Gettysburg Address"
-    type="info">
+    type="info"
+  >
     <Alert
       action={null}
       customIcon={null}
       customStatusColor={null}
       onDismiss={null}
       title="Gettysburg Address"
-      type="info">
+      type="info"
+    >
       <ResponsiveElement
         defaultElement={
           <div
             className="info narrow"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconInformation
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Gettysburg Address
                 </strong>
                 <div>
@@ -158,19 +187,25 @@ exports[`Alert of type info with custom title and HTML content should render an 
         tiny={
           <div
             className="info wide"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconInformation
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Gettysburg Address
                 </strong>
                 <div>
@@ -182,7 +217,8 @@ exports[`Alert of type info with custom title and HTML content should render an 
             </div>
             
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
@@ -197,26 +233,30 @@ exports[`Alert of type outside records with text content should render an Alert 
     Object {
       "Terra.Clinical.alert.outsideRecords": "Outside Records.",
     }
-  }>
+  }
+>
   <Alert
     action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title=""
-    type="outsideRecords">
+    type="outsideRecords"
+  >
     <Alert
       action={null}
       customIcon={
         <IconDiamond
           viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg" />
+          xmlns="http://www.w3.org/2000/svg"
+        />
       }
       customStatusColor="#78288c"
       data-terra-clinical-alert-type="outsideRecords"
       onDismiss={null}
       title="Outside Records."
-      type="custom">
+      type="custom"
+    >
       <ResponsiveElement
         defaultElement={
           <div
@@ -226,19 +266,25 @@ exports[`Alert of type outside records with text content should render an Alert 
               Object {
                 "color": "#78288c",
               }
-            }>
+            }
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconDiamond
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section-custom">
+                className="section-custom"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Outside Records.
                 </strong>
                 <div>
@@ -258,19 +304,25 @@ exports[`Alert of type outside records with text content should render an Alert 
               Object {
                 "color": "#78288c",
               }
-            }>
+            }
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconDiamond
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section-custom">
+                className="section-custom"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Outside Records.
                 </strong>
                 <div>
@@ -280,7 +332,8 @@ exports[`Alert of type outside records with text content should render an Alert 
             </div>
             
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
@@ -301,7 +354,8 @@ exports[`Alert of type success with an action button text content should render 
       "Terra.alert.success": "Success.",
       "Terra.alert.warning": "Warning.",
     }
-  }>
+  }
+>
   <Alert
     action={
       <Button
@@ -313,13 +367,15 @@ exports[`Alert of type success with an action button text content should render 
         size="medium"
         text="Action"
         type="button"
-        variant="primary" />
+        variant="primary"
+      />
     }
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title=""
-    type="success">
+    type="success"
+  >
     <Alert
       action={
         <Button
@@ -331,30 +387,38 @@ exports[`Alert of type success with an action button text content should render 
           size="medium"
           text="Action"
           type="button"
-          variant="primary" />
+          variant="primary"
+        />
       }
       customIcon={null}
       customStatusColor={null}
       onDismiss={null}
       title={null}
-      type="success">
+      type="success"
+    >
       <ResponsiveElement
         defaultElement={
           <div
             className="success narrow"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-narrow">
+              className="body-narrow"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconSuccess
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Success.
                 </strong>
                 <div>
@@ -363,7 +427,8 @@ exports[`Alert of type success with an action button text content should render 
               </div>
             </div>
             <div
-              className="actions">
+              className="actions"
+            >
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -373,7 +438,8 @@ exports[`Alert of type success with an action button text content should render 
                 size="medium"
                 text="Action"
                 type="button"
-                variant="primary" />
+                variant="primary"
+              />
               
             </div>
           </div>
@@ -382,19 +448,25 @@ exports[`Alert of type success with an action button text content should render 
         tiny={
           <div
             className="success wide"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconSuccess
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Success.
                 </strong>
                 <div>
@@ -403,7 +475,8 @@ exports[`Alert of type success with an action button text content should render 
               </div>
             </div>
             <div
-              className="actions">
+              className="actions"
+            >
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -413,11 +486,13 @@ exports[`Alert of type success with an action button text content should render 
                 size="medium"
                 text="Action"
                 type="button"
-                variant="primary" />
+                variant="primary"
+              />
               
             </div>
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
@@ -438,41 +513,52 @@ exports[`Alert with no props should render a default component 1`] = `
       "Terra.alert.success": "Success.",
       "Terra.alert.warning": "Warning.",
     }
-  }>
+  }
+>
   <Alert
     action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={null}
     title=""
-    type="alert">
+    type="alert"
+  >
     <Alert
       action={null}
       customIcon={null}
       customStatusColor={null}
       onDismiss={null}
       title={null}
-      type="alert">
+      type="alert"
+    >
       <ResponsiveElement
         defaultElement={
           <div
             className="alert narrow"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconAlert
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Alert.
                 </strong>
-                <div />
+                <div>
+                  
+                </div>
               </div>
             </div>
             
@@ -482,27 +568,36 @@ exports[`Alert with no props should render a default component 1`] = `
         tiny={
           <div
             className="alert wide"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconAlert
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Alert.
                 </strong>
-                <div />
+                <div>
+                  
+                </div>
               </div>
             </div>
             
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
@@ -523,7 +618,8 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
       "Terra.alert.success": "Success.",
       "Terra.alert.warning": "Warning.",
     }
-  }>
+  }
+>
   <Alert
     action={
       <Button
@@ -535,17 +631,20 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
         size="medium"
         text="Action"
         type="button"
-        variant="primary" />
+        variant="primary"
+      />
     }
     customIcon={
       <IconHelp
         viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg" />
+        xmlns="http://www.w3.org/2000/svg"
+      />
     }
     customStatusColor="orange"
     onDismiss={[Function]}
     title="Help!"
-    type="custom">
+    type="custom"
+  >
     <Alert
       action={
         <Button
@@ -557,17 +656,20 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
           size="medium"
           text="Action"
           type="button"
-          variant="primary" />
+          variant="primary"
+        />
       }
       customIcon={
         <IconHelp
           viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg" />
+          xmlns="http://www.w3.org/2000/svg"
+        />
       }
       customStatusColor="orange"
       onDismiss={[Function]}
       title="Help!"
-      type="custom">
+      type="custom"
+    >
       <ResponsiveElement
         defaultElement={
           <div
@@ -576,19 +678,25 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
               Object {
                 "color": "orange",
               }
-            }>
+            }
+          >
             <div
-              className="body-narrow">
+              className="body-narrow"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconHelp
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section-custom">
+                className="section-custom"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Help!
                 </strong>
                 <div>
@@ -597,7 +705,8 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
               </div>
             </div>
             <div
-              className="actions-custom">
+              className="actions-custom"
+            >
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -607,7 +716,8 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
                 size="medium"
                 text="Action"
                 type="button"
-                variant="primary" />
+                variant="primary"
+              />
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -617,7 +727,8 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
                 size="medium"
                 text="Dismiss"
                 type="button"
-                variant="secondary" />
+                variant="secondary"
+              />
             </div>
           </div>
         }
@@ -629,19 +740,25 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
               Object {
                 "color": "orange",
               }
-            }>
+            }
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconHelp
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section-custom">
+                className="section-custom"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Help!
                 </strong>
                 <div>
@@ -650,7 +767,8 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
               </div>
             </div>
             <div
-              className="actions-custom">
+              className="actions-custom"
+            >
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -660,7 +778,8 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
                 size="medium"
                 text="Action"
                 type="button"
-                variant="primary" />
+                variant="primary"
+              />
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -670,10 +789,12 @@ exports[`Dismissable Alert of type custom with action button, custom title and t
                 size="medium"
                 text="Dismiss"
                 type="button"
-                variant="secondary" />
+                variant="secondary"
+              />
             </div>
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
@@ -694,38 +815,47 @@ exports[`Dismissible Alert that includes actions section should render an alert 
       "Terra.alert.success": "Success.",
       "Terra.alert.warning": "Warning.",
     }
-  }>
+  }
+>
   <Alert
     action={null}
     customIcon={null}
     customStatusColor=""
     onDismiss={[Function]}
     title=""
-    type="alert">
+    type="alert"
+  >
     <Alert
       action={null}
       customIcon={null}
       customStatusColor={null}
       onDismiss={[Function]}
       title={null}
-      type="alert">
+      type="alert"
+    >
       <ResponsiveElement
         defaultElement={
           <div
             className="alert narrow"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-narrow">
+              className="body-narrow"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconAlert
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Alert.
                 </strong>
                 <div>
@@ -734,7 +864,8 @@ exports[`Dismissible Alert that includes actions section should render an alert 
               </div>
             </div>
             <div
-              className="actions">
+              className="actions"
+            >
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -744,7 +875,8 @@ exports[`Dismissible Alert that includes actions section should render an alert 
                 size="medium"
                 text="Dismiss"
                 type="button"
-                variant="secondary" />
+                variant="secondary"
+              />
             </div>
           </div>
         }
@@ -752,19 +884,25 @@ exports[`Dismissible Alert that includes actions section should render an alert 
         tiny={
           <div
             className="alert wide"
-            style={Object {}}>
+            style={Object {}}
+          >
             <div
-              className="body-std">
+              className="body-std"
+            >
               <div
-                className="icon">
+                className="icon"
+              >
                 <IconAlert
                   viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg" />
+                  xmlns="http://www.w3.org/2000/svg"
+                />
               </div>
               <div
-                className="section">
+                className="section"
+              >
                 <strong
-                  className="title">
+                  className="title"
+                >
                   Alert.
                 </strong>
                 <div>
@@ -773,7 +911,8 @@ exports[`Dismissible Alert that includes actions section should render an alert 
               </div>
             </div>
             <div
-              className="actions">
+              className="actions"
+            >
               <Button
                 isBlock={false}
                 isCompact={false}
@@ -783,10 +922,12 @@ exports[`Dismissible Alert that includes actions section should render an alert 
                 size="medium"
                 text="Dismiss"
                 type="button"
-                variant="secondary" />
+                variant="secondary"
+              />
             </div>
           </div>
-        }>
+        }
+      >
         <div />
       </ResponsiveElement>
     </Alert>
