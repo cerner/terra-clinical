@@ -44,7 +44,7 @@
     "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rm -rf lib",
     "compile:build": "$(cd ..; npm bin)/babel src --out-dir lib --copy-files",
-    "lint": "npm run lint:js && npm run lint:scss",
+    "lint": "npm run lint:js",
     "lint:js": "$(cd ..; npm bin)/eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "props-table": "$(cd ..; npm bin)/props-table ./src/OnsetPicker.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:nightwatch",

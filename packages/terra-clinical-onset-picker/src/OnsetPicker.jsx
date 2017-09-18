@@ -337,7 +337,7 @@ class OnsetPicker extends React.Component {
     let ageUnitSelect = null;
     if (this.state.granularity === 'AGE' && this.state.precision !== 'UNKNOWN') {
       ageSelect = (<NumberField
-        className="terra-OnsetPicker-age"
+        data-terra-clinical-onset-picker="age"
         min={1}
         max={this.maxAgeCount()}
         step={1}
@@ -347,7 +347,7 @@ class OnsetPicker extends React.Component {
       />);
 
       ageUnitSelect = (<SelectField
-        className="terra-OnsetPicker-ageUnit"
+        data-terra-clinical-onset-picker="age_unit"
         options={this.allowedAgeDurations()}
         defaultValue={this.state.ageUnit.toString()}
         onChange={this.changeAgeUnit}
@@ -358,7 +358,7 @@ class OnsetPicker extends React.Component {
     let monthSelect = null;
     if (this.state.granularity === 'MONTH' && this.state.precision !== 'UNKNOWN') {
       monthSelect = (<SelectField
-        className="terra-OnsetPicker-month"
+        data-terra-clinical-onset-picker="month"
         options={this.availableMonths(intl)}
         defaultValue={moment(this.state.onsetDate).month().toString()}
         onChange={this.changeMonth}
@@ -369,7 +369,7 @@ class OnsetPicker extends React.Component {
     let yearSelect = null;
     if ((this.state.granularity === 'YEAR' || this.state.granularity === 'MONTH') && this.state.precision !== 'UNKNOWN') {
       yearSelect = (<SelectField
-        className="terra-OnsetPicker-year"
+        data-terra-clinical-onset-picker="year"
         options={this.availableYears()}
         defaultValue={moment(this.state.onsetDate).year().toString()}
         onChange={this.changeYear}
@@ -391,7 +391,7 @@ class OnsetPicker extends React.Component {
     }
 
     return (
-      (<div className="terra-OnsetPicker" {...customProps}>
+      (<div data-terra-clinical-onset-picker {...customProps}>
 
         <Fieldset>
           {/* Precision */}

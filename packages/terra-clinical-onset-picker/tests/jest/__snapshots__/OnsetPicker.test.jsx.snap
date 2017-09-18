@@ -1,54 +1,71 @@
-exports[`test should render a default onset picker with specified onset date 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a default onset picker with specified onset date 1`] = `
 <div
-  class="terra-OnsetPicker">
+  data-terra-clinical-onset-picker="true"
+>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-precision">
+          name="test-precision"
+        >
           <option
             selected=""
-            value="ABOUT">
+            value="ABOUT"
+          >
             About
           </option>
           <option
-            value="BEFORE">
+            value="BEFORE"
+          >
             Before
           </option>
           <option
-            value="AFTER">
+            value="AFTER"
+          >
             After
           </option>
           <option
-            value="UNKNOWN">
+            value="UNKNOWN"
+          >
             Unknown
           </option>
         </select>
       </div>
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-granularity">
+          name="test-granularity"
+        >
           <option
-            selected=""
-            value="MONTH">
-            Month
-          </option>
-          <option
-            value="YEAR">
-            Year
-          </option>
-          <option
-            value="AGE">
+            value="AGE"
+          >
             Age
           </option>
           <option
-            value="DATE">
+            value="YEAR"
+          >
+            Year
+          </option>
+          <option
+            selected=""
+            value="MONTH"
+          >
+            Month
+          </option>
+          <option
+            value="DATE"
+          >
             Date
           </option>
         </select>
@@ -56,83 +73,107 @@ exports[`test should render a default onset picker with specified onset date 1`]
     </div>
   </fieldset>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline terra-OnsetPicker-month">
+        class="field field-inline"
+        data-terra-clinical-onset-picker="month"
+      >
         <select
-          class="select">
+          class="select"
+        >
           <option
-            value="0">
+            value="0"
+          >
             January
           </option>
           <option
-            value="1">
+            value="1"
+          >
             February
           </option>
           <option
-            value="2">
+            value="2"
+          >
             March
           </option>
           <option
-            value="3">
+            value="3"
+          >
             April
           </option>
           <option
-            value="4">
+            value="4"
+          >
             May
           </option>
           <option
-            value="5">
+            value="5"
+          >
             June
           </option>
           <option
-            value="6">
+            value="6"
+          >
             July
           </option>
           <option
-            value="7">
+            value="7"
+          >
             August
           </option>
           <option
             selected=""
-            value="8">
+            value="8"
+          >
             September
           </option>
         </select>
       </div>
       <div
-        class="field field-inline terra-OnsetPicker-year">
+        class="field field-inline"
+        data-terra-clinical-onset-picker="year"
+      >
         <select
-          class="select">
+          class="select"
+        >
           <option
-            value="2011">
+            value="2011"
+          >
             2011
           </option>
           <option
-            value="2012">
+            value="2012"
+          >
             2012
           </option>
           <option
-            value="2013">
+            value="2013"
+          >
             2013
           </option>
           <option
-            value="2014">
+            value="2014"
+          >
             2014
           </option>
           <option
-            value="2015">
+            value="2015"
+          >
             2015
           </option>
           <option
-            value="2016">
+            value="2016"
+          >
             2016
           </option>
           <option
             selected=""
-            value="2017">
+            value="2017"
+          >
             2017
           </option>
         </select>
@@ -142,57 +183,72 @@ exports[`test should render a default onset picker with specified onset date 1`]
 </div>
 `;
 
-exports[`test should render as controlled when onChange functions are supplied 1`] = `
+exports[`should render as controlled when onChange functions are supplied 1`] = `
 <div
-  class="terra-OnsetPicker">
+  data-terra-clinical-onset-picker="true"
+>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-precision">
+          name="test-precision"
+        >
           <option
             selected=""
-            value="ABOUT">
+            value="ABOUT"
+          >
             About
           </option>
           <option
-            value="BEFORE">
+            value="BEFORE"
+          >
             Before
           </option>
           <option
-            value="AFTER">
+            value="AFTER"
+          >
             After
           </option>
           <option
-            value="UNKNOWN">
+            value="UNKNOWN"
+          >
             Unknown
           </option>
         </select>
       </div>
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-granularity">
+          name="test-granularity"
+        >
           <option
-            selected=""
-            value="MONTH">
-            Month
-          </option>
-          <option
-            value="YEAR">
-            Year
-          </option>
-          <option
-            value="AGE">
+            value="AGE"
+          >
             Age
           </option>
           <option
-            value="DATE">
+            value="YEAR"
+          >
+            Year
+          </option>
+          <option
+            selected=""
+            value="MONTH"
+          >
+            Month
+          </option>
+          <option
+            value="DATE"
+          >
             Date
           </option>
         </select>
@@ -200,83 +256,107 @@ exports[`test should render as controlled when onChange functions are supplied 1
     </div>
   </fieldset>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline terra-OnsetPicker-month">
+        class="field field-inline"
+        data-terra-clinical-onset-picker="month"
+      >
         <select
-          class="select">
+          class="select"
+        >
           <option
-            value="0">
+            value="0"
+          >
             January
           </option>
           <option
-            value="1">
+            value="1"
+          >
             February
           </option>
           <option
-            value="2">
+            value="2"
+          >
             March
           </option>
           <option
-            value="3">
+            value="3"
+          >
             April
           </option>
           <option
-            value="4">
+            value="4"
+          >
             May
           </option>
           <option
-            value="5">
+            value="5"
+          >
             June
           </option>
           <option
-            value="6">
+            value="6"
+          >
             July
           </option>
           <option
-            value="7">
+            value="7"
+          >
             August
           </option>
           <option
             selected=""
-            value="8">
+            value="8"
+          >
             September
           </option>
         </select>
       </div>
       <div
-        class="field field-inline terra-OnsetPicker-year">
+        class="field field-inline"
+        data-terra-clinical-onset-picker="year"
+      >
         <select
-          class="select">
+          class="select"
+        >
           <option
-            value="2011">
+            value="2011"
+          >
             2011
           </option>
           <option
-            value="2012">
+            value="2012"
+          >
             2012
           </option>
           <option
-            value="2013">
+            value="2013"
+          >
             2013
           </option>
           <option
-            value="2014">
+            value="2014"
+          >
             2014
           </option>
           <option
-            value="2015">
+            value="2015"
+          >
             2015
           </option>
           <option
-            value="2016">
+            value="2016"
+          >
             2016
           </option>
           <option
             selected=""
-            value="2017">
+            value="2017"
+          >
             2017
           </option>
         </select>
@@ -286,33 +366,42 @@ exports[`test should render as controlled when onChange functions are supplied 1
 </div>
 `;
 
-exports[`test should render only a select when supplied with the UNKNOWN precision 1`] = `
+exports[`should render only a select when supplied with the UNKNOWN precision 1`] = `
 <div
-  class="terra-OnsetPicker">
+  data-terra-clinical-onset-picker="true"
+>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-precision">
+          name="test-precision"
+        >
           <option
-            value="ABOUT">
+            value="ABOUT"
+          >
             About
           </option>
           <option
-            value="BEFORE">
+            value="BEFORE"
+          >
             Before
           </option>
           <option
-            value="AFTER">
+            value="AFTER"
+          >
             After
           </option>
           <option
             selected=""
-            value="UNKNOWN">
+            value="UNKNOWN"
+          >
             Unknown
           </option>
         </select>
@@ -320,64 +409,81 @@ exports[`test should render only a select when supplied with the UNKNOWN precisi
     </div>
   </fieldset>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children" />
+      class="fieldset-children"
+    />
   </fieldset>
 </div>
 `;
 
-exports[`test should render with non default inputs when supplied 1`] = `
+exports[`should render with non default inputs when supplied 1`] = `
 <div
-  class="terra-OnsetPicker">
+  data-terra-clinical-onset-picker="true"
+>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-precision">
+          name="test-precision"
+        >
           <option
-            value="ABOUT">
+            value="ABOUT"
+          >
             About
           </option>
           <option
             selected=""
-            value="BEFORE">
+            value="BEFORE"
+          >
             Before
           </option>
           <option
-            value="AFTER">
+            value="AFTER"
+          >
             After
           </option>
           <option
-            value="UNKNOWN">
+            value="UNKNOWN"
+          >
             Unknown
           </option>
         </select>
       </div>
       <div
-        class="field field-inline">
+        class="field field-inline"
+      >
         <select
           class="select"
-          name="test-granularity">
+          name="test-granularity"
+        >
           <option
-            value="MONTH">
-            Month
-          </option>
-          <option
-            selected=""
-            value="YEAR">
-            Year
-          </option>
-          <option
-            value="AGE">
+            value="AGE"
+          >
             Age
           </option>
           <option
-            value="DATE">
+            selected=""
+            value="YEAR"
+          >
+            Year
+          </option>
+          <option
+            value="MONTH"
+          >
+            Month
+          </option>
+          <option
+            value="DATE"
+          >
             Date
           </option>
         </select>
@@ -385,40 +491,52 @@ exports[`test should render with non default inputs when supplied 1`] = `
     </div>
   </fieldset>
   <fieldset
-    class="fieldset">
+    class="fieldset"
+  >
     <div
-      class="fieldset-children">
+      class="fieldset-children"
+    >
       <div
-        class="field field-inline terra-OnsetPicker-year">
+        class="field field-inline"
+        data-terra-clinical-onset-picker="year"
+      >
         <select
-          class="select">
+          class="select"
+        >
           <option
-            value="2011">
+            value="2011"
+          >
             2011
           </option>
           <option
-            value="2012">
+            value="2012"
+          >
             2012
           </option>
           <option
-            value="2013">
+            value="2013"
+          >
             2013
           </option>
           <option
             selected=""
-            value="2014">
+            value="2014"
+          >
             2014
           </option>
           <option
-            value="2015">
+            value="2015"
+          >
             2015
           </option>
           <option
-            value="2016">
+            value="2016"
+          >
             2016
           </option>
           <option
-            value="2017">
+            value="2017"
+          >
             2017
           </option>
         </select>
