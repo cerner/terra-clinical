@@ -408,13 +408,6 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
       </div>
     </div>
   </fieldset>
-  <fieldset
-    class="fieldset"
-  >
-    <div
-      class="fieldset-children"
-    />
-  </fieldset>
 </div>
 `;
 
