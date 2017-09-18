@@ -1,17 +1,25 @@
-exports[`test should render 1 start theme display 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1 start theme display 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
     </div>
@@ -19,29 +27,38 @@ exports[`test should render 1 start theme display 1`] = `
 </div>
 `;
 
-exports[`test should render 2 start theme displays 1`] = `
+exports[`should render 2 start theme displays 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
     </div>
@@ -49,38 +66,50 @@ exports[`test should render 2 start theme displays 1`] = `
 </div>
 `;
 
-exports[`test should render 3 start theme displays 1`] = `
+exports[`should render 3 start theme displays 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-primaryColor">
+          className="content content-secondarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 3" />
+            text="display 3"
+          />
         </div>
       </div>
     </div>
@@ -88,102 +117,132 @@ exports[`test should render 3 start theme displays 1`] = `
 </div>
 `;
 
-exports[`test should render a comment 1`] = `
+exports[`should render a comment 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <ItemComment
       isTruncated={false}
       text="comment"
-      textStyle="attention" />
+      textStyle="attention"
+    />
   </div>
 </div>
 `;
 
-exports[`test should render a default component 1`] = `
+exports[`should render a default component 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body" />
+    className="body"
+  />
 </div>
 `;
 
-exports[`test should render a end accessory 1`] = `
+exports[`should render a end accessory 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body" />
+    className="body"
+  />
   <div
-    className="accessory accessory-alignCenter">
+    className="accessory accessory-alignCenter"
+  >
     <img
-      alt="Graphic" />
+      alt="Graphic"
+    />
   </div>
 </div>
 `;
 
-exports[`test should render a start accessory 1`] = `
+exports[`should render a start accessory 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="accessory accessory-alignCenter">
+    className="accessory accessory-alignCenter"
+  >
     <img
-      alt="Graphic" />
+      alt="Graphic"
+    />
   </div>
   <div
-    className="body" />
+    className="body"
+  />
 </div>
 `;
 
-exports[`test should render an accessory center aligned 1`] = `
+exports[`should render an accessory center aligned 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="accessory accessory-alignCenter">
+    className="accessory accessory-alignCenter"
+  >
     <img
-      alt="Graphic" />
+      alt="Graphic"
+    />
   </div>
   <div
-    className="body" />
+    className="body"
+  />
 </div>
 `;
 
-exports[`test should render an accessory top aligned 1`] = `
+exports[`should render an accessory top aligned 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="accessory accessory-alignTop">
+    className="accessory accessory-alignTop"
+  >
     <img
-      alt="Graphic" />
+      alt="Graphic"
+    />
   </div>
   <div
-    className="body" />
+    className="body"
+  />
 </div>
 `;
 
-exports[`test should render one column 1`] = `
+exports[`should render one column 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
     </div>
@@ -191,20 +250,26 @@ exports[`test should render one column 1`] = `
 </div>
 `;
 
-exports[`test should render truncated display 1`] = `
+exports[`should render truncated display 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={true}
-            text="display1display1display1display1display1display1display1display1" />
+            text="display1display1display1display1display1display1display1display1"
+          />
         </div>
       </div>
     </div>
@@ -212,71 +277,94 @@ exports[`test should render truncated display 1`] = `
 </div>
 `;
 
-exports[`test should render two columns with 8 displays 1`] = `
+exports[`should render two columns with 8 displays 1`] = `
 <div
-  className="item-view twoColumns">
+  className="item-view twoColumns"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-primaryColor">
+          className="content content-secondarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 3" />
+            text="display 3"
+          />
         </div>
         <div
-          className="content content-secondarySize content-primaryColor">
+          className="content content-secondarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 4" />
-        </div>
-      </div>
-      <div
-        className="row">
-        <div
-          className="content content-secondarySize content-secondaryColor">
-          <ItemDisplay
-            isTruncated={false}
-            text="display 5" />
-        </div>
-        <div
-          className="content content-secondarySize content-secondaryColor">
-          <ItemDisplay
-            isTruncated={false}
-            text="display 6" />
+            text="display 4"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 7" />
+            text="display 5"
+          />
         </div>
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 8" />
+            text="display 6"
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="content content-secondarySize content-secondaryColor"
+        >
+          <ItemDisplay
+            isTruncated={false}
+            text="display 7"
+          />
+        </div>
+        <div
+          className="content content-secondarySize content-secondaryColor"
+        >
+          <ItemDisplay
+            isTruncated={false}
+            text="display 8"
+          />
         </div>
       </div>
     </div>
@@ -284,35 +372,46 @@ exports[`test should render two columns with 8 displays 1`] = `
 </div>
 `;
 
-exports[`test should render two columns with odd number of displays 1`] = `
+exports[`should render two columns with odd number of displays 1`] = `
 <div
-  className="item-view twoColumns">
+  className="item-view twoColumns"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 3" />
+            text="display 3"
+          />
         </div>
       </div>
     </div>
@@ -320,20 +419,26 @@ exports[`test should render two columns with odd number of displays 1`] = `
 </div>
 `;
 
-exports[`test should render with 1 display 1`] = `
+exports[`should render with 1 display 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
     </div>
@@ -341,29 +446,38 @@ exports[`test should render with 1 display 1`] = `
 </div>
 `;
 
-exports[`test should render with 2 displays 1`] = `
+exports[`should render with 2 displays 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
     </div>
@@ -371,38 +485,50 @@ exports[`test should render with 2 displays 1`] = `
 </div>
 `;
 
-exports[`test should render with 3 displays 1`] = `
+exports[`should render with 3 displays 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-primaryColor">
+          className="content content-secondarySize content-primaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 2" />
+            text="display 2"
+          />
         </div>
       </div>
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-secondarySize content-secondaryColor">
+          className="content content-secondarySize content-secondaryColor"
+        >
           <ItemDisplay
             isTruncated={false}
-            text="display 3" />
+            text="display 3"
+          />
         </div>
       </div>
     </div>
@@ -410,24 +536,31 @@ exports[`test should render with 3 displays 1`] = `
 </div>
 `;
 
-exports[`test should render with a display and graphic 1`] = `
+exports[`should render with a display and graphic 1`] = `
 <div
-  className="item-view oneColumn">
+  className="item-view oneColumn"
+>
   <div
-    className="body">
+    className="body"
+  >
     <div
-      className="row-container">
+      className="row-container"
+    >
       <div
-        className="row">
+        className="row"
+      >
         <div
-          className="content content-primarySize content-primaryColor">
+          className="content content-primarySize content-primaryColor"
+        >
           <ItemDisplay
             icon={
               <img
-                alt="Graphic" />
+                alt="Graphic"
+              />
             }
             isTruncated={false}
-            text="display 1" />
+            text="display 1"
+          />
         </div>
       </div>
     </div>

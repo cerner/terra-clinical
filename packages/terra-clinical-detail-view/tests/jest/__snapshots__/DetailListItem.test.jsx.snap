@@ -1,6 +1,9 @@
-exports[`test should render a default component 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a default component 1`] = `
 <div
-  class="detail-list-item">
+  class="detail-list-item"
+>
   <p>
     Test
   </p>

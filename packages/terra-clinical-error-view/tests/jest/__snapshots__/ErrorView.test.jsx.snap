@@ -1,22 +1,30 @@
-exports[`test should not render a glyph 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render a glyph 1`] = `
 <div
-  class="error-view">
+  class="error-view"
+>
   <p
-    class="text" />
+    class="text"
+  />
 </div>
 `;
 
-exports[`test should render a button with text 1`] = `
+exports[`should render a button with text 1`] = `
 <div
-  className="error-view">
+  className="error-view"
+>
   <div
-    className="glyph">
+    className="glyph"
+  >
     <ErrorIcon />
   </div>
   <p
-    className="text" />
+    className="text"
+  />
   <div
-    className="button">
+    className="button"
+  >
     <Button
       isBlock={false}
       isCompact={false}
@@ -25,73 +33,89 @@ exports[`test should render a button with text 1`] = `
       onClick={[Function]}
       text="test button text"
       type="button"
-      variant="secondary" />
+      variant="secondary"
+    />
   </div>
 </div>
 `;
 
-exports[`test should render a default component 1`] = `
+exports[`should render a default component 1`] = `
 <div
-  class="error-view">
+  class="error-view"
+>
   <div
-    class="glyph">
+    class="glyph"
+  >
     <svg
       data-name="Layer 1"
       height="170px"
       id="Layer_1"
       viewbox="0 0 251.7 251.8"
-      width="170px">
+      width="170px"
+    >
       <path
         d="M125.9,0C56.1,0,0,56.2,0,125.9s56,125.9,125.8,125.9s125.9-56.1,125.9-125.9S195.6,0,125.9,0z M36.7,139 v-26.2H215V139H36.7z"
-        style="fill:#e8e9ea;" />
+        style="fill:#e8e9ea;"
+      />
     </svg>
   </div>
   <p
-    class="text" />
+    class="text"
+  />
 </div>
 `;
 
-exports[`test should render a description 1`] = `
+exports[`should render a description 1`] = `
 <div
-  class="error-view">
+  class="error-view"
+>
   <div
-    class="glyph">
+    class="glyph"
+  >
     <svg
       data-name="Layer 1"
       height="170px"
       id="Layer_1"
       viewbox="0 0 251.7 251.8"
-      width="170px">
+      width="170px"
+    >
       <path
         d="M125.9,0C56.1,0,0,56.2,0,125.9s56,125.9,125.8,125.9s125.9-56.1,125.9-125.9S195.6,0,125.9,0z M36.7,139 v-26.2H215V139H36.7z"
-        style="fill:#e8e9ea;" />
+        style="fill:#e8e9ea;"
+      />
     </svg>
   </div>
   <p
-    class="text">
+    class="text"
+  >
     test description.
   </p>
 </div>
 `;
 
-exports[`test should render a name 1`] = `
+exports[`should render a name 1`] = `
 <div
-  class="error-view">
+  class="error-view"
+>
   <div
-    class="glyph">
+    class="glyph"
+  >
     <svg
       data-name="Layer 1"
       height="170px"
       id="Layer_1"
       viewbox="0 0 251.7 251.8"
-      width="170px">
+      width="170px"
+    >
       <path
         d="M125.9,0C56.1,0,0,56.2,0,125.9s56,125.9,125.8,125.9s125.9-56.1,125.9-125.9S195.6,0,125.9,0z M36.7,139 v-26.2H215V139H36.7z"
-        style="fill:#e8e9ea;" />
+        style="fill:#e8e9ea;"
+      />
     </svg>
   </div>
   <p
-    class="text">
+    class="text"
+  >
     <b>
       test error name:
     </b>

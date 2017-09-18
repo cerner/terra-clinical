@@ -1,14 +1,18 @@
-exports[`test should render a default component 1`] = `null`;
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test should render with a given breakpoint 1`] = `
+exports[`should render a default component 1`] = `null`;
+
+exports[`should render with a given breakpoint 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
-      data-terra-clinical-item-collection-list-view={true}>
+      data-terra-clinical-item-collection-list-view={true}
+    >
       <SingleSelectList
         hasChevrons={false}
         isDivided={false}
-        onChange={[Function]}>
+        onChange={[Function]}
+      >
         <ListItem
           content={
             <ItemView
@@ -16,16 +20,19 @@ exports[`test should render with a given breakpoint 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -40,9 +47,11 @@ exports[`test should render with a given breakpoint 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
         <ListItem
           content={
             <ItemView
@@ -50,16 +59,19 @@ exports[`test should render with a given breakpoint 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -74,9 +86,11 @@ exports[`test should render with a given breakpoint 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
         <ListItem
           content={
             <ItemView
@@ -84,16 +98,19 @@ exports[`test should render with a given breakpoint 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -108,15 +125,18 @@ exports[`test should render with a given breakpoint 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
       </SingleSelectList>
     </div>
   }
   medium={
     <div
-      data-terra-clinical-item-collection-table-view={true}>
+      data-terra-clinical-item-collection-table-view={true}
+    >
       <Table
         isPadded={true}
         isStriped={true}
@@ -124,159 +144,197 @@ exports[`test should render with a given breakpoint 1`] = `
           Object {
             "tableLayout": "fixed",
           }
-        }>
+        }
+      >
         <TableHeader
           style={
             Object {
               "visibility": "hidden",
             }
-          }>
+          }
+        >
           <TableHeaderCell
-            columnType="accessory" />
+            columnType="accessory"
+          />
           <TableHeaderCell
-            columnType="display" />
+            columnType="display"
+          />
           <TableHeaderCell
-            columnType="display" />
+            columnType="display"
+          />
           <TableHeaderCell
-            columnType="comment" />
+            columnType="comment"
+          />
           <TableHeaderCell
-            columnType="accessory" />
+            columnType="accessory"
+          />
         </TableHeader>
         <SingleSelectableRows
-          onChange={[Function]}>
+          onChange={[Function]}
+        >
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
         </SingleSelectableRows>
       </Table>
     </div>
   }
-  responsiveTo="parent" />
+  responsiveTo="parent"
+/>
 `;
 
-exports[`test should render with multiple rows 1`] = `
+exports[`should render with multiple rows 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
-      data-terra-clinical-item-collection-list-view={true}>
+      data-terra-clinical-item-collection-list-view={true}
+    >
       <SingleSelectList
         hasChevrons={false}
         isDivided={false}
-        onChange={[Function]}>
+        onChange={[Function]}
+      >
         <ListItem
           content={
             <ItemView
@@ -284,16 +342,19 @@ exports[`test should render with multiple rows 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -308,9 +369,11 @@ exports[`test should render with multiple rows 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
         <ListItem
           content={
             <ItemView
@@ -318,16 +381,19 @@ exports[`test should render with multiple rows 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -342,9 +408,11 @@ exports[`test should render with multiple rows 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
         <ListItem
           content={
             <ItemView
@@ -352,16 +420,19 @@ exports[`test should render with multiple rows 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -376,16 +447,19 @@ exports[`test should render with multiple rows 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
       </SingleSelectList>
     </div>
   }
   responsiveTo="parent"
   small={
     <div
-      data-terra-clinical-item-collection-table-view={true}>
+      data-terra-clinical-item-collection-table-view={true}
+    >
       <Table
         isPadded={true}
         isStriped={true}
@@ -393,158 +467,196 @@ exports[`test should render with multiple rows 1`] = `
           Object {
             "tableLayout": "fixed",
           }
-        }>
+        }
+      >
         <TableHeader
           style={
             Object {
               "visibility": "hidden",
             }
-          }>
+          }
+        >
           <TableHeaderCell
-            columnType="accessory" />
+            columnType="accessory"
+          />
           <TableHeaderCell
-            columnType="display" />
+            columnType="display"
+          />
           <TableHeaderCell
-            columnType="display" />
+            columnType="display"
+          />
           <TableHeaderCell
-            columnType="comment" />
+            columnType="comment"
+          />
           <TableHeaderCell
-            columnType="accessory" />
+            columnType="accessory"
+          />
         </TableHeader>
         <SingleSelectableRows
-          onChange={[Function]}>
+          onChange={[Function]}
+        >
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
         </SingleSelectableRows>
       </Table>
     </div>
-  } />
+  }
+/>
 `;
 
-exports[`test should render with one row 1`] = `
+exports[`should render with one row 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
-      data-terra-clinical-item-collection-list-view={true}>
+      data-terra-clinical-item-collection-list-view={true}
+    >
       <SingleSelectList
         hasChevrons={false}
         isDivided={false}
-        onChange={[Function]}>
+        onChange={[Function]}
+      >
         <ListItem
           content={
             <ItemView
@@ -552,16 +664,19 @@ exports[`test should render with one row 1`] = `
               comment={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
               displays={
                 Array [
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 1" />,
+                    text="Display 1"
+                  />,
                   <ItemDisplay
                     isTruncated={false}
-                    text="Display 2" />,
+                    text="Display 2"
+                  />,
                 ]
               }
               endAccessory={
@@ -576,16 +691,19 @@ exports[`test should render with one row 1`] = `
                   Start Accessory
                 </p>
               }
-              textEmphasis="default" />
+              textEmphasis="default"
+            />
           }
-          isSelected={false} />
+          isSelected={false}
+        />
       </SingleSelectList>
     </div>
   }
   responsiveTo="parent"
   small={
     <div
-      data-terra-clinical-item-collection-table-view={true}>
+      data-terra-clinical-item-collection-table-view={true}
+    >
       <Table
         isPadded={true}
         isStriped={true}
@@ -593,67 +711,85 @@ exports[`test should render with one row 1`] = `
           Object {
             "tableLayout": "fixed",
           }
-        }>
+        }
+      >
         <TableHeader
           style={
             Object {
               "visibility": "hidden",
             }
-          }>
+          }
+        >
           <TableHeaderCell
-            columnType="accessory" />
+            columnType="accessory"
+          />
           <TableHeaderCell
-            columnType="display" />
+            columnType="display"
+          />
           <TableHeaderCell
-            columnType="display" />
+            columnType="display"
+          />
           <TableHeaderCell
-            columnType="comment" />
+            columnType="comment"
+          />
           <TableHeaderCell
-            columnType="accessory" />
+            columnType="accessory"
+          />
         </TableHeader>
         <SingleSelectableRows
-          onChange={[Function]}>
+          onChange={[Function]}
+        >
           <TableRow
             isSelectable={true}
-            isSelected={false}>
+            isSelected={false}
+          >
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   Start Accessory
                 </p>
-              } />
+              }
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 1" />
+                  text="Display 1"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemDisplay
                   isTruncated={false}
-                  text="Display 2" />
+                  text="Display 2"
+                />
               }
-              data-terra-clinical-item-collection-content="display" />
+              data-terra-clinical-item-collection-content="display"
+            />
             <TableCell
               content={
                 <ItemComment
                   isTruncated={false}
-                  text="test comment" />
+                  text="test comment"
+                />
               }
-              data-terra-clinical-item-collection-content="comment" />
+              data-terra-clinical-item-collection-content="comment"
+            />
             <TableCell
               className="content-accessory"
               content={
                 <p>
                   End Accessory
                 </p>
-              } />
+              }
+            />
           </TableRow>
         </SingleSelectableRows>
       </Table>
     </div>
-  } />
+  }
+/>
 `;
