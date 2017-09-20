@@ -2,30 +2,30 @@
 
 exports[`should render a default component 1`] = `
 <header
-  class="flexHeader"
+  class="flex-header"
 >
   <div
-    class="flexFill"
+    class="flex-fill"
   />
 </header>
 `;
 
 exports[`should render a header with all content 1`] = `
 <header
-  class="flexHeader"
+  class="flex-header"
 >
   <div
-    class="flexEnd"
+    class="flex-end"
   >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flexFill"
+    class="flex-fill"
   >
     <div
-      class="titleContainer"
+      class="title-container"
     >
       <h1
         class="title"
@@ -35,7 +35,7 @@ exports[`should render a header with all content 1`] = `
     </div>
   </div>
   <div
-    class="flexEnd"
+    class="flex-end"
   >
     <div>
       end content
@@ -46,30 +46,30 @@ exports[`should render a header with all content 1`] = `
 
 exports[`should render a header with content on the left 1`] = `
 <header
-  class="flexHeader"
+  class="flex-header"
 >
   <div
-    class="flexEnd"
+    class="flex-end"
   >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flexFill"
+    class="flex-fill"
   />
 </header>
 `;
 
 exports[`should render a header with content on the right 1`] = `
 <header
-  class="flexHeader"
+  class="flex-header"
 >
   <div
-    class="flexFill"
+    class="flex-fill"
   />
   <div
-    class="flexEnd"
+    class="flex-end"
   >
     <div>
       end content
@@ -80,13 +80,13 @@ exports[`should render a header with content on the right 1`] = `
 
 exports[`should render a header with title only 1`] = `
 <header
-  class="flexHeader"
+  class="flex-header"
 >
   <div
-    class="flexFill"
+    class="flex-fill"
   >
     <div
-      class="titleContainer"
+      class="title-container"
     >
       <h1
         class="title"
@@ -100,20 +100,20 @@ exports[`should render a header with title only 1`] = `
 
 exports[`should render a subheader with all content 1`] = `
 <header
-  class="flexSubheader"
+  class="flex-subheader"
 >
   <div
-    class="flexEnd"
+    class="flex-end"
   >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flexFill"
+    class="flex-fill"
   >
     <div
-      class="titleContainer"
+      class="title-container"
     >
       <h1
         class="title"
@@ -123,7 +123,7 @@ exports[`should render a subheader with all content 1`] = `
     </div>
   </div>
   <div
-    class="flexEnd"
+    class="flex-end"
   >
     <div>
       end content
@@ -134,13 +134,13 @@ exports[`should render a subheader with all content 1`] = `
 
 exports[`should render a subheader with title only 1`] = `
 <header
-  class="flexSubheader"
+  class="flex-subheader"
 >
   <div
-    class="flexFill"
+    class="flex-fill"
   >
     <div
-      class="titleContainer"
+      class="title-container"
     >
       <h1
         class="title"

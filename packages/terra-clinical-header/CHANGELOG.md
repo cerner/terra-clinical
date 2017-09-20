@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Remove stylelint-disable selector-class-pattern
+* Update class names to follow selector-class-pattern
 
 1.4.0 - (September 1, 2017)
 -----------------
