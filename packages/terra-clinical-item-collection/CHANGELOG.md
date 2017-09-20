@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Fixed visual differences between list and table view
 * Updated nightwatch tests to use expect syntax
+* Remove stylelint-disable selector-class-pattern
 
 1.3.0 - (September 1, 2017)
 -----------------
