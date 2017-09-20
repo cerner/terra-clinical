@@ -1,5 +1,5 @@
 @import './mixins';
-/* stylelint-disable selector-class-pattern  */
+
 :local {
   .item-display {
     @include terra-clinical-item-body;
@@ -38,6 +38,8 @@
     font-weight: 700 !important;
   }
 
+  // Disable selector-class-pattern. Class defined via textStyles prop.
+  // stylelint-disable-next-line selector-class-pattern
   .strikeThrough {
     text-decoration: line-through !important;
   }
