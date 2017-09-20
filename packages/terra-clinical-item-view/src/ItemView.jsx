@@ -119,7 +119,7 @@ class ItemView extends React.Component {
 
   static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
     let contentSize = 'content-primary-size';
-    let contentColor = 'content-primary-solor';
+    let contentColor = 'content-primary-color';
 
     if (rowIndex > 0) {
       contentSize = 'content-secondary-size';
