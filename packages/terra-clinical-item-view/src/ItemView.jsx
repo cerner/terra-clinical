@@ -118,17 +118,17 @@ class ItemView extends React.Component {
   }
 
   static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-    let contentSize = 'content-primarySize';
-    let contentColor = 'content-primaryColor';
+    let contentSize = 'content-primary-size';
+    let contentColor = 'content-primary-solor';
 
     if (rowIndex > 0) {
-      contentSize = 'content-secondarySize';
+      contentSize = 'content-secondary-size';
     }
 
     if (rowCount === 2 && rowIndex === 1) {
-      contentColor = 'content-secondaryColor';
+      contentColor = 'content-secondary-color';
     } else if (rowIndex >= 2) {
-      contentColor = 'content-secondaryColor';
+      contentColor = 'content-secondary-color';
     }
 
     return [contentSize, contentColor];
@@ -136,7 +136,7 @@ class ItemView extends React.Component {
 
   static startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
     if (contentIndex === 1) {
-      return ['content-secondarySize', 'content-secondaryColor'];
+      return ['content-secondary-size', 'content-secondary-color'];
     }
 
     return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);

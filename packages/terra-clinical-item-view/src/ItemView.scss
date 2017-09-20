@@ -1,5 +1,5 @@
 @import './mixins';
-/* stylelint-disable selector-class-pattern  */
+
 // Temporary until it is added to application.
 :local {
   .item-view {
@@ -27,6 +27,8 @@
     max-width: 60px;
   }
 
+  // Disable selector-class-pattern. Classes defined via assessoryAlignment prop.
+  /* stylelint-disable selector-class-pattern  */
   .accessory-alignTop {
     align-self: flex-start;
   }
@@ -34,6 +36,7 @@
   .accessory-alignCenter {
     align-self: center;
   }
+  /* stylelint-enable selector-class-pattern  */
 
   // Content Structure
   .body {
@@ -61,7 +64,8 @@
   }
 
   // Layouts
-  /* stylelint-disable selector-max-compound-selectors */
+  // Disable selector-class-pattern. Classes defined via layout prop.
+  /* stylelint-disable selector-class-pattern, selector-max-compound-selectors */
   .oneColumn {
     .row-container {
       display: flex;
@@ -73,6 +77,7 @@
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
+
   .twoColumns {
     .content:nth-child(odd) {
       flex: 1 1 auto;
@@ -88,21 +93,22 @@
       padding-left: 5px;
     }
   }
+  /* stylelint-enable selector-class-pattern  */
 
   //Emphasis Content Styles
-  .content-primaryColor {
+  .content-primary-color {
     color: #1c1f21;
   }
 
-  .content-primarySize {
+  .content-primary-size {
     @include terra-clinical-tiny-heading;
   }
 
-  .content-secondaryColor {
+  .content-secondary-color {
     color: #64696c;
   }
 
-  .content-secondarySize {
+  .content-secondary-size {
     @include terra-clinical-text-body;
   }
 }
