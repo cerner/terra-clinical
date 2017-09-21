@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Remove stylelint-disable selector-class-pattern
+* Update class names to follow selector-class-pattern
 
 1.3.0 - (September 1, 2017)
 -----------------

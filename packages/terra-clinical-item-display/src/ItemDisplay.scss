@@ -38,9 +38,7 @@
     font-weight: 700 !important;
   }
 
-  // Disable selector-class-pattern. Class defined via textStyles prop.
-  // stylelint-disable-next-line selector-class-pattern
-  .strikeThrough {
+  .strike-through {
     text-decoration: line-through !important;
   }
 }
