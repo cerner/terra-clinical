@@ -27,16 +27,13 @@
     max-width: 60px;
   }
 
-  // Disable selector-class-pattern. Classes defined via assessoryAlignment prop.
-  /* stylelint-disable selector-class-pattern  */
-  .accessory-alignTop {
+  .accessory-align-top {
     align-self: flex-start;
   }
 
-  .accessory-alignCenter {
+  .accessory-align-center {
     align-self: center;
   }
-  /* stylelint-enable selector-class-pattern  */
 
   // Content Structure
   .body {
@@ -64,9 +61,8 @@
   }
 
   // Layouts
-  // Disable selector-class-pattern. Classes defined via layout prop.
-  /* stylelint-disable selector-class-pattern, selector-max-compound-selectors */
-  .oneColumn {
+  /* stylelint-disable selector-max-compound-selectors */
+  .one-column {
     .row-container {
       display: flex;
       flex-flow: row wrap;
@@ -78,7 +74,7 @@
   }
   /* stylelint-enable selector-max-compound-selectors */
 
-  .twoColumns {
+  .two-columns {
     .content:nth-child(odd) {
       flex: 1 1 auto;
       justify-content: flex-start;
@@ -93,7 +89,6 @@
       padding-left: 5px;
     }
   }
-  /* stylelint-enable selector-class-pattern  */
 
   //Emphasis Content Styles
   .content-primary-color {

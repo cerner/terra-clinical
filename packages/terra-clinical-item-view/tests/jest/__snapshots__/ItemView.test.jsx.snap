@@ -2,7 +2,7 @@
 
 exports[`should render 1 start theme display 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -29,7 +29,7 @@ exports[`should render 1 start theme display 1`] = `
 
 exports[`should render 2 start theme displays 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -68,7 +68,7 @@ exports[`should render 2 start theme displays 1`] = `
 
 exports[`should render 3 start theme displays 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -119,7 +119,7 @@ exports[`should render 3 start theme displays 1`] = `
 
 exports[`should render a comment 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -135,7 +135,7 @@ exports[`should render a comment 1`] = `
 
 exports[`should render a default component 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -145,13 +145,13 @@ exports[`should render a default component 1`] = `
 
 exports[`should render a end accessory 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
   />
   <div
-    className="accessory accessory-alignCenter"
+    className="accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -162,10 +162,10 @@ exports[`should render a end accessory 1`] = `
 
 exports[`should render a start accessory 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
-    className="accessory accessory-alignCenter"
+    className="accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -179,10 +179,10 @@ exports[`should render a start accessory 1`] = `
 
 exports[`should render an accessory center aligned 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
-    className="accessory accessory-alignCenter"
+    className="accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -196,10 +196,10 @@ exports[`should render an accessory center aligned 1`] = `
 
 exports[`should render an accessory top aligned 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
-    className="accessory accessory-alignTop"
+    className="accessory accessory-align-top"
   >
     <img
       alt="Graphic"
@@ -213,7 +213,7 @@ exports[`should render an accessory top aligned 1`] = `
 
 exports[`should render one column 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -252,7 +252,7 @@ exports[`should render one column 1`] = `
 
 exports[`should render truncated display 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -279,7 +279,7 @@ exports[`should render truncated display 1`] = `
 
 exports[`should render two columns with 8 displays 1`] = `
 <div
-  className="item-view twoColumns"
+  className="item-view two-columns"
 >
   <div
     className="body"
@@ -374,7 +374,7 @@ exports[`should render two columns with 8 displays 1`] = `
 
 exports[`should render two columns with odd number of displays 1`] = `
 <div
-  className="item-view twoColumns"
+  className="item-view two-columns"
 >
   <div
     className="body"
@@ -421,7 +421,7 @@ exports[`should render two columns with odd number of displays 1`] = `
 
 exports[`should render with 1 display 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -448,7 +448,7 @@ exports[`should render with 1 display 1`] = `
 
 exports[`should render with 2 displays 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -487,7 +487,7 @@ exports[`should render with 2 displays 1`] = `
 
 exports[`should render with 3 displays 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"
@@ -538,7 +538,7 @@ exports[`should render with 3 displays 1`] = `
 
 exports[`should render with a display and graphic 1`] = `
 <div
-  className="item-view oneColumn"
+  className="item-view one-column"
 >
   <div
     className="body"

@@ -58,8 +58,14 @@ class ItemView extends React.Component {
   static renderAccessory(accessory, accessoryAlignment) {
     let accessorySection;
     if (accessory) {
+      const accessoryClassNames = cx(
+        'accessory',
+        { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
+        { 'accessory-align-top': accessoryAlignment === 'alignTop' },
+      );
+
       accessorySection = (
-        <div className={cx('accessory', { [`accessory-${accessoryAlignment}`]: accessoryAlignment })}>
+        <div className={accessoryClassNames}>
           {accessory}
         </div>
       );
@@ -156,7 +162,8 @@ class ItemView extends React.Component {
     const viewClassNames = cx([
       'item-view',
       { 'is-truncated': isTruncated },
-      { [`${layout}`]: layout },
+      { 'one-column': layout === 'oneColumn' },
+      { 'two-columns': layout === 'twoColumns' },
       customProps.className,
     ]);
 
