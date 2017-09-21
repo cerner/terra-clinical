@@ -1,6 +1,5 @@
-/* stylelint-disable selector-class-pattern  */
 :local {
-  .flexHeader {
+  .flex-header {
     background-color: #f4f4f4;
     border-bottom-color: #dedfe0;
     border-bottom-style: solid;
@@ -14,7 +13,7 @@
     width: 100%;
   }
 
-  .flexFill {
+  .flex-fill {
     align-self: center;
     flex: 1 1 auto;
     height: 100%;
@@ -23,14 +22,14 @@
     width: 100%;
   }
 
-  .flexEnd {
+  .flex-end {
     align-self: center;
     flex: 0 0 auto;
     height: 100%;
     position: relative;
   }
 
-  .titleContainer {
+  .title-container {
     height: 100%;
     left: 0;
     position: absolute;
@@ -53,7 +52,7 @@
     word-wrap: normal;
   }
 
-  .flexSubheader {
+  .flex-subheader {
     background-color: #c8cacb;
     border-bottom-color: initial;
     border-bottom-style: 0;

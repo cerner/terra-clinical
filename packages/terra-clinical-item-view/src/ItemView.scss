@@ -1,5 +1,5 @@
 @import './mixins';
-/* stylelint-disable selector-class-pattern  */
+
 // Temporary until it is added to application.
 :local {
   .item-view {
@@ -27,11 +27,11 @@
     max-width: 60px;
   }
 
-  .accessory-alignTop {
+  .accessory-align-top {
     align-self: flex-start;
   }
 
-  .accessory-alignCenter {
+  .accessory-align-center {
     align-self: center;
   }
 
@@ -62,7 +62,7 @@
 
   // Layouts
   /* stylelint-disable selector-max-compound-selectors */
-  .oneColumn {
+  .one-column {
     .row-container {
       display: flex;
       flex-flow: row wrap;
@@ -73,7 +73,8 @@
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
-  .twoColumns {
+
+  .two-columns {
     .content:nth-child(odd) {
       flex: 1 1 auto;
       justify-content: flex-start;
@@ -90,19 +91,19 @@
   }
 
   //Emphasis Content Styles
-  .content-primaryColor {
+  .content-primary-color {
     color: #1c1f21;
   }
 
-  .content-primarySize {
+  .content-primary-size {
     @include terra-clinical-tiny-heading;
   }
 
-  .content-secondaryColor {
+  .content-secondary-color {
     color: #64696c;
   }
 
-  .content-secondarySize {
+  .content-secondary-size {
     @include terra-clinical-text-body;
   }
 }

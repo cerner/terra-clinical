@@ -1,5 +1,5 @@
 @import './mixins';
-/* stylelint-disable selector-class-pattern  */
+
 :local {
   .item-display {
     @include terra-clinical-item-body;
@@ -38,7 +38,7 @@
     font-weight: 700 !important;
   }
 
-  .strikeThrough {
+  .strike-through {
     text-decoration: line-through !important;
   }
 }
