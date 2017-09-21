@@ -52,13 +52,14 @@ class ControlledOnsetExample extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <OnsetPicker
           birthdate={moment().subtract(6, 'years').format()}
-          granularity="YEAR"
+          granularity={this.state.formData.granularity}
           granularitySelectName="doogs-supplied-granularity"
           granularitySelectOnChange={this.handleGranularity}
-          precision="BEFORE"
+          precision={this.state.formData.precision}
+          precisionSet={['UNKNOWN', 'AFTER', 'BEFORE', 'ON/AT']}
           precisionSelectName="doogs-supplied-precision"
           precisionSelectOnChange={this.handlePrecision}
-          onsetDate={moment().subtract(2, 'years').format()}
+          onsetDate={this.state.formData.onsetDate}
           onsetDateInputName="doogs-supplied-onsetDate"
           onsetDateInputOnChange={this.handleOnset}
         />

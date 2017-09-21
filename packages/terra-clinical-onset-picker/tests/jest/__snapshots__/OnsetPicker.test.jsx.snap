@@ -19,6 +19,11 @@ exports[`should render a default onset picker with specified onset date 1`] = `
         >
           <option
             selected=""
+            value="ON/AT"
+          >
+            On/At
+          </option>
+          <option
             value="ABOUT"
           >
             About
@@ -202,6 +207,11 @@ exports[`should render as controlled when onChange functions are supplied 1`] = 
         >
           <option
             selected=""
+            value="ON/AT"
+          >
+            On/At
+          </option>
+          <option
             value="ABOUT"
           >
             About
@@ -384,6 +394,11 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           name="test-precision"
         >
           <option
+            value="ON/AT"
+          >
+            On/At
+          </option>
+          <option
             value="ABOUT"
           >
             About
@@ -428,6 +443,11 @@ exports[`should render with non default inputs when supplied 1`] = `
           class="select"
           name="test-precision"
         >
+          <option
+            value="ON/AT"
+          >
+            On/At
+          </option>
           <option
             value="ABOUT"
           >

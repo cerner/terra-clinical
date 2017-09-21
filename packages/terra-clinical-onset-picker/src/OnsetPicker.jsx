@@ -7,7 +7,7 @@ import Fieldset from 'terra-form/lib/Fieldset';
 import NumberField from 'terra-form/lib/NumberField';
 import DatePicker from 'terra-date-picker';
 import SelectField from 'terra-form/lib/SelectField';
-
+import OnsetUtil from './OnsetUtil';
 
 const propTypes = {
   /**
@@ -33,9 +33,16 @@ const propTypes = {
   granularitySelectOnChange: PropTypes.func,
 
   /**
-   * The precision of the onset date. ABOUT, BEFORE, AFTER, and UNKNOWN are accepted.
+   * The precision of the onset date. This value should be in the set of precisions passed to the precisionSet prop.
    */
-  precision: PropTypes.oneOf(['ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN']),
+  precision: PropTypes.oneOf(['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN']),
+
+  /**
+   * The set of precisions that can be used with the onset picker.
+   * Can be from the set of precisions ON/AT, ABOUT, BEFORE, AFTER, and UNKNOWN.
+   * Order of precisions determines order in precision select.
+   */
+  precisionSet: PropTypes.arrayOf(PropTypes.oneOf(['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'])).isRequired,
 
   /**
    * Name of the precision select. The name should be unique.
@@ -70,7 +77,8 @@ const defaultProps = {
   granularity: 'MONTH',
   granularitySelectName: undefined,
   granularitySelectOnChange: undefined,
-  precision: 'ABOUT',
+  precision: 'ON/AT',
+  precisionSet: ['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'],
   precisionSelectName: undefined,
   precisionSelectOnChange: undefined,
   onsetDate: moment().format('YYYY-MM-DD'),
@@ -107,10 +115,6 @@ class OnsetPicker extends React.Component {
     this.changeYear = this.changeYear.bind(this);
     this.changeMonth = this.changeMonth.bind(this);
     this.changeDate = this.changeDate.bind(this);
-    this.availableMonths = this.availableMonths.bind(this);
-    this.availableYears = this.availableYears.bind(this);
-    this.maxAgeCount = this.maxAgeCount.bind(this);
-    this.allowedAgeDurations = this.allowedAgeDurations.bind(this);
   }
 
   /*
@@ -205,103 +209,6 @@ class OnsetPicker extends React.Component {
     }
   }
 
-  /*
-   * Create object to pass to SelectField for month options
-   * Filters out months before birth or after the current date.
-   *
-   * intl - locale context to use for translations
-   */
-  availableMonths(intl) {
-    const start = moment(this.props.birthdate);
-    const end = moment();
-    const onsetYear = moment(this.state.onsetDate).year();
-    let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
-                          { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
-                          { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
-                          { value: '3', display: intl.formatMessage({ id: 'Terra.onsetPicker.april' }) },
-                          { value: '4', display: intl.formatMessage({ id: 'Terra.onsetPicker.may' }) },
-                          { value: '5', display: intl.formatMessage({ id: 'Terra.onsetPicker.june' }) },
-                          { value: '6', display: intl.formatMessage({ id: 'Terra.onsetPicker.july' }) },
-                          { value: '7', display: intl.formatMessage({ id: 'Terra.onsetPicker.august' }) },
-                          { value: '8', display: intl.formatMessage({ id: 'Terra.onsetPicker.september' }) },
-                          { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
-                          { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
-                          { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
-
-    // If populating months for the start or end year, exclude months before the starting date or after the ending date
-    if (start.year() === onsetYear) {
-      possibleMonths = possibleMonths.filter(month => month.value >= start.month());
-    }
-
-    if (end.year() === onsetYear) {
-      possibleMonths = possibleMonths.filter(month => month.value <= end.month());
-    }
-
-    return possibleMonths;
-  }
-
-  /*
-   * Create object to pass to SelectField for year options.
-   * Populates birth year to current year.
-   */
-  availableYears() {
-    const start = moment(this.props.birthdate).year();
-    const end = moment().year();
-
-    return Array((end - start) + 1).fill(undefined).map(
-      (x, idx) => {
-        const year = start + idx;
-        return { value: year.toString(), display: year.toString() };
-      },
-    );
-  }
-
-  /**
-   * Calulcates maximum number allowed for each age duration.
-   * Will use the lesser of power of two or the difference between birth for week/month.
-   * Power of two for maximum weeks/months (8 weeks = 2 months, 24 months = 2 years)
-   */
-  maxAgeCount() {
-    switch (this.state.ageUnit) {
-      case 'years':
-        return moment().diff(moment(this.props.birthdate), 'years');
-      case 'months': {
-        const monthDiff = moment().diff(moment(this.props.birthdate), 'months');
-        return monthDiff > 24 ? 24 : monthDiff;
-      }
-      default: {
-        const weekDiff = moment().diff(moment(this.props.birthdate), 'weeks');
-        return weekDiff > 8 ? 8 : weekDiff;
-      }
-    }
-  }
-
-  /*
-   * Create object to pass to SelectField for age duration options.
-   * Does not add durations that are not possible based on birth.
-   */
-  allowedAgeDurations() {
-    const ageMoment = moment(this.props.birthdate);
-
-    if (moment().diff(ageMoment, 'weeks') === 0) {
-      return null;
-    }
-
-    const ageDurations = [{ value: 'weeks', display: 'Week(s)' }];
-
-    // Do not add month option if less than a month old
-    if (moment().diff(ageMoment, 'months') > 0) {
-      ageDurations.push({ value: 'months', display: 'Month(s)' });
-    }
-
-    // Do not add year option if less than a month old
-    if (moment().diff(ageMoment, 'years') > 0) {
-      ageDurations.push({ value: 'years', display: 'Year(s)' });
-    }
-
-    return ageDurations;
-  }
-
   render() {
     const {
       birthdate,
@@ -309,6 +216,7 @@ class OnsetPicker extends React.Component {
       granularitySelectName,
       granularitySelectOnChange,
       precision,
+      precisionSet,
       precisionSelectName,
       precisionSelectOnChange,
       onsetDate,
@@ -339,7 +247,7 @@ class OnsetPicker extends React.Component {
       ageSelect = (<NumberField
         data-terra-clinical-onset-picker="age"
         min={1}
-        max={this.maxAgeCount()}
+        max={OnsetUtil.maxAgeCount(this.props.birthdate, this.state.ageUnit)}
         step={1}
         value={this.state.age.toString()}
         onChange={this.changeAge}
@@ -348,7 +256,7 @@ class OnsetPicker extends React.Component {
 
       ageUnitSelect = (<SelectField
         data-terra-clinical-onset-picker="age_unit"
-        options={this.allowedAgeDurations()}
+        options={OnsetUtil.allowedAgeDurations(this.props.birthdate)}
         defaultValue={this.state.ageUnit.toString()}
         onChange={this.changeAgeUnit}
         isInline
@@ -359,7 +267,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'MONTH') {
       monthSelect = (<SelectField
         data-terra-clinical-onset-picker="month"
-        options={this.availableMonths(intl)}
+        options={OnsetUtil.availableMonths(intl, this.props.birthdate, this.state.onsetDate)}
         defaultValue={moment(this.state.onsetDate).month().toString()}
         onChange={this.changeMonth}
         isInline
@@ -370,7 +278,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'YEAR' || this.state.granularity === 'MONTH') {
       yearSelect = (<SelectField
         data-terra-clinical-onset-picker="year"
-        options={this.availableYears()}
+        options={OnsetUtil.availableYears(this.props.birthdate)}
         defaultValue={moment(this.state.onsetDate).year().toString()}
         onChange={this.changeYear}
         isInline
@@ -396,10 +304,7 @@ class OnsetPicker extends React.Component {
         <Fieldset>
           {/* Precision */}
           <SelectField
-            options={[{ value: 'ABOUT', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) },
-                      { value: 'BEFORE', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) },
-                      { value: 'AFTER', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) },
-                      { value: 'UNKNOWN', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) }]}
+            options={OnsetUtil.allowedPrecisions(intl, this.props.precisionSet)}
             name={this.props.precisionSelectName}
             defaultValue={this.state.precision}
             onChange={this.changePrecision}
