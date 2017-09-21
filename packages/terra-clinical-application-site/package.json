@@ -15,13 +15,13 @@
   "scripts": {
     "start": "webpack-dev-server --progress",
     "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "$(cd ..; npm bin)/rimraf lib",
-    "compile:build": "$(cd ..; npm bin)/babel src --out-dir lib --copy-files",
+    "compile:clean": "rimraf lib",
+    "compile:build": "babel src --out-dir lib --copy-files",
     "compile:prod": "webpack --config webpack.prod.config -p",
     "compile:prod-stats": "webpack --config webpack.prod.config -p --json > stats.json",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "lint": "npm run lint:js",
-    "lint:js": "$(cd ..; npm bin)/eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "test": "npm run test:spec",
     "test:spec": "echo \"Warning: no test written\" && exit 0"
   },
