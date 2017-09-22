@@ -89,7 +89,7 @@ class OnsetUtil {
       ageDurations.push({ value: 'months', display: 'Month(s)' });
     }
 
-    // Do not add year option if less than a month old
+    // Do not add year option if less than a year old
     if (moment().diff(ageMoment, 'years') > 0) {
       ageDurations.push({ value: 'years', display: 'Year(s)' });
     }
