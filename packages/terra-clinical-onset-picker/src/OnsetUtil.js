@@ -57,15 +57,18 @@ class OnsetUtil {
    * Power of two for maximum weeks/months (8 weeks = 2 months, 24 months = 2 years)
    */
   static allowedAge(birthdate, ageUnit) {
+    const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
+    const currentMoment = moment().startOf('day');
+
     switch (ageUnit) {
       case 'years':
-        return moment().diff(moment(birthdate), 'years');
+        return currentMoment.diff(birthMoment, 'years');
       case 'months': {
-        const monthDiff = moment().diff(moment(birthdate), 'months');
+        const monthDiff = currentMoment.diff(birthMoment, 'months');
         return monthDiff > 24 ? 24 : monthDiff;
       }
       default: {
-        const weekDiff = moment().diff(moment(birthdate), 'weeks');
+        const weekDiff = currentMoment.diff(birthMoment, 'weeks');
         return weekDiff > 8 ? 8 : weekDiff;
       }
     }
@@ -76,25 +79,47 @@ class OnsetUtil {
    * Does not add durations that are not possible based on birth.
    */
   static allowedAgeUnits(birthdate) {
-    const ageMoment = moment(birthdate);
+    const ageMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
+    const currentMoment = moment().startOf('day');
 
-    if (moment().diff(ageMoment, 'weeks') === 0) {
+    if (currentMoment.diff(ageMoment, 'weeks') === 0) {
       return null;
     }
 
     const ageUnits = [{ value: 'weeks', display: 'Week(s)' }];
 
     // Do not add month option if less than a month old
-    if (moment().diff(ageMoment, 'months') > 0) {
+    if (currentMoment.diff(ageMoment, 'months') > 0) {
       ageUnits.push({ value: 'months', display: 'Month(s)' });
     }
 
     // Do not add year option if less than a year old
-    if (moment().diff(ageMoment, 'years') > 0) {
+    if (currentMoment.diff(ageMoment, 'years') > 0) {
       ageUnits.push({ value: 'years', display: 'Year(s)' });
     }
 
     return ageUnits;
+  }
+
+  /**
+   * Converts onset date to a age value with loweset possible age unit (weeks, then months, then years).
+   */
+  static onsetToAge(birthdate, onsetDate) {
+    const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
+    const onsetMoment = moment(onsetDate).startOf('day');
+    let ageDiff = onsetMoment.diff(birthMoment, 'weeks');
+
+    if (ageDiff > 8) {
+      ageDiff = onsetMoment.diff(birthMoment, 'months');
+
+      if (ageDiff > 24) {
+        return { age: onsetMoment.diff(birthMoment, 'years'), ageUnit: 'years' };
+      }
+
+      return { age: ageDiff, ageUnit: 'months' };
+    }
+
+    return { age: ageDiff, ageUnit: 'weeks' };
   }
 
   /**

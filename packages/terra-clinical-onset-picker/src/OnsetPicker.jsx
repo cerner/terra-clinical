@@ -99,12 +99,15 @@ class OnsetPicker extends React.Component {
 
   constructor(props) {
     super(props);
+
+    const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.props.onsetDate);
+
     this.state = {
       granularity: this.props.granularity,
       precision: this.props.precision,
       onsetDate: this.props.onsetDate,
-      age: 1,
-      ageUnit: 'weeks',
+      age: ageValues.age,
+      ageUnit: ageValues.ageUnit,
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -121,7 +124,17 @@ class OnsetPicker extends React.Component {
    * Change state for granularity
    */
   changeGranularity(event) {
-    this.setState({ granularity: event.target.value });
+    if (event.target.value === 'AGE') {
+      const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.state.onsetDate);
+
+      this.setState({
+        granularity: event.target.value,
+        age: ageValues.age,
+        ageUnit: ageValues.ageUnit
+      });
+    } else {
+      this.setState({ granularity: event.target.value });
+    }
 
     if (this.props.granularitySelectOnChange) {
       this.props.granularitySelectOnChange(event, event.target.value);
@@ -246,7 +259,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'AGE') {
       ageSelect = (<NumberField
         data-terra-clinical-onset-picker="age"
-        min={1}
+        min={0}
         max={OnsetUtil.allowedAge(this.props.birthdate, this.state.ageUnit)}
         step={1}
         value={this.state.age.toString()}
