@@ -2,7 +2,7 @@
 
 The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for use in onset scenarios.
 
-This component manages it's own state.
+This component manages its own state.
 
 ## Getting Started
 
