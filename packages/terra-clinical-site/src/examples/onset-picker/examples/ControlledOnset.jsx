@@ -21,19 +21,19 @@ class ControlledOnsetExample extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleGranularity(e, granularity) {
+  handleGranularity(granularity) {
     const formData = Object.assign({}, this.state.formData);
     formData.granularity = granularity;
     this.setState({ formData });
   }
 
-  handlePrecision(e, precision) {
+  handlePrecision(precision) {
     const formData = Object.assign({}, this.state.formData);
     formData.precision = precision;
     this.setState({ formData });
   }
 
-  handleOnset(e, onsetDate) {
+  handleOnset(onsetDate) {
     const formData = Object.assign({}, this.state.formData);
     formData.onsetDate = onsetDate;
     this.setState({ formData });

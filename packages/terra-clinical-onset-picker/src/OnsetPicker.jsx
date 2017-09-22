@@ -28,7 +28,7 @@ const propTypes = {
 
   /**
    * A callback function to execute when a granularity is selected.
-   * The first parameter is the event. The second parameter is the changed granularity value.
+   * The first parameter is the changed granularity value.
    */
   granularitySelectOnChange: PropTypes.func,
 
@@ -51,7 +51,7 @@ const propTypes = {
 
   /**
    * A callback function to execute when a precision is selected.
-   * The first parameter is the event. The second parameter is the changed precision value.
+   * The first parameter is the changed precision value.
    */
   precisionSelectOnChange: PropTypes.func,
 
@@ -67,7 +67,7 @@ const propTypes = {
 
   /**
    * A callback function to execute when a onsetDate is changed.
-   * The first parameter is the event. The second parameter is the changed onsetDate value.
+   * The first parameter is the changed onsetDate value.
    */
   onsetDateInputOnChange: PropTypes.func,
 };
@@ -130,14 +130,14 @@ class OnsetPicker extends React.Component {
       this.setState({
         granularity: event.target.value,
         age: ageValues.age,
-        ageUnit: ageValues.ageUnit
+        ageUnit: ageValues.ageUnit,
       });
     } else {
       this.setState({ granularity: event.target.value });
     }
 
     if (this.props.granularitySelectOnChange) {
-      this.props.granularitySelectOnChange(event, event.target.value);
+      this.props.granularitySelectOnChange(event.target.value);
     }
   }
 
@@ -148,7 +148,7 @@ class OnsetPicker extends React.Component {
     this.setState({ precision: event.target.value });
 
     if (this.props.precisionSelectOnChange) {
-      this.props.precisionSelectOnChange(event, event.target.value);
+      this.props.precisionSelectOnChange(event.target.value);
     }
   }
 
@@ -163,7 +163,7 @@ class OnsetPicker extends React.Component {
       onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(event, newDate);
+      this.props.onsetDateInputOnChange(newDate);
     }
   }
 
@@ -179,7 +179,7 @@ class OnsetPicker extends React.Component {
       onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(event, newDate);
+      this.props.onsetDateInputOnChange(newDate);
     }
   }
 
@@ -192,7 +192,7 @@ class OnsetPicker extends React.Component {
     this.setState({ onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(event, newDate);
+      this.props.onsetDateInputOnChange(newDate);
     }
   }
 
@@ -205,7 +205,7 @@ class OnsetPicker extends React.Component {
     this.setState({ onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(event, newDate);
+      this.props.onsetDateInputOnChange(newDate);
     }
   }
 
@@ -218,7 +218,7 @@ class OnsetPicker extends React.Component {
     this.setState({ onsetDate: newDate });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(event, newDate);
+      this.props.onsetDateInputOnChange(newDate);
     }
   }
 
