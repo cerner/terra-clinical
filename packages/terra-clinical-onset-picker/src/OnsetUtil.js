@@ -6,7 +6,7 @@ class OnsetUtil {
    * Create object to pass to SelectField for month options
    * Filters out months before birth or after the current date.
    */
-  static availableMonths(intl, birthdate, onsetDate) {
+  static allowedMonths(intl, birthdate, onsetDate) {
     const start = moment(birthdate);
     const end = moment();
     const onsetYear = moment(onsetDate).year();
@@ -39,7 +39,7 @@ class OnsetUtil {
    * Create object to pass to SelectField for year options.
    * Populates birth year to current year.
    */
-  static availableYears(birthdate) {
+  static allowedYears(birthdate) {
     const start = moment(birthdate).year();
     const end = moment().year();
 
@@ -56,7 +56,7 @@ class OnsetUtil {
    * Will use the lesser of power of two or the difference between birth for week/month.
    * Power of two for maximum weeks/months (8 weeks = 2 months, 24 months = 2 years)
    */
-  static maxAgeCount(birthdate, ageUnit) {
+  static allowedAge(birthdate, ageUnit) {
     switch (ageUnit) {
       case 'years':
         return moment().diff(moment(birthdate), 'years');
@@ -72,29 +72,29 @@ class OnsetUtil {
   }
 
   /*
-   * Create object to pass to SelectField for age duration options.
+   * Create object to pass to SelectField for age unit options.
    * Does not add durations that are not possible based on birth.
    */
-  static allowedAgeDurations(birthdate) {
+  static allowedAgeUnits(birthdate) {
     const ageMoment = moment(birthdate);
 
     if (moment().diff(ageMoment, 'weeks') === 0) {
       return null;
     }
 
-    const ageDurations = [{ value: 'weeks', display: 'Week(s)' }];
+    const ageUnits = [{ value: 'weeks', display: 'Week(s)' }];
 
     // Do not add month option if less than a month old
     if (moment().diff(ageMoment, 'months') > 0) {
-      ageDurations.push({ value: 'months', display: 'Month(s)' });
+      ageUnits.push({ value: 'months', display: 'Month(s)' });
     }
 
     // Do not add year option if less than a year old
     if (moment().diff(ageMoment, 'years') > 0) {
-      ageDurations.push({ value: 'years', display: 'Year(s)' });
+      ageUnits.push({ value: 'years', display: 'Year(s)' });
     }
 
-    return ageDurations;
+    return ageUnits;
   }
 
   /**

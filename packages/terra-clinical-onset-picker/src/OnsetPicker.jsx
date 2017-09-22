@@ -247,7 +247,7 @@ class OnsetPicker extends React.Component {
       ageSelect = (<NumberField
         data-terra-clinical-onset-picker="age"
         min={1}
-        max={OnsetUtil.maxAgeCount(this.props.birthdate, this.state.ageUnit)}
+        max={OnsetUtil.allowedAge(this.props.birthdate, this.state.ageUnit)}
         step={1}
         value={this.state.age.toString()}
         onChange={this.changeAge}
@@ -256,7 +256,7 @@ class OnsetPicker extends React.Component {
 
       ageUnitSelect = (<SelectField
         data-terra-clinical-onset-picker="age_unit"
-        options={OnsetUtil.allowedAgeDurations(this.props.birthdate)}
+        options={OnsetUtil.allowedAgeUnits(this.props.birthdate)}
         defaultValue={this.state.ageUnit.toString()}
         onChange={this.changeAgeUnit}
         isInline
@@ -267,7 +267,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'MONTH') {
       monthSelect = (<SelectField
         data-terra-clinical-onset-picker="month"
-        options={OnsetUtil.availableMonths(intl, this.props.birthdate, this.state.onsetDate)}
+        options={OnsetUtil.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
         defaultValue={moment(this.state.onsetDate).month().toString()}
         onChange={this.changeMonth}
         isInline
@@ -278,7 +278,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'YEAR' || this.state.granularity === 'MONTH') {
       yearSelect = (<SelectField
         data-terra-clinical-onset-picker="year"
-        options={OnsetUtil.availableYears(this.props.birthdate)}
+        options={OnsetUtil.allowedYears(this.props.birthdate)}
         defaultValue={moment(this.state.onsetDate).year().toString()}
         onChange={this.changeYear}
         isInline
