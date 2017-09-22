@@ -2,7 +2,7 @@
 
 The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for use in onset scenarios.
 
-This is a controlled component because it manages the state of the value in the input. Because this is a controlled input component, it cannot accept the defaultValue prop as it always uses the value prop. React does not allow having both the defaultValue and value props.
+This component manages it's own state.
 
 ## Getting Started
 
