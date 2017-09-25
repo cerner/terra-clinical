@@ -49,7 +49,7 @@ const ItemDisplay = ({
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
-    { [`${textStyle}`]: textStyle },
+    { 'strike-through': textStyle === 'strikeThrough', [`${textStyle}`]: textStyle },
   ]);
 
   let displayIcon;

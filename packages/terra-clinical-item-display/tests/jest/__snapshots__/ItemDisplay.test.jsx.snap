@@ -39,7 +39,7 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
   className="item-display"
 >
   <div
-    className="text strikeThrough"
+    className="text strike-through strikeThrough"
   >
     Display
   </div>

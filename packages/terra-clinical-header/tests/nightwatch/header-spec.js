@@ -41,7 +41,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Displays a subsection header with content on the left and right': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/header-tests/left-and-right-content-subheader`)
-    .assert.elementPresent('header[class*="flexSubheader"]');
+    .assert.elementPresent('header[class*="flex-subheader"]');
     browser.expect.element('#headerTest--startContent').to.be.present;
     browser.expect.element('#headerTest--endContent').to.be.present;
   },

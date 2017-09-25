@@ -2,47 +2,35 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import Table from 'terra-table';
 import TableHeaderCell from './_TableHeaderCell';
+import determineElements from './_DetermineElements';
 import styles from './ItemCollection.scss';
 
 const cx = classNames.bind(styles);
 
-function determineTableColumns(row) {
-  const { startAccessory, displays, comment, endAccessory } = row;
-
-  const columns = {};
-  columns.startAccessoryColumn = startAccessory !== undefined;
-  if (displays) {
-    columns.displayColumns = displays.length < 8 ? displays.length : 8;
-  }
-  columns.commentColumn = comment !== undefined;
-  columns.endAccessoryColumn = endAccessory !== undefined;
-
-  return columns;
-}
 
 function createTableHeader(tableColumns) {
-  const { startAccessoryColumn, displayColumns, commentColumn, endAccessoryColumn } = tableColumns;
+  const { startAccessoryElement, displayElements, commentElement, endAccessoryElement } = tableColumns;
 
   let startAccessoryHeader;
-  if (startAccessoryColumn) {
+  if (startAccessoryElement) {
     startAccessoryHeader = <TableHeaderCell columnType="accessory" key="start_accessory" />;
   }
 
   const displayHeaders = [];
-  if (displayColumns) {
-    for (let index = 0; index < displayColumns; index += 1) {
+  if (displayElements) {
+    for (let index = 0; index < displayElements; index += 1) {
       const contentKey = `display_header_${index + 1}`;
       displayHeaders[index] = (<TableHeaderCell columnType="display" key={contentKey} />);
     }
   }
 
   let commentHeader;
-  if (commentColumn) {
+  if (commentElement) {
     commentHeader = <TableHeaderCell columnType="comment" key="comment" />;
   }
 
   let endAccessoryHeader;
-  if (endAccessoryColumn) {
+  if (endAccessoryElement) {
     endAccessoryHeader = <TableHeaderCell columnType="accessory" key="end_accessory" />;
   }
 
@@ -65,19 +53,20 @@ function createTableCell(content, keyValue, contentType) {
 }
 
 function createTableRows(rows, tableColumns, selectedIndex) {
+  const { startAccessoryElement, displayElements, commentElement, endAccessoryElement } = tableColumns;
+
   const tableRows = rows.map((row, rowIndex) => {
     const { startAccessory, displays, comment, endAccessory, itemStyles, ...customProps } = row;
-    const { startAccessoryColumn, displayColumns, commentColumn, endAccessoryColumn } = tableColumns;
 
     let startAccessoryContent;
-    if (startAccessoryColumn) {
+    if (startAccessoryElement) {
       startAccessoryContent = createTableCell(startAccessory, 'start_accessory', 'accessory');
     }
 
     let displayContent = [];
-    if (displayColumns) {
+    if (displayElements) {
       displayContent = row.displays.map((display, index) => {
-        if (index < displayColumns) {
+        if (index < displayElements) {
           const displayKey = `display_${index + 1}`;
           return createTableCell(display, displayKey, 'display');
         }
@@ -85,18 +74,18 @@ function createTableRows(rows, tableColumns, selectedIndex) {
       });
       // Ensure the correct number to table cells are created if the number of displays provided are fewer than
       // than the display columns expected.
-      while (displayContent.length < displayColumns) {
+      while (displayContent.length < displayElements) {
         displayContent.push(createTableCell(null, `display_${displayContent.length + 1}`, 'display'));
       }
     }
 
     let commentContent;
-    if (commentColumn) {
+    if (commentElement) {
       commentContent = createTableCell(comment, 'comment', 'comment');
     }
 
     let endAccessoryContent;
-    if (endAccessoryColumn) {
+    if (endAccessoryElement) {
       endAccessoryContent = createTableCell(endAccessory, 'end_accessory', 'accessory');
     }
 
@@ -116,7 +105,7 @@ function createTableRows(rows, tableColumns, selectedIndex) {
 }
 
 function createTableView(rows, tableStyles, selectedIndex, handleSelection) {
-  const tableColumns = determineTableColumns(rows[0]);
+  const tableColumns = determineElements(rows[0]);
   const tableHeader = createTableHeader(tableColumns);
   const tableRows = createTableRows(rows, tableColumns, selectedIndex);
   return (

@@ -1,5 +1,5 @@
 @import './mixins';
-/* stylelint-disable selector-class-pattern  */
+
 :local {
   .item-comment {
     @include terra-clinical-item-body;

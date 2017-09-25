@@ -58,8 +58,14 @@ class ItemView extends React.Component {
   static renderAccessory(accessory, accessoryAlignment) {
     let accessorySection;
     if (accessory) {
+      const accessoryClassNames = cx(
+        'accessory',
+        { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
+        { 'accessory-align-top': accessoryAlignment === 'alignTop' },
+      );
+
       accessorySection = (
-        <div className={cx('accessory', { [`accessory-${accessoryAlignment}`]: accessoryAlignment })}>
+        <div className={accessoryClassNames}>
           {accessory}
         </div>
       );
@@ -118,17 +124,17 @@ class ItemView extends React.Component {
   }
 
   static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-    let contentSize = 'content-primarySize';
-    let contentColor = 'content-primaryColor';
+    let contentSize = 'content-primary-size';
+    let contentColor = 'content-primary-color';
 
     if (rowIndex > 0) {
-      contentSize = 'content-secondarySize';
+      contentSize = 'content-secondary-size';
     }
 
     if (rowCount === 2 && rowIndex === 1) {
-      contentColor = 'content-secondaryColor';
+      contentColor = 'content-secondary-color';
     } else if (rowIndex >= 2) {
-      contentColor = 'content-secondaryColor';
+      contentColor = 'content-secondary-color';
     }
 
     return [contentSize, contentColor];
@@ -136,7 +142,7 @@ class ItemView extends React.Component {
 
   static startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
     if (contentIndex === 1) {
-      return ['content-secondarySize', 'content-secondaryColor'];
+      return ['content-secondary-size', 'content-secondary-color'];
     }
 
     return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
@@ -156,7 +162,8 @@ class ItemView extends React.Component {
     const viewClassNames = cx([
       'item-view',
       { 'is-truncated': isTruncated },
-      { [`${layout}`]: layout },
+      { 'one-column': layout === 'oneColumn' },
+      { 'two-columns': layout === 'twoColumns' },
       customProps.className,
     ]);
 
