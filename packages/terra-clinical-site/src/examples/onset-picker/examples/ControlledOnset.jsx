@@ -9,8 +9,8 @@ class ControlledOnsetExample extends React.Component {
 
     this.state = {
       formData: {
-        granularity: 'YEAR',
         precision: 'BEFORE',
+        granularity: 'YEAR',
         onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
       },
     };

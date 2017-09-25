@@ -42,7 +42,7 @@ const propTypes = {
    * Can be from the set of precisions ON/AT, ABOUT, BEFORE, AFTER, and UNKNOWN.
    * Order of precisions determines order in precision select.
    */
-  precisionSet: PropTypes.arrayOf(PropTypes.oneOf(['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'])).isRequired,
+  precisionSet: PropTypes.arrayOf(PropTypes.oneOf(['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'])),
 
   /**
    * Name of the precision select. The name should be unique.
@@ -97,7 +97,7 @@ const contextTypes = {
 
 class OnsetPicker extends React.Component {
 
-  constructor(props) {
+  constructor(props, context) {
     super(props);
 
     const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.props.onsetDate);
@@ -106,6 +106,7 @@ class OnsetPicker extends React.Component {
       granularity: this.props.granularity,
       precision: this.props.precision,
       onsetDate: this.props.onsetDate,
+      months: OnsetUtil.allowedMonths(context.intl, this.props.birthdate, this.props.onsetDate),
       age: ageValues.age,
       ageUnit: ageValues.ageUnit,
     };
@@ -124,7 +125,7 @@ class OnsetPicker extends React.Component {
    * Change state for granularity
    */
   changeGranularity(event) {
-    if (event.target.value === 'AGE') {
+    if (event.target.value === 'AGE') { // Ensure age select matches current onsetDate
       const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.state.onsetDate);
 
       this.setState({
@@ -160,7 +161,8 @@ class OnsetPicker extends React.Component {
 
     this.setState({
       age: Number(event.target.value),
-      onsetDate: newDate });
+      onsetDate: newDate,
+    });
 
     if (this.props.onsetDateInputOnChange) {
       this.props.onsetDateInputOnChange(newDate);
@@ -176,7 +178,8 @@ class OnsetPicker extends React.Component {
     this.setState({
       age: 1,
       ageUnit: event.target.value,
-      onsetDate: newDate });
+      onsetDate: newDate,
+    });
 
     if (this.props.onsetDateInputOnChange) {
       this.props.onsetDateInputOnChange(newDate);
@@ -187,12 +190,21 @@ class OnsetPicker extends React.Component {
    * Update onset date when year changes
    */
   changeYear(event) {
-    const newDate = moment(this.state.onsetDate).year(event.target.value).format('YYYY-MM-DD');
+    let newDate = moment(this.state.onsetDate).year(event.target.value);
+    const newMonths = OnsetUtil.allowedMonths(this.context.intl, this.props.birthdate, newDate);
 
-    this.setState({ onsetDate: newDate });
+    // Check if new onset month is available, otherwise change month to first possible month
+    if (newMonths.filter(month => parseInt(month.value, 10) === newDate.month()).length === 0) {
+      newDate = moment(newDate).month(newMonths[0].value);
+    }
+
+    this.setState({
+      onsetDate: newDate.format('YYYY-MM-DD'),
+      months: newMonths,
+    });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate);
+      this.props.onsetDateInputOnChange(newDate.format('YYYY-MM-DD'));
     }
   }
 
@@ -280,7 +292,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'MONTH') {
       monthSelect = (<SelectField
         data-terra-clinical-onset-picker="month"
-        options={OnsetUtil.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
+        options={this.state.months}
         defaultValue={moment(this.state.onsetDate).month().toString()}
         onChange={this.changeMonth}
         isInline
