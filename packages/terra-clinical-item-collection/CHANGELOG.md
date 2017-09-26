@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.4.0 - (September 26, 2017)
+-----------------
 ### Changed
 * Fixed visual differences between list and table view
 * Updated nightwatch tests to use expect syntax
