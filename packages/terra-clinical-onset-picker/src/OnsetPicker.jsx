@@ -125,17 +125,21 @@ class OnsetPicker extends React.Component {
    * Change state for granularity
    */
   changeGranularity(event) {
-    if (event.target.value === 'AGE') { // Ensure age select matches current onsetDate
+    if (event.target.value === 'AGE') { // Calculate age values and update onsetDate to match age calculation
       const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.state.onsetDate);
+      const newDate = moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit).format('YYYY-MM-DD');
 
       this.setState({
-        granularity: event.target.value,
         age: ageValues.age,
         ageUnit: ageValues.ageUnit,
+        onsetDate: newDate,
       });
-    } else {
-      this.setState({ granularity: event.target.value });
+
+      if (this.props.onsetDateInputOnChange) {
+        this.props.onsetDateInputOnChange(newDate);
+      }
     }
+    this.setState({ granularity: event.target.value });
 
     if (this.props.granularitySelectOnChange) {
       this.props.granularitySelectOnChange(event.target.value);
@@ -274,7 +278,7 @@ class OnsetPicker extends React.Component {
         min={0}
         max={OnsetUtil.allowedAge(this.props.birthdate, this.state.ageUnit)}
         step={1}
-        value={this.state.age.toString()}
+        value={this.state.age}
         onChange={this.changeAge}
         isInline
       />);

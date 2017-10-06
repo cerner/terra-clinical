@@ -8,11 +8,9 @@ class ControlledOnsetExample extends React.Component {
     super(props);
 
     this.state = {
-      formData: {
-        precision: 'BEFORE',
-        granularity: 'YEAR',
-        onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
-      },
+      precision: 'BEFORE',
+      granularity: 'YEAR',
+      onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
     };
 
     this.handleGranularity = this.handleGranularity.bind(this);
@@ -22,28 +20,26 @@ class ControlledOnsetExample extends React.Component {
   }
 
   handleGranularity(granularity) {
-    const formData = Object.assign({}, this.state.formData);
-    formData.granularity = granularity;
-    this.setState({ formData });
+    this.setState({ granularity });
   }
 
   handlePrecision(precision) {
-    const formData = Object.assign({}, this.state.formData);
-    formData.precision = precision;
-    this.setState({ formData });
+    this.setState({ precision });
   }
 
   handleOnset(onsetDate) {
-    const formData = Object.assign({}, this.state.formData);
-    formData.onsetDate = onsetDate;
-    this.setState({ formData });
+    this.setState({ onsetDate });
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
     this.setState({
-      submittedData: Object.assign({}, this.state.formData),
+      submittedData: {
+        precision: this.state.precision,
+        granularity: this.state.granularity,
+        onsetDate: this.state.onsetDate,
+      },
     });
   }
 
@@ -52,14 +48,14 @@ class ControlledOnsetExample extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <OnsetPicker
           birthdate={moment().subtract(6, 'years').format()}
-          granularity={this.state.formData.granularity}
+          granularity={this.state.granularity}
           granularitySelectName="doogs-supplied-granularity"
           granularitySelectOnChange={this.handleGranularity}
-          precision={this.state.formData.precision}
+          precision={this.state.precision}
           precisionSet={['UNKNOWN', 'AFTER', 'BEFORE', 'ON/AT']}
           precisionSelectName="doogs-supplied-precision"
           precisionSelectOnChange={this.handlePrecision}
-          onsetDate={this.state.formData.onsetDate}
+          onsetDate={this.state.onsetDate}
           onsetDateInputName="doogs-supplied-onsetDate"
           onsetDateInputOnChange={this.handleOnset}
         />
