@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-error-view",
   "main": "lib/ErrorView.js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "The Terra ErrorView is a display presented with an error message and location for a button.",
   "repository": {
     "type": "git",
