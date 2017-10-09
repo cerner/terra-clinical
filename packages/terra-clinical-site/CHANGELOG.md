@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Uplift site header to use collapsible menu view
 
 1.3.0 - (August 16, 2017)
 -----------------
