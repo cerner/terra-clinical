@@ -136,6 +136,11 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           >
             September
           </option>
+          <option
+            value="9"
+          >
+            October
+          </option>
         </select>
       </div>
       <div
@@ -319,10 +324,15 @@ exports[`should render as controlled when onChange functions are supplied 1`] = 
             August
           </option>
           <option
-            selected=""
             value="8"
           >
             September
+          </option>
+          <option
+            selected=""
+            value="9"
+          >
+            October
           </option>
         </select>
       </div>

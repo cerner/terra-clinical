@@ -5,20 +5,70 @@ import OnsetPicker from '../../../lib/OnsetPicker';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
-// Lock date to September 20, 2016
-moment.now = function () {
-  return new Date(2016, 8, 20);
-};
+export default class LessMonth extends React.Component {
+  constructor(props) {
+    super(props);
 
-export default () =>
-  <Base locale={locale}>
-    <p>Onset picker with minimum required fields, supplied with a birthdate of 3 weeks old.</p>
-    <p>Current date locked to September 20, 2016</p>
-    <p>Testing age granularity selection restrictions.</p>
-    <OnsetPicker
-      birthdate={moment().subtract(3, 'weeks').format()}
-      granularitySelectName="test-granularity"
-      precisionSelectName="test-precision"
-      onsetDateInputName="test-onsetDate"
-    />
-  </Base>;
+    // Lock date to September 20, 2016
+    moment.now = () => new Date(2016, 8, 20);
+
+    this.state = {
+      precision: 'ON/AT',
+      granularity: 'MONTH',
+      onsetDate: moment(),
+    };
+
+    this.handleGranularity = this.handleGranularity.bind(this);
+    this.handlePrecision = this.handlePrecision.bind(this);
+    this.handleOnset = this.handleOnset.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleGranularity(granularity) {
+    this.setState({ granularity });
+  }
+
+  handlePrecision(precision) {
+    this.setState({ precision });
+  }
+
+  handleOnset(onsetDate) {
+    this.setState({ onsetDate });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.setState({
+      submittedData: {
+        precision: this.state.precision,
+        granularity: this.state.granularity,
+        onsetDate: this.state.onsetDate,
+      },
+    });
+  }
+
+  render() {
+    return (
+      <Base locale={locale}>
+        <p>Controlled Onset picker with minimum required fields, supplied with a birthdate of 3 weeks old.</p>
+        <p>Current date locked to September 20, 2016</p>
+        <p>Testing age granularity selection restrictions.</p>
+
+        <form onSubmit={this.handleSubmit}>
+          <OnsetPicker
+            birthdate={moment().subtract(3, 'weeks').format()}
+            granularitySelectName="test-granularity"
+            granularitySelectOnChange={this.handleGranularity}
+            precisionSelectName="test-precision"
+            precisionSelectOnChange={this.handlePrecision}
+            onsetDateInputName="test-onsetDate"
+            onsetDateInputOnChange={this.handleOnset}
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <p data-test-json>{JSON.stringify(this.state.submittedData)}</p>
+      </Base>
+    );
+  }
+}

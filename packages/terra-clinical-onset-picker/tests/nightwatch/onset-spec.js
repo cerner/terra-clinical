@@ -112,57 +112,62 @@ module.exports = resizeTo(['large'], {
 
   'Cannot select number of years greater than age': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/default`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
       .setValue('[data-terra-clinical-onset-picker="age"] input', 10)
-      .expect.element('[data-terra-clinical-onset-picker="age"] input').to.have.value.not.equals(10);
+      .click('button[type="submit"]')
+      .expect.element('[data-test-json="true"]').text.to.not.contain('2021-09-20'); // 2011-09-20 + 10 years
   },
 
   'Cannot select more than 24 months': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/default`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'months')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
       .setValue('[data-terra-clinical-onset-picker="age"] input', 30)
-      .expect.element('[data-terra-clinical-onset-picker="age"] input').to.have.value.not.equals(30);
+      .click('button[type="submit"]')
+      .expect.element('[data-test-json="true"]').text.to.not.contain('2014-03-20'); // 2011-09-20 + 30 months
   },
 
   'Cannot select number of months that exceede age': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/LessYear`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/less-year`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'months')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
       .setValue('[data-terra-clinical-onset-picker="age"] input', 20)
-      .expect.element('[data-terra-clinical-onset-picker="age"] input').to.have.value.not.equals(20);
+      .click('button[type="submit"]')
+      .expect.element('[data-test-json="true"]').text.to.not.contain('2017-06-20'); // 2016-09-20 - 11 months + 20 months
   },
 
   'Cannot select more than 8 weeks': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/default`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'weeks')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
       .setValue('[data-terra-clinical-onset-picker="age"] input', 15)
-      .expect.element('[data-terra-clinical-onset-picker="age"] input').to.have.value.not.equals(15);
+      .click('button[type="submit"]')
+      .expect.element('[data-test-json="true"]').text.to.not.contain('2012-01-03'); // 2011-09-20 + 15 weeks
   },
 
   'Cannot select number of weeks that exceede age': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/LessMonth`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/less-month`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'weeks')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
       .setValue('[data-terra-clinical-onset-picker="age"] input', 6)
-      .expect.element('[data-terra-clinical-onset-picker="age"] input').to.have.value.not.equals(6);
+      .click('button[type="submit"]')
+      .expect.element('[data-test-json="true"]').text.to.not.contain('2016-10-11'); // 2016-09-20 - 3 weeks + 6 weeks
   },
 
   'Cannot select years duration if age is less than a year old': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/LessYear`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/less-year`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
       .expect.element('[data-terra-clinical-onset-picker="age_unit"]').to.have.value.not.equals('years');
@@ -170,7 +175,7 @@ module.exports = resizeTo(['large'], {
 
   'Cannot select months duration if age is less than a month old': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/LessMonth`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/less-month`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'months')
       .expect.element('[data-terra-clinical-onset-picker="age_unit"]').to.have.value.not.equals('months');
@@ -181,47 +186,55 @@ module.exports = resizeTo(['large'], {
   // onChange handlers
   'When precision is changed an event is fired to the precisionSelectOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/Controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-precision"]', 'Unknown')
+      .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('UNKNOWN');
   },
 
   'When granularity is changed an event is fired to the granularitySelectOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/Controlled`)
-      .setValue('select[name="test-granularity"]', 'Age')
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .setValue('select[name="test-granularity"]', 'AGE')
+      .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('AGE');
   },
 
   'When onsetDate is changed by the month select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/Controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .setValue('select[name="test-granularity"]', 'MONTH')
       .setValue('[data-terra-clinical-onset-picker="month"] select', 'October')
+      .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('2013-10-14');
   },
 
   'When onsetDate is changed by the year select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/Controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .setValue('select[name="test-granularity"]', 'YEAR')
       .setValue('[data-terra-clinical-onset-picker="year"] select', 2016)
+      .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('2016-02-14');
   },
 
   'When onsetDate is changed by the age input an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/Controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
       .clearValue('[data-terra-clinical-onset-picker="age"] input') // CLEAR FIRST, SET VALUE APPENDS THE NEW VALUE
       .setValue('[data-terra-clinical-onset-picker="age"] input', 4)
+      .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('2015-09-20');
   },
 
   'When onsetDate is change by the ageUnit select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/Controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years') // Switching age unit resets to 1
+      .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('2012-09-20');
   },
 });

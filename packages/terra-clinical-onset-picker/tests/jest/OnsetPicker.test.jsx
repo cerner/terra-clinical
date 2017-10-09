@@ -74,7 +74,6 @@ it('throws error on missing locale prop in Base', () => {
         granularitySelectName="test-granularity"
         precisionSelectName="test-precision"
         onsetDateInputName="test-onsetDate"
-        name="date-input"
       />);
   } catch (e) {
     expect(e.message).toContain('add locale prop to Base component');

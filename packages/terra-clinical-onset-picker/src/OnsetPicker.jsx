@@ -81,7 +81,7 @@ const defaultProps = {
   precisionSet: ['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'],
   precisionSelectName: undefined,
   precisionSelectOnChange: undefined,
-  onsetDate: moment().format('YYYY-MM-DD'),
+  onsetDate: undefined,
   onsetDateInputName: undefined,
   onsetDateInputOnChange: undefined,
 };
@@ -97,7 +97,7 @@ const contextTypes = {
 
 class OnsetPicker extends React.Component {
 
-  constructor(props, context) {
+  constructor(props) {
     super(props);
 
     const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.props.onsetDate);
@@ -105,8 +105,7 @@ class OnsetPicker extends React.Component {
     this.state = {
       granularity: this.props.granularity,
       precision: this.props.precision,
-      onsetDate: this.props.onsetDate,
-      months: OnsetUtil.allowedMonths(context.intl, this.props.birthdate, this.props.onsetDate),
+      onsetDate: this.props.onsetDate ? this.props.onsetDate : moment(),
       age: ageValues.age,
       ageUnit: ageValues.ageUnit,
     };
@@ -127,7 +126,7 @@ class OnsetPicker extends React.Component {
   changeGranularity(event) {
     if (event.target.value === 'AGE') { // Calculate age values and update onsetDate to match age calculation
       const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.state.onsetDate);
-      const newDate = moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit).format('YYYY-MM-DD');
+      const newDate = moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit);
 
       this.setState({
         age: ageValues.age,
@@ -161,7 +160,7 @@ class OnsetPicker extends React.Component {
    * Change state for the age when using AGE granularity, and update onset date
    */
   changeAge(event) {
-    const newDate = moment(this.props.birthdate).add(Number(event.target.value), this.state.ageUnit).format('YYYY-MM-DD');
+    const newDate = moment(this.props.birthdate).add(Number(event.target.value), this.state.ageUnit);
 
     this.setState({
       age: Number(event.target.value),
@@ -177,7 +176,7 @@ class OnsetPicker extends React.Component {
    * Change state for duration when using age granularity, and update onset date
    */
   changeAgeUnit(event) {
-    const newDate = moment(this.props.birthdate).add(1, event.target.value).format('YYYY-MM-DD');
+    const newDate = moment(this.props.birthdate).add(1, event.target.value);
 
     this.setState({
       age: 1,
@@ -203,12 +202,11 @@ class OnsetPicker extends React.Component {
     }
 
     this.setState({
-      onsetDate: newDate.format('YYYY-MM-DD'),
-      months: newMonths,
+      onsetDate: newDate,
     });
 
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate.format('YYYY-MM-DD'));
+      this.props.onsetDateInputOnChange(newDate);
     }
   }
 
@@ -216,7 +214,7 @@ class OnsetPicker extends React.Component {
    * Update onset date when month changes
    */
   changeMonth(event) {
-    const newDate = moment(this.state.onsetDate).month(event.target.value).format('YYYY-MM-DD');
+    const newDate = moment(this.state.onsetDate).month(event.target.value);
 
     this.setState({ onsetDate: newDate });
 
@@ -229,7 +227,7 @@ class OnsetPicker extends React.Component {
    * Update onset date when date changes
    */
   changeDate(event, date) {
-    const newDate = moment(date).format('YYYY-MM-DD');
+    const newDate = moment(date);
 
     this.setState({ onsetDate: newDate });
 
@@ -296,7 +294,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'MONTH') {
       monthSelect = (<SelectField
         data-terra-clinical-onset-picker="month"
-        options={this.state.months}
+        options={OnsetUtil.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
         defaultValue={moment(this.state.onsetDate).month().toString()}
         onChange={this.changeMonth}
         isInline
@@ -320,8 +318,8 @@ class OnsetPicker extends React.Component {
         <DatePicker
           onChange={this.changeDate}
           minDate={this.props.birthdate}
-          maxDate={moment().format('YYYY-MM-DD')}
-          selectedDate={moment(this.state.onsetDate).format('YYYY-MM-DD')}
+          maxDate={moment().format()}
+          selectedDate={moment(this.state.onsetDate).format()}
           name={this.props.onsetDateInputName}
         />
       </Field>);
