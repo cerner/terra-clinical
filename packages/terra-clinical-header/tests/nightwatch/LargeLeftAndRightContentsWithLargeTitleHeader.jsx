@@ -6,7 +6,8 @@ const startContent = <div id="headerTest--startContent" style={{ backgroundColor
 const endContent = <div id="headerTest--endContent" style={{ backgroundColor: 'black', height: '30px', width: '2000px', margin: '0 0 0 10px' }} />;
 
 export default () => (
-  <Header id="Header"
+  <Header
+    id="Header"
     startContent={startContent}
     title="LongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitle"
     endContent={endContent}
