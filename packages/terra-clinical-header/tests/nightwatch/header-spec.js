@@ -50,4 +50,11 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.url(`${browser.launchUrl}/#/tests/header-tests/no-title-right-content`);
     browser.expect.element('#headerTest--content').to.be.present;
   },
+
+  'Displays a header with large left and right contents with a large title': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/header-tests/large-left-and-right-contents-large-title`)
+    .assert.containsText('#Header h1', 'LongTitle');
+    browser.expect.element('#headerTest--startContent').to.be.present;
+    browser.expect.element('#headerTest--endContent').to.be.present;
+  },
 });
