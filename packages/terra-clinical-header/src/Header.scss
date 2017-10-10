@@ -5,7 +5,7 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
     display: flex;
-    height: 3.587rem;
+    min-height: 3.587rem;
     justify-content: space-between;
     overflow: hidden;
     padding: 0.714rem;
@@ -33,7 +33,7 @@
   .title-container {
     height: 100%;
     left: 0;
-    position: absolute;
+    position: inherit;
     top: 0;
     width: 100%;
   }
