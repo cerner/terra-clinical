@@ -15,3 +15,4 @@ Cerner Corporation
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
 [@nagrawal3]: https://github.com/nagrawal3
+[@kschuste]: https://github.com/kschuste
