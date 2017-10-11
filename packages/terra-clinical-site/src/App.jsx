@@ -119,6 +119,7 @@ class App extends React.Component {
       <CollapsibleMenuView className={styles.header}>
         {toggleContent}
         {localeContent}
+        <CollapsibleMenuView.Divider />
         {bidiContent}
       </CollapsibleMenuView>
     );
