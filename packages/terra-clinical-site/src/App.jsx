@@ -21,7 +21,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       isOpen: window.innerWidth >= 768,
-      isLtr: true,
+      dir: 'ltr',
       locale,
     };
     this.handleBidiChange = this.handleBidiChange.bind(this);
@@ -32,7 +32,7 @@ class App extends React.Component {
 
   handleBidiChange(e) {
     document.getElementsByTagName('html')[0].setAttribute('dir', e.currentTarget.id);
-    this.setState({ isLtr: e.currentTarget.id === 'ltr' });
+    this.setState({ dir: e.currentTarget.id });
   }
 
   handleLocaleChange(e) {
@@ -60,8 +60,8 @@ class App extends React.Component {
 
     const bidiContent = (
       <CollapsibleMenuView.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium">
-        <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.isLtr} onClick={this.handleBidiChange} />
-        <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={!this.state.isLtr} onClick={this.handleBidiChange} />
+        <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} onClick={this.handleBidiChange} />
+        <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} onClick={this.handleBidiChange} />
       </CollapsibleMenuView.ItemGroup>
    );
 
