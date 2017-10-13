@@ -59,9 +59,9 @@ class App extends React.Component {
     );
 
     const bidiContent = (
-      <CollapsibleMenuView.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium">
-        <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} onClick={this.handleBidiChange} />
-        <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} onClick={this.handleBidiChange} />
+      <CollapsibleMenuView.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.handleBidiChange}>
+        <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} />
+        <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} />
       </CollapsibleMenuView.ItemGroup>
    );
 
@@ -72,15 +72,15 @@ class App extends React.Component {
         menuWidth="160"
         shouldCloseOnClick={false}
         subMenuItems={[
-          <CollapsibleMenuView.ItemGroup isSelectable key="local-options">
-            <CollapsibleMenuView.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="de" text="de" key="de" isSelected={this.state.locale === 'de'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="es" text="es" key="es" isSelected={this.state.locale === 'es'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="fr" text="fr" key="fr" isSelected={this.state.locale === 'fr'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="pt" text="pt" key="pt" isSelected={this.state.locale === 'pt'} onClick={this.handleLocaleChange} />
-            <CollapsibleMenuView.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.state.locale === 'fi-FI'} onClick={this.handleLocaleChange} />
+          <CollapsibleMenuView.ItemGroup isSelectable key="local-options" onChange={this.handleLocaleChange}>
+            <CollapsibleMenuView.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} />
+            <CollapsibleMenuView.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} />
+            <CollapsibleMenuView.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} />
+            <CollapsibleMenuView.Item id="de" text="de" key="de" isSelected={this.state.locale === 'de'} />
+            <CollapsibleMenuView.Item id="es" text="es" key="es" isSelected={this.state.locale === 'es'} />
+            <CollapsibleMenuView.Item id="fr" text="fr" key="fr" isSelected={this.state.locale === 'fr'} />
+            <CollapsibleMenuView.Item id="pt" text="pt" key="pt" isSelected={this.state.locale === 'pt'} />
+            <CollapsibleMenuView.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.state.locale === 'fi-FI'} />
           </CollapsibleMenuView.ItemGroup>,
         ]}
       />
