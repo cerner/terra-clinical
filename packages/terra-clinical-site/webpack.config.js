@@ -22,10 +22,6 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.json$/,
-        use: 'json-loader',
-      },
-      {
         test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
