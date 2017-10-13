@@ -4,7 +4,8 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-Lock webpack-dev-server at last version supporting IE10 (1.7.1)
+* Lock webpack-dev-server at last version supporting IE10 (1.7.1)
+* Updated webpack config to align with webpack 3 documentation
 
 1.3.0 - (August 16, 2017)
 -----------------

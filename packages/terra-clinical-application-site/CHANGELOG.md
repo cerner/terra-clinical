@@ -3,6 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
+* Updated webpack config to align with webpack 3 documentation
 
 1.2.0 - (September 1, 2017)
 -----------------
