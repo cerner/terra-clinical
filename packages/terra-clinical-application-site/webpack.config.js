@@ -18,15 +18,11 @@ module.exports = {
     'demo-app': path.resolve(path.join(__dirname, 'src', 'index.jsx')),
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(jsx|js)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
+        use: 'babel-loader',
       },
       {
         test: /\.(scss|css)$/,
@@ -68,7 +64,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loader: 'raw-loader',
+        use: 'raw-loader',
       },
     ],
   },
