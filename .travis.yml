@@ -7,8 +7,7 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
-before_script:
-  - sudo apt-get update && sudo apt-get install oracle-java8-installer
+      - oracle-java8-set-default
 script:
   - npm test
   - npm run danger
