@@ -3,8 +3,7 @@ import Base from 'terra-base';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
-import Button from 'terra-button';
-import ButtonGroup from 'terra-button-group';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import ContentContainer from 'terra-content-container';
 import IconMenu from 'terra-icon/lib/icon/IconMenu';
 import List from 'terra-list';
@@ -22,15 +21,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       isOpen: window.innerWidth >= 768,
+      dir: 'ltr',
       locale,
     };
+    this.handleBidiChange = this.handleBidiChange.bind(this);
     this.handleLocaleChange = this.handleLocaleChange.bind(this);
     this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleResetScroll = this.handleResetScroll.bind(this);
   }
 
+  handleBidiChange(e) {
+    document.getElementsByTagName('html')[0].setAttribute('dir', e.currentTarget.id);
+    this.setState({ dir: e.currentTarget.id });
+  }
+
   handleLocaleChange(e) {
-    this.setState({ locale: e.target.value });
+    this.setState({ locale: e.currentTarget.id });
   }
 
   handleToggleClick() {
@@ -49,36 +55,35 @@ class App extends React.Component {
 
   render() {
     const toggleContent = (
-      <Button icon={<IconMenu />} onClick={this.handleToggleClick} />
+      <CollapsibleMenuView.Item icon={<IconMenu />} isIconOnly key="toggle-content" onClick={this.handleToggleClick} />
     );
 
     const bidiContent = (
-      <ButtonGroup
-        className={styles.bidirectionality}
-        dir="ltr"
-        size="medium"
-        isSelectable
-        buttons={[
-          <ButtonGroup.Button isSelected text="ltr" key="ltr" onClick={() => document.getElementsByTagName('html')[0].setAttribute('dir', 'ltr')} />,
-          <ButtonGroup.Button text="rtl" key="rtl" onClick={() => document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl')} />,
-        ]}
-      />
+      <CollapsibleMenuView.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.handleBidiChange}>
+        <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} />
+        <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} />
+      </CollapsibleMenuView.ItemGroup>
    );
 
     const localeContent = (
-      <div className={styles.locale}>
-        <label htmlFor="locale">Locale:</label>
-        <select value={this.state.locale} onChange={this.handleLocaleChange}>
-          <option value="en">en</option>
-          <option value="en-GB">en-GB</option>
-          <option value="en-US">en-US</option>
-          <option value="de">de</option>
-          <option value="es">es</option>
-          <option value="fr">fr</option>
-          <option value="pt">pt</option>
-          <option value="fi-FI">fi-FI</option>
-        </select>
-      </div>
+      <CollapsibleMenuView.Item
+        text={`Locale: ${this.state.locale}`}
+        key="locale"
+        menuWidth="160"
+        shouldCloseOnClick={false}
+        subMenuItems={[
+          <CollapsibleMenuView.ItemGroup isSelectable key="local-options" onChange={this.handleLocaleChange}>
+            <CollapsibleMenuView.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} />
+            <CollapsibleMenuView.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} />
+            <CollapsibleMenuView.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} />
+            <CollapsibleMenuView.Item id="de" text="de" key="de" isSelected={this.state.locale === 'de'} />
+            <CollapsibleMenuView.Item id="es" text="es" key="es" isSelected={this.state.locale === 'es'} />
+            <CollapsibleMenuView.Item id="fr" text="fr" key="fr" isSelected={this.state.locale === 'fr'} />
+            <CollapsibleMenuView.Item id="pt" text="pt" key="pt" isSelected={this.state.locale === 'pt'} />
+            <CollapsibleMenuView.Item id="fi-FI" text="fi-FI" key="fi-FI" isSelected={this.state.locale === 'fi-FI'} />
+          </CollapsibleMenuView.ItemGroup>,
+        ]}
+      />
    );
 
     const navHeader = (
@@ -113,18 +118,13 @@ class App extends React.Component {
       </Base>
     );
 
-    const utilityContent = (
-      <div className={styles.utility}>
-        {localeContent}
-        {bidiContent}
-      </div>
-    );
-
     const applicationHeader = (
-      <div className={styles.header}>
+      <CollapsibleMenuView className={styles.header}>
         {toggleContent}
-        {utilityContent}
-      </div>
+        {localeContent}
+        <CollapsibleMenuView.Divider />
+        {bidiContent}
+      </CollapsibleMenuView>
     );
 
     return (
