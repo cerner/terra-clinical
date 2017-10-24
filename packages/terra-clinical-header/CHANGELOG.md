@@ -3,9 +3,6 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
-* Remove custom margin styling from examples
-* Add margin styling to flex-end
 
 1.5.0 - (September 26, 2017)
 -----------------
