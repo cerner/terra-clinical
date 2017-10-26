@@ -7,6 +7,7 @@ Cerner Corporation
 - Tyler Biethman [@tbiethman]
 - Matt Henkes [@mjhenkes]
 - Nikhil Agrawal [@nagrawal3]
+- Gerard Isdell [@gerard-isdell]
 - Kevin Schuster [@kschuste]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
@@ -16,4 +17,5 @@ Cerner Corporation
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
 [@nagrawal3]: https://github.com/nagrawal3
+[@gerard-isdell]: https://github.com/gerard-isdell
 [@kschuste]: https://github.com/kschuste
