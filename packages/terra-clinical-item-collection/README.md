@@ -8,7 +8,7 @@ An Item Collection is a wrapper component designed to display data as either a t
 Ultimately, the Item Collection component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-core/tree/master/packages/terra-clinical-item-collection/docs)
+- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-collection/docs)
 - [LICENSE](#license)
 
 ## Getting Started
