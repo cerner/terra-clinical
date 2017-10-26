@@ -20,6 +20,7 @@ const OnsetExamples = () => (
     <PropsTable id="props" src={OnsetPickerSrc} />
     <br />
     <h2 id="default">Default with initialization</h2>
+    <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
     <DefaultOnset />
     <h2 id="supplied">Controlled onset picker with supplied data</h2>
     <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>

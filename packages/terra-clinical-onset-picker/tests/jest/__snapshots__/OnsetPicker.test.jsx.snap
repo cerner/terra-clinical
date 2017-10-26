@@ -19,27 +19,27 @@ exports[`should render a default onset picker with specified onset date 1`] = `
         >
           <option
             selected=""
-            value="ON/AT"
+            value="on/at"
           >
             On/At
           </option>
           <option
-            value="ABOUT"
+            value="about"
           >
             About
           </option>
           <option
-            value="BEFORE"
+            value="before"
           >
             Before
           </option>
           <option
-            value="AFTER"
+            value="after"
           >
             After
           </option>
           <option
-            value="UNKNOWN"
+            value="unknown"
           >
             Unknown
           </option>
@@ -212,27 +212,27 @@ exports[`should render as controlled when onChange functions are supplied 1`] = 
         >
           <option
             selected=""
-            value="ON/AT"
+            value="on/at"
           >
             On/At
           </option>
           <option
-            value="ABOUT"
+            value="about"
           >
             About
           </option>
           <option
-            value="BEFORE"
+            value="before"
           >
             Before
           </option>
           <option
-            value="AFTER"
+            value="after"
           >
             After
           </option>
           <option
-            value="UNKNOWN"
+            value="unknown"
           >
             Unknown
           </option>
@@ -404,28 +404,28 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           name="test-precision"
         >
           <option
-            value="ON/AT"
+            value="on/at"
           >
             On/At
           </option>
           <option
-            value="ABOUT"
+            value="about"
           >
             About
           </option>
           <option
-            value="BEFORE"
+            value="before"
           >
             Before
           </option>
           <option
-            value="AFTER"
+            value="after"
           >
             After
           </option>
           <option
             selected=""
-            value="UNKNOWN"
+            value="unknown"
           >
             Unknown
           </option>
@@ -454,28 +454,28 @@ exports[`should render with non default inputs when supplied 1`] = `
           name="test-precision"
         >
           <option
-            value="ON/AT"
+            value="on/at"
           >
             On/At
           </option>
           <option
-            value="ABOUT"
+            value="about"
           >
             About
           </option>
           <option
             selected=""
-            value="BEFORE"
+            value="before"
           >
             Before
           </option>
           <option
-            value="AFTER"
+            value="after"
           >
             After
           </option>
           <option
-            value="UNKNOWN"
+            value="unknown"
           >
             Unknown
           </option>

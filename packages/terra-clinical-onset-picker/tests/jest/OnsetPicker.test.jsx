@@ -28,7 +28,7 @@ it('should render only a select when supplied with the UNKNOWN precision', () =>
         granularitySelectName="test-granularity"
         precisionSelectName="test-precision"
         onsetDateInputName="test-onsetDate"
-        precision="UNKNOWN"
+        precision="unknown"
       />
     </IntlProvider>);
   expect(onsetPicker).toMatchSnapshot();
@@ -42,7 +42,7 @@ it('should render with non default inputs when supplied', () => {
         granularitySelectName="test-granularity"
         precisionSelectName="test-precision"
         onsetDateInputName="test-onsetDate"
-        precision="BEFORE"
+        precision="before"
         granularity="YEAR"
         onsetDate="2014-08-16T17:40:49-05:00"
       />
