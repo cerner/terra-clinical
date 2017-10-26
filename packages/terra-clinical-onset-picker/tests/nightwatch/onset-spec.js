@@ -16,7 +16,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   'Displays no additional options when UNKNOWN precision selected': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/onset-picker/default`)
-      .setValue('select[name="test-precision"]', 'UNKNOWN')
+      .setValue('select[name="test-precision"]', 'unknown')
       .assert.elementNotPresent('select[name="test-granularity"]');
   },
 
@@ -186,7 +186,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   'When precision is changed an event is fired to the precisionSelectOnChange callback': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
-      .setValue('select[name="test-precision"]', 'Unknown')
+      .setValue('select[name="test-precision"]', 'unknown')
       .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('UNKNOWN');
   },

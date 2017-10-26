@@ -1,6 +1,14 @@
 import moment from 'moment';
 
-class OnsetUtil {
+const PrecisionOptions = {
+  ONAT: 'on/at',
+  ABOUT: 'about',
+  BEFORE: 'before',
+  AFTER: 'after',
+  UNKNOWN: 'unknown',
+};
+
+class OnsetUtils {
 
   /*
    * Create object to pass to SelectField for month options
@@ -130,20 +138,20 @@ class OnsetUtil {
 
     for (let i = 0; i < precisionSet.length; i += 1) {
       switch (precisionSet[i]) {
-        case 'ON/AT':
-          precisions.push({ value: 'ON/AT', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionOnAt' }) });
+        case PrecisionOptions.ONAT:
+          precisions.push({ value: PrecisionOptions.ONAT, display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionOnAt' }) });
           break;
-        case 'ABOUT':
-          precisions.push({ value: 'ABOUT', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) });
+        case PrecisionOptions.ABOUT:
+          precisions.push({ value: PrecisionOptions.ABOUT, display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAbout' }) });
           break;
-        case 'BEFORE':
-          precisions.push({ value: 'BEFORE', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) });
+        case PrecisionOptions.BEFORE:
+          precisions.push({ value: PrecisionOptions.BEFORE, display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionBefore' }) });
           break;
-        case 'AFTER':
-          precisions.push({ value: 'AFTER', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) });
+        case PrecisionOptions.AFTER:
+          precisions.push({ value: PrecisionOptions.AFTER, display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionAfter' }) });
           break;
-        case 'UNKNOWN':
-          precisions.push({ value: 'UNKNOWN', display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) });
+        case PrecisionOptions.UNKNOWN:
+          precisions.push({ value: PrecisionOptions.UNKNOWN, display: intl.formatMessage({ id: 'Terra.onsetPicker.precisionUnknown' }) });
           break;
         default:
           break;
@@ -153,4 +161,6 @@ class OnsetUtil {
   }
 }
 
-export default OnsetUtil;
+OnsetUtils.PrecisionOptions = PrecisionOptions;
+
+export default OnsetUtils;

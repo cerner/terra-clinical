@@ -8,7 +8,7 @@ class ControlledOnsetExample extends React.Component {
     super(props);
 
     this.state = {
-      precision: 'BEFORE',
+      precision: OnsetPicker.PrecisionOptions.BEFORE,
       granularity: 'YEAR',
       onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
     };
@@ -52,7 +52,12 @@ class ControlledOnsetExample extends React.Component {
           granularitySelectName="doogs-supplied-granularity"
           granularitySelectOnChange={this.handleGranularity}
           precision={this.state.precision}
-          precisionSet={['UNKNOWN', 'AFTER', 'BEFORE', 'ON/AT']}
+          precisionSet={[
+            OnsetPicker.PrecisionOptions.UNKNOWN,
+            OnsetPicker.PrecisionOptions.AFTER,
+            OnsetPicker.PrecisionOptions.BEFORE,
+            OnsetPicker.PrecisionOptions.ONAT,
+          ]}
           precisionSelectName="doogs-supplied-precision"
           precisionSelectOnChange={this.handlePrecision}
           onsetDate={this.state.onsetDate}

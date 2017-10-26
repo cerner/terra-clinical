@@ -7,7 +7,7 @@ import Fieldset from 'terra-form/lib/Fieldset';
 import NumberField from 'terra-form/lib/NumberField';
 import DatePicker from 'terra-date-picker';
 import SelectField from 'terra-form/lib/SelectField';
-import OnsetUtil from './OnsetUtil';
+import OnsetUtils from './OnsetUtils';
 
 const propTypes = {
   /**
@@ -33,16 +33,29 @@ const propTypes = {
   granularitySelectOnChange: PropTypes.func,
 
   /**
-   * The precision of the onset date. This value should be in the set of precisions passed to the precisionSet prop.
+   * The precision of the onset date. This should be one of precisions passed to the precisionSet prop.
    */
-  precision: PropTypes.oneOf(['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN']),
+  precision: PropTypes.oneOf([
+    OnsetUtils.PrecisionOptions.ONAT,
+    OnsetUtils.PrecisionOptions.ABOUT,
+    OnsetUtils.PrecisionOptions.BEFORE,
+    OnsetUtils.PrecisionOptions.AFTER,
+    OnsetUtils.PrecisionOptions.UNKNOWN,
+  ]),
 
   /**
    * The set of precisions that can be used with the onset picker.
-   * Can be from the set of precisions ON/AT, ABOUT, BEFORE, AFTER, and UNKNOWN.
+   * One of OnsetPicker.PrecisionOptions.ONAT, OnsetPicker.PrecisionOptions.ABOUT, OnsetPicker.PrecisionOptions.BEFORE,
+   * OnsetPicker.PrecisionOption.AFTER, OnsetPicker.PrecisionOptions.UNKNOWN.
    * Order of precisions determines order in precision select.
    */
-  precisionSet: PropTypes.arrayOf(PropTypes.oneOf(['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'])),
+  precisionSet: PropTypes.arrayOf(PropTypes.oneOf([
+    OnsetUtils.PrecisionOptions.ONAT,
+    OnsetUtils.PrecisionOptions.ABOUT,
+    OnsetUtils.PrecisionOptions.BEFORE,
+    OnsetUtils.PrecisionOptions.AFTER,
+    OnsetUtils.PrecisionOptions.UNKNOWN,
+  ])),
 
   /**
    * Name of the precision select. The name should be unique.
@@ -77,8 +90,14 @@ const defaultProps = {
   granularity: 'MONTH',
   granularitySelectName: undefined,
   granularitySelectOnChange: undefined,
-  precision: 'ON/AT',
-  precisionSet: ['ON/AT', 'ABOUT', 'BEFORE', 'AFTER', 'UNKNOWN'],
+  precision: 'on/at',
+  precisionSet: [
+    'on/at',
+    'about',
+    'before',
+    'after',
+    'unknown',
+  ],
   precisionSelectName: undefined,
   precisionSelectOnChange: undefined,
   onsetDate: undefined,
@@ -100,16 +119,6 @@ class OnsetPicker extends React.Component {
   constructor(props) {
     super(props);
 
-    const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.props.onsetDate);
-
-    this.state = {
-      granularity: this.props.granularity,
-      precision: this.props.precision,
-      onsetDate: this.props.onsetDate ? this.props.onsetDate : moment(),
-      age: ageValues.age,
-      ageUnit: ageValues.ageUnit,
-    };
-
     // This binding is necessary to make `this` work in the callback
     this.changeGranularity = this.changeGranularity.bind(this);
     this.changePrecision = this.changePrecision.bind(this);
@@ -118,6 +127,16 @@ class OnsetPicker extends React.Component {
     this.changeYear = this.changeYear.bind(this);
     this.changeMonth = this.changeMonth.bind(this);
     this.changeDate = this.changeDate.bind(this);
+
+    const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, this.props.onsetDate);
+
+    this.state = {
+      granularity: this.props.granularity,
+      precision: this.props.precision,
+      onsetDate: this.props.onsetDate ? this.props.onsetDate : moment(),
+      age: ageValues.age,
+      ageUnit: ageValues.ageUnit,
+    };
   }
 
   /*
@@ -125,7 +144,7 @@ class OnsetPicker extends React.Component {
    */
   changeGranularity(event) {
     if (event.target.value === 'AGE') { // Calculate age values and update onsetDate to match age calculation
-      const ageValues = OnsetUtil.onsetToAge(this.props.birthdate, this.state.onsetDate);
+      const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, this.state.onsetDate);
       const newDate = moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit);
 
       this.setState({
@@ -194,7 +213,7 @@ class OnsetPicker extends React.Component {
    */
   changeYear(event) {
     let newDate = moment(this.state.onsetDate).year(event.target.value);
-    const newMonths = OnsetUtil.allowedMonths(this.context.intl, this.props.birthdate, newDate);
+    const newMonths = OnsetUtils.allowedMonths(this.context.intl, this.props.birthdate, newDate);
 
     // Check if new onset month is available, otherwise change month to first possible month
     if (newMonths.filter(month => parseInt(month.value, 10) === newDate.month()).length === 0) {
@@ -255,7 +274,7 @@ class OnsetPicker extends React.Component {
     const intl = this.context.intl;
 
     let granularitySelect = null;
-    if (this.state.precision !== 'UNKNOWN') {
+    if (this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) {
       granularitySelect = (<SelectField
         options={[{ value: 'AGE', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
                   { value: 'YEAR', display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
@@ -274,7 +293,7 @@ class OnsetPicker extends React.Component {
       ageSelect = (<NumberField
         data-terra-clinical-onset-picker="age"
         min={0}
-        max={OnsetUtil.allowedAge(this.props.birthdate, this.state.ageUnit)}
+        max={OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit)}
         step={1}
         value={this.state.age}
         onChange={this.changeAge}
@@ -283,7 +302,7 @@ class OnsetPicker extends React.Component {
 
       ageUnitSelect = (<SelectField
         data-terra-clinical-onset-picker="age_unit"
-        options={OnsetUtil.allowedAgeUnits(this.props.birthdate)}
+        options={OnsetUtils.allowedAgeUnits(this.props.birthdate)}
         defaultValue={this.state.ageUnit.toString()}
         onChange={this.changeAgeUnit}
         isInline
@@ -294,7 +313,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'MONTH') {
       monthSelect = (<SelectField
         data-terra-clinical-onset-picker="month"
-        options={OnsetUtil.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
+        options={OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
         defaultValue={moment(this.state.onsetDate).month().toString()}
         onChange={this.changeMonth}
         isInline
@@ -305,7 +324,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === 'YEAR' || this.state.granularity === 'MONTH') {
       yearSelect = (<SelectField
         data-terra-clinical-onset-picker="year"
-        options={OnsetUtil.allowedYears(this.props.birthdate)}
+        options={OnsetUtils.allowedYears(this.props.birthdate)}
         defaultValue={moment(this.state.onsetDate).year().toString()}
         onChange={this.changeYear}
         isInline
@@ -331,7 +350,7 @@ class OnsetPicker extends React.Component {
         <Fieldset>
           {/* Precision */}
           <SelectField
-            options={OnsetUtil.allowedPrecisions(intl, this.props.precisionSet)}
+            options={OnsetUtils.allowedPrecisions(intl, this.props.precisionSet)}
             name={this.props.precisionSelectName}
             defaultValue={this.state.precision}
             onChange={this.changePrecision}
@@ -341,7 +360,7 @@ class OnsetPicker extends React.Component {
           {granularitySelect}
         </Fieldset>
 
-        {(this.state.precision !== 'UNKNOWN') &&
+        {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) &&
           <Fieldset>
             {ageSelect}
             {ageUnitSelect}
@@ -358,5 +377,6 @@ class OnsetPicker extends React.Component {
 OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
 OnsetPicker.contextTypes = contextTypes;
+OnsetPicker.PrecisionOptions = OnsetUtils.PrecisionOptions;
 
 export default OnsetPicker;

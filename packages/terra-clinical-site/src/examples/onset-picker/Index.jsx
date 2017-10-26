@@ -24,8 +24,8 @@ const OnsetExamples = () => (
     <h2 id="supplied">Controlled onset picker with supplied data</h2>
     <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
     <p>Onset date: {moment().subtract(2, 'years').format('YYYY-MM-DD')}</p>
-    <p>Precision set: UNKNOWN, AFTER, BEFORE, ON/AT</p>
-    <p>Precision: BEFORE</p>
+    <p>Precision set: unknown, after, before, on/at</p>
+    <p>Precision: before</p>
     <p>Granularity: YEAR</p>
     <ControlledOnset />
   </div>
