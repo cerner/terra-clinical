@@ -13,7 +13,7 @@ class Controlled extends React.Component {
     moment.now = () => new Date(2016, 8, 20);
 
     this.state = {
-      precision: 'BEFORE',
+      precision: 'before',
       granularity: 'YEAR',
       onsetDate: moment('2013-02-14'),
     };

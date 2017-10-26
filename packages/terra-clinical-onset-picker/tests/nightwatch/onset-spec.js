@@ -13,7 +13,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   // Unknown precision
-  'Displays no additional options when UNKNOWN precision selected': (browser) => {
+  'Displays no additional options when unknown precision selected': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/onset-picker/default`)
       .setValue('select[name="test-precision"]', 'unknown')
@@ -188,7 +188,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-precision"]', 'unknown')
       .click('button[type="submit"]')
-      .expect.element('[data-test-json="true"]').text.to.contain('UNKNOWN');
+      .expect.element('[data-test-json="true"]').text.to.contain('unknown');
   },
 
   'When granularity is changed an event is fired to the granularitySelectOnChange callback': (browser) => {
@@ -222,18 +222,20 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
-      .clearValue('[data-terra-clinical-onset-picker="age"] input') // CLEAR FIRST, SET VALUE APPENDS THE NEW VALUE
+      .clearValue('[data-terra-clinical-onset-picker="age"] input') // CLEAR FIRST, SET VALUE APPENDS NEW VALUE
       .setValue('[data-terra-clinical-onset-picker="age"] input', 4)
       .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('2015-09-20');
   },
 
-  'When onsetDate is change by the ageUnit select an event is fired to the onsetDateInputOnChange callback': (browser) => {
+  'When onsetDate is changed by the ageUnit select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
       .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
       .setValue('select[name="test-granularity"]', 'AGE')
-      .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years') // Switching age unit resets to 1
+      .clearValue('[data-terra-clinical-onset-picker="age"] input') // CLEAR FIRST, SET VALUE APPENDS NEW VALUE
+      .setValue('[data-terra-clinical-onset-picker="age"] input', 4)
+      .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
       .click('button[type="submit"]')
-      .expect.element('[data-test-json="true"]').text.to.contain('2012-09-20');
+      .expect.element('[data-test-json="true"]').text.to.contain('2015-09-20');
   },
 });

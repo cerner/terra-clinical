@@ -13,7 +13,7 @@ export default class LessYear extends React.Component {
     moment.now = () => new Date(2016, 8, 20);
 
     this.state = {
-      precision: 'ON/AT',
+      precision: 'on/at',
       granularity: 'MONTH',
       onsetDate: moment(),
     };

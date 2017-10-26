@@ -195,10 +195,9 @@ class OnsetPicker extends React.Component {
    * Change state for duration when using age granularity, and update onset date
    */
   changeAgeUnit(event) {
-    const newDate = moment(this.props.birthdate).add(1, event.target.value);
+    const newDate = moment(this.props.birthdate).add(this.state.age, event.target.value);
 
     this.setState({
-      age: 1,
       ageUnit: event.target.value,
       onsetDate: newDate,
     });
@@ -295,7 +294,7 @@ class OnsetPicker extends React.Component {
         min={0}
         max={OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit)}
         step={1}
-        value={this.state.age}
+        defaultValue={this.state.age}
         onChange={this.changeAge}
         isInline
       />);
