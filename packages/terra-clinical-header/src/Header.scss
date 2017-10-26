@@ -49,8 +49,8 @@
     text-overflow: ellipsis;
     white-space: normal;
     width: 100%;
-    word-break: normal;
-    word-wrap: normal;
+    word-break: break-word;
+    word-wrap: break-word;
   }
 
   .flex-subheader {
