@@ -1,16 +1,26 @@
 import React from 'react';
-import DefaultItemCollection from './DefaultItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
+import item from './Item';
 
 const DividedList = () => (
-  <DefaultItemCollection listStyles={{ isDivided: true, hasChevrons: false }} />
+  <ItemCollection
+    listStyles={{ isDivided: true, hasChevrons: false }}
+    rows={[item, item, item]}
+  />
 );
 
 const ChevronList = () => (
-  <DefaultItemCollection listStyles={{ isDivided: false, hasChevrons: true }} />
+  <ItemCollection
+    listStyles={{ isDivided: false, hasChevrons: true }}
+    rows={[item, item, item]}
+  />
 );
 
 const AllStylesList = () => (
-  <DefaultItemCollection listStyles={{ isDivided: true, hasChevrons: true }} />
+  <ItemCollection
+    listStyles={{ isDivided: true, hasChevrons: true }}
+    rows={[item, item, item]}
+  />
 );
 
 const ListStyles = () => (

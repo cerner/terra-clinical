@@ -1,13 +1,8 @@
 import React from 'react';
-import ItemCollection from '../../../../lib/ItemCollection';
-import item from '../Item';
+import DefaultItemCollection from '../DefaultItemCollection';
 
 const TinyBreakpointItemCollection = () => (
-  <ItemCollection
-    breakpoint="tiny"
-    rows={[item, item, item]}
-    id="ItemCollection"
-  />
+  <DefaultItemCollection breakpoint="tiny" id="ItemCollection" />
 );
 
 export default TinyBreakpointItemCollection;

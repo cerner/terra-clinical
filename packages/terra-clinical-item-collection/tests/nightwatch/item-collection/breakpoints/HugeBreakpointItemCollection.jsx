@@ -1,13 +1,8 @@
 import React from 'react';
-import ItemCollection from '../../../../lib/ItemCollection';
-import item from '../Item';
+import DefaultItemCollection from '../DefaultItemCollection';
 
 const HugeBreakpointItemCollection = () => (
-  <ItemCollection
-    breakpoint="huge"
-    rows={[item, item, item]}
-    id="ItemCollection"
-  />
+  <DefaultItemCollection breakpoint="huge" id="ItemCollection" />
 );
 
 export default HugeBreakpointItemCollection;

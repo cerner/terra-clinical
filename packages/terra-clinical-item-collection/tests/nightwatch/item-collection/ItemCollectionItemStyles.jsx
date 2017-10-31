@@ -1,20 +1,52 @@
 import React from 'react';
-import ItemCollection from '../../../lib/ItemCollection';
-import item from './Item';
+import ItemCollection from '../../../src/ItemCollection';
 
-const itemOneColumn = { ...item, itemStyles: { layout: 'oneColumn' } };
-const itemTwoColumn = { ...item, itemStyles: { layout: 'twoColumns' } };
+const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, commentRequired: true, endAccessoryRequired: true };
+
+const oneColumnItem = (
+  <ItemCollection.Item
+    startAccessory={<p>S</p>}
+    comment={<ItemCollection.Comment text="test comment" />}
+    endAccessory={<p>E</p>}
+    itemStyles={{ layout: 'oneColumn' }}
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+    <ItemCollection.Display text="Display 4" />
+    <ItemCollection.Display text="Display 5" />
+  </ItemCollection.Item>
+);
+
+const twoColumnItem = (
+  <ItemCollection.Item
+    startAccessory={<p>S</p>}
+    comment={<ItemCollection.Comment text="test comment" />}
+    endAccessory={<p>E</p>}
+    itemStyles={{ layout: 'twoColumns' }}
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+    <ItemCollection.Display text="Display 4" />
+    <ItemCollection.Display text="Display 5" />
+  </ItemCollection.Item>
+);
 
 const OneColumnDisplay = () => (
-  <ItemCollection
-    rows={[itemOneColumn, itemOneColumn, itemOneColumn, itemOneColumn]}
-  />
+  <ItemCollection id="ItemCollection" requiredElements={requiredElements}>
+    {oneColumnItem}
+    {oneColumnItem}
+    {oneColumnItem}
+  </ItemCollection>
 );
 
 const TwoColumnDisplay = () => (
-  <ItemCollection
-    rows={[itemTwoColumn, itemTwoColumn, itemTwoColumn, itemTwoColumn]}
-  />
+  <ItemCollection id="ItemCollection" requiredElements={requiredElements}>
+    {twoColumnItem}
+    {twoColumnItem}
+    {twoColumnItem}
+  </ItemCollection>
 );
 
 const ItemStyles = () => (

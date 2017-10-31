@@ -1,16 +1,26 @@
 import React from 'react';
-import DefaultItemCollection from './DefaultItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
+import item from './Item';
 
 const PaddedTable = () => (
-  <DefaultItemCollection tableStyles={{ isPadded: true, isStriped: false }} />
+  <ItemCollection
+    tableStyles={{ isPadded: true, isStriped: false }}
+    rows={[item, item, item, item]}
+  />
 );
 
 const StrippedTable = () => (
-  <DefaultItemCollection tableStyles={{ isPadded: false, isStriped: true }} />
+  <ItemCollection
+    tableStyles={{ isPadded: false, isStriped: true }}
+    rows={[item, item, item, item]}
+  />
 );
 
 const AllStylesTable = () => (
-  <DefaultItemCollection tableStyles={{ isPadded: true, isStriped: true }} />
+  <ItemCollection
+    tableStyles={{ isPadded: true, isStriped: true }}
+    rows={[item, item, item, item]}
+  />
 );
 
 const TableStyles = () => (

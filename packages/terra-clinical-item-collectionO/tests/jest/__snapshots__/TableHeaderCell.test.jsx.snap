@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render accessory, comment and display table headers 1`] = `
+<thead
+  style="visibility:hidden;"
+>
+  <tr>
+    <th
+      class="column-accessory"
+      id="accessory"
+    />
+    <th
+      data-terra-clinical-item-collection-column="comment"
+      id="comment"
+    />
+    <th
+      data-terra-clinical-item-collection-column="display"
+      id="display"
+    />
+  </tr>
+</thead>
+`;

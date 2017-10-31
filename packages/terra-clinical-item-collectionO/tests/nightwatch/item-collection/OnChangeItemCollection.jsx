@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemView from 'terra-clinical-item-view';
-import DefaultItemCollection from './DefaultItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
+import item from './Item';
 
 const selectedItem = {
   startAccessory: <p>S</p>,
@@ -27,8 +28,10 @@ class OnChangeItemCollection extends React.Component {
         <div id="selected-index">
           <h3>Selected Item: {this.state.selectedIndex}</h3>
         </div>
-        <DefaultItemCollection
+        <ItemCollection
+          rows={[item, item, selectedItem, item]}
           onChange={this.handleSelection}
+          id="ItemCollection"
         />
       </div>
     );
