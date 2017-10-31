@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ItemView from 'terra-clinical-item-view';
-import SingleSelectList from 'terra-list/lib/SingleSelectList';
+import List from 'terra-list';
 import Table from 'terra-table';
 import 'terra-base/lib/baseStyles';
 import styles from './ItemCollection.scss';
@@ -58,39 +58,29 @@ function createListItem(elements, itemIndex, itemStyles) {
   );
 
   return (
-    <SingleSelectList.Item key={itemIndex} content={listItemContent} {...listItemProps} />
+    <List.Item key={itemIndex} content={listItemContent} {...listItemProps} />
   );
 }
 
 function createTableCell(content, keyValue, contentType) {
-  const cellContent = content != null ? content : ' ';
-  if (contentType === 'accessory') {
-    return (<Table.Cell content={cellContent} key={keyValue} className={cx(`content-${contentType}`)} />);
-  }
-  return (<Table.Cell content={cellContent} key={keyValue} data-terra-clinical-item-collection-content={`${contentType}`} />);
+  return (<Table.Cell content={content} key={keyValue} className={cx(`content-${contentType}`)} />);
 }
 
 function createTableRow(elements, itemIndex) {
   const { startAccessory, children, comment, endAccessory, ...tableRowProps } = elements;
 
-  const startAccessoryContent = createTableCell(startAccessory, 'start_accessory', 'accessory');
-
-  const displays = children;
   let displayContent = [];
-  displayContent = React.Children.map(displays, (display, index) => {
+  displayContent = React.Children.map(children, (display, index) => {
     const displayKey = `display_${index + 1}`;
     return createTableCell(display, displayKey, 'display');
   });
 
-  const commentContent = createTableCell(comment, 'comment', 'comment');
-  const endAccessoryContent = createTableCell(endAccessory, 'end_accessory', 'accessory');
-
   return (
     <Table.Row {...tableRowProps} key={itemIndex}>
-      {startAccessoryContent}
+      {startAccessory && createTableCell(startAccessory, 'start_accessory', 'accessory')}
       {displayContent}
-      {commentContent}
-      {endAccessoryContent}
+      {comment && createTableCell(comment, 'comment', 'comment')}
+      {endAccessory && createTableCell(endAccessory, 'end_accessory', 'accessory')}
     </Table.Row>
   );
 }

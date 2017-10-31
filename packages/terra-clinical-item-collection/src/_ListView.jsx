@@ -18,7 +18,8 @@ const propTypes = {
     hasChevrons: PropTypes.bool,
   }),
   /**
-   * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to maintain the provided layout.
+   * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to
+   * maintain the provided layout.
    */
   requiredElements: PropTypes.shape({
     startAccessory: PropTypes.bool,

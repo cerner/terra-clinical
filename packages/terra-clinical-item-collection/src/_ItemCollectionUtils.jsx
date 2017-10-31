@@ -1,3 +1,4 @@
+import React from 'react';
 
 const maxDisplays = 8;
 
@@ -11,28 +12,23 @@ const maxDisplays = 8;
 function addAnyMissingListElements(childElements, requiredElements) {
   const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
+  const itemViewPieces = {};
 
-  const startAccessoryContent = {};
-  if (startAccessoryRequired) {
-    startAccessoryContent.startAccessory = startAccessory;
-    startAccessoryContent.hasStartAccessory = startAccessory === true;
-  }
+  itemViewPieces.startAccessory = startAccessoryRequired ? startAccessory : null;
+  itemViewPieces.hasStartAccessory = startAccessoryRequired;
 
   let displayContent;
   if (displaysRequired) {
     const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
     displayContent = children ? children.slice(0, numberOfDisplays) : null;
   }
+  itemViewPieces.children = displayContent;
 
-  const commentContent = commentRequired ? comment : null;
+  itemViewPieces.comment = commentRequired ? comment : null;
+  itemViewPieces.endAccessory = endAccessoryRequired ? endAccessory : null;
+  itemViewPieces.hasEndAccessory = endAccessoryRequired;
 
-  const endAccessoryContent = {};
-  if (endAccessoryRequired) {
-    startAccessoryContent.endAccessory = endAccessory;
-    startAccessoryContent.hasEndAccessory = endAccessory === true;
-  }
-
-  return { ...startAccessoryContent, children: displayContent, comment: commentContent, ...endAccessoryContent };
+  return itemViewPieces;
 }
 
 /**
@@ -45,10 +41,13 @@ function addAnyMissingListElements(childElements, requiredElements) {
 function addAnyMissingTableElements(childElements, requiredElements) {
   const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
+  const tableRowPieces = {};
 
-  let startAccessoryContent;
   if (startAccessoryRequired) {
-    startAccessoryContent = startAccessory;
+    tableRowPieces.startAccessory = <div />;
+    if (startAccessory) {
+      tableRowPieces.startAccessory = startAccessory;
+    }
   }
 
   let displayContent = [];
@@ -56,21 +55,26 @@ function addAnyMissingTableElements(childElements, requiredElements) {
     const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
     displayContent = children ? children.slice(0, numberOfDisplays) : null;
     while (displayContent.length < numberOfDisplays) {
-      displayContent.push(null);
+      displayContent.push(<div />);
+    }
+  }
+  tableRowPieces.children = displayContent;
+
+  if (commentRequired) {
+    tableRowPieces.comment = <div />;
+    if (comment) {
+      tableRowPieces.comment = comment;
     }
   }
 
-  let commentContent;
-  if (commentRequired) {
-    commentContent = comment;
-  }
-
-  let endAccessoryContent;
   if (endAccessoryRequired) {
-    endAccessoryContent = endAccessory;
+    tableRowPieces.endAccessory = <div />;
+    if (endAccessory) {
+      tableRowPieces.endAccessory = endAccessory;
+    }
   }
 
-  return { startAccessory: startAccessoryContent, children: displayContent, comment: commentContent, endAccessory: endAccessoryContent };
+  return tableRowPieces;
 }
 
 /**
