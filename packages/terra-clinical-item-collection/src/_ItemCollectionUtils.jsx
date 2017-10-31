@@ -1,5 +1,3 @@
-import React from 'react';
-import styles from './ItemCollection.scss';
 
 const maxDisplays = 8;
 
@@ -50,33 +48,26 @@ function addAnyMissingTableElements(childElements, requiredElements) {
 
   let startAccessoryContent;
   if (startAccessoryRequired) {
-    startAccessoryContent = <div className={styles['table-accessory']}>{startAccessory}</div>;
+    startAccessoryContent = startAccessory;
   }
 
   let displayContent = [];
   if (displaysRequired) {
     const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
-    displayContent = React.Children.map(children, (display, index) => {
-      if (index < numberOfDisplays) {
-        return <div className={styles['table-display']}>{display}</div>;
-      }
-      return null;
-    });
-    // Ensure the correct number to table cells are created if the number of displays provided are fewer than
-    // than the display columns expected.
+    displayContent = children ? children.slice(0, numberOfDisplays) : null;
     while (displayContent.length < numberOfDisplays) {
-      displayContent.push(<div className={styles['table-display']} />);
+      displayContent.push(null);
     }
   }
 
   let commentContent;
   if (commentRequired) {
-    commentContent = <div className={styles['table-comment']}>{comment}</div>;
+    commentContent = comment;
   }
 
   let endAccessoryContent;
   if (endAccessoryRequired) {
-    endAccessoryContent = <div className={styles['table-accessory']}>{endAccessory}</div>;
+    endAccessoryContent = endAccessory;
   }
 
   return { startAccessory: startAccessoryContent, children: displayContent, comment: commentContent, endAccessory: endAccessoryContent };

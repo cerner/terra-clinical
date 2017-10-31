@@ -19,10 +19,6 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * A callback event that will be triggered when selection state changes.
-   */
-  onChange: PropTypes.func,
-  /**
    * The styles to spread to the list. List style options are isDivided and hasChevrons.
    */
   listStyles: PropTypes.shape({
@@ -49,43 +45,28 @@ const propTypes = {
 
 const defaultProps = {
   breakpoint: 'small',
-  onChange: undefined,
   listStyles: undefined,
   tableStyles: undefined,
   requiredElements: { startAccessoryRequired: true, displaysRequired: 8, commentRequired: true, endAccessoryRequired: true },
 };
 
-class ItemCollection extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleOnChange = this.handleOnChange.bind(this);
-  }
+const ItemCollection = (props) => {
+  const { children, breakpoint, requiredElements, listStyles, tableStyles } = props;
 
-  handleOnChange(event, selectedIndex) {
-    this.setState({ selectedIndex });
-    if (this.props.onChange) {
-      this.props.onChange(event);
-    }
-  }
+  const listDisplay = (<ListView listStyles={listStyles} requiredElements={requiredElements}>{children}</ListView>);
+  const tableDisplay = (<TableView tableStyles={tableStyles} requiredElements={requiredElements}>{children}</TableView>);
 
-  render() {
-    const { children, breakpoint, requiredElements, listStyles, tableStyles } = this.props;
+  const breakpointDisplay = {};
+  breakpointDisplay[breakpoint] = tableDisplay;
 
-    const listDisplay = (<ListView onChange={this.handleOnChange} listStyles={listStyles} requiredElements={requiredElements}>{children}</ListView>);
-    const tableDisplay = (<TableView onChange={this.handleOnChange} tableStyles={tableStyles} requiredElements={requiredElements}>{children}</TableView>);
-
-    const breakpointDisplay = {};
-    breakpointDisplay[breakpoint] = tableDisplay;
-
-    return (
-      <ResponsiveElement
-        responsiveTo="parent"
-        defaultElement={listDisplay}
-        {...breakpointDisplay}
-      />
-    );
-  }
-}
+  return (
+    <ResponsiveElement
+      responsiveTo="parent"
+      defaultElement={listDisplay}
+      {...breakpointDisplay}
+    />
+  );
+};
 
 ItemCollection.propTypes = propTypes;
 ItemCollection.defaultProps = defaultProps;

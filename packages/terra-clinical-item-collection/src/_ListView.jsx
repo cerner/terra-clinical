@@ -11,10 +11,6 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * A callback event that will be triggered when selection state changes.
-   */
-  onChange: PropTypes.func,
-  /**
    * The styles to spread to the list. List style options are isDivided and hasChevrons.
    */
   listStyles: PropTypes.shape({
@@ -35,7 +31,7 @@ const propTypes = {
 function createListItems(children, requiredElements) {
   return React.Children.map(children, (child, index) => {
     if (child.type === Item) {
-      const itemViewPieces = requiredElements ? Utils.addAnyMissingListElements(child.props, requiredElements) : { children: child.props.children };
+      const itemViewPieces = Utils.addAnyMissingListElements(child.props, requiredElements);
       return React.cloneElement(child, { view: 'list', index, ...itemViewPieces });
     }
 
@@ -47,11 +43,11 @@ function createListItems(children, requiredElements) {
   });
 }
 
-const ListView = ({ children, onChange, listStyles, requiredElements }) => {
+const ListView = ({ children, listStyles, requiredElements }) => {
   const listItems = createListItems(children, requiredElements);
 
   return (
-    <List {...listStyles} onChange={onChange}>
+    <List {...listStyles}>
       {listItems}
     </List>
   );

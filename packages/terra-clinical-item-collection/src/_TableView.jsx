@@ -11,10 +11,6 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * A callback event that will be triggered when selection state changes.
-   */
-  onChange: PropTypes.func,
-  /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
    */
   tableStyles: PropTypes.shape({
@@ -33,8 +29,8 @@ const propTypes = {
 };
 
 function createTableHeader(header, requiredElements) {
-  const numberOfCols = Utils.numberOfElements(requiredElements);
-  return React.cloneElement(header, { view: 'table', colSpan: numberOfCols });
+  const numberOfColumns = Utils.numberOfElements(requiredElements);
+  return React.cloneElement(header, { view: 'table', colSpan: numberOfColumns });
 }
 
 function createTableRows(children, requiredElements) {
@@ -45,15 +41,14 @@ function createTableRows(children, requiredElements) {
     }
 
     if (child.type === Header) {
-      // const numberOfCols = Utils.numberOfElements(requiredElements);
-      // return React.cloneElement(child, { view: 'table', colSpan: numberOfCols });
       return createTableHeader(child, requiredElements);
     }
+
     return child;
   });
 }
 
-const TableView = ({ children, onChange, tableStyles, requiredElements }) => {
+const TableView = ({ children, tableStyles, requiredElements }) => {
   let tableHeader;
   let tableRows;
 
@@ -65,11 +60,10 @@ const TableView = ({ children, onChange, tableStyles, requiredElements }) => {
     tableRows = createTableRows(children, requiredElements);
   }
 
-
   return (
     <Table style={{ tableLayout: 'fixed' }} {...tableStyles} >
       {tableHeader}
-      <Table.Rows onChange={onChange}>
+      <Table.Rows>
         {tableRows}
       </Table.Rows>
     </Table>
