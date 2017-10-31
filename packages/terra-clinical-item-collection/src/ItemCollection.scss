@@ -8,4 +8,9 @@
     vertical-align: middle !important;
     width: 40px;
   }
+
+  .content-display,
+  .content-comment {
+    word-wrap: break-word;
+  }
 }
