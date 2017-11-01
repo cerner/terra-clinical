@@ -1,5 +1,3 @@
-import React from 'react';
-
 const maxDisplays = 8;
 
 /**
@@ -44,7 +42,7 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   const tableRowPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
   if (startAccessoryRequired) {
-    tableRowPieces.startAccessory = <div />;
+    tableRowPieces.startAccessory = ' ';
     if (startAccessory) {
       tableRowPieces.startAccessory = startAccessory;
     }
@@ -55,20 +53,20 @@ function addAnyMissingTableElements(childElements, requiredElements) {
     const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
     displayContent = children ? children.slice(0, numberOfDisplays) : null;
     while (displayContent.length < numberOfDisplays) {
-      displayContent.push(<div />);
+      displayContent.push(' ');
     }
   }
   tableRowPieces.children = displayContent;
 
   if (commentRequired) {
-    tableRowPieces.comment = <div />;
+    tableRowPieces.comment = ' ';
     if (comment) {
       tableRowPieces.comment = comment;
     }
   }
 
   if (endAccessoryRequired) {
-    tableRowPieces.endAccessory = <div />;
+    tableRowPieces.endAccessory = ' ';
     if (endAccessory) {
       tableRowPieces.endAccessory = endAccessory;
     }
