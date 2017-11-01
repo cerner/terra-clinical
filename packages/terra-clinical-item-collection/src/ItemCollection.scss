@@ -1,12 +1,14 @@
 :local {
-  .column-accessory,
-  .list-accessory {
+  .table {
+    table-layout: fixed;
+  }
+
+  .accessory-column {
     width: 40px;
   }
 
   .content-accessory {
     vertical-align: middle !important;
-    width: 40px;
   }
 
   .content-display,

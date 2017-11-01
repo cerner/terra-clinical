@@ -12,7 +12,7 @@ const maxDisplays = 8;
 function addAnyMissingListElements(childElements, requiredElements) {
   const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
-  const itemViewPieces = {};
+  const itemViewPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
   itemViewPieces.startAccessory = startAccessoryRequired ? startAccessory : null;
   itemViewPieces.hasStartAccessory = startAccessoryRequired;
@@ -41,7 +41,7 @@ function addAnyMissingListElements(childElements, requiredElements) {
 function addAnyMissingTableElements(childElements, requiredElements) {
   const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
-  const tableRowPieces = {};
+  const tableRowPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
   if (startAccessoryRequired) {
     tableRowPieces.startAccessory = <div />;

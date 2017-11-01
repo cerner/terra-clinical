@@ -4,6 +4,7 @@ import Table from 'terra-table';
 import Item from './Item';
 import Header from './Header';
 import Utils from './_ItemCollectionUtils';
+import styles from './ItemCollection.scss';
 
 const propTypes = {
   /**
@@ -29,6 +30,24 @@ const propTypes = {
   }),
 };
 
+function createTableLayout(requiredElements) {
+  const displays = [];
+  if (requiredElements.displaysRequired) {
+    for (let i = 0; i < requiredElements.displaysRequired; i += 1) {
+      displays.push(<col key={i} />);
+    }
+  }
+
+  return (
+    <colgroup>
+      {requiredElements.startAccessoryRequired && <col className={styles['accessory-column']} />}
+      {displays}
+      {requiredElements.commentRequired && <col />}
+      {requiredElements.endAccessoryRequired && <col className={styles['accessory-column']} />}
+    </colgroup>
+  );
+}
+
 function createTableHeader(header, requiredElements) {
   const numberOfColumns = Utils.numberOfElements(requiredElements);
   return React.cloneElement(header, { view: 'table', colSpan: numberOfColumns });
@@ -50,6 +69,7 @@ function createTableRows(children, requiredElements) {
 }
 
 const TableView = ({ children, tableStyles, requiredElements }) => {
+  const tableLayout = createTableLayout(requiredElements);
   let tableHeader;
   let tableRows;
 
@@ -62,8 +82,9 @@ const TableView = ({ children, tableStyles, requiredElements }) => {
   }
 
   return (
-    <Table style={{ tableLayout: 'fixed' }} {...tableStyles} >
+    <Table className={styles.table} {...tableStyles} >
       {tableHeader}
+      {tableLayout}
       <Table.Rows>
         {tableRows}
       </Table.Rows>
