@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Update flex-end styling
+* Update flex-end styling 
 
 1.5.0 - (September 26, 2017)
 -----------------
