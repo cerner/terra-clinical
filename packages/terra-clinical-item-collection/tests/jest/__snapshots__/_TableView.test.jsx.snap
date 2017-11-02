@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a TableView with children 1`] = `
+<Table
+  className="table"
+  isPadded={true}
+  isStriped={true}
+>
+  <colgroup>
+    <col
+      className="accessory-column"
+    />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col
+      className="accessory-column"
+    />
+  </colgroup>
+  <TableRows>
+    <Item
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="test comment"
+        />
+      }
+      endAccessory={
+        <p>
+          E
+        </p>
+      }
+      index={0}
+      listItemStyles={Object {}}
+      startAccessory={
+        <p>
+          S
+        </p>
+      }
+      view="table"
+    >
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+       
+       
+       
+       
+       
+       
+       
+    </Item>
+  </TableRows>
+</Table>
+`;
+
+exports[`should render a TableView with table styles 1`] = `
+<Table
+  className="table"
+  isPadded={true}
+  isStriped={true}
+>
+  <colgroup>
+    <col
+      className="accessory-column"
+    />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col
+      className="accessory-column"
+    />
+  </colgroup>
+  <TableRows>
+    <Item
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="test comment"
+        />
+      }
+      endAccessory={
+        <p>
+          E
+        </p>
+      }
+      index={0}
+      listItemStyles={Object {}}
+      startAccessory={
+        <p>
+          S
+        </p>
+      }
+      view="table"
+    >
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+       
+       
+       
+       
+       
+       
+       
+    </Item>
+  </TableRows>
+</Table>
+`;
+
+exports[`should render a default TableView 1`] = `
+<Table
+  className="table"
+  isPadded={true}
+  isStriped={true}
+>
+  <colgroup>
+    <col
+      className="accessory-column"
+    />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col />
+    <col
+      className="accessory-column"
+    />
+  </colgroup>
+  <TableRows />
+</Table>
+`;

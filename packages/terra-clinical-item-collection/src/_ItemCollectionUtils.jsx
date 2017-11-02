@@ -15,10 +15,13 @@ function addAnyMissingListElements(childElements, requiredElements) {
   itemViewPieces.startAccessory = startAccessoryRequired ? startAccessory : null;
   itemViewPieces.hasStartAccessory = startAccessoryRequired;
 
-  let displayContent;
-  if (displaysRequired) {
+  let displayContent = [];
+  if (displaysRequired && displaysRequired > 0) {
     const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
-    displayContent = children ? children.slice(0, numberOfDisplays) : null;
+    if (children) {
+      // If one child element is provided, children is an obj, not an array
+      displayContent = children.length ? children.slice(0, numberOfDisplays) : children;
+    }
   }
   itemViewPieces.children = displayContent;
 
@@ -51,7 +54,9 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   let displayContent = [];
   if (displaysRequired) {
     const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
-    displayContent = children ? children.slice(0, numberOfDisplays) : null;
+    if (children) {
+      displayContent = children.length ? children.slice(0, numberOfDisplays) : [children];
+    }
     while (displayContent.length < numberOfDisplays) {
       displayContent.push(' ');
     }

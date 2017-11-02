@@ -1,31 +1,71 @@
 import React from 'react';
-import ItemView from 'terra-clinical-item-view';
 import ItemCollection from '../../src/ItemCollection';
 
-const item = {
-  startAccessory: <p>Start Accessory</p>,
-  displays: [<ItemView.Display text="Display 1" />, <ItemView.Display text="Display 2" />],
-  comment: <ItemView.Comment text="test comment" />,
-  endAccessory: <p>End Accessory</p>,
-};
-
-// Snapshot Tests
-it('should render a default component', () => {
-  const itemCollection = shallow(<ItemCollection />);
-  expect(itemCollection).toMatchSnapshot();
+it('should render a default ItemCollection', () => {
+  const itemCollection = (
+    <ItemCollection>
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display text="Display 1" />
+        <ItemCollection.Display text="Display 2" />
+        <ItemCollection.Display text="Display 3" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
 });
 
-it('should render with one row', () => {
-  const itemCollection = shallow(<ItemCollection rows={[item]} />);
-  expect(itemCollection).toMatchSnapshot();
+it('should render an ItemCollection with list styles', () => {
+  const itemCollection = (
+    <ItemCollection listStyles={{ isDivided: true, hasChevrons: true }}>
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display text="Display 1" />
+        <ItemCollection.Display text="Display 2" />
+        <ItemCollection.Display text="Display 3" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
 });
 
-it('should render with multiple rows', () => {
-  const itemCollection = shallow(<ItemCollection rows={[item, item, item]} />);
-  expect(itemCollection).toMatchSnapshot();
+it('should render an ItemCollection with table styles', () => {
+  const itemCollection = (
+    <ItemCollection tableStyles={{ isPadded: true, isStriped: true }}>
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display text="Display 1" />
+        <ItemCollection.Display text="Display 2" />
+        <ItemCollection.Display text="Display 3" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
 });
 
-it('should render with a given breakpoint', () => {
-  const itemCollection = shallow(<ItemCollection breakpoint="medium" rows={[item, item, item]} />);
-  expect(itemCollection).toMatchSnapshot();
+it('should render an ItemCollection with a breakpoint', () => {
+  const itemCollection = (
+    <ItemCollection breapoint="tiny" >
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display text="Display 1" />
+        <ItemCollection.Display text="Display 2" />
+        <ItemCollection.Display text="Display 3" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
+});
+
+it('should render an ItemCollection with requiredElements', () => {
+  const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, commentRequired: true, endAccessoryRequired: false };
+  const itemCollection = (
+    <ItemCollection requiredElements={requiredElements}>
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display text="Display 1" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
 });
