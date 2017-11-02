@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'terra-table';
 import Item from './Item';
-import Header from './Header';
 import Utils from './_ItemCollectionUtils';
 import styles from './ItemCollection.scss';
 
@@ -48,20 +47,11 @@ function createTableLayout(requiredElements) {
   );
 }
 
-function createTableHeader(header, requiredElements) {
-  const numberOfColumns = Utils.numberOfElements(requiredElements);
-  return React.cloneElement(header, { view: 'table', colSpan: numberOfColumns });
-}
-
 function createTableRows(children, requiredElements) {
   return React.Children.map(children, (child, index) => {
     if (child.type === Item) {
       const tableRowPieces = Utils.addAnyMissingTableElements(child.props, requiredElements);
       return React.cloneElement(child, { view: 'table', index, ...tableRowPieces });
-    }
-
-    if (child.type === Header) {
-      return createTableHeader(child, requiredElements);
     }
 
     return child;
@@ -70,20 +60,10 @@ function createTableRows(children, requiredElements) {
 
 const TableView = ({ children, tableStyles, requiredElements }) => {
   const tableLayout = createTableLayout(requiredElements);
-  let tableHeader;
-  let tableRows;
-
-  if (children[0].type === Header) {
-    tableHeader = createTableHeader(children[0], requiredElements);
-    const rows = React.Children.toArray(children);
-    tableRows = createTableRows(rows.splice(1, rows.length), requiredElements);
-  } else {
-    tableRows = createTableRows(children, requiredElements);
-  }
+  const tableRows = createTableRows(children, requiredElements);
 
   return (
     <Table className={styles.table} {...tableStyles} >
-      {tableHeader}
       {tableLayout}
       <Table.Rows>
         {tableRows}

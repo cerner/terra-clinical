@@ -4,7 +4,6 @@ import ResponsiveElement from 'terra-responsive-element';
 import 'terra-base/lib/baseStyles';
 
 import Item from './Item';
-import Header from './Header';
 import ListView from './_ListView';
 import TableView from './_TableView';
 import './ItemCollection.scss';
@@ -73,7 +72,6 @@ ItemCollection.defaultProps = defaultProps;
 
 // Item Collection Building Blocks
 ItemCollection.Item = Item;
-ItemCollection.Header = Header;
 ItemCollection.Comment = Item.Comment;
 ItemCollection.Display = Item.Display;
 

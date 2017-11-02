@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
 import Item from './Item';
-import Header from './Header';
 import Utils from './_ItemCollectionUtils';
 
 const propTypes = {
@@ -34,10 +33,6 @@ function createListItems(children, requiredElements) {
     if (child.type === Item) {
       const itemViewPieces = Utils.addAnyMissingListElements(child.props, requiredElements);
       return React.cloneElement(child, { view: 'list', index, ...itemViewPieces });
-    }
-
-    if (child.type === Header) {
-      return React.cloneElement(child, { view: 'list' });
     }
 
     return child;

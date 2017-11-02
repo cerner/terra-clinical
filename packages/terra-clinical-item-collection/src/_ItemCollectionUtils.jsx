@@ -75,30 +75,9 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   return tableRowPieces;
 }
 
-/**
- * Returns the total number of required elements.
- *
- * @ param {requiredElements} obj - The elements expected to be displayed.
- */
-function numberOfElements(requiredElements) {
-  const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
-
-  let elementCount = 0;
-  elementCount += startAccessoryRequired ? 1 : 0;
-  if (displaysRequired) {
-    const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
-    elementCount += numberOfDisplays;
-  }
-  elementCount += commentRequired ? 1 : 0;
-  elementCount += endAccessoryRequired ? 1 : 0;
-
-  return elementCount;
-}
-
 const ItemCollectionUtils = {
   addAnyMissingListElements,
   addAnyMissingTableElements,
-  numberOfElements,
 };
 
 export default ItemCollectionUtils;
