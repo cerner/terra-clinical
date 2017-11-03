@@ -5,7 +5,7 @@ import OnsetPicker from '../../../lib/OnsetPicker';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
-class Controlled extends React.Component {
+class FiveYears extends React.Component {
   constructor(props) {
     super(props);
 
@@ -51,9 +51,10 @@ class Controlled extends React.Component {
   render() {
     return (
       <Base locale={locale}>
-        <p>Onset picker with onChange handlers, birthdate of 2011-09-20.</p>
+        <p>Onset picker with onChange handlers, birthdate of 2011-09-20 (5 years).</p>
         <p>Current date is locked to September 20, 2016</p>
         <p>Testing returns from handlers are correct, if they are the json object should get updated on changes.</p>
+        <p>Also tests age caps for months and years.</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
             birthdate={moment('2011-09-20').format()}
@@ -75,4 +76,4 @@ class Controlled extends React.Component {
   }
 }
 
-export default Controlled;
+export default FiveYears;

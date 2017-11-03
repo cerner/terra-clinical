@@ -111,7 +111,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Cannot select number of years greater than age': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'age')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
@@ -122,7 +122,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Cannot select more than 24 months': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'age')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'months')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
@@ -144,7 +144,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Cannot select more than 8 weeks': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'age')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'weeks')
       .clearValue('[data-terra-clinical-onset-picker="age"] input')
@@ -183,7 +183,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   // onChange handlers
   'When precision is changed an event is fired to the precisionSelectOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-precision"]', 'unknown')
       .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('unknown');
@@ -191,7 +191,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'When granularity is changed an event is fired to the granularitySelectOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'age')
       .click('button[type="submit"]')
       .expect.element('[data-test-json="true"]').text.to.contain('age');
@@ -199,7 +199,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'When onsetDate is changed by the month select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'month')
       .setValue('[data-terra-clinical-onset-picker="month"] select', 'October')
       .click('button[type="submit"]')
@@ -208,7 +208,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'When onsetDate is changed by the year select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'year')
       .setValue('[data-terra-clinical-onset-picker="year"] select', 2016)
       .click('button[type="submit"]')
@@ -217,7 +217,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'When onsetDate is changed by the age input an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'age')
       .setValue('[data-terra-clinical-onset-picker="age_unit"] select', 'years')
       .clearValue('[data-terra-clinical-onset-picker="age"] input') // CLEAR FIRST, SET VALUE APPENDS NEW VALUE
@@ -228,7 +228,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'When onsetDate is changed by the ageUnit select an event is fired to the onsetDateInputOnChange callback': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/onset-picker/controlled`)
+      .url(`${browser.launchUrl}/#/tests/onset-picker/five-years`)
       .setValue('select[name="test-granularity"]', 'age')
       .clearValue('[data-terra-clinical-onset-picker="age"] input') // CLEAR FIRST, SET VALUE APPENDS NEW VALUE
       .setValue('[data-terra-clinical-onset-picker="age"] input', 4)

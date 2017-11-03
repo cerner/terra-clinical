@@ -11,7 +11,7 @@ import { version } from 'terra-clinical-onset-picker/package.json';
 
 // Example Files
 import DefaultOnset from './examples/DefaultOnset';
-import ControlledOnset from './examples/ControlledOnset';
+import HandledOnset from './examples/HandledOnset';
 
 const OnsetExamples = () => (
   <div>
@@ -22,13 +22,13 @@ const OnsetExamples = () => (
     <h2 id="default">Default with initialization</h2>
     <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
     <DefaultOnset />
-    <h2 id="supplied">Controlled onset picker with supplied data</h2>
+    <h2 id="supplied">Onset picker with supplied data and handlers</h2>
     <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
     <p>Onset date: {moment().subtract(2, 'years').format('YYYY-MM-DD')}</p>
     <p>Precision set: unknown, after, before, on/at</p>
     <p>Precision: before</p>
     <p>Granularity: YEAR</p>
-    <ControlledOnset />
+    <HandledOnset />
   </div>
 );
 

@@ -3,7 +3,7 @@ import React from 'react';
 import moment from 'moment';
 import OnsetPicker from 'terra-clinical-onset-picker/src/OnsetPicker';
 
-class ControlledOnsetExample extends React.Component {
+class HandledOnsetExample extends React.Component {
   constructor(props) {
     super(props);
 
@@ -71,4 +71,4 @@ class ControlledOnsetExample extends React.Component {
   }
 }
 
-export default ControlledOnsetExample;
+export default HandledOnsetExample;
