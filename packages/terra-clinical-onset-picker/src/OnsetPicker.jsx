@@ -45,8 +45,8 @@ const propTypes = {
 
   /**
    * The set of precisions that can be used with the onset picker.
-   * One of OnsetPicker.PrecisionOptions.ONAT, OnsetPicker.PrecisionOptions.ABOUT, OnsetPicker.PrecisionOptions.BEFORE,
-   * OnsetPicker.PrecisionOption.AFTER, OnsetPicker.PrecisionOptions.UNKNOWN.
+   * One of OnsetPicker.Opts.Precisions.ONAT, OnsetPicker.Opts.Precisions.ABOUT, OnsetPicker.Opts.Precisions.BEFORE,
+   * OnsetPicker.Opts.Precisions.AFTER, OnsetPicker.Opts.Precisions.UNKNOWN.
    * Order of precisions determines order in precision select.
    */
   precisionSet: PropTypes.arrayOf(PropTypes.oneOf([
@@ -369,6 +369,7 @@ class OnsetPicker extends React.Component {
 OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
 OnsetPicker.contextTypes = contextTypes;
-OnsetPicker.PrecisionOptions = OnsetUtils.PrecisionOptions;
+OnsetPicker.Opts = {};
+OnsetPicker.Opts.Precisions = OnsetUtils.PrecisionOptions;
 
 export default OnsetPicker;
