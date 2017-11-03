@@ -37,6 +37,8 @@ exports[`should render a TableView with children 1`] = `
         </p>
       }
       index={0}
+      isSelectable={false}
+      isSelected={false}
       listItemStyles={Object {}}
       startAccessory={
         <p>
@@ -98,6 +100,8 @@ exports[`should render a TableView with table styles 1`] = `
         </p>
       }
       index={0}
+      isSelectable={false}
+      isSelected={false}
       listItemStyles={Object {}}
       startAccessory={
         <p>

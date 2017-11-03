@@ -37,6 +37,15 @@ const propTypes = {
     accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   }),
   /**
+   * Wether or not the item is selectable. If true, the item is given list and table hover and focus styles, tabIndex
+   * set to 0, and onClick and onKeyDown callbacks set to the onSelect function provided via Item Collection.
+   */
+  isSelectable: PropTypes.bool,
+  /*
+   * Wether or not the item is selected.
+   */
+  isSelected: PropTypes.bool,
+  /**
    * The comment element to be presented.
    */
   view: PropTypes.oneOf(['list', 'table']),
@@ -47,10 +56,29 @@ const defaultProps = {
   comment: undefined,
   endAccessory: undefined,
   listItemStyles: {},
+  isSelectable: false,
+  isSelected: false,
   view: 'list',
 };
 
-function createListItem(elements, itemStyles, itemIndex) {
+function createSelectableProps(onSelect) {
+  const selectableProps = { isSelectable: true };
+  selectableProps.tabIndex = 0;
+
+  if (onSelect) {
+    selectableProps.onClick = (event) => {
+      onSelect(event);
+    };
+
+    selectableProps.onKeyDown = (event) => {
+      onSelect(event);
+    };
+  }
+
+  return selectableProps;
+}
+
+function createListItem(elements, itemIndex, selectableProps, isSelected, itemStyles) {
   const { startAccessory, children, comment, endAccessory, hasStartAccessory, hasEndAccessory, ...listItemProps } = elements;
   // hasStartAccessorySpacing={hasStartAccessory}
   // hasEndAccessorySpacing={hasEndAccessory}
@@ -66,7 +94,13 @@ function createListItem(elements, itemStyles, itemIndex) {
   );
 
   return (
-    <List.Item key={itemIndex} content={listItemContent} {...listItemProps} />
+    <List.Item
+      key={itemIndex}
+      content={listItemContent}
+      isSelected={isSelected}
+      {...selectableProps}
+      {...listItemProps}
+    />
   );
 }
 
@@ -74,7 +108,7 @@ function createTableCell(content, keyValue, contentType) {
   return (<Table.Cell content={content} key={keyValue} className={cx(`content-${contentType}`)} />);
 }
 
-function createTableRow(elements, itemIndex) {
+function createTableRow(elements, itemIndex, selectableProps, isSelected) {
   const { startAccessory, children, comment, endAccessory, ...tableRowProps } = elements;
 
 // QUESTION:
@@ -89,7 +123,7 @@ function createTableRow(elements, itemIndex) {
   });
 
   return (
-    <Table.Row {...tableRowProps} key={itemIndex}>
+    <Table.Row isSelected={isSelected} {...selectableProps} {...tableRowProps} key={itemIndex}>
       {startAccessory && createTableCell(startAccessory, 'start_accessory', 'accessory')}
       {displayContent}
       {comment && createTableCell(comment, 'comment', 'comment')}
@@ -99,15 +133,17 @@ function createTableRow(elements, itemIndex) {
 }
 
 const Item = (props) => {
-  const { listItemStyles, ...otherItemProps } = props;
+  const { view, isSelectable, isSelected, onSelect, listItemStyles, ...otherItemProps } = props;
   // The index value is set by the ListView & TableView components.
-  const { view, index, ...elements } = otherItemProps;
+  const { index, ...elements } = otherItemProps;
+
+  const selectableProps = isSelectable ? createSelectableProps(onSelect) : {};
 
   if (view === 'table') {
-    return createTableRow(elements, index);
+    return createTableRow(elements, index, selectableProps, isSelected);
   }
 
-  return createListItem(elements, listItemStyles, index);
+  return createListItem(elements, index, selectableProps, isSelected, listItemStyles);
 };
 
 Item.propTypes = propTypes;

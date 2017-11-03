@@ -24,7 +24,7 @@ it('should render a ListView with children', () => {
 
 it('should render a ListView with list styles', () => {
   const item = (
-    <ListView requiredElements={defaultRequiredElements} listStyles={{ isDivided: true, hasChevrons: true }}>
+    <ListView requiredElements={defaultRequiredElements} listStyles={{ isDivided: true }}>
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
       </ItemCollection.Item>

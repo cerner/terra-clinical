@@ -19,8 +19,7 @@ exports[`List View Tests should pass customProps to the Item 1`] = `
       textEmphasis="default"
     />
   }
-  isSelectable={true}
-  isSelected={true}
+  isSelected={false}
 />
 `;
 
@@ -187,7 +186,7 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
 <ListItem
   content={
     <ItemView
-      accessoryAlignment="alignCenter"
+      accessoryAlignment="alignTop"
       comment={
         <ItemComment
           isTruncated={false}
@@ -215,25 +214,17 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
           end
         </p>
       }
-      isTruncated={false}
-      layout="oneColumn"
+      isTruncated={true}
+      layout="twoColumns"
       startAccessory={
         <p>
           start
         </p>
       }
-      textEmphasis="default"
+      textEmphasis="start"
     />
   }
   isSelected={false}
-  itemStyles={
-    Object {
-      "accessoryAlignment": "alignTop",
-      "isTruncated": true,
-      "layout": "twoColumns",
-      "textEmphasis": "start",
-    }
-  }
 />
 `;
 
@@ -252,11 +243,130 @@ exports[`List View Tests should render a default Item 1`] = `
 />
 `;
 
+exports[`List View Tests should renders a selectable Item 1`] = `
+<TableRow
+  isSelectable={true}
+  isSelected={false}
+  tabIndex={0}
+>
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        start
+      </p>
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 2"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 3"
+      />
+    }
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+  />
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        end
+      </p>
+    }
+  />
+</TableRow>
+`;
+
+exports[`List View Tests should renders a selected Item 1`] = `
+<TableRow
+  isSelected={true}
+>
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        start
+      </p>
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 2"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 3"
+      />
+    }
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+  />
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        end
+      </p>
+    }
+  />
+</TableRow>
+`;
+
 exports[`Table View Tests should pass customProps to the Item 1`] = `
 <TableRow
   className="TableRow"
-  isSelectable={true}
-  isSelected={true}
+  isSelected={false}
 >
   <TableCell
     className="content-display"
@@ -273,14 +383,6 @@ exports[`Table View Tests should pass customProps to the Item 1`] = `
 exports[`Table View Tests should render a Item that ignores list item styles 1`] = `
 <TableRow
   isSelected={false}
-  itemStyles={
-    Object {
-      "accessoryAlignment": "alignTop",
-      "isTruncated": true,
-      "layout": "twoColumns",
-      "textEmphasis": "start",
-    }
-  }
 >
   <TableCell
     className="content-accessory"
@@ -502,6 +604,126 @@ exports[`Table View Tests should render a default Item 1`] = `
 <TableRow
   isSelected={false}
 />
+`;
+
+exports[`Table View Tests should renders a selectable Item 1`] = `
+<TableRow
+  isSelectable={true}
+  isSelected={false}
+  tabIndex={0}
+>
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        start
+      </p>
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 2"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 3"
+      />
+    }
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+  />
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        end
+      </p>
+    }
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should renders a selected Item 1`] = `
+<TableRow
+  isSelected={true}
+>
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        start
+      </p>
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 2"
+      />
+    }
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 3"
+      />
+    }
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+  />
+  <TableCell
+    className="content-accessory"
+    content={
+      <p>
+        end
+      </p>
+    }
+  />
+</TableRow>
 `;
 
 exports[`should render a default Item 1`] = `

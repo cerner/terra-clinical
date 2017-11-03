@@ -11,6 +11,10 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
+   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable.
+   */
+  onSelect: PropTypes.func,
+  /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
    */
   tableStyles: PropTypes.shape({
@@ -47,20 +51,20 @@ function createTableLayout(requiredElements) {
   );
 }
 
-function createTableRows(children, requiredElements) {
+function createTableRows(children, onSelect, requiredElements) {
   return React.Children.map(children, (child, index) => {
     if (child.type === Item) {
       const tableRowPieces = Utils.addAnyMissingTableElements(child.props, requiredElements);
-      return React.cloneElement(child, { view: 'table', index, ...tableRowPieces });
+      return React.cloneElement(child, { view: 'table', index, onSelect, ...tableRowPieces });
     }
 
     return child;
   });
 }
 
-const TableView = ({ children, tableStyles, requiredElements }) => {
+const TableView = ({ children, onSelect, tableStyles, requiredElements }) => {
   const tableLayout = createTableLayout(requiredElements);
-  const tableRows = createTableRows(children, requiredElements);
+  const tableRows = createTableRows(children, onSelect, requiredElements);
 
   return (
     <Table className={styles.table} {...tableStyles} >

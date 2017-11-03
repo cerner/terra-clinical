@@ -4,6 +4,7 @@ exports[`should render a default ItemCollection 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
+      listStyles={Object {}}
       requiredElements={
         Object {
           "commentRequired": true,
@@ -25,6 +26,8 @@ exports[`should render a default ItemCollection 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -59,6 +62,7 @@ exports[`should render a default ItemCollection 1`] = `
           "startAccessoryRequired": true,
         }
       }
+      tableStyles={Object {}}
     >
       <Item
         comment={
@@ -72,6 +76,8 @@ exports[`should render a default ItemCollection 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -102,6 +108,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
+      listStyles={Object {}}
       requiredElements={
         Object {
           "commentRequired": true,
@@ -123,6 +130,8 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -157,6 +166,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
           "startAccessoryRequired": true,
         }
       }
+      tableStyles={Object {}}
     >
       <Item
         comment={
@@ -170,6 +180,8 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -202,7 +214,6 @@ exports[`should render an ItemCollection with list styles 1`] = `
     <ListView
       listStyles={
         Object {
-          "hasChevrons": true,
           "isDivided": true,
         }
       }
@@ -227,6 +238,8 @@ exports[`should render an ItemCollection with list styles 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -261,6 +274,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
           "startAccessoryRequired": true,
         }
       }
+      tableStyles={Object {}}
     >
       <Item
         comment={
@@ -274,6 +288,8 @@ exports[`should render an ItemCollection with list styles 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -300,10 +316,101 @@ exports[`should render an ItemCollection with list styles 1`] = `
 />
 `;
 
+exports[`should render an ItemCollection with onSelect 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      listStyles={Object {}}
+      onSelect={[Function]}
+      requiredElements={
+        Object {
+          "commentRequired": true,
+          "displaysRequired": 8,
+          "endAccessoryRequired": true,
+          "startAccessoryRequired": true,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      >
+        <ItemDisplay
+          isTruncated={false}
+          text="Display 1"
+        />
+      </Item>
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      onSelect={[Function]}
+      requiredElements={
+        Object {
+          "commentRequired": true,
+          "displaysRequired": 8,
+          "endAccessoryRequired": true,
+          "startAccessoryRequired": true,
+        }
+      }
+      tableStyles={Object {}}
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      >
+        <ItemDisplay
+          isTruncated={false}
+          text="Display 1"
+        />
+      </Item>
+    </TableView>
+  }
+/>
+`;
+
 exports[`should render an ItemCollection with requiredElements 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
+      listStyles={Object {}}
       requiredElements={
         Object {
           "commentRequired": true,
@@ -325,6 +432,8 @@ exports[`should render an ItemCollection with requiredElements 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -351,6 +460,7 @@ exports[`should render an ItemCollection with requiredElements 1`] = `
           "startAccessoryRequired": true,
         }
       }
+      tableStyles={Object {}}
     >
       <Item
         comment={
@@ -364,6 +474,8 @@ exports[`should render an ItemCollection with requiredElements 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -386,6 +498,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
+      listStyles={Object {}}
       requiredElements={
         Object {
           "commentRequired": true,
@@ -407,6 +520,8 @@ exports[`should render an ItemCollection with table styles 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>
@@ -460,6 +575,8 @@ exports[`should render an ItemCollection with table styles 1`] = `
             E
           </p>
         }
+        isSelectable={false}
+        isSelected={false}
         listItemStyles={Object {}}
         startAccessory={
           <p>

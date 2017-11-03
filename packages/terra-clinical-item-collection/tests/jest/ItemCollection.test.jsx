@@ -17,7 +17,7 @@ it('should render a default ItemCollection', () => {
 
 it('should render an ItemCollection with list styles', () => {
   const itemCollection = (
-    <ItemCollection listStyles={{ isDivided: true, hasChevrons: true }}>
+    <ItemCollection listStyles={{ isDivided: true }}>
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
@@ -61,6 +61,18 @@ it('should render an ItemCollection with requiredElements', () => {
   const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, commentRequired: true, endAccessoryRequired: false };
   const itemCollection = (
     <ItemCollection requiredElements={requiredElements}>
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display text="Display 1" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
+});
+
+it('should render an ItemCollection with onSelect', () => {
+  const itemCollection = (
+    <ItemCollection onSelect={() => {}} >
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
       </ItemCollection.Item>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from '../../src/Item';
 
-const itemStyles = {
+const listItemStyles = {
   layout: 'twoColumns',
   textEmphasis: 'start',
   isTruncated: true,
@@ -95,6 +95,42 @@ describe('List View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('should renders a selectable Item', () => {
+    const item = (
+      <Item
+        view="table"
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        isSelectable
+      >
+        <Item.Display text="Display 1" />
+        <Item.Display text="Display 2" />
+        <Item.Display text="Display 3" />
+      </Item>
+    );
+    const component = shallow(item);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('should renders a selected Item', () => {
+    const item = (
+      <Item
+        view="table"
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        isSelected
+      >
+        <Item.Display text="Display 1" />
+        <Item.Display text="Display 2" />
+        <Item.Display text="Display 3" />
+      </Item>
+    );
+    const component = shallow(item);
+    expect(component).toMatchSnapshot();
+  });
+
   it('should render a Item with list item styles', () => {
     const item = (
       <Item
@@ -102,7 +138,7 @@ describe('List View Tests', () => {
         startAccessory={<p>start</p>}
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
-        itemStyles={itemStyles}
+        listItemStyles={listItemStyles}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />
@@ -117,8 +153,6 @@ describe('List View Tests', () => {
     const item = (
       <Item
         view="list"
-        isSelected
-        isSelectable
         className="ListItem"
       >
         <Item.Display text="Display 1" />
@@ -210,6 +244,43 @@ describe('Table View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('should renders a selectable Item', () => {
+    const item = (
+      <Item
+        view="table"
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        isSelectable
+      >
+        <Item.Display text="Display 1" />
+        <Item.Display text="Display 2" />
+        <Item.Display text="Display 3" />
+      </Item>
+    );
+    const component = shallow(item);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('should renders a selected Item', () => {
+    const item = (
+      <Item
+        view="table"
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        isSelected
+      >
+        <Item.Display text="Display 1" />
+        <Item.Display text="Display 2" />
+        <Item.Display text="Display 3" />
+      </Item>
+    );
+    const component = shallow(item);
+    expect(component).toMatchSnapshot();
+  });
+
+
   it('should render a Item that ignores list item styles', () => {
     const item = (
       <Item
@@ -217,7 +288,7 @@ describe('Table View Tests', () => {
         startAccessory={<p>start</p>}
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
-        itemStyles={itemStyles}
+        listItemStyles={listItemStyles}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />
@@ -232,8 +303,6 @@ describe('Table View Tests', () => {
     const item = (
       <Item
         view="table"
-        isSelected
-        isSelectable
         className="TableRow"
       >
         <Item.Display text="Display 1" />

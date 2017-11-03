@@ -18,11 +18,24 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * The styles to spread to the list. List style options are isDivided and hasChevrons.
+   * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to maintain
+   * the provided layout.
+   */
+  requiredElements: PropTypes.shape({
+    startAccessoryRequired: PropTypes.bool,
+    displaysRequired: PropTypes.Number,
+    commentRequired: PropTypes.bool,
+    endAccessoryRequired: PropTypes.bool,
+  }),
+  /**
+   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable.
+   */
+  onSelect: PropTypes.func,
+  /**
+   * The styles to spread to the list. List style options are isDivided.
    */
   listStyles: PropTypes.shape({
     isDivided: PropTypes.bool,
-    hasChevrons: PropTypes.bool,
   }),
   /**
    * The styles to spread to the table. Table style options are isPadded and isStriped.
@@ -31,29 +44,37 @@ const propTypes = {
     isPadded: PropTypes.bool,
     isStriped: PropTypes.bool,
   }),
-  /**
-   * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to maintain the provided layout.
-   */
-  requiredElements: PropTypes.shape({
-    startAccessoryRequired: PropTypes.bool,
-    displaysRequired: PropTypes.Number,
-    commentRequired: PropTypes.bool,
-    endAccessoryRequired: PropTypes.bool,
-  }),
 };
 
 const defaultProps = {
   breakpoint: 'small',
-  listStyles: undefined,
-  tableStyles: undefined,
   requiredElements: { startAccessoryRequired: true, displaysRequired: 8, commentRequired: true, endAccessoryRequired: true },
+  onSelect: undefined,
+  listStyles: {},
+  tableStyles: {},
 };
 
 const ItemCollection = (props) => {
-  const { children, breakpoint, requiredElements, listStyles, tableStyles } = props;
+  const { children, breakpoint, onSelect, requiredElements, listStyles, tableStyles } = props;
 
-  const listDisplay = (<ListView listStyles={listStyles} requiredElements={requiredElements}>{children}</ListView>);
-  const tableDisplay = (<TableView tableStyles={tableStyles} requiredElements={requiredElements}>{children}</TableView>);
+  const listDisplay = (
+    <ListView
+      requiredElements={requiredElements}
+      onSelect={onSelect}
+      listStyles={listStyles}
+    >
+      {children}
+    </ListView>
+  );
+  const tableDisplay = (
+    <TableView
+      requiredElements={requiredElements}
+      onSelect={onSelect}
+      tableStyles={tableStyles}
+    >
+      {children}
+    </TableView>
+  );
 
   const breakpointDisplay = {};
   breakpointDisplay[breakpoint] = tableDisplay;

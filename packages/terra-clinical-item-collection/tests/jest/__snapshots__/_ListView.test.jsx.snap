@@ -19,6 +19,8 @@ exports[`should render a ListView with children 1`] = `
     hasEndAccessory={true}
     hasStartAccessory={true}
     index={0}
+    isSelectable={false}
+    isSelected={false}
     listItemStyles={Object {}}
     startAccessory={
       <p>
@@ -37,7 +39,6 @@ exports[`should render a ListView with children 1`] = `
 
 exports[`should render a ListView with list styles 1`] = `
 <List
-  hasChevrons={true}
   isDivided={true}
 >
   <Item
@@ -55,6 +56,8 @@ exports[`should render a ListView with list styles 1`] = `
     hasEndAccessory={true}
     hasStartAccessory={true}
     index={0}
+    isSelectable={false}
+    isSelected={false}
     listItemStyles={Object {}}
     startAccessory={
       <p>
