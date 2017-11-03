@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+const maxWeeks = 8;
+const maxMonths = 24;
 const PrecisionOptions = {
   ONAT: 'on/at',
   ABOUT: 'about',
@@ -73,11 +75,11 @@ class OnsetUtils {
         return currentMoment.diff(birthMoment, 'years');
       case 'months': {
         const monthDiff = currentMoment.diff(birthMoment, 'months');
-        return monthDiff > 24 ? 24 : monthDiff;
+        return monthDiff > maxMonths ? maxMonths : monthDiff;
       }
       default: {
         const weekDiff = currentMoment.diff(birthMoment, 'weeks');
-        return weekDiff > 8 ? 8 : weekDiff;
+        return weekDiff > maxWeeks ? maxWeeks : weekDiff;
       }
     }
   }
@@ -117,10 +119,10 @@ class OnsetUtils {
     const onsetMoment = moment(onsetDate).startOf('day');
     let ageDiff = onsetMoment.diff(birthMoment, 'weeks');
 
-    if (ageDiff > 8) {
+    if (ageDiff > maxWeeks) {
       ageDiff = onsetMoment.diff(birthMoment, 'months');
 
-      if (ageDiff > 24) {
+      if (ageDiff > maxMonths) {
         return { age: onsetMoment.diff(birthMoment, 'years'), ageUnit: 'years' };
       }
 
