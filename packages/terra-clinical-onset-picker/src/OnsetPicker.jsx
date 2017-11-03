@@ -127,6 +127,7 @@ class OnsetPicker extends React.Component {
     this.changeYear = this.changeYear.bind(this);
     this.changeMonth = this.changeMonth.bind(this);
     this.changeDate = this.changeDate.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
 
     const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, this.props.onsetDate);
 
@@ -153,9 +154,7 @@ class OnsetPicker extends React.Component {
         onsetDate: newDate,
       });
 
-      if (this.props.onsetDateInputOnChange) {
-        this.props.onsetDateInputOnChange(newDate);
-      }
+      this.handleDateChange(newDate);
     }
     this.setState({ granularity: event.target.value });
 
@@ -185,10 +184,7 @@ class OnsetPicker extends React.Component {
       age: Number(event.target.value),
       onsetDate: newDate,
     });
-
-    if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate);
-    }
+    this.handleDateChange(newDate);
   }
 
   /*
@@ -201,10 +197,7 @@ class OnsetPicker extends React.Component {
       ageUnit: event.target.value,
       onsetDate: newDate,
     });
-
-    if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate);
-    }
+    this.handleDateChange(newDate);
   }
 
   /*
@@ -222,10 +215,7 @@ class OnsetPicker extends React.Component {
     this.setState({
       onsetDate: newDate,
     });
-
-    if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate);
-    }
+    this.handleDateChange(newDate);
   }
 
   /*
@@ -235,10 +225,7 @@ class OnsetPicker extends React.Component {
     const newDate = moment(this.state.onsetDate).month(event.target.value);
 
     this.setState({ onsetDate: newDate });
-
-    if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate);
-    }
+    this.handleDateChange(newDate);
   }
 
   /*
@@ -248,9 +235,15 @@ class OnsetPicker extends React.Component {
     const newDate = moment(date);
 
     this.setState({ onsetDate: newDate });
+    this.handleDateChange(newDate);
+  }
 
+  /**
+   * Handle passing formatted onsetDate to callback function
+   */
+  handleDateChange(date) {
     if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(newDate);
+      this.props.onsetDateInputOnChange(date.format());
     }
   }
 

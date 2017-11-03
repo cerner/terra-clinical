@@ -65,7 +65,7 @@ class Controlled extends React.Component {
             precisionSelectOnChange={this.handlePrecision}
             onsetDateInputName="test-onsetDate"
             onsetDateInputOnChange={this.handleOnset}
-            onsetDate={this.state.onsetDate.format()}
+            onsetDate={moment(this.state.onsetDate).format()}
           />
           <button type="submit">Submit</button>
         </form>

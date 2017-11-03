@@ -180,8 +180,6 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
       .expect.element('[data-terra-clinical-onset-picker="age_unit"]').to.have.value.not.equals('months');
   },
 
-  // Util methods
-
   // onChange handlers
   'When precision is changed an event is fired to the precisionSelectOnChange callback': (browser) => {
     browser
