@@ -53,23 +53,23 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           name="test-granularity"
         >
           <option
-            value="AGE"
+            value="age"
           >
             Age
           </option>
           <option
-            value="YEAR"
+            value="year"
           >
             Year
           </option>
           <option
             selected=""
-            value="MONTH"
+            value="month"
           >
             Month
           </option>
           <option
-            value="DATE"
+            value="date"
           >
             Date
           </option>
@@ -251,23 +251,23 @@ exports[`should render as controlled when onChange functions are supplied 1`] = 
           name="test-granularity"
         >
           <option
-            value="AGE"
+            value="age"
           >
             Age
           </option>
           <option
-            value="YEAR"
+            value="year"
           >
             Year
           </option>
           <option
             selected=""
-            value="MONTH"
+            value="month"
           >
             Month
           </option>
           <option
-            value="DATE"
+            value="date"
           >
             Date
           </option>
@@ -499,23 +499,23 @@ exports[`should render with non default inputs when supplied 1`] = `
           name="test-granularity"
         >
           <option
-            value="AGE"
+            value="age"
           >
             Age
           </option>
           <option
             selected=""
-            value="YEAR"
+            value="year"
           >
             Year
           </option>
           <option
-            value="MONTH"
+            value="month"
           >
             Month
           </option>
           <option
-            value="DATE"
+            value="date"
           >
             Date
           </option>

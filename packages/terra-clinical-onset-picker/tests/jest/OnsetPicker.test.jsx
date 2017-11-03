@@ -43,7 +43,7 @@ it('should render with non default inputs when supplied', () => {
         precisionSelectName="test-precision"
         onsetDateInputName="test-onsetDate"
         precision="before"
-        granularity="YEAR"
+        granularity="year"
         onsetDate="2014-08-16T17:40:49-05:00"
       />
     </IntlProvider>);

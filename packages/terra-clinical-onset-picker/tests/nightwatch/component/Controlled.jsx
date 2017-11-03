@@ -14,7 +14,7 @@ class Controlled extends React.Component {
 
     this.state = {
       precision: 'before',
-      granularity: 'YEAR',
+      granularity: 'year',
       onsetDate: moment('2013-02-14'),
     };
 

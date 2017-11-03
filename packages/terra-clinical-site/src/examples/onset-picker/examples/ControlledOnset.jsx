@@ -9,7 +9,7 @@ class ControlledOnsetExample extends React.Component {
 
     this.state = {
       precision: OnsetPicker.Opts.Precisions.BEFORE,
-      granularity: 'YEAR',
+      granularity: OnsetPicker.Opts.Granularities.YEAR,
       onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
     };
 

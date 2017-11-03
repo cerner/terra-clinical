@@ -14,7 +14,7 @@ export default class LessMonth extends React.Component {
 
     this.state = {
       precision: 'on/at',
-      granularity: 'MONTH',
+      granularity: 'month',
       onsetDate: moment(),
     };
 
