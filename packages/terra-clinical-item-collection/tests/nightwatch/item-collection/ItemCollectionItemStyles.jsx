@@ -8,7 +8,7 @@ const oneColumnItem = (
     startAccessory={<p>S</p>}
     comment={<ItemCollection.Comment text="test comment" />}
     endAccessory={<p>E</p>}
-    itemStyles={{ layout: 'oneColumn' }}
+    listItemStyles={{ layout: 'oneColumn' }}
   >
     <ItemCollection.Display text="Display 1" />
     <ItemCollection.Display text="Display 2" />
@@ -23,7 +23,7 @@ const twoColumnItem = (
     startAccessory={<p>S</p>}
     comment={<ItemCollection.Comment text="test comment" />}
     endAccessory={<p>E</p>}
-    itemStyles={{ layout: 'twoColumns' }}
+    listItemStyles={{ layout: 'twoColumns' }}
   >
     <ItemCollection.Display text="Display 1" />
     <ItemCollection.Display text="Display 2" />

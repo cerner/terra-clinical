@@ -1,28 +1,29 @@
 import React from 'react';
-import DefaultItemCollection from './DefaultItemCollection';
+import ItemCollection from '../../../src/ItemCollection';
+
+const defaultItem = (
+  <ItemCollection.Item startAccessory={<div>S</div>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<div>E</div>}>
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+  </ItemCollection.Item>
+);
 
 const DividedList = () => (
-  <DefaultItemCollection listStyles={{ isDivided: true, hasChevrons: false }} />
-);
-
-const ChevronList = () => (
-  <DefaultItemCollection listStyles={{ isDivided: false, hasChevrons: true }} />
-);
-
-const AllStylesList = () => (
-  <DefaultItemCollection listStyles={{ isDivided: true, hasChevrons: true }} />
+  <ItemCollection
+    requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+    listStyles={{ isDivided: true }}
+  >
+    {defaultItem}
+    {defaultItem}
+    {defaultItem}
+  </ItemCollection>
 );
 
 const ListStyles = () => (
   <div id="ListStyles">
     <h3>List Style - Divided </h3>
     <DividedList />
-    <br />
-    <h3>List Style - Chevrons </h3>
-    <ChevronList />
-    <br />
-    <h3>List Style - Divided and Chevrons </h3>
-    <AllStylesList />
   </div>
 );
 

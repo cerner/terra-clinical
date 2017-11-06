@@ -47,7 +47,7 @@ const ListView = ({ children, onSelect, listStyles, requiredElements }) => {
   const listItems = createListItems(children, onSelect, requiredElements);
 
   return (
-    <List data-terra-clinical-item-collection-table-view {...listStyles}>
+    <List data-terra-clinical-item-collection-list-view {...listStyles}>
       {listItems}
     </List>
   );

@@ -1,16 +1,35 @@
 import React from 'react';
-import DefaultItemCollection from './DefaultItemCollection';
+import ItemCollection from '../../../src/ItemCollection';
+
+
+const defaultItem = (
+  <ItemCollection.Item startAccessory={<div>S</div>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<div>E</div>}>
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+  </ItemCollection.Item>
+);
 
 const PaddedTable = () => (
-  <DefaultItemCollection tableStyles={{ isPadded: true, isStriped: false }} />
+  <ItemCollection
+    requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+    tableStyles={{ isPadded: true, isStriped: false }}
+  >
+    {defaultItem}
+    {defaultItem}
+    {defaultItem}
+  </ItemCollection>
 );
 
 const StrippedTable = () => (
-  <DefaultItemCollection tableStyles={{ isPadded: false, isStriped: true }} />
-);
-
-const AllStylesTable = () => (
-  <DefaultItemCollection tableStyles={{ isPadded: true, isStriped: true }} />
+  <ItemCollection
+    requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+    tableStyles={{ isPadded: false, isStriped: true }}
+  >
+    {defaultItem}
+    {defaultItem}
+    {defaultItem}
+  </ItemCollection>
 );
 
 const TableStyles = () => (
@@ -20,9 +39,6 @@ const TableStyles = () => (
     <br />
     <h3>Table Style - Stripes </h3>
     <StrippedTable />
-    <br />
-    <h3>Table Style - Padding and Stripes </h3>
-    <AllStylesTable />
   </div>
 );
 
