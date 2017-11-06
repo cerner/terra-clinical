@@ -3,6 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
+* Update Item Collection Example for v2 API
 
 1.4.0 - (September 26, 2017)
 -----------------
