@@ -2,7 +2,8 @@
 const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resizeTo;
 
 // Current date is locked to September 20, 2016 in test components
-module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
+// module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
+module.exports = resizeTo(['medium'], {
 
   'Displays a default Onset picker': (browser) => {
     browser

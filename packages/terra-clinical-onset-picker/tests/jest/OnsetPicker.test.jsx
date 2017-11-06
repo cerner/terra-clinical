@@ -50,7 +50,7 @@ it('should render with non default inputs when supplied', () => {
   expect(onsetPicker).toMatchSnapshot();
 });
 
-it('should render as controlled when onChange functions are supplied', () => {
+it('should render the same when onChange functions are supplied', () => {
   const onsetPicker = render(
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
@@ -61,6 +61,20 @@ it('should render as controlled when onChange functions are supplied', () => {
         granularitySelectOnChange={() => {}}
         precisionSelectOnChange={() => {}}
         onsetDateInputOnChange={() => {}}
+      />
+    </IntlProvider>);
+  expect(onsetPicker).toMatchSnapshot();
+});
+
+it('should render only the supplied precisions', () => {
+  const onsetPicker = render(
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate={'2011-08-16T17:40:49-05:00'}
+        precisionSet={[OnsetPicker.Opts.Precisions.UNKNOWN, OnsetPicker.Opts.Precisions.BEFORE, OnsetPicker.Opts.Precisions.AFTER]}
+        granularitySelectName="test-granularity"
+        precisionSelectName="test-precision"
+        onsetDateInputName="test-onsetDate"
       />
     </IntlProvider>);
   expect(onsetPicker).toMatchSnapshot();
