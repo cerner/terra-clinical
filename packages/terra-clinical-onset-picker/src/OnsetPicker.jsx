@@ -147,7 +147,7 @@ class OnsetPicker extends React.Component {
     this.state = {
       granularity: this.props.granularity,
       precision: this.props.precision,
-      onsetDate: this.props.onsetDate ? this.props.onsetDate : moment(),
+      onsetDate: this.props.onsetDate ? moment(this.props.onsetDate) : moment(),
       age: ageValues.age,
       ageUnit: ageValues.ageUnit,
     };
