@@ -29,10 +29,12 @@ exports[`List View Tests should render a Item with a comment 1`] = `
     <ItemView
       accessoryAlignment="alignCenter"
       comment={
-        <ItemComment
-          isTruncated={false}
-          text="comment"
-        />
+        <div>
+          <ItemComment
+            isTruncated={false}
+            text="comment"
+          />
+        </div>
       }
       displays={Array []}
       isTruncated={false}
@@ -75,9 +77,11 @@ exports[`List View Tests should render a Item with a start accessory 1`] = `
       isTruncated={false}
       layout="oneColumn"
       startAccessory={
-        <p>
-          start
-        </p>
+        <div>
+          <p>
+            start
+          </p>
+        </div>
       }
       textEmphasis="default"
     />
@@ -92,10 +96,12 @@ exports[`List View Tests should render a Item with all elements 1`] = `
     <ItemView
       accessoryAlignment="alignCenter"
       comment={
-        <ItemComment
-          isTruncated={false}
-          text="comment"
-        />
+        <div>
+          <ItemComment
+            isTruncated={false}
+            text="comment"
+          />
+        </div>
       }
       displays={
         Array [
@@ -114,16 +120,20 @@ exports[`List View Tests should render a Item with all elements 1`] = `
         ]
       }
       endAccessory={
-        <p>
-          end
-        </p>
+        <div>
+          <p>
+            end
+          </p>
+        </div>
       }
       isTruncated={false}
       layout="oneColumn"
       startAccessory={
-        <p>
-          start
-        </p>
+        <div>
+          <p>
+            start
+          </p>
+        </div>
       }
       textEmphasis="default"
     />
@@ -139,9 +149,11 @@ exports[`List View Tests should render a Item with an end accessory 1`] = `
       accessoryAlignment="alignCenter"
       displays={Array []}
       endAccessory={
-        <p>
-          end
-        </p>
+        <div>
+          <p>
+            end
+          </p>
+        </div>
       }
       isTruncated={false}
       layout="oneColumn"
@@ -188,10 +200,12 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
     <ItemView
       accessoryAlignment="alignTop"
       comment={
-        <ItemComment
-          isTruncated={false}
-          text="comment"
-        />
+        <div>
+          <ItemComment
+            isTruncated={false}
+            text="comment"
+          />
+        </div>
       }
       displays={
         Array [
@@ -210,16 +224,20 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
         ]
       }
       endAccessory={
-        <p>
-          end
-        </p>
+        <div>
+          <p>
+            end
+          </p>
+        </div>
       }
       isTruncated={true}
       layout="twoColumns"
       startAccessory={
-        <p>
-          start
-        </p>
+        <div>
+          <p>
+            start
+          </p>
+        </div>
       }
       textEmphasis="start"
     />
@@ -243,68 +261,61 @@ exports[`List View Tests should render a default Item 1`] = `
 />
 `;
 
-exports[`List View Tests should renders a selectable Item 1`] = `
-<TableRow
+exports[`List View Tests should render a selectable Item 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={
+        <div>
+          <ItemComment
+            isTruncated={false}
+            text="comment"
+          />
+        </div>
+      }
+      displays={
+        Array [
+          <ItemDisplay
+            isTruncated={false}
+            text="Display 1"
+          />,
+          <ItemDisplay
+            isTruncated={false}
+            text="Display 2"
+          />,
+          <ItemDisplay
+            isTruncated={false}
+            text="Display 3"
+          />,
+        ]
+      }
+      endAccessory={
+        <div>
+          <p>
+            end
+          </p>
+        </div>
+      }
+      isTruncated={false}
+      layout="oneColumn"
+      startAccessory={
+        <div>
+          <p>
+            start
+          </p>
+        </div>
+      }
+      textEmphasis="default"
+    />
+  }
   isSelectable={true}
   isSelected={false}
   tabIndex={0}
->
-  <TableCell
-    className="content-accessory"
-    content={
-      <p>
-        start
-      </p>
-    }
-  />
-  <TableCell
-    className="content-display"
-    content={
-      <ItemDisplay
-        isTruncated={false}
-        text="Display 1"
-      />
-    }
-  />
-  <TableCell
-    className="content-display"
-    content={
-      <ItemDisplay
-        isTruncated={false}
-        text="Display 2"
-      />
-    }
-  />
-  <TableCell
-    className="content-display"
-    content={
-      <ItemDisplay
-        isTruncated={false}
-        text="Display 3"
-      />
-    }
-  />
-  <TableCell
-    className="content-comment"
-    content={
-      <ItemComment
-        isTruncated={false}
-        text="comment"
-      />
-    }
-  />
-  <TableCell
-    className="content-accessory"
-    content={
-      <p>
-        end
-      </p>
-    }
-  />
-</TableRow>
+/>
 `;
 
-exports[`List View Tests should renders a selected Item 1`] = `
+exports[`List View Tests should render a selected Item 1`] = `
 <TableRow
   isSelected={true}
 >
@@ -456,25 +467,19 @@ exports[`Table View Tests should render a Item with a comment 1`] = `
 `;
 
 exports[`Table View Tests should render a Item with a single children 1`] = `
-<ListItem
-  content={
-    <ItemView
-      accessoryAlignment="alignCenter"
-      displays={
-        Array [
-          <ItemDisplay
-            isTruncated={false}
-            text="Display 1"
-          />,
-        ]
-      }
-      isTruncated={false}
-      layout="oneColumn"
-      textEmphasis="default"
-    />
-  }
+<TableRow
   isSelected={false}
-/>
+>
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+    }
+  />
+</TableRow>
 `;
 
 exports[`Table View Tests should render a Item with a start accessory 1`] = `
@@ -606,7 +611,7 @@ exports[`Table View Tests should render a default Item 1`] = `
 />
 `;
 
-exports[`Table View Tests should renders a selectable Item 1`] = `
+exports[`Table View Tests should render a selectable Item 1`] = `
 <TableRow
   isSelectable={true}
   isSelected={false}
@@ -667,7 +672,7 @@ exports[`Table View Tests should renders a selectable Item 1`] = `
 </TableRow>
 `;
 
-exports[`Table View Tests should renders a selected Item 1`] = `
+exports[`Table View Tests should render a selected Item 1`] = `
 <TableRow
   isSelected={true}
 >

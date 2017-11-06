@@ -156,7 +156,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
     </ListView>
   }
   responsiveTo="parent"
-  small={
+  tiny={
     <TableView
       requiredElements={
         Object {
@@ -354,6 +354,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
         view="list"
       >
         <ItemDisplay
+          isSelectable={true}
           isTruncated={false}
           text="Display 1"
         />
@@ -397,6 +398,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
         view="list"
       >
         <ItemDisplay
+          isSelectable={true}
           isTruncated={false}
           text="Display 1"
         />

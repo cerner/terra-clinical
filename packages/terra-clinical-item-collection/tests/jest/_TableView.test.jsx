@@ -25,7 +25,7 @@ it('should render a TableView with children', () => {
 it('should render a TableView with table styles', () => {
   const item = (
     <TableView requiredElements={defaultRequiredElements} tableStyles={{ isPadded: true, isStriped: true }}>
-      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+      <ItemCollection.Item key="1" startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
       </ItemCollection.Item>
     </TableView>

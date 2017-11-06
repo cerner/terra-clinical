@@ -2,6 +2,7 @@
 
 exports[`should render a ListView with children 1`] = `
 <List
+  data-terra-clinical-item-collection-table-view={true}
   isDivided={false}
 >
   <Item
@@ -18,9 +19,9 @@ exports[`should render a ListView with children 1`] = `
     }
     hasEndAccessory={true}
     hasStartAccessory={true}
-    index={0}
     isSelectable={false}
     isSelected={false}
+    itemKey={null}
     listItemStyles={Object {}}
     startAccessory={
       <p>
@@ -39,6 +40,7 @@ exports[`should render a ListView with children 1`] = `
 
 exports[`should render a ListView with list styles 1`] = `
 <List
+  data-terra-clinical-item-collection-table-view={true}
   isDivided={true}
 >
   <Item
@@ -55,9 +57,9 @@ exports[`should render a ListView with list styles 1`] = `
     }
     hasEndAccessory={true}
     hasStartAccessory={true}
-    index={0}
     isSelectable={false}
     isSelected={false}
+    itemKey="1"
     listItemStyles={Object {}}
     startAccessory={
       <p>
@@ -76,6 +78,7 @@ exports[`should render a ListView with list styles 1`] = `
 
 exports[`should render a default ListView 1`] = `
 <List
+  data-terra-clinical-item-collection-table-view={true}
   isDivided={false}
 />
 `;

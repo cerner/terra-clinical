@@ -52,10 +52,10 @@ function createTableLayout(requiredElements) {
 }
 
 function createTableRows(children, onSelect, requiredElements) {
-  return React.Children.map(children, (child, index) => {
+  return React.Children.map(children, (child) => {
     if (child.type === Item) {
       const tableRowPieces = Utils.addAnyMissingTableElements(child.props, requiredElements);
-      return React.cloneElement(child, { view: 'table', index, onSelect, ...tableRowPieces });
+      return React.cloneElement(child, { view: 'table', itemKey: child.key, onSelect, ...tableRowPieces });
     }
 
     return child;
@@ -67,7 +67,7 @@ const TableView = ({ children, onSelect, tableStyles, requiredElements }) => {
   const tableRows = createTableRows(children, onSelect, requiredElements);
 
   return (
-    <Table className={styles.table} {...tableStyles} >
+    <Table data-terra-clinical-item-collection-table-view className={styles.table} {...tableStyles} >
       {tableLayout}
       <Table.Rows>
         {tableRows}

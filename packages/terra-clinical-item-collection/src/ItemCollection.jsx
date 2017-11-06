@@ -55,7 +55,7 @@ const defaultProps = {
 };
 
 const ItemCollection = (props) => {
-  const { children, breakpoint, onSelect, requiredElements, listStyles, tableStyles } = props;
+  const { children, breakpoint, onSelect, requiredElements, listStyles, tableStyles, ...customProps } = props;
 
   const listDisplay = (
     <ListView
@@ -66,6 +66,7 @@ const ItemCollection = (props) => {
       {children}
     </ListView>
   );
+
   const tableDisplay = (
     <TableView
       requiredElements={requiredElements}
@@ -81,6 +82,7 @@ const ItemCollection = (props) => {
 
   return (
     <ResponsiveElement
+      {...customProps}
       responsiveTo="parent"
       defaultElement={listDisplay}
       {...breakpointDisplay}

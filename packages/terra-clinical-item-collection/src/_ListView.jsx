@@ -33,10 +33,10 @@ const propTypes = {
 };
 
 function createListItems(children, onSelect, requiredElements) {
-  return React.Children.map(children, (child, index) => {
+  return React.Children.map(children, (child) => {
     if (child.type === Item) {
       const itemViewPieces = Utils.addAnyMissingListElements(child.props, requiredElements);
-      return React.cloneElement(child, { view: 'list', index, onSelect, ...itemViewPieces });
+      return React.cloneElement(child, { view: 'list', itemKey: child.key, onSelect, ...itemViewPieces });
     }
 
     return child;
@@ -47,7 +47,7 @@ const ListView = ({ children, onSelect, listStyles, requiredElements }) => {
   const listItems = createListItems(children, onSelect, requiredElements);
 
   return (
-    <List {...listStyles}>
+    <List data-terra-clinical-item-collection-table-view {...listStyles}>
       {listItems}
     </List>
   );

@@ -14,6 +14,24 @@ it('should render a default Item', () => {
   expect(component).toMatchSnapshot();
 });
 
+it('throws an error for a missing key when an item is selectable', () => {
+  try {
+    const item = (
+      <Item
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        isSelectable
+      >
+        <Item.Display text="Display 1" />
+      </Item>
+    );
+    shallow(item);
+  } catch (e) {
+    expect(e.message).toContain('Key is required for correct selectable implementation.');
+  }
+});
+
 describe('List View Tests', () => {
   it('should render a default Item', () => {
     const item = (
@@ -95,14 +113,16 @@ describe('List View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('should renders a selectable Item', () => {
+  it('should render a selectable Item', () => {
+    const mockItemCollectionProps = { itemKey: 'selectable' };
     const item = (
       <Item
-        view="table"
+        view="list"
         startAccessory={<p>start</p>}
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
         isSelectable
+        {...mockItemCollectionProps}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />
@@ -113,7 +133,7 @@ describe('List View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('should renders a selected Item', () => {
+  it('should render a selected Item', () => {
     const item = (
       <Item
         view="table"
@@ -197,7 +217,7 @@ describe('Table View Tests', () => {
 
   it('should render a Item with a single children', () => {
     const item = (
-      <Item view="list">
+      <Item view="table">
         <Item.Display text="Display 1" />
       </Item>
     );
@@ -244,7 +264,8 @@ describe('Table View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('should renders a selectable Item', () => {
+  it('should render a selectable Item', () => {
+    const mockItemCollectionProps = { itemKey: 'selectable' };
     const item = (
       <Item
         view="table"
@@ -252,6 +273,7 @@ describe('Table View Tests', () => {
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
         isSelectable
+        {...mockItemCollectionProps}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />
@@ -262,7 +284,7 @@ describe('Table View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('should renders a selected Item', () => {
+  it('should render a selected Item', () => {
     const item = (
       <Item
         view="table"
@@ -279,7 +301,6 @@ describe('Table View Tests', () => {
     const component = shallow(item);
     expect(component).toMatchSnapshot();
   });
-
 
   it('should render a Item that ignores list item styles', () => {
     const item = (

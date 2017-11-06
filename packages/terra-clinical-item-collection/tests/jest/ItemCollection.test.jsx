@@ -45,7 +45,7 @@ it('should render an ItemCollection with table styles', () => {
 
 it('should render an ItemCollection with a breakpoint', () => {
   const itemCollection = (
-    <ItemCollection breapoint="tiny" >
+    <ItemCollection breakpoint="tiny" >
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
@@ -74,7 +74,7 @@ it('should render an ItemCollection with onSelect', () => {
   const itemCollection = (
     <ItemCollection onSelect={() => {}} >
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
-        <ItemCollection.Display text="Display 1" />
+        <ItemCollection.Display isSelectable text="Display 1" />
       </ItemCollection.Item>
     </ItemCollection>
   );

@@ -3,6 +3,7 @@
 exports[`should render a TableView with children 1`] = `
 <Table
   className="table"
+  data-terra-clinical-item-collection-table-view={true}
   isPadded={true}
   isStriped={true}
 >
@@ -36,9 +37,9 @@ exports[`should render a TableView with children 1`] = `
           E
         </p>
       }
-      index={0}
       isSelectable={false}
       isSelected={false}
+      itemKey={null}
       listItemStyles={Object {}}
       startAccessory={
         <p>
@@ -66,6 +67,7 @@ exports[`should render a TableView with children 1`] = `
 exports[`should render a TableView with table styles 1`] = `
 <Table
   className="table"
+  data-terra-clinical-item-collection-table-view={true}
   isPadded={true}
   isStriped={true}
 >
@@ -99,9 +101,9 @@ exports[`should render a TableView with table styles 1`] = `
           E
         </p>
       }
-      index={0}
       isSelectable={false}
       isSelected={false}
+      itemKey="1"
       listItemStyles={Object {}}
       startAccessory={
         <p>
@@ -129,6 +131,7 @@ exports[`should render a TableView with table styles 1`] = `
 exports[`should render a default TableView 1`] = `
 <Table
   className="table"
+  data-terra-clinical-item-collection-table-view={true}
   isPadded={true}
   isStriped={true}
 >
