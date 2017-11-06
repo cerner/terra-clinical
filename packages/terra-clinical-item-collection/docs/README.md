@@ -18,15 +18,30 @@ The TableHeaderCell is a 'private' subcomponent of Item Collection. This compone
 import React from 'react';
 import ItemCollection from 'terra-clinical-item-collection';
 
-const row1 = {startAccessory: <Icon/>, displays: [<ItemDisplay/>, <ItemDisplay/>], comment: <ItemComment/>, endAccessory: <Icon/>, itemStyles={{ layout: 'twoColumns' }} };
-const row2 = {startAccessory: <Icon/>, displays: [<ItemDisplay/>, <ItemDisplay/>], comment: <ItemComment/>, endAccessory: <Icon/> };
-
 <ItemCollection
+  id="ItemCollection"
   breakpoint="tiny"
-  listStyles={{ isDivided }}
-  tableStyles={{ isPadded: false, isStriped: false }}
-  rows={[row1, row2]}
-/>
+  requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+>
+  <ItemCollection.Item
+    startAccessory={<Icon/>}
+    comment={<ItemCollection.Comment text="Comment" />}
+    endAccessory={<Icon/>}
+    itemStyles={{ layout: 'twoColumns' }}
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+  </ItemCollection.Item>
+  <ItemCollection.Item
+    startAccessory={<Icon/>}
+    comment={<ItemCollection.Comment text="Comment" />}
+    endAccessory={<Icon/>}
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+  </ItemCollection.Item>
+</ItemCollection>
 ```
 
 ## Component Features

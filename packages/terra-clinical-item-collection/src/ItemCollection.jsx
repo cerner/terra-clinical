@@ -28,7 +28,8 @@ const propTypes = {
     endAccessoryRequired: PropTypes.bool,
   }),
   /**
-   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable.
+   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable. The first
+   * parameter returned is the event and the second parameter is the child key. Function is not applied if child is not selectable.
    */
   onSelect: PropTypes.func,
   /**

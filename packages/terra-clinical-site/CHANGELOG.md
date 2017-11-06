@@ -7,6 +7,7 @@ Unreleased
 * Lock webpack-dev-server at last version supporting IE10 (1.7.1)
 * Uplift site header to use collapsible menu view
 * Updated webpack config to align with webpack 3 documentation
+* Update Item Collection Example for v2 API
 
 1.3.0 - (August 16, 2017)
 -----------------

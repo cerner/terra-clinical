@@ -3,7 +3,18 @@ ChangeLog
 
 Unreleased
 ----------
-* Update Item Collection Example for v2 API
+* See Release Notes for Migration Guide
+
+### Added
+* onSelect, children, and requiredElements props
+* Item Component to use as for Item Collection children
+
+### Removed
+* rows and onChange props
+
+### Changed
+* Item Collection layout is no longer rendered via the first row, but the requiredElements object
+* Item Collection now initially renders as static. Additional props must be included for selectable Item Collections. See Selectable Readme for more information.
 
 1.4.0 - (September 26, 2017)
 -----------------
