@@ -16,6 +16,7 @@ exports[`should render a header with all content 1`] = `
 >
   <div
     class="flex-end"
+    style="max-width:100%;"
   >
     <div>
       start content
@@ -36,6 +37,7 @@ exports[`should render a header with all content 1`] = `
   </div>
   <div
     class="flex-end"
+    style="max-width:100%;"
   >
     <div>
       end content
@@ -50,6 +52,7 @@ exports[`should render a header with content on the left 1`] = `
 >
   <div
     class="flex-end"
+    style="max-width:100%;"
   >
     <div>
       start content
@@ -70,6 +73,7 @@ exports[`should render a header with content on the right 1`] = `
   />
   <div
     class="flex-end"
+    style="max-width:100%;"
   >
     <div>
       end content
@@ -104,6 +108,7 @@ exports[`should render a subheader with all content 1`] = `
 >
   <div
     class="flex-end"
+    style="max-width:100%;"
   >
     <div>
       start content
@@ -124,6 +129,7 @@ exports[`should render a subheader with all content 1`] = `
   </div>
   <div
     class="flex-end"
+    style="max-width:100%;"
   >
     <div>
       end content
