@@ -217,7 +217,7 @@ class OnsetPicker extends React.Component {
    * Update onset date when year changes
    */
   changeYear(event) {
-    let newDate = moment(this.state.onsetDate).year(event.target.value);
+    let newDate = this.state.onsetDate.year(event.target.value);
     const newMonths = OnsetUtils.allowedMonths(this.context.intl, this.props.birthdate, newDate);
 
     // Check if new onset month is available, otherwise change month to first possible month
@@ -235,7 +235,7 @@ class OnsetPicker extends React.Component {
    * Update onset date when month changes
    */
   changeMonth(event) {
-    const newDate = moment(this.state.onsetDate).month(event.target.value);
+    const newDate = this.state.onsetDate.month(event.target.value);
 
     this.setState({ onsetDate: newDate });
     this.handleDateChange(newDate);
