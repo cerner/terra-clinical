@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCollection from '../../../src/ItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
 
 const KEYCODES = {
   ENTER: 13,
@@ -77,9 +77,3 @@ class DefaultItemCollection extends React.Component {
 }
 
 export default DefaultItemCollection;
-
-//
-// To Create a Selectable Item Collection:
-// - Add TabIndex to Each Item for Navigation
-// - Add isSelectable to Each Item to indicate if it is selectable
-// - Add onClick and

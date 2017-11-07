@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCollection from '../../../src/ItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
 
 const defaultItem = (
   <ItemCollection.Item startAccessory={<div>S</div>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<div>E</div>}>

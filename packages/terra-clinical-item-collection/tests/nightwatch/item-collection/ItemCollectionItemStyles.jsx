@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCollection from '../../../src/ItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
 
 const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, commentRequired: true, endAccessoryRequired: true };
 

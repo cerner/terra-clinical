@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCollection from '../../../src/ItemCollection';
+import ItemCollection from '../../../lib/ItemCollection';
 
 const DefaultItemCollection = () => (
   <ItemCollection id="VaryingItems" breakpoint="medium">
