@@ -319,7 +319,7 @@ class OnsetPicker extends React.Component {
       monthSelect = (<SelectField
         data-terra-clinical-onset-picker="month"
         options={OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
-        defaultValue={moment(this.state.onsetDate).month().toString()}
+        defaultValue={this.state.onsetDate.month().toString()}
         onChange={this.changeMonth}
         isInline
       />);
@@ -330,7 +330,7 @@ class OnsetPicker extends React.Component {
       yearSelect = (<SelectField
         data-terra-clinical-onset-picker="year"
         options={OnsetUtils.allowedYears(this.props.birthdate)}
-        defaultValue={moment(this.state.onsetDate).year().toString()}
+        defaultValue={this.state.onsetDate.year().toString()}
         onChange={this.changeYear}
         isInline
       />);
@@ -343,7 +343,7 @@ class OnsetPicker extends React.Component {
           onChange={this.changeDate}
           minDate={this.props.birthdate}
           maxDate={moment().format()}
-          selectedDate={moment(this.state.onsetDate).format()}
+          selectedDate={this.state.onsetDate.format()}
           name={this.props.onsetDateInputName}
         />
       </Field>);
