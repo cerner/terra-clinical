@@ -51,7 +51,7 @@ export default class LessMonth extends React.Component {
   render() {
     return (
       <Base locale={locale}>
-        <p>Controlled Onset picker with minimum required fields, supplied with a birthdate of 3 weeks old.</p>
+        <p>Onset picker with minimum required fields and onChange handlers, supplied with a birthdate of 3 weeks old.</p>
         <p>Current date locked to September 20, 2016</p>
         <p>Testing age granularity selection restrictions.</p>
 
