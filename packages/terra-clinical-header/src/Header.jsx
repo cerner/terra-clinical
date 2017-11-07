@@ -1,6 +1,4 @@
-/* eslint-disable react/no-find-dom-node */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
@@ -52,13 +50,11 @@ class Header extends React.Component {
   componentDidMount() {
     // grab the initial full display widths of the end containers for reference
     // when resizing the end containers inside handleOnResize
-    const startNode = ReactDOM.findDOMNode(this.startContainerTarget);
-    if (startNode) {
-      this.state.startContentInitialWidth = startNode.offsetWidth;
+    if (this.startContainerTarget) {
+      this.state.startContentInitialWidth = this.startContainerTarget.offsetWidth;
     }
-    const endNode = ReactDOM.findDOMNode(this.endContainerTarget);
-    if (endNode) {
-      this.state.endContentInitialWidth = endNode.offsetWidth;
+    if (this.endContainerTarget) {
+      this.state.endContentInitialWidth = this.endContainerTarget.offsetWidth;
     }
 
     window.addEventListener('resize', this.handleOnResize);
@@ -71,11 +67,10 @@ class Header extends React.Component {
 
   handleOnResize() {
     // get the maxWidth of the start and end containers that is 40% of the header
-    const containerWidth = ReactDOM.findDOMNode(this.containerTarget).offsetWidth;
+    const containerWidth = this.containerTarget.offsetWidth;
     const fitMaxWidth = containerWidth * 0.4;
 
-    const startNode = ReactDOM.findDOMNode(this.startContainerTarget);
-    if (startNode) {
+    if (this.startContainerTarget) {
       // set the start container to its initial width if can fit inside the 40% maxWidth
       // else set the start container to the maximum possible width it can be
       if (fitMaxWidth >= this.state.startContentInitialWidth) {
@@ -85,8 +80,7 @@ class Header extends React.Component {
       }
     }
 
-    const endNode = ReactDOM.findDOMNode(this.endContainerTarget);
-    if (endNode) {
+    if (this.endContainerTarget) {
       // set the end container to its initial width if can fit inside the 40% maxWidth
       // else set the end container to the maximum possible width it can be
       if (fitMaxWidth >= this.state.endContentInitialWidth) {
