@@ -142,7 +142,7 @@ class OnsetPicker extends React.Component {
     this.changeDate = this.changeDate.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
 
-    const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, this.props.onsetDate);
+    const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, moment(this.props.onsetDate));
 
     this.state = {
       granularity: this.props.granularity,
