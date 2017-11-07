@@ -19,7 +19,8 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   /**
    * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to maintain
-   * the provided layout.
+   * the provided layout.The elements expected to be displayed. Options are startAccessoryRequired (bool), displaysRequired
+   * (number), commentRequired (bool), and endAccessoryRequired (bool).
    */
   requiredElements: PropTypes.shape({
     startAccessoryRequired: PropTypes.bool,

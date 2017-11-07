@@ -46,7 +46,7 @@ const propTypes = {
    */
   isSelected: PropTypes.bool,
   /**
-   * The comment element to be presented.
+   * The view in which the item should be presented. Options are list or table and this will be set by the Item Collection component.
    */
   view: PropTypes.oneOf(['list', 'table']),
 };
