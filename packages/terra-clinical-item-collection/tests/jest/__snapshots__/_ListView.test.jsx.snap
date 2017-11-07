@@ -2,7 +2,7 @@
 
 exports[`should render a ListView with children 1`] = `
 <List
-  data-terra-clinical-item-collection-table-view={true}
+  data-terra-clinical-item-collection-list-view={true}
   isDivided={false}
 >
   <Item
@@ -40,7 +40,7 @@ exports[`should render a ListView with children 1`] = `
 
 exports[`should render a ListView with list styles 1`] = `
 <List
-  data-terra-clinical-item-collection-table-view={true}
+  data-terra-clinical-item-collection-list-view={true}
   isDivided={true}
 >
   <Item
@@ -78,7 +78,7 @@ exports[`should render a ListView with list styles 1`] = `
 
 exports[`should render a default ListView 1`] = `
 <List
-  data-terra-clinical-item-collection-table-view={true}
+  data-terra-clinical-item-collection-list-view={true}
   isDivided={false}
 />
 `;
