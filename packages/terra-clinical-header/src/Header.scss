@@ -28,11 +28,11 @@
     flex: 0 0 auto;
     height: 100%;
     position: relative;
+  }
 
-    & > * {
-      width: 100%;
-      display: flex;
-    }
+  .flex-end > * {
+    display: flex;
+    width: 100%;
   }
 
   .title-container {
