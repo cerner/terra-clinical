@@ -1,4 +1,5 @@
 import React from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
@@ -55,12 +56,14 @@ class Header extends React.Component {
       this.endContentInitialWidth = this.endContainerTarget.offsetWidth;
     }
 
-    window.addEventListener('resize', this.handleOnResize);
-    this.handleOnResize();
+    this.resizeObserver = new ResizeObserver((entries) => {
+      this.handleOnResize(entries[0].contentRect.width);
+    });
+    this.resizeObserver.observe(this.containerTarget);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleOnResize);
+    this.resizeObserver.disconnect(this.containerTarget);
   }
 
   handleOnResize() {

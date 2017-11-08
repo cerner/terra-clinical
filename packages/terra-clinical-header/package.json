@@ -29,6 +29,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "resize-observer-polyfill": "^1.4.1",
     "terra-base": "^2.0.0"
   },
   "scripts": {
