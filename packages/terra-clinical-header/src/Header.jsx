@@ -49,10 +49,10 @@ class Header extends React.Component {
     // grab the initial full display widths of the end containers for reference
     // when resizing the end containers inside handleOnResize
     if (this.startContainerTarget) {
-      this.state.startContentInitialWidth = this.startContainerTarget.offsetWidth;
+      this.startContentInitialWidth = this.startContainerTarget.offsetWidth;
     }
     if (this.endContainerTarget) {
-      this.state.endContentInitialWidth = this.endContainerTarget.offsetWidth;
+      this.endContentInitialWidth = this.endContainerTarget.offsetWidth;
     }
 
     window.addEventListener('resize', this.handleOnResize);
@@ -73,8 +73,8 @@ class Header extends React.Component {
     if (this.startContainerTarget) {
       // set the start container to its initial width if can fit inside the 40% maxWidth
       // else set the start container to the maximum possible width it can be
-      if (fitMaxWidth >= this.state.startContentInitialWidth) {
-        startContentWidth = this.state.startContentInitialWidth;
+      if (fitMaxWidth >= this.startContentInitialWidth) {
+        startContentWidth = this.startContentInitialWidth;
       } else {
         startContentWidth = fitMaxWidth;
       }
@@ -83,8 +83,8 @@ class Header extends React.Component {
     if (this.endContainerTarget) {
       // set the end container to its initial width if can fit inside the 40% maxWidth
       // else set the end container to the maximum possible width it can be
-      if (fitMaxWidth >= this.state.endContentInitialWidth) {
-        endContentWidth = this.state.endContentInitialWidth;
+      if (fitMaxWidth >= this.endContentInitialWidth) {
+        endContentWidth = this.endContentInitialWidth;
       } else {
         endContentWidth = fitMaxWidth;
       }
