@@ -1,5 +1,10 @@
 const maxDisplays = 8;
 
+const KEYCODES = {
+  ENTER: 13,
+  SPACE: 32,
+};
+
 /**
  * This function ensures the correct elements are provided to create a consistent item view layout. To handle a
  * potential missing required accessory element, a boolean indicator is provided to single accessory space is needed.
@@ -83,6 +88,7 @@ function addAnyMissingTableElements(childElements, requiredElements) {
 const ItemCollectionUtils = {
   addAnyMissingListElements,
   addAnyMissingTableElements,
+  KEYCODES,
 };
 
 export default ItemCollectionUtils;

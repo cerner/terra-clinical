@@ -32,7 +32,14 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.expect.element('#selected-key').text.to.contain('1');
   },
 
-  'Returns child key for keydown when onSelect is given to a selectable item collection': (browser) => {
+  'Returns child key for ENTER when onSelect is given to a selectable item collection': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/selectable`);
+    browser.expect.element('#item3').to.be.present;
+    browser.sendKeys('#item2', browser.Keys.ENTER);
+    browser.expect.element('#selected-key').text.to.contain('2');
+  },
+
+  'Returns child key for SPACE when onSelect is given to a selectable item collection': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/selectable`);
     browser.expect.element('#item3').to.be.present;
     browser.sendKeys('#item3', browser.Keys.ENTER);

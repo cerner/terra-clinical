@@ -1,11 +1,6 @@
 import React from 'react';
 import ItemCollection from '../../../lib/ItemCollection';
 
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-};
-
 class DefaultItemCollection extends React.Component {
   constructor(props) {
     super(props);
@@ -14,13 +9,7 @@ class DefaultItemCollection extends React.Component {
   }
 
   handleSelection(event, selectedItemKey) {
-    if (event.nativeEvent.type === 'click') {
-      this.setState({ selectedItemKey });
-    } else if (event.nativeEvent.type === 'keydown') {
-      if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
-        this.setState({ selectedItemKey });
-      }
-    }
+    this.setState({ selectedItemKey });
   }
 
   render() {

@@ -5,6 +5,7 @@ import ItemView from 'terra-clinical-item-view';
 import List from 'terra-list';
 import Table from 'terra-table';
 import 'terra-base/lib/baseStyles';
+import Utils from './_ItemCollectionUtils';
 import styles from './ItemCollection.scss';
 
 const cx = classNames.bind(styles);
@@ -77,7 +78,9 @@ function createSelectableProps(onSelect, itemKey) {
     };
 
     selectableProps.onKeyDown = (event) => {
-      onSelect(event, itemKey);
+      if (event.nativeEvent.keyCode === Utils.KEYCODES.ENTER || event.nativeEvent.keyCode === Utils.KEYCODES.SPACE) {
+        onSelect(event, itemKey);
+      }
     };
   }
 
