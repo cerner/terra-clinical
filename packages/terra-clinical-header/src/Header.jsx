@@ -40,8 +40,6 @@ class Header extends React.Component {
     super(props);
     this.handleOnResize = this.handleOnResize.bind(this);
     this.state = {
-      startContentInitialWidth: undefined,
-      endContentInitialWidth: undefined,
       startContentWidth: undefined,
       endContentWidth: undefined,
     };
@@ -69,14 +67,16 @@ class Header extends React.Component {
     // get the maxWidth of the start and end containers that is 40% of the header
     const containerWidth = this.containerTarget.offsetWidth;
     const fitMaxWidth = containerWidth * 0.4;
+    let startContentWidth = 0;
+    let endContentWidth = 0;
 
     if (this.startContainerTarget) {
       // set the start container to its initial width if can fit inside the 40% maxWidth
       // else set the start container to the maximum possible width it can be
       if (fitMaxWidth >= this.state.startContentInitialWidth) {
-        this.state.startContentWidth = this.state.startContentInitialWidth;
+        startContentWidth = this.state.startContentInitialWidth;
       } else {
-        this.state.startContentWidth = fitMaxWidth;
+        startContentWidth = fitMaxWidth;
       }
     }
 
@@ -84,13 +84,13 @@ class Header extends React.Component {
       // set the end container to its initial width if can fit inside the 40% maxWidth
       // else set the end container to the maximum possible width it can be
       if (fitMaxWidth >= this.state.endContentInitialWidth) {
-        this.state.endContentWidth = this.state.endContentInitialWidth;
+        endContentWidth = this.state.endContentInitialWidth;
       } else {
-        this.state.endContentWidth = fitMaxWidth;
+        endContentWidth = fitMaxWidth;
       }
     }
 
-    this.forceUpdate();
+    this.setState({ startContentWidth, endContentWidth });
   }
 
   render() {
