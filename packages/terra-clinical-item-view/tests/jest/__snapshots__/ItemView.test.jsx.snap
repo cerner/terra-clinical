@@ -152,9 +152,16 @@ exports[`should render a end accessory 1`] = `
   />
   <div
     className="accessory accessory-align-center"
+    style={
+      Object {
+        "width": "1em",
+      }
+    }
   >
     <img
       alt="Graphic"
+      height="1em"
+      width="1em"
     />
   </div>
 </div>
@@ -166,9 +173,16 @@ exports[`should render a start accessory 1`] = `
 >
   <div
     className="accessory accessory-align-center"
+    style={
+      Object {
+        "width": "1em",
+      }
+    }
   >
     <img
       alt="Graphic"
+      height="1em"
+      width="1em"
     />
   </div>
   <div
@@ -183,9 +197,16 @@ exports[`should render an accessory center aligned 1`] = `
 >
   <div
     className="accessory accessory-align-center"
+    style={
+      Object {
+        "width": "1em",
+      }
+    }
   >
     <img
       alt="Graphic"
+      height="1em"
+      width="1em"
     />
   </div>
   <div
@@ -200,9 +221,16 @@ exports[`should render an accessory top aligned 1`] = `
 >
   <div
     className="accessory accessory-align-top"
+    style={
+      Object {
+        "width": "1em",
+      }
+    }
   >
     <img
       alt="Graphic"
+      height="1em"
+      width="1em"
     />
   </div>
   <div
@@ -252,7 +280,6 @@ exports[`should render one column 1`] = `
 
 exports[`should render scaled accessories 1`] = `
 <div
-  accessoryScale="40px"
   className="item-view one-column"
   start={
     <img
@@ -265,9 +292,16 @@ exports[`should render scaled accessories 1`] = `
   />
   <div
     className="accessory accessory-align-center"
+    style={
+      Object {
+        "width": "40px",
+      }
+    }
   >
     <img
       alt="Graphic"
+      height="40px"
+      width="40px"
     />
   </div>
 </div>
@@ -275,9 +309,16 @@ exports[`should render scaled accessories 1`] = `
 
 exports[`should render start accessory alignment 1`] = `
 <div
-  alignStartAccessory={true}
   className="item-view one-column"
 >
+  <div
+    className="accessory accessory-align-center"
+    style={
+      Object {
+        "width": "1em",
+      }
+    }
+  />
   <div
     className="body"
   />
@@ -604,11 +645,18 @@ exports[`should render with a display and graphic 1`] = `
 
 exports[`should render with end accessory alignment 1`] = `
 <div
-  alignEndAccessory={true}
   className="item-view one-column"
 >
   <div
     className="body"
+  />
+  <div
+    className="accessory accessory-align-center"
+    style={
+      Object {
+        "width": "1em",
+      }
+    }
   />
 </div>
 `;
