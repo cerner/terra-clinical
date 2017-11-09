@@ -17,6 +17,9 @@ exports[`should render with a given breakpoint 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -64,6 +67,9 @@ exports[`should render with a given breakpoint 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -111,6 +117,9 @@ exports[`should render with a given breakpoint 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -363,6 +372,9 @@ exports[`should render with multiple rows 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -410,6 +422,9 @@ exports[`should render with multiple rows 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -457,6 +472,9 @@ exports[`should render with multiple rows 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -709,6 +727,9 @@ exports[`should render with one row 1`] = `
           content={
             <ItemView
               accessoryAlignment="alignCenter"
+              accessoryScale="1em"
+              alignEndAccessory={false}
+              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
