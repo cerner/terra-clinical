@@ -15,9 +15,9 @@ const views = () => (
     <h2>Start and End Acessory</h2>
     <ItemView startAccessory={<IconAlert id="StartAccessory" />} endAccessory={<IconInformation id="EndAccessory" />} accessoryAlignment="alignTop" id="test-both-accessory-top" />
     <h2>Align Start Acessory</h2>
-    <ItemView alignStartAccessory endAccessory={<IconInformation id="EndAccessory" />} accessoryAlignment="alignTop" displays={[display1]} id="test-align-end-accessory" />
+    <ItemView alignStartAccessory endAccessory={<IconInformation id="EndAccessory" />} accessoryAlignment="alignTop" displays={[display1]} id="test-align-start-accessory" />
     <h2>Align End Acessory</h2>
-    <ItemView startAccessory={<IconAlert id="StartAccessory" />} alignEndAccessory accessoryAlignment="alignTop" displays={[display1]} id="test-align-start-accessory" />
+    <ItemView startAccessory={<IconAlert id="StartAccessory" />} alignEndAccessory accessoryAlignment="alignTop" displays={[display1]} id="test-align-end-accessory" />
     <h2>Scaled Start and End Acessory</h2>
     <ItemView accessoryScale="40px" startAccessory={<IconAlert id="StartAccessory" />} endAccessory={<IconInformation id="EndAccessory" />} accessoryAlignment="alignTop" id="test-accessory-scale" />
     <h2>Scaled Accessories with Font Size 100px (max-height and max-width is 60px)</h2>

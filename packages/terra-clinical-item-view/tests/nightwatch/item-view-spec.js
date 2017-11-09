@@ -34,7 +34,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Displays a clinical item view with end accessory alignment': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-view-tests/accessory`);
-    browser.expect.element('#test-align-start-accessory div[class*="accessory"]').to.be.present;
+    browser.expect.element('#test-align-end-accessory div[class*="accessory"]').to.be.present;
   },
 
   'Displays a clinical item view with a start and end accessory': (browser) => {
