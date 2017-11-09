@@ -250,6 +250,40 @@ exports[`should render one column 1`] = `
 </div>
 `;
 
+exports[`should render scaled accessories 1`] = `
+<div
+  accessoryScale="40px"
+  className="item-view one-column"
+  start={
+    <img
+      alt="Graphic"
+    />
+  }
+>
+  <div
+    className="body"
+  />
+  <div
+    className="accessory accessory-align-center"
+  >
+    <img
+      alt="Graphic"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render start accessory alignment 1`] = `
+<div
+  alignStartAccessory={true}
+  className="item-view one-column"
+>
+  <div
+    className="body"
+  />
+</div>
+`;
+
 exports[`should render truncated display 1`] = `
 <div
   className="item-view one-column"
@@ -565,5 +599,16 @@ exports[`should render with a display and graphic 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`should render with end accessory alignment 1`] = `
+<div
+  alignEndAccessory={true}
+  className="item-view one-column"
+>
+  <div
+    className="body"
+  />
 </div>
 `;

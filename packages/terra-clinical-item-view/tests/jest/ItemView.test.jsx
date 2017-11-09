@@ -94,9 +94,45 @@ it('should render a start accessory', () => {
   expect(itemView).toMatchSnapshot();
 });
 
+it('should render start accessory alignment', () => {
+  const params = {
+    layout: 'oneColumn',
+    textEmphasis: 'default',
+    displays: [],
+    alignStartAccessory: true,
+  };
+  const itemView = shallow(<ItemView {...params} />);
+  expect(itemView).toMatchSnapshot();
+});
+
 it('should render a end accessory', () => {
   const testElement = <img alt="Graphic" />;
   const params = {
+    layout: 'oneColumn',
+    textEmphasis: 'default',
+    displays: [],
+    endAccessory: testElement,
+  };
+  const itemView = shallow(<ItemView {...params} />);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render with end accessory alignment', () => {
+  const params = {
+    layout: 'oneColumn',
+    textEmphasis: 'default',
+    displays: [],
+    alignEndAccessory: true,
+  };
+  const itemView = shallow(<ItemView {...params} />);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render scaled accessories', () => {
+  const testElement = <img alt="Graphic" />;
+  const params = {
+    start: testElement,
+    accessoryScale: '40px',
     layout: 'oneColumn',
     textEmphasis: 'default',
     displays: [],
