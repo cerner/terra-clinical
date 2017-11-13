@@ -31,7 +31,7 @@ const propTypes = {
   /**
    * The react element to be placed in the start aligned accessory position.
    */
-  startAccessory: PropTypes.element,
+  startAccessory: PropTypes.node,
   /**
    * Indicates weather or not the allow space for the start accessory if none is given.
    */
@@ -39,7 +39,7 @@ const propTypes = {
   /**
    * The react element to be placed in the end aligned accessory position.
    */
-  endAccessory: PropTypes.element,
+  endAccessory: PropTypes.node,
   /**
    * Indicates weather or not the allow space for the end accessory if none is given.
    */
@@ -51,7 +51,7 @@ const propTypes = {
   /**
    * The react element for the comment element.
    */
-  comment: PropTypes.element,
+  comment: PropTypes.node,
 };
 
 const defaultProps = {
