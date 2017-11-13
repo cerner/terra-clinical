@@ -1,5 +1,3 @@
-const maxDisplays = 8;
-
 const KEYCODES = {
   ENTER: 13,
   SPACE: 32,
@@ -13,26 +11,23 @@ const KEYCODES = {
  * @ param {requiredElements} obj - The elements expected to be displayed.
  */
 function addAnyMissingListElements(childElements, requiredElements) {
-  const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
+  const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
   const itemViewPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
-  itemViewPieces.startAccessory = startAccessoryRequired ? startAccessory : null;
-  itemViewPieces.hasStartAccessory = startAccessoryRequired;
+  itemViewPieces.startAccessory = hasStartAccessory ? startAccessory : null;
+  itemViewPieces.hasStartAccessory = hasStartAccessory;
 
   let displayContent = [];
-  if (displaysRequired && displaysRequired > 0) {
-    const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
-    if (children) {
-      // If one child element is provided, children is an obj, not an array
-      displayContent = children.length ? children.slice(0, numberOfDisplays) : children;
-    }
+  if (numberOfDisplays > 0 && children) {
+    // Checks if its an array of React Children or single React Child
+    displayContent = children.length ? children.slice(0, numberOfDisplays) : children;
   }
   itemViewPieces.children = displayContent;
 
-  itemViewPieces.comment = commentRequired ? comment : null;
-  itemViewPieces.endAccessory = endAccessoryRequired ? endAccessory : null;
-  itemViewPieces.hasEndAccessory = endAccessoryRequired;
+  itemViewPieces.comment = hasComment ? comment : null;
+  itemViewPieces.endAccessory = hasEndAccessory ? endAccessory : null;
+  itemViewPieces.hasEndAccessory = hasEndAccessory;
 
   return itemViewPieces;
 }
@@ -45,11 +40,11 @@ function addAnyMissingListElements(childElements, requiredElements) {
  * @ param {requiredElements} obj - The elements expected to be displayed.
  */
 function addAnyMissingTableElements(childElements, requiredElements) {
-  const { startAccessoryRequired, displaysRequired, commentRequired, endAccessoryRequired } = requiredElements;
+  const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
   const tableRowPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
-  if (startAccessoryRequired) {
+  if (hasStartAccessory) {
     tableRowPieces.startAccessory = ' ';
     if (startAccessory) {
       tableRowPieces.startAccessory = startAccessory;
@@ -57,9 +52,9 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   }
 
   let displayContent = [];
-  if (displaysRequired) {
-    const numberOfDisplays = displaysRequired < maxDisplays ? displaysRequired : maxDisplays;
+  if (numberOfDisplays > 0) {
     if (children) {
+      // Checks if its an array of React Children or single React Child
       displayContent = children.length ? children.slice(0, numberOfDisplays) : [children];
     }
     while (displayContent.length < numberOfDisplays) {
@@ -68,14 +63,14 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   }
   tableRowPieces.children = displayContent;
 
-  if (commentRequired) {
+  if (hasComment) {
     tableRowPieces.comment = ' ';
     if (comment) {
       tableRowPieces.comment = comment;
     }
   }
 
-  if (endAccessoryRequired) {
+  if (hasEndAccessory) {
     tableRowPieces.endAccessory = ' ';
     if (endAccessory) {
       tableRowPieces.endAccessory = endAccessory;

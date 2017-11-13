@@ -1,8 +1,6 @@
 import React from 'react';
 import ItemCollection from '../../../lib/ItemCollection';
 
-const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, commentRequired: true, endAccessoryRequired: true };
-
 const oneColumnItem = (
   <ItemCollection.Item
     startAccessory={<p>S</p>}
@@ -34,7 +32,12 @@ const twoColumnItem = (
 );
 
 const OneColumnDisplay = () => (
-  <ItemCollection id="ItemCollection" requiredElements={requiredElements}>
+  <ItemCollection
+    hasStartAccessory
+    numberOfDisplays={5}
+    hasComment
+    hasEndAccessory
+  >
     {oneColumnItem}
     {oneColumnItem}
     {oneColumnItem}
@@ -42,7 +45,12 @@ const OneColumnDisplay = () => (
 );
 
 const TwoColumnDisplay = () => (
-  <ItemCollection id="ItemCollection" requiredElements={requiredElements}>
+  <ItemCollection
+    hasStartAccessory
+    numberOfDisplays={5}
+    hasComment
+    hasEndAccessory
+  >
     {twoColumnItem}
     {twoColumnItem}
     {twoColumnItem}

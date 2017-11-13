@@ -11,7 +11,10 @@ const defaultItem = (
 
 const DividedList = () => (
   <ItemCollection
-    requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+    hasStartAccessory
+    numberOfDisplays={3}
+    hasComment
+    hasEndAccessory
     isListDivided
   >
     {defaultItem}

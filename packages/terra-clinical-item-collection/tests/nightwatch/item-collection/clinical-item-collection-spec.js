@@ -3,13 +3,13 @@
 const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsive-helpers');
 
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
-  'Displays a default item collection': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/default`)
+  'Displays a item collection with all possibe elements': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/all`)
       .expect.element('#ItemCollection').to.be.present;
   },
 
   'Displays the correct collection when responding to breakpoint': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/default`);
+    browser.url(`${browser.launchUrl}/#/tests/item-collection-tests/all`);
     browser.execute("document.getElementById('siteApplication').style.padding = 0;");
 
     const width = screenWidth(browser);

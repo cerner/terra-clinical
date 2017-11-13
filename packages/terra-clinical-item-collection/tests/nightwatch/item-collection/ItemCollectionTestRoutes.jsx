@@ -4,7 +4,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import ItemCollectionTests from './ItemCollectionTests';
 
-import DefaultItemCollection from './DefaultItemCollection';
+import ItemCollectionAllElements from './ItemCollectionAllElements';
 import ItemCollectionVaryingItems from './ItemCollectionVaryingItems';
 import ItemCollectionSelectable from './ItemCollectionSelectable';
 import TableStyles from './ItemCollectionTableStyles';
@@ -14,7 +14,7 @@ import ItemStyles from './ItemCollectionItemStyles';
 const routes = (
   <div>
     <Route path="/tests/item-collection-tests" component={ItemCollectionTests} />
-    <Route path="/tests/item-collection-tests/default" component={DefaultItemCollection} />
+    <Route path="/tests/item-collection-tests/all" component={ItemCollectionAllElements} />
     <Route path="/tests/item-collection-tests/varying-items" component={ItemCollectionVaryingItems} />
     <Route path="/tests/item-collection-tests/selectable" component={ItemCollectionSelectable} />
     <Route path="/tests/item-collection-tests/table-styles" component={TableStyles} />

@@ -1,133 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render a default ItemCollection 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <ListView
-      listStyles={
-        Object {
-          "isDivided": false,
-        }
-      }
-      requiredElements={
-        Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
-        }
-      }
-    >
-      <Item
-        comment={
-          <ItemComment
-            isTruncated={false}
-            text="test comment"
-          />
-        }
-        endAccessory={
-          <p>
-            E
-          </p>
-        }
-        isSelectable={false}
-        isSelected={false}
-        listItemStyles={Object {}}
-        startAccessory={
-          <p>
-            S
-          </p>
-        }
-        view="list"
-      >
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 1"
-        />
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 2"
-        />
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 3"
-        />
-      </Item>
-    </ListView>
-  }
-  responsiveTo="parent"
-  small={
-    <TableView
-      requiredElements={
-        Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
-        }
-      }
-      tableStyles={
-        Object {
-          "isPadded": false,
-          "isStriped": false,
-        }
-      }
-    >
-      <Item
-        comment={
-          <ItemComment
-            isTruncated={false}
-            text="test comment"
-          />
-        }
-        endAccessory={
-          <p>
-            E
-          </p>
-        }
-        isSelectable={false}
-        isSelected={false}
-        listItemStyles={Object {}}
-        startAccessory={
-          <p>
-            S
-          </p>
-        }
-        view="list"
-      >
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 1"
-        />
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 2"
-        />
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 3"
-        />
-      </Item>
-    </TableView>
-  }
-/>
-`;
-
 exports[`should render an ItemCollection with a breakpoint 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={
-        Object {
-          "isDivided": false,
-        }
-      }
+      isListDivided={false}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -171,18 +54,14 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
   responsiveTo="parent"
   tiny={
     <TableView
+      isTablePadded={false}
+      isTableStriped={false}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
-        }
-      }
-      tableStyles={
-        Object {
-          "isPadded": false,
-          "isStriped": false,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -226,21 +105,368 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
 />
 `;
 
+exports[`should render an ItemCollection with a comment 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      isListDivided={false}
+      requiredElements={
+        Object {
+          "hasComment": true,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        view="list"
+      />
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      isTablePadded={false}
+      isTableStriped={false}
+      requiredElements={
+        Object {
+          "hasComment": true,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        view="list"
+      />
+    </TableView>
+  }
+/>
+`;
+
+exports[`should render an ItemCollection with a start accessory 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      isListDivided={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": true,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      />
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      isTablePadded={false}
+      isTableStriped={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": true,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      />
+    </TableView>
+  }
+/>
+`;
+
+exports[`should render an ItemCollection with all elements 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      isListDivided={false}
+      requiredElements={
+        Object {
+          "hasComment": true,
+          "hasEndAccessory": true,
+          "hasStartAccessory": true,
+          "numberOfDisplays": 1,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      >
+        <ItemDisplay
+          isTruncated={false}
+          text="Display 1"
+        />
+      </Item>
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      isTablePadded={false}
+      isTableStriped={false}
+      requiredElements={
+        Object {
+          "hasComment": true,
+          "hasEndAccessory": true,
+          "hasStartAccessory": true,
+          "numberOfDisplays": 1,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      >
+        <ItemDisplay
+          isTruncated={false}
+          text="Display 1"
+        />
+      </Item>
+    </TableView>
+  }
+/>
+`;
+
+exports[`should render an ItemCollection with an end accessory 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      isListDivided={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": true,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        view="list"
+      />
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      isTablePadded={false}
+      isTableStriped={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": true,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        view="list"
+      />
+    </TableView>
+  }
+/>
+`;
+
+exports[`should render an ItemCollection with displays 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      isListDivided={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 1,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      >
+        <ItemDisplay
+          isTruncated={false}
+          text="Display 1"
+        />
+      </Item>
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      isTablePadded={false}
+      isTableStriped={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 1,
+        }
+      }
+    >
+      <Item
+        comment={
+          <ItemComment
+            isTruncated={false}
+            text="test comment"
+          />
+        }
+        endAccessory={
+          <p>
+            E
+          </p>
+        }
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        startAccessory={
+          <p>
+            S
+          </p>
+        }
+        view="list"
+      >
+        <ItemDisplay
+          isTruncated={false}
+          text="Display 1"
+        />
+      </Item>
+    </TableView>
+  }
+/>
+`;
+
 exports[`should render an ItemCollection with list styles 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={
-        Object {
-          "isDivided": true,
-        }
-      }
+      isListDivided={true}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -284,18 +510,14 @@ exports[`should render an ItemCollection with list styles 1`] = `
   responsiveTo="parent"
   small={
     <TableView
+      isTablePadded={false}
+      isTableStriped={false}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
-        }
-      }
-      tableStyles={
-        Object {
-          "isPadded": false,
-          "isStriped": false,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -343,18 +565,14 @@ exports[`should render an ItemCollection with onSelect 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={
-        Object {
-          "isDivided": false,
-        }
-      }
+      isListDivided={false}
       onSelect={[Function]}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -391,19 +609,15 @@ exports[`should render an ItemCollection with onSelect 1`] = `
   responsiveTo="parent"
   small={
     <TableView
+      isTablePadded={false}
+      isTableStriped={false}
       onSelect={[Function]}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
-        }
-      }
-      tableStyles={
-        Object {
-          "isPadded": false,
-          "isStriped": false,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -431,103 +645,6 @@ exports[`should render an ItemCollection with onSelect 1`] = `
       >
         <ItemDisplay
           isSelectable={true}
-          isTruncated={false}
-          text="Display 1"
-        />
-      </Item>
-    </TableView>
-  }
-/>
-`;
-
-exports[`should render an ItemCollection with requiredElements 1`] = `
-<ResponsiveElement
-  defaultElement={
-    <ListView
-      listStyles={
-        Object {
-          "isDivided": false,
-        }
-      }
-      requiredElements={
-        Object {
-          "commentRequired": true,
-          "displaysRequired": 5,
-          "endAccessoryRequired": false,
-          "startAccessoryRequired": true,
-        }
-      }
-    >
-      <Item
-        comment={
-          <ItemComment
-            isTruncated={false}
-            text="test comment"
-          />
-        }
-        endAccessory={
-          <p>
-            E
-          </p>
-        }
-        isSelectable={false}
-        isSelected={false}
-        listItemStyles={Object {}}
-        startAccessory={
-          <p>
-            S
-          </p>
-        }
-        view="list"
-      >
-        <ItemDisplay
-          isTruncated={false}
-          text="Display 1"
-        />
-      </Item>
-    </ListView>
-  }
-  responsiveTo="parent"
-  small={
-    <TableView
-      requiredElements={
-        Object {
-          "commentRequired": true,
-          "displaysRequired": 5,
-          "endAccessoryRequired": false,
-          "startAccessoryRequired": true,
-        }
-      }
-      tableStyles={
-        Object {
-          "isPadded": false,
-          "isStriped": false,
-        }
-      }
-    >
-      <Item
-        comment={
-          <ItemComment
-            isTruncated={false}
-            text="test comment"
-          />
-        }
-        endAccessory={
-          <p>
-            E
-          </p>
-        }
-        isSelectable={false}
-        isSelected={false}
-        listItemStyles={Object {}}
-        startAccessory={
-          <p>
-            S
-          </p>
-        }
-        view="list"
-      >
-        <ItemDisplay
           isTruncated={false}
           text="Display 1"
         />
@@ -541,17 +658,13 @@ exports[`should render an ItemCollection with table styles 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={
-        Object {
-          "isDivided": false,
-        }
-      }
+      isListDivided={false}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -595,18 +708,14 @@ exports[`should render an ItemCollection with table styles 1`] = `
   responsiveTo="parent"
   small={
     <TableView
+      isTablePadded={true}
+      isTableStriped={true}
       requiredElements={
         Object {
-          "commentRequired": true,
-          "displaysRequired": 8,
-          "endAccessoryRequired": true,
-          "startAccessoryRequired": true,
-        }
-      }
-      tableStyles={
-        Object {
-          "isPadded": true,
-          "isStriped": true,
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
         }
       }
     >
@@ -645,6 +754,53 @@ exports[`should render an ItemCollection with table styles 1`] = `
           text="Display 3"
         />
       </Item>
+    </TableView>
+  }
+/>
+`;
+
+exports[`should render an default ItemCollection with no elements 1`] = `
+<ResponsiveElement
+  defaultElement={
+    <ListView
+      isListDivided={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        view="list"
+      />
+    </ListView>
+  }
+  responsiveTo="parent"
+  small={
+    <TableView
+      isTablePadded={false}
+      isTableStriped={false}
+      requiredElements={
+        Object {
+          "hasComment": false,
+          "hasEndAccessory": false,
+          "hasStartAccessory": false,
+          "numberOfDisplays": 0,
+        }
+      }
+    >
+      <Item
+        isSelectable={false}
+        isSelected={false}
+        listItemStyles={Object {}}
+        view="list"
+      />
     </TableView>
   }
 />

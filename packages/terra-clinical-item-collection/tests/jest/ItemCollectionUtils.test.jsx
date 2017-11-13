@@ -18,11 +18,11 @@ const defaultChildElements = {
   endAccessory: <p>E</p>,
 };
 
-const noRequiredElements = { startAccessoryRequired: false, displaysRequired: 0, commentRequired: false, endAccessoryRequired: false };
+const noRequiredElements = { hasStartAccessory: false, numberOfDisplays: 0, hasComment: false, hasEndAccessory: false };
 
 describe('addAnyMissingListElements Tests', () => {
-  it('should use the start accessory when startAccessoryRequired', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { startAccessoryRequired: true });
+  it('should use the start accessory when hasStartAccessory', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasStartAccessory: true });
 
     const listPieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 
@@ -30,8 +30,8 @@ describe('addAnyMissingListElements Tests', () => {
     expect(listPieces).toEqual(expectedListPieces);
   });
 
-  it('should set hasStartAccessory={true} when startAccessoryRequired & startAccessory is missing', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { startAccessoryRequired: true });
+  it('should set hasStartAccessory={true} when hasStartAccessory & startAccessory is missing', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasStartAccessory: true });
     const missingChildElements = Object.assign({}, defaultChildElements, { startAccessory: null });
 
     const listPieces = Utils.addAnyMissingListElements(missingChildElements, requiredElements);
@@ -40,8 +40,8 @@ describe('addAnyMissingListElements Tests', () => {
     expect(listPieces).toEqual(expectedListPieces);
   });
 
-  it('should use the correct displays when displaysRequired is specified', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { displaysRequired: 1 });
+  it('should use the correct displays when numberOfDisplays is specified', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { numberOfDisplays: 1 });
 
     const listPieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 
@@ -49,8 +49,8 @@ describe('addAnyMissingListElements Tests', () => {
     expect(listPieces).toEqual(expectedListPieces);
   });
 
-  it('should only allow 8 displays when displaysRequired is more than maxDisplays', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { displaysRequired: 9 });
+  it('should only allow 8 displays when numberOfDisplays is more than maxDisplays', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { numberOfDisplays: 9 });
 
     const listPieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 
@@ -74,8 +74,8 @@ describe('addAnyMissingListElements Tests', () => {
     expect(listPieces).toEqual(expectedListPieces);
   });
 
-  it('should use the comment when commentRequired', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { commentRequired: true });
+  it('should use the comment when hasComment', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasComment: true });
 
     const listPieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 
@@ -83,8 +83,8 @@ describe('addAnyMissingListElements Tests', () => {
     expect(listPieces).toEqual(expectedListPieces);
   });
 
-  it('should use the end accessory when endAccessoryRequired', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { endAccessoryRequired: true });
+  it('should use the end accessory when hasEndAccessory', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasEndAccessory: true });
 
     const listPieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 
@@ -92,8 +92,8 @@ describe('addAnyMissingListElements Tests', () => {
     expect(listPieces).toEqual(expectedListPieces);
   });
 
-  it('should set hasEndAccessory={true} when endAccessoryRequired & endAccessory is missing', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { endAccessoryRequired: true });
+  it('should set hasEndAccessory={true} when hasEndAccessory & endAccessory is missing', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasEndAccessory: true });
     const missingChildElements = Object.assign({}, defaultChildElements, { endAccessory: null });
 
     const listPieces = Utils.addAnyMissingListElements(missingChildElements, requiredElements);
@@ -103,7 +103,7 @@ describe('addAnyMissingListElements Tests', () => {
   });
 
   it('does not add elements when all are required & none missing', () => {
-    const requiredElements = { startAccessoryRequired: true, displaysRequired: 8, commentRequired: true, endAccessoryRequired: true };
+    const requiredElements = { hasStartAccessory: true, numberOfDisplays: 8, hasComment: true, hasEndAccessory: true };
 
     const listPieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 
@@ -129,8 +129,8 @@ describe('addAnyMissingListElements Tests', () => {
 });
 
 describe('addAnyMissingTableElements Tests', () => {
-  it('should use the start accessory when startAccessoryRequired', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { startAccessoryRequired: true });
+  it('should use the start accessory when hasStartAccessory', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasStartAccessory: true });
 
     const tablePieces = Utils.addAnyMissingTableElements(defaultChildElements, requiredElements);
 
@@ -138,8 +138,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should add a start accessory when startAccessoryRequired & startAccessory is missing', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { startAccessoryRequired: true });
+  it('should add a start accessory when hasStartAccessory & startAccessory is missing', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasStartAccessory: true });
     const missingChildElements = Object.assign({}, defaultChildElements, { startAccessory: null });
 
     const tablePieces = Utils.addAnyMissingTableElements(missingChildElements, requiredElements);
@@ -148,8 +148,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should use the correct displays when displaysRequired is specified', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { displaysRequired: 1 });
+  it('should use the correct displays when numberOfDisplays is specified', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { numberOfDisplays: 1 });
 
     const tablePieces = Utils.addAnyMissingTableElements(defaultChildElements, requiredElements);
 
@@ -157,8 +157,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should add the correct displays when displaysRequired is specified & children are missing', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { displaysRequired: 3 });
+  it('should add the correct displays when numberOfDisplays is specified & children are missing', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { numberOfDisplays: 3 });
     const missingChildElements = Object.assign({}, defaultChildElements, { children: null });
 
     const tablePieces = Utils.addAnyMissingTableElements(missingChildElements, requiredElements);
@@ -167,31 +167,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should only allow 8 displays when displaysRequired is more than maxDisplays', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { displaysRequired: 9 });
-
-    const tablePieces = Utils.addAnyMissingTableElements(defaultChildElements, requiredElements);
-
-    const expectedTablePieces = {
-      startAccessory: null,
-      children: [
-        <ItemCollection.Display text="Display 1" />,
-        <ItemCollection.Display text="Display 2" />,
-        <ItemCollection.Display text="Display 3" />,
-        <ItemCollection.Display text="Display 4" />,
-        <ItemCollection.Display text="Display 5" />,
-        <ItemCollection.Display text="Display 6" />,
-        <ItemCollection.Display text="Display 7" />,
-        <ItemCollection.Display text="Display 8" />,
-      ],
-      comment: null,
-      endAccessory: null,
-    };
-    expect(tablePieces).toEqual(expectedTablePieces);
-  });
-
-  it('should use the comment when commentRequired', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { commentRequired: true });
+  it('should use the comment when hasComment', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasComment: true });
 
     const tablePieces = Utils.addAnyMissingTableElements(defaultChildElements, requiredElements);
 
@@ -199,8 +176,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should add a comment when commentRequired & comment is missing', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { commentRequired: true });
+  it('should add a comment when hasComment & comment is missing', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasComment: true });
     const missingChildElements = Object.assign({}, defaultChildElements, { comment: null });
 
     const tablePieces = Utils.addAnyMissingTableElements(missingChildElements, requiredElements);
@@ -209,8 +186,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should use the end accessory when endAccessoryRequired', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { endAccessoryRequired: true });
+  it('should use the end accessory when hasEndAccessory', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasEndAccessory: true });
 
     const tablePieces = Utils.addAnyMissingTableElements(defaultChildElements, requiredElements);
 
@@ -218,8 +195,8 @@ describe('addAnyMissingTableElements Tests', () => {
     expect(tablePieces).toEqual(expectedTablePieces);
   });
 
-  it('should add a end accessory when endAccessoryRequired & endAccessory is missing', () => {
-    const requiredElements = Object.assign({}, noRequiredElements, { endAccessoryRequired: true });
+  it('should add a end accessory when hasEndAccessory & endAccessory is missing', () => {
+    const requiredElements = Object.assign({}, noRequiredElements, { hasEndAccessory: true });
     const missingChildElements = Object.assign({}, defaultChildElements, { endAccessory: null });
 
     const tablePieces = Utils.addAnyMissingTableElements(missingChildElements, requiredElements);
@@ -229,7 +206,7 @@ describe('addAnyMissingTableElements Tests', () => {
   });
 
   it('does not add elements when all are required & none missing', () => {
-    const requiredElements = { startAccessoryRequired: true, displaysRequired: 8, commentRequired: true, endAccessoryRequired: true };
+    const requiredElements = { hasStartAccessory: true, numberOfDisplays: 8, hasComment: true, hasEndAccessory: true };
 
     const tablePieces = Utils.addAnyMissingListElements(defaultChildElements, requiredElements);
 

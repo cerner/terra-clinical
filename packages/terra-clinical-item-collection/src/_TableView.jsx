@@ -15,38 +15,39 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * The styles to spread to the table. Table style options are isPadded and isStriped.
+   * Whether or not the table rows should be zebra striped.
    */
-  tableStyles: PropTypes.shape({
-    isPadded: PropTypes.bool,
-    isStriped: PropTypes.bool,
-  }),
+  isTablePadded: PropTypes.bool,
+  /**
+   * Whether or not the table cells should be padded.
+   */
+  isTableStriped: PropTypes.bool,
   /**
    * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to maintain
    * the provided layout.
    */
   requiredElements: PropTypes.shape({
-    startAccessory: PropTypes.bool,
-    displays: PropTypes.Number,
-    comment: PropTypes.bool,
-    endAccessory: PropTypes.bool,
+    hasStartAccessory: PropTypes.bool,
+    numberOfDisplays: PropTypes.number,
+    hasComment: PropTypes.bool,
+    hasEndAccessory: PropTypes.bool,
   }),
 };
 
 function createTableLayout(requiredElements) {
   const displays = [];
-  if (requiredElements.displaysRequired) {
-    for (let i = 0; i < requiredElements.displaysRequired; i += 1) {
+  if (requiredElements.numberOfDisplays) {
+    for (let i = 0; i < requiredElements.numberOfDisplays; i += 1) {
       displays.push(<col key={i} />);
     }
   }
 
   return (
     <colgroup>
-      {requiredElements.startAccessoryRequired && <col className={styles['accessory-column']} />}
+      {requiredElements.hasStartAccessory && <col className={styles['accessory-column']} />}
       {displays}
-      {requiredElements.commentRequired && <col />}
-      {requiredElements.endAccessoryRequired && <col className={styles['accessory-column']} />}
+      {requiredElements.hasComment && <col />}
+      {requiredElements.hasEndAccessory && <col className={styles['accessory-column']} />}
     </colgroup>
   );
 }
@@ -62,12 +63,17 @@ function createTableRows(children, onSelect, requiredElements) {
   });
 }
 
-const TableView = ({ children, onSelect, tableStyles, requiredElements }) => {
+const TableView = ({ children, onSelect, isTablePadded, isTableStriped, requiredElements }) => {
   const tableLayout = createTableLayout(requiredElements);
   const tableRows = createTableRows(children, onSelect, requiredElements);
 
   return (
-    <Table data-terra-clinical-item-collection-table-view className={styles.table} {...tableStyles} >
+    <Table
+      data-terra-clinical-item-collection-table-view
+      className={styles.table}
+      isPadded={isTablePadded}
+      isStriped={isTableStriped}
+    >
       {tableLayout}
       <Table.Rows>
         {tableRows}

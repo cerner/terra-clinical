@@ -8,6 +8,8 @@ import ListView from './_ListView';
 import TableView from './_TableView';
 import './ItemCollection.scss';
 
+const maxDisplays = 8;
+
 const propTypes = {
   /**
    * The breakpoint to switch from a table view to a list view. Breakpoint options are tiny, small, medium, large, or huge.
@@ -18,16 +20,21 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-   * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to maintain
-   * the provided layout.The elements expected to be displayed. Options are startAccessoryRequired (bool), displaysRequired
-   * (number), commentRequired (bool), and endAccessoryRequired (bool).
-   */
-  requiredElements: PropTypes.shape({
-    startAccessoryRequired: PropTypes.bool,
-    displaysRequired: PropTypes.Number,
-    commentRequired: PropTypes.bool,
-    endAccessoryRequired: PropTypes.bool,
-  }),
+  * Whether or not the item collection should create a layout to display a start accessory.
+  */
+  hasStartAccessory: PropTypes.bool,
+  /**
+  * The number of displays the item collection should create a layout for.
+  */
+  numberOfDisplays: PropTypes.number,
+  /**
+  * Whether or not the item collection should create a layout to display a comment.
+  */
+  hasComment: PropTypes.bool,
+  /**
+  * Whether or not the item collection should create a layout to display an end accessory.
+  */
+  hasEndAccessory: PropTypes.bool,
   /**
    * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable. The first
    * parameter returned is the event and the second parameter is the child key. Function is not applied if child is not selectable.
@@ -49,7 +56,10 @@ const propTypes = {
 
 const defaultProps = {
   breakpoint: 'small',
-  requiredElements: { startAccessoryRequired: true, displaysRequired: 8, commentRequired: true, endAccessoryRequired: true },
+  hasStartAccessory: false,
+  numberOfDisplays: 0,
+  hasComment: false,
+  hasEndAccessory: false,
   onSelect: undefined,
   isListDivided: false,
   isTablePadded: false,
@@ -57,25 +67,44 @@ const defaultProps = {
 };
 
 const ItemCollection = (props) => {
-  const { children, breakpoint, onSelect, requiredElements, isListDivided, isTablePadded, isTableStriped, ...customProps } = props;
+  const {
+    children,
+    breakpoint,
+    onSelect,
+    hasStartAccessory,
+    numberOfDisplays,
+    hasComment,
+    hasEndAccessory,
+    isListDivided,
+    isTablePadded,
+    isTableStriped,
+    ...customProps
+  } = props;
 
-  const listStyles = { isDivided: isListDivided };
+  const displaysRequired = (numberOfDisplays < maxDisplays) ? numberOfDisplays : maxDisplays;
+  const requiredElements = {
+    hasStartAccessory,
+    numberOfDisplays: displaysRequired,
+    hasComment,
+    hasEndAccessory,
+  };
+
   const listDisplay = (
     <ListView
       requiredElements={requiredElements}
       onSelect={onSelect}
-      listStyles={listStyles}
+      isListDivided={isListDivided}
     >
       {children}
     </ListView>
   );
 
-  const tableStyles = { isPadded: isTablePadded, isStriped: isTableStriped };
   const tableDisplay = (
     <TableView
       requiredElements={requiredElements}
       onSelect={onSelect}
-      tableStyles={tableStyles}
+      isTablePadded={isTablePadded}
+      isTableStriped={isTableStriped}
     >
       {children}
     </TableView>

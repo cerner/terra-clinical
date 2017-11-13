@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 const ItemCollectionTests = () => (
   <div>
     <ul>
-      <li><Link to="/tests/item-collection-tests/default">Item Collection - Default</Link></li>
+      <li><Link to="/tests/item-collection-tests/all">Item Collection - All Elements</Link></li>
       <li><Link to="/tests/item-collection-tests/selectable">Item Collection - Selectable Example</Link></li>
       <li><Link to="/tests/item-collection-tests/varying-items">Item Collection - Varying Items Example</Link></li>
       <li><Link to="/tests/item-collection-tests/table-styles">Item Collection - Table Styles</Link></li>

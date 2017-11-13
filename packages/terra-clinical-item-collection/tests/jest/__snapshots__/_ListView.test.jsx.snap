@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render a ListView with a divided list 1`] = `
+<List
+  data-terra-clinical-item-collection-list-view={true}
+  isDivided={true}
+>
+  <Item
+    comment={
+      <ItemComment
+        isTruncated={false}
+        text="test comment"
+      />
+    }
+    endAccessory={
+      <p>
+        E
+      </p>
+    }
+    hasEndAccessory={true}
+    hasStartAccessory={true}
+    isSelectable={false}
+    isSelected={false}
+    itemKey="1"
+    listItemStyles={Object {}}
+    startAccessory={
+      <p>
+        S
+      </p>
+    }
+    view="list"
+  >
+    <ItemDisplay
+      isTruncated={false}
+      text="Display 1"
+    />
+  </Item>
+</List>
+`;
+
 exports[`should render a ListView with children 1`] = `
 <List
   data-terra-clinical-item-collection-list-view={true}
@@ -22,44 +60,6 @@ exports[`should render a ListView with children 1`] = `
     isSelectable={false}
     isSelected={false}
     itemKey={null}
-    listItemStyles={Object {}}
-    startAccessory={
-      <p>
-        S
-      </p>
-    }
-    view="list"
-  >
-    <ItemDisplay
-      isTruncated={false}
-      text="Display 1"
-    />
-  </Item>
-</List>
-`;
-
-exports[`should render a ListView with list styles 1`] = `
-<List
-  data-terra-clinical-item-collection-list-view={true}
-  isDivided={true}
->
-  <Item
-    comment={
-      <ItemComment
-        isTruncated={false}
-        text="test comment"
-      />
-    }
-    endAccessory={
-      <p>
-        E
-      </p>
-    }
-    hasEndAccessory={true}
-    hasStartAccessory={true}
-    isSelectable={false}
-    isSelected={false}
-    itemKey="1"
     listItemStyles={Object {}}
     startAccessory={
       <p>

@@ -2,7 +2,14 @@ import React from 'react';
 import ItemCollection from '../../../lib/ItemCollection';
 
 const DefaultItemCollection = () => (
-  <ItemCollection id="VaryingItems" breakpoint="medium">
+  <ItemCollection
+    id="VaryingItems"
+    hasStartAccessory
+    numberOfDisplays={3}
+    hasComment
+    hasEndAccessory
+    breakpoint="medium"
+  >
     <ItemCollection.Item comment={<ItemCollection.Comment text="test comment" />} endAccessory={<div>E</div>}>
       <ItemCollection.Display text="Display 1" />
       <ItemCollection.Display text="Display 2" />

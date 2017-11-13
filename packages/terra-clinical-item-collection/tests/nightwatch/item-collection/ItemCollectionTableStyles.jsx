@@ -11,7 +11,10 @@ const defaultItem = (
 
 const PaddedTable = () => (
   <ItemCollection
-    requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+    hasStartAccessory
+    numberOfDisplays={3}
+    hasComment
+    hasEndAccessory
     isTablePadded
   >
     {defaultItem}
@@ -22,7 +25,10 @@ const PaddedTable = () => (
 
 const StrippedTable = () => (
   <ItemCollection
-    requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+    hasStartAccessory
+    numberOfDisplays={3}
+    hasComment
+    hasEndAccessory
     isTableStriped
   >
     {defaultItem}

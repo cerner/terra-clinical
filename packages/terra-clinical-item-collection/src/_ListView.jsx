@@ -14,21 +14,18 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * The styles to spread to the list. List style options are isDivided and hasChevrons.
+   * Whether or not the list items should be divided.
    */
-  listStyles: PropTypes.shape({
-    isDivided: PropTypes.bool,
-    hasChevrons: PropTypes.bool,
-  }),
+  isListDivided: PropTypes.bool,
   /**
    * The elements expected to be displayed. If a child is missing an element, ItemCollection will allocate space to
    * maintain the provided layout.
    */
   requiredElements: PropTypes.shape({
-    startAccessory: PropTypes.bool,
-    displays: PropTypes.Number,
-    comment: PropTypes.bool,
-    endAccessory: PropTypes.bool,
+    hasStartAccessory: PropTypes.bool,
+    numberOfDisplays: PropTypes.number,
+    hasComment: PropTypes.bool,
+    hasEndAccessory: PropTypes.bool,
   }),
 };
 
@@ -43,11 +40,11 @@ function createListItems(children, onSelect, requiredElements) {
   });
 }
 
-const ListView = ({ children, onSelect, listStyles, requiredElements }) => {
+const ListView = ({ children, onSelect, isListDivided, requiredElements }) => {
   const listItems = createListItems(children, onSelect, requiredElements);
 
   return (
-    <List data-terra-clinical-item-collection-list-view {...listStyles}>
+    <List data-terra-clinical-item-collection-list-view isDivided={isListDivided} >
       {listItems}
     </List>
   );

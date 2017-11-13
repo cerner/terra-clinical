@@ -13,15 +13,21 @@ class DefaultItemCollection extends React.Component {
   }
 
   render() {
-    const requiredElements = { startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true };
-
     return (
       <div>
         <h3>This a POC Selectable ItemCollection Example.</h3>
         <p>This example it set up to be a sinlge-selection example, however the Item Colleciton
            gives implementors the flexibilty to create their own selection implementation. </p>
         <p id="selected-key"> Selected Item: {this.state.selectedItemKey} </p>
-        <ItemCollection onSelect={this.handleSelection} id="ItemCollection" requiredElements={requiredElements} breakpoint="medium">
+        <ItemCollection
+          id="ItemCollection"
+          onSelect={this.handleSelection}
+          hasStartAccessory
+          numberOfDisplays={3}
+          hasComment
+          hasEndAccessory
+          breakpoint="medium"
+        >
           <ItemCollection.Item
             id="item1"
             key="1"
