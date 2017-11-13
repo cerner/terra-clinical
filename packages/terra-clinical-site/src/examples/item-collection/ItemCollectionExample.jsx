@@ -16,11 +16,13 @@ const comment = <ItemCollection.Comment text="Faint red rash appeared at 08-05-2
 
 const startAccessory = <IconAlert />;
 const endAccessory = <IconInformation />;
-const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, commentRequired: true, endAccessoryRequired: true };
 
 const DefaultItemCollection = () => (
   <ItemCollection
-    requiredElements={requiredElements}
+    hasStartAccessory
+    numberOfDisplays={6}
+    hasComment
+    hasEndAccessory
     isListDivided
     isTableStriped
   >
@@ -40,7 +42,7 @@ const DefaultItemCollection = () => (
       startAccessory={startAccessory}
       comment={comment}
       endAccessory={endAccessory}
-      listItemStyles={{ layout: 'twoColumns' }}
+      listItemLayout="twoColumns"
     >
       {display1}
       {display2}
@@ -73,7 +75,7 @@ const DefaultItemCollection = () => (
     <ItemCollection.Item
       startAccessory={startAccessory}
       comment={comment}
-      listItemStyles={{ layout: 'twoColumns' }}
+      listItemLayout="twoColumns"
     >
       {display1}
       {display2}
