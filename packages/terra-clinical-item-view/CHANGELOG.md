@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Added
-* Added alignStartAccessory, alignEndAccessory and accessoryScale props to allow for proper spacing when a accessory is not provided.
+* Added alignStartAccessory, alignEndAccessory and accessoryScale props to allow for proper spacing when an accessory is not provided.
 
 1.4.0 - (September 26, 2017)
 -----------------
