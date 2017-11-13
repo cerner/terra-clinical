@@ -15,6 +15,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -26,9 +27,11 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -66,6 +69,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -77,9 +81,11 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -120,15 +126,18 @@ exports[`should render an ItemCollection with a comment 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
             text="test comment"
           />
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         view="list"
       />
     </ListView>
@@ -148,15 +157,18 @@ exports[`should render an ItemCollection with a comment 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
             text="test comment"
           />
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         view="list"
       />
     </TableView>
@@ -179,9 +191,12 @@ exports[`should render an ItemCollection with a start accessory 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -206,9 +221,12 @@ exports[`should render an ItemCollection with a start accessory 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -236,6 +254,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -247,9 +266,11 @@ exports[`should render an ItemCollection with all elements 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -279,6 +300,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -290,9 +312,11 @@ exports[`should render an ItemCollection with all elements 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -325,14 +349,17 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         endAccessory={
           <p>
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         view="list"
       />
     </ListView>
@@ -352,14 +379,17 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         endAccessory={
           <p>
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         view="list"
       />
     </TableView>
@@ -382,6 +412,7 @@ exports[`should render an ItemCollection with displays 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -393,9 +424,11 @@ exports[`should render an ItemCollection with displays 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -425,6 +458,7 @@ exports[`should render an ItemCollection with displays 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -436,9 +470,11 @@ exports[`should render an ItemCollection with displays 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -471,6 +507,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -482,9 +519,11 @@ exports[`should render an ItemCollection with list styles 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -522,6 +561,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -533,9 +573,11 @@ exports[`should render an ItemCollection with list styles 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -577,6 +619,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -588,9 +631,11 @@ exports[`should render an ItemCollection with onSelect 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -622,6 +667,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -633,9 +679,11 @@ exports[`should render an ItemCollection with onSelect 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -669,6 +717,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -680,9 +729,11 @@ exports[`should render an ItemCollection with table styles 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -720,6 +771,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
         comment={
           <ItemComment
             isTruncated={false}
@@ -731,9 +783,11 @@ exports[`should render an ItemCollection with table styles 1`] = `
             E
           </p>
         }
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         startAccessory={
           <p>
             S
@@ -774,9 +828,12 @@ exports[`should render an default ItemCollection with no elements 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         view="list"
       />
     </ListView>
@@ -796,9 +853,12 @@ exports[`should render an default ItemCollection with no elements 1`] = `
       }
     >
       <Item
+        accessoryAlignment="alignCenter"
+        isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
-        listItemStyles={Object {}}
+        listItemLayout="oneColumn"
+        listItemTextEmphasis="default"
         view="list"
       />
     </TableView>

@@ -6,6 +6,7 @@ exports[`should render a ListView with a divided list 1`] = `
   isDivided={true}
 >
   <Item
+    accessoryAlignment="alignCenter"
     comment={
       <ItemComment
         isTruncated={false}
@@ -19,10 +20,12 @@ exports[`should render a ListView with a divided list 1`] = `
     }
     hasEndAccessory={true}
     hasStartAccessory={true}
+    isListItemTruncated={false}
     isSelectable={false}
     isSelected={false}
     itemKey="1"
-    listItemStyles={Object {}}
+    listItemLayout="oneColumn"
+    listItemTextEmphasis="default"
     startAccessory={
       <p>
         S
@@ -44,6 +47,7 @@ exports[`should render a ListView with children 1`] = `
   isDivided={false}
 >
   <Item
+    accessoryAlignment="alignCenter"
     comment={
       <ItemComment
         isTruncated={false}
@@ -57,10 +61,12 @@ exports[`should render a ListView with children 1`] = `
     }
     hasEndAccessory={true}
     hasStartAccessory={true}
+    isListItemTruncated={false}
     isSelectable={false}
     isSelected={false}
     itemKey={null}
-    listItemStyles={Object {}}
+    listItemLayout="oneColumn"
+    listItemTextEmphasis="default"
     startAccessory={
       <p>
         S

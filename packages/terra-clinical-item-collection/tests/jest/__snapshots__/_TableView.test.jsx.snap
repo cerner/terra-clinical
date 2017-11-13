@@ -11,21 +11,40 @@ exports[`should render a TableView with children 1`] = `
     <col
       className="accessory-column"
     />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-comment-column={true}
+    />
     <col
       className="accessory-column"
     />
   </colgroup>
   <TableRows>
     <Item
+      accessoryAlignment="alignCenter"
       comment={
         <ItemComment
           isTruncated={false}
@@ -37,10 +56,12 @@ exports[`should render a TableView with children 1`] = `
           E
         </p>
       }
+      isListItemTruncated={false}
       isSelectable={false}
       isSelected={false}
       itemKey={null}
-      listItemStyles={Object {}}
+      listItemLayout="oneColumn"
+      listItemTextEmphasis="default"
       startAccessory={
         <p>
           S
@@ -75,21 +96,40 @@ exports[`should render a TableView with table styles 1`] = `
     <col
       className="accessory-column"
     />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-comment-column={true}
+    />
     <col
       className="accessory-column"
     />
   </colgroup>
   <TableRows>
     <Item
+      accessoryAlignment="alignCenter"
       comment={
         <ItemComment
           isTruncated={false}
@@ -101,10 +141,12 @@ exports[`should render a TableView with table styles 1`] = `
           E
         </p>
       }
+      isListItemTruncated={false}
       isSelectable={false}
       isSelected={false}
       itemKey="1"
-      listItemStyles={Object {}}
+      listItemLayout="oneColumn"
+      listItemTextEmphasis="default"
       startAccessory={
         <p>
           S
@@ -139,15 +181,33 @@ exports[`should render a default TableView 1`] = `
     <col
       className="accessory-column"
     />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
-    <col />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-comment-column={true}
+    />
     <col
       className="accessory-column"
     />

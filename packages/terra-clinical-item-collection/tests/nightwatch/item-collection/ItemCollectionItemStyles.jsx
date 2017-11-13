@@ -3,12 +3,12 @@ import ItemCollection from '../../../lib/ItemCollection';
 
 const oneColumnItem = (
   <ItemCollection.Item
-    startAccessory={<p>S</p>}
+    startAccessory="S"
     comment={<ItemCollection.Comment text="test comment" />}
-    endAccessory={<p>E</p>}
-    listItemStyles={{ layout: 'oneColumn' }}
+    endAccessory="E"
+    listItemLayout="oneColumn"
   >
-    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 1: Shows one column layout." />
     <ItemCollection.Display text="Display 2" />
     <ItemCollection.Display text="Display 3" />
     <ItemCollection.Display text="Display 4" />
@@ -18,12 +18,12 @@ const oneColumnItem = (
 
 const twoColumnItem = (
   <ItemCollection.Item
-    startAccessory={<p>S</p>}
+    startAccessory="S"
     comment={<ItemCollection.Comment text="test comment" />}
-    endAccessory={<p>E</p>}
-    listItemStyles={{ layout: 'twoColumns' }}
+    endAccessory="E"
+    listItemLayout="twoColumns"
   >
-    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 1: Shows two column layout." />
     <ItemCollection.Display text="Display 2" />
     <ItemCollection.Display text="Display 3" />
     <ItemCollection.Display text="Display 4" />
@@ -31,39 +31,61 @@ const twoColumnItem = (
   </ItemCollection.Item>
 );
 
-const OneColumnDisplay = () => (
+const LayoutDisplay = () => (
   <ItemCollection
     hasStartAccessory
     numberOfDisplays={5}
     hasComment
     hasEndAccessory
+    isTablePadded
   >
     {oneColumnItem}
-    {oneColumnItem}
-    {oneColumnItem}
+    {twoColumnItem}
   </ItemCollection>
 );
 
-const TwoColumnDisplay = () => (
+
+const AlignmentDisplay = () => (
   <ItemCollection
     hasStartAccessory
     numberOfDisplays={5}
     hasComment
     hasEndAccessory
+    isTablePadded
   >
-    {twoColumnItem}
-    {twoColumnItem}
-    {twoColumnItem}
+    <ItemCollection.Item
+      startAccessory="S"
+      comment={<ItemCollection.Comment text="test comment" />}
+      endAccessory="E"
+      accessoryAlignment="alignTop"
+    >
+      <ItemCollection.Display text="Display 1: Shows top accessory alignment." />
+      <ItemCollection.Display text="Display 2" />
+      <ItemCollection.Display text="Display 3" />
+      <ItemCollection.Display text="Display 4" />
+      <ItemCollection.Display text="Display 5" />
+    </ItemCollection.Item>
+    <ItemCollection.Item
+      startAccessory="S"
+      comment={<ItemCollection.Comment text="test comment" />}
+      endAccessory="E"
+    >
+      <ItemCollection.Display text="Display 1: Shows center accessory alignment." />
+      <ItemCollection.Display text="Display 2" />
+      <ItemCollection.Display text="Display 3" />
+      <ItemCollection.Display text="Display 4" />
+      <ItemCollection.Display text="Display 5" />
+    </ItemCollection.Item>
   </ItemCollection>
 );
 
 const ItemStyles = () => (
   <div id="ItemStyles">
-    <h3>List Item Style - One Column </h3>
-    <OneColumnDisplay />
+    <h3>List Item Layout - One Column vs Two Columns </h3>
+    <LayoutDisplay />
     <br />
-    <h3>List Item Style - Two Columns </h3>
-    <TwoColumnDisplay />
+    <h3>Accessory Alignment - Top vs Center </h3>
+    <AlignmentDisplay />
     <br />
   </div>
 );

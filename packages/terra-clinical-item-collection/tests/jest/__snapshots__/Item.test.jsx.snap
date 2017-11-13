@@ -296,7 +296,7 @@ exports[`List View Tests should render a selected Item 1`] = `
   isSelected={true}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         start
@@ -340,7 +340,7 @@ exports[`List View Tests should render a selected Item 1`] = `
     }
   />
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         end
@@ -372,7 +372,7 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
   isSelected={false}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-top"
     content={
       <p>
         start
@@ -416,7 +416,7 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
     }
   />
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-top"
     content={
       <p>
         end
@@ -463,7 +463,7 @@ exports[`Table View Tests should render a Item with a start accessory 1`] = `
   isSelected={false}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         start
@@ -478,7 +478,7 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
   isSelected={false}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         start
@@ -522,7 +522,7 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
     }
   />
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         end
@@ -537,7 +537,7 @@ exports[`Table View Tests should render a Item with an end accessory 1`] = `
   isSelected={false}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         end
@@ -594,7 +594,7 @@ exports[`Table View Tests should render a selectable Item 1`] = `
   tabIndex={0}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         start
@@ -638,7 +638,7 @@ exports[`Table View Tests should render a selectable Item 1`] = `
     }
   />
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         end
@@ -653,7 +653,7 @@ exports[`Table View Tests should render a selected Item 1`] = `
   isSelected={true}
 >
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         start
@@ -697,7 +697,7 @@ exports[`Table View Tests should render a selected Item 1`] = `
     }
   />
   <TableCell
-    className="content-accessory"
+    className="content-accessory content-accessory-align-center"
     content={
       <p>
         end

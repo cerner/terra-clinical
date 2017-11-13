@@ -7,12 +7,17 @@
     width: 40px;
   }
 
-  .content-accessory {
+  .content-accessory-align-top {
+    vertical-align: top !important;
+  }
+
+  .content-accessory-align-center {
     vertical-align: middle !important;
   }
 
-  .content-display,
-  .content-comment {
+  .content-accessory,
+  .content-comment,
+  .content-display {
     word-wrap: break-word;
   }
 }

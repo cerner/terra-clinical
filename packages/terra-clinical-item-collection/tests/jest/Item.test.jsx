@@ -2,9 +2,9 @@ import React from 'react';
 import Item from '../../src/Item';
 
 const listItemStyles = {
-  layout: 'twoColumns',
-  textEmphasis: 'start',
-  isTruncated: true,
+  listItemLayout: 'twoColumns',
+  listItemTextEmphasis: 'start',
+  isListItemTruncated: true,
   accessoryAlignment: 'alignTop',
 };
 
@@ -158,7 +158,7 @@ describe('List View Tests', () => {
         startAccessory={<p>start</p>}
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
-        listItemStyles={listItemStyles}
+        {...listItemStyles}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />
@@ -309,7 +309,7 @@ describe('Table View Tests', () => {
         startAccessory={<p>start</p>}
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
-        listItemStyles={listItemStyles}
+        {...listItemStyles}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />

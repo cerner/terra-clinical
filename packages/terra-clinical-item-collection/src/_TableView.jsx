@@ -38,7 +38,7 @@ function createTableLayout(requiredElements) {
   const displays = [];
   if (requiredElements.numberOfDisplays) {
     for (let i = 0; i < requiredElements.numberOfDisplays; i += 1) {
-      displays.push(<col key={i} />);
+      displays.push(<col key={i} data-terra-clinical-item-collection-display-column />);
     }
   }
 
@@ -46,7 +46,7 @@ function createTableLayout(requiredElements) {
     <colgroup>
       {requiredElements.hasStartAccessory && <col className={styles['accessory-column']} />}
       {displays}
-      {requiredElements.hasComment && <col />}
+      {requiredElements.hasComment && <col data-terra-clinical-item-collection-comment-column />}
       {requiredElements.hasEndAccessory && <col className={styles['accessory-column']} />}
     </colgroup>
   );
