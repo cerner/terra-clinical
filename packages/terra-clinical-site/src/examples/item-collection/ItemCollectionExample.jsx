@@ -21,8 +21,8 @@ const requiredElements = { startAccessoryRequired: true, displaysRequired: 5, co
 const DefaultItemCollection = () => (
   <ItemCollection
     requiredElements={requiredElements}
-    listStyles={{ isDivided: true }}
-    tableStyles={{ isPadded: false, isStriped: false }}
+    isListDivided
+    isTableStriped
   >
     <ItemCollection.Item
       startAccessory={startAccessory}

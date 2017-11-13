@@ -34,31 +34,32 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * The styles to spread to the list. List style options are isDivided.
+   * Whether or not the list items should be divided.
    */
-  listStyles: PropTypes.shape({
-    isDivided: PropTypes.bool,
-  }),
+  isListDivided: PropTypes.bool,
   /**
-   * The styles to spread to the table. Table style options are isPadded and isStriped.
+   * Whether or not the table rows should be zebra striped.
    */
-  tableStyles: PropTypes.shape({
-    isPadded: PropTypes.bool,
-    isStriped: PropTypes.bool,
-  }),
+  isTablePadded: PropTypes.bool,
+  /**
+   * Whether or not the table cells should be padded.
+   */
+  isTableStriped: PropTypes.bool,
 };
 
 const defaultProps = {
   breakpoint: 'small',
   requiredElements: { startAccessoryRequired: true, displaysRequired: 8, commentRequired: true, endAccessoryRequired: true },
   onSelect: undefined,
-  listStyles: {},
-  tableStyles: {},
+  isListDivided: false,
+  isTablePadded: false,
+  isTableStriped: false,
 };
 
 const ItemCollection = (props) => {
-  const { children, breakpoint, onSelect, requiredElements, listStyles, tableStyles, ...customProps } = props;
+  const { children, breakpoint, onSelect, requiredElements, isListDivided, isTablePadded, isTableStriped, ...customProps } = props;
 
+  const listStyles = { isDivided: isListDivided };
   const listDisplay = (
     <ListView
       requiredElements={requiredElements}
@@ -69,6 +70,7 @@ const ItemCollection = (props) => {
     </ListView>
   );
 
+  const tableStyles = { isPadded: isTablePadded, isStriped: isTableStriped };
   const tableDisplay = (
     <TableView
       requiredElements={requiredElements}

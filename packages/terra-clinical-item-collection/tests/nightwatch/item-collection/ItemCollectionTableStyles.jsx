@@ -12,7 +12,7 @@ const defaultItem = (
 const PaddedTable = () => (
   <ItemCollection
     requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
-    tableStyles={{ isPadded: true, isStriped: false }}
+    isTablePadded
   >
     {defaultItem}
     {defaultItem}
@@ -23,7 +23,7 @@ const PaddedTable = () => (
 const StrippedTable = () => (
   <ItemCollection
     requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
-    tableStyles={{ isPadded: false, isStriped: true }}
+    isTableStriped
   >
     {defaultItem}
     {defaultItem}

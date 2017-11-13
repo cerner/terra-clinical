@@ -29,12 +29,10 @@ exports[`List View Tests should render a Item with a comment 1`] = `
     <ItemView
       accessoryAlignment="alignCenter"
       comment={
-        <div>
-          <ItemComment
-            isTruncated={false}
-            text="comment"
-          />
-        </div>
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
       }
       displays={Array []}
       isTruncated={false}
@@ -77,11 +75,9 @@ exports[`List View Tests should render a Item with a start accessory 1`] = `
       isTruncated={false}
       layout="oneColumn"
       startAccessory={
-        <div>
-          <p>
-            start
-          </p>
-        </div>
+        <p>
+          start
+        </p>
       }
       textEmphasis="default"
     />
@@ -96,12 +92,10 @@ exports[`List View Tests should render a Item with all elements 1`] = `
     <ItemView
       accessoryAlignment="alignCenter"
       comment={
-        <div>
-          <ItemComment
-            isTruncated={false}
-            text="comment"
-          />
-        </div>
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
       }
       displays={
         Array [
@@ -120,20 +114,16 @@ exports[`List View Tests should render a Item with all elements 1`] = `
         ]
       }
       endAccessory={
-        <div>
-          <p>
-            end
-          </p>
-        </div>
+        <p>
+          end
+        </p>
       }
       isTruncated={false}
       layout="oneColumn"
       startAccessory={
-        <div>
-          <p>
-            start
-          </p>
-        </div>
+        <p>
+          start
+        </p>
       }
       textEmphasis="default"
     />
@@ -149,11 +139,9 @@ exports[`List View Tests should render a Item with an end accessory 1`] = `
       accessoryAlignment="alignCenter"
       displays={Array []}
       endAccessory={
-        <div>
-          <p>
-            end
-          </p>
-        </div>
+        <p>
+          end
+        </p>
       }
       isTruncated={false}
       layout="oneColumn"
@@ -200,12 +188,10 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
     <ItemView
       accessoryAlignment="alignTop"
       comment={
-        <div>
-          <ItemComment
-            isTruncated={false}
-            text="comment"
-          />
-        </div>
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
       }
       displays={
         Array [
@@ -224,20 +210,16 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
         ]
       }
       endAccessory={
-        <div>
-          <p>
-            end
-          </p>
-        </div>
+        <p>
+          end
+        </p>
       }
       isTruncated={true}
       layout="twoColumns"
       startAccessory={
-        <div>
-          <p>
-            start
-          </p>
-        </div>
+        <p>
+          start
+        </p>
       }
       textEmphasis="start"
     />
@@ -267,12 +249,10 @@ exports[`List View Tests should render a selectable Item 1`] = `
     <ItemView
       accessoryAlignment="alignCenter"
       comment={
-        <div>
-          <ItemComment
-            isTruncated={false}
-            text="comment"
-          />
-        </div>
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
       }
       displays={
         Array [
@@ -291,20 +271,16 @@ exports[`List View Tests should render a selectable Item 1`] = `
         ]
       }
       endAccessory={
-        <div>
-          <p>
-            end
-          </p>
-        </div>
+        <p>
+          end
+        </p>
       }
       isTruncated={false}
       layout="oneColumn"
       startAccessory={
-        <div>
-          <p>
-            start
-          </p>
-        </div>
+        <p>
+          start
+        </p>
       }
       textEmphasis="default"
     />

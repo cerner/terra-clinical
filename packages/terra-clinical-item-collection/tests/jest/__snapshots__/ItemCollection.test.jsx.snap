@@ -4,7 +4,11 @@ exports[`should render a default ItemCollection 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={Object {}}
+      listStyles={
+        Object {
+          "isDivided": false,
+        }
+      }
       requiredElements={
         Object {
           "commentRequired": true,
@@ -62,7 +66,12 @@ exports[`should render a default ItemCollection 1`] = `
           "startAccessoryRequired": true,
         }
       }
-      tableStyles={Object {}}
+      tableStyles={
+        Object {
+          "isPadded": false,
+          "isStriped": false,
+        }
+      }
     >
       <Item
         comment={
@@ -108,7 +117,11 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={Object {}}
+      listStyles={
+        Object {
+          "isDivided": false,
+        }
+      }
       requiredElements={
         Object {
           "commentRequired": true,
@@ -166,7 +179,12 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
           "startAccessoryRequired": true,
         }
       }
-      tableStyles={Object {}}
+      tableStyles={
+        Object {
+          "isPadded": false,
+          "isStriped": false,
+        }
+      }
     >
       <Item
         comment={
@@ -274,7 +292,12 @@ exports[`should render an ItemCollection with list styles 1`] = `
           "startAccessoryRequired": true,
         }
       }
-      tableStyles={Object {}}
+      tableStyles={
+        Object {
+          "isPadded": false,
+          "isStriped": false,
+        }
+      }
     >
       <Item
         comment={
@@ -320,7 +343,11 @@ exports[`should render an ItemCollection with onSelect 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={Object {}}
+      listStyles={
+        Object {
+          "isDivided": false,
+        }
+      }
       onSelect={[Function]}
       requiredElements={
         Object {
@@ -373,7 +400,12 @@ exports[`should render an ItemCollection with onSelect 1`] = `
           "startAccessoryRequired": true,
         }
       }
-      tableStyles={Object {}}
+      tableStyles={
+        Object {
+          "isPadded": false,
+          "isStriped": false,
+        }
+      }
     >
       <Item
         comment={
@@ -412,7 +444,11 @@ exports[`should render an ItemCollection with requiredElements 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={Object {}}
+      listStyles={
+        Object {
+          "isDivided": false,
+        }
+      }
       requiredElements={
         Object {
           "commentRequired": true,
@@ -462,7 +498,12 @@ exports[`should render an ItemCollection with requiredElements 1`] = `
           "startAccessoryRequired": true,
         }
       }
-      tableStyles={Object {}}
+      tableStyles={
+        Object {
+          "isPadded": false,
+          "isStriped": false,
+        }
+      }
     >
       <Item
         comment={
@@ -500,7 +541,11 @@ exports[`should render an ItemCollection with table styles 1`] = `
 <ResponsiveElement
   defaultElement={
     <ListView
-      listStyles={Object {}}
+      listStyles={
+        Object {
+          "isDivided": false,
+        }
+      }
       requiredElements={
         Object {
           "commentRequired": true,

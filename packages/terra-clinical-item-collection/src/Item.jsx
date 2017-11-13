@@ -89,15 +89,15 @@ function createSelectableProps(onSelect, itemKey) {
 
 function createListItem(elements, itemKey, selectableProps, isSelected, listItemStyles) {
   const { startAccessory, children, comment, endAccessory, hasStartAccessory, hasEndAccessory, ...listItemProps } = elements;
-  // hasStartAccessorySpacing={hasStartAccessory}
-  // hasEndAccessorySpacing={hasEndAccessory}
+  // alignStartAccessory={hasStartAccessory}
+  // alignEndAccessory={hasEndAccessory}
 
   const listItemContent = (
     <ItemView
-      startAccessory={startAccessory && <div>{startAccessory}</div>}
+      startAccessory={startAccessory}
       displays={React.Children.toArray(children)}
-      comment={comment && <div>{comment}</div>}
-      endAccessory={endAccessory && <div>{endAccessory}</div>}
+      comment={comment}
+      endAccessory={endAccessory}
       {...listItemStyles}
     />
   );

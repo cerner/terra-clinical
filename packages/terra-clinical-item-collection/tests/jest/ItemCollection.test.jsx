@@ -17,7 +17,7 @@ it('should render a default ItemCollection', () => {
 
 it('should render an ItemCollection with list styles', () => {
   const itemCollection = (
-    <ItemCollection listStyles={{ isDivided: true }}>
+    <ItemCollection isListDivided >
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
@@ -31,7 +31,7 @@ it('should render an ItemCollection with list styles', () => {
 
 it('should render an ItemCollection with table styles', () => {
   const itemCollection = (
-    <ItemCollection tableStyles={{ isPadded: true, isStriped: true }}>
+    <ItemCollection isTablePadded isTableStriped >
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
