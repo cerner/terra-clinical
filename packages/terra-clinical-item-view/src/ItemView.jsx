@@ -25,7 +25,7 @@ const propTypes = {
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**
-   * The height and width value the accessory should receive. Maximun scalar is 60px.
+   * The height and width value the accessory should receive. Maximum scalar is 60px.
    */
   accessoryScale: PropTypes.string,
   /**
