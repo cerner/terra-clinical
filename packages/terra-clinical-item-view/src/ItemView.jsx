@@ -33,7 +33,7 @@ const propTypes = {
    */
   startAccessory: PropTypes.node,
   /**
-   * Indicates weather or not the allow space for the start accessory if none is given.
+   * Indicates whether or not the allow space for the start accessory if none is given.
    */
   alignStartAccessory: PropTypes.bool,
   /**
@@ -41,7 +41,7 @@ const propTypes = {
    */
   endAccessory: PropTypes.node,
   /**
-   * Indicates weather or not the allow space for the end accessory if none is given.
+   * Indicates whether or not the allow space for the end accessory if none is given.
    */
   alignEndAccessory: PropTypes.bool,
   /**
