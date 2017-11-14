@@ -40,7 +40,7 @@ const propTypes = {
    */
   isListItemTruncated: PropTypes.bool,
   /**
-   * The vertical alignment of the start and end accesories.
+   * The vertical alignment of the start and end accessories.
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**

@@ -45,11 +45,11 @@ const propTypes = {
    */
   isListDivided: PropTypes.bool,
   /**
-   * Whether or not the table rows should be zebra striped.
+   * Whether or not the table cells should be padded.
    */
   isTablePadded: PropTypes.bool,
   /**
-   * Whether or not the table cells should be padded.
+   * Whether or not the table rows should be zebra striped.
    */
   isTableStriped: PropTypes.bool,
 };

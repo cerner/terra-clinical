@@ -21,13 +21,16 @@ import ItemCollection from 'terra-clinical-item-collection';
 <ItemCollection
   id="ItemCollection"
   breakpoint="tiny"
-  requiredElements={{ startAccessoryRequired: true, displaysRequired: 3, commentRequired: true, endAccessoryRequired: true }}
+  hasStartAccessory
+  numberOfDisplays={3}
+  hasComment
+  hasEndAccessory
 >
   <ItemCollection.Item
     startAccessory={<Icon/>}
     comment={<ItemCollection.Comment text="Comment" />}
     endAccessory={<Icon/>}
-    itemStyles={{ layout: 'twoColumns' }}
+    listItemLayout="twoColumns"
   >
     <ItemCollection.Display text="Display 1" />
     <ItemCollection.Display text="Display 2" />

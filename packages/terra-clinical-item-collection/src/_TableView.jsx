@@ -35,19 +35,21 @@ const propTypes = {
 };
 
 function createTableLayout(requiredElements) {
+  const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
+
   const displays = [];
-  if (requiredElements.numberOfDisplays) {
-    for (let i = 0; i < requiredElements.numberOfDisplays; i += 1) {
+  if (numberOfDisplays) {
+    for (let i = 0; i < numberOfDisplays; i += 1) {
       displays.push(<col key={i} data-terra-clinical-item-collection-display-column />);
     }
   }
 
   return (
     <colgroup>
-      {requiredElements.hasStartAccessory && <col className={styles['accessory-column']} />}
+      {hasStartAccessory && <col className={styles['accessory-column']} />}
       {displays}
-      {requiredElements.hasComment && <col data-terra-clinical-item-collection-comment-column />}
-      {requiredElements.hasEndAccessory && <col className={styles['accessory-column']} />}
+      {hasComment && <col data-terra-clinical-item-collection-comment-column />}
+      {hasEndAccessory && <col className={styles['accessory-column']} />}
     </colgroup>
   );
 }

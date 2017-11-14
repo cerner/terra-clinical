@@ -37,14 +37,10 @@ class SelectableExample extends React.Component {
     return (
       <ItemCollection
         breakpoint="tiny"
-        requiredElements={
-          {
-            startAccessoryRequired: true,
-            displaysRequired: 3,
-            commentRequired: true,
-            endAccessoryRequired: true,
-          }
-        }
+        hasStartAccessory
+        numberOfDisplays={3}
+        hasComment
+        hasEndAccessory
 +       onSelect={this.handleOnSelect}                      // Step 1
       >
         <ItemCollection.Item
