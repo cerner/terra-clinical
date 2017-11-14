@@ -18,8 +18,6 @@ exports[`should render with a given breakpoint 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -49,6 +47,8 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -68,8 +68,6 @@ exports[`should render with a given breakpoint 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -99,6 +97,8 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -118,8 +118,6 @@ exports[`should render with a given breakpoint 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -149,6 +147,8 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -373,8 +373,6 @@ exports[`should render with multiple rows 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -404,6 +402,8 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -423,8 +423,6 @@ exports[`should render with multiple rows 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -454,6 +452,8 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -473,8 +473,6 @@ exports[`should render with multiple rows 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -504,6 +502,8 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -728,8 +728,6 @@ exports[`should render with one row 1`] = `
             <ItemView
               accessoryAlignment="alignCenter"
               accessoryScale="1em"
-              alignEndAccessory={false}
-              alignStartAccessory={false}
               comment={
                 <ItemComment
                   isTruncated={false}
@@ -759,6 +757,8 @@ exports[`should render with one row 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveEndAccessorySpace={false}
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"

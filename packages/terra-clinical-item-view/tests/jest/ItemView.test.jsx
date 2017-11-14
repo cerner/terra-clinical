@@ -94,12 +94,12 @@ it('should render a start accessory', () => {
   expect(itemView).toMatchSnapshot();
 });
 
-it('should render start accessory alignment', () => {
+it('should render start accessory space reserved', () => {
   const params = {
     layout: 'oneColumn',
     textEmphasis: 'default',
     displays: [],
-    alignStartAccessory: true,
+    reserveStartAccessorySpace: true,
   };
   const itemView = shallow(<ItemView {...params} />);
   expect(itemView).toMatchSnapshot();
@@ -117,12 +117,12 @@ it('should render a end accessory', () => {
   expect(itemView).toMatchSnapshot();
 });
 
-it('should render with end accessory alignment', () => {
+it('should render with end accessory space reserved', () => {
   const params = {
     layout: 'oneColumn',
     textEmphasis: 'default',
     displays: [],
-    alignEndAccessory: true,
+    reserveEndAccessorySpace: true,
   };
   const itemView = shallow(<ItemView {...params} />);
   expect(itemView).toMatchSnapshot();

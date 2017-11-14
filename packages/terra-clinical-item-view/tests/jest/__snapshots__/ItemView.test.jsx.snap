@@ -151,17 +151,10 @@ exports[`should render a end accessory 1`] = `
     className="body"
   />
   <div
-    className="accessory accessory-align-center"
-    style={
-      Object {
-        "width": "1em",
-      }
-    }
+    className="accessory end-accessory null accessory-align-center"
   >
     <img
       alt="Graphic"
-      height="1em"
-      width="1em"
     />
   </div>
 </div>
@@ -172,17 +165,10 @@ exports[`should render a start accessory 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-center"
-    style={
-      Object {
-        "width": "1em",
-      }
-    }
+    className="accessory start-accessory null accessory-align-center"
   >
     <img
       alt="Graphic"
-      height="1em"
-      width="1em"
     />
   </div>
   <div
@@ -196,17 +182,10 @@ exports[`should render an accessory center aligned 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-center"
-    style={
-      Object {
-        "width": "1em",
-      }
-    }
+    className="accessory start-accessory null accessory-align-center"
   >
     <img
       alt="Graphic"
-      height="1em"
-      width="1em"
     />
   </div>
   <div
@@ -220,17 +199,10 @@ exports[`should render an accessory top aligned 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-top"
-    style={
-      Object {
-        "width": "1em",
-      }
-    }
+    className="accessory start-accessory null accessory-align-top"
   >
     <img
       alt="Graphic"
-      height="1em"
-      width="1em"
     />
   </div>
   <div
@@ -291,33 +263,21 @@ exports[`should render scaled accessories 1`] = `
     className="body"
   />
   <div
-    className="accessory accessory-align-center"
-    style={
-      Object {
-        "width": "40px",
-      }
-    }
+    className="accessory end-accessory null accessory-align-center"
   >
     <img
       alt="Graphic"
-      height="40px"
-      width="40px"
     />
   </div>
 </div>
 `;
 
-exports[`should render start accessory alignment 1`] = `
+exports[`should render start accessory space reserved 1`] = `
 <div
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-center"
-    style={
-      Object {
-        "width": "1em",
-      }
-    }
+    className="accessory start-accessory reserve-start-accessory-space accessory-align-center"
   />
   <div
     className="body"
@@ -643,7 +603,7 @@ exports[`should render with a display and graphic 1`] = `
 </div>
 `;
 
-exports[`should render with end accessory alignment 1`] = `
+exports[`should render with end accessory space reserved 1`] = `
 <div
   className="item-view one-column"
 >
@@ -651,12 +611,7 @@ exports[`should render with end accessory alignment 1`] = `
     className="body"
   />
   <div
-    className="accessory accessory-align-center"
-    style={
-      Object {
-        "width": "1em",
-      }
-    }
+    className="accessory end-accessory reserve-end-accessory-space accessory-align-center"
   />
 </div>
 `;

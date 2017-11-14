@@ -35,7 +35,7 @@ const propTypes = {
   /**
    * Indicates whether or not space is allocated for the start accessory if none is given.
    */
-  alignStartAccessory: PropTypes.bool,
+  reserveStartAccessorySpace: PropTypes.bool,
   /**
    * The react element to be placed in the end aligned accessory position.
    */
@@ -43,7 +43,7 @@ const propTypes = {
   /**
    * Indicates whether or not space is allocated for the end accessory if none is given.
    */
-  alignEndAccessory: PropTypes.bool,
+  reserveEndAccessorySpace: PropTypes.bool,
   /**
    * An array of react display elements to be presented.
    */
@@ -61,32 +61,31 @@ const defaultProps = {
   accessoryAlignment: 'alignCenter',
   accessoryScale: '1em',
   startAccessory: undefined,
-  alignStartAccessory: false,
+  reserveStartAccessorySpace: false,
   endAccessory: undefined,
-  alignEndAccessory: false,
+  reserveEndAccessorySpace: false,
   displays: [],
   comment: undefined,
 };
 
 class ItemView extends React.Component {
 
-  static renderAccessory(alignAccessory, accessory, accessoryAlignment, accessoryScale) {
+  static renderAccessory(accessory, reserveSpace, accessoryAlignment, type) {
     let accessorySection;
-    if (accessory || alignAccessory) {
+    if (accessory || reserveSpace) {
+      const reserveSpaceClassName = reserveSpace ? `reserve-${type}-accessory-space` : null;
+
       const accessoryClassNames = cx(
         'accessory',
+        `${type}-accessory`,
+        `${reserveSpaceClassName}`,
         { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
         { 'accessory-align-top': accessoryAlignment === 'alignTop' },
       );
 
-      let scaledAccessory = accessory;
-      if (accessory && accessoryScale !== null) {
-        scaledAccessory = React.cloneElement(accessory, { width: accessoryScale, height: accessoryScale });
-      }
-
       accessorySection = (
-        <div className={accessoryClassNames} style={{ width: accessoryScale }} >
-          {scaledAccessory}
+        <div className={accessoryClassNames} >
+          {accessory}
         </div>
       );
     }
@@ -175,9 +174,9 @@ class ItemView extends React.Component {
             accessoryAlignment,
             accessoryScale,
             startAccessory,
-            alignStartAccessory,
+            reserveStartAccessorySpace,
             endAccessory,
-            alignEndAccessory,
+            reserveEndAccessorySpace,
             displays,
             comment,
             ...customProps } = this.props;
@@ -192,12 +191,12 @@ class ItemView extends React.Component {
 
     return (
       <div {...customProps} className={viewClassNames}>
-        {ItemView.renderAccessory(alignStartAccessory, startAccessory, accessoryAlignment, accessoryScale)}
+        {ItemView.renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
         <div className={cx('body')}>
           {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>
-        {ItemView.renderAccessory(alignEndAccessory, endAccessory, accessoryAlignment, accessoryScale)}
+        {ItemView.renderAccessory(endAccessory, reserveEndAccessorySpace, accessoryAlignment, 'end')}
       </div>
     );
   }

@@ -4,7 +4,12 @@ ChangeLog
 Unreleased
 ----------
 ### Added
-* Added alignStartAccessory, alignEndAccessory and accessoryScale props to allow for proper spacing when an accessory is not provided.
+* Added reserveStartAccessorySpace, and reserveEndAccessorySpace to allow for proper spacing when an accessory is not provided.
+
+### Changed
+* Updated the start accessory's max-width and mix-height to be 2.8571rem (40px)
+* Updated the end accessory's max-width to be 20% and max-height to be 7.14285rem (100px)
+* startAccessory, comment and endAccessory props now accept node proptypes
 
 1.4.0 - (September 26, 2017)
 -----------------

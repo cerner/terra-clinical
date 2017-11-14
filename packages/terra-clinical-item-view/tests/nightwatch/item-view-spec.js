@@ -21,9 +21,9 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.expect.element('#test-start-accessory #EndAccessory').to.not.be.present;
   },
 
-  'Displays a clinical item view with start accessory alignment': (browser) => {
+  'Displays a clinical item view with start accessory spacing reserved': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-view-tests/accessory`);
-    browser.expect.element('#test-align-start-accessory div[class*="accessory"]').to.be.present;
+    browser.expect.element('#test-reserve-start-accessory div[class*="accessory"]').to.be.present;
   },
 
   'Displays a clinical item view with an end accessory': (browser) => {
@@ -32,9 +32,9 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.expect.element('#test-end-accessory #EndAccessory').to.be.present;
   },
 
-  'Displays a clinical item view with end accessory alignment': (browser) => {
+  'Displays a clinical item view with end accessory spacing reserved': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-view-tests/accessory`);
-    browser.expect.element('#test-align-end-accessory div[class*="accessory"]').to.be.present;
+    browser.expect.element('#test-reserve-end-accessory div[class*="accessory"]').to.be.present;
   },
 
   'Displays a clinical item view with a start and end accessory': (browser) => {
