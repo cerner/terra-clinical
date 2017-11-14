@@ -34,7 +34,6 @@ const views = () => (
       displays={displays}
       endAccessory={<button id="EndAccessory" size="medium">Disclose</button>}
       layout="twoColumns"
-      accessoryAlignment="alignTop"
       id="test-reserve-start-accessory"
     />
     <h2>Reserve End Acessory Space</h2>
@@ -46,6 +45,24 @@ const views = () => (
       layout="twoColumns"
       accessoryAlignment="alignTop"
       id="test-reserve-end-accessory"
+    />
+    <ul><li><h4>Reserving space allocates width of 20% even with content</h4></li></ul>
+    <ItemView
+      startAccessory={<IconAlert id="StartAccessory" />}
+      displays={displays}
+      reserveEndAccessorySpace
+      endAccessory={<button id="EndAccessory" size="medium">Disclose</button>}
+      layout="twoColumns"
+      accessoryAlignment="alignTop"
+    />
+    <ul><li><h4>alignCenter is Maintained</h4></li></ul>
+    <ItemView
+      startAccessory={<IconAlert id="StartAccessory" />}
+      displays={displays}
+      reserveEndAccessorySpace
+      endAccessory={<button id="EndAccessory" size="medium">Disclose</button>}
+      layout="twoColumns"
+      accessoryAlignment="alignCenter"
     />
     <h2>Start Accessory with Font Size 100px</h2>
     <ul><li><h4>The max-height and max-width of 40px is maintained</h4></li></ul>
