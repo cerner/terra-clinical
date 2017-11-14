@@ -250,28 +250,6 @@ exports[`should render one column 1`] = `
 </div>
 `;
 
-exports[`should render scaled accessories 1`] = `
-<div
-  className="item-view one-column"
-  start={
-    <img
-      alt="Graphic"
-    />
-  }
->
-  <div
-    className="body"
-  />
-  <div
-    className="accessory end-accessory null accessory-align-center"
-  >
-    <img
-      alt="Graphic"
-    />
-  </div>
-</div>
-`;
-
 exports[`should render start accessory space reserved 1`] = `
 <div
   className="item-view one-column"

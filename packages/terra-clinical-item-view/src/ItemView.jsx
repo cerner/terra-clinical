@@ -25,10 +25,6 @@ const propTypes = {
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**
-   * The height and width value the accessory should receive. Maximum scalar is 60px.
-   */
-  accessoryScale: PropTypes.string,
-  /**
    * The react element to be placed in the start aligned accessory position.
    */
   startAccessory: PropTypes.node,
@@ -59,7 +55,6 @@ const defaultProps = {
   textEmphasis: 'default',
   isTruncated: false,
   accessoryAlignment: 'alignCenter',
-  accessoryScale: '1em',
   startAccessory: undefined,
   reserveStartAccessorySpace: false,
   endAccessory: undefined,
@@ -172,7 +167,6 @@ class ItemView extends React.Component {
             textEmphasis,
             isTruncated,
             accessoryAlignment,
-            accessoryScale,
             startAccessory,
             reserveStartAccessorySpace,
             endAccessory,

@@ -128,20 +128,6 @@ it('should render with end accessory space reserved', () => {
   expect(itemView).toMatchSnapshot();
 });
 
-it('should render scaled accessories', () => {
-  const testElement = <img alt="Graphic" />;
-  const params = {
-    start: testElement,
-    accessoryScale: '40px',
-    layout: 'oneColumn',
-    textEmphasis: 'default',
-    displays: [],
-    endAccessory: testElement,
-  };
-  const itemView = shallow(<ItemView {...params} />);
-  expect(itemView).toMatchSnapshot();
-});
-
 it('should render an accessory top aligned', () => {
   const testElement = <img alt="Graphic" />;
   const params = {
