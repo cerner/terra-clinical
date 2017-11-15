@@ -1,4 +1,5 @@
 import React from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
@@ -35,40 +36,140 @@ const defaultProps = {
   isSubheader: false,
 };
 
-const Header = ({ title, startContent, endContent, isSubheader, ...customProps }) => {
-  let startElement;
-  if (startContent) {
-    startElement = <div className={cx('flex-end')}>{startContent}</div>;
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleOnResize = this.handleOnResize.bind(this);
+    this.state = {
+      startContentWidth: undefined,
+      endContentWidth: undefined,
+    };
   }
 
-  let titleElement;
-  if (title) {
-    titleElement = (
-      <div className={cx('title-container')}>
-        <h1 className={cx('title')}>
-          {title}
-        </h1>
-      </div>
+  componentDidMount() {
+    // grab the initial full display widths of the end containers for reference
+    // when resizing the end containers inside handleOnResize
+    if (this.startContainerTarget) {
+      this.startContentInitialWidth = this.startContainerTarget.offsetWidth;
+    }
+    if (this.endContainerTarget) {
+      this.endContentInitialWidth = this.endContainerTarget.offsetWidth;
+    }
+
+    this.resizeObserver = new ResizeObserver((entries) => {
+      this.handleOnResize(entries[0].contentRect.width);
+    });
+    this.resizeObserver.observe(this.containerTarget);
+  }
+
+  componentWillUnmount() {
+    this.resizeObserver.disconnect(this.containerTarget);
+  }
+
+  handleOnResize() {
+    // get the maxWidth of the start and end containers that is 40% of the header
+    const containerWidth = this.containerTarget.offsetWidth;
+    const fitMaxWidth = containerWidth * 0.4;
+    let startContentWidth = 0;
+    let endContentWidth = 0;
+
+    if (this.startContainerTarget) {
+      // set the start container to its initial width if can fit inside the 40% maxWidth
+      // else set the start container to the maximum possible width it can be
+      if (fitMaxWidth >= this.startContentInitialWidth) {
+        startContentWidth = this.startContentInitialWidth;
+      } else {
+        startContentWidth = fitMaxWidth;
+      }
+    }
+
+    if (this.endContainerTarget) {
+      // set the end container to its initial width if can fit inside the 40% maxWidth
+      // else set the end container to the maximum possible width it can be
+      if (fitMaxWidth >= this.endContentInitialWidth) {
+        endContentWidth = this.endContentInitialWidth;
+      } else {
+        endContentWidth = fitMaxWidth;
+      }
+    }
+
+    this.setState({ startContentWidth, endContentWidth });
+  }
+
+  render() {
+    const { title, startContent, endContent, isSubheader, ...customProps } = this.props;
+
+    let startElement;
+    if (startContent) {
+      const startElementStyle = {};
+      if (this.state.startContentWidth !== undefined) {
+        startElementStyle.width = this.state.startContentWidth;
+      } else {
+        // have the start element display at its top most width to be sized
+        // down to 40% of the header if its width exceeds 40% on first load
+        startElementStyle.maxWidth = '100%';
+      }
+
+      startElement = (
+        <div
+          className={cx('flex-end')}
+          ref={(node) => { if (node !== null) { this.startContainerTarget = node; } }}
+          style={startElementStyle}
+        >{startContent}</div>
+      );
+      this.startContainerTarget = startElement;
+    }
+
+    let titleElement;
+    if (title) {
+      titleElement = (
+        <div className={cx('title-container')}>
+          <h1 className={cx('title')}>
+            {title}
+          </h1>
+        </div>
+      );
+    }
+
+    let endElement;
+    if (endContent) {
+      const endElementStyle = {};
+      if (this.state.endContentWidth !== undefined) {
+        endElementStyle.width = this.state.endContentWidth;
+      } else {
+        // have the end element display at its top most width to be sized
+        // down to 40% of the header if its width exceeds 40% on first load
+        endElementStyle.maxWidth = '100%';
+      }
+
+      endElement = (
+        <div
+          className={cx('flex-end')}
+          ref={(node) => { if (node !== null) { this.endContainerTarget = node; } }}
+          style={endElementStyle}
+        >{endContent}</div>
+      );
+
+      this.endContainerTarget = endElement;
+    }
+
+    const headerClass = isSubheader ? 'flex-subheader' : 'flex-header';
+
+    return (
+      <header
+        {...customProps}
+        className={cx(headerClass, customProps.className)}
+        ref={(node) => { if (node !== null) { this.containerTarget = node; } }}
+      >
+        {startElement}
+        <div className={cx('flex-fill')}>
+          {titleElement}
+        </div>
+        {endElement}
+      </header>
     );
   }
-
-  let endElement;
-  if (endContent) {
-    endElement = <div className={cx('flex-end')}>{endContent}</div>;
-  }
-
-  const headerClass = isSubheader ? 'flex-subheader' : 'flex-header';
-
-  return (
-    <header {...customProps} className={cx(headerClass, customProps.className)}>
-      {startElement}
-      <div className={cx('flex-fill')}>
-        {titleElement}
-      </div>
-      {endElement}
-    </header>
-  );
-};
+}
 
 Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;

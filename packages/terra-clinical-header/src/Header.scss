@@ -5,8 +5,8 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
     display: flex;
-    height: 3.587rem;
     justify-content: space-between;
+    min-height: 3.587rem;
     overflow: hidden;
     padding: 0.714rem;
     position: relative;
@@ -23,17 +23,22 @@
   }
 
   .flex-end {
-    align-items: center;
+    align-self: center;
     display: flex;
     flex: 0 0 auto;
     height: 100%;
     position: relative;
   }
 
+  .flex-end > * {
+    display: flex;
+    width: 100%;
+  }
+
   .title-container {
     height: 100%;
     left: 0;
-    position: absolute;
+    position: inherit;
     top: 0;
     width: 100%;
   }
@@ -47,10 +52,10 @@
     margin-top: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
     width: 100%;
-    word-break: normal;
-    word-wrap: normal;
+    word-break: break-word;
+    word-wrap: break-word;
   }
 
   .flex-subheader {

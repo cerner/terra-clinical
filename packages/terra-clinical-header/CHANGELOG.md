@@ -11,6 +11,7 @@ Unreleased
 ### Changed
 * Remove stylelint-disable selector-class-pattern
 * Update class names to follow selector-class-pattern
+* Updated header to have max-width attribute for side elements
 
 1.4.0 - (September 1, 2017)
 -----------------
