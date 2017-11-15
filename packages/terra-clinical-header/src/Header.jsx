@@ -11,11 +11,6 @@ const propTypes = {
    * Child element to be displayed on the right end of the header.
    */
   children: PropTypes.element,
-  /**
-   * Content to be displayed at the end of the header.
-   * This can only be a collapsible react element.
-   */
-  collapsibleContent: PropTypes.element,
 
   /**
    * Content to be displayed at the start of the header, placed before the title
