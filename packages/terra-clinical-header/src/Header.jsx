@@ -8,6 +8,12 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Content to be displayed at the end of the header.
+   * This can only be a collapsible react element.
+   */
+  collapsibleContent: PropTypes.element,
+
+  /**
    * Content to be displayed at the start of the header, placed before the title
    */
   startContent: PropTypes.element,
@@ -35,7 +41,7 @@ const defaultProps = {
   isSubheader: false,
 };
 
-const Header = ({ title, startContent, endContent, isSubheader, ...customProps }) => {
+const Header = ({ collapsibleContent, title, startContent, endContent, isSubheader, ...customProps }) => {
   let startElement;
   if (startContent) {
     startElement = <div className={cx('flex-end')}>{startContent}</div>;
@@ -59,12 +65,22 @@ const Header = ({ title, startContent, endContent, isSubheader, ...customProps }
 
   const headerClass = isSubheader ? 'flex-subheader' : 'flex-header';
 
+  let collapseElement;
+  if (collapsibleContent) {
+    const collapseClassNames = cx([
+      'flex-collapse',
+      collapsibleContent.props.className,
+    ]);
+    collapseElement = React.cloneElement(collapsibleContent, { className: collapseClassNames });
+  }
+
   return (
     <header {...customProps} className={cx(headerClass, customProps.className)}>
       {startElement}
       <div className={cx('flex-fill')}>
         {titleElement}
       </div>
+      {collapseElement}
       {endElement}
     </header>
   );

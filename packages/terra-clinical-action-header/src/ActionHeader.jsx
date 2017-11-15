@@ -18,6 +18,12 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Content to be displayed at the end of the header.
+   * This can only be a collapsible react element.
+   */
+  collapsibleContent: PropTypes.element,
+
+  /**
    * Text to be displayed as the title in the header bar
    */
   title: PropTypes.string,
@@ -84,6 +90,7 @@ const contextTypes = {
 };
 
 const ActionHeader = ({
+  collapsibleContent,
   title,
   onClose,
   onBack,
@@ -168,6 +175,7 @@ const ActionHeader = ({
   const actionHeader = (
     <Header
       {...attributes}
+      collapsibleContent={collapsibleContent}
       data-terra-clincial-action-header
       startContent={leftButtonsDefault}
       title={title}
@@ -178,6 +186,7 @@ const ActionHeader = ({
   const smallActionHeader = (
     <Header
       {...attributes}
+      collapsibleContent={collapsibleContent}
       data-terra-clincial-action-header
       startContent={leftButtonsSmall}
       title={title}

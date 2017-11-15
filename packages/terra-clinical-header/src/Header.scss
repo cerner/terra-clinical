@@ -30,6 +30,15 @@
     position: relative;
   }
 
+  .flex-collapse {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+    max-width: 50%;
+    position: relative;
+  }
+
   .title-container {
     height: 100%;
     left: 0;
