@@ -32,11 +32,6 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.expect.element('#test-end-accessory #EndAccessory').to.be.present;
   },
 
-  'Displays a clinical item view with end accessory spacing reserved': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/item-view-tests/accessory`);
-    browser.expect.element('#test-reserve-end-accessory div[class*="accessory"]').to.be.present;
-  },
-
   'Displays a clinical item view with a start and end accessory': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-view-tests/accessory`);
     browser.expect.element('#test-both-accessory-top #StartAccessory').to.be.present;

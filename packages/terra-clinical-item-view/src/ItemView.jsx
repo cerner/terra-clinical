@@ -37,10 +37,6 @@ const propTypes = {
    */
   endAccessory: PropTypes.node,
   /**
-   * Indicates whether or not space is allocated for the end accessory if none is given.
-   */
-  reserveEndAccessorySpace: PropTypes.bool,
-  /**
    * An array of react display elements to be presented.
    */
   displays: PropTypes.arrayOf(PropTypes.element),
@@ -58,7 +54,6 @@ const defaultProps = {
   startAccessory: undefined,
   reserveStartAccessorySpace: false,
   endAccessory: undefined,
-  reserveEndAccessorySpace: false,
   displays: [],
   comment: undefined,
 };
@@ -68,18 +63,15 @@ class ItemView extends React.Component {
   static renderAccessory(accessory, reserveSpace, accessoryAlignment, type) {
     let accessorySection;
     if (accessory || reserveSpace) {
-      const reserveSpaceClassName = reserveSpace ? `reserve-${type}-accessory-space` : null;
-
       const accessoryClassNames = cx(
         'accessory',
         `${type}-accessory`,
-        `${reserveSpaceClassName}`,
         { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
         { 'accessory-align-top': accessoryAlignment === 'alignTop' },
       );
 
       accessorySection = (
-        <div className={accessoryClassNames} >
+        <div className={accessoryClassNames}>
           {accessory}
         </div>
       );
@@ -170,7 +162,6 @@ class ItemView extends React.Component {
             startAccessory,
             reserveStartAccessorySpace,
             endAccessory,
-            reserveEndAccessorySpace,
             displays,
             comment,
             ...customProps } = this.props;
@@ -190,7 +181,7 @@ class ItemView extends React.Component {
           {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>
-        {ItemView.renderAccessory(endAccessory, reserveEndAccessorySpace, accessoryAlignment, 'end')}
+        {ItemView.renderAccessory(endAccessory, false, accessoryAlignment, 'end')}
       </div>
     );
   }

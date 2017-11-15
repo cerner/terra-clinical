@@ -19,36 +19,15 @@
     overflow: hidden;
   }
 
-  .accessory > * {
-    display: flex !important;
-  }
-
   // Start Accessory is of fixed size and does not shrink or grow.
-  .start-accessory,
-  .reserve-start-accessory-space {
+  .start-accessory {
     justify-content: flex-start;
     width: 2.8571rem;
   }
 
-  .start-accessory > * {
-    max-height: 2.8571rem;
-    max-width: 2.8571rem;
-  }
-
-  .end-accessory,
-  .reserve-end-accessory-space {
+  .end-accessory {
     justify-content: flex-end;
-    max-height: 7.14285rem;
     max-width: 20%;
-  }
-
-  .reserve-end-accessory-space {
-    width: 20%;
-  }
-
-  .end-accessory > * {
-    justify-content: flex-end;
-    max-height: 7.14285rem;
   }
 
   .accessory-align-top {

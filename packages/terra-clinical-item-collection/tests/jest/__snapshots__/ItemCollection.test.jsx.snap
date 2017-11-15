@@ -46,7 +46,6 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div
@@ -95,7 +94,6 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div
@@ -144,7 +142,6 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div
@@ -398,7 +395,6 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div
@@ -447,7 +443,6 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div
@@ -496,7 +491,6 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div
@@ -750,7 +744,6 @@ exports[`should render with one row 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
-              reserveEndAccessorySpace={false}
               reserveStartAccessorySpace={false}
               startAccessory={
                 <div

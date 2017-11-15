@@ -151,7 +151,7 @@ exports[`should render a end accessory 1`] = `
     className="body"
   />
   <div
-    className="accessory end-accessory null accessory-align-center"
+    className="accessory end-accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -165,7 +165,7 @@ exports[`should render a start accessory 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory start-accessory null accessory-align-center"
+    className="accessory start-accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -182,7 +182,7 @@ exports[`should render an accessory center aligned 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory start-accessory null accessory-align-center"
+    className="accessory start-accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -199,7 +199,7 @@ exports[`should render an accessory top aligned 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory start-accessory null accessory-align-top"
+    className="accessory start-accessory accessory-align-top"
   >
     <img
       alt="Graphic"
@@ -255,7 +255,7 @@ exports[`should render start accessory space reserved 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory start-accessory reserve-start-accessory-space accessory-align-center"
+    className="accessory start-accessory accessory-align-center"
   />
   <div
     className="body"
@@ -578,18 +578,5 @@ exports[`should render with a display and graphic 1`] = `
       </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`should render with end accessory space reserved 1`] = `
-<div
-  className="item-view one-column"
->
-  <div
-    className="body"
-  />
-  <div
-    className="accessory end-accessory reserve-end-accessory-space accessory-align-center"
-  />
 </div>
 `;
