@@ -18,12 +18,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Content to be displayed at the end of the header.
-   * This can only be a collapsible react element.
-   */
-  collapsibleContent: PropTypes.element,
-
-  /**
    * Text to be displayed as the title in the header bar
    */
   title: PropTypes.string,
@@ -65,6 +59,7 @@ const propTypes = {
 
   /**
    * Child element to be displayed on the right end of the header.
+   * This is intended to be used with the CollapsibleMenuView.
    */
   children: PropTypes.element,
 };
@@ -90,7 +85,6 @@ const contextTypes = {
 };
 
 const ActionHeader = ({
-  collapsibleContent,
   title,
   onClose,
   onBack,
@@ -153,7 +147,6 @@ const ActionHeader = ({
 
   const rightButtonsDefault = (
     <div className={cx('right-buttons')}>
-      {children}
       {closeButton}
     </div>
   );
@@ -167,7 +160,6 @@ const ActionHeader = ({
 
   const rightButtonsSmall = (
     <div className={cx('right-buttons')}>
-      {children}
       {closeButtonSmall}
     </div>
   );
@@ -175,23 +167,25 @@ const ActionHeader = ({
   const actionHeader = (
     <Header
       {...attributes}
-      collapsibleContent={collapsibleContent}
       data-terra-clincial-action-header
       startContent={leftButtonsDefault}
       title={title}
       endContent={rightButtonsDefault}
-    />
+    >
+      {children}
+    </Header>
   );
 
   const smallActionHeader = (
     <Header
       {...attributes}
-      collapsibleContent={collapsibleContent}
       data-terra-clincial-action-header
       startContent={leftButtonsSmall}
       title={title}
       endContent={rightButtonsSmall}
-    />
+    >
+      {children}
+    </Header>
   );
 
   return (
