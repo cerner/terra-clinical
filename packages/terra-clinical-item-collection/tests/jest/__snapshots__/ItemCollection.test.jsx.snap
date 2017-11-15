@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render a default component 1`] = `null`;
+exports[`should render a default component 1`] = `""`;
 
 exports[`should render with a given breakpoint 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
+      className={undefined}
       data-terra-clinical-item-collection-list-view={true}
+      onChange={undefined}
     >
       <SingleSelectList
         hasChevrons={false}
@@ -26,12 +28,16 @@ exports[`should render with a given breakpoint 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -59,6 +65,8 @@ exports[`should render with a given breakpoint 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
         <ListItem
@@ -74,12 +82,16 @@ exports[`should render with a given breakpoint 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -107,6 +119,8 @@ exports[`should render with a given breakpoint 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
         <ListItem
@@ -122,12 +136,16 @@ exports[`should render with a given breakpoint 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -155,6 +173,8 @@ exports[`should render with a given breakpoint 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
       </SingleSelectList>
@@ -162,7 +182,9 @@ exports[`should render with a given breakpoint 1`] = `
   }
   medium={
     <div
+      className={undefined}
       data-terra-clinical-item-collection-table-view={true}
+      onChange={undefined}
     >
       <Table
         isPadded={true}
@@ -174,6 +196,7 @@ exports[`should render with a given breakpoint 1`] = `
         }
       >
         <TableHeader
+          onClick={undefined}
           style={
             Object {
               "visibility": "hidden",
@@ -214,8 +237,10 @@ exports[`should render with a given breakpoint 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -223,8 +248,10 @@ exports[`should render with a given breakpoint 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -262,8 +289,10 @@ exports[`should render with a given breakpoint 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -271,8 +300,10 @@ exports[`should render with a given breakpoint 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -310,8 +341,10 @@ exports[`should render with a given breakpoint 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -319,8 +352,10 @@ exports[`should render with a given breakpoint 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -355,7 +390,9 @@ exports[`should render with multiple rows 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
+      className={undefined}
       data-terra-clinical-item-collection-list-view={true}
+      onChange={undefined}
     >
       <SingleSelectList
         hasChevrons={false}
@@ -375,12 +412,16 @@ exports[`should render with multiple rows 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -408,6 +449,8 @@ exports[`should render with multiple rows 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
         <ListItem
@@ -423,12 +466,16 @@ exports[`should render with multiple rows 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -456,6 +503,8 @@ exports[`should render with multiple rows 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
         <ListItem
@@ -471,12 +520,16 @@ exports[`should render with multiple rows 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -504,6 +557,8 @@ exports[`should render with multiple rows 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
       </SingleSelectList>
@@ -512,7 +567,9 @@ exports[`should render with multiple rows 1`] = `
   responsiveTo="parent"
   small={
     <div
+      className={undefined}
       data-terra-clinical-item-collection-table-view={true}
+      onChange={undefined}
     >
       <Table
         isPadded={true}
@@ -524,6 +581,7 @@ exports[`should render with multiple rows 1`] = `
         }
       >
         <TableHeader
+          onClick={undefined}
           style={
             Object {
               "visibility": "hidden",
@@ -564,8 +622,10 @@ exports[`should render with multiple rows 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -573,8 +633,10 @@ exports[`should render with multiple rows 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -612,8 +674,10 @@ exports[`should render with multiple rows 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -621,8 +685,10 @@ exports[`should render with multiple rows 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -660,8 +726,10 @@ exports[`should render with multiple rows 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -669,8 +737,10 @@ exports[`should render with multiple rows 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -704,7 +774,9 @@ exports[`should render with one row 1`] = `
 <ResponsiveElement
   defaultElement={
     <div
+      className={undefined}
       data-terra-clinical-item-collection-list-view={true}
+      onChange={undefined}
     >
       <SingleSelectList
         hasChevrons={false}
@@ -724,12 +796,16 @@ exports[`should render with one row 1`] = `
               displays={
                 Array [
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 1"
+                    textStyle={undefined}
                   />,
                   <ItemDisplay
+                    icon={undefined}
                     isTruncated={false}
                     text="Display 2"
+                    textStyle={undefined}
                   />,
                 ]
               }
@@ -757,6 +833,8 @@ exports[`should render with one row 1`] = `
               textEmphasis="default"
             />
           }
+          hasChevron={undefined}
+          isSelectable={undefined}
           isSelected={false}
         />
       </SingleSelectList>
@@ -765,7 +843,9 @@ exports[`should render with one row 1`] = `
   responsiveTo="parent"
   small={
     <div
+      className={undefined}
       data-terra-clinical-item-collection-table-view={true}
+      onChange={undefined}
     >
       <Table
         isPadded={true}
@@ -777,6 +857,7 @@ exports[`should render with one row 1`] = `
         }
       >
         <TableHeader
+          onClick={undefined}
           style={
             Object {
               "visibility": "hidden",
@@ -817,8 +898,10 @@ exports[`should render with one row 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 1"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"
@@ -826,8 +909,10 @@ exports[`should render with one row 1`] = `
             <TableCell
               content={
                 <ItemDisplay
+                  icon={undefined}
                   isTruncated={false}
                   text="Display 2"
+                  textStyle={undefined}
                 />
               }
               data-terra-clinical-item-collection-content="display"

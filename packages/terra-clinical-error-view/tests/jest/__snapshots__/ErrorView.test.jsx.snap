@@ -50,7 +50,7 @@ exports[`should render a default component 1`] = `
       data-name="Layer 1"
       height="170px"
       id="Layer_1"
-      viewbox="0 0 251.7 251.8"
+      viewBox="0 0 251.7 251.8"
       width="170px"
     >
       <path
@@ -76,7 +76,7 @@ exports[`should render a description 1`] = `
       data-name="Layer 1"
       height="170px"
       id="Layer_1"
-      viewbox="0 0 251.7 251.8"
+      viewBox="0 0 251.7 251.8"
       width="170px"
     >
       <path
@@ -104,7 +104,7 @@ exports[`should render a name 1`] = `
       data-name="Layer 1"
       height="170px"
       id="Layer_1"
-      viewbox="0 0 251.7 251.8"
+      viewBox="0 0 251.7 251.8"
       width="170px"
     >
       <path
