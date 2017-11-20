@@ -3,8 +3,12 @@
     table-layout: fixed;
   }
 
-  .accessory-column {
+  .start-accessory-column {
     width: 40px;
+  }
+
+  .end-accessory-column {
+    width: calc(100% / 7);
   }
 
   .content-accessory-align-top {
@@ -13,6 +17,10 @@
 
   .content-accessory-align-center {
     vertical-align: middle !important;
+  }
+
+  .content-end-accessory {
+    text-align: right !important;
   }
 
   .content-accessory,

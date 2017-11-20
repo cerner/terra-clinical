@@ -75,13 +75,13 @@ function createSelectableProps(onSelect, itemKey) {
   const selectableProps = { isSelectable: true };
   selectableProps.tabIndex = 0;
 
-  if (!itemKey) {
-    /* eslint-disable no-console */
-    console.error('Key is required for correct selectable implementation.');
-    /* eslint-disable no-console */
-  }
-
   if (onSelect) {
+    if (!itemKey) {
+      /* eslint-disable no-console */
+      console.error('Key is required for correct selectable implementation.');
+      /* eslint-disable no-console */
+    }
+
     selectableProps.onClick = (event) => {
       onSelect(event, itemKey);
     };
@@ -96,10 +96,8 @@ function createSelectableProps(onSelect, itemKey) {
   return selectableProps;
 }
 
-function createListItem(elements, itemKey, selectableProps, isSelected, listItemStyles) {
+function createListItem(elements, itemKey, selectableProps, isSelected, itemViewStyles) {
   const { startAccessory, children, comment, endAccessory, hasStartAccessory, hasEndAccessory, ...listItemProps } = elements;
-  // alignStartAccessory={hasStartAccessory}
-  // alignEndAccessory={hasEndAccessory}
 
   const listItemContent = (
     <ItemView
@@ -107,7 +105,8 @@ function createListItem(elements, itemKey, selectableProps, isSelected, listItem
       displays={React.Children.toArray(children)}
       comment={comment}
       endAccessory={endAccessory}
-      {...listItemStyles}
+      reserveStartAccessorySpace={hasStartAccessory}
+      {...itemViewStyles}
     />
   );
 
@@ -125,8 +124,8 @@ function createListItem(elements, itemKey, selectableProps, isSelected, listItem
 function createTableCell(content, keyValue, contentType, accessoryAlignment) {
   const cellClassNames = cx(
     `content-${contentType}`,
-    { 'content-accessory-align-center': (contentType === 'accessory' && accessoryAlignment === 'alignCenter') },
-    { 'content-accessory-align-top': (contentType === 'accessory' && accessoryAlignment === 'alignTop') },
+    { 'content-accessory-align-center': (contentType.includes('accessory') && accessoryAlignment === 'alignCenter') },
+    { 'content-accessory-align-top': (contentType.includes('accessory') && accessoryAlignment === 'alignTop') },
   );
 
   return (<Table.Cell content={content} key={keyValue} className={cellClassNames} />);
@@ -148,10 +147,10 @@ function createTableRow(elements, itemKey, selectableProps, isSelected, accessor
 
   return (
     <Table.Row isSelected={isSelected} {...selectableProps} {...tableRowProps} key={itemKey}>
-      {startAccessory && createTableCell(startAccessory, 'start_accessory', 'accessory', accessoryAlignment)}
+      {startAccessory && createTableCell(startAccessory, 'start_accessory', 'start-accessory', accessoryAlignment)}
       {displayContent}
       {comment && createTableCell(comment, 'comment', 'comment')}
-      {endAccessory && createTableCell(endAccessory, 'end_accessory', 'accessory', accessoryAlignment)}
+      {endAccessory && createTableCell(endAccessory, 'end_accessory', 'end-accessory', accessoryAlignment)}
     </Table.Row>
   );
 }
@@ -177,8 +176,8 @@ const Item = (props) => {
     return createTableRow(elements, itemKey, selectableProps, isSelected, accessoryAlignment);
   }
 
-  const listItemStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
-  return createListItem(elements, itemKey, selectableProps, isSelected, listItemStyles);
+  const itemViewStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
+  return createListItem(elements, itemKey, selectableProps, isSelected, itemViewStyles);
 };
 
 Item.propTypes = propTypes;

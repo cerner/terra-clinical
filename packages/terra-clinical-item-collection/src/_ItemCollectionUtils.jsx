@@ -27,7 +27,6 @@ function addAnyMissingListElements(childElements, requiredElements) {
 
   itemViewPieces.comment = hasComment ? comment : null;
   itemViewPieces.endAccessory = hasEndAccessory ? endAccessory : null;
-  itemViewPieces.hasEndAccessory = hasEndAccessory;
 
   return itemViewPieces;
 }
@@ -45,10 +44,7 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   const tableRowPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
   if (hasStartAccessory) {
-    tableRowPieces.startAccessory = ' ';
-    if (startAccessory) {
-      tableRowPieces.startAccessory = startAccessory;
-    }
+    tableRowPieces.startAccessory = startAccessory || ' ';
   }
 
   let displayContent = [];
@@ -64,17 +60,11 @@ function addAnyMissingTableElements(childElements, requiredElements) {
   tableRowPieces.children = displayContent;
 
   if (hasComment) {
-    tableRowPieces.comment = ' ';
-    if (comment) {
-      tableRowPieces.comment = comment;
-    }
+    tableRowPieces.comment = comment || ' ';
   }
 
   if (hasEndAccessory) {
-    tableRowPieces.endAccessory = ' ';
-    if (endAccessory) {
-      tableRowPieces.endAccessory = endAccessory;
-    }
+    tableRowPieces.endAccessory = endAccessory || ' ';
   }
 
   return tableRowPieces;

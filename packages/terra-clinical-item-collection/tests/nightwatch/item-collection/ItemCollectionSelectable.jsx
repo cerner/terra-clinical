@@ -35,7 +35,7 @@ class DefaultItemCollection extends React.Component {
             isSelected={this.state.selectedItemKey === '1'}
             startAccessory={<ItemCollection.Comment />}
             comment={<ItemCollection.Comment text="test comment" />}
-            endAccessory={<ItemCollection.Comment />}
+            endAccessory={<button size="medium">Disclose</button>}
           >
             <ItemCollection.Display text="Display 1" />
             <ItemCollection.Display text="Display 1" />
@@ -47,7 +47,7 @@ class DefaultItemCollection extends React.Component {
             isSelected={this.state.selectedItemKey === '2'}
             isSelectable
             comment={<ItemCollection.Comment text="test comment" />}
-            endAccessory={<ItemCollection.Comment />}
+            endAccessory={<button size="medium">Disclose</button>}
           >
             <ItemCollection.Display text="Display 1" />
             <ItemCollection.Display text="Display 1" />

@@ -46,10 +46,10 @@ function createTableLayout(requiredElements) {
 
   return (
     <colgroup>
-      {hasStartAccessory && <col className={styles['accessory-column']} />}
+      {hasStartAccessory && <col className={styles['start-accessory-column']} />}
       {displays}
       {hasComment && <col data-terra-clinical-item-collection-comment-column />}
-      {hasEndAccessory && <col className={styles['accessory-column']} />}
+      {hasEndAccessory && <col className={styles['end-accessory-column']} />}
     </colgroup>
   );
 }
