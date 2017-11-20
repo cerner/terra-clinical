@@ -27,11 +27,15 @@ const propTypes = {
   /**
    * The react element to be placed in the start aligned accessory position.
    */
-  startAccessory: PropTypes.element,
+  startAccessory: PropTypes.node,
+  /**
+   * Indicates whether or not space is allocated for the start accessory if none is given.
+   */
+  reserveStartAccessorySpace: PropTypes.bool,
   /**
    * The react element to be placed in the end aligned accessory position.
    */
-  endAccessory: PropTypes.element,
+  endAccessory: PropTypes.node,
   /**
    * An array of react display elements to be presented.
    */
@@ -39,7 +43,7 @@ const propTypes = {
   /**
    * The react element for the comment element.
    */
-  comment: PropTypes.element,
+  comment: PropTypes.node,
 };
 
 const defaultProps = {
@@ -48,6 +52,7 @@ const defaultProps = {
   isTruncated: false,
   accessoryAlignment: 'alignCenter',
   startAccessory: undefined,
+  reserveStartAccessorySpace: false,
   endAccessory: undefined,
   displays: [],
   comment: undefined,
@@ -55,11 +60,12 @@ const defaultProps = {
 
 class ItemView extends React.Component {
 
-  static renderAccessory(accessory, accessoryAlignment) {
+  static renderAccessory(accessory, reserveSpace, accessoryAlignment, type) {
     let accessorySection;
-    if (accessory) {
+    if (accessory || reserveSpace) {
       const accessoryClassNames = cx(
         'accessory',
+        `${type}-accessory`,
         { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
         { 'accessory-align-top': accessoryAlignment === 'alignTop' },
       );
@@ -154,6 +160,7 @@ class ItemView extends React.Component {
             isTruncated,
             accessoryAlignment,
             startAccessory,
+            reserveStartAccessorySpace,
             endAccessory,
             displays,
             comment,
@@ -169,12 +176,12 @@ class ItemView extends React.Component {
 
     return (
       <div {...customProps} className={viewClassNames}>
-        {ItemView.renderAccessory(startAccessory, accessoryAlignment)}
+        {ItemView.renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
         <div className={cx('body')}>
           {ItemView.renderRows(displays, layout, textEmphasis)}
           {comment}
         </div>
-        {ItemView.renderAccessory(endAccessory, accessoryAlignment)}
+        {ItemView.renderAccessory(endAccessory, false, accessoryAlignment, 'end')}
       </div>
     );
   }

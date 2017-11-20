@@ -11,20 +11,27 @@
     word-wrap: break-word;
   }
 
-  // Accessory is of fixed size and does not shrink or grow.
   .accessory {
+    display: flex;
     flex: 0 0 auto;
     margin: 5px;
-    max-height: 60px;
-    max-width: 60px;
     min-width: 0;
     overflow: hidden;
   }
 
-  .accessory > * {
-    display: flex !important;
-    max-height: 60px;
-    max-width: 60px;
+  // Start Accessory is of fixed size and does not shrink or grow.
+  .start-accessory {
+    justify-content: flex-start;
+    width: 2.8571rem;
+  }
+
+  .start-accessory > * {
+    max-width: 2.8571rem;
+  }
+
+  .end-accessory {
+    justify-content: flex-end;
+    max-width: 20%;
   }
 
   .accessory-align-top {
