@@ -5,6 +5,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -40,16 +41,22 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 2"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 3"
+          textStyle={undefined}
         />
       </Item>
     </ListView>
@@ -59,6 +66,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -94,16 +102,22 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 2"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 3"
+          textStyle={undefined}
         />
       </Item>
     </TableView>
@@ -116,6 +130,7 @@ exports[`should render an ItemCollection with a comment 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": true,
@@ -133,11 +148,13 @@ exports[`should render an ItemCollection with a comment 1`] = `
             text="test comment"
           />
         }
+        endAccessory={undefined}
         isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
         listItemLayout="oneColumn"
         listItemTextEmphasis="default"
+        startAccessory={undefined}
         view="list"
       />
     </ListView>
@@ -147,6 +164,7 @@ exports[`should render an ItemCollection with a comment 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": true,
@@ -164,11 +182,13 @@ exports[`should render an ItemCollection with a comment 1`] = `
             text="test comment"
           />
         }
+        endAccessory={undefined}
         isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
         listItemLayout="oneColumn"
         listItemTextEmphasis="default"
+        startAccessory={undefined}
         view="list"
       />
     </TableView>
@@ -181,6 +201,7 @@ exports[`should render an ItemCollection with a start accessory 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -192,6 +213,8 @@ exports[`should render an ItemCollection with a start accessory 1`] = `
     >
       <Item
         accessoryAlignment="alignCenter"
+        comment={undefined}
+        endAccessory={undefined}
         isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
@@ -211,6 +234,7 @@ exports[`should render an ItemCollection with a start accessory 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -222,6 +246,8 @@ exports[`should render an ItemCollection with a start accessory 1`] = `
     >
       <Item
         accessoryAlignment="alignCenter"
+        comment={undefined}
+        endAccessory={undefined}
         isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
@@ -244,6 +270,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": true,
@@ -279,8 +306,10 @@ exports[`should render an ItemCollection with all elements 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
       </Item>
     </ListView>
@@ -290,6 +319,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": true,
@@ -325,8 +355,10 @@ exports[`should render an ItemCollection with all elements 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
       </Item>
     </TableView>
@@ -339,6 +371,7 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -350,6 +383,7 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
     >
       <Item
         accessoryAlignment="alignCenter"
+        comment={undefined}
         endAccessory={
           <p>
             E
@@ -360,6 +394,7 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
         isSelected={false}
         listItemLayout="oneColumn"
         listItemTextEmphasis="default"
+        startAccessory={undefined}
         view="list"
       />
     </ListView>
@@ -369,6 +404,7 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -380,6 +416,7 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
     >
       <Item
         accessoryAlignment="alignCenter"
+        comment={undefined}
         endAccessory={
           <p>
             E
@@ -390,6 +427,7 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
         isSelected={false}
         listItemLayout="oneColumn"
         listItemTextEmphasis="default"
+        startAccessory={undefined}
         view="list"
       />
     </TableView>
@@ -402,6 +440,7 @@ exports[`should render an ItemCollection with displays 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -437,8 +476,10 @@ exports[`should render an ItemCollection with displays 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
       </Item>
     </ListView>
@@ -448,6 +489,7 @@ exports[`should render an ItemCollection with displays 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -483,8 +525,10 @@ exports[`should render an ItemCollection with displays 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
       </Item>
     </TableView>
@@ -497,6 +541,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
   defaultElement={
     <ListView
       isListDivided={true}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -532,16 +577,22 @@ exports[`should render an ItemCollection with list styles 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 2"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 3"
+          textStyle={undefined}
         />
       </Item>
     </ListView>
@@ -551,6 +602,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -586,16 +638,22 @@ exports[`should render an ItemCollection with list styles 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 2"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 3"
+          textStyle={undefined}
         />
       </Item>
     </TableView>
@@ -644,9 +702,11 @@ exports[`should render an ItemCollection with onSelect 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isSelectable={true}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
       </Item>
     </ListView>
@@ -692,9 +752,11 @@ exports[`should render an ItemCollection with onSelect 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isSelectable={true}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
       </Item>
     </TableView>
@@ -707,6 +769,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -742,16 +805,22 @@ exports[`should render an ItemCollection with table styles 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 2"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 3"
+          textStyle={undefined}
         />
       </Item>
     </ListView>
@@ -761,6 +830,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
     <TableView
       isTablePadded={true}
       isTableStriped={true}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -796,16 +866,22 @@ exports[`should render an ItemCollection with table styles 1`] = `
         view="list"
       >
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 1"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 2"
+          textStyle={undefined}
         />
         <ItemDisplay
+          icon={undefined}
           isTruncated={false}
           text="Display 3"
+          textStyle={undefined}
         />
       </Item>
     </TableView>
@@ -818,6 +894,7 @@ exports[`should render an default ItemCollection with no elements 1`] = `
   defaultElement={
     <ListView
       isListDivided={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -829,11 +906,14 @@ exports[`should render an default ItemCollection with no elements 1`] = `
     >
       <Item
         accessoryAlignment="alignCenter"
+        comment={undefined}
+        endAccessory={undefined}
         isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
         listItemLayout="oneColumn"
         listItemTextEmphasis="default"
+        startAccessory={undefined}
         view="list"
       />
     </ListView>
@@ -843,6 +923,7 @@ exports[`should render an default ItemCollection with no elements 1`] = `
     <TableView
       isTablePadded={false}
       isTableStriped={false}
+      onSelect={undefined}
       requiredElements={
         Object {
           "hasComment": false,
@@ -854,11 +935,14 @@ exports[`should render an default ItemCollection with no elements 1`] = `
     >
       <Item
         accessoryAlignment="alignCenter"
+        comment={undefined}
+        endAccessory={undefined}
         isListItemTruncated={false}
         isSelectable={false}
         isSelected={false}
         listItemLayout="oneColumn"
         listItemTextEmphasis="default"
+        startAccessory={undefined}
         view="list"
       />
     </TableView>

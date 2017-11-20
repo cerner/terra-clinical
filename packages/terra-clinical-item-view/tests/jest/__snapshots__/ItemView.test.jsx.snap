@@ -12,9 +12,11 @@ exports[`should render 1 start theme display 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -39,9 +41,11 @@ exports[`should render 2 start theme displays 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -51,9 +55,11 @@ exports[`should render 2 start theme displays 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -78,9 +84,11 @@ exports[`should render 3 start theme displays 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -90,9 +98,11 @@ exports[`should render 3 start theme displays 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -102,9 +112,11 @@ exports[`should render 3 start theme displays 1`] = `
       </div>
       <div
         className="row"
+        key="2"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -151,7 +163,7 @@ exports[`should render a end accessory 1`] = `
     className="body"
   />
   <div
-    className="accessory accessory-align-center"
+    className="accessory end-accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -165,7 +177,7 @@ exports[`should render a start accessory 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-center"
+    className="accessory start-accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -182,7 +194,7 @@ exports[`should render an accessory center aligned 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-center"
+    className="accessory start-accessory accessory-align-center"
   >
     <img
       alt="Graphic"
@@ -199,7 +211,7 @@ exports[`should render an accessory top aligned 1`] = `
   className="item-view one-column"
 >
   <div
-    className="accessory accessory-align-top"
+    className="accessory start-accessory accessory-align-top"
   >
     <img
       alt="Graphic"
@@ -223,9 +235,11 @@ exports[`should render one column 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -235,9 +249,11 @@ exports[`should render one column 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -247,6 +263,19 @@ exports[`should render one column 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`should render start accessory space reserved 1`] = `
+<div
+  className="item-view one-column"
+>
+  <div
+    className="accessory start-accessory accessory-align-center"
+  />
+  <div
+    className="body"
+  />
 </div>
 `;
 
@@ -262,9 +291,11 @@ exports[`should render truncated display 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={true}
@@ -289,9 +320,11 @@ exports[`should render two columns with 8 displays 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -300,6 +333,7 @@ exports[`should render two columns with 8 displays 1`] = `
         </div>
         <div
           className="content content-primary-size content-primary-color"
+          key="1"
         >
           <ItemDisplay
             isTruncated={false}
@@ -309,9 +343,11 @@ exports[`should render two columns with 8 displays 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -320,6 +356,7 @@ exports[`should render two columns with 8 displays 1`] = `
         </div>
         <div
           className="content content-secondary-size content-primary-color"
+          key="1"
         >
           <ItemDisplay
             isTruncated={false}
@@ -329,9 +366,11 @@ exports[`should render two columns with 8 displays 1`] = `
       </div>
       <div
         className="row"
+        key="2"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -340,6 +379,7 @@ exports[`should render two columns with 8 displays 1`] = `
         </div>
         <div
           className="content content-secondary-size content-secondary-color"
+          key="1"
         >
           <ItemDisplay
             isTruncated={false}
@@ -349,9 +389,11 @@ exports[`should render two columns with 8 displays 1`] = `
       </div>
       <div
         className="row"
+        key="3"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -360,6 +402,7 @@ exports[`should render two columns with 8 displays 1`] = `
         </div>
         <div
           className="content content-secondary-size content-secondary-color"
+          key="1"
         >
           <ItemDisplay
             isTruncated={false}
@@ -384,9 +427,11 @@ exports[`should render two columns with odd number of displays 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -395,6 +440,7 @@ exports[`should render two columns with odd number of displays 1`] = `
         </div>
         <div
           className="content content-primary-size content-primary-color"
+          key="1"
         >
           <ItemDisplay
             isTruncated={false}
@@ -404,9 +450,11 @@ exports[`should render two columns with odd number of displays 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -431,9 +479,11 @@ exports[`should render with 1 display 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -458,9 +508,11 @@ exports[`should render with 2 displays 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -470,9 +522,11 @@ exports[`should render with 2 displays 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -497,9 +551,11 @@ exports[`should render with 3 displays 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -509,9 +565,11 @@ exports[`should render with 3 displays 1`] = `
       </div>
       <div
         className="row"
+        key="1"
       >
         <div
           className="content content-secondary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -521,9 +579,11 @@ exports[`should render with 3 displays 1`] = `
       </div>
       <div
         className="row"
+        key="2"
       >
         <div
           className="content content-secondary-size content-secondary-color"
+          key="0"
         >
           <ItemDisplay
             isTruncated={false}
@@ -548,9 +608,11 @@ exports[`should render with a display and graphic 1`] = `
     >
       <div
         className="row"
+        key="0"
       >
         <div
           className="content content-primary-size content-primary-color"
+          key="0"
         >
           <ItemDisplay
             icon={

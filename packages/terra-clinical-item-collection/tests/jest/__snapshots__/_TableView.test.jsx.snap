@@ -13,27 +13,35 @@ exports[`should render a TableView with children 1`] = `
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="0"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="1"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="2"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="3"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="4"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="5"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="6"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="7"
     />
     <col
       data-terra-clinical-item-collection-comment-column={true}
@@ -60,6 +68,7 @@ exports[`should render a TableView with children 1`] = `
       isSelectable={false}
       isSelected={false}
       itemKey={null}
+      key=".0"
       listItemLayout="oneColumn"
       listItemTextEmphasis="default"
       startAccessory={
@@ -98,27 +107,35 @@ exports[`should render a TableView with table styles 1`] = `
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="0"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="1"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="2"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="3"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="4"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="5"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="6"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="7"
     />
     <col
       data-terra-clinical-item-collection-comment-column={true}
@@ -145,6 +162,7 @@ exports[`should render a TableView with table styles 1`] = `
       isSelectable={false}
       isSelected={false}
       itemKey="1"
+      key=".$1"
       listItemLayout="oneColumn"
       listItemTextEmphasis="default"
       startAccessory={
@@ -183,27 +201,35 @@ exports[`should render a default TableView 1`] = `
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="0"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="1"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="2"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="3"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="4"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="5"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="6"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
+      key="7"
     />
     <col
       data-terra-clinical-item-collection-comment-column={true}
