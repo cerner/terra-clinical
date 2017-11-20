@@ -9,6 +9,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * Child element to be displayed on the right end of the header.
+   * The element passed as children will be decorated with flex attributes.
    */
   children: PropTypes.element,
 
@@ -24,6 +25,7 @@ const propTypes = {
 
   /**
    * Content to be displayed at the end of the header
+   * The element passed as endContent will be wrapped in a div with flex attributes.
    */
   endContent: PropTypes.element,
 
