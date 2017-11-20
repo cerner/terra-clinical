@@ -9,7 +9,7 @@ exports[`should render a TableView with children 1`] = `
 >
   <colgroup>
     <col
-      className="accessory-column"
+      className="start-accessory-column"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
@@ -47,7 +47,7 @@ exports[`should render a TableView with children 1`] = `
       data-terra-clinical-item-collection-comment-column={true}
     />
     <col
-      className="accessory-column"
+      className="end-accessory-column"
     />
   </colgroup>
   <TableRows>
@@ -103,7 +103,7 @@ exports[`should render a TableView with table styles 1`] = `
 >
   <colgroup>
     <col
-      className="accessory-column"
+      className="start-accessory-column"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
@@ -141,7 +141,7 @@ exports[`should render a TableView with table styles 1`] = `
       data-terra-clinical-item-collection-comment-column={true}
     />
     <col
-      className="accessory-column"
+      className="end-accessory-column"
     />
   </colgroup>
   <TableRows>
@@ -197,7 +197,7 @@ exports[`should render a default TableView 1`] = `
 >
   <colgroup>
     <col
-      className="accessory-column"
+      className="start-accessory-column"
     />
     <col
       data-terra-clinical-item-collection-display-column={true}
@@ -235,7 +235,7 @@ exports[`should render a default TableView 1`] = `
       data-terra-clinical-item-collection-comment-column={true}
     />
     <col
-      className="accessory-column"
+      className="end-accessory-column"
     />
   </colgroup>
   <TableRows />
