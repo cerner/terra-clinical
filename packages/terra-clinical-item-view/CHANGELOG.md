@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added reserveStartAccessorySpace to allow for proper spacing when a start accessory is not provided.
+
+### Changed
+* Updated the start accessory's max-width to be 2.8571rem (40px) and removed max-height.
+* Updated the end accessory's max-width to be 20% and removed max-height.
+* startAccessory, comment and endAccessory props now accept node proptypes.
 
 1.4.0 - (September 26, 2017)
 -----------------

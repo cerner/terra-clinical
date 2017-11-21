@@ -52,6 +52,7 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -105,6 +106,7 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -158,6 +160,7 @@ exports[`should render with a given breakpoint 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -433,6 +436,7 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -486,6 +490,7 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -539,6 +544,7 @@ exports[`should render with multiple rows 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
@@ -814,6 +820,7 @@ exports[`should render with one row 1`] = `
               }
               isTruncated={false}
               layout="oneColumn"
+              reserveStartAccessorySpace={false}
               startAccessory={
                 <div
                   className="list-accessory"
