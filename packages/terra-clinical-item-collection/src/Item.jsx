@@ -131,16 +131,16 @@ const Item = (props) => {
     listItemTextEmphasis,
     isListItemTruncated,
     accessoryAlignment,
-    ...otherItemProps
+    ...elements
   } = props;
   const selectableProps = isSelectable ? { isSelectable, tabIndex: 0 } : {};
 
   if (view === 'table') {
-    return createTableRow(otherItemProps, selectableProps, isSelected, accessoryAlignment);
+    return createTableRow(elements, selectableProps, isSelected, accessoryAlignment);
   }
 
   const itemViewStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
-  return createListItem(otherItemProps, selectableProps, isSelected, itemViewStyles);
+  return createListItem(elements, selectableProps, isSelected, itemViewStyles);
 };
 
 Item.propTypes = propTypes;
