@@ -49,7 +49,7 @@ function createTableLayout(requiredElements) {
       {hasStartAccessory && <col className={styles['start-accessory-column']} />}
       {displays}
       {hasComment && <col data-terra-clinical-item-collection-comment-column />}
-      {hasEndAccessory && <col className={styles['end-accessory-column']} />}
+      {hasEndAccessory && <col data-terra-clinical-item-collection-end-accessory-column />}
     </colgroup>
   );
 }
