@@ -134,8 +134,7 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
 function createTableRow(elements, itemKey, selectableProps, isSelected, accessoryAlignment) {
   const { startAccessory, children, comment, endAccessory, ...tableRowProps } = elements;
 
-  let displayContent = [];
-  displayContent = React.Children.map(children, (display, index) => {
+  const displayContent = React.Children.map(children, (display, index) => {
     const displayKey = `display_${index + 1}`;
     return createTableCell(display, displayKey, 'display');
   });
