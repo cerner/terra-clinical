@@ -5,12 +5,12 @@ const KEYCODES = {
 
 /**
  * This function ensures the correct elements are provided to create a consistent item view layout. To handle a
- * potential missing required accessory element, a boolean indicator is provided to single accessory space is needed.
+ * potential missing required accessory element, a boolean is provided to indicate if start accessory space is needed.
  *
  * @ param {childElement} obj - The react child props that will compose an item view list item.
  * @ param {requiredElements} obj - The elements expected to be displayed.
  */
-function addAnyMissingListElements(childElements, requiredElements) {
+function addMissingListElements(childElements, requiredElements) {
   const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
   const itemViewPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
@@ -38,7 +38,7 @@ function addAnyMissingListElements(childElements, requiredElements) {
  * @ param {childElement} obj - The react child props that will compose a table row.
  * @ param {requiredElements} obj - The elements expected to be displayed.
  */
-function addAnyMissingTableElements(childElements, requiredElements) {
+function addMissingTableElements(childElements, requiredElements) {
   const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
   const { startAccessory, children, comment, endAccessory } = childElements;
   const tableRowPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
@@ -71,8 +71,8 @@ function addAnyMissingTableElements(childElements, requiredElements) {
 }
 
 const ItemCollectionUtils = {
-  addAnyMissingListElements,
-  addAnyMissingTableElements,
+  addMissingListElements,
+  addMissingTableElements,
   KEYCODES,
 };
 

@@ -15,11 +15,11 @@ const propTypes = {
    */
   onSelect: PropTypes.func,
   /**
-   * Whether or not the table rows should be zebra striped.
+   * Whether or not the table cells should be padded.
    */
   isTablePadded: PropTypes.bool,
   /**
-   * Whether or not the table cells should be padded.
+   * Whether or not the table rows should be zebra striped.
    */
   isTableStriped: PropTypes.bool,
   /**
@@ -57,7 +57,7 @@ function createTableLayout(requiredElements) {
 function createTableRows(children, onSelect, requiredElements) {
   return React.Children.map(children, (child) => {
     if (child.type === Item) {
-      const tableRowPieces = Utils.addAnyMissingTableElements(child.props, requiredElements);
+      const tableRowPieces = Utils.addMissingTableElements(child.props, requiredElements);
       return React.cloneElement(child, { view: 'table', itemKey: child.key, onSelect, ...tableRowPieces });
     }
 

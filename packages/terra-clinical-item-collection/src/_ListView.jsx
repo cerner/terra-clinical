@@ -32,7 +32,7 @@ const propTypes = {
 function createListItems(children, onSelect, requiredElements) {
   return React.Children.map(children, (child) => {
     if (child.type === Item) {
-      const itemViewPieces = Utils.addAnyMissingListElements(child.props, requiredElements);
+      const itemViewPieces = Utils.addMissingListElements(child.props, requiredElements);
       return React.cloneElement(child, { view: 'list', itemKey: child.key, onSelect, ...itemViewPieces });
     }
 

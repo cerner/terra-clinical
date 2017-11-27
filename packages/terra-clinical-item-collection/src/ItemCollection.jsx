@@ -20,23 +20,23 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-  * Whether or not the item collection should create a layout to display a start accessory.
+  * Whether or not the item collection should display a start accessory.
   */
   hasStartAccessory: PropTypes.bool,
   /**
-  * The number of displays the item collection should create a layout for.
+  * The number of displays the item collection should display.
   */
   numberOfDisplays: PropTypes.number,
   /**
-  * Whether or not the item collection should create a layout to display a comment.
+  * Whether or not the item collection should display a comment.
   */
   hasComment: PropTypes.bool,
   /**
-  * Whether or not the item collection should create a layout to display an end accessory.
+  * Whether or not the item collection should display an end accessory.
   */
   hasEndAccessory: PropTypes.bool,
   /**
-   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable. The first
+   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child is selectable. The first
    * parameter returned is the event and the second parameter is the child key. Function is not applied if child is not selectable.
    */
   onSelect: PropTypes.func,

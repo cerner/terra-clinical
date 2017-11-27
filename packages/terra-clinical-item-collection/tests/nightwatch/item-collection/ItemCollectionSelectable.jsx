@@ -16,7 +16,7 @@ class DefaultItemCollection extends React.Component {
     return (
       <div>
         <h3>This a POC Selectable ItemCollection Example.</h3>
-        <p>This example it set up to be a sinlge-selection example, however the Item Colleciton
+        <p>This example it set up to be a single-selection example, however the Item Collection
            gives implementors the flexibilty to create their own selection implementation. </p>
         <p id="selected-key"> Selected Item: {this.state.selectedItemKey} </p>
         <ItemCollection

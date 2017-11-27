@@ -44,12 +44,12 @@ const propTypes = {
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**
-   * Wether or not the item is selectable. If true, the item is given list and table hover and focus styles, tabIndex
+   * Whether or not the item is selectable. If true, the item is given list and table hover and focus styles, tabIndex
    * set to 0, and onClick and onKeyDown callbacks set to the onSelect function provided via Item Collection.
    */
   isSelectable: PropTypes.bool,
   /*
-   * Wether or not the item is selected.
+   * Whether or not the item is selected.
    */
   isSelected: PropTypes.bool,
   /**
@@ -133,11 +133,6 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
 
 function createTableRow(elements, itemKey, selectableProps, isSelected, accessoryAlignment) {
   const { startAccessory, children, comment, endAccessory, ...tableRowProps } = elements;
-
-// QUESTION:
-  // Does ITEM as a standalone component want to care about the maximun number of displays columns?
-  // The max is 8 - determined by ItemView rendering.
-  // When used in the ItemCollection, _createTableView handles the case of too many.
 
   let displayContent = [];
   displayContent = React.Children.map(children, (display, index) => {
