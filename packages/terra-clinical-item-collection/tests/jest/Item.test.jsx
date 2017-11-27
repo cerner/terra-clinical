@@ -114,7 +114,6 @@ describe('List View Tests', () => {
   });
 
   it('should render a selectable Item', () => {
-    const mockItemCollectionProps = { itemKey: 'selectable' };
     const item = (
       <Item
         view="list"
@@ -122,7 +121,6 @@ describe('List View Tests', () => {
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
         isSelectable
-        {...mockItemCollectionProps}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />
@@ -265,7 +263,6 @@ describe('Table View Tests', () => {
   });
 
   it('should render a selectable Item', () => {
-    const mockItemCollectionProps = { itemKey: 'selectable' };
     const item = (
       <Item
         view="table"
@@ -273,7 +270,6 @@ describe('Table View Tests', () => {
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
         isSelectable
-        {...mockItemCollectionProps}
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />

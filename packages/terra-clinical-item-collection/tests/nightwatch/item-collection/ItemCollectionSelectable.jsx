@@ -4,7 +4,7 @@ import ItemCollection from '../../../lib/ItemCollection';
 class DefaultItemCollection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedItemKey: null };
+    this.state = { selectedItemKey: '1' };
     this.handleSelection = this.handleSelection.bind(this);
   }
 

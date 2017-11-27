@@ -33,7 +33,8 @@ function createListItems(children, onSelect, requiredElements) {
   return React.Children.map(children, (child) => {
     if (child.type === Item) {
       const itemViewPieces = Utils.addMissingListElements(child.props, requiredElements);
-      return React.cloneElement(child, { view: 'list', itemKey: child.key, onSelect, ...itemViewPieces });
+      const onSelectProps = onSelect && child.props.isSelectable ? Utils.createOnSelectProps(onSelect, child.key) : {};
+      return React.cloneElement(child, { view: 'list', ...onSelectProps, ...itemViewPieces });
     }
 
     return child;

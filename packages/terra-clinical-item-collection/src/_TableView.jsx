@@ -58,7 +58,8 @@ function createTableRows(children, onSelect, requiredElements) {
   return React.Children.map(children, (child) => {
     if (child.type === Item) {
       const tableRowPieces = Utils.addMissingTableElements(child.props, requiredElements);
-      return React.cloneElement(child, { view: 'table', itemKey: child.key, onSelect, ...tableRowPieces });
+      const onSelectProps = onSelect && child.props.isSelectable ? Utils.createOnSelectProps(onSelect, child.key) : {};
+      return React.cloneElement(child, { view: 'table', ...onSelectProps, ...tableRowPieces });
     }
 
     return child;

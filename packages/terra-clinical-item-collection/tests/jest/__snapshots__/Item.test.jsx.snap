@@ -343,7 +343,6 @@ exports[`List View Tests should render a selectable Item 1`] = `
   }
   isSelectable={true}
   isSelected={false}
-  key="selectable"
   tabIndex={0}
 />
 `;
@@ -702,7 +701,6 @@ exports[`Table View Tests should render a selectable Item 1`] = `
 <TableRow
   isSelectable={true}
   isSelected={false}
-  key="selectable"
   tabIndex={0}
 >
   <TableCell

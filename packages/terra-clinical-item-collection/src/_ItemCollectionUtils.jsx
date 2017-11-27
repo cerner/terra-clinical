@@ -70,10 +70,32 @@ function addMissingTableElements(childElements, requiredElements) {
   return tableRowPieces;
 }
 
+function createOnSelectProps(onSelect, key) {
+  const selectableProps = {};
+
+  if (!key) {
+    /* eslint-disable no-console */
+    console.error('Key is required for correct onSelect implementation.');
+    /* eslint-disable no-console */
+  }
+
+  selectableProps.onClick = (event) => {
+    onSelect(event, key);
+  };
+
+  selectableProps.onKeyDown = (event) => {
+    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+      onSelect(event, key);
+    }
+  };
+
+  return selectableProps;
+}
+
 const ItemCollectionUtils = {
   addMissingListElements,
   addMissingTableElements,
-  KEYCODES,
+  createOnSelectProps,
 };
 
 export default ItemCollectionUtils;

@@ -5,7 +5,6 @@ import ItemView from 'terra-clinical-item-view';
 import List from 'terra-list';
 import Table from 'terra-table';
 import 'terra-base/lib/baseStyles';
-import Utils from './_ItemCollectionUtils';
 import styles from './ItemCollection.scss';
 
 const cx = classNames.bind(styles);
@@ -71,32 +70,7 @@ const defaultProps = {
   view: 'list',
 };
 
-function createSelectableProps(onSelect, itemKey) {
-  const selectableProps = { isSelectable: true };
-  selectableProps.tabIndex = 0;
-
-  if (onSelect) {
-    if (!itemKey) {
-      /* eslint-disable no-console */
-      console.error('Key is required for correct selectable implementation.');
-      /* eslint-disable no-console */
-    }
-
-    selectableProps.onClick = (event) => {
-      onSelect(event, itemKey);
-    };
-
-    selectableProps.onKeyDown = (event) => {
-      if (event.nativeEvent.keyCode === Utils.KEYCODES.ENTER || event.nativeEvent.keyCode === Utils.KEYCODES.SPACE) {
-        onSelect(event, itemKey);
-      }
-    };
-  }
-
-  return selectableProps;
-}
-
-function createListItem(elements, itemKey, selectableProps, isSelected, itemViewStyles) {
+function createListItem(elements, selectableProps, isSelected, itemViewStyles) {
   const { startAccessory, children, comment, endAccessory, hasStartAccessory, hasEndAccessory, ...listItemProps } = elements;
 
   const listItemContent = (
@@ -112,7 +86,6 @@ function createListItem(elements, itemKey, selectableProps, isSelected, itemView
 
   return (
     <List.Item
-      key={itemKey}
       content={listItemContent}
       isSelected={isSelected}
       {...selectableProps}
@@ -131,7 +104,7 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
   return (<Table.Cell content={content} key={keyValue} className={cellClassNames} />);
 }
 
-function createTableRow(elements, itemKey, selectableProps, isSelected, accessoryAlignment) {
+function createTableRow(elements, selectableProps, isSelected, accessoryAlignment) {
   const { startAccessory, children, comment, endAccessory, ...tableRowProps } = elements;
 
   const displayContent = React.Children.map(children, (display, index) => {
@@ -140,7 +113,7 @@ function createTableRow(elements, itemKey, selectableProps, isSelected, accessor
   });
 
   return (
-    <Table.Row isSelected={isSelected} {...selectableProps} {...tableRowProps} key={itemKey}>
+    <Table.Row isSelected={isSelected} {...selectableProps} {...tableRowProps}>
       {startAccessory && createTableCell(startAccessory, 'start_accessory', 'start-accessory', accessoryAlignment)}
       {displayContent}
       {comment && createTableCell(comment, 'comment', 'comment')}
@@ -154,24 +127,20 @@ const Item = (props) => {
     view,
     isSelectable,
     isSelected,
-    onSelect,
     listItemLayout,
     listItemTextEmphasis,
     isListItemTruncated,
     accessoryAlignment,
     ...otherItemProps
   } = props;
-  // The itemKey is set by the ListView & TableView components as the child.key value.
-  const { itemKey, ...elements } = otherItemProps;
-
-  const selectableProps = isSelectable ? createSelectableProps(onSelect, itemKey) : {};
+  const selectableProps = isSelectable ? { isSelectable, tabIndex: 0 } : {};
 
   if (view === 'table') {
-    return createTableRow(elements, itemKey, selectableProps, isSelected, accessoryAlignment);
+    return createTableRow(otherItemProps, selectableProps, isSelected, accessoryAlignment);
   }
 
   const itemViewStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
-  return createListItem(elements, itemKey, selectableProps, isSelected, itemViewStyles);
+  return createListItem(otherItemProps, selectableProps, isSelected, itemViewStyles);
 };
 
 Item.propTypes = propTypes;
