@@ -8,6 +8,12 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Child element to be displayed on the right end of the header.
+   * The element passed as children will be decorated with flex attributes.
+   */
+  children: PropTypes.element,
+
+  /**
    * Content to be displayed at the start of the header, placed before the title
    */
   startContent: PropTypes.element,
@@ -19,6 +25,7 @@ const propTypes = {
 
   /**
    * Content to be displayed at the end of the header
+   * The element passed as endContent will be wrapped in a div with flex attributes.
    */
   endContent: PropTypes.element,
 
@@ -35,7 +42,7 @@ const defaultProps = {
   isSubheader: false,
 };
 
-const Header = ({ title, startContent, endContent, isSubheader, ...customProps }) => {
+const Header = ({ children, title, startContent, endContent, isSubheader, ...customProps }) => {
   let startElement;
   if (startContent) {
     startElement = <div className={cx('flex-end')}>{startContent}</div>;
@@ -57,6 +64,15 @@ const Header = ({ title, startContent, endContent, isSubheader, ...customProps }
     endElement = <div className={cx('flex-end')}>{endContent}</div>;
   }
 
+  let childElement;
+  if (children) {
+    const childClassNames = cx([
+      'flex-collapse',
+      children.props.className,
+    ]);
+    childElement = React.cloneElement(children, { className: childClassNames });
+  }
+
   const headerClass = isSubheader ? 'flex-subheader' : 'flex-header';
 
   return (
@@ -65,6 +81,7 @@ const Header = ({ title, startContent, endContent, isSubheader, ...customProps }
       <div className={cx('flex-fill')}>
         {titleElement}
       </div>
+      {childElement}
       {endElement}
     </header>
   );
