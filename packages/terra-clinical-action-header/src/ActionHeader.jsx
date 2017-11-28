@@ -59,6 +59,7 @@ const propTypes = {
 
   /**
    * Child element to be displayed on the right end of the header.
+   * This is intended to be used with the CollapsibleMenuView.
    */
   children: PropTypes.element,
 };
@@ -146,7 +147,6 @@ const ActionHeader = ({
 
   const rightButtonsDefault = (
     <div className={cx('right-buttons')}>
-      {children}
       {closeButton}
     </div>
   );
@@ -160,7 +160,6 @@ const ActionHeader = ({
 
   const rightButtonsSmall = (
     <div className={cx('right-buttons')}>
-      {children}
       {closeButtonSmall}
     </div>
   );
@@ -172,7 +171,9 @@ const ActionHeader = ({
       startContent={leftButtonsDefault}
       title={title}
       endContent={rightButtonsDefault}
-    />
+    >
+      {children}
+    </Header>
   );
 
   const smallActionHeader = (
@@ -182,7 +183,9 @@ const ActionHeader = ({
       startContent={leftButtonsSmall}
       title={title}
       endContent={rightButtonsSmall}
-    />
+    >
+      {children}
+    </Header>
   );
 
   return (

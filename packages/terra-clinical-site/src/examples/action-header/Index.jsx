@@ -24,7 +24,7 @@ const HeaderExamples = () => (
     <ActionHeaderBackNextPreviousClose />
     <h2>Maximize, Close</h2>
     <ActionHeaderExpandClose />
-    <h2>Minimize, Custom Content, Close </h2>
+    <h2>Minimize, Custom Content, Children, Close </h2>
     <ActionHeaderMinimizeCustomClose />
   </div>
 );

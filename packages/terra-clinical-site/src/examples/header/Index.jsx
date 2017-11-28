@@ -27,7 +27,7 @@ const HeaderExamples = () => (
     <ContentHeader />
     <h1> Header With Long Title </h1>
     <HeaderLongText />
-    <h1> Header With Long Title And Content </h1>
+    <h1> Header With Long Title, Children, And Content </h1>
     <HeaderLongTextWithContent />
     <h1> Subheader with content </h1>
     <Subheader />
