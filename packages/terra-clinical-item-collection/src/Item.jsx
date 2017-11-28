@@ -43,8 +43,8 @@ const propTypes = {
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**
-   * Whether or not the item is selectable. If true, the item is given list and table hover and focus styles, tabIndex
-   * set to 0, and onClick and onKeyDown callbacks set to the onSelect function provided via Item Collection.
+   * Whether or not the item is selectable. If true, the item is given list and table hover and focus styles and set tabIndex
+   * to 0.
    */
   isSelectable: PropTypes.bool,
   /*
