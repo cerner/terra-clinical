@@ -61,12 +61,12 @@ const defaultProps = {
   startAccessory: undefined,
   comment: undefined,
   endAccessory: undefined,
-  listItemLayout: 'oneColumn',
-  listItemTextEmphasis: 'default',
-  isListItemTruncated: false,
   accessoryAlignment: 'alignCenter',
+  isListItemTruncated: false,
   isSelectable: false,
   isSelected: false,
+  listItemLayout: 'oneColumn',
+  listItemTextEmphasis: 'default',
   view: 'list',
 };
 
@@ -124,13 +124,13 @@ function createTableRow(elements, selectableProps, isSelected, accessoryAlignmen
 
 const Item = (props) => {
   const {
-    view,
+    accessoryAlignment,
+    isListItemTruncated,
     isSelectable,
     isSelected,
     listItemLayout,
     listItemTextEmphasis,
-    isListItemTruncated,
-    accessoryAlignment,
+    view,
     ...elements
   } = props;
   const selectableProps = isSelectable ? { isSelectable, tabIndex: 0 } : {};
