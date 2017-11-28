@@ -71,7 +71,7 @@ function addMissingTableElements(childProps, requiredElements) {
 }
 
 /**
- * This function creates the onClick and onKeyDown props for a selectable react child. For both the onClick and onKeyDown, 
+ * This function creates the onClick and onKeyDown props for a selectable react child. For both the onClick and onKeyDown,
  * the first parameter returned is the event and the second parameter is the child key.
  *
  * @ param {onSelect} func - he callback function that is assigned as to a child's onClick and onKeyDown.
