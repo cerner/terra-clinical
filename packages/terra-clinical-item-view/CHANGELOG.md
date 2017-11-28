@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.5.0 - (November 28, 2017)
+-----------------
 ### Added
 * Added reserveStartAccessorySpace to allow for proper spacing when a start accessory is not provided.
 

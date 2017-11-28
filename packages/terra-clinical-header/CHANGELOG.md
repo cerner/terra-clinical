@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Collapsible Content Section to enable use of CollapsibleMenuView
 
 1.6.0 - (November 15, 2017)
 -----------------
