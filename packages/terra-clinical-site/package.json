@@ -70,6 +70,7 @@
     "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^2.30.0",
     "node-sass": "^4.5.2",
+    "postcss-assets-webpack-plugin": "^1.1.0",
     "postcss-custom-properties": "^6.0.1",
     "postcss-loader": "^2.0.6",
     "postcss-rtl": "^1.1.2",
