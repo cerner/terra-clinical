@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.0.0 - (November 29, 2017)
+-----------------
 * See Release Notes for Migration Guide
 
 ### Added

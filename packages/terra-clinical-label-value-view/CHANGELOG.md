@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.4.0 - (November 29, 2017)
+-----------------
 ### Changed
 * Break long words to wrap when needed 
 
