@@ -1,26 +1,44 @@
 import React from 'react';
 import ItemCollection from '../../../lib/ItemCollection';
-import item from './Item';
+
+const defaultItem = (
+  <ItemCollection.Item
+    startAccessory={<div>S</div>}
+    comment={<ItemCollection.Comment text="test comment" />}
+    endAccessory={<div>E</div>}
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+  </ItemCollection.Item>
+);
 
 const PaddedTable = () => (
   <ItemCollection
-    tableStyles={{ isPadded: true, isStriped: false }}
-    rows={[item, item, item, item]}
-  />
+    hasStartAccessory
+    numberOfDisplays={3}
+    hasComment
+    hasEndAccessory
+    isTablePadded
+  >
+    {defaultItem}
+    {defaultItem}
+    {defaultItem}
+  </ItemCollection>
 );
 
 const StrippedTable = () => (
   <ItemCollection
-    tableStyles={{ isPadded: false, isStriped: true }}
-    rows={[item, item, item, item]}
-  />
-);
-
-const AllStylesTable = () => (
-  <ItemCollection
-    tableStyles={{ isPadded: true, isStriped: true }}
-    rows={[item, item, item, item]}
-  />
+    hasStartAccessory
+    numberOfDisplays={3}
+    hasComment
+    hasEndAccessory
+    isTableStriped
+  >
+    {defaultItem}
+    {defaultItem}
+    {defaultItem}
+  </ItemCollection>
 );
 
 const TableStyles = () => (
@@ -30,9 +48,6 @@ const TableStyles = () => (
     <br />
     <h3>Table Style - Stripes </h3>
     <StrippedTable />
-    <br />
-    <h3>Table Style - Padding and Stripes </h3>
-    <AllStylesTable />
   </div>
 );
 

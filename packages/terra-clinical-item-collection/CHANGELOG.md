@@ -3,6 +3,21 @@ ChangeLog
 
 Unreleased
 ----------
+* See Release Notes for Migration Guide
+
+### Added
+* children prop and Item Component to be used as the children. The children prop replaces the rows prop.
+* onSelect prop to enable the rending of a selectable item collection children
+* hasStartAccessory, numberOfDisplays, hasComment, and hasEndAccessory props to construct the item collection layout.
+* isListDivided prop, which replace the listStyles prop
+* isTablePadded and isTableStriped props to replace the tableStyles prop.
+
+### Removed
+* rows, onChange, listStyles and tableStyles props
+
+### Changed
+* Item Collection layout is no longer rendered via the first row, but the hasStartAccessory, numberOfDisplays, hasComment, and hasEndAccessory props.
+* Item Collection now initially renders as static. Additional props must be included for selectable Item Collections. See Selectable Readme for more information.
 
 1.4.0 - (September 26, 2017)
 -----------------
