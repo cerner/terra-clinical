@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a TableView with children 1`] = `
+<Table
+  className="table"
+  data-terra-clinical-item-collection-table-view={true}
+  isPadded={true}
+  isStriped={true}
+>
+  <colgroup>
+    <col
+      className="start-accessory-column"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="0"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="1"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="2"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="3"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="4"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="5"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="6"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="7"
+    />
+    <col
+      data-terra-clinical-item-collection-comment-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-end-accessory-column={true}
+    />
+  </colgroup>
+  <TableRows>
+    <Item
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="test comment"
+        />
+      }
+      endAccessory={
+        <p>
+          E
+        </p>
+      }
+      isListItemTruncated={false}
+      isSelectable={false}
+      isSelected={false}
+      key=".0"
+      listItemLayout="oneColumn"
+      listItemTextEmphasis="default"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          S
+        </p>
+      }
+      view="table"
+    >
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+       
+       
+       
+       
+       
+       
+       
+    </Item>
+  </TableRows>
+</Table>
+`;
+
+exports[`should render a TableView with table styles 1`] = `
+<Table
+  className="table"
+  data-terra-clinical-item-collection-table-view={true}
+  isPadded={true}
+  isStriped={true}
+>
+  <colgroup>
+    <col
+      className="start-accessory-column"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="0"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="1"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="2"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="3"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="4"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="5"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="6"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="7"
+    />
+    <col
+      data-terra-clinical-item-collection-comment-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-end-accessory-column={true}
+    />
+  </colgroup>
+  <TableRows>
+    <Item
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="test comment"
+        />
+      }
+      endAccessory={
+        <p>
+          E
+        </p>
+      }
+      isListItemTruncated={false}
+      isSelectable={false}
+      isSelected={false}
+      key=".$1"
+      listItemLayout="oneColumn"
+      listItemTextEmphasis="default"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          S
+        </p>
+      }
+      view="table"
+    >
+      <ItemDisplay
+        isTruncated={false}
+        text="Display 1"
+      />
+       
+       
+       
+       
+       
+       
+       
+    </Item>
+  </TableRows>
+</Table>
+`;
+
+exports[`should render a default TableView 1`] = `
+<Table
+  className="table"
+  data-terra-clinical-item-collection-table-view={true}
+  isPadded={true}
+  isStriped={true}
+>
+  <colgroup>
+    <col
+      className="start-accessory-column"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="0"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="1"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="2"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="3"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="4"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="5"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="6"
+    />
+    <col
+      data-terra-clinical-item-collection-display-column={true}
+      key="7"
+    />
+    <col
+      data-terra-clinical-item-collection-comment-column={true}
+    />
+    <col
+      data-terra-clinical-item-collection-end-accessory-column={true}
+    />
+  </colgroup>
+  <TableRows />
+</Table>
+`;

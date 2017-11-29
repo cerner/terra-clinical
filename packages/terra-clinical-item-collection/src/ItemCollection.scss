@@ -1,10 +1,27 @@
 :local {
-  .column-accessory,
-  .list-accessory {
+  .table {
+    table-layout: fixed;
+  }
+
+  .start-accessory-column {
     width: 40px;
   }
 
-  .content-accessory {
-    vertical-align: middle !important;
+  .content-accessory.content-accessory-align-top {
+    vertical-align: top;
+  }
+
+  .content-accessory.content-accessory-align-center {
+    vertical-align: middle;
+  }
+
+  .content-accessory.content-end-accessory {
+    text-align: right;
+  }
+
+  .content-accessory,
+  .content-comment,
+  .content-display {
+    word-wrap: break-word;
   }
 }
