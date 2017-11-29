@@ -14,24 +14,6 @@ it('should render a default Item', () => {
   expect(component).toMatchSnapshot();
 });
 
-it('throws an error for a missing key when an item is selectable', () => {
-  try {
-    const item = (
-      <Item
-        startAccessory={<p>start</p>}
-        comment={<Item.Comment text="comment" />}
-        endAccessory={<p>end</p>}
-        isSelectable
-      >
-        <Item.Display text="Display 1" />
-      </Item>
-    );
-    shallow(item);
-  } catch (e) {
-    expect(e.message).toContain('Key is required for correct selectable implementation.');
-  }
-});
-
 describe('List View Tests', () => {
   it('should render a default Item', () => {
     const item = (

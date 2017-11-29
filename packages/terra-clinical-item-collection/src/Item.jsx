@@ -43,8 +43,13 @@ const propTypes = {
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**
-   * Whether or not the item is selectable. If true, the item is given list and table hover and focus styles and set tabIndex
-   * to 0.
+   * When displayed as a list item, indicates whether or not space is allocated for the start accessory.
+   * This will be set by the Item Collection component.
+   */
+  reserveStartAccessorySpace: PropTypes.bool,
+  /**
+   * Whether or not the item is selectable. If true, the item is given list and table hover and focus styles
+   * and set tabIndex to 0.
    */
   isSelectable: PropTypes.bool,
   /*
@@ -52,7 +57,8 @@ const propTypes = {
    */
   isSelected: PropTypes.bool,
   /**
-   * The view in which the item should be presented. Options are list or table and this will be set by the Item Collection component.
+   * The view in which the item should be presented. Options are list or table and this will be set by the
+   * Item Collection component.
    */
   view: PropTypes.oneOf(['list', 'table']),
 };
@@ -67,11 +73,12 @@ const defaultProps = {
   isSelected: false,
   listItemLayout: 'oneColumn',
   listItemTextEmphasis: 'default',
+  reserveStartAccessorySpace: false,
   view: 'list',
 };
 
-function createListItem(elements, selectableProps, isSelected, itemViewStyles) {
-  const { startAccessory, children, comment, endAccessory, hasStartAccessory, hasEndAccessory, ...listItemProps } = elements;
+function createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles) {
+  const { startAccessory, children, comment, endAccessory, reserveStartAccessorySpace } = elements;
 
   const listItemContent = (
     <ItemView
@@ -79,7 +86,7 @@ function createListItem(elements, selectableProps, isSelected, itemViewStyles) {
       displays={React.Children.toArray(children)}
       comment={comment}
       endAccessory={endAccessory}
-      reserveStartAccessorySpace={hasStartAccessory}
+      reserveStartAccessorySpace={reserveStartAccessorySpace}
       {...itemViewStyles}
     />
   );
@@ -89,7 +96,7 @@ function createListItem(elements, selectableProps, isSelected, itemViewStyles) {
       content={listItemContent}
       isSelected={isSelected}
       {...selectableProps}
-      {...listItemProps}
+      {...customProps}
     />
   );
 }
@@ -97,6 +104,7 @@ function createListItem(elements, selectableProps, isSelected, itemViewStyles) {
 function createTableCell(content, keyValue, contentType, accessoryAlignment) {
   const cellClassNames = cx(
     `content-${contentType}`,
+    { 'content-end-accessory': keyValue === 'end_accessory' },
     { 'content-accessory-align-center': (contentType.includes('accessory') && accessoryAlignment === 'alignCenter') },
     { 'content-accessory-align-top': (contentType.includes('accessory') && accessoryAlignment === 'alignTop') },
   );
@@ -104,8 +112,8 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
   return (<Table.Cell content={content} key={keyValue} className={cellClassNames} />);
 }
 
-function createTableRow(elements, selectableProps, isSelected, accessoryAlignment) {
-  const { startAccessory, children, comment, endAccessory, ...tableRowProps } = elements;
+function createTableRow(elements, selectableProps, customProps, isSelected, accessoryAlignment) {
+  const { startAccessory, children, comment, endAccessory } = elements;
 
   const displayContent = React.Children.map(children, (display, index) => {
     const displayKey = `display_${index + 1}`;
@@ -113,34 +121,41 @@ function createTableRow(elements, selectableProps, isSelected, accessoryAlignmen
   });
 
   return (
-    <Table.Row isSelected={isSelected} {...selectableProps} {...tableRowProps}>
-      {startAccessory && createTableCell(startAccessory, 'start_accessory', 'start-accessory', accessoryAlignment)}
+    <Table.Row isSelected={isSelected} {...selectableProps} {...customProps}>
+      {startAccessory && createTableCell(startAccessory, 'start_accessory', 'accessory', accessoryAlignment)}
       {displayContent}
       {comment && createTableCell(comment, 'comment', 'comment')}
-      {endAccessory && createTableCell(endAccessory, 'end_accessory', 'end-accessory', accessoryAlignment)}
+      {endAccessory && createTableCell(endAccessory, 'end_accessory', 'accessory', accessoryAlignment)}
     </Table.Row>
   );
 }
 
 const Item = (props) => {
   const {
+    children,
+    startAccessory,
+    comment,
+    endAccessory,
     accessoryAlignment,
     isListItemTruncated,
     isSelectable,
     isSelected,
     listItemLayout,
     listItemTextEmphasis,
+    reserveStartAccessorySpace,
     view,
-    ...elements
+    ...customProps
   } = props;
+
+  const elements = { children, startAccessory, comment, endAccessory, reserveStartAccessorySpace };
   const selectableProps = isSelectable ? { isSelectable, tabIndex: 0 } : {};
 
   if (view === 'table') {
-    return createTableRow(elements, selectableProps, isSelected, accessoryAlignment);
+    return createTableRow(elements, selectableProps, customProps, isSelected, accessoryAlignment);
   }
 
   const itemViewStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
-  return createListItem(elements, selectableProps, isSelected, itemViewStyles);
+  return createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles);
 };
 
 Item.propTypes = propTypes;

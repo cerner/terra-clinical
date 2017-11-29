@@ -18,13 +18,13 @@ exports[`should render a ListView with a divided list 1`] = `
         E
       </p>
     }
-    hasStartAccessory={true}
     isListItemTruncated={false}
     isSelectable={false}
     isSelected={false}
     key=".$1"
     listItemLayout="oneColumn"
     listItemTextEmphasis="default"
+    reserveStartAccessorySpace={true}
     startAccessory={
       <p>
         S
@@ -58,13 +58,13 @@ exports[`should render a ListView with children 1`] = `
         E
       </p>
     }
-    hasStartAccessory={true}
     isListItemTruncated={false}
     isSelectable={false}
     isSelected={false}
     key=".0"
     listItemLayout="oneColumn"
     listItemTextEmphasis="default"
+    reserveStartAccessorySpace={true}
     startAccessory={
       <p>
         S

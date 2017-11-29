@@ -11,7 +11,7 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child isSelectable.
+   * The callback function that is assigned as to a child's onClick and onKeyDown callback if the child is selectable.
    */
   onSelect: PropTypes.func,
   /**

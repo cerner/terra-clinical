@@ -16,7 +16,7 @@ function addMissingListElements(childProps, requiredElements) {
   const itemViewPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
 
   itemViewPieces.startAccessory = hasStartAccessory ? startAccessory : null;
-  itemViewPieces.hasStartAccessory = hasStartAccessory;
+  itemViewPieces.reserveStartAccessorySpace = hasStartAccessory;
 
   let displayContent = [];
   if (numberOfDisplays > 0 && children) {
@@ -80,9 +80,9 @@ function addMissingTableElements(childProps, requiredElements) {
 function createOnSelectProps(onSelect, key) {
   const selectableProps = {};
 
-  if (!key) {
+  if (!key && process.env.NODE_ENV !== 'production') {
     /* eslint-disable no-console */
-    console.error('Key is required for correct onSelect implementation.');
+    console.warn('Keys are required for correct onSelect implementation.');
     /* eslint-disable no-console */
   }
 

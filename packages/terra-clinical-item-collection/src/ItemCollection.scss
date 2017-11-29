@@ -7,16 +7,16 @@
     width: 40px;
   }
 
-  .content-accessory-align-top {
-    vertical-align: top !important;
+  .content-accessory.content-accessory-align-top {
+    vertical-align: top;
   }
 
-  .content-accessory-align-center {
-    vertical-align: middle !important;
+  .content-accessory.content-accessory-align-center {
+    vertical-align: middle;
   }
 
-  .content-end-accessory {
-    text-align: right !important;
+  .content-accessory.content-end-accessory {
+    text-align: right;
   }
 
   .content-accessory,
