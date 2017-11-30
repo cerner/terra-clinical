@@ -6,7 +6,7 @@ Unreleased
 
 2.0.0 - (November 29, 2017)
 -----------------
-* See Release Notes for Migration Guide
+* See [Release Notes](https://github.com/cerner/terra-clinical/releases/tag/terra-clinical-item-collection%402.0.0) for Migration Guide
 
 ### Added
 * children prop and Item Component to be used as the children. The children prop replaces the rows prop.
