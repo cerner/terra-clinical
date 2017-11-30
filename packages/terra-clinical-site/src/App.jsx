@@ -118,12 +118,14 @@ class App extends React.Component {
     );
 
     const applicationHeader = (
-      <CollapsibleMenuView className={styles.header}>
-        {toggleContent}
-        {localeContent}
-        <CollapsibleMenuView.Divider />
-        {bidiContent}
-      </CollapsibleMenuView>
+      <div className={styles.header}>
+        <CollapsibleMenuView className={styles.collapsible}>
+          {toggleContent}
+          {localeContent}
+          <CollapsibleMenuView.Divider />
+          {bidiContent}
+        </CollapsibleMenuView>
+      </div>
     );
 
     return (
