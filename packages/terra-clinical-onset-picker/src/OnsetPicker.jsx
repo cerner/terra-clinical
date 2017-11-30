@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import Field from 'terra-form/lib/Field';
 import Fieldset from 'terra-form/lib/Fieldset';
@@ -8,6 +9,9 @@ import NumberField from 'terra-form/lib/NumberField';
 import DatePicker from 'terra-date-picker';
 import SelectField from 'terra-form/lib/SelectField';
 import OnsetUtils from './OnsetUtils';
+import styles from './OnsetPicker.scss';
+
+const cx = classNames.bind(styles);
 
 const GranularityOptions = {
   AGE: 'age',
@@ -281,6 +285,7 @@ class OnsetPicker extends React.Component {
     let granularitySelect = null;
     if (this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) {
       granularitySelect = (<SelectField
+        className={cx('field-inline')}
         options={[{ value: GranularityOptions.AGE, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
                   { value: GranularityOptions.YEAR, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
                   { value: GranularityOptions.MONTH, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonth' }) },
@@ -296,6 +301,7 @@ class OnsetPicker extends React.Component {
     let ageUnitSelect = null;
     if (this.state.granularity === GranularityOptions.AGE) {
       ageSelect = (<NumberField
+        className={cx('field-inline')}
         data-terra-clinical-onset-picker="age"
         min={0}
         max={OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit)}
@@ -306,8 +312,9 @@ class OnsetPicker extends React.Component {
       />);
 
       ageUnitSelect = (<SelectField
+        className={cx('field-inline')}
         data-terra-clinical-onset-picker="age_unit"
-        options={OnsetUtils.allowedAgeUnits(this.props.birthdate)}
+        options={OnsetUtils.allowedAgeUnits(this.props.birthdate, intl)}
         defaultValue={this.state.ageUnit.toString()}
         onChange={this.changeAgeUnit}
         isInline
@@ -317,6 +324,7 @@ class OnsetPicker extends React.Component {
     let monthSelect = null;
     if (this.state.granularity === GranularityOptions.MONTH) {
       monthSelect = (<SelectField
+        className={cx('field-inline')}
         data-terra-clinical-onset-picker="month"
         options={OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
         defaultValue={this.state.onsetDate.month().toString()}
@@ -328,6 +336,7 @@ class OnsetPicker extends React.Component {
     let yearSelect = null;
     if (this.state.granularity === GranularityOptions.YEAR || this.state.granularity === GranularityOptions.MONTH) {
       yearSelect = (<SelectField
+        className={cx('field-inline')}
         data-terra-clinical-onset-picker="year"
         options={OnsetUtils.allowedYears(this.props.birthdate)}
         defaultValue={this.state.onsetDate.year().toString()}
@@ -338,7 +347,7 @@ class OnsetPicker extends React.Component {
 
     let dateSelect = null;
     if (this.state.granularity === GranularityOptions.DATE) {
-      dateSelect = (<Field>
+      dateSelect = (<Field className={cx('field-inline')} isInline>
         <DatePicker
           onChange={this.changeDate}
           minDate={this.props.birthdate}
@@ -352,9 +361,10 @@ class OnsetPicker extends React.Component {
     return (
       (<div data-terra-clinical-onset-picker {...customProps}>
 
-        <Fieldset>
+        <Fieldset className={cx('fieldset')}>
           {/* Precision */}
           <SelectField
+            className={cx('field-inline')}
             options={OnsetUtils.allowedPrecisions(intl, this.props.precisionSet)}
             name={this.props.precisionSelectName}
             defaultValue={this.state.precision}
@@ -366,7 +376,7 @@ class OnsetPicker extends React.Component {
         </Fieldset>
 
         {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) &&
-          <Fieldset>
+          <Fieldset className={cx('fieldset')}>
             {ageSelect}
             {ageUnitSelect}
             {monthSelect}

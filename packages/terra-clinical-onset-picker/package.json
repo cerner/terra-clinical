@@ -33,12 +33,13 @@
     "terra-base": "^2.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "moment": "^2.17.1",
     "prop-types": "^15.5.8",
     "terra-base": "^2.0.0",
     "terra-date-picker": "^1.9.0",
-    "terra-i18n": "^1.4.0",
-    "terra-form": "^1.3.0"
+    "terra-form": "^1.3.0",
+    "terra-i18n": "^1.4.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

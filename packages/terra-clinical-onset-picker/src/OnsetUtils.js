@@ -88,7 +88,7 @@ class OnsetUtils {
    * Create object to pass to SelectField for age unit options.
    * Does not add durations that are not possible based on birth.
    */
-  static allowedAgeUnits(birthdate) {
+  static allowedAgeUnits(birthdate, intl) {
     const ageMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const currentMoment = moment().startOf('day');
 
@@ -96,16 +96,16 @@ class OnsetUtils {
       return null;
     }
 
-    const ageUnits = [{ value: 'weeks', display: 'Week(s)' }];
+    const ageUnits = [{ value: 'weeks', display: intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionWeek' }) }];
 
     // Do not add month option if less than a month old
     if (currentMoment.diff(ageMoment, 'months') > 0) {
-      ageUnits.push({ value: 'months', display: 'Month(s)' });
+      ageUnits.push({ value: 'months', display: intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionMonth' }) });
     }
 
     // Do not add year option if less than a year old
     if (currentMoment.diff(ageMoment, 'years') > 0) {
-      ageUnits.push({ value: 'years', display: 'Year(s)' });
+      ageUnits.push({ value: 'years', display: intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionYear' }) });
     }
 
     return ageUnits;
