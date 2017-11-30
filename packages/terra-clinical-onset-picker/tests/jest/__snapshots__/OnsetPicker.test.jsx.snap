@@ -5,13 +5,13 @@ exports[`should render a default onset picker with specified onset date 1`] = `
   data-terra-clinical-onset-picker="true"
 >
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -46,7 +46,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -78,13 +78,13 @@ exports[`should render a default onset picker with specified onset date 1`] = `
     </div>
   </fieldset>
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="month"
       >
         <select
@@ -149,7 +149,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="year"
       >
         <select
@@ -203,13 +203,13 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
   data-terra-clinical-onset-picker="true"
 >
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -253,13 +253,13 @@ exports[`should render only the supplied precisions 1`] = `
   data-terra-clinical-onset-picker="true"
 >
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -283,7 +283,7 @@ exports[`should render only the supplied precisions 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -315,13 +315,13 @@ exports[`should render only the supplied precisions 1`] = `
     </div>
   </fieldset>
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="month"
       >
         <select
@@ -386,7 +386,7 @@ exports[`should render only the supplied precisions 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="year"
       >
         <select
@@ -440,13 +440,13 @@ exports[`should render the same when onChange functions are supplied 1`] = `
   data-terra-clinical-onset-picker="true"
 >
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -481,7 +481,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -513,13 +513,13 @@ exports[`should render the same when onChange functions are supplied 1`] = `
     </div>
   </fieldset>
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="month"
       >
         <select
@@ -584,7 +584,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="year"
       >
         <select
@@ -638,13 +638,13 @@ exports[`should render with non default inputs when supplied 1`] = `
   data-terra-clinical-onset-picker="true"
 >
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -679,7 +679,7 @@ exports[`should render with non default inputs when supplied 1`] = `
         </select>
       </div>
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
       >
         <select
           class="select"
@@ -711,13 +711,13 @@ exports[`should render with non default inputs when supplied 1`] = `
     </div>
   </fieldset>
   <fieldset
-    class="fieldset"
+    class="fieldset fieldset"
   >
     <div
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline field-inline"
         data-terra-clinical-onset-picker="year"
       >
         <select
