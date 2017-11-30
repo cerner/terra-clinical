@@ -94,6 +94,17 @@ it('should render a start accessory', () => {
   expect(itemView).toMatchSnapshot();
 });
 
+it('should render start accessory space reserved', () => {
+  const params = {
+    layout: 'oneColumn',
+    textEmphasis: 'default',
+    displays: [],
+    reserveStartAccessorySpace: true,
+  };
+  const itemView = shallow(<ItemView {...params} />);
+  expect(itemView).toMatchSnapshot();
+});
+
 it('should render a end accessory', () => {
   const testElement = <img alt="Graphic" />;
   const params = {

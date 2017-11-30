@@ -3,6 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.7.0 - (November 29, 2017)
+-----------------
+### Added
+* Collapsible Content Section to enable use of CollapsibleMenuView
+
+1.6.0 - (November 15, 2017)
+-----------------
 ### Changed
 * Update flex-end styling 
 

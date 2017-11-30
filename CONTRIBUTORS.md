@@ -9,6 +9,7 @@ Cerner Corporation
 - Douglas Williams [@dwilliams]
 - Nikhil Agrawal [@nagrawal3]
 - Gerard Isdell [@gerard-isdell]
+- Ryan Manuel [@ryanthemanuel]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -19,3 +20,4 @@ Cerner Corporation
 [@dwilliams]: https://github.com/doogthemushroom
 [@nagrawal3]: https://github.com/nagrawal3
 [@gerard-isdell]: https://github.com/gerard-isdell
+[@ryanthemanuel]: https://github.com/ryanthemanuel

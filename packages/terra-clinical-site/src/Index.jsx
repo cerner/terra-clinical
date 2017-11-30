@@ -34,9 +34,8 @@ import ItemCommentTestRoutes from 'terra-clinical-item-display/tests/nightwatch/
 import HeaderTestRoutes from 'terra-clinical-header/tests/nightwatch/HeaderTestRoutes';
 import LabelValueViewTestRoutes from 'terra-clinical-label-value-view/tests/nightwatch/LabelValueViewTestRoutes';
 import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/NoDataViewTestRoutes';
-import ItemCollectionTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTestRoutes';
-import TableHeaderCellTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/table-header-cell/TableHeaderCellTestRoutes';
 import OnsetPickerTestRoutes from 'terra-clinical-onset-picker/tests/nightwatch/OnsetPickerTestRoutes';
+import ItemCollectionTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTestRoutes';
 
 // Remove eslint rule when these packages have been released.
 /* eslint-disable import/no-extraneous-dependencies */
@@ -79,7 +78,6 @@ ReactDOM.render((
       {NoDataViewTestRoutes}
       {OnsetPickerTestRoutes}
       {ItemCollectionTestRoutes}
-      {TableHeaderCellTestRoutes}
       <Route path="/demo" component={DemoApplicationExamples} />
     </Router>
   </div>
