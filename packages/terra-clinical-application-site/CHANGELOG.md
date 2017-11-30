@@ -3,6 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.4.0 - (November 28, 2017)
+-----------------
+### Changed
+* Updated to use postcss-assets-webpack-plugin
+
+1.3.0 - (November 15, 2017)
+-----------------
 * Updated webpack config to align with webpack 3 documentation
 
 1.2.0 - (September 1, 2017)

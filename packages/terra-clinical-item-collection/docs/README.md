@@ -4,7 +4,7 @@ An Item Collection is a wrapper component designed to display data as either a t
 
 Ultimately, the Item Collection component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
 
-The TableHeaderCell is a 'private' subcomponent of Item Collection. This component creates an empty table header cell that contains a defined width for accessory items.
+The ItemCollection is rendered as a static, non-selectable display, however it has the foundation to become a selectable component. See the [Selectable Implementation Guide](https://github.com/cerner/terra-clinical/tree/master/packages/terra-item-collection/docs/SelectableImplementation.md) for details.
 
 ## Getting Started
 
@@ -18,15 +18,33 @@ The TableHeaderCell is a 'private' subcomponent of Item Collection. This compone
 import React from 'react';
 import ItemCollection from 'terra-clinical-item-collection';
 
-const row1 = {startAccessory: <Icon/>, displays: [<ItemDisplay/>, <ItemDisplay/>], comment: <ItemComment/>, endAccessory: <Icon/>, itemStyles={{ layout: 'twoColumns' }} };
-const row2 = {startAccessory: <Icon/>, displays: [<ItemDisplay/>, <ItemDisplay/>], comment: <ItemComment/>, endAccessory: <Icon/> };
-
 <ItemCollection
+  id="ItemCollection"
   breakpoint="tiny"
-  listStyles={{ isDivided }}
-  tableStyles={{ isPadded: false, isStriped: false }}
-  rows={[row1, row2]}
-/>
+  hasStartAccessory
+  numberOfDisplays={3}
+  hasComment
+  hasEndAccessory
+>
+  <ItemCollection.Item
+    startAccessory={<Icon/>}
+    comment={<ItemCollection.Comment text="Comment" />}
+    endAccessory={<Icon/>}
+    listItemLayout="twoColumns"
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+    <ItemCollection.Display text="Display 3" />
+  </ItemCollection.Item>
+  <ItemCollection.Item
+    startAccessory={<Icon/>}
+    comment={<ItemCollection.Comment text="Comment" />}
+    endAccessory={<Icon/>}
+  >
+    <ItemCollection.Display text="Display 1" />
+    <ItemCollection.Display text="Display 2" />
+  </ItemCollection.Item>
+</ItemCollection>
 ```
 
 ## Component Features

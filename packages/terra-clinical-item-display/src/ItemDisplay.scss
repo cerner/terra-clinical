@@ -5,6 +5,7 @@
     @include terra-clinical-item-body;
     align-items: center;
     display: flex;
+    max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
 

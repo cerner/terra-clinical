@@ -1,0 +1,861 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List View Tests should pass customProps to the Item 1`] = `
+<ListItem
+  className="ListItem"
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with a comment 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
+      }
+      displays={Array []}
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with a single children 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with a start accessory 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={Array []}
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          start
+        </p>
+      }
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with all elements 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
+      }
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 2"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 3"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={
+        <p>
+          end
+        </p>
+      }
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          start
+        </p>
+      }
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with an end accessory 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={Array []}
+      endAccessory={
+        <p>
+          end
+        </p>
+      }
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with children 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 2"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 3"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with list item styles 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignTop"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
+      }
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 2"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 3"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={
+        <p>
+          end
+        </p>
+      }
+      isTruncated={true}
+      layout="twoColumns"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          start
+        </p>
+      }
+      textEmphasis="start"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a default Item 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={Array []}
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a selectable Item 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
+      }
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 2"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 3"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={
+        <p>
+          end
+        </p>
+      }
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          start
+        </p>
+      }
+      textEmphasis="default"
+    />
+  }
+  isSelectable={true}
+  isSelected={false}
+  tabIndex={0}
+/>
+`;
+
+exports[`List View Tests should render a selected Item 1`] = `
+<TableRow
+  isSelected={true}
+>
+  <TableCell
+    className="content-accessory content-accessory-align-center"
+    content={
+      <p>
+        start
+      </p>
+    }
+    key="start_accessory"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 2"
+        textStyle={undefined}
+      />
+    }
+    key="display_2/.1"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 3"
+        textStyle={undefined}
+      />
+    }
+    key="display_3/.2"
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+    key="comment"
+  />
+  <TableCell
+    className="content-accessory content-end-accessory content-accessory-align-center"
+    content={
+      <p>
+        end
+      </p>
+    }
+    key="end_accessory"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should pass customProps to the Item 1`] = `
+<TableRow
+  className="TableRow"
+  isSelected={false}
+>
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item that ignores list item styles 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-accessory content-accessory-align-top"
+    content={
+      <p>
+        start
+      </p>
+    }
+    key="start_accessory"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 2"
+        textStyle={undefined}
+      />
+    }
+    key="display_2/.1"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 3"
+        textStyle={undefined}
+      />
+    }
+    key="display_3/.2"
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+    key="comment"
+  />
+  <TableCell
+    className="content-accessory content-end-accessory content-accessory-align-top"
+    content={
+      <p>
+        end
+      </p>
+    }
+    key="end_accessory"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item with a comment 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+    key="comment"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item with a single children 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item with a start accessory 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-accessory content-accessory-align-center"
+    content={
+      <p>
+        start
+      </p>
+    }
+    key="start_accessory"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item with all elements 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-accessory content-accessory-align-center"
+    content={
+      <p>
+        start
+      </p>
+    }
+    key="start_accessory"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 2"
+        textStyle={undefined}
+      />
+    }
+    key="display_2/.1"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 3"
+        textStyle={undefined}
+      />
+    }
+    key="display_3/.2"
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+    key="comment"
+  />
+  <TableCell
+    className="content-accessory content-end-accessory content-accessory-align-center"
+    content={
+      <p>
+        end
+      </p>
+    }
+    key="end_accessory"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item with an end accessory 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-accessory content-end-accessory content-accessory-align-center"
+    content={
+      <p>
+        end
+      </p>
+    }
+    key="end_accessory"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a Item with children 1`] = `
+<TableRow
+  isSelected={false}
+>
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 2"
+        textStyle={undefined}
+      />
+    }
+    key="display_2/.1"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 3"
+        textStyle={undefined}
+      />
+    }
+    key="display_3/.2"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a default Item 1`] = `
+<TableRow
+  isSelected={false}
+/>
+`;
+
+exports[`Table View Tests should render a selectable Item 1`] = `
+<TableRow
+  isSelectable={true}
+  isSelected={false}
+  tabIndex={0}
+>
+  <TableCell
+    className="content-accessory content-accessory-align-center"
+    content={
+      <p>
+        start
+      </p>
+    }
+    key="start_accessory"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 2"
+        textStyle={undefined}
+      />
+    }
+    key="display_2/.1"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 3"
+        textStyle={undefined}
+      />
+    }
+    key="display_3/.2"
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+    key="comment"
+  />
+  <TableCell
+    className="content-accessory content-end-accessory content-accessory-align-center"
+    content={
+      <p>
+        end
+      </p>
+    }
+    key="end_accessory"
+  />
+</TableRow>
+`;
+
+exports[`Table View Tests should render a selected Item 1`] = `
+<TableRow
+  isSelected={true}
+>
+  <TableCell
+    className="content-accessory content-accessory-align-center"
+    content={
+      <p>
+        start
+      </p>
+    }
+    key="start_accessory"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 1"
+        textStyle={undefined}
+      />
+    }
+    key="display_1/.0"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 2"
+        textStyle={undefined}
+      />
+    }
+    key="display_2/.1"
+  />
+  <TableCell
+    className="content-display"
+    content={
+      <ItemDisplay
+        icon={undefined}
+        isTruncated={false}
+        text="Display 3"
+        textStyle={undefined}
+      />
+    }
+    key="display_3/.2"
+  />
+  <TableCell
+    className="content-comment"
+    content={
+      <ItemComment
+        isTruncated={false}
+        text="comment"
+      />
+    }
+    key="comment"
+  />
+  <TableCell
+    className="content-accessory content-end-accessory content-accessory-align-center"
+    content={
+      <p>
+        end
+      </p>
+    }
+    key="end_accessory"
+  />
+</TableRow>
+`;
+
+exports[`should render a default Item 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={undefined}
+      displays={Array []}
+      endAccessory={undefined}
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={undefined}
+      textEmphasis="default"
+    />
+  }
+  isSelected={false}
+/>
+`;

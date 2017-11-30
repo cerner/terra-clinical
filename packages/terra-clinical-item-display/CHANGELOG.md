@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+1.5.0 - (November 29, 2017)
+-----------------
+### Fixed
+* Fix IE10 truncation
+
 1.4.0 - (September 26, 2017)
 -----------------
 ### Changed
