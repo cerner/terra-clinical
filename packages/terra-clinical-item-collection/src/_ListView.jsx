@@ -37,7 +37,7 @@ function createListItems(children, onSelect, requiredElements) {
       return React.cloneElement(child, { view: 'list', ...onSelectProps, ...itemViewPieces });
     }
 
-    return child;
+    return React.cloneElement(child, { view: 'list' });
   });
 }
 
