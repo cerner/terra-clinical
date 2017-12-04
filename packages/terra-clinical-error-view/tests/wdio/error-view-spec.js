@@ -6,8 +6,8 @@ describe('ErrorView', () => {
   // Message received: "No Violation. Ensures the contrast between foreground and background
   //     colors meets WCAG 2 AA contrast ratio thresholds."
   // Impact: Serious
-  // Description: "Element has insufficient color contrast of 1.64 (foreground color: #c8cacb,
-  //     background color: #ffffff, font size: 18.0pt, font weight: normal)"
+  // Description: "Insufficient color contrast of 1.64 (foreground color: #c8cacb, background
+  //     color: #ffffff)"
   const rules = {
     'color-contrast': { enabled: false },
   };
