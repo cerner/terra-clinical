@@ -62,7 +62,7 @@ function createTableRows(children, onSelect, requiredElements) {
       return React.cloneElement(child, { view: 'table', ...onSelectProps, ...tableRowPieces });
     }
 
-    return child;
+    return React.cloneElement(child, { view: 'table' });
   });
 }
 
