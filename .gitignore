@@ -54,3 +54,6 @@ reports
 screenshots
 target
 **/aggregated-translations/*.*
+**/__snapshots__/screen
+**/__snapshots__/diff
+errorScreenshots

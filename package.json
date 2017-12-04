@@ -60,7 +60,8 @@
     "start": "cd packages/terra-clinical-site && npm run start",
     "start:express": "node scripts/express/app.js",
     "nightwatch": "nightwatch",
-    "test": "jest && nightwatch"
+    "test": "jest && nightwatch && wdio",
+    "wdio": "wdio"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -82,6 +83,7 @@
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.15.2",
     "identity-obj-proxy": "^3.0.0",
+    "ip": "^1.1.5",
     "jest": "^21.0.2",
     "lerna": "2.1.2",
     "link-parent-bin": "^0.1.3",
@@ -95,8 +97,11 @@
     "stylelint": "~8.0.0",
     "stylelint-config-sass-guidelines": "^3.0.0",
     "terra-props-table": "^1.0.0",
-    "terra-toolkit": "^2.2.0",
+    "terra-toolkit": "^2.3.0",
     "webpack": "^3.6.0",
+    "wdio-mocha-framework": "^0.5.11",
+    "wdio-visual-regression-service": "^0.8.0",
+    "webdriverio": "^4.9.8",
     "webpack-dev-server": "2.7.1"
   }
 }
