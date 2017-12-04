@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Place site header background on a parent div, instead of collapsible.
+
+1.5.0 - (November 28, 2017)
+-----------------
+### Changed
+* Updated to use postcss-assets-webpack-plugin
 
 1.4.0 - (November 15, 2017)
 -----------------
@@ -10,6 +17,7 @@ Unreleased
 * Lock webpack-dev-server at last version supporting IE10 (1.7.1)
 * Uplift site header to use collapsible menu view
 * Updated webpack config to align with webpack 3 documentation
+* Update Item Collection Example for v2 API
 
 1.3.0 - (August 16, 2017)
 -----------------

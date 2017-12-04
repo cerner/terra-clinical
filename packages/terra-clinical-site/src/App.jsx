@@ -55,7 +55,7 @@ class App extends React.Component {
 
   render() {
     const toggleContent = (
-      <CollapsibleMenuView.Item icon={<IconMenu />} isIconOnly key="toggle-content" onClick={this.handleToggleClick} />
+      <CollapsibleMenuView.Item icon={<IconMenu />} isIconOnly text="Toggle Menu" key="toggle-content" onClick={this.handleToggleClick} />
     );
 
     const bidiContent = (
@@ -118,12 +118,14 @@ class App extends React.Component {
     );
 
     const applicationHeader = (
-      <CollapsibleMenuView className={styles.header}>
-        {toggleContent}
-        {localeContent}
-        <CollapsibleMenuView.Divider />
-        {bidiContent}
-      </CollapsibleMenuView>
+      <div className={styles.header}>
+        <CollapsibleMenuView className={styles.collapsible}>
+          {toggleContent}
+          {localeContent}
+          <CollapsibleMenuView.Divider />
+          {bidiContent}
+        </CollapsibleMenuView>
+      </div>
     );
 
     return (
