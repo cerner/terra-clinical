@@ -1,10 +1,19 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
+import MockDate from 'mockdate';
 import { IntlProvider } from 'react-intl';
 import OnsetPicker from '../../lib/OnsetPicker';
 import messages from '../../translations/en-US.json';
 
 const locale = 'en-US';
+
+beforeEach(() => {
+  MockDate.set('11/15/2017');
+});
+
+afterEach(() => {
+  MockDate.reset();
+});
 
 it('should render a default onset picker with specified onset date', () => {
   const onsetPicker = render(
