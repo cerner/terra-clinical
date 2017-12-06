@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.6.0 - (December 5, 2017)
+-----------------
 ### Changed
 * Place site header background on a parent div, instead of collapsible.
 

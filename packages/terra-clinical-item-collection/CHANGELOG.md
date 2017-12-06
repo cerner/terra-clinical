@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+2.1.0 - (December 5, 2017)
+-----------------
+### Changed
+* Pass down the Item Collection's view to allow for custom Item Collection components to know when to render as a list item or a table row.
+
 2.0.0 - (November 29, 2017)
 -----------------
 * See [Release Notes](https://github.com/cerner/terra-clinical/releases/tag/terra-clinical-item-collection%402.0.0) for Migration Guide
