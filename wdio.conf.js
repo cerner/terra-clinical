@@ -10,17 +10,14 @@ const isRepoTest = __dirname === process.cwd();
 
 // Flex specs search between local pacakge and repo
 let specs = path.join('tests', 'wdio', '**', '*-spec.js');
-if (!isRepoTest) {
-  specs = path.join('packages', 'terra-**', specs);
+if (isRepoTest) {
+  specs = path.join('packages', 'terra-*', specs);
 }
 
 const config = {
   ...wdioConf.config,
   baseUrl: `http://${localIP.address()}:${webpackPort}`,
   specs: [specs],
-  exclude: [
-    path.join(__dirname, 'packages', '**', 'node_modules', '**', 'tests', 'wdio', '**', '*-spec.js'),
-  ],
 
   // Terra-toolkit services are 'visual-regression', AxeService, TerraService, SeleniumDockerService
   services: wdioConf.config.services.concat([WebpackDevService]),
