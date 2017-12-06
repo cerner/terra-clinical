@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.1.0 - (December 5, 2017)
+-----------------
 ### Changed
 * Pass down the Item Collection's view to allow for custom Item Collection components to know when to render as a list item or a table row.
 
