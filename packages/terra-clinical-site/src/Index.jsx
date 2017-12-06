@@ -18,6 +18,7 @@ import LabelValueViewExamples from './examples/label-value-view/Index';
 import NoDataViewExamples from './examples/no-data-view/Index';
 import ItemCollectionExamples from './examples/item-collection/Index';
 import DemoApplicationExamples from './examples/demo-application/Index';
+import OnsetPickerExamples from './examples/onset-picker/Index';
 
 // Test
 /* eslint-disable import/first */
@@ -33,6 +34,7 @@ import ItemCommentTestRoutes from 'terra-clinical-item-display/tests/nightwatch/
 import HeaderTestRoutes from 'terra-clinical-header/tests/nightwatch/HeaderTestRoutes';
 import LabelValueViewTestRoutes from 'terra-clinical-label-value-view/tests/nightwatch/LabelValueViewTestRoutes';
 import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/NoDataViewTestRoutes';
+import OnsetPickerTestRoutes from 'terra-clinical-onset-picker/tests/nightwatch/OnsetPickerTestRoutes';
 import ItemCollectionTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTestRoutes';
 
 // Remove eslint rule when these packages have been released.
@@ -58,6 +60,7 @@ ReactDOM.render((
         <Route path="item-view" component={ItemViewExamples} />
         <Route path="label-value-view" component={LabelValueViewExamples} />
         <Route path="no-data-view" component={NoDataViewExamples} />
+        <Route path="onset-picker" component={OnsetPickerExamples} />
         <Route path="item-collection" component={ItemCollectionExamples} />
       </Route>
       <Route path="/tests" component={TestLinks} />
@@ -73,6 +76,7 @@ ReactDOM.render((
       {ItemViewTestRoutes}
       {LabelValueViewTestRoutes}
       {NoDataViewTestRoutes}
+      {OnsetPickerTestRoutes}
       {ItemCollectionTestRoutes}
       <Route path="/demo" component={DemoApplicationExamples} />
     </Router>

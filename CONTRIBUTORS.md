@@ -6,6 +6,7 @@ Cerner Corporation
 - Neil Pfeiffer [@neilpfeiffer]
 - Tyler Biethman [@tbiethman]
 - Matt Henkes [@mjhenkes]
+- Douglas Williams [@dwilliams]
 - Nikhil Agrawal [@nagrawal3]
 - Gerard Isdell [@gerard-isdell]
 - Ryan Manuel [@ryanthemanuel]
@@ -16,6 +17,7 @@ Cerner Corporation
 [@neilpfeiffer]: https://github.com/neilpfeiffer
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
+[@dwilliams]: https://github.com/doogthemushroom
 [@nagrawal3]: https://github.com/nagrawal3
 [@gerard-isdell]: https://github.com/gerard-isdell
 [@ryanthemanuel]: https://github.com/ryanthemanuel
