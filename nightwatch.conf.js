@@ -4,7 +4,7 @@ const webpackConfig = require('./packages/terra-clinical-site/webpack.config');
 const getPackageTestDirectories = require('terra-toolkit/lib/nightwatch/setup-helper.js').getPackageTestDirectories;
 
 let srcFolders;
-const isRepoTest = !process.cwd().includes('/packages/');
+const isRepoTest = __dirname === process.cwd();
 
 if (isRepoTest) {
   srcFolders = getPackageTestDirectories('lerna.json');
