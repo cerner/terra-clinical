@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.2.0 - (December 9, 2017)
+----------
 ### Added
 * showListItemChevron prop on the ItemCollection.Item component to allow list items to display a chevron.
 

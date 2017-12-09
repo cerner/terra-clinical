@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+1.6.0 - (December 9, 2017)
+----------
+### Added
+* Translations
+
 1.5.0 - (November 29, 2017)
 -----------------
 ### Added
