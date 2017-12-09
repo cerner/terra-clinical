@@ -48,7 +48,8 @@ const propTypes = {
    */
   reserveStartAccessorySpace: PropTypes.bool,
   /**
-   * When displayed as a list item, whether or not it has a chevron.
+   * When displayed as a list item, whether or not it has a chevron. This should only be used when creating a
+   * a single selectable list.
    */
   showListItemChevron: PropTypes.bool,
   /**
