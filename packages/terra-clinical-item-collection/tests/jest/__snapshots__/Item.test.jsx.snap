@@ -25,6 +25,7 @@ exports[`List View Tests should pass customProps to the Item 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -49,6 +50,61 @@ exports[`List View Tests should render a Item with a comment 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
+  isSelected={false}
+/>
+`;
+
+exports[`List View Tests should render a Item with a list item chevron 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
+      }
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 2"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 3"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={
+        <p>
+          end
+        </p>
+      }
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          start
+        </p>
+      }
+      textEmphasis="default"
+    />
+  }
+  hasChevron={true}
   isSelected={false}
 />
 `;
@@ -77,6 +133,7 @@ exports[`List View Tests should render a Item with a single children 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -100,6 +157,7 @@ exports[`List View Tests should render a Item with a start accessory 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -153,6 +211,7 @@ exports[`List View Tests should render a Item with all elements 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -176,6 +235,7 @@ exports[`List View Tests should render a Item with an end accessory 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -216,6 +276,7 @@ exports[`List View Tests should render a Item with children 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -269,6 +330,7 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
       textEmphasis="start"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -288,6 +350,7 @@ exports[`List View Tests should render a default Item 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;
@@ -341,6 +404,7 @@ exports[`List View Tests should render a selectable Item 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelectable={true}
   isSelected={false}
   tabIndex={0}
@@ -507,6 +571,60 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
     key="end_accessory"
   />
 </TableRow>
+`;
+
+exports[`Table View Tests should render a Item that ignores the list item chevron 1`] = `
+<ListItem
+  content={
+    <ItemView
+      accessoryAlignment="alignCenter"
+      comment={
+        <ItemComment
+          isTruncated={false}
+          text="comment"
+        />
+      }
+      displays={
+        Array [
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 1"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 2"
+            textStyle={undefined}
+          />,
+          <ItemDisplay
+            icon={undefined}
+            isTruncated={false}
+            text="Display 3"
+            textStyle={undefined}
+          />,
+        ]
+      }
+      endAccessory={
+        <p>
+          end
+        </p>
+      }
+      isTruncated={false}
+      layout="oneColumn"
+      reserveStartAccessorySpace={false}
+      startAccessory={
+        <p>
+          start
+        </p>
+      }
+      textEmphasis="default"
+    />
+  }
+  hasChevron={true}
+  isSelected={false}
+/>
 `;
 
 exports[`Table View Tests should render a Item with a comment 1`] = `
@@ -856,6 +974,7 @@ exports[`should render a default Item 1`] = `
       textEmphasis="default"
     />
   }
+  hasChevron={false}
   isSelected={false}
 />
 `;

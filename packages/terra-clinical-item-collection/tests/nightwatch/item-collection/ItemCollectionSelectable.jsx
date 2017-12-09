@@ -36,6 +36,7 @@ class DefaultItemCollection extends React.Component {
             startAccessory={<ItemCollection.Comment />}
             comment={<ItemCollection.Comment text="test comment" />}
             endAccessory={<button size="medium">Disclose</button>}
+            showListItemChevron
           >
             <ItemCollection.Display text="Display 1" />
             <ItemCollection.Display text="Display 1" />
@@ -48,6 +49,7 @@ class DefaultItemCollection extends React.Component {
             isSelectable
             comment={<ItemCollection.Comment text="test comment" />}
             endAccessory={<button size="medium">Disclose</button>}
+            showListItemChevron
           >
             <ItemCollection.Display text="Display 1" />
             <ItemCollection.Display text="Display 1" />

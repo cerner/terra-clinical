@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'terra-table';
-import Item from './Item';
 import Utils from './_ItemCollectionUtils';
 import styles from './ItemCollection.scss';
 
@@ -56,13 +55,9 @@ function createTableLayout(requiredElements) {
 
 function createTableRows(children, onSelect, requiredElements) {
   return React.Children.map(children, (child) => {
-    if (child.type === Item) {
-      const tableRowPieces = Utils.addMissingTableElements(child.props, requiredElements);
-      const onSelectProps = onSelect && child.props.isSelectable ? Utils.createOnSelectProps(onSelect, child.key) : {};
-      return React.cloneElement(child, { view: 'table', ...onSelectProps, ...tableRowPieces });
-    }
-
-    return React.cloneElement(child, { view: 'table' });
+    const tableRowPieces = Utils.addMissingTableElements(child.props, requiredElements);
+    const onSelectProps = onSelect && child.props.isSelectable ? Utils.createOnSelectProps(onSelect, child.key) : {};
+    return React.cloneElement(child, { view: 'table', ...onSelectProps, ...tableRowPieces });
   });
 }
 

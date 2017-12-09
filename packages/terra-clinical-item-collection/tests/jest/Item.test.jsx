@@ -149,6 +149,24 @@ describe('List View Tests', () => {
     expect(component).toMatchSnapshot();
   });
 
+  it('should render a Item with a list item chevron', () => {
+    const item = (
+      <Item
+        view="list"
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        showListItemChevron
+      >
+        <Item.Display text="Display 1" />
+        <Item.Display text="Display 2" />
+        <Item.Display text="Display 3" />
+      </Item>
+    );
+    const component = shallow(item);
+    expect(component).toMatchSnapshot();
+  });
+
   it('should pass customProps to the Item', () => {
     const item = (
       <Item
@@ -288,6 +306,24 @@ describe('Table View Tests', () => {
         comment={<Item.Comment text="comment" />}
         endAccessory={<p>end</p>}
         {...listItemStyles}
+      >
+        <Item.Display text="Display 1" />
+        <Item.Display text="Display 2" />
+        <Item.Display text="Display 3" />
+      </Item>
+    );
+    const component = shallow(item);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('should render a Item that ignores the list item chevron', () => {
+    const item = (
+      <Item
+        view="list"
+        startAccessory={<p>start</p>}
+        comment={<Item.Comment text="comment" />}
+        endAccessory={<p>end</p>}
+        showListItemChevron
       >
         <Item.Display text="Display 1" />
         <Item.Display text="Display 2" />

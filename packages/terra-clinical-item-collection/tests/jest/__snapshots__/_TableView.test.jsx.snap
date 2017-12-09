@@ -71,6 +71,7 @@ exports[`should render a TableView with children 1`] = `
       listItemLayout="oneColumn"
       listItemTextEmphasis="default"
       reserveStartAccessorySpace={false}
+      showListItemChevron={false}
       startAccessory={
         <p>
           S
@@ -165,6 +166,7 @@ exports[`should render a TableView with table styles 1`] = `
       listItemLayout="oneColumn"
       listItemTextEmphasis="default"
       reserveStartAccessorySpace={false}
+      showListItemChevron={false}
       startAccessory={
         <p>
           S
