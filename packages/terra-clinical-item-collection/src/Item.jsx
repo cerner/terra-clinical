@@ -48,6 +48,11 @@ const propTypes = {
    */
   reserveStartAccessorySpace: PropTypes.bool,
   /**
+   * When displayed as a list item, whether or not it has a chevron. This should only be used when creating a
+   * a single selectable list.
+   */
+  showListItemChevron: PropTypes.bool,
+  /**
    * Whether or not the item is selectable. If true, the item is given list and table hover and focus styles
    * and set tabIndex to 0.
    */
@@ -74,10 +79,11 @@ const defaultProps = {
   listItemLayout: 'oneColumn',
   listItemTextEmphasis: 'default',
   reserveStartAccessorySpace: false,
+  showListItemChevron: false,
   view: 'list',
 };
 
-function createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles) {
+function createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles, showListItemChevron) {
   const { startAccessory, children, comment, endAccessory, reserveStartAccessorySpace } = elements;
 
   const listItemContent = (
@@ -95,6 +101,7 @@ function createListItem(elements, selectableProps, customProps, isSelected, item
     <List.Item
       content={listItemContent}
       isSelected={isSelected}
+      hasChevron={showListItemChevron}
       {...selectableProps}
       {...customProps}
     />
@@ -143,6 +150,7 @@ const Item = (props) => {
     listItemLayout,
     listItemTextEmphasis,
     reserveStartAccessorySpace,
+    showListItemChevron,
     view,
     ...customProps
   } = props;
@@ -155,7 +163,7 @@ const Item = (props) => {
   }
 
   const itemViewStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
-  return createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles);
+  return createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles, showListItemChevron);
 };
 
 Item.propTypes = propTypes;
