@@ -3,6 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* showListItemChevron prop on the ItemCollection.Item component to allow list items to display a chevron.
+
+### Changed
+* Remove type check to pass all Item Collection generated properties that are passed to the Item Collection children
 
 2.1.0 - (December 5, 2017)
 -----------------

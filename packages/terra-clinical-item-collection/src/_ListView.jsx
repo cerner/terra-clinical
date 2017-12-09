@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import List from 'terra-list';
-import Item from './Item';
 import Utils from './_ItemCollectionUtils';
 
 const propTypes = {
@@ -31,13 +30,9 @@ const propTypes = {
 
 function createListItems(children, onSelect, requiredElements) {
   return React.Children.map(children, (child) => {
-    if (child.type === Item) {
-      const itemViewPieces = Utils.addMissingListElements(child.props, requiredElements);
-      const onSelectProps = onSelect && child.props.isSelectable ? Utils.createOnSelectProps(onSelect, child.key) : {};
-      return React.cloneElement(child, { view: 'list', ...onSelectProps, ...itemViewPieces });
-    }
-
-    return React.cloneElement(child, { view: 'list' });
+    const itemViewPieces = Utils.addMissingListElements(child.props, requiredElements);
+    const onSelectProps = onSelect && child.props.isSelectable ? Utils.createOnSelectProps(onSelect, child.key) : {};
+    return React.cloneElement(child, { view: 'list', ...onSelectProps, ...itemViewPieces });
   });
 }
 
