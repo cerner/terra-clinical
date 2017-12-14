@@ -58,134 +58,131 @@ const defaultProps = {
   comment: undefined,
 };
 
-class ItemView extends React.Component {
+const renderAccessory = (accessory, reserveSpace, accessoryAlignment, type) => {
+  let accessorySection;
+  if (accessory || reserveSpace) {
+    const accessoryClassNames = cx(
+      'accessory',
+      `${type}-accessory`,
+      { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
+      { 'accessory-align-top': accessoryAlignment === 'alignTop' },
+    );
 
-  static renderAccessory(accessory, reserveSpace, accessoryAlignment, type) {
-    let accessorySection;
-    if (accessory || reserveSpace) {
-      const accessoryClassNames = cx(
-        'accessory',
-        `${type}-accessory`,
-        { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
-        { 'accessory-align-top': accessoryAlignment === 'alignTop' },
-      );
-
-      accessorySection = (
-        <div className={accessoryClassNames}>
-          {accessory}
-        </div>
-      );
-    }
-    return accessorySection;
-  }
-
-  static renderRows(displays, layout, emphasis) {
-    if (displays === null || displays === undefined || !displays.length) {
-      return undefined;
-    }
-
-    const displayGroups = [];
-    const displaysSlice = displays.slice(0, 8);
-    const spliceValue = layout === 'twoColumns' ? 2 : 1;
-
-    while (displaysSlice.length) {
-      displayGroups.push(displaysSlice.splice(0, spliceValue));
-    }
-
-    return (
-      <div className={cx('row-container')}>
-        {displayGroups.map((group, index) => {
-          const row = ItemView.renderRow(group, index, displayGroups.length, emphasis);
-          return row;
-        })}
+    accessorySection = (
+      <div className={accessoryClassNames}>
+        {accessory}
       </div>
     );
   }
+  return accessorySection;
+};
 
-  static renderRow(row, rowIndex, rowCount, emphasis) {
-    const rowKey = rowIndex;
-    return (
-      <div className={cx('row')} key={rowKey}>
-        {row.map((display, contentIndex) => {
-          const contentKey = contentIndex;
-          const contentClasses = ItemView.classesForContent(rowIndex, rowCount, contentIndex, emphasis);
-          return (
-            <div className={cx(contentClasses)} key={contentKey}>
-              {display}
-            </div>
-          );
-        })}
+const defaultEmphasisContentClassesFromIndexes = (rowIndex, rowCount) => {
+  let contentSize = 'content-primary-size';
+  let contentColor = 'content-primary-color';
+
+  if (rowIndex > 0) {
+    contentSize = 'content-secondary-size';
+  }
+
+  if (rowCount === 2 && rowIndex === 1) {
+    contentColor = 'content-secondary-color';
+  } else if (rowIndex >= 2) {
+    contentColor = 'content-secondary-color';
+  }
+
+  return [contentSize, contentColor];
+};
+
+const startEmphasisContentClassesFromIndexes = (rowIndex, rowCount, contentIndex) => {
+  if (contentIndex === 1) {
+    return ['content-secondary-size', 'content-secondary-color'];
+  }
+
+  return defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
+};
+
+const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
+  let classes;
+  if (emphasis === 'start') {
+    classes = startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
+  } else {
+    classes = defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
+  }
+  return ['content'].concat(classes);
+};
+
+const renderRow = (row, rowIndex, rowCount, emphasis) => {
+  const rowKey = rowIndex;
+  return (
+    <div className={cx('row')} key={rowKey}>
+      {row.map((display, contentIndex) => {
+        const contentKey = contentIndex;
+        const contentClasses = classesForContent(rowIndex, rowCount, contentIndex, emphasis);
+        return (
+          <div className={cx(contentClasses)} key={contentKey}>
+            {display}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const renderRows = (displays, layout, emphasis) => {
+  if (displays === null || displays === undefined || !displays.length) {
+    return undefined;
+  }
+
+  const displayGroups = [];
+  const displaysSlice = displays.slice(0, 8);
+  const spliceValue = layout === 'twoColumns' ? 2 : 1;
+
+  while (displaysSlice.length) {
+    displayGroups.push(displaysSlice.splice(0, spliceValue));
+  }
+
+  return (
+    <div className={cx('row-container')}>
+      {displayGroups.map((group, index) => {
+        const row = renderRow(group, index, displayGroups.length, emphasis);
+        return row;
+      })}
+    </div>
+  );
+};
+
+const ItemView = ({
+  layout,
+  textEmphasis,
+  isTruncated,
+  accessoryAlignment,
+  startAccessory,
+  reserveStartAccessorySpace,
+  endAccessory,
+  displays,
+  comment,
+  ...customProps
+}) => {
+  const viewClassNames = cx([
+    'item-view',
+    { 'is-truncated': isTruncated },
+    { 'one-column': layout === 'oneColumn' },
+    { 'two-columns': layout === 'twoColumns' },
+    customProps.className,
+  ]);
+
+  return (
+    <div {...customProps} className={viewClassNames}>
+      {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
+      <div className={cx('body')}>
+        {renderRows(displays, layout, textEmphasis)}
+        {comment}
       </div>
-    );
-  }
-
-  static classesForContent(rowIndex, rowCount, contentIndex, emphasis) {
-    let classes;
-    if (emphasis === 'start') {
-      classes = ItemView.startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
-    } else {
-      classes = ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
-    }
-    return ['content'].concat(classes);
-  }
-
-  static defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount) {
-    let contentSize = 'content-primary-size';
-    let contentColor = 'content-primary-color';
-
-    if (rowIndex > 0) {
-      contentSize = 'content-secondary-size';
-    }
-
-    if (rowCount === 2 && rowIndex === 1) {
-      contentColor = 'content-secondary-color';
-    } else if (rowIndex >= 2) {
-      contentColor = 'content-secondary-color';
-    }
-
-    return [contentSize, contentColor];
-  }
-
-  static startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex) {
-    if (contentIndex === 1) {
-      return ['content-secondary-size', 'content-secondary-color'];
-    }
-
-    return ItemView.defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
-  }
-
-  render() {
-    const { layout,
-            textEmphasis,
-            isTruncated,
-            accessoryAlignment,
-            startAccessory,
-            reserveStartAccessorySpace,
-            endAccessory,
-            displays,
-            comment,
-            ...customProps } = this.props;
-
-    const viewClassNames = cx([
-      'item-view',
-      { 'is-truncated': isTruncated },
-      { 'one-column': layout === 'oneColumn' },
-      { 'two-columns': layout === 'twoColumns' },
-      customProps.className,
-    ]);
-
-    return (
-      <div {...customProps} className={viewClassNames}>
-        {ItemView.renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
-        <div className={cx('body')}>
-          {ItemView.renderRows(displays, layout, textEmphasis)}
-          {comment}
-        </div>
-        {ItemView.renderAccessory(endAccessory, false, accessoryAlignment, 'end')}
-      </div>
-    );
-  }
-}
+      {renderAccessory(endAccessory, false, accessoryAlignment, 'end')}
+    </div>
+  );
+};
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
