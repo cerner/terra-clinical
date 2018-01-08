@@ -6,10 +6,11 @@ Cerner Corporation
 - Neil Pfeiffer [@neilpfeiffer]
 - Tyler Biethman [@tbiethman]
 - Matt Henkes [@mjhenkes]
-- Douglas Williams [@dwilliams]
+- Douglas Williams [@doogthemushroom]
 - Nikhil Agrawal [@nagrawal3]
 - Gerard Isdell [@gerard-isdell]
 - Ryan Manuel [@ryanthemanuel]
+- Noah Benham [@noahbenham]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -17,7 +18,8 @@ Cerner Corporation
 [@neilpfeiffer]: https://github.com/neilpfeiffer
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
-[@dwilliams]: https://github.com/doogthemushroom
+[@doogthemushroom]: https://github.com/doogthemushroom
 [@nagrawal3]: https://github.com/nagrawal3
 [@gerard-isdell]: https://github.com/gerard-isdell
 [@ryanthemanuel]: https://github.com/ryanthemanuel
+[@noahbenham]: https://github.com/noahbenham

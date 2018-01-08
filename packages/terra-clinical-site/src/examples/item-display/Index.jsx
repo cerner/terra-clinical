@@ -12,9 +12,9 @@ import CommentSrc from '!raw-loader!terra-clinical-item-display/src/ItemComment.
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
-import TextItemDisplay from './TextItemDisplay';
-import IconItemDisplay from './IconItemDisplay';
-import TextIconItemDisplay from './TextIconItemDisplay';
+import TextStyles from './TextStyles';
+import Icon from './Icon';
+import IconText from './IconText';
 import DefaultComment from './DefaultComment';
 
 const ItemDisplayExamples = () => (
@@ -23,18 +23,19 @@ const ItemDisplayExamples = () => (
     <Markdown id="readme" src={ReadMe} />
     <h2> Item Display </h2>
     <PropsTable id="props" src={ItemDisplaySrc} />
-    <h2> Item Display-Comment </h2>
+    <h2> Comment Item Display </h2>
     <PropsTable id="props" src={CommentSrc} />
-    <h2 id="text">Text Display</h2>
-    <TextItemDisplay />
+
+    <h2>Item Display: Text styles</h2>
+    <TextStyles />
     <br />
-    <h2 id="icon">Icon Display</h2>
-    <IconItemDisplay />
+    <h2>Item Display: Icon</h2>
+    <Icon />
     <br />
-    <h2 id="icon">Icon and Text Display</h2>
-    <TextIconItemDisplay />
+    <h2>Item Display: Icon & Text</h2>
+    <IconText />
     <br />
-    <h2 id="standard">Comment Display</h2>
+    <h2>Comment Item Display</h2>
     <DefaultComment />
   </div>
 );

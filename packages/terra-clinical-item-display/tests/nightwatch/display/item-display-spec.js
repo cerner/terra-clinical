@@ -13,6 +13,8 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     browser.expect.element('#test-display-secondary > :first-child').to.have.css('color').which.equals('rgba(100, 105, 108, 1)');
     browser.expect.element('#test-display-attention > :first-child').to.have.css('color').which.equals('rgba(204, 0, 0, 1)');
     browser.expect.element('#test-display-strike-through > :first-child').to.have.css('text-decoration').which.contains('line-through');
+    browser.expect.element('#test-display-strong > :first-child').to.have.css('font-weight').which.equals('700');
+    browser.expect.element('#test-display-disabled > :first-child').to.have.css('color').which.equals('rgba(100, 105, 108, 1)');
   },
 
   'Displays text with an icon': (browser) => {

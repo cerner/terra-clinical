@@ -22,6 +22,18 @@ exports[`should render a display with the attention textStyle on text 1`] = `
 </div>
 `;
 
+exports[`should render a display with the disabled textStyle on text 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="text disabled"
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a display with the secondary textStyle on text 1`] = `
 <div
   className="item-display"
@@ -40,6 +52,18 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
 >
   <div
     className="text strike-through strikeThrough"
+  >
+    Display
+  </div>
+</div>
+`;
+
+exports[`should render a display with the strong textStyle on text 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="text strong"
   >
     Display
   </div>

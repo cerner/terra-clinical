@@ -43,3 +43,13 @@ it('should render a display with the strikeThrough textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="strikeThrough" />);
   expect(itemDisplay).toMatchSnapshot();
 });
+
+it('should render a display with the strong textStyle on text', () => {
+  const itemDisplay = shallow(<Display text="Display" textStyle="strong" />);
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render a display with the disabled textStyle on text', () => {
+  const itemDisplay = shallow(<Display text="Display" textStyle="disabled" />);
+  expect(itemDisplay).toMatchSnapshot();
+});

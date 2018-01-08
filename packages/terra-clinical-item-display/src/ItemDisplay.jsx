@@ -11,6 +11,8 @@ const textStyles = [
   'secondary',
   'attention',
   'strikeThrough',
+  'strong',
+  'disabled',
 ];
 
 const propTypes = {
@@ -19,7 +21,7 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
-   * The visual styles to be applied to the display element.
+   * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, `strong`, `disabled`.
    */
   textStyle: PropTypes.oneOf(textStyles),
   /**
