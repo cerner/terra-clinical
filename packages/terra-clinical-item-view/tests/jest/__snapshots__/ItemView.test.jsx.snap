@@ -19,6 +19,7 @@ exports[`should render 1 start theme display 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -48,6 +49,7 @@ exports[`should render 2 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -62,6 +64,7 @@ exports[`should render 2 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -91,6 +94,7 @@ exports[`should render 3 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -105,6 +109,7 @@ exports[`should render 3 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -119,6 +124,7 @@ exports[`should render 3 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 3"
           />
@@ -242,6 +248,7 @@ exports[`should render one column 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -256,6 +263,7 @@ exports[`should render one column 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -298,6 +306,7 @@ exports[`should render truncated display 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={true}
             text="display1display1display1display1display1display1display1display1"
           />
@@ -327,6 +336,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -336,6 +346,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -350,6 +361,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 3"
           />
@@ -359,6 +371,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 4"
           />
@@ -373,6 +386,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 5"
           />
@@ -382,6 +396,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 6"
           />
@@ -396,6 +411,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 7"
           />
@@ -405,6 +421,7 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 8"
           />
@@ -434,6 +451,7 @@ exports[`should render two columns with odd number of displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -443,6 +461,7 @@ exports[`should render two columns with odd number of displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -457,6 +476,7 @@ exports[`should render two columns with odd number of displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 3"
           />
@@ -486,6 +506,7 @@ exports[`should render with 1 display 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -515,6 +536,7 @@ exports[`should render with 2 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -529,6 +551,7 @@ exports[`should render with 2 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -558,6 +581,7 @@ exports[`should render with 3 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />
@@ -572,6 +596,7 @@ exports[`should render with 3 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 2"
           />
@@ -586,6 +611,7 @@ exports[`should render with 3 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            isInvalid={false}
             isTruncated={false}
             text="display 3"
           />
@@ -620,6 +646,7 @@ exports[`should render with a display and graphic 1`] = `
                 alt="Graphic"
               />
             }
+            isInvalid={false}
             isTruncated={false}
             text="display 1"
           />

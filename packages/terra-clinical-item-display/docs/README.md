@@ -18,6 +18,7 @@ import ItemDisplay from 'terra-clinical-item-display';
   text="display text"
   textStyle="attention"
   isTruncated
+  isInvalid
   icon={<img alt="Graphic" />}
 />
 

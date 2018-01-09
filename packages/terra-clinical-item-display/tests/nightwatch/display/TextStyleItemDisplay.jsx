@@ -8,7 +8,6 @@ const views = () => (
     <ItemDisplay text="test text" textStyle="attention" id="test-display-attention" />
     <ItemDisplay text="test text" textStyle="strikeThrough" id="test-display-strike-through" />
     <ItemDisplay text="test text" textStyle="strong" id="test-display-strong" />
-    <ItemDisplay text="test text" textStyle="disabled" id="test-display-disabled" />
   </div>
 );
 

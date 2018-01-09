@@ -22,18 +22,6 @@ exports[`should render a display with the attention textStyle on text 1`] = `
 </div>
 `;
 
-exports[`should render a display with the disabled textStyle on text 1`] = `
-<div
-  className="item-display"
->
-  <div
-    className="text disabled"
-  >
-    Display
-  </div>
-</div>
-`;
-
 exports[`should render a display with the secondary textStyle on text 1`] = `
 <div
   className="item-display"
@@ -78,6 +66,37 @@ exports[`should render a truncated display 1`] = `
     className="text is-truncated"
   >
     display1display1display1display1display1display1display1display1
+  </div>
+</div>
+`;
+
+exports[`should render an invalid display 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="text is-invalid"
+  >
+    Display
+  </div>
+</div>
+`;
+
+exports[`should render invalid with text and graphic 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="inline-icon is-invalid"
+  >
+    <img
+      alt="Graphic"
+    />
+  </div>
+  <div
+    className="text is-invalid"
+  >
+    Display
   </div>
 </div>
 `;

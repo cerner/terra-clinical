@@ -6,7 +6,6 @@ const component = () => (
     <ItemDisplay text="Attention" textStyle="attention" />
     <ItemDisplay text="Strong" textStyle="strong" />
     <ItemDisplay text="Secondary" textStyle="secondary" />
-    <ItemDisplay text="Disabled" textStyle="disabled" />
     <ItemDisplay text="Strike-through" textStyle="strikeThrough" />
   </span>
 );

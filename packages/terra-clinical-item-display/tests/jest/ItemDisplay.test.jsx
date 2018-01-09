@@ -24,8 +24,19 @@ it('should render with text and graphic', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
+it('should render invalid with text and graphic', () => {
+  const graphic = <img alt="Graphic" />;
+  const itemDisplay = shallow(<Display text="Display" icon={graphic} isInvalid />);
+  expect(itemDisplay).toMatchSnapshot();
+});
+
 it('should render a truncated display', () => {
   const itemDisplay = shallow(<Display text="display1display1display1display1display1display1display1display1" isTruncated />);
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render an invalid display', () => {
+  const itemDisplay = shallow(<Display text="Display" isInvalid />);
   expect(itemDisplay).toMatchSnapshot();
 });
 
@@ -46,10 +57,5 @@ it('should render a display with the strikeThrough textStyle on text', () => {
 
 it('should render a display with the strong textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="strong" />);
-  expect(itemDisplay).toMatchSnapshot();
-});
-
-it('should render a display with the disabled textStyle on text', () => {
-  const itemDisplay = shallow(<Display text="Display" textStyle="disabled" />);
   expect(itemDisplay).toMatchSnapshot();
 });
