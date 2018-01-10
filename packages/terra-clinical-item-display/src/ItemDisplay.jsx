@@ -53,21 +53,24 @@ const ItemDisplay = ({
     icon,
     ...customProps
   }) => {
+  const componentClassNames = cx([
+    'item-display',
+    { 'is-disabled': isDisabled },
+    customProps.className,
+  ]);
   const textClassNames = cx([
     'text',
-    { 'is-disabled': isDisabled },
     { 'is-truncated': isTruncated },
     { 'strike-through': textStyle === 'strikeThrough', [`${textStyle}`]: textStyle },
   ]);
 
   let displayIcon;
   if (icon) {
-    const iconClasses = cx('inline-icon', { 'is-disabled': isDisabled });
-    displayIcon = <div className={iconClasses}>{icon}</div>;
+    displayIcon = <div className={cx('inline-icon')}>{icon}</div>;
   }
 
   return (
-    <div {...customProps} className={cx('item-display', customProps.className)}>
+    <div {...customProps} className={componentClassNames}>
       {displayIcon}
       <div className={textClassNames}>{text}</div>
     </div>

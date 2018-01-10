@@ -12,10 +12,10 @@ exports[`should render a default component 1`] = `
 
 exports[`should render a disabled display 1`] = `
 <div
-  className="item-display"
+  className="item-display is-disabled"
 >
   <div
-    className="text is-disabled"
+    className="text"
   >
     Display
   </div>
@@ -84,17 +84,17 @@ exports[`should render a truncated display 1`] = `
 
 exports[`should render disabled with text and graphic 1`] = `
 <div
-  className="item-display"
+  className="item-display is-disabled"
 >
   <div
-    className="inline-icon is-disabled"
+    className="inline-icon"
   >
     <img
       alt="Graphic"
     />
   </div>
   <div
-    className="text is-disabled"
+    className="text"
   >
     Display
   </div>
