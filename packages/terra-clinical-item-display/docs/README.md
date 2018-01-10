@@ -24,7 +24,7 @@ import ItemDisplay from 'terra-clinical-item-display';
 
 <ItemDisplay.Comment
   text="display text"
-  isTruncated"
+  isTruncated
 />
 ```
 ## Component Features
