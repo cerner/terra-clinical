@@ -44,21 +44,21 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 2"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 3"
           textStyle={undefined}
@@ -110,21 +110,21 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 2"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 3"
           textStyle={undefined}
@@ -327,7 +327,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
@@ -379,7 +379,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
@@ -507,7 +507,7 @@ exports[`should render an ItemCollection with displays 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
@@ -559,7 +559,7 @@ exports[`should render an ItemCollection with displays 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
@@ -614,21 +614,21 @@ exports[`should render an ItemCollection with list styles 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 2"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 3"
           textStyle={undefined}
@@ -680,21 +680,21 @@ exports[`should render an ItemCollection with list styles 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 2"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 3"
           textStyle={undefined}
@@ -749,7 +749,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isSelectable={true}
           isTruncated={false}
           text="Display 1"
@@ -802,7 +802,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isSelectable={true}
           isTruncated={false}
           text="Display 1"
@@ -858,21 +858,21 @@ exports[`should render an ItemCollection with table styles 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 2"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 3"
           textStyle={undefined}
@@ -924,21 +924,21 @@ exports[`should render an ItemCollection with table styles 1`] = `
       >
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 1"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 2"
           textStyle={undefined}
         />
         <ItemDisplay
           icon={undefined}
-          isInvalid={false}
+          isDisabled={false}
           isTruncated={false}
           text="Display 3"
           textStyle={undefined}

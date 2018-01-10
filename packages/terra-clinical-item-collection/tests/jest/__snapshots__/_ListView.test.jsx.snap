@@ -34,7 +34,7 @@ exports[`should render a ListView with a divided list 1`] = `
     view="list"
   >
     <ItemDisplay
-      isInvalid={false}
+      isDisabled={false}
       isTruncated={false}
       text="Display 1"
     />
@@ -76,7 +76,7 @@ exports[`should render a ListView with children 1`] = `
     view="list"
   >
     <ItemDisplay
-      isInvalid={false}
+      isDisabled={false}
       isTruncated={false}
       text="Display 1"
     />

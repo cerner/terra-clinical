@@ -5,8 +5,8 @@ import ItemDisplay from '../../../lib/ItemDisplay';
 
 const views = () => (
   <div>
-    <ItemDisplay text="test text" id="test-display-text" isInvalid />
-    <ItemDisplay text="Test Text" icon={<IconSuccess />} id="test-display-icon" isInvalid />
+    <ItemDisplay text="test text" id="test-display-text" isDisabled />
+    <ItemDisplay text="Test Text" icon={<IconSuccess />} id="test-display-icon" isDisabled />
   </div>
 );
 

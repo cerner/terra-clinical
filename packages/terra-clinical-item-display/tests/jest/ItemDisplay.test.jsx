@@ -24,9 +24,9 @@ it('should render with text and graphic', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render invalid with text and graphic', () => {
+it('should render disabled with text and graphic', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display text="Display" icon={graphic} isInvalid />);
+  const itemDisplay = shallow(<Display text="Display" icon={graphic} isDisabled />);
   expect(itemDisplay).toMatchSnapshot();
 });
 
@@ -35,8 +35,8 @@ it('should render a truncated display', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render an invalid display', () => {
-  const itemDisplay = shallow(<Display text="Display" isInvalid />);
+it('should render a disabled display', () => {
+  const itemDisplay = shallow(<Display text="Display" isDisabled />);
   expect(itemDisplay).toMatchSnapshot();
 });
 

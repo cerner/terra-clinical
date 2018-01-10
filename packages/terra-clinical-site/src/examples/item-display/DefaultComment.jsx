@@ -4,7 +4,7 @@ import ItemDisplay from 'terra-clinical-item-display';
 const component = () => (
   <span>
     <ItemDisplay.Comment text="Comment" />
-    <ItemDisplay.Comment text="Invalid Comment" isInvalid />
+    <ItemDisplay.Comment text="Disabled Comment" isDisabled />
   </span>
 );
 

@@ -29,7 +29,7 @@
     @include terra-clinical-text-truncate;
   }
 
-  .is-invalid {
+  .is-disabled {
     opacity: 0.18;
 
     &.inline-icon {

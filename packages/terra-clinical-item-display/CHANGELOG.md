@@ -3,8 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
-* Add `strong` & `inactive` text styles.
+### Added
+* Added `strong` textStyle & `isDisabled` prop.
 
 1.5.0 - (November 29, 2017)
 -----------------

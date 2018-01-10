@@ -10,6 +10,18 @@ exports[`should render a default component 1`] = `
 </div>
 `;
 
+exports[`should render a disabled display 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="text is-disabled"
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a display with the attention textStyle on text 1`] = `
 <div
   className="item-display"
@@ -70,31 +82,19 @@ exports[`should render a truncated display 1`] = `
 </div>
 `;
 
-exports[`should render an invalid display 1`] = `
+exports[`should render disabled with text and graphic 1`] = `
 <div
   className="item-display"
 >
   <div
-    className="text is-invalid"
-  >
-    Display
-  </div>
-</div>
-`;
-
-exports[`should render invalid with text and graphic 1`] = `
-<div
-  className="item-display"
->
-  <div
-    className="inline-icon is-invalid"
+    className="inline-icon is-disabled"
   >
     <img
       alt="Graphic"
     />
   </div>
   <div
-    className="text is-invalid"
+    className="text is-disabled"
   >
     Display
   </div>

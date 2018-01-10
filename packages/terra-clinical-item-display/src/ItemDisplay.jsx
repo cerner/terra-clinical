@@ -20,7 +20,7 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
-   * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, `strong`.
+   * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, or `strong`.
    */
   textStyle: PropTypes.oneOf(textStyles),
   /**
@@ -28,9 +28,9 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   * Whether or not the text should be styled as invalid.
+   * Whether or not the text should be styled as disabled.
    */
-  isInvalid: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   /**
    * The icon react element to be displayed next to the display text.
    */
@@ -41,7 +41,7 @@ const defaultProps = {
   text: '',
   textStyle: undefined,
   isTruncated: false,
-  isInvalid: false,
+  isDisabled: false,
   icon: undefined,
 };
 
@@ -49,20 +49,20 @@ const ItemDisplay = ({
     text,
     textStyle,
     isTruncated,
-    isInvalid,
+    isDisabled,
     icon,
     ...customProps
   }) => {
   const textClassNames = cx([
     'text',
-    { 'is-invalid': isInvalid },
+    { 'is-disabled': isDisabled },
     { 'is-truncated': isTruncated },
     { 'strike-through': textStyle === 'strikeThrough', [`${textStyle}`]: textStyle },
   ]);
 
   let displayIcon;
   if (icon) {
-    const iconClasses = cx('inline-icon', { 'is-invalid': isInvalid });
+    const iconClasses = cx('inline-icon', { 'is-disabled': isDisabled });
     displayIcon = <div className={iconClasses}>{icon}</div>;
   }
 

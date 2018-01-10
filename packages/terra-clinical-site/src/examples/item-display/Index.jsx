@@ -13,7 +13,7 @@ import CommentSrc from '!raw-loader!terra-clinical-item-display/src/ItemComment.
 
 // Example Files
 import TextStyles from './TextStyles';
-import TextStylesInvalid from './TextStylesInvalid';
+import TextStylesDisabled from './TextStylesDisabled';
 import Icon from './Icon';
 import IconText from './IconText';
 import DefaultComment from './DefaultComment';
@@ -30,8 +30,8 @@ const ItemDisplayExamples = () => (
     <h2>Item Display: Text styles</h2>
     <TextStyles />
     <br />
-    <h2>Invalid Item Display: Text styles</h2>
-    <TextStylesInvalid />
+    <h2>Disabled Item Display: Text styles</h2>
+    <TextStylesDisabled />
     <br />
     <h2>Item Display: Icon</h2>
     <Icon />

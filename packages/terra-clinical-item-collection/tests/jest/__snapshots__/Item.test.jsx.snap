@@ -11,7 +11,7 @@ exports[`List View Tests should pass customProps to the Item 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
@@ -71,21 +71,21 @@ exports[`List View Tests should render a Item with a list item chevron 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 2"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 3"
             textStyle={undefined}
@@ -123,7 +123,7 @@ exports[`List View Tests should render a Item with a single children 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
@@ -182,21 +182,21 @@ exports[`List View Tests should render a Item with all elements 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 2"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 3"
             textStyle={undefined}
@@ -258,21 +258,21 @@ exports[`List View Tests should render a Item with children 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 2"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 3"
             textStyle={undefined}
@@ -307,21 +307,21 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 2"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 3"
             textStyle={undefined}
@@ -384,21 +384,21 @@ exports[`List View Tests should render a selectable Item 1`] = `
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 2"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 3"
             textStyle={undefined}
@@ -446,7 +446,7 @@ exports[`List View Tests should render a selected Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -459,7 +459,7 @@ exports[`List View Tests should render a selected Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 2"
         textStyle={undefined}
@@ -472,7 +472,7 @@ exports[`List View Tests should render a selected Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 3"
         textStyle={undefined}
@@ -512,7 +512,7 @@ exports[`Table View Tests should pass customProps to the Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -541,7 +541,7 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -554,7 +554,7 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 2"
         textStyle={undefined}
@@ -567,7 +567,7 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 3"
         textStyle={undefined}
@@ -612,21 +612,21 @@ exports[`Table View Tests should render a Item that ignores the list item chevro
         Array [
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 1"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 2"
             textStyle={undefined}
           />,
           <ItemDisplay
             icon={undefined}
-            isInvalid={false}
+            isDisabled={false}
             isTruncated={false}
             text="Display 3"
             textStyle={undefined}
@@ -680,7 +680,7 @@ exports[`Table View Tests should render a Item with a single children 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -725,7 +725,7 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -738,7 +738,7 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 2"
         textStyle={undefined}
@@ -751,7 +751,7 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 3"
         textStyle={undefined}
@@ -806,7 +806,7 @@ exports[`Table View Tests should render a Item with children 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -819,7 +819,7 @@ exports[`Table View Tests should render a Item with children 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 2"
         textStyle={undefined}
@@ -832,7 +832,7 @@ exports[`Table View Tests should render a Item with children 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 3"
         textStyle={undefined}
@@ -869,7 +869,7 @@ exports[`Table View Tests should render a selectable Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -882,7 +882,7 @@ exports[`Table View Tests should render a selectable Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 2"
         textStyle={undefined}
@@ -895,7 +895,7 @@ exports[`Table View Tests should render a selectable Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 3"
         textStyle={undefined}
@@ -943,7 +943,7 @@ exports[`Table View Tests should render a selected Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
         textStyle={undefined}
@@ -956,7 +956,7 @@ exports[`Table View Tests should render a selected Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 2"
         textStyle={undefined}
@@ -969,7 +969,7 @@ exports[`Table View Tests should render a selected Item 1`] = `
     content={
       <ItemDisplay
         icon={undefined}
-        isInvalid={false}
+        isDisabled={false}
         isTruncated={false}
         text="Display 3"
         textStyle={undefined}
