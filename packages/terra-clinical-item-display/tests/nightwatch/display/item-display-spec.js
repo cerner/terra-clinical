@@ -18,9 +18,9 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Displays disabled': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/item-display-tests/disabled`);
-    browser.expect.element('#test-display-text > :first-child').to.have.css('opacity').which.equals('0.18');
+    browser.expect.element('#test-display-text').to.have.css('opacity').which.equals('0.2');
     browser.expect.element('#test-display-icon [class*="inline-icon"]').to.have.css('color').which.equals('rgba(117, 118, 125, 0.3)');
-    browser.expect.element('#test-display-icon > :first-child').to.have.css('opacity').which.equals('0.18');
+    browser.expect.element('#test-display-icon').to.have.css('opacity').which.equals('0.2');
   },
 
   'Displays text with an icon': (browser) => {
