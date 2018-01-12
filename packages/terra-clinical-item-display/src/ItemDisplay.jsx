@@ -28,7 +28,7 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   * Whether or not the text should be styled as disabled.
+   * Whether or not the display is disabled.
    */
   isDisabled: PropTypes.bool,
   /**

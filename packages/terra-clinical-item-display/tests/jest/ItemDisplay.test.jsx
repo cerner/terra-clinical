@@ -24,7 +24,7 @@ it('should render with text and graphic', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render disabled with text and graphic', () => {
+it('should render disabled display with text and graphic', () => {
   const graphic = <img alt="Graphic" />;
   const itemDisplay = shallow(<Display text="Display" icon={graphic} isDisabled />);
   expect(itemDisplay).toMatchSnapshot();
