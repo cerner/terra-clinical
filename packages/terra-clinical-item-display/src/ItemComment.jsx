@@ -32,7 +32,7 @@ const ItemComment = ({
     <ItemDisplay
       text={text}
       isTruncated={isTruncated}
-      icon={<CommentIndicator />}
+      icon={<CommentIndicator className={cx('inline-icon')} />}
       {...customProps}
       className={cx('item-comment', customProps.className)}
     />

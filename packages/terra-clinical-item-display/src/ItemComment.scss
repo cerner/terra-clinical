@@ -4,5 +4,9 @@
   .item-comment {
     @include terra-clinical-item-body;
     color: #75767d;
+
+    .inline-icon {
+      color: rgba(117, 118, 125, 0.3);
+    }
   }
 }

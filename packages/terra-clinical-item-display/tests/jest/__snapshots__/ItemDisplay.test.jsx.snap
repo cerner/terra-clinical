@@ -82,7 +82,7 @@ exports[`should render a truncated display 1`] = `
 </div>
 `;
 
-exports[`should render disabled with text and graphic 1`] = `
+exports[`should render disabled display with text and graphic 1`] = `
 <div
   className="item-display is-disabled"
 >

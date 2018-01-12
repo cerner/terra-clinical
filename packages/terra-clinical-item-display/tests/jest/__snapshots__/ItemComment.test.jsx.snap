@@ -5,7 +5,7 @@ exports[`should render a comment with text 1`] = `
   className="item-comment"
   icon={
     <IconComment
-      className=""
+      className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
@@ -23,7 +23,7 @@ exports[`should render a comment with the attention textStyle on text 1`] = `
   className="item-comment"
   icon={
     <IconComment
-      className=""
+      className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
@@ -42,7 +42,7 @@ exports[`should render a comment with the secondary textStyle on text 1`] = `
   className="item-comment"
   icon={
     <IconComment
-      className=""
+      className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
@@ -61,7 +61,7 @@ exports[`should render a comment with the strikeThrough textStyle on text 1`] = 
   className="item-comment"
   icon={
     <IconComment
-      className=""
+      className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
@@ -80,7 +80,7 @@ exports[`should render a default component 1`] = `
   className="item-comment"
   icon={
     <IconComment
-      className=""
+      className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
@@ -98,7 +98,7 @@ exports[`should render a truncated comment 1`] = `
   className="item-comment"
   icon={
     <IconComment
-      className=""
+      className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
       viewBox="0 0 48 48"
