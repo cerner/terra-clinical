@@ -4,7 +4,7 @@ An Item Collection is a wrapper component designed to display data as either a t
 
 Ultimately, the Item Collection component allows consumers to organize tabular data and ensure this data is readable as screen sizes become progressively smaller.
 
-The ItemCollection is rendered as a static, non-selectable display, however it has the foundation to become a selectable component. See the [Selectable Implementation Guide](https://github.com/cerner/terra-clinical/tree/master/packages/terra-item-collection/docs/SelectableImplementation.md) for details.
+The ItemCollection is rendered as a static, non-selectable display, however it has the foundation to become a selectable component. See the [Selectable Implementation Guide](https://github.com/cerner/terra-clinical/blob/master/packages/terra-clinical-item-collection/docs/SelectableImplementation.md) for details.
 
 ## Getting Started
 
