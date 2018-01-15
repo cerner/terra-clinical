@@ -18,13 +18,13 @@ import ItemDisplay from 'terra-clinical-item-display';
   text="display text"
   textStyle="attention"
   isTruncated
-  icon=<img alt="Graphic" />
+  isDisabled
+  icon={<img alt="Graphic" />}
 />
 
 <ItemDisplay.Comment
   text="display text"
-  textStyle="attention"
-  isTruncated"
+  isTruncated
 />
 ```
 ## Component Features

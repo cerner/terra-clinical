@@ -29,17 +29,29 @@
     @include terra-clinical-text-truncate;
   }
 
+  .is-disabled {
+    opacity: 0.2;
+
+    .inline-icon {
+      color: rgba(117, 118, 125, 0.3);
+    }
+  }
+
   // Text Styles
   .secondary {
-    color: #64696c !important;
+    color: #75767d;
   }
 
   .attention {
-    color: #c00 !important;
-    font-weight: 700 !important;
+    color: #c00;
+    font-weight: 700;
+  }
+
+  .strong {
+    font-weight: 700;
   }
 
   .strike-through {
-    text-decoration: line-through !important;
+    text-decoration: line-through;
   }
 }

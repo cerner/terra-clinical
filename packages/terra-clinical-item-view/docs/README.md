@@ -19,7 +19,7 @@ import ItemView from 'terra-clinical-item-view';
   textEmphasis="default"
   isTruncated
   accessoryAlignment="top"
-  leftAccessory=<img alt="Graphic" />
+  startAccessory={<img alt="Graphic" />}
   displays={[<ItemView.Display text="display 1" />, <ItemDisplay text="display 2" />]}
   comment=<ItemView.Comment text="comment" />
 />

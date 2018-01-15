@@ -80,6 +80,7 @@ exports[`should render a TableView with children 1`] = `
       view="table"
     >
       <ItemDisplay
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
       />
@@ -175,6 +176,7 @@ exports[`should render a TableView with table styles 1`] = `
       view="table"
     >
       <ItemDisplay
+        isDisabled={false}
         isTruncated={false}
         text="Display 1"
       />
