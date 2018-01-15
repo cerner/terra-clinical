@@ -11,6 +11,7 @@ Cerner Corporation
 - Gerard Isdell [@gerard-isdell]
 - Ryan Manuel [@ryanthemanuel]
 - Noah Benham [@noahbenham]
+- Natalie Seeto [@njseeto]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -23,3 +24,4 @@ Cerner Corporation
 [@gerard-isdell]: https://github.com/gerard-isdell
 [@ryanthemanuel]: https://github.com/ryanthemanuel
 [@noahbenham]: https://github.com/noahbenham
+[@njseeto]: https://github.com/njseeto
