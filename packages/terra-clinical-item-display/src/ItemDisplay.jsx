@@ -11,6 +11,7 @@ const textStyles = [
   'secondary',
   'attention',
   'strikeThrough',
+  'strong',
 ];
 
 const propTypes = {
@@ -19,13 +20,17 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
-   * The visual styles to be applied to the display element.
+   * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, or `strong`.
    */
   textStyle: PropTypes.oneOf(textStyles),
   /**
    * Whether or not the text should be truncated.
    */
   isTruncated: PropTypes.bool,
+  /**
+   * Whether or not the display is disabled.
+   */
+  isDisabled: PropTypes.bool,
   /**
    * The icon react element to be displayed next to the display text.
    */
@@ -36,6 +41,7 @@ const defaultProps = {
   text: '',
   textStyle: undefined,
   isTruncated: false,
+  isDisabled: false,
   icon: undefined,
 };
 
@@ -43,9 +49,15 @@ const ItemDisplay = ({
     text,
     textStyle,
     isTruncated,
+    isDisabled,
     icon,
     ...customProps
   }) => {
+  const componentClassNames = cx([
+    'item-display',
+    { 'is-disabled': isDisabled },
+    customProps.className,
+  ]);
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
@@ -58,7 +70,7 @@ const ItemDisplay = ({
   }
 
   return (
-    <div {...customProps} className={cx('item-display', customProps.className)}>
+    <div {...customProps} className={componentClassNames}>
       {displayIcon}
       <div className={textClassNames}>{text}</div>
     </div>

@@ -10,6 +10,18 @@ exports[`should render a default component 1`] = `
 </div>
 `;
 
+exports[`should render a disabled display 1`] = `
+<div
+  className="item-display is-disabled"
+>
+  <div
+    className="text"
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a display with the attention textStyle on text 1`] = `
 <div
   className="item-display"
@@ -46,6 +58,18 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
 </div>
 `;
 
+exports[`should render a display with the strong textStyle on text 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="text strong"
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a truncated display 1`] = `
 <div
   className="item-display"
@@ -54,6 +78,25 @@ exports[`should render a truncated display 1`] = `
     className="text is-truncated"
   >
     display1display1display1display1display1display1display1display1
+  </div>
+</div>
+`;
+
+exports[`should render disabled display with text and graphic 1`] = `
+<div
+  className="item-display is-disabled"
+>
+  <div
+    className="inline-icon"
+  >
+    <img
+      alt="Graphic"
+    />
+  </div>
+  <div
+    className="text"
+  >
+    Display
   </div>
 </div>
 `;

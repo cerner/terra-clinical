@@ -1,7 +1,11 @@
 import React from 'react';
-
 import ItemDisplay from 'terra-clinical-item-display';
 
-const DefaultComment = () => (<ItemDisplay.Comment text="Comment" />);
+const component = () => (
+  <span>
+    <ItemDisplay.Comment text="Comment" />
+    <ItemDisplay.Comment text="Disabled Comment" isDisabled />
+  </span>
+);
 
-export default DefaultComment;
+export default component;
