@@ -12,6 +12,7 @@ Cerner Corporation
 - Ryan Manuel [@ryanthemanuel]
 - Noah Benham [@noahbenham]
 - Natalie Seeto [@njseeto]
+- Kevin Schuster [@kschuste]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -25,3 +26,4 @@ Cerner Corporation
 [@ryanthemanuel]: https://github.com/ryanthemanuel
 [@noahbenham]: https://github.com/noahbenham
 [@njseeto]: https://github.com/njseeto
+[@kschuste]: https://github.com/kschuste
