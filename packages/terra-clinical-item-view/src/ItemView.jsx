@@ -44,6 +44,10 @@ const propTypes = {
    * The react element for the comment element.
    */
   comment: PropTypes.node,
+  /**
+   * Function callback for the ref of the outer most div.
+   */
+  refCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -162,6 +166,7 @@ const ItemView = ({
   endAccessory,
   displays,
   comment,
+  refCallback,
   ...customProps
 }) => {
   const viewClassNames = cx([
@@ -173,7 +178,7 @@ const ItemView = ({
   ]);
 
   return (
-    <div {...customProps} className={viewClassNames}>
+    <div {...customProps} className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>
         {renderRows(displays, layout, textEmphasis)}
