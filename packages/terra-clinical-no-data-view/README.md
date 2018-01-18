@@ -4,7 +4,8 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-no-data-view.svg)](https://www.npmjs.org/package/terra-clinical-no-data-view)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-This component renders a no data glyph with with a message or a content section to display sub-component.
+This component renders a no data glyph with with a message or a content section to display sub-component.  This component has been deprecated in
+favor of [terra-status-view](https://github.com/cerner/terra-core/tree/master/packages/terra-status-view).
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-no-data-view/docs)

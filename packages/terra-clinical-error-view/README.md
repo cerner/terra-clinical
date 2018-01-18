@@ -4,7 +4,8 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-error-view.svg)](https://www.npmjs.org/package/terra-clinical-error-view)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-The Terra ErrorView is a display presented with an error message and location for a button.
+The Terra ErrorView is a display presented with an error message and location for a button.  This component has been deprecated in
+favor of [terra-status-view](https://github.com/cerner/terra-core/tree/master/packages/terra-status-view).
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-error-view/docs)
