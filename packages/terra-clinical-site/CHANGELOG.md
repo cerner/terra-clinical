@@ -3,8 +3,6 @@ ChangeLog
 
 Unreleased
 ----------
-### Removed
-* Removed terra-clinical-error-view and terra-clinical-no-data-view from repository.
 
 1.6.0 - (December 5, 2017)
 -----------------

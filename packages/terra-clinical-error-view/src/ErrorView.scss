@@ -1,0 +1,30 @@
+:local {
+  .error-view {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1.429rem 0;
+    width: 100%;
+  }
+
+  .glyph {
+    flex: 0 0 auto;
+    padding-bottom: 0.2857rem;
+    padding-top: 1.429rem;
+  }
+
+  .text {
+    color: #c8cacb;
+    flex: 0 0 auto;
+    font-size: 1.7142857142857142rem;
+    line-height: 1.284;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .button {
+    flex: 0 0 auto;
+    padding-top: 0.2857rem;
+  }
+}
