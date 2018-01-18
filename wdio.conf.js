@@ -19,7 +19,7 @@ const config = {
   baseUrl: `http://${localIP.address()}:${webpackPort}`,
   specs: [specs],
   exclude: [
-    'packages/terra-clinical-error-view/tests/wdio/**/*-spec.js'
+    'packages/terra-clinical-error-view/tests/wdio/**/*-spec.js',
   ],
 
   // Terra-toolkit services are 'visual-regression', AxeService, TerraService, SeleniumDockerService
