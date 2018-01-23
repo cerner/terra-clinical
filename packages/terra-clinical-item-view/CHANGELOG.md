@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.6.0 - (January 23, 2018)
+-----------------
 ### Changed
 * Coverted ItemView to be a functional component, removing static methods.
 
