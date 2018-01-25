@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.6.0 - (January 23, 2018)
+-----------------
 ### Added
 * Added `strong` textStyle & `isDisabled` prop.
 
