@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Marked terra-clinical-error-view and terra-clinical-no-data-view as deprecated.
 
 1.8.0 - (January 23, 2018)
 -----------------
