@@ -34,6 +34,16 @@ const config = {
     },
   },
 
+  axe: {
+    inject: true,
+    options: {
+      rules: [{
+        id: 'landmark-one-main',
+        enabled: false,
+      }],
+    },
+  },
+
    // Configuration for WebPackDevService
   webpackPort,
   webpackConfig,
