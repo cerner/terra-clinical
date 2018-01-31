@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Added margin between text & start/end content
 
 1.7.0 - (November 29, 2017)
 -----------------
@@ -12,7 +14,7 @@ Unreleased
 1.6.0 - (November 15, 2017)
 -----------------
 ### Changed
-* Update flex-end styling 
+* Update flex-end styling
 
 1.5.0 - (September 26, 2017)
 -----------------
