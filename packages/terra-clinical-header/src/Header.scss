@@ -17,7 +17,6 @@
     align-self: center;
     flex: 1 1 auto;
     height: 100%;
-    margin: 0 5px;
     min-width: 0;
     position: relative;
     width: 100%;
@@ -38,6 +37,14 @@
     height: 100%;
     max-width: 40%;
     position: relative;
+  }
+
+  .start-content {
+    margin-right: 5px;
+  }
+
+  .end-content {
+    margin-left: 5px;
   }
 
   .title-container {

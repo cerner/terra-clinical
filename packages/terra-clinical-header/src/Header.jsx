@@ -45,7 +45,7 @@ const defaultProps = {
 const Header = ({ children, title, startContent, endContent, isSubheader, ...customProps }) => {
   let startElement;
   if (startContent) {
-    startElement = <div className={cx('flex-end')}>{startContent}</div>;
+    startElement = <div className={cx('start-content flex-end')}>{startContent}</div>;
   }
 
   let titleElement;
@@ -61,7 +61,7 @@ const Header = ({ children, title, startContent, endContent, isSubheader, ...cus
 
   let endElement;
   if (endContent) {
-    endElement = <div className={cx('flex-end')}>{endContent}</div>;
+    endElement = <div className={cx('end-content flex-end')}>{endContent}</div>;
   }
 
   let childElement;
