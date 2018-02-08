@@ -1,14 +1,6 @@
 *.log
 node_modules
-src
 reports
-tests
 build
 aggregated-translations
 stats.json
-lib/App.js
-lib/Home.js
-lib/index.html
-lib/Index.js
-lib/site.scss
-lib/TestLinks.js
