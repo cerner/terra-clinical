@@ -99,7 +99,7 @@ it('should render ActionHeader with children', () => {
 
 it('throws error on missing locale prop in Base', () => {
   try {
-    shallow(<ActionHeader />);
+    render(<ActionHeader />);
   } catch (e) {
     expect(e.message).toContain('add locale prop to Base component');
   }

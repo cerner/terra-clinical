@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Marked terra-clinical-error-view and terra-clinical-no-data-view as deprecated.
+* Update to React 16
 
 1.8.0 - (January 23, 2018)
 -----------------

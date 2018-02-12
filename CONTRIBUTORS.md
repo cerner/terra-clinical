@@ -13,6 +13,7 @@ Cerner Corporation
 - Noah Benham [@noahbenham]
 - Natalie Seeto [@njseeto]
 - Kevin Schuster [@kschuste]
+- Ben Cai [@benbcai]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -27,3 +28,4 @@ Cerner Corporation
 [@noahbenham]: https://github.com/noahbenham
 [@njseeto]: https://github.com/njseeto
 [@kschuste]: https://github.com/kschuste
+[@benbcai]: https://github.com/benbcai

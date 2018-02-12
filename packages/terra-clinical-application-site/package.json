@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.8",
-    "react-intl": "^2.2.3",
+    "react-intl": "^2.4.0",
     "react-modal": "^1.6.5",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.0.0",
@@ -58,8 +58,8 @@
     "terra-slide-panel": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
@@ -77,8 +77,8 @@
     "postcss-loader": "^2.0.6",
     "postcss-rtl": "^1.1.2",
     "raw-loader": "^0.5.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "terra-i18n": "^1.0.0",

@@ -28,7 +28,7 @@
   "dependencies": {
     "moment": "^2.17.1",
     "prop-types": "^15.5.8",
-    "react-intl": "^2.3.0",
+    "react-intl": "^2.4.0",
     "terra-app-delegate": "^1.0.0",
     "terra-button": "^1.0.0",
     "terra-button-group": "^1.0.0",
@@ -56,8 +56,8 @@
     "terra-slide-panel": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
   },
@@ -77,8 +77,8 @@
     "postcss-loader": "^2.0.6",
     "postcss-rtl": "^1.1.2",
     "raw-loader": "^0.5.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.5",
     "redux": "^3.6.0",
