@@ -45,6 +45,8 @@ import ApplicationTestRoutes from 'terra-clinical-application/tests/nightwatch/A
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
+import TestContainer from './TestContainer';
+
 ReactDOM.render((
   <div className={styles.application} id="siteApplication">
     <Router history={hashHistory}>
@@ -63,21 +65,23 @@ ReactDOM.render((
         <Route path="onset-picker" component={OnsetPickerExamples} />
         <Route path="item-collection" component={ItemCollectionExamples} />
       </Route>
-      <Route path="/tests" component={TestLinks} />
-      {ActionHeaderTestRoutes}
-      {ApplicationTestRoutes}
-      {DetailViewTestRoutes}
-      {DetailListTestRoutes}
-      {DetailListItemTestRoutes}
-      {ErrorViewTestRoutes}
-      {HeaderTestRoutes}
-      {ItemCommentTestRoutes}
-      {ItemDisplayTestRoutes}
-      {ItemViewTestRoutes}
-      {LabelValueViewTestRoutes}
-      {NoDataViewTestRoutes}
-      {OnsetPickerTestRoutes}
-      {ItemCollectionTestRoutes}
+      <Route path="/tests" component={TestContainer}>
+        <IndexRoute component={TestLinks} />
+        {ActionHeaderTestRoutes}
+        {ApplicationTestRoutes}
+        {DetailViewTestRoutes}
+        {DetailListTestRoutes}
+        {DetailListItemTestRoutes}
+        {ErrorViewTestRoutes}
+        {HeaderTestRoutes}
+        {ItemCommentTestRoutes}
+        {ItemDisplayTestRoutes}
+        {ItemViewTestRoutes}
+        {LabelValueViewTestRoutes}
+        {NoDataViewTestRoutes}
+        {OnsetPickerTestRoutes}
+        {ItemCollectionTestRoutes}
+      </Route>
       <Route path="/demo" component={DemoApplicationExamples} />
     </Router>
   </div>
