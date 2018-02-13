@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* prop to keep the close button in small viewports
 
 1.6.0 - (December 9, 2017)
 ----------
