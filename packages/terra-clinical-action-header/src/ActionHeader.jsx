@@ -77,7 +77,7 @@ const defaultProps = {
   onMinimize: null,
   onNext: null,
   onPrevious: null,
-  keepCloseButton: null,
+  keepCloseButton: false,
   children: null,
 };
 
