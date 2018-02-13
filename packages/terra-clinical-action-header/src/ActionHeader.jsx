@@ -104,13 +104,13 @@ const ActionHeader = ({
   const previousText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.previous' });
   const nextText = intl.formatMessage({ id: 'Terra.Clinical.ActionHeader.next' });
 
-  const closeButton = onClose ? <Button icon={<IconClose />} aria-label={closeText} onClick={onClose} /> : null;
-  const backButton = onBack ? <Button icon={<IconLeft />} aria-label={backText} onClick={onBack} /> : null;
+  const closeButton = onClose ? <Button isIconOnly icon={<IconClose />} text={closeText} onClick={onClose} /> : null;
+  const backButton = onBack ? <Button isIconOnly icon={<IconLeft />} text={backText} onClick={onBack} /> : null;
 
   let closeButtonSmall;
   let backButtonSmall;
   if (onClose && !onBack) {
-    backButtonSmall = <Button icon={<IconLeft />} aria-label={backText} onClick={onClose} />;
+    backButtonSmall = <Button isIconOnly icon={<IconLeft />} text={backText} onClick={onClose} />;
     closeButtonSmall = null;
   } else {
     closeButtonSmall = closeButton;
@@ -121,9 +121,9 @@ const ActionHeader = ({
   let expandButton;
   if (!backButton) {
     if (onMaximize) {
-      expandButton = <Button icon={<IconMaximize />} aria-label={maximizeText} onClick={onMaximize} />;
+      expandButton = <Button isIconOnly icon={<IconMaximize />} text={maximizeText} onClick={onMaximize} />;
     } else if (onMinimize) {
-      expandButton = <Button icon={<IconMinimize />} aria-label={minimizeText} onClick={onMinimize} />;
+      expandButton = <Button isIconOnly icon={<IconMinimize />} text={minimizeText} onClick={onMinimize} />;
     }
   }
 
@@ -131,8 +131,8 @@ const ActionHeader = ({
   if (onPrevious || onNext) {
     previousNextButtonGroup = (
       <ButtonGroup>
-        <ButtonGroup.Button icon={<IconChevronUp />} aria-label={previousText} onClick={onPrevious} key="ActionHeaderPrevious" />
-        <ButtonGroup.Button icon={<IconChevronDown />} aria-label={nextText} onClick={onNext} key="ActionHeaderNext" />
+        <ButtonGroup.Button icon={<IconChevronUp />} text={previousText} onClick={onPrevious} key="ActionHeaderPrevious" />
+        <ButtonGroup.Button icon={<IconChevronDown />} text={nextText} onClick={onNext} key="ActionHeaderNext" />
       </ButtonGroup>
     );
   }

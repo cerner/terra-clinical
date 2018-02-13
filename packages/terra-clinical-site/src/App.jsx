@@ -30,13 +30,13 @@ class App extends React.Component {
     this.handleResetScroll = this.handleResetScroll.bind(this);
   }
 
-  handleBidiChange(e) {
-    document.getElementsByTagName('html')[0].setAttribute('dir', e.currentTarget.id);
-    this.setState({ dir: e.currentTarget.id });
+  handleBidiChange(e, selectedKey) {
+    document.getElementsByTagName('html')[0].setAttribute('dir', selectedKey);
+    this.setState({ dir: selectedKey });
   }
 
-  handleLocaleChange(e) {
-    this.setState({ locale: e.currentTarget.id });
+  handleLocaleChange(e, selectedKey) {
+    this.setState({ locale: selectedKey });
   }
 
   handleToggleClick() {
@@ -59,7 +59,7 @@ class App extends React.Component {
     );
 
     const bidiContent = (
-      <CollapsibleMenuView.ItemGroup key="site-bidi" isSelectable dir="ltr" size="medium" onChange={this.handleBidiChange}>
+      <CollapsibleMenuView.ItemGroup key="site-bidi" selectedKeys={[this.state.dir]} dir="ltr" size="medium" onChange={this.handleBidiChange}>
         <CollapsibleMenuView.Item id="ltr" text="ltr" key="ltr" isSelected={this.state.dir === 'ltr'} />
         <CollapsibleMenuView.Item id="rtl" text="rtl" key="rtl" isSelected={this.state.dir === 'rtl'} />
       </CollapsibleMenuView.ItemGroup>
@@ -72,7 +72,7 @@ class App extends React.Component {
         menuWidth="160"
         shouldCloseOnClick={false}
         subMenuItems={[
-          <CollapsibleMenuView.ItemGroup isSelectable key="local-options" onChange={this.handleLocaleChange}>
+          <CollapsibleMenuView.ItemGroup selectedKeys={[this.state.locale]} key="local-options" onChange={this.handleLocaleChange}>
             <CollapsibleMenuView.Item id="en" text="en" key="en" isSelected={this.state.locale === 'en'} />
             <CollapsibleMenuView.Item id="en-GB" text="en-GB" key="en-GB" isSelected={this.state.locale === 'en-GB'} />
             <CollapsibleMenuView.Item id="en-US" text="en-US" key="en-US" isSelected={this.state.locale === 'en-US'} />

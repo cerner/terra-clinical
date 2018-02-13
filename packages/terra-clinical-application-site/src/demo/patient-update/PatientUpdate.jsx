@@ -65,8 +65,8 @@ class PatientUpdate extends React.Component {
           <p>Comment</p>
           <textarea ref={(element) => { this.commentTextAreaElement = element; }} defaultValue={patient.comment} />
           <div>
-            <Button onClick={this.handleCancel} variant="secondary" text="Cancel" />
-            <Button onClick={this.handleSubmit} variant="primary" text="Submit" />
+            <Button onClick={this.handleCancel} text="Cancel" />
+            <Button onClick={this.handleSubmit} variant={Button.Opts.Variants.EMPHASIS} text="Submit" />
           </div>
         </div>
       </ContentContainer>

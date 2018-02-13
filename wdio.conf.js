@@ -22,9 +22,6 @@ const config = {
     'packages/terra-clinical-error-view/tests/wdio/**/*-spec.js',
   ],
 
-  // Terra-toolkit services are 'visual-regression', AxeService, TerraService, SeleniumDockerService
-  // services: wdioConf.config.services.concat([WebpackDevService]),
-
   // Travis only has 1 browser instace, set maxInstances to 1 to prevent timeouts
   maxInstances: process.env.CI ? 1 : wdioConf.config.maxInstances,
 
@@ -53,13 +50,6 @@ const config = {
    // Configuration for WebPackDevService
   webpackPort,
   webpackConfig,
-
-  beforeHook() {
-    // Being Terra tests are executed on an SPA, a full refresh is required
-    // in order to reset the site. This ensures customProperty tests and any
-    // other dom modifications are cleared before starting a test.
-    global.browser.refresh();
-  },
 };
 
 config.services = wdioConf.config.services.concat([WebpackDevService]);

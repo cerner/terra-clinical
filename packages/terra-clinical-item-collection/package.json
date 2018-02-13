@@ -23,16 +23,16 @@
   "peerDependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "terra-base": "^2.0.0"
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.0.0",
+    "terra-base": "^3.0.0",
     "terra-clinical-item-view": "^1.6.0",
-    "terra-list": "^1.0.0",
-    "terra-responsive-element": "^1.0.0",
-    "terra-table": "^1.0.0"
+    "terra-list": "^2.0.0",
+    "terra-responsive-element": "^2.0.0",
+    "terra-table": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

@@ -89,7 +89,7 @@ it('should render ActionHeader with children', () => {
   const minimizeActionHeader = (
     <IntlProvider locale={locale} messages={messages}>
       <ActionHeader>
-        <Button />
+        <Button text={'test button'} />
       </ActionHeader>
     </IntlProvider>
   );

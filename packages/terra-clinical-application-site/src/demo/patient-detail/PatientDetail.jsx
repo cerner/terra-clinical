@@ -61,8 +61,8 @@ class PatientDetail extends React.Component {
         header={(
           <NavigationHeader app={this.props.app}>
             <span>
-              {this.props.onRefresh && <Button onClick={this.props.onRefresh} icon={<IconRefresh isSpin={this.props.isLoading} />} />}
-              <Button style={{ marginLeft: '5px' }} icon={<IconEdit />} onClick={this.showPatientUpdate(patient, 'modal')} />
+              {this.props.onRefresh && <Button onClick={this.props.onRefresh} text={'Refresh'} isIconOnly icon={<IconRefresh isSpin={this.props.isLoading} />} />}
+              <Button style={{ marginLeft: '5px' }} text={'Edit'} isIconOnly icon={<IconEdit />} onClick={this.showPatientUpdate(patient, 'modal')} />
             </span>
           </NavigationHeader>
         )}

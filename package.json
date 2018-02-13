@@ -103,7 +103,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "~8.0.0",
     "stylelint-config-sass-guidelines": "^3.0.0",
-    "terra-props-table": "^1.0.0",
+    "terra-props-table": "^2.0.0",
     "terra-toolkit": "^2.7.0",
     "wdio-mocha-framework": "^0.5.11",
     "wdio-visual-regression-service": "^0.8.0",

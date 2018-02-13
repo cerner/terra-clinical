@@ -69,8 +69,8 @@ class PatientList extends React.PureComponent {
                 }
                 endAccessory={
                   <ButtonGroup>
-                    <ButtonGroup.Button onClick={this.showPatientDetail(patient, 'modal')} icon={<IconInformation />} key="MODAL" />
-                    <ButtonGroup.Button onClick={this.showPatientDetail(patient, 'panel')} icon={<IconPanelRight />} key="PANEL" />
+                    <ButtonGroup.Button onClick={this.showPatientDetail(patient, 'modal')} icon={<IconInformation />} text={'Show Information'} key="MODAL" />
+                    <ButtonGroup.Button onClick={this.showPatientDetail(patient, 'panel')} icon={<IconPanelRight />} text={'Show Panel'} key="PANEL" />
                   </ButtonGroup>
                 }
               />
@@ -85,7 +85,7 @@ class PatientList extends React.PureComponent {
         className="orion-PatientList"
         header={(
           <NavigationHeader title="Patient List" app={this.props.app}>
-            {this.props.onRefresh && <Button key="Refresh" onClick={this.props.onRefresh} icon={<IconRefresh isSpin={this.props.isLoading} />} />}
+            {this.props.onRefresh && <Button key="Refresh" onClick={this.props.onRefresh} isIconOnly icon={<IconRefresh isSpin={this.props.isLoading} />} text={'Refresh'} />}
           </NavigationHeader>
         )}
         fill
