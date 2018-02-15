@@ -42,9 +42,6 @@ Unreleased
 * Updated DetailView site examples to be more realistic.
 * Update site to use slide panel
 
-### Fixes
-* Fix application-site demo styling
-
 1.2.0 - (July 27, 2017)
 -----------------
 * Converted component to use CSS modules

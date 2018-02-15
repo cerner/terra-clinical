@@ -107,7 +107,6 @@ class App extends React.Component {
           <List.Item content={<Link onClick={this.handleResetScroll} to="/site/onset-picker">Onset Picker</Link>} />
           <List.Item content={<Link onClick={this.handleResetScroll} to="/site/no-data-view">No Data View</Link>} />
           <List.Item content={<Link onClick={this.handleResetScroll} to="/tests">Tests</Link>} />
-          <List.Item content={<Link to="/demo">Demo</Link>} />
         </List>
       </ContentContainer>
     );

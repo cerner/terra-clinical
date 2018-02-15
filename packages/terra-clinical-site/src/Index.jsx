@@ -17,7 +17,6 @@ import HeaderExamples from './examples/header/Index';
 import LabelValueViewExamples from './examples/label-value-view/Index';
 import NoDataViewExamples from './examples/no-data-view/Index';
 import ItemCollectionExamples from './examples/item-collection/Index';
-import DemoApplicationExamples from './examples/demo-application/Index';
 import OnsetPickerExamples from './examples/onset-picker/Index';
 
 // Test
@@ -82,7 +81,6 @@ ReactDOM.render((
         {OnsetPickerTestRoutes}
         {ItemCollectionTestRoutes}
       </Route>
-      <Route path="/demo" component={DemoApplicationExamples} />
     </Router>
   </div>
 ), document.getElementById('root'));

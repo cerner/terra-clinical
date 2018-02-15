@@ -56,25 +56,6 @@
     padding: 1.25rem;
     width: 100%;
   }
-
-// Doing a bit of positioning here to override other site styling that the demo does not need
-  .demoApplication {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-
-    > div {
-      height: 100%;
-    }
-
-    [class*="ItemView__accessory"],
-    [class*="ItemView__accessory"] > * {
-      max-width: 100%;
-    }
-  }
 }
 
 #site-body {
