@@ -8,7 +8,6 @@ import styles from './site.scss';
 
 // Examples
 import ActionHeaderExamples from './examples/action-header/Index';
-import ApplicationExamples from './examples/application/Index';
 import DetailViewExamples from './examples/detail-view/Index';
 import ErrorViewExamples from './examples/error-view/Index';
 import ItemDisplayExamples from './examples/item-display/Index';
@@ -36,11 +35,6 @@ import NoDataViewTestRoutes from 'terra-clinical-no-data-view/tests/nightwatch/N
 import OnsetPickerTestRoutes from 'terra-clinical-onset-picker/tests/nightwatch/OnsetPickerTestRoutes';
 import ItemCollectionTestRoutes from 'terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTestRoutes';
 
-// Remove eslint rule when these packages have been released.
-/* eslint-disable import/no-extraneous-dependencies */
-import ApplicationTestRoutes from 'terra-clinical-application/tests/nightwatch/ApplicationTestRoutes';
-/* eslint-enable import/no-extraneous-dependencies */
-
 import TestLinks from './TestLinks';
 /* eslint-enable import/first */
 
@@ -53,7 +47,6 @@ ReactDOM.render((
       <Route path="/site" component={App}>
         <IndexRoute component={Home} />
         <Route path="action-header" component={ActionHeaderExamples} />
-        <Route path="application" component={ApplicationExamples} />
         <Route path="detail-view" component={DetailViewExamples} />
         <Route path="error-view" component={ErrorViewExamples} />
         <Route path="header" component={HeaderExamples} />
@@ -67,7 +60,6 @@ ReactDOM.render((
       <Route path="/tests" component={TestContainer}>
         <IndexRoute component={TestLinks} />
         {ActionHeaderTestRoutes}
-        {ApplicationTestRoutes}
         {DetailViewTestRoutes}
         {DetailListTestRoutes}
         {DetailListItemTestRoutes}
