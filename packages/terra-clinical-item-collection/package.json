@@ -30,9 +30,9 @@
     "prop-types": "^15.5.8",
     "terra-base": "^3.0.0",
     "terra-clinical-item-view": "^1.6.0",
-    "terra-list": "^2.0.0",
-    "terra-responsive-element": "^2.0.0",
-    "terra-table": "^2.0.0"
+    "terra-list": "^2.0.1",
+    "terra-responsive-element": "^2.0.1",
+    "terra-table": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
