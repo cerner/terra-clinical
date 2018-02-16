@@ -12,6 +12,7 @@ import MinimizeActionHeader from './MinimizeActionHeader';
 import BackCloseActionHeader from './BackCloseActionHeader';
 import PreviousNextActionHeader from './PreviousNextActionHeader';
 import ChildrenActionHeader from './ChildrenActionHeader';
+import KeepCloseButtonActionHeader from './KeepCloseButtonActionHeader';
 
 const routes = (
   <div>
@@ -22,6 +23,7 @@ const routes = (
     <Route path="/tests/action-header-tests/action-header-minimize" component={MinimizeActionHeader} />
     <Route path="/tests/action-header-tests/action-header-back" component={BackActionHeader} />
     <Route path="/tests/action-header-tests/action-header-close" component={CloseActionHeader} />
+    <Route path="/tests/action-header-tests/action-header-keep-close-button" component={KeepCloseButtonActionHeader} />
     <Route path="/tests/action-header-tests/action-header-back-close" component={BackCloseActionHeader} />
     <Route path="/tests/action-header-tests/action-header-previous-next" component={PreviousNextActionHeader} />
     <Route path="/tests/action-header-tests/action-header-child" component={ChildrenActionHeader} />

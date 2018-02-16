@@ -58,6 +58,11 @@ const propTypes = {
   onPrevious: PropTypes.func,
 
   /**
+   * A Boolean indicating if close button should be displayed on small viewports when separate onBack callback is not set.
+   */
+  keepCloseButton: PropTypes.bool,
+
+  /**
    * Child element to be displayed on the right end of the header.
    * This is intended to be used with the CollapsibleMenuView.
    */
@@ -72,6 +77,7 @@ const defaultProps = {
   onMinimize: null,
   onNext: null,
   onPrevious: null,
+  keepCloseButton: false,
   children: null,
 };
 
@@ -92,6 +98,7 @@ const ActionHeader = ({
   onMinimize,
   onPrevious,
   onNext,
+  keepCloseButton,
   children,
   ...customProps }, {
   intl,
@@ -109,7 +116,7 @@ const ActionHeader = ({
 
   let closeButtonSmall;
   let backButtonSmall;
-  if (onClose && !onBack) {
+  if (onClose && !onBack && !keepCloseButton) {
     backButtonSmall = <Button isIconOnly icon={<IconLeft />} text={backText} onClick={onClose} />;
     closeButtonSmall = null;
   } else {
