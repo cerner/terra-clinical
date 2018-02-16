@@ -40,8 +40,8 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     const width = screenWidth(browser);
     if (width < browser.globals.breakpoints.medium[0]) {
       browser
-        .assert.elementPresent('[class*="left-buttons"] > button')
-        .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Back');
+        .assert.elementPresent('[class*="right-buttons"] > button')
+        .assert.attributeContains('[class*="right-buttons"] > button', 'aria-label', 'Close');
     } else {
       browser
         .assert.elementPresent('[class*="right-buttons"] > button')
