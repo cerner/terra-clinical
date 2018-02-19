@@ -25,7 +25,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "terra-base": "^3.0.0",
-    "terra-clinical-item-display": "^1.7.0",
+    "terra-clinical-item-display": "^2.0.0",
     "terra-icon": "^2.0.1"
   },
   "dependencies": {

@@ -30,7 +30,7 @@
     "terra-base": "^3.0.0",
     "terra-button": "^2.0.0",
     "terra-button-group": "^2.0.1",
-    "terra-clinical-header": "^1.8.0",
+    "terra-clinical-header": "^2.0.0",
     "terra-icon": "^2.0.1"
   },
   "dependencies": {
