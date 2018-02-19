@@ -8,6 +8,7 @@ Unreleased
 ----------
 ### Changed
 * Marked terra-clinical-error-view and terra-clinical-no-data-view as deprecated.
+* Update to React 16
 
 1.8.0 - (January 23, 2018)
 -----------------
@@ -43,9 +44,6 @@ Unreleased
 * Change data-class to be name spaced
 * Updated DetailView site examples to be more realistic.
 * Update site to use slide panel
-
-### Fixes
-* Fix application-site demo styling
 
 1.2.0 - (July 27, 2017)
 -----------------

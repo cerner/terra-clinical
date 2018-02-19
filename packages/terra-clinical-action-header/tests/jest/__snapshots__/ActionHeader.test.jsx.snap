@@ -54,9 +54,11 @@ exports[`should render ActionHeader with children 1`] = `
     isBlock={false}
     isCompact={false}
     isDisabled={false}
+    isIconOnly={false}
     isReversed={false}
+    text="test button"
     type="button"
-    variant="default"
+    variant="neutral"
   />
 </ActionHeader>
 `;

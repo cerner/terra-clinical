@@ -22,14 +22,14 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "terra-base": "^2.0.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.0.0"
+    "terra-base": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
