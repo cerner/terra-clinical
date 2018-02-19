@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Update to React 16
 
+1.8.0 - (February 19, 2018)
+----------
+### Changed
+* Minor dependency updates
+
 1.7.0 - (November 29, 2017)
 -----------------
 ### Added
@@ -14,7 +19,7 @@ Unreleased
 1.6.0 - (November 15, 2017)
 -----------------
 ### Changed
-* Update flex-end styling 
+* Update flex-end styling
 
 1.5.0 - (September 26, 2017)
 -----------------
