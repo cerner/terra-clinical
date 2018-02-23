@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Margin between text & start/end content
 
 2.0.0 - (February 19, 2018)
 ----------
