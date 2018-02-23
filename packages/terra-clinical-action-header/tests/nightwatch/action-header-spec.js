@@ -35,6 +35,20 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
     }
   },
 
+  'Displays an action header with close button even in small view ports': (browser) => {
+    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-keep-close-button`);
+    const width = screenWidth(browser);
+    if (width < browser.globals.breakpoints.medium[0]) {
+      browser
+        .assert.elementPresent('[class*="right-buttons"] > button')
+        .assert.attributeContains('[class*="right-buttons"] > button', 'aria-label', 'Close');
+    } else {
+      browser
+        .assert.elementPresent('[class*="right-buttons"] > button')
+        .assert.attributeContains('[class*="right-buttons"] > button', 'aria-label', 'Close');
+    }
+  },
+
   'Displays an action header with maximize button': (browser) => {
     browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-maximize`);
     const width = screenWidth(browser);

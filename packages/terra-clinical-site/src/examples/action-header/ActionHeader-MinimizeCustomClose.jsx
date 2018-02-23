@@ -52,7 +52,7 @@ const ActionHeaderExample = () => (
           ]}
         />
         <CollapsibleMenuView.Divider key="Divider2" />
-        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" isSelectable>
+        <CollapsibleMenuView.ItemGroup key="ViewTypeSelection" selectedKeys={['tableView']}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"

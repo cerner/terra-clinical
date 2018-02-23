@@ -12,6 +12,7 @@ const ActionHeaderTests = () => (
       <li><Link to="/tests/action-header-tests/action-header-minimize">ActionHeader - Minimize</Link></li>
       <li><Link to="/tests/action-header-tests/action-header-back">ActionHeader - Back</Link></li>
       <li><Link to="/tests/action-header-tests/action-header-close">ActionHeader - Close</Link></li>
+      <li><Link to="/tests/action-header-tests/action-header-keep-close-button">ActionHeader - Keep Close Button</Link></li>
       <li><Link to="/tests/action-header-tests/action-header-back-close">ActionHeader - Back and Close</Link></li>
       <li><Link to="/tests/action-header-tests/action-header-previous-next">ActionHeader - Previous-Next</Link></li>
       <li><Link to="/tests/action-header-tests/action-header-child">ActionHeader - Custom Content</Link></li>

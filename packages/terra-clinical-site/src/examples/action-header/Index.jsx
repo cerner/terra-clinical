@@ -13,6 +13,7 @@ import HeaderSrc from '!raw-loader!terra-clinical-action-header/src/ActionHeader
 import ActionHeaderBackNextPreviousClose from './ActionHeader-BackNextPreviousClose';
 import ActionHeaderExpandClose from './ActionHeader-MaximizeClose';
 import ActionHeaderMinimizeCustomClose from './ActionHeader-MinimizeCustomClose';
+import ActionHeaderKeepClose from './ActionHeader-KeepClose';
 
 const HeaderExamples = () => (
   <div>
@@ -24,6 +25,8 @@ const HeaderExamples = () => (
     <ActionHeaderBackNextPreviousClose />
     <h2>Maximize, Close</h2>
     <ActionHeaderExpandClose />
+    <h2>Keeps close button in small view port</h2>
+    <ActionHeaderKeepClose />
     <h2>Minimize, Custom Content, Children, Close </h2>
     <ActionHeaderMinimizeCustomClose />
   </div>
