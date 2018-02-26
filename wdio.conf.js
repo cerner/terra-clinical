@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const wdioConf = require('terra-toolkit/lib/wdio/conf');
-const webpackConfig = require('./packages/terra-clinical-site/webpack.config.js');
+const webpackConfig = require('./webpack.config.js');
 const WebpackDevService = require('terra-toolkit/lib/wdio/services/index').WebpackDevService;
 const localIP = require('ip');
 const path = require('path');
@@ -30,6 +30,12 @@ const config = {
       TZ: 'America/Chicago',
     },
   },
+
+  // global visual-regression selector
+  terra: {
+    selector: '[data-terra-dev-site-content] *:first-child',
+  },
+
 
    // Configuration for WebPackDevService
   webpackPort,

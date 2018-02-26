@@ -3,5 +3,12 @@
   "packages": [
     "packages/*"
   ],
+  "commands": {
+    "publish": {
+      "ignore": [
+        "terra-clinical-site"
+      ]
+    }
+  },
   "version": "independent"
 }

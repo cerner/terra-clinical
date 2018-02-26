@@ -4,14 +4,14 @@ const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resi
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Renders the Application with provided AppDelegate': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/application-tests/default`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-application/default-application`)
       .assert.elementPresent('#Application')
       .assert.containsText('.test-ContainerComponent', 'App is present');
   },
 
   'Renders the Application without provided AppDelegate': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/application-tests/no-app-delegate`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-application/no-app-delegate-application`)
       .assert.elementPresent('#Application')
       .assert.containsText('.test-ContainerComponent', 'App is not present');
   },

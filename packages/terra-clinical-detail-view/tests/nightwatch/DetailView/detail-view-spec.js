@@ -4,13 +4,13 @@ const resizeTo = require('terra-toolkit/lib/nightwatch/responsive-helpers').resi
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Displays a divided Detail View with provided components': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/detail-view-tests/detail-view-divided`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-detail-view/detail-view/detail-view-divided`)
       .assert.elementPresent('#DetailView hr');
   },
 
   'Displays a Detail View that is not divided with provided components': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/detail-view-tests/detail-view-no-divider`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-detail-view/detail-view/detail-view-no-divider`)
       .assert.elementNotPresent('#DetailView hr');
   },
 });
