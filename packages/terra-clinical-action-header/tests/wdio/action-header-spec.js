@@ -1,6 +1,9 @@
 /* global browser, Terra, before */
 
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
+const rules = {
+  'color-contrast': { enabled: false },
+};
 
 describe('Action Header', () => {
   describe('Displays a default action header', () => {
@@ -80,7 +83,7 @@ describe('Action Header', () => {
       browser.url('/#/tests/action-header-tests/action-header-previous-next');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, rules });
     Terra.should.beAccessible();
   });
 
