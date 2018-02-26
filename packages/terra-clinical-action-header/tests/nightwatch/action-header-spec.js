@@ -36,7 +36,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an action header with close button even in small view ports': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-keep-close-button`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/keep-close-button-action-header`);
     const width = screenWidth(browser);
     if (width < browser.globals.breakpoints.medium[0]) {
       browser

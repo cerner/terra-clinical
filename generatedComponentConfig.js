@@ -2,17 +2,15 @@
 
 // Component Examples
 import TerraClinicalSiteIndex from './packages/terra-clinical-site/src/examples/action-header/Index';
-import TerraClinicalSiteIndex1 from './packages/terra-clinical-site/src/examples/application/Index';
-import TerraClinicalSiteIndex2 from './packages/terra-clinical-site/src/examples/demo-application/Index';
-import TerraClinicalSiteIndex3 from './packages/terra-clinical-site/src/examples/detail-view/Index';
-import TerraClinicalSiteIndex4 from './packages/terra-clinical-site/src/examples/error-view/Index';
-import TerraClinicalSiteIndex5 from './packages/terra-clinical-site/src/examples/header/Index';
-import TerraClinicalSiteIndex6 from './packages/terra-clinical-site/src/examples/item-collection/Index';
-import TerraClinicalSiteIndex7 from './packages/terra-clinical-site/src/examples/item-display/Index';
-import TerraClinicalSiteIndex8 from './packages/terra-clinical-site/src/examples/item-view/Index';
-import TerraClinicalSiteIndex9 from './packages/terra-clinical-site/src/examples/label-value-view/Index';
-import TerraClinicalSiteIndex10 from './packages/terra-clinical-site/src/examples/no-data-view/Index';
-import TerraClinicalSiteIndex11 from './packages/terra-clinical-site/src/examples/onset-picker/Index';
+import TerraClinicalSiteIndex1 from './packages/terra-clinical-site/src/examples/detail-view/Index';
+import TerraClinicalSiteIndex2 from './packages/terra-clinical-site/src/examples/error-view/Index';
+import TerraClinicalSiteIndex3 from './packages/terra-clinical-site/src/examples/header/Index';
+import TerraClinicalSiteIndex4 from './packages/terra-clinical-site/src/examples/item-collection/Index';
+import TerraClinicalSiteIndex5 from './packages/terra-clinical-site/src/examples/item-display/Index';
+import TerraClinicalSiteIndex6 from './packages/terra-clinical-site/src/examples/item-view/Index';
+import TerraClinicalSiteIndex7 from './packages/terra-clinical-site/src/examples/label-value-view/Index';
+import TerraClinicalSiteIndex8 from './packages/terra-clinical-site/src/examples/no-data-view/Index';
+import TerraClinicalSiteIndex9 from './packages/terra-clinical-site/src/examples/onset-picker/Index';
 
 // Component Test Examples
 import BackActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/BackActionHeader';
@@ -20,13 +18,11 @@ import BackCloseActionHeader from './packages/terra-clinical-action-header/tests
 import ChildrenActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/ChildrenActionHeader';
 import CloseActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/CloseActionHeader';
 import DefaultActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/DefaultActionHeader';
+import KeepCloseButtonActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/KeepCloseButtonActionHeader';
 import MaximizeActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/MaximizeActionHeader';
 import MinimizeActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/MinimizeActionHeader';
 import PreviousNextActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/PreviousNextActionHeader';
 import TitleActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/TitleActionHeader';
-import ContainerComponent from './packages/terra-clinical-application/tests/nightwatch/ContainerComponent';
-import DefaultApplication from './packages/terra-clinical-application/tests/nightwatch/DefaultApplication';
-import NoAppDelegateApplication from './packages/terra-clinical-application/tests/nightwatch/NoAppDelegateApplication';
 import LargeItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/LargeItemList';
 import NormalItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/NormalItemList';
 import DefaultListItem from './packages/terra-clinical-detail-view/tests/nightwatch/DetailListItem/DefaultListItem';
@@ -107,6 +103,11 @@ const componentConfig = {
         component: DefaultActionHeader,
       },
       {
+        name: 'Keep Close Button Action Header',
+        path: '/keep-close-button-action-header',
+        component: KeepCloseButtonActionHeader,
+      },
+      {
         name: 'Maximize Action Header',
         path: '/maximize-action-header',
         component: MaximizeActionHeader,
@@ -125,27 +126,6 @@ const componentConfig = {
         name: 'Title Action Header',
         path: '/title-action-header',
         component: TitleActionHeader,
-      },
-    ],
-  },
-  'terra-clinical-application': {
-    name: 'Clinical Application',
-    path: '/clinical-application',
-    tests: [
-      {
-        name: 'Container Component',
-        path: '/container-component',
-        component: ContainerComponent,
-      },
-      {
-        name: 'Default Application',
-        path: '/default-application',
-        component: DefaultApplication,
-      },
-      {
-        name: 'No App Delegate Application',
-        path: '/no-app-delegate-application',
-        component: NoAppDelegateApplication,
       },
     ],
   },
@@ -501,35 +481,13 @@ const componentConfig = {
         ],
       },
       {
-        name: 'Application',
-        path: '/application',
-        pages: [
-          {
-            name: 'Index',
-            path: '/index',
-            component: TerraClinicalSiteIndex1,
-          },
-        ],
-      },
-      {
-        name: 'Demo Application',
-        path: '/demo-application',
-        pages: [
-          {
-            name: 'Index',
-            path: '/index',
-            component: TerraClinicalSiteIndex2,
-          },
-        ],
-      },
-      {
         name: 'Detail View',
         path: '/detail-view',
         pages: [
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex3,
+            component: TerraClinicalSiteIndex1,
           },
         ],
       },
@@ -540,7 +498,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex4,
+            component: TerraClinicalSiteIndex2,
           },
         ],
       },
@@ -551,7 +509,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex5,
+            component: TerraClinicalSiteIndex3,
           },
         ],
       },
@@ -562,7 +520,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex6,
+            component: TerraClinicalSiteIndex4,
           },
         ],
       },
@@ -573,7 +531,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex7,
+            component: TerraClinicalSiteIndex5,
           },
         ],
       },
@@ -584,7 +542,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex8,
+            component: TerraClinicalSiteIndex6,
           },
         ],
       },
@@ -595,7 +553,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex9,
+            component: TerraClinicalSiteIndex7,
           },
         ],
       },
@@ -606,7 +564,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex10,
+            component: TerraClinicalSiteIndex8,
           },
         ],
       },
@@ -617,7 +575,7 @@ const componentConfig = {
           {
             name: 'Index',
             path: '/index',
-            component: TerraClinicalSiteIndex11,
+            component: TerraClinicalSiteIndex9,
           },
         ],
       },
