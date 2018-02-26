@@ -18,9 +18,12 @@ const config = {
   ...wdioConf.config,
   baseUrl: `http://${localIP.address()}:${webpackPort}`,
   specs: [specs],
+  exclude: [
+    'packages/terra-clinical-error-view/tests/wdio/**/*-spec.js',
+  ],
 
-  // Terra-toolkit services are 'visual-regression', AxeService, TerraService, SeleniumDockerService
-  services: wdioConf.config.services.concat([WebpackDevService]),
+  // Travis only has 1 browser instace, set maxInstances to 1 to prevent timeouts
+  maxInstances: process.env.CI ? 1 : wdioConf.config.maxInstances,
 
   // Configuration for terra-toolkit's SeleniumDocker service
   seleniumDocker: {
@@ -31,15 +34,25 @@ const config = {
     },
   },
 
+  axe: {
+    inject: true,
+    options: {
+      rules: [{
+        id: 'landmark-one-main',
+        enabled: false,
+      }],
+    },
+  },
+
   // global visual-regression selector
   terra: {
     selector: '[data-terra-dev-site-content] *:first-child',
   },
-
 
    // Configuration for WebPackDevService
   webpackPort,
   webpackConfig,
 };
 
+config.services = wdioConf.config.services.concat([WebpackDevService]);
 exports.config = config;

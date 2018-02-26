@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-action-header",
   "main": "lib/ActionHeader.js",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side.",
   "repository": {
     "type": "git",
@@ -22,26 +22,26 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "react-intl": "^2.3.0"
+    "react-intl": "^2.4.0"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "terra-base": "^2.0.0",
-    "terra-button": "^1.0.0",
-    "terra-button-group": "^1.0.0",
-    "terra-clinical-header": "^1.7.0",
-    "terra-icon": "^1.0.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.0.0",
+    "terra-button": "^2.0.0",
+    "terra-button-group": "^2.0.1",
+    "terra-clinical-header": "^2.0.0",
+    "terra-icon": "^2.0.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.0.0",
-    "terra-button": "^1.0.0",
-    "terra-button-group": "^1.0.0",
-    "terra-clinical-header": "^1.7.0",
-    "terra-icon": "^1.0.0",
-    "terra-responsive-element": "^1.0.0"
+    "terra-base": "^3.0.0",
+    "terra-button": "^2.0.1",
+    "terra-button-group": "^2.0.1",
+    "terra-clinical-header": "^2.0.0",
+    "terra-icon": "^2.0.1",
+    "terra-responsive-element": "^2.0.1"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

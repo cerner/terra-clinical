@@ -2,6 +2,7 @@
 
 exports[`should render ActionHeader with Previous-Next button when onNext is givien 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={null}
@@ -14,6 +15,7 @@ exports[`should render ActionHeader with Previous-Next button when onNext is giv
 
 exports[`should render ActionHeader with Previous-Next button when onPrevious is givien 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={null}
@@ -26,6 +28,7 @@ exports[`should render ActionHeader with Previous-Next button when onPrevious is
 
 exports[`should render ActionHeader with back button 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={[Function]}
   onClose={null}
   onMaximize={null}
@@ -38,6 +41,7 @@ exports[`should render ActionHeader with back button 1`] = `
 
 exports[`should render ActionHeader with children 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={null}
@@ -50,15 +54,18 @@ exports[`should render ActionHeader with children 1`] = `
     isBlock={false}
     isCompact={false}
     isDisabled={false}
+    isIconOnly={false}
     isReversed={false}
+    text="test button"
     type="button"
-    variant="default"
+    variant="neutral"
   />
 </ActionHeader>
 `;
 
 exports[`should render ActionHeader with close button 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={[Function]}
   onMaximize={null}
@@ -71,6 +78,7 @@ exports[`should render ActionHeader with close button 1`] = `
 
 exports[`should render ActionHeader with expand button 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={[Function]}
@@ -83,6 +91,7 @@ exports[`should render ActionHeader with expand button 1`] = `
 
 exports[`should render ActionHeader with minimize button 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={null}
@@ -95,6 +104,7 @@ exports[`should render ActionHeader with minimize button 1`] = `
 
 exports[`should render ActionHeader with title 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={null}
@@ -107,6 +117,7 @@ exports[`should render ActionHeader with title 1`] = `
 
 exports[`should render default component 1`] = `
 <ActionHeader
+  keepCloseButton={false}
   onBack={null}
   onClose={null}
   onMaximize={null}

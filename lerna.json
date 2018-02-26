@@ -3,12 +3,15 @@
   "packages": [
     "packages/*"
   ],
+  "version": "independent",
   "commands": {
     "publish": {
       "ignore": [
+        "DEPENDENCIES.md",
+        "terra-clinical-error-view",
+        "terra-clinical-no-data-view",
         "terra-clinical-site"
       ]
     }
-  },
-  "version": "independent"
+  }
 }

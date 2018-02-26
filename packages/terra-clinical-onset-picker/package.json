@@ -1,6 +1,6 @@
 {
   "name": "terra-clinical-onset-picker",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for use in onset scenarios.",
   "main": "lib/OnsetPicker.js",
   "repository": {
@@ -24,23 +24,23 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "react-intl": "^2.3.0",
-    "terra-props-table": "^1.3.0"
+    "react-intl": "^2.4.0",
+    "terra-props-table": "^2.0.0"
   },
   "peerDependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "terra-base": "^2.0.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "mockdate": "^2.0.2",
     "moment": "^2.17.1",
     "prop-types": "^15.5.8",
-    "terra-base": "^2.0.0",
-    "terra-date-picker": "^1.9.0",
-    "terra-form": "^1.3.0",
-    "terra-i18n": "^1.4.0"
+    "terra-base": "^3.0.0",
+    "terra-date-picker": "^2.0.1",
+    "terra-form": "^2.0.1",
+    "terra-i18n": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",

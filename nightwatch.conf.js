@@ -13,5 +13,6 @@ if (isRepoTest) {
 }
 
 const config = nightwatchConfig(webpackConfig, srcFolders);
+config.src_folders = config.src_folders.filter(value => value !== 'packages/terra-clinical-error-view/tests/nightwatch' && value !== 'packages/terra-clinical-no-data-view/tests/nightwatch');
 
 module.exports = config;

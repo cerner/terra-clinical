@@ -1,6 +1,7 @@
 # Terra Clinical ErrorView
 
-The Terra Clinical ErrorView is a display presented with an error message and location for a button.
+The Terra ErrorView is a display presented with an error message and location for a button.  This component has been **deprecated** in
+favor of [terra-status-view](https://github.com/cerner/terra-core/tree/master/packages/terra-status-view).
 
 ## Getting Started
 
