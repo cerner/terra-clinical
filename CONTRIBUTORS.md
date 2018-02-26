@@ -15,6 +15,7 @@ Cerner Corporation
 - Kevin Schuster [@kschuste]
 - Yusuf Ali [@yusufali2205]
 - Ben Cai [@benbcai]
+- Sairam Rakshith Bhyravabhotla [@rakshith91]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -31,3 +32,4 @@ Cerner Corporation
 [@kschuste]: https://github.com/kschuste
 [@yusufali2205]: https://github.com/yusufali2205
 [@benbcai]: https://github.com/benbcai
+[@rakshith91]: https://github.com/rakshith91
