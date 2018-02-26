@@ -21,7 +21,7 @@ import OnsetPickerExamples from './examples/onset-picker/Index';
 // Test
 /* eslint-disable import/first */
 
-import ActionHeaderTestRoutes from 'terra-clinical-action-header/tests/nightwatch/ActionHeaderTestRoutes';
+import ActionHeaderTestRoutes from 'terra-clinical-action-header/tests/examples/ActionHeaderTestRoutes';
 import DetailViewTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewTestRoutes';
 import DetailListTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailList/DetailListTestRoutes';
 import DetailListItemTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailListItem/ListItemTestRoutes';
