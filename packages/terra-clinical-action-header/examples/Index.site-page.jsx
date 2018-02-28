@@ -2,18 +2,18 @@
 import React from 'react';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
-import ReadMe from 'terra-clinical-action-header/docs/README.md';
-import { version } from 'terra-clinical-action-header/package.json';
+import ReadMe from '../docs/README.md';
+import { version } from '../package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
-import HeaderSrc from '!raw-loader!terra-clinical-action-header/src/ActionHeader';
+import HeaderSrc from '!raw-loader!../src/ActionHeader';
 
 // Example Files
-import ActionHeaderBackNextPreviousClose from './ActionHeader-BackNextPreviousClose';
-import ActionHeaderExpandClose from './ActionHeader-MaximizeClose';
-import ActionHeaderMinimizeCustomClose from './ActionHeader-MinimizeCustomClose';
-import ActionHeaderKeepClose from './ActionHeader-KeepClose';
+import ActionHeaderBackNextPreviousClose from './index-examples/ActionHeader-BackNextPreviousClose';
+import ActionHeaderExpandClose from './index-examples/ActionHeader-MaximizeClose';
+import ActionHeaderMinimizeCustomClose from './index-examples/ActionHeader-MinimizeCustomClose';
+import ActionHeaderKeepClose from './index-examples/ActionHeader-KeepClose';
 
 const HeaderExamples = () => (
   <div>

@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React from 'react';
-import ActionHeader from 'terra-clinical-action-header';
+import ActionHeader from '../../src/ActionHeader';
 
 const ActionHeaderExample = () => (
   <div>
@@ -8,7 +8,9 @@ const ActionHeaderExample = () => (
     <ActionHeader
       title="Action Header"
       onClose={() => alert('You clicked close!')}
-      keepCloseButton
+      onBack={() => alert('You clicked back!')}
+      onNext={() => alert('You clicked next!')}
+      onPrevious={() => alert('You clicked previous!')}
     />
     <br />
   </div>

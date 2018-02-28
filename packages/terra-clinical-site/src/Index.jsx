@@ -7,7 +7,6 @@ import Home from './Home';
 import styles from './site.scss';
 
 // Examples
-import ActionHeaderExamples from './examples/action-header/Index';
 import ApplicationExamples from './examples/application/Index';
 import DetailViewExamples from './examples/detail-view/Index';
 import ErrorViewExamples from './examples/error-view/Index';
@@ -22,7 +21,6 @@ import OnsetPickerExamples from './examples/onset-picker/Index';
 // Test
 /* eslint-disable import/first */
 
-import ActionHeaderTestRoutes from 'terra-clinical-action-header/tests/nightwatch/ActionHeaderTestRoutes';
 import ApplicationTestRoutes from 'terra-clinical-application/tests/nightwatch/ApplicationTestRoutes';
 import DetailViewTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewTestRoutes';
 import DetailListTestRoutes from 'terra-clinical-detail-view/tests/nightwatch/DetailList/DetailListTestRoutes';
@@ -48,7 +46,6 @@ ReactDOM.render((
       <Redirect from="/" to="/site" />
       <Route path="/site" component={App}>
         <IndexRoute component={Home} />
-        <Route path="action-header" component={ActionHeaderExamples} />
         <Route path="application" component={ApplicationExamples} />
         <Route path="detail-view" component={DetailViewExamples} />
         <Route path="error-view" component={ErrorViewExamples} />
@@ -62,7 +59,6 @@ ReactDOM.render((
       </Route>
       <Route path="/tests" component={TestContainer}>
         <IndexRoute component={TestLinks} />
-        {ActionHeaderTestRoutes}
         {ApplicationTestRoutes}
         {DetailViewTestRoutes}
         {DetailListTestRoutes}
