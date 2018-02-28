@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Move examples and tests to local package
 
 2.0.0 - (February 19, 2018)
 ----------
