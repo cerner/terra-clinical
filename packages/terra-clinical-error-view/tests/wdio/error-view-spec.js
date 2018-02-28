@@ -13,26 +13,26 @@ describe('ErrorView', () => {
   };
 
   describe('default', () => {
-    before(() => browser.url('/#/tests/error-view-tests/default'));
+    before(() => browser.url('/#/raw/tests/clinical-error-view/default-error-view'));
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
   });
 
   describe('with name and description', () => {
-    before(() => browser.url('/#/tests/error-view-tests/text'));
+    before(() => browser.url('/#/raw/tests/clinical-error-view/text-error-view'));
 
     Terra.should.beAccessible({ viewports, rules });
     Terra.should.matchScreenshot({ viewports });
   });
 
   describe('with button', () => {
-    before(() => browser.url('/#/tests/error-view-tests/button'));
+    before(() => browser.url('/#/raw/tests/clinical-error-view/button-error-view'));
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
   });
 
   describe('with glyph hidden', () => {
-    before(() => browser.url('/#/tests/error-view-tests/hidden'));
+    before(() => browser.url('/#/raw/tests/clinical-error-view/hidden-error-view'));
     Terra.should.beAccessible({ viewports, rules });
     Terra.should.matchScreenshot({ viewports });
   });

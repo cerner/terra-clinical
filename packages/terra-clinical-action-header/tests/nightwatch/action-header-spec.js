@@ -4,25 +4,25 @@ const { resizeTo, screenWidth } = require('terra-toolkit/lib/nightwatch/responsi
 module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], {
   'Displays a default action header': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/default-action-header`)
       .assert.elementPresent('#ActionHeader');
   },
 
   'Displays an action header with title': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-title`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/title-action-header`)
       .assert.elementPresent('#ActionHeader');
   },
 
   'Displays an action header with back button': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-back`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/back-action-header`)
       .assert.elementPresent('[class*="left-buttons"] > button')
       .assert.attributeContains('[class*="left-buttons"] > button', 'aria-label', 'Back');
   },
 
   'Displays an action header with close button': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-close`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/close-action-header`);
     const width = screenWidth(browser);
     if (width < browser.globals.breakpoints.medium[0]) {
       browser
@@ -36,7 +36,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an action header with close button even in small view ports': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-keep-close-button`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/keep-close-button-action-header`);
     const width = screenWidth(browser);
     if (width < browser.globals.breakpoints.medium[0]) {
       browser
@@ -50,7 +50,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an action header with maximize button': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-maximize`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/maximize-action-header`);
     const width = screenWidth(browser);
     if (width < browser.globals.breakpoints.medium[0]) {
       browser.assert.elementNotPresent('[class*="left-buttons"] > button');
@@ -62,7 +62,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an action header with minimize button': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-minimize`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/minimize-action-header`);
     const width = screenWidth(browser);
     if (width < browser.globals.breakpoints.medium[0]) {
       browser.assert.elementNotPresent('[class*="left-buttons"] > button');
@@ -74,7 +74,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an action header with a back button and a close button': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-back-close`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/back-close-action-header`);
     browser
       .assert.elementPresent('#ActionHeader [class*="left-buttons"] > button')
       .assert.attributeContains('#ActionHeader [class*="left-buttons"] > button', 'aria-label', 'Back');
@@ -84,7 +84,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
   },
 
   'Displays an action header with a previous-next button-group': (browser) => {
-    browser.url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-previous-next`);
+    browser.url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/previous-next-action-header`);
     browser
       .assert.elementPresent('[class*="left-buttons"] button:first-child')
       .assert.attributeContains('[class*="left-buttons"] button:first-child', 'aria-label', 'Previous');
@@ -95,7 +95,7 @@ module.exports = resizeTo(['tiny', 'small', 'medium', 'large', 'huge', 'enormous
 
   'Displays an action header with custom content': (browser) => {
     browser
-      .url(`${browser.launchUrl}/#/tests/action-header-tests/action-header-child`)
+      .url(`${browser.launchUrl}/#/raw/tests/clinical-action-header/children-action-header`)
       .assert.elementPresent('#CustomContent');
   },
 });

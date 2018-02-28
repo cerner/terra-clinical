@@ -57,3 +57,4 @@ target
 **/__snapshots__/screen
 **/__snapshots__/diff
 errorScreenshots
+themeable-variables.json

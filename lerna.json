@@ -9,7 +9,8 @@
       "ignore": [
         "DEPENDENCIES.md",
         "terra-clinical-error-view",
-        "terra-clinical-no-data-view"
+        "terra-clinical-no-data-view",
+        "terra-clinical-site"
       ]
     }
   }
