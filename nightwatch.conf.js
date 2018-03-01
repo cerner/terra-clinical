@@ -1,6 +1,6 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const nightwatchConfig = require('terra-toolkit/lib/nightwatch/nightwatch.config.js').default;
-const webpackConfig = require('./packages/terra-clinical-site/webpack.config');
+const webpackConfig = require('./webpack.config');
 const getPackageTestDirectories = require('terra-toolkit/lib/nightwatch/setup-helper.js').getPackageTestDirectories;
 
 let srcFolders;
@@ -12,7 +12,10 @@ if (isRepoTest) {
   srcFolders = 'tests/nightwatch/';
 }
 
+if (Array.isArray(srcFolders)) {
+  srcFolders = srcFolders.filter(value => value !== 'packages/terra-clinical-error-view/tests/nightwatch' && value !== 'packages/terra-clinical-no-data-view/tests/nightwatch');
+}
+
 const config = nightwatchConfig(webpackConfig, srcFolders);
-config.src_folders = config.src_folders.filter(value => value !== 'packages/terra-clinical-error-view/tests/nightwatch' && value !== 'packages/terra-clinical-no-data-view/tests/nightwatch');
 
 module.exports = config;
