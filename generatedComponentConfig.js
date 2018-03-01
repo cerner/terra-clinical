@@ -14,16 +14,18 @@ import TerraClinicalSiteIndex9 from './packages/terra-clinical-site/src/examples
 import TerraClinicalSiteIndex10 from './packages/terra-clinical-site/src/examples/onset-picker/Index';
 
 // Component Test Examples
-import BackActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/BackActionHeader';
-import BackCloseActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/BackCloseActionHeader';
-import ChildrenActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/ChildrenActionHeader';
-import CloseActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/CloseActionHeader';
-import DefaultActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/DefaultActionHeader';
-import KeepCloseButtonActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/KeepCloseButtonActionHeader';
-import MaximizeActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/MaximizeActionHeader';
-import MinimizeActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/MinimizeActionHeader';
-import PreviousNextActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/PreviousNextActionHeader';
-import TitleActionHeader from './packages/terra-clinical-action-header/tests/nightwatch/TitleActionHeader';
+import ActionHeaderTestRoutes from './packages/terra-clinical-action-header/examples/test-examples/ActionHeaderTestRoutes';
+import ActionHeaderTests from './packages/terra-clinical-action-header/examples/test-examples/ActionHeaderTests';
+import BackActionHeader from './packages/terra-clinical-action-header/examples/test-examples/BackActionHeader';
+import BackCloseActionHeader from './packages/terra-clinical-action-header/examples/test-examples/BackCloseActionHeader';
+import ChildrenActionHeader from './packages/terra-clinical-action-header/examples/test-examples/ChildrenActionHeader';
+import CloseActionHeader from './packages/terra-clinical-action-header/examples/test-examples/CloseActionHeader';
+import DefaultActionHeader from './packages/terra-clinical-action-header/examples/test-examples/DefaultActionHeader';
+import KeepCloseButtonActionHeader from './packages/terra-clinical-action-header/examples/test-examples/KeepCloseButtonActionHeader';
+import MaximizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MaximizeActionHeader';
+import MinimizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MinimizeActionHeader';
+import PreviousNextActionHeader from './packages/terra-clinical-action-header/examples/test-examples/PreviousNextActionHeader';
+import TitleActionHeader from './packages/terra-clinical-action-header/examples/test-examples/TitleActionHeader';
 import ContainerComponent from './packages/terra-clinical-application/tests/nightwatch/ContainerComponent';
 import DefaultApplication from './packages/terra-clinical-application/tests/nightwatch/DefaultApplication';
 import NoAppDelegateApplication from './packages/terra-clinical-application/tests/nightwatch/NoAppDelegateApplication';
@@ -81,6 +83,16 @@ const componentConfig = {
     name: 'Clinical Action Header',
     path: '/clinical-action-header',
     tests: [
+      {
+        name: 'Action Header Test Routes',
+        path: '/action-header-test-routes',
+        component: ActionHeaderTestRoutes,
+      },
+      {
+        name: 'Action Header Tests',
+        path: '/action-header-tests',
+        component: ActionHeaderTests,
+      },
       {
         name: 'Back Action Header',
         path: '/back-action-header',
