@@ -26,9 +26,9 @@ import MaximizeActionHeader from './packages/terra-clinical-action-header/exampl
 import MinimizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MinimizeActionHeader';
 import PreviousNextActionHeader from './packages/terra-clinical-action-header/examples/test-examples/PreviousNextActionHeader';
 import TitleActionHeader from './packages/terra-clinical-action-header/examples/test-examples/TitleActionHeader';
-import ContainerComponent from './packages/terra-clinical-application/tests/nightwatch/ContainerComponent';
-import DefaultApplication from './packages/terra-clinical-application/tests/nightwatch/DefaultApplication';
-import NoAppDelegateApplication from './packages/terra-clinical-application/tests/nightwatch/NoAppDelegateApplication';
+import ContainerComponent from './packages/terra-clinical-application/examples/test-examples/ContainerComponent';
+import DefaultApplication from './packages/terra-clinical-application/examples/test-examples/DefaultApplication';
+import NoAppDelegateApplication from './packages/terra-clinical-application/examples/test-examples/NoAppDelegateApplication';
 import LargeItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/LargeItemList';
 import NormalItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/NormalItemList';
 import DefaultListItem from './packages/terra-clinical-detail-view/tests/nightwatch/DetailListItem/DefaultListItem';
@@ -38,21 +38,21 @@ import ButtonErrorView from './packages/terra-clinical-error-view/tests/nightwat
 import DefaultErrorView from './packages/terra-clinical-error-view/tests/nightwatch/DefaultErrorView';
 import HiddenErrorView from './packages/terra-clinical-error-view/tests/nightwatch/HiddenErrorView';
 import TextErrorView from './packages/terra-clinical-error-view/tests/nightwatch/TextErrorView';
-import DefaultHeader from './packages/terra-clinical-header/tests/nightwatch/DefaultHeader';
-import LeftAndRightContentHeader from './packages/terra-clinical-header/tests/nightwatch/LeftAndRightContentHeader';
-import LeftAndRightContentSubheader from './packages/terra-clinical-header/tests/nightwatch/LeftAndRightContentSubheader';
-import LeftContentHeader from './packages/terra-clinical-header/tests/nightwatch/LeftContentHeader';
-import LongTitleAndContentHeader from './packages/terra-clinical-header/tests/nightwatch/LongTitleAndContentHeader';
-import LongTitleHeader from './packages/terra-clinical-header/tests/nightwatch/LongTitleHeader';
-import NoTitleRightContentHeader from './packages/terra-clinical-header/tests/nightwatch/NoTitleRightContentHeader';
-import RightContentHeader from './packages/terra-clinical-header/tests/nightwatch/RightContentHeader';
-import TitleHeader from './packages/terra-clinical-header/tests/nightwatch/TitleHeader';
-import ItemCollectionAllElements from './packages/terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionAllElements';
-import ItemCollectionItemStyles from './packages/terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionItemStyles';
-import ItemCollectionListStyles from './packages/terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionListStyles';
-import ItemCollectionSelectable from './packages/terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionSelectable';
-import ItemCollectionTableStyles from './packages/terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionTableStyles';
-import ItemCollectionVaryingItems from './packages/terra-clinical-item-collection/tests/nightwatch/item-collection/ItemCollectionVaryingItems';
+import DefaultHeader from './packages/terra-clinical-header/examples/test-examples/DefaultHeader';
+import LeftAndRightContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentHeader';
+import LeftAndRightContentSubheader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentSubheader';
+import LeftContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftContentHeader';
+import LongTitleAndContentHeader from './packages/terra-clinical-header/examples/test-examples/LongTitleAndContentHeader';
+import LongTitleHeader from './packages/terra-clinical-header/examples/test-examples/LongTitleHeader';
+import NoTitleRightContentHeader from './packages/terra-clinical-header/examples/test-examples/NoTitleRightContentHeader';
+import RightContentHeader from './packages/terra-clinical-header/examples/test-examples/RightContentHeader';
+import TitleHeader from './packages/terra-clinical-header/examples/test-examples/TitleHeader';
+import ItemCollectionAllElements from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionAllElements';
+import ItemCollectionItemStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionItemStyles';
+import ItemCollectionListStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionListStyles';
+import ItemCollectionSelectable from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionSelectable';
+import ItemCollectionTableStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionTableStyles';
+import ItemCollectionVaryingItems from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionVaryingItems';
 import DefaultItemComment from './packages/terra-clinical-item-display/tests/nightwatch/comment/DefaultItemComment';
 import TextItemComment from './packages/terra-clinical-item-display/tests/nightwatch/comment/TextItemComment';
 import DefaultItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/DefaultItemDisplay';
@@ -60,23 +60,23 @@ import DisabledItemDisplay from './packages/terra-clinical-item-display/tests/ni
 import IconItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/IconItemDisplay';
 import ScalingIconItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/ScalingIconItemDisplay';
 import TextStyleItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/TextStyleItemDisplay';
-import AccessoryItemView from './packages/terra-clinical-item-view/tests/nightwatch/AccessoryItemView';
-import CommentItemView from './packages/terra-clinical-item-view/tests/nightwatch/CommentItemView';
-import DefaultItemView from './packages/terra-clinical-item-view/tests/nightwatch/DefaultItemView';
-import DisplaysItemView from './packages/terra-clinical-item-view/tests/nightwatch/DisplaysItemView';
-import OverflowDisplaysItemView from './packages/terra-clinical-item-view/tests/nightwatch/OverflowDisplaysItemView';
-import DefaultLabelValueView from './packages/terra-clinical-label-value-view/tests/nightwatch/DefaultLabelValueView';
-import MultipleValueLabelValueView from './packages/terra-clinical-label-value-view/tests/nightwatch/MultipleValueLabelValueView';
-import NodeValueLabelValueView from './packages/terra-clinical-label-value-view/tests/nightwatch/NodeValueLabelValueView';
-import TextValueLabelValueView from './packages/terra-clinical-label-value-view/tests/nightwatch/TextValueLabelValueView';
+import AccessoryItemView from './packages/terra-clinical-item-view/examples/test-examples/AccessoryItemView';
+import CommentItemView from './packages/terra-clinical-item-view/examples/test-examples/CommentItemView';
+import DefaultItemView from './packages/terra-clinical-item-view/examples/test-examples/DefaultItemView';
+import DisplaysItemView from './packages/terra-clinical-item-view/examples/test-examples/DisplaysItemView';
+import OverflowDisplaysItemView from './packages/terra-clinical-item-view/examples/test-examples/OverflowDisplaysItemView';
+import DefaultLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/DefaultLabelValueView';
+import MultipleValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/MultipleValueLabelValueView';
+import NodeValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/NodeValueLabelValueView';
+import TextValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/TextValueLabelValueView';
 import ContentNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/ContentNoDataView';
 import DefaultNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/DefaultNoDataView';
 import HiddenNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/HiddenNoDataView';
 import TextNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/TextNoDataView';
-import Default from './packages/terra-clinical-onset-picker/tests/nightwatch/component/Default';
-import FiveYears from './packages/terra-clinical-onset-picker/tests/nightwatch/component/FiveYears';
-import LessMonth from './packages/terra-clinical-onset-picker/tests/nightwatch/component/LessMonth';
-import LessYear from './packages/terra-clinical-onset-picker/tests/nightwatch/component/LessYear';
+import Default from './packages/terra-clinical-onset-picker/examples/test-examples/Default';
+import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears';
+import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth';
+import LessYear from './packages/terra-clinical-onset-picker/examples/test-examples/LessYear';
 
 const componentConfig = {
   'terra-clinical-action-header': {
@@ -297,40 +297,34 @@ const componentConfig = {
     path: '/clinical-item-collection',
     tests: [
       {
-        name: 'Item Collection',
-        path: '/item-collection',
-        tests: [
-          {
-            name: 'Item Collection All Elements',
-            path: '/item-collection-all-elements',
-            component: ItemCollectionAllElements,
-          },
-          {
-            name: 'Item Collection Item Styles',
-            path: '/item-collection-item-styles',
-            component: ItemCollectionItemStyles,
-          },
-          {
-            name: 'Item Collection List Styles',
-            path: '/item-collection-list-styles',
-            component: ItemCollectionListStyles,
-          },
-          {
-            name: 'Item Collection Selectable',
-            path: '/item-collection-selectable',
-            component: ItemCollectionSelectable,
-          },
-          {
-            name: 'Item Collection Table Styles',
-            path: '/item-collection-table-styles',
-            component: ItemCollectionTableStyles,
-          },
-          {
-            name: 'Item Collection Varying Items',
-            path: '/item-collection-varying-items',
-            component: ItemCollectionVaryingItems,
-          },
-        ],
+        name: 'Item Collection All Elements',
+        path: '/item-collection-all-elements',
+        component: ItemCollectionAllElements,
+      },
+      {
+        name: 'Item Collection Item Styles',
+        path: '/item-collection-item-styles',
+        component: ItemCollectionItemStyles,
+      },
+      {
+        name: 'Item Collection List Styles',
+        path: '/item-collection-list-styles',
+        component: ItemCollectionListStyles,
+      },
+      {
+        name: 'Item Collection Selectable',
+        path: '/item-collection-selectable',
+        component: ItemCollectionSelectable,
+      },
+      {
+        name: 'Item Collection Table Styles',
+        path: '/item-collection-table-styles',
+        component: ItemCollectionTableStyles,
+      },
+      {
+        name: 'Item Collection Varying Items',
+        path: '/item-collection-varying-items',
+        component: ItemCollectionVaryingItems,
       },
     ],
   },
@@ -475,30 +469,24 @@ const componentConfig = {
     path: '/clinical-onset-picker',
     tests: [
       {
-        name: 'Component',
-        path: '/component',
-        tests: [
-          {
-            name: 'Default',
-            path: '/default',
-            component: Default,
-          },
-          {
-            name: 'Five Years',
-            path: '/five-years',
-            component: FiveYears,
-          },
-          {
-            name: 'Less Month',
-            path: '/less-month',
-            component: LessMonth,
-          },
-          {
-            name: 'Less Year',
-            path: '/less-year',
-            component: LessYear,
-          },
-        ],
+        name: 'Default',
+        path: '/default',
+        component: Default,
+      },
+      {
+        name: 'Five Years',
+        path: '/five-years',
+        component: FiveYears,
+      },
+      {
+        name: 'Less Month',
+        path: '/less-month',
+        component: LessMonth,
+      },
+      {
+        name: 'Less Year',
+        path: '/less-year',
+        component: LessYear,
       },
     ],
   },

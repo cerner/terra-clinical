@@ -1,7 +1,7 @@
 import React from 'react';
 import Base from 'terra-base';
 import moment from 'moment';
-import OnsetPicker from '../../../lib/OnsetPicker';
+import OnsetPicker from '../../lib/OnsetPicker';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 

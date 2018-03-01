@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCollection from '../../../lib/ItemCollection';
+import ItemCollection from '../../lib/ItemCollection';
 
 const defaultItem = (
   <ItemCollection.Item
