@@ -3,8 +3,14 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
+## Changed
 * Move examples and tests to local package
+
+### Added
+* webdriver.io tests for `terra-clinical-action-header`
+
+### Removed
+* Nightwatch tests in favor of webdriver.io tests
 
 2.0.0 - (February 19, 2018)
 ----------
