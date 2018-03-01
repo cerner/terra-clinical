@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCollection from '../../../lib/ItemCollection';
+import ItemCollection from '../../lib/ItemCollection';
 
 class DefaultItemCollection extends React.Component {
   constructor(props) {
