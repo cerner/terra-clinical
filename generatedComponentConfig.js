@@ -29,11 +29,11 @@ import TitleActionHeader from './packages/terra-clinical-action-header/examples/
 import ContainerComponent from './packages/terra-clinical-application/examples/test-examples/ContainerComponent';
 import DefaultApplication from './packages/terra-clinical-application/examples/test-examples/DefaultApplication';
 import NoAppDelegateApplication from './packages/terra-clinical-application/examples/test-examples/NoAppDelegateApplication';
-import LargeItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/LargeItemList';
-import NormalItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/NormalItemList';
-import DefaultListItem from './packages/terra-clinical-detail-view/tests/nightwatch/DetailListItem/DefaultListItem';
-import DetailViewDivided from './packages/terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewDivided';
-import DetailViewNoDivider from './packages/terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewNoDivider';
+import LargeItemList from './packages/terra-clinical-detail-view/tests/wdio/DetailList/LargeItemList';
+import NormalItemList from './packages/terra-clinical-detail-view/tests/wdio/DetailList/NormalItemList';
+import DefaultListItem from './packages/terra-clinical-detail-view/tests/wdio/DetailListItem/DefaultListItem';
+import DetailViewDivided from './packages/terra-clinical-detail-view/tests/wdio/DetailView/DetailViewDivided';
+import DetailViewNoDivider from './packages/terra-clinical-detail-view/tests/wdio/DetailView/DetailViewNoDivider';
 import ButtonErrorView from './packages/terra-clinical-error-view/tests/nightwatch/ButtonErrorView';
 import DefaultErrorView from './packages/terra-clinical-error-view/tests/nightwatch/DefaultErrorView';
 import HiddenErrorView from './packages/terra-clinical-error-view/tests/nightwatch/HiddenErrorView';
