@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+## Changed
+* Move examples and tests to local package
+
 ### Added
 * webdriver.io tests for `terra-clinical-action-header`
 
