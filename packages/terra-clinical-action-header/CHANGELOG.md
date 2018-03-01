@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * webdriver.io tests for `terra-clinical-action-header`
 
+### Removed
+* Nightwatch tests in favor of webdriver.io tests
+
 2.0.0 - (February 19, 2018)
 ----------
 ### Changed
