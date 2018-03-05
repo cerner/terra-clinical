@@ -66,6 +66,7 @@
     "props-table": "lerna run props-table",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && npm run props-table && lerna publish",
     "start": "webpack-dev-server --progress",
+    "start:build": "npm run generate-config && npm run start",
     "start:express": "node scripts/express/app.js",
     "nightwatch": "nightwatch",
     "test": "jest && nightwatch && wdio",
