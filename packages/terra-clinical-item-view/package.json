@@ -41,7 +41,6 @@
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "props-table": "props-table ./src/ItemView.jsx --out-dir ./docs/props-table",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
