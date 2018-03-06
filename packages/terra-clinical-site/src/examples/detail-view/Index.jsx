@@ -19,7 +19,6 @@ const DetailViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <h2>Detail View</h2>
     <PropsTable id="detail_view_props" src={DetailViewSrc} componentName="Detail View" />
     <PropsTable id="detail_list_props" src={DetailListSrc} componentName="Detail List" />
     <PropsTable id="detail_list_item_props" src={DetailListItemSrc} componentName="Detail List Item" />
