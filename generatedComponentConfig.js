@@ -31,10 +31,10 @@ import NormalItemList from './packages/terra-clinical-detail-view/tests/nightwat
 import DefaultListItem from './packages/terra-clinical-detail-view/tests/nightwatch/DetailListItem/DefaultListItem';
 import DetailViewDivided from './packages/terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewDivided';
 import DetailViewNoDivider from './packages/terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewNoDivider';
-import ButtonErrorView from './packages/terra-clinical-error-view/tests/nightwatch/ButtonErrorView';
-import DefaultErrorView from './packages/terra-clinical-error-view/tests/nightwatch/DefaultErrorView';
-import HiddenErrorView from './packages/terra-clinical-error-view/tests/nightwatch/HiddenErrorView';
-import TextErrorView from './packages/terra-clinical-error-view/tests/nightwatch/TextErrorView';
+import ButtonErrorView from './packages/terra-clinical-error-view/examples/test-examples/ButtonErrorView.example';
+import DefaultErrorView from './packages/terra-clinical-error-view/examples/test-examples/DefaultErrorView.example';
+import HiddenErrorView from './packages/terra-clinical-error-view/examples/test-examples/HiddenErrorView.example';
+import TextErrorView from './packages/terra-clinical-error-view/examples/test-examples/TextErrorView.example';
 import DefaultHeader from './packages/terra-clinical-header/examples/test-examples/DefaultHeader.example';
 import LeftAndRightContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentHeader.example';
 import LeftAndRightContentSubheader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentSubheader.example';
