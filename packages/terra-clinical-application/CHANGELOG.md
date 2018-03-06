@@ -2,9 +2,9 @@ ChangeLog
 =========
 
 Unreleased
-----------
 ### Changed
 * Update to React 16
+* Migrate doc from site to local package
 
 1.4.0 - (February 19, 2018)
 ----------
