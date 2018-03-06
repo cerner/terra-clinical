@@ -12,4 +12,13 @@ describe('Detail List', () => {
     Terra.should.matchScreenshot({ viewports, selector });
     Terra.should.beAccessible();
   });
+
+  describe('Displays a default Detail List with a title and large list', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-detail-view/detail-list/large-item-list');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.should.beAccessible();
+  });
 });
