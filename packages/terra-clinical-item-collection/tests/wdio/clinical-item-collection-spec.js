@@ -41,7 +41,7 @@ describe('Item Collection', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
       expect(browser.element('#item2')).to.exist;
-      browser.keys(['\uE004', '\uE004', '\uE004', '\uE00D']);
+      browser.keys(['\uE004', '\uE004', '\uE004', '\uE007']);
     });
 
     Terra.should.matchScreenshot({ viewports });
