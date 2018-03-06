@@ -34,4 +34,4 @@ Cerner Corporation
 [@yusufali2205]: https://github.com/yusufali2205
 [@benbcai]: https://github.com/benbcai
 [@rakshith91]: https://github.com/rakshith91
-[@Blackop778]: https://github.com/Blackop778 s
+[@Blackop778]: https://github.com/Blackop778
