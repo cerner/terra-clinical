@@ -50,7 +50,7 @@
     "compile:prod": "webpack --config webpack.prod.config --p",
     "danger": "danger",
     "deploy": "webpack --config webpack.prod.config -p && gh-pages -d build",
-    "generate-config": "node node_modules/terra-dev-site/scripts/generate-component-config/generate-component-config.js -s 'packages/terra-clinical-site/src/examples/*/Index.jsx' -s 'packages/terra-*/tests/{nightwatch,nightwatch/*}/!(*-spec|*Tests|*TestRoutes|*Template|common)+(.jsx|.js)'",
+    "generate-config": "generate-config -s 'packages/terra-clinical-site/src/examples/*/Index.jsx' -s 'packages/terra-*/tests/{nightwatch,nightwatch/*}/!(*-spec|*Template|common)+(.jsx|.js)'",
     "heroku-prebuild": "npm install -g lerna@2.1.2 && lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest",
