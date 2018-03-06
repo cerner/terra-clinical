@@ -38,14 +38,10 @@ describe('Item Collection', () => {
   });
 
   describe('Returns child key for ENTER when onSelect is given to a selectable item collection', () => {
-    const selector = '#item2';
     before(() => {
       browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
       expect(browser.element('#item2')).to.exist;
-      browser.keys('\uE004');
-      browser.keys('\uE004');
-      browser.keys('\uE004');
-      browser.keys('\uE007');
+      browser.keys(['\uE004', '\uE004', '\uE004', '\uE00D']);
     });
 
     Terra.should.matchScreenshot({ viewports });
@@ -55,12 +51,7 @@ describe('Item Collection', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
       expect(browser.element('#item3')).to.exist;
-      browser.keys('\uE004');
-      browser.keys('\uE004');
-      browser.keys('\uE004');
-      browser.keys('\uE004');
-      browser.keys('\uE004');
-      browser.keys('\uE00D');
+      browser.keys(['\uE004', '\uE004', '\uE004', '\uE004', '\uE004', '\uE00D']);
     });
 
     Terra.should.matchScreenshot({ viewports });
