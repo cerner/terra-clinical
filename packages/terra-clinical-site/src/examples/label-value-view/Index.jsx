@@ -12,6 +12,7 @@ import LabelValueViewSrc from '!raw-loader!terra-clinical-label-value-view/src/L
 // Example Files
 import LabelValueViewText from './LabelValueViewText';
 import LabelValueViewNode from './LabelValueViewNode';
+import LabelValueViewNodeCustom from './LabelValueViewNodeCustom';
 
 const LabelValueViewExamples = () => (
   <div>
@@ -21,8 +22,11 @@ const LabelValueViewExamples = () => (
     <h2 id="text_value">Label Value View with a Text Input</h2>
     <LabelValueViewText />
     <br />
-    <h2 id="element_value">Label Value View with an Node Input</h2>
+    <h2 id="element_value">Label Value View with a Node Input</h2>
     <LabelValueViewNode />
+    <br />
+    <h2 id="element_value">Label Value View with a Node Input (Custom)</h2>
+    <LabelValueViewNodeCustom />
     <br />
   </div>
 );
