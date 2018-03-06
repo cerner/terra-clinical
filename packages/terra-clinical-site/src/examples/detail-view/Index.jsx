@@ -20,9 +20,9 @@ const DetailViewExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <h2>Detail View</h2>
-    <PropsTable id="detail_view_props" src={DetailViewSrc} />
-    <PropsTable id="detail_list_props" src={DetailListSrc} />
-    <PropsTable id="detail_list_item_props" src={DetailListItemSrc} />
+    <PropsTable id="detail_view_props" src={DetailViewSrc} componentName="Detail View" />
+    <PropsTable id="detail_list_props" src={DetailListSrc} componentName="Detail List" />
+    <PropsTable id="detail_list_item_props" src={DetailListItemSrc} componentName="Detail List Item" />
     <br />
     <h2 id="Divided">Divided Detail View</h2>
     <DetailViewDivided />

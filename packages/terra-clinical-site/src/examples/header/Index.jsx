@@ -20,7 +20,7 @@ const HeaderExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={HeaderSrc} />
+    <PropsTable id="props" src={HeaderSrc} componentName="Header" />
     <h1> Header With Title Only </h1>
     <TitleHeader />
     <h1> Header With Content </h1>

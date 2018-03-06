@@ -23,9 +23,9 @@ const ItemDisplayExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <h2> Item Display </h2>
-    <PropsTable id="props" src={ItemDisplaySrc} />
+    <PropsTable id="props" src={ItemDisplaySrc} componentName="Item Display" />
     <h2> Comment Item Display </h2>
-    <PropsTable id="props" src={CommentSrc} />
+    <PropsTable id="props" src={CommentSrc} componentName="Comment" />
 
     <h2>Item Display: Text styles</h2>
     <TextStyles />
