@@ -1,3 +1,4 @@
+/* eslint no-unused-expressions: 0 */
 /* global before, browser, Terra, expect */
 
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
