@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-collection",
   "main": "lib/ItemCollection.js",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size.",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^3.0.0",
-    "terra-clinical-item-view": "^2.0.0",
+    "terra-clinical-item-view": "^2.1.0",
     "terra-list": "^2.0.1",
     "terra-responsive-element": "^2.0.1",
     "terra-table": "^2.0.1"
@@ -41,7 +41,6 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/ItemCollection.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:wdio": "wdio ../../wdio.conf.js"

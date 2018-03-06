@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-application",
   "main": "lib/Application.js",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "A wrapper component around `terra-base` that provides clinical application-specific properties",
   "repository": {
     "type": "git",
@@ -42,7 +42,6 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/Application.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:nightwatch",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:nightwatch": "nightwatch -c ../../nightwatch.conf.js"
