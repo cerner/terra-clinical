@@ -3,6 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
 * Updated value font-size and the site example page
 
 2.1.0 - (March 6, 2018)
