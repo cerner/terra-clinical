@@ -3,7 +3,7 @@
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
 
 describe('Clinical header', () => {
-  describe('Displays a default header with no content', () => {
+  describe('Header with no content', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/default-header');
     });
@@ -12,7 +12,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with a title only', () => {
+  describe('Header with a title only', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/title-header');
     });
@@ -21,7 +21,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with a long title that truncates', () => {
+  describe('Header with a long title that truncates', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/long-title-header');
     });
@@ -30,7 +30,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with content on the left', () => {
+  describe('Header with content on the left', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/left-content-header');
     });
@@ -39,7 +39,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with content on the right', () => {
+  describe('Header with content on the right', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/right-content-header');
     });
@@ -48,7 +48,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with content on the left and right', () => {
+  describe('Header with content on both sides', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/left-and-right-content-header');
     });
@@ -57,7 +57,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with a long title that truncates with left and right content', () => {
+  describe('Header with a long title that truncates with content', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/long-title-and-content-header');
     });
@@ -66,7 +66,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a subsection header with content on the left and right', () => {
+  describe('Subsection header with content on both sides', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/left-and-right-content-subheader');
     });
@@ -75,7 +75,7 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 
-  describe('Displays a header with no title and content on the right', () => {
+  describe('Header with no title and content on the right', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-header/no-title-right-content-header');
     });
