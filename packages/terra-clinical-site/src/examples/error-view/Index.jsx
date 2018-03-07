@@ -20,7 +20,7 @@ const ErrorViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props-errorView" src={ErrorViewSrc} />
+    <PropsTable id="props-errorView" src={ErrorViewSrc} componentName="Error View" />
     <h2 id="errorView">Error View</h2>
     <ErrorViewStandard />
     <h2 id="errorView-glyph-hidden">Error View With Glyph Hidden</h2>
