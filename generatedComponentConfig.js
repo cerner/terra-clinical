@@ -14,45 +14,42 @@ import TerraClinicalSiteIndex9 from './packages/terra-clinical-site/src/examples
 import TerraClinicalSiteIndex10 from './packages/terra-clinical-site/src/examples/onset-picker/Index';
 
 // Component Test Examples
-import ActionHeaderTestRoutes from './packages/terra-clinical-action-header/examples/test-examples/ActionHeaderTestRoutes';
-import ActionHeaderTests from './packages/terra-clinical-action-header/examples/test-examples/ActionHeaderTests';
-import BackActionHeader from './packages/terra-clinical-action-header/examples/test-examples/BackActionHeader';
-import BackCloseActionHeader from './packages/terra-clinical-action-header/examples/test-examples/BackCloseActionHeader';
-import ChildrenActionHeader from './packages/terra-clinical-action-header/examples/test-examples/ChildrenActionHeader';
-import CloseActionHeader from './packages/terra-clinical-action-header/examples/test-examples/CloseActionHeader';
-import DefaultActionHeader from './packages/terra-clinical-action-header/examples/test-examples/DefaultActionHeader';
-import KeepCloseButtonActionHeader from './packages/terra-clinical-action-header/examples/test-examples/KeepCloseButtonActionHeader';
-import MaximizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MaximizeActionHeader';
-import MinimizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MinimizeActionHeader';
-import PreviousNextActionHeader from './packages/terra-clinical-action-header/examples/test-examples/PreviousNextActionHeader';
-import TitleActionHeader from './packages/terra-clinical-action-header/examples/test-examples/TitleActionHeader';
-import ContainerComponent from './packages/terra-clinical-application/examples/test-examples/ContainerComponent';
-import DefaultApplication from './packages/terra-clinical-application/examples/test-examples/DefaultApplication';
-import NoAppDelegateApplication from './packages/terra-clinical-application/examples/test-examples/NoAppDelegateApplication';
-import LargeItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/LargeItemList';
-import NormalItemList from './packages/terra-clinical-detail-view/tests/nightwatch/DetailList/NormalItemList';
-import DefaultListItem from './packages/terra-clinical-detail-view/tests/nightwatch/DetailListItem/DefaultListItem';
-import DetailViewDivided from './packages/terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewDivided';
-import DetailViewNoDivider from './packages/terra-clinical-detail-view/tests/nightwatch/DetailView/DetailViewNoDivider';
+import BackActionHeader from './packages/terra-clinical-action-header/examples/test-examples/BackActionHeader.example';
+import BackCloseActionHeader from './packages/terra-clinical-action-header/examples/test-examples/BackCloseActionHeader.example';
+import ChildrenActionHeader from './packages/terra-clinical-action-header/examples/test-examples/ChildrenActionHeader.example';
+import CloseActionHeader from './packages/terra-clinical-action-header/examples/test-examples/CloseActionHeader.example';
+import DefaultActionHeader from './packages/terra-clinical-action-header/examples/test-examples/DefaultActionHeader.example';
+import KeepCloseButtonActionHeader from './packages/terra-clinical-action-header/examples/test-examples/KeepCloseButtonActionHeader.example';
+import MaximizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MaximizeActionHeader.example';
+import MinimizeActionHeader from './packages/terra-clinical-action-header/examples/test-examples/MinimizeActionHeader.example';
+import PreviousNextActionHeader from './packages/terra-clinical-action-header/examples/test-examples/PreviousNextActionHeader.example';
+import TitleActionHeader from './packages/terra-clinical-action-header/examples/test-examples/TitleActionHeader.example';
+import DefaultApplication from './packages/terra-clinical-application/examples/test-examples/DefaultApplication.example';
+import NoAppDelegateApplication from './packages/terra-clinical-application/examples/test-examples/NoAppDelegateApplication.example';
+import LargeItemList from './packages/terra-clinical-detail-view/examples/test-examples/DetailList/LargeItemList.example';
+import NormalItemList from './packages/terra-clinical-detail-view/examples/test-examples/DetailList/NormalItemList.example';
+import DefaultListItem from './packages/terra-clinical-detail-view/examples/test-examples/DetailListItem/DefaultListItem.example';
+import DetailViewDivided from './packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewDivided.example';
+import DetailViewNoDivider from './packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewNoDivider.example';
 import ButtonErrorView from './packages/terra-clinical-error-view/tests/nightwatch/ButtonErrorView';
 import DefaultErrorView from './packages/terra-clinical-error-view/tests/nightwatch/DefaultErrorView';
 import HiddenErrorView from './packages/terra-clinical-error-view/tests/nightwatch/HiddenErrorView';
 import TextErrorView from './packages/terra-clinical-error-view/tests/nightwatch/TextErrorView';
-import DefaultHeader from './packages/terra-clinical-header/examples/test-examples/DefaultHeader';
-import LeftAndRightContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentHeader';
-import LeftAndRightContentSubheader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentSubheader';
-import LeftContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftContentHeader';
-import LongTitleAndContentHeader from './packages/terra-clinical-header/examples/test-examples/LongTitleAndContentHeader';
-import LongTitleHeader from './packages/terra-clinical-header/examples/test-examples/LongTitleHeader';
-import NoTitleRightContentHeader from './packages/terra-clinical-header/examples/test-examples/NoTitleRightContentHeader';
-import RightContentHeader from './packages/terra-clinical-header/examples/test-examples/RightContentHeader';
-import TitleHeader from './packages/terra-clinical-header/examples/test-examples/TitleHeader';
-import ItemCollectionAllElements from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionAllElements';
-import ItemCollectionItemStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionItemStyles';
-import ItemCollectionListStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionListStyles';
-import ItemCollectionSelectable from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionSelectable';
-import ItemCollectionTableStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionTableStyles';
-import ItemCollectionVaryingItems from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionVaryingItems';
+import DefaultHeader from './packages/terra-clinical-header/examples/test-examples/DefaultHeader.example';
+import LeftAndRightContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentHeader.example';
+import LeftAndRightContentSubheader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentSubheader.example';
+import LeftContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftContentHeader.example';
+import LongTitleAndContentHeader from './packages/terra-clinical-header/examples/test-examples/LongTitleAndContentHeader.example';
+import LongTitleHeader from './packages/terra-clinical-header/examples/test-examples/LongTitleHeader.example';
+import NoTitleRightContentHeader from './packages/terra-clinical-header/examples/test-examples/NoTitleRightContentHeader.example';
+import RightContentHeader from './packages/terra-clinical-header/examples/test-examples/RightContentHeader.example';
+import TitleHeader from './packages/terra-clinical-header/examples/test-examples/TitleHeader.example';
+import ItemCollectionAllElements from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionAllElements.example';
+import ItemCollectionItemStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionItemStyles.example';
+import ItemCollectionListStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionListStyles.example';
+import ItemCollectionSelectable from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionSelectable.example';
+import ItemCollectionTableStyles from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionTableStyles.example';
+import ItemCollectionVaryingItems from './packages/terra-clinical-item-collection/examples/test-examples/ItemCollectionVaryingItems.example';
 import DefaultItemComment from './packages/terra-clinical-item-display/tests/nightwatch/comment/DefaultItemComment';
 import TextItemComment from './packages/terra-clinical-item-display/tests/nightwatch/comment/TextItemComment';
 import DefaultItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/DefaultItemDisplay';
@@ -60,39 +57,29 @@ import DisabledItemDisplay from './packages/terra-clinical-item-display/tests/ni
 import IconItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/IconItemDisplay';
 import ScalingIconItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/ScalingIconItemDisplay';
 import TextStyleItemDisplay from './packages/terra-clinical-item-display/tests/nightwatch/display/TextStyleItemDisplay';
-import AccessoryItemView from './packages/terra-clinical-item-view/examples/test-examples/AccessoryItemView';
-import CommentItemView from './packages/terra-clinical-item-view/examples/test-examples/CommentItemView';
-import DefaultItemView from './packages/terra-clinical-item-view/examples/test-examples/DefaultItemView';
-import DisplaysItemView from './packages/terra-clinical-item-view/examples/test-examples/DisplaysItemView';
-import OverflowDisplaysItemView from './packages/terra-clinical-item-view/examples/test-examples/OverflowDisplaysItemView';
-import DefaultLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/DefaultLabelValueView';
-import MultipleValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/MultipleValueLabelValueView';
-import NodeValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/NodeValueLabelValueView';
-import TextValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/TextValueLabelValueView';
+import AccessoryItemView from './packages/terra-clinical-item-view/examples/test-examples/AccessoryItemView.example';
+import CommentItemView from './packages/terra-clinical-item-view/examples/test-examples/CommentItemView.example';
+import DefaultItemView from './packages/terra-clinical-item-view/examples/test-examples/DefaultItemView.example';
+import DisplaysItemView from './packages/terra-clinical-item-view/examples/test-examples/DisplaysItemView.example';
+import OverflowDisplaysItemView from './packages/terra-clinical-item-view/examples/test-examples/OverflowDisplaysItemView.example';
+import DefaultLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/DefaultLabelValueView.example';
+import MultipleValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/MultipleValueLabelValueView.example';
+import NodeValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/NodeValueLabelValueView.example';
+import TextValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/TextValueLabelValueView.example';
 import ContentNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/ContentNoDataView';
 import DefaultNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/DefaultNoDataView';
 import HiddenNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/HiddenNoDataView';
 import TextNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/TextNoDataView';
-import Default from './packages/terra-clinical-onset-picker/examples/test-examples/Default';
-import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears';
-import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth';
-import LessYear from './packages/terra-clinical-onset-picker/examples/test-examples/LessYear';
+import Default from './packages/terra-clinical-onset-picker/examples/test-examples/Default.example';
+import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears.example';
+import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth.example';
+import LessYear from './packages/terra-clinical-onset-picker/examples/test-examples/LessYear.example';
 
 const componentConfig = {
   'terra-clinical-action-header': {
     name: 'Clinical Action Header',
     path: '/clinical-action-header',
     tests: [
-      {
-        name: 'Action Header Test Routes',
-        path: '/action-header-test-routes',
-        component: ActionHeaderTestRoutes,
-      },
-      {
-        name: 'Action Header Tests',
-        path: '/action-header-tests',
-        component: ActionHeaderTests,
-      },
       {
         name: 'Back Action Header',
         path: '/back-action-header',
@@ -149,11 +136,6 @@ const componentConfig = {
     name: 'Clinical Application',
     path: '/clinical-application',
     tests: [
-      {
-        name: 'Container Component',
-        path: '/container-component',
-        component: ContainerComponent,
-      },
       {
         name: 'Default Application',
         path: '/default-application',

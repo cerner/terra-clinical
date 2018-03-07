@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-action-header",
   "main": "lib/ActionHeader.js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side.",
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "terra-base": "^3.0.0",
     "terra-button": "^2.0.0",
     "terra-button-group": "^2.0.1",
-    "terra-clinical-header": "^2.0.0",
+    "terra-clinical-header": "^2.1.0",
     "terra-icon": "^2.0.1"
   },
   "dependencies": {
@@ -39,7 +39,7 @@
     "terra-base": "^3.0.0",
     "terra-button": "^2.0.1",
     "terra-button-group": "^2.0.1",
-    "terra-clinical-header": "^2.0.0",
+    "terra-clinical-header": "^2.1.0",
     "terra-icon": "^2.0.1",
     "terra-responsive-element": "^2.0.1"
   },
@@ -50,7 +50,6 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
-    "props-table": "props-table ./src/ActionHeader.jsx --out-dir ./docs/props-table",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
     "test:wdio": "wdio ../../wdio.conf.js"

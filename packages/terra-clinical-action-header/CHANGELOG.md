@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.1.0 - (March 6, 2018)
+----------
 ### Added
 * webdriver.io tests for `terra-clinical-action-header`
 
