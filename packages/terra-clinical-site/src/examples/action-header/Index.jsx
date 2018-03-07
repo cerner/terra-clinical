@@ -19,8 +19,7 @@ const HeaderExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <h2>Action Header</h2>
-    <PropsTable id="props" src={HeaderSrc} />
+    <PropsTable id="props" src={HeaderSrc} componentName="Action Header" />
     <h2>Back, Previous-Next, Close</h2>
     <ActionHeaderBackNextPreviousClose />
     <h2>Maximize, Close</h2>
