@@ -21,7 +21,7 @@ const ItemViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={ItemViewSrc} />
+    <PropsTable id="props" src={ItemViewSrc} componentName="Item View" />
     <h2 id="standard">ItemView - Default</h2>
     <ItemViewStandard />
     <br />

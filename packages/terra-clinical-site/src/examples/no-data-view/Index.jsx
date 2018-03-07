@@ -18,7 +18,7 @@ const NoDataViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props-noDataView" src={NoDataViewSrc} />
+    <PropsTable id="props-noDataView" src={NoDataViewSrc} componentName="No Data View" />
     <h2 id="noDataView">No Data View</h2>
     <NoDataViewStandard />
     <h2 id="noDataView-hidden-glyph">No Data View With Glyph Hidden</h2>
