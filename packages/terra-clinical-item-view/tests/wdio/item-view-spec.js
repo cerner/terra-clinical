@@ -1,6 +1,8 @@
 /* global before, browser, Terra */
 
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
+// Issue occurring because of common accessoryEnd in the test examples.
+const rules = { 'duplicate-id': { enabled: false } };
 
 describe('Clinical Item View', () => {
   describe('with one column displays', () => {
@@ -9,7 +11,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays' });
-    Terra.should.beAccessible({ viewports, selector: '#test-displays' });
+    Terra.should.beAccessible();
   });
 
   describe('with two column displays', () => {
@@ -18,7 +20,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two' });
-    Terra.should.beAccessible({ viewports, context: '#test-displays-two' });
+    Terra.should.beAccessible();
   });
 
   describe('with two column and start displays', () => {
@@ -27,7 +29,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two-start' });
-    Terra.should.beAccessible({ viewports, context: '#test-displays-two-start' });
+    Terra.should.beAccessible();
   });
 
   describe('with accessories', () => {
@@ -36,6 +38,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports });
+    Terra.should.beAccessible({ rules });
   });
 
   describe('with default comment set', () => {
@@ -44,6 +47,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView1' });
+    Terra.should.beAccessible({ rules });
   });
 
   describe('with truncated comment set', () => {
@@ -52,6 +56,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView2' });
+    Terra.should.beAccessible({ rules });
   });
 
   describe('with the full example word wrap', () => {
@@ -60,6 +65,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
+    Terra.should.beAccessible({ rules });
   });
 
   describe('with the full example truncated', () => {
@@ -68,5 +74,6 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-truncate' });
+    Terra.should.beAccessible({ rules });
   });
 });
