@@ -65,6 +65,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
     Terra.should.beAccessible({ rules });
   });
 
@@ -73,6 +74,7 @@ describe('Clinical Item View', () => {
       browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
     });
 
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-truncate' });
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-truncate' });
     Terra.should.beAccessible({ rules });
   });
