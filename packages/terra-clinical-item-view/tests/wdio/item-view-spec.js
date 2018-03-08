@@ -1,26 +1,36 @@
 /* global before, browser, Terra */
 
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-const selector = '#root';
 
-describe('Item View', () => {
-  describe('Displays a clinical item view with default props', () => {
-    before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/default-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-  });
-
-  describe('Displays a clinical item view with displays present', () => {
+describe('Clinical Item View', () => {
+  describe('with one column displays', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/displays-item-view');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '#test-displays' });
+    Terra.should.beAccessible({ viewports, selector: '#test-displays' });
   });
 
-  describe('Displays a clinical item view with various accessory', () => {
+  describe('with two column displays', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-item-view/displays-item-view');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two' });
+    Terra.should.beAccessible({ viewports, context: '#test-displays-two' });
+  });
+
+  describe('with two column and start displays', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-item-view/displays-item-view');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two-start' });
+    Terra.should.beAccessible({ viewports, context: '#test-displays-two-start' });
+  });
+
+  describe('with accessories', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/accessory-item-view');
     });
@@ -28,19 +38,35 @@ describe('Item View', () => {
     Terra.should.matchScreenshot({ viewports });
   });
 
-  describe('Displays a clinical item view with a comment set', () => {
+  describe('with default comment set', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/comment-item-view');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView1' });
   });
 
-  describe('Displays a clinical item view with the word wrap and truncation', () => {
+  describe('with truncated comment set', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-item-view/comment-item-view');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView2' });
+  });
+
+  describe('with the full example word wrap', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector });
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
+  });
+
+  describe('with the full example truncated', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-truncate' });
   });
 });
