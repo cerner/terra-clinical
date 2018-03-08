@@ -17,7 +17,7 @@ const OnsetExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={OnsetPickerSrc} />
+    <PropsTable id="props" src={OnsetPickerSrc} componentName="Onset Picker" />
     <br />
     <h2 id="default">Default with initialization</h2>
     <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>

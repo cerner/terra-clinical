@@ -15,7 +15,7 @@ const ApplicationExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={ApplicationSrc} />
+    <PropsTable id="props" src={ApplicationSrc} componentName="Application" />
   </div>
 );
 
