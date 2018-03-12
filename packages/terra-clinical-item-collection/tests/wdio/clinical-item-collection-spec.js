@@ -4,7 +4,7 @@
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
 
 describe('Item Collection', () => {
-  describe('Displays a item collection with all possibe elements', () => {
+  describe('Displays an item collection with all possibe elements', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-collection/item-collection-all-elements');
     });
@@ -15,7 +15,6 @@ describe('Item Collection', () => {
   describe('Displays the correct collection when responding to breakpoint', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-collection/item-collection-all-elements');
-      browser.execute("document.getElementById('site').style.padding = 0;");
     });
 
     Terra.should.matchScreenshot({ viewports });
