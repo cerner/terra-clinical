@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const wdioConf = require('terra-toolkit/lib/wdio/conf');
 const webpackConfig = require('./webpack.config.js');
-const WebpackDevService = require('terra-toolkit/lib/wdio/services/index').WebpackDevService;
+const ExpressDevService = require('terra-toolkit/lib/wdio/services/index').ExpressDevService;
 const localIP = require('ip');
 const path = require('path');
 
@@ -49,10 +49,9 @@ const config = {
     selector: '[data-terra-dev-site-content] *:first-child',
   },
 
-   // Configuration for WebPackDevService
-  webpackPort,
+   // Configuration for ExpressDevService
   webpackConfig,
 };
 
-config.services = wdioConf.config.services.concat([WebpackDevService]);
+config.services = wdioConf.config.services.concat([ExpressDevService]);
 exports.config = config;
