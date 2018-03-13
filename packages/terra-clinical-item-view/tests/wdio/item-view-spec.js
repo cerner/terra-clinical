@@ -59,7 +59,7 @@ describe('Clinical Item View', () => {
     Terra.should.beAccessible({ rules });
   });
 
-  describe('with the full example word wrap  one column', () => {
+  describe('with the full example word wrap - one column', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
     });
