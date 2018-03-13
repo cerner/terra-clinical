@@ -59,23 +59,39 @@ describe('Clinical Item View', () => {
     Terra.should.beAccessible({ rules });
   });
 
-  describe('with the full example word wrap', () => {
+  describe('with the full example word wrap  one column', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
     Terra.should.beAccessible({ rules });
   });
 
-  describe('with the full example truncated', () => {
+  describe('with the full example word wrap - two column', () => {
     before(() => {
       browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-truncate' });
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-truncate' });
+    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
+    Terra.should.beAccessible({ rules });
+  });
+
+  describe('with the full example truncated - one truncated', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
+    Terra.should.beAccessible({ rules });
+  });
+
+  describe('with the full example truncated - two truncated', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+    });
+
+    Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
     Terra.should.beAccessible({ rules });
   });
 });
