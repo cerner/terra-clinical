@@ -108,7 +108,7 @@
     "terra-dev-site": "^0.2.0",
     "terra-i18n": "^2.0.0",
     "terra-i18n-plugin": "^2.0.0",
-    "terra-toolkit": "^2.8.1",
+    "terra-toolkit": "^2.9.0",
     "wdio-mocha-framework": "^0.5.11",
     "wdio-visual-regression-service": "^0.8.0",
     "webdriverio": "^4.9.9",
