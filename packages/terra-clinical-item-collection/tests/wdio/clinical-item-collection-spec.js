@@ -35,6 +35,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
       before(() => {
         browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
         browser.click('#item1');
+        browser.click('#selected-key');
       });
 
       Terra.should.matchScreenshot(viewport);
@@ -45,6 +46,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
         expect(browser.element('#item2')).to.exist;
         browser.keys(['\uE004', '\uE004', '\uE004', '\uE007']);
+        browser.click('#selected-key');
       });
 
       Terra.should.matchScreenshot();
@@ -55,6 +57,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
         expect(browser.element('#item3')).to.exist;
         browser.keys(['\uE004', '\uE004', '\uE004', '\uE004', '\uE004', '\uE00D']);
+        browser.click('#selected-key');
       });
 
       Terra.should.matchScreenshot(viewport);
