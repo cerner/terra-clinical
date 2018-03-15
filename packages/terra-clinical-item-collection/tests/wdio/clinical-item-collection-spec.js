@@ -7,7 +7,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
       browser.setViewportSize(viewport);
     });
 
-    describe('Displays an item collection with all possibe elements', () => {
+    describe('Displays an item collection with all possible elements', () => {
       before(() => {
         browser.url('/#/raw/tests/clinical-item-collection/item-collection-all-elements');
       });
@@ -46,7 +46,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
       before(() => {
         browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
         expect(browser.element('#item2')).to.exist;
-        browser.keys(['\uE004', '\uE004', '\uE004', '\uE007']);
+        browser.keys(['Tab', 'Tab', 'Tab', 'Enter']);
         browser.click('#selected-key');
       });
 
@@ -57,7 +57,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
       before(() => {
         browser.url('/#/raw/tests/clinical-item-collection/item-collection-selectable');
         expect(browser.element('#item3')).to.exist;
-        browser.keys(['\uE004', '\uE004', '\uE004', '\uE004', '\uE004', '\uE00D']);
+        browser.keys(['Tab', 'Tab', 'Tab', 'Tab', 'Tab', ' ']);
         browser.click('#selected-key');
       });
 
