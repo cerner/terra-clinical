@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.1.0 - (March 14, 2018)
+----------
+### Added
 * Add component names to Props Table titles
 
 2.0.0 - (February 19, 2018)
