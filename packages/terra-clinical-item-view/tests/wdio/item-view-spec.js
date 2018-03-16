@@ -1,8 +1,6 @@
 /* global before, browser, Terra */
 
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-// Issue occurring because of common accessoryEnd in the test examples.
-const rules = { 'duplicate-id': { enabled: false } };
 
 describe('Clinical Item View', () => {
   describe('with one column displays', () => {
@@ -38,7 +36,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('with default comment set', () => {
@@ -47,7 +45,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView1' });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('with truncated comment set', () => {
@@ -56,7 +54,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView2' });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('with the full example word wrap - one column', () => {
@@ -65,7 +63,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('with the full example word wrap - two column', () => {
@@ -74,7 +72,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('with the full example truncated - one truncated', () => {
@@ -83,7 +81,7 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('with the full example truncated - two truncated', () => {
@@ -92,6 +90,6 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 });
