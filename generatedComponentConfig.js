@@ -66,10 +66,10 @@ import DefaultLabelValueView from './packages/terra-clinical-label-value-view/ex
 import MultipleValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/MultipleValueLabelValueView.example';
 import NodeValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/NodeValueLabelValueView.example';
 import TextValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/TextValueLabelValueView.example';
-import ContentNoDataView from './packages/terra-clinical-no-data-view/tests/wdio/ContentNoDataView';
-import DefaultNoDataView from './packages/terra-clinical-no-data-view/tests/wdio/DefaultNoDataView';
-import HiddenNoDataView from './packages/terra-clinical-no-data-view/tests/wdio/HiddenNoDataView';
-import TextNoDataView from './packages/terra-clinical-no-data-view/tests/wdio/TextNoDataView';
+import ContentNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/ContentNoDataView';
+import DefaultNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/DefaultNoDataView';
+import HiddenNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/HiddenNoDataView';
+import TextNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/TextNoDataView';
 import Default from './packages/terra-clinical-onset-picker/examples/test-examples/Default.example';
 import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears.example';
 import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth.example';
