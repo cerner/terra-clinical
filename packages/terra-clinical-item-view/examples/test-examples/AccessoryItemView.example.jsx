@@ -21,9 +21,9 @@ const views = () => (
     />
     <h2>Start and End Acessory</h2>
     <ItemView
-      startAccessory={<IconAlert id="StartAccessory" />}
+      startAccessory={<IconAlert id="StartAccessory2" />}
       displays={displays}
-      endAccessory={<button id="EndAccessory" size="medium">Disclose</button>}
+      endAccessory={<button id="EndAccessory2" size="medium">Disclose</button>}
       layout="twoColumns"
       accessoryAlignment="alignTop"
       id="test-both-accessory-top"
@@ -32,7 +32,7 @@ const views = () => (
     <ItemView
       reserveStartAccessorySpace
       displays={displays}
-      endAccessory={<button id="EndAccessory" size="medium">Disclose</button>}
+      endAccessory={<button id="EndAccessory3" size="medium">Disclose</button>}
       layout="twoColumns"
       id="test-reserve-start-accessory"
     />
