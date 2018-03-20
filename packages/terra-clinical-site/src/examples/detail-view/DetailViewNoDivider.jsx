@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import DetailView from 'terra-clinical-detail-view';
-import ItemView from 'terra-clinical-item-view';
-import IconHighPriority from 'terra-icon/lib/icon/IconHighPriority';
 import LabelValueView from 'terra-clinical-label-value-view';
 
 const item1 = (<LabelValueView label="Start Date" textValue="12/12/12 00:00AM" />);

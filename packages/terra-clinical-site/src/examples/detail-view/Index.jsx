@@ -16,10 +16,10 @@ import DetailViewDivided from './DetailViewDivided';
 import DetailViewNoDivider from './DetailViewNoDivider';
 
 const DetailViewExamplesHeadingStyle = {
-  marginBottom: "0px",
+  marginBottom: '0px',
 };
 const DetailViewExamplesBoxedStyle = {
-  border: "3px dotted #d3d4d5",
+  border: '3px dotted #d3d4d5',
 };
 
 const DetailViewExamples = () => (
@@ -32,13 +32,13 @@ const DetailViewExamples = () => (
     <br />
     <br />
     <br />
-    <h2 id="Divided" style={DetailViewExamplesHeadingStyle}>Example Divided Detail View</h2>
+    <h2 id="Divided" style={DetailViewExamplesHeadingStyle} >Example Divided Detail View</h2>
     <div style={DetailViewExamplesBoxedStyle}>
       <DetailViewDivided />
     </div>
     <br />
     <br />
-    <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle}>Example Non-Divided Detail View</h2>
+    <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle} >Example Non-Divided Detail View</h2>
     <div style={DetailViewExamplesBoxedStyle}>
       <DetailViewNoDivider />
     </div>
