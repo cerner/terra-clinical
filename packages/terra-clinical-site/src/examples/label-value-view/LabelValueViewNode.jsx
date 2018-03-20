@@ -1,13 +1,12 @@
 import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
+import ItemDisplay from 'terra-clinical-item-display';
+import IconCritical from 'terra-icon/lib/icon/IconCritical';
 
 const LabelValueViewNode = () => (
   <div>
     <LabelValueView label="Label">
-      <div>
-        <h5> Sample Text </h5>
-        <p>  More Sample text </p>
-      </div>
+      <ItemDisplay text="Clinical-Item-Display as Value" textStyle="attention" icon={<IconCritical />} />
     </LabelValueView>
   </div>
 );
