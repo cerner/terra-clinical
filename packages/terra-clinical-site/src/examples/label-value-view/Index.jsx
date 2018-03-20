@@ -19,11 +19,16 @@ const LabelValueViewExamples = () => (
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={LabelValueViewSrc} componentName="Label Value View" />
+    <br />
     <h2 id="text_value">Label Value View with a Text Input</h2>
     <LabelValueViewText />
     <br />
+    <br />
+    <br />
     <h2 id="element_value">Label Value View with a Node Input</h2>
     <LabelValueViewNode />
+    <br />
+    <br />
     <br />
     <h2 id="element_value">Label Value View with a Node Input (Custom)</h2>
     <LabelValueViewNodeCustom />
