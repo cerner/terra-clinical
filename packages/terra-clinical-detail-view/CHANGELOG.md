@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated text sizes & colors
 
 2.1.0 - (March 6, 2018)
 ----------

@@ -15,6 +15,13 @@ import DetailListItemSrc from '!raw-loader!terra-clinical-detail-view/src/Detail
 import DetailViewDivided from './DetailViewDivided';
 import DetailViewNoDivider from './DetailViewNoDivider';
 
+const DetailViewExamplesHeadingStyle = {
+  marginBottom: '0px',
+};
+const DetailViewExamplesBoxedStyle = {
+  border: '3px dotted #d3d4d5',
+};
+
 const DetailViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
@@ -23,10 +30,18 @@ const DetailViewExamples = () => (
     <PropsTable id="detail_list_props" src={DetailListSrc} componentName="Detail List" />
     <PropsTable id="detail_list_item_props" src={DetailListItemSrc} componentName="Detail List Item" />
     <br />
-    <h2 id="Divided">Divided Detail View</h2>
-    <DetailViewDivided />
-    <h2 id="NoDivider">Non-Divided Detail View</h2>
-    <DetailViewNoDivider />
+    <br />
+    <br />
+    <h2 id="Divided" style={DetailViewExamplesHeadingStyle} >Example Divided Detail View</h2>
+    <div style={DetailViewExamplesBoxedStyle}>
+      <DetailViewDivided />
+    </div>
+    <br />
+    <br />
+    <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle} >Example Non-Divided Detail View</h2>
+    <div style={DetailViewExamplesBoxedStyle}>
+      <DetailViewNoDivider />
+    </div>
   </div>
 );
 

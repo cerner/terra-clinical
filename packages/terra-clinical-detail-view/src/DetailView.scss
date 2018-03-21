@@ -1,27 +1,39 @@
 :local {
   .detail-view {
-    padding: 1.428rem;
+    padding: 1.4285714286rem;
 
     > * {
-      margin-bottom: 1.428rem;
+      margin-bottom: 0.7142857143rem;
     }
   }
 
   .title {
-    line-height: 1.428;
-    margin-bottom: 1.785rem;
+    line-height: 1.2;
+    padding-bottom: 0.7142857143rem;
   }
 
   .primary-text {
-    font-size: 1.428rem;
+    font-size: 2rem;
+    font-weight: normal;
     margin-bottom: 0;
     margin-top: 0;
   }
 
+  .subtitle {
+    color: #75767d;
+    font-size: 1.1428571429rem;
+    line-height: 1.4285714286;
+    padding-left: 0.1071428571rem;
+
+    &:first-of-type {
+      padding-top: 0.3571428571rem;
+    }
+  }
+
   .footer-text {
-    color: #909496;
-    font-size: 1rem;
-    line-height: 1.428;
+    color: #75767d;
+    font-size: 0.8571428571rem;
+    line-height: 1.4285714286;
     text-align: center;
   }
 
@@ -30,15 +42,6 @@
     border-style: solid;
     border-width: 1px 0 0;
     margin: 0;
-    padding-bottom: 0.714rem;
-  }
-
-  .subtitle {
-    color: #bcbfc0;
-    font-size: 1.286rem;
-
-    &:last-child {
-      margin: 0;
-    }
+    padding-bottom: 0.7142857143rem;
   }
 }
