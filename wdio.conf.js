@@ -21,9 +21,8 @@ const config = {
   exclude: [
     'packages/terra-clinical-error-view/tests/wdio/**/*-spec.js',
   ],
-
-  // Travis only has 1 browser instace, set maxInstances to 1 to prevent timeouts
-  maxInstances: process.env.CI ? 1 : wdioConf.config.maxInstances,
+  
+  maxInstances: 1,
 
   // Configuration for terra-toolkit's SeleniumDocker service
   seleniumDocker: {
