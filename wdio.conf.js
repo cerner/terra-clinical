@@ -21,8 +21,6 @@ const config = {
   exclude: [
     'packages/terra-clinical-error-view/tests/wdio/**/*-spec.js',
   ],
-  
-  maxInstances: 1,
 
   // Configuration for terra-toolkit's SeleniumDocker service
   seleniumDocker: {
