@@ -14,6 +14,7 @@ import DetailListItemSrc from '!raw-loader!terra-clinical-detail-view/src/Detail
 // Example files
 import DetailViewDivided from './DetailViewDivided';
 import DetailViewNoDivider from './DetailViewNoDivider';
+import DetailViewDividedSmallerTitles from './DetailViewDividedSmallerTitles';
 
 const DetailViewExamplesHeadingStyle = {
   marginBottom: '0px',
@@ -41,6 +42,12 @@ const DetailViewExamples = () => (
     <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle} >Example Non-Divided Detail View</h2>
     <div style={DetailViewExamplesBoxedStyle}>
       <DetailViewNoDivider />
+    </div>
+    <br />
+    <br />
+    <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle} >Example Divided Detail View with Smaller Titles</h2>
+    <div style={DetailViewExamplesBoxedStyle}>
+      <DetailViewDividedSmallerTitles />
     </div>
   </div>
 );

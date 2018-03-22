@@ -30,11 +30,8 @@ import LargeItemList from './packages/terra-clinical-detail-view/examples/test-e
 import NormalItemList from './packages/terra-clinical-detail-view/examples/test-examples/DetailList/NormalItemList.example';
 import DefaultListItem from './packages/terra-clinical-detail-view/examples/test-examples/DetailListItem/DefaultListItem.example';
 import DetailViewDivided from './packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewDivided.example';
+import DetailViewDividedSmallerTitles from './packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewDividedSmallerTitles.example';
 import DetailViewNoDivider from './packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewNoDivider.example';
-import ButtonErrorView from './packages/terra-clinical-error-view/tests/nightwatch/ButtonErrorView';
-import DefaultErrorView from './packages/terra-clinical-error-view/tests/nightwatch/DefaultErrorView';
-import HiddenErrorView from './packages/terra-clinical-error-view/tests/nightwatch/HiddenErrorView';
-import TextErrorView from './packages/terra-clinical-error-view/tests/nightwatch/TextErrorView';
 import DefaultHeader from './packages/terra-clinical-header/examples/test-examples/DefaultHeader.example';
 import LeftAndRightContentHeader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentHeader.example';
 import LeftAndRightContentSubheader from './packages/terra-clinical-header/examples/test-examples/LeftAndRightContentSubheader.example';
@@ -66,10 +63,6 @@ import DefaultLabelValueView from './packages/terra-clinical-label-value-view/ex
 import MultipleValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/MultipleValueLabelValueView.example';
 import NodeValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/NodeValueLabelValueView.example';
 import TextValueLabelValueView from './packages/terra-clinical-label-value-view/examples/test-examples/TextValueLabelValueView.example';
-import ContentNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/ContentNoDataView';
-import DefaultNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/DefaultNoDataView';
-import HiddenNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/HiddenNoDataView';
-import TextNoDataView from './packages/terra-clinical-no-data-view/tests/nightwatch/TextNoDataView';
 import Default from './packages/terra-clinical-onset-picker/examples/test-examples/Default.example';
 import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears.example';
 import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth.example';
@@ -189,37 +182,16 @@ const componentConfig = {
             component: DetailViewDivided,
           },
           {
+            name: 'Detail View Divided Smaller Titles',
+            path: '/detail-view-divided-smaller-titles',
+            component: DetailViewDividedSmallerTitles,
+          },
+          {
             name: 'Detail View No Divider',
             path: '/detail-view-no-divider',
             component: DetailViewNoDivider,
           },
         ],
-      },
-    ],
-  },
-  'terra-clinical-error-view': {
-    name: 'Clinical Error View',
-    path: '/clinical-error-view',
-    tests: [
-      {
-        name: 'Button Error View',
-        path: '/button-error-view',
-        component: ButtonErrorView,
-      },
-      {
-        name: 'Default Error View',
-        path: '/default-error-view',
-        component: DefaultErrorView,
-      },
-      {
-        name: 'Hidden Error View',
-        path: '/hidden-error-view',
-        component: HiddenErrorView,
-      },
-      {
-        name: 'Text Error View',
-        path: '/text-error-view',
-        component: TextErrorView,
       },
     ],
   },
@@ -417,32 +389,6 @@ const componentConfig = {
         name: 'Text Value Label Value View',
         path: '/text-value-label-value-view',
         component: TextValueLabelValueView,
-      },
-    ],
-  },
-  'terra-clinical-no-data-view': {
-    name: 'Clinical No Data View',
-    path: '/clinical-no-data-view',
-    tests: [
-      {
-        name: 'Content No Data View',
-        path: '/content-no-data-view',
-        component: ContentNoDataView,
-      },
-      {
-        name: 'Default No Data View',
-        path: '/default-no-data-view',
-        component: DefaultNoDataView,
-      },
-      {
-        name: 'Hidden No Data View',
-        path: '/hidden-no-data-view',
-        component: HiddenNoDataView,
-      },
-      {
-        name: 'Text No Data View',
-        path: '/text-no-data-view',
-        component: TextNoDataView,
       },
     ],
   },

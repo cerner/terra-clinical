@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemDisplay from '../../../terra-clinical-item-display/lib/ItemDisplay';
 import DetailView from '../../src/DetailView';
 
 const defaultVariety = <DetailView />;
@@ -21,11 +22,38 @@ it('should render a title', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a smaller title', () => {
+  const detailView = <DetailView title="Header" isSmallerTitles />;
+  const wrapper = render(detailView);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render secondaryTitles', () => {
+  const detailView = (
+    <DetailView
+      title="Header"
+      secondaryTitles={['SecondaryTitle1', 'SecondaryTitle2']}
+    />
+  );
+  const wrapper = render(detailView);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render subtitles', () => {
   const detailView = (
     <DetailView
       title="Header"
       subtitles={['Subtitle 1', 'Subtitle 2']}
+    />);
+  const wrapper = render(detailView);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render accessory', () => {
+  const detailView = (
+    <DetailView
+      title="Header"
+      accessory={<ItemDisplay text="Accessory" />}
     />);
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();

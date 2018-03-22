@@ -17,7 +17,17 @@ const propTypes = {
   /**
    * List of subtitle strings
    */
+  secondaryTitles: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * List of subtitle strings
+   */
   subtitles: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * Display for visualization data
+   */
+  accessory: PropTypes.element,
 
   /**
    * Display for visualization data
@@ -35,19 +45,27 @@ const propTypes = {
   footer: PropTypes.string,
 
   /**
-   * Indicates if sections should be devided
+   * Indicates if sections should be dvided
    */
   isDivided: PropTypes.bool,
+
+  /**
+   * Indicates if title size is smaller.
+   */
+  isSmallerTitles: PropTypes.bool,
 };
 
 const defaultProps = {
   title: '',
+  secondaryTitles: [],
   subtitles: [],
+  accessory: null,
   details: [],
   isDivided: true,
+  isSmallerTitles: false,
 };
 
-const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...customProps }) => {
+const DetailView = ({ title, secondaryTitles, subtitles, accessory, graph, details, footer, isDivided, isSmallerTitles, ...customProps }) => {
   const attributes = Object.assign({}, customProps);
   attributes.className = cx(['detail-view',
     attributes.className,
@@ -56,10 +74,18 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
   let divider = null;
   let dividedDetails = [];
 
+  const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
+  const secondaryTitlesElements = secondaryTitles.map((secondarytitle, i) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <div className={cx('secondary-text')} key={i}>{secondarytitle}</div>
+  ));
   const subtitleElements = subtitles.map((subtitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
     <div className={cx('subtitle')} key={i}>{subtitle}</div>
   ));
+  const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
+  const footerElement = footer ? (<div className={cx('footer-text')}>{footer}</div>) : null;
+
 
   if (isDivided) {
     divider = (<hr className={cx('divider')} />);
@@ -73,24 +99,23 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
   }
 
   return (
-    <div {...attributes}>
-      <div className={cx('title')}>
-        <h1 className={cx('primary-text')}>{title}</h1>
+    <div {...attributes} className={attributes.className}>
+      <div className={cx('title', { 'title-smaller': isSmallerTitles })}>
+        {titleElement}
+        {secondaryTitlesElements}
         {subtitleElements}
+        {accessoryElement}
       </div>
       {graph && divider}
       {graph}
       {divider}
       {dividedDetails}
-      <div className={cx('footer-text')}>
-        {footer}
-      </div>
+      {footerElement}
     </div>
   );
 };
 
 DetailView.propTypes = propTypes;
-
 DetailView.defaultProps = defaultProps;
 DetailView.DetailList = DetailList;
 DetailView.DetailListItem = DetailListItem;
