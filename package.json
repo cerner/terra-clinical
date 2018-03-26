@@ -105,7 +105,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "~8.0.0",
     "stylelint-config-sass-guidelines": "^3.0.0",
-    "terra-dev-site": "^0.2.0",
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#use-terra-application-layout",
     "terra-i18n": "^2.0.0",
     "terra-i18n-plugin": "^2.0.0",
     "terra-toolkit": "^2.9.0",
