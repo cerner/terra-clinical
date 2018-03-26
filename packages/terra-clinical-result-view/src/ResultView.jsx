@@ -15,15 +15,49 @@ import styles from './ResultView.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   *  An array of one or more results
+   */
   results: PropTypes.array,
+  /**
+   *  The age display of the result. Does not handle formatting
+   */
   timeDisplay: PropTypes.string,
-  conceptDisplay: PropTypes.string,
+  /**
+   *  Does the result have related documents. Adds an indicator
+   */
   hasDocument: PropTypes.bool,
+  /**
+   *  Has the result been modified. Adds an indicator
+   */
   isModified: PropTypes.bool,
+  /**
+   *  Are there comments related to the result. Adds an indicator
+   */
   hasComment: PropTypes.bool,
+  /**
+   *  Is the view aligned to the right. Defaults to false.
+   */
   alignEnd: PropTypes.bool,
+  /**
+   *  Can the result text be truncated. Defaults to true.
+   */
   isTruncated: PropTypes.bool,
+  /**
+   *  Should the view have padding. Default to false.
+   */
   isPadded: PropTypes.bool,
+};
+
+const defaultProps = {
+  results: [],
+  timeDisplay: null,
+  hasDocument: false,
+  hasComment: false,
+  isModified: false,
+  alignEnd: false,
+  isTruncated: true,
+  isPadded: false,
 };
 
 function documentsDiv() {
@@ -119,12 +153,8 @@ function timeDisplayDiv(timeDisplay) {
   return <div className={cx('result-view-conceptDisplay')} >{timeDisplay}</div>;
 }
 
-function conceptDisplayDiv(conceptDisplay) {
-  return <div className={cx('result-view-conceptDisplay')} >{conceptDisplay}</div>;
-}
-
 const ResultView = (props) => {
-  const { results, timeDisplay, conceptDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
+  const { results, timeDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
 
   const attributesName = 'result-view';
 
@@ -161,14 +191,12 @@ const ResultView = (props) => {
         {timeDisplay &&
           timeDisplayDiv(timeDisplay)
         }
-        {conceptDisplay &&
-          conceptDisplayDiv(conceptDisplay)
-        }
       </div>
     </div>
   );
 };
 
 ResultView.propTypes = propTypes;
+ResultView.defaultProps = defaultProps;
 
 export default ResultView;
