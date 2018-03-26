@@ -74,6 +74,8 @@ import Default from './packages/terra-clinical-onset-picker/examples/test-exampl
 import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears.example';
 import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth.example';
 import LessYear from './packages/terra-clinical-onset-picker/examples/test-examples/LessYear.example';
+import DefaultResultView from './packages/terra-clinical-result-view/examples/test-examples/DefaultResultView.example';
+import CompleteResultView from './packages/terra-clinical-result-view/examples/test-examples/CompleteResultView.example';
 
 const componentConfig = {
   'terra-clinical-action-header': {
@@ -469,6 +471,22 @@ const componentConfig = {
         name: 'Less Year',
         path: '/less-year',
         component: LessYear,
+      },
+    ],
+  },
+  'terra-clinical-result-view': {
+    name: 'Clinical Result View',
+    path: '/clinical-result-view',
+    tests: [
+      {
+        name: 'DefaultResultView',
+        path: '/default-result-view',
+        component: DefaultResultView,
+      },
+      {
+        name: 'CompleteResultView',
+        path: '/complete-result-view',
+        component: CompleteResultView,
       },
     ],
   },

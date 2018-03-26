@@ -1,5 +1,164 @@
+
+
 :local {
   .result-view {
-    /* TODO: Add styles */
+    color: var(--orion-clinical-result-view-background-color, #595f62);
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    width: 100%;
+
+    svg {
+      fill: currentColor;
+    }
   }
+
+  .result-view-body--padded {
+    padding: 5px;
+  }
+
+  .result-view.result-view--alignEnd {
+    text-align: right; // Verify this is correct, should flex with RTL
+
+    .result-view-resultBlock > :first-child {
+      flex-grow: 1;
+    }
+  }
+
+  .result-view.result-view--noTruncate {
+    white-space: initial;
+  }
+
+  [aria-selected=true] .result-view {
+    border-right: none;
+
+    svg {
+      fill: var(--orion-clinical-result-view-base-color, #fff);
+    }
+
+    .result-view-resultAge {
+      color: var(--orion-clinical-result-view-base-color, #fff);
+    }
+
+    .result-view-conceptDisplay {
+      color: var(--orion-clinical-result-view-base-color, #fff);
+    }
+
+    .result-view-resultUnit {
+      color: var(--orion-clinical-result-view-base-color, #fff);
+    }
+
+    .result-view-resultValueText {
+      color: var(--orion-clinical-result-view-base-color, #fff);
+    }
+
+    .result-view-resultSeparator {
+      color: var(--orion-clinical-result-view-base-color, #fff);
+    }
+  }
+
+  .result-view-resultBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+
+  .result-view-indicator--high {
+    color: var(--orion-clinical-result-view-high-color, #ff6100);
+
+    & + .result-view-resultValueText {
+      color: var(--orion-clinical-result-view-high-color, #ff6100);
+    }
+  }
+
+  .result-view-indicator--unexpected {
+    color: var(--orion-clinical-result-view-unexpected-color, #868a8c);
+  }
+
+  .result-view-indicator--low {
+    color: var(--orion-clinical-result-view-low-color, #0053e6);
+
+    & + .result-view-resultValueText {
+      color: var(--orion-clinical-result-view-low-color, #0053e6);
+    }
+  }
+
+  .result-view-indicator--abnormal {
+    color: var(--orion-clinical-result-view-abnormal-color, #654a08);
+
+    & + .result-view-resultValueText {
+      color: var(--orion-clinical-result-view-abnormal-color, #654a08);
+    }
+  }
+
+  .result-view-indicator--critical {
+    color: var(--orion-clinical-result-view-critical-color, #cc0000);
+
+    & + .result-view-resultValueText {
+      color: var(--orion-clinical-result-view-critical-color, #cc0000);
+    }
+  }
+
+  .result-view-resultValueText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .result-view-resultUnit {
+    line-height: normal;
+    padding-left: 3px; // Fix this for RTL
+    color: var(--orion-clinical-result-view-text-color, #6f7477);
+  }
+
+  .result-view-resultAge {
+    //.text-body(); // Fix this!!
+    color: var(--orion-clinical-result-view-text-color, #6f7477);
+    display: block;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .result-view-conceptDisplay {
+    //.text-body(); // Fix this!!
+    color: var(--orion-clinical-result-view-text-color, #6f7477);
+    display: block;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .result-view-indicator {
+    padding-right: 3px; // Fix this for RTL
+    max-height: 100%;
+    height: 14px;
+    width: 1em;
+
+    &.result-view-indicator--modified {
+      padding-left: 3px; // Fix this for RTL
+      padding-right: 0px; // Fix this for RTL
+      height: 11px;
+      color: var(--orion-clinical-result-view-modified-color, #26a2e5);
+    }
+
+    &.result-view-indicator--document {
+      color: var(--orion-clinical-result-view-document-color, #9b9fa1);
+    }
+
+    &.result-view-indicator--comment {
+      padding-left: 3px; // Fix this for RTL
+      padding-right: 0px; // Fix this for RTL
+      height: 11px;
+      color: var(--orion-clinical-result-view-comment-color, #9b9fa1);
+    }
+  }
+
+  .result-view-resultSeparator {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
 }

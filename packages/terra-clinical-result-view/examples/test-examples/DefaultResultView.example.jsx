@@ -1,5 +1,7 @@
 import React from 'react';
+import Base from 'terra-base';
+import ResultView from '../../src/ResultView';
 
-import ResultView from '../../lib/ResultView';
+const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
-export default () => <ResultView />;
+export default () => <Base locale={locale}><ResultView id="ResultView" /></Base>;
