@@ -28,7 +28,7 @@ const propTypes = {
 
 function documentsDiv() {
   return <IconDocuments />;
-      //   classes = "#{INDICATOR_CLASS} ion-ResultView-indicator--document"
+      // classes = "#{INDICATOR_CLASS} result-view-indicator--document"
       // documents_graphic = Graphic.new(image_inline: {path: 'orion/clinical_results/documents.svg'},
       //                                 attributes: {class: classes})
       // documents_graphic.render_with_template(template)
@@ -61,14 +61,14 @@ function resultIndicator(result) {
 function resultsDiv(results) {
   if (!results || !results.length) {
     let noValueDisplay = '--';
-    return <div className={cx('ion-ResultView-resultValueText')} >{noValueDisplay}</div>;
+    return <div className={cx('result-View-resultValueText')} >{noValueDisplay}</div>;
   }
 
   const resultsDivs = [];
 
   for (let i = 0; i < results.length; i += 1) {
     if (resultsDivs.length >= 1) {
-      const seperator = <span className={cx('ion-ResultView-resultSeparator')} >{'/'}</span>;
+      const seperator = <span className={cx('result-View-resultSeparator')} >{'/'}</span>;
       resultsDivs.push(seperator);
     }
 
@@ -87,7 +87,7 @@ function resultsDiv(results) {
     let unitDiv = null;
 
     if (resultValue.unit && resultValue.unit.length > 0) {
-      unitDiv = <small className={cx('ion-ResultView-resultUnit')} >{resultValue.unit}</small>;
+      unitDiv = <small className={cx('result-view-resultUnit')} >{resultValue.unit}</small>;
     }
 
     let resultValueDisplay = '--';
@@ -96,10 +96,10 @@ function resultsDiv(results) {
     }
 
 
-    const resultValueDiv = <span className={cx('ion-ResultView-resultValueText')} >
-                           {resultValueDisplay}
-                           {unitDiv}
-                           </span>;
+    const resultValueDiv = (<span className={cx('result-view-resultValueText')} >
+      {resultValueDisplay}
+      {unitDiv}
+    </span>);
 
     resultsDivs.push(resultValueDiv);
   }
@@ -116,37 +116,37 @@ function commentsDiv() {
 }
 
 function timeDisplayDiv(timeDisplay) {
-  return <div className={cx('ion-ResultView-conceptDisplay')} >{timeDisplay}</div>;
+  return <div className={cx('result-view-conceptDisplay')} >{timeDisplay}</div>;
 }
 
 function conceptDisplayDiv(conceptDisplay) {
-  return <div className={cx('ion-ResultView-conceptDisplay')} >{conceptDisplay}</div>;
+  return <div className={cx('result-view-conceptDisplay')} >{conceptDisplay}</div>;
 }
 
 const ResultView = (props) => {
   const { results, timeDisplay, conceptDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
 
-  const attributesName = 'ion-ResultView';
+  const attributesName = 'result-view';
 
   if (alignEnd) {
-    // ion-ResultView--alignEnd
+    // result-view--alignEnd
   }
 
   if (isTruncated) {
-    //  ion-ResultView--noTruncate
+    //  result-view--noTruncate
   }
 
-  let bodyClassName = 'ion-ResultView-body';
+  let bodyClassName = 'result-view-body';
 
   if (isPadded) {
-    bodyClassName = 'ion-ResultView-body--padded';
+    bodyClassName = 'result-view-body--padded';
   }
 
   let noValueDisplay = '--';
   return (
     <div className={cx(attributesName)}>
       <div className={cx(bodyClassName)}>
-        <div className={cx('ion-ResultView-resultBlock')}>
+        <div className={cx('result-view-resultBlock')}>
           {hasDocument &&
             documentsDiv()
           }
