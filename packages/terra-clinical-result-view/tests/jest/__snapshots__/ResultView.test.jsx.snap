@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultView should render a default component 1`] = `
+<div
+  className="result-view"
+>
+  default
+</div>
+`;

@@ -1,0 +1,11 @@
+{
+  "orion-clinical-js.comments": "Comentarios",
+  "orion-clinical-js.comment-header": "{author}, {time}",
+  "orion-clinical-js.error.system.header": "Error del sistema",
+  "orion-clinical-js.error.detail.default": "Se produjo un error. Inténtelo de nuevo.",
+  "orion-clinical-js.error.system.detail": "No se pudo completar la operación solicitada.",
+  "orion-clinical-js.error.system.retry": "Reintentar",
+  "orion-clinical-js.error.not-found.header": "No se encontró el recurso",
+  "orion-clinical-js.error.not-found.detail": "El recurso que está buscando no existe. Inténtelo de nuevo.",
+  "orion-clinical-js.error.back": "Atrás"
+}
