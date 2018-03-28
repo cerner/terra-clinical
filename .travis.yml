@@ -3,7 +3,7 @@ sudo: required
 branches:
   only:
     - master
-cache: false
+cache: true
 before_install:
   - docker pull selenium/standalone-chrome:3.8.1-erbium
   - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
