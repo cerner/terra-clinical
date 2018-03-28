@@ -7,20 +7,21 @@ cache: false
 before_install:
   - docker pull selenium/standalone-chrome:3.8.1-erbium
   - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
-script: "npm run $TEST_SUITE"
-env:
-  - TEST_SUITE=jest
-  - TEST_SUITE="wdio -- --suite actionHeader"
-  - TEST_SUITE="wdio -- --suite application"
-  - TEST_SUITE="wdio -- --suite detailView"
-  - TEST_SUITE="wdio -- --suite header"
-  - TEST_SUITE="wdio -- --suite itemCollection"
-  - TEST_SUITE="wdio -- --suite itemDisplay"
-  - TEST_SUITE="wdio -- --suite itemView"
-  - TEST_SUITE="wdio -- --suite labelValueView"
-  - TEST_SUITE="wdio -- --suite onsetPicker"
 jobs:
   include:
+    - stage: Test
+      script: "npm run $TEST_SUITE"
+      env:
+        - TEST_SUITE=jest
+        - TEST_SUITE="wdio -- --suite actionHeader"
+        - TEST_SUITE="wdio -- --suite application"
+        - TEST_SUITE="wdio -- --suite detailView"
+        - TEST_SUITE="wdio -- --suite header"
+        - TEST_SUITE="wdio -- --suite itemCollection"
+        - TEST_SUITE="wdio -- --suite itemDisplay"
+        - TEST_SUITE="wdio -- --suite itemView"
+        - TEST_SUITE="wdio -- --suite labelValueView"
+        - TEST_SUITE="wdio -- --suite onsetPicker"
     - stage: Danger
       script: npm run danger
     - stage: Deploy
