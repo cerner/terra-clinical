@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
 script:
-  - "npm test:$TEST_SUITE"
+  - "npm run $TEST_SUITE"
   - npm run danger
 branches:
   only:
