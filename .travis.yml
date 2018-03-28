@@ -7,13 +7,12 @@ cache: false
 before_install:
   - docker pull selenium/standalone-chrome:3.8.1-erbium
   - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
+script: "npm run $TEST_SUITE"
+env:
+  - TEST_SUITE=jest
+  - TEST_SUITE=wdio
 jobs:
   include:
-    - stage: Tests
-      script: "npm run $TEST_SUITE"
-      env:
-        - TEST_SUITE=jest
-        - TEST_SUITE=wdio
     - stage: Danger
       script: npm run danger
     - stage: Deploy
