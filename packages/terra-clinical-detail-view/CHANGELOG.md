@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.2.0 - (March 27, 2018)
+----------
 ### Changed
 * Updated text sizes & colors
 
