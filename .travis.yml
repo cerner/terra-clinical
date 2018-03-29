@@ -15,9 +15,6 @@ env:
   - TEST_SUITE="wdio -- --suite actionHeader,application,detailView,header"
   - TEST_SUITE="wdio -- --suite itemCollection,itemDisplay,itemView,labelValueView,onsetPicker"
   - TEST_SUITE=danger
-stages:
-  - Test
-  - Deploy
 jobs:
   include:
     - stage: Test
