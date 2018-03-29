@@ -1,8 +1,8 @@
-
+@import './mixins';
 
 :local {
   .result-view {
-    color: var(--orion-clinical-result-view-background-color, #595f62);
+    color: var(--result-view-background-color, #595f62);
     font-size: 16px;
     line-height: 20px;
     white-space: nowrap;
@@ -17,148 +17,77 @@
     padding: 5px;
   }
 
-  .result-view.result-view--alignEnd {
+  .result-view--align-end {
     text-align: right; // Verify this is correct, should flex with RTL
-
-    .result-view-resultBlock > :first-child {
-      flex-grow: 1;
-    }
   }
 
-  .result-view.result-view--noTruncate {
-    white-space: initial;
-  }
-
-  [aria-selected=true] .result-view {
-    border-right: none;
-
-    svg {
-      fill: var(--orion-clinical-result-view-base-color, #fff);
-    }
-
-    .result-view-resultAge {
-      color: var(--orion-clinical-result-view-base-color, #fff);
-    }
-
-    .result-view-conceptDisplay {
-      color: var(--orion-clinical-result-view-base-color, #fff);
-    }
-
-    .result-view-resultUnit {
-      color: var(--orion-clinical-result-view-base-color, #fff);
-    }
-
-    .result-view-resultValueText {
-      color: var(--orion-clinical-result-view-base-color, #fff);
-    }
-
-    .result-view-resultSeparator {
-      color: var(--orion-clinical-result-view-base-color, #fff);
-    }
-  }
-
-  .result-view-resultBlock {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: baseline;
-    -ms-flex-align: baseline;
+  .result-view-result-block {
     align-items: baseline;
+    display: flex;
   }
 
   .result-view-indicator--high {
-    color: var(--orion-clinical-result-view-high-color, #ff6100);
+    color: var(--result-view-high-color, #ff6100);
 
-    & + .result-view-resultValueText {
-      color: var(--orion-clinical-result-view-high-color, #ff6100);
+    .result-view-result-value-text {
+      color: var(--result-view-high-color, #ff6100);
     }
   }
 
   .result-view-indicator--unexpected {
-    color: var(--orion-clinical-result-view-unexpected-color, #868a8c);
+    color: var(--result-view-unexpected-color, #868a8c);
   }
 
   .result-view-indicator--low {
-    color: var(--orion-clinical-result-view-low-color, #0053e6);
+    color: var(--result-view-low-color, #0053e6);
 
-    & + .result-view-resultValueText {
-      color: var(--orion-clinical-result-view-low-color, #0053e6);
+    .result-view-result-value-text {
+      color: var(--result-view-low-color, #0053e6);
     }
   }
 
   .result-view-indicator--abnormal {
-    color: var(--orion-clinical-result-view-abnormal-color, #654a08);
+    color: var(--result-view-abnormal-color, #654a08);
 
-    & + .result-view-resultValueText {
-      color: var(--orion-clinical-result-view-abnormal-color, #654a08);
+    .result-view-result-value-text {
+      color: var(--result-view-abnormal-color, #654a08);
     }
   }
 
   .result-view-indicator--critical {
-    color: var(--orion-clinical-result-view-critical-color, #cc0000);
+    color: var(--result-view-critical-color, #c00);
 
-    & + .result-view-resultValueText {
-      color: var(--orion-clinical-result-view-critical-color, #cc0000);
+    .result-view-result-value-text {
+      color: var(--result-view-critical-color, #c00);
     }
   }
 
-  .result-view-resultValueText {
+  .result-view-result-value-text {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .result-view-resultUnit {
+  .result-view-result-unit {
+    color: var(--result-view-text-color, #6f7477);
     line-height: normal;
     padding-left: 3px; // Fix this for RTL
-    color: var(--orion-clinical-result-view-text-color, #6f7477);
   }
 
-  .result-view-resultAge {
+  .result-view-result-age {
     //.text-body(); // Fix this!!
-    color: var(--orion-clinical-result-view-text-color, #6f7477);
+    color: var(--result-view-text-color, #6f7477);
     display: block;
     font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .result-view-conceptDisplay {
-    //.text-body(); // Fix this!!
-    color: var(--orion-clinical-result-view-text-color, #6f7477);
-    display: block;
-    font-size: 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .is-truncated {
+    @include terra-clinical-text-truncate;
   }
 
-  .result-view-indicator {
-    padding-right: 3px; // Fix this for RTL
-    max-height: 100%;
-    height: 14px;
-    width: 1em;
-
-    &.result-view-indicator--modified {
-      padding-left: 3px; // Fix this for RTL
-      padding-right: 0px; // Fix this for RTL
-      height: 11px;
-      color: var(--orion-clinical-result-view-modified-color, #26a2e5);
-    }
-
-    &.result-view-indicator--document {
-      color: var(--orion-clinical-result-view-document-color, #9b9fa1);
-    }
-
-    &.result-view-indicator--comment {
-      padding-left: 3px; // Fix this for RTL
-      padding-right: 0px; // Fix this for RTL
-      height: 11px;
-      color: var(--orion-clinical-result-view-comment-color, #9b9fa1);
-    }
-  }
-
-  .result-view-resultSeparator {
+  .result-view-result-separator {
     padding-left: 3px;
     padding-right: 3px;
   }
-
 }

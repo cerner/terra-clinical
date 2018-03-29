@@ -3,7 +3,7 @@ import Base from 'terra-base';
 import ResultView from '../../src/ResultView';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
-const results = [{ value: '50', unit: 'ml', normalcy: 'HIGH' }];
+const results = [{ value: '503456789', unit: 'ml', normalcy: 'CRITICAL' }];
 
 const CompleteResultView = () => (
   <Base locale={locale}>

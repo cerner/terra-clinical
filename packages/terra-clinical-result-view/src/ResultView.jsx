@@ -16,23 +16,23 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   *  An array of one or more results
+   *  An array of one or more results.
    */
   results: PropTypes.array,
   /**
-   *  The age display of the result. Does not handle formatting
+   *  The age display of the result. Does not handle formatting.
    */
   timeDisplay: PropTypes.string,
   /**
-   *  Does the result have related documents. Adds an indicator
+   *  Does the result have related documents. Adds an indicator.
    */
   hasDocument: PropTypes.bool,
   /**
-   *  Has the result been modified. Adds an indicator
+   *  Has the result been modified. Adds an indicator.
    */
   isModified: PropTypes.bool,
   /**
-   *  Are there comments related to the result. Adds an indicator
+   *  Are there comments related to the result. Adds an indicator.
    */
   hasComment: PropTypes.bool,
   /**
@@ -44,7 +44,7 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   *  Should the view have padding. Default to false.
+   *  Should the view have padding. Defaults to false.
    */
   isPadded: PropTypes.bool,
 };
@@ -62,13 +62,9 @@ const defaultProps = {
 
 function documentsDiv() {
   return <IconDocuments />;
-      // classes = "#{INDICATOR_CLASS} result-view-indicator--document"
-      // documents_graphic = Graphic.new(image_inline: {path: 'orion/clinical_results/documents.svg'},
-      //                                 attributes: {class: classes})
-      // documents_graphic.render_with_template(template)
 }
 
-function resultIndicator(result) {
+const resultIndicator = (result) => {
   if (!result.normalcy || !result.normalcy.length) {
     return null;
   }
@@ -90,24 +86,23 @@ function resultIndicator(result) {
   }
 
   return null;
-}
+};
 
-function resultsDiv(results) {
+const resultsDiv = (results, isTruncated) => {
   if (!results || !results.length) {
-    let noValueDisplay = '--';
-    return <div className={cx('result-View-resultValueText')} >{noValueDisplay}</div>;
+    const noValueDisplay = '--';
+    return <div className={cx('result-view-result-value-text')} >{noValueDisplay}</div>;
   }
 
   const resultsDivs = [];
 
   for (let i = 0; i < results.length; i += 1) {
     if (resultsDivs.length >= 1) {
-      const seperator = <span className={cx('result-View-resultSeparator')} >{'/'}</span>;
+      const seperator = <span className={cx('result-view-result-separator')} >{'/'}</span>;
       resultsDivs.push(seperator);
     }
 
     const resultValue = results[i];
-
     const resultIndicatorDiv = resultIndicator(resultValue);
 
     if (resultIndicatorDiv) {
@@ -119,9 +114,8 @@ function resultsDiv(results) {
     }
 
     let unitDiv = null;
-
     if (resultValue.unit && resultValue.unit.length > 0) {
-      unitDiv = <small className={cx('result-view-resultUnit')} >{resultValue.unit}</small>;
+      unitDiv = <small className={cx('result-view-result-unit')} >{resultValue.unit}</small>;
     }
 
     let resultValueDisplay = '--';
@@ -129,8 +123,12 @@ function resultsDiv(results) {
       resultValueDisplay = resultValue.value;
     }
 
+    let resultValueTextClassName = 'result-view-result-value-text';
+    if (isTruncated) {
+      resultValueTextClassName = 'is-truncated';
+    }
 
-    const resultValueDiv = (<span className={cx('result-view-resultValueText')} >
+    const resultValueDiv = (<span className={cx(resultValueTextClassName)} >
       {resultValueDisplay}
       {unitDiv}
     </span>);
@@ -139,31 +137,19 @@ function resultsDiv(results) {
   }
 
   return resultsDivs;
-}
+};
 
-function modifiedDiv() {
-  return <IconModified />;
-}
-
-function commentsDiv() {
-  return <IconComment />;
-}
-
-function timeDisplayDiv(timeDisplay) {
-  return <div className={cx('result-view-conceptDisplay')} >{timeDisplay}</div>;
-}
+const timeDisplayDiv = (timeDisplay) => {
+  const resultAgeClassName = 'result-view-result-age';
+  return <div className={cx(resultAgeClassName)} >{timeDisplay}</div>;
+};
 
 const ResultView = (props) => {
   const { results, timeDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
-
-  const attributesName = 'result-view';
+  let attributesName = 'result-view';
 
   if (alignEnd) {
-    // result-view--alignEnd
-  }
-
-  if (isTruncated) {
-    //  result-view--noTruncate
+    attributesName = 'result-view--alignEnd';
   }
 
   let bodyClassName = 'result-view-body';
@@ -172,20 +158,19 @@ const ResultView = (props) => {
     bodyClassName = 'result-view-body--padded';
   }
 
-  let noValueDisplay = '--';
   return (
     <div className={cx(attributesName)}>
       <div className={cx(bodyClassName)}>
-        <div className={cx('result-view-resultBlock')}>
+        <div className={cx('result-view-result-block')}>
           {hasDocument &&
             documentsDiv()
           }
-          { resultsDiv(results) }
+          { resultsDiv(results, isTruncated) }
           {isModified &&
-            modifiedDiv()
+            <IconModified />
           }
           {hasComment &&
-            commentsDiv()
+            <IconComment />
           }
         </div>
         {timeDisplay &&
@@ -196,7 +181,7 @@ const ResultView = (props) => {
   );
 };
 
-ResultView.propTypes = propTypes;
 ResultView.defaultProps = defaultProps;
+ResultView.propTypes = propTypes;
 
 export default ResultView;
