@@ -13,6 +13,10 @@ env:
   - TEST_SUITE="wdio -- --suite actionHeader,application,detailView,header"
   - TEST_SUITE="wdio -- --suite itemCollection,itemDisplay,itemView,labelValueView,onsetPicker"
   - TEST_SUITE=danger
+stages:
+  - Build
+  - Test
+  - Deploy
 jobs:
   include:
     - stage: Build
