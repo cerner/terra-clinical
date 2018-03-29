@@ -5,7 +5,6 @@ branches:
     - master
 cache:
   directories:
-    - node_modules
     - $HOME/.npm
 before_install:
   - docker pull selenium/standalone-chrome:3.8.1-erbium
