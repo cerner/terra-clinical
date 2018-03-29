@@ -6,7 +6,7 @@ branches:
 cache:
   directories:
     - $HOME/.npm
-install: false
+install: true
 env:
   - TEST_SUITE=lint
   - TEST_SUITE=jest
