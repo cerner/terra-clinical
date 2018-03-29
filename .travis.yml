@@ -20,6 +20,7 @@ stages:
 jobs:
   include:
     - stage: Build
+      skip_cleanup: true
       before_script: 
         - docker pull selenium/standalone-chrome:3.8.1-erbium
         - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
