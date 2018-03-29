@@ -9,6 +9,7 @@ cache:
 before_install:
   - docker pull selenium/standalone-chrome:3.8.1-erbium
   - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
+script: true
 env:
   - TEST_SUITE=lint
   - TEST_SUITE=jest
@@ -20,6 +21,8 @@ jobs:
     - stage: Test
       script: "npm run $TEST_SUITE"
     - stage: Deploy
+      before_deploy:
+        - npm run compile:prod
       deploy:
         provider: pages
         skip_cleanup: true
