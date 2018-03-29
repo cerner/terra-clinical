@@ -6,7 +6,9 @@ branches:
 cache:
   directories:
     - $HOME/.npm
-install: true
+before_install:
+  - docker pull selenium/standalone-chrome:3.8.1-erbium
+  - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
 env:
   - TEST_SUITE=lint
   - TEST_SUITE=jest
@@ -14,19 +16,11 @@ env:
   - TEST_SUITE="wdio -- --suite itemCollection,itemDisplay,itemView,labelValueView,onsetPicker"
   - TEST_SUITE=danger
 stages:
-  - Build
   - Test
   - Deploy
 jobs:
   include:
-    - stage: Build
-      skip_cleanup: true
-      before_script: 
-        - docker pull selenium/standalone-chrome:3.8.1-erbium
-        - docker run -v /dev/shm:/dev/shm -e TZ=America/Chicago -d -p 4444:4444 selenium/standalone-chrome:3.8.1-erbium
-      script: npm install
     - stage: Test
-      skip_cleanup: true
       script: "npm run $TEST_SUITE"
     - stage: Deploy
       deploy:
