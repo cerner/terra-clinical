@@ -13,15 +13,8 @@ script: "npm run $TEST_SUITE"
 env:
   - TEST_SUITE=lint
   - TEST_SUITE=jest
-  - TEST_SUITE="wdio -- --suite actionHeader"
-  - TEST_SUITE="wdio -- --suite application"
-  - TEST_SUITE="wdio -- --suite detailView"
-  - TEST_SUITE="wdio -- --suite header"
-  - TEST_SUITE="wdio -- --suite itemCollection"
-  - TEST_SUITE="wdio -- --suite itemDisplay"
-  - TEST_SUITE="wdio -- --suite itemView"
-  - TEST_SUITE="wdio -- --suite labelValueView"
-  - TEST_SUITE="wdio -- --suite onsetPicker"
+  - TEST_SUITE="wdio -- --suite actionHeader,application,detailView,header"
+  - TEST_SUITE="wdio -- --suite itemCollection,itemDisplay,itemView,labelValueView,onsetPicker"
   - TEST_SUITE=danger
 deploy:
   provider: pages
