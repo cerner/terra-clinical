@@ -37,8 +37,8 @@ describe('ResultView', () => {
     Terra.should.matchScreenshot({ viewports });
   });
 
-  describe('with  no Time Display', () => {
-    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/not-time-display-result-view'));
+  describe('with no Time Display', () => {
+    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/no-time-display-result-view'));
 
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });

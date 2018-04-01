@@ -77,8 +77,8 @@ import LessYear from './packages/terra-clinical-onset-picker/examples/test-examp
 import DefaultResultView from './packages/terra-clinical-result-view/examples/test-examples/DefaultResultView.example';
 import TruncatedResultView from './packages/terra-clinical-result-view/examples/test-examples/TruncatedResultView.example';
 import AlignEndResultView from './packages/terra-clinical-result-view/examples/test-examples/AlignEndResultView.example';
-import ResultViewWithNoTimeDisplay from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithNoTimeDisplay.example';
-import ResultViewWithNotTruncated from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithNotTruncated.example';
+import ResultViewNoTimeDisplay from './packages/terra-clinical-result-view/examples/test-examples/ResultViewNoTimeDisplay.example';
+import ResultViewNotTruncated from './packages/terra-clinical-result-view/examples/test-examples/ResultViewNotTruncated.example';
 import ResultViewWithSeparator from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithSeparator.example';
 
 const componentConfig = {
@@ -498,14 +498,14 @@ const componentConfig = {
         component: ResultViewWithSeparator,
       },
       {
-        name: 'ResultViewWithNotTruncated',
+        name: 'ResultViewNotTruncated',
         path: '/not-truncated-result-view',
-        component: ResultViewWithNotTruncated,
+        component: ResultViewNotTruncated,
       },
       {
-        name: 'ResultViewWithNoTimeDisplay',
+        name: 'ResultViewNoTimeDisplay',
         path: '/no-time-display-result-view',
-        component: ResultViewWithNoTimeDisplay,
+        component: ResultViewNoTimeDisplay,
       },
       {
         name: 'AlignEndResultView',
