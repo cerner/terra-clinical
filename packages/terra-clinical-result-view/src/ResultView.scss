@@ -17,10 +17,6 @@
     padding: 5px;
   }
 
-  .result-view--align-end {
-    text-align: right; // Verify this is correct, should flex with RTL
-  }
-
   .result-view-result-block {
     align-items: baseline;
     display: flex;
@@ -70,11 +66,10 @@
   .result-view-result-unit {
     color: var(--result-view-text-color, #6f7477);
     line-height: normal;
-    padding-left: 3px; // Fix this for RTL
+    padding-left: 3px;
   }
 
   .result-view-result-age {
-    //.text-body(); // Fix this!!
     color: var(--result-view-text-color, #6f7477);
     display: block;
     font-size: 16px;

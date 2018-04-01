@@ -146,10 +146,11 @@ const timeDisplayDiv = (timeDisplay) => {
 
 const ResultView = (props) => {
   const { results, timeDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
-  let attributesName = 'result-view';
+  const attributesName = 'result-view';
+  let dir = 'ltr';
 
   if (alignEnd) {
-    attributesName = 'result-view--alignEnd';
+    dir = 'rtl';
   }
 
   let bodyClassName = 'result-view-body';
@@ -159,7 +160,7 @@ const ResultView = (props) => {
   }
 
   return (
-    <div className={cx(attributesName)}>
+    <div className={cx(attributesName)} dir={dir}>
       <div className={cx(bodyClassName)}>
         <div className={cx('result-view-result-block')}>
           {hasDocument &&

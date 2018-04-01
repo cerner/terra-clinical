@@ -75,7 +75,11 @@ import FiveYears from './packages/terra-clinical-onset-picker/examples/test-exam
 import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth.example';
 import LessYear from './packages/terra-clinical-onset-picker/examples/test-examples/LessYear.example';
 import DefaultResultView from './packages/terra-clinical-result-view/examples/test-examples/DefaultResultView.example';
-import CompleteResultView from './packages/terra-clinical-result-view/examples/test-examples/CompleteResultView.example';
+import TruncatedResultView from './packages/terra-clinical-result-view/examples/test-examples/TruncatedResultView.example';
+import AlignEndResultView from './packages/terra-clinical-result-view/examples/test-examples/AlignEndResultView.example';
+import ResultViewWithNoTimeDisplay from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithNoTimeDisplay.example';
+import ResultViewWithNotTruncated from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithNotTruncated.example';
+import ResultViewWithSeparator from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithSeparator.example';
 
 const componentConfig = {
   'terra-clinical-action-header': {
@@ -484,9 +488,29 @@ const componentConfig = {
         component: DefaultResultView,
       },
       {
-        name: 'CompleteResultView',
-        path: '/complete-result-view',
-        component: CompleteResultView,
+        name: 'TruncatedResultView',
+        path: '/truncated-result-view',
+        component: TruncatedResultView,
+      },
+      {
+        name: 'ResultViewWithSeparator',
+        path: '/separator-result-view',
+        component: ResultViewWithSeparator,
+      },
+      {
+        name: 'ResultViewWithNotTruncated',
+        path: '/not-truncated-result-view',
+        component: ResultViewWithNotTruncated,
+      },
+      {
+        name: 'ResultViewWithNoTimeDisplay',
+        path: '/no-time-display-result-view',
+        component: ResultViewWithNoTimeDisplay,
+      },
+      {
+        name: 'AlignEndResultView',
+        path: '/align-end-result-view',
+        component: AlignEndResultView,
       },
     ],
   },
