@@ -12,17 +12,26 @@ import LabelValueViewSrc from '!raw-loader!terra-clinical-label-value-view/src/L
 // Example Files
 import LabelValueViewText from './LabelValueViewText';
 import LabelValueViewNode from './LabelValueViewNode';
+import LabelValueViewNodeCustom from './LabelValueViewNodeCustom';
 
 const LabelValueViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={LabelValueViewSrc} componentName="Label Value View" />
+    <br />
     <h2 id="text_value">Label Value View with a Text Input</h2>
     <LabelValueViewText />
     <br />
-    <h2 id="element_value">Label Value View with an Node Input</h2>
+    <br />
+    <br />
+    <h2 id="element_value">Label Value View with a Node Input</h2>
     <LabelValueViewNode />
+    <br />
+    <br />
+    <br />
+    <h2 id="element_value">Label Value View with a Node Input (Custom)</h2>
+    <LabelValueViewNodeCustom />
     <br />
   </div>
 );

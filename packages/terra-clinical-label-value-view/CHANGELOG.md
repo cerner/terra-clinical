@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+2.2.0 - (March 27, 2018)
+----------
+### Changed
+* Updated value font-size and the site example page
+
 2.1.0 - (March 6, 2018)
 ----------
 ### Changed

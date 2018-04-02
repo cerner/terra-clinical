@@ -17,6 +17,10 @@ const siteConfig = {
 
     /* The title for the site header. */
     title: 'Terra Clinical',
+
+    extensions: {
+      gitHubUrl: 'https://github.com/cerner/terra-clinical',
+    },
   },
 };
 

@@ -9,6 +9,10 @@ Unreleased
 ### Added
 * Add component names to Props Table titles
 
+### Changed
+* Updated DetailView examples
+* Updated LabelValueView examples
+
 2.0.0 - (February 19, 2018)
 ----------
 ### Changed

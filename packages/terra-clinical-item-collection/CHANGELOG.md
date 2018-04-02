@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+3.2.0 - (March 27, 2018)
+----------
+### Changed
+* Converted nightwatch tests to wdio
+
 3.1.0 - (March 6, 2018)
 ----------
 ### Changed
