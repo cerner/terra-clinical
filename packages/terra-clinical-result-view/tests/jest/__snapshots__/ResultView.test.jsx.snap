@@ -7,8 +7,7 @@ exports[`ResultView should render a Result View with RTL support 1`] = `
   hasDocument={true}
   isModified={false}
   isPadded={true}
-  isTruncated={true}
-  isTruncation={false}
+  isTruncated={false}
   results={
     Array [
       Object {
@@ -50,8 +49,7 @@ exports[`ResultView should render a Result View with separator 1`] = `
   hasDocument={true}
   isModified={false}
   isPadded={true}
-  isTruncated={true}
-  isTruncation={false}
+  isTruncated={false}
   results={
     Array [
       Object {
@@ -96,8 +94,7 @@ exports[`ResultView should render a Result View without truncation 1`] = `
   hasDocument={true}
   isModified={false}
   isPadded={true}
-  isTruncated={true}
-  isTruncation={false}
+  isTruncated={false}
   results={
     Array [
       Object {

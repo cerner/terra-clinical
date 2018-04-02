@@ -50,7 +50,7 @@ describe('ResultView', () => {
           hasDocument
           hasComment
           isPadded
-          isTruncation={false}
+          isTruncated={false}
         />
       </IntlProvider>);
     const wrapper = shallow(resultView);
@@ -65,7 +65,7 @@ describe('ResultView', () => {
           hasDocument
           hasComment
           isPadded
-          isTruncation={false}
+          isTruncated={false}
         />
       </IntlProvider>);
     const wrapper = shallow(resultView);
@@ -80,7 +80,7 @@ describe('ResultView', () => {
           hasDocument
           hasComment
           isPadded
-          isTruncation={false}
+          isTruncated={false}
           alignEnd
         />
       </IntlProvider>);

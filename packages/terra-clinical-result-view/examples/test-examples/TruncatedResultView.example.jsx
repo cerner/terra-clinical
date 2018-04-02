@@ -15,6 +15,7 @@ const TruncatedResultView = () => (
         hasDocument
         hasComment
         isPadded
+        isModified
       />
     </Base>
   </div>
