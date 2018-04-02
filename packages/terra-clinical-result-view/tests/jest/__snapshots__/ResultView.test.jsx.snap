@@ -1,9 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ResultView should render a Result View with RTL support 1`] = `
+<ResultView
+  alignEnd={true}
+  hasComment={true}
+  hasDocument={true}
+  isModified={false}
+  isPadded={true}
+  isTruncated={true}
+  isTruncation={false}
+  results={
+    Array [
+      Object {
+        "normalcy": "CRITICAL",
+        "unit": "ml",
+        "value": "503456789",
+      },
+    ]
+  }
+  timeDisplay={null}
+/>
+`;
+
+exports[`ResultView should render a Result View with no time display 1`] = `
+<ResultView
+  alignEnd={false}
+  hasComment={true}
+  hasDocument={true}
+  isModified={false}
+  isPadded={true}
+  isTruncated={true}
+  results={
+    Array [
+      Object {
+        "normalcy": "CRITICAL",
+        "unit": "ml",
+        "value": "503456789",
+      },
+    ]
+  }
+  timeDisplay={null}
+/>
+`;
+
+exports[`ResultView should render a Result View with separator 1`] = `
+<ResultView
+  alignEnd={false}
+  hasComment={true}
+  hasDocument={true}
+  isModified={false}
+  isPadded={true}
+  isTruncated={true}
+  isTruncation={false}
+  results={
+    Array [
+      Object {
+        "unit": "mmHg",
+        "value": "120",
+      },
+      Object {
+        "unit": "mmHg",
+        "value": "80",
+      },
+    ]
+  }
+  timeDisplay={null}
+/>
+`;
+
+exports[`ResultView should render a Result View with truncation by default 1`] = `
+<ResultView
+  alignEnd={false}
+  hasComment={true}
+  hasDocument={true}
+  isModified={false}
+  isPadded={true}
+  isTruncated={true}
+  results={
+    Array [
+      Object {
+        "normalcy": "CRITICAL",
+        "unit": "ml",
+        "value": "503456789",
+      },
+    ]
+  }
+  timeDisplay={null}
+/>
+`;
+
+exports[`ResultView should render a Result View without truncation 1`] = `
+<ResultView
+  alignEnd={false}
+  hasComment={true}
+  hasDocument={true}
+  isModified={false}
+  isPadded={true}
+  isTruncated={true}
+  isTruncation={false}
+  results={
+    Array [
+      Object {
+        "normalcy": "CRITICAL",
+        "unit": "ml",
+        "value": "503456789",
+      },
+    ]
+  }
+  timeDisplay={null}
+/>
+`;
+
 exports[`ResultView should render a default component 1`] = `
-<div
-  className="result-view"
->
-  default
-</div>
+<ResultView
+  alignEnd={false}
+  hasComment={false}
+  hasDocument={false}
+  isModified={false}
+  isPadded={false}
+  isTruncated={true}
+  results={Array []}
+  timeDisplay={null}
+/>
 `;
