@@ -24,21 +24,21 @@ describe('ResultView', () => {
   });
 
   describe('with Separator', () => {
-    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/separator-result-view'));
+    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/result-view-with-separator'));
 
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
   });
 
   describe('Not Truncated', () => {
-    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/not-truncated-result-view'));
+    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/result-view-not-truncated'));
 
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
   });
 
   describe('with no Time Display', () => {
-    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/no-time-display-result-view'));
+    beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/result-view-no-time-display'));
 
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
