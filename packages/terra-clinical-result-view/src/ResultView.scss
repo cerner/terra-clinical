@@ -11,6 +11,10 @@
     svg {
       fill: currentColor;
     }
+
+    &.align-end {
+      text-align: right;
+    }
   }
 
   .result-view-body--padded {
@@ -19,7 +23,7 @@
 
   .result-view-result-block {
     align-items: baseline;
-    display: flex;
+    display: inline-flex;
   }
 
   .result-view-indicator {
@@ -101,7 +105,6 @@
     &.critical {
       color: var(--result-view-text-color, #c00);
     }
-
   }
 
   .result-view-result-separator {

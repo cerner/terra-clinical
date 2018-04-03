@@ -130,12 +130,12 @@ const resultsDiv = (results, isTruncated) => {
       resultValueTextClassName = 'result-view-is-truncated';
     }
 
-    let normalcyColor = results[i].normalcy;
-    if (normalcyColor !== undefined) {
-      normalcyColor = normalcyColor.toLowerCase();
+    let normalcyLevel = results[i].normalcy;
+    if (normalcyLevel !== undefined) {
+      normalcyLevel = normalcyLevel.toLowerCase();
     }
 
-    const resultValueDiv = (<span className={cx(resultValueTextClassName, normalcyColor)} >
+    const resultValueDiv = (<span className={cx(resultValueTextClassName, normalcyLevel)} >
       {resultValueDisplay}
       {unitDiv}
     </span>);
@@ -154,10 +154,10 @@ const timeDisplayDiv = (timeDisplay) => {
 const ResultView = (props) => {
   const { results, timeDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
   const attributesName = 'result-view';
-  let dir = 'ltr';
+  let align = 'align-start';
 
   if (alignEnd) {
-    dir = 'rtl';
+    align = 'align-end';
   }
 
   let bodyClassName = 'result-view-body';
@@ -167,7 +167,7 @@ const ResultView = (props) => {
   }
 
   return (
-    <div className={cx(attributesName)} dir={dir}>
+    <div className={cx(attributesName, align)} >
       <div className={cx(bodyClassName)}>
         <div className={cx('result-view-result-block')}>
           {hasDocument &&
