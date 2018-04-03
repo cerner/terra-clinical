@@ -20,7 +20,7 @@ describe('ResultView', () => {
     beforeEach(() => browser.url('/#/raw/tests/clinical-result-view/align-end-result-view'));
 
     Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector: '#root' });
   });
 
   describe('with Separator', () => {
