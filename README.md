@@ -38,6 +38,7 @@
 | terra-clinical-modal-manager |[![NPM version](http://img.shields.io/npm/v/terra-clinical-modal-manager.svg)](https://www.npmjs.org/package/terra-clinical-modal-manager) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 | [terra-clinical-no-data-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-no-data-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-no-data-view.svg)](https://www.npmjs.org/package/terra-clinical-no-data-view) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 | [terra-clinical-site](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-site) |[![NPM version](http://img.shields.io/npm/v/terra-clinical-site.svg)](https://www.npmjs.org/package/terra-clinical-site) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg)|
+| [terra-clinical-result-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-result-view) | | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg)|
 | terra-clinical-slide-group |[![NPM version](http://img.shields.io/npm/v/terra-clinical-slide-group.svg)](https://www.npmjs.org/package/terra-clinical-slide-group) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 
 
