@@ -65,27 +65,29 @@ function documentsDiv() {
 }
 
 const resultIndicator = (result) => {
+  let icon = null;
+
   if (!result.normalcy || !result.normalcy.length) {
     return null;
   }
 
   if (result.normalcy === 'ABNORMAL') {
-    return <IconAbnormal />;
+    icon = <IconAbnormal />;
   }
 
   if (result.normalcy === 'CRITICAL') {
-    return <IconAlert />;
+    icon = <IconAlert />;
   }
 
   if (result.normalcy === 'LOW') {
-    return <IconLow />;
+    icon = <IconLow />;
   }
 
   if (result.normalcy === 'HIGH') {
-    return <IconHigh />;
+    icon = <IconHigh />;
   }
 
-  return null;
+  return <span className={cx('result-view-indicator', result.normalcy.toLowerCase())} >{icon}</span>;
 };
 
 const resultsDiv = (results, isTruncated) => {
@@ -125,10 +127,15 @@ const resultsDiv = (results, isTruncated) => {
 
     let resultValueTextClassName = 'result-view-result-value-text';
     if (isTruncated) {
-      resultValueTextClassName = 'is-truncated';
+      resultValueTextClassName = 'result-view-is-truncated';
     }
 
-    const resultValueDiv = (<span className={cx(resultValueTextClassName)} >
+    let normalcyColor = results[i].normalcy;
+    if (normalcyColor !== undefined) {
+      normalcyColor = normalcyColor.toLowerCase();
+    }
+
+    const resultValueDiv = (<span className={cx(resultValueTextClassName, normalcyColor)} >
       {resultValueDisplay}
       {unitDiv}
     </span>);
