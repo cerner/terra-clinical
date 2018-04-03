@@ -74,12 +74,12 @@ import Default from './packages/terra-clinical-onset-picker/examples/test-exampl
 import FiveYears from './packages/terra-clinical-onset-picker/examples/test-examples/FiveYears.example';
 import LessMonth from './packages/terra-clinical-onset-picker/examples/test-examples/LessMonth.example';
 import LessYear from './packages/terra-clinical-onset-picker/examples/test-examples/LessYear.example';
-import DefaultResultView from './packages/terra-clinical-result-view/examples/test-examples/DefaultResultView.example';
-import TruncatedResultView from './packages/terra-clinical-result-view/examples/test-examples/TruncatedResultView.example';
 import AlignEndResultView from './packages/terra-clinical-result-view/examples/test-examples/AlignEndResultView.example';
+import DefaultResultView from './packages/terra-clinical-result-view/examples/test-examples/DefaultResultView.example';
 import ResultViewNoTimeDisplay from './packages/terra-clinical-result-view/examples/test-examples/ResultViewNoTimeDisplay.example';
 import ResultViewNotTruncated from './packages/terra-clinical-result-view/examples/test-examples/ResultViewNotTruncated.example';
 import ResultViewWithSeparator from './packages/terra-clinical-result-view/examples/test-examples/ResultViewWithSeparator.example';
+import TruncatedResultView from './packages/terra-clinical-result-view/examples/test-examples/TruncatedResultView.example';
 
 const componentConfig = {
   'terra-clinical-action-header': {
@@ -483,34 +483,34 @@ const componentConfig = {
     path: '/clinical-result-view',
     tests: [
       {
-        name: 'DefaultResultView',
+        name: 'Align End Result View',
+        path: '/align-end-result-view',
+        component: AlignEndResultView,
+      },
+      {
+        name: 'Default Result View',
         path: '/default-result-view',
         component: DefaultResultView,
       },
       {
-        name: 'TruncatedResultView',
-        path: '/truncated-result-view',
-        component: TruncatedResultView,
-      },
-      {
-        name: 'ResultViewWithSeparator',
-        path: '/separator-result-view',
-        component: ResultViewWithSeparator,
-      },
-      {
-        name: 'ResultViewNotTruncated',
-        path: '/not-truncated-result-view',
-        component: ResultViewNotTruncated,
-      },
-      {
-        name: 'ResultViewNoTimeDisplay',
-        path: '/no-time-display-result-view',
+        name: 'Result View No Time Display',
+        path: '/result-view-no-time-display',
         component: ResultViewNoTimeDisplay,
       },
       {
-        name: 'AlignEndResultView',
-        path: '/align-end-result-view',
-        component: AlignEndResultView,
+        name: 'Result View Not Truncated',
+        path: '/result-view-not-truncated',
+        component: ResultViewNotTruncated,
+      },
+      {
+        name: 'Result View With Separator',
+        path: '/result-view-with-separator',
+        component: ResultViewWithSeparator,
+      },
+      {
+        name: 'Truncated Result View',
+        path: '/truncated-result-view',
+        component: TruncatedResultView,
       },
     ],
   },
