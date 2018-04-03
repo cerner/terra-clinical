@@ -10,15 +10,16 @@ import { version } from '../package.json';
 import ResultViewSrc from '!raw-loader!../src/ResultView.jsx';
 
 // Examples
-import DefaultResultView from './test-examples/DefaultResultView';
-import ResultViewNotTruncated from './test-examples/ResultViewNotTruncated';
-import TruncatedResultView from './test-examples/TruncatedResultView';
-import ResultViewWithSeparator from './test-examples/ResultViewWithSeparator';
+import DefaultResultView from './index-examples/DefaultResultView';
+import ResultViewNotTruncated from './index-examples/ResultViewNotTruncated';
+import TruncatedResultView from './index-examples/TruncatedResultView';
+import ResultViewWithSeparator from './index-examples/ResultViewWithSeparator';
 
 const ResultViewExamples = () => (
   <div>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
+    <PropsTable id="props-table" src={ResultViewSrc} />
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
     <h3>Default Result View</h3>
     <DefaultResultView />
@@ -29,7 +30,6 @@ const ResultViewExamples = () => (
     <h3>Result View with Separator</h3>
     <ResultViewWithSeparator />
     <br />
-    <PropsTable id="props-table" src={ResultViewSrc} />
   </div>
 );
 
