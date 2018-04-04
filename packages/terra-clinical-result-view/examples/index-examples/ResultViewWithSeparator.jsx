@@ -1,7 +1,7 @@
 import React from 'react';
 import ResultView from '../../src/ResultView';
 
-const resultsWithSeperator = [{ value: '120', unit: 'mmHg' }, { value: '80', unit: 'mmHg' }];
+const resultsWithSeperator = [{ value: 120, unit: 'mmHg' }, { value: 80, unit: 'mmHg' }];
 
 const ResultViewWithSeparator = () => (
   <div>

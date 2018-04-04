@@ -1,7 +1,7 @@
 import React from 'react';
 import ResultView from '../../src/ResultView';
 
-const results = [{ value: '25.0', unit: 'ml', normalcy: 'LOW' }];
+const results = [{ value: 25.0, unit: 'ml', normalcy: 'LOW' }];
 
 const ResultViewNotTruncated = () => (
   <div>

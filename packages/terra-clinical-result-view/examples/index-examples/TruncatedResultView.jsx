@@ -1,7 +1,7 @@
 import React from 'react';
 import ResultView from '../../src/ResultView';
 
-const results = [{ value: '503456789', unit: 'ml', normalcy: 'CRITICAL' }];
+const results = [{ value: 503456789, unit: 'ml', normalcy: 'CRITICAL' }];
 
 const TruncatedResultView = () => (
   <div>

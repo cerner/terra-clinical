@@ -3,7 +3,7 @@ import Base from 'terra-base';
 import ResultView from '../../src/ResultView';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
-const results = [{ value: '25.0', unit: 'ml', normalcy: 'LOW' }];
+const results = [{ value: 25.0, unit: 'ml', normalcy: 'LOW' }];
 
 const ResultViewNotTruncated = () => (
   <div>
