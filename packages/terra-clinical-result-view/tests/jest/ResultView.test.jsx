@@ -3,8 +3,8 @@ import { IntlProvider } from 'react-intl';
 import ResultView from '../../src/ResultView';
 
 const locale = 'en-US';
-const results = [{ value: '503456789', unit: 'ml', normalcy: 'CRITICAL' }];
-const resultsWithSeperator = [{ value: '120', unit: 'mmHg' }, { value: '80', unit: 'mmHg' }];
+const results = [{ value: 503456789, unit: 'ml', normalcy: 'CRITICAL' }];
+const resultsWithSeperator = [{ value: 120, unit: 'mmHg' }, { value: 80, unit: 'mmHg' }];
 
 describe('ResultView', () => {
   // Snapshot Tests

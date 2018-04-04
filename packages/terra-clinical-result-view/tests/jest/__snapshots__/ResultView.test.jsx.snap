@@ -13,7 +13,7 @@ exports[`ResultView should render a Result View with RTL support 1`] = `
       Object {
         "normalcy": "CRITICAL",
         "unit": "ml",
-        "value": "503456789",
+        "value": 503456789,
       },
     ]
   }
@@ -34,7 +34,7 @@ exports[`ResultView should render a Result View with no time display 1`] = `
       Object {
         "normalcy": "CRITICAL",
         "unit": "ml",
-        "value": "503456789",
+        "value": 503456789,
       },
     ]
   }
@@ -54,11 +54,11 @@ exports[`ResultView should render a Result View with separator 1`] = `
     Array [
       Object {
         "unit": "mmHg",
-        "value": "120",
+        "value": 120,
       },
       Object {
         "unit": "mmHg",
-        "value": "80",
+        "value": 80,
       },
     ]
   }
@@ -79,7 +79,7 @@ exports[`ResultView should render a Result View with truncation by default 1`] =
       Object {
         "normalcy": "CRITICAL",
         "unit": "ml",
-        "value": "503456789",
+        "value": 503456789,
       },
     ]
   }
@@ -100,7 +100,7 @@ exports[`ResultView should render a Result View without truncation 1`] = `
       Object {
         "normalcy": "CRITICAL",
         "unit": "ml",
-        "value": "503456789",
+        "value": 503456789,
       },
     ]
   }
