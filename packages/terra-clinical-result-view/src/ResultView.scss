@@ -3,8 +3,8 @@
 :local {
   .result-view {
     color: var(--result-view-background-color, #595f62);
-    font-size: 20px;
-    line-height: 20px;
+    font-size: var(--result-view-font-size, 20px);
+    line-height: var(--result-view-line-height, 20px);
     white-space: nowrap;
     width: 100%;
 
@@ -18,7 +18,7 @@
   }
 
   .result-view-body--padded {
-    padding: 5px;
+    padding: var(--result-view-body-padding, 5px);
   }
 
   .result-view-result-block {
@@ -27,7 +27,7 @@
   }
 
   .result-view-indicator {
-    padding-right: 3px;
+    padding-right: var(--result-view-indicator-padding-right, 3px);
 
     &.high {
       color: var(--result-view-high-color, #ff6100);
@@ -51,7 +51,7 @@
   }
 
   .result-view-result-value-text {
-    font-size: 20px;
+    font-size: var(--result-view-font-size, 20px);
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -75,14 +75,14 @@
   .result-view-result-unit {
     color: var(--result-view-text-color, #6f7477);
     line-height: normal;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: var(--result-view-result-unit-padding-left, 3px);
+    padding-right: var(--result-view-result-unit-padding-right, 3px);
   }
 
   .result-view-result-age {
     color: var(--result-view-text-color, #6f7477);
     display: block;
-    font-size: 20px;
+    font-size: var(--result-view-font-size, 20px);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -108,7 +108,7 @@
   }
 
   .result-view-result-separator {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: var(--result-view-result-separator-padding-left, 3px);
+    padding-right: var(--result-view-result-separator-padding-right, 3px);
   }
 }

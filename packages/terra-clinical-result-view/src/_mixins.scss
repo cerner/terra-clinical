@@ -2,7 +2,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 30px;
+  width: var(--result-view-truncation-width, 30px);
   word-break: normal;
   word-wrap: normal;
 }
