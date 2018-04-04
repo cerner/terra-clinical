@@ -18,7 +18,11 @@ const propTypes = {
   /**
    *  An array of one or more results.
    */
-  results: PropTypes.array,
+  results: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.number,
+    units: PropTypes.string,
+    normalcy: PropTypes.string,
+  })),
   /**
    *  The age display of the result. Does not handle formatting.
    */
