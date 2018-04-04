@@ -60,31 +60,21 @@ const defaultProps = {
   isPadded: false,
 };
 
-function documentsDiv() {
-  return <IconDocuments />;
-}
+const normalcyIndicators = {
+  ABNORMAL: <IconAbnormal />,
+  CRITICAL: <IconAlert />,
+  LOW: <IconLow />,
+  HIGH: <IconHigh />,
+};
 
 const resultIndicator = (result) => {
   let icon = null;
+  const normalcyValues = ['ABNORMAL', 'CRITICAL', 'HIGH', 'LOW'];
 
   if (!result.normalcy || !result.normalcy.length) {
     return null;
-  }
-
-  if (result.normalcy === 'ABNORMAL') {
-    icon = <IconAbnormal />;
-  }
-
-  if (result.normalcy === 'CRITICAL') {
-    icon = <IconAlert />;
-  }
-
-  if (result.normalcy === 'LOW') {
-    icon = <IconLow />;
-  }
-
-  if (result.normalcy === 'HIGH') {
-    icon = <IconHigh />;
+  } else if (normalcyValues.includes(result.normalcy)) {
+    icon = normalcyIndicators[result.normalcy];
   }
 
   return <span className={cx('result-view-indicator', result.normalcy.toLowerCase())} >{icon}</span>;
@@ -100,8 +90,8 @@ const resultsDiv = (results, isTruncated) => {
 
   for (let i = 0; i < results.length; i += 1) {
     if (resultsDivs.length >= 1) {
-      const seperator = <span className={cx('result-view-result-separator')} >{'/'}</span>;
-      resultsDivs.push(seperator);
+      const separator = <span className={cx('result-view-result-separator')} >{'/'}</span>;
+      resultsDivs.push(separator);
     }
 
     const resultValue = results[i];
@@ -171,7 +161,7 @@ const ResultView = (props) => {
       <div className={cx(bodyClassName)}>
         <div className={cx('result-view-result-block')}>
           {hasDocument &&
-            documentsDiv()
+            <IconDocuments />
           }
           { resultsDiv(results, isTruncated) }
           {isModified &&
@@ -193,3 +183,4 @@ ResultView.defaultProps = defaultProps;
 ResultView.propTypes = propTypes;
 
 export default ResultView;
+export { normalcyIndicators };
