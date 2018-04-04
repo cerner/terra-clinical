@@ -69,11 +69,10 @@ const normalcyIndicators = {
 
 const resultIndicator = (result) => {
   let icon = null;
-  const normalcyValues = ['ABNORMAL', 'CRITICAL', 'HIGH', 'LOW'];
 
   if (!result.normalcy || !result.normalcy.length) {
     return null;
-  } else if (normalcyValues.includes(result.normalcy)) {
+  } else if (Object.keys(normalcyIndicators).includes(result.normalcy)) {
     icon = normalcyIndicators[result.normalcy];
   }
 
