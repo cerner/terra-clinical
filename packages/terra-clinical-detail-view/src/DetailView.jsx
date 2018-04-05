@@ -15,7 +15,7 @@ const propTypes = {
   title: PropTypes.string,
 
   /**
-   * List of subtitle strings
+   * Additional list of title strings to display
    */
   secondaryTitles: PropTypes.arrayOf(PropTypes.string),
 
@@ -25,7 +25,7 @@ const propTypes = {
   subtitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * Display for visualization data
+   * Display for minor supporting information like Status, Progress, or other additional detail
    */
   accessory: PropTypes.element,
 
@@ -49,8 +49,8 @@ const propTypes = {
    */
   isDivided: PropTypes.bool,
 
-  /**
-   * Indicates if title size is smaller.
+  /*
+   * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
    */
   isSmallerTitles: PropTypes.bool,
 };
