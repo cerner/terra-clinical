@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import IconDocuments from 'terra-icon/lib/icon/IconDocuments';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
+import { elementType } from 'react-prop-types';
 import styles from './ResultView.scss';
 
 const cx = classNames.bind(styles);
@@ -15,7 +16,7 @@ const propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.number,
     unit: PropTypes.string,
-    icon: PropTypes.node,
+    icon: elementType('svg'),
     color: PropTypes.string,
   })),
   /**
@@ -98,10 +99,7 @@ const resultsDiv = (results, isTruncated) => {
       unitDiv = <small className={cx('result-view-result-unit')} >{resultValue.unit}</small>;
     }
 
-    let resultValueDisplay = '--';
-    if (resultValue.value) {
-      resultValueDisplay = resultValue.value;
-    }
+    const resultValueDisplay = resultValue.value || '--';
 
     let resultValueTextClassName = 'result-view-result-value-text';
     if (isTruncated) {
