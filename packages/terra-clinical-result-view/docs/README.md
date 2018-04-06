@@ -11,9 +11,10 @@ Clinical Result View is a small stateless view that is intended to show measurem
 
 ```jsx
 import React from 'react';
+import IconLow from 'terra-icon/lib/icon/IconLow';
 import ResultView from 'terra-clinical-result-view';
 
-const results = [{ value: '50', unit: 'ml', normalcy: 'CRITICAL'}];
+const results = [{ value: '50', unit: 'ml', normalcy: <IconLow />, normalcyColor: '#0053e6' }];
 
 <ResultView
   results={results}

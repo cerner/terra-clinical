@@ -28,48 +28,12 @@
 
   .result-view-indicator {
     padding-right: var(--result-view-indicator-padding-right, 3px);
-
-    &.high {
-      color: var(--result-view-high-color, #ff6100);
-    }
-
-    &.unexpected {
-      color: var(--result-view-unexpected-color, #868a8c);
-    }
-
-    &.low {
-      color: var(--result-view-low-color, #0053e6);
-    }
-
-    &.abnormal {
-      color: var(--result-view-abnormal-color, #654a08);
-    }
-
-    &.critical {
-      color: var(--result-view-critical-color, #c00);
-    }
   }
 
   .result-view-result-value-text {
     font-size: var(--result-view-font-size, 20px);
     overflow: hidden;
     text-overflow: ellipsis;
-
-    &.low {
-      color: var(--result-view-text-color, #0053e6);
-    }
-
-    &.high {
-      color: var(--result-view-text-color, #ff6100);
-    }
-
-    &.abnormal {
-      color: var(--result-view-text-color, #654a08);
-    }
-
-    &.critical {
-      color: var(--result-view-text-color, #c00);
-    }
   }
 
   .result-view-result-unit {
@@ -89,22 +53,6 @@
 
   .result-view-is-truncated {
     @include terra-clinical-text-truncate;
-
-    &.low {
-      color: var(--result-view-text-color, #0053e6);
-    }
-
-    &.high {
-      color: var(--result-view-text-color, #ff6100);
-    }
-
-    &.abnormal {
-      color: var(--result-view-text-color, #654a08);
-    }
-
-    &.critical {
-      color: var(--result-view-text-color, #c00);
-    }
   }
 
   .result-view-result-separator {

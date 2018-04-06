@@ -1,7 +1,8 @@
 import React from 'react';
+import IconLow from 'terra-icon/lib/icon/IconLow';
 import ResultView from '../../src/ResultView';
 
-const results = [{ value: 25.0, unit: 'ml', normalcy: 'LOW' }];
+const results = [{ value: 25.2, unit: 'ml', normalcy: <IconLow />, normalcyColor: '#0053e6' }];
 
 const ResultViewNotTruncated = () => (
   <div>

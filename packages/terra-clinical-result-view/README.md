@@ -4,7 +4,7 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-result-view.svg)](https://www.npmjs.org/package/terra-clinical-result-view)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-{insert description}
+The Clinical Result View is a small stateless view that is intended to show measurements such as labs and vitals. The view is designed in a way that it can handle a single measurement (such as weight), but also show paired measurements such as blood pressure. In a clinical setting, each measurement can have additional metadata associated on the result, like whether it's a critical value or has been modified, or even if it's an unexpected value.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-result-view/docs)

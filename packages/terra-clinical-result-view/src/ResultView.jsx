@@ -5,11 +5,6 @@ import IconDocuments from 'terra-icon/lib/icon/IconDocuments';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconUnexpected from 'terra-icon/lib/icon/IconUnexpected';
-
-import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
-import IconHigh from 'terra-icon/lib/icon/IconHigh';
-import IconLow from 'terra-icon/lib/icon/IconLow';
 import styles from './ResultView.scss';
 
 const cx = classNames.bind(styles);
@@ -21,7 +16,8 @@ const propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.number,
     units: PropTypes.string,
-    normalcy: PropTypes.string,
+    normalcy: PropTypes.node,
+    normalcyColor: PropTypes.string,
   })),
   /**
    *  The age display of the result. Does not handle formatting.
@@ -64,23 +60,18 @@ const defaultProps = {
   isPadded: false,
 };
 
-const normalcyIndicators = {
-  ABNORMAL: <IconAbnormal />,
-  CRITICAL: <IconAlert />,
-  LOW: <IconLow />,
-  HIGH: <IconHigh />,
-};
-
 const resultIndicator = (result) => {
   let icon = null;
 
-  if (!result.normalcy || !result.normalcy.length) {
+  if (!result.normalcy) {
     return null;
-  } else if (Object.keys(normalcyIndicators).includes(result.normalcy)) {
-    icon = normalcyIndicators[result.normalcy];
   }
+  icon = React.cloneElement(
+    result.normalcy,
+    { color: result.normalcyColor },
+  );
 
-  return <span className={cx('result-view-indicator', result.normalcy.toLowerCase())} >{icon}</span>;
+  return <span className={cx('result-view-indicator')} >{icon}</span>;
 };
 
 const resultsDiv = (results, isTruncated) => {
@@ -99,7 +90,6 @@ const resultsDiv = (results, isTruncated) => {
 
     const resultValue = results[i];
     const resultIndicatorDiv = resultIndicator(resultValue);
-
     if (resultIndicatorDiv) {
       resultsDivs.push(resultIndicatorDiv);
     }
@@ -114,7 +104,7 @@ const resultsDiv = (results, isTruncated) => {
     }
 
     let resultValueDisplay = '--';
-    if (resultValue.value && resultValue.value.length > 0) {
+    if (resultValue.value) {
       resultValueDisplay = resultValue.value;
     }
 
@@ -123,12 +113,7 @@ const resultsDiv = (results, isTruncated) => {
       resultValueTextClassName = 'result-view-is-truncated';
     }
 
-    let normalcyLevel = results[i].normalcy;
-    if (normalcyLevel !== undefined) {
-      normalcyLevel = normalcyLevel.toLowerCase();
-    }
-
-    const resultValueDiv = (<span className={cx(resultValueTextClassName, normalcyLevel)} >
+    const resultValueDiv = (<span className={cx(resultValueTextClassName)} style={{ color: resultValue.normalcyColor }} >
       {resultValueDisplay}
       {unitDiv}
     </span>);
@@ -186,4 +171,3 @@ ResultView.defaultProps = defaultProps;
 ResultView.propTypes = propTypes;
 
 export default ResultView;
-export { normalcyIndicators };
