@@ -35,22 +35,22 @@
   }
 
   .result-view-result-value-text {
-    font-size: var(--result-view-font-size, 20px);
+    font-size: var(--result-view-result-value-font-size, 20px);
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .result-view-result-unit {
-    color: var(--result-view-text-color, #6f7477);
+    color: var(--result-view-result-unit-text-color, #6f7477);
     line-height: normal;
     padding-left: var(--result-view-result-unit-padding-left, 3px);
     padding-right: var(--result-view-result-unit-padding-right, 3px);
   }
 
   .result-view-result-age {
-    color: var(--result-view-text-color, #6f7477);
+    color: var(--result-view-result-age-text-color, #6f7477);
     display: block;
-    font-size: var(--result-view-font-size, 20px);
+    font-size: var(--result-view-result-age-font-size, 20px);
     overflow: hidden;
     text-overflow: ellipsis;
   }
