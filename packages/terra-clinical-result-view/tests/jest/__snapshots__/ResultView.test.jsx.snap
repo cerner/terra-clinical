@@ -12,7 +12,12 @@ exports[`ResultView should render a Result View with RTL support 1`] = `
   results={
     Array [
       Object {
-        "normalcy": "CRITICAL",
+        "color": "#0053e6",
+        "icon": <IconLow
+          id="Layer_1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />,
         "unit": "ml",
         "value": 503456789,
       },
@@ -33,7 +38,12 @@ exports[`ResultView should render a Result View with no time display 1`] = `
   results={
     Array [
       Object {
-        "normalcy": "CRITICAL",
+        "color": "#0053e6",
+        "icon": <IconLow
+          id="Layer_1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />,
         "unit": "ml",
         "value": 503456789,
       },
@@ -78,7 +88,12 @@ exports[`ResultView should render a Result View with truncation by default 1`] =
   results={
     Array [
       Object {
-        "normalcy": "CRITICAL",
+        "color": "#0053e6",
+        "icon": <IconLow
+          id="Layer_1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />,
         "unit": "ml",
         "value": 503456789,
       },
@@ -99,7 +114,12 @@ exports[`ResultView should render a Result View without truncation 1`] = `
   results={
     Array [
       Object {
-        "normalcy": "CRITICAL",
+        "color": "#0053e6",
+        "icon": <IconLow
+          id="Layer_1"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />,
         "unit": "ml",
         "value": 503456789,
       },

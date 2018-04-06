@@ -1,9 +1,10 @@
 import React from 'react';
+import IconLow from 'terra-icon/lib/icon/IconLow';
 import { IntlProvider } from 'react-intl';
 import ResultView from '../../src/ResultView';
 
 const locale = 'en-US';
-const results = [{ value: 503456789, unit: 'ml', normalcy: 'CRITICAL' }];
+const results = [{ value: 503456789, unit: 'ml', icon: <IconLow />, color: '#0053e6' }];
 const resultsWithSeperator = [{ value: 120, unit: 'mmHg' }, { value: 80, unit: 'mmHg' }];
 
 describe('ResultView', () => {
