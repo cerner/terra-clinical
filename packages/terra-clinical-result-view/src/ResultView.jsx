@@ -38,7 +38,7 @@ const propTypes = {
   /**
    *  The alignment of the component. Defaults to left.
    */
-  alignment: PropTypes.oneOf(['right', 'center']),
+  alignment: PropTypes.oneOf(['left', 'right', 'center']),
   /**
    *  Can the result text be truncated. Defaults to true.
    */
@@ -55,7 +55,7 @@ const defaultProps = {
   hasDocument: false,
   hasComment: false,
   isModified: false,
-  alignment: null,
+  alignment: 'left',
   isTruncated: true,
   isPadded: false,
 };
@@ -121,7 +121,7 @@ const timeDisplayDiv = (timeDisplay) => {
 const ResultView = (props) => {
   const { results, timeDisplay, hasDocument, isModified, hasComment, alignment, isTruncated, isPadded } = props;
   const attributesName = 'result-view';
-  let align = 'align-left';
+  let align = 'alignment-left';
 
   if (alignment === 'right') {
     align = 'alignment-right';

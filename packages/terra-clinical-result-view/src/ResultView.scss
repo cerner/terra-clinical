@@ -12,6 +12,10 @@
       fill: currentColor;
     }
 
+    &.alignment-left {
+      text-align: left;
+    }
+
     &.alignment-right {
       text-align: right;
     }
