@@ -4,7 +4,7 @@ import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import ResultView from '../../src/ResultView';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
-const results = [{ value: 503456789, unit: 'ml', normalcy: <IconAlert />, normalcyColor: '#E50000' }];
+const results = [{ value: 503456789, unit: 'ml', icon: <IconAlert />, color: '#E50000' }];
 
 const AlignEndResultView = () => (
   <div>
@@ -16,7 +16,7 @@ const AlignEndResultView = () => (
         hasDocument
         hasComment
         isPadded
-        alignEnd
+        alignment="right"
       />
     </Base>
   </div>

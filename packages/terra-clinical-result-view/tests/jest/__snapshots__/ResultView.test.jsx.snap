@@ -3,6 +3,7 @@
 exports[`ResultView should render a Result View with RTL support 1`] = `
 <ResultView
   alignEnd={true}
+  alignment={null}
   hasComment={true}
   hasDocument={true}
   isModified={false}
@@ -23,7 +24,7 @@ exports[`ResultView should render a Result View with RTL support 1`] = `
 
 exports[`ResultView should render a Result View with no time display 1`] = `
 <ResultView
-  alignEnd={false}
+  alignment={null}
   hasComment={true}
   hasDocument={true}
   isModified={false}
@@ -44,7 +45,7 @@ exports[`ResultView should render a Result View with no time display 1`] = `
 
 exports[`ResultView should render a Result View with separator 1`] = `
 <ResultView
-  alignEnd={false}
+  alignment={null}
   hasComment={true}
   hasDocument={true}
   isModified={false}
@@ -68,7 +69,7 @@ exports[`ResultView should render a Result View with separator 1`] = `
 
 exports[`ResultView should render a Result View with truncation by default 1`] = `
 <ResultView
-  alignEnd={false}
+  alignment={null}
   hasComment={true}
   hasDocument={true}
   isModified={false}
@@ -89,7 +90,7 @@ exports[`ResultView should render a Result View with truncation by default 1`] =
 
 exports[`ResultView should render a Result View without truncation 1`] = `
 <ResultView
-  alignEnd={false}
+  alignment={null}
   hasComment={true}
   hasDocument={true}
   isModified={false}
@@ -110,7 +111,7 @@ exports[`ResultView should render a Result View without truncation 1`] = `
 
 exports[`ResultView should render a default component 1`] = `
 <ResultView
-  alignEnd={false}
+  alignment={null}
   hasComment={false}
   hasDocument={false}
   isModified={false}

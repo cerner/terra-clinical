@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import IconDocuments from 'terra-icon/lib/icon/IconDocuments';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
-import IconUnexpected from 'terra-icon/lib/icon/IconUnexpected';
 import styles from './ResultView.scss';
 
 const cx = classNames.bind(styles);
@@ -16,8 +15,8 @@ const propTypes = {
   results: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.number,
     unit: PropTypes.string,
-    normalcy: PropTypes.node,
-    normalcyColor: PropTypes.string,
+    icon: PropTypes.node,
+    color: PropTypes.string,
   })),
   /**
    *  The age display of the result. Does not handle formatting.
@@ -36,9 +35,9 @@ const propTypes = {
    */
   hasComment: PropTypes.bool,
   /**
-   *  Is the view aligned to the right. Defaults to false.
+   *  The alignment of the component. Defaults to left.
    */
-  alignEnd: PropTypes.bool,
+  alignment: PropTypes.oneOf(['right', 'center']),
   /**
    *  Can the result text be truncated. Defaults to true.
    */
@@ -55,7 +54,7 @@ const defaultProps = {
   hasDocument: false,
   hasComment: false,
   isModified: false,
-  alignEnd: false,
+  alignment: null,
   isTruncated: true,
   isPadded: false,
 };
@@ -63,12 +62,12 @@ const defaultProps = {
 const resultIndicator = (result) => {
   let icon = null;
 
-  if (!result.normalcy) {
+  if (!result.icon) {
     return null;
   }
   icon = React.cloneElement(
-    result.normalcy,
-    { color: result.normalcyColor },
+    result.icon,
+    { color: result.color },
   );
 
   return <span className={cx('result-view-indicator')} >{icon}</span>;
@@ -94,10 +93,6 @@ const resultsDiv = (results, isTruncated) => {
       resultsDivs.push(resultIndicatorDiv);
     }
 
-    if (resultValue.unexpected) {
-      resultsDivs.push(<IconUnexpected />);
-    }
-
     let unitDiv = null;
     if (resultValue.unit && resultValue.unit.length > 0) {
       unitDiv = <small className={cx('result-view-result-unit')} >{resultValue.unit}</small>;
@@ -110,10 +105,10 @@ const resultsDiv = (results, isTruncated) => {
 
     let resultValueTextClassName = 'result-view-result-value-text';
     if (isTruncated) {
-      resultValueTextClassName = 'result-view-is-truncated';
+      resultValueTextClassName = 'result-view-truncated';
     }
 
-    const resultValueDiv = (<span className={cx(resultValueTextClassName)} style={{ color: resultValue.normalcyColor }} >
+    const resultValueDiv = (<span className={cx(resultValueTextClassName)} style={{ color: resultValue.color }} >
       {resultValueDisplay}
       {unitDiv}
     </span>);
@@ -130,12 +125,14 @@ const timeDisplayDiv = (timeDisplay) => {
 };
 
 const ResultView = (props) => {
-  const { results, timeDisplay, hasDocument, isModified, hasComment, alignEnd, isTruncated, isPadded } = props;
+  const { results, timeDisplay, hasDocument, isModified, hasComment, alignment, isTruncated, isPadded } = props;
   const attributesName = 'result-view';
-  let align = 'align-start';
+  let align = 'align-left';
 
-  if (alignEnd) {
-    align = 'align-end';
+  if (alignment === 'right') {
+    align = 'alignment-right';
+  } else if (alignment === 'center') {
+    align = 'alignment-center';
   }
 
   let bodyClassName = 'result-view-body';

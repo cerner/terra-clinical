@@ -12,8 +12,12 @@
       fill: currentColor;
     }
 
-    &.align-end {
+    &.alignment-right {
       text-align: right;
+    }
+
+    &.alignment-center {
+      text-align: center;
     }
   }
 
@@ -51,7 +55,7 @@
     text-overflow: ellipsis;
   }
 
-  .result-view-is-truncated {
+  .result-view-truncated {
     @include terra-clinical-text-truncate;
   }
 
