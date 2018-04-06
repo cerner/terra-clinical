@@ -15,7 +15,7 @@ const propTypes = {
    */
   results: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.number,
-    units: PropTypes.string,
+    unit: PropTypes.string,
     normalcy: PropTypes.node,
     normalcyColor: PropTypes.string,
   })),
