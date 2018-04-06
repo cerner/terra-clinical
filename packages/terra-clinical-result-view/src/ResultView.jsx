@@ -100,11 +100,7 @@ const resultsDiv = (results, isTruncated) => {
     }
 
     const resultValueDisplay = resultValue.value || '--';
-
-    let resultValueTextClassName = 'result-view-result-value-text';
-    if (isTruncated) {
-      resultValueTextClassName = 'result-view-truncated';
-    }
+    const resultValueTextClassName = isTruncated ? 'result-view-truncated' : 'result-view-result-value-text';
 
     const resultValueDiv = (<span className={cx(resultValueTextClassName)} style={{ color: resultValue.color }} >
       {resultValueDisplay}
