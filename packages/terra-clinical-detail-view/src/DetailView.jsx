@@ -45,7 +45,7 @@ const propTypes = {
   footer: PropTypes.string,
 
   /**
-   * Indicates if sections should be dvided
+   * Indicates if sections should be divided
    */
   isDivided: PropTypes.bool,
 
