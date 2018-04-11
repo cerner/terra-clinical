@@ -27,7 +27,7 @@ const DetailViewDivided = () => (
     title="M. V. I. Adult 10 mL = 10 mL"
     secondaryTitles={['Sodium bicarbonate 8.4% 50 mL', 'Dextrose 5% in Water 1000 mL']}
     subtitles={['30 mg, Oral, Start Date/Time: 06/28/17 20:00:00 CDT. Stop Date/Time: 06/28/17 20:00:00 CDT']}
-    caption={<ItemDisplay text="Ordered" />}
+    accessory={<ItemDisplay text="Ordered" />}
     details={[
       (<DetailView.DetailList title={detail1title} key="Indicators">
         <DetailView.DetailListItem item={detail1item1} />
