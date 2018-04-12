@@ -24,7 +24,6 @@ const config = {
 
   // Configuration for terra-toolkit's SeleniumDocker service
   seleniumDocker: {
-    enabled: !process.env.TRAVIS,
     cleanup: false,
     env: {
       TZ: 'America/Chicago',
