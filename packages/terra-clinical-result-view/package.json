@@ -2,7 +2,7 @@
   "name": "terra-clinical-result-view",
   "main": "lib/ResultView.js",
   "version": "0.0.0",
-  "description": "{insert description}",
+  "description": "The Clinical Result View is a stateless view that is intended to show measurements such as labs and vitals.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"
@@ -23,8 +23,7 @@
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "peerDependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "terra-base": "^3.1.0"
+    "react-dom": "^16.2.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
