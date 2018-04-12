@@ -49,7 +49,7 @@ const propTypes = {
    */
   isDivided: PropTypes.bool,
 
-  /*
+  /**
    * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
    */
   isSmallerTitles: PropTypes.bool,

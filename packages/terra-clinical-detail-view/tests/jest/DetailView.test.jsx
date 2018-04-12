@@ -54,7 +54,8 @@ it('should render accessory', () => {
     <DetailView
       title="Header"
       accessory={<ItemDisplay text="Accessory" />}
-    />);
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
