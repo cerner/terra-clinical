@@ -3,8 +3,8 @@
 :local {
   .result-view {
     color: var(--result-view-background-color, #595f62);
-    font-size: var(--result-view-font-size, 20px);
-    line-height: var(--result-view-line-height, 20px);
+    font-size: var(--result-view-font-size, 1.25rem);
+    line-height: var(--result-view-line-height, 1.25);
     white-space: nowrap;
     width: 100%;
 
@@ -26,35 +26,34 @@
   }
 
   .result-view-body--padded {
-    padding: var(--result-view-body-padding, 5px);
+    padding: var(--result-view-body-padding, 0.3125rem);
   }
 
   .result-view-result-block {
-    align-items: baseline;
+    align-items: center;
     display: inline-flex;
   }
 
   .result-view-indicator {
-    padding-right: var(--result-view-indicator-padding-right, 3px);
+    padding-right: var(--result-view-indicator-padding-right, 0.1875rem);
   }
 
   .result-view-result-value-text {
-    font-size: var(--result-view-result-value-font-size, 20px);
+    font-size: var(--result-view-result-value-font-size, 1.25rem);
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .result-view-result-unit {
     color: var(--result-view-result-unit-text-color, #6f7477);
-    line-height: normal;
-    padding-left: var(--result-view-result-unit-padding-left, 3px);
-    padding-right: var(--result-view-result-unit-padding-right, 3px);
+    padding-left: var(--result-view-result-unit-padding-left, 0.1875rem);
+    padding-right: var(--result-view-result-unit-padding-right, 0.1875rem);
   }
 
   .result-view-result-age {
     color: var(--result-view-result-age-text-color, #6f7477);
     display: block;
-    font-size: var(--result-view-result-age-font-size, 20px);
+    font-size: var(--result-view-result-age-font-size, 1.25rem);
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -64,7 +63,7 @@
   }
 
   .result-view-result-separator {
-    padding-left: var(--result-view-result-separator-padding-left, 3px);
-    padding-right: var(--result-view-result-separator-padding-right, 3px);
+    padding-left: var(--result-view-result-separator-padding-left, 0.1875rem);
+    padding-right: var(--result-view-result-separator-padding-right, 0.1875rem);
   }
 }
