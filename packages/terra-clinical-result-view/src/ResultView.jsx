@@ -60,49 +60,42 @@ const defaultProps = {
   isPadded: false,
 };
 
-const resultIndicator = (result) => {
-  let icon = null;
-
-  if (!result.icon) {
+const resultIndicator = (icon, color) => {
+  if (!icon) {
     return null;
   }
-  icon = React.cloneElement(
-    result.icon,
-    { color: result.color },
-  );
-
-  return <span className={cx('result-view-indicator')} >{icon}</span>;
+  const coloredIcon = React.cloneElement(icon, { color });
+  return <span className={cx('result-view-indicator')}>{coloredIcon}</span>;
 };
 
 const resultsDiv = (results, isTruncated) => {
   if (!results || !results.length) {
-    const noValueDisplay = '--';
-    return <div className={cx('result-view-result-value-text')} >{noValueDisplay}</div>;
+    return <div className={cx('result-view-result-value-text')}>{'--'}</div>;
   }
 
   const resultsDivs = [];
 
   for (let i = 0; i < results.length; i += 1) {
     if (resultsDivs.length >= 1) {
-      const separator = <span className={cx('result-view-result-separator')} >{'/'}</span>;
+      const separator = <span className={cx('result-view-result-separator')}>{'/'}</span>;
       resultsDivs.push(separator);
     }
 
     const resultValue = results[i];
-    const resultIndicatorDiv = resultIndicator(resultValue);
+    const resultIndicatorDiv = resultIndicator(resultValue.icon, resultValue.color);
     if (resultIndicatorDiv) {
       resultsDivs.push(resultIndicatorDiv);
     }
 
     let unitDiv = null;
     if (resultValue.unit && resultValue.unit.length > 0) {
-      unitDiv = <small className={cx('result-view-result-unit')} >{resultValue.unit}</small>;
+      unitDiv = <small className={cx('result-view-result-unit')}>{resultValue.unit}</small>;
     }
 
     const resultValueDisplay = resultValue.value || '--';
     const resultValueTextClassName = isTruncated ? 'result-view-truncated' : 'result-view-result-value-text';
 
-    const resultValueDiv = (<span className={cx(resultValueTextClassName)} style={{ color: resultValue.color }} >
+    const resultValueDiv = (<span className={cx(resultValueTextClassName)} style={{ color: resultValue.color }}>
       {resultValueDisplay}
       {unitDiv}
     </span>);
@@ -113,31 +106,13 @@ const resultsDiv = (results, isTruncated) => {
   return resultsDivs;
 };
 
-const timeDisplayDiv = (timeDisplay) => {
-  const resultAgeClassName = 'result-view-result-age';
-  return <div className={cx(resultAgeClassName)} >{timeDisplay}</div>;
-};
-
 const ResultView = (props) => {
   const { results, timeDisplay, hasDocument, isModified, hasComment, alignment, isTruncated, isPadded } = props;
-  const attributesName = 'result-view';
-  let align = 'alignment-left';
-
-  if (alignment === 'right') {
-    align = 'alignment-right';
-  } else if (alignment === 'center') {
-    align = 'alignment-center';
-  }
-
-  let bodyClassName = 'result-view-body';
-
-  if (isPadded) {
-    bodyClassName = 'result-view-body--padded';
-  }
+  const resultClassNames = cx('result-view', `alignment-${alignment}`);
 
   return (
-    <div className={cx(attributesName, align)} >
-      <div className={cx(bodyClassName)}>
+    <div className={cx(resultClassNames)}>
+      <div className={cx({ 'result-view-body--padded': isPadded })}>
         <div className={cx('result-view-result-block')}>
           {hasDocument &&
             <IconDocuments />
@@ -151,7 +126,7 @@ const ResultView = (props) => {
           }
         </div>
         {timeDisplay &&
-          timeDisplayDiv(timeDisplay)
+          <div className={cx('result-view-result-age')}>{timeDisplay}</div>
         }
       </div>
     </div>
