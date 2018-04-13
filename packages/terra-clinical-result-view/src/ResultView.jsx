@@ -107,11 +107,21 @@ const resultsDiv = (results, isTruncated) => {
 };
 
 const ResultView = (props) => {
-  const { results, timeDisplay, hasDocument, isModified, hasComment, alignment, isTruncated, isPadded } = props;
-  const resultClassNames = cx('result-view', `alignment-${alignment}`);
+  const {
+    results,
+    timeDisplay,
+    hasDocument,
+    isModified,
+    hasComment,
+    alignment,
+    isTruncated,
+    isPadded,
+    ...customProps } = props;
+
+  const resultClassNames = cx('result-view', `alignment-${alignment}`, customProps.className);
 
   return (
-    <div className={cx(resultClassNames)}>
+    <div {...customProps} className={cx(resultClassNames)}>
       <div className={cx({ 'result-view-body--padded': isPadded })}>
         <div className={cx('result-view-result-block')}>
           {hasDocument &&
