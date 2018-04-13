@@ -71,9 +71,6 @@ const DetailView = ({ title, secondaryTitles, subtitles, accessory, graph, detai
     attributes.className,
   ]);
 
-  let divider = null;
-  let dividedDetails = [];
-
   const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
   const secondaryTitlesElements = secondaryTitles.map((secondarytitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
@@ -86,6 +83,8 @@ const DetailView = ({ title, secondaryTitles, subtitles, accessory, graph, detai
   const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
   const footerElement = footer ? (<div className={cx('footer-text')}>{footer}</div>) : null;
 
+  let divider = null;
+  let dividedDetails = [];
 
   if (isDivided) {
     divider = (<hr className={cx('divider')} />);
