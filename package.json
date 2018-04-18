@@ -47,7 +47,7 @@
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "lerna run compile",
-    "compile:prod": "webpack --config node_modules/terra-dev-site/src/webpack/webpack.config.js -p",
+    "compile:prod": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p",
     "danger": "danger",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "generate-config": "generate-config -o 'dev-site-config' -s 'packages/terra-clinical-site/src/examples/*/Index.jsx'",
@@ -68,7 +68,7 @@
     "start:build": "npm run generate-config && npm run start",
     "start-heroku": "tt:serve-static --site build",
     "test": "jest && npm run wdio",
-    "wdio": "wdio node_modules/terra-dev-site/src/wdio/wdio.conf.js"
+    "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
