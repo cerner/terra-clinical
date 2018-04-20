@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+2.3.0 - (April 20, 2018)
+----------
+### Changed
+* Translations for nl, nl-BE
+
 2.2.0 - (March 27, 2018)
 ----------
 ### Changed
