@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-clinical",
   "engines": {
-    "node": "8.9.2"
+    "node": "^8.9.2"
   },
   "repository": {
     "type": "git",
@@ -105,7 +105,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "~8.0.0",
     "stylelint-config-sass-guidelines": "^3.0.0",
-    "terra-dev-site": "^0.2.0",
+    "terra-dev-site": "0.3.0",
     "terra-i18n": "^2.0.0",
     "terra-i18n-plugin": "^2.0.0",
     "terra-toolkit": "^2.9.0",
