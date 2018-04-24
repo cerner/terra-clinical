@@ -45,7 +45,7 @@ const DetailViewExamples = () => (
     </div>
     <br />
     <br />
-    <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle} >Example Divided Detail View with Smaller Titles</h2>
+    <h2 id="DividerWithSmallerTitles" style={DetailViewExamplesHeadingStyle} >Example Divided Detail View with Smaller Titles</h2>
     <div style={DetailViewExamplesBoxedStyle}>
       <DetailViewDividedSmallerTitles />
     </div>
