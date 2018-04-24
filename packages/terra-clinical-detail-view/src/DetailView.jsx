@@ -65,20 +65,32 @@ const defaultProps = {
   isSmallerTitles: false,
 };
 
-const DetailView = ({ title, secondaryTitles, subtitles, accessory, graph, details, footer, isDivided, isSmallerTitles, ...customProps }) => {
+const DetailView = (props) => {
+  const {
+    title,
+    secondaryTitles,
+    subtitles,
+    accessory,
+    graph,
+    details,
+    footer,
+    isDivided,
+    isSmallerTitles,
+    ...customProps
+  } = props;
   const attributes = Object.assign({}, customProps);
   attributes.className = cx(['detail-view',
     attributes.className,
   ]);
 
   const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
-  const secondaryTitlesElements = secondaryTitles.map((secondarytitle, i) => (
+  const secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('secondary-text')} key={i}>{secondarytitle}</div>
+    <div className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</div>
   ));
-  const subtitleElements = subtitles.map((subtitle, i) => (
+  const subtitleElements = subtitles.map((subTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('subtitle')} key={i}>{subtitle}</div>
+    <div className={cx('subtitle')} key={`${i}`}>{subTitle}</div>
   ));
   const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
   const footerElement = footer ? (<div className={cx('footer-text')}>{footer}</div>) : null;
@@ -98,7 +110,7 @@ const DetailView = ({ title, secondaryTitles, subtitles, accessory, graph, detai
   }
 
   return (
-    <div {...attributes} className={attributes.className}>
+    <div {...attributes}>
       <div className={cx('title', { 'title-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}

@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemDisplay from '../../../terra-clinical-item-display/lib/ItemDisplay';
+import ItemDisplay from 'terra-clinical-item-display/lib/ItemDisplay';
 import DetailView from '../../src/DetailView';
 
 const defaultVariety = <DetailView />;
