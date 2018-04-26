@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Increased the pause for the onset-picker tests.
+* Run tests once per screen-size.
 
 2.3.0 - (April 20, 2018)
 ----------
