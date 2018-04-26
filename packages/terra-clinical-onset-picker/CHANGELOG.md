@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Run tests once per screen-size.
 
 2.3.0 - (April 20, 2018)
 ----------
