@@ -5,4 +5,24 @@
   width: var(--result-view-truncation-width, 1.95rem);
   word-break: normal;
   word-wrap: normal;
+
+  &.critical {
+    color: var(--result-view-text-color, #c00);
+  }
+
+  &.low {
+    color: var(--result-view-low-color, #0053e6);
+  }
+
+  &.high {
+    color: var(--result-view-high-color, #cd4d00);
+  }
+
+  &.abnormal {
+    color: var(--result-view-abnormal-color, #654a08);
+  }
+
+  &.normal {
+    color: var(--result-view-normal-color, #6f7477);
+  }
 }

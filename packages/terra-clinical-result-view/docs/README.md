@@ -14,7 +14,7 @@ import React from 'react';
 import IconLow from 'terra-icon/lib/icon/IconLow';
 import ResultView from 'terra-clinical-result-view';
 
-const results = [{ value: '50', unit: 'ml', normalcy: <IconLow />, normalcyColor: '#0053e6' }];
+const results = [{ value: '50', unit: 'ml', normalcy: 'LOW' }];
 
 <ResultView
   results={results}

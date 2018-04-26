@@ -64,13 +64,13 @@ describe('ResultView', () => {
     Terra.should.themeEachCustomProperty(
       '#root',
       {
-        '--result-view-background-color': 'rgba(0, 0, 255, 0.5)',
+        '--result-view-background-color': '#c00',
         '--result-view-line-height': '50px',
         '--result-view-body-padding': '20px',
         '--result-view-indicator-padding-right': '10px',
         '--result-view-result-age-text-color': '#c00',
         '--result-view-result-age-font-size': '10px',
-        '--result-view-result-unit-text-color': 'rgba(0, 0, 255, 0.5)',
+        '--result-view-result-unit-text-color': '#c00',
       },
     );
   });
