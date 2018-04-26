@@ -1,6 +1,5 @@
 import React from 'react';
 import Base from 'terra-base';
-import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import ResultView from '../../src/ResultView';
 
 const locale = document.getElementsByTagName('html')[0].getAttribute('lang');

@@ -4,18 +4,17 @@ import classNames from 'classnames/bind';
 import IconDocuments from 'terra-icon/lib/icon/IconDocuments';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
-import IconAbnormal from './IconAbnormal';
 import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
+import IconAbnormal from './IconAbnormal';
 import IconCritical from './IconCritical';
-import { elementType } from 'react-prop-types';
 import styles from './ResultView.scss';
 
 const cx = classNames.bind(styles);
 
 const normalcyIndicators = {
   HIGH: <IconHigh />,
-  LOW:  <IconLow />,
+  LOW: <IconLow />,
   CRITICAL: <IconCritical />,
   ABNORMAL: <IconAbnormal />,
 };
@@ -77,7 +76,7 @@ const resultIndicator = (normalcy) => {
     return <span className={cx('result-view-indicator', normalcy.toLowerCase())}>{normalcyIndicators[normalcy]}</span>;
   }
   return null;
-}
+};
 
 const resultsDiv = (results, isTruncated) => {
   if (!results || !results.length) {

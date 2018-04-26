@@ -1,5 +1,4 @@
 import React from 'react';
-import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import ResultView from '../../src/ResultView';
 
 const results = [{ value: 503456789, unit: 'ml', normalcy: 'CRITICAL' }];

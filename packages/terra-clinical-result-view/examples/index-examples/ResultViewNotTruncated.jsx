@@ -1,5 +1,4 @@
 import React from 'react';
-import IconLow from 'terra-icon/lib/icon/IconLow';
 import ResultView from '../../src/ResultView';
 
 const results = [{ value: 25.2, unit: 'ml', normalcy: 'LOW' }];
