@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Increased the pause for the onset-picker tests.
 
 2.3.0 - (April 20, 2018)
 ----------

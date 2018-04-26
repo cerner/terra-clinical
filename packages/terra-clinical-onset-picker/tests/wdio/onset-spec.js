@@ -135,7 +135,7 @@ describe('Onset Picker', () => {
       browser.clearElement('[data-terra-clinical-onset-picker="age"] input');
       browser.setValue('[data-terra-clinical-onset-picker="age"] input', 10);
       browser.click('button[type="submit"]');
-      browser.pause(2900);
+      browser.pause(3500);
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#root' });
@@ -150,7 +150,7 @@ describe('Onset Picker', () => {
       browser.clearElement('[data-terra-clinical-onset-picker="age"] input');
       browser.setValue('[data-terra-clinical-onset-picker="age"] input', 30);
       browser.click('button[type="submit"]');
-      browser.pause(2900);
+      browser.pause(3500);
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#root' });
@@ -165,7 +165,7 @@ describe('Onset Picker', () => {
       browser.clearElement('[data-terra-clinical-onset-picker="age"] input');
       browser.setValue('[data-terra-clinical-onset-picker="age"] input', 20);
       browser.click('button[type="submit"]');
-      browser.pause(2900);
+      browser.pause(3500);
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#root' });
@@ -180,7 +180,7 @@ describe('Onset Picker', () => {
       browser.clearElement('[data-terra-clinical-onset-picker="age"] input');
       browser.setValue('[data-terra-clinical-onset-picker="age"] input', 15);
       browser.click('button[type="submit"]');
-      browser.pause(2900);
+      browser.pause(3500);
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#root' });
@@ -195,7 +195,7 @@ describe('Onset Picker', () => {
       browser.clearElement('[data-terra-clinical-onset-picker="age"] input');
       browser.setValue('[data-terra-clinical-onset-picker="age"] input', 6);
       browser.click('button[type="submit"]');
-      browser.pause(2900);
+      browser.pause(3500);
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#root' });
