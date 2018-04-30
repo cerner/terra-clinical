@@ -7,22 +7,22 @@
   word-wrap: normal;
 
   &.critical {
-    color: var(--result-view-text-color, #c00);
+    color: var(--result-view-result-value-truncated-critical, #c00);
   }
 
   &.low {
-    color: var(--result-view-low-color, #0053e6);
+    color: var(--result-view-result-value-truncated-low, #0053e6);
   }
 
   &.high {
-    color: var(--result-view-high-color, #cd4d00);
+    color: var(--result-view-result-value-truncated-high, #cd4d00);
   }
 
   &.abnormal {
-    color: var(--result-view-abnormal-color, #654a08);
+    color: var(--result-view-result-value-truncated-abnormal, #654a08);
   }
 
   &.normal {
-    color: var(--result-view-normal-color, #6f7477);
+    color: var(--result-view-result-value-truncated-normal, #6f7477);
   }
 }

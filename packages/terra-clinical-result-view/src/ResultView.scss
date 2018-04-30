@@ -38,19 +38,19 @@
     padding-right: var(--result-view-indicator-padding-right, 0.1875em);
 
     &.critical {
-      color: var(--result-view-text-color, #c00);
+      color: var(--result-view-normalcy-indicator-critical, #c00);
     }
 
     &.low {
-      color: var(--result-view-low-color, #0053e6);
+      color: var(--result-view-normalcy-indicator-low, #0053e6);
     }
 
     &.high {
-      color: var(--result-view-high-color, #cd4d00);
+      color: var(--result-view-normalcy-indicator-high, #cd4d00);
     }
 
     &.abnormal {
-      color: var(--result-view-abnormal-color, #654a08);
+      color: var(--result-view-normalcy-indicator-abnormal, #654a08);
     }
   }
 
@@ -60,23 +60,23 @@
     text-overflow: ellipsis;
 
     &.critical {
-      color: var(--result-view-text-color, #c00);
+      color: var(--result-view-result-value-text-critical, #c00);
     }
 
     &.low {
-      color: var(--result-view-low-color, #0053e6);
+      color: var(--result-view-result-value-text-low, #0053e6);
     }
 
     &.high {
-      color: var(--result-view-high-color, #cd4d00);
+      color: var(--result-view-result-value-text-high, #cd4d00);
     }
 
     &.abnormal {
-      color: var(--result-view-abnormal-color, #654a08);
+      color: var(--result-view-result-value-text-abnormal, #654a08);
     }
 
     &.normal {
-      color: var(--result-view-normal-color, #6f7477);
+      color: var(--result-view-result-value-text-normal, #6f7477);
     }
   }
 
@@ -86,23 +86,23 @@
     padding-right: var(--result-view-result-unit-padding-right, 0.1875em);
 
     &.critical {
-      color: var(--result-view-text-color, #c00);
+      color: var(--result-view-result-unit-text-critical, #c00);
     }
 
     &.low {
-      color: var(--result-view-low-color, #0053e6);
+      color: var(--result-view-result-unit-text-low, #0053e6);
     }
 
     &.high {
-      color: var(--result-view-high-color, #cd4d00);
+      color: var(--result-view-result-unit-text-high, #cd4d00);
     }
 
     &.abnormal {
-      color: var(--result-view-abnormal-color, #654a08);
+      color: var(--result-view-result-unit-text-abnormal, #654a08);
     }
 
     &.normal {
-      color: var(--result-view-abnormal-color, #6f7477);
+      color: var(--result-view-result-unit-text-normal, #6f7477);
     }
   }
 
