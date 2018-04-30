@@ -5,7 +5,7 @@ exports[`should render a default component 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   />
   <hr
     class="divider"
@@ -18,7 +18,7 @@ exports[`should render a smaller title 1`] = `
   class="detail-view"
 >
   <div
-    class="title title-smaller"
+    class="titles-section titles-smaller"
   >
     <h1
       class="primary-text"
@@ -37,7 +37,7 @@ exports[`should render a title 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -56,7 +56,7 @@ exports[`should render accessory 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -66,14 +66,8 @@ exports[`should render accessory 1`] = `
     <div
       class="accessory"
     >
-      <div
-        class="item-display"
-      >
-        <div
-          class="text"
-        >
-          Accessory
-        </div>
+      <div>
+         This is where an accessory would go 
       </div>
     </div>
   </div>
@@ -88,7 +82,7 @@ exports[`should render details 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -123,7 +117,7 @@ exports[`should render footer 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -163,7 +157,7 @@ exports[`should render graph 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -198,7 +192,7 @@ exports[`should render secondaryTitles 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -227,7 +221,7 @@ exports[`should render subtitles 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -256,7 +250,7 @@ exports[`should render without a divider when indicated 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"

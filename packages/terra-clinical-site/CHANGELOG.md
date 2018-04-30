@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Added
-* Added new props to Props Table of Detail View and new example for DetailView with Smaller Title and secondary Titles.
+* Added new example for DetailView with Secondary Titles and isSmallerTitles
 
 2.1.0 - (March 14, 2018)
 ----------

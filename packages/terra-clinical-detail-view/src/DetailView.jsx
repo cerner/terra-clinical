@@ -10,42 +10,42 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The title to display
+   * The primary title to display.
    */
   title: PropTypes.string,
 
   /**
-   * Additional list of title strings to display
+   * Additional list of title strings to display.
    */
   secondaryTitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * List of subtitle strings
+   * List of subtitle strings.
    */
   subtitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * Display for minor supporting information like Status, Progress, or other additional detail
+   * Display for minor supporting information like Status, Progress, or anything additional.
    */
   accessory: PropTypes.element,
 
   /**
-   * Display for visualization data
+   * Display for visualization of data.
    */
   graph: PropTypes.element,
 
   /**
-   * Array of elements to display detail information
+   * Array of elements to display information in the body of the detail view.
    */
   details: PropTypes.arrayOf(PropTypes.element),
 
   /**
-   * Text to be displayed at the footer of the view
+   * Text to be displayed at the footer of the detail view.
    */
   footer: PropTypes.string,
 
   /**
-   * Indicates if sections should be divided
+   * Indicates if sections should be divided. Is applied by default.
    */
   isDivided: PropTypes.bool,
 
@@ -56,11 +56,13 @@ const propTypes = {
 };
 
 const defaultProps = {
-  title: '',
+  title: undefined,
   secondaryTitles: [],
   subtitles: [],
-  accessory: null,
+  graph: undefined,
+  accessory: undefined,
   details: [],
+  footer: undefined,
   isDivided: true,
   isSmallerTitles: false,
 };
@@ -111,7 +113,7 @@ const DetailView = (props) => {
 
   return (
     <div {...attributes}>
-      <div className={cx('title', { 'title-smaller': isSmallerTitles })}>
+      <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}
         {subtitleElements}

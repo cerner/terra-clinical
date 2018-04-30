@@ -1,5 +1,4 @@
 import React from 'react';
-import ItemDisplay from 'terra-clinical-item-display/lib/ItemDisplay';
 import DetailView from '../../src/DetailView';
 
 const defaultVariety = <DetailView />;
@@ -53,7 +52,7 @@ it('should render accessory', () => {
   const detailView = (
     <DetailView
       title="Header"
-      accessory={<ItemDisplay text="Accessory" />}
+      accessory={<div> This is where an accessory would go </div>}
     />
   );
   const wrapper = render(detailView);
