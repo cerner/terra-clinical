@@ -30,6 +30,7 @@ import LargeItemList from '../packages/terra-clinical-detail-view/examples/test-
 import NormalItemList from '../packages/terra-clinical-detail-view/examples/test-examples/DetailList/NormalItemList.example';
 import DefaultListItem from '../packages/terra-clinical-detail-view/examples/test-examples/DetailListItem/DefaultListItem.example';
 import DetailViewDivided from '../packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewDivided.example';
+import DetailViewDividedSmallerTitles from '../packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewDividedSmallerTitles.example';
 import DetailViewNoDivider from '../packages/terra-clinical-detail-view/examples/test-examples/DetailView/DetailViewNoDivider.example';
 import DefaultHeader from '../packages/terra-clinical-header/examples/test-examples/DefaultHeader.example';
 import LeftAndRightContentHeader from '../packages/terra-clinical-header/examples/test-examples/LeftAndRightContentHeader.example';
@@ -179,6 +180,11 @@ const componentConfig = {
             name: 'Detail View Divided',
             path: '/detail-view-divided',
             component: DetailViewDivided,
+          },
+          {
+            name: 'Detail View Divided Smaller Titles',
+            path: '/detail-view-divided-smaller-titles',
+            component: DetailViewDividedSmallerTitles,
           },
           {
             name: 'Detail View No Divider',

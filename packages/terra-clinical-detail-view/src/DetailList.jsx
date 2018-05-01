@@ -9,13 +9,13 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The title to be displayed above the list items.
+   * The detail view list title to be displayed above the list item(s).
    */
   title: PropTypes.string,
 
   /**
-   * The detail item(s) to display information. Must be a
-   * DetailListItem element.
+   * The detail item(s) to display information. Must be either a
+   * DetailListItem element or array of DetailListItem elements.
    */
   children: PropTypes.oneOfType([
     PropTypes.objectOf(DetailListItem),
@@ -24,7 +24,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  title: '',
+  title: undefined,
+  children: undefined,
 };
 
 const DetailList = ({ title, children, ...customProps }) => {
