@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.3.0 - (May 1, 2018)
+----------
 ### Added
 * Added new props "secondaryTitles", "accessory", and "isSmallerTitles"
 
