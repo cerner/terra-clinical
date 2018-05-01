@@ -10,56 +10,95 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The title to display
+   * The primary title to display.
    */
   title: PropTypes.string,
 
   /**
-   * List of subtitle strings
+   * Additional list of title strings to display.
+   */
+  secondaryTitles: PropTypes.arrayOf(PropTypes.string),
+
+  /**
+   * List of subtitle strings.
    */
   subtitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * Display for visualization data
+   * Display for minor supporting information like Status, Progress, or anything additional.
+   */
+  accessory: PropTypes.element,
+
+  /**
+   * Display for visualization of data.
    */
   graph: PropTypes.element,
 
   /**
-   * Array of elements to display detail information
+   * Array of elements to display information in the body of the detail view.
    */
   details: PropTypes.arrayOf(PropTypes.element),
 
   /**
-   * Text to be displayed at the footer of the view
+   * Text to be displayed at the footer of the detail view.
    */
   footer: PropTypes.string,
 
   /**
-   * Indicates if sections should be devided
+   * Indicates if sections should be divided. Is applied by default.
    */
   isDivided: PropTypes.bool,
+
+  /**
+   * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
+   */
+  isSmallerTitles: PropTypes.bool,
 };
 
 const defaultProps = {
-  title: '',
+  title: undefined,
+  secondaryTitles: [],
   subtitles: [],
+  graph: undefined,
+  accessory: undefined,
   details: [],
+  footer: undefined,
   isDivided: true,
+  isSmallerTitles: false,
 };
 
-const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...customProps }) => {
+const DetailView = (props) => {
+  const {
+    title,
+    secondaryTitles,
+    subtitles,
+    accessory,
+    graph,
+    details,
+    footer,
+    isDivided,
+    isSmallerTitles,
+    ...customProps
+  } = props;
   const attributes = Object.assign({}, customProps);
   attributes.className = cx(['detail-view',
     attributes.className,
   ]);
 
+  const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
+  const secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <div className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</div>
+  ));
+  const subtitleElements = subtitles.map((subTitle, i) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <div className={cx('subtitle')} key={`${i}`}>{subTitle}</div>
+  ));
+  const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
+  const footerElement = footer ? (<div className={cx('footer-text')}>{footer}</div>) : null;
+
   let divider = null;
   let dividedDetails = [];
-
-  const subtitleElements = subtitles.map((subtitle, i) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('subtitle')} key={i}>{subtitle}</div>
-  ));
 
   if (isDivided) {
     divider = (<hr className={cx('divider')} />);
@@ -74,23 +113,22 @@ const DetailView = ({ title, subtitles, graph, details, footer, isDivided, ...cu
 
   return (
     <div {...attributes}>
-      <div className={cx('title')}>
-        <h1 className={cx('primary-text')}>{title}</h1>
+      <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
+        {titleElement}
+        {secondaryTitlesElements}
         {subtitleElements}
+        {accessoryElement}
       </div>
       {graph && divider}
       {graph}
       {divider}
       {dividedDetails}
-      <div className={cx('footer-text')}>
-        {footer}
-      </div>
+      {footerElement}
     </div>
   );
 };
 
 DetailView.propTypes = propTypes;
-
 DetailView.defaultProps = defaultProps;
 DetailView.DetailList = DetailList;
 DetailView.DetailListItem = DetailListItem;
