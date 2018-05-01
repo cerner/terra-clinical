@@ -5,27 +5,20 @@ exports[`should render a default component 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
-  >
-    <h1
-      class="primary-text"
-    />
-  </div>
+    class="titles-section"
+  />
   <hr
     class="divider"
-  />
-  <div
-    class="footer-text"
   />
 </div>
 `;
 
-exports[`should render a title 1`] = `
+exports[`should render a smaller title 1`] = `
 <div
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section titles-smaller"
   >
     <h1
       class="primary-text"
@@ -36,8 +29,50 @@ exports[`should render a title 1`] = `
   <hr
     class="divider"
   />
+</div>
+`;
+
+exports[`should render a title 1`] = `
+<div
+  class="detail-view"
+>
   <div
-    class="footer-text"
+    class="titles-section"
+  >
+    <h1
+      class="primary-text"
+    >
+      Header
+    </h1>
+  </div>
+  <hr
+    class="divider"
+  />
+</div>
+`;
+
+exports[`should render accessory 1`] = `
+<div
+  class="detail-view"
+>
+  <div
+    class="titles-section"
+  >
+    <h1
+      class="primary-text"
+    >
+      Header
+    </h1>
+    <div
+      class="accessory"
+    >
+      <div>
+         This is where an accessory would go 
+      </div>
+    </div>
+  </div>
+  <hr
+    class="divider"
   />
 </div>
 `;
@@ -47,7 +82,7 @@ exports[`should render details 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -74,9 +109,6 @@ exports[`should render details 1`] = `
   <hr
     class="divider"
   />
-  <div
-    class="footer-text"
-  />
 </div>
 `;
 
@@ -85,7 +117,7 @@ exports[`should render footer 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -125,7 +157,7 @@ exports[`should render graph 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -152,8 +184,34 @@ exports[`should render graph 1`] = `
   <hr
     class="divider"
   />
+</div>
+`;
+
+exports[`should render secondaryTitles 1`] = `
+<div
+  class="detail-view"
+>
   <div
-    class="footer-text"
+    class="titles-section"
+  >
+    <h1
+      class="primary-text"
+    >
+      Header
+    </h1>
+    <div
+      class="secondary-text"
+    >
+      SecondaryTitle1
+    </div>
+    <div
+      class="secondary-text"
+    >
+      SecondaryTitle2
+    </div>
+  </div>
+  <hr
+    class="divider"
   />
 </div>
 `;
@@ -163,7 +221,7 @@ exports[`should render subtitles 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
@@ -184,9 +242,6 @@ exports[`should render subtitles 1`] = `
   <hr
     class="divider"
   />
-  <div
-    class="footer-text"
-  />
 </div>
 `;
 
@@ -195,7 +250,7 @@ exports[`should render without a divider when indicated 1`] = `
   class="detail-view"
 >
   <div
-    class="title"
+    class="titles-section"
   >
     <h1
       class="primary-text"
