@@ -1,13 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-
 import DetailView from '../../../lib/DetailView';
 
 const item = (<p>A Detail List Item</p>);
 const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
 const accessoryElement = (<p> A sample accessory container </p>);
 
-const DetailViewDivided = () => (
+const DetailViewDividedSmallerTitles = () => (
   <DetailView
     title="Header"
     secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
@@ -25,8 +24,8 @@ const DetailViewDivided = () => (
     ]}
     footer="Footer Text"
     id="DetailView"
-    isSmallerTitles={false}
+    isSmallerTitles
   />
 );
 
-export default DetailViewDivided;
+export default DetailViewDividedSmallerTitles;

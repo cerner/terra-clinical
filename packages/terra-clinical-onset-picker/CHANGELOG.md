@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.4.0 - (May 1, 2018)
+----------
 ### Changed
 * Run tests once per screen-size.
 

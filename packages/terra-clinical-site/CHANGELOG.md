@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added new example for DetailView with Secondary Titles and isSmallerTitles
 
 2.1.0 - (March 14, 2018)
 ----------
