@@ -12,6 +12,7 @@ import TerraClinicalSiteIndex7 from '../packages/terra-clinical-site/src/example
 import TerraClinicalSiteIndex8 from '../packages/terra-clinical-site/src/examples/label-value-view/Index';
 import TerraClinicalSiteIndex9 from '../packages/terra-clinical-site/src/examples/no-data-view/Index';
 import TerraClinicalSiteIndex10 from '../packages/terra-clinical-site/src/examples/onset-picker/Index';
+import TerraDataGridIndex from '../packages/terra-data-grid/examples/Index.site-page';
 
 // Component Test Examples
 import BackActionHeader from '../packages/terra-clinical-action-header/examples/test-examples/BackActionHeader.example';
@@ -542,6 +543,17 @@ const componentConfig = {
             component: TerraClinicalSiteIndex10,
           },
         ],
+      },
+    ],
+  },
+  'terra-data-grid': {
+    name: 'Data Grid',
+    path: '/data-grid',
+    pages: [
+      {
+        name: 'Index',
+        path: '/index',
+        component: TerraDataGridIndex,
       },
     ],
   },
