@@ -5,7 +5,7 @@ import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 // import DisclosureComponent from 'terra-disclosure-manager/examples/index-examples/DisclosureComponent';
 
-import DataGrid from '../../src/DataGrid';
+import DataGrid, { Section, Row, Cell, DefaultCell } from '../../src/DataGrid';
 
 import styles from './DataGridStandard.scss';
 
@@ -55,6 +55,10 @@ class DataGridStandard extends React.Component {
 
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
     this.handleCellClick = this.handleCellClick.bind(this);
+    this.handleSectionClick = this.handleSectionClick.bind(this);
+
+    this.buildSection = this.buildSection.bind(this);
+    this.buildRows = this.buildRows.bind(this);
 
     const columns = {
       column0: {
@@ -111,6 +115,7 @@ class DataGridStandard extends React.Component {
     this.state = {
       columns,
       sorting: {},
+      collapsedSections: {},
       rows: generateRows(30),
       fixedColumnKeys: ['column1', 'column2', 'column7'],
       flexColumnKeys: ['column4', 'column5', 'column6', 'column3', 'column0'],
@@ -119,9 +124,13 @@ class DataGridStandard extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     const { aggregatorDelegate } = this.props;
-    const { sorting } = this.state;
+    const { sorting, collapsedSections } = this.state;
 
     if (nextState.sorting !== sorting) {
+      return true;
+    }
+
+    if (nextState.collapsedSections !== collapsedSections) {
       return true;
     }
 
@@ -177,12 +186,65 @@ class DataGridStandard extends React.Component {
           size: 'small',
           content: {
             key: 'worklist-disclose',
-            component: <div />,
+            component: <div>{`${rowKey} - ${columnKey}`}</div>,
             // component: <DisclosureComponent name={`${rowKey} - ${columnKey}`} />,
           },
         });
       });
     }
+  }
+
+  handleSectionClick(sectionId) {
+    if (!sectionId) {
+      return;
+    }
+
+    const collapsedSections = Object.assign({}, this.state.collapsedSections);
+    collapsedSections[sectionId] = !collapsedSections[sectionId];
+
+    this.setState({ collapsedSections });
+  }
+
+  buildRows(sectionName, num) {
+    const { aggregatorDelegate } = this.props;
+
+    let selectedCell;
+    if (aggregatorDelegate.hasFocus) {
+      selectedCell = aggregatorDelegate.itemState.selectedCell;
+    }
+
+    return (new Array(num)).fill().map((val, index) => (
+      <Row
+        key={`row${index}`}
+        id={`${sectionName}-Row${index}`}
+      >
+        {Object.keys(this.state.columns).map(columnKey => (
+          <Cell
+            key={`${columnKey}`}
+            columnId={columnKey}
+            isSelectable
+            isSelected={selectedCell && selectedCell.rowKey === `${sectionName}-Row${index}` && selectedCell.columnKey === columnKey}
+          >
+            <DefaultCell
+              text={`Row ${index}, Column ${columnKey}`}
+            />
+          </Cell>
+        ))}
+      </Row>
+    ));
+  }
+
+  buildSection(sectionId, sectionName) {
+    return (
+      <Section
+        id={sectionId}
+        title={sectionName}
+        isCollapsible
+        isCollapsed={this.state.collapsedSections[sectionId]}
+      >
+        {this.buildRows(sectionName, 30)}
+      </Section>
+    );
   }
 
   render() {
@@ -194,24 +256,59 @@ class DataGridStandard extends React.Component {
       sortedColumns = sorting;
     }
 
-    let selectedCells;
-    if (aggregatorDelegate && aggregatorDelegate.hasFocus) {
-      selectedCells = [aggregatorDelegate.itemState.selectedCell];
-    }
-
     return (
       <DataGrid
         fixedColumnKeys={fixedColumnKeys}
         flexColumnKeys={flexColumnKeys}
         columns={columns}
         sortedColumns={sortedColumns}
-        rows={rows}
         sizeClass={cx('large-rows')}
-        selectedCells={selectedCells}
         onClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
-      />
+        onSectionClick={this.handleSectionClick}
+      >
+        {this.buildSection('section_0', 'Section 0')}
+        {this.buildSection('section_1', 'Section 1')}
+        {this.buildSection('section_2', 'Section 2')}
+      </DataGrid>
     );
+
+    // return (
+    //   <DataGrid
+    //     fixedColumnKeys={fixedColumnKeys}
+    //     flexColumnKeys={flexColumnKeys}
+    //     columns={columns}
+    //     sortedColumns={sortedColumns}
+    //     sizeClass={cx('large-rows')}
+    //     selectedCells={selectedCells}
+    //     onClick={this.handleCellClick}
+    //     onHeaderClick={this.handleHeaderClick}
+    //   >
+    //     <Section
+    //       id="Section_1"
+    //       title="Section 1"
+    //       isCollapsible
+    //       isCollapsed
+    //     >
+    //       <Row
+    //         id="Row1"
+    //       >
+    //         <Cell columnId="column0">
+    //           <DefaultCell />
+    //         </Cell>
+    //         <Cell columnId="column1">
+    //           <DefaultCell />
+    //         </Cell>
+    //         <Cell columnId="column2">
+    //           <DefaultCell />
+    //         </Cell>
+    //         <Cell columnId="column3">
+    //           <DefaultCell />
+    //         </Cell>
+    //       </Row>
+    //     </Section>
+    //   </DataGrid>
+    // );
   }
 }
 

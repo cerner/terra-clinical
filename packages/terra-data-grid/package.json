@@ -28,19 +28,19 @@
   },
   "devDependencies": {
     "react-router-dom": "^4.2.2",
-    "terra-props-table": "^2.0.0"
+    "terra-aggregator": "^2.4.0",
+    "terra-button": "^2.0.1",
+    "terra-props-table": "^2.0.0",
+    "terra-content-container": "^2.0.1",
+    "terra-disclosure-manager": "^2.2.0",
+    "terra-slide-panel-manager": "^2.3.0",
+    "terra-modal-manager": "^2.4.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-aggregator": "^2.4.0",
     "terra-base": "^3.0.0",
-    "terra-button": "^2.0.1",
-    "terra-content-container": "^2.0.1",
-    "terra-disclosure-manager": "^2.2.0",
     "terra-icon": "^2.6.0",
-    "terra-slide-panel-manager": "^2.3.0",
-    "terra-modal-manager": "^2.4.0",
     "react-draggable": "^3.0.5"
   },
   "scripts": {

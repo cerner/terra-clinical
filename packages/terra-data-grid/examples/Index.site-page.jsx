@@ -20,7 +20,7 @@ const DataGridExamples = () => (
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
     <DataGridStandard />
-    <PropsTable id="props-table" src={DataGridSrc} />
+    {/* <PropsTable id="props-table" src={DataGridSrc} /> */}
   </div>
 );
 
