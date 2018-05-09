@@ -1,35 +1,42 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import moment from 'moment';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
-import OnsetPickerSrc from '!raw-loader!terra-clinical-onset-picker/src/OnsetPicker';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-onset-picker/docs/README.md';
-import { version } from 'terra-clinical-onset-picker/package.json';
+import { name } from 'terra-clinical-onset-picker/package.json';
+
 // Component Source
+import OnsetPickerSrc from '!raw-loader!terra-clinical-onset-picker/src/OnsetPicker';
 
 // Example Files
 import DefaultOnset from './examples/DefaultOnset';
+import DefaultOnsetSrc from '!raw-loader!./examples/DefaultOnset';
 import HandledOnset from './examples/HandledOnset';
+import HandledOnsetSrc from '!raw-loader!./examples/HandledOnset';
 
-const OnsetExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={OnsetPickerSrc} componentName="Onset Picker" />
-    <br />
-    <h2 id="default">Default with initialization</h2>
-    <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
-    <DefaultOnset />
-    <h2 id="supplied">Onset picker with supplied data and handlers</h2>
-    <p>Birthdate: {moment().subtract(6, 'years').format('YYYY-MM-DD')}</p>
-    <p>Onset date: {moment().subtract(2, 'years').format('YYYY-MM-DD')}</p>
-    <p>Precision set: unknown, after, before, on/at</p>
-    <p>Precision: before</p>
-    <p>Granularity: YEAR</p>
-    <HandledOnset />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Default with initialization',
+        example: <DefaultOnset />,
+        source: DefaultOnsetSrc,
+      },
+      {
+        title: 'Onset picker with supplied data and handlers',
+        example: <HandledOnset />,
+        source: HandledOnsetSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Onset Picker',
+        componentSrc: OnsetPickerSrc,
+      },
+    ]}
+  />
 );
 
-export default OnsetExamples;
+export default DocPage;
