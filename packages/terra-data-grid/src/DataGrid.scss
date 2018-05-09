@@ -86,7 +86,12 @@
     }
   }
 
-  .section-header, .section-header-placeholder {
+  .section-header-placeholder {
+    height: 33px;
+    z-index: -1;
+  }
+
+  .section-header {
     height: 33px;
     background: lightgrey;
     border-bottom: 1px solid #646464;
@@ -94,6 +99,7 @@
     align-items: center;
     padding: 5px;
     cursor: pointer;
+    user-select: none;
 
     .collapsible-icon {
       flex: 0 0 auto;
@@ -169,6 +175,8 @@
     width: 100%;
     overflow: auto;
     position: relative;
+
+    background-color: #cccccc;
   }
 
   .overflow-container.legacy-sticky {
@@ -197,6 +205,7 @@
     height: 0px;
     overflow: visible;
     z-index: 100;
+    transform: translateZ(0px); // Necessary to correct variability with overflowed content interactions in Chrome
 
     .cell:last-child {
       border-right: 2px solid rgb(155, 159, 161);

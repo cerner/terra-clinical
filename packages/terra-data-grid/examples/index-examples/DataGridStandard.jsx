@@ -269,7 +269,7 @@ class DataGridStandard extends React.Component {
       >
         {this.buildSection('section_0', 'Section 0')}
         {this.buildSection('section_1', 'Section 1')}
-        {this.buildSection('section_2', 'Section 2')}
+        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text')}
       </DataGrid>
     );
 
@@ -322,7 +322,7 @@ const AggregatorWrapper = props => (
     }]}
     disclose={props.app.disclose}
     render={renderData => (
-      <div style={{ height: '500px' }}>
+      <div style={{ height: '100%' }}>
         {renderData.items}
       </div>
       )
@@ -331,7 +331,7 @@ const AggregatorWrapper = props => (
 );
 
 const SlidePanelManagerWrapper = () => (
-  <div style={{ height: '500px' }}>
+  <div style={{ height: '750px' }}>
     <ModalManager>
       <SlidePanelManager
         panelBehavior="squish"

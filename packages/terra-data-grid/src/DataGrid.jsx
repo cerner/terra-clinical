@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
+import ResizeObserver from 'resize-observer-polyfill';
 import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
@@ -110,6 +111,7 @@ class DataGrid extends React.Component {
   constructor(props) {
     super(props);
 
+    this.handleResize = this.handleResize.bind(this);
     this.updateWidths = this.updateWidths.bind(this);
     this.handleContentClick = this.handleContentClick.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
@@ -140,6 +142,18 @@ class DataGrid extends React.Component {
      * This is weird, but it works, and it should have an insignificant impact on performance.
      */
     const height = this.containerRef.scrollHeight; // eslint-disable-line no-unused-vars
+
+    /**
+     * A ResizeObserver is used to manage changes to the DataGrid's overall size.
+     */
+    this.resizeObserver = new ResizeObserver((entries) => { this.handleResize(entries[0].contentRect.width, entries[0].contentRect.height); });
+    this.resizeObserver.observe(this.containerRef);
+
+    // this.handleResize(this.containerRef);
+  }
+
+  componentWillUnmount() {
+    this.resizeObserver.disconnect(this.containerRef);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -185,6 +199,15 @@ class DataGrid extends React.Component {
       fixedColumnWidth,
       flexColumnWidth,
       columnWidths,
+    });
+  }
+
+  handleResize(newWidth, newHeight) {
+    /**
+     * We need to update the inline widths of each section header in response to the overall container width changes.
+     */
+    document.querySelectorAll(`.${cx('section-header')}`).forEach((el) => {
+      el.style.width = `${newWidth}px`;
     });
   }
 
@@ -438,12 +461,12 @@ class DataGrid extends React.Component {
         ref={(ref) => {
           this.containerRef = ref;
 
-          if (ref) {
-            // TODO: Switch to ResizeObserver and update widths on change
-            document.querySelectorAll(`.${cx('section-header')}`).forEach((el) => {
-              el.style.width = `${ref.clientWidth}px`;
-            });
-          }
+          // if (ref) {
+          //   // TODO: Switch to ResizeObserver and update widths on change
+          //   document.querySelectorAll(`.${cx('section-header')}`).forEach((el) => {
+          //     el.style.width = `${ref.clientWidth}px`;
+          //   });
+          // }
         }}
       >
         {this.renderFixedHeaderRow()}
