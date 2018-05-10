@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import Aggregator from 'terra-aggregator';
+import Button from 'terra-button';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
-// import DisclosureComponent from 'terra-disclosure-manager/examples/index-examples/DisclosureComponent';
 
 import DataGrid, { Section, Row, Cell, ContentCell, HeaderCell, SectionHeader } from '../../src/DataGrid';
 
@@ -14,6 +14,13 @@ const cx = classNames.bind(styles);
 const CustomHeaderCell = ({ text }) => (
   <div style={{ color: 'blue' }}>
     {text}
+  </div>
+);
+
+const DisclosureComponent = ({ app, text }) => (
+  <div style={{ height: '100%' }}>
+    <p>{text}</p>
+    <Button text="Close" onClick={app.closeDisclosure} />
   </div>
 );
 
@@ -181,15 +188,14 @@ class DataGridStandard extends React.Component {
           size: 'small',
           content: {
             key: 'worklist-disclose',
-            component: <div>{`${rowKey} - ${columnKey}`}</div>,
-            // component: <DisclosureComponent name={`${rowKey} - ${columnKey}`} />,
+            component: <DisclosureComponent text={`${rowKey} - ${columnKey}`} />,
           },
         });
       });
     }
   }
 
-  handleSectionClick(sectionId) {
+  handleSectionClick(event, sectionId) {
     if (!sectionId) {
       return;
     }
@@ -238,12 +244,13 @@ class DataGridStandard extends React.Component {
     return (
       <Section
         id={sectionId}
-        onClick={this.handleSectionClick}
         component={
           <SectionHeader
+            sectionId={sectionId}
             text={sectionName}
             isCollapsible
             isCollapsed={isCollapsed}
+            onClick={this.handleSectionClick}
           />
         }
       >
@@ -264,7 +271,6 @@ class DataGridStandard extends React.Component {
         sizeClass={cx('large-rows')}
         onClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
-        onSectionClick={this.handleSectionClick}
       >
         {this.buildSection('section_0', 'Section 0')}
         {this.buildSection('section_1', 'Section 1')}

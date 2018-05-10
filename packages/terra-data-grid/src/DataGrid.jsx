@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
 import ResizeObserver from 'resize-observer-polyfill';
-import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
-import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
-import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 import ContentCell from './default-components/ContentCell';
 import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
+import { isStickySupported } from './utils';
+
 
 import styles from './DataGrid.scss';
 
@@ -27,22 +26,7 @@ const defaultProps = {
   sortedColumns: {},
 };
 
-let stickyIsSupported;
-if (!window.getComputedStyle) {
-  stickyIsSupported = false;
-} else {
-  const testNode = document.createElement('div');
-
-  stickyIsSupported = ['', '-webkit-', '-moz-', '-ms-'].some((prefix) => {
-    try {
-      testNode.style.position = `${prefix}sticky`;
-    } catch (e) {
-      // Exception can be thrown if position value is not supported.
-    }
-
-    return testNode.style.position !== '';
-  });
-}
+const stickyIsSupported = isStickySupported();
 
 class DataGrid extends React.Component {
   static generateWidthState(props) {
@@ -92,7 +76,6 @@ class DataGrid extends React.Component {
     this.updateWidths = this.updateWidths.bind(this);
     this.handleContentClick = this.handleContentClick.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
-    this.handleSectionClick = this.handleSectionClick.bind(this);
 
     this.buildSectionData = this.buildSectionData.bind(this);
 
@@ -275,14 +258,14 @@ class DataGrid extends React.Component {
 
     return (
       <React.Fragment key={section.id}>
-        <div
-          key={section.id}
-          data-section-id={section.id}
-          onClick={this.handleSectionClick}
-          className={cx('section-header-container')}
-        >
-          { withHeader ? section.component : null}
-        </div>
+        {section.component ? (
+          <div
+            key={section.id}
+            className={cx('section-header-container')}
+          >
+            { withHeader ? section.component : null}
+          </div>
+        ) : null}
         {section.rows && section.rows.map((row, index) => (
           <div key={`${section.id}-${row.id}`} className={cx(['row', { 'stripe-row': index % 2 > 0 }, sizeClass])} style={{ width }}>
             {columnKeys.map((columnKey) => {
@@ -357,20 +340,6 @@ class DataGrid extends React.Component {
 
     if (cellNode.classList.contains(cx('selectable')) && onClick) {
       onClick(cellNode.getAttribute('data-row-key'), cellNode.getAttribute('data-column-key'));
-    }
-  }
-
-  handleSectionClick(event) {
-    const { onSectionClick } = this.props;
-
-    const sectionNode = event.currentTarget;
-
-    if (!sectionNode.classList.contains(cx('section-header-container'))) {
-      return;
-    }
-
-    if (onSectionClick) {
-      onSectionClick(sectionNode.getAttribute('data-section-id'));
     }
   }
 
