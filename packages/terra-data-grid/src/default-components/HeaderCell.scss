@@ -1,0 +1,23 @@
+:local {
+  .header-cell {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+
+    .sort-indicator {
+      flex: 0 0 auto;
+      margin-left: .5rem;
+    }
+
+    .text {
+      flex: 0 1 auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+      overflow: hidden;
+    }
+  }
+}

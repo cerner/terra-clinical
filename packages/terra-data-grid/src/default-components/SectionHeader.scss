@@ -1,0 +1,34 @@
+:local {
+  .section-header {
+    height: 100%;
+    width: 100%;
+    background: lightgrey;
+    border-bottom: 1px solid #646464;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+
+    .collapsible-icon {
+      flex: 0 0 auto;
+    }
+
+    .text {
+      flex: 1 1 auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+      overflow: hidden;
+    }
+
+    .text:nth-child(2) {
+      margin-left: 5px;
+    }
+  }
+
+  .section-header.selectable:hover {
+    background: grey;
+  }
+}

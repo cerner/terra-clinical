@@ -7,6 +7,10 @@ import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
+import ContentCell from './default-components/ContentCell';
+import HeaderCell from './default-components/HeaderCell';
+import SectionHeader from './default-components/SectionHeader';
+
 import styles from './DataGrid.scss';
 
 const cx = classNames.bind(styles);
@@ -21,33 +25,6 @@ const defaultProps = {
   fixedColumnKeys: [],
   flexColumnKeys: [],
   sortedColumns: {},
-};
-
-const DefaultCell = ({ text }) => (
-  <div className={cx('default-cell')}>
-    {text}
-  </div>
-);
-
-const DefaultHeaderCell = ({ text, sortable, sortDirection }) => {
-  let sortIndicator;
-  if (sortable) {
-    sortIndicator = (
-      <div className={cx('sort-indicator')}>
-        {sortDirection === 'ascending' ? <IconCaretUp /> : null}
-        {sortDirection === 'descending' ? <IconCaretDown /> : null}
-      </div>
-    );
-  }
-
-  return (
-    <div className={cx('default-header-cell')}>
-      <div className={cx('text')}>
-        {text}
-      </div>
-      {sortIndicator}
-    </div>
-  );
 };
 
 let stickyIsSupported;
@@ -144,12 +121,11 @@ class DataGrid extends React.Component {
     const height = this.containerRef.scrollHeight; // eslint-disable-line no-unused-vars
 
     /**
-     * A ResizeObserver is used to manage changes to the DataGrid's overall size.
+     * A ResizeObserver is used to manage changes to the DataGrid's overall size. The handler will execute once upon the start of
+     * observation and on every subsequent resize.
      */
     this.resizeObserver = new ResizeObserver((entries) => { this.handleResize(entries[0].contentRect.width, entries[0].contentRect.height); });
     this.resizeObserver.observe(this.containerRef);
-
-    // this.handleResize(this.containerRef);
   }
 
   componentWillUnmount() {
@@ -204,20 +180,16 @@ class DataGrid extends React.Component {
 
   handleResize(newWidth, newHeight) {
     /**
-     * We need to update the inline widths of each section header in response to the overall container width changes.
+     * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
+     * The widths are applied directly the nodes outside of the React lifecycle to improve performance.
      */
-    document.querySelectorAll(`.${cx('section-header')}`).forEach((el) => {
-      el.style.width = `${newWidth}px`;
+    document.querySelectorAll(`.${cx('section-header-container')}`).forEach((el) => {
+      el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
     });
   }
 
-  renderHeaderCell(columnKey, columnData, sortedColumns) {
-    let content;
-    if (columnData.text) {
-      content = <DefaultHeaderCell text={columnData.text} sortable={columnData.sortable} sortDirection={sortedColumns[columnKey]} />;
-    } else if (columnData.component) {
-      content = columnData.component;
-    }
+  renderHeaderCell(columnKey, columnData) {
+    const content = columnData.component;
 
     let resizeHandle;
     if (columnData.resizable) {
@@ -271,7 +243,7 @@ class DataGrid extends React.Component {
 
   renderFixedHeaderRow() {
     const { columns, fixedColumnKeys, sortedColumns } = this.props;
-    const { fixedColumnWidth, flexColumnWidth } = this.state;
+    const { fixedColumnWidth } = this.state;
 
     return (
       <div
@@ -292,11 +264,10 @@ class DataGrid extends React.Component {
     return (
       <div className={cx(['row', 'header-row'])} style={{ width: `${flexColumnWidth}px` }}>
         {flexColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey], sortedColumns))}
-        <div className={cx('buffer-cell')} />
+        {/* <div className={cx('buffer-cell')} /> */}
       </div>
     );
   }
-
 
   renderSection(section, columnKeys, width, withHeader) {
     const { sizeClass } = this.props;
@@ -304,39 +275,23 @@ class DataGrid extends React.Component {
 
     return (
       <React.Fragment key={section.id}>
-        { withHeader ? (
-          <div
-            key={section.id}
-            style={{ zIndex: '1001' }}
-            className={cx('section-header')}
-            data-section-id={section.id}
-            onClick={this.handleSectionClick}
-          >
-            {section.isCollapsible ? (
-              <div className={cx('collapsible-icon')}>
-                {section.isCollapsed ? <IconCaretRight /> : <IconCaretDown />}
-              </div>
-              ) : null
-            }
-            <div className={cx('text')}>
-              {section.title}
-            </div>
-          </div>
-        ) : (
-          <div
-            key={section.id}
-            className={cx('section-header-placeholder')}
-          />
-        ) }
-        {!section.isCollapsed ? section.rows.map((row, index) => (
-          <div key={row.id} className={cx(['row', { 'stripe-row': index % 2 > 0 }, sizeClass])} style={{ width }}>
+        <div
+          key={section.id}
+          data-section-id={section.id}
+          onClick={this.handleSectionClick}
+          className={cx('section-header-container')}
+        >
+          { withHeader ? section.component : null}
+        </div>
+        {section.rows && section.rows.map((row, index) => (
+          <div key={`${section.id}-${row.id}`} className={cx(['row', { 'stripe-row': index % 2 > 0 }, sizeClass])} style={{ width }}>
             {columnKeys.map((columnKey) => {
               const cell = row.cells[columnKey];
 
               return (
                 <div
                   onClick={this.handleContentClick}
-                  key={`${row.id} - ${columnKey}`}
+                  key={`${section.id}-${row.id}-${columnKey}`}
                   className={cx(['cell', { 'no-data': cell.noData, selectable: cell.isSelectable, selected: cell.isSelected }])}
                   style={{ width: `${columnWidths[columnKey]}px` }}
                   tabIndex={cell.isSelectable ? '0' : undefined}
@@ -348,7 +303,7 @@ class DataGrid extends React.Component {
               );
             })}
           </div>
-        )) : null}
+        ))}
       </React.Fragment>
     );
   }
@@ -410,7 +365,7 @@ class DataGrid extends React.Component {
 
     const sectionNode = event.currentTarget;
 
-    if (!sectionNode.classList.contains(cx('section-header'))) {
+    if (!sectionNode.classList.contains(cx('section-header-container'))) {
       return;
     }
 
@@ -424,9 +379,8 @@ class DataGrid extends React.Component {
       const sectionData = {};
 
       sectionData.id = section.props.id;
-      sectionData.title = section.props.title;
-      sectionData.isCollapsible = section.props.isCollapsible;
-      sectionData.isCollapsed = section.props.isCollapsed;
+      sectionData.onClick = section.props.onClick;
+      sectionData.component = section.props.component;
       sectionData.rows = React.Children.map(section.props.children, (row) => {
         const rowData = {};
         rowData.id = row.props.id;
@@ -460,13 +414,6 @@ class DataGrid extends React.Component {
         className={cx(['container', { 'legacy-sticky': !stickyIsSupported }])}
         ref={(ref) => {
           this.containerRef = ref;
-
-          // if (ref) {
-          //   // TODO: Switch to ResizeObserver and update widths on change
-          //   document.querySelectorAll(`.${cx('section-header')}`).forEach((el) => {
-          //     el.style.width = `${ref.clientWidth}px`;
-          //   });
-          // }
         }}
       >
         {this.renderFixedHeaderRow()}
@@ -503,4 +450,4 @@ const Row = () => null;
 const Cell = () => null;
 
 export default DataGrid;
-export { Section, Row, Cell, DefaultCell };
+export { Section, Row, Cell, ContentCell, HeaderCell, SectionHeader };

@@ -86,76 +86,6 @@
     }
   }
 
-  .section-header-placeholder {
-    height: 33px;
-    z-index: -1;
-  }
-
-  .section-header {
-    height: 33px;
-    background: lightgrey;
-    border-bottom: 1px solid #646464;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
-    user-select: none;
-
-    .collapsible-icon {
-      flex: 0 0 auto;
-    }
-
-    .text {
-      flex: 1 1 auto;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      word-break: normal;
-      word-wrap: normal;
-      overflow: hidden;
-    }
-
-    .text:nth-child(2) {
-      margin-left: 5px;
-    }
-  }
-
-  .section-header:hover {
-    background: grey;
-  }
-
-  .default-cell {
-    height: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-    word-break: normal;
-    word-wrap: normal;
-    padding: 5px;
-  }
-
-  .default-header-cell {
-    height: 100%;
-    overflow: hidden;
-    width: 100%;
-    padding: 5px;
-    display: flex;
-
-    .sort-indicator {
-      flex: 0 0 auto;
-      margin-left: .5rem;
-    }
-
-    .text {
-      flex: 0 1 auto;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      word-break: normal;
-      word-wrap: normal;
-      overflow: hidden;
-    }
-  }
-
   // Sticky implementation
 
   .container {
@@ -219,5 +149,10 @@
   .scroll-content {
     position: relative;
     min-width: 100%;
+  }
+
+  .section-header-container {
+    height: 33px;
+    width: 100%;
   }
 }

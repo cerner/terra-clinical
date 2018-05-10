@@ -5,49 +5,17 @@ import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 // import DisclosureComponent from 'terra-disclosure-manager/examples/index-examples/DisclosureComponent';
 
-import DataGrid, { Section, Row, Cell, DefaultCell } from '../../src/DataGrid';
+import DataGrid, { Section, Row, Cell, ContentCell, HeaderCell, SectionHeader } from '../../src/DataGrid';
 
 import styles from './DataGridStandard.scss';
 
 const cx = classNames.bind(styles);
 
-const generateRows = num => (new Array(num)).fill().map((val, index) => (
-  {
-    key: `Row${index}`,
-    data: {
-      column0: {
-        component: <div>Custom Content Component</div>,
-        selectable: true,
-      },
-      column1: {
-        text: `Row ${index} Column 1`,
-        selectable: true,
-      },
-      column2: {
-        text: `Row ${index} Column 2  (Not Selectable)`,
-      },
-      column3: {
-        noData: true,
-      },
-      column4: {
-        text: `Row ${index} Column 4`,
-        selectable: true,
-      },
-      column5: {
-        text: `Row ${index} Column 5`,
-        selectable: true,
-      },
-      column6: {
-        text: `Row ${index} Column 6`,
-        selectable: true,
-      },
-      column7: {
-        text: `Row ${index} Column 7`,
-        selectable: true,
-      },
-    },
-  }
-));
+const CustomHeaderCell = ({ text }) => (
+  <div style={{ color: 'blue' }}>
+    {text}
+  </div>
+);
 
 class DataGridStandard extends React.Component {
   constructor(props) {
@@ -66,57 +34,56 @@ class DataGridStandard extends React.Component {
         minWidth: 100,
         sortable: true,
         resizable: true,
-        component: <div>Column 0 (Custom Header Component)</div>,
+        component: <CustomHeaderCell text="Column 0 (CustomHeaderCell)" />,
       },
       column1: {
         startWidth: 200,
         sortable: true,
         resizable: true,
-        text: 'Column 1',
+        component: <HeaderCell text="Column 1" />,
       },
       column2: {
         startWidth: 200,
         sortable: true,
         resizable: true,
-        text: 'Column 2',
+        component: <HeaderCell text="Column 2" />,
       },
       column3: {
         startWidth: 200,
         sortable: false,
         resizable: true,
-        text: 'Column 3 (No Data)',
+        component: <HeaderCell text="Column 3 (No Data)" />,
       },
       column4: {
         startWidth: 400,
         sortable: true,
         resizable: true,
         text: 'Column 4',
+        component: <HeaderCell text="Column 4" />,
       },
       column5: {
         startWidth: 400,
         sortable: true,
         resizable: true,
-        text: 'Column 5',
+        component: <HeaderCell text="Column 5" />,
       },
       column6: {
         startWidth: 400,
         sortable: true,
         resizable: false,
-        text: 'Column 6 (No Resize)',
+        component: <HeaderCell text="Column 6 (No resize)" />,
       },
       column7: {
         startWidth: 200,
         sortable: true,
         resizable: true,
-        text: 'Column 7',
+        component: <HeaderCell text="Column 7" />,
       },
     };
 
     this.state = {
       columns,
-      sorting: {},
       collapsedSections: {},
-      rows: generateRows(30),
       fixedColumnKeys: ['column1', 'column2', 'column7'],
       flexColumnKeys: ['column4', 'column5', 'column6', 'column3', 'column0'],
     };
@@ -124,9 +91,17 @@ class DataGridStandard extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     const { aggregatorDelegate } = this.props;
-    const { sorting, collapsedSections } = this.state;
+    const { columns, sortedColumnKey, sortDirection, collapsedSections } = this.state;
 
-    if (nextState.sorting !== sorting) {
+    if (nextState.columns !== columns) {
+      return true;
+    }
+
+    if (nextState.sortDirection !== sortDirection) {
+      return true;
+    }
+
+    if (nextState.sortedColumnKey !== sortedColumnKey) {
       return true;
     }
 
@@ -151,18 +126,38 @@ class DataGridStandard extends React.Component {
   }
 
   handleHeaderClick(columnKey) {
-    const { sorting } = this.state;
+    const { sortedColumnKey } = this.state;
 
-    if (!sorting[columnKey]) {
-      this.setState({ sorting: { [columnKey]: 'ascending' }, rows: generateRows(30) });
+    const columns = Object.assign({}, this.state.columns);
+
+    if (!columns[columnKey]) {
       return;
     }
 
-    if (sorting[columnKey] === 'ascending') {
-      this.setState({ sorting: { [columnKey]: 'descending' }, rows: generateRows(30).reverse() });
-    } else {
-      this.setState({ sorting: { [columnKey]: 'ascending' }, rows: generateRows(30) });
+    const headerCellComponent = columns[columnKey].component;
+
+    if (!headerCellComponent) {
+      return;
     }
+
+    let sortDirection;
+    if (!headerCellComponent.props.sortDirection || headerCellComponent.props.sortDirection === 'ascending') {
+      sortDirection = 'descending';
+    } else {
+      sortDirection = 'ascending';
+    }
+
+    columns[columnKey].component = React.cloneElement(headerCellComponent, { sortDirection });
+
+    /**
+     * For the example implementation only one column can be sorted, so we have to keep track of the previously sorted column
+     * and remove its indicator when necessary.
+     */
+    if (sortedColumnKey && sortedColumnKey !== columnKey && columns[sortedColumnKey] && columns[sortedColumnKey].component) {
+      columns[sortedColumnKey].component = React.cloneElement(columns[sortedColumnKey].component, { sortDirection: undefined });
+    }
+
+    this.setState({ columns, sortedColumnKey: columnKey, sortDirection });
   }
 
   handleCellClick(rowKey, columnKey) {
@@ -205,63 +200,67 @@ class DataGridStandard extends React.Component {
     this.setState({ collapsedSections });
   }
 
-  buildRows(sectionName, num) {
+  buildRows(sectionId, num) {
     const { aggregatorDelegate } = this.props;
+    const { sortDirection } = this.state;
 
     let selectedCell;
     if (aggregatorDelegate.hasFocus) {
       selectedCell = aggregatorDelegate.itemState.selectedCell;
     }
 
-    return (new Array(num)).fill().map((val, index) => (
+    const rows = (new Array(num)).fill().map((val, index) => (
       <Row
-        key={`row${index}`}
-        id={`${sectionName}-Row${index}`}
+        key={`${sectionId}-Row${index}`}
+        id={`${sectionId}-Row${index}`}
       >
         {Object.keys(this.state.columns).map(columnKey => (
           <Cell
             key={`${columnKey}`}
             columnId={columnKey}
             isSelectable
-            isSelected={selectedCell && selectedCell.rowKey === `${sectionName}-Row${index}` && selectedCell.columnKey === columnKey}
+            isSelected={selectedCell && selectedCell.rowKey === `${sectionId}-Row${index}` && selectedCell.columnKey === columnKey}
           >
-            <DefaultCell
+            <ContentCell
               text={`Row ${index}, Column ${columnKey}`}
             />
           </Cell>
         ))}
       </Row>
     ));
+
+    return sortDirection === 'descending' ? rows.reverse() : rows;
   }
 
   buildSection(sectionId, sectionName) {
+    const isCollapsed = this.state.collapsedSections[sectionId];
+
     return (
       <Section
         id={sectionId}
-        title={sectionName}
-        isCollapsible
-        isCollapsed={this.state.collapsedSections[sectionId]}
+        onClick={this.handleSectionClick}
+        component={
+          <SectionHeader
+            text={sectionName}
+            isCollapsible
+            isCollapsed={isCollapsed}
+          />
+        }
       >
-        {this.buildRows(sectionName, 30)}
+        {!isCollapsed ? this.buildRows(sectionId, 30) : null}
       </Section>
     );
   }
 
   render() {
     const { aggregatorDelegate } = this.props;
-    const { columns, rows, flexColumnKeys, fixedColumnKeys, sorting } = this.state;
-
-    let sortedColumns;
-    if (sorting) {
-      sortedColumns = sorting;
-    }
+    const { columns, rows, flexColumnKeys, fixedColumnKeys } = this.state;
 
     return (
       <DataGrid
         fixedColumnKeys={fixedColumnKeys}
         flexColumnKeys={flexColumnKeys}
         columns={columns}
-        sortedColumns={sortedColumns}
         sizeClass={cx('large-rows')}
         onClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
@@ -272,43 +271,6 @@ class DataGridStandard extends React.Component {
         {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text')}
       </DataGrid>
     );
-
-    // return (
-    //   <DataGrid
-    //     fixedColumnKeys={fixedColumnKeys}
-    //     flexColumnKeys={flexColumnKeys}
-    //     columns={columns}
-    //     sortedColumns={sortedColumns}
-    //     sizeClass={cx('large-rows')}
-    //     selectedCells={selectedCells}
-    //     onClick={this.handleCellClick}
-    //     onHeaderClick={this.handleHeaderClick}
-    //   >
-    //     <Section
-    //       id="Section_1"
-    //       title="Section 1"
-    //       isCollapsible
-    //       isCollapsed
-    //     >
-    //       <Row
-    //         id="Row1"
-    //       >
-    //         <Cell columnId="column0">
-    //           <DefaultCell />
-    //         </Cell>
-    //         <Cell columnId="column1">
-    //           <DefaultCell />
-    //         </Cell>
-    //         <Cell columnId="column2">
-    //           <DefaultCell />
-    //         </Cell>
-    //         <Cell columnId="column3">
-    //           <DefaultCell />
-    //         </Cell>
-    //       </Row>
-    //     </Section>
-    //   </DataGrid>
-    // );
   }
 }
 
