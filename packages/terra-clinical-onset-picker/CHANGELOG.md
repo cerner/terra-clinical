@@ -4,6 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+2.4.0 - (May 1, 2018)
+----------
+### Changed
+* Run tests once per screen-size.
+
+2.3.0 - (April 20, 2018)
+----------
+### Changed
+* Translations for nl, nl-BE
+
 2.2.0 - (March 27, 2018)
 ----------
 ### Changed

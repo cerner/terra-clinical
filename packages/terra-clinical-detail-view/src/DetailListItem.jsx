@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * The item to be displayed.
+   * The detail view list item to be displayed.
    */
   item: PropTypes.element.isRequired,
 };

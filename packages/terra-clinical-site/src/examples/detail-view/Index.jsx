@@ -1,48 +1,59 @@
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-detail-view/docs/README.md';
-import { version } from 'terra-clinical-detail-view/package.json';
+import { name } from 'terra-clinical-detail-view/package.json';
 
 // Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import DetailViewSrc from '!raw-loader!terra-clinical-detail-view/src/DetailView.jsx';
 import DetailListSrc from '!raw-loader!terra-clinical-detail-view/src/DetailList.jsx';
 import DetailListItemSrc from '!raw-loader!terra-clinical-detail-view/src/DetailListItem.jsx';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example files
 import DetailViewDivided from './DetailViewDivided';
+import DetailViewDividedSrc from '!raw-loader!./DetailViewDivided';
 import DetailViewNoDivider from './DetailViewNoDivider';
+import DetailViewNoDividerSrc from '!raw-loader!./DetailViewNoDivider';
+import DetailViewDividedSmallerTitles from './DetailViewDividedSmallerTitles';
+import DetailViewDividedSmallerTitlesSrc from '!raw-loader!./DetailViewDividedSmallerTitles';
 
-const DetailViewExamplesHeadingStyle = {
-  marginBottom: '0px',
-};
-const DetailViewExamplesBoxedStyle = {
-  border: '3px dotted #d3d4d5',
-};
-
-const DetailViewExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="detail_view_props" src={DetailViewSrc} componentName="Detail View" />
-    <PropsTable id="detail_list_props" src={DetailListSrc} componentName="Detail List" />
-    <PropsTable id="detail_list_item_props" src={DetailListItemSrc} componentName="Detail List Item" />
-    <br />
-    <br />
-    <br />
-    <h2 id="Divided" style={DetailViewExamplesHeadingStyle} >Example Divided Detail View</h2>
-    <div style={DetailViewExamplesBoxedStyle}>
-      <DetailViewDivided />
-    </div>
-    <br />
-    <br />
-    <h2 id="NoDivider" style={DetailViewExamplesHeadingStyle} >Example Non-Divided Detail View</h2>
-    <div style={DetailViewExamplesBoxedStyle}>
-      <DetailViewNoDivider />
-    </div>
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Divided Detail View',
+        example: <DetailViewDivided />,
+        source: DetailViewDividedSrc,
+      },
+      {
+        title: 'Non-Divided Detail View',
+        example: <DetailViewNoDivider />,
+        source: DetailViewNoDividerSrc,
+      },
+      {
+        title: 'Divided Detail View with Smaller Titles',
+        example: <DetailViewDividedSmallerTitles />,
+        source: DetailViewDividedSmallerTitlesSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Detail View',
+        componentSrc: DetailViewSrc,
+      },
+      {
+        componentName: 'Detail List',
+        componentSrc: DetailListSrc,
+      },
+      {
+        componentName: 'Detail List Item',
+        componentSrc: DetailListItemSrc,
+      },
+    ]}
+  />
 );
 
-export default DetailViewExamples;
+export default DocPage;

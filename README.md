@@ -8,7 +8,10 @@
   Terra Clinical
 </h1>
 
+[![Cerner OSS](https://img.shields.io/badge/Cerner-OSS-blue.svg?style=flat)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
+[![lerna](https://img.shields.io/badge/Maintained%20With-Lerna-cc00ff.svg)](https://lernajs.io/)
+[![devDependencies status](https://david-dm.org/cerner/terra-clinical/dev-status.svg)](https://david-dm.org/cerner/terra-clinical?type=dev)
 
 - [Supported Browsers](#supported-browsers)
 - [Packages](#packages)
@@ -25,7 +28,7 @@
 
 | Terra Package      | Version | Status |
 |--------------------|---------|--------|
-| [terra-clinical-action-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-action-header.svg)](https://www.npmjs.org/package/terra-clinical-action-header) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg)|
+| [terra-clinical-action-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-action-header.svg)](https://www.npmjs.org/package/terra-clinical-action-header) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 | terra-clinical-app-delegate |[![NPM version](http://img.shields.io/npm/v/terra-clinical-app-delegate.svg)](https://www.npmjs.org/package/terra-clinical-app-delegate) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 | terra-clinical-application |[![NPM version](http://img.shields.io/npm/v/terra-clinical-application.svg)](https://www.npmjs.org/package/terra-clinical-application) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 | [terra-clinical-detail-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-detail-view) | [![NPM version](http://img.shields.io/npm/v/terra-clinical-detail-view.svg)](https://www.npmjs.org/package/terra-clinical-detail-view) | ![Stable](https://img.shields.io/badge/status-Stable-brightgreen.svg) |

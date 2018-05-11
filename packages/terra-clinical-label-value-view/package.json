@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-label-value-view",
   "main": "lib/LabelValueView.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "The label value view component displays a label and the associated value or list of values underneath the label.",
   "repository": {
     "type": "git",
@@ -40,6 +40,6 @@
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
-    "test:wdio": "wdio ../../wdio.conf.js"
+    "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

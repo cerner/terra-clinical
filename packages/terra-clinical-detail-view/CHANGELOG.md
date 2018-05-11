@@ -4,6 +4,15 @@ ChangeLog
 Unreleased
 ----------
 
+2.3.0 - (May 1, 2018)
+----------
+### Added
+* Added new props "secondaryTitles", "accessory", and "isSmallerTitles"
+
+### Changed
+* Updated spacing & text sizes
+* Updated empty/none default prop values to undefined
+
 2.2.0 - (March 27, 2018)
 ----------
 ### Changed

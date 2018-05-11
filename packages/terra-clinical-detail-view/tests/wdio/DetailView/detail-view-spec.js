@@ -17,6 +17,14 @@ describe('Detail View', () => {
       browser.url('/#/raw/tests/clinical-detail-view/detail-view/detail-view-no-divider');
     });
 
-    Terra.should.matchScreenshot({ viewports });
+    Terra.should.matchScreenshot({ viewports, selector });
+  });
+
+  describe('Displays a Detail View with provided components and when title size is smaller', () => {
+    before(() => {
+      browser.url('/#/raw/tests/clinical-detail-view/detail-view/detail-view-divided-smaller-titles');
+    });
+
+    Terra.should.matchScreenshot({ viewports, selector });
   });
 });

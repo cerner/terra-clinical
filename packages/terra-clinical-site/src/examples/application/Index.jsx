@@ -1,22 +1,24 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-application/docs/README.md';
-import { version } from 'terra-clinical-application/package.json';
+import { name } from 'terra-clinical-application/package.json';
 
 // Component Source
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import ApplicationSrc from '!raw-loader!terra-clinical-application/src/Application';
 
-// Example Files
-
-const ApplicationExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={ApplicationSrc} componentName="Application" />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    propsTables={[
+      {
+        componentName: 'Application',
+        componentSrc: ApplicationSrc,
+      },
+    ]}
+  />
 );
 
-export default ApplicationExamples;
+export default DocPage;

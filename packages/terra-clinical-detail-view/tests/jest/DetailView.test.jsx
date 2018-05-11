@@ -21,12 +21,40 @@ it('should render a title', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a smaller title', () => {
+  const detailView = <DetailView title="Header" isSmallerTitles />;
+  const wrapper = render(detailView);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render secondaryTitles', () => {
+  const detailView = (
+    <DetailView
+      title="Header"
+      secondaryTitles={['SecondaryTitle1', 'SecondaryTitle2']}
+    />
+  );
+  const wrapper = render(detailView);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render subtitles', () => {
   const detailView = (
     <DetailView
       title="Header"
       subtitles={['Subtitle 1', 'Subtitle 2']}
     />);
+  const wrapper = render(detailView);
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render accessory', () => {
+  const detailView = (
+    <DetailView
+      title="Header"
+      accessory={<div> This is where an accessory would go </div>}
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });

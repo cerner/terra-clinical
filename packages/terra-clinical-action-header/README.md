@@ -4,7 +4,8 @@
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-action-header.svg)](https://www.npmjs.org/package/terra-clinical-action-header)
 [![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
-An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side.
+An action header is a header bar with a grey background containing actionable navigation buttons, a left aligned title, and a space for an additional element to be added on the right side. This component has been **deprecated** in
+favor of [terra-action-header](https://github.com/cerner/terra-core/tree/master/packages/terra-action-header).
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-action-header/docs)
