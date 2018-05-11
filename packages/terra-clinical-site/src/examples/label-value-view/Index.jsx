@@ -1,9 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-label-value-view/docs/README.md';
-import { version } from 'terra-clinical-label-value-view/package.json';
+import { name } from 'terra-clinical-label-value-view/package.json';
 
 // Component Source
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
@@ -11,29 +10,41 @@ import LabelValueViewSrc from '!raw-loader!terra-clinical-label-value-view/src/L
 
 // Example Files
 import LabelValueViewText from './LabelValueViewText';
+import LabelValueViewTextSrc from '!raw-loader!./LabelValueViewText';
 import LabelValueViewNode from './LabelValueViewNode';
+import LabelValueViewNodeSrc from '!raw-loader!./LabelValueViewNode';
 import LabelValueViewNodeCustom from './LabelValueViewNodeCustom';
+import LabelValueViewNodeCustomSrc from '!raw-loader!./LabelValueViewNodeCustom';
 
-const LabelValueViewExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={LabelValueViewSrc} componentName="Label Value View" />
-    <br />
-    <h2 id="text_value">Label Value View with a Text Input</h2>
-    <LabelValueViewText />
-    <br />
-    <br />
-    <br />
-    <h2 id="element_value">Label Value View with a Node Input</h2>
-    <LabelValueViewNode />
-    <br />
-    <br />
-    <br />
-    <h2 id="element_value">Label Value View with a Node Input (Custom)</h2>
-    <LabelValueViewNodeCustom />
-    <br />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Label Value View with a Text Input',
+        example: <LabelValueViewText />,
+        source: LabelValueViewTextSrc,
+      },
+      {
+        title: 'Label Value View with a Node Input',
+        example: <LabelValueViewNode />,
+        source: LabelValueViewNodeSrc,
+      },
+      {
+        title: 'Label Value View with a Node Input (Custom)',
+        example: <LabelValueViewNodeCustom />,
+        source: LabelValueViewNodeCustomSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Label Value View',
+        componentSrc: LabelValueViewSrc,
+      },
+    ]}
+  />
 );
 
-export default LabelValueViewExamples;
+export default DocPage;

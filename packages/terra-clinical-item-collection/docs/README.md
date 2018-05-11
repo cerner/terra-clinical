@@ -6,46 +6,15 @@ Ultimately, the Item Collection component allows consumers to organize tabular d
 
 The ItemCollection is rendered as a static, non-selectable display, however it has the foundation to become a selectable component. See the [Selectable Implementation Guide](https://github.com/cerner/terra-clinical/blob/master/packages/terra-clinical-item-collection/docs/SelectableImplementation.md) for details.
 
+### Item Collection Item
+
+This component handles the rendering of a list item or table row for the ItemCollection. By default, this renders an ListItem with an ItemView as the content. Else it will render a TableRow with the element layout of startAccessory, displays, comment, and endAccessory. This component does not handle missing element logic, but provides a clean way to represent an item as a child within the item collection. \n\n Additionally, this component will export the ItemView.Display and ItemView.Comment components as Item.Display & Item.Comment.
+
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-item-collection`
   - `yarn add terra-clinical-item-collection`
-
-## Usage
-
-```jsx
-import React from 'react';
-import ItemCollection from 'terra-clinical-item-collection';
-
-<ItemCollection
-  id="ItemCollection"
-  breakpoint="tiny"
-  hasStartAccessory
-  numberOfDisplays={3}
-  hasComment
-  hasEndAccessory
->
-  <ItemCollection.Item
-    startAccessory={<Icon/>}
-    comment={<ItemCollection.Comment text="Comment" />}
-    endAccessory={<Icon/>}
-    listItemLayout="twoColumns"
-  >
-    <ItemCollection.Display text="Display 1" />
-    <ItemCollection.Display text="Display 2" />
-    <ItemCollection.Display text="Display 3" />
-  </ItemCollection.Item>
-  <ItemCollection.Item
-    startAccessory={<Icon/>}
-    comment={<ItemCollection.Comment text="Comment" />}
-    endAccessory={<Icon/>}
-  >
-    <ItemCollection.Display text="Display 1" />
-    <ItemCollection.Display text="Display 2" />
-  </ItemCollection.Item>
-</ItemCollection>
-```
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
