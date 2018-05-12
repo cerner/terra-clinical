@@ -1,10 +1,8 @@
-language: node_js
 sudo: required 
 branches:
   only:
     - master
 cache: false
-script: "npm run $TEST_SUITE"
 env:
   - TEST_SUITE=lint
   - TEST_SUITE=jest
@@ -13,6 +11,13 @@ env:
   - TEST_SUITE=danger
 jobs:
   include:
+    - stage: Build
+      script:
+        - echo "$DOCKER_PASSWORD" | docker login -u "ryanthemanuel" --password-stdin
+        - docker-compose build
+        - docker-compose push
+    - stage: Test
+      script: "docker-compose run test npm run $TEST_SUITE"
     - stage: Deploy
       before_deploy:
         - npm run compile:prod

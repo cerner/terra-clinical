@@ -4,6 +4,12 @@ const wdioConf = require('terra-dev-site/config/wdio/wdio.conf');
 const config = {
   ...wdioConf.config,
 
+  seleniumDocker: {
+    enabled: false,
+  },
+
+  host = 'standalone-chrome';
+
   // define suites
   suites: {
     actionHeader: [
