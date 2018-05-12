@@ -20,7 +20,8 @@ jobs:
         - docker-compose build
         - docker-compose push
     - stage: test
-      script: "docker-compose run test npm run $TEST_SUITE"
+      script: 
+        - "docker-compose run test npm run $TEST_SUITE"
     - stage: deploy
       before_deploy:
         - npm run compile:prod
