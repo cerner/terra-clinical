@@ -28,3 +28,7 @@ jobs:
         local_dir: /build
         on:
           branch: master
+stages:
+  - build
+  - test
+  - deploy
