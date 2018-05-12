@@ -21,6 +21,7 @@ jobs:
         - docker-compose push
     - stage: test
       script: 
+        - 'docker-compose pull'
         - "docker-compose run test npm run $TEST_SUITE"
     - stage: deploy
       before_deploy:
