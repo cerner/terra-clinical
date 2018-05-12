@@ -8,7 +8,7 @@ const config = {
     enabled: false,
   },
 
-  host = 'standalone-chrome';
+  host = 'standalone-chrome',
 
   // define suites
   suites: {
