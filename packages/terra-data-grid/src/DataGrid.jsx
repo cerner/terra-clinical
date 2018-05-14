@@ -104,11 +104,12 @@ class DataGrid extends React.Component {
     super(props);
 
     this.handleResize = this.handleResize.bind(this);
-    this.updateWidths = this.updateWidths.bind(this);
+    this.updateColumnWidths = this.updateColumnWidths.bind(this);
     this.handleContentClick = this.handleContentClick.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
 
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
+    this.renderResizeHandle = this.renderResizeHandle.bind(this);
     this.renderFixedHeaderRow = this.renderFixedHeaderRow.bind(this);
     this.renderOverflowHeaderRow = this.renderOverflowHeaderRow.bind(this);
     this.renderOverflowContent = this.renderOverflowContent.bind(this);
@@ -167,7 +168,17 @@ class DataGrid extends React.Component {
     }
   }
 
-  updateWidths(columnKey, widthDelta, minWidth) {
+  handleResize(newWidth, newHeight) {
+    /**
+     * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
+     * The widths are applied directly the nodes outside of the React lifecycle to improve performance.
+     */
+    document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`).forEach((el) => {
+      el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
+    });
+  }
+
+  updateColumnWidths(columnKey, widthDelta, minWidth) {
     const columnWidths = Object.assign({}, this.state.columnWidths);
     const minimumColumnWidth = minWidth || 50;
 
@@ -190,57 +201,46 @@ class DataGrid extends React.Component {
     });
   }
 
-  handleResize(newWidth, newHeight) {
-    /**
-     * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
-     * The widths are applied directly the nodes outside of the React lifecycle to improve performance.
-     */
-    document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`).forEach((el) => {
-      el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
-    });
+  renderResizeHandle(columnKey, columnData) {
+    return (
+      <DraggableCore
+        onStart={(event, data) => {
+          const node = data.node;
+
+          node.classList.add(cx('dragging'));
+          node.style.height = `${this.containerRef.clientHeight}px`;
+
+          this.scrollPosition = 0;
+        }}
+        onStop={(event, data) => {
+          const node = data.node;
+
+          node.classList.remove(cx('dragging'));
+          node.style.transform = '';
+          node.style.height = '';
+
+          this.updateColumnWidths(columnKey, this.scrollPosition, columnData.minWidth);
+        }}
+        onDrag={(event, data) => {
+          const node = data.node;
+
+          this.scrollPosition += data.deltaX;
+          node.style.transform = `translate3d(${this.scrollPosition}px, 0, 0)`;
+        }}
+      >
+        <div className={cx('resize-handle')} />
+      </DraggableCore>
+    );
   }
 
   renderHeaderCell(columnKey, columnData) {
     const content = columnData.component;
 
-    let resizeHandle;
-    if (columnData.resizable) {
-      resizeHandle = (
-        <DraggableCore
-          onStart={(event, data) => {
-            const node = data.node;
-
-            node.classList.add(cx('react-draggable-dragging'));
-            node.style.height = `${this.containerRef.clientHeight}px`;
-
-            this.scrollPosition = 0;
-          }}
-          onStop={(event, data) => {
-            const node = data.node;
-
-            node.classList.remove(cx('react-draggable-dragging'));
-            node.style.transform = '';
-            node.style.height = '';
-
-            this.updateWidths(columnKey, this.scrollPosition, columnData.minWidth);
-          }}
-          onDrag={(event, data) => {
-            const node = data.node;
-
-            this.scrollPosition += data.deltaX;
-            node.style.transform = `translate3d(${this.scrollPosition}px, 0, 0)`;
-          }}
-        >
-          <div className={cx('drag-region')} />
-        </DraggableCore>
-      );
-    }
-
     return (
       <div
         key={columnKey}
         data-column-key={columnKey}
-        className={cx(['cell', 'header-cell', { selectable: columnData.sortable }])}
+        className={cx(['cell-container', 'header-cell-container', { selectable: columnData.sortable }])}
         style={{ width: `${this.state.columnWidths[columnKey]}px` }}
         tabIndex={columnData.sortable ? '0' : null}
         onClick={this.handleHeaderClick}
@@ -248,7 +248,7 @@ class DataGrid extends React.Component {
         <div style={{ height: '100%', width: '100%', overflow: 'hidden' }} >
           {content}
         </div>
-        {resizeHandle}
+        {columnData.resizable ? this.renderResizeHandle(columnKey, columnData) : null }
       </div>
     );
   }
@@ -296,7 +296,7 @@ class DataGrid extends React.Component {
           </div>
         ) : null}
         {(!section.isCollapsible || !section.isCollapsed) && section.rows && section.rows.map((row, index) => (
-          <div key={`${section.id}-${row.id}`} className={cx(['row', { 'stripe-row': index % 2 > 0 }, sizeClass])} style={{ width }}>
+          <div key={`${section.id}-${row.id}`} className={cx(['row', { striped: index % 2 > 0 }, sizeClass])} style={{ width }}>
             {columnKeys.map((columnKey) => {
               const cell = row.cells[columnKey];
 
@@ -304,7 +304,7 @@ class DataGrid extends React.Component {
                 <div
                   onClick={this.handleContentClick}
                   key={`${section.id}-${row.id}-${columnKey}`}
-                  className={cx(['cell', { 'no-data': cell.noData, selectable: cell.isSelectable, selected: cell.isSelected }])}
+                  className={cx(['cell-container', { selectable: cell.isSelectable, selected: cell.isSelected }])}
                   style={{ width: `${columnWidths[columnKey]}px` }}
                   tabIndex={cell.isSelectable ? '0' : undefined}
                   data-column-key={columnKey}
@@ -341,19 +341,17 @@ class DataGrid extends React.Component {
      * If the click event target is the resize handle, we do not want to
      * recognize the click.
      */
-    if (event.target.classList.contains(cx('drag-region'))) {
+    if (event.target.classList.contains(cx('resize-handle'))) {
       return;
     }
 
     const headerCellNode = event.currentTarget;
 
-    if (!headerCellNode.classList.contains(cx('header-cell'))) {
+    if (!headerCellNode.classList.contains(cx('header-cell-container'))) {
       return;
     }
 
     if (headerCellNode.classList.contains(cx('selectable')) && onHeaderClick) {
-      const columnKey = headerCellNode.getAttribute('data-column-key');
-
       onHeaderClick(headerCellNode.getAttribute('data-column-key'));
     }
   }
@@ -363,7 +361,7 @@ class DataGrid extends React.Component {
 
     const cellNode = event.currentTarget;
 
-    if (!cellNode.classList.contains(cx('cell'))) {
+    if (!cellNode.classList.contains(cx('cell-container'))) {
       return;
     }
 
