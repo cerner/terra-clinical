@@ -11,18 +11,65 @@ import styles from './DataGridStandard.scss';
 
 const cx = classNames.bind(styles);
 
-const CustomHeaderCell = ({ text }) => (
-  <div style={{ color: 'blue' }}>
-    {text}
-  </div>
-);
-
 const DisclosureComponent = ({ app, text }) => (
   <div style={{ height: '100%' }}>
     <p>{text}</p>
     <Button text="Close" onClick={app.closeDisclosure} />
   </div>
 );
+
+const columnData = {
+  column0: {
+    startWidth: 100,
+    minWidth: 100,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 0" />,
+  },
+  column1: {
+    startWidth: 100,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 1" />,
+  },
+  column2: {
+    startWidth: 100,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 2" />,
+  },
+  column3: {
+    startWidth: 100,
+    sortable: false,
+    resizable: true,
+    component: <HeaderCell text="Column 3 (No Sort)" />,
+  },
+  column4: {
+    startWidth: 100,
+    sortable: true,
+    resizable: true,
+    text: 'Column 4',
+    component: <HeaderCell text="Column 4" />,
+  },
+  column5: {
+    startWidth: 100,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 5" />,
+  },
+  column6: {
+    startWidth: 100,
+    sortable: true,
+    resizable: false,
+    component: <HeaderCell text="Column 6 (No resize)" />,
+  },
+  column7: {
+    startWidth: 100,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 7" />,
+  },
+};
 
 class DataGridStandard extends React.Component {
   constructor(props) {
@@ -35,64 +82,11 @@ class DataGridStandard extends React.Component {
     this.buildSection = this.buildSection.bind(this);
     this.buildRows = this.buildRows.bind(this);
 
-    const columns = {
-      column0: {
-        startWidth: 300,
-        minWidth: 100,
-        sortable: true,
-        resizable: true,
-        component: <CustomHeaderCell text="Column 0 (CustomHeaderCell)" />,
-      },
-      column1: {
-        startWidth: 200,
-        sortable: true,
-        resizable: true,
-        component: <HeaderCell text="Column 1" />,
-      },
-      column2: {
-        startWidth: 200,
-        sortable: true,
-        resizable: true,
-        component: <HeaderCell text="Column 2" />,
-      },
-      column3: {
-        startWidth: 200,
-        sortable: false,
-        resizable: true,
-        component: <HeaderCell text="Column 3 (No Data)" />,
-      },
-      column4: {
-        startWidth: 400,
-        sortable: true,
-        resizable: true,
-        text: 'Column 4',
-        component: <HeaderCell text="Column 4" />,
-      },
-      column5: {
-        startWidth: 400,
-        sortable: true,
-        resizable: true,
-        component: <HeaderCell text="Column 5" />,
-      },
-      column6: {
-        startWidth: 400,
-        sortable: true,
-        resizable: false,
-        component: <HeaderCell text="Column 6 (No resize)" />,
-      },
-      column7: {
-        startWidth: 200,
-        sortable: true,
-        resizable: true,
-        component: <HeaderCell text="Column 7" />,
-      },
-    };
-
     this.state = {
-      columns,
+      columns: columnData,
       collapsedSections: {},
-      fixedColumnKeys: ['column1', 'column2', 'column7'],
-      flexColumnKeys: ['column4', 'column5', 'column6', 'column3', 'column0'],
+      fixedColumnKeys: ['column0', 'column1', 'column2'],
+      flexColumnKeys: ['column3', 'column4', 'column5', 'column6', 'column7'],
     };
   }
 
@@ -238,23 +232,25 @@ class DataGridStandard extends React.Component {
     return sortDirection === 'descending' ? rows.reverse() : rows;
   }
 
-  buildSection(sectionId, sectionName) {
+  buildSection(sectionId, sectionName, numberOfRows, isCollapsible) {
     const isCollapsed = this.state.collapsedSections[sectionId];
 
     return (
       <Section
         id={sectionId}
-        component={
+        isCollapsible={isCollapsible}
+        isCollapsed={isCollapsed}
+        header={
           <SectionHeader
             sectionId={sectionId}
             text={sectionName}
-            isCollapsible
+            isCollapsible={isCollapsible}
             isCollapsed={isCollapsed}
-            onClick={this.handleSectionClick}
+            onClick={isCollapsible ? this.handleSectionClick : null}
           />
         }
       >
-        {!isCollapsed ? this.buildRows(sectionId, 30) : null}
+        {this.buildRows(sectionId, numberOfRows)}
       </Section>
     );
   }
@@ -272,9 +268,10 @@ class DataGridStandard extends React.Component {
         onClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
       >
-        {this.buildSection('section_0', 'Section 0')}
-        {this.buildSection('section_1', 'Section 1')}
-        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text')}
+        {this.buildSection('section_0', 'Section 0', 30, true)}
+        {this.buildSection('section_1', 'Section 1', 10, true)}
+        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 60, true)}
+        {this.buildSection('section_3', 'Section 3 (No collapsing)', 10)}
       </DataGrid>
     );
   }

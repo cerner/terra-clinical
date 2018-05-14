@@ -19,9 +19,7 @@ const propTypes = {
 const SectionHeader = ({ sectionId, text, isCollapsible, isCollapsed, onClick }) => (
   <div
     key={sectionId}
-    style={{ zIndex: '1001' }}
     className={cx(['section-header', { selectable: isCollapsible }])}
-    data-section-id={sectionId}
     onClick={onClick ? ((event) => { onClick(event, sectionId); }) : null}
   >
     {isCollapsible ? (

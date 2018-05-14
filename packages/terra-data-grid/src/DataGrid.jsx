@@ -9,7 +9,6 @@ import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
 import { isStickySupported } from './utils';
 
-
 import styles from './DataGrid.scss';
 
 const cx = classNames.bind(styles);
@@ -17,13 +16,11 @@ const cx = classNames.bind(styles);
 const propTypes = {
   fixedColumnKeys: PropTypes.arrayOf(PropTypes.string),
   flexColumnKeys: PropTypes.arrayOf(PropTypes.string),
-  sortedColumns: PropTypes.object,
 };
 
 const defaultProps = {
   fixedColumnKeys: [],
   flexColumnKeys: [],
-  sortedColumns: {},
 };
 
 const stickyIsSupported = isStickySupported();
@@ -166,7 +163,7 @@ class DataGrid extends React.Component {
      * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
      * The widths are applied directly the nodes outside of the React lifecycle to improve performance.
      */
-    document.querySelectorAll(`.${cx('section-header-container')}`).forEach((el) => {
+    document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`).forEach((el) => {
       el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
     });
   }
@@ -225,7 +222,7 @@ class DataGrid extends React.Component {
   }
 
   renderFixedHeaderRow() {
-    const { columns, fixedColumnKeys, sortedColumns } = this.props;
+    const { columns, fixedColumnKeys } = this.props;
     const { fixedColumnWidth } = this.state;
 
     return (
@@ -234,20 +231,19 @@ class DataGrid extends React.Component {
         style={{ width: `${fixedColumnWidth}px` }}
       >
         <div className={cx(['row', 'header-row'])} style={{ width: `${fixedColumnWidth}px` }}>
-          {fixedColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey], sortedColumns))}
+          {fixedColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey]))}
         </div>
       </div>
     );
   }
 
   renderOverflowHeaderRow() {
-    const { columns, flexColumnKeys, sortedColumns } = this.props;
+    const { columns, flexColumnKeys } = this.props;
     const { flexColumnWidth } = this.state;
 
     return (
       <div className={cx(['row', 'header-row'])} style={{ width: `${flexColumnWidth}px` }}>
-        {flexColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey], sortedColumns))}
-        {/* <div className={cx('buffer-cell')} /> */}
+        {flexColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey]))}
       </div>
     );
   }
@@ -258,15 +254,16 @@ class DataGrid extends React.Component {
 
     return (
       <React.Fragment key={section.id}>
-        {section.component ? (
+        {section.header ? (
           <div
             key={section.id}
             className={cx('section-header-container')}
+            tabIndex={withHeader ? '0' : undefined}
           >
-            { withHeader ? section.component : null}
+            { withHeader ? section.header : null}
           </div>
         ) : null}
-        {section.rows && section.rows.map((row, index) => (
+        {(!section.isCollapsible || !section.isCollapsed) && section.rows && section.rows.map((row, index) => (
           <div key={`${section.id}-${row.id}`} className={cx(['row', { 'stripe-row': index % 2 > 0 }, sizeClass])} style={{ width }}>
             {columnKeys.map((columnKey) => {
               const cell = row.cells[columnKey];
@@ -349,7 +346,9 @@ class DataGrid extends React.Component {
 
       sectionData.id = section.props.id;
       sectionData.onClick = section.props.onClick;
-      sectionData.component = section.props.component;
+      sectionData.isCollapsible = section.props.isCollapsible;
+      sectionData.isCollapsed = section.props.isCollapsed;
+      sectionData.header = section.props.header;
       sectionData.rows = React.Children.map(section.props.children, (row) => {
         const rowData = {};
         rowData.id = row.props.id;
@@ -389,7 +388,11 @@ class DataGrid extends React.Component {
         <div className={cx(['overflow-container', { 'legacy-sticky': !stickyIsSupported }])}>
           <div
             className={cx('scroll-header')}
-            style={{ width: `${this.state.flexColumnWidth}px`, paddingLeft: `${this.state.fixedColumnWidth}px` }}
+            style={{
+              width: `${this.state.flexColumnWidth}px`,
+              minWidth: `calc(100% - ${this.state.fixedColumnWidth}px`,
+              marginLeft: `${this.state.fixedColumnWidth}px`,
+            }}
           >
             {this.renderOverflowHeaderRow()}
           </div>
@@ -401,7 +404,11 @@ class DataGrid extends React.Component {
           </div>
           <div
             className={cx('scroll-content')}
-            style={{ width: `${this.state.flexColumnWidth}px`, paddingLeft: `${this.state.fixedColumnWidth}px` }}
+            style={{
+              width: `${this.state.flexColumnWidth}px`,
+              minWidth: `calc(100% - ${this.state.fixedColumnWidth}px`,
+              marginLeft: `${this.state.fixedColumnWidth}px`,
+            }}
           >
             {this.renderOverflowContent()}
           </div>
