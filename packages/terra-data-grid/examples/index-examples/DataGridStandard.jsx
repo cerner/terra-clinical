@@ -20,54 +20,66 @@ const DisclosureComponent = ({ app, text }) => (
 
 const columnData = {
   column0: {
-    startWidth: 100,
+    startWidth: 200,
     minWidth: 100,
     sortable: true,
     resizable: true,
     component: <HeaderCell text="Column 0" />,
   },
   column1: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: true,
     resizable: true,
     component: <HeaderCell text="Column 1" />,
   },
   column2: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: true,
     resizable: true,
     component: <HeaderCell text="Column 2" />,
   },
   column3: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: false,
     resizable: true,
     component: <HeaderCell text="Column 3 (No Sort)" />,
   },
   column4: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: true,
     resizable: true,
     text: 'Column 4',
     component: <HeaderCell text="Column 4" />,
   },
   column5: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: true,
     resizable: true,
     component: <HeaderCell text="Column 5" />,
   },
   column6: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: true,
     resizable: false,
     component: <HeaderCell text="Column 6 (No resize)" />,
   },
   column7: {
-    startWidth: 100,
+    startWidth: 200,
     sortable: true,
     resizable: true,
     component: <HeaderCell text="Column 7" />,
+  },
+  column8: {
+    startWidth: 200,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 8" />,
+  },
+  column9: {
+    startWidth: 200,
+    sortable: true,
+    resizable: true,
+    component: <HeaderCell text="Column 9" />,
   },
 };
 
@@ -86,7 +98,7 @@ class DataGridStandard extends React.Component {
       columns: columnData,
       collapsedSections: {},
       fixedColumnKeys: ['column0', 'column1', 'column2'],
-      flexColumnKeys: ['column3', 'column4', 'column5', 'column6', 'column7'],
+      flexColumnKeys: ['column3', 'column4', 'column5', 'column6', 'column7', 'column8', 'column9'],
     };
   }
 

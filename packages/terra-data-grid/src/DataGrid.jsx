@@ -66,6 +66,40 @@ class DataGrid extends React.Component {
     return selectionMap;
   }
 
+  static buildSectionData(sections) {
+    return React.Children.map(sections, (section) => {
+      const sectionData = {};
+
+      sectionData.id = section.props.id;
+      sectionData.onClick = section.props.onClick;
+      sectionData.isCollapsible = section.props.isCollapsible;
+      sectionData.isCollapsed = section.props.isCollapsed;
+      sectionData.header = section.props.header;
+      sectionData.rows = React.Children.map(section.props.children, (row) => {
+        const rowData = {};
+        rowData.id = row.props.id;
+        rowData.cells = {};
+
+        React.Children.forEach(row.props.children, (cell) => {
+          if (!cell.props.columnId) {
+            return;
+          }
+
+          const cellData = {};
+          cellData.columnId = cell.props.columnId;
+          cellData.isSelectable = cell.props.isSelectable;
+          cellData.isSelected = cell.props.isSelected;
+          cellData.content = cell.props.children;
+
+          rowData.cells[cell.props.columnId] = cellData;
+        });
+        return rowData;
+      });
+
+      return sectionData;
+    });
+  }
+
   constructor(props) {
     super(props);
 
@@ -73,8 +107,6 @@ class DataGrid extends React.Component {
     this.updateWidths = this.updateWidths.bind(this);
     this.handleContentClick = this.handleContentClick.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
-
-    this.buildSectionData = this.buildSectionData.bind(this);
 
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
     this.renderFixedHeaderRow = this.renderFixedHeaderRow.bind(this);
@@ -84,7 +116,7 @@ class DataGrid extends React.Component {
 
     this.state = Object.assign({}, DataGrid.generateWidthState(props), {
       selectionMap: DataGrid.buildSelectionMap(props.selectedCells),
-      sectionData: this.buildSectionData(props.children),
+      sectionData: DataGrid.buildSectionData(props.children),
     });
   }
 
@@ -127,7 +159,7 @@ class DataGrid extends React.Component {
     }
 
     if (this.props.children !== nextProps.children) {
-      newState.sectionData = this.buildSectionData(nextProps.children);
+      newState.sectionData = DataGrid.buildSectionData(nextProps.children);
     }
 
     if (Object.keys(newState).length) {
@@ -340,40 +372,6 @@ class DataGrid extends React.Component {
     }
   }
 
-  buildSectionData(sections) {
-    return React.Children.map(sections, (section) => {
-      const sectionData = {};
-
-      sectionData.id = section.props.id;
-      sectionData.onClick = section.props.onClick;
-      sectionData.isCollapsible = section.props.isCollapsible;
-      sectionData.isCollapsed = section.props.isCollapsed;
-      sectionData.header = section.props.header;
-      sectionData.rows = React.Children.map(section.props.children, (row) => {
-        const rowData = {};
-        rowData.id = row.props.id;
-        rowData.cells = {};
-
-        React.Children.forEach(row.props.children, (cell) => {
-          if (!cell.props.columnId) {
-            return;
-          }
-
-          const cellData = {};
-          cellData.columnId = cell.props.columnId;
-          cellData.isSelectable = cell.props.isSelectable;
-          cellData.isSelected = cell.props.isSelected;
-          cellData.content = cell.props.children;
-
-          rowData.cells[cell.props.columnId] = cellData;
-        });
-        return rowData;
-      });
-
-      return sectionData;
-    });
-  }
-
   render() {
     console.log('rendering data grid');
 
@@ -391,7 +389,7 @@ class DataGrid extends React.Component {
             style={{
               width: `${this.state.flexColumnWidth}px`,
               minWidth: `calc(100% - ${this.state.fixedColumnWidth}px`,
-              marginLeft: `${this.state.fixedColumnWidth}px`,
+              paddingLeft: `${this.state.fixedColumnWidth}px`,
             }}
           >
             {this.renderOverflowHeaderRow()}
@@ -407,7 +405,7 @@ class DataGrid extends React.Component {
             style={{
               width: `${this.state.flexColumnWidth}px`,
               minWidth: `calc(100% - ${this.state.fixedColumnWidth}px`,
-              marginLeft: `${this.state.fixedColumnWidth}px`,
+              paddingLeft: `${this.state.fixedColumnWidth}px`,
             }}
           >
             {this.renderOverflowContent()}
