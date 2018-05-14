@@ -1,5 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const wdioConf = require('terra-dev-site/config/wdio/wdio.conf');
+const PackageUtilities = require('lerna/lib/PackageUtilities');
+const Repository = require('lerna/lib/Repository');
+
+// eslint-disable-next-line no-underscore-dangle
+const packageLocations = PackageUtilities.getPackages(new Repository(__dirname)).map(pkg => pkg._location);
 
 const config = {
   ...wdioConf.config,
@@ -10,36 +15,18 @@ const config = {
 
   host: 'standalone-chrome',
 
-  // define suites
-  suites: {
-    actionHeader: [
-      'packages/terra-clinical-action-header/tests/wdio/**/*-spec.js',
-    ],
-    application: [
-      'packages/terra-clinical-application/tests/wdio/**/*-spec.js',
-    ],
-    detailView: [
-      'packages/terra-clinical-detail-view/tests/wdio/**/*-spec.js',
-    ],
-    header: [
-      'packages/terra-clinical-header/tests/wdio/**/*-spec.js',
-    ],
-    itemCollection: [
-      'packages/terra-clinical-item-collection/tests/wdio/**/*-spec.js',
-    ],
-    itemDisplay: [
-      'packages/terra-clinical-item-display/tests/wdio/**/*-spec.js',
-    ],
-    itemView: [
-      'packages/terra-clinical-item-view/tests/wdio/**/*-spec.js',
-    ],
-    labelValueView: [
-      'packages/terra-clinical-label-value-view/tests/wdio/**/*-spec.js',
-    ],
-    onsetPicker: [
-      'packages/terra-clinical-onset-picker/tests/wdio/**/*-spec.js',
-    ],
-  },
+  // Define wdio test suites
+  suites: {},
 };
+
+const numberOfSuites = 4;
+[...Array(numberOfSuites)].forEach((_, index) => {
+  config.suites[`suite${index + 1}`] = [];
+});
+const itemsPerSuite = Math.ceil(packageLocations.length / numberOfSuites);
+packageLocations.forEach((packageLocation, index) => {
+  const currentSuite = `suite${Math.floor(index / itemsPerSuite) + 1}`;
+  config.suites[currentSuite] = config.suites[currentSuite].concat(`${packageLocation}/tests/wdio/**/*-spec.js`);
+});
 
 exports.config = config;
