@@ -103,7 +103,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "^9.2.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
-    "terra-dev-site": "0.6.0",
-    "terra-toolkit": "^3.2.0"
+    "terra-dev-site": "noahbenham/terra-dev-site#browserslist-test",
+    "terra-toolkit": "noahbenham/terra-toolkit#browserslistrc"
   }
 }
