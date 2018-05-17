@@ -10,26 +10,6 @@ Detail List Items are the elements to be placed within a Detail List. A Detail L
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-detail-view`
-  - `yarn add terra-clinical-detail-view`
-
-## Usage
-
-```jsx
-import React from 'react';
-import DetailView from 'terra-clinical-detail-view';
-
-<DetailView {
-  title={<div className="terra-Title terra-Title--large">Header</div>}
-  subtitles={[<DetailView.Subtitle text="Subtitle 1" key="Subtitle1" />, <DetailView.Subtitle text="Subtitle 2" key="Subtitle2" />]}
-  graph={<div> This is where a graph would go </div>}
-  details={[
-    <DetailView.DetailList>
-      <DetailView.DetailListItem item={<p>Item</p>}
-    <DetailView.DetailList/>]}
-  footer="Footer text"
-  isDivided
-} />
-```
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)

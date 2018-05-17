@@ -1,45 +1,70 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-item-view/docs/README.md';
-import { version } from 'terra-clinical-item-view/package.json';
+import { name } from 'terra-clinical-item-view/package.json';
 
 // Component Source
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import ItemViewSrc from '!raw-loader!terra-clinical-item-view/src/ItemView.jsx';
 
 // Example Files
 import ItemViewStandard from './ItemViewStandard';
+import ItemViewStandardSrc from '!raw-loader!./ItemViewStandard';
 import ItemViewTwoColumn from './ItemViewTwoColumn';
+import ItemViewTwoColumnSrc from '!raw-loader!./ItemViewTwoColumn';
 import ItemViewTwoColumnStart from './ItemViewTwoColumnStart';
+import ItemViewTwoColumnStartSrc from '!raw-loader!./ItemViewTwoColumnStart';
 import ItemViewComment from './ItemViewComment';
+import ItemViewCommentSrc from '!raw-loader!./ItemViewComment';
 import ItemViewAll from './ItemViewAll';
+import ItemViewAllSrc from '!raw-loader!./ItemViewAll';
 import ItemViewAllTopAligned from './ItemViewAllTopAligned';
+import ItemViewAllTopAlignedSrc from '!raw-loader!./ItemViewAllTopAligned';
 
-const ItemViewExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={ItemViewSrc} componentName="Item View" />
-    <h2 id="standard">ItemView - Default</h2>
-    <ItemViewStandard />
-    <br />
-    <h2 id="two-column">ItemView - Two Column Layout</h2>
-    <ItemViewTwoColumn />
-    <br />
-    <h2 id="start-emphasis">ItemView - Start Emphasis</h2>
-    <ItemViewTwoColumnStart />
-    <br />
-    <h2 id="comment">ItemView - Comment</h2>
-    <ItemViewComment />
-    <br />
-    <h2 id="all-elements">ItemView - All Elements</h2>
-    <ItemViewAll />
-    <br />
-    <h2 id="all-elements-top">ItemView - All Elements Top Aligned</h2>
-    <ItemViewAllTopAligned />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'ItemView - Default',
+        example: <ItemViewStandard />,
+        source: ItemViewStandardSrc,
+      },
+      {
+        title: 'ItemView - Two Column Layout',
+        example: <ItemViewTwoColumn />,
+        source: ItemViewTwoColumnSrc,
+      },
+      {
+        title: 'ItemView - Start Emphasis',
+        example: <ItemViewTwoColumnStart />,
+        source: ItemViewTwoColumnStartSrc,
+      },
+      {
+        title: 'ItemView - Comment',
+        example: <ItemViewComment />,
+        source: ItemViewCommentSrc,
+      },
+      {
+        title: 'ItemView - All Elements',
+        example: <ItemViewAll />,
+        source: ItemViewAllSrc,
+      },
+      {
+        title: 'ItemView - All Elements Top Aligned',
+        example: <ItemViewAllTopAligned />,
+        source: ItemViewAllTopAlignedSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Item View',
+        componentSrc: ItemViewSrc,
+      },
+    ]}
+  />
 );
 
-export default ItemViewExamples;
+export default DocPage;

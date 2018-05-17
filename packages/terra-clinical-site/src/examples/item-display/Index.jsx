@@ -1,45 +1,68 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-item-display/docs/README.md';
-import { version } from 'terra-clinical-item-display/package.json';
+import { name } from 'terra-clinical-item-display/package.json';
 
 // Component Source
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import ItemDisplaySrc from '!raw-loader!terra-clinical-item-display/src/ItemDisplay.jsx';
 import CommentSrc from '!raw-loader!terra-clinical-item-display/src/ItemComment.jsx';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 
 // Example Files
 import TextStyles from './TextStyles';
+import TextStylesSrc from '!raw-loader!./TextStyles';
 import TextStylesDisabled from './TextStylesDisabled';
+import TextStylesDisabledSrc from '!raw-loader!./TextStylesDisabled';
 import Icon from './Icon';
+import IconSrc from '!raw-loader!./Icon';
 import IconText from './IconText';
+import IconTextSrc from '!raw-loader!./IconText';
 import DefaultComment from './DefaultComment';
+import DefaultCommentSrc from '!raw-loader!./DefaultComment';
 
-const ItemDisplayExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props" src={ItemDisplaySrc} componentName="Item Display" />
-    <PropsTable id="props" src={CommentSrc} componentName="Comment" />
-
-    <h2>Item Display: Text styles</h2>
-    <TextStyles />
-    <br />
-    <h2>Disabled Item Display: Text styles</h2>
-    <TextStylesDisabled />
-    <br />
-    <h2>Item Display: Icon</h2>
-    <Icon />
-    <br />
-    <h2>Item Display: Icon & Text</h2>
-    <IconText />
-    <br />
-    <h2>Comment Item Display</h2>
-    <DefaultComment />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Item Display: Text styles',
+        example: <TextStyles />,
+        source: TextStylesSrc,
+      },
+      {
+        title: 'Disabled Item Display: Text styles',
+        example: <TextStylesDisabled />,
+        source: TextStylesDisabledSrc,
+      },
+      {
+        title: 'Item Display: Icon',
+        example: <Icon />,
+        source: IconSrc,
+      },
+      {
+        title: 'Item Display: Icon & Text',
+        example: <IconText />,
+        source: IconTextSrc,
+      },
+      {
+        title: 'Comment Item Display',
+        example: <DefaultComment />,
+        source: DefaultCommentSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Item Display',
+        componentSrc: ItemDisplaySrc,
+      },
+      {
+        componentName: 'Item Comment',
+        componentSrc: CommentSrc,
+      },
+    ]}
+  />
 );
 
-export default ItemDisplayExamples;
+export default DocPage;

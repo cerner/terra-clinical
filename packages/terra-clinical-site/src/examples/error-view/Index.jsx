@@ -1,37 +1,63 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions */
 import React from 'react';
-import PropsTable from 'terra-props-table';
-import Markdown from 'terra-markdown';
+import DocTemplate from 'terra-doc-template';
 import ReadMe from 'terra-clinical-error-view/docs/README.md';
-import { version } from 'terra-clinical-error-view/package.json';
+import { name } from 'terra-clinical-error-view/package.json';
 
 // Component Source
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import ErrorViewSrc from '!raw-loader!terra-clinical-error-view/src/ErrorView.jsx';
 
 // Example Files
 import ErrorViewStandard from './ErrorViewStandard';
+import ErrorViewStandardSrc from '!raw-loader!./ErrorViewStandard';
 import ErrorViewHiddenGlyph from './ErrorViewHiddenGlyph';
+import ErrorViewHiddenGlyphSrc from '!raw-loader!./ErrorViewHiddenGlyph';
 import ErrorViewHiddenGlyphNoButton from './ErrorViewHiddenGlyphNoButton';
+import ErrorViewHiddenGlyphNoButtonSrc from '!raw-loader!./ErrorViewHiddenGlyphNoButton';
 import ErrorViewNoName from './ErrorViewNoName';
+import ErrorViewNoNameSrc from '!raw-loader!./ErrorViewNoName';
 import ErrorViewNoDescription from './ErrorViewNoDescription';
+import ErrorViewNoDescriptionSrc from '!raw-loader!./ErrorViewNoDescription';
 
-const ErrorViewExamples = () => (
-  <div>
-    <div id="version">Version: {version}</div>
-    <Markdown id="readme" src={ReadMe} />
-    <PropsTable id="props-errorView" src={ErrorViewSrc} componentName="Error View" />
-    <h2 id="errorView">Error View</h2>
-    <ErrorViewStandard />
-    <h2 id="errorView-glyph-hidden">Error View With Glyph Hidden</h2>
-    <ErrorViewHiddenGlyph />
-    <h2 id="errorView-glyph-hidden-no-button">Error View With Glyph Hidden and No Button</h2>
-    <ErrorViewHiddenGlyphNoButton />
-    <h2 id="errorView-no-name">Error View With No Name</h2>
-    <ErrorViewNoName />
-    <h2 id="errorView-no-description">Error View No Description</h2>
-    <ErrorViewNoDescription />
-  </div>
+const DocPage = () => (
+  <DocTemplate
+    packageName={name}
+    readme={ReadMe}
+    srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
+    examples={[
+      {
+        title: 'Error View',
+        example: <ErrorViewStandard />,
+        source: ErrorViewStandardSrc,
+      },
+      {
+        title: 'Error View With Glyph Hidden',
+        example: <ErrorViewHiddenGlyph />,
+        source: ErrorViewHiddenGlyphSrc,
+      },
+      {
+        title: 'Error View With Glyph Hidden and No Button',
+        example: <ErrorViewHiddenGlyphNoButton />,
+        source: ErrorViewHiddenGlyphNoButtonSrc,
+      },
+      {
+        title: 'Error View With No Name',
+        example: <ErrorViewNoName />,
+        source: ErrorViewNoNameSrc,
+      },
+      {
+        title: 'Error View No Description',
+        example: <ErrorViewNoDescription />,
+        source: ErrorViewNoDescriptionSrc,
+      },
+    ]}
+    propsTables={[
+      {
+        componentName: 'Error View',
+        componentSrc: ErrorViewSrc,
+      },
+    ]}
+  />
 );
 
-export default ErrorViewExamples;
+export default DocPage;
