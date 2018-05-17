@@ -78,5 +78,5 @@ stages:
   - test
   - name: deploy
     if: type != pull_request
-  - clean up cache
+  - name: clean up cache
     if: type = pull_request
