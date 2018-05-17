@@ -1,3 +1,3 @@
-const config = require('./packages/terra-clinical-site/postcss.config');
+/* eslint-disable import/no-extraneous-dependencies */
 
-module.exports = config;
+module.exports = { plugins() { return []; } };
