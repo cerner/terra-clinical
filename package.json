@@ -104,6 +104,6 @@
     "stylelint": "^9.2.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
     "terra-dev-site": "0.6.0",
-    "terra-toolkit": "git://github.com/terra/terra-toolkit.git#build_improvements"
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#build_improvements"
   }
 }
