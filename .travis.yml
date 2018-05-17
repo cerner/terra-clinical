@@ -18,30 +18,6 @@ before_install:
   - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
 jobs:
   include:
-    - stage: release terra-node
-      script:
-        - echo "$DOCKER_PASSWORD" | docker login -u "ryanthemanuel" --password-stdin
-        - "travis_wait docker build -t cerner/terra-node:$TERRA_NODE_TAG -f ./docker/terra-node/Dockerfile ./docker/terra-node/"
-language: generic
-sudo: required 
-services: 
-  - docker
-branches:
-  only:
-    - master
-cache:
-  directories:
-    - $HOME/docker
-env:
-  global:
-    - DOCKER_IMAGE='cerner/terra-clinical'
-    - TERRA_NODE_TAG="${TRAVIS_PULL_REQUEST_BRANCH:=latest}"
-    - TAG="${TRAVIS_PULL_REQUEST_SHA:=latest}"
-before_install:
-  # Load cached docker images
-  - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
-jobs:
-  include:
     - stage: lint jest and danger
       script:
         - 'wget -q -O docker-compose.yml https://raw.github.com/cerner/terra-toolkit/master/config/docker/ci-docker-compose.yml'
