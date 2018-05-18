@@ -62,6 +62,7 @@ jobs:
     - stage: deploy
       script: skip
       before_deploy:
+        - sudo chown -R travis:travis $HOME/docker
         # Load cached docker images
         - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
         - 'wget -q -O docker-compose.yml https://raw.github.com/cerner/terra-toolkit/master/config/docker/ci-docker-compose.yml'
