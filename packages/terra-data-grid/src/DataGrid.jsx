@@ -299,12 +299,21 @@ class DataGrid extends React.Component {
           }
         }
       }
+
+      return;
     }
 
-    // if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
-    //   event.preventDefault();
-    //   // this.props.onRequestBack();
-    // }
+    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+      const activeElement = document.activeElement;
+
+      if (activeElement.matches('[data-cell]')) {
+        this.props.onCellClick(activeElement.getAttribute('data-row-id'), activeElement.getAttribute('data-column-id'));
+      } else if (activeElement.matches('[data-header-cell]')) {
+        this.props.onHeaderClick(activeElement.getAttribute('data-column-id'));
+      }
+
+      event.preventDefault();
+    }
   }
 
   handleKeyUp(event) {
@@ -379,6 +388,8 @@ class DataGrid extends React.Component {
         style={{ width: `${this.state.columnWidths[columnKey]}px` }}
         tabIndex={columnData.sortable ? '0' : null}
         onClick={this.handleHeaderClick}
+        data-header-cell
+        data-column-id={columnKey}
       >
         <div style={{ height: '100%', width: '100%', overflow: 'hidden' }} >
           {content}
