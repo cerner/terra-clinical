@@ -16,6 +16,7 @@ const cx = classNames.bind(styles);
 const propTypes = {
   fixedColumnKeys: PropTypes.arrayOf(PropTypes.string),
   flexColumnKeys: PropTypes.arrayOf(PropTypes.string),
+  onCellClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -24,6 +25,21 @@ const defaultProps = {
 };
 
 const stickyIsSupported = isStickySupported();
+
+const KEYCODES = {
+  ENTER: 13,
+  SPACE: 32,
+  UP_ARROW: 38,
+  DOWN_ARROW: 40,
+  LEFT_ARROW: 37,
+  RIGHT_ARROW: 39,
+  TAB: 9,
+  SHIFT: 16,
+};
+
+if (!Element.prototype.matches) {
+  Element.prototype.matches = Element.prototype.msMatchesSelector;
+}
 
 class DataGrid extends React.Component {
   static generateWidthState(props) {
@@ -67,7 +83,9 @@ class DataGrid extends React.Component {
   }
 
   static buildSectionData(sections) {
-    return React.Children.map(sections, (section) => {
+    const sectionMap = {};
+
+    React.Children.forEach(sections, (section) => {
       const sectionData = {};
 
       sectionData.id = section.props.id;
@@ -75,7 +93,10 @@ class DataGrid extends React.Component {
       sectionData.isCollapsible = section.props.isCollapsible;
       sectionData.isCollapsed = section.props.isCollapsed;
       sectionData.header = section.props.header;
-      sectionData.rows = React.Children.map(section.props.children, (row) => {
+
+      sectionData.rows = {};
+      sectionData.rowOrdering = [];
+      React.Children.forEach(section.props.children, (row) => {
         const rowData = {};
         rowData.id = row.props.id;
         rowData.cells = {};
@@ -93,17 +114,23 @@ class DataGrid extends React.Component {
 
           rowData.cells[cell.props.columnId] = cellData;
         });
-        return rowData;
+
+        sectionData.rows[rowData.id] = rowData;
+        sectionData.rowOrdering.push(rowData.id);
       });
 
-      return sectionData;
+      sectionMap[sectionData.id] = sectionData;
     });
+
+    return sectionMap;
   }
 
   constructor(props) {
     super(props);
 
     this.handleResize = this.handleResize.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
     this.updateColumnWidths = this.updateColumnWidths.bind(this);
     this.handleContentClick = this.handleContentClick.bind(this);
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
@@ -117,7 +144,8 @@ class DataGrid extends React.Component {
 
     this.state = Object.assign({}, DataGrid.generateWidthState(props), {
       selectionMap: DataGrid.buildSelectionMap(props.selectedCells),
-      sectionData: DataGrid.buildSectionData(props.children),
+      sections: DataGrid.buildSectionData(props.children),
+      sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
     });
   }
 
@@ -139,6 +167,11 @@ class DataGrid extends React.Component {
      */
     this.resizeObserver = new ResizeObserver((entries) => { this.handleResize(entries[0].contentRect.width, entries[0].contentRect.height); });
     this.resizeObserver.observe(this.containerRef);
+
+    /**
+     * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
+     */
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount() {
@@ -160,7 +193,8 @@ class DataGrid extends React.Component {
     }
 
     if (this.props.children !== nextProps.children) {
-      newState.sectionData = DataGrid.buildSectionData(nextProps.children);
+      newState.sections = DataGrid.buildSectionData(nextProps.children);
+      newState.sectionOrdering = React.Children.map(nextProps.children, child => (child.props.id));
     }
 
     if (Object.keys(newState).length) {
@@ -176,6 +210,107 @@ class DataGrid extends React.Component {
     document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`).forEach((el) => {
       el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
     });
+  }
+
+  handleKeyDown(event) {
+    console.log(event.nativeEvent.keyCode);
+
+    if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = true;
+      return;
+    }
+
+    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+      const activeElement = document.activeElement;
+
+      if (!activeElement) {
+        return;
+      }
+
+      if (activeElement.matches('[data-cell]')) {
+        const columnId = activeElement.getAttribute('data-column-id');
+        const rowId = activeElement.getAttribute('data-row-id');
+        const sectionId = activeElement.getAttribute('data-section-id');
+
+        const mergedColumns = [].concat(this.props.fixedColumnKeys).concat(this.props.flexColumnKeys);
+        const currentColumnIndex = mergedColumns.indexOf(columnId);
+
+        const sectionData = this.state.sections[sectionId];
+        const currentRowIndex = sectionData.rowOrdering.indexOf(rowId);
+
+        if (currentColumnIndex === 0 && this.shiftIsPressed) {
+          if (currentRowIndex !== 0) {
+            const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
+
+            const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[mergedColumns.length - 1]}]`);
+            newFocusElement.focus();
+
+            event.preventDefault();
+          }
+        } else if (currentColumnIndex === mergedColumns.length - 1 && !this.shiftIsPressed) {
+          if (currentRowIndex !== sectionData.rowOrdering.length - 1) {
+            const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
+
+            const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[0]}]`);
+            newFocusElement.focus();
+
+            event.preventDefault();
+          } else {
+            const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
+            const nextSectionIndex = currentSectionIndex + 1;
+
+            if (currentSectionIndex < this.state.sectionOrdering.length - 1) {
+              const newSectionData = this.state.sections[this.state.sectionOrdering[nextSectionIndex]];
+
+              const sectionHeader = document.querySelector(`.${cx('section-header-container')}[data-section][data-section-id=${newSectionData.id}]`);
+
+              if (sectionHeader) {
+                sectionHeader.focus();
+
+                event.preventDefault();
+              }
+            }
+          }
+        } else {
+          const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${rowId}][data-column-id=${this.shiftIsPressed ? mergedColumns[currentColumnIndex - 1] : mergedColumns[currentColumnIndex + 1]}]`);
+          newFocusElement.focus();
+
+          event.preventDefault();
+        }
+      } else if (activeElement.matches('[data-section]')) {
+        if (this.shiftIsPressed) {
+          const sectionId = activeElement.getAttribute('data-section-id');
+
+          const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
+
+          if (currentSectionIndex !== 0 && currentSectionIndex !== this.state.sectionOrdering.length - 1) {
+            const sectionData = this.state.sections[this.state.sectionOrdering[currentSectionIndex - 1]];
+            const newRowId = sectionData.rowOrdering[sectionData.rowOrdering.length - 1];
+            const mergedColumns = [].concat(this.props.fixedColumnKeys).concat(this.props.flexColumnKeys);
+            const newColumnId = mergedColumns[mergedColumns.length - 1];
+
+            const newFocusElement = document.querySelector(`[data-section-id=${sectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
+
+            if (newFocusElement) {
+              newFocusElement.focus();
+
+              event.preventDefault();
+            }
+          }
+        }
+      }
+    }
+
+    // if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+    //   event.preventDefault();
+    //   // this.props.onRequestBack();
+    // }
+  }
+
+  handleKeyUp(event) {
+    if (event.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = false;
+    }
   }
 
   updateColumnWidths(columnKey, widthDelta, minWidth) {
@@ -239,7 +374,7 @@ class DataGrid extends React.Component {
     return (
       <div
         key={columnKey}
-        data-column-key={columnKey}
+        data-column-id={columnKey}
         className={cx(['cell-container', 'header-cell-container', { selectable: columnData.sortable }])}
         style={{ width: `${this.state.columnWidths[columnKey]}px` }}
         tabIndex={columnData.sortable ? '0' : null}
@@ -291,24 +426,35 @@ class DataGrid extends React.Component {
             key={section.id}
             className={cx('section-header-container')}
             tabIndex={withHeader ? '0' : undefined}
+            data-section-id={withHeader ? section.id : undefined}
+            data-section={withHeader}
           >
             { withHeader ? section.header : null}
           </div>
         ) : null}
-        {(!section.isCollapsible || !section.isCollapsed) && section.rows && section.rows.map((row, index) => (
-          <div key={`${section.id}-${row.id}`} className={cx(['row', { striped: index % 2 > 0 }, sizeClass])} style={{ width }}>
+        {(!section.isCollapsible || !section.isCollapsed) && section.rows && section.rowOrdering.map((rowId, index) => (
+          <div
+            key={`${section.id}-${section.rows[rowId].id}`}
+            className={cx(['row', { striped: index % 2 > 0 }, sizeClass])}
+            style={{ width }}
+            data-row
+            data-row-id={section.rows[rowId].id}
+            data-section-id={section.id}
+          >
             {columnKeys.map((columnKey) => {
-              const cell = row.cells[columnKey];
+              const cell = section.rows[rowId].cells[columnKey];
 
               return (
                 <div
                   onClick={this.handleContentClick}
-                  key={`${section.id}-${row.id}-${columnKey}`}
+                  key={`${section.id}-${section.rows[rowId].id}-${columnKey}`}
                   className={cx(['cell-container', { selectable: cell.isSelectable, selected: cell.isSelected }])}
                   style={{ width: `${columnWidths[columnKey]}px` }}
                   tabIndex={cell.isSelectable ? '0' : undefined}
-                  data-column-key={columnKey}
-                  data-row-key={row.id}
+                  data-cell
+                  data-column-id={columnKey}
+                  data-row-id={section.rows[rowId].id}
+                  data-section-id={section.id}
                 >
                   {cell.content}
                 </div>
@@ -322,16 +468,16 @@ class DataGrid extends React.Component {
 
   renderFixedContent() {
     const { fixedColumnKeys } = this.props;
-    const { sectionData, fixedColumnWidth } = this.state;
+    const { sections, sectionOrdering, fixedColumnWidth } = this.state;
 
-    return sectionData.map(section => this.renderSection(section, fixedColumnKeys, `${fixedColumnWidth}px`, true));
+    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], fixedColumnKeys, `${fixedColumnWidth}px`, true));
   }
 
   renderOverflowContent() {
     const { flexColumnKeys } = this.props;
-    const { sectionData, flexColumnWidth } = this.state;
+    const { sections, sectionOrdering, flexColumnWidth } = this.state;
 
-    return sectionData.map(section => this.renderSection(section, flexColumnKeys, `${flexColumnWidth}px`));
+    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], flexColumnKeys, `${flexColumnWidth}px`));
   }
 
   handleHeaderClick(event) {
@@ -352,12 +498,12 @@ class DataGrid extends React.Component {
     }
 
     if (headerCellNode.classList.contains(cx('selectable')) && onHeaderClick) {
-      onHeaderClick(headerCellNode.getAttribute('data-column-key'));
+      onHeaderClick(headerCellNode.getAttribute('data-column-id'));
     }
   }
 
   handleContentClick(event) {
-    const { onClick } = this.props;
+    const { onCellClick } = this.props;
 
     const cellNode = event.currentTarget;
 
@@ -365,8 +511,8 @@ class DataGrid extends React.Component {
       return;
     }
 
-    if (cellNode.classList.contains(cx('selectable')) && onClick) {
-      onClick(cellNode.getAttribute('data-row-key'), cellNode.getAttribute('data-column-key'));
+    if (cellNode.classList.contains(cx('selectable')) && onCellClick) {
+      onCellClick(cellNode.getAttribute('data-row-id'), cellNode.getAttribute('data-column-id'));
     }
   }
 
@@ -379,6 +525,7 @@ class DataGrid extends React.Component {
         ref={(ref) => {
           this.containerRef = ref;
         }}
+        onKeyDown={this.handleKeyDown}
       >
         {this.renderFixedHeaderRow()}
         <div className={cx(['overflow-container', { 'legacy-sticky': !stickyIsSupported }])}>
