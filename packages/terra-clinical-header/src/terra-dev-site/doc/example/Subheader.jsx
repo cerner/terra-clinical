@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'terra-button';
-import Header from '../../../Header';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import Header from 'terra-clinical-header/lib/Header';
 
 const Subheader = () => (
   <div>

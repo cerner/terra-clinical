@@ -1,6 +1,7 @@
 import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
-import DetailView from '../../../DetailView';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import DetailView from 'terra-clinical-detail-view/lib/DetailView';
 
 const detail1title = 'Diabetes';
 const detail1item1 = (<LabelValueView label="Age of onset" textValue="38 years" />);

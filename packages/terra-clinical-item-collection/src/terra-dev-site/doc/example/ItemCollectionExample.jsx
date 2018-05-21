@@ -4,7 +4,8 @@ import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
-import ItemCollection from '../../../ItemCollection';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import ItemCollection from 'terra-clinical-item-collection/lib/ItemCollection';
 
 const display1 = <ItemCollection.Display icon={<IconPerson />} text="Asif Khan" />;
 const display2 = <ItemCollection.Display text="Care Position: Primary" />;

@@ -1,5 +1,6 @@
 import React from 'react';
-import LabelValueView from '../../../LabelValueView';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import LabelValueView from 'terra-clinical-label-value-view/lib/LabelValueView';
 
 const LabelValueViewText = () => (
   <div>

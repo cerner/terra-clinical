@@ -1,6 +1,7 @@
 import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
-import DetailView from '../../../DetailView';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import DetailView from 'terra-clinical-detail-view/lib/DetailView';
 
 const item1 = (<LabelValueView label="Start Date" textValue="12/12/12 00:00AM" />);
 const item2 = (<LabelValueView label="Stop Date" textValue="12/12/12 10:00AM" />);

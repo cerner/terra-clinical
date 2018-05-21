@@ -1,5 +1,6 @@
 import React from 'react';
-import ItemDisplay from '../../../ItemDisplay';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import ItemDisplay from 'terra-clinical-item-display/lib/ItemDisplay';
 
 const component = () => (
   <span>

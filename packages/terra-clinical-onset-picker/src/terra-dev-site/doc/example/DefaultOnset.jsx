@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import moment from 'moment';
-import OnsetPicker from '../../../OnsetPicker';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import OnsetPicker from 'terra-clinical-onset-picker/lib/OnsetPicker';
 
 const picker = () => (
   <OnsetPicker
