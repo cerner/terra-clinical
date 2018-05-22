@@ -277,7 +277,7 @@ class DataGridStandard extends React.Component {
         flexColumnKeys={flexColumnKeys}
         columns={columns}
         sizeClass={cx('large-rows')}
-        onClick={this.handleCellClick}
+        onCellClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
       >
         {this.buildSection('section_0', 'Section 0', 30, true)}

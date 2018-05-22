@@ -246,6 +246,11 @@ class DataGrid extends React.Component {
             newFocusElement.focus();
 
             event.preventDefault();
+          } else {
+            const newFocusElement = document.querySelector(`[data-section][data-section-id=${sectionId}]`);
+            newFocusElement.focus();
+
+            event.preventDefault();
           }
         } else if (currentColumnIndex === mergedColumns.length - 1 && !this.shiftIsPressed) {
           if (currentRowIndex !== sectionData.rowOrdering.length - 1) {
@@ -278,15 +283,15 @@ class DataGrid extends React.Component {
           event.preventDefault();
         }
       } else if (activeElement.matches('[data-section]')) {
-        if (this.shiftIsPressed) {
-          const sectionId = activeElement.getAttribute('data-section-id');
+        const sectionId = activeElement.getAttribute('data-section-id');
+        const mergedColumns = [].concat(this.props.fixedColumnKeys).concat(this.props.flexColumnKeys);
 
+        if (this.shiftIsPressed) {
           const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
 
           if (currentSectionIndex !== 0 && currentSectionIndex !== this.state.sectionOrdering.length - 1) {
             const sectionData = this.state.sections[this.state.sectionOrdering[currentSectionIndex - 1]];
             const newRowId = sectionData.rowOrdering[sectionData.rowOrdering.length - 1];
-            const mergedColumns = [].concat(this.props.fixedColumnKeys).concat(this.props.flexColumnKeys);
             const newColumnId = mergedColumns[mergedColumns.length - 1];
 
             const newFocusElement = document.querySelector(`[data-section-id=${sectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
@@ -296,6 +301,18 @@ class DataGrid extends React.Component {
 
               event.preventDefault();
             }
+          }
+        } else {
+          const newActiveSectionData = this.state.sections[sectionId];
+
+          const newRowId = newActiveSectionData.rowOrdering[0];
+          const newColumnId = mergedColumns[0];
+          const newActiveElement = document.querySelector(`[data-section-id=${newActiveSectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
+
+          if (newActiveElement) {
+            newActiveElement.focus();
+
+            event.preventDefault();
           }
         }
       }
