@@ -7,6 +7,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import ContentCell from './default-components/ContentCell';
 import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
+
 import { isStickySupported } from './utils';
 
 import styles from './DataGrid.scss';
@@ -16,12 +17,14 @@ const cx = classNames.bind(styles);
 const propTypes = {
   fixedColumnKeys: PropTypes.arrayOf(PropTypes.string),
   flexColumnKeys: PropTypes.arrayOf(PropTypes.string),
+  rowHeight: PropTypes.string,
   onCellClick: PropTypes.func,
 };
 
 const defaultProps = {
   fixedColumnKeys: [],
   flexColumnKeys: [],
+  rowHeight: '2rem',
 };
 
 const stickyIsSupported = isStickySupported();
@@ -92,7 +95,7 @@ class DataGrid extends React.Component {
       sectionData.onClick = section.props.onClick;
       sectionData.isCollapsible = section.props.isCollapsible;
       sectionData.isCollapsed = section.props.isCollapsed;
-      sectionData.header = section.props.header;
+      sectionData.text = section.props.text;
 
       sectionData.rows = {};
       sectionData.rowOrdering = [];
@@ -327,6 +330,8 @@ class DataGrid extends React.Component {
         this.props.onCellClick(activeElement.getAttribute('data-row-id'), activeElement.getAttribute('data-column-id'));
       } else if (activeElement.matches('[data-header-cell]')) {
         this.props.onHeaderClick(activeElement.getAttribute('data-column-id'));
+      } else if (activeElement.matches('[data-section]')) {
+        this.props.onSectionClick(undefined, activeElement.getAttribute('data-section-id'));
       }
 
       event.preventDefault();
@@ -444,27 +449,35 @@ class DataGrid extends React.Component {
   }
 
   renderSection(section, columnKeys, width, withHeader) {
-    const { sizeClass } = this.props;
+    const { rowHeight } = this.props;
     const { columnWidths } = this.state;
 
     return (
       <React.Fragment key={section.id}>
-        {section.header ? (
+        {section.text ? (
           <div
             key={section.id}
             className={cx('section-header-container')}
             tabIndex={withHeader ? '0' : undefined}
             data-section-id={withHeader ? section.id : undefined}
             data-section={withHeader}
+            onClick={withHeader ? (event) => { this.props.onSectionClick(event, section.id); } : undefined}
           >
-            { withHeader ? section.header : null}
+
+            { withHeader ? (
+              <SectionHeader
+                text={section.text}
+                isCollapsible={section.isCollapsible}
+                isCollapsed={section.isCollapsed}
+              />
+            ) : null}
           </div>
         ) : null}
         {(!section.isCollapsible || !section.isCollapsed) && section.rows && section.rowOrdering.map((rowId, index) => (
           <div
             key={`${section.id}-${section.rows[rowId].id}`}
-            className={cx(['row', { striped: index % 2 > 0 }, sizeClass])}
-            style={{ width }}
+            className={cx(['row', { striped: index % 2 > 0 }])}
+            style={{ width, height: rowHeight }}
             data-row
             data-row-id={section.rows[rowId].id}
             data-section-id={section.id}
@@ -597,4 +610,4 @@ const Row = () => null;
 const Cell = () => null;
 
 export default DataGrid;
-export { Section, Row, Cell, ContentCell, HeaderCell, SectionHeader };
+export { Section, Row, Cell, ContentCell, HeaderCell };
