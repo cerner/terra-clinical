@@ -5,7 +5,7 @@ import Button from 'terra-button';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-import DataGrid, { Section, Row, Cell, ContentCell, HeaderCell, SectionHeader } from '../../src/DataGrid';
+import DataGrid, { Section, Row, Cell, ContentCell, HeaderCell } from '../../src/DataGrid';
 
 import styles from './DataGridStandard.scss';
 
@@ -17,71 +17,6 @@ const DisclosureComponent = ({ app, text }) => (
     <Button text="Close" onClick={app.closeDisclosure} />
   </div>
 );
-
-const columnData = {
-  column0: {
-    startWidth: 200,
-    minWidth: 100,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 0" />,
-  },
-  column1: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 1" />,
-  },
-  column2: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 2" />,
-  },
-  column3: {
-    startWidth: 200,
-    sortable: false,
-    resizable: true,
-    component: <HeaderCell text="Column 3 (No Sort)" />,
-  },
-  column4: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    text: 'Column 4',
-    component: <HeaderCell text="Column 4" />,
-  },
-  column5: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 5" />,
-  },
-  column6: {
-    startWidth: 200,
-    sortable: true,
-    resizable: false,
-    component: <HeaderCell text="Column 6 (No resize)" />,
-  },
-  column7: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 7" />,
-  },
-  column8: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 8" />,
-  },
-  column9: {
-    startWidth: 200,
-    sortable: true,
-    resizable: true,
-    component: <HeaderCell text="Column 9" />,
-  },
-};
 
 class DataGridStandard extends React.Component {
   constructor(props) {
@@ -95,20 +30,13 @@ class DataGridStandard extends React.Component {
     this.buildRows = this.buildRows.bind(this);
 
     this.state = {
-      columns: columnData,
       collapsedSections: {},
-      fixedColumnKeys: ['column0', 'column1', 'column2'],
-      flexColumnKeys: ['column3', 'column4', 'column5', 'column6', 'column7', 'column8', 'column9'],
     };
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const { aggregatorDelegate } = this.props;
-    const { columns, sortedColumnKey, sortDirection, collapsedSections } = this.state;
-
-    if (nextState.columns !== columns) {
-      return true;
-    }
+    const { sortedColumnKey, sortDirection, collapsedSections } = this.state;
 
     if (nextState.sortDirection !== sortDirection) {
       return true;
@@ -139,38 +67,16 @@ class DataGridStandard extends React.Component {
   }
 
   handleHeaderClick(columnKey) {
-    const { sortedColumnKey } = this.state;
+    const { sortedColumnKey, sortDirection } = this.state;
 
-    const columns = Object.assign({}, this.state.columns);
-
-    if (!columns[columnKey]) {
-      return;
-    }
-
-    const headerCellComponent = columns[columnKey].component;
-
-    if (!headerCellComponent) {
-      return;
-    }
-
-    let sortDirection;
-    if (!headerCellComponent.props.sortDirection || headerCellComponent.props.sortDirection === 'ascending') {
-      sortDirection = 'descending';
+    let newSortDirection;
+    if (!sortDirection || (sortDirection === 'ascending' && sortedColumnKey === columnKey) || sortedColumnKey !== columnKey) {
+      newSortDirection = 'descending';
     } else {
-      sortDirection = 'ascending';
+      newSortDirection = 'ascending';
     }
 
-    columns[columnKey].component = React.cloneElement(headerCellComponent, { sortDirection });
-
-    /**
-     * For the example implementation only one column can be sorted, so we have to keep track of the previously sorted column
-     * and remove its indicator when necessary.
-     */
-    if (sortedColumnKey && sortedColumnKey !== columnKey && columns[sortedColumnKey] && columns[sortedColumnKey].component) {
-      columns[sortedColumnKey].component = React.cloneElement(columns[sortedColumnKey].component, { sortDirection: undefined });
-    }
-
-    this.setState({ columns, sortedColumnKey: columnKey, sortDirection });
+    this.setState({ sortedColumnKey: columnKey, sortDirection: newSortDirection });
   }
 
   handleCellClick(rowKey, columnKey) {
@@ -226,7 +132,7 @@ class DataGridStandard extends React.Component {
         key={`${sectionId}-Row${index}`}
         id={`${sectionId}-Row${index}`}
       >
-        {Object.keys(this.state.columns).map(columnKey => (
+        {((new Array(10).fill(0)).map((val, index) => (`column${index}`))).map(columnKey => (
           <Cell
             key={`${columnKey}`}
             columnId={columnKey}
@@ -252,15 +158,7 @@ class DataGridStandard extends React.Component {
         id={sectionId}
         isCollapsible={isCollapsible}
         isCollapsed={isCollapsed}
-        header={
-          <SectionHeader
-            sectionId={sectionId}
-            text={sectionName}
-            isCollapsible={isCollapsible}
-            isCollapsed={isCollapsed}
-            onClick={isCollapsible ? this.handleSectionClick : null}
-          />
-        }
+        text={sectionName}
       >
         {this.buildRows(sectionId, numberOfRows)}
       </Section>
@@ -269,16 +167,104 @@ class DataGridStandard extends React.Component {
 
   render() {
     const { aggregatorDelegate } = this.props;
-    const { columns, rows, flexColumnKeys, fixedColumnKeys } = this.state;
+    const { rows, sortedColumnKey, sortDirection } = this.state;
 
     return (
       <DataGrid
-        fixedColumnKeys={fixedColumnKeys}
-        flexColumnKeys={flexColumnKeys}
-        columns={columns}
-        sizeClass={cx('large-rows')}
+        pinnedColumns={[
+          {
+            id: 'column0',
+            startWidth: 200,
+            minWidth: 100,
+            selectable: true,
+            resizable: true,
+            component: (
+              <HeaderCell
+                text="Column 0"
+                sortDirection={sortedColumnKey === 'column0' ? sortDirection : null}
+              />
+            ),
+          },
+          {
+            id: 'column1',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            component: (
+              <HeaderCell
+                text="Column 1"
+                sortDirection={sortedColumnKey === 'column1' ? sortDirection : null}
+              />
+            ),
+          },
+          {
+            id: 'column2',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            component: (
+              <HeaderCell
+                text="Column 2" sortDirection={sortedColumnKey === 'column2' ? sortDirection : null}
+              />
+            ),
+          },
+        ]}
+        overflowColumns={[
+          {
+            id: 'column3',
+            startWidth: 200,
+            selectable: false,
+            resizable: true,
+            component: <HeaderCell text="Column 3 (No Sort)" sortDirection={sortedColumnKey === 'column3' ? sortDirection : null} />,
+          },
+          {
+            id: 'column4',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            text: 'Column 4',
+            component: <HeaderCell text="Column 4" sortDirection={sortedColumnKey === 'column4' ? sortDirection : null} />,
+          },
+          {
+            id: 'column5',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            component: <HeaderCell text="Column 5" sortDirection={sortedColumnKey === 'column5' ? sortDirection : null} />,
+          },
+          {
+            id: 'column6',
+            startWidth: 200,
+            selectable: true,
+            resizable: false,
+            component: <HeaderCell text="Column 6 (No resize)" sortDirection={sortedColumnKey === 'column6' ? sortDirection : null} />,
+          },
+          {
+            id: 'column7',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            component: <HeaderCell text="Column 7" sortDirection={sortedColumnKey === 'column7' ? sortDirection : null} />,
+          },
+          {
+            id: 'column8',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            component: <HeaderCell text="Column 8" sortDirection={sortedColumnKey === 'column8' ? sortDirection : null} />,
+          },
+          {
+            id: 'column9',
+            startWidth: 200,
+            selectable: true,
+            resizable: true,
+            component: <HeaderCell text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,
+          },
+        ]}
+        rowHeight="5rem"
         onCellClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
+        onSectionClick={this.handleSectionClick}
       >
         {this.buildSection('section_0', 'Section 0', 30, true)}
         {this.buildSection('section_1', 'Section 1', 10, true)}

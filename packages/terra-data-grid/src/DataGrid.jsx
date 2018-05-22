@@ -14,16 +14,35 @@ import styles from './DataGrid.scss';
 
 const cx = classNames.bind(styles);
 
+const Section = () => null;
+const Row = () => null;
+const Cell = () => null;
+
 const propTypes = {
-  fixedColumnKeys: PropTypes.arrayOf(PropTypes.string),
-  flexColumnKeys: PropTypes.arrayOf(PropTypes.string),
+  pinnedColumns: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    startWidth: PropTypes.number,
+    selectable: PropTypes.bool,
+    resizable: PropTypes.bool,
+    component: PropTypes.node,
+  })),
+  overflowColumns: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    startWidth: PropTypes.number,
+    selectable: PropTypes.bool,
+    resizable: PropTypes.bool,
+    component: PropTypes.node,
+  })),
   rowHeight: PropTypes.string,
   onCellClick: PropTypes.func,
+  onHeaderClick: PropTypes.func,
+  onSectionClick: PropTypes.func,
+  children: PropTypes.node,
 };
 
 const defaultProps = {
-  fixedColumnKeys: [],
-  flexColumnKeys: [],
+  pinnedColumns: [],
+  overflowColumns: [],
   rowHeight: '2rem',
 };
 
@@ -46,20 +65,23 @@ if (!Element.prototype.matches) {
 
 class DataGrid extends React.Component {
   static generateWidthState(props) {
-    const fixedColumnWidth = props.fixedColumnKeys.length ?
-      props.fixedColumnKeys.map(key => props.columns[key].startWidth).reduce((totalWidth, width) => totalWidth + width) : 0;
+    const pinnedColumnWidth = props.pinnedColumns.length ?
+      props.pinnedColumns.map(column => column.startWidth).reduce((totalWidth, width) => totalWidth + width) : 0;
 
-    const flexColumnWidth = props.flexColumnKeys.length ?
-      props.flexColumnKeys.map(key => props.columns[key].startWidth).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
+    const overflowColumnWidth = props.overflowColumns.length ?
+      props.overflowColumns.map(column => column.startWidth).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
 
     const columnWidths = {};
-    Object.keys(props.columns).forEach((columnKey) => {
-      columnWidths[columnKey] = props.columns[columnKey].startWidth;
+    props.pinnedColumns.forEach((column) => {
+      columnWidths[column.id] = column.startWidth;
+    });
+    props.overflowColumns.forEach((column) => {
+      columnWidths[column.id] = column.startWidth;
     });
 
     return {
-      fixedColumnWidth,
-      flexColumnWidth,
+      pinnedColumnWidth,
+      overflowColumnWidth,
       columnWidths,
     };
   }
@@ -216,12 +238,12 @@ class DataGrid extends React.Component {
   }
 
   handleKeyDown(event) {
-    console.log(event.nativeEvent.keyCode);
-
     if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
       this.shiftIsPressed = true;
       return;
     }
+
+    const mergedColumns = [].concat(this.props.pinnedColumns).concat(this.props.overflowColumns).map(column => column.id);
 
     if (event.nativeEvent.keyCode === KEYCODES.TAB) {
       const activeElement = document.activeElement;
@@ -235,7 +257,6 @@ class DataGrid extends React.Component {
         const rowId = activeElement.getAttribute('data-row-id');
         const sectionId = activeElement.getAttribute('data-section-id');
 
-        const mergedColumns = [].concat(this.props.fixedColumnKeys).concat(this.props.flexColumnKeys);
         const currentColumnIndex = mergedColumns.indexOf(columnId);
 
         const sectionData = this.state.sections[sectionId];
@@ -287,7 +308,6 @@ class DataGrid extends React.Component {
         }
       } else if (activeElement.matches('[data-section]')) {
         const sectionId = activeElement.getAttribute('data-section-id');
-        const mergedColumns = [].concat(this.props.fixedColumnKeys).concat(this.props.flexColumnKeys);
 
         if (this.shiftIsPressed) {
           const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
@@ -354,20 +374,20 @@ class DataGrid extends React.Component {
       columnWidths[columnKey] += widthDelta;
     }
 
-    const fixedColumnWidth = this.props.fixedColumnKeys.length ?
-      this.props.fixedColumnKeys.map(key => columnWidths[key]).reduce((totalWidth, width) => totalWidth + width) : 0;
+    const pinnedColumnWidth = this.props.pinnedColumns.length ?
+      this.props.pinnedColumns.map(column => columnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) : 0;
 
-    const flexColumnWidth = this.props.flexColumnKeys.length ?
-      this.props.flexColumnKeys.map(key => columnWidths[key]).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
+    const overflowColumnWidth = this.props.overflowColumns.length ?
+      this.props.overflowColumns.map(column => columnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
 
     this.setState({
-      fixedColumnWidth,
-      flexColumnWidth,
+      pinnedColumnWidth,
+      overflowColumnWidth,
       columnWidths,
     });
   }
 
-  renderResizeHandle(columnKey, columnData) {
+  renderResizeHandle(columnData) {
     return (
       <DraggableCore
         onStart={(event, data) => {
@@ -385,7 +405,7 @@ class DataGrid extends React.Component {
           node.style.transform = '';
           node.style.height = '';
 
-          this.updateColumnWidths(columnKey, this.scrollPosition, columnData.minWidth);
+          this.updateColumnWidths(columnData.id, this.scrollPosition, columnData.minWidth);
         }}
         onDrag={(event, data) => {
           const node = data.node;
@@ -399,56 +419,56 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderHeaderCell(columnKey, columnData) {
-    const content = columnData.component;
+  renderHeaderCell(columnData) {
+    const columnId = columnData.id;
 
     return (
       <div
-        key={columnKey}
-        data-column-id={columnKey}
-        className={cx(['cell-container', 'header-cell-container', { selectable: columnData.sortable }])}
-        style={{ width: `${this.state.columnWidths[columnKey]}px` }}
-        tabIndex={columnData.sortable ? '0' : null}
+        key={columnId}
+        data-column-id={columnId}
+        className={cx(['cell-container', 'header-cell-container', { selectable: columnData.selectable }])}
+        style={{ width: `${this.state.columnWidths[columnId]}px` }}
+        tabIndex={columnData.selectable ? '0' : null}
         onClick={this.handleHeaderClick}
         data-header-cell
-        data-column-id={columnKey}
+        data-column-id={columnId}
       >
         <div style={{ height: '100%', width: '100%', overflow: 'hidden' }} >
-          {content}
+          {columnData.component}
         </div>
-        {columnData.resizable ? this.renderResizeHandle(columnKey, columnData) : null }
+        {columnData.resizable ? this.renderResizeHandle(columnData) : null }
       </div>
     );
   }
 
   renderFixedHeaderRow() {
-    const { columns, fixedColumnKeys } = this.props;
-    const { fixedColumnWidth } = this.state;
+    const { columns, pinnedColumns } = this.props;
+    const { pinnedColumnWidth } = this.state;
 
     return (
       <div
         className={cx('fixed-column-header-container')}
-        style={{ width: `${fixedColumnWidth}px` }}
+        style={{ width: `${pinnedColumnWidth}px` }}
       >
-        <div className={cx(['row', 'header-row'])} style={{ width: `${fixedColumnWidth}px` }}>
-          {fixedColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey]))}
+        <div className={cx(['row', 'header-row'])} style={{ width: `${pinnedColumnWidth}px` }}>
+          {pinnedColumns.map(column => this.renderHeaderCell(column))}
         </div>
       </div>
     );
   }
 
   renderOverflowHeaderRow() {
-    const { columns, flexColumnKeys } = this.props;
-    const { flexColumnWidth } = this.state;
+    const { columns, overflowColumns } = this.props;
+    const { overflowColumnWidth } = this.state;
 
     return (
-      <div className={cx(['row', 'header-row'])} style={{ width: `${flexColumnWidth}px` }}>
-        {flexColumnKeys.map(columnKey => this.renderHeaderCell(columnKey, columns[columnKey]))}
+      <div className={cx(['row', 'header-row'])} style={{ width: `${overflowColumnWidth}px` }}>
+        {overflowColumns.map(column => this.renderHeaderCell(column))}
       </div>
     );
   }
 
-  renderSection(section, columnKeys, width, withHeader) {
+  renderSection(section, columns, width, withHeader) {
     const { rowHeight } = this.props;
     const { columnWidths } = this.state;
 
@@ -482,18 +502,18 @@ class DataGrid extends React.Component {
             data-row-id={section.rows[rowId].id}
             data-section-id={section.id}
           >
-            {columnKeys.map((columnKey) => {
-              const cell = section.rows[rowId].cells[columnKey];
+            {columns.map((column) => {
+              const cell = section.rows[rowId].cells[column.id];
 
               return (
                 <div
                   onClick={this.handleContentClick}
-                  key={`${section.id}-${section.rows[rowId].id}-${columnKey}`}
+                  key={`${section.id}-${section.rows[rowId].id}-${column.id}`}
                   className={cx(['cell-container', { selectable: cell.isSelectable, selected: cell.isSelected }])}
-                  style={{ width: `${columnWidths[columnKey]}px` }}
+                  style={{ width: `${columnWidths[column.id]}px` }}
                   tabIndex={cell.isSelectable ? '0' : undefined}
                   data-cell
-                  data-column-id={columnKey}
+                  data-column-id={column.id}
                   data-row-id={section.rows[rowId].id}
                   data-section-id={section.id}
                 >
@@ -508,21 +528,21 @@ class DataGrid extends React.Component {
   }
 
   renderFixedContent() {
-    const { fixedColumnKeys } = this.props;
-    const { sections, sectionOrdering, fixedColumnWidth } = this.state;
+    const { pinnedColumns } = this.props;
+    const { sections, sectionOrdering, pinnedColumnWidth } = this.state;
 
-    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], fixedColumnKeys, `${fixedColumnWidth}px`, true));
+    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], pinnedColumns, `${pinnedColumnWidth}px`, true));
   }
 
   renderOverflowContent() {
-    const { flexColumnKeys } = this.props;
-    const { sections, sectionOrdering, flexColumnWidth } = this.state;
+    const { overflowColumns } = this.props;
+    const { sections, sectionOrdering, overflowColumnWidth } = this.state;
 
-    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], flexColumnKeys, `${flexColumnWidth}px`));
+    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], overflowColumns, `${overflowColumnWidth}px`));
   }
 
   handleHeaderClick(event) {
-    const { onHeaderClick, columns } = this.props;
+    const { onHeaderClick } = this.props;
 
     /**
      * If the click event target is the resize handle, we do not want to
@@ -573,25 +593,25 @@ class DataGrid extends React.Component {
           <div
             className={cx('scroll-header')}
             style={{
-              width: `${this.state.flexColumnWidth}px`,
-              minWidth: `calc(100% - ${this.state.fixedColumnWidth}px`,
-              paddingLeft: `${this.state.fixedColumnWidth}px`,
+              width: `${this.state.overflowColumnWidth}px`,
+              minWidth: `calc(100% - ${this.state.pinnedColumnWidth}px`,
+              paddingLeft: `${this.state.pinnedColumnWidth}px`,
             }}
           >
             {this.renderOverflowHeaderRow()}
           </div>
           <div
             className={cx(['fixed-content', { 'legacy-sticky': !stickyIsSupported }])}
-            style={{ width: `${this.state.fixedColumnWidth}px` }}
+            style={{ width: `${this.state.pinnedColumnWidth}px` }}
           >
             {this.renderFixedContent()}
           </div>
           <div
             className={cx('scroll-content')}
             style={{
-              width: `${this.state.flexColumnWidth}px`,
-              minWidth: `calc(100% - ${this.state.fixedColumnWidth}px`,
-              paddingLeft: `${this.state.fixedColumnWidth}px`,
+              width: `${this.state.overflowColumnWidth}px`,
+              minWidth: `calc(100% - ${this.state.pinnedColumnWidth}px`,
+              paddingLeft: `${this.state.pinnedColumnWidth}px`,
             }}
           >
             {this.renderOverflowContent()}
@@ -604,10 +624,6 @@ class DataGrid extends React.Component {
 
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
-
-const Section = () => null;
-const Row = () => null;
-const Cell = () => null;
 
 export default DataGrid;
 export { Section, Row, Cell, ContentCell, HeaderCell };
