@@ -8,7 +8,7 @@ import ContentCell from './default-components/ContentCell';
 import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
 
-import { isStickySupported } from './utils';
+import { isStickySupported, KEYCODES, matches } from './utils';
 
 import styles from './DataGrid.scss';
 
@@ -33,10 +33,14 @@ const propTypes = {
     resizable: PropTypes.bool,
     component: PropTypes.node,
   })),
+  columnWidths: PropTypes.objectOf(PropTypes.number),
+  onRequestColumnResize: PropTypes.func,
+  collapsedSections: PropTypes.object,
+  onRequestSectionCollapse: PropTypes.func,
   rowHeight: PropTypes.string,
+  headerHeight: PropTypes.string,
   onCellClick: PropTypes.func,
   onHeaderClick: PropTypes.func,
-  onSectionClick: PropTypes.func,
   children: PropTypes.node,
 };
 
@@ -44,67 +48,51 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rowHeight: '2rem',
+  headerHeight: '2rem',
 };
 
 const stickyIsSupported = isStickySupported();
 
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-  UP_ARROW: 38,
-  DOWN_ARROW: 40,
-  LEFT_ARROW: 37,
-  RIGHT_ARROW: 39,
-  TAB: 9,
-  SHIFT: 16,
-};
-
-if (!Element.prototype.matches) {
-  Element.prototype.matches = Element.prototype.msMatchesSelector;
-}
-
 class DataGrid extends React.Component {
-  static generateWidthState(props) {
+  static generateWidthState(props, resetWidths) {
+    const { columnWidths } = props;
+    const { internalColumnWidths } = props;
+
+    let widthExtractor;
+    if (columnWidths) {
+      widthExtractor = column => columnWidths[column.id];
+    } else {
+      widthExtractor = column => (resetWidths ? column.startWidth : internalColumnWidths[column.id]);
+    }
+
     const pinnedColumnWidth = props.pinnedColumns.length ?
-      props.pinnedColumns.map(column => column.startWidth).reduce((totalWidth, width) => totalWidth + width) : 0;
+      props.pinnedColumns.map(widthExtractor).reduce((totalWidth, width) => totalWidth + width) : 0;
 
     const overflowColumnWidth = props.overflowColumns.length ?
-      props.overflowColumns.map(column => column.startWidth).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
+      props.overflowColumns.map(widthExtractor).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
 
-    const columnWidths = {};
-    props.pinnedColumns.forEach((column) => {
-      columnWidths[column.id] = column.startWidth;
-    });
-    props.overflowColumns.forEach((column) => {
-      columnWidths[column.id] = column.startWidth;
-    });
+    let newColumnWidths;
+    if (columnWidths) {
+      newColumnWidths = Object.assign({}, columnWidths);
+    } else if (resetWidths) {
+      newColumnWidths = {};
+
+      props.pinnedColumns.forEach((column) => {
+        newColumnWidths[column.id] = column.startWidth;
+      });
+
+      props.overflowColumns.forEach((column) => {
+        newColumnWidths[column.id] = column.startWidth;
+      });
+    } else {
+      newColumnWidths = Object.assign({}, internalColumnWidths);
+    }
 
     return {
       pinnedColumnWidth,
       overflowColumnWidth,
-      columnWidths,
+      internalColumnWidths: newColumnWidths,
     };
-  }
-
-  static buildSelectionMap(selectionArray) {
-    const selectionMap = {};
-    if (!selectionArray) {
-      return {};
-    }
-
-    selectionArray.forEach((selection) => {
-      if (!selection.rowKey || !selection.columnKey) {
-        return;
-      }
-
-      if (!selectionMap[selection.rowKey]) {
-        selectionMap[selection.rowKey] = {};
-      }
-
-      selectionMap[selection.rowKey][selection.columnKey] = true;
-    });
-
-    return selectionMap;
   }
 
   static buildSectionData(sections) {
@@ -114,10 +102,9 @@ class DataGrid extends React.Component {
       const sectionData = {};
 
       sectionData.id = section.props.id;
-      sectionData.onClick = section.props.onClick;
       sectionData.isCollapsible = section.props.isCollapsible;
-      sectionData.isCollapsed = section.props.isCollapsed;
-      sectionData.text = section.props.text;
+      sectionData.isInitiallyCollapsed = section.props.isInitiallyCollapsed;
+      sectionData.headerText = section.props.headerText;
 
       sectionData.rows = {};
       sectionData.rowOrdering = [];
@@ -167,8 +154,22 @@ class DataGrid extends React.Component {
     this.renderOverflowContent = this.renderOverflowContent.bind(this);
     this.renderFixedContent = this.renderFixedContent.bind(this);
 
-    this.state = Object.assign({}, DataGrid.generateWidthState(props), {
-      selectionMap: DataGrid.buildSelectionMap(props.selectedCells),
+    // const generateWidthState = (props, state, useInitialValues) => {
+    //   let widthExtractor;
+    //   if (props.columnWidths) {
+    //     widthExtractor = column => props.columnWidths[column.id];
+    //   } else {
+    //     widthExtractor = column => (useInitialValues ? column.startWidth : (state.internalColumnWidths || {})[column.id]);
+    //   }
+
+    //   const pinnedColumnWidth = props.pinnedColumns.length ?
+    //   props.pinnedColumns.map(widthExtractor).reduce((totalWidth, width) => totalWidth + width) : 0;
+
+    //   const overflowColumnWidth = props.overflowColumns.length ?
+    //   props.overflowColumns.map(widthExtractor).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
+    // };
+
+    this.state = Object.assign({}, DataGrid.generateWidthState(props, true), {
       sections: DataGrid.buildSectionData(props.children),
       sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
     });
@@ -199,25 +200,21 @@ class DataGrid extends React.Component {
     document.addEventListener('keyup', this.handleKeyUp);
   }
 
-  componentWillUnmount() {
-    this.resizeObserver.disconnect(this.containerRef);
-  }
-
   componentWillReceiveProps(nextProps) {
     let newState = {};
-    if (this.props.columns !== nextProps.columns) {
-      /**
-       * The widths are regenerated only if the columns prop has been mutated. This ensures that any temporary column widths
-       * are maintained on subsequent renders.
-       */
-      newState = Object.assign({}, DataGrid.generateWidthState(nextProps));
-    }
 
-    if (this.props.selectedCells !== nextProps.selectedCells) {
-      newState.selectionMap = DataGrid.buildSelectionMap(nextProps.selectedCells);
+    if (this.props.columnWidths !== nextProps.columnWidths) {
+      /**
+       * If the column widths are controlled by the consuming component, the internal width calculations need to be regenerated upon changes
+       * to the columnWidths component.
+       */
+      newState = Object.assign({}, DataGrid.generateWidthState(nextProps, false));
     }
 
     if (this.props.children !== nextProps.children) {
+      /**
+       * If the provided children differ from the previous render, they need to be reprocessed into a more convenient structure.
+       */
       newState.sections = DataGrid.buildSectionData(nextProps.children);
       newState.sectionOrdering = React.Children.map(nextProps.children, child => (child.props.id));
     }
@@ -227,10 +224,15 @@ class DataGrid extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.resizeObserver.disconnect(this.containerRef);
+  }
+
   handleResize(newWidth, newHeight) {
     /**
      * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
-     * The widths are applied directly the nodes outside of the React lifecycle to improve performance.
+     * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
+     * unnecessary rendering of other components.
      */
     document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`).forEach((el) => {
       el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
@@ -252,7 +254,7 @@ class DataGrid extends React.Component {
         return;
       }
 
-      if (activeElement.matches('[data-cell]')) {
+      if (matches(activeElement, '[data-cell]')) {
         const columnId = activeElement.getAttribute('data-column-id');
         const rowId = activeElement.getAttribute('data-row-id');
         const sectionId = activeElement.getAttribute('data-section-id');
@@ -306,7 +308,7 @@ class DataGrid extends React.Component {
 
           event.preventDefault();
         }
-      } else if (activeElement.matches('[data-section]')) {
+      } else if (matches(activeElement, '[data-section]')) {
         const sectionId = activeElement.getAttribute('data-section-id');
 
         if (this.shiftIsPressed) {
@@ -346,12 +348,22 @@ class DataGrid extends React.Component {
     if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
       const activeElement = document.activeElement;
 
-      if (activeElement.matches('[data-cell]')) {
+      if (matches(activeElement, '[data-cell]')) {
         this.props.onCellClick(activeElement.getAttribute('data-row-id'), activeElement.getAttribute('data-column-id'));
-      } else if (activeElement.matches('[data-header-cell]')) {
+      } else if (matches(activeElement, '[data-header-cell]')) {
         this.props.onHeaderClick(activeElement.getAttribute('data-column-id'));
-      } else if (activeElement.matches('[data-section]')) {
-        this.props.onSectionClick(undefined, activeElement.getAttribute('data-section-id'));
+      } else if (matches(activeElement, '[data-section]')) {
+        const sectionId = activeElement.getAttribute('data-section-id');
+
+        if (this.props.collapsedSections) {
+          if (this.props.onRequestSectionCollapse) {
+            this.props.onRequestSectionCollapse(sectionId);
+          }
+        } else {
+          const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
+          currentlyCollapsedSections[sectionId] = !currentlyCollapsedSections[sectionId];
+          this.setState({ collapsedSections: currentlyCollapsedSections });
+        }
       }
 
       event.preventDefault();
@@ -364,27 +376,38 @@ class DataGrid extends React.Component {
     }
   }
 
-  updateColumnWidths(columnKey, widthDelta, minWidth) {
-    const columnWidths = Object.assign({}, this.state.columnWidths);
+  updateColumnWidths(columnId, widthDelta, minWidth) {
+    const { columnWidths, onRequestColumnResize } = this.props;
+    const { internalColumnWidths } = this.state;
+
+    let columnWidth = columnWidths ? columnWidths[columnId] : internalColumnWidths[columnId];
     const minimumColumnWidth = minWidth || 50;
 
-    if (columnWidths[columnKey] + widthDelta < minimumColumnWidth) {
-      columnWidths[columnKey] = minimumColumnWidth;
+    if (columnWidth + widthDelta < minimumColumnWidth) {
+      columnWidth = minimumColumnWidth;
     } else {
-      columnWidths[columnKey] += widthDelta;
+      columnWidth += widthDelta;
     }
 
-    const pinnedColumnWidth = this.props.pinnedColumns.length ?
-      this.props.pinnedColumns.map(column => columnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) : 0;
+    if (columnWidths) {
+      if (onRequestColumnResize) {
+        onRequestColumnResize(columnId, columnWidth);
+      }
+    } else {
+      internalColumnWidths[columnId] = columnWidth;
 
-    const overflowColumnWidth = this.props.overflowColumns.length ?
-      this.props.overflowColumns.map(column => columnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
+      const pinnedColumnWidth = this.props.pinnedColumns.length ?
+      this.props.pinnedColumns.map(column => internalColumnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) : 0;
 
-    this.setState({
-      pinnedColumnWidth,
-      overflowColumnWidth,
-      columnWidths,
-    });
+      const overflowColumnWidth = this.props.overflowColumns.length ?
+      this.props.overflowColumns.map(column => internalColumnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
+
+      this.setState({
+        pinnedColumnWidth,
+        overflowColumnWidth,
+        internalColumnWidths,
+      });
+    }
   }
 
   renderResizeHandle(columnData) {
@@ -421,48 +444,58 @@ class DataGrid extends React.Component {
 
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
+    const { internalColumnWidths } = this.state;
 
     return (
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         key={columnId}
-        data-column-id={columnId}
         className={cx(['cell-container', 'header-cell-container', { selectable: columnData.selectable }])}
-        style={{ width: `${this.state.columnWidths[columnId]}px` }}
+        style={{ width: `${internalColumnWidths[columnId]}px`, height: '100%' }}
         tabIndex={columnData.selectable ? '0' : null}
         onClick={this.handleHeaderClick}
         data-header-cell
         data-column-id={columnId}
       >
-        <div style={{ height: '100%', width: '100%', overflow: 'hidden' }} >
-          {columnData.component}
-        </div>
+        {columnData.component}
         {columnData.resizable ? this.renderResizeHandle(columnData) : null }
       </div>
+      /* eslint-enable jsx-a11y/no-static-element-interactions */
     );
   }
 
   renderFixedHeaderRow() {
-    const { columns, pinnedColumns } = this.props;
+    const { pinnedColumns, headerHeight } = this.props;
     const { pinnedColumnWidth } = this.state;
 
     return (
       <div
-        className={cx('fixed-column-header-container')}
-        style={{ width: `${pinnedColumnWidth}px` }}
+        className={cx(['pinned-header', 'row', 'header-row'])}
+        style={{
+          width: `${pinnedColumnWidth}px`,
+          minWidth: `${pinnedColumnWidth}px`,
+          height: headerHeight,
+        }}
       >
-        <div className={cx(['row', 'header-row'])} style={{ width: `${pinnedColumnWidth}px` }}>
-          {pinnedColumns.map(column => this.renderHeaderCell(column))}
-        </div>
+        {pinnedColumns.map(column => this.renderHeaderCell(column))}
       </div>
     );
   }
 
   renderOverflowHeaderRow() {
-    const { columns, overflowColumns } = this.props;
-    const { overflowColumnWidth } = this.state;
+    const { overflowColumns, headerHeight } = this.props;
+    const { pinnedColumnWidth, overflowColumnWidth } = this.state;
 
     return (
-      <div className={cx(['row', 'header-row'])} style={{ width: `${overflowColumnWidth}px` }}>
+      <div
+        className={cx(['scroll-header', 'row', 'header-row'])}
+        style={{
+          width: `${overflowColumnWidth + pinnedColumnWidth}px`,
+          minWidth: `calc(100% - ${pinnedColumnWidth})`,
+          height: headerHeight,
+          paddingLeft: `${pinnedColumnWidth}px`,
+        }}
+      >
         {overflowColumns.map(column => this.renderHeaderCell(column))}
       </div>
     );
@@ -470,30 +503,40 @@ class DataGrid extends React.Component {
 
   renderSection(section, columns, width, withHeader) {
     const { rowHeight } = this.props;
-    const { columnWidths } = this.state;
+    const { internalColumnWidths } = this.state;
 
     return (
-      <React.Fragment key={section.id}>
-        {section.text ? (
+      <div key={section.id}>
+        {section.headerText ? (
           <div
             key={section.id}
             className={cx('section-header-container')}
             tabIndex={withHeader ? '0' : undefined}
             data-section-id={withHeader ? section.id : undefined}
             data-section={withHeader}
-            onClick={withHeader ? (event) => { this.props.onSectionClick(event, section.id); } : undefined}
+            onClick={withHeader ? (event) => {
+              if (this.props.collapsedSections) {
+                if (this.props.onRequestSectionCollapse) {
+                  this.props.onRequestSectionCollapse(section.id);
+                }
+              } else {
+                const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
+                currentlyCollapsedSections[section.id] = !currentlyCollapsedSections[section.id];
+                this.setState({ collapsedSections: currentlyCollapsedSections });
+              }
+            } : undefined}
           >
 
             { withHeader ? (
               <SectionHeader
-                text={section.text}
+                text={section.headerText}
                 isCollapsible={section.isCollapsible}
-                isCollapsed={section.isCollapsed}
+                isCollapsed={section.isInitiallyCollapsed}
               />
             ) : null}
           </div>
         ) : null}
-        {(!section.isCollapsible || !section.isCollapsed) && section.rows && section.rowOrdering.map((rowId, index) => (
+        {(!section.isCollapsible || !section.isInitiallyCollapsed) && section.rows && section.rowOrdering.map((rowId, index) => (
           <div
             key={`${section.id}-${section.rows[rowId].id}`}
             className={cx(['row', { striped: index % 2 > 0 }])}
@@ -510,7 +553,7 @@ class DataGrid extends React.Component {
                   onClick={this.handleContentClick}
                   key={`${section.id}-${section.rows[rowId].id}-${column.id}`}
                   className={cx(['cell-container', { selectable: cell.isSelectable, selected: cell.isSelected }])}
-                  style={{ width: `${columnWidths[column.id]}px` }}
+                  style={{ width: `${internalColumnWidths[column.id]}px` }}
                   tabIndex={cell.isSelectable ? '0' : undefined}
                   data-cell
                   data-column-id={column.id}
@@ -523,7 +566,7 @@ class DataGrid extends React.Component {
             })}
           </div>
         ))}
-      </React.Fragment>
+      </div>
     );
   }
 
@@ -590,16 +633,7 @@ class DataGrid extends React.Component {
       >
         {this.renderFixedHeaderRow()}
         <div className={cx(['overflow-container', { 'legacy-sticky': !stickyIsSupported }])}>
-          <div
-            className={cx('scroll-header')}
-            style={{
-              width: `${this.state.overflowColumnWidth}px`,
-              minWidth: `calc(100% - ${this.state.pinnedColumnWidth}px`,
-              paddingLeft: `${this.state.pinnedColumnWidth}px`,
-            }}
-          >
-            {this.renderOverflowHeaderRow()}
-          </div>
+          {this.renderOverflowHeaderRow()}
           <div
             className={cx(['fixed-content', { 'legacy-sticky': !stickyIsSupported }])}
             style={{ width: `${this.state.pinnedColumnWidth}px` }}

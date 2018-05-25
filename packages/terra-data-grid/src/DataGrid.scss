@@ -21,18 +21,17 @@
   }
 
   .cell-container.selectable:hover {
-    background-color: #f4fafe;
-    border-right: 1px solid #c8cacb;
+    background-color: #e2f2fc;
     cursor: pointer;
   }
 
   .cell-container.selected {
-    background-color: var(--terra-data-grid-cell-selected-background-color,#e2f2fc);
+    background-color: var(--terra-data-grid-cell-selected-background-color,#cbe7fa);
     box-shadow: inset 0 0 5px 0px #0092e0;
   }
 
-  .cell-container.selectable.selected:hover {
-    background-color: var(--terra-data-grid-cell-selected-background-color,#e2f2fc);
+  .cell-container.selected:hover {
+    background-color: var(--terra-data-grid-cell-selected-background-color,#b3ddf7);
   }
 
   .header-cell-container.selectable:hover {
@@ -48,7 +47,7 @@
     box-shadow: inset 0 0 5px 0px #0092e0;
   }
 
-  .fixed-column-header-container {
+  .pinned-header {
     position: absolute;
     left: 0;
     top: 0;
@@ -88,7 +87,6 @@
 
   .container.legacy-sticky {
     overflow-y: auto;
-    overflow-x: auto;
     position: relative;
   }
 

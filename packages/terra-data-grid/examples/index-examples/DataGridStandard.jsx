@@ -25,18 +25,29 @@ class DataGridStandard extends React.Component {
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
     this.handleCellClick = this.handleCellClick.bind(this);
     this.handleSectionClick = this.handleSectionClick.bind(this);
+    this.handleColumnResize = this.handleColumnResize.bind(this);
 
     this.buildSection = this.buildSection.bind(this);
     this.buildRows = this.buildRows.bind(this);
 
+    const columnWidths = {};
+    (new Array(10)).fill(0).forEach((val, index) => {
+      columnWidths[`column${index}`] = 200;
+    });
+
     this.state = {
       collapsedSections: {},
+      columnWidths,
     };
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     const { aggregatorDelegate } = this.props;
-    const { sortedColumnKey, sortDirection, collapsedSections } = this.state;
+    const { sortedColumnKey, sortDirection, collapsedSections, columnWidths } = this.state;
+
+    if (nextState.columnWidths !== columnWidths) {
+      return true;
+    }
 
     if (nextState.sortDirection !== sortDirection) {
       return true;
@@ -64,6 +75,14 @@ class DataGridStandard extends React.Component {
     }
 
     return false;
+  }
+
+  handleColumnResize(columnId, width) {
+    const { columnWidths } = this.state;
+
+    this.setState({
+      columnWidths: Object.assign({}, columnWidths, { [`${columnId}`]: width }),
+    });
   }
 
   handleHeaderClick(columnKey) {
@@ -107,7 +126,7 @@ class DataGridStandard extends React.Component {
     }
   }
 
-  handleSectionClick(event, sectionId) {
+  handleSectionClick(sectionId) {
     if (!sectionId) {
       return;
     }
@@ -157,8 +176,9 @@ class DataGridStandard extends React.Component {
       <Section
         id={sectionId}
         isCollapsible={isCollapsible}
-        isCollapsed={isCollapsed}
-        text={sectionName}
+        isInitiallyCollapsed={isCollapsed}
+        hideHeader={false}
+        headerText={sectionName}
       >
         {this.buildRows(sectionId, numberOfRows)}
       </Section>
@@ -167,14 +187,14 @@ class DataGridStandard extends React.Component {
 
   render() {
     const { aggregatorDelegate } = this.props;
-    const { rows, sortedColumnKey, sortDirection } = this.state;
+    const { sortedColumnKey, sortDirection, collapsedSections } = this.state;
 
     return (
       <DataGrid
         pinnedColumns={[
           {
             id: 'column0',
-            startWidth: 200,
+            startWidth: 300,
             minWidth: 100,
             selectable: true,
             resizable: true,
@@ -187,7 +207,7 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column1',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             component: (
@@ -197,9 +217,11 @@ class DataGridStandard extends React.Component {
               />
             ),
           },
+        ]}
+        overflowColumns={[
           {
             id: 'column2',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             component: (
@@ -208,18 +230,16 @@ class DataGridStandard extends React.Component {
               />
             ),
           },
-        ]}
-        overflowColumns={[
           {
             id: 'column3',
-            startWidth: 200,
+            startWidth: 300,
             selectable: false,
             resizable: true,
             component: <HeaderCell text="Column 3 (No Sort)" sortDirection={sortedColumnKey === 'column3' ? sortDirection : null} />,
           },
           {
             id: 'column4',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             text: 'Column 4',
@@ -227,49 +247,53 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column5',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCell text="Column 5" sortDirection={sortedColumnKey === 'column5' ? sortDirection : null} />,
           },
           {
             id: 'column6',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: false,
             component: <HeaderCell text="Column 6 (No resize)" sortDirection={sortedColumnKey === 'column6' ? sortDirection : null} />,
           },
           {
             id: 'column7',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCell text="Column 7" sortDirection={sortedColumnKey === 'column7' ? sortDirection : null} />,
           },
           {
             id: 'column8',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCell text="Column 8" sortDirection={sortedColumnKey === 'column8' ? sortDirection : null} />,
           },
           {
             id: 'column9',
-            startWidth: 200,
+            startWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCell text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,
           },
         ]}
         rowHeight="5rem"
+        headerHeight="3rem"
         onCellClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
-        onSectionClick={this.handleSectionClick}
+        columnWidths={this.state.columnWidths}
+        onRequestColumnResize={this.handleColumnResize}
+        collapsedSections={collapsedSections}
+        onRequestSectionCollapse={this.handleSectionClick}
       >
-        {this.buildSection('section_0', 'Section 0', 30, true)}
-        {this.buildSection('section_1', 'Section 1', 10, true)}
-        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 60, true)}
-        {this.buildSection('section_3', 'Section 3 (No collapsing)', 10)}
+        {this.buildSection('section_0', 'Section 0', 100, true)}
+        {this.buildSection('section_1', 'Section 1', 100, true)}
+        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 100, true)}
+        {this.buildSection('section_3', 'Section 3 (No collapsing)', 100)}
       </DataGrid>
     );
   }
@@ -304,5 +328,82 @@ const SlidePanelManagerWrapper = () => (
     </ModalManager>
   </div>
 );
+
+// const Current = () => (
+//   <DataGrid>
+//     <Section id="section0" isCollapsible>
+//       <Row id="row0">
+//         <Cell columnId="column0" isSelectable>
+//           <div>Cell 0</div>
+//         </Cell>
+//         <Cell columnId="column1" isSelectable isSelected>
+//           <div>Cell 1</div>
+//         </Cell>
+//       </Row>
+//     </Section>
+//     <Section id="section1" isCollapsible>
+//       <Row id="row1">
+//         <Cell columnId="column0" isSelectable>
+//           <div>Cell 0</div>
+//         </Cell>
+//         <Cell columnId="column1" isSelectable isSelected>
+//           <div>Cell 1</div>
+//         </Cell>
+//       </Row>
+//     </Section>
+//   </DataGrid>
+// );
+
+// const Alternative = () => {
+//   const sections = [{
+//     id: 'section0',
+//     isCollapsible: true,
+//     text: 'Section 0',
+//     rows: [{
+//       id: 'row0',
+//       cells: [{
+//         columnId: 'column0',
+//         isSelectable: true,
+//         component: (
+//           <div>Cell 0</div>
+//         ),
+//       }, {
+//         columnId: 'column1',
+//         isSelectable: true,
+//         isSelected: true,
+//         component: (
+//           <div>Cell 1</div>
+//         ),
+//       }],
+//     }],
+//   }, {
+//     id: 'section1',
+//     isCollapsible: true,
+//     text: 'Section 1',
+//     rows: [{
+//       id: 'row1',
+//       cells: [{
+//         columnId: 'column0',
+//         isSelectable: true,
+//         component: (
+//           <div>Cell 0</div>
+//         ),
+//       }, {
+//         columnId: 'column1',
+//         isSelectable: true,
+//         isSelected: true,
+//         component: (
+//           <div>Cell 1</div>
+//         ),
+//       }],
+//     }],
+//   }];
+
+//   return (
+//     <DataGrid
+//       sections={sections}
+//     />
+//   );
+// };
 
 export default SlidePanelManagerWrapper;
