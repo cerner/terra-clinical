@@ -5,7 +5,7 @@ const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'e
 describe('Clinical Item View', () => {
   describe('with one column displays', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays' });
@@ -14,7 +14,7 @@ describe('Clinical Item View', () => {
 
   describe('with two column displays', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two' });
@@ -23,7 +23,7 @@ describe('Clinical Item View', () => {
 
   describe('with two column and start displays', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two-start' });
@@ -32,7 +32,7 @@ describe('Clinical Item View', () => {
 
   describe('with accessories', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/accessory-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/accessory-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports });
@@ -41,7 +41,7 @@ describe('Clinical Item View', () => {
 
   describe('with default comment set', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/comment-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView1' });
@@ -50,7 +50,7 @@ describe('Clinical Item View', () => {
 
   describe('with truncated comment set', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/comment-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView2' });
@@ -59,7 +59,7 @@ describe('Clinical Item View', () => {
 
   describe('with the full example word wrap - one column', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
@@ -68,7 +68,7 @@ describe('Clinical Item View', () => {
 
   describe('with the full example word wrap - two column', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
@@ -77,7 +77,7 @@ describe('Clinical Item View', () => {
 
   describe('with the full example truncated - one truncated', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
     });
 
     Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
@@ -86,7 +86,7 @@ describe('Clinical Item View', () => {
 
   describe('with the full example truncated - two truncated', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-item-view/overflow-displays-item-view');
+      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
     });
 
     Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });

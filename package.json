@@ -30,6 +30,9 @@
       "raf/polyfill",
       "./jestsetup.js"
     ],
+    "testMatch": [
+      "**/jest/**/(*.)(spec|test).js?(x)"
+    ],
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ],
@@ -43,6 +46,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "bootstrap:hoist": "lerna bootstrap --hoist",
     "clean:all": "lerna clean --yes && node scripts/clean-modules/index.js",
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
@@ -50,7 +54,6 @@
     "compile:prod": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p",
     "danger": "danger",
     "deploy": "npm run compile:prod && gh-pages -d build",
-    "generate-config": "generate-config -o 'dev-site-config' -s 'packages/terra-clinical-site/src/examples/*/Index.jsx'",
     "heroku-prebuild": "npm install -g lerna@2.1.2 && lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest",
@@ -62,10 +65,9 @@
     "pretest": "npm run lint",
     "postinstall": "node scripts/post-install/index.js",
     "postinstall:package": "npm run compile && npm run bootstrap",
-    "postinstall:project": "link-parent-bin && npm run compile && npm run bootstrap",
+    "postinstall:project": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
     "start": "tt:serve",
-    "start:build": "npm run generate-config && npm run start",
     "start-heroku": "tt:serve-static --site build",
     "test": "jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
@@ -103,7 +105,7 @@
     "shelljs": "^0.7.7",
     "stylelint": "^9.2.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
-    "terra-dev-site": "0.6.0",
+    "terra-dev-site": "^1.0.0",
     "terra-toolkit": "^3.3.1"
   }
 }

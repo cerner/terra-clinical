@@ -5,7 +5,7 @@ const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'e
 describe('Clinical Application', () => {
   describe('Renders the Application with provided AppDelegate', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-application/default-application');
+      browser.url('/#/raw/tests/terra-clinical-application/clinical-application/default-application');
     });
 
     Terra.should.matchScreenshot({ viewports });
@@ -14,7 +14,7 @@ describe('Clinical Application', () => {
 
   describe('Renders the Application without provided AppDelegate', () => {
     before(() => {
-      browser.url('/#/raw/tests/clinical-application/no-app-delegate-application');
+      browser.url('/#/raw/tests/terra-clinical-application/clinical-application/no-app-delegate-application');
     });
 
     Terra.should.matchScreenshot({ viewports });
