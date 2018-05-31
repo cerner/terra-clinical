@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Conform to eslint updates
 
 3.6.0 - (May 30, 2018)
 ----------
