@@ -84,7 +84,9 @@ const defaultProps = {
 };
 
 function createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles, showListItemChevron) {
-  const { startAccessory, children, comment, endAccessory, reserveStartAccessorySpace } = elements;
+  const {
+    startAccessory, children, comment, endAccessory, reserveStartAccessorySpace,
+  } = elements;
 
   const listItemContent = (
     <ItemView
@@ -120,7 +122,9 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
 }
 
 function createTableRow(elements, selectableProps, customProps, isSelected, accessoryAlignment) {
-  const { startAccessory, children, comment, endAccessory } = elements;
+  const {
+    startAccessory, children, comment, endAccessory,
+  } = elements;
 
   const displayContent = React.Children.map(children, (display, index) => {
     const displayKey = `display_${index + 1}`;
@@ -155,14 +159,18 @@ const Item = (props) => {
     ...customProps
   } = props;
 
-  const elements = { children, startAccessory, comment, endAccessory, reserveStartAccessorySpace };
+  const elements = {
+    children, startAccessory, comment, endAccessory, reserveStartAccessorySpace,
+  };
   const selectableProps = isSelectable ? { isSelectable, tabIndex: 0 } : {};
 
   if (view === 'table') {
     return createTableRow(elements, selectableProps, customProps, isSelected, accessoryAlignment);
   }
 
-  const itemViewStyles = { layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment };
+  const itemViewStyles = {
+    layout: listItemLayout, textEmphasis: listItemTextEmphasis, isTruncated: isListItemTruncated, accessoryAlignment,
+  };
   return createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles, showListItemChevron);
 };
 

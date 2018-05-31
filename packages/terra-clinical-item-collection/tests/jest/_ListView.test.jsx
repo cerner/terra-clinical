@@ -2,7 +2,9 @@ import React from 'react';
 import ItemCollection from '../../src/ItemCollection';
 import ListView from '../../src/_ListView';
 
-const defaultRequiredElements = { hasStartAccessory: true, numberOfDisplays: 8, hasComment: true, hasEndAccessory: true };
+const defaultRequiredElements = {
+  hasStartAccessory: true, numberOfDisplays: 8, hasComment: true, hasEndAccessory: true,
+};
 
 it('should render a default ListView', () => {
   const item = (<ListView />);
