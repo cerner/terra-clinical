@@ -21,29 +21,6 @@
   "bugs": {
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "packages/**/src/*.js",
-      "packages/**/src/*.jsx"
-    ],
-    "setupFiles": [
-      "raf/polyfill",
-      "./jestsetup.js"
-    ],
-    "testMatch": [
-      "**/jest/**/(*.)(spec|test).js?(x)"
-    ],
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "testPathIgnorePatterns": [
-      "/packages/terra-clinical-error-view/tests/jest/",
-      "/packages/terra-clinical-no-data-view/tests/jest/"
-    ]
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
@@ -56,8 +33,8 @@
     "deploy": "npm run compile:prod && gh-pages -d build",
     "heroku-prebuild": "npm install -g lerna@2.1.2 && lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
-    "jest": "jest",
-    "jest:coverage": "jest --coverage",
+    "jest": "jest --config jestconfig.js",
+    "jest:coverage": "jest --coverage --config jestconfig.js",
     "link-parent-bin": "link-parent-bin",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx .",
@@ -70,7 +47,7 @@
     "start": "tt:serve",
     "start-heroku": "tt:serve-static --site build",
     "start-static": "tt:serve-static --config webpack.config",
-    "test": "jest && npm run wdio",
+    "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {

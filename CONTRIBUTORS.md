@@ -18,6 +18,7 @@ Cerner Corporation
 - Sairam Rakshith Bhyravabhotla [@rakshith91]
 - Nathan Faltermeier [@Blackop778]
 - Dinesh Singh [@dineshsingh9]
+- Ben Boersma [@BenBoersma]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -37,3 +38,4 @@ Cerner Corporation
 [@rakshith91]: https://github.com/rakshith91
 [@Blackop778]: https://github.com/Blackop778
 [@dineshsingh9]: https://github.com/DineshSingh9
+[@BenBoersma]: https://github.com/BenBoersma
