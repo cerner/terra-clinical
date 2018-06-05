@@ -290,10 +290,10 @@ class DataGridStandard extends React.Component {
         collapsedSections={collapsedSections}
         onRequestSectionCollapse={this.handleSectionClick}
       >
-        {this.buildSection('section_0', 'Section 0', 100, true)}
-        {this.buildSection('section_1', 'Section 1', 100, true)}
-        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 100, true)}
-        {this.buildSection('section_3', 'Section 3 (No collapsing)', 100)}
+        {this.buildSection('section_0', 'Section 0', 10, true)}
+        {this.buildSection('section_1', 'Section 1', 10, true)}
+        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 10, true)}
+        {this.buildSection('section_3', 'Section 3 (No collapsing)', 10)}
       </DataGrid>
     );
   }
@@ -318,7 +318,7 @@ const AggregatorWrapper = props => (
 );
 
 const SlidePanelManagerWrapper = () => (
-  <div style={{ height: '750px' }}>
+  <div style={{ height: '500px' }}>
     <ModalManager>
       <SlidePanelManager
         panelBehavior="squish"

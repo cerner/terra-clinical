@@ -1,0 +1,19 @@
+:local {
+  .resize-handle {
+    height: 100%;
+    position: absolute;
+    width: 5px;
+    right: 0;
+    top:0;
+    cursor: col-resize;
+
+    &:hover {
+      background-color: grey;
+    }
+
+    &.dragging {
+      background-color: darkslategrey;
+      z-index: 200;
+    }
+  }
+}

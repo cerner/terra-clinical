@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
 import ResizeObserver from 'resize-observer-polyfill';
+import ContentContainer from 'terra-content-container';
 
+import ResizeHandle from './ResizeHandle';
 import ContentCell from './default-components/ContentCell';
 import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
 
-import { isStickySupported, KEYCODES, matches } from './utils';
+import { KEYCODES, matches } from './utils';
 
 import styles from './DataGrid.scss';
 
@@ -51,7 +53,7 @@ const defaultProps = {
   headerHeight: '2rem',
 };
 
-const stickyIsSupported = isStickySupported();
+const stickyIsSupported = false;// isStickySupported();
 
 class DataGrid extends React.Component {
   static generateWidthState(props, resetWidths) {
@@ -148,11 +150,15 @@ class DataGrid extends React.Component {
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
 
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
-    this.renderResizeHandle = this.renderResizeHandle.bind(this);
-    this.renderFixedHeaderRow = this.renderFixedHeaderRow.bind(this);
-    this.renderOverflowHeaderRow = this.renderOverflowHeaderRow.bind(this);
+    this.renderHeaderRow = this.renderHeaderRow.bind(this);
     this.renderOverflowContent = this.renderOverflowContent.bind(this);
     this.renderFixedContent = this.renderFixedContent.bind(this);
+
+    this.getCustomScrollbarWidth = this.getCustomScrollbarWidth.bind(this);
+    this.updateCustomScrollbarWidth = this.updateCustomScrollbarWidth.bind(this);
+    this.setCustomScrollbarRef = this.setCustomScrollbarRef.bind(this);
+
+    this.customScrollbarPosition = 0;
 
     // const generateWidthState = (props, state, useInitialValues) => {
     //   let widthExtractor;
@@ -185,7 +191,7 @@ class DataGrid extends React.Component {
      * triggers a redraw/repaint of the component. Upon completion of the redraw, rendering within Safari behaves as desired.
      * This is weird, but it works, and it should have an insignificant impact on performance.
      */
-    const height = this.containerRef.scrollHeight; // eslint-disable-line no-unused-vars
+    // const height = this.containerRef.scrollHeight; // eslint-disable-line no-unused-vars
 
     /**
      * A ResizeObserver is used to manage changes to the DataGrid's overall size. The handler will execute once upon the start of
@@ -198,6 +204,11 @@ class DataGrid extends React.Component {
      * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
      */
     document.addEventListener('keyup', this.handleKeyUp);
+
+    /**
+     * The custom horizontal scrollbar needs to be resized relative to the container width.
+     */
+    this.updateCustomScrollbarWidth();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -234,9 +245,20 @@ class DataGrid extends React.Component {
      * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
      * unnecessary rendering of other components.
      */
-    document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`).forEach((el) => {
-      el.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
+    const sectionHeaderContainers = document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`);
+
+    /**
+     * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
+     * However, We can utilize the Array's forEach implementation to iterate through the list.
+     */
+    Array.prototype.forEach.call(sectionHeaderContainers, (container) => {
+      container.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
     });
+
+    /**
+     * The custom horizontal scrollbar needs to be resized relative to the container's new width.
+     */
+    this.updateCustomScrollbarWidth();
   }
 
   handleKeyDown(event) {
@@ -410,38 +432,6 @@ class DataGrid extends React.Component {
     }
   }
 
-  renderResizeHandle(columnData) {
-    return (
-      <DraggableCore
-        onStart={(event, data) => {
-          const node = data.node;
-
-          node.classList.add(cx('dragging'));
-          node.style.height = `${this.containerRef.clientHeight}px`;
-
-          this.scrollPosition = 0;
-        }}
-        onStop={(event, data) => {
-          const node = data.node;
-
-          node.classList.remove(cx('dragging'));
-          node.style.transform = '';
-          node.style.height = '';
-
-          this.updateColumnWidths(columnData.id, this.scrollPosition, columnData.minWidth);
-        }}
-        onDrag={(event, data) => {
-          const node = data.node;
-
-          this.scrollPosition += data.deltaX;
-          node.style.transform = `translate3d(${this.scrollPosition}px, 0, 0)`;
-        }}
-      >
-        <div className={cx('resize-handle')} />
-      </DraggableCore>
-    );
-  }
-
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
     const { internalColumnWidths } = this.state;
@@ -458,45 +448,62 @@ class DataGrid extends React.Component {
         data-column-id={columnId}
       >
         {columnData.component}
-        {columnData.resizable ? this.renderResizeHandle(columnData) : null }
+        {columnData.resizable ? <ResizeHandle id={columnId} onResizeStop={this.updateColumnWidths} /> : null }
       </div>
       /* eslint-enable jsx-a11y/no-static-element-interactions */
     );
   }
 
-  renderFixedHeaderRow() {
-    const { pinnedColumns, headerHeight } = this.props;
-    const { pinnedColumnWidth } = this.state;
-
-    return (
-      <div
-        className={cx(['pinned-header', 'row', 'header-row'])}
-        style={{
-          width: `${pinnedColumnWidth}px`,
-          minWidth: `${pinnedColumnWidth}px`,
-          height: headerHeight,
-        }}
-      >
-        {pinnedColumns.map(column => this.renderHeaderCell(column))}
-      </div>
-    );
-  }
-
-  renderOverflowHeaderRow() {
-    const { overflowColumns, headerHeight } = this.props;
+  renderHeaderRow() {
+    const { pinnedColumns, overflowColumns, headerHeight } = this.props;
     const { pinnedColumnWidth, overflowColumnWidth } = this.state;
 
     return (
       <div
-        className={cx(['scroll-header', 'row', 'header-row'])}
         style={{
-          width: `${overflowColumnWidth + pinnedColumnWidth}px`,
-          minWidth: `calc(100% - ${pinnedColumnWidth})`,
           height: headerHeight,
-          paddingLeft: `${pinnedColumnWidth}px`,
+          width: '100%',
+          overflow: 'hidden',
         }}
       >
-        {overflowColumns.map(column => this.renderHeaderCell(column))}
+        <div
+          className={cx(['pinned-header', 'row', 'header-row'])}
+          style={{
+            width: `${pinnedColumnWidth}px`,
+            minWidth: `${pinnedColumnWidth}px`,
+            height: headerHeight,
+            overflow: 'hidden',
+          }}
+        >
+          {pinnedColumns.map(column => this.renderHeaderCell(column))}
+        </div>
+        <div
+          style={{
+            width: '100%',
+            paddingLeft: `${pinnedColumnWidth}px`,
+            overflowX: 'auto',
+            height: 'calc(100% + 20px)',
+            paddingBottom: '20px',
+          }}
+          ref={(ref) => { this.overflowHeaderContainer = ref; }}
+          onScroll={() => {
+            if (!this.customScrollerIsScrolling) {
+              requestAnimationFrame(() => {
+                this.containerRef.scrollLeft = this.overflowHeaderContainer.scrollLeft;
+              });
+            }
+          }}
+        >
+          <div
+            className={cx(['scroll-header', 'row', 'header-row'])}
+            style={{
+              width: `${overflowColumnWidth}px`,
+              height: '100%',
+            }}
+          >
+            {overflowColumns.map(column => this.renderHeaderCell(column))}
+          </div>
+        </div>
       </div>
     );
   }
@@ -587,19 +594,7 @@ class DataGrid extends React.Component {
   handleHeaderClick(event) {
     const { onHeaderClick } = this.props;
 
-    /**
-     * If the click event target is the resize handle, we do not want to
-     * recognize the click.
-     */
-    if (event.target.classList.contains(cx('resize-handle'))) {
-      return;
-    }
-
     const headerCellNode = event.currentTarget;
-
-    if (!headerCellNode.classList.contains(cx('header-cell-container'))) {
-      return;
-    }
 
     if (headerCellNode.classList.contains(cx('selectable')) && onHeaderClick) {
       onHeaderClick(headerCellNode.getAttribute('data-column-id'));
@@ -620,20 +615,94 @@ class DataGrid extends React.Component {
     }
   }
 
+
+  componentDidUpdate() {
+    this.updateCustomScrollbarWidth();
+  }
+
+  getCustomScrollbarWidth() {
+    return (2 * this.containerRef.clientWidth) - this.containerRef.scrollWidth;
+  }
+
+  updateCustomScrollbarWidth() {
+    debugger;
+    this.customScrollbarRef.style.width = `${this.getCustomScrollbarWidth()}px`;
+  }
+
+  setCustomScrollbarRef(ref) {
+    this.customScrollbarRef = ref;
+  }
+
   render() {
     console.log('rendering data grid');
 
     return (
-      <div
-        className={cx(['container', { 'legacy-sticky': !stickyIsSupported }])}
-        ref={(ref) => {
-          this.containerRef = ref;
-        }}
+      <ContentContainer
+        header={(
+          this.renderHeaderRow()
+        )}
+        footer={(
+          <div
+            style={{ height: '14px', width: '100%', backgroundColor: 'lightgrey' }}
+          >
+            <DraggableCore
+              onStart={(event, data) => {
+                const node = data.node;
+                node.style.backgroundColor = 'green';
+                this.customScrollerIsScrolling = true;
+              }}
+              onStop={(event, data) => {
+                const node = data.node;
+                node.style.backgroundColor = 'grey';
+                this.customScrollerIsScrolling = false;
+              }}
+              onDrag={(event, data) => {
+                const node = data.node;
+
+                const newPosition = this.customScrollbarPosition + data.deltaX;
+                const customScrollbarWidth = this.getCustomScrollbarWidth();
+
+                let xPosition;
+                if (newPosition < 0) {
+                  xPosition = 0;
+                } else if (newPosition > this.containerRef.clientWidth - customScrollbarWidth) {
+                  xPosition = this.containerRef.clientWidth - customScrollbarWidth;
+                } else {
+                  xPosition = newPosition;
+                }
+
+                this.customScrollbarPosition = Math.floor(xPosition);
+
+                requestAnimationFrame(() => {
+                  node.style.transform = `translateX(${this.customScrollbarPosition}px)`;
+                  this.overflowHeaderContainer.scrollLeft = this.customScrollbarPosition;
+                  this.containerRef.scrollLeft = this.customScrollbarPosition;
+                });
+              }}
+            >
+              <div
+                style={{ height: '100%', width: '50px', backgroundColor: 'grey', borderRadius: '15px', touchAction: 'none', cursor: 'ew-resize' }}
+                ref={this.setCustomScrollbarRef}
+              />
+            </DraggableCore>
+          </div>
+        )}
+        fill
         onKeyDown={this.handleKeyDown}
       >
-        {this.renderFixedHeaderRow()}
-        <div className={cx(['overflow-container', { 'legacy-sticky': !stickyIsSupported }])}>
-          {this.renderOverflowHeaderRow()}
+        <div
+          className={cx(['overflow-container', { 'legacy-sticky': !stickyIsSupported }])}
+          ref={(ref) => {
+            this.containerRef = ref;
+          }}
+          onScroll={() => {
+            if (!this.customScrollerIsScrolling) {
+              requestAnimationFrame(() => {
+                this.overflowHeaderContainer.scrollLeft = this.containerRef.scrollLeft;
+              });
+            }
+          }}
+        >
           <div
             className={cx(['fixed-content', { 'legacy-sticky': !stickyIsSupported }])}
             style={{ width: `${this.state.pinnedColumnWidth}px` }}
@@ -644,14 +713,14 @@ class DataGrid extends React.Component {
             className={cx('scroll-content')}
             style={{
               width: `${this.state.overflowColumnWidth}px`,
-              minWidth: `calc(100% - ${this.state.pinnedColumnWidth}px`,
+              minWidth: '100%',
               paddingLeft: `${this.state.pinnedColumnWidth}px`,
             }}
           >
             {this.renderOverflowContent()}
           </div>
         </div>
-      </div>
+      </ContentContainer>
     );
   }
 }

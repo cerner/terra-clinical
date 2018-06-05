@@ -71,7 +71,7 @@
       background-color: grey;
     }
 
-    &.dragging {
+    &.resize-handle-dragging {
       background-color: darkslategrey;
       z-index: 200;
     }
@@ -133,6 +133,8 @@
 
   .fixed-content.legacy-sticky {
     position: absolute;
+    left: 0;
+    top: 0;
   }
 
   .scroll-content {
