@@ -16,8 +16,4 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
-  testPathIgnorePatterns: [
-    '/packages/terra-clinical-error-view/tests/jest/',
-    '/packages/terra-clinical-no-data-view/tests/jest/',
-  ],
 };
