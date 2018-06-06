@@ -6,6 +6,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 
 import ResizeHandle from './ResizeHandle';
+import Scrollbar from './Scrollbar';
 import ContentCell from './default-components/ContentCell';
 import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
@@ -209,6 +210,8 @@ class DataGrid extends React.Component {
      * The custom horizontal scrollbar needs to be resized relative to the container width.
      */
     this.updateCustomScrollbarWidth();
+
+    this.handleResize(this.containerRef.clientWidth, this.containerRef.clientHeight);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -240,6 +243,9 @@ class DataGrid extends React.Component {
   }
 
   handleResize(newWidth, newHeight) {
+    console.log('handleResize');
+    console.log(`new width: ${newWidth}`);
+    console.log(`client width: ${this.containerRef.clientWidth}`);
     /**
      * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
      * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
@@ -625,12 +631,11 @@ class DataGrid extends React.Component {
   }
 
   updateCustomScrollbarWidth() {
-    debugger;
-    this.customScrollbarRef.style.width = `${this.getCustomScrollbarWidth()}px`;
+    // this.customScrollbarRef.style.width = `${this.getCustomScrollbarWidth()}px`;
   }
 
   setCustomScrollbarRef(ref) {
-    this.customScrollbarRef = ref;
+    // this.customScrollbarRef = ref;
   }
 
   render() {
@@ -638,55 +643,61 @@ class DataGrid extends React.Component {
 
     return (
       <ContentContainer
-        header={(
-          this.renderHeaderRow()
-        )}
-        footer={(
-          <div
-            style={{ height: '14px', width: '100%', backgroundColor: 'lightgrey' }}
-          >
-            <DraggableCore
-              onStart={(event, data) => {
-                const node = data.node;
-                node.style.backgroundColor = 'green';
-                this.customScrollerIsScrolling = true;
-              }}
-              onStop={(event, data) => {
-                const node = data.node;
-                node.style.backgroundColor = 'grey';
-                this.customScrollerIsScrolling = false;
-              }}
-              onDrag={(event, data) => {
-                const node = data.node;
+        header={this.renderHeaderRow()}
+        footer={<Scrollbar overflowWidth={this.state.pinnedColumnWidth + this.state.overflowColumnWidth} />}
 
-                const newPosition = this.customScrollbarPosition + data.deltaX;
-                const customScrollbarWidth = this.getCustomScrollbarWidth();
 
-                let xPosition;
-                if (newPosition < 0) {
-                  xPosition = 0;
-                } else if (newPosition > this.containerRef.clientWidth - customScrollbarWidth) {
-                  xPosition = this.containerRef.clientWidth - customScrollbarWidth;
-                } else {
-                  xPosition = newPosition;
-                }
+        //   (
+        //   <div
+        //     style={{ height: '14px', width: '100%', backgroundColor: 'lightgrey', overflow: 'hidden' }}
+        //   >
+        //     <DraggableCore
+        //       onStart={(event, data) => {
+        //         const node = data.node;
+        //         node.style.backgroundColor = 'green';
+        //         this.customScrollerIsScrolling = true;
+        //       }}
+        //       onStop={(event, data) => {
+        //         const node = data.node;
+        //         node.style.backgroundColor = 'grey';
+        //         this.customScrollerIsScrolling = false;
+        //       }}
+        //       onDrag={(event, data) => {
+        //         const node = data.node;
 
-                this.customScrollbarPosition = Math.floor(xPosition);
+        //         const newPosition = this.customScrollbarPosition + data.deltaX;
+        //         const customScrollbarWidth = this.getCustomScrollbarWidth();
 
-                requestAnimationFrame(() => {
-                  node.style.transform = `translateX(${this.customScrollbarPosition}px)`;
-                  this.overflowHeaderContainer.scrollLeft = this.customScrollbarPosition;
-                  this.containerRef.scrollLeft = this.customScrollbarPosition;
-                });
-              }}
-            >
-              <div
-                style={{ height: '100%', width: '50px', backgroundColor: 'grey', borderRadius: '15px', touchAction: 'none', cursor: 'ew-resize' }}
-                ref={this.setCustomScrollbarRef}
-              />
-            </DraggableCore>
-          </div>
-        )}
+        //         console.log('');
+        //         console.log(`current position: ${this.customScrollbarPosition}`);
+        //         console.log(`newPosition: ${newPosition}`);
+        //         console.log(`range: ${this.containerRef.clientWidth - customScrollbarWidth}`);
+
+        //         let xPosition;
+        //         if (newPosition < 0) {
+        //           xPosition = 0;
+        //         } else if (newPosition > this.containerRef.clientWidth - customScrollbarWidth) {
+        //           xPosition = this.containerRef.clientWidth - customScrollbarWidth;
+        //         } else {
+        //           xPosition = newPosition;
+        //         }
+
+        //         this.customScrollbarPosition = Math.floor(xPosition);
+
+        //         requestAnimationFrame(() => {
+        //           node.style.transform = `translateX(${this.customScrollbarPosition}px)`;
+        //           this.overflowHeaderContainer.scrollLeft = this.customScrollbarPosition;
+        //           this.containerRef.scrollLeft = this.customScrollbarPosition;
+        //         });
+        //       }}
+        //     >
+        //       <div
+        //         style={{ height: '100%', width: '50px', backgroundColor: 'grey', borderRadius: '15px', touchAction: 'none', cursor: 'ew-resize' }}
+        //         ref={this.setCustomScrollbarRef}
+        //       />
+        //     </DraggableCore>
+        //   </div>
+        // )}
         fill
         onKeyDown={this.handleKeyDown}
       >

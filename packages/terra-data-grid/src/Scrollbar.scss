@@ -1,0 +1,23 @@
+:local {
+  .container {
+    background-color: lightgrey;
+    height: 14px;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+
+  .scrollbar {
+    background-color: grey;
+    border-radius: 15px;
+    cursor: ew-resize;
+    height: 100%;
+    position: absolute;
+    touch-action: none;
+
+    &.dragging {
+      background-color: darkslategray;
+    }
+  }
+}

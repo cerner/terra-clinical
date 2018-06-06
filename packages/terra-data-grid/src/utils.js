@@ -18,3 +18,4 @@ const KEYCODES = {
 };
 
 export default { matches, KEYCODES };
+export { matches, KEYCODES };
