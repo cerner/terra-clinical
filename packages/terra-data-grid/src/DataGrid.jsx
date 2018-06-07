@@ -11,6 +11,7 @@ import ContentCell from './default-components/ContentCell';
 import HeaderCell from './default-components/HeaderCell';
 import SectionHeader from './default-components/SectionHeader';
 
+import { calculateScrollbarPosition } from './scrollbarUtils';
 import { KEYCODES, matches } from './utils';
 
 import styles from './DataGrid.scss';
@@ -159,7 +160,7 @@ class DataGrid extends React.Component {
     this.updateCustomScrollbarWidth = this.updateCustomScrollbarWidth.bind(this);
     this.setCustomScrollbarRef = this.setCustomScrollbarRef.bind(this);
 
-    this.customScrollbarPosition = 0;
+    this.scrollbarPosition = 0;
 
     // const generateWidthState = (props, state, useInitialValues) => {
     //   let widthExtractor;
@@ -243,9 +244,6 @@ class DataGrid extends React.Component {
   }
 
   handleResize(newWidth, newHeight) {
-    console.log('handleResize');
-    console.log(`new width: ${newWidth}`);
-    console.log(`client width: ${this.containerRef.clientWidth}`);
     /**
      * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
      * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
@@ -493,6 +491,24 @@ class DataGrid extends React.Component {
           }}
           ref={(ref) => { this.overflowHeaderContainer = ref; }}
           onScroll={() => {
+            if (this.scrollbarIsScrolling || this.contentIsScrolling) {
+              return;
+            }
+
+            this.headerIsScrolling = true;
+
+            requestAnimationFrame(() => {
+              this.containerRef.scrollLeft = this.overflowHeaderContainer.scrollLeft;
+
+              const ratio = this.overflowHeaderContainer.scrollLeft / (this.containerRef.scrollWidth - this.containerRef.clientWidth);
+
+              const position = (this.containerRef.clientWidth - this.scrollbarRef.clientWidth) * ratio;
+
+              this.scrollbarRef.style.transform = `translateX(${position}px)`;
+
+              this.headerIsScrolling = false;
+            });
+
             if (!this.customScrollerIsScrolling) {
               requestAnimationFrame(() => {
                 this.containerRef.scrollLeft = this.overflowHeaderContainer.scrollLeft;
@@ -644,60 +660,32 @@ class DataGrid extends React.Component {
     return (
       <ContentContainer
         header={this.renderHeaderRow()}
-        footer={<Scrollbar overflowWidth={this.state.pinnedColumnWidth + this.state.overflowColumnWidth} />}
+        footer={(
+          <Scrollbar
+            overflowWidth={this.state.pinnedColumnWidth + this.state.overflowColumnWidth}
+            scrollbarRefCallback={(ref) => { this.scrollbarRef = ref; }}
+            onMove={(event, data) => {
+              if (this.headerIsScrolling || this.contentIsScrolling) {
+                return;
+              }
 
+              this.scrollbarIsScrolling = true;
 
-        //   (
-        //   <div
-        //     style={{ height: '14px', width: '100%', backgroundColor: 'lightgrey', overflow: 'hidden' }}
-        //   >
-        //     <DraggableCore
-        //       onStart={(event, data) => {
-        //         const node = data.node;
-        //         node.style.backgroundColor = 'green';
-        //         this.customScrollerIsScrolling = true;
-        //       }}
-        //       onStop={(event, data) => {
-        //         const node = data.node;
-        //         node.style.backgroundColor = 'grey';
-        //         this.customScrollerIsScrolling = false;
-        //       }}
-        //       onDrag={(event, data) => {
-        //         const node = data.node;
+              const { position, ratio } = calculateScrollbarPosition(this.scrollbarRef, this.containerRef, this.scrollbarPosition, data.deltaX);
 
-        //         const newPosition = this.customScrollbarPosition + data.deltaX;
-        //         const customScrollbarWidth = this.getCustomScrollbarWidth();
+              this.scrollbarPosition = position;
 
-        //         console.log('');
-        //         console.log(`current position: ${this.customScrollbarPosition}`);
-        //         console.log(`newPosition: ${newPosition}`);
-        //         console.log(`range: ${this.containerRef.clientWidth - customScrollbarWidth}`);
+              const maxScrollLeft = (this.state.pinnedColumnWidth + this.state.overflowColumnWidth) - this.containerRef.clientWidth;
 
-        //         let xPosition;
-        //         if (newPosition < 0) {
-        //           xPosition = 0;
-        //         } else if (newPosition > this.containerRef.clientWidth - customScrollbarWidth) {
-        //           xPosition = this.containerRef.clientWidth - customScrollbarWidth;
-        //         } else {
-        //           xPosition = newPosition;
-        //         }
-
-        //         this.customScrollbarPosition = Math.floor(xPosition);
-
-        //         requestAnimationFrame(() => {
-        //           node.style.transform = `translateX(${this.customScrollbarPosition}px)`;
-        //           this.overflowHeaderContainer.scrollLeft = this.customScrollbarPosition;
-        //           this.containerRef.scrollLeft = this.customScrollbarPosition;
-        //         });
-        //       }}
-        //     >
-        //       <div
-        //         style={{ height: '100%', width: '50px', backgroundColor: 'grey', borderRadius: '15px', touchAction: 'none', cursor: 'ew-resize' }}
-        //         ref={this.setCustomScrollbarRef}
-        //       />
-        //     </DraggableCore>
-        //   </div>
-        // )}
+              requestAnimationFrame(() => {
+                this.scrollbarRef.style.transform = `translateX(${position}px)`;
+                this.overflowHeaderContainer.scrollLeft = maxScrollLeft * ratio;
+                this.containerRef.scrollLeft = maxScrollLeft * ratio;
+              });
+            }}
+            onMoveEnd={() => { this.scrollbarIsScrolling = false; }}
+          />
+        )}
         fill
         onKeyDown={this.handleKeyDown}
       >
@@ -707,11 +695,23 @@ class DataGrid extends React.Component {
             this.containerRef = ref;
           }}
           onScroll={() => {
-            if (!this.customScrollerIsScrolling) {
-              requestAnimationFrame(() => {
-                this.overflowHeaderContainer.scrollLeft = this.containerRef.scrollLeft;
-              });
+            if (this.scrollbarIsScrolling || this.headerIsScrolling) {
+              return;
             }
+
+            this.contentIsScrolling = true;
+
+            requestAnimationFrame(() => {
+              this.overflowHeaderContainer.scrollLeft = this.containerRef.scrollLeft;
+
+              const ratio = this.overflowHeaderContainer.scrollLeft / (this.containerRef.scrollWidth - this.containerRef.clientWidth);
+
+              const position = (this.containerRef.clientWidth - this.scrollbarRef.clientWidth) * ratio;
+
+              this.scrollbarRef.style.transform = `translateX(${position}px)`;
+
+              this.contentIsScrolling = false;
+            });
           }}
         >
           <div

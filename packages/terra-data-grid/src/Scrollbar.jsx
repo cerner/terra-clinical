@@ -4,6 +4,8 @@ import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
 import ResizeObserver from 'resize-observer-polyfill';
 
+import { calculateScrollbarPosition } from './scrollbarUtils';
+
 import styles from './Scrollbar.scss';
 
 const cx = classNames.bind(styles);
@@ -32,23 +34,21 @@ class Scrollbar extends React.Component {
     this.setScrollbarRef = this.setScrollbarRef.bind(this);
     this.getScrollbarWidth = this.getScrollbarWidth.bind(this);
     this.updateScrollbarWidth = this.updateScrollbarWidth.bind(this);
+
+    this.scrollPosition = 0;
   }
 
   componentDidMount() {
-    this.resizeObserver = new ResizeObserver((entries) => { this.updateScrollbarWidth(); });
+    this.resizeObserver = new ResizeObserver(() => { this.updateScrollbarWidth(); });
     this.resizeObserver.observe(this.containerRef);
 
     this.updateScrollbarWidth();
-
-    this.scrollPosition = this.scrollbarRef.offsetLeft;
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.overflowWidth !== this.props.overflowWidth) {
       this.updateScrollbarWidth();
     }
-
-    this.scrollPosition = this.scrollbarRef.offsetLeft;
   }
 
   componentWillUnmount() {
@@ -56,32 +56,9 @@ class Scrollbar extends React.Component {
   }
 
   handleDragMove(event, data) {
-    const node = data.node;
-
-    const newPosition = this.scrollPosition + data.deltaX;
-    const scrollbarWidth = this.scrollbarWidth;
-    const containerWidth = this.containerRef.clientWidth;
-
-    let finalPosition;
-    if (newPosition < 0) {
-      finalPosition = 0;
-    } else if (newPosition > containerWidth - scrollbarWidth) {
-      finalPosition = containerWidth - scrollbarWidth;
-    } else {
-      finalPosition = newPosition;
+    if (this.props.onMove) {
+      this.props.onMove(event, data);
     }
-
-    this.scrollPosition = finalPosition;
-
-    const scrollerPositionRatio = finalPosition / (containerWidth - scrollbarWidth);
-
-    requestAnimationFrame(() => {
-      node.style.transform = `translateX(${finalPosition}px)`;
-
-      if (this.props.onMove) {
-        this.props.onMove(event, data, finalPosition, scrollerPositionRatio);
-      }
-    });
   }
 
   handleDragStart(event, data) {
@@ -129,7 +106,7 @@ class Scrollbar extends React.Component {
       return 0;
     }
 
-    const scrollbarWidth = Math.min(containerWidth, (containerWidth * containerWidth) / overflowWidth);// containerWidth / (Math.max(1, overflowWidth / containerWidth));
+    const scrollbarWidth = Math.min(containerWidth, (containerWidth * containerWidth) / overflowWidth);
     return scrollbarWidth;
   }
 
@@ -137,6 +114,11 @@ class Scrollbar extends React.Component {
     this.scrollbarWidth = this.getScrollbarWidth();
 
     this.scrollbarRef.style.width = `${this.scrollbarWidth}px`;
+
+    if (this.scrollPosition + this.scrollbarWidth > this.containerRef.clientWidth) {
+      this.scrollPosition = this.containerRef.clientWidth - this.scrollbarWidth;
+      this.scrollbarRef.style.transform = `translateX(${this.scrollPosition}px)`;
+    }
   }
 
   render() {
