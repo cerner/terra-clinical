@@ -497,6 +497,14 @@ class DataGrid extends React.Component {
 
             this.headerIsScrolling = true;
 
+            if (this.scrollTimeout) {
+              clearTimeout(this.scrollTimeout);
+            }
+
+            this.scrollTimeout = setTimeout(() => {
+              this.headerIsScrolling = false;
+            }, 100);
+
             requestAnimationFrame(() => {
               this.containerRef.scrollLeft = this.overflowHeaderContainer.scrollLeft;
 
@@ -505,15 +513,7 @@ class DataGrid extends React.Component {
               const position = (this.containerRef.clientWidth - this.scrollbarRef.clientWidth) * ratio;
 
               this.scrollbarRef.style.transform = `translateX(${position}px)`;
-
-              this.headerIsScrolling = false;
             });
-
-            if (!this.customScrollerIsScrolling) {
-              requestAnimationFrame(() => {
-                this.containerRef.scrollLeft = this.overflowHeaderContainer.scrollLeft;
-              });
-            }
           }}
         >
           <div
@@ -701,6 +701,14 @@ class DataGrid extends React.Component {
 
             this.contentIsScrolling = true;
 
+            if (this.scrollTimeout) {
+              clearTimeout(this.scrollTimeout);
+            }
+
+            this.scrollTimeout = setTimeout(() => {
+              this.contentIsScrolling = false;
+            }, 100);
+
             requestAnimationFrame(() => {
               this.overflowHeaderContainer.scrollLeft = this.containerRef.scrollLeft;
 
@@ -709,8 +717,6 @@ class DataGrid extends React.Component {
               const position = (this.containerRef.clientWidth - this.scrollbarRef.clientWidth) * ratio;
 
               this.scrollbarRef.style.transform = `translateX(${position}px)`;
-
-              this.contentIsScrolling = false;
             });
           }}
         >
