@@ -14,7 +14,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  item: undefined,
 };
 
 const DetailListItem = ({ item, ...customProps }) => {

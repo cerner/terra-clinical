@@ -103,10 +103,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  birthdate: undefined,
   granularity: 'month',
-  granularitySelectName: undefined,
-  granularitySelectOnChange: undefined,
   precision: 'on/at',
   precisionSet: [
     'on/at',
@@ -115,11 +112,6 @@ const defaultProps = {
     'after',
     'unknown',
   ],
-  precisionSelectName: undefined,
-  precisionSelectOnChange: undefined,
-  onsetDate: undefined,
-  onsetDateInputName: undefined,
-  onsetDateInputOnChange: undefined,
 };
 
 const contextTypes = {
@@ -132,7 +124,6 @@ const contextTypes = {
 };
 
 class OnsetPicker extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -280,7 +271,7 @@ class OnsetPicker extends React.Component {
       ...customProps
     } = this.props;
 
-    const intl = this.context.intl;
+    const { intl } = this.context;
 
     let granularitySelect = null;
     if (this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) {
@@ -347,19 +338,21 @@ class OnsetPicker extends React.Component {
 
     let dateSelect = null;
     if (this.state.granularity === GranularityOptions.DATE) {
-      dateSelect = (<Field className={cx('field-inline')} isInline>
-        <DatePicker
-          onChange={this.changeDate}
-          minDate={this.props.birthdate}
-          maxDate={moment().format()}
-          selectedDate={this.state.onsetDate.format()}
-          name={this.props.onsetDateInputName}
-        />
-      </Field>);
+      dateSelect = (
+        <Field className={cx('field-inline')} isInline>
+          <DatePicker
+            onChange={this.changeDate}
+            minDate={this.props.birthdate}
+            maxDate={moment().format()}
+            selectedDate={this.state.onsetDate.format()}
+            name={this.props.onsetDateInputName}
+          />
+        </Field>
+      );
     }
 
     return (
-      (<div data-terra-clinical-onset-picker {...customProps}>
+      <div data-terra-clinical-onset-picker {...customProps}>
 
         <Fieldset className={cx('fieldset')}>
           {/* Precision */}
@@ -384,7 +377,7 @@ class OnsetPicker extends React.Component {
             {dateSelect}
           </Fieldset>
         }
-      </div>)
+      </div>
     );
   }
 }
