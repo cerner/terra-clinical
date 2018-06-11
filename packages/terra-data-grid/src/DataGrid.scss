@@ -79,66 +79,69 @@
 
   // Sticky implementation
 
-  .container {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
+  // .container {
+  //   height: 100%;
+  //   width: 100%;
+  //   overflow: hidden;
+  // }
 
-  .container.legacy-sticky {
-    overflow-y: auto;
-    position: relative;
-  }
+  // .container.legacy-sticky {
+  //   overflow-y: auto;
+  //   position: relative;
+  // }
 
-  .overflow-container {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    position: relative;
+  // .overflow-container {
+  //   height: 100%;
+  //   width: 100%;
+  //   overflow: auto;
+  //   position: relative;
 
+  //   background-color: #cccccc;
+  // }
+
+  .vertical-overflow-container {
     background-color: #cccccc;
+    position: relative;
+    overflow-x: none;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
   }
 
-  .overflow-container.legacy-sticky {
-    position: static;
+  .scroll-header-container {
+    height: calc(100% + 20px);
+    margin-bottom: -20px;
     overflow-x: auto;
-    overflow-y: none;
-    height: auto;
-    width: auto;
+    padding-bottom: 20px;
+    width: 100%;
   }
 
   .scroll-header {
     height: 2rem;
     position: relative;
-    position: -webkit-sticky;
-    position: sticky;
     top: 0;
     z-index: 101;
   }
 
   .fixed-content {
-    position: relative;
-    position: -webkit-sticky;
-    position: sticky;
     left: 0;
-    height: 0px;
-    overflow: visible;
     z-index: 100;
     transform: translateZ(0px); // Necessary to correct variability with overflowed content interactions in Chrome
+
+    position: absolute;
+    top: 0;
 
     .cell-container:last-child {
       border-right: 2px solid rgb(155, 159, 161);
     }
   }
 
-  .fixed-content.legacy-sticky {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
   .scroll-content {
+    margin-bottom: -20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
     position: relative;
+    width: 100%;
   }
 
   .section-header-container {

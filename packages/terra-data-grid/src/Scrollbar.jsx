@@ -4,8 +4,6 @@ import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
 import ResizeObserver from 'resize-observer-polyfill';
 
-import { calculateScrollbarPosition } from './scrollbarUtils';
-
 import styles from './Scrollbar.scss';
 
 const cx = classNames.bind(styles);
