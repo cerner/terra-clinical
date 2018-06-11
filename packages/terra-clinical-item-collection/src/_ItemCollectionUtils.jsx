@@ -11,9 +11,15 @@ const KEYCODES = {
  * @ param {requiredElements} obj - The boolean indicators that determine which elements should be displayed.
  */
 function addMissingListElements(childProps, requiredElements) {
-  const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
-  const { startAccessory, children, comment, endAccessory } = childProps;
-  const itemViewPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
+  const {
+    hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory,
+  } = requiredElements;
+  const {
+    startAccessory, children, comment, endAccessory,
+  } = childProps;
+  const itemViewPieces = {
+    startAccessory: null, children: null, comment: null, endAccessory: null,
+  };
 
   itemViewPieces.startAccessory = hasStartAccessory ? startAccessory : null;
   itemViewPieces.reserveStartAccessorySpace = hasStartAccessory;
@@ -39,9 +45,15 @@ function addMissingListElements(childProps, requiredElements) {
  * @ param {requiredElements} obj - The boolean indicators that determine which elements should be displayed.
  */
 function addMissingTableElements(childProps, requiredElements) {
-  const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
-  const { startAccessory, children, comment, endAccessory } = childProps;
-  const tableRowPieces = { startAccessory: null, children: null, comment: null, endAccessory: null };
+  const {
+    hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory,
+  } = requiredElements;
+  const {
+    startAccessory, children, comment, endAccessory,
+  } = childProps;
+  const tableRowPieces = {
+    startAccessory: null, children: null, comment: null, endAccessory: null,
+  };
 
   if (hasStartAccessory) {
     tableRowPieces.startAccessory = startAccessory || ' ';

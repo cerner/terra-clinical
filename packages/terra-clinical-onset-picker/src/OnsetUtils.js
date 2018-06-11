@@ -11,7 +11,6 @@ const PrecisionOptions = {
 };
 
 class OnsetUtils {
-
   /*
    * Create object to pass to SelectField for month options
    * Filters out months before birth or after the current date.
@@ -21,17 +20,17 @@ class OnsetUtils {
     const end = moment();
     const onsetYear = onsetDate.year();
     let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
-                          { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
-                          { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
-                          { value: '3', display: intl.formatMessage({ id: 'Terra.onsetPicker.april' }) },
-                          { value: '4', display: intl.formatMessage({ id: 'Terra.onsetPicker.may' }) },
-                          { value: '5', display: intl.formatMessage({ id: 'Terra.onsetPicker.june' }) },
-                          { value: '6', display: intl.formatMessage({ id: 'Terra.onsetPicker.july' }) },
-                          { value: '7', display: intl.formatMessage({ id: 'Terra.onsetPicker.august' }) },
-                          { value: '8', display: intl.formatMessage({ id: 'Terra.onsetPicker.september' }) },
-                          { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
-                          { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
-                          { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
+      { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
+      { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
+      { value: '3', display: intl.formatMessage({ id: 'Terra.onsetPicker.april' }) },
+      { value: '4', display: intl.formatMessage({ id: 'Terra.onsetPicker.may' }) },
+      { value: '5', display: intl.formatMessage({ id: 'Terra.onsetPicker.june' }) },
+      { value: '6', display: intl.formatMessage({ id: 'Terra.onsetPicker.july' }) },
+      { value: '7', display: intl.formatMessage({ id: 'Terra.onsetPicker.august' }) },
+      { value: '8', display: intl.formatMessage({ id: 'Terra.onsetPicker.september' }) },
+      { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
+      { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
+      { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
 
     // If populating months for the start or end year, exclude months before the starting date or after the ending date
     if (start.year() === onsetYear) {
@@ -53,12 +52,10 @@ class OnsetUtils {
     const start = moment(birthdate).year();
     const end = moment().year();
 
-    return Array((end - start) + 1).fill(undefined).map(
-      (x, idx) => {
-        const year = start + idx;
-        return { value: year.toString(), display: year.toString() };
-      },
-    );
+    return Array((end - start) + 1).fill(undefined).map((x, idx) => {
+      const year = start + idx;
+      return { value: year.toString(), display: year.toString() };
+    });
   }
 
   /**
