@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.7.0 - (June 12, 2018)
+----------
 ### Changed
 * Conform to eslint updates
 
