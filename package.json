@@ -82,7 +82,7 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
-    "terra-dev-site": "^1.0.0",
+    "terra-dev-site": "^1.2.0",
     "terra-toolkit": "^3.3.1"
   }
 }
