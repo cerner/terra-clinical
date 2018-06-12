@@ -1,9 +1,6 @@
 import React from 'react';
-import Base from 'terra-base';
 import moment from 'moment';
 import OnsetPicker from '../../../OnsetPicker';
-
-const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
 class FiveYears extends React.Component {
   constructor(props) {
@@ -50,7 +47,7 @@ class FiveYears extends React.Component {
 
   render() {
     return (
-      <Base locale={locale}>
+      <div>
         <p>Onset picker with onChange handlers, birthdate of 2011-09-20 (5 years).</p>
         <p>Current date is locked to September 20, 2016</p>
         <p>Testing returns from handlers are correct, if they are the json object should get updated on changes.</p>
@@ -71,7 +68,7 @@ class FiveYears extends React.Component {
           <button type="submit">Submit</button>
         </form>
         <p data-test-json>{JSON.stringify(this.state.submittedData)}</p>
-      </Base>
+      </div>
     );
   }
 }
