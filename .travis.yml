@@ -82,7 +82,9 @@ jobs:
         - 'rm -f $HOME/docker/*.tar.gz'
 stages:
   - build
-  - lint jest and danger
+  - lint
+  - danger
+  - jest
   - test
   - name: deploy
     if: type != pull_request
