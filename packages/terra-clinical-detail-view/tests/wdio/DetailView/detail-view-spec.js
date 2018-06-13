@@ -12,7 +12,7 @@ describe('Detail View', () => {
     Terra.should.matchScreenshot({ viewports, selector });
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
-      selector: selector,
+      selector,
       properties: {
         '--terra-detail-view-subtitle-color': 'purple',
         '--terra-detail-view-accessory-color': 'red',
