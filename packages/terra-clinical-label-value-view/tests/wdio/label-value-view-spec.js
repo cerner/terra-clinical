@@ -14,7 +14,7 @@ describe('Label Value View', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-label-value-label-color': 'purple',
+        '--terra-label-value-view-label-color': 'purple',
       },
     });
     // Remove {rules} once #306 is resolved
