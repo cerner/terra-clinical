@@ -1,0 +1,9 @@
+:local {
+  .header-cell {
+    border-right: 1px solid #b3b4b5;
+  }
+
+  .header-cell.selectable:hover {
+    background-color: #e9e9e9;
+  }
+}

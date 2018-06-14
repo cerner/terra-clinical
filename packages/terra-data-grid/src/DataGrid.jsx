@@ -4,10 +4,12 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 
-import ResizeHandle from './ResizeHandle';
+import Cell from './Cell';
+import HeaderCell from './HeaderCell';
 import Scrollbar from './Scrollbar';
-import ContentCell from './default-components/ContentCell';
-import HeaderCell from './default-components/HeaderCell';
+
+import ContentCellLayout from './default-components/ContentCellLayout';
+import HeaderCellLayout from './default-components/HeaderCellLayout';
 import SectionHeader from './default-components/SectionHeader';
 
 import { calculateScrollbarPosition } from './scrollbarUtils';
@@ -19,7 +21,6 @@ const cx = classNames.bind(styles);
 
 const Section = () => null;
 const Row = () => null;
-const Cell = () => null;
 
 const propTypes = {
   pinnedColumns: PropTypes.arrayOf(PropTypes.shape({
@@ -416,19 +417,16 @@ class DataGrid extends React.Component {
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
-      <div
+      <HeaderCell
         key={columnId}
-        className={cx(['cell-container', 'header-cell-container', { selectable: columnData.selectable }])}
-        style={{ width: `${internalColumnWidths[columnId]}px`, height: '100%' }}
-        tabIndex={columnData.selectable ? '0' : null}
-        onClick={this.handleHeaderClick}
-        data-header-cell
-        data-column-id={columnId}
+        columnId={columnId}
+        width={`${internalColumnWidths[columnId]}px`}
+        isSelectable={columnData.selectable}
+        isResizeable={columnData.resizable}
+        onCellClick={this.handleHeaderClick}
       >
         {columnData.component}
-        {columnData.resizable ? <ResizeHandle id={columnId} onResizeStop={this.updateColumnWidths} /> : null }
-      </div>
-      /* eslint-enable jsx-a11y/no-static-element-interactions */
+      </HeaderCell>
     );
   }
 
@@ -502,7 +500,7 @@ class DataGrid extends React.Component {
   }
 
   renderSection(section, columns, width, withHeader) {
-    const { rowHeight } = this.props;
+    const { rowHeight, onCellClick } = this.props;
     const { internalColumnWidths } = this.state;
 
     return (
@@ -549,19 +547,18 @@ class DataGrid extends React.Component {
               const cell = section.rows[rowId].cells[column.id];
 
               return (
-                <div
-                  onClick={this.handleContentClick}
+                <Cell
                   key={`${section.id}-${section.rows[rowId].id}-${column.id}`}
-                  className={cx(['cell-container', { selectable: cell.isSelectable, selected: cell.isSelected }])}
-                  style={{ width: `${internalColumnWidths[column.id]}px` }}
-                  tabIndex={cell.isSelectable ? '0' : undefined}
-                  data-cell
-                  data-column-id={column.id}
-                  data-row-id={section.rows[rowId].id}
-                  data-section-id={section.id}
+                  sectionId={section.id}
+                  rowId={section.rows[rowId].id}
+                  columnId={column.id}
+                  width={`${internalColumnWidths[column.id]}px`}
+                  onCellClick={onCellClick || undefined}
+                  isSelectable={cell.isSelectable}
+                  isSelected={cell.isSelected}
                 >
                   {cell.content}
-                </div>
+                </Cell>
               );
             })}
           </div>
@@ -584,26 +581,21 @@ class DataGrid extends React.Component {
     return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], overflowColumns, `${overflowColumnWidth}px`));
   }
 
-  handleHeaderClick(event) {
+  handleHeaderClick(columnId) {
     const { onHeaderClick } = this.props;
 
-    const headerCellNode = event.currentTarget;
-
-    if (headerCellNode.classList.contains(cx('selectable')) && onHeaderClick) {
-      onHeaderClick(headerCellNode.getAttribute('data-column-id'));
+    if (onHeaderClick) {
+      onHeaderClick(columnId);
     }
   }
 
   handleContentClick(event) {
     const { onCellClick } = this.props;
 
-    const cellNode = event.currentTarget;
+    const cellTouchTargetNode = event.currentTarget;
+    const cellNode = cellTouchTargetNode.parentNode;
 
-    if (!cellNode.classList.contains(cx('cell-container'))) {
-      return;
-    }
-
-    if (cellNode.classList.contains(cx('selectable')) && onCellClick) {
+    if (cellTouchTargetNode.classList.contains(cx('selectable')) && onCellClick) {
       onCellClick(cellNode.getAttribute('data-row-id'), cellNode.getAttribute('data-column-id'));
     }
   }
@@ -705,4 +697,4 @@ DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
 export default DataGrid;
-export { Section, Row, Cell, ContentCell, HeaderCell };
+export { Section, Row, Cell, HeaderCell, ContentCellLayout, HeaderCellLayout };

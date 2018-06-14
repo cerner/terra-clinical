@@ -14,37 +14,12 @@
     background-color: lightgrey;
   }
 
-  .cell-container {
-    position: relative;
-    flex: 0 0 auto;
-    border-right: 1px solid #c8cacb;
-  }
-
-  .cell-container.selectable:hover {
-    background-color: #e2f2fc;
-    cursor: pointer;
-  }
-
-  .cell-container.selected {
-    background-color: var(--terra-data-grid-cell-selected-background-color,#cbe7fa);
-    box-shadow: inset 0 0 5px 0px #0092e0;
-  }
-
-  .cell-container.selected:hover {
-    background-color: var(--terra-data-grid-cell-selected-background-color,#b3ddf7);
-  }
-
   .header-cell-container.selectable:hover {
     background-color: #e9e9e9;
   }
 
   .header-cell-container {
     border-right: 1px solid #b3b4b5;
-  }
-
-  .cell-container.selectable:focus {
-    outline: none;
-    box-shadow: inset 0 0 5px 0px #0092e0;
   }
 
   .pinned-header {
@@ -59,45 +34,25 @@
     }
   }
 
-  .resize-handle {
-    height: 100%;
-    position: absolute;
-    width: 5px;
-    right: 0;
-    top:0;
-    cursor: col-resize;
+  // .resize-handle {
+  //   height: 100%;
+  //   position: absolute;
+  //   width: 5px;
+  //   right: 0;
+  //   top:0;
+  //   cursor: col-resize;
 
-    &:hover {
-      background-color: grey;
-    }
+  //   &:hover {
+  //     background-color: grey;
+  //   }
 
-    &.resize-handle-dragging {
-      background-color: darkslategrey;
-      z-index: 200;
-    }
-  }
+  //   &.resize-handle-dragging {
+  //     background-color: darkslategrey;
+  //     z-index: 200;
+  //   }
+  // }
 
   // Sticky implementation
-
-  // .container {
-  //   height: 100%;
-  //   width: 100%;
-  //   overflow: hidden;
-  // }
-
-  // .container.legacy-sticky {
-  //   overflow-y: auto;
-  //   position: relative;
-  // }
-
-  // .overflow-container {
-  //   height: 100%;
-  //   width: 100%;
-  //   overflow: auto;
-  //   position: relative;
-
-  //   background-color: #cccccc;
-  // }
 
   .vertical-overflow-container {
     background-color: #cccccc;

@@ -5,7 +5,7 @@ import Button from 'terra-button';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-import DataGrid, { Section, Row, Cell, ContentCell, HeaderCell } from '../../src/DataGrid';
+import DataGrid, { Section, Row, Cell, ContentCellLayout, HeaderCellLayout } from '../../src/DataGrid';
 
 import styles from './DataGridStandard.scss';
 
@@ -158,7 +158,7 @@ class DataGridStandard extends React.Component {
             isSelectable
             isSelected={selectedCell && selectedCell.rowKey === `${sectionId}-Row${index}` && selectedCell.columnKey === columnKey}
           >
-            <ContentCell
+            <ContentCellLayout
               text={`Row ${index}, Column ${columnKey}`}
             />
           </Cell>
@@ -199,7 +199,7 @@ class DataGridStandard extends React.Component {
             selectable: true,
             resizable: true,
             component: (
-              <HeaderCell
+              <HeaderCellLayout
                 text="Column 0"
                 sortDirection={sortedColumnKey === 'column0' ? sortDirection : null}
               />
@@ -211,7 +211,7 @@ class DataGridStandard extends React.Component {
             selectable: true,
             resizable: true,
             component: (
-              <HeaderCell
+              <HeaderCellLayout
                 text="Column 1"
                 sortDirection={sortedColumnKey === 'column1' ? sortDirection : null}
               />
@@ -225,7 +225,7 @@ class DataGridStandard extends React.Component {
             selectable: true,
             resizable: true,
             component: (
-              <HeaderCell
+              <HeaderCellLayout
                 text="Column 2" sortDirection={sortedColumnKey === 'column2' ? sortDirection : null}
               />
             ),
@@ -235,7 +235,7 @@ class DataGridStandard extends React.Component {
             startWidth: 300,
             selectable: false,
             resizable: true,
-            component: <HeaderCell text="Column 3 (No Sort)" sortDirection={sortedColumnKey === 'column3' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 3 (No Sort)" sortDirection={sortedColumnKey === 'column3' ? sortDirection : null} />,
           },
           {
             id: 'column4',
@@ -243,42 +243,42 @@ class DataGridStandard extends React.Component {
             selectable: true,
             resizable: true,
             text: 'Column 4',
-            component: <HeaderCell text="Column 4" sortDirection={sortedColumnKey === 'column4' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 4" sortDirection={sortedColumnKey === 'column4' ? sortDirection : null} />,
           },
           {
             id: 'column5',
             startWidth: 300,
             selectable: true,
             resizable: true,
-            component: <HeaderCell text="Column 5" sortDirection={sortedColumnKey === 'column5' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 5" sortDirection={sortedColumnKey === 'column5' ? sortDirection : null} />,
           },
           {
             id: 'column6',
             startWidth: 300,
             selectable: true,
             resizable: false,
-            component: <HeaderCell text="Column 6 (No resize)" sortDirection={sortedColumnKey === 'column6' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 6 (No resize)" sortDirection={sortedColumnKey === 'column6' ? sortDirection : null} />,
           },
           {
             id: 'column7',
             startWidth: 300,
             selectable: true,
             resizable: true,
-            component: <HeaderCell text="Column 7" sortDirection={sortedColumnKey === 'column7' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 7" sortDirection={sortedColumnKey === 'column7' ? sortDirection : null} />,
           },
           {
             id: 'column8',
             startWidth: 300,
             selectable: true,
             resizable: true,
-            component: <HeaderCell text="Column 8" sortDirection={sortedColumnKey === 'column8' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 8" sortDirection={sortedColumnKey === 'column8' ? sortDirection : null} />,
           },
           {
             id: 'column9',
             startWidth: 300,
             selectable: true,
             resizable: true,
-            component: <HeaderCell text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,
+            component: <HeaderCellLayout text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,
           },
         ]}
         rowHeight="5rem"

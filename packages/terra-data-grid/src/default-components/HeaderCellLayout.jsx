@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
-import styles from './HeaderCell.scss';
+import styles from './HeaderCellLayout.scss';
 
 const cx = classNames.bind(styles);
 
@@ -13,7 +13,7 @@ const propTypes = {
   sortDirection: PropTypes.oneOf(['ascending', 'descending']),
 };
 
-const HeaderCell = ({ text, sortDirection }) => {
+const HeaderCellLayout = ({ text, sortDirection }) => {
   let sortIndicator;
   if (sortDirection) {
     sortIndicator = (
@@ -34,6 +34,6 @@ const HeaderCell = ({ text, sortDirection }) => {
   );
 };
 
-HeaderCell.propTypes = propTypes;
+HeaderCellLayout.propTypes = propTypes;
 
-export default HeaderCell;
+export default HeaderCellLayout;
