@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Remove Base wrapper from test examples. Terra-dev-site wraps all test examples in Base.
 
+2.7.0 - (June 12, 2018)
+----------
+### Changed
+* Conform to eslint updates
+
 2.6.0 - (May 30, 2018)
 ----------
 ### Changed

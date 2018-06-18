@@ -42,7 +42,9 @@ const defaultProps = {
   isSubheader: false,
 };
 
-const Header = ({ children, title, startContent, endContent, isSubheader, ...customProps }) => {
+const Header = ({
+  children, title, startContent, endContent, isSubheader, ...customProps
+}) => {
   let startElement;
   if (startContent) {
     startElement = <div className={cx('flex-end')}>{startContent}</div>;

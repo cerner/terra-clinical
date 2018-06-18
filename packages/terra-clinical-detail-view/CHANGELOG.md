@@ -4,6 +4,12 @@ ChangeLog
 Unreleased
 ----------
 
+2.6.0 - (June 12, 2018)
+----------
+### Changed
+* Conform to eslint updates
+* Added theming variables in Detail View
+
 2.5.0 - (May 30, 2018)
 ----------
 ### Changed

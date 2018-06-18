@@ -14,12 +14,14 @@ const DetailViewDivided = () => (
       title="Complete Blood Count Order"
       subtitles={['Accession', '239493849']}
       details={[
-        (<DetailView.DetailList title="Collection Details" key="order-info-2">
-          <DetailView.DetailListItem item={item1} />
-          <DetailView.DetailListItem item={item2} />
-          <DetailView.DetailListItem item={item3} />
-          <DetailView.DetailListItem item={item4} />
-        </DetailView.DetailList>),
+        (
+          <DetailView.DetailList title="Collection Details" key="order-info-2">
+            <DetailView.DetailListItem item={item1} />
+            <DetailView.DetailListItem item={item2} />
+            <DetailView.DetailListItem item={item3} />
+            <DetailView.DetailListItem item={item4} />
+          </DetailView.DetailList>
+        ),
       ]}
       isDivided={false}
     />

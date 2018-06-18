@@ -25,18 +25,18 @@ const defaultProps = {
 };
 
 const ItemComment = ({
-    text,
-    isTruncated,
-    ...customProps
-  }) => (
-    <ItemDisplay
-      text={text}
-      isTruncated={isTruncated}
-      icon={<CommentIndicator className={cx('inline-icon')} />}
-      {...customProps}
-      className={cx('item-comment', customProps.className)}
-    />
-  );
+  text,
+  isTruncated,
+  ...customProps
+}) => (
+  <ItemDisplay
+    text={text}
+    isTruncated={isTruncated}
+    icon={<CommentIndicator className={cx('inline-icon')} />}
+    {...customProps}
+    className={cx('item-comment', customProps.className)}
+  />
+);
 
 ItemComment.propTypes = propTypes;
 ItemComment.defaultProps = defaultProps;
