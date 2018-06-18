@@ -8,6 +8,7 @@ Unreleased
 ----------
 ### Changed
 * Conform to eslint updates
+* Added theming variables in Label Value
 
 2.5.0 - (May 30, 2018)
 ----------
