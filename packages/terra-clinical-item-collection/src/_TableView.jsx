@@ -34,7 +34,9 @@ const propTypes = {
 };
 
 function createTableLayout(requiredElements) {
-  const { hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory } = requiredElements;
+  const {
+    hasStartAccessory, numberOfDisplays, hasComment, hasEndAccessory,
+  } = requiredElements;
 
   const displays = [];
   if (numberOfDisplays) {
@@ -61,7 +63,9 @@ function createTableRows(children, onSelect, requiredElements) {
   });
 }
 
-const TableView = ({ children, onSelect, isTablePadded, isTableStriped, requiredElements }) => {
+const TableView = ({
+  children, onSelect, isTablePadded, isTableStriped, requiredElements,
+}) => {
   const tableLayout = createTableLayout(requiredElements);
   const tableRows = createTableRows(children, onSelect, requiredElements);
 

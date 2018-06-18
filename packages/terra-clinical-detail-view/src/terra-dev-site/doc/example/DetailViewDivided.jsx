@@ -20,16 +20,20 @@ const DetailViewDivided = () => (
       title="Mother"
       subtitles={['Martha (58 years)', '[second line for subtitles]']}
       details={[
-        (<DetailView.DetailList title={detail1title} key="order-info-1">
-          <DetailView.DetailListItem item={detail1item1} />
-          <DetailView.DetailListItem item={detail1item2} />
-          <DetailView.DetailListItem item={detail1item3} />
-        </DetailView.DetailList>),
-        (<DetailView.DetailList title={detail2title} key="order-info-2">
-          <DetailView.DetailListItem item={detail2item1} />
-          <DetailView.DetailListItem item={detail2item2} />
-          <DetailView.DetailListItem item={detail2item3} />
-        </DetailView.DetailList>),
+        (
+          <DetailView.DetailList title={detail1title} key="order-info-1">
+            <DetailView.DetailListItem item={detail1item1} />
+            <DetailView.DetailListItem item={detail1item2} />
+            <DetailView.DetailListItem item={detail1item3} />
+          </DetailView.DetailList>
+        ),
+        (
+          <DetailView.DetailList title={detail2title} key="order-info-2">
+            <DetailView.DetailListItem item={detail2item1} />
+            <DetailView.DetailListItem item={detail2item2} />
+            <DetailView.DetailListItem item={detail2item3} />
+          </DetailView.DetailList>
+        ),
       ]}
       footer="Last Modified by: Hollister MD, David MD at 09/12/2011 11:34:12AM"
     />

@@ -46,13 +46,13 @@ const defaultProps = {
 };
 
 const ItemDisplay = ({
-    text,
-    textStyle,
-    isTruncated,
-    isDisabled,
-    icon,
-    ...customProps
-  }) => {
+  text,
+  textStyle,
+  isTruncated,
+  isDisabled,
+  icon,
+  ...customProps
+}) => {
   const componentClassNames = cx([
     'item-display',
     { 'is-disabled': isDisabled },
