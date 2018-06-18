@@ -19,6 +19,7 @@ Cerner Corporation
 - Nathan Faltermeier [@Blackop778]
 - Dinesh Singh [@dineshsingh9]
 - Ben Boersma [@BenBoersma]
+- Mayuri Kini [@mayurikini]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -39,3 +40,4 @@ Cerner Corporation
 [@Blackop778]: https://github.com/Blackop778
 [@dineshsingh9]: https://github.com/DineshSingh9
 [@BenBoersma]: https://github.com/BenBoersma
+[@mayurikini]: https://github.com/mayurikini
