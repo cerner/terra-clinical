@@ -104,19 +104,11 @@ class Scrollbar extends React.Component {
       return 0;
     }
 
-    const scrollbarWidth = Math.min(containerWidth, (containerWidth * containerWidth) / overflowWidth);
-    return scrollbarWidth;
+    return Math.min(containerWidth, (containerWidth * containerWidth) / overflowWidth);
   }
 
   updateScrollbarWidth() {
-    this.scrollbarWidth = this.getScrollbarWidth();
-
-    this.scrollbarRef.style.width = `${this.scrollbarWidth}px`;
-
-    if (this.scrollPosition + this.scrollbarWidth > this.containerRef.clientWidth) {
-      this.scrollPosition = this.containerRef.clientWidth - this.scrollbarWidth;
-      this.scrollbarRef.style.transform = `translateX(${this.scrollPosition}px)`;
-    }
+    this.scrollbarRef.style.width = `${this.getScrollbarWidth()}px`;
   }
 
   render() {

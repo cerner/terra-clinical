@@ -1,28 +1,36 @@
 :local {
-  .row {
-    display: flex;
-    background-color: white;
-    min-width: 100%;
-  }
+  .header-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 
-  .row.striped {
-    background-color: #f4f4f4;
-  }
+    .pinned-header {
+      border-bottom: 1px solid grey;
+      background-color: lightgrey;
+      display: flex;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      height: 100%;
+    }
 
-  .header-row {
-    border-bottom: 1px solid grey;
-    background-color: lightgrey;
-  }
+    .header-overflow-container {
+      height: calc(100% + 20px);
+      margin-bottom: -20px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      width: 100%;
 
-  .pinned-header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    z-index: 10000;
-
-    .cell-container:last-child {
-      border-right: 2px solid rgb(155, 159, 161);
+      .overflow-header {
+        border-bottom: 1px solid grey;
+        background-color: lightgrey;
+        display: flex;
+        height: 100%;
+        min-width: 100%;
+        position: relative;
+        top: 0;
+      }
     }
   }
 
@@ -31,25 +39,9 @@
   .vertical-overflow-container {
     background-color: #cccccc;
     position: relative;
-    overflow-x: none;
     overflow-y: auto;
     height: 100%;
     width: 100%;
-  }
-
-  .scroll-header-container {
-    height: calc(100% + 20px);
-    margin-bottom: -20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    width: 100%;
-  }
-
-  .scroll-header {
-    height: 2rem;
-    position: relative;
-    top: 0;
-    z-index: 101;
   }
 
   .fixed-content {
@@ -59,10 +51,6 @@
 
     position: absolute;
     top: 0;
-
-    .cell-container:last-child {
-      border-right: 2px solid rgb(155, 159, 161);
-    }
   }
 
   .scroll-content {
