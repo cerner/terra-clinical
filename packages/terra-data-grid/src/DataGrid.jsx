@@ -6,6 +6,7 @@ import ContentContainer from 'terra-content-container';
 
 import Cell from './Cell';
 import HeaderCell from './HeaderCell';
+import Row from './Row';
 import Scrollbar from './Scrollbar';
 
 import ContentCellLayout from './default-components/ContentCellLayout';
@@ -20,7 +21,6 @@ import styles from './DataGrid.scss';
 const cx = classNames.bind(styles);
 
 const Section = () => null;
-const Row = () => null;
 
 const propTypes = {
   pinnedColumns: PropTypes.arrayOf(PropTypes.shape({
@@ -146,8 +146,6 @@ class DataGrid extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.updateColumnWidths = this.updateColumnWidths.bind(this);
-    this.handleContentClick = this.handleContentClick.bind(this);
-    this.handleHeaderClick = this.handleHeaderClick.bind(this);
 
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
     this.renderHeaderRow = this.renderHeaderRow.bind(this);
@@ -413,17 +411,18 @@ class DataGrid extends React.Component {
 
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
+    const { onHeaderClick } = this.props;
     const { internalColumnWidths } = this.state;
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <HeaderCell
         key={columnId}
         columnId={columnId}
         width={`${internalColumnWidths[columnId]}px`}
         isSelectable={columnData.selectable}
         isResizeable={columnData.resizable}
-        onCellClick={this.handleHeaderClick}
+        onResizeEnd={this.updateColumnWidths}
+        onCellClick={onHeaderClick}
       >
         {columnData.component}
       </HeaderCell>
@@ -448,7 +447,6 @@ class DataGrid extends React.Component {
             width: `${pinnedColumnWidth}px`,
             minWidth: `${pinnedColumnWidth}px`,
             height: headerHeight,
-            overflow: 'hidden',
           }}
         >
           {pinnedColumns.map(column => this.renderHeaderCell(column))}
@@ -535,13 +533,12 @@ class DataGrid extends React.Component {
           </div>
         ) : null}
         {(!section.isCollapsible || !section.isInitiallyCollapsed) && section.rows && section.rowOrdering.map((rowId, index) => (
-          <div
+          <Row
             key={`${section.id}-${section.rows[rowId].id}`}
-            className={cx(['row', { striped: index % 2 > 0 }])}
-            style={{ width, height: rowHeight }}
-            data-row
-            data-row-id={section.rows[rowId].id}
-            data-section-id={section.id}
+            sectionId={section.id}
+            rowId={section.rows[rowId].id}
+            width={width}
+            height={rowHeight}
           >
             {columns.map((column) => {
               const cell = section.rows[rowId].cells[column.id];
@@ -561,7 +558,7 @@ class DataGrid extends React.Component {
                 </Cell>
               );
             })}
-          </div>
+          </Row>
         ))}
       </div>
     );
@@ -579,25 +576,6 @@ class DataGrid extends React.Component {
     const { sections, sectionOrdering, overflowColumnWidth } = this.state;
 
     return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], overflowColumns, `${overflowColumnWidth}px`));
-  }
-
-  handleHeaderClick(columnId) {
-    const { onHeaderClick } = this.props;
-
-    if (onHeaderClick) {
-      onHeaderClick(columnId);
-    }
-  }
-
-  handleContentClick(event) {
-    const { onCellClick } = this.props;
-
-    const cellTouchTargetNode = event.currentTarget;
-    const cellNode = cellTouchTargetNode.parentNode;
-
-    if (cellTouchTargetNode.classList.contains(cx('selectable')) && onCellClick) {
-      onCellClick(cellNode.getAttribute('data-row-id'), cellNode.getAttribute('data-column-id'));
-    }
   }
 
   getCustomScrollbarWidth() {

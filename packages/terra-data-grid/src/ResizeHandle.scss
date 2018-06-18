@@ -1,12 +1,13 @@
 :local {
   .resize-handle {
+    cursor: col-resize;
     height: 100%;
+    pointer-events: auto;
     position: absolute;
-    width: 5px;
     right: 0;
     top:0;
     touch-action: none;
-    cursor: col-resize;
+    width: 5px;
 
     &:hover {
       background-color: grey;

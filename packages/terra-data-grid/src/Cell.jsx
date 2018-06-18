@@ -45,13 +45,17 @@ class Cell extends React.Component {
   }
 
   render() {
-    const { sectionId, rowId, columnId, isSelectable, isSelected, children } = this.props;
+    const { sectionId, rowId, columnId, isSelectable, isSelected, width, onCellClick, children, ...customProps } = this.props;
     const { widthStyle } = this.state;
 
+    const cellClassName = cx(['container', customProps.className]);
+
     return (
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
+        {...customProps}
+        className={cellClassName}
         key={`${sectionId}-${rowId}-${columnId}`}
-        className={cx('container')}
         style={widthStyle}
         data-cell
         data-column-id={columnId}
@@ -67,6 +71,7 @@ class Cell extends React.Component {
           {children}
         </div>
       </div>
+      /* eslint-enable jsx-a11y/no-static-element-interactions */
     );
   }
 }

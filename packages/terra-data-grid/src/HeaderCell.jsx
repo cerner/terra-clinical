@@ -12,7 +12,6 @@ const cx = classNames.bind(styles);
 const propTypes = {
   columnId: PropTypes.string.isRequired,
   isSelectable: PropTypes.bool,
-  isSelected: PropTypes.bool,
   isResizeable: PropTypes.bool,
   width: PropTypes.string,
   onCellClick: PropTypes.func,
@@ -36,7 +35,7 @@ class HeaderCell extends React.Component {
   }
 
   render() {
-    const { columnId, isSelectable, isSelected, isResizeable, width, children, onResizeEnd } = this.props;
+    const { columnId, isSelectable, isResizeable, width, children, onResizeEnd } = this.props;
 
     return (
       <Cell
@@ -44,7 +43,6 @@ class HeaderCell extends React.Component {
         width={width}
         columnId={columnId}
         isSelectable={isSelectable}
-        isSelected={isSelected}
         onCellClick={this.handleCellClick}
         data-header-cell
       >
@@ -58,4 +56,3 @@ class HeaderCell extends React.Component {
 HeaderCell.propTypes = propTypes;
 
 export default HeaderCell;
-export { HeaderCell };

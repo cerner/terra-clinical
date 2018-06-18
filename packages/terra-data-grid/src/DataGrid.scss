@@ -14,14 +14,6 @@
     background-color: lightgrey;
   }
 
-  .header-cell-container.selectable:hover {
-    background-color: #e9e9e9;
-  }
-
-  .header-cell-container {
-    border-right: 1px solid #b3b4b5;
-  }
-
   .pinned-header {
     position: absolute;
     left: 0;
@@ -33,24 +25,6 @@
       border-right: 2px solid rgb(155, 159, 161);
     }
   }
-
-  // .resize-handle {
-  //   height: 100%;
-  //   position: absolute;
-  //   width: 5px;
-  //   right: 0;
-  //   top:0;
-  //   cursor: col-resize;
-
-  //   &:hover {
-  //     background-color: grey;
-  //   }
-
-  //   &.resize-handle-dragging {
-  //     background-color: darkslategrey;
-  //     z-index: 200;
-  //   }
-  // }
 
   // Sticky implementation
 

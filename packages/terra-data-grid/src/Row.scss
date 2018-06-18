@@ -1,0 +1,9 @@
+.row {
+  display: flex;
+  background-color: white;
+  min-width: 100%;
+}
+
+.row:nth-child(odd) {
+  background-color: #f4f4f4;
+}
