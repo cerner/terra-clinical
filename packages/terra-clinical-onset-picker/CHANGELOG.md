@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Remove Base wrapper from test examples. Terra-dev-site wraps all test examples in Base.
 
 2.7.0 - (June 12, 2018)
 ----------
