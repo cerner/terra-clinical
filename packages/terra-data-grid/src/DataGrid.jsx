@@ -150,13 +150,21 @@ class DataGrid extends React.Component {
     /**
      * Refs
      */
+    this.setHeaderOverflowContainerRef = this.setHeaderOverflowContainerRef.bind(this);
+    this.setHorizontalOverflowContainerRef = this.setHorizontalOverflowContainerRef.bind(this);
+    this.setVerticalOverflowContainerRef = this.setVerticalOverflowContainerRef.bind(this);
     this.setScrollbarRef = this.setScrollbarRef.bind(this);
 
     /**
      * Scroll synchronization
      */
+    this.synchronizeHeaderScroll = this.synchronizeHeaderScroll.bind(this);
+    this.synchronizeContentScroll = this.synchronizeContentScroll.bind(this);
     this.synchronizeScrollbar = this.synchronizeScrollbar.bind(this);
+    this.resetHeaderScrollEventMarkers = this.resetHeaderScrollEventMarkers.bind(this);
+    this.resetContentScrollEventMarkers = this.resetContentScrollEventMarkers.bind(this);
     this.resetScrollbarEventMarkers = this.resetScrollbarEventMarkers.bind(this);
+    this.updateScrollbarPosition = this.updateScrollbarPosition.bind(this);
 
     /**
      * Rendering
@@ -240,7 +248,7 @@ class DataGrid extends React.Component {
      * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
      * unnecessary rendering of other components.
      */
-    const sectionHeaderContainers = document.querySelectorAll(`.${cx('fixed-content')} .${cx('section-header-container')}`);
+    const sectionHeaderContainers = document.querySelectorAll(`.${cx('pinned-content-container')} .${cx('section-header-container')}`);
 
     /**
      * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
@@ -249,6 +257,12 @@ class DataGrid extends React.Component {
     Array.prototype.forEach.call(sectionHeaderContainers, (container) => {
       container.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
     });
+
+
+    /**
+     * The scrollbar position needs to be updated upon resize to accurately reflect the new horizontal spacing.
+     */
+    this.updateScrollbarPosition();
   }
 
   handleKeyDown(event) {
@@ -426,13 +440,65 @@ class DataGrid extends React.Component {
    * Refs
    */
 
+  setHeaderOverflowContainerRef(ref) {
+    this.headerOverflowContainerRef = ref;
+  }
+
+  setHorizontalOverflowContainerRef(ref) {
+    this.horizontalOverflowContainerRef = ref;
+  }
+
   setScrollbarRef(ref) {
     this.scrollbarRef = ref;
+  }
+
+  setVerticalOverflowContainerRef(ref) {
+    this.verticalOverflowContainerRef = ref;
   }
 
   /**
    * Scroll synchronization
    */
+
+  synchronizeHeaderScroll() {
+    if (this.scrollbarIsScrolling || this.contentIsScrolling) {
+      return;
+    }
+
+    this.headerIsScrolling = true;
+
+    if (this.synchronizeScrollTimeout) {
+      clearTimeout(this.synchronizeScrollTimeout);
+    }
+
+    this.synchronizeScrollTimeout = setTimeout(this.resetHeaderScrollEventMarkers, 100);
+
+    requestAnimationFrame(() => {
+      this.horizontalOverflowContainerRef.scrollLeft = this.headerOverflowContainerRef.scrollLeft;
+
+      this.updateScrollbarPosition();
+    });
+  }
+
+  synchronizeContentScroll() {
+    if (this.scrollbarIsScrolling || this.headerIsScrolling) {
+      return;
+    }
+
+    this.contentIsScrolling = true;
+
+    if (this.synchronizeScrollTimeout) {
+      clearTimeout(this.synchronizeScrollTimeout);
+    }
+
+    this.synchronizeScrollTimeout = setTimeout(this.resetContentScrollEventMarkers, 100);
+
+    requestAnimationFrame(() => {
+      this.headerOverflowContainerRef.scrollLeft = this.horizontalOverflowContainerRef.scrollLeft;
+
+      this.updateScrollbarPosition();
+    });
+  }
 
   synchronizeScrollbar(event, data) {
     const { pinnedColumnWidth, overflowColumnWidth } = this.state;
@@ -443,21 +509,41 @@ class DataGrid extends React.Component {
 
     this.scrollbarIsScrolling = true;
 
-    const { position, ratio } = calculateScrollbarPosition(this.scrollbarRef, this.scrollContentRef, this.scrollbarPosition, data.deltaX);
+    const { position, ratio } = calculateScrollbarPosition(this.scrollbarRef, this.horizontalOverflowContainerRef, this.scrollbarPosition, data.deltaX);
 
     this.scrollbarPosition = position;
 
-    const maxScrollLeft = (pinnedColumnWidth + overflowColumnWidth) - this.scrollContentRef.clientWidth;
+    const maxScrollLeft = (pinnedColumnWidth + overflowColumnWidth) - this.horizontalOverflowContainerRef.clientWidth;
 
     requestAnimationFrame(() => {
       this.scrollbarRef.style.transform = `translateX(${this.scrollbarPosition}px)`;
       this.headerOverflowContainerRef.scrollLeft = maxScrollLeft * ratio;
-      this.scrollContentRef.scrollLeft = maxScrollLeft * ratio;
+      this.horizontalOverflowContainerRef.scrollLeft = maxScrollLeft * ratio;
     });
+  }
+
+  resetHeaderScrollEventMarkers() {
+    this.headerIsScrolling = false;
+  }
+
+  resetContentScrollEventMarkers() {
+    this.contentIsScrolling = false;
   }
 
   resetScrollbarEventMarkers() {
     this.scrollbarIsScrolling = false;
+  }
+
+  updateScrollbarPosition() {
+    const scrollbarWidth = Math.min(this.horizontalOverflowContainerRef.clientWidth, (this.horizontalOverflowContainerRef.clientWidth * this.horizontalOverflowContainerRef.clientWidth) / (this.state.pinnedColumnWidth + this.state.overflowColumnWidth));
+
+    const positionRatio = this.horizontalOverflowContainerRef.scrollLeft / (this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth);
+
+    const position = (this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth) * positionRatio;
+
+    this.scrollbarRef.style.width = `${scrollbarWidth}px`;
+    this.scrollbarRef.style.transform = `translateX(${position}px)`;
+    this.scrollbarPosition = position;
   }
 
   /**
@@ -500,32 +586,8 @@ class DataGrid extends React.Component {
           style={{
             paddingLeft: `${pinnedColumnWidth}px`,
           }}
-          ref={(ref) => { this.headerOverflowContainerRef = ref; }}
-          onScroll={() => {
-            if (this.scrollbarIsScrolling || this.contentIsScrolling) {
-              return;
-            }
-
-            this.headerIsScrolling = true;
-
-            if (this.scrollTimeout) {
-              clearTimeout(this.scrollTimeout);
-            }
-
-            this.scrollTimeout = setTimeout(() => {
-              this.headerIsScrolling = false;
-            }, 100);
-
-            requestAnimationFrame(() => {
-              this.scrollContentRef.scrollLeft = this.headerOverflowContainerRef.scrollLeft;
-
-              const ratio = this.headerOverflowContainerRef.scrollLeft / (this.scrollContentRef.scrollWidth - this.scrollContentRef.clientWidth);
-
-              const position = (this.scrollContentRef.clientWidth - this.scrollbarRef.clientWidth) * ratio;
-
-              this.scrollbarRef.style.transform = `translateX(${position}px)`;
-            });
-          }}
+          ref={this.setHeaderOverflowContainerRef}
+          onScroll={this.synchronizeHeaderScroll}
         >
           <div
             className={cx('overflow-header')}
@@ -630,11 +692,8 @@ class DataGrid extends React.Component {
   }
 
   renderScrollbar() {
-    const { pinnedColumnWidth, overflowColumnWidth } = this.state;
-
     return (
       <Scrollbar
-        overflowWidth={pinnedColumnWidth + overflowColumnWidth}
         scrollbarRefCallback={this.setScrollbarRef}
         onMove={this.synchronizeScrollbar}
         onMoveEnd={this.resetScrollbarEventMarkers}
@@ -654,49 +713,20 @@ class DataGrid extends React.Component {
       >
         <div
           className={cx('vertical-overflow-container')}
-          ref={(ref) => {
-            this.verticalOverflowContainerRef = ref;
-          }}
-          onScroll={() => {
-            if (this.scrollbarIsScrolling || this.headerIsScrolling) {
-              return;
-            }
-
-            this.contentIsScrolling = true;
-
-            if (this.scrollTimeout) {
-              clearTimeout(this.scrollTimeout);
-            }
-
-            this.scrollTimeout = setTimeout(() => {
-              this.contentIsScrolling = false;
-            }, 100);
-
-            requestAnimationFrame(() => {
-              this.headerOverflowContainerRef.scrollLeft = this.scrollContentRef.scrollLeft;
-
-              const ratio = this.headerOverflowContainerRef.scrollLeft / (this.scrollContentRef.scrollWidth - this.scrollContentRef.clientWidth);
-
-              const position = (this.scrollContentRef.clientWidth - this.scrollbarRef.clientWidth) * ratio;
-
-              this.scrollbarRef.style.transform = `translateX(${position}px)`;
-            });
-          }}
+          ref={this.setVerticalOverflowContainerRef}
         >
           <div
-            className={cx('scroll-content')}
+            className={cx('horizontal-overflow-container')}
             style={{
               paddingLeft: `${this.state.pinnedColumnWidth}px`,
             }}
-            ref={(ref) => {
-              this.scrollContentRef = ref;
-            }}
+            ref={this.setHorizontalOverflowContainerRef}
+            onScroll={this.synchronizeContentScroll}
           >
             {this.renderOverflowContent()}
           </div>
-
           <div
-            className={cx('fixed-content')}
+            className={cx('pinned-content-container')}
             style={{
               width: `${this.state.pinnedColumnWidth}px`,
             }}

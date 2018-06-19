@@ -34,8 +34,6 @@
     }
   }
 
-  // Sticky implementation
-
   .vertical-overflow-container {
     background-color: #cccccc;
     position: relative;
@@ -44,21 +42,21 @@
     width: 100%;
   }
 
-  .fixed-content {
+  .horizontal-overflow-container {
+    margin-bottom: -20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    position: relative;
+    width: 100%;
+  }
+
+  .pinned-content-container {
     left: 0;
     z-index: 100;
     transform: translateZ(0px); // Necessary to correct variability with overflowed content interactions in Chrome
 
     position: absolute;
     top: 0;
-  }
-
-  .scroll-content {
-    margin-bottom: -20px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    position: relative;
-    width: 100%;
   }
 
   .section-header-container {
