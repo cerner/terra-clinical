@@ -30,18 +30,22 @@ const DetailViewDivided = () => (
       subtitles={['30 mg, Oral, Start Date/Time: 06/28/17 20:00:00 CDT. Stop Date/Time: 06/28/17 20:00:00 CDT']}
       accessory={<ItemDisplay text="Ordered" />}
       details={[
-        (<DetailView.DetailList title={detail1title} key="Indicators">
-          <DetailView.DetailListItem item={detail1item1} />
-          <DetailView.DetailListItem item={detail1item2} />
-          <DetailView.DetailListItem item={detail1item3} />
-          <DetailView.DetailListItem item={detail1item4} />
-        </DetailView.DetailList>),
-        (<DetailView.DetailList title={detail2title} key="Comments">
-          <DetailView.DetailListItem item={detail2item1} />
-          <DetailView.DetailListItem item={detail2item2} />
-          <DetailView.DetailListItem item={detail2item3} />
-          <DetailView.DetailListItem item={detail2item4} />
-        </DetailView.DetailList>),
+        (
+          <DetailView.DetailList title={detail1title} key="Indicators">
+            <DetailView.DetailListItem item={detail1item1} />
+            <DetailView.DetailListItem item={detail1item2} />
+            <DetailView.DetailListItem item={detail1item3} />
+            <DetailView.DetailListItem item={detail1item4} />
+          </DetailView.DetailList>
+        ),
+        (
+          <DetailView.DetailList title={detail2title} key="Comments">
+            <DetailView.DetailListItem item={detail2item1} />
+            <DetailView.DetailListItem item={detail2item2} />
+            <DetailView.DetailListItem item={detail2item3} />
+            <DetailView.DetailListItem item={detail2item4} />
+          </DetailView.DetailList>
+        ),
       ]}
       footer="Last Modified by: Hollister MD, David MD at 09/12/2011 11:34:12AM"
       isSmallerTitles

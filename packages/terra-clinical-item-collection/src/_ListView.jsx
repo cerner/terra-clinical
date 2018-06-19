@@ -36,7 +36,9 @@ function createListItems(children, onSelect, requiredElements) {
   });
 }
 
-const ListView = ({ children, onSelect, isListDivided, requiredElements }) => {
+const ListView = ({
+  children, onSelect, isListDivided, requiredElements,
+}) => {
   const listItems = createListItems(children, onSelect, requiredElements);
 
   return (

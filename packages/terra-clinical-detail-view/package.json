@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-detail-view",
   "main": "lib/DetailView.js",
-  "version": "2.5.0",
+  "version": "2.7.0",
   "description": "Detail Views allows you to create a view with text at different levels of importance. A detail view can contain a title, subtitles, a graph, a footer and a list of elements that can display information at a more detailed level. A Detail List is a structural subcomponent of Detail View indented to be used within the details prop. A Detail List accepts and arranges DetailListItem elements in a flexbox layout that wraps the list of items by row. Detail List Items are the elements to be placed within a Detail List. A Detail List Item accepts one element item and applies a minimum width of 50% so that the element spans at minimum half of the Detail List. This allows the Detail List to have either one or two items per row depending on the width of the item content in each item.",
   "repository": {
     "type": "git",
@@ -29,8 +29,8 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-base": "^3.0.0",
-    "terra-clinical-item-display": "^2.5.0",
-    "terra-clinical-label-value-view": "^2.5.0",
+    "terra-clinical-item-display": "^2.6.0",
+    "terra-clinical-label-value-view": "^2.7.0",
     "terra-doc-template": "^1.2.0",
     "terra-icon": "^2.9.0"
   },
@@ -42,7 +42,7 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   }
 }

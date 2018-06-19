@@ -11,16 +11,26 @@ const DetailViewNoDivider = () => (
     title="Header"
     secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
     subtitles={['Subtitle 1', 'Subtitle 2']}
-    graph={<div style={{ border: '1px solid black', height: '20em', width: '25em', marginBottom: '0.714rem' }}>This is where any visualizations would go</div>}
+    graph={
+      <div
+        style={{
+          border: '1px solid black', height: '20em', width: '25em', marginBottom: '0.714rem',
+        }}
+      >
+      This is where any visualizations would go
+      </div>
+    }
     accessory={accessoryElement}
     details={[
-      (<DetailView.DetailList title="Detail List Title" key="detailInfo-1">
-        <DetailView.DetailListItem item={item} />
-        <DetailView.DetailListItem item={item} />
-        <DetailView.DetailListItem item={item2} />
-        <DetailView.DetailListItem item={item} />
-        <DetailView.DetailListItem item={item} />
-      </DetailView.DetailList>),
+      (
+        <DetailView.DetailList title="Detail List Title" key="detailInfo-1">
+          <DetailView.DetailListItem item={item} />
+          <DetailView.DetailListItem item={item} />
+          <DetailView.DetailListItem item={item2} />
+          <DetailView.DetailListItem item={item} />
+          <DetailView.DetailListItem item={item} />
+        </DetailView.DetailList>
+      ),
     ]}
     footer="Footer Text"
     isDivided={false}

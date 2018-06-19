@@ -26,7 +26,9 @@ const defaultProps = {
   children: undefined,
 };
 
-const LabelValueView = ({ label, textValue, children, ...customProps }) => {
+const LabelValueView = ({
+  label, textValue, children, ...customProps
+}) => {
   let textValueSection;
   if (!textValue && !children) {
     textValueSection = <div className={cx('value')}>--</div>;

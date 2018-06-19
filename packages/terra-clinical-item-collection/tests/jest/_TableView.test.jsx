@@ -2,7 +2,9 @@ import React from 'react';
 import ItemCollection from '../../src/ItemCollection';
 import TableView from '../../src/_TableView';
 
-const defaultRequiredElements = { hasStartAccessory: true, numberOfDisplays: 8, hasComment: true, hasEndAccessory: true };
+const defaultRequiredElements = {
+  hasStartAccessory: true, numberOfDisplays: 8, hasComment: true, hasEndAccessory: true,
+};
 
 it('should render a default TableView', () => {
   const item = (<TableView requiredElements={defaultRequiredElements} />);
