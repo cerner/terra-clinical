@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added word-wrap property to DetailView title
 
 2.6.0 - (June 12, 2018)
 ----------
