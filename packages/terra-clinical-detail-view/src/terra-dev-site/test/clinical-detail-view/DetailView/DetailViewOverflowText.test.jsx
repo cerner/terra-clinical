@@ -8,9 +8,9 @@ const accessoryElement = (<p> A sample accessory container </p>);
 
 const DetailViewOverflowText = () => (
   <DetailView
-    title="OverflowTextOverflowTextOverflowTextOverflowTextOverflowTextOverflowTextOverflowTextOverflowTextOverflowText"
-    secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
-    subtitles={['Subtitle 1', 'Subtitle 2']}
+    title={'OverflowText'.repeat(10)}
+    secondaryTitles={['secondaryTitle1'.repeat(15), 'secondaryTitle2'.repeat(15)]}
+    subtitles={['Subtitle1'.repeat(25), 'Subtitle2'.repeat(25)]}
     graph={
       <div
         style={{
