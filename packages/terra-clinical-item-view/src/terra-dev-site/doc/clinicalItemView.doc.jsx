@@ -1,9 +1,9 @@
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-duplicates */
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../docs/README.md';
 import { name } from '../../../package.json';
 
+/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import ItemViewSrc from '!raw-loader!../../../src/ItemView.jsx';
 
@@ -20,6 +20,7 @@ import ItemViewAll from './example/ItemViewAll';
 import ItemViewAllSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewAll';
 import ItemViewAllTopAligned from './example/ItemViewAllTopAligned';
 import ItemViewAllTopAlignedSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewAllTopAligned';
+/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate
