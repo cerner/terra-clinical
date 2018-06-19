@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Lint in doc page
 
 2.4.0 - (June 12, 2018)
 ----------
