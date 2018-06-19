@@ -1,9 +1,6 @@
 import React from 'react';
-import Base from 'terra-base';
 import moment from 'moment';
 import OnsetPicker from '../../../OnsetPicker';
-
-const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 
 export default class LessYear extends React.Component {
   constructor(props) {
@@ -50,7 +47,7 @@ export default class LessYear extends React.Component {
 
   render() {
     return (
-      <Base locale={locale}>
+      <div>
         <p>Onset picker with minimum required fields and onChange handlers, supplied with a birthdate of 11 months old.</p>
         <p>Current date locked to September 20, 2016</p>
         <p>Testing age granularity selection restrictions.</p>
@@ -68,7 +65,7 @@ export default class LessYear extends React.Component {
           <button type="submit">Submit</button>
         </form>
         <p data-test-json>{JSON.stringify(this.state.submittedData)}</p>
-      </Base>
+      </div>
     );
   }
 }
