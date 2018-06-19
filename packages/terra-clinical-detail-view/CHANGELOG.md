@@ -6,10 +6,16 @@ Unreleased
 ### Added
 * Added word-wrap property to DetailView title
 
+2.7.0 - (June 19, 2018)
+----------
+### Changed
+* Minor updates
+
 2.6.0 - (June 12, 2018)
 ----------
 ### Changed
 * Conform to eslint updates
+* Added theming variables in Detail View
 
 2.5.0 - (May 30, 2018)
 ----------
