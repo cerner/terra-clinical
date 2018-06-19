@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Accessibility in Accessory Item View example
 
 2.7.0 - (June 12, 2018)
 ----------
