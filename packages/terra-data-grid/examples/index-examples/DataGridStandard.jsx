@@ -194,7 +194,7 @@ class DataGridStandard extends React.Component {
         pinnedColumns={[
           {
             id: 'column0',
-            startWidth: 300,
+            initialWidth: 300,
             minWidth: 100,
             selectable: true,
             resizable: true,
@@ -207,7 +207,7 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column1',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             component: (
@@ -221,7 +221,7 @@ class DataGridStandard extends React.Component {
         overflowColumns={[
           {
             id: 'column2',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             component: (
@@ -232,14 +232,14 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column3',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: false,
             resizable: true,
             component: <HeaderCellLayout text="Column 3 (No Sort)" sortDirection={sortedColumnKey === 'column3' ? sortDirection : null} />,
           },
           {
             id: 'column4',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             text: 'Column 4',
@@ -247,35 +247,35 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column5',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCellLayout text="Column 5" sortDirection={sortedColumnKey === 'column5' ? sortDirection : null} />,
           },
           {
             id: 'column6',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: false,
             component: <HeaderCellLayout text="Column 6 (No resize)" sortDirection={sortedColumnKey === 'column6' ? sortDirection : null} />,
           },
           {
             id: 'column7',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCellLayout text="Column 7" sortDirection={sortedColumnKey === 'column7' ? sortDirection : null} />,
           },
           {
             id: 'column8',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCellLayout text="Column 8" sortDirection={sortedColumnKey === 'column8' ? sortDirection : null} />,
           },
           {
             id: 'column9',
-            startWidth: 300,
+            initialWidth: 300,
             selectable: true,
             resizable: true,
             component: <HeaderCellLayout text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,

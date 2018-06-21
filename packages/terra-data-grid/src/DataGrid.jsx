@@ -25,14 +25,14 @@ const Section = () => null;
 const propTypes = {
   pinnedColumns: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
-    startWidth: PropTypes.number,
+    initialWidth: PropTypes.number,
     selectable: PropTypes.bool,
     resizable: PropTypes.bool,
     component: PropTypes.node,
   })),
   overflowColumns: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
-    startWidth: PropTypes.number,
+    initialWidth: PropTypes.number,
     selectable: PropTypes.bool,
     resizable: PropTypes.bool,
     component: PropTypes.node,
@@ -56,47 +56,6 @@ const defaultProps = {
 };
 
 class DataGrid extends React.Component {
-  static generateWidthState(props, resetWidths) {
-    const { columnWidths } = props;
-    const { internalColumnWidths } = props;
-
-    let widthExtractor;
-    if (columnWidths) {
-      widthExtractor = column => columnWidths[column.id];
-    } else {
-      widthExtractor = column => (resetWidths ? column.startWidth : internalColumnWidths[column.id]);
-    }
-
-    const pinnedColumnWidth = props.pinnedColumns.length ?
-      props.pinnedColumns.map(widthExtractor).reduce((totalWidth, width) => totalWidth + width) : 0;
-
-    const overflowColumnWidth = props.overflowColumns.length ?
-      props.overflowColumns.map(widthExtractor).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
-
-    let newColumnWidths;
-    if (columnWidths) {
-      newColumnWidths = Object.assign({}, columnWidths);
-    } else if (resetWidths) {
-      newColumnWidths = {};
-
-      props.pinnedColumns.forEach((column) => {
-        newColumnWidths[column.id] = column.startWidth;
-      });
-
-      props.overflowColumns.forEach((column) => {
-        newColumnWidths[column.id] = column.startWidth;
-      });
-    } else {
-      newColumnWidths = Object.assign({}, internalColumnWidths);
-    }
-
-    return {
-      pinnedColumnWidth,
-      overflowColumnWidth,
-      internalColumnWidths: newColumnWidths,
-    };
-  }
-
   static buildSectionData(sections) {
     const sectionMap = {};
 
@@ -145,7 +104,15 @@ class DataGrid extends React.Component {
     this.handleDataGridResize = this.handleDataGridResize.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.updateColumnWidths = this.updateColumnWidths.bind(this);
+
+    /**
+     * Column Sizing
+     */
+    this.getWidthForColumn = this.getWidthForColumn.bind(this);
+    this.getMinimumWidthForColumn = this.getMinimumWidthForColumn.bind(this);
+    this.getTotalOverflowColumnWidth = this.getTotalOverflowColumnWidth.bind(this);
+    this.getTotalPinnedColumnWidth = this.getTotalPinnedColumnWidth.bind(this);
+    this.updateColumnWidth = this.updateColumnWidth.bind(this);
 
     /**
      * Refs
@@ -179,14 +146,12 @@ class DataGrid extends React.Component {
 
     this.scrollbarPosition = 0;
 
-    this.state = Object.assign(
-      {},
-      DataGrid.generateWidthState(props, true),
-      {
-        sections: DataGrid.buildSectionData(props.children),
-        sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
-      },
-    );
+    this.state = {
+      pinnedColumnWidth: this.getTotalPinnedColumnWidth(),
+      overflowColumnWidth: this.getTotalOverflowColumnWidth(),
+      sections: DataGrid.buildSectionData(props.children),
+      sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
+    };
   }
 
   componentDidMount() {
@@ -207,19 +172,18 @@ class DataGrid extends React.Component {
      */
     this.handleDataGridResize(this.verticalOverflowContainerRef.clientWidth, this.verticalOverflowContainerRef.clientHeight);
 
+    /**
+     * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+     * want defer to the custom scrollbar that rendered by the DataGrid.
+     */
     this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
   }
 
   componentWillReceiveProps(nextProps) {
-    let newState = {};
-
-    if (this.props.columnWidths !== nextProps.columnWidths) {
-      /**
-       * If the column widths are controlled by the consuming component, the internal width calculations need to be regenerated upon changes
-       * to the columnWidths component.
-       */
-      newState = Object.assign({}, DataGrid.generateWidthState(nextProps, false));
-    }
+    const newState = {
+      pinnedColumnWidth: this.getTotalPinnedColumnWidth(nextProps),
+      overflowColumnWidth: this.getTotalOverflowColumnWidth(nextProps),
+    };
 
     if (this.props.children !== nextProps.children) {
       /**
@@ -229,9 +193,7 @@ class DataGrid extends React.Component {
       newState.sectionOrdering = React.Children.map(nextProps.children, child => (child.props.id));
     }
 
-    if (Object.keys(newState).length) {
-      this.setState(newState);
-    }
+    this.setState(newState);
   }
 
   componentDidUpdate() {
@@ -240,6 +202,10 @@ class DataGrid extends React.Component {
      */
     this.updateScrollbarPosition();
 
+    /**
+     * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+     * want defer to the custom scrollbar that rendered by the DataGrid.
+     */
     this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
   }
 
@@ -262,7 +228,6 @@ class DataGrid extends React.Component {
     Array.prototype.forEach.call(sectionHeaderContainers, (container) => {
       container.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
     });
-
 
     /**
      * The scrollbar position needs to be updated upon resize to accurately reflect the new horizontal spacing.
@@ -407,12 +372,63 @@ class DataGrid extends React.Component {
     }
   }
 
-  updateColumnWidths(columnId, widthDelta, minWidth) {
-    const { columnWidths, onRequestColumnResize } = this.props;
-    const { internalColumnWidths } = this.state;
+  /**
+   * Column Sizing
+   */
 
-    let columnWidth = columnWidths ? columnWidths[columnId] : internalColumnWidths[columnId];
-    const minimumColumnWidth = minWidth || 50;
+  getWidthForColumn(columnId, source) {
+    const { pinnedColumns, overflowColumns, columnWidths } = source || this.props;
+
+    let width;
+
+    if (columnWidths && columnWidths[columnId]) {
+      width = columnWidths[columnId];
+    }
+
+    if (pinnedColumns && pinnedColumns[columnId]) {
+      width = pinnedColumns[columnId].initialWidth;
+    } else if (overflowColumns && overflowColumns[columnId]) {
+      width = overflowColumns[columnId].initialWidth;
+    }
+
+    return width || 100;
+  }
+
+  getMinimumWidthForColumn(columnId, source) {
+    const { pinnedColumns, overflowColumns } = source || this.props;
+
+    let minimumWidth;
+
+    if (pinnedColumns && pinnedColumns[columnId]) {
+      minimumWidth = pinnedColumns[columnId].minWidth;
+    } else if (overflowColumns && overflowColumns[columnId]) {
+      minimumWidth = overflowColumns[columnId].minWidth;
+    }
+
+    return minimumWidth || 50;
+  }
+
+  getTotalPinnedColumnWidth(source) {
+    const { pinnedColumns } = source || this.props;
+
+    return pinnedColumns.reduce((totalWidth, column) => totalWidth + this.getWidthForColumn(column.id, source), 0);
+  }
+
+  getTotalOverflowColumnWidth(source) {
+    const { overflowColumns } = source || this.props;
+
+    return overflowColumns.reduce((totalWidth, column) => totalWidth + this.getWidthForColumn(column.id, source), 0) + 150;
+  }
+
+  updateColumnWidth(columnId, widthDelta) {
+    const { onRequestColumnResize } = this.props;
+
+    if (!onRequestColumnResize) {
+      return;
+    }
+
+    let columnWidth = this.getWidthForColumn(columnId);
+    const minimumColumnWidth = this.getMinimumWidthForColumn(columnId);
 
     if (columnWidth + widthDelta < minimumColumnWidth) {
       columnWidth = minimumColumnWidth;
@@ -420,25 +436,7 @@ class DataGrid extends React.Component {
       columnWidth += widthDelta;
     }
 
-    if (columnWidths) {
-      if (onRequestColumnResize) {
-        onRequestColumnResize(columnId, columnWidth);
-      }
-    } else {
-      internalColumnWidths[columnId] = columnWidth;
-
-      const pinnedColumnWidth = this.props.pinnedColumns.length ?
-      this.props.pinnedColumns.map(column => internalColumnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) : 0;
-
-      const overflowColumnWidth = this.props.overflowColumns.length ?
-      this.props.overflowColumns.map(column => internalColumnWidths[column.id]).reduce((totalWidth, width) => totalWidth + width) + 150 : 150;
-
-      this.setState({
-        pinnedColumnWidth,
-        overflowColumnWidth,
-        internalColumnWidths,
-      });
-    }
+    onRequestColumnResize(columnId, columnWidth);
   }
 
   /**
@@ -548,10 +546,12 @@ class DataGrid extends React.Component {
   }
 
   updateScrollbarPosition() {
+    const { pinnedColumnWidth, overflowColumnWidth } = this.state;
+
     /**
      * The scrollbar width is determined by squaring the container width and dividing by the overflow value. The scrollbar cannot be larger than the container.
      */
-    const scrollbarWidth = Math.min(this.verticalOverflowContainerRef.clientWidth, (this.verticalOverflowContainerRef.clientWidth * this.verticalOverflowContainerRef.clientWidth) / (this.state.pinnedColumnWidth + this.state.overflowColumnWidth));
+    const scrollbarWidth = Math.min(this.verticalOverflowContainerRef.clientWidth, (this.verticalOverflowContainerRef.clientWidth * this.verticalOverflowContainerRef.clientWidth) / (pinnedColumnWidth + overflowColumnWidth));
 
     /**
      * The scrollbar position is determined by calculating its position within the horizontalOverflowContainerRef and applying its relative position
@@ -572,16 +572,15 @@ class DataGrid extends React.Component {
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
     const { onHeaderClick } = this.props;
-    const { internalColumnWidths } = this.state;
 
     return (
       <HeaderCell
         key={columnId}
         columnId={columnId}
-        width={`${internalColumnWidths[columnId]}px`}
+        width={`${this.getWidthForColumn(columnId)}px`}
         isSelectable={columnData.selectable}
         isResizeable={columnData.resizable}
-        onResizeEnd={this.updateColumnWidths}
+        onResizeEnd={this.updateColumnWidth}
         onCellClick={onHeaderClick}
       >
         {columnData.component}
@@ -631,7 +630,6 @@ class DataGrid extends React.Component {
 
   renderSection(section, columns, width, withHeader) {
     const { rowHeight, onCellClick } = this.props;
-    const { internalColumnWidths } = this.state;
 
     return (
       <div key={section.id}>
@@ -681,7 +679,7 @@ class DataGrid extends React.Component {
                   sectionId={section.id}
                   rowId={section.rows[rowId].id}
                   columnId={column.id}
-                  width={`${internalColumnWidths[column.id]}px`}
+                  width={`${this.getWidthForColumn(column.id)}px`}
                   onCellClick={onCellClick || undefined}
                   isSelectable={cell.isSelectable}
                   isSelected={cell.isSelected}
@@ -721,6 +719,10 @@ class DataGrid extends React.Component {
   }
 
   render() {
+    const { pinnedColumnWidth } = this.state;
+
+    console.log(`pinnedColumnWidth: ${pinnedColumnWidth}`);
+
     console.log('rendering data grid');
 
     return (
@@ -728,7 +730,6 @@ class DataGrid extends React.Component {
         header={this.renderHeaderRow()}
         footer={this.renderScrollbar()}
         fill
-        onKeyDown={this.handleKeyDown}
       >
         <div
           className={cx('vertical-overflow-container')}
@@ -738,7 +739,7 @@ class DataGrid extends React.Component {
             className={cx('overflowed-content-container')}
             ref={this.setOverflowedContentContainerRef}
             style={{
-              paddingLeft: `${this.state.pinnedColumnWidth}px`,
+              paddingLeft: `${pinnedColumnWidth}px`,
             }}
           >
             <div
@@ -753,7 +754,7 @@ class DataGrid extends React.Component {
             className={cx('pinned-content-container')}
             ref={this.setPinnedContentContainerRef}
             style={{
-              width: `${this.state.pinnedColumnWidth}px`,
+              width: `${pinnedColumnWidth}px`,
             }}
           >
             {this.renderPinnedContent()}
