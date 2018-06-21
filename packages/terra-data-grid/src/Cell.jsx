@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
+import { KEYCODES } from './utils';
+
 import styles from './Cell.scss';
 
 const cx = classNames.bind(styles);
@@ -18,10 +20,10 @@ const propTypes = {
 };
 
 class Cell extends React.Component {
-
   constructor(props) {
     super(props);
 
+    this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleTargetClick = this.handleTargetClick.bind(this);
 
     this.state = {
@@ -33,14 +35,21 @@ class Cell extends React.Component {
     this.setState({ widthStyle: { width: nextProps.width } });
   }
 
-  handleTargetClick(event) {
+  handleKeyDown(event) {
+    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+      const { onCellClick } = this.props;
+
+      if (onCellClick) {
+        onCellClick(this.props.rowId, this.props.columnId);
+      }
+    }
+  }
+
+  handleTargetClick() {
     const { onCellClick } = this.props;
 
-    const touchTargetNode = event.currentTarget;
-    const containerNode = touchTargetNode.parentNode;
-
     if (onCellClick) {
-      onCellClick(containerNode.getAttribute('data-row-id'), containerNode.getAttribute('data-column-id'));
+      onCellClick(this.props.rowId, this.props.columnId);
     }
   }
 
@@ -65,6 +74,7 @@ class Cell extends React.Component {
         <div
           className={cx(['touch-target', { selectable: isSelectable, selected: isSelected }])}
           onClick={isSelectable ? this.handleTargetClick : undefined}
+          onKeyDown={isSelectable ? this.handleKeyDown : undefined}
           tabIndex={isSelectable ? '0' : undefined}
         />
         <div className={cx('content')}>

@@ -43,11 +43,14 @@
   }
 
   .horizontal-overflow-container {
-    margin-bottom: -20px;
     overflow-x: auto;
     padding-bottom: 20px;
     position: relative;
     width: 100%;
+  }
+
+  .overflowed-content-container {
+    overflow: hidden;
   }
 
   .pinned-content-container {
