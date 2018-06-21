@@ -102,8 +102,6 @@ class DataGrid extends React.Component {
     super(props);
 
     this.handleDataGridResize = this.handleDataGridResize.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
 
     /**
      * Column Sizing
@@ -162,10 +160,10 @@ class DataGrid extends React.Component {
     this.resizeObserver = new ResizeObserver((entries) => { this.handleDataGridResize(entries[0].contentRect.width, entries[0].contentRect.height); });
     this.resizeObserver.observe(this.verticalOverflowContainerRef);
 
-    /**
-     * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
-     */
-    document.addEventListener('keyup', this.handleKeyUp);
+    // /**
+    //  * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
+    //  */
+    // document.addEventListener('keyup', this.handleKeyUp);
 
     /**
      * The elements that are sized relative to the DataGrid's overall width must updated after the initial mount.
@@ -235,142 +233,142 @@ class DataGrid extends React.Component {
     this.updateScrollbarPosition();
   }
 
-  handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
-      this.shiftIsPressed = true;
-      return;
-    }
+  // handleKeyDown(event) {
+  //   if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
+  //     this.shiftIsPressed = true;
+  //     return;
+  //   }
 
-    const mergedColumns = [].concat(this.props.pinnedColumns).concat(this.props.overflowColumns).map(column => column.id);
+  //   const mergedColumns = [].concat(this.props.pinnedColumns).concat(this.props.overflowColumns).map(column => column.id);
 
-    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
-      const activeElement = document.activeElement;
+  //   if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+  //     const activeElement = document.activeElement;
 
-      if (!activeElement) {
-        return;
-      }
+  //     if (!activeElement) {
+  //       return;
+  //     }
 
-      if (matches(activeElement, '[data-cell]')) {
-        const columnId = activeElement.getAttribute('data-column-id');
-        const rowId = activeElement.getAttribute('data-row-id');
-        const sectionId = activeElement.getAttribute('data-section-id');
+  //     if (matches(activeElement, '[data-cell]')) {
+  //       const columnId = activeElement.getAttribute('data-column-id');
+  //       const rowId = activeElement.getAttribute('data-row-id');
+  //       const sectionId = activeElement.getAttribute('data-section-id');
 
-        const currentColumnIndex = mergedColumns.indexOf(columnId);
+  //       const currentColumnIndex = mergedColumns.indexOf(columnId);
 
-        const sectionData = this.state.sections[sectionId];
-        const currentRowIndex = sectionData.rowOrdering.indexOf(rowId);
+  //       const sectionData = this.state.sections[sectionId];
+  //       const currentRowIndex = sectionData.rowOrdering.indexOf(rowId);
 
-        if (currentColumnIndex === 0 && this.shiftIsPressed) {
-          if (currentRowIndex !== 0) {
-            const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
+  //       if (currentColumnIndex === 0 && this.shiftIsPressed) {
+  //         if (currentRowIndex !== 0) {
+  //           const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
 
-            const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[mergedColumns.length - 1]}]`);
-            newFocusElement.focus();
+  //           const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[mergedColumns.length - 1]}]`);
+  //           newFocusElement.focus();
 
-            event.preventDefault();
-          } else {
-            const newFocusElement = document.querySelector(`[data-section][data-section-id=${sectionId}]`);
-            newFocusElement.focus();
+  //           event.preventDefault();
+  //         } else {
+  //           const newFocusElement = document.querySelector(`[data-section][data-section-id=${sectionId}]`);
+  //           newFocusElement.focus();
 
-            event.preventDefault();
-          }
-        } else if (currentColumnIndex === mergedColumns.length - 1 && !this.shiftIsPressed) {
-          if (currentRowIndex !== sectionData.rowOrdering.length - 1) {
-            const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
+  //           event.preventDefault();
+  //         }
+  //       } else if (currentColumnIndex === mergedColumns.length - 1 && !this.shiftIsPressed) {
+  //         if (currentRowIndex !== sectionData.rowOrdering.length - 1) {
+  //           const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
 
-            const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[0]}]`);
-            newFocusElement.focus();
+  //           const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[0]}]`);
+  //           newFocusElement.focus();
 
-            event.preventDefault();
-          } else {
-            const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
-            const nextSectionIndex = currentSectionIndex + 1;
+  //           event.preventDefault();
+  //         } else {
+  //           const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
+  //           const nextSectionIndex = currentSectionIndex + 1;
 
-            if (currentSectionIndex < this.state.sectionOrdering.length - 1) {
-              const newSectionData = this.state.sections[this.state.sectionOrdering[nextSectionIndex]];
+  //           if (currentSectionIndex < this.state.sectionOrdering.length - 1) {
+  //             const newSectionData = this.state.sections[this.state.sectionOrdering[nextSectionIndex]];
 
-              const sectionHeader = document.querySelector(`.${cx('section-header-container')}[data-section][data-section-id=${newSectionData.id}]`);
+  //             const sectionHeader = document.querySelector(`.${cx('section-header-container')}[data-section][data-section-id=${newSectionData.id}]`);
 
-              if (sectionHeader) {
-                sectionHeader.focus();
+  //             if (sectionHeader) {
+  //               sectionHeader.focus();
 
-                event.preventDefault();
-              }
-            }
-          }
-        } else {
-          const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${rowId}][data-column-id=${this.shiftIsPressed ? mergedColumns[currentColumnIndex - 1] : mergedColumns[currentColumnIndex + 1]}]`);
-          newFocusElement.focus();
+  //               event.preventDefault();
+  //             }
+  //           }
+  //         }
+  //       } else {
+  //         const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${rowId}][data-column-id=${this.shiftIsPressed ? mergedColumns[currentColumnIndex - 1] : mergedColumns[currentColumnIndex + 1]}]`);
+  //         newFocusElement.focus();
 
-          event.preventDefault();
-        }
-      } else if (matches(activeElement, '[data-section]')) {
-        const sectionId = activeElement.getAttribute('data-section-id');
+  //         event.preventDefault();
+  //       }
+  //     } else if (matches(activeElement, '[data-section]')) {
+  //       const sectionId = activeElement.getAttribute('data-section-id');
 
-        if (this.shiftIsPressed) {
-          const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
+  //       if (this.shiftIsPressed) {
+  //         const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
 
-          if (currentSectionIndex !== 0 && currentSectionIndex !== this.state.sectionOrdering.length - 1) {
-            const sectionData = this.state.sections[this.state.sectionOrdering[currentSectionIndex - 1]];
-            const newRowId = sectionData.rowOrdering[sectionData.rowOrdering.length - 1];
-            const newColumnId = mergedColumns[mergedColumns.length - 1];
+  //         if (currentSectionIndex !== 0 && currentSectionIndex !== this.state.sectionOrdering.length - 1) {
+  //           const sectionData = this.state.sections[this.state.sectionOrdering[currentSectionIndex - 1]];
+  //           const newRowId = sectionData.rowOrdering[sectionData.rowOrdering.length - 1];
+  //           const newColumnId = mergedColumns[mergedColumns.length - 1];
 
-            const newFocusElement = document.querySelector(`[data-section-id=${sectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
+  //           const newFocusElement = document.querySelector(`[data-section-id=${sectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
 
-            if (newFocusElement) {
-              newFocusElement.focus();
+  //           if (newFocusElement) {
+  //             newFocusElement.focus();
 
-              event.preventDefault();
-            }
-          }
-        } else {
-          const newActiveSectionData = this.state.sections[sectionId];
+  //             event.preventDefault();
+  //           }
+  //         }
+  //       } else {
+  //         const newActiveSectionData = this.state.sections[sectionId];
 
-          const newRowId = newActiveSectionData.rowOrdering[0];
-          const newColumnId = mergedColumns[0];
-          const newActiveElement = document.querySelector(`[data-section-id=${newActiveSectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
+  //         const newRowId = newActiveSectionData.rowOrdering[0];
+  //         const newColumnId = mergedColumns[0];
+  //         const newActiveElement = document.querySelector(`[data-section-id=${newActiveSectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
 
-          if (newActiveElement) {
-            newActiveElement.focus();
+  //         if (newActiveElement) {
+  //           newActiveElement.focus();
 
-            event.preventDefault();
-          }
-        }
-      }
+  //           event.preventDefault();
+  //         }
+  //       }
+  //     }
 
-      return;
-    }
+  //     return;
+  //   }
 
-    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
-      const activeElement = document.activeElement;
+  //   if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+  //     const activeElement = document.activeElement;
 
-      if (matches(activeElement, '[data-cell]')) {
-        this.props.onCellClick(activeElement.getAttribute('data-row-id'), activeElement.getAttribute('data-column-id'));
-      } else if (matches(activeElement, '[data-header-cell]')) {
-        this.props.onHeaderClick(activeElement.getAttribute('data-column-id'));
-      } else if (matches(activeElement, '[data-section]')) {
-        const sectionId = activeElement.getAttribute('data-section-id');
+  //     if (matches(activeElement, '[data-cell]')) {
+  //       this.props.onCellClick(activeElement.getAttribute('data-row-id'), activeElement.getAttribute('data-column-id'));
+  //     } else if (matches(activeElement, '[data-header-cell]')) {
+  //       this.props.onHeaderClick(activeElement.getAttribute('data-column-id'));
+  //     } else if (matches(activeElement, '[data-section]')) {
+  //       const sectionId = activeElement.getAttribute('data-section-id');
 
-        if (this.props.collapsedSections) {
-          if (this.props.onRequestSectionCollapse) {
-            this.props.onRequestSectionCollapse(sectionId);
-          }
-        } else {
-          const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
-          currentlyCollapsedSections[sectionId] = !currentlyCollapsedSections[sectionId];
-          this.setState({ collapsedSections: currentlyCollapsedSections });
-        }
-      }
+  //       if (this.props.collapsedSections) {
+  //         if (this.props.onRequestSectionCollapse) {
+  //           this.props.onRequestSectionCollapse(sectionId);
+  //         }
+  //       } else {
+  //         const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
+  //         currentlyCollapsedSections[sectionId] = !currentlyCollapsedSections[sectionId];
+  //         this.setState({ collapsedSections: currentlyCollapsedSections });
+  //       }
+  //     }
 
-      event.preventDefault();
-    }
-  }
+  //     event.preventDefault();
+  //   }
+  // }
 
-  handleKeyUp(event) {
-    if (event.keyCode === KEYCODES.SHIFT) {
-      this.shiftIsPressed = false;
-    }
-  }
+  // handleKeyUp(event) {
+  //   if (event.keyCode === KEYCODES.SHIFT) {
+  //     this.shiftIsPressed = false;
+  //   }
+  // }
 
   /**
    * Column Sizing
@@ -561,7 +559,7 @@ class DataGrid extends React.Component {
     const position = (this.verticalOverflowContainerRef.clientWidth - scrollbarWidth) * positionRatio;
 
     this.scrollbarRef.style.width = `${scrollbarWidth}px`;
-    this.scrollbarRef.style.transform = `translateX(${position}px)`;
+    this.scrollbarRef.style.left = `${position}px`;
     this.scrollbarPosition = position;
   }
 
@@ -720,8 +718,6 @@ class DataGrid extends React.Component {
 
   render() {
     const { pinnedColumnWidth } = this.state;
-
-    console.log(`pinnedColumnWidth: ${pinnedColumnWidth}`);
 
     console.log('rendering data grid');
 
