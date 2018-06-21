@@ -5,8 +5,10 @@
     position: relative;
 
     .pinned-header {
-      border-bottom: 1px solid grey;
       background-color: lightgrey;
+      border-bottom: 1px solid grey;
+      box-shadow: 3px 0px 5px grey;
+
       display: flex;
       position: absolute;
       left: 0;
@@ -54,6 +56,8 @@
   }
 
   .pinned-content-container {
+    box-shadow: 3px 0px 5px grey;
+
     left: 0;
     z-index: 100;
     transform: translateZ(0px); // Necessary to correct variability with overflowed content interactions in Chrome

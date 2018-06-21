@@ -548,10 +548,16 @@ class DataGrid extends React.Component {
   }
 
   updateScrollbarPosition() {
+    /**
+     * The scrollbar width is determined by squaring the container width and dividing by the overflow value. The scrollbar cannot be larger than the container.
+     */
     const scrollbarWidth = Math.min(this.verticalOverflowContainerRef.clientWidth, (this.verticalOverflowContainerRef.clientWidth * this.verticalOverflowContainerRef.clientWidth) / (this.state.pinnedColumnWidth + this.state.overflowColumnWidth));
 
+    /**
+     * The scrollbar position is determined by calculating its position within the horizontalOverflowContainerRef and applying its relative position
+     * to the overall container width.
+     */
     const positionRatio = this.horizontalOverflowContainerRef.scrollLeft / (this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth);
-
     const position = (this.verticalOverflowContainerRef.clientWidth - scrollbarWidth) * positionRatio;
 
     this.scrollbarRef.style.width = `${scrollbarWidth}px`;
