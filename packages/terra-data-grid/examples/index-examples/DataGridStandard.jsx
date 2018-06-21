@@ -217,8 +217,6 @@ class DataGridStandard extends React.Component {
               />
             ),
           },
-        ]}
-        overflowColumns={[
           {
             id: 'column2',
             initialWidth: 300,
@@ -230,6 +228,8 @@ class DataGridStandard extends React.Component {
               />
             ),
           },
+        ]}
+        overflowColumns={[
           {
             id: 'column3',
             initialWidth: 300,

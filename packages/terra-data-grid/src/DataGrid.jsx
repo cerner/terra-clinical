@@ -106,6 +106,7 @@ class DataGrid extends React.Component {
     /**
      * Column Sizing
      */
+    this.getColumn = this.getColumn.bind(this);
     this.getWidthForColumn = this.getWidthForColumn.bind(this);
     this.getMinimumWidthForColumn = this.getMinimumWidthForColumn.bind(this);
     this.getTotalOverflowColumnWidth = this.getTotalOverflowColumnWidth.bind(this);
@@ -374,36 +375,35 @@ class DataGrid extends React.Component {
    * Column Sizing
    */
 
+  getColumn(columnId, source) {
+    const { pinnedColumns, overflowColumns } = source || this.props;
+
+    const allColumns = (pinnedColumns || []).concat(overflowColumns);
+    for (let i = 0, length = allColumns.length; i < length; i += 1) {
+      if (allColumns[i].id === columnId) {
+        return allColumns[i];
+      }
+    }
+
+    return undefined;
+  }
+
   getWidthForColumn(columnId, source) {
-    const { pinnedColumns, overflowColumns, columnWidths } = source || this.props;
+    const { columnWidths } = source || this.props;
 
     let width;
 
     if (columnWidths && columnWidths[columnId]) {
       width = columnWidths[columnId];
-    }
-
-    if (pinnedColumns && pinnedColumns[columnId]) {
-      width = pinnedColumns[columnId].initialWidth;
-    } else if (overflowColumns && overflowColumns[columnId]) {
-      width = overflowColumns[columnId].initialWidth;
+    } else {
+      width = this.getColumn(columnId, source).initialWidth;
     }
 
     return width || 100;
   }
 
   getMinimumWidthForColumn(columnId, source) {
-    const { pinnedColumns, overflowColumns } = source || this.props;
-
-    let minimumWidth;
-
-    if (pinnedColumns && pinnedColumns[columnId]) {
-      minimumWidth = pinnedColumns[columnId].minWidth;
-    } else if (overflowColumns && overflowColumns[columnId]) {
-      minimumWidth = overflowColumns[columnId].minWidth;
-    }
-
-    return minimumWidth || 50;
+    return this.getColumn(columnId, source).minWidth || 50;
   }
 
   getTotalPinnedColumnWidth(source) {
