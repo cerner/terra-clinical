@@ -37,4 +37,10 @@ describe('Detail View', () => {
 
     Terra.should.matchScreenshot({ viewports, selector });
   });
+
+  describe('Displays a Detail View with overflowed title text', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-overflow-text'));
+
+    Terra.should.matchScreenshot({ viewports, selector });
+  });
 });
