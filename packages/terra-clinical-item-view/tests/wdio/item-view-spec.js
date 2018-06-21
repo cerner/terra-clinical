@@ -9,6 +9,16 @@ describe('Clinical Item View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports, selector: '#test-displays' });
+
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      selector: '#test-displays',
+      properties: {
+        '--terra-item-view-content-color': '#1441CA',
+        '--terra-item-view-content-primary-color': '#CA2BAC',
+        '--terra-item-view-content-secondary-color': '#D32416',
+      },
+    });
     Terra.should.beAccessible();
   });
 
