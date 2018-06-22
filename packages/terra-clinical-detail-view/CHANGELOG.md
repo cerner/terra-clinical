@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added word-wrap property to DetailView titles and subtitles
+* Added test page for overflow text
+
 ### Fixed
 * Lint in doc page
 
