@@ -3,6 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
+* Added theming variables in Item View
 
 2.7.0 - (June 12, 2018)
 ----------
