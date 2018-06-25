@@ -46,7 +46,7 @@
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
     "start": "tt-serve",
     "start-heroku": "tt-serve-static --site build",
-    "start-static": "tt-serve-static --config node_modules/terra-dev-site/config/webpack/webpack.config",
+    "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
