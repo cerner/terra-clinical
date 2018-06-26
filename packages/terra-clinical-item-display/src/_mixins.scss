@@ -7,10 +7,6 @@
 }
 
 @mixin terra-clinical-item-body {
-  font-size: 1.1428571428571428rem;
+  font-size: 1rem;
   line-height: 1.4285714285714286;
-
-  @media screen and (min-width: 760px) {
-    font-size: 1rem;
-  }
 }
