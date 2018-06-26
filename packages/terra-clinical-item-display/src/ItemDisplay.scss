@@ -33,17 +33,17 @@
     opacity: 0.2;
 
     .inline-icon {
-      color: rgba(117, 118, 125, 0.3);
+      color: var(--terra-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
     }
   }
 
   // Text Styles
   .secondary {
-    color: #75767d;
+    color: var(--terra-item-display-secondary-color, #75767d);
   }
 
   .attention {
-    color: #c00;
+    color: var(--terra-item-display-attention-color, #c00);
     font-weight: 700;
   }
 

@@ -3,6 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
+* Added theming variables in Item Display
 
 2.6.0 - (June 12, 2018)
 ----------
