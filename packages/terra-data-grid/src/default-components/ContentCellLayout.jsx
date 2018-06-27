@@ -20,6 +20,7 @@ const ContentCellLayout = ({ text }) => (
         text="Button" onClick={() => {
           alert('You clicked a button, but you did not select a cell');
         }}
+        data-grid-accessible
       />
     </div>
   </div>

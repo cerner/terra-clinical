@@ -179,6 +179,8 @@ class DataGridStandard extends React.Component {
         isInitiallyCollapsed={isCollapsed}
         hideHeader={false}
         headerText={sectionName}
+        headerStartAccessory={<Button text="Start" style={{ pointerEvents: 'auto' }} />}
+        headerEndAccessory={<Button text="End" style={{ pointerEvents: 'auto' }} />}
       >
         {this.buildRows(sectionId, numberOfRows)}
       </Section>
@@ -289,6 +291,7 @@ class DataGridStandard extends React.Component {
         onRequestColumnResize={this.handleColumnResize}
         collapsedSections={collapsedSections}
         onRequestSectionCollapse={this.handleSectionClick}
+        fill
       >
         {this.buildSection('section_0', 'Section 0', 10, true)}
         {this.buildSection('section_1', 'Section 1', 10, true)}

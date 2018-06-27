@@ -4,14 +4,14 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 
-import Cell from './Cell';
+import Cell, { accessibleElementsWithinCell, focusCell } from './Cell';
 import HeaderCell from './HeaderCell';
 import Row from './Row';
 import Scrollbar from './Scrollbar';
+import SectionHeader from './SectionHeader';
 
 import ContentCellLayout from './default-components/ContentCellLayout';
 import HeaderCellLayout from './default-components/HeaderCellLayout';
-import SectionHeader from './default-components/SectionHeader';
 
 import { calculateScrollbarPosition } from './scrollbarUtils';
 import { KEYCODES, matches } from './utils';
@@ -46,6 +46,7 @@ const propTypes = {
   onCellClick: PropTypes.func,
   onHeaderClick: PropTypes.func,
   children: PropTypes.node,
+  fill: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -66,6 +67,8 @@ class DataGrid extends React.Component {
       sectionData.isCollapsible = section.props.isCollapsible;
       sectionData.isInitiallyCollapsed = section.props.isInitiallyCollapsed;
       sectionData.headerText = section.props.headerText;
+      sectionData.headerStartAccessory = section.props.headerStartAccessory;
+      sectionData.headerEndAccessory = section.props.headerEndAccessory;
 
       sectionData.rows = {};
       sectionData.rowOrdering = [];
@@ -102,6 +105,22 @@ class DataGrid extends React.Component {
     super(props);
 
     this.handleDataGridResize = this.handleDataGridResize.bind(this);
+
+    /**
+     * Keyboard Interactions
+     */
+
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.shiftIsPressed = false;
+
+    /**
+     * Accessibility
+     */
+    this.getAccessibilityIdForHeaderCell = this.getAccessibilityIdForHeaderCell.bind(this);
+    this.getAccessibilityIdForCell = this.getAccessibilityIdForCell.bind(this);
+    this.getAccessibilityIdSectionHeader = this.getAccessibilityIdSectionHeader.bind(this);
+    this.generateAccessibilityMap = this.generateAccessibilityMap.bind(this);
 
     /**
      * Column Sizing
@@ -148,6 +167,7 @@ class DataGrid extends React.Component {
     this.state = {
       pinnedColumnWidth: this.getTotalPinnedColumnWidth(),
       overflowColumnWidth: this.getTotalOverflowColumnWidth(),
+      accessibilityMap: this.generateAccessibilityMap(),
       sections: DataGrid.buildSectionData(props.children),
       sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
     };
@@ -161,10 +181,10 @@ class DataGrid extends React.Component {
     this.resizeObserver = new ResizeObserver((entries) => { this.handleDataGridResize(entries[0].contentRect.width, entries[0].contentRect.height); });
     this.resizeObserver.observe(this.verticalOverflowContainerRef);
 
-    // /**
-    //  * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
-    //  */
-    // document.addEventListener('keyup', this.handleKeyUp);
+    /**
+     * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
+     */
+    document.addEventListener('keyup', this.handleKeyUp);
 
     /**
      * The elements that are sized relative to the DataGrid's overall width must updated after the initial mount.
@@ -180,6 +200,7 @@ class DataGrid extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const newState = {
+      accessibilityMap: this.generateAccessibilityMap(nextProps),
       pinnedColumnWidth: this.getTotalPinnedColumnWidth(nextProps),
       overflowColumnWidth: this.getTotalOverflowColumnWidth(nextProps),
     };
@@ -210,6 +231,7 @@ class DataGrid extends React.Component {
 
   componentWillUnmount() {
     this.resizeObserver.disconnect(this.verticalOverflowContainerRef);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   handleDataGridResize(newWidth, newHeight) {
@@ -234,142 +256,170 @@ class DataGrid extends React.Component {
     this.updateScrollbarPosition();
   }
 
-  // handleKeyDown(event) {
-  //   if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
-  //     this.shiftIsPressed = true;
-  //     return;
-  //   }
+  handleKeyDown(event) {
+    if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = true;
+      return;
+    }
 
-  //   const mergedColumns = [].concat(this.props.pinnedColumns).concat(this.props.overflowColumns).map(column => column.id);
+    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+      const { accessibilityMap } = this.state;
+      const activeElement = document.activeElement;
 
-  //   if (event.nativeEvent.keyCode === KEYCODES.TAB) {
-  //     const activeElement = document.activeElement;
+      if (!activeElement) {
+        return;
+      }
 
-  //     if (!activeElement) {
-  //       return;
-  //     }
+      if (matches(activeElement, '[data-accessibility-id]')) {
+        // const accessibleItemsWithinElement = accessibleElementsWithinCell(activeElement);
+        // if (accessibleItemsWithinElement.length) {
+        //   accessibleItemsWithinElement[0].focus();
+        //   event.preventDefault();
 
-  //     if (matches(activeElement, '[data-cell]')) {
-  //       const columnId = activeElement.getAttribute('data-column-id');
-  //       const rowId = activeElement.getAttribute('data-row-id');
-  //       const sectionId = activeElement.getAttribute('data-section-id');
+        //   return;
+        // }
 
-  //       const currentColumnIndex = mergedColumns.indexOf(columnId);
+        const currentAccessibilityId = activeElement.getAttribute('data-accessibility-id');
+        const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
 
-  //       const sectionData = this.state.sections[sectionId];
-  //       const currentRowIndex = sectionData.rowOrdering.indexOf(rowId);
+        if (nextAccessibilityId < 0 || nextAccessibilityId >= accessibilityMap.totalAccessibleElements) {
+          activeElement.blur();
+        } else {
+          const nextFocusElement = document.querySelector(`[data-accessibility-id="${nextAccessibilityId}"]`);
+          if (nextFocusElement) {
+            event.preventDefault();
 
-  //       if (currentColumnIndex === 0 && this.shiftIsPressed) {
-  //         if (currentRowIndex !== 0) {
-  //           const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
+            nextFocusElement.focus();
+          }
+        }
+      }
+      // else if (matches(activeElement, '[data-grid-accessible]')) {
+      //   const searchElement = activeElement;
+      //   let accessibleParent;
+      //   while (!accessibleParent && activeElement !== document) {
+      //     if (matches(searchElement, '[data-cell]')) {
+      //       accessibleParent = searchElement;
+      //     }
+      //   }
 
-  //           const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[mergedColumns.length - 1]}]`);
-  //           newFocusElement.focus();
+      //   const accessibleChildren = accessibleElementsWithinCell(accessibleParent);
+      //   let activeItemIndex;
+      //   for (let i = 0, length = accessibleChildren.length; i < length; i += 1) {
+      //     if (accessibleChildren.item(i) === activeElement) {
+      //       activeItemIndex = i;
+      //       break;
+      //     }
+      //   }
 
-  //           event.preventDefault();
-  //         } else {
-  //           const newFocusElement = document.querySelector(`[data-section][data-section-id=${sectionId}]`);
-  //           newFocusElement.focus();
+      //   if (activeItemIndex === 0 && accessibleChildren.length === 1) {
+      //     if (this.shiftIsPressed) {
+      //       focusCell(accessibleParent);
+      //     } else {
+      //       debugger;
+      //     }
+      //   } else if (activeItemIndex > 0 && activeItemIndex < accessibleChildren.length - 1) {
+      //     if (this.shiftIsPressed) {
+      //       accessibleChildren[activeItemIndex - 1].focus();
+      //       event.preventDefault();
+      //     } else {
+      //       accessibleChildren[activeItemIndex + 1].focus();
+      //       event.preventDefault();
+      //     }
+      //   }
+      // }
+    }
+  }
 
-  //           event.preventDefault();
-  //         }
-  //       } else if (currentColumnIndex === mergedColumns.length - 1 && !this.shiftIsPressed) {
-  //         if (currentRowIndex !== sectionData.rowOrdering.length - 1) {
-  //           const newRowId = this.shiftIsPressed ? sectionData.rowOrdering[currentRowIndex - 1] : sectionData.rowOrdering[currentRowIndex + 1];
+  handleKeyUp(event) {
+    if (event.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = false;
+    }
+  }
 
-  //           const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${newRowId}][data-column-id=${mergedColumns[0]}]`);
-  //           newFocusElement.focus();
+  /**
+   * Accessiblity
+   */
 
-  //           event.preventDefault();
-  //         } else {
-  //           const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
-  //           const nextSectionIndex = currentSectionIndex + 1;
+  getAccessibilityIdForHeaderCell(columnId, source) {
+    const { accessibilityMap } = source || this.state;
 
-  //           if (currentSectionIndex < this.state.sectionOrdering.length - 1) {
-  //             const newSectionData = this.state.sections[this.state.sectionOrdering[nextSectionIndex]];
+    return accessibilityMap.headers[columnId];
+  }
 
-  //             const sectionHeader = document.querySelector(`.${cx('section-header-container')}[data-section][data-section-id=${newSectionData.id}]`);
+  getAccessibilityIdSectionHeader(sectionId, source) {
+    const { accessibilityMap } = source || this.state;
 
-  //             if (sectionHeader) {
-  //               sectionHeader.focus();
+    return accessibilityMap.sections[sectionId];
+  }
 
-  //               event.preventDefault();
-  //             }
-  //           }
-  //         }
-  //       } else {
-  //         const newFocusElement = document.querySelector(`[data-section-id=${sectionId}][data-row-id=${rowId}][data-column-id=${this.shiftIsPressed ? mergedColumns[currentColumnIndex - 1] : mergedColumns[currentColumnIndex + 1]}]`);
-  //         newFocusElement.focus();
+  getAccessibilityIdForCell(sectionId, rowId, columnId, source) {
+    const { accessibilityMap } = source || this.state;
 
-  //         event.preventDefault();
-  //       }
-  //     } else if (matches(activeElement, '[data-section]')) {
-  //       const sectionId = activeElement.getAttribute('data-section-id');
+    return accessibilityMap.cells[sectionId][rowId][columnId];
+  }
 
-  //       if (this.shiftIsPressed) {
-  //         const currentSectionIndex = this.state.sectionOrdering.indexOf(sectionId);
+  generateAccessibilityMap(source) {
+    const { pinnedColumns, overflowColumns, children } = source || this.props;
 
-  //         if (currentSectionIndex !== 0 && currentSectionIndex !== this.state.sectionOrdering.length - 1) {
-  //           const sectionData = this.state.sections[this.state.sectionOrdering[currentSectionIndex - 1]];
-  //           const newRowId = sectionData.rowOrdering[sectionData.rowOrdering.length - 1];
-  //           const newColumnId = mergedColumns[mergedColumns.length - 1];
+    const accessibilityMap = {
+      headers: {},
+      sections: {},
+      cells: {},
+    };
+    const orderedColumnIds = pinnedColumns.concat(overflowColumns).map(column => column.id);
 
-  //           const newFocusElement = document.querySelector(`[data-section-id=${sectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
+    let accessibilityIndex = 0;
 
-  //           if (newFocusElement) {
-  //             newFocusElement.focus();
+    pinnedColumns.forEach((column) => {
+      if (column.selectable) {
+        accessibilityMap.headers[column.id] = accessibilityIndex;
+        accessibilityIndex += 1;
+      }
+    });
 
-  //             event.preventDefault();
-  //           }
-  //         }
-  //       } else {
-  //         const newActiveSectionData = this.state.sections[sectionId];
+    overflowColumns.forEach((column) => {
+      if (column.selectable) {
+        accessibilityMap.headers[column.id] = accessibilityIndex;
+        accessibilityIndex += 1;
+      }
+    });
 
-  //         const newRowId = newActiveSectionData.rowOrdering[0];
-  //         const newColumnId = mergedColumns[0];
-  //         const newActiveElement = document.querySelector(`[data-section-id=${newActiveSectionData.id}][data-row-id=${newRowId}][data-column-id=${newColumnId}]`);
+    React.Children.forEach(children, (section) => {
+      if (section.props.isCollapsible) {
+        accessibilityMap.sections[section.props.id] = accessibilityIndex;
+        accessibilityIndex += 1;
+      }
 
-  //         if (newActiveElement) {
-  //           newActiveElement.focus();
+      if (section.props.isCollapsed) {
+        /**
+         * If the section is collapsed, we do not want to assign accessibility identifiers to its content.
+         */
+        return;
+      }
 
-  //           event.preventDefault();
-  //         }
-  //       }
-  //     }
+      accessibilityMap.cells[section.props.id] = {};
 
-  //     return;
-  //   }
+      React.Children.forEach(section.props.children, (row) => {
+        accessibilityMap.cells[section.props.id][row.props.id] = {};
 
-  //   if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
-  //     const activeElement = document.activeElement;
+        const cellMap = {};
+        React.Children.forEach(row.props.children, (cell) => {
+          cellMap[cell.props.columnId] = cell;
+        });
 
-  //     if (matches(activeElement, '[data-cell]')) {
-  //       this.props.onCellClick(activeElement.getAttribute('data-row-id'), activeElement.getAttribute('data-column-id'));
-  //     } else if (matches(activeElement, '[data-header-cell]')) {
-  //       this.props.onHeaderClick(activeElement.getAttribute('data-column-id'));
-  //     } else if (matches(activeElement, '[data-section]')) {
-  //       const sectionId = activeElement.getAttribute('data-section-id');
+        orderedColumnIds.forEach((columnId) => {
+          if (cellMap[columnId].props.isSelectable) {
+            accessibilityMap.cells[section.props.id][row.props.id][columnId] = accessibilityIndex;
+            accessibilityIndex += 1;
+          }
+        });
+      });
+    });
 
-  //       if (this.props.collapsedSections) {
-  //         if (this.props.onRequestSectionCollapse) {
-  //           this.props.onRequestSectionCollapse(sectionId);
-  //         }
-  //       } else {
-  //         const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
-  //         currentlyCollapsedSections[sectionId] = !currentlyCollapsedSections[sectionId];
-  //         this.setState({ collapsedSections: currentlyCollapsedSections });
-  //       }
-  //     }
+    accessibilityMap.totalAccessibleElements = accessibilityIndex;
 
-  //     event.preventDefault();
-  //   }
-  // }
-
-  // handleKeyUp(event) {
-  //   if (event.keyCode === KEYCODES.SHIFT) {
-  //     this.shiftIsPressed = false;
-  //   }
-  // }
+    return accessibilityMap;
+  }
 
   /**
    * Column Sizing
@@ -580,6 +630,7 @@ class DataGrid extends React.Component {
         isResizeable={columnData.resizable}
         onResizeEnd={this.updateColumnWidth}
         onCellClick={onHeaderClick}
+        accessibilityId={this.getAccessibilityIdForHeaderCell(columnId)}
       >
         {columnData.component}
       </HeaderCell>
@@ -628,6 +679,7 @@ class DataGrid extends React.Component {
 
   renderSection(section, columns, width, withHeader) {
     const { rowHeight, onCellClick } = this.props;
+    const { accessibilityMap } = this.state;
 
     return (
       <div key={section.id}>
@@ -635,27 +687,30 @@ class DataGrid extends React.Component {
           <div
             key={section.id}
             className={cx('section-header-container')}
-            tabIndex={withHeader ? '0' : undefined}
             data-section-id={withHeader ? section.id : undefined}
             data-section={withHeader}
-            onClick={withHeader ? (event) => {
-              if (this.props.collapsedSections) {
-                if (this.props.onRequestSectionCollapse) {
-                  this.props.onRequestSectionCollapse(section.id);
-                }
-              } else {
-                const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
-                currentlyCollapsedSections[section.id] = !currentlyCollapsedSections[section.id];
-                this.setState({ collapsedSections: currentlyCollapsedSections });
-              }
-            } : undefined}
           >
 
             { withHeader ? (
               <SectionHeader
+                sectionId={section.id}
                 text={section.headerText}
                 isCollapsible={section.isCollapsible}
                 isCollapsed={section.isInitiallyCollapsed}
+                startAccessory={section.headerStartAccessory}
+                endAccessory={section.headerEndAccessory}
+                onClick={(event, sectionId) => {
+                  if (this.props.collapsedSections) {
+                    if (this.props.onRequestSectionCollapse) {
+                      this.props.onRequestSectionCollapse(sectionId);
+                    }
+                  } else {
+                    const currentlyCollapsedSections = Object.assign({}, this.state.collapsedSections);
+                    currentlyCollapsedSections[sectionId] = !currentlyCollapsedSections[sectionId];
+                    this.setState({ collapsedSections: currentlyCollapsedSections });
+                  }
+                }}
+                accessibilityId={accessibilityMap.sections[section.id]}
               />
             ) : null}
           </div>
@@ -681,6 +736,7 @@ class DataGrid extends React.Component {
                   onCellClick={onCellClick || undefined}
                   isSelectable={cell.isSelectable}
                   isSelected={cell.isSelected}
+                  accessibilityId={this.getAccessibilityIdForCell(section.id, section.rows[rowId].id, column.id)}
                 >
                   {cell.content}
                 </Cell>
@@ -717,6 +773,7 @@ class DataGrid extends React.Component {
   }
 
   render() {
+    const { fill } = this.props;
     const { pinnedColumnWidth } = this.state;
 
     console.log('rendering data grid');
@@ -725,7 +782,8 @@ class DataGrid extends React.Component {
       <ContentContainer
         header={this.renderHeaderRow()}
         footer={this.renderScrollbar()}
-        fill
+        onKeyDown={this.handleKeyDown}
+        fill={fill}
       >
         <div
           className={cx('vertical-overflow-container')}

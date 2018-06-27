@@ -17,6 +17,7 @@ const propTypes = {
   onCellClick: PropTypes.func,
   onResizeEnd: PropTypes.func,
   children: PropTypes.node,
+  accessibilityId: PropTypes.number,
 };
 
 class HeaderCell extends React.Component {
@@ -35,7 +36,7 @@ class HeaderCell extends React.Component {
   }
 
   render() {
-    const { columnId, isSelectable, isResizeable, width, children, onResizeEnd } = this.props;
+    const { columnId, isSelectable, isResizeable, width, children, onResizeEnd, accessibilityId } = this.props;
 
     return (
       <Cell
@@ -44,6 +45,7 @@ class HeaderCell extends React.Component {
         columnId={columnId}
         isSelectable={isSelectable}
         onCellClick={this.handleCellClick}
+        accessibilityId={accessibilityId}
         data-header-cell
       >
         {children}

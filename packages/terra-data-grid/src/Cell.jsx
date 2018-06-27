@@ -17,7 +17,11 @@ const propTypes = {
   width: PropTypes.string,
   onCellClick: PropTypes.func,
   children: PropTypes.node,
+  accessibilityId: PropTypes.number,
 };
+
+const accessibleElementsWithinCell = touchTargetElement => touchTargetElement.parentElement.querySelectorAll(`.${cx('content')} [data-grid-accessible]`);
+const focusCell = (cellElement) => { cellElement.querySelector(`.${cx('touch-target')}`).focus(); };
 
 class Cell extends React.Component {
   constructor(props) {
@@ -40,6 +44,7 @@ class Cell extends React.Component {
       const { onCellClick } = this.props;
 
       if (onCellClick) {
+        event.preventDefault();
         onCellClick(this.props.rowId, this.props.columnId);
       }
     }
@@ -54,7 +59,7 @@ class Cell extends React.Component {
   }
 
   render() {
-    const { sectionId, rowId, columnId, isSelectable, isSelected, width, onCellClick, children, ...customProps } = this.props;
+    const { sectionId, rowId, columnId, isSelectable, isSelected, width, onCellClick, children, accessibilityId, ...customProps } = this.props;
     const { widthStyle } = this.state;
 
     const cellClassName = cx(['container', customProps.className]);
@@ -76,6 +81,7 @@ class Cell extends React.Component {
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
           tabIndex={isSelectable ? '0' : undefined}
+          data-accessibility-id={accessibilityId}
         />
         <div className={cx('content')}>
           {children}
@@ -89,3 +95,4 @@ class Cell extends React.Component {
 Cell.propTypes = propTypes;
 
 export default Cell;
+export { accessibleElementsWithinCell, focusCell };
