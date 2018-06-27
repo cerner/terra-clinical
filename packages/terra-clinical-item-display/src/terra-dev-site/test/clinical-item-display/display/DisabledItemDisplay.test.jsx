@@ -1,12 +1,12 @@
 import React from 'react';
-import IconSuccess from 'terra-icon/lib/icon/IconSuccess';
+import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 
 import ItemDisplay from '../../../../ItemDisplay';
 
 const views = () => (
   <div>
     <ItemDisplay text="test text" id="test-display-text" isDisabled />
-    <ItemDisplay text="Test Text" icon={<IconSuccess />} id="test-display-icon" isDisabled />
+    <ItemDisplay text="Test Text" icon={<IconCheckmark />} id="test-display-icon" isDisabled />
   </div>
 );
 

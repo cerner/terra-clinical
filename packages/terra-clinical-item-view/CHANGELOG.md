@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added theming variables in Item View
+
 ### Fixed
 * Accessibility in Accessory Item View example
 
