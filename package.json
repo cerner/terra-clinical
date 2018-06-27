@@ -82,7 +82,7 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
-    "terra-dev-site": "git://github.com/cerner/terra-dev-site#use-i18n-locale-testing-tt-v3-and-site-changes",
-    "terra-toolkit": "git://github.com/cerner/terra-toolkit#i18n-locale-testing-tt-v3"
+    "terra-dev-site": "^2.0.0",
+    "terra-toolkit": "^4.0.0"
   }
 }
