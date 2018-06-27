@@ -11,6 +11,7 @@ Unreleased
 ----------
 ### Added
 * Added theming variables in Item View
+* Updated Inline-icon to use em instead of px 
 
 
 2.7.0 - (June 12, 2018)
