@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added theming variables in Item Display
+
 ### Fixed
 * Lint in doc page
 
