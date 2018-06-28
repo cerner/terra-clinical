@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 
-import Cell, { accessibleElementsWithinCell, focusCell } from './Cell';
+import Cell, { accessibleElementsWithinCell, selectCell } from './Cell';
 import HeaderCell from './HeaderCell';
 import Row from './Row';
 import Scrollbar from './Scrollbar';
@@ -117,6 +117,11 @@ class DataGrid extends React.Component {
     /**
      * Accessibility
      */
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleReceivedFocus = this.handleReceivedFocus.bind(this);
+    this.getAccessibleElement = this.getAccessibleElement.bind(this);
+    this.setElementFocus = this.setElementFocus.bind(this);
+    this.removeElementFocus = this.removeElementFocus.bind(this);
     this.getAccessibilityIdForHeaderCell = this.getAccessibilityIdForHeaderCell.bind(this);
     this.getAccessibilityIdForCell = this.getAccessibilityIdForCell.bind(this);
     this.getAccessibilityIdSectionHeader = this.getAccessibilityIdSectionHeader.bind(this);
@@ -135,6 +140,7 @@ class DataGrid extends React.Component {
     /**
      * Refs
      */
+    this.setDataGridContainerRef = this.setDataGridContainerRef.bind(this);
     this.setHeaderOverflowContainerRef = this.setHeaderOverflowContainerRef.bind(this);
     this.setHorizontalOverflowContainerRef = this.setHorizontalOverflowContainerRef.bind(this);
     this.setOverflowedContentContainerRef = this.setOverflowedContentContainerRef.bind(this);
@@ -259,74 +265,40 @@ class DataGrid extends React.Component {
   handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
       this.shiftIsPressed = true;
-      return;
     }
 
-    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+    if (event.nativeEvent.keyCode === KEYCODES.TAB && document.activeElement === this.dataGridContainerRef) {
       const { accessibilityMap } = this.state;
-      const activeElement = document.activeElement;
 
-      if (!activeElement) {
+      console.log('data grid has focus');
+      console.log('doing next element here');
+
+      if (this.shiftIsPressed) {
+        this.activeAccessibilityId = this.activeAccessibilityId - 1;
+      } else {
+        this.activeAccessibilityId = this.activeAccessibilityId + 1;
+      }
+
+      if (this.activeAccessibilityId < 0) {
+        /**
+         * If the activeAccessiblity
+         */
+        return;
+      } else if (this.activeAccessibilityId >= this.state.accessibilityMap.totalAccessibleElements) {
+        /**
+         * When focus is leaving the DataGrid, we do not want the brower to refocus on the elements within
+         * the DataGrid cells that may have tabindex values. So we will force focus on the terminal-focus-anchor
+         * element that is the last focusable element in the DataGrid's DOM and let the browser take over from there.
+         */
+        const terminalFocusTrap = this.dataGridContainerRef.querySelector(`.${cx('terminal-focus-anchor')}`);
+        terminalFocusTrap.focus();
         return;
       }
 
-      if (matches(activeElement, '[data-accessibility-id]')) {
-        // const accessibleItemsWithinElement = accessibleElementsWithinCell(activeElement);
-        // if (accessibleItemsWithinElement.length) {
-        //   accessibleItemsWithinElement[0].focus();
-        //   event.preventDefault();
+      event.preventDefault();
+      event.stopPropagation();
 
-        //   return;
-        // }
-
-        const currentAccessibilityId = activeElement.getAttribute('data-accessibility-id');
-        const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
-
-        if (nextAccessibilityId < 0 || nextAccessibilityId >= accessibilityMap.totalAccessibleElements) {
-          activeElement.blur();
-        } else {
-          const nextFocusElement = document.querySelector(`[data-accessibility-id="${nextAccessibilityId}"]`);
-          if (nextFocusElement) {
-            event.preventDefault();
-
-            nextFocusElement.focus();
-          }
-        }
-      }
-      // else if (matches(activeElement, '[data-grid-accessible]')) {
-      //   const searchElement = activeElement;
-      //   let accessibleParent;
-      //   while (!accessibleParent && activeElement !== document) {
-      //     if (matches(searchElement, '[data-cell]')) {
-      //       accessibleParent = searchElement;
-      //     }
-      //   }
-
-      //   const accessibleChildren = accessibleElementsWithinCell(accessibleParent);
-      //   let activeItemIndex;
-      //   for (let i = 0, length = accessibleChildren.length; i < length; i += 1) {
-      //     if (accessibleChildren.item(i) === activeElement) {
-      //       activeItemIndex = i;
-      //       break;
-      //     }
-      //   }
-
-      //   if (activeItemIndex === 0 && accessibleChildren.length === 1) {
-      //     if (this.shiftIsPressed) {
-      //       focusCell(accessibleParent);
-      //     } else {
-      //       debugger;
-      //     }
-      //   } else if (activeItemIndex > 0 && activeItemIndex < accessibleChildren.length - 1) {
-      //     if (this.shiftIsPressed) {
-      //       accessibleChildren[activeItemIndex - 1].focus();
-      //       event.preventDefault();
-      //     } else {
-      //       accessibleChildren[activeItemIndex + 1].focus();
-      //       event.preventDefault();
-      //     }
-      //   }
-      // }
+      this.setElementFocus(this.getAccessibleElement(this.activeAccessibilityId));
     }
   }
 
@@ -339,6 +311,72 @@ class DataGrid extends React.Component {
   /**
    * Accessiblity
    */
+
+  handleBlur() {
+    this.activeAccessibilityId = -1;
+
+    if (this.activeFocusElement) {
+      this.removeElementFocus(this.activeFocusElement);
+      this.activeFocusElement = undefined;
+    }
+  }
+
+  handleReceivedFocus(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (this.shiftIsPressed) {
+      this.activeAccessibilityId = this.state.accessibilityMap.totalAccessibleElements - 1;
+    } else {
+      this.activeAccessibilityId = 0;
+    }
+
+    this.setElementFocus(this.getAccessibleElement(this.activeAccessibilityId));
+  }
+
+  getAccessibleElement(accessibilityId) {
+    return this.dataGridContainerRef.querySelector(`[data-accessibility-id="${accessibilityId}"]`);
+  }
+
+  setElementFocus(element) {
+    if (this.activeFocusElement) {
+      this.removeElementFocus(this.activeFocusElement);
+    }
+
+    element.setAttribute('aria-activedescendant', true);
+    this.activeFocusElement = element;
+
+    if (matches(this.activeFocusElement, `.${cx('vertical-overflow-container')} [data-cell]`) ||
+        matches(this.activeFocusElement, `.${cx('vertical-overflow-container')} [data-section-header]`)) {
+      const elementOffsetTop = this.activeFocusElement.offsetTop;
+      const elementHeight = this.activeFocusElement.getBoundingClientRect().height;
+      const verticalScrollOffset = this.verticalOverflowContainerRef.scrollTop;
+      const verticalScrollHeight = this.verticalOverflowContainerRef.getBoundingClientRect().height;
+
+      if (verticalScrollOffset > elementOffsetTop) {
+        this.verticalOverflowContainerRef.scrollTop = elementOffsetTop;
+      } else if ((elementOffsetTop + elementHeight) >= (verticalScrollOffset + verticalScrollHeight)) {
+        this.verticalOverflowContainerRef.scrollTop = (elementOffsetTop - verticalScrollHeight) + elementHeight;
+      }
+    }
+
+    if (matches(this.activeFocusElement, `.${cx('horizontal-overflow-container')} [data-cell]`)) {
+      const cellOffsetLeft = this.activeFocusElement.offsetLeft;
+      const cellWidth = this.activeFocusElement.getBoundingClientRect().width;
+      const horizontalScrollOffset = this.horizontalOverflowContainerRef.scrollLeft;
+      const horizontalScrollWidth = this.horizontalOverflowContainerRef.getBoundingClientRect().width;
+
+      if (horizontalScrollOffset > cellOffsetLeft) {
+        this.horizontalOverflowContainerRef.scrollLeft = cellOffsetLeft;
+      } else if ((cellOffsetLeft + cellWidth) >= (horizontalScrollOffset + horizontalScrollWidth)) {
+        this.horizontalOverflowContainerRef.scrollLeft = (cellOffsetLeft - horizontalScrollWidth) + cellWidth;
+      }
+    }
+  }
+
+  removeElementFocus(element) {
+    element.removeAttribute('aria-activedescendant');
+  }
 
   getAccessibilityIdForHeaderCell(columnId, source) {
     const { accessibilityMap } = source || this.state;
@@ -490,6 +528,9 @@ class DataGrid extends React.Component {
   /**
    * Refs
    */
+  setDataGridContainerRef(ref) {
+    this.dataGridContainerRef = ref;
+  }
 
   setPinnedContentContainerRef(ref) {
     this.pinnedContentContainerRef = ref;
@@ -733,7 +774,7 @@ class DataGrid extends React.Component {
                   rowId={section.rows[rowId].id}
                   columnId={column.id}
                   width={`${this.getWidthForColumn(column.id)}px`}
-                  onCellClick={onCellClick || undefined}
+                  onCellClick={onCellClick}
                   isSelectable={cell.isSelectable}
                   isSelected={cell.isSelected}
                   accessibilityId={this.getAccessibilityIdForCell(section.id, section.rows[rowId].id, column.id)}
@@ -779,42 +820,54 @@ class DataGrid extends React.Component {
     console.log('rendering data grid');
 
     return (
-      <ContentContainer
-        header={this.renderHeaderRow()}
-        footer={this.renderScrollbar()}
+      <div
+        className={cx(['data-grid-container', { fill }])}
+        tabIndex="0"
+        ref={this.setDataGridContainerRef}
+        onFocus={this.handleReceivedFocus}
+        onBlur={this.handleBlur}
         onKeyDown={this.handleKeyDown}
-        fill={fill}
       >
-        <div
-          className={cx('vertical-overflow-container')}
-          ref={this.setVerticalOverflowContainerRef}
+        <ContentContainer
+          header={this.renderHeaderRow()}
+          footer={this.renderScrollbar()}
+          fill={fill}
         >
           <div
-            className={cx('overflowed-content-container')}
-            ref={this.setOverflowedContentContainerRef}
-            style={{
-              paddingLeft: `${pinnedColumnWidth}px`,
-            }}
+            className={cx('vertical-overflow-container')}
+            ref={this.setVerticalOverflowContainerRef}
           >
             <div
-              className={cx('horizontal-overflow-container')}
-              ref={this.setHorizontalOverflowContainerRef}
-              onScroll={this.synchronizeContentScroll}
+              className={cx('overflowed-content-container')}
+              ref={this.setOverflowedContentContainerRef}
+              style={{
+                paddingLeft: `${pinnedColumnWidth}px`,
+              }}
             >
-              {this.renderOverflowContent()}
+              <div
+                className={cx('horizontal-overflow-container')}
+                ref={this.setHorizontalOverflowContainerRef}
+                onScroll={this.synchronizeContentScroll}
+              >
+                {this.renderOverflowContent()}
+              </div>
+            </div>
+            <div
+              className={cx('pinned-content-container')}
+              ref={this.setPinnedContentContainerRef}
+              style={{
+                width: `${pinnedColumnWidth}px`,
+              }}
+            >
+              {this.renderPinnedContent()}
             </div>
           </div>
-          <div
-            className={cx('pinned-content-container')}
-            ref={this.setPinnedContentContainerRef}
-            style={{
-              width: `${pinnedColumnWidth}px`,
-            }}
-          >
-            {this.renderPinnedContent()}
-          </div>
-        </div>
-      </ContentContainer>
+        </ContentContainer>
+        <div
+          className={cx('terminal-focus-anchor')}
+          tabIndex="0"
+        />
+      </div>
     );
   }
 }

@@ -21,7 +21,7 @@ const propTypes = {
 };
 
 const accessibleElementsWithinCell = touchTargetElement => touchTargetElement.parentElement.querySelectorAll(`.${cx('content')} [data-grid-accessible]`);
-const focusCell = (cellElement) => { cellElement.querySelector(`.${cx('touch-target')}`).focus(); };
+const selectCell = (cellElement) => { cellElement.querySelector(`.${cx('touch-target')}`).click(); };
 
 class Cell extends React.Component {
   constructor(props) {
@@ -71,6 +71,8 @@ class Cell extends React.Component {
         className={cellClassName}
         key={`${sectionId}-${rowId}-${columnId}`}
         style={widthStyle}
+        aria-selected={isSelected}
+        data-accessibility-id={accessibilityId}
         data-cell
         data-column-id={columnId}
         data-row-id={rowId}
@@ -81,7 +83,6 @@ class Cell extends React.Component {
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
           tabIndex={isSelectable ? '0' : undefined}
-          data-accessibility-id={accessibilityId}
         />
         <div className={cx('content')}>
           {children}
@@ -95,4 +96,4 @@ class Cell extends React.Component {
 Cell.propTypes = propTypes;
 
 export default Cell;
-export { accessibleElementsWithinCell, focusCell };
+export { accessibleElementsWithinCell, selectCell };

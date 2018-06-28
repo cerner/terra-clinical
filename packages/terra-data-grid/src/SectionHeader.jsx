@@ -23,13 +23,13 @@ const SectionHeader = ({ sectionId, text, startAccessory, endAccessory, isCollap
   <div
     key={sectionId}
     className={cx('section-header')}
+    data-section-header
+    data-accessibility-id={accessibilityId}
   >
     {isCollapsible ? (
       <div
         className={cx(['touch-target', { selectable: isCollapsible }])}
         onClick={onClick && isCollapsible ? ((event) => { onClick(event, sectionId); }) : null}
-        tabIndex={isCollapsible ? '0' : null}
-        data-accessibility-id={isCollapsible ? accessibilityId : null}
       />
     ) : null}
     <div className={cx('content')}>
