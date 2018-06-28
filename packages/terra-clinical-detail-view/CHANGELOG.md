@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.8.0 - (June 28, 2018)
+----------
 ### Added
 * Added word-wrap property to DetailView titles and subtitles
 * Added test page for overflow text
