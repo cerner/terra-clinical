@@ -17,7 +17,7 @@
     position: absolute;
     width: 100%;
 
-    [aria-activedescendant] & {
+    &:focus {
       outline: none;
       box-shadow: inset 0 0 5px 0px #0092e0;
     }

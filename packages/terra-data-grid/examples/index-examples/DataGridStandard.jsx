@@ -179,8 +179,8 @@ class DataGridStandard extends React.Component {
         isInitiallyCollapsed={isCollapsed}
         hideHeader={false}
         headerText={sectionName}
-        headerStartAccessory={<Button text="Start" style={{ pointerEvents: 'auto' }} />}
-        headerEndAccessory={<Button text="End" style={{ pointerEvents: 'auto' }} />}
+        headerStartAccessory={<Button text="Start" data-accessible-data-grid-content />}
+        headerEndAccessory={<Button text="End" data-accessible-data-grid-content />}
       >
         {this.buildRows(sectionId, numberOfRows)}
       </Section>

@@ -16,11 +16,10 @@ const ContentCellLayout = ({ text }) => (
     {text}
     <div>
       <Button
-        style={{ pointerEvents: 'auto' }}
         text="Button" onClick={() => {
           alert('You clicked a button, but you did not select a cell');
         }}
-        data-grid-accessible
+        data-accessible-data-grid-content
       />
     </div>
   </div>

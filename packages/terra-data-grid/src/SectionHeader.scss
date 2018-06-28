@@ -41,15 +41,15 @@
       position: absolute;
       width: 100%;
 
+      &:focus {
+        outline: none;
+        box-shadow: inset 0 0 5px 0px #0092e0;
+      }
+
       &.selectable:hover {
         background: #e2f2fc;
         cursor: pointer;
       }
     }
-  }
-
-  [aria-activedescendant] .touch-target {
-      outline: none;
-      box-shadow: inset 0 0 5px 0px #0092e0;
   }
 }
