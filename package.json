@@ -22,14 +22,7 @@
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "browserslist": [
-    "iOS >= 10",
-    "last 2 and_chr versions",
-    "last 2 android versions",
-    "last 2 chrome versions",
-    "last 2 edge versions",
-    "last 2 firefox versions",
-    "last 2 ie versions",
-    "last 2 safari versions"
+    "extends browserslist-config-terra"
   ],
   "eslintConfig": {
     "extends": "terra"
@@ -96,7 +89,7 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
-    "terra-dev-site": "^1.2.0",
-    "terra-toolkit": "^3.3.1"
+    "terra-dev-site": "^2.0.0",
+    "terra-toolkit": "^4.0.0"
   }
 }
