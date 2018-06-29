@@ -3,11 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
-### Added
-* Added theming variables in Item View
-
 ### Fixed
 * Accessibility in Accessory Item View example
+
+2.8.0 - (June 28, 2018)
+----------
+### Added
+* Added theming variables in Item View
 
 2.7.0 - (June 12, 2018)
 ----------
