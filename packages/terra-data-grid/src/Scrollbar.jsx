@@ -11,6 +11,7 @@ const propTypes = {
   onMoveStart: PropTypes.func,
   onMoveEnd: PropTypes.func,
   onMove: PropTypes.func,
+  refCallback: PropTypes.func,
   scrollbarRefCallback: PropTypes.func,
 };
 
@@ -58,11 +59,12 @@ class Scrollbar extends React.Component {
   }
 
   render() {
-    const { scrollbarRefCallback } = this.props;
+    const { refCallback, scrollbarRefCallback } = this.props;
 
     return (
       <div
         className={cx('container')}
+        ref={refCallback}
       >
         <DraggableCore
           onStart={this.handleDragStart}

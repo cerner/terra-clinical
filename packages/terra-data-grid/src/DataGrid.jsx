@@ -16,27 +16,16 @@ import HeaderCellLayout from './default-components/HeaderCellLayout';
 import { calculateScrollbarPosition } from './scrollbarUtils';
 import { KEYCODES, matches } from './utils';
 
+import columnDataShape from './prop-types/columnDataShape';
+import sectionDataShape from './prop-types/sectionDataShape';
+
 import styles from './DataGrid.scss';
 
 const cx = classNames.bind(styles);
 
-const Section = () => null;
-
 const propTypes = {
-  pinnedColumns: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    initialWidth: PropTypes.number,
-    selectable: PropTypes.bool,
-    resizable: PropTypes.bool,
-    component: PropTypes.node,
-  })),
-  overflowColumns: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    initialWidth: PropTypes.number,
-    selectable: PropTypes.bool,
-    resizable: PropTypes.bool,
-    component: PropTypes.node,
-  })),
+  pinnedColumns: PropTypes.arrayOf(columnDataShape),
+  overflowColumns: PropTypes.arrayOf(columnDataShape),
   columnWidths: PropTypes.objectOf(PropTypes.number),
   onRequestColumnResize: PropTypes.func,
   collapsedSections: PropTypes.object,
@@ -45,62 +34,19 @@ const propTypes = {
   headerHeight: PropTypes.string,
   onCellClick: PropTypes.func,
   onHeaderClick: PropTypes.func,
-  children: PropTypes.node,
+  sections: PropTypes.arrayOf(sectionDataShape),
   fill: PropTypes.bool,
 };
 
 const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
+  sections: [],
   rowHeight: '2rem',
   headerHeight: '2rem',
 };
 
 class DataGrid extends React.Component {
-  static buildSectionData(sections) {
-    const sectionMap = {};
-
-    React.Children.forEach(sections, (section) => {
-      const sectionData = {};
-
-      sectionData.id = section.props.id;
-      sectionData.isCollapsible = section.props.isCollapsible;
-      sectionData.isInitiallyCollapsed = section.props.isInitiallyCollapsed;
-      sectionData.headerText = section.props.headerText;
-      sectionData.headerStartAccessory = section.props.headerStartAccessory;
-      sectionData.headerEndAccessory = section.props.headerEndAccessory;
-
-      sectionData.rows = {};
-      sectionData.rowOrdering = [];
-      React.Children.forEach(section.props.children, (row) => {
-        const rowData = {};
-        rowData.id = row.props.id;
-        rowData.cells = {};
-
-        React.Children.forEach(row.props.children, (cell) => {
-          if (!cell.props.columnId) {
-            return;
-          }
-
-          const cellData = {};
-          cellData.columnId = cell.props.columnId;
-          cellData.isSelectable = cell.props.isSelectable;
-          cellData.isSelected = cell.props.isSelected;
-          cellData.content = cell.props.children;
-
-          rowData.cells[cell.props.columnId] = cellData;
-        });
-
-        sectionData.rows[rowData.id] = rowData;
-        sectionData.rowOrdering.push(rowData.id);
-      });
-
-      sectionMap[sectionData.id] = sectionData;
-    });
-
-    return sectionMap;
-  }
-
   constructor(props) {
     super(props);
 
@@ -139,8 +85,12 @@ class DataGrid extends React.Component {
     this.setHorizontalOverflowContainerRef = this.setHorizontalOverflowContainerRef.bind(this);
     this.setOverflowedContentContainerRef = this.setOverflowedContentContainerRef.bind(this);
     this.setPinnedContentContainerRef = this.setPinnedContentContainerRef.bind(this);
-    this.setVerticalOverflowContainerRef = this.setVerticalOverflowContainerRef.bind(this);
     this.setScrollbarRef = this.setScrollbarRef.bind(this);
+    this.setScrollbarContainerRef = this.setScrollbarContainerRef.bind(this);
+    this.setVerticalOverflowContainerRef = this.setVerticalOverflowContainerRef.bind(this);
+    this.headerCellRefs = {};
+    this.cellRefs = {};
+    this.sectionRefs = {};
 
     /**
      * Scroll synchronization
@@ -152,6 +102,8 @@ class DataGrid extends React.Component {
     this.resetContentScrollEventMarkers = this.resetContentScrollEventMarkers.bind(this);
     this.resetScrollbarEventMarkers = this.resetScrollbarEventMarkers.bind(this);
     this.updateScrollbarPosition = this.updateScrollbarPosition.bind(this);
+    this.updateScrollbarVisibility = this.updateScrollbarVisibility.bind(this);
+    this.scrollbarPosition = 0;
 
     /**
      * Rendering
@@ -162,17 +114,11 @@ class DataGrid extends React.Component {
     this.renderPinnedContent = this.renderPinnedContent.bind(this);
     this.renderScrollbar = this.renderScrollbar.bind(this);
 
-    this.headerCellRefs = {};
-    this.cellRefs = {};
-    this.sectionRefs = {};
-
-    this.scrollbarPosition = 0;
-
     this.state = {
       pinnedColumnWidth: this.getTotalPinnedColumnWidth(),
       overflowColumnWidth: this.getTotalOverflowColumnWidth(),
-      sections: DataGrid.buildSectionData(props.children),
-      sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
+      // sections: DataGrid.buildSectionData(props.children),
+      // sectionOrdering: React.Children.map(props.children, child => (child.props.id)),
     };
   }
 
@@ -201,6 +147,9 @@ class DataGrid extends React.Component {
     this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
 
     this.generateAccessibleContentIndex();
+
+    this.updateScrollbarPosition();
+    this.updateScrollbarVisibility();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -209,13 +158,13 @@ class DataGrid extends React.Component {
       overflowColumnWidth: this.getTotalOverflowColumnWidth(nextProps),
     };
 
-    if (this.props.children !== nextProps.children) {
-      /**
-       * If the provided children differ from the previous render, they need to be reprocessed into a more convenient structure.
-       */
-      newState.sections = DataGrid.buildSectionData(nextProps.children);
-      newState.sectionOrdering = React.Children.map(nextProps.children, child => (child.props.id));
-    }
+    // if (this.props.children !== nextProps.children) {
+    //   /**
+    //    * If the provided children differ from the previous render, they need to be reprocessed into a more convenient structure.
+    //    */
+    //   newState.sections = DataGrid.buildSectionData(nextProps.children);
+    //   newState.sectionOrdering = React.Children.map(nextProps.children, child => (child.props.id));
+    // }
 
     this.setState(newState);
   }
@@ -226,6 +175,7 @@ class DataGrid extends React.Component {
      */
     requestAnimationFrame(() => {
       this.updateScrollbarPosition();
+      this.updateScrollbarVisibility();
     });
 
     /**
@@ -337,7 +287,7 @@ class DataGrid extends React.Component {
   }
 
   generateAccessibleContentIndex(source) {
-    const { pinnedColumns, overflowColumns, children } = source || this.props;
+    const { pinnedColumns, overflowColumns, sections } = source || this.props;
 
     const orderedColumnIds = pinnedColumns.concat(overflowColumns).map(column => column.id);
 
@@ -371,9 +321,9 @@ class DataGrid extends React.Component {
       }
     });
 
-    React.Children.forEach(children, (section) => {
-      if (section.props.isCollapsible) {
-        const sectionRef = this.sectionRefs[section.props.id];
+    sections.forEach((section) => {
+      if (section.isCollapsible) {
+        const sectionRef = this.sectionRefs[section.id];
         if (sectionRef) {
           accessibilityStack.push(sectionRef);
 
@@ -384,22 +334,22 @@ class DataGrid extends React.Component {
         }
       }
 
-      if (section.props.isCollapsed) {
+      if (section.isCollapsed) {
         /**
          * If the section is collapsed, we do not want to assign accessibility identifiers to its content.
          */
         return;
       }
 
-      React.Children.forEach(section.props.children, (row) => {
+      section.rows.forEach((row) => {
         const cellMap = {};
-        React.Children.forEach(row.props.children, (cell) => {
-          cellMap[cell.props.columnId] = cell;
+        row.cells.forEach((cell) => {
+          cellMap[cell.columnId] = cell;
         });
 
         orderedColumnIds.forEach((columnId) => {
-          if (cellMap[columnId].props.isSelectable) {
-            const cellRef = this.cellRefs[`${section.props.id}-${row.props.id}-${columnId}`];
+          if (cellMap[columnId].isSelectable) {
+            const cellRef = this.cellRefs[`${section.id}-${row.id}-${columnId}`];
             if (cellRef) {
               accessibilityStack.push(cellRef);
 
@@ -514,6 +464,10 @@ class DataGrid extends React.Component {
     this.scrollbarRef = ref;
   }
 
+  setScrollbarContainerRef(ref) {
+    this.scrollbarContainerRef = ref;
+  }
+
   setVerticalOverflowContainerRef(ref) {
     this.verticalOverflowContainerRef = ref;
   }
@@ -594,6 +548,14 @@ class DataGrid extends React.Component {
 
   resetScrollbarEventMarkers() {
     this.scrollbarIsScrolling = false;
+  }
+
+  updateScrollbarVisibility() {
+    if (this.horizontalOverflowContainerRef.scrollWidth <= this.horizontalOverflowContainerRef.getBoundingClientRect().width) {
+      this.scrollbarContainerRef.style.height = '0px';
+    } else {
+      this.scrollbarContainerRef.style.height = '';
+    }
   }
 
   updateScrollbarPosition() {
@@ -683,6 +645,15 @@ class DataGrid extends React.Component {
   renderSection(section, columns, width, withHeader) {
     const { rowHeight, onCellClick } = this.props;
 
+    let isSectionCollapsed;
+    if (this.props.collapsedSections) {
+      isSectionCollapsed = this.props.collapsedSections[section.id];
+    }
+
+    if (isSectionCollapsed === undefined) {
+      isSectionCollapsed = section.isInitiallyCollapsed;
+    }
+
     return (
       <div key={section.id}>
         {section.headerText ? (
@@ -697,15 +668,13 @@ class DataGrid extends React.Component {
               <SectionHeader
                 sectionId={section.id}
                 text={section.headerText}
-                isCollapsible={section.isCollapsible}
-                isCollapsed={section.isInitiallyCollapsed}
                 startAccessory={section.headerStartAccessory}
                 endAccessory={section.headerEndAccessory}
+                isCollapsible={section.isCollapsible}
+                isCollapsed={isSectionCollapsed}
                 onClick={(sectionId) => {
-                  if (this.props.collapsedSections) {
-                    if (this.props.onRequestSectionCollapse) {
-                      this.props.onRequestSectionCollapse(sectionId);
-                    }
+                  if (this.props.onRequestSectionCollapse) {
+                    this.props.onRequestSectionCollapse(sectionId);
                   }
                 }}
                 refCallback={(ref) => {
@@ -715,23 +684,23 @@ class DataGrid extends React.Component {
             ) : null}
           </div>
         ) : null}
-        {(!section.isCollapsible || !section.isInitiallyCollapsed) && section.rows && section.rowOrdering.map((rowId, index) => (
+        {!isSectionCollapsed && section.rows && section.rows.map(row => (
           <Row
-            key={`${section.id}-${section.rows[rowId].id}`}
+            key={`${section.id}-${row.id}`}
             sectionId={section.id}
-            rowId={section.rows[rowId].id}
+            rowId={row.id}
             width={width}
             height={rowHeight}
           >
             {columns.map((column) => {
-              const cell = section.rows[rowId].cells[column.id];
-              const cellKey = `${section.id}-${section.rows[rowId].id}-${column.id}`;
+              const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
+              const cellKey = `${section.id}-${row.id}-${column.id}`;
 
               return (
                 <Cell
                   key={cellKey}
                   sectionId={section.id}
-                  rowId={section.rows[rowId].id}
+                  rowId={row.id}
                   columnId={column.id}
                   width={`${this.getWidthForColumn(column.id)}px`}
                   onCellClick={onCellClick}
@@ -750,22 +719,23 @@ class DataGrid extends React.Component {
   }
 
   renderPinnedContent() {
-    const { pinnedColumns } = this.props;
-    const { sections, sectionOrdering, pinnedColumnWidth } = this.state;
+    const { pinnedColumns, sections } = this.props;
+    const { pinnedColumnWidth } = this.state;
 
-    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], pinnedColumns, `${pinnedColumnWidth}px`, true));
+    return sections.map(section => this.renderSection(section, pinnedColumns, `${pinnedColumnWidth}px`, true));
   }
 
   renderOverflowContent() {
-    const { overflowColumns } = this.props;
-    const { sections, sectionOrdering, overflowColumnWidth } = this.state;
+    const { overflowColumns, sections } = this.props;
+    const { overflowColumnWidth } = this.state;
 
-    return sectionOrdering.map(sectionId => this.renderSection(sections[sectionId], overflowColumns, `${overflowColumnWidth}px`));
+    return sections.map(section => this.renderSection(section, overflowColumns, `${overflowColumnWidth}px`));
   }
 
   renderScrollbar() {
     return (
       <Scrollbar
+        refCallback={this.setScrollbarContainerRef}
         scrollbarRefCallback={this.setScrollbarRef}
         onMove={this.synchronizeScrollbar}
         onMoveEnd={this.resetScrollbarEventMarkers}
@@ -854,4 +824,4 @@ DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
 export default DataGrid;
-export { Section, Row, Cell, HeaderCell, ContentCellLayout, HeaderCellLayout };
+export { ContentCellLayout, HeaderCellLayout };

@@ -25,7 +25,16 @@ class SectionHeader extends React.Component {
   constructor(props) {
     super(props);
 
+    this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  handleClick() {
+    const { onClick, sectionId } = this.props;
+
+    if (onClick) {
+      onClick(sectionId);
+    }
   }
 
   handleKeyDown(event) {
@@ -36,15 +45,6 @@ class SectionHeader extends React.Component {
         event.preventDefault();
         onClick(sectionId);
       }
-    }
-  }
-
-  handleClick(event) {
-    const { onClick, sectionId } = this.props;
-
-    if (onClick) {
-      event.preventDefault();
-      onClick(sectionId);
     }
   }
 

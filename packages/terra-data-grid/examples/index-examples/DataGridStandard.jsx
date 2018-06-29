@@ -1,15 +1,10 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import Aggregator from 'terra-aggregator';
 import Button from 'terra-button';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
 
-import DataGrid, { Section, Row, Cell, ContentCellLayout, HeaderCellLayout } from '../../src/DataGrid';
-
-import styles from './DataGridStandard.scss';
-
-const cx = classNames.bind(styles);
+import DataGrid, { ContentCellLayout, HeaderCellLayout } from '../../src/DataGrid';
 
 const DisclosureComponent = ({ app, text }) => (
   <div style={{ height: '100%' }}>
@@ -127,6 +122,7 @@ class DataGridStandard extends React.Component {
   }
 
   handleSectionClick(sectionId) {
+    debugger;
     if (!sectionId) {
       return;
     }
@@ -146,25 +142,15 @@ class DataGridStandard extends React.Component {
       selectedCell = aggregatorDelegate.itemState.selectedCell;
     }
 
-    const rows = (new Array(num)).fill().map((val, index) => (
-      <Row
-        key={`${sectionId}-Row${index}`}
-        id={`${sectionId}-Row${index}`}
-      >
-        {((new Array(10).fill(0)).map((val, index) => (`column${index}`))).map(columnKey => (
-          <Cell
-            key={`${columnKey}`}
-            columnId={columnKey}
-            isSelectable
-            isSelected={selectedCell && selectedCell.rowKey === `${sectionId}-Row${index}` && selectedCell.columnKey === columnKey}
-          >
-            <ContentCellLayout
-              text={`Row ${index}, Column ${columnKey}`}
-            />
-          </Cell>
-        ))}
-      </Row>
-    ));
+    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionId}-Row${rowIndex}`,
+      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`column${cellIndex}`))).map(columnKey => ({
+        columnId: columnKey,
+        isSelectable: true,
+        isSelected: selectedCell && selectedCell.rowKey === `${sectionId}-Row${rowIndex}` && selectedCell.columnKey === columnKey,
+        content: <ContentCellLayout text={`Row ${rowIndex}, Column ${columnKey}`} />,
+      })),
+    }));
 
     return sortDirection === 'descending' ? rows.reverse() : rows;
   }
@@ -172,19 +158,16 @@ class DataGridStandard extends React.Component {
   buildSection(sectionId, sectionName, numberOfRows, isCollapsible) {
     const isCollapsed = this.state.collapsedSections[sectionId];
 
-    return (
-      <Section
-        id={sectionId}
-        isCollapsible={isCollapsible}
-        isInitiallyCollapsed={isCollapsed}
-        hideHeader={false}
-        headerText={sectionName}
-        headerStartAccessory={<Button text="Start" data-accessible-data-grid-content />}
-        headerEndAccessory={<Button text="End" data-accessible-data-grid-content />}
-      >
-        {this.buildRows(sectionId, numberOfRows)}
-      </Section>
-    );
+    return ({
+      id: sectionId,
+      isCollapsible,
+      isCollapsed,
+      headerText: sectionName,
+      headerStartAccessory: <Button text="Start" data-accessible-data-grid-content />,
+      headerEndAccessory: <Button text="End" data-accessible-data-grid-content />,
+      headerComponent: undefined,
+      rows: this.buildRows(sectionId, numberOfRows),
+    });
   }
 
   render() {
@@ -283,6 +266,12 @@ class DataGridStandard extends React.Component {
             component: <HeaderCellLayout text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,
           },
         ]}
+        sections={[
+          this.buildSection('section_0', 'Section 0', 10, true),
+          this.buildSection('section_1', 'Section 1', 10, true),
+          this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 10, true),
+          this.buildSection('section_3', 'Section 3 (No collapsing)', 10),
+        ]}
         rowHeight="5rem"
         headerHeight="3rem"
         onCellClick={this.handleCellClick}
@@ -292,12 +281,7 @@ class DataGridStandard extends React.Component {
         collapsedSections={collapsedSections}
         onRequestSectionCollapse={this.handleSectionClick}
         fill
-      >
-        {this.buildSection('section_0', 'Section 0', 10, true)}
-        {this.buildSection('section_1', 'Section 1', 10, true)}
-        {this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 10, true)}
-        {this.buildSection('section_3', 'Section 3 (No collapsing)', 10)}
-      </DataGrid>
+      />
     );
   }
 }
