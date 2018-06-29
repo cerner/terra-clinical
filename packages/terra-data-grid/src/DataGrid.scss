@@ -1,6 +1,7 @@
 :local {
   .data-grid-container {
     outline: none;
+    border: 1px solid lightgrey;
   }
 
   .data-grid-container [data-accessible-data-grid-content] {
@@ -80,7 +81,7 @@
   }
 
   .section-header-container {
-    height: 33px;
+    height: 3rem;
     background: lightgrey;
     border-bottom: 1px solid #646464;
   }

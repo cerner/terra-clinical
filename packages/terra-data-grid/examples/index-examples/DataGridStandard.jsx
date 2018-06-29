@@ -122,7 +122,6 @@ class DataGridStandard extends React.Component {
   }
 
   handleSectionClick(sectionId) {
-    debugger;
     if (!sectionId) {
       return;
     }
@@ -156,18 +155,46 @@ class DataGridStandard extends React.Component {
   }
 
   buildSection(sectionId, sectionName, numberOfRows, isCollapsible) {
-    const isCollapsed = this.state.collapsedSections[sectionId];
+    if (sectionId === 'section_0') {
+      return {
+        id: sectionId,
+        isCollapsible,
+        headerText: sectionName,
+        rows: this.buildRows(sectionId, numberOfRows),
+      };
+    } else if (sectionId === 'section_1') {
+      return {
+        id: sectionId,
+        isCollapsible,
+        headerText: sectionName,
+        headerStartAccessory: <Button text="Start Accessory" data-accessible-data-grid-content />,
+        headerEndAccessory: <Button text="End Accessory" data-accessible-data-grid-content />,
+        rows: this.buildRows(sectionId, numberOfRows),
+      };
+    } else if (sectionId === 'section_2') {
+      return {
+        id: sectionId,
+        isCollapsible,
+        headerText: sectionName,
+        headerEndAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
+        rows: this.buildRows(sectionId, numberOfRows),
+      };
+    } else if (sectionId === 'section_3') {
+      return {
+        id: sectionId,
+        isCollapsible,
+        headerComponent: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 - Custom Content</marquee>,
+        rows: this.buildRows(sectionId, numberOfRows),
+      };
+    }
 
-    return ({
+    return {
       id: sectionId,
       isCollapsible,
-      isCollapsed,
       headerText: sectionName,
-      headerStartAccessory: <Button text="Start" data-accessible-data-grid-content />,
-      headerEndAccessory: <Button text="End" data-accessible-data-grid-content />,
-      headerComponent: undefined,
+      headerEndAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
       rows: this.buildRows(sectionId, numberOfRows),
-    });
+    };
   }
 
   render() {
@@ -267,10 +294,11 @@ class DataGridStandard extends React.Component {
           },
         ]}
         sections={[
-          this.buildSection('section_0', 'Section 0', 10, true),
-          this.buildSection('section_1', 'Section 1', 10, true),
-          this.buildSection('section_2', 'Section 2 - Long text Long textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong textLong text', 10, true),
-          this.buildSection('section_3', 'Section 3 (No collapsing)', 10),
+          this.buildSection('section_0', 'Section Header 0 - Text', 10, true),
+          this.buildSection('section_1', 'Section Header 1 - Text w/ Accessory Content', 10, true),
+          this.buildSection('section_2', 'Section Header 2 - Long text - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo erat lorem, sed ornare erat blandit ac. Nullam porta elit eget pretium eleifend. Donec lobortis malesuada mauris, ac rutrum nibh dictum quis. In vel consectetur sem. Nullam in rutrum erat, eget ultricies urna. Nam pharetra nisi ipsum, et posuere sapien', 10, true),
+          this.buildSection('section_3', 'Section Header 3 - Custom', 10, true),
+          this.buildSection('section_4', 'Section Header 4 - Not Collapsible', 10),
         ]}
         rowHeight="5rem"
         headerHeight="3rem"
@@ -315,82 +343,5 @@ const SlidePanelManagerWrapper = () => (
     </ModalManager>
   </div>
 );
-
-// const Current = () => (
-//   <DataGrid>
-//     <Section id="section0" isCollapsible>
-//       <Row id="row0">
-//         <Cell columnId="column0" isSelectable>
-//           <div>Cell 0</div>
-//         </Cell>
-//         <Cell columnId="column1" isSelectable isSelected>
-//           <div>Cell 1</div>
-//         </Cell>
-//       </Row>
-//     </Section>
-//     <Section id="section1" isCollapsible>
-//       <Row id="row1">
-//         <Cell columnId="column0" isSelectable>
-//           <div>Cell 0</div>
-//         </Cell>
-//         <Cell columnId="column1" isSelectable isSelected>
-//           <div>Cell 1</div>
-//         </Cell>
-//       </Row>
-//     </Section>
-//   </DataGrid>
-// );
-
-// const Alternative = () => {
-//   const sections = [{
-//     id: 'section0',
-//     isCollapsible: true,
-//     text: 'Section 0',
-//     rows: [{
-//       id: 'row0',
-//       cells: [{
-//         columnId: 'column0',
-//         isSelectable: true,
-//         component: (
-//           <div>Cell 0</div>
-//         ),
-//       }, {
-//         columnId: 'column1',
-//         isSelectable: true,
-//         isSelected: true,
-//         component: (
-//           <div>Cell 1</div>
-//         ),
-//       }],
-//     }],
-//   }, {
-//     id: 'section1',
-//     isCollapsible: true,
-//     text: 'Section 1',
-//     rows: [{
-//       id: 'row1',
-//       cells: [{
-//         columnId: 'column0',
-//         isSelectable: true,
-//         component: (
-//           <div>Cell 0</div>
-//         ),
-//       }, {
-//         columnId: 'column1',
-//         isSelectable: true,
-//         isSelected: true,
-//         component: (
-//           <div>Cell 1</div>
-//         ),
-//       }],
-//     }],
-//   }];
-
-//   return (
-//     <DataGrid
-//       sections={sections}
-//     />
-//   );
-// };
 
 export default SlidePanelManagerWrapper;

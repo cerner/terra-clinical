@@ -1,13 +1,21 @@
 :local {
   .container {
     background-color: lightgrey;
-    height: 14px;
+    height: 8px;
     left: 0;
     overflow: hidden;
     position: relative;
     width: 100%;
 
-    transition: height 0.15s linear;
+    transition: height .1s linear;
+  }
+
+  .container[aria-hidden] {
+    display: none;
+  }
+
+  .container:hover, .container.dragging {
+    height: 12px;
   }
 
   .scrollbar {
@@ -17,8 +25,10 @@
     height: 100%;
     position: absolute;
     touch-action: none;
+  }
 
-    &.dragging {
+  .container.dragging {
+    .scrollbar {
       background-color: darkslategray;
     }
   }

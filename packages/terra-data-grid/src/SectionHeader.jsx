@@ -19,6 +19,7 @@ const propTypes = {
   isCollapsed: PropTypes.bool,
   onClick: PropTypes.func,
   refCallback: PropTypes.func,
+  children: PropTypes.node,
 };
 
 class SectionHeader extends React.Component {
@@ -49,23 +50,22 @@ class SectionHeader extends React.Component {
   }
 
   render() {
-    const { sectionId, text, startAccessory, endAccessory, isCollapsible, isCollapsed, refCallback } = this.props;
+    const { sectionId, text, startAccessory, endAccessory, children, isCollapsible, isCollapsed, refCallback } = this.props;
 
     return (
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         key={sectionId}
         className={cx('section-header')}
         data-section-header
       >
-        {isCollapsible ? (
-          <div
-            className={cx(['touch-target', { selectable: isCollapsible }])}
-            onClick={isCollapsible ? this.handleClick : undefined}
-            onKeyDown={isCollapsible ? this.handleKeyDown : undefined}
-            tabIndex={isCollapsible ? '0' : undefined}
-            ref={refCallback}
-          />
-        ) : null}
+        <div
+          className={cx(['touch-target', { selectable: isCollapsible }])}
+          onClick={isCollapsible ? this.handleClick : undefined}
+          onKeyDown={isCollapsible ? this.handleKeyDown : undefined}
+          tabIndex={isCollapsible ? '0' : undefined}
+          ref={refCallback}
+        />
         <div className={cx('content')}>
           {isCollapsible ? (
             <div className={cx('collapsible-icon')}>
@@ -75,14 +75,16 @@ class SectionHeader extends React.Component {
           <div className={cx('start-accessory')}>
             {startAccessory}
           </div>
-          <div className={cx('text')}>
-            {text}
+          <div className={cx('flex-content')}>
+            {text ? <div className={cx('text')}>{text}</div> : null}
+            {children}
           </div>
           <div className={cx('end-accessory')}>
             {endAccessory}
           </div>
         </div>
       </div>
+      /* eslint-enable jsx-a11y/no-static-element-interactions */
     );
   }
 }
