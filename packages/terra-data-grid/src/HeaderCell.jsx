@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
+import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 import Cell from './Cell';
 import ResizeHandle from './ResizeHandle';
@@ -11,6 +13,8 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   columnId: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  sortIndicator: PropTypes.oneOf(['ascending', 'descending']),
   isSelectable: PropTypes.bool,
   isResizeable: PropTypes.bool,
   width: PropTypes.string,
@@ -36,7 +40,29 @@ class HeaderCell extends React.Component {
   }
 
   render() {
-    const { columnId, isSelectable, isResizeable, width, children, onResizeEnd, refCallback } = this.props;
+    const { columnId, text, sortIndicator, isSelectable, isResizeable, width, children, onResizeEnd, refCallback } = this.props;
+
+    let content = children;
+    if (!content && (text || sortIndicator)) {
+      let sortIndicatorComponent;
+      if (sortIndicator) {
+        sortIndicatorComponent = (
+          <div className={cx('sort-indicator')}>
+            {sortIndicator === 'ascending' ? <IconCaretUp /> : null}
+            {sortIndicator === 'descending' ? <IconCaretDown /> : null}
+          </div>
+        );
+      }
+
+      content = (
+        <div className={cx('default-layout')}>
+          <div className={cx('text')}>
+            {text}
+          </div>
+          {sortIndicatorComponent}
+        </div>
+      );
+    }
 
     return (
       <Cell
@@ -48,7 +74,7 @@ class HeaderCell extends React.Component {
         refCallback={refCallback}
         data-header-cell
       >
-        {children}
+        {content}
         {isResizeable ? <ResizeHandle id={columnId} onResizeStop={onResizeEnd} /> : null }
       </Cell>
     );

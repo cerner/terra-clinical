@@ -11,7 +11,6 @@ import Scrollbar from './Scrollbar';
 import SectionHeader from './SectionHeader';
 
 import ContentCellLayout from './default-components/ContentCellLayout';
-import HeaderCellLayout from './default-components/HeaderCellLayout';
 
 import { calculateScrollbarPosition } from './scrollbarUtils';
 import { KEYCODES, matches } from './utils';
@@ -558,6 +557,8 @@ class DataGrid extends React.Component {
       <HeaderCell
         key={columnId}
         columnId={columnId}
+        text={columnData.text}
+        sortIndicator={columnData.sortIndicator}
         width={`${this.getWidthForColumn(columnId)}px`}
         isSelectable={columnData.selectable}
         isResizeable={columnData.resizable}
@@ -803,4 +804,4 @@ DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
 export default DataGrid;
-export { ContentCellLayout, HeaderCellLayout };
+export { ContentCellLayout };

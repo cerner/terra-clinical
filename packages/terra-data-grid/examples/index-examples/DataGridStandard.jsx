@@ -3,8 +3,10 @@ import Aggregator from 'terra-aggregator';
 import Button from 'terra-button';
 import ModalManager from 'terra-modal-manager';
 import SlidePanelManager from 'terra-slide-panel-manager';
+import IconUp from 'terra-icon/lib/icon/IconUp';
+import IconDown from 'terra-icon/lib/icon/IconDown';
 
-import DataGrid, { ContentCellLayout, HeaderCellLayout } from '../../src/DataGrid';
+import DataGrid, { ContentCellLayout } from '../../src/DataGrid';
 
 const DisclosureComponent = ({ app, text }) => (
   <div style={{ height: '100%' }}>
@@ -26,9 +28,6 @@ class DataGridStandard extends React.Component {
     this.buildRows = this.buildRows.bind(this);
 
     const columnWidths = {};
-    (new Array(10)).fill(0).forEach((val, index) => {
-      columnWidths[`column${index}`] = 200;
-    });
 
     this.state = {
       collapsedSections: {},
@@ -206,91 +205,105 @@ class DataGridStandard extends React.Component {
         pinnedColumns={[
           {
             id: 'column0',
-            initialWidth: 300,
+            initialWidth: 200,
             minWidth: 100,
             selectable: true,
             resizable: true,
-            component: (
-              <HeaderCellLayout
-                text="Column 0"
-                sortDirection={sortedColumnKey === 'column0' ? sortDirection : null}
-              />
-            ),
+            text: 'Column 0',
+            sortIndicator: sortedColumnKey === 'column0' ? sortDirection : null,
           },
           {
             id: 'column1',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: true,
-            component: (
-              <HeaderCellLayout
-                text="Column 1"
-                sortDirection={sortedColumnKey === 'column1' ? sortDirection : null}
-              />
-            ),
+            text: 'Column 1',
+            sortIndicator: sortedColumnKey === 'column1' ? sortDirection : null,
           },
           {
             id: 'column2',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: true,
-            component: (
-              <HeaderCellLayout
-                text="Column 2" sortDirection={sortedColumnKey === 'column2' ? sortDirection : null}
-              />
-            ),
+            text: 'Column 2',
+            sortIndicator: sortedColumnKey === 'column2' ? sortDirection : null,
           },
         ]}
         overflowColumns={[
           {
             id: 'column3',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: false,
             resizable: true,
-            component: <HeaderCellLayout text="Column 3 (No Sort)" sortDirection={sortedColumnKey === 'column3' ? sortDirection : null} />,
+            text: 'Column 3',
+            sortIndicator: sortedColumnKey === 'column3' ? sortDirection : null,
           },
           {
             id: 'column4',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: true,
             text: 'Column 4',
-            component: <HeaderCellLayout text="Column 4" sortDirection={sortedColumnKey === 'column4' ? sortDirection : null} />,
+            sortIndicator: sortedColumnKey === 'column4' ? sortDirection : null,
           },
           {
             id: 'column5',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: true,
-            component: <HeaderCellLayout text="Column 5" sortDirection={sortedColumnKey === 'column5' ? sortDirection : null} />,
+            text: 'Column 5',
+            sortIndicator: sortedColumnKey === 'column5' ? sortDirection : null,
           },
           {
             id: 'column6',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: false,
-            component: <HeaderCellLayout text="Column 6 (No resize)" sortDirection={sortedColumnKey === 'column6' ? sortDirection : null} />,
+            text: 'Column 6',
+            sortIndicator: sortedColumnKey === 'column6' ? sortDirection : null,
           },
           {
             id: 'column7',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: true,
-            component: <HeaderCellLayout text="Column 7" sortDirection={sortedColumnKey === 'column7' ? sortDirection : null} />,
+            text: 'Column 7',
+            sortIndicator: sortedColumnKey === 'column7' ? sortDirection : null,
           },
           {
             id: 'column8',
-            initialWidth: 300,
+            initialWidth: 200,
             selectable: true,
             resizable: true,
-            component: <HeaderCellLayout text="Column 8" sortDirection={sortedColumnKey === 'column8' ? sortDirection : null} />,
+            text: 'Column 8',
+            sortIndicator: sortedColumnKey === 'column8' ? sortDirection : null,
           },
           {
             id: 'column9',
-            initialWidth: 300,
-            selectable: true,
+            initialWidth: 200,
+            minWidth: 200,
+            selectable: false,
             resizable: true,
-            component: <HeaderCellLayout text="Column 9" sortDirection={sortedColumnKey === 'column9' ? sortDirection : null} />,
+            component: (
+              <Button
+                text="Column 9 (Custom Header)"
+                icon={(() => {
+                  if (sortedColumnKey === 'column9') {
+                    if (sortDirection === 'ascending') {
+                      return <IconUp />;
+                    }
+                    return <IconDown />;
+                  }
+                })()}
+                variant="emphasis"
+                isBlock
+                data-accessible-data-grid-content
+                style={{ height: '100%' }}
+                onClick={() => {
+                  this.handleHeaderClick('column9');
+                }}
+              />
+            ),
           },
         ]}
         sections={[
