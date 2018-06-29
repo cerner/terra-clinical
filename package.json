@@ -53,9 +53,9 @@
     "postinstall:package": "npm run compile && npm run bootstrap",
     "postinstall:project": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
-    "start": "tt:serve",
-    "start-heroku": "tt:serve-static --site build",
-    "start-static": "tt:serve-static --config webpack.config",
+    "start": "tt-serve",
+    "start-heroku": "tt-serve-static --site build",
+    "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },

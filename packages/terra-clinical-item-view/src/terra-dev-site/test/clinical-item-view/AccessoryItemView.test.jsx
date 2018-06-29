@@ -37,7 +37,7 @@ const views = () => (
       id="test-reserve-start-accessory"
     />
     <h2>Start Accessory with Font Size 100px</h2>
-    <ul><li><h4>The max-height and max-width of 40px is maintained</h4></li></ul>
+    <ul><li><h3>The max-height and max-width of 40px is maintained</h3></li></ul>
     <ItemView startAccessory={<IconAlert />} id="test-scale" style={{ fontSize: '100px' }} />
   </div>
 );

@@ -6,6 +6,11 @@ Unreleased
 ### Fixed
 * Lint in doc page
 
+2.5.0 - (June 28, 2018)
+----------
+### Changed
+* Minor dependency updates
+
 2.4.0 - (June 12, 2018)
 ----------
 ### Changed
