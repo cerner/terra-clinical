@@ -44,9 +44,9 @@
     "postinstall:package": "npm run compile && npm run bootstrap",
     "postinstall:project": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
-    "start": "tt:serve",
-    "start-heroku": "tt:serve-static --site build",
-    "start-static": "tt:serve-static --config webpack.config",
+    "start": "tt-serve",
+    "start-heroku": "tt-serve-static --site build",
+    "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
@@ -82,7 +82,7 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
-    "terra-dev-site": "^1.2.0",
-    "terra-toolkit": "^3.3.1"
+    "terra-dev-site": "^2.0.0",
+    "terra-toolkit": "^4.0.0"
   }
 }
