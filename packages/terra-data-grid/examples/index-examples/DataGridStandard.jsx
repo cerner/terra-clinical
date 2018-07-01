@@ -182,7 +182,7 @@ class DataGridStandard extends React.Component {
       return {
         id: sectionId,
         isCollapsible,
-        headerComponent: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 - Custom Content</marquee>,
+        headerComponent: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 (Custom Component)</marquee>,
         rows: this.buildRows(sectionId, numberOfRows),
       };
     }
@@ -280,13 +280,13 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column9',
-            initialWidth: 200,
+            initialWidth: 400,
             minWidth: 200,
             selectable: false,
             resizable: true,
             component: (
               <Button
-                text="Column 9 (Custom Header)"
+                text="Column 9 (Custom Component)"
                 icon={(() => {
                   if (sortedColumnKey === 'column9') {
                     if (sortDirection === 'ascending') {

@@ -45,7 +45,20 @@ const defaultProps = {
   headerHeight: '2rem',
 };
 
+/* eslint-disable react/sort-comp */
 class DataGrid extends React.Component {
+  static getAccessibleContents(element) {
+    const accessibleArray = [];
+    const accessibleContentNodes = element.querySelectorAll('[data-accessible-data-grid-content]');
+
+    for (let i = 0, length = accessibleContentNodes.length; i < length; i += 1) {
+      accessibleArray.push(accessibleContentNodes[i]);
+    }
+
+    return accessibleArray;
+  }
+
+
   constructor(props) {
     super(props);
 
@@ -58,14 +71,16 @@ class DataGrid extends React.Component {
      * Keyboard Events
      */
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.handleShiftDown = this.handleShiftDown.bind(this);
+    this.handleShiftUp = this.handleShiftUp.bind(this);
     this.shiftIsPressed = false;
 
     /**
      * Accessibility
      */
     this.generateAccessibleContentIndex = this.generateAccessibleContentIndex.bind(this);
-    this.activeAccessibilityId = -1;
+    this.handleLeadingFocusAnchorFocus = this.handleLeadingFocusAnchorFocus.bind(this);
+    this.handleTerminalFocusAnchorFocus = this.handleTerminalFocusAnchorFocus.bind(this);
 
     /**
      * Column Sizing
@@ -83,13 +98,15 @@ class DataGrid extends React.Component {
     this.setDataGridContainerRef = this.setDataGridContainerRef.bind(this);
     this.setHeaderOverflowContainerRef = this.setHeaderOverflowContainerRef.bind(this);
     this.setHorizontalOverflowContainerRef = this.setHorizontalOverflowContainerRef.bind(this);
+    this.setLeadingFocusAnchorRef = this.setLeadingFocusAnchorRef.bind(this);
     this.setOverflowedContentContainerRef = this.setOverflowedContentContainerRef.bind(this);
     this.setPinnedContentContainerRef = this.setPinnedContentContainerRef.bind(this);
     this.setScrollbarRef = this.setScrollbarRef.bind(this);
     this.setScrollbarContainerRef = this.setScrollbarContainerRef.bind(this);
+    this.setTerminalFocusAnchorRef = this.setTerminalFocusAnchorRef.bind(this);
     this.setVerticalOverflowContainerRef = this.setVerticalOverflowContainerRef.bind(this);
-    this.headerCellRefs = {};
     this.cellRefs = {};
+    this.headerCellRefs = {};
     this.sectionRefs = {};
 
     /**
@@ -108,14 +125,20 @@ class DataGrid extends React.Component {
     /**
      * Rendering
      */
+    this.renderCell = this.renderCell.bind(this);
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
     this.renderHeaderRow = this.renderHeaderRow.bind(this);
     this.renderOverflowContent = this.renderOverflowContent.bind(this);
     this.renderPinnedContent = this.renderPinnedContent.bind(this);
+    this.renderRow = this.renderRow.bind(this);
     this.renderScrollbar = this.renderScrollbar.bind(this);
     this.renderSection = this.renderSection.bind(this);
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
 
+    /**
+     * Determining the widths of the pinned and overflow sections requires iterating over the prop arrays. The widths are
+     * generated and cached in state to limit the amount of iteration performed by the render functions.
+     */
     this.state = {
       pinnedColumnWidth: this.getTotalPinnedColumnWidth(),
       overflowColumnWidth: this.getTotalOverflowColumnWidth(),
@@ -133,7 +156,8 @@ class DataGrid extends React.Component {
     /**
      * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
      */
-    document.addEventListener('keyup', this.handleKeyUp);
+    document.addEventListener('keydown', this.handleShiftDown);
+    document.addEventListener('keyup', this.handleShiftUp);
 
     /**
      * The elements that are sized relative to the DataGrid's overall width must updated after the initial mount.
@@ -146,8 +170,15 @@ class DataGrid extends React.Component {
      */
     this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
 
+    /**
+     * The DOM is parsed after the initial render to generate the accessibility identifiers used by the DataGrid's custom
+     * focus implementation.
+     */
     this.generateAccessibleContentIndex();
 
+    /**
+     * The scrollbar position and visibility are determined based on the size of the DataGrid after the first rendering.
+     */
     this.updateScrollbarPosition();
     this.updateScrollbarVisibility();
   }
@@ -163,7 +194,7 @@ class DataGrid extends React.Component {
 
   componentDidUpdate() {
     /**
-     * The scrollbar position needs to be updated on component update to account for a potential difference in the overflow size.
+     * The scrollbar position needs to be updated to account for any potential difference in the overflow size.
      */
     requestAnimationFrame(() => {
       this.updateScrollbarPosition();
@@ -176,18 +207,21 @@ class DataGrid extends React.Component {
      */
     this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
 
+    /**
+     * The accessibility identifiers are regenerated after each update to ensure that any prop changes are accounted for.
+     */
     this.generateAccessibleContentIndex();
   }
 
   componentWillUnmount() {
     this.resizeObserver.disconnect(this.verticalOverflowContainerRef);
-    document.removeEventListener('keyup', this.handleKeyUp);
+    document.removeEventListener('keydown', this.handleShiftDown);
+    document.removeEventListener('keyup', this.handleShiftUp);
   }
 
   /**
    * Resize Events
    */
-
   handleDataGridResize(newWidth, newHeight) {
     /**
      * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
@@ -214,10 +248,6 @@ class DataGrid extends React.Component {
    * Keyboard Events
    */
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEYCODES.SHIFT) {
-      this.shiftIsPressed = true;
-    }
-
     if (event.nativeEvent.keyCode === KEYCODES.TAB) {
       const activeElement = document.activeElement;
 
@@ -244,7 +274,13 @@ class DataGrid extends React.Component {
     }
   }
 
-  handleKeyUp(event) {
+  handleShiftDown(event) {
+    if (event.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = true;
+    }
+  }
+
+  handleShiftUp(event) {
     if (event.keyCode === KEYCODES.SHIFT) {
       this.shiftIsPressed = false;
     }
@@ -253,17 +289,6 @@ class DataGrid extends React.Component {
   /**
    * Accessiblity
    */
-  getAccessibleContents(element) {
-    const accessibleArray = [];
-    const accessibleContentNodes = element.querySelectorAll('[data-accessible-data-grid-content]');
-
-    for (let i = 0, length = accessibleContentNodes.length; i < length; i += 1) {
-      accessibleArray.push(accessibleContentNodes[i]);
-    }
-
-    return accessibleArray;
-  }
-
   generateAccessibleContentIndex(source) {
     const { pinnedColumns, overflowColumns, sections } = source || this.props;
 
@@ -278,7 +303,7 @@ class DataGrid extends React.Component {
           accessibilityStack.push(headerRef);
         }
 
-        accessibilityStack = accessibilityStack.concat(this.getAccessibleContents(headerRef.parentNode));
+        accessibilityStack = accessibilityStack.concat(DataGrid.getAccessibleContents(headerRef.parentNode));
       }
     });
 
@@ -290,7 +315,7 @@ class DataGrid extends React.Component {
           accessibilityStack.push(headerRef);
         }
 
-        accessibilityStack = accessibilityStack.concat(this.getAccessibleContents(headerRef.parentNode));
+        accessibilityStack = accessibilityStack.concat(DataGrid.getAccessibleContents(headerRef.parentNode));
       }
     });
 
@@ -302,7 +327,7 @@ class DataGrid extends React.Component {
           accessibilityStack.push(sectionRef);
         }
 
-        accessibilityStack = accessibilityStack.concat(this.getAccessibleContents(sectionRef.parentNode));
+        accessibilityStack = accessibilityStack.concat(DataGrid.getAccessibleContents(sectionRef.parentNode));
       }
 
       if (section.isCollapsed) {
@@ -325,7 +350,7 @@ class DataGrid extends React.Component {
               accessibilityStack.push(cellRef);
             }
 
-            accessibilityStack = accessibilityStack.concat(this.getAccessibleContents(cellRef.parentNode));
+            accessibilityStack = accessibilityStack.concat(DataGrid.getAccessibleContents(cellRef.parentNode));
           }
         });
       });
@@ -336,6 +361,25 @@ class DataGrid extends React.Component {
     });
 
     this.accessibilityStack = accessibilityStack;
+  }
+
+  handleLeadingFocusAnchorFocus() {
+    if (!this.shiftIsPressed) {
+      const firstAccessibleElement = this.dataGridContainerRef.querySelector('[data-accessibility-id="0"]');
+      if (firstAccessibleElement) {
+        firstAccessibleElement.focus();
+      }
+    }
+  }
+
+  handleTerminalFocusAnchorFocus() {
+    if (this.shiftIsPressed) {
+      const lastAccessibleElement = this.dataGridContainerRef.querySelector(`[data-accessibility-id="${this.accessibilityStack.length - 1}"]`);
+
+      if (lastAccessibleElement) {
+        lastAccessibleElement.focus();
+      }
+    }
   }
 
   /**
@@ -423,6 +467,10 @@ class DataGrid extends React.Component {
     this.horizontalOverflowContainerRef = ref;
   }
 
+  setLeadingFocusAnchorRef(ref) {
+    this.leadingFocusAnchorRef = ref;
+  }
+
   setOverflowedContentContainerRef(ref) {
     this.overflowedContentContainerRef = ref;
   }
@@ -433,6 +481,10 @@ class DataGrid extends React.Component {
 
   setScrollbarContainerRef(ref) {
     this.scrollbarContainerRef = ref;
+  }
+
+  setTerminalFocusAnchorRef(ref) {
+    this.terminalFocusAnchorRef = ref;
   }
 
   setVerticalOverflowContainerRef(ref) {
@@ -647,8 +699,48 @@ class DataGrid extends React.Component {
     );
   }
 
+  renderCell(cell, sectionId, rowId, columnId) {
+    const { onCellClick } = this.props;
+    const cellKey = `${sectionId}-${rowId}-${columnId}`;
+
+    return (
+      <Cell
+        key={cellKey}
+        sectionId={sectionId}
+        rowId={rowId}
+        columnId={columnId}
+        width={`${this.getWidthForColumn(columnId)}px`}
+        onCellClick={onCellClick}
+        isSelectable={cell.isSelectable}
+        isSelected={cell.isSelected}
+        refCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
+      >
+        {cell.content}
+      </Cell>
+    );
+  }
+
+  renderRow(row, sectionId, columns, width) {
+    const { rowHeight } = this.props;
+
+    return (
+      <Row
+        key={`${sectionId}-${row.id}`}
+        sectionId={sectionId}
+        rowId={row.id}
+        width={width}
+        height={rowHeight}
+      >
+        {columns.map((column) => {
+          const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
+          return this.renderCell(cell, sectionId, row.id, column.id);
+        })}
+      </Row>
+    );
+  }
+
   renderSection(section, columns, width, hideHeader) {
-    const { collapsedSections, rowHeight, onCellClick } = this.props;
+    const { collapsedSections } = this.props;
 
     let isSectionCollapsed;
     if (collapsedSections) {
@@ -656,39 +748,12 @@ class DataGrid extends React.Component {
     }
 
     return (
-      <div key={section.id}>
+      <React.Fragment key={section.id}>
         {this.renderSectionHeader(section, isSectionCollapsed, hideHeader)}
         {!isSectionCollapsed && section.rows && section.rows.map(row => (
-          <Row
-            key={`${section.id}-${row.id}`}
-            sectionId={section.id}
-            rowId={row.id}
-            width={width}
-            height={rowHeight}
-          >
-            {columns.map((column) => {
-              const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
-              const cellKey = `${section.id}-${row.id}-${column.id}`;
-
-              return (
-                <Cell
-                  key={cellKey}
-                  sectionId={section.id}
-                  rowId={row.id}
-                  columnId={column.id}
-                  width={`${this.getWidthForColumn(column.id)}px`}
-                  onCellClick={onCellClick}
-                  isSelectable={cell.isSelectable}
-                  isSelected={cell.isSelected}
-                  refCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
-                >
-                  {cell.content}
-                </Cell>
-              );
-            })}
-          </Row>
+          this.renderRow(row, section.id, columns, width)
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 
@@ -724,6 +789,7 @@ class DataGrid extends React.Component {
     console.log('rendering data grid');
 
     return (
+      /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         className={cx(['data-grid-container', { fill }])}
         ref={this.setDataGridContainerRef}
@@ -732,17 +798,8 @@ class DataGrid extends React.Component {
         <div
           className={cx('leading-focus-anchor')}
           tabIndex="0"
-          onFocus={() => {
-            if (!this.shiftIsPressed) {
-              const firstAccessibleElement = this.dataGridContainerRef.querySelector('[data-accessibility-id="0"]');
-              if (firstAccessibleElement) {
-                firstAccessibleElement.focus();
-              }
-            }
-          }}
-          ref={(ref) => {
-            this.leadingFocusAnchorRef = ref;
-          }}
+          onFocus={this.handleLeadingFocusAnchorFocus}
+          ref={this.setLeadingFocusAnchorRef}
         />
         <ContentContainer
           header={this.renderHeaderRow()}
@@ -782,20 +839,11 @@ class DataGrid extends React.Component {
         <div
           className={cx('terminal-focus-anchor')}
           tabIndex="0"
-          onFocus={() => {
-            if (this.shiftIsPressed) {
-              const lastAccessibleElement = this.dataGridContainerRef.querySelector(`[data-accessibility-id="${this.accessibilityStack.length - 1}"]`);
-
-              if (lastAccessibleElement) {
-                lastAccessibleElement.focus();
-              }
-            }
-          }}
-          ref={(ref) => {
-            this.terminalFocusAnchorRef = ref;
-          }}
+          onFocus={this.handleTerminalFocusAnchorFocus}
+          ref={this.setTerminalFocusAnchorRef}
         />
       </div>
+      /* eslint-enable jsx-a11y/no-static-element-interactions */
     );
   }
 }
