@@ -74,8 +74,13 @@ class DataGridStandard extends React.Component {
   handleColumnResize(columnId, width) {
     const { columnWidths } = this.state;
 
+    let newWidth = width;
+    if (newWidth < 50) {
+      newWidth = 50;
+    }
+
     this.setState({
-      columnWidths: Object.assign({}, columnWidths, { [`${columnId}`]: width }),
+      columnWidths: Object.assign({}, columnWidths, { [`${columnId}`]: newWidth }),
     });
   }
 
@@ -146,7 +151,7 @@ class DataGridStandard extends React.Component {
         columnId: columnKey,
         isSelectable: true,
         isSelected: selectedCell && selectedCell.rowKey === `${sectionId}-Row${rowIndex}` && selectedCell.columnKey === columnKey,
-        content: <ContentCellLayout text={`Row ${rowIndex}, Column ${columnKey}`} />,
+        component: <ContentCellLayout text={`Row ${rowIndex}, Column ${columnKey}`} />,
       })),
     }));
 
@@ -158,31 +163,31 @@ class DataGridStandard extends React.Component {
       return {
         id: sectionId,
         isCollapsible,
-        headerText: sectionName,
+        text: sectionName,
         rows: this.buildRows(sectionId, numberOfRows),
       };
     } else if (sectionId === 'section_1') {
       return {
         id: sectionId,
         isCollapsible,
-        headerText: sectionName,
-        headerStartAccessory: <Button text="Start Accessory" data-accessible-data-grid-content />,
-        headerEndAccessory: <Button text="End Accessory" data-accessible-data-grid-content />,
+        text: sectionName,
+        startAccessory: <Button text="Start Accessory" data-accessible-data-grid-content />,
+        endAccessory: <Button text="End Accessory" data-accessible-data-grid-content />,
         rows: this.buildRows(sectionId, numberOfRows),
       };
     } else if (sectionId === 'section_2') {
       return {
         id: sectionId,
         isCollapsible,
-        headerText: sectionName,
-        headerEndAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
+        text: sectionName,
+        endAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
         rows: this.buildRows(sectionId, numberOfRows),
       };
     } else if (sectionId === 'section_3') {
       return {
         id: sectionId,
         isCollapsible,
-        headerComponent: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 (Custom Component)</marquee>,
+        component: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 (Custom Component)</marquee>,
         rows: this.buildRows(sectionId, numberOfRows),
       };
     }
@@ -190,41 +195,40 @@ class DataGridStandard extends React.Component {
     return {
       id: sectionId,
       isCollapsible,
-      headerText: sectionName,
-      headerEndAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
+      text: sectionName,
+      endAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
       rows: this.buildRows(sectionId, numberOfRows),
     };
   }
 
   render() {
     const { aggregatorDelegate } = this.props;
-    const { sortedColumnKey, sortDirection, collapsedSections } = this.state;
+    const { sortedColumnKey, sortDirection, collapsedSections, columnWidths } = this.state;
 
     return (
       <DataGrid
         pinnedColumns={[
           {
             id: 'column0',
-            initialWidth: 200,
-            minWidth: 100,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column0,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 0',
             sortIndicator: sortedColumnKey === 'column0' ? sortDirection : null,
           },
           {
             id: 'column1',
-            initialWidth: 200,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column1,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 1',
             sortIndicator: sortedColumnKey === 'column1' ? sortDirection : null,
           },
           {
             id: 'column2',
-            initialWidth: 200,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column2,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 2',
             sortIndicator: sortedColumnKey === 'column2' ? sortDirection : null,
           },
@@ -232,58 +236,57 @@ class DataGridStandard extends React.Component {
         overflowColumns={[
           {
             id: 'column3',
-            initialWidth: 200,
-            selectable: false,
-            resizable: true,
-            text: 'Column 3',
+            width: columnWidths.column3,
+            isSelectable: false,
+            isResizable: true,
+            text: 'Column 3 - Not Sortable',
             sortIndicator: sortedColumnKey === 'column3' ? sortDirection : null,
           },
           {
             id: 'column4',
-            initialWidth: 200,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column4,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 4',
             sortIndicator: sortedColumnKey === 'column4' ? sortDirection : null,
           },
           {
             id: 'column5',
-            initialWidth: 200,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column5,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 5',
             sortIndicator: sortedColumnKey === 'column5' ? sortDirection : null,
           },
           {
             id: 'column6',
-            initialWidth: 200,
-            selectable: true,
-            resizable: false,
-            text: 'Column 6',
+            width: columnWidths.column6,
+            isSelectable: true,
+            isResizable: false,
+            text: 'Column 6 - Not Resizable',
             sortIndicator: sortedColumnKey === 'column6' ? sortDirection : null,
           },
           {
             id: 'column7',
-            initialWidth: 200,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column7,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 7',
             sortIndicator: sortedColumnKey === 'column7' ? sortDirection : null,
           },
           {
             id: 'column8',
-            initialWidth: 200,
-            selectable: true,
-            resizable: true,
+            width: columnWidths.column8,
+            isSelectable: true,
+            isResizable: true,
             text: 'Column 8',
             sortIndicator: sortedColumnKey === 'column8' ? sortDirection : null,
           },
           {
             id: 'column9',
-            initialWidth: 400,
-            minWidth: 200,
-            selectable: false,
-            resizable: true,
+            width: columnWidths.column9,
+            isSelectable: true,
+            isResizable: true,
             component: (
               <Button
                 text="Column 9 (Custom Component)"
@@ -317,7 +320,7 @@ class DataGridStandard extends React.Component {
         headerHeight="3rem"
         onCellClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
-        columnWidths={this.state.columnWidths}
+        // columnWidths={this.state.columnWidths}
         onRequestColumnResize={this.handleColumnResize}
         collapsedSections={collapsedSections}
         onRequestSectionCollapse={this.handleSectionClick}

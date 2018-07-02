@@ -16,7 +16,7 @@ const propTypes = {
   text: PropTypes.string,
   sortIndicator: PropTypes.oneOf(['ascending', 'descending']),
   isSelectable: PropTypes.bool,
-  isResizeable: PropTypes.bool,
+  isResizable: PropTypes.bool,
   width: PropTypes.string,
   onCellClick: PropTypes.func,
   onResizeEnd: PropTypes.func,
@@ -40,7 +40,7 @@ class HeaderCell extends React.Component {
   }
 
   render() {
-    const { columnId, text, sortIndicator, isSelectable, isResizeable, width, children, onResizeEnd, refCallback } = this.props;
+    const { columnId, text, sortIndicator, isSelectable, isResizable, width, children, onResizeEnd, refCallback } = this.props;
 
     let content = children;
     if (!content && (text || sortIndicator)) {
@@ -75,7 +75,7 @@ class HeaderCell extends React.Component {
         data-header-cell
       >
         {content}
-        {isResizeable ? <ResizeHandle id={columnId} onResizeStop={onResizeEnd} /> : null }
+        {isResizable ? <ResizeHandle id={columnId} onResizeStop={onResizeEnd} /> : null }
       </Cell>
     );
   }

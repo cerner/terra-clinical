@@ -25,7 +25,6 @@ const cx = classNames.bind(styles);
 const propTypes = {
   pinnedColumns: PropTypes.arrayOf(columnDataShape),
   overflowColumns: PropTypes.arrayOf(columnDataShape),
-  columnWidths: PropTypes.objectOf(PropTypes.number),
   onRequestColumnResize: PropTypes.func,
   collapsedSections: PropTypes.object,
   onRequestSectionCollapse: PropTypes.func,
@@ -44,6 +43,9 @@ const defaultProps = {
   rowHeight: '2rem',
   headerHeight: '2rem',
 };
+
+const DEFAULT_COLUMN_WIDTH = 200;
+const VOID_COLUMN_WIDTH = 150;
 
 /* eslint-disable react/sort-comp */
 class DataGrid extends React.Component {
@@ -87,7 +89,6 @@ class DataGrid extends React.Component {
      */
     this.getColumn = this.getColumn.bind(this);
     this.getWidthForColumn = this.getWidthForColumn.bind(this);
-    this.getMinimumWidthForColumn = this.getMinimumWidthForColumn.bind(this);
     this.getTotalOverflowColumnWidth = this.getTotalOverflowColumnWidth.bind(this);
     this.getTotalPinnedColumnWidth = this.getTotalPinnedColumnWidth.bind(this);
     this.updateColumnWidth = this.updateColumnWidth.bind(this);
@@ -400,21 +401,8 @@ class DataGrid extends React.Component {
   }
 
   getWidthForColumn(columnId, source) {
-    const { columnWidths } = source || this.props;
-
-    let width;
-
-    if (columnWidths && columnWidths[columnId]) {
-      width = columnWidths[columnId];
-    } else {
-      width = this.getColumn(columnId, source).initialWidth;
-    }
-
-    return width || 100;
-  }
-
-  getMinimumWidthForColumn(columnId, source) {
-    return this.getColumn(columnId, source).minWidth || 50;
+    const width = this.getColumn(columnId, source).width;
+    return width || DEFAULT_COLUMN_WIDTH;
   }
 
   getTotalPinnedColumnWidth(source) {
@@ -426,7 +414,7 @@ class DataGrid extends React.Component {
   getTotalOverflowColumnWidth(source) {
     const { overflowColumns } = source || this.props;
 
-    return overflowColumns.reduce((totalWidth, column) => totalWidth + this.getWidthForColumn(column.id, source), 0) + 150;
+    return overflowColumns.reduce((totalWidth, column) => totalWidth + this.getWidthForColumn(column.id, source), 0) + VOID_COLUMN_WIDTH;
   }
 
   updateColumnWidth(columnId, widthDelta) {
@@ -437,13 +425,7 @@ class DataGrid extends React.Component {
     }
 
     let columnWidth = this.getWidthForColumn(columnId);
-    const minimumColumnWidth = this.getMinimumWidthForColumn(columnId);
-
-    if (columnWidth + widthDelta < minimumColumnWidth) {
-      columnWidth = minimumColumnWidth;
-    } else {
-      columnWidth += widthDelta;
-    }
+    columnWidth += widthDelta;
 
     onRequestColumnResize(columnId, columnWidth);
   }
@@ -612,8 +594,8 @@ class DataGrid extends React.Component {
         text={columnData.text}
         sortIndicator={columnData.sortIndicator}
         width={`${this.getWidthForColumn(columnId)}px`}
-        isSelectable={columnData.selectable}
-        isResizeable={columnData.resizable}
+        isSelectable={columnData.isSelectable}
+        isResizable={columnData.isResizable}
         onResizeEnd={this.updateColumnWidth}
         onCellClick={onHeaderClick}
         refCallback={(ref) => { this.headerCellRefs[columnId] = ref; }}
@@ -666,7 +648,7 @@ class DataGrid extends React.Component {
   renderSectionHeader(section, sectionIsCollapsed, hideHeader) {
     const { onRequestSectionCollapse } = this.props;
 
-    const shouldRenderSectionHeader = section.isCollapsible || section.headerText || section.headerStartAccessory || section.headerEndAccessory || section.headerComponent;
+    const shouldRenderSectionHeader = section.isCollapsible || section.text || section.startAccessory || section.endAccessory || section.component;
 
     return (
       shouldRenderSectionHeader ? (
@@ -677,21 +659,17 @@ class DataGrid extends React.Component {
           { !hideHeader ? (
             <SectionHeader
               sectionId={section.id}
-              text={section.headerText}
-              startAccessory={section.headerStartAccessory}
-              endAccessory={section.headerEndAccessory}
+              text={section.text}
+              startAccessory={section.startAccessory}
+              endAccessory={section.endAccessory}
               isCollapsible={section.isCollapsible}
               isCollapsed={sectionIsCollapsed}
-              onClick={(sectionId) => {
-                if (onRequestSectionCollapse) {
-                  onRequestSectionCollapse(sectionId);
-                }
-              }}
+              onClick={onRequestSectionCollapse}
               refCallback={(ref) => {
                 this.sectionRefs[section.id] = ref;
               }}
             >
-              {section.headerComponent}
+              {section.component}
             </SectionHeader>
           ) : null}
         </div>
@@ -715,7 +693,7 @@ class DataGrid extends React.Component {
         isSelected={cell.isSelected}
         refCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
       >
-        {cell.content}
+        {cell.component}
       </Cell>
     );
   }

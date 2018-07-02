@@ -4,10 +4,10 @@ import rowDataShape from './rowDataShape';
 const sectionDataShape = PropTypes.shape({
   id: PropTypes.string.isRequired,
   isCollapsible: PropTypes.bool,
-  headerText: PropTypes.string,
-  headerStartAccessory: PropTypes.node,
-  headerEndAccessory: PropTypes.node,
-  headerComponent: PropTypes.node,
+  text: PropTypes.string,
+  startAccessory: PropTypes.node,
+  endAccessory: PropTypes.node,
+  component: PropTypes.node,
   rows: PropTypes.arrayOf(rowDataShape),
 });
 

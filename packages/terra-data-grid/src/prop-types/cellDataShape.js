@@ -4,7 +4,7 @@ const cellDataShape = PropTypes.shape({
   columnId: PropTypes.string.isRequired,
   isSelectable: PropTypes.bool,
   isSelected: PropTypes.bool,
-  content: PropTypes.node,
+  component: PropTypes.node,
 });
 
 export default cellDataShape;
