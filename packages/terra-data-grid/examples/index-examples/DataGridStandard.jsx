@@ -163,6 +163,7 @@ class DataGridStandard extends React.Component {
       return {
         id: sectionId,
         isCollapsible,
+        isCollapsed: this.state.collapsedSections[sectionId],
         text: sectionName,
         rows: this.buildRows(sectionId, numberOfRows),
       };
@@ -170,6 +171,7 @@ class DataGridStandard extends React.Component {
       return {
         id: sectionId,
         isCollapsible,
+        isCollapsed: this.state.collapsedSections[sectionId],
         text: sectionName,
         startAccessory: <Button text="Start Accessory" data-accessible-data-grid-content />,
         endAccessory: <Button text="End Accessory" data-accessible-data-grid-content />,
@@ -179,6 +181,7 @@ class DataGridStandard extends React.Component {
       return {
         id: sectionId,
         isCollapsible,
+        isCollapsed: this.state.collapsedSections[sectionId],
         text: sectionName,
         endAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
         rows: this.buildRows(sectionId, numberOfRows),
@@ -187,6 +190,7 @@ class DataGridStandard extends React.Component {
       return {
         id: sectionId,
         isCollapsible,
+        isCollapsed: this.state.collapsedSections[sectionId],
         component: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 (Custom Component)</marquee>,
         rows: this.buildRows(sectionId, numberOfRows),
       };
@@ -195,6 +199,7 @@ class DataGridStandard extends React.Component {
     return {
       id: sectionId,
       isCollapsible,
+      isCollapsed: this.state.collapsedSections[sectionId],
       text: sectionName,
       endAccessory: <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span>,
       rows: this.buildRows(sectionId, numberOfRows),
@@ -284,7 +289,7 @@ class DataGridStandard extends React.Component {
           },
           {
             id: 'column9',
-            width: columnWidths.column9,
+            width: columnWidths.column9 || 300,
             isSelectable: true,
             isResizable: true,
             component: (
@@ -320,9 +325,7 @@ class DataGridStandard extends React.Component {
         headerHeight="3rem"
         onCellClick={this.handleCellClick}
         onHeaderClick={this.handleHeaderClick}
-        // columnWidths={this.state.columnWidths}
         onRequestColumnResize={this.handleColumnResize}
-        collapsedSections={collapsedSections}
         onRequestSectionCollapse={this.handleSectionClick}
         fill
       />
