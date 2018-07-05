@@ -64,8 +64,8 @@
 
   .flex-subheader {
     background-color: #c8cacb;
-    border-bottom-color: initial;
-    border-bottom-style: 0;
+    border-bottom-color: currentColor;
+    border-bottom-style: none;
     border-bottom-width: 0;
     display: flex;
     height: 2.857rem;
