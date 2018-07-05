@@ -38,6 +38,7 @@
     "terra-icon": "^2.6.0",
     "terra-aggregator": "^2.4.0",
     "terra-content-container": "^2.0.1",
+    "terra-overlay": "^2.16.0",
     "terra-slide-panel-manager": "^2.3.0",
     "terra-modal-manager": "^2.4.0",
     "react-draggable": "^3.0.5",

@@ -6,7 +6,8 @@ import SlidePanelManager from 'terra-slide-panel-manager';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 
-import DataGrid, { ContentCellLayout } from '../../src/DataGrid';
+import DataGrid from '../../src/DataGrid';
+import ContentCellLayout from './ContentCellLayout';
 
 const DisclosureComponent = ({ app, text }) => (
   <div style={{ height: '100%' }}>
@@ -97,7 +98,7 @@ class DataGridStandard extends React.Component {
     this.setState({ sortedColumnKey: columnKey, sortDirection: newSortDirection });
   }
 
-  handleCellClick(rowKey, columnKey) {
+  handleCellClick(sectionId, rowKey, columnKey) {
     const { aggregatorDelegate } = this.props;
     if (!aggregatorDelegate) {
       return;

@@ -10,8 +10,6 @@ import Row from './Row';
 import Scrollbar from './Scrollbar';
 import SectionHeader from './SectionHeader';
 
-import ContentCellLayout from './default-components/ContentCellLayout';
-
 import { calculateScrollbarPosition } from './scrollbarUtils';
 import { KEYCODES, matches } from './utils';
 
@@ -63,6 +61,7 @@ const propTypes = {
    * Boolean that indicates whether or not the DataGrid should fill its parent container.
    */
   fill: PropTypes.bool,
+  onRequestContent: PropTypes.func,
 };
 
 const defaultProps = {
@@ -84,6 +83,9 @@ const DEFAULT_COLUMN_WIDTH = 200;
  */
 const VOID_COLUMN_WIDTH = 150;
 
+
+const PAGED_CONTENT_OFFSET_BUFFER = 100;
+
 /* eslint-disable react/sort-comp */
 class DataGrid extends React.Component {
 
@@ -103,8 +105,36 @@ class DataGrid extends React.Component {
     return accessibleArray;
   }
 
+  static resizeSectionHeaders(width) {
+    /**
+     * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
+     * unnecessary rendering of other components.
+     */
+    const sectionHeaderContainers = document.querySelectorAll(`.${cx('pinned-content-container')} .${cx('section-header-container')}`);
+
+    /**
+     * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
+     * However, We can utilize the Array's forEach implementation to iterate through the list.
+     */
+    Array.prototype.forEach.call(sectionHeaderContainers, (container) => {
+      container.style.width = `${width}px`; // eslint-disable-line no-param-reassign
+    });
+  }
+
+
   constructor(props) {
     super(props);
+
+    /**
+     * Post-render Updates
+     */
+    this.generateAccessibleContentIndex = this.generateAccessibleContentIndex.bind(this);
+    this.postRenderUpdate = this.postRenderUpdate.bind(this);
+
+    /**
+     * Paging
+     */
+    this.checkForMoreContent = this.checkForMoreContent.bind(this);
 
     /**
      * Resize Events
@@ -122,7 +152,6 @@ class DataGrid extends React.Component {
     /**
      * Accessibility
      */
-    this.generateAccessibleContentIndex = this.generateAccessibleContentIndex.bind(this);
     this.handleLeadingFocusAnchorFocus = this.handleLeadingFocusAnchorFocus.bind(this);
     this.handleTerminalFocusAnchorFocus = this.handleTerminalFocusAnchorFocus.bind(this);
 
@@ -214,28 +243,9 @@ class DataGrid extends React.Component {
     document.addEventListener('keydown', this.handleGlobalShiftDown);
     document.addEventListener('keyup', this.handleGlobalShiftUp);
 
-    /**
-     * The elements that are sized relative to the DataGrid's overall width must updated after the initial mount.
-     */
-    this.handleDataGridResize(this.verticalOverflowContainerRef.clientWidth, this.verticalOverflowContainerRef.clientHeight);
+    this.postRenderUpdate();
 
-    /**
-     * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
-     * want defer to the custom scrollbar that rendered by the DataGrid.
-     */
-    this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
-
-    /**
-     * The DOM is parsed after the initial render to generate the accessibility identifiers used by the DataGrid's custom
-     * focus implementation.
-     */
-    this.generateAccessibleContentIndex();
-
-    /**
-     * The scrollbar position and visibility are determined based on the size of the DataGrid after the first rendering.
-     */
-    this.updateScrollbarPosition();
-    this.updateScrollbarVisibility();
+    this.checkForMoreContent();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -270,27 +280,16 @@ class DataGrid extends React.Component {
     }
 
     this.setState(newState);
+
+    if (nextProps.sections !== this.props.sections) {
+      this.hasRequestedContent = false;
+    }
   }
 
   componentDidUpdate() {
-    /**
-     * The scrollbar position needs to be updated to account for any potential difference in the overflow size.
-     */
-    requestAnimationFrame(() => {
-      this.updateScrollbarPosition();
-      this.updateScrollbarVisibility();
-    });
+    this.postRenderUpdate();
 
-    /**
-     * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
-     * want defer to the custom scrollbar that rendered by the DataGrid.
-     */
-    this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
-
-    /**
-     * The accessibility identifiers are regenerated after each update to ensure that any prop changes are accounted for.
-     */
-    this.generateAccessibleContentIndex();
+    this.checkForMoreContent();
   }
 
   componentWillUnmount() {
@@ -300,74 +299,7 @@ class DataGrid extends React.Component {
   }
 
   /**
-   * Resize Events
-   */
-  handleDataGridResize(newWidth, newHeight) {
-    /**
-     * We need to update the inline widths of each section header in response to changes to the overall DataGrid width.
-     * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
-     * unnecessary rendering of other components.
-     */
-    const sectionHeaderContainers = document.querySelectorAll(`.${cx('pinned-content-container')} .${cx('section-header-container')}`);
-
-    /**
-     * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
-     * However, We can utilize the Array's forEach implementation to iterate through the list.
-     */
-    Array.prototype.forEach.call(sectionHeaderContainers, (container) => {
-      container.style.width = `${newWidth}px`; // eslint-disable-line no-param-reassign
-    });
-
-    /**
-     * The scrollbar position needs to be updated upon resize to accurately reflect the new horizontal spacing.
-     */
-    this.updateScrollbarPosition();
-  }
-
-  /**
-   * Keyboard Events
-   */
-  handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
-      const activeElement = document.activeElement;
-
-      if (!activeElement) {
-        return;
-      }
-
-      if (matches(activeElement, '[data-accessibility-id]')) {
-        const currentAccessibilityId = activeElement.getAttribute('data-accessibility-id');
-        const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
-
-        if (nextAccessibilityId >= 0 && nextAccessibilityId < this.accessibilityStack.length) {
-          const nextFocusElement = document.querySelector(`[data-accessibility-id="${nextAccessibilityId}"]`);
-          if (nextFocusElement) {
-            event.preventDefault();
-            nextFocusElement.focus();
-          }
-        } else if (nextAccessibilityId === -1) {
-          this.leadingFocusAnchorRef.focus();
-        } else {
-          this.terminalFocusAnchorRef.focus();
-        }
-      }
-    }
-  }
-
-  handleGlobalShiftDown(event) {
-    if (event.keyCode === KEYCODES.SHIFT) {
-      this.shiftIsPressed = true;
-    }
-  }
-
-  handleGlobalShiftUp(event) {
-    if (event.keyCode === KEYCODES.SHIFT) {
-      this.shiftIsPressed = false;
-    }
-  }
-
-  /**
-   * Accessiblity
+   * Post-render Updates
    */
   generateAccessibleContentIndex(source) {
     const { pinnedColumns, overflowColumns, sections } = source || this.props;
@@ -379,7 +311,7 @@ class DataGrid extends React.Component {
     pinnedColumns.forEach((column) => {
       const headerRef = this.headerCellRefs[column.id];
       if (headerRef) {
-        if (column.selectable) {
+        if (column.isSelectable) {
           accessibilityStack.push(headerRef);
         }
 
@@ -391,7 +323,7 @@ class DataGrid extends React.Component {
       const headerRef = this.headerCellRefs[column.id];
 
       if (headerRef) {
-        if (column.selectable) {
+        if (column.isSelectable) {
           accessibilityStack.push(headerRef);
         }
 
@@ -443,6 +375,110 @@ class DataGrid extends React.Component {
     this.accessibilityStack = accessibilityStack;
   }
 
+  postRenderUpdate() {
+    /**
+     * The DOM is parsed after rendering to generate the accessibility identifiers used by the DataGrid's custom
+     * focus implementation.
+     */
+    this.generateAccessibleContentIndex();
+
+    requestAnimationFrame(() => {
+      /**
+       * The SectionHeader widths must be updated after rendering to match the rendered DataGrid's width.
+       */
+      DataGrid.resizeSectionHeaders(this.verticalOverflowContainerRef.clientWidth);
+
+      /**
+       * The scrollbar position and visibility are determined based on the size of the DataGrid after rendering.
+       */
+      this.updateScrollbarPosition();
+      this.updateScrollbarVisibility();
+
+      /**
+       * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+       * want defer to the custom scrollbar that rendered by the DataGrid.
+       */
+      this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
+    });
+  }
+
+  /**
+   * Resize Events
+   */
+  handleDataGridResize(newWidth) {
+    DataGrid.resizeSectionHeaders(newWidth);
+
+    this.updateScrollbarPosition();
+    this.updateScrollbarVisibility();
+
+    this.checkForMoreContent();
+  }
+
+  /**
+   * Paging
+   */
+  checkForMoreContent() {
+    const { onRequestContent } = this.props;
+
+    if (!onRequestContent || this.hasRequestedContent) {
+      return;
+    }
+
+    const containerHeight = this.verticalOverflowContainerRef.getBoundingClientRect().height;
+    const containerScrollHeight = this.verticalOverflowContainerRef.scrollHeight;
+    const containerScrollTop = this.verticalOverflowContainerRef.scrollTop;
+
+    if (containerScrollHeight - (containerScrollTop + containerHeight) <= PAGED_CONTENT_OFFSET_BUFFER) {
+      this.hasRequestedContent = true;
+      onRequestContent();
+    }
+  }
+
+  /**
+   * Keyboard Events
+   */
+  handleKeyDown(event) {
+    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+      const activeElement = document.activeElement;
+
+      if (!activeElement) {
+        return;
+      }
+
+      if (matches(activeElement, '[data-accessibility-id]')) {
+        const currentAccessibilityId = activeElement.getAttribute('data-accessibility-id');
+        const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
+
+        if (nextAccessibilityId >= 0 && nextAccessibilityId < this.accessibilityStack.length) {
+          const nextFocusElement = document.querySelector(`[data-accessibility-id="${nextAccessibilityId}"]`);
+          if (nextFocusElement) {
+            event.preventDefault();
+            nextFocusElement.focus();
+          }
+        } else if (nextAccessibilityId === -1) {
+          this.leadingFocusAnchorRef.focus();
+        } else {
+          this.terminalFocusAnchorRef.focus();
+        }
+      }
+    }
+  }
+
+  handleGlobalShiftDown(event) {
+    if (event.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = true;
+    }
+  }
+
+  handleGlobalShiftUp(event) {
+    if (event.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = false;
+    }
+  }
+
+  /**
+   * Accessiblity
+   */
   handleLeadingFocusAnchorFocus() {
     if (!this.shiftIsPressed) {
       const firstAccessibleElement = this.dataGridContainerRef.querySelector('[data-accessibility-id="0"]');
@@ -660,7 +696,6 @@ class DataGrid extends React.Component {
   /**
    * Rendering
    */
-
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
     const { onHeaderClick } = this.props;
@@ -850,6 +885,9 @@ class DataGrid extends React.Component {
           <div
             className={cx('vertical-overflow-container')}
             ref={this.setVerticalOverflowContainerRef}
+            onScroll={() => {
+              this.checkForMoreContent();
+            }}
           >
             <div
               className={cx('overflowed-content-container')}
@@ -889,4 +927,3 @@ DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
 export default DataGrid;
-export { ContentCellLayout };

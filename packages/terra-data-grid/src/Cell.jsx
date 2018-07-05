@@ -51,7 +51,7 @@ class Cell extends React.Component {
     const { onCellClick } = this.props;
 
     if (onCellClick) {
-      onCellClick(this.props.rowId, this.props.columnId);
+      onCellClick(this.props.sectionId, this.props.rowId, this.props.columnId);
     }
   }
 

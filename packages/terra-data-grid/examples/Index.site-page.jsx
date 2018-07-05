@@ -12,6 +12,8 @@ import DataGridSrc from '!raw-loader!../src/DataGrid.jsx';
 
 // Example Files
 import DataGridStandard from './index-examples/DataGridStandard';
+import PagingDataGrid from './index-examples/PagingDataGrid';
+
 
 const DataGridExamples = () => (
   <div>
@@ -19,9 +21,11 @@ const DataGridExamples = () => (
     <Markdown id="readme" src={ReadMe} />
 
     <h1 style={{ paddingBottom: '0.3em', borderBottom: '1px solid #eaecef' }}>Examples</h1>
+    <PagingDataGrid />
+    <br />
+    <br />
+    <br />
     <DataGridStandard />
-    <br />
-    <br />
     <br />
     <br />
     <br />
