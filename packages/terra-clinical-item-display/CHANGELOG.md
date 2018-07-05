@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.8.0 - (July 3, 2018)
+----------
 ### Fixed
 * Lint in doc page
 
@@ -10,7 +13,6 @@ Unreleased
 ----------
 ### Added
 * Added theming variables in Item Display
-
 
 2.6.0 - (June 12, 2018)
 ----------
