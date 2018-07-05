@@ -1,7 +1,7 @@
 :local {
   .flex-header {
-    background-color: #f4f4f4;
-    border-bottom-color: #dedfe0;
+    background-color: var(--terra-header-background-color, #f4f4f4);
+    border-bottom-color: var(--terra-header-border-bottom-color, #dedfe0);
     border-bottom-style: solid;
     border-bottom-width: 1px;
     display: flex;
@@ -63,7 +63,7 @@
   }
 
   .flex-subheader {
-    background-color: #c8cacb;
+    background-color: var(--terra-header-subheader-background-color, #c8cacb);
     border-bottom-color: initial;
     border-bottom-style: 0;
     border-bottom-width: 0;
