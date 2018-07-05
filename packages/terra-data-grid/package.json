@@ -1,0 +1,58 @@
+{
+  "name": "terra-data-grid",
+  "main": "lib/DataGrid.js",
+  "version": "0.0.0",
+  "description": "TODO",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-framework.git"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-data-grid",
+    "DataGrid",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "homepage": "https://github.com/cerner/terra-framework#readme",
+  "peerDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "terra-base": "^3.0.0"
+  },
+  "devDependencies": {
+    "react-router-dom": "^4.2.2",
+    "terra-props-table": "^2.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8",
+    "terra-base": "^3.0.0",
+    "terra-button": "^2.0.1",
+    "terra-icon": "^2.6.0",
+    "terra-aggregator": "^2.4.0",
+    "terra-content-container": "^2.0.1",
+    "terra-overlay": "^2.16.0",
+    "terra-slide-panel-manager": "^2.3.0",
+    "terra-modal-manager": "^2.4.0",
+    "react-draggable": "^3.0.5",
+    "resize-observer-polyfill": "^1.4.1"
+  },
+  "scripts": {
+    "compile": "npm run compile:clean && npm run compile:build",
+    "compile:clean": "rimraf lib",
+    "compile:build": "babel src --out-dir lib --copy-files",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
+    "lint:scss": "stylelint src/**/*.scss",
+    "test": "npm run test:jest && npm run test:wdio",
+    "test:jest": "jest ./tests/jest/* --config ../../jestconfig.json",
+    "test:wdio": "wdio ../../wdio.conf.js"
+  }
+}

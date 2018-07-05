@@ -1,0 +1,63 @@
+:local {
+  .section-header {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .content {
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      position: relative;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      padding: 5px;
+
+      .collapsible-icon,
+      .start-accessory,
+      .end-accessory {
+        flex: 0 0 auto;
+        max-height: 100%;
+      }
+
+      .flex-content {
+        flex: 1 1 auto;
+        max-height: 100%;
+        overflow: hidden;
+      }
+
+      * + .start-accessory,
+      * + .flex-content,
+      * + .end-accessory {
+        margin-left: 5px;
+      }
+
+      .text {
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: normal;
+        word-wrap: normal;
+        overflow: hidden;
+      }
+    }
+
+    .touch-target {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        box-shadow: inset 0 0 5px 0px #0092e0;
+      }
+
+      &.selectable:hover {
+        background: #e2f2fc;
+        cursor: pointer;
+      }
+    }
+  }
+}

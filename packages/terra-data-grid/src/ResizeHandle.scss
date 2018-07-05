@@ -1,0 +1,21 @@
+:local {
+  .resize-handle {
+    cursor: col-resize;
+    height: 100%;
+    pointer-events: auto;
+    position: absolute;
+    right: 0;
+    top:0;
+    touch-action: none;
+    width: 5px;
+
+    &:hover {
+      background-color: grey;
+    }
+
+    &.dragging {
+      background-color: darkslategrey;
+      z-index: 200;
+    }
+  }
+}
