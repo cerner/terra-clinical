@@ -17,12 +17,12 @@
   .inline-icon {
     flex: 0 0 auto;
     overflow: hidden;
-    padding-right: 5px;
+    padding-right: 0.357142857142857rem;
   }
 
   .inline-icon > * {
-    min-height: 20px;
-    min-width: 16px;
+    min-height: 1em;
+    min-width: 1em;
   }
 
   .is-truncated {
