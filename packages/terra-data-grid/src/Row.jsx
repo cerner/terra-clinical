@@ -36,10 +36,10 @@ class Row extends React.Component {
   }
 
   render() {
-    const { rowId, sectionId, width, height, children, ...customProps } = this.props;
+    const { rowId, sectionId, width, height, isSelected, children, ...customProps } = this.props;
     const { rowStyles } = this.state;
 
-    const rowClassName = cx(['row', customProps.className]);
+    const rowClassName = cx(['row', { selected: isSelected }, customProps.className]);
 
     return (
       <div

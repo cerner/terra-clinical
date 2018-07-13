@@ -23,6 +23,7 @@ class DataGridStandard extends React.Component {
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
     this.handleCellClick = this.handleCellClick.bind(this);
     this.handleSectionClick = this.handleSectionClick.bind(this);
+    this.handleRowClick = this.handleRowClick.bind(this);
     this.handleColumnResize = this.handleColumnResize.bind(this);
 
     this.buildSection = this.buildSection.bind(this);
@@ -69,6 +70,19 @@ class DataGridStandard extends React.Component {
       return true;
     }
 
+    const currentSelectedRow = aggregatorDelegate && aggregatorDelegate.hasFocus ? aggregatorDelegate.itemState.selectedRow : undefined
+    const nextSelectedRow = nextProps.aggregatorDelegate && nextProps.aggregatorDelegate.hasFocus ? nextProps.aggregatorDelegate.itemState.selectedRow : undefined;
+
+    if (currentSelectedRow) {
+      if (!nextSelectedRow) {
+        return true;
+      } else if (nextSelectedRow.rowKey !== currentSelectedRow.rowKey && nextSelectedRow.sectionKey !== currentSelectedRow.sectionKey) {
+        return true;
+      }
+    } else if (nextSelectedRow) {
+      return true;
+    }
+
     return false;
   }
 
@@ -105,7 +119,7 @@ class DataGridStandard extends React.Component {
     }
 
     const currentSelectedItem = aggregatorDelegate && aggregatorDelegate.hasFocus ? aggregatorDelegate.itemState.selectedCell : {};
-    if (currentSelectedItem.rowKey === rowKey && currentSelectedItem.columnKey === columnKey) {
+    if (currentSelectedItem && currentSelectedItem.rowKey === rowKey && currentSelectedItem.columnKey === columnKey) {
       aggregatorDelegate.releaseFocus();
     } else {
       aggregatorDelegate.requestFocus({
@@ -137,17 +151,49 @@ class DataGridStandard extends React.Component {
     this.setState({ collapsedSections });
   }
 
+  handleRowClick(sectionId, rowId) {
+    const { aggregatorDelegate } = this.props;
+    if (!aggregatorDelegate) {
+      return;
+    }
+
+    const currentSelectedRow = aggregatorDelegate && aggregatorDelegate.hasFocus ? aggregatorDelegate.itemState.selectedRow : {};
+    if (currentSelectedRow && currentSelectedRow.rowKey === rowId && currentSelectedRow.sectionKey === sectionId) {
+      aggregatorDelegate.releaseFocus();
+    } else {
+      aggregatorDelegate.requestFocus({
+        selectedRow: {
+          rowKey: rowId,
+          sectionKey: sectionId,
+        },
+      }).then(({ disclose }) => {
+        disclose({
+          preferredType: 'panel',
+          size: 'small',
+          content: {
+            key: 'worklist-disclose',
+            component: <DisclosureComponent text={`Row Selected: ${sectionId} - ${rowId}`} />,
+          },
+        });
+      });
+    }
+  }
+
   buildRows(sectionId, num) {
     const { aggregatorDelegate } = this.props;
     const { sortDirection } = this.state;
 
     let selectedCell;
+    let selectedRow;
     if (aggregatorDelegate.hasFocus) {
       selectedCell = aggregatorDelegate.itemState.selectedCell;
+      selectedRow = aggregatorDelegate.itemState.selectedRow;
     }
 
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
+      isSelectable: true,
+      isSelected: selectedRow && selectedRow.rowKey === `${sectionId}-Row${rowIndex}` && selectedRow.sectionKey === sectionId,
       cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`column${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
         isSelectable: true,
@@ -329,6 +375,8 @@ class DataGridStandard extends React.Component {
         onRequestColumnResize={this.handleColumnResize}
         onRequestSectionCollapse={this.handleSectionClick}
         fill
+        hasSelectableRows
+        onRowClick={this.handleRowClick}
       />
     );
   }

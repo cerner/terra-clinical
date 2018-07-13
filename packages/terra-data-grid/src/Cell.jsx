@@ -16,6 +16,8 @@ const propTypes = {
   isSelected: PropTypes.bool,
   width: PropTypes.string,
   onCellClick: PropTypes.func,
+  onHoverStart: PropTypes.func,
+  onHoverEnd: PropTypes.func,
   children: PropTypes.node,
   refCallback: PropTypes.func,
 };
@@ -26,6 +28,8 @@ class Cell extends React.Component {
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleTargetClick = this.handleTargetClick.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
     this.state = {
       widthStyle: { width: props.width },
@@ -42,8 +46,24 @@ class Cell extends React.Component {
 
       if (onCellClick) {
         event.preventDefault();
-        onCellClick(this.props.rowId, this.props.columnId);
+        onCellClick(this.props.sectionId, this.props.rowId, this.props.columnId);
       }
+    }
+  }
+
+  handleMouseEnter() {
+    const { onHoverStart } = this.props;
+
+    if (onHoverStart) {
+      onHoverStart();
+    }
+  }
+
+  handleMouseLeave() {
+    const { onHoverEnd } = this.props;
+
+    if (onHoverEnd) {
+      onHoverEnd();
     }
   }
 
@@ -56,7 +76,7 @@ class Cell extends React.Component {
   }
 
   render() {
-    const { sectionId, rowId, columnId, isSelectable, isSelected, width, onCellClick, children, refCallback, ...customProps } = this.props;
+    const { sectionId, rowId, columnId, isSelectable, isSelected, width, onCellClick, children, refCallback, onHoverStart, onHoverEnd, ...customProps } = this.props;
     const { widthStyle } = this.state;
 
     const cellClassName = cx(['container', customProps.className]);
@@ -78,6 +98,8 @@ class Cell extends React.Component {
           className={cx(['touch-target', { selectable: isSelectable, selected: isSelected }])}
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
+          onMouseEnter={onHoverStart}
+          onMouseLeave={onHoverEnd}
           tabIndex={isSelectable ? '0' : undefined}
           ref={refCallback}
         />

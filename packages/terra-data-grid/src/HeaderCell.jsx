@@ -31,7 +31,7 @@ class HeaderCell extends React.Component {
     this.handleCellClick = this.handleCellClick.bind(this);
   }
 
-  handleCellClick(rowId, columnId) {
+  handleCellClick(sectionId, rowId, columnId) {
     const { onCellClick } = this.props;
 
     if (onCellClick) {

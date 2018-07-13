@@ -138,8 +138,6 @@ class PagingDataGrid extends React.Component {
   render() {
     const { sortedColumnKey, sortDirection, columnWidths, isLoading } = this.state;
 
-    console.log(`isLoading: ${isLoading}`);
-
     return (
       <div style={{ height: '500px', position: 'relative' }}>
         <DataGrid
