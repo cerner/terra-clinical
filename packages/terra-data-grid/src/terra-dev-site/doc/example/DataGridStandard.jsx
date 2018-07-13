@@ -370,13 +370,13 @@ class DataGridStandard extends React.Component {
         ]}
         rowHeight="5rem"
         headerHeight="3rem"
-        onCellClick={this.handleCellClick}
-        onHeaderClick={this.handleHeaderClick}
+        onCellSelect={this.handleCellClick}
+        onColumnSelect={this.handleHeaderClick}
         onRequestColumnResize={this.handleColumnResize}
         onRequestSectionCollapse={this.handleSectionClick}
         fill
         hasSelectableRows
-        onRowClick={this.handleRowClick}
+        onRowSelect={this.handleRowClick}
       />
     );
   }

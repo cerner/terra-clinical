@@ -36,11 +36,11 @@ const propTypes = {
   /**
    * Function that is called when a selectable cell is selected.
    */
-  onCellClick: PropTypes.func,
+  onCellSelect: PropTypes.func,
   /**
    * Function that is called when a selectable header cell is selected.
    */
-  onHeaderClick: PropTypes.func,
+  onColumnSelect: PropTypes.func,
   /**
    * Function that is called when a resizable column is resized.
    */
@@ -58,27 +58,24 @@ const propTypes = {
    */
   headerHeight: PropTypes.string,
   /**
-   * Boolean that indicates whether or not the DataGrid should fill its parent container.
-   */
-  fill: PropTypes.bool,
-  /**
-   * Function that will be called when the DataGrid's vertical overflow reaches its terminal position. If there is no additional
-   * content to present, this function should not be provided.
-   */
-  onRequestContent: PropTypes.func,
-  /**
    * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
   /**
-   *
-   */
-  // batchRowSelectionEnabled: PropTypes.bool,
-  /**
    * Function that will be called when a row is selected.
    */
-  onRowClick: PropTypes.func,
+  onRowSelect: PropTypes.func,
+  /**
+   * Boolean that indicates whether or not the DataGrid should fill its parent container.
+   */
+  fill: PropTypes.bool,
+  /**
+   * Function that will be called when the DataGrid's vertical overflow reaches its terminal position. If there is no additional
+   * content to present, this function should not be provided. The `fill` prop must also be provided as true; otherwise, the DataGrid
+   * will not overflow internally and will not know to request more content.
+   */
+  onRequestContent: PropTypes.func,
 };
 
 const defaultProps = {
@@ -748,7 +745,7 @@ class DataGrid extends React.Component {
    */
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
-    const { onHeaderClick } = this.props;
+    const { onColumnSelect } = this.props;
 
     return (
       <HeaderCell
@@ -760,7 +757,7 @@ class DataGrid extends React.Component {
         isSelectable={columnData.isSelectable}
         isResizable={columnData.isResizable}
         onResizeEnd={this.updateColumnWidth}
-        onCellClick={onHeaderClick}
+        onCellClick={onColumnSelect}
         refCallback={(ref) => { this.headerCellRefs[columnId] = ref; }}
       >
         {columnData.component}
@@ -833,7 +830,7 @@ class DataGrid extends React.Component {
   }
 
   renderRowSelectionCell(section, row, column) {
-    const { onRowClick } = this.props;
+    const { onRowSelect } = this.props;
     const cellKey = `${section.id}-${row.id}-${column.id}`;
 
     return (
@@ -858,8 +855,8 @@ class DataGrid extends React.Component {
           }
         }}
         onCellClick={(sectionId, rowId, columnId) => {
-          if (onRowClick) {
-            onRowClick(sectionId, rowId);
+          if (onRowSelect) {
+            onRowSelect(sectionId, rowId);
           }
         }}
       />
@@ -867,7 +864,7 @@ class DataGrid extends React.Component {
   }
 
   renderCell(cell, section, row, column) {
-    const { onCellClick } = this.props;
+    const { onCellSelect } = this.props;
     const cellKey = `${section.id}-${row.id}-${column.id}`;
 
     return (
@@ -877,7 +874,7 @@ class DataGrid extends React.Component {
         rowId={row.id}
         columnId={column.id}
         width={`${this.getWidthForColumn(column)}px`}
-        onCellClick={onCellClick}
+        onCellClick={onCellSelect}
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
         refCallback={(ref) => { this.cellRefs[cellKey] = ref; }}

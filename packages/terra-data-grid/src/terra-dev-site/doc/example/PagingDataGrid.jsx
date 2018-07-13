@@ -246,8 +246,8 @@ class PagingDataGrid extends React.Component {
           sections={this.buildSections()}
           rowHeight="5rem"
           headerHeight="3rem"
-          onCellClick={this.handleCellClick}
-          onHeaderClick={this.handleHeaderClick}
+          onCellSelect={this.handleCellClick}
+          onColumnSelect={this.handleHeaderClick}
           onRequestColumnResize={this.handleColumnResize}
           onRequestSectionCollapse={this.handleSectionClick}
           onRequestContent={this.state.sectionCount < 10 ? (() => {
