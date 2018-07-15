@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import { KEYCODES } from './utils';
+import { KEYCODES } from '../utils/utils';
 
 import styles from './Cell.scss';
 

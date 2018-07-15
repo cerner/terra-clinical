@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import memoize from "memoize-one";
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 
-import Cell from './Cell';
-import HeaderCell from './HeaderCell';
-import Row from './Row';
-import Scrollbar from './Scrollbar';
-import SectionHeader from './SectionHeader';
+import Cell from './subcomponents/Cell';
+import HeaderCell from './subcomponents/HeaderCell';
+import Row from './subcomponents/Row';
+import Scrollbar from './subcomponents/Scrollbar';
+import SectionHeader from './subcomponents/SectionHeader';
 
-import { KEYCODES, matches, calculateScrollbarPosition } from './utils';
+import { KEYCODES, matches, calculateScrollbarPosition } from './utils/utils';
 
 import columnDataShape from './prop-types/columnDataShape';
 import sectionDataShape from './prop-types/sectionDataShape';
@@ -102,6 +103,9 @@ const VOID_COLUMN_WIDTH = 150;
  */
 const PAGED_CONTENT_OFFSET_BUFFER = 100;
 
+/**
+ * The width of the column used for row selection.
+ */
 const ROW_SELECTION_COLUMN_WIDTH = 50;
 
 /* eslint-disable react/sort-comp */
@@ -123,6 +127,10 @@ class DataGrid extends React.Component {
     return accessibleArray;
   }
 
+  /**
+   * Retrieves the visible section header containers and updates their widths.
+   * @param {Float} width The width at which the SectionHeaders are to be rendered.
+   */
   static resizeSectionHeaders(width) {
     /**
      * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
@@ -138,6 +146,9 @@ class DataGrid extends React.Component {
     }
   }
 
+  /**
+   * Returns the configuration for the row selection column.
+   */
   static getRowSelectionColumn() {
     return {
       id: 'DataGrid-rowSelectionColumn',
@@ -147,6 +158,9 @@ class DataGrid extends React.Component {
     };
   }
 
+  /**
+   * Returns the configuration for the void column utilized for column resizing.
+   */
   static getVoidColumn() {
     return {
       id: 'DataGrid-voidColumn',
@@ -156,6 +170,14 @@ class DataGrid extends React.Component {
 
   constructor(props) {
     super(props);
+
+    /**
+     * Memoized Style Generators
+     */
+    this.generateOverflowPaddingStyle = memoize(this.generateOverflowPaddingStyle);
+    this.generateHeaderContainerStyle = memoize(this.generateHeaderContainerStyle);
+    this.generateOverflowContainerStyle = memoize(this.generateOverflowContainerStyle);
+    this.generatePinnedContainerStyle = memoize(this.generatePinnedContainerStyle);
 
     /**
      * Post-render Updates
@@ -248,18 +270,11 @@ class DataGrid extends React.Component {
     /**
      * Determining the widths of the pinned and overflow sections requires iterating over the prop arrays. The widths are
      * generated and cached in state to limit the amount of iteration performed by the render functions.
-     *
-     * We also generate style objects based on the prop values to provide the rendering functions with consistent object references
-     * on subsequent renders of the component. These values are updated in componentWillReceiveProps on a conditional basis.
      */
     this.state = {
       pinnedColumnWidth,
       overflowColumnWidth,
       pageDirection,
-      overflowPaddingStyle: pageDirection === 'rtl' ? { paddingRight: `${pinnedColumnWidth}px` } : { paddingLeft: `${pinnedColumnWidth}px` },
-      headerContainerStyle: { height: `${props.headerHeight}` },
-      overflowContainerStyle: { width: `${overflowColumnWidth}px` },
-      pinnedContainerStyle: { width: `${pinnedColumnWidth}px` },
     };
   }
 
@@ -293,35 +308,19 @@ class DataGrid extends React.Component {
       pageDirection,
     };
 
-    /**
-     * We conditionally regenerate the inline style objects based on width/prop/direction changes to ensure that consistent Object
-     * references are utilized when possible.
-     */
-    if (pinnedColumnWidth !== this.state.pinnedColumnWidth || pageDirection !== this.state.pageDirection) {
-      newState.overflowPaddingStyle = pageDirection === 'rtl' ? { paddingRight: `${pinnedColumnWidth}px` } : { paddingLeft: `${pinnedColumnWidth}px` };
-    }
-
-    if (pinnedColumnWidth !== this.state.pinnedColumnWidth) {
-      newState.pinnedContainerStyle = { width: `${pinnedColumnWidth}px` };
-    }
-
-    if (overflowColumnWidth !== this.state.overflowColumnWidth) {
-      newState.overflowContainerStyle = { width: `${overflowColumnWidth}px` };
-    }
-
-    if (nextProps.headerHeight !== this.props.headerHeight) {
-      newState.headerContainerStyle = { height: `${nextProps.headerHeight}` };
-    }
-
     this.setState(newState);
-
-    if (nextProps.sections !== this.props.sections) {
-      this.hasRequestedContent = false;
-    }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     this.postRenderUpdate();
+
+    /**
+     * If the sections prop has been updated, we invalidate the content request flag before potentially requesting
+     * more content.
+     */
+    if (prevProps.sections !== this.props.sections) {
+      this.hasRequestedContent = false;
+    }
 
     this.checkForMoreContent();
   }
@@ -636,7 +635,6 @@ class DataGrid extends React.Component {
   /**
    * Scroll synchronization
    */
-
   synchronizeHeaderScroll() {
     if (this.scrollbarIsScrolling || this.contentIsScrolling) {
       return;
@@ -712,7 +710,7 @@ class DataGrid extends React.Component {
   }
 
   updateScrollbarVisibility() {
-    if (this.horizontalOverflowContainerRef.scrollWidth <= this.horizontalOverflowContainerRef.getBoundingClientRect().width) {
+    if (Math.abs(this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.getBoundingClientRect().width) < 1) {
       this.scrollbarContainerRef.setAttribute('aria-hidden', true);
     } else {
       this.scrollbarContainerRef.removeAttribute('aria-hidden');
@@ -740,11 +738,40 @@ class DataGrid extends React.Component {
   }
 
   /**
+   * Memoized Style Generators
+   */
+  generateOverflowPaddingStyle(direction, pinnedColumnWidth) {
+    return direction === 'rtl' ? { paddingRight: `${pinnedColumnWidth}px` } : { paddingLeft: `${pinnedColumnWidth}px` };
+  }
+
+  generateHeaderContainerStyle(headerHeight) {
+    return {
+      height: `${headerHeight}`,
+    }
+  }
+
+  generateOverflowContainerStyle(overflowColumnWidth) {
+    return {
+      width: `${overflowColumnWidth}px`,
+    };
+  }
+
+  generatePinnedContainerStyle(pinnedColumnWidth) {
+    return {
+      width: `${pinnedColumnWidth}px`,
+    };
+  }
+
+  /**
    * Rendering
    */
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
     const { onColumnSelect } = this.props;
+
+    if (columnId === 'DataGrid-voidColumn') {
+      return undefined;
+    }
 
     return (
       <HeaderCell
@@ -765,30 +792,30 @@ class DataGrid extends React.Component {
   }
 
   renderHeaderRow() {
-    const { pinnedColumns, overflowColumns } = this.props;
-    const { headerContainerStyle, overflowPaddingStyle, overflowContainerStyle, pinnedContainerStyle } = this.state;
+    const { pinnedColumns, overflowColumns, headerHeight } = this.props;
+    const { pageDirection, pinnedColumnWidth, overflowColumnWidth } = this.state;
 
     return (
       <div
         className={cx('header-container')}
-        style={headerContainerStyle}
+        style={this.generateHeaderContainerStyle(headerHeight)}
       >
         <div
           className={cx('header-overflow-container')}
-          style={overflowPaddingStyle}
+          style={this.generateOverflowPaddingStyle(pageDirection, pinnedColumnWidth)}
           ref={this.setHeaderOverflowContainerRef}
           onScroll={this.synchronizeHeaderScroll}
         >
           <div
             className={cx('overflow-header')}
-            style={overflowContainerStyle}
+            style={this.generateOverflowContainerStyle(overflowColumnWidth)}
           >
             {this.getOverflowColumns().map(column => this.renderHeaderCell(column))}
           </div>
         </div>
         <div
           className={cx('pinned-header')}
-          style={pinnedContainerStyle}
+          style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
         >
           {this.getPinnedColumns().map(column => this.renderHeaderCell(column))}
         </div>
@@ -898,6 +925,8 @@ class DataGrid extends React.Component {
         {columns.map((column) => {
           if (column.id === 'DataGrid-rowSelectionColumn') {
             return this.renderRowSelectionCell(section, row, column);
+          } else if (column.id === 'DataGrid-voidColumn') {
+            return undefined;
           }
 
           const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
@@ -919,27 +948,17 @@ class DataGrid extends React.Component {
   }
 
   renderPinnedContent() {
-    const { sections, hasSelectableRows } = this.props;
+    const { sections } = this.props;
     const { pinnedColumnWidth } = this.state;
 
-    let pinnedColumns = this.props.pinnedColumns;
-    if (hasSelectableRows) {
-      pinnedColumns = [{
-        id: 'DataGrid-rowSelectionColumn',
-        isResizable: false,
-        isSelectable: false,
-        width: ROW_SELECTION_COLUMN_WIDTH,
-      }].concat(this.props.pinnedColumns);
-    }
-
-    return sections.map(section => this.renderSection(section, pinnedColumns, `${pinnedColumnWidth}px`));
+    return sections.map(section => this.renderSection(section, this.getPinnedColumns(), `${pinnedColumnWidth}px`));
   }
 
   renderOverflowContent() {
-    const { overflowColumns, sections } = this.props;
+    const { sections } = this.props;
     const { overflowColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, overflowColumns, `${overflowColumnWidth}px`, true));
+    return sections.map(section => this.renderSection(section, this.getOverflowColumns(), `${overflowColumnWidth}px`, true));
   }
 
   renderScrollbar() {
@@ -955,7 +974,7 @@ class DataGrid extends React.Component {
 
   render() {
     const { fill } = this.props;
-    const { overflowPaddingStyle, pinnedContainerStyle } = this.state;
+    const { pageDirection, overflowColumnWidth, pinnedColumnWidth } = this.state;
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -983,7 +1002,7 @@ class DataGrid extends React.Component {
             <div
               className={cx('overflowed-content-container')}
               ref={this.setOverflowedContentContainerRef}
-              style={overflowPaddingStyle}
+              style={this.generateOverflowPaddingStyle(pageDirection, pinnedColumnWidth)}
             >
               <div
                 className={cx('horizontal-overflow-container')}
@@ -996,7 +1015,7 @@ class DataGrid extends React.Component {
             <div
               className={cx('pinned-content-container')}
               ref={this.setPinnedContentContainerRef}
-              style={pinnedContainerStyle}
+              style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
             >
               {this.renderPinnedContent()}
             </div>

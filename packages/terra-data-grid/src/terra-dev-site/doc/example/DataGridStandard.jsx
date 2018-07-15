@@ -337,7 +337,6 @@ class DataGridStandard extends React.Component {
           {
             id: 'column9',
             width: columnWidths.column9 || 300,
-            isSelectable: true,
             isResizable: true,
             component: (
               <Button

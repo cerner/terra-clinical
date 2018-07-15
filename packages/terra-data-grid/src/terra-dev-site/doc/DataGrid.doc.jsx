@@ -6,7 +6,6 @@ import { name } from '../../../package.json';
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import DataGridSrc from '!raw-loader!../../../src/DataGrid';
-// import ItemSrc from '!raw-loader!../../../src/Item';
 
 // Example Files
 import DataGridStandard from './example/DataGridStandard';
@@ -24,6 +23,7 @@ const DocPage = () => (
     examples={[
       {
         title: 'Data Grid Example',
+        description: 'A catch all example',
         example: <DataGridStandard />,
         source: DataGridStandardSrc,
       },
