@@ -9,17 +9,50 @@ import styles from './Cell.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  sectionId: PropTypes.string,
-  rowId: PropTypes.string,
+  /**
+   * String identifier of the section in which the Cell will be rendered.
+   */
+  sectionId: PropTypes.string.isRequired,
+  /**
+   * String identifer of the row in which the Cell will be rendered.
+   */
+  rowId: PropTypes.string.isRequired,
+  /**
+   * String identifier of the column in which the Cell will be rendered.
+   */
   columnId: PropTypes.string.isRequired,
+  /**
+   * String-formatted width that the Cell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   */
+  width: PropTypes.string.isRequired,
+  /**
+   * Boolean indicating whether the Cell is selectable.
+   */
   isSelectable: PropTypes.bool,
+  /**
+   * Boolean indicating whether the Cell is actively selected.
+   */
   isSelected: PropTypes.bool,
-  width: PropTypes.string,
-  onCellClick: PropTypes.func,
+  /**
+   * Function that will be called upon Cell selection. The `isSelectable` prop must be true for this function to be called.
+   */
+  onSelect: PropTypes.func,
+  /**
+   * Function that will be called upon the mouse entering the selectable region of the Cell. The `isSelectable` prop must be true for this function to be called.
+   */
   onHoverStart: PropTypes.func,
+  /**
+   * Function that will be called upon the mouse leaving the selectable region of the Cell. The `isSelectable` prop must be true for this function to be called.
+   */
   onHoverEnd: PropTypes.func,
+  /**
+   * Content that will rendered within the Cell.
+   */
   children: PropTypes.node,
-  refCallback: PropTypes.func,
+  /**
+   * Function that will be called with a ref to the Cell's selectable element.
+   */
+  selectableRefCallback: PropTypes.func,
 };
 
 class Cell extends React.Component {
@@ -28,8 +61,6 @@ class Cell extends React.Component {
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleTargetClick = this.handleTargetClick.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
     this.state = {
       widthStyle: { width: props.width },
@@ -42,57 +73,48 @@ class Cell extends React.Component {
 
   handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
-      const { onCellClick } = this.props;
+      const { onSelect } = this.props;
 
-      if (onCellClick) {
+      if (onSelect) {
         event.preventDefault();
-        onCellClick(this.props.sectionId, this.props.rowId, this.props.columnId);
+        onSelect(this.props.sectionId, this.props.rowId, this.props.columnId);
       }
     }
   }
 
-  handleMouseEnter() {
-    const { onHoverStart } = this.props;
-
-    if (onHoverStart) {
-      onHoverStart();
-    }
-  }
-
-  handleMouseLeave() {
-    const { onHoverEnd } = this.props;
-
-    if (onHoverEnd) {
-      onHoverEnd();
-    }
-  }
-
   handleTargetClick() {
-    const { onCellClick } = this.props;
+    const { onSelect } = this.props;
 
-    if (onCellClick) {
-      onCellClick(this.props.sectionId, this.props.rowId, this.props.columnId);
+    if (onSelect) {
+      onSelect(this.props.sectionId, this.props.rowId, this.props.columnId);
     }
   }
 
   render() {
-    const { sectionId, rowId, columnId, isSelectable, isSelected, width, onCellClick, children, refCallback, onHoverStart, onHoverEnd, ...customProps } = this.props;
-    const { widthStyle } = this.state;
+    const {
+      sectionId,
+      rowId,
+      columnId,
+      isSelectable,
+      isSelected,
+      width,
+      onSelect,
+      children,
+      selectableRefCallback,
+      onHoverStart,
+      onHoverEnd,
+      ...customProps
+    } = this.props;
 
-    const cellClassName = cx(['container', customProps.className]);
+    const { widthStyle } = this.state;
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
       <div
         {...customProps}
-        className={cellClassName}
-        key={`${sectionId}-${rowId}-${columnId}`}
+        className={cx(['container', customProps.className])}
         style={widthStyle}
         aria-selected={isSelected}
-        data-cell
-        data-column-id={columnId}
-        data-row-id={rowId}
-        data-section-id={sectionId}
       >
         <div
           className={cx(['touch-target', { selectable: isSelectable, selected: isSelected }])}
@@ -101,7 +123,7 @@ class Cell extends React.Component {
           onMouseEnter={onHoverStart}
           onMouseLeave={onHoverEnd}
           tabIndex={isSelectable ? '0' : undefined}
-          ref={refCallback}
+          ref={selectableRefCallback}
         />
         <div className={cx('content')}>
           {children}

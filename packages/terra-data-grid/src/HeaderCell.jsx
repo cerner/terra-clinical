@@ -12,35 +12,83 @@ import styles from './HeaderCell.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * String identifier of the column in which the HeaderCell will be rendered.
+   */
   columnId: PropTypes.string.isRequired,
+  /**
+   * String-formatted width that the Cell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   */
+  /**
+   * String text that will be rendered within the HeaderCell's default text region.
+   */
   text: PropTypes.string,
+  /**
+   * String indicating the sort direction of the column. If provided, a sorting indicator will be
+   * rendered within in the header. However, if custom children are also provided, the sorting indicator will
+   * not be rendered.
+   */
   sortIndicator: PropTypes.oneOf(['ascending', 'descending']),
+  /**
+   * Boolean indicating whether or not the HeaderCell is selectable.
+   */
   isSelectable: PropTypes.bool,
+  /**
+   * Function that will be called when the HeaderCell is selected. The `isSelectable` prop must be true for
+   * this function to be called.
+   */
+  onSelect: PropTypes.func,
+  /**
+   * Boolean indicating whether or not the HeaderCell is resizable. If true, a ResizeHandle will be rendered
+   * over the HeaderCell's contents.
+   */
   isResizable: PropTypes.bool,
-  width: PropTypes.string,
-  onCellClick: PropTypes.func,
+  /**
+   * Function that will be called upon the release of the ResizeHandle. The `isResizable` prop must be be true
+   * for this function to be called.
+   */
   onResizeEnd: PropTypes.func,
+  /**
+   * String-formatted width that the HeaderCell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   */
+  width: PropTypes.string,
+  /**
+   * Content that will rendered within the HeaderCell. If provided, the `text` and `sortIndicator` props will be ignored.
+   */
   children: PropTypes.node,
-  refCallback: PropTypes.func,
+  /**
+   * Function that will be called with a ref to the Cell's selectable element.
+   */
+  selectableRefCallback: PropTypes.func,
 };
 
 class HeaderCell extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleCellClick = this.handleCellClick.bind(this);
+    this.handleCellSelect = this.handleCellSelect.bind(this);
   }
 
-  handleCellClick(sectionId, rowId, columnId) {
-    const { onCellClick } = this.props;
+  handleCellSelect(sectionId, rowId, columnId) {
+    const { onSelect } = this.props;
 
-    if (onCellClick) {
-      onCellClick(columnId);
+    if (onSelect) {
+      onSelect(columnId);
     }
   }
 
   render() {
-    const { columnId, text, sortIndicator, isSelectable, isResizable, width, children, onResizeEnd, refCallback } = this.props;
+    const {
+      columnId,
+      text,
+      sortIndicator,
+      isSelectable,
+      isResizable,
+      width,
+      children,
+      onResizeEnd,
+      selectableRefCallback
+    } = this.props;
 
     let content = children;
     if (!content && (text || sortIndicator)) {
@@ -67,12 +115,13 @@ class HeaderCell extends React.Component {
     return (
       <Cell
         className={cx('header-cell')}
-        width={width}
+        sectionId=""
+        rowId=""
         columnId={columnId}
+        width={width}
         isSelectable={isSelectable}
-        onCellClick={this.handleCellClick}
-        refCallback={refCallback}
-        data-header-cell
+        onSelect={this.handleCellSelect}
+        selectableRefCallback={selectableRefCallback}
       >
         {content}
         {isResizable ? <ResizeHandle id={columnId} onResizeStop={onResizeEnd} /> : null }

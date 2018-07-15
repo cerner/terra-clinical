@@ -33,7 +33,7 @@
       box-shadow: inset 0 0 5px 0px #0092e0;
 
       &:hover {
-        background: var(--terra-data-grid-cell-selected-background-color,#b3ddf7);
+        background: var(--terra-data-grid-cell-selected-hover-background-color,#b3ddf7);
       }
     }
   }

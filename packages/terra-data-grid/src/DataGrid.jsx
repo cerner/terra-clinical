@@ -10,8 +10,7 @@ import Row from './Row';
 import Scrollbar from './Scrollbar';
 import SectionHeader from './SectionHeader';
 
-import { calculateScrollbarPosition } from './scrollbarUtils';
-import { KEYCODES, matches } from './utils';
+import { KEYCODES, matches, calculateScrollbarPosition } from './utils';
 
 import columnDataShape from './prop-types/columnDataShape';
 import sectionDataShape from './prop-types/sectionDataShape';
@@ -757,8 +756,8 @@ class DataGrid extends React.Component {
         isSelectable={columnData.isSelectable}
         isResizable={columnData.isResizable}
         onResizeEnd={this.updateColumnWidth}
-        onCellClick={onColumnSelect}
-        refCallback={(ref) => { this.headerCellRefs[columnId] = ref; }}
+        onSelect={onColumnSelect}
+        selectableRefCallback={(ref) => { this.headerCellRefs[columnId] = ref; }}
       >
         {columnData.component}
       </HeaderCell>
@@ -800,10 +799,10 @@ class DataGrid extends React.Component {
   renderSectionHeader(section, hideHeader) {
     const { onRequestSectionCollapse } = this.props;
 
-    const shouldRenderSectionHeader = section.isCollapsible || section.text || section.startAccessory || section.endAccessory || section.component;
+    const shouldRenderSectionHeaderContainer = section.isCollapsible || section.text || section.startAccessory || section.endAccessory || section.component;
 
     return (
-      shouldRenderSectionHeader ? (
+      shouldRenderSectionHeaderContainer ? (
         <div
           key={section.id}
           className={cx('section-header-container')}
@@ -816,8 +815,8 @@ class DataGrid extends React.Component {
               endAccessory={section.endAccessory}
               isCollapsible={section.isCollapsible}
               isCollapsed={section.isCollapsed}
-              onClick={onRequestSectionCollapse}
-              refCallback={(ref) => {
+              onRequestSectionCollapse={onRequestSectionCollapse}
+              selectableRefCallback={(ref) => {
                 this.sectionRefs[section.id] = ref;
               }}
             >
@@ -841,7 +840,7 @@ class DataGrid extends React.Component {
         columnId={column.id}
         width={`${this.getWidthForColumn(column)}px`}
         isSelectable={row.isSelectable}
-        refCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
+        selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
         onHoverStart={() => {
           const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
           for (let i = 0, length = rowElements.length; i < length; i += 1) {
@@ -854,7 +853,7 @@ class DataGrid extends React.Component {
             rowElements[i].classList.remove('hover');
           }
         }}
-        onCellClick={(sectionId, rowId, columnId) => {
+        onSelect={(sectionId, rowId, columnId) => {
           if (onRowSelect) {
             onRowSelect(sectionId, rowId);
           }
@@ -874,10 +873,10 @@ class DataGrid extends React.Component {
         rowId={row.id}
         columnId={column.id}
         width={`${this.getWidthForColumn(column)}px`}
-        onCellClick={onCellSelect}
+        onSelect={onCellSelect}
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
-        refCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
+        selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
       >
         {cell.component}
       </Cell>

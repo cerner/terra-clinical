@@ -8,13 +8,22 @@ import styles from './ResizeHandle.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * String identifer for the ResizeHandle. This value will be provided to the `onResizeStop` function prop as a parameter for
+   * identification purposes.
+   */
   id: PropTypes.string,
+  /**
+   * Function called upon release of the ResizeHandle. The id, as well as the new ResizeHandle position, will be provided
+   * as arguments.
+   */
   onResizeStop: PropTypes.func,
 };
 
 class ResizeHandle extends React.Component {
   /**
-   * Click events that occur on the ResizeHandle are not propagated.
+   * Click events that occur on the ResizeHandle are not propagated. This prevents clicks on the ResizeHandle from registering
+   * as clicks on the elements over which the ResizeHandle is rendered.
    */
   static preventClickEvent(event) {
     event.stopPropagation();

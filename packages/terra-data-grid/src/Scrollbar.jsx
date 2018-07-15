@@ -8,32 +8,36 @@ import styles from './Scrollbar.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * Function called once upon initial scroll of the scrollbar for a given movement event.
+   */
   onMoveStart: PropTypes.func,
+  /**
+   * Function called once upon the end of scrolling of the scrollbar for a given movement event.
+   */
   onMoveEnd: PropTypes.func,
+  /**
+   * Function called upon movement of the scrollbar.
+   */
   onMove: PropTypes.func,
+  /**
+   * Function called with a reference to the Scrollbar's outer container element.
+   */
   refCallback: PropTypes.func,
+  /**
+   * Function called with a reference to the Scrollbar's scrollbar handle.
+   */
   scrollbarRefCallback: PropTypes.func,
-};
-
-const defaultProps = {
-  overflowWidth: 0,
 };
 
 class Scrollbar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDragMove = this.handleDragMove.bind(this);
     this.handleDragStart = this.handleDragStart.bind(this);
     this.handleDragStop = this.handleDragStop.bind(this);
 
     this.scrollPosition = 0;
-  }
-
-  handleDragMove(event, data) {
-    if (this.props.onMove) {
-      this.props.onMove(event, data);
-    }
   }
 
   handleDragStart(event, data) {
@@ -59,7 +63,7 @@ class Scrollbar extends React.Component {
   }
 
   render() {
-    const { refCallback, scrollbarRefCallback } = this.props;
+    const { onMove, refCallback, scrollbarRefCallback } = this.props;
 
     return (
       <div
@@ -69,7 +73,7 @@ class Scrollbar extends React.Component {
         <DraggableCore
           onStart={this.handleDragStart}
           onStop={this.handleDragStop}
-          onDrag={this.handleDragMove}
+          onDrag={onMove}
         >
           <div
             className={cx('scrollbar')}
@@ -82,6 +86,5 @@ class Scrollbar extends React.Component {
 }
 
 Scrollbar.propTypes = propTypes;
-Scrollbar.defaultProps = defaultProps;
 
 export default Scrollbar;
