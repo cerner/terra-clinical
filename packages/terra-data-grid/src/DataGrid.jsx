@@ -910,7 +910,7 @@ class DataGrid extends React.Component {
   renderSection(section, columns, width, hideHeader) {
     return (
       <React.Fragment key={section.id}>
-        {this.renderSectionHeader(section, section.isColla, hideHeader)}
+        {this.renderSectionHeader(section, hideHeader)}
         {!section.isCollapsed && section.rows && section.rows.map(row => (
           this.renderRow(row, section, columns, width)
         ))}

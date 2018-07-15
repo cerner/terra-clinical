@@ -238,7 +238,7 @@ class DataGridStandard extends React.Component {
         id: sectionId,
         isCollapsible,
         isCollapsed: this.state.collapsedSections[sectionId],
-        component: <marquee behavior="alternate" direction="right" scrollamount="10" style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 (Custom Component)</marquee>,
+        component: <div style={{ color: 'blue', verticalAlign: 'center' }}>Section Header 3 (Custom Component)</div>,
         rows: this.buildRows(sectionId, numberOfRows),
       };
     }
