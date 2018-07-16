@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import memoize from "memoize-one";
+import { polyfill } from 'react-lifecycles-compat';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 
@@ -76,6 +77,10 @@ const propTypes = {
    * will not overflow internally and will not know to request more content.
    */
   onRequestContent: PropTypes.func,
+  /**
+   * String indicating the desired layout direction for the DataGrid.
+   */
+  pageDirection: PropTypes.oneOf(['ltr', 'rtl']),
 };
 
 const defaultProps = {
@@ -84,6 +89,7 @@ const defaultProps = {
   rowHeight: '2rem',
   headerHeight: '2rem',
   sections: [],
+  pageDirection: 'ltr',
 };
 
 /**
@@ -168,6 +174,58 @@ class DataGrid extends React.Component {
     };
   }
 
+  /**
+   * Returns the column's specified width or the default width if not width is defined.
+   * @param {Object} column Object adhering to the columnData shape.
+   */
+  static getWidthForColumn(column) {
+    return column.width || DEFAULT_COLUMN_WIDTH;
+  }
+
+  /**
+   * Returns the combined width of every column provided.
+   * @param {Array} columns Array of Objects adhering to the columnData shape.
+   */
+  static getTotalColumnWidth(columns) {
+    return columns.reduce((totalWidth, column) => totalWidth + DataGrid.getWidthForColumn(column), 0);
+  }
+
+  /**
+   * Returns the pinned columns from the given source, including the row selection column if necessary.
+   * @param {Object} source Object conforming to DataGrid's prop types.
+   */
+  static getPinnedColumns(source) {
+    const { pinnedColumns, hasSelectableRows } = source;
+
+    let updatedPinnedColumns = pinnedColumns;
+    if (hasSelectableRows) {
+      updatedPinnedColumns = [DataGrid.getRowSelectionColumn()].concat(updatedPinnedColumns);
+    }
+
+    return updatedPinnedColumns;
+  }
+
+  /**
+   * Returns the overflow columns from the given source, including the void column used for column resizing.
+   * @param {Object} source Object conforming to DataGrid's prop types.
+   */
+  static getOverflowColumns(source) {
+    const { overflowColumns } = source;
+
+    return overflowColumns.concat([DataGrid.getVoidColumn()]);
+  }
+
+  /**
+   * Returns a new state object containing the pinned/overflowed section widths based on the incoming props.
+   * @param {Object} nextProps Object conforming to DataGrid's prop types.
+   */
+  static getDerivedStateFromProps(nextProps) {
+    return {
+      pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(nextProps)),
+      overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(nextProps)),
+    }
+  }
+
   constructor(props) {
     super(props);
 
@@ -212,12 +270,7 @@ class DataGrid extends React.Component {
     /**
      * Column Sizing
      */
-    this.getColumn = this.getColumn.bind(this);
-    this.getWidthForColumn = this.getWidthForColumn.bind(this);
-    this.getTotalColumnWidth = this.getTotalColumnWidth.bind(this);
     this.updateColumnWidth = this.updateColumnWidth.bind(this);
-    this.getPinnedColumns = this.getPinnedColumns.bind(this);
-    this.getOverflowColumns = this.getOverflowColumns.bind(this);
 
     /**
      * Refs
@@ -263,18 +316,13 @@ class DataGrid extends React.Component {
     this.renderSection = this.renderSection.bind(this);
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
 
-    const pinnedColumnWidth = this.getTotalColumnWidth(this.getPinnedColumns(props));
-    const overflowColumnWidth = this.getTotalColumnWidth(this.getOverflowColumns(props));
-    const pageDirection = document.documentElement.getAttribute('dir');
-
     /**
      * Determining the widths of the pinned and overflow sections requires iterating over the prop arrays. The widths are
      * generated and cached in state to limit the amount of iteration performed by the render functions.
      */
     this.state = {
-      pinnedColumnWidth,
-      overflowColumnWidth,
-      pageDirection,
+      pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(props)),
+      overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(props)),
     };
   }
 
@@ -295,20 +343,6 @@ class DataGrid extends React.Component {
     this.postRenderUpdate();
 
     this.checkForMoreContent();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const pinnedColumnWidth = this.getTotalColumnWidth(this.getPinnedColumns(nextProps));
-    const overflowColumnWidth = this.getTotalColumnWidth(this.getOverflowColumns(nextProps));
-    const pageDirection = document.documentElement.getAttribute('dir');
-
-    const newState = {
-      pinnedColumnWidth,
-      overflowColumnWidth,
-      pageDirection,
-    };
-
-    this.setState(newState);
   }
 
   componentDidUpdate(prevProps) {
@@ -334,11 +368,11 @@ class DataGrid extends React.Component {
   /**
    * Post-render Updates
    */
-  generateAccessibleContentIndex(source) {
-    const { sections } = source || this.props;
+  generateAccessibleContentIndex() {
+    const { sections } = this.props;
 
-    const pinnedColumns = this.getPinnedColumns(source);
-    const overflowColumns = this.getOverflowColumns(source);
+    const pinnedColumns = DataGrid.getPinnedColumns(this.props);
+    const overflowColumns = DataGrid.getOverflowColumns(this.props);
 
     const orderedColumnIds = pinnedColumns.concat(overflowColumns).map(column => column.id);
 
@@ -537,14 +571,6 @@ class DataGrid extends React.Component {
   /**
    * Column Sizing
    */
-  getWidthForColumn(column) {
-    return column.width || DEFAULT_COLUMN_WIDTH;
-  }
-
-  getTotalColumnWidth(columns) {
-    return columns.reduce((totalWidth, column) => totalWidth + this.getWidthForColumn(column), 0);
-  }
-
   updateColumnWidth(columnId, widthDelta) {
     const { onRequestColumnResize } = this.props;
 
@@ -552,41 +578,19 @@ class DataGrid extends React.Component {
       return;
     }
 
-    const columnData = this.getColumn(columnId);
-    let columnWidth = this.getWidthForColumn(columnData);
-
-    columnWidth += widthDelta;
-
-    onRequestColumnResize(columnId, columnWidth);
-  }
-
-  getColumn(columnId, source) {
-    const allColumns = this.getPinnedColumns(source).concat(this.getOverflowColumns(source));
-
+    let column;
+    const allColumns = DataGrid.getPinnedColumns(this.props).concat(DataGrid.getOverflowColumns(this.props));
     for (let i = 0, length = allColumns.length; i < length; i += 1) {
       if (allColumns[i].id === columnId) {
-        return allColumns[i];
+        column = allColumns[i];
       }
     }
 
-    return undefined;
-  }
-
-  getPinnedColumns(source) {
-    const { pinnedColumns, hasSelectableRows } = source || this.props;
-
-    let updatedPinnedColumns = pinnedColumns;
-    if (hasSelectableRows) {
-      updatedPinnedColumns = [DataGrid.getRowSelectionColumn()].concat(updatedPinnedColumns);
+    if (!column) {
+      return;
     }
 
-    return updatedPinnedColumns;
-  }
-
-  getOverflowColumns(source) {
-    const { overflowColumns } = source || this.props;
-
-    return overflowColumns.concat([DataGrid.getVoidColumn()]);
+    onRequestColumnResize(columnId, DataGrid.getWidthForColumn(column) + widthDelta);
   }
 
   /**
@@ -779,7 +783,7 @@ class DataGrid extends React.Component {
         columnId={columnId}
         text={columnData.text}
         sortIndicator={columnData.sortIndicator}
-        width={`${this.getWidthForColumn(columnData)}px`}
+        width={`${DataGrid.getWidthForColumn(columnData)}px`}
         isSelectable={columnData.isSelectable}
         isResizable={columnData.isResizable}
         onResizeEnd={this.updateColumnWidth}
@@ -792,8 +796,8 @@ class DataGrid extends React.Component {
   }
 
   renderHeaderRow() {
-    const { pinnedColumns, overflowColumns, headerHeight } = this.props;
-    const { pageDirection, pinnedColumnWidth, overflowColumnWidth } = this.state;
+    const { pinnedColumns, overflowColumns, headerHeight, pageDirection } = this.props;
+    const { pinnedColumnWidth, overflowColumnWidth } = this.state;
 
     return (
       <div
@@ -810,14 +814,14 @@ class DataGrid extends React.Component {
             className={cx('overflow-header')}
             style={this.generateOverflowContainerStyle(overflowColumnWidth)}
           >
-            {this.getOverflowColumns().map(column => this.renderHeaderCell(column))}
+            {DataGrid.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
           </div>
         </div>
         <div
           className={cx('pinned-header')}
           style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
         >
-          {this.getPinnedColumns().map(column => this.renderHeaderCell(column))}
+          {DataGrid.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
         </div>
       </div>
     );
@@ -865,7 +869,7 @@ class DataGrid extends React.Component {
         sectionId={section.id}
         rowId={row.id}
         columnId={column.id}
-        width={`${this.getWidthForColumn(column)}px`}
+        width={`${DataGrid.getWidthForColumn(column)}px`}
         isSelectable={row.isSelectable}
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
         onHoverStart={() => {
@@ -899,7 +903,7 @@ class DataGrid extends React.Component {
         sectionId={section.id}
         rowId={row.id}
         columnId={column.id}
-        width={`${this.getWidthForColumn(column)}px`}
+        width={`${DataGrid.getWidthForColumn(column)}px`}
         onSelect={onCellSelect}
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
@@ -951,14 +955,14 @@ class DataGrid extends React.Component {
     const { sections } = this.props;
     const { pinnedColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, this.getPinnedColumns(), `${pinnedColumnWidth}px`));
+    return sections.map(section => this.renderSection(section, DataGrid.getPinnedColumns(this.props), `${pinnedColumnWidth}px`));
   }
 
   renderOverflowContent() {
     const { sections } = this.props;
     const { overflowColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, this.getOverflowColumns(), `${overflowColumnWidth}px`, true));
+    return sections.map(section => this.renderSection(section, DataGrid.getOverflowColumns(this.props), `${overflowColumnWidth}px`, true));
   }
 
   renderScrollbar() {
@@ -973,8 +977,8 @@ class DataGrid extends React.Component {
   }
 
   render() {
-    const { fill } = this.props;
-    const { pageDirection, overflowColumnWidth, pinnedColumnWidth } = this.state;
+    const { fill, pageDirection } = this.props;
+    const { overflowColumnWidth, pinnedColumnWidth } = this.state;
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -1036,4 +1040,4 @@ class DataGrid extends React.Component {
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
-export default DataGrid;
+export default polyfill(DataGrid);
