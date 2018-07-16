@@ -64,10 +64,6 @@ class Cell extends React.Component {
     this.handleTargetClick = this.handleTargetClick.bind(this);
 
     this.getCellStyles = memoize(this.getCellStyles);
-
-    this.state = {
-      widthStyle: { width: props.width },
-    };
   }
 
   getCellStyles(width) {
@@ -110,8 +106,6 @@ class Cell extends React.Component {
       onHoverEnd,
       ...customProps
     } = this.props;
-
-    const { widthStyle } = this.state;
 
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions */
