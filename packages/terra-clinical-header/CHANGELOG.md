@@ -10,7 +10,6 @@ Unreleased
 ### Changed
 * Added theming variables in Header
 
-
 2.8.0 - (July 3, 2018)
 ----------
 ### Fixed
