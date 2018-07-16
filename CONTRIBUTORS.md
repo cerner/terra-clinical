@@ -20,6 +20,7 @@ Cerner Corporation
 - Dinesh Singh [@dineshsingh9]
 - Ben Boersma [@BenBoersma]
 - Mayuri Kini [@mayurikini]
+- Christian Alten [@cwalten]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -41,3 +42,4 @@ Cerner Corporation
 [@dineshsingh9]: https://github.com/DineshSingh9
 [@BenBoersma]: https://github.com/BenBoersma
 [@mayurikini]: https://github.com/mayurikini
+[@cwalten]: https://github.com/cwalten
