@@ -63,14 +63,14 @@ class Cell extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleTargetClick = this.handleTargetClick.bind(this);
 
-    this.getWidthStyle = memoize(this.getWidthStyle);
+    this.getCellStyles = memoize(this.getCellStyles);
 
     this.state = {
       widthStyle: { width: props.width },
     };
   }
 
-  getWidthStyle(width) {
+  getCellStyles(width) {
     return {
       width,
     };
@@ -118,7 +118,7 @@ class Cell extends React.Component {
       <div
         {...customProps}
         className={cx(['container', customProps.className])}
-        style={this.getWidthStyle(width)}
+        style={this.getCellStyles(width)}
         aria-selected={isSelected}
       >
         <div
