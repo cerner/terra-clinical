@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import memoize from "memoize-one";
 
 import { KEYCODES } from '../utils/utils';
 
@@ -62,13 +63,17 @@ class Cell extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleTargetClick = this.handleTargetClick.bind(this);
 
+    this.getWidthStyle = memoize(this.getWidthStyle);
+
     this.state = {
       widthStyle: { width: props.width },
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ widthStyle: { width: nextProps.width } });
+  getWidthStyle(width) {
+    return {
+      width,
+    };
   }
 
   handleKeyDown(event) {
@@ -113,7 +118,7 @@ class Cell extends React.Component {
       <div
         {...customProps}
         className={cx(['container', customProps.className])}
-        style={widthStyle}
+        style={this.getWidthStyle(width)}
         aria-selected={isSelected}
       >
         <div

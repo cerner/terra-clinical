@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import memoize from "memoize-one";
 
 import styles from './Row.scss';
 
@@ -37,21 +38,14 @@ class Row extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      rowStyles: {
-        width: props.width,
-        height: props.height,
-      },
-    };
+    this.getRowStyles = memoize(this.getRowStyles);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      rowStyles: {
-        width: nextProps.width,
-        height: nextProps.height,
-      },
-    });
+  getRowStyles(width, height) {
+    return {
+      width,
+      height,
+    }
   }
 
   render() {
@@ -64,13 +58,12 @@ class Row extends React.Component {
       children,
       ...customProps
     } = this.props;
-    const { rowStyles } = this.state;
 
     return (
       <div
         {...customProps}
         className={cx(['row', { selected: isSelected }, customProps.className])}
-        style={rowStyles}
+        style={this.getRowStyles(width, height)}
         data-row
         data-row-id={rowId}
         data-section-id={sectionId}
