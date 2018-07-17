@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.9.0 - (July 17, 2018)
+----------
 ### Changed
 * Added theming variables in Header
 
