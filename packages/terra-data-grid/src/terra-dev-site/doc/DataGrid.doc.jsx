@@ -8,6 +8,12 @@ import { name } from '../../../package.json';
 import DataGridSrc from '!raw-loader!../../../src/DataGrid';
 
 // Example Files
+import SimpleDataGrid from './example/SimpleDataGrid';
+import SimpleDataGridSrc from '!raw-loader!./../../../src/terra-dev-site/doc/example/SimpleDataGrid';
+import SubsectionDataGrid from './example/SubsectionDataGrid';
+import SubsectionDataGridSrc from '!raw-loader!./../../../src/terra-dev-site/doc/example/SubsectionDataGrid';
+import SelectableDataGrid from './example/SelectableDataGrid';
+import SelectableDataGridSrc from '!raw-loader!./../../../src/terra-dev-site/doc/example/SelectableDataGrid';
 import DataGridStandard from './example/DataGridStandard';
 import DataGridStandardSrc from '!raw-loader!./../../../src/terra-dev-site/doc/example/DataGridStandard';
 import PagingDataGrid from './example/PagingDataGrid';
@@ -22,15 +28,34 @@ const DocPage = () => (
     srcPath={`https://github.com/cerner/terra-clinical/tree/master/packages/${name}`}
     examples={[
       {
+        title: 'Simple Data Grid Example',
+        description: 'This example renders a static DataGrid with dynamic features enabled.',
+        example: <SimpleDataGrid />,
+        source: SimpleDataGridSrc,
+      },
+      {
+        title: 'Data Grid w/ Subsections',
+        description: 'This example renders a DataGrid visible subsections.',
+        example: <SubsectionDataGrid />,
+        source: SubsectionDataGridSrc,
+      },
+      {
+        title: 'Data Grid w/ Selections',
+        description: 'This example renders a DataGrid with selectable headers, rows, and cells.',
+        example: <SelectableDataGrid />,
+        source: SelectableDataGridSrc,
+      },
+      {
+        title: 'Data Grid w/ Post-Render Content Loading',
+        description: 'This example renders a DataGrid that loads up to 10 individual sections based upon the DataGrid\'s vertical scroll position.',
+        example: <PagingDataGrid />,
+        source: PagingDataGridSrc,
+      },
+      {
         title: 'Data Grid Example',
         description: 'A catch all example',
         example: <DataGridStandard />,
         source: DataGridStandardSrc,
-      },
-      {
-        title: 'Data Grid w/ Paging',
-        example: <PagingDataGrid />,
-        source: PagingDataGridSrc,
       },
     ]}
     propsTables={[

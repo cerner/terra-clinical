@@ -1,7 +1,7 @@
 import React from 'react';
-import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
-import DataGrid from 'terra-data-grid';
 
+import DataGrid from 'terra-data-grid';
+import Button from 'terra-button';
 import ContentCellLayout from './ContentCellLayout';
 
 const pinnedColumns = [
@@ -43,19 +43,32 @@ const overflowColumns = [
     width: 200,
     text: 'Column 6',
   },
+  {
+    id: 'column7',
+    width: 200,
+    text: 'Column 7',
+  },
+  {
+    id: 'column8',
+    width: 200,
+    text: 'Column 8',
+  },
+  {
+    id: 'column9',
+    width: 200,
+    text: 'Column 9',
+  },
 ];
 
-class PagingDataGrid extends React.Component {
+class SubsectionDataGrid extends React.Component {
   constructor(props) {
     super(props);
 
-    this.buildSections = this.buildSections.bind(this);
+    this.buildSection = this.buildSection.bind(this);
     this.buildRows = this.buildRows.bind(this);
 
     this.state = {
-      sectionCount: 1,
-      isLoading: false,
-      sections: this.buildSections(1),
+      section2IsCollapsed: false,
     }
   }
 
@@ -71,42 +84,40 @@ class PagingDataGrid extends React.Component {
     return rows;
   }
 
-  buildSections(sectionCount) {
-    const sections = [];
-    for (let i = 0, length = sectionCount; i < length; i += 1) {
-      const sectionId = `section_${i}`;
-      sections.push({
-        id: sectionId,
-        text: `Section ${i}`,
-        rows: this.buildRows(sectionId, 3),
-      });
-    }
-
-    return sections;
+  buildSection(sectionId, sectionName, numberOfRows) {
+    return {
+      id: sectionId,
+      text: sectionName,
+      endAccessory: (sectionId === 'section_1') ? <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span> : null,
+      isCollapsible: sectionId === 'section_2',
+      isCollapsed: sectionId === 'section_2' && this.state.section2IsCollapsed,
+      rows: this.buildRows(sectionId, numberOfRows),
+    };
   }
 
   render() {
     return (
-      <div style={{ height: '600px', position: 'relative' }}>
+      <div style={{ height: '600px' }}>
         <DataGrid
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
-          sections={this.state.sections}
+          sections={[
+            this.buildSection('section_0', 'Section 0', 15),
+            this.buildSection('section_1', 'Section 1', 15),
+            this.buildSection('section_2', 'Section 2', 15),
+          ]}
           rowHeight="2.5rem"
           headerHeight="3rem"
-          fill
-          onRequestContent={this.state.sectionCount < 10 ? (() => {
-            this.setState({ isLoading: true }, () => {
-              setTimeout(() => {
-                this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: this.buildSections(this.state.sectionCount + 1), });
-              }, 2000);
+          onRequestSectionCollapse={(sectionId) => {
+            this.setState({
+              section2IsCollapsed: !this.state.section2IsCollapsed,
             });
-          }) : undefined}
+          }}
+          fill
         />
-        {<LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated style={{ top: 0 }} />}
       </div>
     );
   }
 }
 
-export default PagingDataGrid;
+export default SubsectionDataGrid;

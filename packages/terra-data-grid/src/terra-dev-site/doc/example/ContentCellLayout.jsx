@@ -14,14 +14,14 @@ const propTypes = {
 const ContentCellLayout = ({ text }) => (
   <div className={cx('content-cell')}>
     {text}
-    <div>
+    {/* <div>
       <Button
         text="Button" onClick={() => {
           alert('You clicked a button, but you did not select a cell');
         }}
         data-accessible-data-grid-content
       />
-    </div>
+    </div> */}
   </div>
 );
 

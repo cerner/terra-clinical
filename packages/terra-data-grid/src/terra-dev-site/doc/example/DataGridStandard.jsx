@@ -29,11 +29,9 @@ class DataGridStandard extends React.Component {
     this.buildSection = this.buildSection.bind(this);
     this.buildRows = this.buildRows.bind(this);
 
-    const columnWidths = {};
-
     this.state = {
       collapsedSections: {},
-      columnWidths,
+      columnWidths: {},
     };
   }
 
@@ -367,7 +365,7 @@ class DataGridStandard extends React.Component {
           this.buildSection('section_3', 'Section Header 3 - Custom', 10, true),
           this.buildSection('section_4', 'Section Header 4 - Not Collapsible', 10),
         ]}
-        rowHeight="5rem"
+        rowHeight="2.5rem"
         headerHeight="3rem"
         onCellSelect={this.handleCellClick}
         onColumnSelect={this.handleHeaderClick}
