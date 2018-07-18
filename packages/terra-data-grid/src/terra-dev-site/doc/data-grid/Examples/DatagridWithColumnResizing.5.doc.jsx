@@ -61,10 +61,8 @@ class DataGridWithColumnResizing extends React.Component {
   buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `Row-${rowIndex}`,
-      isSelectable: true,
       cells: ((new Array(7).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
-        isSelectable: true,
         component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
       })),
     }));
