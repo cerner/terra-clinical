@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+## Fixed
+* Removed usage of CSS `initial` value because Internet Explorer does not support it
+* Fixed usage of invalid value for `border-bottom-style` on flex-subheaders
 
 2.9.0 - (July 17, 2018)
 ----------
