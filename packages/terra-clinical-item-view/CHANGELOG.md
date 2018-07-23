@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+2.10.0 - (July 17, 2018)
+----------
+### Changed
+* Minor updates
+
 2.9.0 - (July 3, 2018)
 ----------
 ### Fixed
@@ -14,6 +19,7 @@ Unreleased
 ----------
 ### Added
 * Added theming variables in Item View
+* Updated Inline-icon to use em instead of px 
 
 2.7.0 - (June 12, 2018)
 ----------
