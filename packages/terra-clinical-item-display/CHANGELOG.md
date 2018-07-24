@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Added theming variables in Item Comment
 
 2.9.0 - (July 17, 2018)
 ----------
