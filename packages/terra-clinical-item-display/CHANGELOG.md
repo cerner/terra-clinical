@@ -4,6 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+2.10.1 - (July 25, 2018)
+----------
+### Changed
+* Patch release
+
+2.10.0 - (July 25, 2018)
+----------
+### Changed
+* Minor updates
+
 2.9.0 - (July 17, 2018)
 ----------
 ### Changed
