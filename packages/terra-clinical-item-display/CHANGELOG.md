@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Added theming variables in Item Comment
+* Added Webdriver I/O tests for Item Comment
 
 2.9.0 - (July 17, 2018)
 ----------
