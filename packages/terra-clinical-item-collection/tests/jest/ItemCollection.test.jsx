@@ -51,10 +51,10 @@ it('should only allow 8 displays when numberOfDisplays is more than maxDisplays 
   const component = shallow(itemCollection);
 
   // Test required dipslays for list view
-  expect(component.props().defaultElement.props.requiredElements.numberOfDisplays).toEqual(8);
+  expect(component.children().props().defaultElement.props.requiredElements.numberOfDisplays).toEqual(8);
 
   // Test required dipslays for table view
-  expect(component.props().small.props.requiredElements.numberOfDisplays).toEqual(8);
+  expect(component.children().props().small.props.requiredElements.numberOfDisplays).toEqual(8);
 });
 
 it('should render an ItemCollection with a comment', () => {
