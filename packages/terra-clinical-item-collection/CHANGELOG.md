@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+3.13.0 - (July 26, 2018)
+----------
+### Changed
+* Re-enabled ability to set custom props on Item Collection component
+
 3.12.0 - (July 25, 2018)
 ----------
 ### Changed
