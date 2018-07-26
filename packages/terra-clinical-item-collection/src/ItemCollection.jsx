@@ -114,12 +114,13 @@ const ItemCollection = (props) => {
   breakpointDisplay[breakpoint] = tableDisplay;
 
   return (
-    <ResponsiveElement
-      {...customProps}
-      responsiveTo="parent"
-      defaultElement={listDisplay}
-      {...breakpointDisplay}
-    />
+    <div {...customProps}>
+      <ResponsiveElement
+        responsiveTo="parent"
+        defaultElement={listDisplay}
+        {...breakpointDisplay}
+      />
+    </div>
   );
 };
 

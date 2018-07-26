@@ -151,3 +151,15 @@ it('should render an ItemCollection with onSelect', () => {
   const component = shallow(itemCollection);
   expect(component).toMatchSnapshot();
 });
+
+it('should render an ItemCollection with custom props', () => {
+  const itemCollection = (
+    <ItemCollection onSelect={() => { }} id="foo" className="bar" >
+      <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
+        <ItemCollection.Display isSelectable text="Display 1" />
+      </ItemCollection.Item>
+    </ItemCollection>
+  );
+  const component = shallow(itemCollection);
+  expect(component).toMatchSnapshot();
+});
