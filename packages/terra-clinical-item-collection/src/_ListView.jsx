@@ -39,10 +39,10 @@ function createListItems(children, onSelect, requiredElements) {
 const ListView = ({
   children, onSelect, isListDivided, requiredElements,
 }) => {
-  const hasAChevron = React.Children.toArray(children).some(child => child.props.isSelectable);
+  const hasSelectableChild = React.Children.toArray(children).some(child => child.props.isSelectable);
 
   const listItems = createListItems(children, onSelect, requiredElements);
-  const roleSpread = hasAChevron ? { role: 'listbox' } : {};
+  const roleSpread = hasSelectableChild ? { role: 'listbox' } : {};
 
   return (
     <List data-terra-clinical-item-collection-list-view isDivided={isListDivided} {...roleSpread}>
