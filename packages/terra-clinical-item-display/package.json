@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-display",
   "main": "lib/ItemDisplay.js",
-  "version": "2.9.0",
+  "version": "2.10.1",
   "description": "The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.",
   "repository": {
     "type": "git",
