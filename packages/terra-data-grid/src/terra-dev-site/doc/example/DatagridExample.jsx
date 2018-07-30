@@ -1,7 +1,6 @@
 import React from 'react';
 
 import DataGrid from 'terra-data-grid';
-import Button from 'terra-button';
 import ContentCellLayout from './ContentCellLayout';
 
 const pinnedColumns = [
@@ -60,16 +59,12 @@ const overflowColumns = [
   },
 ];
 
-class SubsectionDataGrid extends React.Component {
+class DataGridExample extends React.Component {
   constructor(props) {
     super(props);
 
     this.buildSection = this.buildSection.bind(this);
     this.buildRows = this.buildRows.bind(this);
-
-    this.state = {
-      section2IsCollapsed: false,
-    }
   }
 
   buildRows(sectionId, num) {
@@ -84,35 +79,24 @@ class SubsectionDataGrid extends React.Component {
     return rows;
   }
 
-  buildSection(sectionId, sectionName, numberOfRows) {
+  buildSection(sectionId, numberOfRows) {
     return {
       id: sectionId,
-      text: sectionName,
-      endAccessory: (sectionId === 'section_1') ? <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span> : null,
-      isCollapsible: sectionId === 'section_2',
-      isCollapsed: sectionId === 'section_2' && this.state.section2IsCollapsed,
       rows: this.buildRows(sectionId, numberOfRows),
     };
   }
 
   render() {
     return (
-      <div style={{ height: '600px' }}>
+      <div style={{ height: '100%', padding: '15px' }}>
         <DataGrid
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[
-            this.buildSection('section_0', 'Section 0', 15),
-            this.buildSection('section_1', 'Section 1', 15),
-            this.buildSection('section_2', 'Section 2', 15),
+            this.buildSection('section_0', 30),
           ]}
           rowHeight="2.5rem"
           headerHeight="3rem"
-          onRequestSectionCollapse={(sectionId) => {
-            this.setState({
-              section2IsCollapsed: !this.state.section2IsCollapsed,
-            });
-          }}
           fill
         />
       </div>
@@ -120,4 +104,4 @@ class SubsectionDataGrid extends React.Component {
   }
 }
 
-export default SubsectionDataGrid;
+export default DataGridExample;
