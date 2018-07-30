@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Button from 'terra-button';
+// import Button from 'terra-button';
 
 import styles from './ContentCellLayout.scss';
 
@@ -16,8 +16,9 @@ const ContentCellLayout = ({ text }) => (
     {text}
     {/* <div>
       <Button
-        text="Button" onClick={() => {
+        text="Button" onClick={(event) => {
           alert('You clicked a button, but you did not select a cell');
+          event.stopPropagation();
         }}
         data-accessible-data-grid-content
       />

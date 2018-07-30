@@ -7,7 +7,6 @@
     .content {
       height: 100%;
       overflow: hidden;
-      pointer-events: none;
       position: relative;
       width: 100%;
 
@@ -42,12 +41,6 @@
         word-wrap: normal;
         overflow: hidden;
       }
-    }
-
-    .touch-target {
-      height: 100%;
-      position: absolute;
-      width: 100%;
 
       &:focus {
         outline: none;

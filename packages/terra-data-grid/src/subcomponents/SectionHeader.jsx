@@ -88,13 +88,12 @@ class SectionHeader extends React.Component {
         data-section-header
       >
         <div
-          className={cx(['touch-target', { selectable: isCollapsible }])}
+          className={cx(['content', { selectable: isCollapsible }])}
           onClick={isCollapsible ? this.handleClick : undefined}
           onKeyDown={isCollapsible ? this.handleKeyDown : undefined}
           tabIndex={isCollapsible ? '0' : undefined}
           ref={selectableRefCallback}
-        />
-        <div className={cx('content')}>
+        >
           {isCollapsible ? (
             <div className={cx('collapsible-icon')}>
               {isCollapsed ? <IconCaretRight /> : <IconCaretDown />}

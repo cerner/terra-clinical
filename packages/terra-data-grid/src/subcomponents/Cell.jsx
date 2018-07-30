@@ -116,15 +116,14 @@ class Cell extends React.Component {
         aria-selected={isSelected}
       >
         <div
-          className={cx(['touch-target', { selectable: isSelectable, selected: isSelected }])}
+          className={cx(['content', { selectable: isSelectable, selected: isSelected }])}
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
           onMouseEnter={onHoverStart}
           onMouseLeave={onHoverEnd}
           tabIndex={isSelectable ? '0' : undefined}
           ref={selectableRefCallback}
-        />
-        <div className={cx('content')}>
+        >
           {children}
         </div>
       </div>

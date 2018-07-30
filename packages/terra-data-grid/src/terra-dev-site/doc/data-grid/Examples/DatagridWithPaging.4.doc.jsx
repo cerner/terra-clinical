@@ -59,6 +59,10 @@ class PagingDataGrid extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.pagingTimeout);
+  }
+
   buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
@@ -97,7 +101,8 @@ class PagingDataGrid extends React.Component {
           fill
           onRequestContent={this.state.sectionCount < 10 ? (() => {
             this.setState({ isLoading: true }, () => {
-              setTimeout(() => {
+              clearTimeout(this.pagingTimeout);
+              this.pagingTimeout = setTimeout(() => {
                 this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: this.buildSections(this.state.sectionCount + 1), });
               }, 2000);
             });
