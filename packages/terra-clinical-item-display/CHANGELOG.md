@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Added theming variables in Item Comment
+* Added Webdriver I/O tests for Item Comment
 
 2.10.1 - (July 25, 2018)
 ----------
