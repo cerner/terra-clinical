@@ -7,7 +7,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import Cell from './Cell';
 import ResizeHandle from './ResizeHandle';
 
-import styles from './HeaderCell.scss';
+import styles from './HeaderCell.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -103,9 +103,9 @@ class SubsectionDataGrid extends React.Component {
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[
-            SubsectionDataGrid.buildSection('section_0', 'Section 0', 15),
-            SubsectionDataGrid.buildSection('section_1', 'Section 1', 15),
-            SubsectionDataGrid.buildSection('section_2', 'Section 2', 15),
+            this.buildSection('section_0', 'Section 0', 15),
+            this.buildSection('section_1', 'Section 1', 15),
+            this.buildSection('section_2', 'Section 2', 15),
           ]}
           rowHeight="2.5rem"
           headerHeight="3rem"

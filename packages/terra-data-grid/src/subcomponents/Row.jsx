@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
 
-import styles from './Row.scss';
+import styles from './Row.module.scss';
 
 const cx = classNames.bind(styles);
 

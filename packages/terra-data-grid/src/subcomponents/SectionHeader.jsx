@@ -6,7 +6,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 import { KEYCODES } from '../utils/utils';
 
-import styles from './SectionHeader.scss';
+import styles from './SectionHeader.module.scss';
 
 const cx = classNames.bind(styles);
 

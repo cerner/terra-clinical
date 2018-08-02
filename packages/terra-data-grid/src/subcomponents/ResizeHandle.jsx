@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
 
-import styles from './ResizeHandle.scss';
+import styles from './ResizeHandle.module.scss';
 
 const cx = classNames.bind(styles);
 

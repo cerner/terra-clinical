@@ -14,10 +14,10 @@ import SectionHeader from './subcomponents/SectionHeader';
 
 import { KEYCODES, matches, calculateScrollbarPosition } from './utils/utils';
 
-import columnDataShape from './prop-types/columnDataShape';
-import sectionDataShape from './prop-types/sectionDataShape';
+import columnDataShape from './proptypes/columnDataShape';
+import sectionDataShape from './proptypes/sectionDataShape';
 
-import styles from './DataGrid.scss';
+import styles from './DataGrid.module.scss';
 
 const cx = classNames.bind(styles);
 

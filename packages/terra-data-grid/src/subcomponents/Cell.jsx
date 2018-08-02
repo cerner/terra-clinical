@@ -5,7 +5,7 @@ import memoize from 'memoize-one';
 
 import { KEYCODES } from '../utils/utils';
 
-import styles from './Cell.scss';
+import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
 
