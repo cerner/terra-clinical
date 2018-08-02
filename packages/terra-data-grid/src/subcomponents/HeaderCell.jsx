@@ -87,7 +87,7 @@ class HeaderCell extends React.Component {
       width,
       children,
       onResizeEnd,
-      selectableRefCallback
+      selectableRefCallback,
     } = this.props;
 
     let content = children;

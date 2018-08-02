@@ -79,10 +79,12 @@ class SectionHeader extends React.Component {
   }
 
   render() {
-    const { text, startAccessory, endAccessory, children, isCollapsible, isCollapsed, selectableRefCallback } = this.props;
+    const {
+      text, startAccessory, endAccessory, children, isCollapsible, isCollapsed, selectableRefCallback,
+    } = this.props;
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
+      /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
       <div
         className={cx('section-header')}
         data-section-header
@@ -111,7 +113,7 @@ class SectionHeader extends React.Component {
           </div>
         </div>
       </div>
-      /* eslint-enable jsx-a11y/no-static-element-interactions */
+      /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     );
   }
 }

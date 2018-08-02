@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import memoize from "memoize-one";
+import memoize from 'memoize-one';
 
 import styles from './Row.scss';
 
@@ -41,12 +41,14 @@ class Row extends React.Component {
     this.getRowStyles = memoize(this.getRowStyles);
   }
 
+  /* eslint-disable class-methods-use-this */
   getRowStyles(width, height) {
     return {
       width,
       height,
-    }
+    };
   }
+  /* eslint-enable class-methods-use-this */
 
   render() {
     const {

@@ -1,6 +1,8 @@
 import React from 'react';
 
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-data-grid';
+
 import ContentCellLayout from './ContentCellLayout';
 
 class DataGridWithColumnResizing extends React.Component {
@@ -107,7 +109,7 @@ class DataGridWithColumnResizing extends React.Component {
             columnToUpdate.width = Math.max(width, 50);
             this.setState({
               columns: Object.assign({}, this.state.columns, { [`${columnId}`]: columnToUpdate }),
-            })
+            });
           }}
         />
       </div>

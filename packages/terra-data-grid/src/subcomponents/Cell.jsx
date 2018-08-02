@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import memoize from "memoize-one";
+import memoize from 'memoize-one';
 
 import { KEYCODES } from '../utils/utils';
 
@@ -66,11 +66,13 @@ class Cell extends React.Component {
     this.getCellStyles = memoize(this.getCellStyles);
   }
 
+  /* eslint-disable class-methods-use-this */
   getCellStyles(width) {
     return {
       width,
     };
   }
+  /* eslint-enable class-methods-use-this */
 
   handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
@@ -108,7 +110,7 @@ class Cell extends React.Component {
     } = this.props;
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
+      /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
       <div
         {...customProps}
         className={cx(['container', customProps.className])}
@@ -127,7 +129,7 @@ class Cell extends React.Component {
           {children}
         </div>
       </div>
-      /* eslint-enable jsx-a11y/no-static-element-interactions */
+      /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     );
   }
 }

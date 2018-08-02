@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import memoize from "memoize-one";
+import memoize from 'memoize-one';
 import { polyfill } from 'react-lifecycles-compat';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
@@ -116,7 +116,6 @@ const ROW_SELECTION_COLUMN_WIDTH = 50;
 
 /* eslint-disable react/sort-comp */
 class DataGrid extends React.Component {
-
   /**
    * Returns an Array of HTMLElements that are children of the given 'element' parameter and have
    * the data-accessible-data-grid-content attribute defined.
@@ -126,7 +125,7 @@ class DataGrid extends React.Component {
     const accessibleArray = [];
     const accessibleContentNodes = element.querySelectorAll('[data-accessible-data-grid-content]');
 
-    for (let i = 0, length = accessibleContentNodes.length; i < length; i += 1) {
+    for (let i = 0, numberOfNodes = accessibleContentNodes.length; i < numberOfNodes; i += 1) {
       accessibleArray.push(accessibleContentNodes[i]);
     }
 
@@ -204,7 +203,7 @@ class DataGrid extends React.Component {
     return {
       pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(nextProps)),
       overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(nextProps)),
-    }
+    };
   }
 
   constructor(props) {
@@ -381,7 +380,7 @@ class DataGrid extends React.Component {
 
     let column;
     const allColumns = DataGrid.getPinnedColumns(this.props).concat(DataGrid.getOverflowColumns(this.props));
-    for (let i = 0, length = allColumns.length; i < length; i += 1) {
+    for (let i = 0, numberOfColumns = allColumns.length; i < numberOfColumns; i += 1) {
       if (allColumns[i].id === columnId) {
         column = allColumns[i];
       }
@@ -399,7 +398,7 @@ class DataGrid extends React.Component {
    */
   handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KEYCODES.TAB) {
-      const activeElement = document.activeElement;
+      const { activeElement } = document;
 
       if (!activeElement) {
         return;
@@ -438,7 +437,13 @@ class DataGrid extends React.Component {
 
   /**
    * Memoized Style Generators
+   *
+   * These functions could technically be static functions on the DataGrid class, but then the cached values would
+   * be shared across all DataGrid instances. It is recommended to make instance-based versions. Because of this,
+   * the eslint rule for the usage of 'this' must be disabled.
    */
+
+  /* eslint-disable class-methods-use-this */
   generateOverflowPaddingStyle(direction, pinnedColumnWidth) {
     return direction === 'rtl' ? { paddingRight: `${pinnedColumnWidth}px` } : { paddingLeft: `${pinnedColumnWidth}px` };
   }
@@ -446,7 +451,7 @@ class DataGrid extends React.Component {
   generateHeaderContainerStyle(headerHeight) {
     return {
       height: `${headerHeight}`,
-    }
+    };
   }
 
   generateOverflowContainerStyle(overflowColumnWidth) {
@@ -460,6 +465,7 @@ class DataGrid extends React.Component {
       width: `${pinnedColumnWidth}px`,
     };
   }
+  /* eslint-enable class-methods-use-this */
 
   /**
    * Paging
@@ -544,7 +550,7 @@ class DataGrid extends React.Component {
         orderedColumnIds.forEach((columnId) => {
           const cellRef = this.cellRefs[`${section.id}-${row.id}-${columnId}`];
           if (cellRef) {
-            if (cellMap[columnId] && cellMap[columnId].isSelectable || columnId === 'DataGrid-rowSelectionColumn' && row.isSelectable) {
+            if ((cellMap[columnId] && cellMap[columnId].isSelectable) || (columnId === 'DataGrid-rowSelectionColumn' && row.isSelectable)) {
               accessibilityStack.push(cellRef);
             }
 
@@ -653,7 +659,7 @@ class DataGrid extends React.Component {
     /**
      * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
      */
-    for (let i = 0, length = sectionHeaderContainers.length; i < length; i += 1) {
+    for (let i = 0, numberOfSectionHeaders = sectionHeaderContainers.length; i < numberOfSectionHeaders; i += 1) {
       sectionHeaderContainers[i].style.width = `${width}px`; // eslint-disable-line no-param-reassign
     }
   }
@@ -793,7 +799,9 @@ class DataGrid extends React.Component {
   }
 
   renderHeaderRow() {
-    const { pinnedColumns, overflowColumns, headerHeight, pageDirection } = this.props;
+    const {
+      headerHeight, pageDirection,
+    } = this.props;
     const { pinnedColumnWidth, overflowColumnWidth } = this.state;
 
     return (
@@ -871,23 +879,23 @@ class DataGrid extends React.Component {
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
         onHoverStart={() => {
           const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
-          for (let i = 0, length = rowElements.length; i < length; i += 1) {
+          for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
             rowElements[i].classList.add('hover');
           }
         }}
         onHoverEnd={() => {
           const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
-          for (let i = 0, length = rowElements.length; i < length; i += 1) {
+          for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
             rowElements[i].classList.remove('hover');
           }
         }}
-        onSelect={(sectionId, rowId, columnId) => {
+        onSelect={(sectionId, rowId) => {
           if (onRowSelect) {
             onRowSelect(sectionId, rowId);
           }
         }}
       />
-    )
+    );
   }
 
   renderCell(cell, section, row, column) {
@@ -974,13 +982,18 @@ class DataGrid extends React.Component {
   }
 
   render() {
-    const { fill, pageDirection } = this.props;
-    const { overflowColumnWidth, pinnedColumnWidth } = this.state;
+    const {
+      pinnedColumns, overflowColumns, sections, onCellSelect, onColumnSelect, onRequestColumnResize, onRequestSectionCollapse, rowHeight, headerHeight, hasSelectableRows, onRowSelect, fill, onRequestContent, pageDirection, ...customProps
+    } = this.props;
+    const { pinnedColumnWidth } = this.state;
+
+    const dataGridClassnames = cx(['data-grid-container', { fill }, customProps.className]);
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
+      /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
       <div
-        className={cx(['data-grid-container', { fill }])}
+        {...customProps}
+        className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
         onKeyDown={this.handleKeyDown}
       >
@@ -1029,7 +1042,7 @@ class DataGrid extends React.Component {
           ref={this.setTerminalFocusAnchorRef}
         />
       </div>
-      /* eslint-enable jsx-a11y/no-static-element-interactions */
+      /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     );
   }
 }

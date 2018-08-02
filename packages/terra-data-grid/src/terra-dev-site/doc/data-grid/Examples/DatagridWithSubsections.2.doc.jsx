@@ -1,7 +1,9 @@
 import React from 'react';
 
-import DataGrid from 'terra-data-grid';
 import Button from 'terra-button';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
+import DataGrid from 'terra-data-grid';
+
 import ContentCellLayout from './ContentCellLayout';
 
 const pinnedColumns = [
@@ -69,7 +71,7 @@ class SubsectionDataGrid extends React.Component {
 
     this.state = {
       section2IsCollapsed: false,
-    }
+    };
   }
 
   buildRows(sectionId, num) {

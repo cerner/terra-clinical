@@ -1,6 +1,8 @@
 import React from 'react';
-import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
+
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-data-grid';
+import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 
 import ContentCellLayout from './ContentCellLayout';
 
@@ -56,7 +58,7 @@ class PagingDataGrid extends React.Component {
       sectionCount: 1,
       isLoading: false,
       sections: this.buildSections(1),
-    }
+    };
   }
 
   componentWillUnmount() {
@@ -103,7 +105,7 @@ class PagingDataGrid extends React.Component {
             this.setState({ isLoading: true }, () => {
               clearTimeout(this.pagingTimeout);
               this.pagingTimeout = setTimeout(() => {
-                this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: this.buildSections(this.state.sectionCount + 1), });
+                this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: this.buildSections(this.state.sectionCount + 1) });
               }, 2000);
             });
           }) : undefined}

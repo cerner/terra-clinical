@@ -38,27 +38,27 @@ class ResizeHandle extends React.Component {
   }
 
   handleDragMove(event, data) {
-    const node = data.node;
+    const handleNode = data.node;
 
     this.resizeHandleDragPosition += data.deltaX;
 
-    node.style.transform = `translate3d(${this.resizeHandleDragPosition}px, 0, 0)`;
+    handleNode.style.transform = `translate3d(${this.resizeHandleDragPosition}px, 0, 0)`;
   }
 
   handleDragStart(event, data) {
-    const node = data.node;
+    const handleNode = data.node;
 
     this.resizeHandleDragPosition = 0;
 
-    node.classList.add(cx('dragging'));
+    handleNode.classList.add(cx('dragging'));
   }
 
   handleDragStop(event, data) {
     const { id, onResizeStop } = this.props;
-    const node = data.node;
+    const handleNode = data.node;
 
-    node.classList.remove(cx('dragging'));
-    node.style.transform = '';
+    handleNode.classList.remove(cx('dragging'));
+    handleNode.style.transform = '';
 
     if (onResizeStop) {
       onResizeStop(id, this.resizeHandleDragPosition);
@@ -67,7 +67,7 @@ class ResizeHandle extends React.Component {
 
   render() {
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions */
+      /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
       <DraggableCore
         onStart={this.handleDragStart}
         onStop={this.handleDragStop}
@@ -75,7 +75,7 @@ class ResizeHandle extends React.Component {
       >
         <div className={cx('resize-handle')} onClick={ResizeHandle.preventClickEvent} />
       </DraggableCore>
-      /* eslint-enable jsx-a11y/no-static-element-interactions */
+      /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     );
   }
 }

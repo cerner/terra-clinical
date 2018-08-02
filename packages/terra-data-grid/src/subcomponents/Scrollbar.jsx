@@ -42,9 +42,9 @@ class Scrollbar extends React.Component {
 
   handleDragStart(event, data) {
     const { onMoveStart } = this.props;
-    const node = data.node;
+    const handleNode = data.node;
 
-    node.parentNode.classList.add(cx('dragging'));
+    handleNode.parentNode.classList.add(cx('dragging'));
 
     if (onMoveStart) {
       onMoveStart(event, data);
@@ -53,9 +53,9 @@ class Scrollbar extends React.Component {
 
   handleDragStop(event, data) {
     const { onMoveEnd } = this.props;
-    const node = data.node;
+    const handleNode = data.node;
 
-    node.parentNode.classList.remove(cx('dragging'));
+    handleNode.parentNode.classList.remove(cx('dragging'));
 
     if (onMoveEnd) {
       onMoveEnd(event, data);

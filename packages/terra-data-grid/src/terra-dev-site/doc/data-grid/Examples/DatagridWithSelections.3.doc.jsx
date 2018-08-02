@@ -1,6 +1,8 @@
 import React from 'react';
 
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-data-grid';
+
 import ContentCellLayout from './ContentCellLayout';
 
 class SelectableDataGrid extends React.Component {
@@ -113,7 +115,7 @@ class SelectableDataGrid extends React.Component {
 
             const columnToSort = Object.assign({}, this.state.columns[columnId]);
             columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
-            newColumns[`${columnId}`] = columnToSort
+            newColumns[`${columnId}`] = columnToSort;
 
             if (columnId !== this.state.sortedColumnId) {
               const previouslySortedColumn = Object.assign({}, this.state.columns[this.state.sortedColumnId]);
@@ -130,18 +132,24 @@ class SelectableDataGrid extends React.Component {
             });
           }}
           onCellSelect={(sectionId, rowId, columnId) => {
-            this.setState({ selectedRow: undefined, selectedCell: {
+            this.setState({
+ selectedRow: undefined,
+selectedCell: {
               sectionId,
               rowId,
               columnId,
-            } });
+            },
+});
           }}
           hasSelectableRows
           onRowSelect={(sectionId, rowId) => {
-            this.setState({ selectedCell: undefined, selectedRow: {
+            this.setState({
+ selectedCell: undefined,
+selectedRow: {
               sectionId,
               rowId,
-            } });
+            },
+});
           }}
         />
       </div>
