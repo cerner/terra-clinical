@@ -5,16 +5,16 @@
     left: 0;
     overflow: hidden;
     position: relative;
+    transition: height 0.1s linear;
     width: 100%;
-
-    transition: height .1s linear;
   }
 
   .container[aria-hidden] {
     display: none;
   }
 
-  .container:hover, .container.dragging {
+  .container:hover,
+  .container.dragging {
     height: 12px;
   }
 
@@ -24,7 +24,6 @@
     cursor: ew-resize;
     height: 100%;
     position: absolute;
-    touch-action: none;
   }
 
   .container.dragging {

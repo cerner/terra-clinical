@@ -6,11 +6,28 @@ import DataGrid from 'terra-data-grid';
 import ContentCellLayout from './ContentCellLayout';
 
 class DataGridWithColumnResizing extends React.Component {
+  static buildRows(sectionId, num) {
+    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
+      id: `Row-${rowIndex}`,
+      cells: ((new Array(7).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
+        columnId: columnKey,
+        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
+      })),
+    }));
+
+    return rows;
+  }
+
+  static buildSection(sectionId, sectionName, numberOfRows) {
+    return {
+      id: sectionId,
+      text: sectionName,
+      rows: DataGridWithColumnResizing.buildRows(sectionId, numberOfRows),
+    };
+  }
+
   constructor(props) {
     super(props);
-
-    this.buildSection = this.buildSection.bind(this);
-    this.buildRows = this.buildRows.bind(this);
 
     this.state = {
       columns: {
@@ -60,26 +77,6 @@ class DataGridWithColumnResizing extends React.Component {
     };
   }
 
-  buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `Row-${rowIndex}`,
-      cells: ((new Array(7).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
-      })),
-    }));
-
-    return rows;
-  }
-
-  buildSection(sectionId, sectionName, numberOfRows) {
-    return {
-      id: sectionId,
-      text: sectionName,
-      rows: this.buildRows(sectionId, numberOfRows),
-    };
-  }
-
   render() {
     const { columns } = this.state;
 
@@ -98,8 +95,8 @@ class DataGridWithColumnResizing extends React.Component {
             columns['Column-6'],
           ]}
           sections={[
-            this.buildSection('Section-0', 'Section 0', 15),
-            this.buildSection('Section-1', 'Section 1', 15),
+            DataGridWithColumnResizing.buildSection('Section-0', 'Section 0', 15),
+            DataGridWithColumnResizing.buildSection('Section-1', 'Section 1', 15),
           ]}
           rowHeight="2.5rem"
           headerHeight="3rem"

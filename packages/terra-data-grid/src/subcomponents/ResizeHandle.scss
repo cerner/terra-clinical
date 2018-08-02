@@ -2,11 +2,9 @@
   .resize-handle {
     cursor: col-resize;
     height: 100%;
-    pointer-events: auto;
     position: absolute;
     right: 0;
-    top:0;
-    touch-action: none;
+    top: 0;
     width: 5px;
 
     &:hover {

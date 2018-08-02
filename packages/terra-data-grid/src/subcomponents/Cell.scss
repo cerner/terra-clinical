@@ -11,22 +11,22 @@
     width: 100%;
 
     &:focus {
+      box-shadow: inset 0 0 5px 0 #0092e0;
       outline: none;
-      box-shadow: inset 0 0 5px 0px #0092e0;
     }
 
     &.selectable:hover {
       background: #e2f2fc;
+      box-shadow: inset 0 0 5px 0 #a6d4fc;
       cursor: pointer;
-      box-shadow: inset 0 0 5px 0px #a6d4fc;
     }
 
     &.selected {
-      background: var(--terra-data-grid-cell-selected-background-color,#cbe7fa);
-      box-shadow: inset 0 0 5px 0px #0092e0;
+      background: var(--terra-data-grid-cell-selected-background-color, #cbe7fa);
+      box-shadow: inset 0 0 5px 0 #0092e0;
 
       &:hover {
-        background: var(--terra-data-grid-cell-selected-hover-background-color,#b3ddf7);
+        background: var(--terra-data-grid-cell-selected-hover-background-color, #b3ddf7);
       }
     }
   }

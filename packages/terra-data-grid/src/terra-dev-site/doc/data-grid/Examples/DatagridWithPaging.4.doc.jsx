@@ -8,17 +8,17 @@ import ContentCellLayout from './ContentCellLayout';
 
 const pinnedColumns = [
   {
-    id: 'column0',
+    id: 'Column-0',
     width: 200,
     text: 'Column 0',
   },
   {
-    id: 'column1',
+    id: 'Column-1',
     width: 200,
     text: 'Column 1',
   },
   {
-    id: 'column2',
+    id: 'Column-2',
     width: 200,
     text: 'Column 2',
   },
@@ -26,69 +26,67 @@ const pinnedColumns = [
 
 const overflowColumns = [
   {
-    id: 'column3',
+    id: 'Column-3',
     width: 200,
     text: 'Column 3',
   },
   {
-    id: 'column4',
+    id: 'Column-4',
     width: 200,
     text: 'Column 4',
   },
   {
-    id: 'column5',
+    id: 'Column-5',
     width: 200,
     text: 'Column 5',
   },
   {
-    id: 'column6',
+    id: 'Column-6',
     width: 200,
     text: 'Column 6',
   },
 ];
 
 class PagingDataGrid extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.buildSections = this.buildSections.bind(this);
-    this.buildRows = this.buildRows.bind(this);
-
-    this.state = {
-      sectionCount: 1,
-      isLoading: false,
-      sections: this.buildSections(1),
-    };
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.pagingTimeout);
-  }
-
-  buildRows(sectionId, num) {
+  static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`column${cellIndex}`))).map(columnKey => ({
+      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
-        component: <ContentCellLayout text={`Row ${rowIndex}, Column ${columnKey}`} />,
+        component: <ContentCellLayout text={`Row-${rowIndex}, Column ${columnKey}`} />,
       })),
     }));
 
     return rows;
   }
 
-  buildSections(sectionCount) {
+  static buildSections(sectionCount) {
     const sections = [];
     for (let i = 0, length = sectionCount; i < length; i += 1) {
       const sectionId = `section_${i}`;
       sections.push({
         id: sectionId,
         text: `Section ${i}`,
-        rows: this.buildRows(sectionId, 3),
+        rows: PagingDataGrid.buildRows(sectionId, 3),
       });
     }
 
     return sections;
+  }
+
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sectionCount: 1,
+      isLoading: false,
+      sections: PagingDataGrid.buildSections(1),
+    };
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.pagingTimeout);
   }
 
   render() {
@@ -105,7 +103,7 @@ class PagingDataGrid extends React.Component {
             this.setState({ isLoading: true }, () => {
               clearTimeout(this.pagingTimeout);
               this.pagingTimeout = setTimeout(() => {
-                this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: this.buildSections(this.state.sectionCount + 1) });
+                this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: PagingDataGrid.buildSections(this.state.sectionCount + 1) });
               }, 2000);
             });
           }) : undefined}

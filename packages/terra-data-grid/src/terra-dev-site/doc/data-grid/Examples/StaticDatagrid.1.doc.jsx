@@ -7,17 +7,17 @@ import ContentCellLayout from './ContentCellLayout';
 
 const pinnedColumns = [
   {
-    id: 'column0',
+    id: 'Column-0',
     width: 200,
     text: 'Column 0',
   },
   {
-    id: 'column1',
+    id: 'Column-1',
     width: 200,
     text: 'Column 1',
   },
   {
-    id: 'column2',
+    id: 'Column-2',
     width: 200,
     text: 'Column 2',
   },
@@ -25,49 +25,49 @@ const pinnedColumns = [
 
 const overflowColumns = [
   {
-    id: 'column3',
+    id: 'Column-3',
     width: 200,
     text: 'Column 3',
   },
   {
-    id: 'column4',
+    id: 'Column-4',
     width: 200,
     text: 'Column 4',
   },
   {
-    id: 'column5',
+    id: 'Column-5',
     width: 200,
     text: 'Column 5',
   },
   {
-    id: 'column6',
+    id: 'Column-6',
     width: 200,
     text: 'Column 6',
   },
   {
-    id: 'column7',
+    id: 'Column-7',
     width: 200,
     text: 'Column 7',
   },
   {
-    id: 'column8',
+    id: 'Column-8',
     width: 200,
     text: 'Column 8',
   },
   {
-    id: 'column9',
+    id: 'Column-9',
     width: 200,
     text: 'Column 9',
   },
 ];
 
-class DataGridExample extends React.Component {
+class StaticDataGrid extends React.Component {
   static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`column${cellIndex}`))).map(columnKey => ({
+      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
-        component: <ContentCellLayout text={`Row ${rowIndex}, Column ${columnKey}`} />,
+        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
       })),
     }));
 
@@ -77,7 +77,7 @@ class DataGridExample extends React.Component {
   static buildSection(sectionId, numberOfRows) {
     return {
       id: sectionId,
-      rows: DataGridExample.buildRows(sectionId, numberOfRows),
+      rows: StaticDataGrid.buildRows(sectionId, numberOfRows),
     };
   }
 
@@ -88,7 +88,7 @@ class DataGridExample extends React.Component {
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[
-            DataGridExample.buildSection('section_0', 30),
+            StaticDataGrid.buildSection('section_0', 30),
           ]}
           rowHeight="2.5rem"
           headerHeight="3rem"
@@ -99,4 +99,4 @@ class DataGridExample extends React.Component {
   }
 }
 
-export default DataGridExample;
+export default StaticDataGrid;

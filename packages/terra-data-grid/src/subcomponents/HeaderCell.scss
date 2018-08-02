@@ -4,25 +4,25 @@
   }
 
   .default-layout {
+    align-items: center;
+    display: flex;
     height: 100%;
     overflow: hidden;
-    width: 100%;
     padding: 5px;
-    display: flex;
-    align-items: center;
+    width: 100%;
 
     .sort-indicator {
       flex: 0 0 auto;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
 
     .text {
       flex: 0 1 auto;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       word-break: normal;
       word-wrap: normal;
-      overflow: hidden;
     }
   }
 }

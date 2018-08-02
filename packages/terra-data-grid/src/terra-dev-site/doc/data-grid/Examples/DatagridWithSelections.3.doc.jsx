@@ -21,6 +21,7 @@ class SelectableDataGrid extends React.Component {
           width: 200,
           text: 'Column 0',
           isSelectable: true,
+          sortIndicator: 'ascending',
         },
         'Column-1': {
           id: 'Column-1',
@@ -59,6 +60,8 @@ class SelectableDataGrid extends React.Component {
           isSelectable: true,
         },
       },
+      sortedColumnId: 'Column-0',
+      sortedColumnDirection: 'ascending',
     };
   }
 
