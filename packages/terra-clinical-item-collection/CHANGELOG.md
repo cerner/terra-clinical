@@ -6,6 +6,11 @@ Unreleased
 ### Fixed
 * Fixed list collections not being assigned the `listbox` role when they have a selectable child
 
+3.14.0 - (August 1, 2018)
+----------
+### Changed
+* Minor updates
+
 3.13.0 - (July 26, 2018)
 ----------
 ### Changed

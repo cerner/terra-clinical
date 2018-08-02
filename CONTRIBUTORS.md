@@ -21,6 +21,7 @@ Cerner Corporation
 - Ben Boersma [@BenBoersma]
 - Mayuri Kini [@mayurikini]
 - Christian Alten [@cwalten]
+- Alvin Cheung [@pseudofaux]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -43,3 +44,4 @@ Cerner Corporation
 [@BenBoersma]: https://github.com/BenBoersma
 [@mayurikini]: https://github.com/mayurikini
 [@cwalten]: https://github.com/cwalten
+[@pseudofaux]: https://github.com/pseudofaux
