@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed list collections not being assigned the `listbox` role when they have a selectable child
 
 3.14.0 - (August 1, 2018)
 ----------
