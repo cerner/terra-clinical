@@ -269,6 +269,7 @@ class DataGrid extends React.Component {
      */
     this.handleDataGridResize = this.handleDataGridResize.bind(this);
     this.resizeSectionHeaders = this.resizeSectionHeaders.bind(this);
+    this.updateHeaderPadding = this.updateHeaderPadding.bind(this);
 
     /**
      * Scroll synchronization
@@ -454,9 +455,10 @@ class DataGrid extends React.Component {
     };
   }
 
-  generateOverflowContainerStyle(overflowColumnWidth) {
+  generateOverflowContainerStyle(overflowColumnWidth, headerHeight) {
     return {
       width: `${overflowColumnWidth}px`,
+      height: `${headerHeight}`,
     };
   }
 
@@ -587,6 +589,11 @@ class DataGrid extends React.Component {
       this.updateScrollbarVisibility();
 
       /**
+       * Ensure correct padding is set on the header to account for potentially increased row counts.
+       */
+      this.updateHeaderPadding();
+
+      /**
        * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
        * want defer to the custom scrollbar that rendered by the DataGrid.
        */
@@ -643,6 +650,8 @@ class DataGrid extends React.Component {
   handleDataGridResize(newWidth) {
     this.resizeSectionHeaders(newWidth);
 
+    this.updateHeaderPadding();
+
     this.updateScrollbarPosition();
     this.updateScrollbarVisibility();
 
@@ -662,6 +671,15 @@ class DataGrid extends React.Component {
     for (let i = 0, numberOfSectionHeaders = sectionHeaderContainers.length; i < numberOfSectionHeaders; i += 1) {
       sectionHeaderContainers[i].style.width = `${width}px`; // eslint-disable-line no-param-reassign
     }
+  }
+
+  updateHeaderPadding() {
+    /**
+     * If there is a vertical overflow and fixed scrollbars are present (due to the presence of a mouse, etc.), the header columns
+     * and content columns can become unsynced. We need to account for the potential presence of t
+     */
+    const padding = this.dataGridContainerRef.getBoundingClientRect().width - this.state.pinnedColumnWidth - this.horizontalOverflowContainerRef.getBoundingClientRect().width;
+    this.headerOverflowContainerRef.style.paddingRight = `${padding}px`;
   }
 
   /**
@@ -817,7 +835,7 @@ class DataGrid extends React.Component {
         >
           <div
             className={cx('overflow-header')}
-            style={this.generateOverflowContainerStyle(overflowColumnWidth)}
+            style={this.generateOverflowContainerStyle(overflowColumnWidth, headerHeight)}
           >
             {DataGrid.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
           </div>

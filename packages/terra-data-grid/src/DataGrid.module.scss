@@ -1,6 +1,8 @@
 :local {
   .data-grid-container {
-    border: 1px solid lightgrey;
+    border-color: var(--terra-clinical-data-grid-border-width, lightgrey);
+    border-style: var(--terra-clinical-data-grid-border-width, solid);
+    border-width: var(--terra-clinical-data-grid-border-width, 1px);
   }
 
   .fill {
@@ -9,14 +11,16 @@
   }
 
   .header-container {
+    background-color: var(--terra-clinical-data-grid-column-header-background-color, lightgrey);
+    border-bottom-color: var(--terra-clinical-data-grid-column-header-border-bottom-color, grey);
+    border-bottom-style: var(--terra-clinical-data-grid-column-header-border-bottom-style, solid);
+    border-bottom-width: var(--terra-clinical-data-grid-column-header-border-bottom-width, 1px);
     overflow: hidden;
     position: relative;
     width: 100%;
 
     .pinned-header {
-      background-color: lightgrey;
-      border-bottom: 1px solid grey;
-
+      background-color: var(--terra-clinical-data-grid-column-header-background-color, lightgrey);
       display: flex;
       height: 100%;
       left: 0;
@@ -33,10 +37,8 @@
       width: 100%;
 
       .overflow-header {
-        background-color: lightgrey;
-        border-bottom: 1px solid grey;
+        background-color: var(--terra-clinical-data-grid-column-header-background-color, lightgrey);
         display: flex;
-        height: 100%;
         min-width: 100%;
         position: relative;
         top: 0;
@@ -45,7 +47,8 @@
   }
 
   .vertical-overflow-container {
-    background-color: #ccc;
+    background-color: var(--terra-clinical-data-grid-background-color, #ccc);
+
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -54,6 +57,8 @@
   }
 
   .horizontal-overflow-container {
+    background-color: var(--terra-clinical-data-grid-background-color, #ccc);
+
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 20px;
@@ -66,8 +71,7 @@
   }
 
   .pinned-content-container {
-    box-shadow: 3px 0 5px grey;
-
+    box-shadow: var(--terra-clinical-data-grid-pinned-column-box-shadow, 3px 0 5px grey);
     left: 0;
     position: absolute;
     top: 0;
@@ -76,14 +80,7 @@
   }
 
   .section-header-container {
-    background: lightgrey;
-    border-bottom: 1px solid #646464;
     height: 3rem;
-  }
-
-  .section-header-container:focus {
-    box-shadow: inset 0 0 5px 0 #0092e0;
-    outline: none;
   }
 
   .leading-focus-anchor {
