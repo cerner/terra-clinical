@@ -55,24 +55,16 @@
 | Safari & Mobile Safari      | Current |
 
 ## Internationalization (I18n)
+Terra load translations and locale data on demand and when providing translated messages to components. The `terra-base` component will handle locale changes, manage the locale's loading state, and receive customized translation messages from an application. The `terra-base` component is responsible for passing this information to [`react-intl`](https://github.com/yahoo/react-intl). Terra-base is a requirement for the consumption of Terra componenets. Here's what you need to know:
 
-1. Please follow [Base Getting Started](packages/terra-base/README.md#getting-started) to install `Base`, and consume it with `locale` props.
-2. Install and config `terra-i18n-plugin`:
-    - Follow [terra-i18n-plugin Getting Started](packages/terra-i18n-plugin#getting-started) to install `terra-i18n-plugin` to aggregate translations in `node_modules`.
-    - Follow [terra-i18n-plugin Wiki Guide](https://github.com/cerner/terra-core/wiki/Terra-i18n-plugin-Guide) to config i18n plugin.
-3. Install and config `react-intl`
-    - Install it `npm install --save react-intl`.
-    - Add alias webpack config to avoid importing duplicate `react-intl`.
-        ```
-        resolve: {
-          extensions: ['.js', '.jsx'],
-          alias: {
-            'react-intl': path.resolve(__dirname, 'node_modules/react-intl'),
-          },
-        },
-        ```
-4. Provide values for `locale` and `customMessages` prop of `Base`.
-5. Follow [react-intl wiki](https://github.com/yahoo/react-intl/wiki/API) to use `injectIntl`([pass translations to props](https://github.com/cerner/terra-core/wiki/terra-i18n-Guide#pass-translated-message-as-props)) or `FormattedMessage`([render translations](https://github.com/cerner/terra-core/wiki/terra-i18n-Guide#display-transalated-message-without-default-message-fallback)) to consume translations.
+
+1. Install `terra-base` and then wrap your application in `terra-base` with the `locale` prop defined. More information on how to use `terra-base` can be found [here](https://engineering.cerner.com/terra-ui/#/components/terra-base/base/base).
+2. Install `react-intl`.
+    - Install it `npm install --save react-intl`
+3. Extend terra's [default webpack configuration](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/webpack) for automatic `react-intl` configuration and translation aggregation.
+    - Review the [aggregated-translation i18n configuration docs](https://github.com/cerner/terra-toolkit/blob/master/docs/AggregateTranslations.md#terrai18nconfig-example) to customize your translation aggregation.
+4. Follow [react-intl's API wiki](https://github.com/yahoo/react-intl/wiki/API) to use `injectIntl`([pass translations to props](https://github.com/cerner/terra-core/wiki/terra-i18n-Guide#pass-translated-message-as-props)) or `FormattedMessage`([render translations](https://github.com/cerner/terra-core/wiki/terra-i18n-Guide#display-transalated-message-without-default-message-fallback)) to consume translations.
+5. Review [react-intl's test wiki](https://github.com/yahoo/react-intl/wiki/Testing-with-React-Intl) to learn how to test internationalized componsnet with jest and enzyme. 
 
 ## Contributing
 
