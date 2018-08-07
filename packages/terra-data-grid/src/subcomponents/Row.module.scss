@@ -1,18 +1,18 @@
 .row {
-  background-color: white;
+  background-color: var(--terra-clinical-data-grid-row-background-color, white);
   display: flex;
   min-width: 100%;
 }
 
 .row:nth-child(odd) {
-  background-color: #f4f4f4;
+  background-color: var(--terra-clinical-data-grid-row-striped-background-color, #f4f4f4);
 }
 
 .row.hover {
-  background-color: #e2f2fc;
+  background-color: var(--terra-clinical-data-grid-row-hover-background-color, #e2f2fc);
 }
 
 .row.selected {
-  background: var(--terra-data-grid-cell-selected-background-color, #cbe7fa);
+  background-color: var(--terra-clinical-data-grid-row-selected-background-color, #cbe7fa);
   box-shadow: inset 0 0 5px 0 #0092e0;
 }

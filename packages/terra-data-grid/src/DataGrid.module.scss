@@ -86,7 +86,7 @@
   }
 
   .section-header-container {
-    height: 3rem;
+    height: var(--terra-clinical-data-grid-section-header-height, 3rem);
   }
 
   .leading-focus-anchor {

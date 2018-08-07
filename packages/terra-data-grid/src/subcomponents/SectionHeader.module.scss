@@ -1,7 +1,10 @@
 :local {
   .section-header {
-    background: lightgrey;
-    border-bottom: 1px solid #646464;
+    background-color: var(--terra-clinical-data-grid-section-header-background-color, lightgrey);
+
+    border-bottom-color: var(--terra-clinical-data-grid-section-header-border-bottom-width, #646464);
+    border-bottom-style: var(--terra-clinical-data-grid-section-header-border-bottom-width, solid);
+    border-bottom-width: var(--terra-clinical-data-grid-section-header-border-bottom-width, 1px);
 
     height: 100%;
     position: relative;
@@ -52,7 +55,7 @@
   }
 
   .content.selectable:hover {
-    background: #e2f2fc;
+    background-color: var(--terra-clinical-data-grid-section-header-hover-background-color, #e2f2fc);
     cursor: pointer;
   }
 }

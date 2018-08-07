@@ -5,14 +5,14 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 5px;
+    width: var(--terra-clinical-data-grid-resize-handle-width, 5px);
 
     &:hover {
-      background-color: grey;
+      background-color: var(--terra-clinical-data-grid-resize-handle-hover-background-color, grey);
     }
 
     &.dragging {
-      background-color: darkslategrey;
+      background-color: var(--terra-clinical-data-grid-resize-handle-active-background-color, darkslategrey);
       z-index: 200;
     }
   }

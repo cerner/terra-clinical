@@ -1,7 +1,8 @@
 :local {
   .container {
-    background-color: lightgrey;
-    height: 8px;
+    background-color: var(--terra-clinical-data-grid-scrollbar-background-color, lightgrey);
+    height: var(--terra-clinical-data-grid-scrollbar-height, 8px);
+
     left: 0;
     overflow: hidden;
     position: relative;
@@ -15,12 +16,12 @@
 
   .container:hover,
   .container.dragging {
-    height: 12px;
+    height: var(--terra-clinical-data-grid-scrollbar-hover-height, 12px);
   }
 
   .scrollbar {
-    background-color: grey;
-    border-radius: 25px;
+    background-color: var(--terra-clinical-data-grid-scrollbar-color, grey);
+    border-radius: var(--terra-clinical-data-grid-scrollbar-border-radius, 25px);
     cursor: ew-resize;
     height: 100%;
     position: absolute;
@@ -28,7 +29,7 @@
 
   .container.dragging {
     .scrollbar {
-      background-color: darkslategray;
+      background-color: var(--terra-clinical-data-grid-scrollbar-active-color, darkslategray);
     }
   }
 }
