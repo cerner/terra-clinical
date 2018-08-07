@@ -55,7 +55,7 @@
 | Safari & Mobile Safari      | Current |
 
 ## Internationalization (I18n)
-Terra load translations and locale data on demand and when providing translated messages to components. The `terra-base` component will handle locale changes, manage the locale's loading state, and receive customized translation messages from an application. The `terra-base` component is responsible for passing this information to the `terra-i18n` component which communicates with [`react-intl`](https://github.com/yahoo/react-intl). Terra-base is a requirement for the consumption of Terra componenets. Here's what you need to know:
+Terra load translations and locale data on demand when providing translated messages to components. The `terra-base` component will handle locale changes, manage the locale's loading state, and receive customized translation messages from an application. The `terra-base` component is responsible for passing this information to the `terra-i18n` component which communicates with [`react-intl`](https://github.com/yahoo/react-intl). Terra-base is a requirement for the consumption of Terra components. Here's what you need to know:
 
 
 1. Install `terra-base` and then wrap your application in `terra-base` with the `locale` prop defined. More information on how to use `terra-base` can be found [here](https://engineering.cerner.com/terra-ui/#/components/terra-base/base/base).
