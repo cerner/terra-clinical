@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
 
-import { KEYCODES } from '../utils/utils';
+import { KEYCODES } from '../utils/keycodes';
 
 import styles from './Cell.module.scss';
 

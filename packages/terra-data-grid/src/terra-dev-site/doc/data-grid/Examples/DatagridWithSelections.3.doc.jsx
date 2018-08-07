@@ -136,23 +136,23 @@ class SelectableDataGrid extends React.Component {
           }}
           onCellSelect={(sectionId, rowId, columnId) => {
             this.setState({
- selectedRow: undefined,
-selectedCell: {
-              sectionId,
-              rowId,
-              columnId,
-            },
-});
+              selectedRow: undefined,
+              selectedCell: {
+                sectionId,
+                rowId,
+                columnId,
+              },
+            });
           }}
           hasSelectableRows
           onRowSelect={(sectionId, rowId) => {
             this.setState({
- selectedCell: undefined,
-selectedRow: {
-              sectionId,
-              rowId,
-            },
-});
+              selectedCell: undefined,
+              selectedRow: {
+                sectionId,
+                rowId,
+              },
+            });
           }}
         />
       </div>

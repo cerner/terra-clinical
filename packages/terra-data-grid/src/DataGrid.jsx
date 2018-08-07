@@ -12,7 +12,7 @@ import Row from './subcomponents/Row';
 import Scrollbar from './subcomponents/Scrollbar';
 import SectionHeader from './subcomponents/SectionHeader';
 
-import { KEYCODES, matches, calculateScrollbarPosition } from './utils/utils';
+import { KEYCODES } from './utils/keycodes';
 
 import columnDataShape from './proptypes/columnDataShape';
 import sectionDataShape from './proptypes/sectionDataShape';
@@ -68,9 +68,9 @@ const propTypes = {
    */
   onRowSelect: PropTypes.func,
   /**
-   * Function that will be called when the DataGrid's vertical overflow reaches its terminal position. If there is no additional
-   * content to present, this function should not be provided. The `fill` prop must also be provided as true; otherwise, the DataGrid
-   * will not overflow internally and will not know to request more content.
+   * Function that will be called when the DataGrid's vertical overflow reaches its terminal position. This can be used to contextually
+   * load additional content in the DataGrid. If there is no additional content to present, this function should not be provided.
+   * The `fill` prop must also be provided as true; otherwise, the DataGrid will not overflow internally and will not know to request more content.
    */
   onRequestContent: PropTypes.func,
   /**
@@ -188,6 +188,46 @@ class DataGrid extends React.Component {
     const { overflowColumns } = source;
 
     return overflowColumns.concat([DataGrid.getVoidColumn()]);
+  }
+
+  /**
+   * Returns true if the given element matches the given selector. Includes support for IE10.
+   * @param {Element} element The element to compare against the selector.
+   * @param {String} selector The selector string to test.
+   */
+  static matchesSelector(element, selector) {
+    if (Element.prototype.msMatchesSelector) {
+      return element.msMatchesSelector(selector);
+    }
+
+    return element.matches(selector);
+  }
+
+  /**
+   * Returns the new position and offset ratio of the scrollbar given the change in width.
+   * @param {Number} scrollbarWidth The current scrollbar width.
+   * @param {Number} containerWidth The width of the container in which the scrollbar is presented.
+   * @param {Number} currentScrollbarPosition The current scrollbar position.
+   * @param {Number} delta The desired difference in position.
+   */
+  static calculateScrollbarPosition(scrollbarWidth, containerWidth, currentScrollbarPosition, delta) {
+    const newPosition = currentScrollbarPosition + delta;
+
+    let finalPosition;
+    if (newPosition < 0) {
+      finalPosition = 0;
+    } else if (newPosition > containerWidth - scrollbarWidth) {
+      finalPosition = containerWidth - scrollbarWidth;
+    } else {
+      finalPosition = newPosition;
+    }
+
+    const scrollerPositionRatio = finalPosition / (containerWidth - scrollbarWidth);
+
+    return {
+      position: finalPosition,
+      ratio: scrollerPositionRatio,
+    };
   }
 
   /**
@@ -407,7 +447,7 @@ class DataGrid extends React.Component {
         return;
       }
 
-      if (matches(activeElement, '[data-accessibility-id]')) {
+      if (DataGrid.matchesSelector(activeElement, '[data-accessibility-id]')) {
         const currentAccessibilityId = activeElement.getAttribute('data-accessibility-id');
         const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
 
@@ -736,7 +776,7 @@ class DataGrid extends React.Component {
 
     this.scrollbarIsScrolling = true;
 
-    const { position, ratio } = calculateScrollbarPosition(this.scrollbarRef, this.verticalOverflowContainerRef, this.scrollbarPosition, data.deltaX);
+    const { position, ratio } = DataGrid.calculateScrollbarPosition(this.scrollbarRef.clientWidth, this.verticalOverflowContainerRef.clientWidth, this.scrollbarPosition, data.deltaX);
 
     this.scrollbarPosition = position;
 

@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
-import { KEYCODES } from '../utils/utils';
+import { KEYCODES } from '../utils/keycodes';
 
 import styles from './SectionHeader.module.scss';
 
