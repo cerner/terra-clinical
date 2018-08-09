@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Button from 'terra-button';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-data-grid';
 
@@ -61,37 +62,60 @@ const overflowColumns = [
   },
 ];
 
-class StaticDataGrid extends React.Component {
+class DatagridWithSubsections extends React.Component {
   static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
       cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
+        component: <ContentCellLayout text={`Row-${rowIndex}, Column ${columnKey}`} />,
       })),
     }));
 
     return rows;
   }
 
-  static buildSection(sectionId, numberOfRows) {
+  constructor(props) {
+    super(props);
+
+    this.buildSection = this.buildSection.bind(this);
+
+    this.state = {
+      collapsedSectionId: undefined,
+    };
+  }
+
+  buildSection(sectionId, sectionName, numberOfRows) {
     return {
       id: sectionId,
-      rows: StaticDataGrid.buildRows(sectionId, numberOfRows),
+      text: sectionName,
+      endAccessory: (sectionId === 'section_1') ? <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span> : null,
+      isCollapsible: sectionId === 'section_0',
+      isCollapsed: this.state.collapsedSectionId === sectionId,
+      rows: DatagridWithSubsections.buildRows(sectionId, numberOfRows),
     };
   }
 
   render() {
     return (
-      <div style={{ height: '100%', padding: '15px' }}>
+      <div style={{ height: '800px' }}>
         <DataGrid
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[
-            StaticDataGrid.buildSection('section_0', 30),
+            this.buildSection('section_0', 'Section 0', 15),
+            this.buildSection('section_1', 'Section 1', 15),
+            this.buildSection('section_2', 'Section 2', 15),
           ]}
           rowHeight="2.5rem"
           headerHeight="3rem"
+          onRequestSectionCollapse={(sectionId) => {
+            if (this.state.collapsedSectionId === sectionId) {
+              this.setState({ collapsedSectionId: undefined });
+            } else {
+              this.setState({ collapsedSectionId: sectionId });
+            }
+          }}
           fill
         />
       </div>
@@ -99,4 +123,4 @@ class StaticDataGrid extends React.Component {
   }
 }
 
-export default StaticDataGrid;
+export default DatagridWithSubsections;

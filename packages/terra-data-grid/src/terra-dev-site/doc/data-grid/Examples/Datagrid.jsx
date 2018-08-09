@@ -5,7 +5,7 @@ import DataGrid from 'terra-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
 
-const overflowColumns = [
+const pinnedColumns = [
   {
     id: 'Column-0',
     width: 200,
@@ -21,6 +21,9 @@ const overflowColumns = [
     width: 200,
     text: 'Column 2',
   },
+];
+
+const overflowColumns = [
   {
     id: 'Column-3',
     width: 200,
@@ -80,8 +83,9 @@ class StaticDataGrid extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '100%', padding: '15px' }}>
+      <div style={{ height: '800px' }}>
         <DataGrid
+          pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[
             StaticDataGrid.buildSection('section_0', 30),

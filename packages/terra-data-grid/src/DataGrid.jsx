@@ -82,8 +82,8 @@ const propTypes = {
 const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
-  rowHeight: '2rem',
-  headerHeight: '2rem',
+  rowHeight: '2.5rem',
+  headerHeight: '3rem',
   sections: [],
 };
 

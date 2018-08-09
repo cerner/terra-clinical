@@ -5,7 +5,7 @@ import DataGrid from 'terra-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
 
-class SelectableDataGrid extends React.Component {
+class DatagridWithSelections extends React.Component {
   constructor(props) {
     super(props);
 
@@ -93,7 +93,7 @@ class SelectableDataGrid extends React.Component {
     const { columns } = this.state;
 
     return (
-      <div style={{ height: '100%', padding: '15px' }}>
+      <div style={{ height: '800px' }}>
         <DataGrid
           pinnedColumns={[
             columns['Column-0'],
@@ -160,4 +160,4 @@ class SelectableDataGrid extends React.Component {
   }
 }
 
-export default SelectableDataGrid;
+export default DatagridWithSelections;
