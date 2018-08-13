@@ -414,26 +414,52 @@ class DataGrid extends React.Component {
       return;
     }
 
-    let column;
-    const allColumns = DataGrid.getPinnedColumns(this.props).concat(DataGrid.getOverflowColumns(this.props));
+    const pinnedColumns = DataGrid.getPinnedColumns(this.props);
+    let columnToUpdate;
+    let columnIsPinned;
+    const allColumns = pinnedColumns.concat(DataGrid.getOverflowColumns(this.props));
     for (let i = 0, numberOfColumns = allColumns.length; i < numberOfColumns; i += 1) {
       if (allColumns[i].id === columnId) {
-        column = allColumns[i];
+        columnToUpdate = allColumns[i];
+
+        if (i < pinnedColumns.length) {
+          columnIsPinned = true;
+        }
       }
     }
 
-    if (!column) {
+    if (!columnToUpdate) {
       return;
     }
 
     /**
      * Depending on the page's layout direction, we need to manipulate the size calculation to account for
-     * the delta's initial, direction-agnostic value.
+     * the delta's direction-agnostic value.
      */
     const pageDirection = document.documentElement.getAttribute('dir');
     const deltaForDirection = pageDirection === 'rtl' ? widthDelta * -1 : widthDelta;
+    let newWidth = DataGrid.getWidthForColumn(columnToUpdate) + deltaForDirection;
 
-    onRequestColumnResize(columnId, DataGrid.getWidthForColumn(column) + deltaForDirection);
+    /**
+     * If the column being updated is a pinned column, we need to ensure that the new width will not cause the pinned columns to overflow the
+     * container's current width. Otherwise, the DataGrid may get into an unrecoverable state.
+     */
+    if (columnIsPinned) {
+      const totalPinnedSectionWidth = pinnedColumns.reduce((totalWidth, pinnedColumn) => {
+        if (pinnedColumn.id === columnId) {
+          return totalWidth + newWidth;
+        }
+
+        return totalWidth + pinnedColumn.width;
+      }, 0);
+
+      const containerWidth = this.dataGridContainerRef.getBoundingClientRect().width;
+      if (totalPinnedSectionWidth > containerWidth) {
+        newWidth -= totalPinnedSectionWidth - containerWidth;
+      }
+    }
+
+    onRequestColumnResize(columnId, newWidth);
   }
 
   /**

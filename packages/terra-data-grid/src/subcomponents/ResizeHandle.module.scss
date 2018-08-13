@@ -13,8 +13,6 @@
 
     &.dragging {
       background-color: var(--terra-clinical-data-grid-resize-handle-active-background-color, darkslategrey);
-      // transform: translateZ(0);
-      // z-index: 200;
     }
   }
 }
