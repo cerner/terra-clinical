@@ -3,23 +3,29 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 import ItemView from 'terra-clinical-item-view';
-import IconFeatured from 'terra-icon/lib/icon/IconFeatured';
+import CustomHeaderCellLayout from './CustomHeaderCellLayout';
 
 const pinnedColumns = [
   {
     id: 'Column-0',
     width: 200,
-    text: 'Column 0',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 0" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-1',
     width: 200,
-    text: 'Column 1',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 1" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-2',
     width: 200,
-    text: 'Column 2',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 2" secondaryText="Custom Header Cell" />
+    ),
   },
 ];
 
@@ -27,37 +33,51 @@ const overflowColumns = [
   {
     id: 'Column-3',
     width: 200,
-    text: 'Column 3',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 3" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-4',
     width: 200,
-    text: 'Column 4',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 4" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-5',
     width: 200,
-    text: 'Column 5',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 5" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-6',
     width: 200,
-    text: 'Column 6',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 6" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-7',
     width: 200,
-    text: 'Column 7',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 7" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-8',
     width: 200,
-    text: 'Column 8',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 8" secondaryText="Custom Header Cell" />
+    ),
   },
   {
     id: 'Column-9',
     width: 200,
-    text: 'Column 9',
+    component: (
+      <CustomHeaderCellLayout primaryText="Column 9" secondaryText="Custom Header Cell" />
+    ),
   },
 ];
 
@@ -70,10 +90,14 @@ class DatagridWithCustomContent extends React.Component {
         component: (
           <ItemView
             displays={[
-              <ItemView.Display icon={<IconFeatured />} text={`Row-${rowIndex}, ${columnKey}`} />,
-              <ItemView.Display text="Cell" />,
-              <ItemView.Display text="Example" />,
+              <ItemView.Display isTruncated text={`Row-${rowIndex}, ${columnKey}`} />,
+              <ItemView.Display isTruncated text="Item View" />,
+              <ItemView.Display isTruncated text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae." />,
             ]}
+            style={{
+              height: '100%',
+              width: '100%',
+            }}
           />
         ),
       })),

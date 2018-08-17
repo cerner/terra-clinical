@@ -8,7 +8,7 @@ import DatagridWithCustomContentSrc from '!raw-loader!./DatagridWithCustomConten
 
 const DatagridWithColumnResizingExample = () => (
   <ExampleTemplate
-    description="This example features column resizing using the draggable resize region in the column header."
+    description="This example features custom header cell implementations and more complex content cells."
     example={<DatagridWithCustomContent />}
     exampleSrc={DatagridWithCustomContentSrc}
   />
