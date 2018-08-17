@@ -23,6 +23,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * String that will be used to prefix identifiers used throughout the DataGrid for accessibility purposes. Because it will be
+   * used to generate id's, this value must be unique among every instance of DataGrid mounted at the same time.
+   */
+  accessibilityPrefix: PropTypes.string.isRequired,
+  /**
    * Data for columns that will be pinned. Columns will be presented in the order given.
    */
   pinnedColumns: PropTypes.arrayOf(columnDataShape),
@@ -77,10 +82,6 @@ const propTypes = {
    * Boolean that indicates whether or not the DataGrid should fill its parent container.
    */
   fill: PropTypes.bool,
-  /**
-   * String that will be used to prefix identifiers used throughout the DataGrid for accessibility purposes.
-   */
-  accessibilityPrefix: PropTypes.string,
 };
 
 const defaultProps = {
@@ -1090,7 +1091,21 @@ class DataGrid extends React.Component {
 
   render() {
     const {
-      pinnedColumns, overflowColumns, sections, onCellSelect, onColumnSelect, onRequestColumnResize, onRequestSectionCollapse, rowHeight, headerHeight, hasSelectableRows, onRowSelect, fill, onRequestContent, ...customProps
+      accessibilityPrefix,
+      pinnedColumns,
+      overflowColumns,
+      sections,
+      onCellSelect,
+      onColumnSelect,
+      onRequestColumnResize,
+      onRequestSectionCollapse,
+      rowHeight,
+      headerHeight,
+      hasSelectableRows,
+      onRowSelect,
+      fill,
+      onRequestContent,
+      ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
 

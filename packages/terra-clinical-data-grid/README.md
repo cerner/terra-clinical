@@ -1,17 +1,17 @@
-# Terra Data Grid
+# Terra Clinical DataGrid
 
-TODO
+The DataGrid is an organizational component that renders a collection of data in a grid-like format.
 
-[![NPM version](http://img.shields.io/npm/v/terra-data-grid.svg)](https://www.npmjs.org/package/terra-data-grid)
-[![Build Status](https://travis-ci.org/cerner/terra-framework.svg?branch=master)](https://travis-ci.org/cerner/terra-framework)
+[![NPM version](http://img.shields.io/npm/v/terra-clinical-data-grid.svg)](https://www.npmjs.org/package/terra-clinical-data-grid)
+[![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-framework/tree/master/packages/terra-data-grid/docs)
+- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-data-grid/docs)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-data-grid`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-clinical-data-grid`
 
 ## LICENSE
 

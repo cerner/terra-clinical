@@ -1,7 +1,7 @@
 import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DataGrid from 'terra-data-grid';
+import DataGrid from 'terra-clinical-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
 
@@ -83,6 +83,7 @@ class DatagridWithColumnResizing extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
+          accessibilityPrefix="column-resize-example"
           pinnedColumns={[
             columns['Column-0'],
             columns['Column-1'],
@@ -98,8 +99,6 @@ class DatagridWithColumnResizing extends React.Component {
             DatagridWithColumnResizing.buildSection('Section-0', 'Section 0', 15),
             DatagridWithColumnResizing.buildSection('Section-1', 'Section 1', 15),
           ]}
-          rowHeight="2.5rem"
-          headerHeight="3rem"
           fill
           onRequestColumnResize={(columnId, width) => {
             const columnToUpdate = Object.assign({}, this.state.columns[columnId]);

@@ -1,11 +1,11 @@
 import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DataGrid from 'terra-data-grid';
+import DataGrid from 'terra-clinical-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
 
-const pinnedColumns = [
+const overflowColumns = [
   {
     id: 'Column-0',
     width: 200,
@@ -21,9 +21,6 @@ const pinnedColumns = [
     width: 200,
     text: 'Column 2',
   },
-];
-
-const overflowColumns = [
   {
     id: 'Column-3',
     width: 200,
@@ -61,7 +58,7 @@ const overflowColumns = [
   },
 ];
 
-class StaticDataGrid extends React.Component {
+class DatagridWithNoPinnedColumns extends React.Component {
   static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
@@ -77,7 +74,7 @@ class StaticDataGrid extends React.Component {
   static buildSection(sectionId, numberOfRows) {
     return {
       id: sectionId,
-      rows: StaticDataGrid.buildRows(sectionId, numberOfRows),
+      rows: DatagridWithNoPinnedColumns.buildRows(sectionId, numberOfRows),
     };
   }
 
@@ -85,13 +82,11 @@ class StaticDataGrid extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
-          pinnedColumns={pinnedColumns}
+          accessibilityPrefix="no-pinning-example"
           overflowColumns={overflowColumns}
           sections={[
-            StaticDataGrid.buildSection('section_0', 30),
+            DatagridWithNoPinnedColumns.buildSection('section_0', 30),
           ]}
-          rowHeight="2.5rem"
-          headerHeight="3rem"
           fill
         />
       </div>
@@ -99,4 +94,4 @@ class StaticDataGrid extends React.Component {
   }
 }
 
-export default StaticDataGrid;
+export default DatagridWithNoPinnedColumns;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DataGrid from 'terra-data-grid';
+import DataGrid from 'terra-clinical-data-grid';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 
 import ContentCellLayout from './ContentCellLayout';
@@ -93,11 +93,10 @@ class DatagridWithPaging extends React.Component {
     return (
       <div style={{ height: '800px', position: 'relative' }}>
         <DataGrid
+          accessibilityPrefix="paging-example"
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={this.state.sections}
-          rowHeight="2.5rem"
-          headerHeight="3rem"
           fill
           onRequestContent={this.state.sectionCount < 10 ? (() => {
             this.setState({ isLoading: true }, () => {

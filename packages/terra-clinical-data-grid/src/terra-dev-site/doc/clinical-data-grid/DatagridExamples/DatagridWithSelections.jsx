@@ -1,7 +1,7 @@
 import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DataGrid from 'terra-data-grid';
+import DataGrid from 'terra-clinical-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
 
@@ -95,6 +95,7 @@ class DatagridWithSelections extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
+          accessibilityPrefix="selections-example"
           pinnedColumns={[
             columns['Column-0'],
             columns['Column-1'],
@@ -110,8 +111,6 @@ class DatagridWithSelections extends React.Component {
             this.buildSection('Section-0', 'Section 0', 15),
             this.buildSection('Section-1', 'Section 1', 15),
           ]}
-          rowHeight="2.5rem"
-          headerHeight="3rem"
           fill
           onColumnSelect={(columnId) => {
             const newColumns = {};
