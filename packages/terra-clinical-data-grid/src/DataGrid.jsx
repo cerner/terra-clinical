@@ -751,7 +751,7 @@ class DataGrid extends React.Component {
      * and content columns can move out of alignment. We need to account for the potential presence of the scrollbar and set the size of the
      * header scrollbar buffer element to equalize any differences in width.
      */
-    const scrollbarOffset = this.dataGridContainerRef.getBoundingClientRect().width - pinnedColumnWidth - this.horizontalOverflowContainerRef.getBoundingClientRect().width;
+    const scrollbarOffset = this.dataGridContainerRef.clientWidth - pinnedColumnWidth - this.horizontalOverflowContainerRef.clientWidth;
     this.headerScrollbarBuffer.style.width = `${scrollbarOffset}px`;
   }
 
