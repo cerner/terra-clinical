@@ -38,14 +38,14 @@
       overflow-y: hidden;
       padding-bottom: 20px;
       width: 100%;
+    }
 
-      .overflow-header {
-        background-color: var(--terra-clinical-data-grid-column-header-background-color, lightgrey);
-        display: flex;
-        min-width: 100%;
-        position: relative;
-        top: 0;
-      }
+    .overflow-header {
+      background-color: var(--terra-clinical-data-grid-column-header-background-color, lightgrey);
+      display: flex;
+      min-width: 100%;
+      position: relative;
+      top: 0;
     }
 
     .header-scrollbar-buffer {

@@ -77,6 +77,10 @@ const propTypes = {
    * Boolean that indicates whether or not the DataGrid should fill its parent container.
    */
   fill: PropTypes.bool,
+  /**
+   * String that will be used to prefix identifiers used throughout the DataGrid for accessibility purposes.
+   */
+  accessibilityPrefix: PropTypes.string,
 };
 
 const defaultProps = {
@@ -924,7 +928,7 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderSectionHeader(section, hideHeader) {
+  renderSectionHeader(section, isPinned) {
     const { onRequestSectionCollapse } = this.props;
 
     const shouldRenderSectionHeaderContainer = section.isCollapsible || section.text || section.startAccessory || section.endAccessory || section.component;
@@ -935,7 +939,7 @@ class DataGrid extends React.Component {
           key={section.id}
           className={cx('section-header-container')}
         >
-          { !hideHeader ? (
+          { isPinned ? (
             <SectionHeader
               sectionId={section.id}
               text={section.text}
@@ -981,11 +985,7 @@ class DataGrid extends React.Component {
             rowElements[i].classList.remove('hover');
           }
         }}
-        onSelect={(sectionId, rowId) => {
-          if (onRowSelect) {
-            onRowSelect(sectionId, rowId);
-          }
-        }}
+        onSelect={onRowSelect}
       />
     );
   }
@@ -1011,8 +1011,21 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderRow(row, section, columns, width) {
-    const { rowHeight } = this.props;
+  renderRow(row, section, columns, width, isPinned) {
+    const { rowHeight, accessibilityPrefix } = this.props;
+
+    /**
+     * Because of the DOM structure necessary to properly render the pinned and overflow sections,
+     * each 'row' of the DataGrid is actually two rows, side-by-side. However, we can use aria attributes
+     * to ensure screen readers will read both rows as one contiguous row.
+     */
+    const ariaStyles = {};
+    if (isPinned) {
+      ariaStyles.id = `${accessibilityPrefix}-Pinned-Row-${row.id}-Section-${section.id}`;
+      ariaStyles['aria-owns'] = `${accessibilityPrefix}-Overflow-Row-${row.id}-Section-${section.id}`;
+    } else {
+      ariaStyles.id = `${accessibilityPrefix}-Overflow-Row-${row.id}-Section-${section.id}`;
+    }
 
     return (
       <Row
@@ -1022,6 +1035,8 @@ class DataGrid extends React.Component {
         width={width}
         height={rowHeight}
         isSelected={row.isSelected}
+        {...ariaStyles}
+
       >
         {columns.map((column) => {
           if (column.id === 'DataGrid-rowSelectionColumn') {
@@ -1037,12 +1052,12 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderSection(section, columns, width, hideHeader) {
+  renderSection(section, columns, width, isPinned) {
     return (
       <React.Fragment key={section.id}>
-        {this.renderSectionHeader(section, hideHeader)}
+        {this.renderSectionHeader(section, isPinned)}
         {!section.isCollapsed && section.rows && section.rows.map(row => (
-          this.renderRow(row, section, columns, width)
+          this.renderRow(row, section, columns, width, isPinned)
         ))}
       </React.Fragment>
     );
@@ -1052,14 +1067,14 @@ class DataGrid extends React.Component {
     const { sections } = this.props;
     const { pinnedColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, DataGrid.getPinnedColumns(this.props), `${pinnedColumnWidth}px`));
+    return sections.map(section => this.renderSection(section, DataGrid.getPinnedColumns(this.props), `${pinnedColumnWidth}px`, true));
   }
 
   renderOverflowContent() {
     const { sections } = this.props;
     const { overflowColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, DataGrid.getOverflowColumns(this.props), `${overflowColumnWidth}px`, true));
+    return sections.map(section => this.renderSection(section, DataGrid.getOverflowColumns(this.props), `${overflowColumnWidth}px`));
   }
 
   renderScrollbar() {
@@ -1088,6 +1103,7 @@ class DataGrid extends React.Component {
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
         onKeyDown={this.handleKeyDown}
+        tabIndex="0"
       >
         <div
           className={cx('leading-focus-anchor')}
