@@ -14,7 +14,7 @@ const propTypes = {
   /**
    * String identifier of the section that the SectionHeader is rendered within.
    */
-  sectionId: PropTypes.string,
+  sectionId: PropTypes.string.isRequired,
   /**
    * String text rendered within the SectionHeader's default text position.
    */
@@ -83,6 +83,29 @@ class SectionHeader extends React.Component {
       text, startAccessory, endAccessory, children, isCollapsible, isCollapsed, selectableRefCallback,
     } = this.props;
 
+    let content;
+    if (children) {
+      content = (
+        <div className={cx('flex-content')}>
+          {children}
+        </div>
+      );
+    } else {
+      content = (
+        <React.Fragment>
+          <div className={cx('start-accessory')}>
+            {startAccessory}
+          </div>
+          <div className={cx('flex-content')}>
+            {text ? <div className={cx('text')}>{text}</div> : null}
+          </div>
+          <div className={cx('end-accessory')}>
+            {endAccessory}
+          </div>
+        </React.Fragment>
+      );
+    }
+
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
       <div
@@ -101,16 +124,7 @@ class SectionHeader extends React.Component {
               {isCollapsed ? <IconCaretRight /> : <IconCaretDown />}
             </div>
             ) : null}
-          <div className={cx('start-accessory')}>
-            {startAccessory}
-          </div>
-          <div className={cx('flex-content')}>
-            {text ? <div className={cx('text')}>{text}</div> : null}
-            {children}
-          </div>
-          <div className={cx('end-accessory')}>
-            {endAccessory}
-          </div>
+          {content}
         </div>
       </div>
       /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */

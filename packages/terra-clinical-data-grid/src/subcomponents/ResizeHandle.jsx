@@ -12,7 +12,7 @@ const propTypes = {
    * String identifer for the ResizeHandle. This value will be provided to the `onResizeStop` function prop as a parameter for
    * identification purposes.
    */
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   /**
    * Function called upon release of the ResizeHandle. The id, as well as the new ResizeHandle position, will be provided
    * as arguments.
