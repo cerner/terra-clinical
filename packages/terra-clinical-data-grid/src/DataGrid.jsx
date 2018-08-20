@@ -138,8 +138,6 @@ class DataGrid extends React.Component {
   static getRowSelectionColumn() {
     return {
       id: 'DataGrid-rowSelectionColumn',
-      isResizable: false,
-      isSelectable: false,
       width: ROW_SELECTION_COLUMN_WIDTH,
     };
   }
@@ -159,7 +157,7 @@ class DataGrid extends React.Component {
    * @param {Object} column Object adhering to the columnData shape.
    */
   static getWidthForColumn(column) {
-    return column.width || DEFAULT_COLUMN_WIDTH;
+    return (column && column.width) || DEFAULT_COLUMN_WIDTH;
   }
 
   /**
@@ -167,15 +165,19 @@ class DataGrid extends React.Component {
    * @param {Array} columns Array of Objects adhering to the columnData shape.
    */
   static getTotalColumnWidth(columns) {
+    if (!columns) {
+      return 0;
+    }
+
     return columns.reduce((totalWidth, column) => totalWidth + DataGrid.getWidthForColumn(column), 0);
   }
 
   /**
    * Returns the pinned columns from the given source, including the row selection column if necessary.
-   * @param {Object} source Object conforming to DataGrid's prop types.
+   * @param {Object} props Object conforming to DataGrid's prop types.
    */
-  static getPinnedColumns(source) {
-    const { pinnedColumns, hasSelectableRows } = source;
+  static getPinnedColumns(props) {
+    const { pinnedColumns, hasSelectableRows } = props;
 
     let updatedPinnedColumns = pinnedColumns;
     if (hasSelectableRows) {
@@ -187,10 +189,10 @@ class DataGrid extends React.Component {
 
   /**
    * Returns the overflow columns from the given source, including the void column used for column resizing.
-   * @param {Object} source Object conforming to DataGrid's prop types.
+   * @param {Object} props Object conforming to DataGrid's prop types.
    */
-  static getOverflowColumns(source) {
-    const { overflowColumns } = source;
+  static getOverflowColumns(props) {
+    const { overflowColumns } = props;
 
     return overflowColumns.concat([DataGrid.getVoidColumn()]);
   }
