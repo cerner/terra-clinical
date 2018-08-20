@@ -17,8 +17,9 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   /**
-   * String-formatted width that the Cell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   * String-formatted width that the HeaderCell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
    */
+  width: PropTypes.string.isRequired,
   /**
    * String text that will be rendered within the HeaderCell's default text region.
    */
@@ -48,10 +49,6 @@ const propTypes = {
    * for this function to be called.
    */
   onResizeEnd: PropTypes.func,
-  /**
-   * String-formatted width that the HeaderCell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
-   */
-  width: PropTypes.string,
   /**
    * Content that will rendered within the HeaderCell. If provided, the `text` and `sortIndicator` props will be ignored.
    */
