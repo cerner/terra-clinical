@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell Snapshot Tests should render a Cell with all provided props 1`] = `
+<div
+  aria-selected={true}
+  className="container custom-class-name"
+  data-custom-attribute={true}
+  style={
+    Object {
+      "width": "123px",
+    }
+  }
+>
+  <div
+    className="content selectable selected"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    tabIndex="0"
+  >
+    <div>
+      Child here
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cell Snapshot Tests should render a Cell with minimal props 1`] = `
+<div
+  className="container"
+  style={
+    Object {
+      "width": "123px",
+    }
+  }
+>
+  <div
+    className="content"
+  />
+</div>
+`;

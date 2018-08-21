@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row Snapshot Tests should render a Row with all provided props 1`] = `
+<div
+  className="row selected"
+  data-row={true}
+  data-row-id="row-test"
+  data-section-id="section-test"
+  style={
+    Object {
+      "height": "4rem",
+      "width": "123px",
+    }
+  }
+>
+  <div>
+    Row Content
+  </div>
+</div>
+`;
+
+exports[`Row Snapshot Tests should render a Row with minimal props 1`] = `
+<div
+  className="row"
+  data-row={true}
+  data-row-id="row-test"
+  data-section-id="section-test"
+  style={
+    Object {
+      "height": "4rem",
+      "width": "123px",
+    }
+  }
+/>
+`;

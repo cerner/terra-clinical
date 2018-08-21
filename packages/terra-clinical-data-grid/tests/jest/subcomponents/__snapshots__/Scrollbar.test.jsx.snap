@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scrollbar Snapshot Tests should render a Scrollbar with all provided props 1`] = `
+<div
+  className="container"
+>
+  <DraggableCore
+    allowAnyClick={false}
+    cancel={null}
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    transform={null}
+  >
+    <div
+      className="scrollbar"
+    />
+  </DraggableCore>
+</div>
+`;
+
+exports[`Scrollbar Snapshot Tests should render a Scrollbar with minimal props 1`] = `
+<div
+  className="container"
+>
+  <DraggableCore
+    allowAnyClick={false}
+    cancel={null}
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    transform={null}
+  >
+    <div
+      className="scrollbar"
+    />
+  </DraggableCore>
+</div>
+`;
