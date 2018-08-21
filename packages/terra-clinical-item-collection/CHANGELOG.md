@@ -4,19 +4,20 @@ ChangeLog
 Unreleased
 ----------
 
-3.14.0 - (August 1, 2018)
+3.14.0 - (August 8, 2018)
+----------
+### Fixed
+* Fixed list collections not being assigned the `listbox` role when they have a selectable child
+
+3.13.0 - (August 1, 2018)
 ----------
 ### Changed
 * Minor updates
 
-3.13.0 - (July 26, 2018)
+3.12.0 - (July 26, 2018)
 ----------
 ### Changed
 * Re-enabled ability to set custom props on Item Collection component
-
-3.12.0 - (July 25, 2018)
-----------
-### Changed
 * Updated to use terra-responsive-element v3
 
 3.11.1 - (July 25, 2018)
