@@ -869,6 +869,10 @@ class DataGrid extends React.Component {
     const columnId = columnData.id;
     const { onColumnSelect } = this.props;
 
+    /**
+     * Rather than render an empty HeaderCell for the void column, we just render nothing.
+     * The width of the void column is already being accounted for.
+     */
     if (columnId === 'DataGrid-voidColumn') {
       return undefined;
     }
@@ -895,6 +899,7 @@ class DataGrid extends React.Component {
     const {
       headerHeight,
     } = this.props;
+
     const {
       pinnedColumnWidth,
       overflowColumnWidth,
