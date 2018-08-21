@@ -1,0 +1,35 @@
+:local {
+  .container {
+    background-color: var(--terra-clinical-data-grid-scrollbar-background-color, lightgrey);
+    height: var(--terra-clinical-data-grid-scrollbar-height, 8px);
+
+    left: 0;
+    overflow: hidden;
+    position: relative;
+    transition: height 0.1s linear;
+    width: 100%;
+  }
+
+  .container[aria-hidden] {
+    display: none;
+  }
+
+  .container:hover,
+  .container.dragging {
+    height: var(--terra-clinical-data-grid-scrollbar-hover-height, 12px);
+  }
+
+  .scrollbar {
+    background-color: var(--terra-clinical-data-grid-scrollbar-color, grey);
+    border-radius: var(--terra-clinical-data-grid-scrollbar-border-radius, 25px);
+    cursor: ew-resize;
+    height: 100%;
+    position: absolute;
+  }
+
+  .container.dragging {
+    .scrollbar {
+      background-color: var(--terra-clinical-data-grid-scrollbar-active-color, darkslategray);
+    }
+  }
+}

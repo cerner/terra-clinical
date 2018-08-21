@@ -1,0 +1,1419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`] = `
+<div
+  className="data-grid-container fill"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={true}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "3rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        >
+          <HeaderCell
+            columnId="Column-0"
+            onResizeEnd={[Function]}
+            selectableRefCallback={[Function]}
+            sortIndicator="ascending"
+            text="Column 0"
+            width="200px"
+          >
+            <div>
+              Custom Header 0
+            </div>
+          </HeaderCell>
+        </div>
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "3rem",
+                "width": "450px",
+              }
+            }
+          >
+            <HeaderCell
+              columnId="Column-1"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              sortIndicator="descending"
+              text="Column 1"
+              width="300px"
+            >
+              <div>
+                Custom Header 1
+              </div>
+            </HeaderCell>
+          </div>
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+      >
+        <div
+          className="section-header-container"
+          key="section-0"
+        >
+          <SectionHeader
+            endAccessory={
+              <div>
+                End Accessory
+              </div>
+            }
+            isCollapsed={false}
+            isCollapsible={true}
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            startAccessory={
+              <div>
+                Start Accessory
+              </div>
+            }
+            text="Section 0"
+          />
+        </div>
+        <Row
+          aria-owns="test-Overflow-Row-row-0-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-0-Section-section-0"
+          key="section-0-row-0"
+          rowId="row-0"
+          sectionId="section-0"
+          width="200px"
+        >
+          <Cell
+            columnId="Column-0"
+            key="section-0-row-0-Column-0"
+            rowId="row-0"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              0
+            </div>
+          </Cell>
+        </Row>
+      </div>
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="section-header-container"
+            key="section-0"
+          />
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-0-Section-section-0"
+            key="section-0-row-0"
+            rowId="row-0"
+            sectionId="section-0"
+            width="450px"
+          >
+            <Cell
+              columnId="Column-1"
+              key="section-0-row-0-Column-1"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="300px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with custom row and header heights 1`] = `
+<div
+  className="data-grid-container fill"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={true}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "10rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "0px",
+            }
+          }
+        />
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "10rem",
+                "width": "950px",
+              }
+            }
+          >
+            <HeaderCell
+              columnId="Column-0"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 0"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-1"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 1"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-2"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 2"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-3"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 3"
+              width="200px"
+            />
+          </div>
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "0px",
+          }
+        }
+      >
+        <Row
+          aria-owns="test-Overflow-Row-row-0-Section-section-0"
+          height="5rem"
+          id="test-Pinned-Row-row-0-Section-section-0"
+          key="section-0-row-0"
+          rowId="row-0"
+          sectionId="section-0"
+          width="0px"
+        />
+        <Row
+          aria-owns="test-Overflow-Row-row-1-Section-section-0"
+          height="5rem"
+          id="test-Pinned-Row-row-1-Section-section-0"
+          key="section-0-row-1"
+          rowId="row-1"
+          sectionId="section-0"
+          width="0px"
+        />
+      </div>
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        >
+          <Row
+            height="5rem"
+            id="test-Overflow-Row-row-0-Section-section-0"
+            key="section-0-row-0"
+            rowId="row-0"
+            sectionId="section-0"
+            width="950px"
+          >
+            <Cell
+              columnId="Column-0"
+              key="section-0-row-0-Column-0"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                0
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-1"
+              key="section-0-row-0-Column-1"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-2"
+              key="section-0-row-0-Column-2"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                2
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-3"
+              key="section-0-row-0-Column-3"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                3
+              </div>
+            </Cell>
+          </Row>
+          <Row
+            height="5rem"
+            id="test-Overflow-Row-row-1-Section-section-0"
+            key="section-0-row-1"
+            rowId="row-1"
+            sectionId="section-0"
+            width="950px"
+          >
+            <Cell
+              columnId="Column-0"
+              key="section-0-row-1-Column-0"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                0
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-1"
+              key="section-0-row-1-Column-1"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-2"
+              key="section-0-row-1-Column-2"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                2
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-3"
+              key="section-0-row-1-Column-3"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                3
+              </div>
+            </Cell>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with custom section header 1`] = `
+<div
+  className="data-grid-container fill"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={true}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "3rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        >
+          <HeaderCell
+            columnId="Column-0"
+            onResizeEnd={[Function]}
+            selectableRefCallback={[Function]}
+            sortIndicator="ascending"
+            text="Column 0"
+            width="200px"
+          />
+        </div>
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "3rem",
+                "width": "450px",
+              }
+            }
+          >
+            <HeaderCell
+              columnId="Column-1"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              sortIndicator="descending"
+              text="Column 1"
+              width="300px"
+            />
+          </div>
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "200px",
+          }
+        }
+      >
+        <div
+          className="section-header-container"
+          key="section-0"
+        >
+          <SectionHeader
+            endAccessory={
+              <div>
+                End Accessory
+              </div>
+            }
+            isCollapsed={false}
+            isCollapsible={true}
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            startAccessory={
+              <div>
+                Start Accessory
+              </div>
+            }
+            text="Section 0"
+          >
+            <div>
+              Custom Section Header
+            </div>
+          </SectionHeader>
+        </div>
+        <Row
+          aria-owns="test-Overflow-Row-row-0-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-0-Section-section-0"
+          key="section-0-row-0"
+          rowId="row-0"
+          sectionId="section-0"
+          width="200px"
+        >
+          <Cell
+            columnId="Column-0"
+            key="section-0-row-0-Column-0"
+            rowId="row-0"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              0
+            </div>
+          </Cell>
+        </Row>
+      </div>
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="section-header-container"
+            key="section-0"
+          />
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-0-Section-section-0"
+            key="section-0-row-0"
+            rowId="row-0"
+            sectionId="section-0"
+            width="450px"
+          >
+            <Cell
+              columnId="Column-1"
+              key="section-0-row-0-Column-1"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="300px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with missing optional props 1`] = `
+<div
+  className="data-grid-container"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={false}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "3rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "0px",
+            }
+          }
+        />
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "3rem",
+                "width": "150px",
+              }
+            }
+          />
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "0px",
+          }
+        }
+      />
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        />
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 1`] = `
+<div
+  className="data-grid-container fill"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={true}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "3rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "0px",
+            }
+          }
+        />
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "3rem",
+                "width": "950px",
+              }
+            }
+          >
+            <HeaderCell
+              columnId="Column-0"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 0"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-1"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 1"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-2"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 2"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-3"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 3"
+              width="200px"
+            />
+          </div>
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "0px",
+          }
+        }
+      >
+        <Row
+          aria-owns="test-Overflow-Row-row-0-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-0-Section-section-0"
+          key="section-0-row-0"
+          rowId="row-0"
+          sectionId="section-0"
+          width="0px"
+        />
+        <Row
+          aria-owns="test-Overflow-Row-row-1-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-1-Section-section-0"
+          key="section-0-row-1"
+          rowId="row-1"
+          sectionId="section-0"
+          width="0px"
+        />
+      </div>
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        >
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-0-Section-section-0"
+            key="section-0-row-0"
+            rowId="row-0"
+            sectionId="section-0"
+            width="950px"
+          >
+            <Cell
+              columnId="Column-0"
+              key="section-0-row-0-Column-0"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                0
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-1"
+              key="section-0-row-0-Column-1"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-2"
+              key="section-0-row-0-Column-2"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                2
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-3"
+              key="section-0-row-0-Column-3"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                3
+              </div>
+            </Cell>
+          </Row>
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-1-Section-section-0"
+            key="section-0-row-1"
+            rowId="row-1"
+            sectionId="section-0"
+            width="950px"
+          >
+            <Cell
+              columnId="Column-0"
+              key="section-0-row-1-Column-0"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                0
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-1"
+              key="section-0-row-1-Column-1"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-2"
+              key="section-0-row-1-Column-2"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                2
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-3"
+              key="section-0-row-1-Column-3"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                3
+              </div>
+            </Cell>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow columns 1`] = `
+<div
+  className="data-grid-container fill"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={true}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "3rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "400px",
+            }
+          }
+        >
+          <HeaderCell
+            columnId="Column-0"
+            onResizeEnd={[Function]}
+            selectableRefCallback={[Function]}
+            text="Column 0"
+            width="200px"
+          />
+          <HeaderCell
+            columnId="Column-1"
+            onResizeEnd={[Function]}
+            selectableRefCallback={[Function]}
+            text="Column 1"
+            width="200px"
+          />
+        </div>
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "3rem",
+                "width": "550px",
+              }
+            }
+          >
+            <HeaderCell
+              columnId="Column-2"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 2"
+              width="200px"
+            />
+            <HeaderCell
+              columnId="Column-3"
+              onResizeEnd={[Function]}
+              selectableRefCallback={[Function]}
+              text="Column 3"
+              width="200px"
+            />
+          </div>
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "400px",
+          }
+        }
+      >
+        <Row
+          aria-owns="test-Overflow-Row-row-0-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-0-Section-section-0"
+          key="section-0-row-0"
+          rowId="row-0"
+          sectionId="section-0"
+          width="400px"
+        >
+          <Cell
+            columnId="Column-0"
+            key="section-0-row-0-Column-0"
+            rowId="row-0"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              0
+            </div>
+          </Cell>
+          <Cell
+            columnId="Column-1"
+            key="section-0-row-0-Column-1"
+            rowId="row-0"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              1
+            </div>
+          </Cell>
+        </Row>
+        <Row
+          aria-owns="test-Overflow-Row-row-1-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-1-Section-section-0"
+          key="section-0-row-1"
+          rowId="row-1"
+          sectionId="section-0"
+          width="400px"
+        >
+          <Cell
+            columnId="Column-0"
+            key="section-0-row-1-Column-0"
+            rowId="row-1"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              0
+            </div>
+          </Cell>
+          <Cell
+            columnId="Column-1"
+            key="section-0-row-1-Column-1"
+            rowId="row-1"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              1
+            </div>
+          </Cell>
+        </Row>
+      </div>
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        >
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-0-Section-section-0"
+            key="section-0-row-0"
+            rowId="row-0"
+            sectionId="section-0"
+            width="550px"
+          >
+            <Cell
+              columnId="Column-2"
+              key="section-0-row-0-Column-2"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                2
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-3"
+              key="section-0-row-0-Column-3"
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                3
+              </div>
+            </Cell>
+          </Row>
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-1-Section-section-0"
+            key="section-0-row-1"
+            rowId="row-1"
+            sectionId="section-0"
+            width="550px"
+          >
+            <Cell
+              columnId="Column-2"
+              key="section-0-row-1-Column-2"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                2
+              </div>
+            </Cell>
+            <Cell
+              columnId="Column-3"
+              key="section-0-row-1-Column-3"
+              rowId="row-1"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="200px"
+            >
+              <div>
+                3
+              </div>
+            </Cell>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with selectable rows, columns, and cells 1`] = `
+<div
+  className="data-grid-container fill"
+  onKeyDown={[Function]}
+  tabIndex="0"
+>
+  <div
+    className="leading-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+  <ContentContainer
+    fill={true}
+    footer={
+      <Scrollbar
+        onMove={[Function]}
+        onMoveEnd={[Function]}
+        refCallback={[Function]}
+        scrollbarRefCallback={[Function]}
+      />
+    }
+    header={
+      <div
+        className="header-container"
+        style={
+          Object {
+            "height": "3rem",
+          }
+        }
+      >
+        <div
+          className="pinned-header"
+          style={
+            Object {
+              "width": "250px",
+            }
+          }
+        >
+          <HeaderCell
+            columnId="DataGrid-rowSelectionColumn"
+            onResizeEnd={[Function]}
+            onSelect={[Function]}
+            selectableRefCallback={[Function]}
+            width="50px"
+          />
+          <HeaderCell
+            columnId="Column-0"
+            isResizable={true}
+            isSelectable={true}
+            onResizeEnd={[Function]}
+            onSelect={[Function]}
+            selectableRefCallback={[Function]}
+            sortIndicator="ascending"
+            text="Column 0"
+            width="200px"
+          />
+        </div>
+        <div
+          className="header-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="overflow-header"
+            style={
+              Object {
+                "height": "3rem",
+                "width": "450px",
+              }
+            }
+          >
+            <HeaderCell
+              columnId="Column-1"
+              isSelectable={true}
+              onResizeEnd={[Function]}
+              onSelect={[Function]}
+              selectableRefCallback={[Function]}
+              sortIndicator="descending"
+              text="Column 1"
+              width="300px"
+            />
+          </div>
+        </div>
+        <div
+          className="header-scrollbar-buffer"
+        />
+      </div>
+    }
+  >
+    <div
+      className="vertical-overflow-container"
+      onScroll={[Function]}
+    >
+      <div
+        className="pinned-content-container"
+        style={
+          Object {
+            "width": "250px",
+          }
+        }
+      >
+        <div
+          className="section-header-container"
+          key="section-0"
+        >
+          <SectionHeader
+            endAccessory={
+              <div>
+                End Accessory
+              </div>
+            }
+            isCollapsed={false}
+            isCollapsible={true}
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            startAccessory={
+              <div>
+                Start Accessory
+              </div>
+            }
+            text="Section 0"
+          />
+        </div>
+        <Row
+          aria-owns="test-Overflow-Row-row-0-Section-section-0"
+          height="2.5rem"
+          id="test-Pinned-Row-row-0-Section-section-0"
+          isSelected={true}
+          key="section-0-row-0"
+          rowId="row-0"
+          sectionId="section-0"
+          width="250px"
+        >
+          <Cell
+            columnId="DataGrid-rowSelectionColumn"
+            isSelectable={true}
+            key="section-0-row-0-DataGrid-rowSelectionColumn"
+            onHoverEnd={[Function]}
+            onHoverStart={[Function]}
+            onSelect={[Function]}
+            rowId="row-0"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="50px"
+          />
+          <Cell
+            columnId="Column-0"
+            isSelectable={true}
+            isSelected={true}
+            key="section-0-row-0-Column-0"
+            onSelect={[Function]}
+            rowId="row-0"
+            sectionId="section-0"
+            selectableRefCallback={[Function]}
+            width="200px"
+          >
+            <div>
+              0
+            </div>
+          </Cell>
+        </Row>
+      </div>
+      <div
+        className="overflowed-content-container"
+      >
+        <div
+          className="horizontal-overflow-container"
+          onScroll={[Function]}
+        >
+          <div
+            className="section-header-container"
+            key="section-0"
+          />
+          <Row
+            height="2.5rem"
+            id="test-Overflow-Row-row-0-Section-section-0"
+            isSelected={true}
+            key="section-0-row-0"
+            rowId="row-0"
+            sectionId="section-0"
+            width="450px"
+          >
+            <Cell
+              columnId="Column-1"
+              isSelectable={true}
+              key="section-0-row-0-Column-1"
+              onSelect={[Function]}
+              rowId="row-0"
+              sectionId="section-0"
+              selectableRefCallback={[Function]}
+              width="300px"
+            >
+              <div>
+                1
+              </div>
+            </Cell>
+          </Row>
+        </div>
+      </div>
+    </div>
+  </ContentContainer>
+  <div
+    className="terminal-focus-anchor"
+    onFocus={[Function]}
+    tabIndex="0"
+  />
+</div>
+`;

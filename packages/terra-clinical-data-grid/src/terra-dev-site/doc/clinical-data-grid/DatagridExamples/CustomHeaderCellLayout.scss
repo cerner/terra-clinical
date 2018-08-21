@@ -1,0 +1,25 @@
+:local {
+  .custom-header-cell {
+    height: 100%;
+    padding: 8px;
+    width: 100%;
+
+    .primary,
+    .secondary {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: center;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+    }
+
+    .primary {
+      font-weight: bold;
+    }
+
+    .secondary {
+      color: rgb(0, 128, 0);
+    }
+  }
+}
