@@ -13,7 +13,7 @@
 [![lerna](https://img.shields.io/badge/Maintained%20With-Lerna-cc00ff.svg)](https://lernajs.io/)
 [![devDependencies status](https://david-dm.org/cerner/terra-clinical/dev-status.svg)](https://david-dm.org/cerner/terra-clinical?type=dev)
 
-- [Supported Browsers](#supported-browsers)
+- [Supported Browsers](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
 - [Packages](#packages)
 - [Contributing](#contributing)
 - [LICENSE](#license)
@@ -43,16 +43,6 @@
 | terra-clinical-site |[![NPM version](http://img.shields.io/npm/v/terra-clinical-site.svg)](https://www.npmjs.org/package/terra-clinical-site) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 | terra-clinical-slide-group |[![NPM version](http://img.shields.io/npm/v/terra-clinical-slide-group.svg)](https://www.npmjs.org/package/terra-clinical-slide-group) | ![Stable](https://img.shields.io/badge/status-Deprecated-lightgrey.svg)|
 
-
-## Supported Browsers
-
-| Browser                     | Version |
-|-----------------------------|---------|
-| Chrome & Chrome for Android | Current |
-| Edge                        | Current |
-| Firefox                     | Current |
-| Internet Explorer           | 10 & 11 |
-| Safari & Mobile Safari      | Current |
 
 ## Internationalization (I18n)
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
