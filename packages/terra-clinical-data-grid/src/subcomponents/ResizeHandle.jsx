@@ -15,7 +15,7 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   /**
    * Function called upon release of the ResizeHandle. The id, as well as the new ResizeHandle position, will be provided
-   * as arguments.
+   * as arguments. Parameters: `onResizeStop(resizeHandleId, positionDelta)`
    */
   onResizeStop: PropTypes.func,
 };

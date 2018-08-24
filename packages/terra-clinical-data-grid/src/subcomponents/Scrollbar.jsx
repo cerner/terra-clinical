@@ -9,23 +9,23 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Function called once upon initial scroll of the scrollbar for a given movement event.
+   * Function called once upon initial scroll of the scrollbar for a given movement event. Parameters: `onMoveStart()`
    */
   onMoveStart: PropTypes.func,
   /**
-   * Function called once upon the end of scrolling of the scrollbar for a given movement event.
+   * Function called once upon the end of scrolling of the scrollbar for a given movement event. Parameters: `onMoveEnd()`
    */
   onMoveEnd: PropTypes.func,
   /**
-   * Function called upon movement of the scrollbar.
+   * Function called upon movement of the scrollbar. Parameters: `onMove()`
    */
   onMove: PropTypes.func,
   /**
-   * Function called with a reference to the Scrollbar's outer container element.
+   * Function called with a reference to the Scrollbar's outer container element. Parameters: `refCallback(ref)`
    */
   refCallback: PropTypes.func,
   /**
-   * Function called with a reference to the Scrollbar's scrollbar handle.
+   * Function called with a reference to the Scrollbar's scrollbar handle. Parameters: `scrollbarRefCallback(scrollbarRef)`
    */
   scrollbarRefCallback: PropTypes.func,
 };

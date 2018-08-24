@@ -9,7 +9,7 @@ class DatagridWithColumnResizing extends React.Component {
   static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `Row-${rowIndex}`,
-      cells: ((new Array(7).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
+      cells: ((new Array(9).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
         component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
       })),
@@ -39,9 +39,9 @@ class DatagridWithColumnResizing extends React.Component {
         },
         'Column-1': {
           id: 'Column-1',
-          width: 200,
-          text: 'Column 1',
-          isResizable: true,
+          width: 250,
+          text: 'Column 1 (Not Resizable)',
+          isResizable: false,
         },
         'Column-2': {
           id: 'Column-2',
@@ -73,6 +73,18 @@ class DatagridWithColumnResizing extends React.Component {
           text: 'Column 6',
           isResizable: true,
         },
+        'Column-7': {
+          id: 'Column-7',
+          width: 200,
+          text: 'Column 7',
+          isResizable: true,
+        },
+        'Column-8': {
+          id: 'Column-8',
+          width: 200,
+          text: 'Column 8',
+          isResizable: true,
+        },
       },
     };
   }
@@ -94,11 +106,14 @@ class DatagridWithColumnResizing extends React.Component {
             columns['Column-4'],
             columns['Column-5'],
             columns['Column-6'],
+            columns['Column-7'],
+            columns['Column-8'],
           ]}
           sections={[
             DatagridWithColumnResizing.buildSection('Section-0', 'Section 0', 15),
             DatagridWithColumnResizing.buildSection('Section-1', 'Section 1', 15),
           ]}
+          hasResizableColumns
           fill
           onRequestColumnResize={(columnId, width) => {
             const columnToUpdate = Object.assign({}, this.state.columns[columnId]);

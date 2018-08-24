@@ -46,7 +46,7 @@ const propTypes = {
   isResizable: PropTypes.bool,
   /**
    * Function that will be called upon the release of the ResizeHandle. The `isResizable` prop must be be true
-   * for this function to be called.
+   * for this function to be called. Parameters: `onResizeEnd(columnId, resizeDelta)`
    */
   onResizeEnd: PropTypes.func,
   /**
@@ -54,7 +54,7 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * Function that will be called with a ref to the Cell's selectable element.
+   * Function that will be called with a ref to the HeaderCell's selectable element. Parameters: `selectableRefCallback(selectableRef)`
    */
   selectableRefCallback: PropTypes.func,
 };

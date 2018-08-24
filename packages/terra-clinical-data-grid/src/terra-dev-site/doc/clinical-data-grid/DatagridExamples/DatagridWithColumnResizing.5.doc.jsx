@@ -8,7 +8,7 @@ import DatagridWithColumnResizingSrc from '!raw-loader!./DatagridWithColumnResiz
 
 const DatagridWithColumnResizingExample = () => (
   <ExampleTemplate
-    description="This example features column resizing using the draggable resize region in the column header."
+    description="This example features column resizing using the draggable resize region in the column header. Resizing for Column 1 is explicitly disabled."
     example={<DatagridWithColumnResizing />}
     exampleSrc={DatagridWithColumnResizingSrc}
   />

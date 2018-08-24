@@ -36,14 +36,17 @@ const propTypes = {
   isSelected: PropTypes.bool,
   /**
    * Function that will be called upon Cell selection. The `isSelectable` prop must be true for this function to be called.
+   * Parameters: `onSelect(sectionId, rowId, columnId)`
    */
   onSelect: PropTypes.func,
   /**
    * Function that will be called upon the mouse entering the selectable region of the Cell. The `isSelectable` prop must be true for this function to be called.
+   * Parameters: `onHoverStart(event)`
    */
   onHoverStart: PropTypes.func,
   /**
    * Function that will be called upon the mouse leaving the selectable region of the Cell. The `isSelectable` prop must be true for this function to be called.
+   * Parameters: `onHoverEnd(event)`
    */
   onHoverEnd: PropTypes.func,
   /**
@@ -51,7 +54,7 @@ const propTypes = {
    */
   children: PropTypes.node,
   /**
-   * Function that will be called with a ref to the Cell's selectable element.
+   * Function that will be called with a ref to the Cell's selectable element. Parameters: `selectableRefCallback(selectableRef)`
    */
   selectableRefCallback: PropTypes.func,
 };

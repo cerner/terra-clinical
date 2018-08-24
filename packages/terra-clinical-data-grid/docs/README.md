@@ -38,7 +38,7 @@ Sections are provided to the DataGrid through the `sections` prop. The order in 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**id**|string|required|none|An identifier for the section. This identifier should be unique across the set of sections provided to the DataGrid.|
-|**isCollapsible**|bool|optional|none|A boolean indicating whether or not the the section is collapsible. If true, the DataGrid's `onRequestSectionCollapse` function will be called upon selection of the section header.|
+|**isCollapsible**|bool|optional|none|A boolean indicating whether or not the the section is collapsible. If true, the DataGrid's `onRequestSectionCollapse` function will be called upon selection of the section header, and an icon indicating collapsibility will be rendered within the seaction header.|
 |**isCollapsed**|bool|optional|none|A boolean indicating whether or not the section is collapsed. If true, the DataGrid will not render the contents of the section.|
 |**text**|string|optional|none|A text string to render within the section header.|
 |**startAccessory**|component|optional|none|A component to render within the section header's start accessory position. This will be rendered ahead of `text`.

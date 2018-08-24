@@ -40,19 +40,19 @@ const propTypes = {
    */
   sections: PropTypes.arrayOf(sectionDataShape),
   /**
-   * Function that is called when a selectable cell is selected.
+   * Function that is called when a selectable cell is selected. Parameters: `onCellSelect(sectionId, rowId, columnId)`
    */
   onCellSelect: PropTypes.func,
   /**
-   * Function that is called when a selectable header cell is selected.
+   * Function that is called when a selectable header cell is selected. Parameters: `onColumnSelect(columnId)`
    */
   onColumnSelect: PropTypes.func,
   /**
-   * Function that is called when a resizable column is resized.
+   * Function that is called when a resizable column is resized. Parameters: `onRequestColumnResize(columnId, requestedWidth)`
    */
   onRequestColumnResize: PropTypes.func,
   /**
-   * Function that is called when a collapsible section is selected.
+   * Function that is called when a collapsible section is selected. Parameters: `onRequestSectionCollapse(sectionId)`
    */
   onRequestSectionCollapse: PropTypes.func,
   /**
@@ -69,13 +69,23 @@ const propTypes = {
    */
   hasSelectableRows: PropTypes.bool,
   /**
-   * Function that will be called when a row is selected.
+   * Function that will be called when a row is selected. Parameters: `onRowSelect(sectionId, rowId)`
    */
   onRowSelect: PropTypes.func,
+  /**
+   * Boolean indicating whether or not resizable columns are enabled for the DataGrid. If this prop is not enabled, the isResizable value of columns
+   * will be ignored.
+   */
+  hasResizableColumns: PropTypes.bool,
+  /**
+   * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
+   */
+  defaultColumnWidth: PropTypes.number,
   /**
    * Function that will be called when the DataGrid's vertical overflow reaches its terminal position. This can be used to contextually
    * load additional content in the DataGrid. If there is no additional content to present, this function should not be provided.
    * The `fill` prop must also be provided as true; otherwise, the DataGrid will not overflow internally and will not know to request more content.
+   * Parameters: `onRequestContent()`
    */
   onRequestContent: PropTypes.func,
   /**
@@ -89,13 +99,9 @@ const defaultProps = {
   overflowColumns: [],
   rowHeight: '2.5rem',
   headerHeight: '3rem',
+  defaultColumnWidth: 200,
   sections: [],
 };
-
-/**
- * If a width is not provided for a given column, the DEFAULT_COLUMN_WIDTH value will be used.
- */
-const DEFAULT_COLUMN_WIDTH = 200;
 
 /**
  * The VOID_COLUMN_WIDTH value controls the trailing empty column size. This empty column is used
@@ -155,21 +161,23 @@ class DataGrid extends React.Component {
   /**
    * Returns the column's specified width or the default width if not width is defined.
    * @param {Object} column Object adhering to the columnData shape.
+   * @param {Number} defaultColumnWidth Number (in px) indicating the default width to be used if a column's width is otherwise undefined.
    */
-  static getWidthForColumn(column) {
-    return (column && column.width) || DEFAULT_COLUMN_WIDTH;
+  static getWidthForColumn(column, defaultColumnWidth) {
+    return (column && column.width) || defaultColumnWidth;
   }
 
   /**
    * Returns the combined width of every column provided.
    * @param {Array} columns Array of Objects adhering to the columnData shape.
+   * @param {Number} defaultColumnWidth Number (in px) indicating the default width to be used if a column's width is otherwise undefined.
    */
-  static getTotalColumnWidth(columns) {
+  static getTotalColumnWidth(columns, defaultColumnWidth) {
     if (!columns) {
       return 0;
     }
 
-    return columns.reduce((totalWidth, column) => totalWidth + DataGrid.getWidthForColumn(column), 0);
+    return columns.reduce((totalWidth, column) => totalWidth + DataGrid.getWidthForColumn(column, defaultColumnWidth), 0);
   }
 
   /**
@@ -192,9 +200,13 @@ class DataGrid extends React.Component {
    * @param {Object} props Object conforming to DataGrid's prop types.
    */
   static getOverflowColumns(props) {
-    const { overflowColumns } = props;
+    const { overflowColumns, hasResizableColumns } = props;
 
-    return overflowColumns.concat([DataGrid.getVoidColumn()]);
+    if (hasResizableColumns) {
+      return overflowColumns.concat([DataGrid.getVoidColumn()]);
+    }
+
+    return overflowColumns;
   }
 
   /**
@@ -243,8 +255,8 @@ class DataGrid extends React.Component {
    */
   static getDerivedStateFromProps(nextProps) {
     return {
-      pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(nextProps)),
-      overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(nextProps)),
+      pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(nextProps), nextProps.defaultColumnWidth),
+      overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(nextProps), nextProps.defaultColumnWidth),
     };
   }
 
@@ -345,8 +357,8 @@ class DataGrid extends React.Component {
      * generated and cached in state to limit the amount of iteration performed by the render functions.
      */
     this.state = {
-      pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(props)),
-      overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(props)),
+      pinnedColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getPinnedColumns(props), props.defaultColumnWidth),
+      overflowColumnWidth: DataGrid.getTotalColumnWidth(DataGrid.getOverflowColumns(props), props.defaultColumnWidth),
     };
   }
 
@@ -415,7 +427,7 @@ class DataGrid extends React.Component {
    * Column Sizing
    */
   updateColumnWidth(columnId, widthDelta) {
-    const { onRequestColumnResize } = this.props;
+    const { onRequestColumnResize, defaultColumnWidth } = this.props;
 
     if (!onRequestColumnResize) {
       return;
@@ -445,7 +457,7 @@ class DataGrid extends React.Component {
      */
     const pageDirection = document.documentElement.getAttribute('dir');
     const deltaForDirection = pageDirection === 'rtl' ? widthDelta * -1 : widthDelta;
-    let newWidth = DataGrid.getWidthForColumn(columnToUpdate) + deltaForDirection;
+    let newWidth = DataGrid.getWidthForColumn(columnToUpdate, defaultColumnWidth) + deltaForDirection;
 
     /**
      * If the column being updated is a pinned column, we need to ensure that the new width will not cause the pinned columns to overflow the
@@ -867,7 +879,7 @@ class DataGrid extends React.Component {
    */
   renderHeaderCell(columnData) {
     const columnId = columnData.id;
-    const { onColumnSelect } = this.props;
+    const { onColumnSelect, hasResizableColumns, defaultColumnWidth } = this.props;
 
     /**
      * Rather than render an empty HeaderCell for the void column, we just render nothing.
@@ -883,9 +895,9 @@ class DataGrid extends React.Component {
         columnId={columnId}
         text={columnData.text}
         sortIndicator={columnData.sortIndicator}
-        width={`${DataGrid.getWidthForColumn(columnData)}px`}
+        width={`${DataGrid.getWidthForColumn(columnData, defaultColumnWidth)}px`}
         isSelectable={columnData.isSelectable}
-        isResizable={columnData.isResizable}
+        isResizable={hasResizableColumns && columnData.isResizable}
         onResizeEnd={this.updateColumnWidth}
         onSelect={onColumnSelect}
         selectableRefCallback={(ref) => { this.headerCellRefs[columnId] = ref; }}
@@ -969,7 +981,7 @@ class DataGrid extends React.Component {
   }
 
   renderRowSelectionCell(section, row, column) {
-    const { onRowSelect } = this.props;
+    const { onRowSelect, defaultColumnWidth } = this.props;
     const cellKey = `${section.id}-${row.id}-${column.id}`;
 
     return (
@@ -978,10 +990,14 @@ class DataGrid extends React.Component {
         sectionId={section.id}
         rowId={row.id}
         columnId={column.id}
-        width={`${DataGrid.getWidthForColumn(column)}px`}
+        width={`${DataGrid.getWidthForColumn(column, defaultColumnWidth)}px`}
         isSelectable={row.isSelectable}
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
         onHoverStart={() => {
+          /**
+           * Because the pinned and overflow rows are two separate elements, we need to retrieve them and add the appropriate hover styles
+           * to both to ensure a consistent row styling.
+           */
           const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
           for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
             rowElements[i].classList.add('hover');
@@ -999,7 +1015,7 @@ class DataGrid extends React.Component {
   }
 
   renderCell(cell, section, row, column) {
-    const { onCellSelect } = this.props;
+    const { onCellSelect, defaultColumnWidth } = this.props;
     const cellKey = `${section.id}-${row.id}-${column.id}`;
 
     return (
@@ -1008,7 +1024,7 @@ class DataGrid extends React.Component {
         sectionId={section.id}
         rowId={row.id}
         columnId={column.id}
-        width={`${DataGrid.getWidthForColumn(column)}px`}
+        width={`${DataGrid.getWidthForColumn(column, defaultColumnWidth)}px`}
         onSelect={onCellSelect}
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
@@ -1110,6 +1126,8 @@ class DataGrid extends React.Component {
       headerHeight,
       hasSelectableRows,
       onRowSelect,
+      hasResizableColumns,
+      defaultColumnWidth,
       fill,
       onRequestContent,
       ...customProps

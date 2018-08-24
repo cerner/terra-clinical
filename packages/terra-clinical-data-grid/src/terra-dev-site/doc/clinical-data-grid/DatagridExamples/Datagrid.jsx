@@ -8,17 +8,15 @@ import ContentCellLayout from './ContentCellLayout';
 const pinnedColumns = [
   {
     id: 'Column-0',
-    width: 200,
     text: 'Column 0',
+    width: 100,
   },
   {
     id: 'Column-1',
-    width: 200,
     text: 'Column 1',
   },
   {
     id: 'Column-2',
-    width: 200,
     text: 'Column 2',
   },
 ];
@@ -26,37 +24,30 @@ const pinnedColumns = [
 const overflowColumns = [
   {
     id: 'Column-3',
-    width: 200,
     text: 'Column 3',
   },
   {
     id: 'Column-4',
-    width: 200,
     text: 'Column 4',
   },
   {
     id: 'Column-5',
-    width: 200,
     text: 'Column 5',
   },
   {
     id: 'Column-6',
-    width: 200,
     text: 'Column 6',
   },
   {
     id: 'Column-7',
-    width: 200,
     text: 'Column 7',
   },
   {
     id: 'Column-8',
-    width: 200,
     text: 'Column 8',
   },
   {
     id: 'Column-9',
-    width: 200,
     text: 'Column 9',
   },
 ];
@@ -91,6 +82,7 @@ class StaticDataGrid extends React.Component {
           sections={[
             StaticDataGrid.buildSection('section_0', 30),
           ]}
+          defaultColumnWidth={250}
           fill
         />
       </div>

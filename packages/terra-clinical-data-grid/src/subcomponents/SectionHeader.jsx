@@ -38,11 +38,11 @@ const propTypes = {
   isCollapsed: PropTypes.bool,
   /**
    * Function called upon selection of the SectionHeader. The `isCollapsible` prop must be true for this function
-   * to be executed.
+   * to be executed. Parameters: `onRequestSectionCollapse(sectionId)`
    */
   onRequestSectionCollapse: PropTypes.func,
   /**
-   * Function that will be called with a ref to the SectionHeader's selectable element.
+   * Function that will be called with a ref to the SectionHeader's selectable element. Parameters: `selectableRefCallback(selectableRef)`
    */
   selectableRefCallback: PropTypes.func,
   /**
