@@ -1,8 +1,8 @@
 # Terra Clinical Label Value View
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-clinical-label-value-view.svg)](https://www.npmjs.org/package/terra-clinical-label-value-view)
-[![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
+[![NPM version](http://img.shields.io/npm/v/terra-clinical-label-value-view)](https://www.npmjs.org/package/terra-clinical-label-value-view)
+[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
 The label value view component displays a label and the associated value or list
 of values underneath the label.
