@@ -60,19 +60,5 @@ describe('SectionHeader Snapshot Tests', () => {
 
     expect(sectionHeader).toMatchSnapshot();
   });
-
-  // it('should render a Scrollbar with all provided props', () => {
-  //   const scrollbar = shallow((
-  //     <Scrollbar
-  //       onMoveStart={() => {}}
-  //       onMoveEnd={() => {}}
-  //       onMove={() => {}}
-  //       refCallback={() => {}}
-  //       scrollbarRefCallback={() => {}}
-  //     />
-  //   ));
-
-  //   expect(scrollbar).toMatchSnapshot();
-  // });
 });
 
