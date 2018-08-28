@@ -1,7 +1,7 @@
 # Terra Client Item View
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-clinical-item-view)](https://www.npmjs.org/package/terra-clinical-item-view)
+[![NPM version](https://badgen.net/npm/v/terra-clinical-item-view)](https://www.npmjs.org/package/terra-clinical-item-view)
 [![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
 The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.

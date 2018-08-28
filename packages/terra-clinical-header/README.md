@@ -1,7 +1,7 @@
 # Terra Clinical Header
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-clinical-header)](https://www.npmjs.org/package/terra-clinical-header)
+[![NPM version](https://badgen.net/npm/v/terra-clinical-header)](https://www.npmjs.org/package/terra-clinical-header)
 [![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
 A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. 

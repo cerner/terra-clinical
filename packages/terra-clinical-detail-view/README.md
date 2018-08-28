@@ -1,7 +1,7 @@
 # Terra Clinical DetailView
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-clinical-detail-view)](https://www.npmjs.org/package/terra-clinical-detail-view)
+[![NPM version](https://badgen.net/npm/v/terra-clinical-detail-view)](https://www.npmjs.org/package/terra-clinical-detail-view)
 [![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
 Detail Views allows you to create a view with text at different levels of importance. A detail view can contain a title, subtitles, a graph, a footer and a list of elements that can display information at a more detailed level.
