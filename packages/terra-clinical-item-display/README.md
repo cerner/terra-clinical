@@ -1,8 +1,8 @@
 # Terra Client Item Display
 
 
-[![NPM version](http://img.shields.io/npm/v/terra-clinical-item-display.svg)](https://www.npmjs.org/package/terra-clinical-item-display)
-[![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
+[![NPM version](https://badgen.net/npm/v/terra-clinical-item-display)](https://www.npmjs.org/package/terra-clinical-item-display)
+[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
 The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.
 
