@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated test screenshots including the datepicker component
 
 2.12.0 - (August 30, 2018)
 ----------
