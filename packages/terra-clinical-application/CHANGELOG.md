@@ -4,6 +4,17 @@ ChangeLog
 Unreleased
 ----------
 
+2.8.0 - (September 5, 2018)
+----------
+### Changed
+* Bumped minimum react peerDependency version from ^16.2.0 to ^16.4.2
+* Bumped minimum react-dom peerDependency version from ^16.2.0 to ^16.4.2
+
+2.7.0 - (August 30, 2018)
+----------
+### Changed
+* Minor dependency updates
+
 2.6.0 - (July 3, 2018)
 ----------
 ### Fixed

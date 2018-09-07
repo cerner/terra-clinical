@@ -1,6 +1,6 @@
 {
   "name": "terra-clinical-onset-picker",
-  "version": "2.11.1",
+  "version": "2.13.0",
   "description": "The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for use in onset scenarios.",
   "main": "lib/OnsetPicker.js",
   "repository": {
@@ -27,8 +27,8 @@
     "react-intl": "^2.4.0"
   },
   "peerDependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "terra-base": "^3.0.0"
   },
   "dependencies": {

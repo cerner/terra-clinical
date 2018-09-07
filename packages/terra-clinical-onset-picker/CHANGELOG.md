@@ -4,6 +4,18 @@ ChangeLog
 Unreleased
 ----------
 
+2.13.0 - (September 5, 2018)
+----------
+### Changed
+* Bumped minimum react peerDependency version from ^16.2.0 to ^16.4.2
+* Bumped minimum react-dom peerDependency version from ^16.2.0 to ^16.4.2
+* Updated test screenshots including the datepicker component
+
+2.12.0 - (August 30, 2018)
+----------
+### Changed
+* Minor dependency updates
+
 2.11.1 - (July 25, 2018)
 ----------
 ### Changed
