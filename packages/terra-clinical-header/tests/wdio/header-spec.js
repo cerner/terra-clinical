@@ -84,4 +84,3 @@ describe('Clinical header', () => {
     Terra.should.beAccessible();
   });
 });
-

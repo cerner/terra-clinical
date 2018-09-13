@@ -153,7 +153,7 @@ class OnsetPicker extends React.Component {
    */
   changeGranularity(event) {
     if (event.target.value === GranularityOptions.AGE) { // Calculate age values and update onsetDate to match age calculation
-      const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, this.state.onsetDate);
+      const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, this.setState(prevState => ({ onsetDate: prevState.onsetDate })));
       const newDate = moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit);
 
       this.setState({
@@ -186,11 +186,14 @@ class OnsetPicker extends React.Component {
    * Change state for the age when using AGE granularity, and update onset date
    */
   changeAge(event) {
-    const newDate = moment(this.props.birthdate).add(Number(event.target.value), this.state.ageUnit);
+    let newDate;
 
-    this.setState({
-      age: Number(event.target.value),
-      onsetDate: newDate,
+    this.setState((prevState) => {
+      newDate = moment(this.props.birthdate).add(Number(event.target.value), prevState.ageUnit);
+      return {
+        age: Number(event.target.value),
+        onsetDate: newDate,
+      };
     });
     this.handleDateChange(newDate);
   }
@@ -199,11 +202,14 @@ class OnsetPicker extends React.Component {
    * Change state for duration when using age granularity, and update onset date
    */
   changeAgeUnit(event) {
-    const newDate = moment(this.props.birthdate).add(this.state.age, event.target.value);
+    let newDate;
 
-    this.setState({
-      ageUnit: event.target.value,
-      onsetDate: newDate,
+    this.setState((prevState) => {
+      newDate = moment(this.props.birthdate).add(prevState.age, event.target.value);
+      return {
+        ageUnit: event.target.value,
+        onsetDate: newDate,
+      };
     });
     this.handleDateChange(newDate);
   }
@@ -212,17 +218,22 @@ class OnsetPicker extends React.Component {
    * Update onset date when year changes
    */
   changeYear(event) {
-    let newDate = this.state.onsetDate.year(event.target.value);
-    const newMonths = OnsetUtils.allowedMonths(this.context.intl, this.props.birthdate, newDate);
+    let newDate;
 
-    // Check if new onset month is available, otherwise change month to first possible month
-    if (newMonths.filter(month => parseInt(month.value, 10) === newDate.month()).length === 0) {
-      newDate = moment(newDate).month(newMonths[0].value);
-    }
+    this.setState((prevState) => {
+      newDate = prevState.onsetDate.year(event.target.value);
+      const newMonths = OnsetUtils.allowedMonths(this.context.intl, this.props.birthdate, newDate);
 
-    this.setState({
-      onsetDate: newDate,
+      // Check if new onset month is available, otherwise change month to first possible month
+      if (newMonths.filter(month => parseInt(month.value, 10) === newDate.month()).length === 0) {
+        newDate = moment(newDate).month(newMonths[0].value);
+      }
+
+      return {
+        onsetDate: newDate,
+      };
     });
+
     this.handleDateChange(newDate);
   }
 
@@ -230,7 +241,14 @@ class OnsetPicker extends React.Component {
    * Update onset date when month changes
    */
   changeMonth(event) {
-    const newDate = this.state.onsetDate.month(event.target.value);
+    let newDate;
+
+    this.setState((prevState) => {
+      newDate = prevState.onsetDate.month(event.target.value);
+      return {
+        onsetDate: newDate,
+      };
+    });
 
     this.setState({ onsetDate: newDate });
     this.handleDateChange(newDate);
@@ -275,65 +293,75 @@ class OnsetPicker extends React.Component {
 
     let granularitySelect = null;
     if (this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) {
-      granularitySelect = (<SelectField
-        className={cx('field-inline')}
-        options={[{ value: GranularityOptions.AGE, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
-                  { value: GranularityOptions.YEAR, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
-                  { value: GranularityOptions.MONTH, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonth' }) },
-                  { value: GranularityOptions.DATE, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
-        name={this.props.granularitySelectName}
-        defaultValue={this.state.granularity}
-        onChange={this.changeGranularity}
-        isInline
-      />);
+      granularitySelect = (
+        <SelectField
+          className={cx('field-inline')}
+          options={[{ value: GranularityOptions.AGE, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityAge' }) },
+            { value: GranularityOptions.YEAR, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityYear' }) },
+            { value: GranularityOptions.MONTH, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityMonth' }) },
+            { value: GranularityOptions.DATE, display: intl.formatMessage({ id: 'Terra.onsetPicker.granularityDate' }) }]}
+          name={this.props.granularitySelectName}
+          defaultValue={this.state.granularity}
+          onChange={this.changeGranularity}
+          isInline
+        />
+      );
     }
 
     let ageSelect = null;
     let ageUnitSelect = null;
     if (this.state.granularity === GranularityOptions.AGE) {
-      ageSelect = (<NumberField
-        className={cx('field-inline')}
-        data-terra-clinical-onset-picker="age"
-        min={0}
-        max={OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit)}
-        step={1}
-        defaultValue={this.state.age}
-        onChange={this.changeAge}
-        isInline
-      />);
+      ageSelect = (
+        <NumberField
+          className={cx('field-inline')}
+          data-terra-clinical-onset-picker="age"
+          min={0}
+          max={OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit)}
+          step={1}
+          defaultValue={this.state.age}
+          onChange={this.changeAge}
+          isInline
+        />
+      );
 
-      ageUnitSelect = (<SelectField
-        className={cx('field-inline')}
-        data-terra-clinical-onset-picker="age_unit"
-        options={OnsetUtils.allowedAgeUnits(this.props.birthdate, intl)}
-        defaultValue={this.state.ageUnit.toString()}
-        onChange={this.changeAgeUnit}
-        isInline
-      />);
+      ageUnitSelect = (
+        <SelectField
+          className={cx('field-inline')}
+          data-terra-clinical-onset-picker="age_unit"
+          options={OnsetUtils.allowedAgeUnits(this.props.birthdate, intl)}
+          defaultValue={this.state.ageUnit.toString()}
+          onChange={this.changeAgeUnit}
+          isInline
+        />
+      );
     }
 
     let monthSelect = null;
     if (this.state.granularity === GranularityOptions.MONTH) {
-      monthSelect = (<SelectField
-        className={cx('field-inline')}
-        data-terra-clinical-onset-picker="month"
-        options={OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
-        defaultValue={this.state.onsetDate.month().toString()}
-        onChange={this.changeMonth}
-        isInline
-      />);
+      monthSelect = (
+        <SelectField
+          className={cx('field-inline')}
+          data-terra-clinical-onset-picker="month"
+          options={OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)}
+          defaultValue={this.state.onsetDate.month().toString()}
+          onChange={this.changeMonth}
+          isInline
+        />
+      );
     }
 
     let yearSelect = null;
     if (this.state.granularity === GranularityOptions.YEAR || this.state.granularity === GranularityOptions.MONTH) {
-      yearSelect = (<SelectField
-        className={cx('field-inline')}
-        data-terra-clinical-onset-picker="year"
-        options={OnsetUtils.allowedYears(this.props.birthdate)}
-        defaultValue={this.state.onsetDate.year().toString()}
-        onChange={this.changeYear}
-        isInline
-      />);
+      yearSelect = (
+        <SelectField
+          className={cx('field-inline')}
+          data-terra-clinical-onset-picker="year"
+          options={OnsetUtils.allowedYears(this.props.birthdate)}
+          defaultValue={this.state.onsetDate.year().toString()}
+          onChange={this.changeYear}
+          isInline
+        />
+      );
     }
 
     let dateSelect = null;
@@ -368,7 +396,8 @@ class OnsetPicker extends React.Component {
           {granularitySelect}
         </Fieldset>
 
-        {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) &&
+        {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN)
+          && (
           <Fieldset className={cx('fieldset')}>
             {ageSelect}
             {ageUnitSelect}
@@ -376,6 +405,7 @@ class OnsetPicker extends React.Component {
             {yearSelect}
             {dateSelect}
           </Fieldset>
+          )
         }
       </div>
     );

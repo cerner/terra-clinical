@@ -35,14 +35,13 @@ class FiveYears extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    this.setState({
+    this.setState(prevState => ({
       submittedData: {
-        precision: this.state.precision,
-        granularity: this.state.granularity,
-        onsetDate: this.state.onsetDate,
+        precision: prevState.precision,
+        granularity: prevState.granularity,
+        onsetDate: prevState.onsetDate,
       },
-    });
+    }));
   }
 
   render() {

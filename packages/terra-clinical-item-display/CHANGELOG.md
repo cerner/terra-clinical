@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Disable cyclical depencency error per eslint v5 update. Logged issue: https://github.com/cerner/terra-clinical/issues/389
 
 2.13.0 - (September 5, 2018)
 ----------
