@@ -44,10 +44,11 @@
 
   .attention {
     color: var(--terra-clinical-item-display-attention-color, #c00);
-    font-weight: 700;
+    font-weight: var(--terra-clinical-item-display-attention-font-weight, 700);
   }
 
   .strong {
+    color: var(--terra-clinical-item-display-strong-color);
     font-weight: 700;
   }
 
