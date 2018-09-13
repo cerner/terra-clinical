@@ -1,5 +1,3 @@
-/* global browser, expect, Terra, before */
-
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
 
 describe('Clinical header', () => {
