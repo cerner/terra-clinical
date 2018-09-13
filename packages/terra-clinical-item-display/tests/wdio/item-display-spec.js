@@ -15,8 +15,8 @@ describe('ItemDisplay', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-item-display-attention-color': 'pink',
-        '--terra-item-display-secondary-color': 'green',
+        '--terra-clinical-item-display-attention-color': 'pink',
+        '--terra-clinical-item-display-secondary-color': 'green',
       },
     });
   });
@@ -28,7 +28,8 @@ describe('ItemDisplay', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-item-display-disabled-inline-icon-color': 'rgba(255, 0, 0, 1)',
+        '--terra-clinical-item-display-disabled-inline-icon-opacity': '0.5',
+        '--terra-clinical-item-display-disabled-inline-icon-color': 'rgba(255, 0, 0, 1)',
       },
     });
   });
@@ -37,6 +38,13 @@ describe('ItemDisplay', () => {
     before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/icon-item-display'));
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
+
+    Terra.should.themeCombinationOfCustomProperties({
+      testName: 'themed',
+      properties: {
+        '--terra-clinical-item-display-inline-icon-padding-right': '10px',
+      },
+    });
   });
 
   describe('scaling', () => {

@@ -9,7 +9,7 @@ describe('ItemComment', () => {
   });
 
   describe('Text', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/text-item-comment'));
+    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/text-item-comment'));
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
   });

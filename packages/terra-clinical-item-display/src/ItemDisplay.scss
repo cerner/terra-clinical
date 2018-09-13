@@ -17,7 +17,7 @@
   .inline-icon {
     flex: 0 0 auto;
     overflow: hidden;
-    padding-right: 0.357142857142857rem;
+    padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.357142857142857rem);
   }
 
   .inline-icon > * {
@@ -30,20 +30,21 @@
   }
 
   .is-disabled {
-    opacity: 0.2;
+    // opacity: 0.2;
+    opacity: var(--terra-clinical-item-display-disabled-inline-icon-opacity, 0.2);
 
     .inline-icon {
-      color: var(--terra-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
+      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
     }
   }
 
   // Text Styles
   .secondary {
-    color: var(--terra-item-display-secondary-color, #75767d);
+    color: var(--terra-clinical-item-display-secondary-color, #75767d);
   }
 
   .attention {
-    color: var(--terra-item-display-attention-color, #c00);
+    color: var(--terra-clinical-item-display-attention-color, #c00);
     font-weight: 700;
   }
 
