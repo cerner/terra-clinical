@@ -49,10 +49,11 @@
 
   .strong {
     color: var(--terra-clinical-item-display-strong-color);
-    font-weight: 700;
+    font-weight: var(--terra-clinical-item-display-strong-font-weight, 700);
   }
 
   .strike-through {
+    color: var(--terra-clinical-item-display-strike-through-color);
     text-decoration: line-through;
   }
 }
