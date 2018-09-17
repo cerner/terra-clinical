@@ -67,7 +67,7 @@ Cells define the content rendered in a given section, row, and column.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|required|none|An identifier for the row. This identifier should be unique across the set of rows provided to a given section.|
+|**columnId**|string|required|none|A column identifier for the cell. This identifier should be unique across the set of cells provided to a given row.|
 |**isSelectable**|bool|optional|none|A boolean indicating whether or not the cell is selectable.|
 |**isSelected**|bool|optional|none|A boolean indicating whether or not the cell should render as selected.|
 |**component**|component|optional|none|A component to render within the cell.|
