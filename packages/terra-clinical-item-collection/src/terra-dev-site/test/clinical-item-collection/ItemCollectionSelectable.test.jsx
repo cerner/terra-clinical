@@ -21,11 +21,8 @@ This example it set up to be a single-selection example, however the Item Collec
            gives implementors the flexibilty to create their own selection implementation.
         </p>
         <p id="selected-key">
-          {' '}
-Selected Item:
+          Selected Item:
           {this.state.selectedItemKey}
-          {' '}
-
         </p>
         <ItemCollection
           id="ItemCollection"
