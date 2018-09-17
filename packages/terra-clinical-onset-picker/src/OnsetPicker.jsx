@@ -234,7 +234,7 @@ class OnsetPicker extends React.Component {
    */
   changeMonth(event) {
     const month = event.target.value;
-    // this.setState(this.state.onsetDate.month(event.target.value),
+
     this.setState(prevState => (
       { onsetDate: prevState.onsetDate.month(month) }
     ), () => this.handleDateChange(this.state.onsetDate));
