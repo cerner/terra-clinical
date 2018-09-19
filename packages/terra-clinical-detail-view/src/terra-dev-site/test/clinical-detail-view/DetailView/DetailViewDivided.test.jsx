@@ -11,7 +11,7 @@ const DetailViewDivided = () => (
     title="Header"
     secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
     subtitles={['subtitle1', 'subTitle2']}
-    graph={
+    graph={(
       <div
         style={{
           border: '1px solid black', height: '20em', width: '25em', marginBottom: '0.714rem',
@@ -19,7 +19,7 @@ const DetailViewDivided = () => (
       >
       This is where any visualizations would go
       </div>
-    }
+)}
     accessory={accessoryElement}
     details={[
       (

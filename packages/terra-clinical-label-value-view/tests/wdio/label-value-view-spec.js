@@ -1,5 +1,3 @@
-/* global browser, before, Terra */
-
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
 // Remove once #306 is resolved
 const rules = { 'color-contrast': { enabled: false } };

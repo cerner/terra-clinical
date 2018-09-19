@@ -100,7 +100,7 @@ it('should render an ItemCollection with all elements', () => {
 
 it('should render an ItemCollection with list styles', () => {
   const itemCollection = (
-    <ItemCollection isListDivided >
+    <ItemCollection isListDivided>
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
@@ -114,7 +114,7 @@ it('should render an ItemCollection with list styles', () => {
 
 it('should render an ItemCollection with table styles', () => {
   const itemCollection = (
-    <ItemCollection isTablePadded isTableStriped >
+    <ItemCollection isTablePadded isTableStriped>
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
@@ -128,7 +128,7 @@ it('should render an ItemCollection with table styles', () => {
 
 it('should render an ItemCollection with a breakpoint', () => {
   const itemCollection = (
-    <ItemCollection breakpoint="tiny" >
+    <ItemCollection breakpoint="tiny">
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display text="Display 1" />
         <ItemCollection.Display text="Display 2" />
@@ -142,7 +142,7 @@ it('should render an ItemCollection with a breakpoint', () => {
 
 it('should render an ItemCollection with onSelect', () => {
   const itemCollection = (
-    <ItemCollection onSelect={() => {}} >
+    <ItemCollection onSelect={() => {}}>
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display isSelectable text="Display 1" />
       </ItemCollection.Item>
@@ -154,7 +154,7 @@ it('should render an ItemCollection with onSelect', () => {
 
 it('should render an ItemCollection with custom props', () => {
   const itemCollection = (
-    <ItemCollection onSelect={() => { }} id="foo" className="bar" >
+    <ItemCollection onSelect={() => { }} id="foo" className="bar">
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display isSelectable text="Display 1" />
       </ItemCollection.Item>

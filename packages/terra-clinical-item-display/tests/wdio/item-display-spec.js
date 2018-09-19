@@ -1,4 +1,3 @@
-/* global browser, describe, it, expect, before, Terra */
 const viewports = Terra.viewports('tiny', 'medium');
 
 describe('ItemDisplay', () => {

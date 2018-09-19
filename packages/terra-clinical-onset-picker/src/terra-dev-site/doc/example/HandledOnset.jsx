@@ -35,13 +35,13 @@ class HandledOnsetExample extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.setState({
+    this.setState(prevState => ({
       submittedData: {
-        precision: this.state.precision,
-        granularity: this.state.granularity,
-        onsetDate: this.state.onsetDate,
+        precision: prevState.precision,
+        granularity: prevState.granularity,
+        onsetDate: prevState.onsetDate,
       },
-    });
+    }));
   }
 
   render() {
@@ -66,7 +66,15 @@ class HandledOnsetExample extends React.Component {
           onsetDateInputOnChange={this.handleOnset}
         />
         <button type="submit">Submit</button>
-        {this.state.submittedData && <div><hr /><p>Form was submitted with {JSON.stringify(this.state.submittedData)}</p></div>}
+        {this.state.submittedData && (
+        <div>
+          <hr />
+          <p>
+Form was submitted with
+            {JSON.stringify(this.state.submittedData)}
+          </p>
+        </div>
+        )}
       </form>
     );
   }
