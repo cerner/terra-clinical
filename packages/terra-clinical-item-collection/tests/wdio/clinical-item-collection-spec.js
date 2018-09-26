@@ -1,6 +1,4 @@
 /* eslint no-unused-expressions: 0 */
-/* global before, browser, Terra, expect */
-
 const ignoredA11y = {
   // https://github.com/cerner/terra-clinical/issues/378
   'color-contrast': { enabled: false },

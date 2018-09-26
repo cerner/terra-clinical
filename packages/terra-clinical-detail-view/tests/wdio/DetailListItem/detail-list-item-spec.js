@@ -1,5 +1,3 @@
-/* global browser, Terra, before */
-
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge');
 
 describe('Detail List Item', () => {

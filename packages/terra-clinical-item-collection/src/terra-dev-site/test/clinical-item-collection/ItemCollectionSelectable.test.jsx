@@ -16,10 +16,14 @@ class DefaultItemCollection extends React.Component {
     return (
       <div>
         <h3>This a POC Selectable ItemCollection Example.</h3>
-        <p>This example it set up to be a single-selection example, however the Item Collection
+        <p>
+This example it set up to be a single-selection example, however the Item Collection
            gives implementors the flexibilty to create their own selection implementation.
         </p>
-        <p id="selected-key"> Selected Item: {this.state.selectedItemKey} </p>
+        <p id="selected-key">
+          Selected Item:
+          {this.state.selectedItemKey}
+        </p>
         <ItemCollection
           id="ItemCollection"
           onSelect={this.handleSelection}
@@ -36,7 +40,7 @@ class DefaultItemCollection extends React.Component {
             isSelected={this.state.selectedItemKey === '1'}
             startAccessory={<ItemCollection.Comment />}
             comment={<ItemCollection.Comment text="test comment" />}
-            endAccessory={<button size="medium">Disclose</button>}
+            endAccessory={<button type="button" size="medium">Disclose</button>}
             showListItemChevron
           >
             <ItemCollection.Display text="Display 1" />
@@ -49,7 +53,7 @@ class DefaultItemCollection extends React.Component {
             isSelected={this.state.selectedItemKey === '2'}
             isSelectable
             comment={<ItemCollection.Comment text="test comment" />}
-            endAccessory={<button size="medium">Disclose</button>}
+            endAccessory={<button type="button" size="medium">Disclose</button>}
             showListItemChevron
           >
             <ItemCollection.Display text="Display 1" />
