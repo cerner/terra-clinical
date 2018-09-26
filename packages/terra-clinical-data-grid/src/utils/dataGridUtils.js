@@ -127,6 +127,90 @@ const calculateScrollbarPosition = (scrollbarWidth, containerWidth, currentScrol
   };
 };
 
+/**
+ * Generates identifiers for accessible elements within the DataGrid.
+ * @param {Object} props The DataGrid props.
+ * @param {Object} headerCellRefs The references to accessible header cell elements.
+ * @param {Object} sectionRefs The references to accessible section header elements.
+ * @param {Object} cellRefs The references to accessible cell elements.
+ */
+const generateAccessibleContentIndex = (props, headerCellRefs, sectionRefs, cellRefs) => {
+  const { sections } = props;
+
+  const pinnedColumns = getPinnedColumns(props);
+  const overflowColumns = getOverflowColumns(props);
+
+  const orderedColumnIds = pinnedColumns.concat(overflowColumns).map(column => column.id);
+
+  let accessibilityStack = [];
+
+  pinnedColumns.forEach((column) => {
+    const headerRef = headerCellRefs[column.id];
+    if (headerRef) {
+      if (column.isSelectable) {
+        accessibilityStack.push(headerRef);
+      }
+
+      accessibilityStack = accessibilityStack.concat(getAccessibleContents(headerRef.parentNode));
+    }
+  });
+
+  overflowColumns.forEach((column) => {
+    const headerRef = headerCellRefs[column.id];
+
+    if (headerRef) {
+      if (column.isSelectable) {
+        accessibilityStack.push(headerRef);
+      }
+
+      accessibilityStack = accessibilityStack.concat(getAccessibleContents(headerRef.parentNode));
+    }
+  });
+
+  sections.forEach((section) => {
+    const sectionRef = sectionRefs[section.id];
+
+    if (sectionRef) {
+      if (section.isCollapsible) {
+        accessibilityStack.push(sectionRef);
+      }
+
+      accessibilityStack = accessibilityStack.concat(getAccessibleContents(sectionRef.parentNode));
+    }
+
+    if (section.isCollapsed) {
+      /**
+       * If the section is collapsed, we do not want to assign accessibility identifiers to its content.
+       */
+      return;
+    }
+
+    section.rows.forEach((row) => {
+      const cellMap = {};
+      row.cells.forEach((cell) => {
+        cellMap[cell.columnId] = cell;
+      });
+
+      orderedColumnIds.forEach((columnId) => {
+        const cellRef = cellRefs[`${section.id}-${row.id}-${columnId}`];
+        if (cellRef) {
+          if ((cellMap[columnId] && cellMap[columnId].isSelectable) || (columnId === 'DataGrid-rowSelectionColumn' && row.isSelectable)) {
+            accessibilityStack.push(cellRef);
+          }
+
+          accessibilityStack = accessibilityStack.concat(getAccessibleContents(cellRef.parentNode));
+        }
+      });
+    });
+  });
+
+  accessibilityStack.forEach((element, index) => {
+    element.setAttribute('data-accessibility-id', index);
+  });
+
+  return accessibilityStack;
+};
+
 const dataGridUtils = {
   PAGED_CONTENT_OFFSET_BUFFER,
   VOID_COLUMN,
@@ -138,6 +222,7 @@ const dataGridUtils = {
   getOverflowColumns,
   matchesSelector,
   calculateScrollbarPosition,
+  generateAccessibleContentIndex,
 };
 
 export default dataGridUtils;
@@ -152,4 +237,5 @@ export {
   getOverflowColumns,
   matchesSelector,
   calculateScrollbarPosition,
+  generateAccessibleContentIndex,
 };

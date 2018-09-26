@@ -14,13 +14,13 @@ import SectionHeader from './subcomponents/SectionHeader';
 import { KEYCODES } from './utils/keycodes';
 import {
   PAGED_CONTENT_OFFSET_BUFFER,
-  getAccessibleContents,
   getWidthForColumn,
   getTotalColumnWidth,
   getPinnedColumns,
   getOverflowColumns,
   matchesSelector,
   calculateScrollbarPosition,
+  generateAccessibleContentIndex,
 } from './utils/dataGridUtils';
 
 import columnDataShape from './proptypes/columnDataShape';
@@ -162,7 +162,6 @@ class DataGrid extends React.Component {
     /**
      * Post-render Updates
      */
-    this.generateAccessibleContentIndex = this.generateAccessibleContentIndex.bind(this);
     this.postRenderUpdate = this.postRenderUpdate.bind(this);
 
     /**
@@ -440,89 +439,12 @@ class DataGrid extends React.Component {
   /**
    * Post-render Updates
    */
-  generateAccessibleContentIndex() {
-    const { sections } = this.props;
-
-    const pinnedColumns = getPinnedColumns(this.props);
-    const overflowColumns = getOverflowColumns(this.props);
-
-    const orderedColumnIds = pinnedColumns.concat(overflowColumns).map(column => column.id);
-
-    let accessibilityStack = [];
-
-    pinnedColumns.forEach((column) => {
-      const headerRef = this.headerCellRefs[column.id];
-      if (headerRef) {
-        if (column.isSelectable) {
-          accessibilityStack.push(headerRef);
-        }
-
-        accessibilityStack = accessibilityStack.concat(getAccessibleContents(headerRef.parentNode));
-      }
-    });
-
-    overflowColumns.forEach((column) => {
-      const headerRef = this.headerCellRefs[column.id];
-
-      if (headerRef) {
-        if (column.isSelectable) {
-          accessibilityStack.push(headerRef);
-        }
-
-        accessibilityStack = accessibilityStack.concat(getAccessibleContents(headerRef.parentNode));
-      }
-    });
-
-    sections.forEach((section) => {
-      const sectionRef = this.sectionRefs[section.id];
-
-      if (sectionRef) {
-        if (section.isCollapsible) {
-          accessibilityStack.push(sectionRef);
-        }
-
-        accessibilityStack = accessibilityStack.concat(getAccessibleContents(sectionRef.parentNode));
-      }
-
-      if (section.isCollapsed) {
-        /**
-         * If the section is collapsed, we do not want to assign accessibility identifiers to its content.
-         */
-        return;
-      }
-
-      section.rows.forEach((row) => {
-        const cellMap = {};
-        row.cells.forEach((cell) => {
-          cellMap[cell.columnId] = cell;
-        });
-
-        orderedColumnIds.forEach((columnId) => {
-          const cellRef = this.cellRefs[`${section.id}-${row.id}-${columnId}`];
-          if (cellRef) {
-            if ((cellMap[columnId] && cellMap[columnId].isSelectable) || (columnId === 'DataGrid-rowSelectionColumn' && row.isSelectable)) {
-              accessibilityStack.push(cellRef);
-            }
-
-            accessibilityStack = accessibilityStack.concat(getAccessibleContents(cellRef.parentNode));
-          }
-        });
-      });
-    });
-
-    accessibilityStack.forEach((element, index) => {
-      element.setAttribute('data-accessibility-id', index);
-    });
-
-    this.accessibilityStack = accessibilityStack;
-  }
-
   postRenderUpdate() {
     /**
      * The DOM is parsed after rendering to generate the accessibility identifiers used by the DataGrid's custom
      * focus implementation.
      */
-    this.generateAccessibleContentIndex();
+    this.accessibilityStack = generateAccessibleContentIndex(this.props, this.headerCellRefs, this.sectionRefs, this.cellRefs);
 
     requestAnimationFrame(() => {
       /**
