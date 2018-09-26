@@ -19,12 +19,14 @@ const comment = <ItemView.Comment text="Faint red rash appeared at 08-05-2016 13
 const accessoryStart = <IconAlert />;
 const accessoryEnd = <IconInformation />;
 
-export default () => (<ItemView
-  displays={displays}
-  layout="twoColumns"
-  isTruncated
-  textEmphasis="start"
-  startAccessory={accessoryStart}
-  endAccessory={accessoryEnd}
-  comment={comment}
-/>);
+export default () => (
+  <ItemView
+    displays={displays}
+    layout="twoColumns"
+    isTruncated
+    textEmphasis="start"
+    startAccessory={accessoryStart}
+    endAccessory={accessoryEnd}
+    comment={comment}
+  />
+);

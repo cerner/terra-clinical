@@ -1,5 +1,3 @@
-/* global before, browser, Terra */
-
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
 
 describe('Clinical Item View', () => {

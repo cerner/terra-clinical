@@ -14,7 +14,7 @@ const DefaultItemCollection = () => (
     <ItemCollection.Item
       listItemLayout="twoColumns"
       comment={<ItemCollection.Comment text="test comment" />}
-      endAccessory={<button size="medium">Disclose</button>}
+      endAccessory={<button type="button" size="medium">Disclose</button>}
     >
       <ItemCollection.Display text="Display 1" />
       <ItemCollection.Display text="Display 2" />
@@ -34,7 +34,7 @@ const DefaultItemCollection = () => (
     <ItemCollection.Item
       listItemLayout="twoColumns"
       startAccessory={<div>S</div>}
-      endAccessory={<button size="medium">Disclose</button>}
+      endAccessory={<button type="button" size="medium">Disclose</button>}
     >
       <ItemCollection.Display text="Display 1" />
       <ItemCollection.Display text="Display 2" />
@@ -43,7 +43,7 @@ const DefaultItemCollection = () => (
     <ItemCollection.Item
       listItemLayout="twoColumns"
       comment={<ItemCollection.Comment text="test comment" />}
-      endAccessory={<button size="medium">Disclose</button>}
+      endAccessory={<button type="button" size="medium">Disclose</button>}
     >
       <ItemCollection.Display text="Display 1" />
       <ItemCollection.Display text="Display 2" />
@@ -58,7 +58,7 @@ const DefaultItemCollection = () => (
       listItemLayout="twoColumns"
       startAccessory={<div>S</div>}
       comment={<ItemCollection.Comment text="test comment" />}
-      endAccessory={<button size="medium">Disclose</button>}
+      endAccessory={<button type="button" size="medium">Disclose</button>}
     >
       <ItemCollection.Display text="Display 1" />
     </ItemCollection.Item>

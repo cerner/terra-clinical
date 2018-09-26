@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import styles from './ItemDisplay.scss';
+/* eslint-disable-next-line import/no-cycle */
 import ItemComment from './ItemComment';
 
 const cx = classNames.bind(styles);
