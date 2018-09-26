@@ -113,7 +113,6 @@ class Cell extends React.Component {
     } = this.props;
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
       <div
         {...customProps}
         className={cx(['container', customProps.className])}
@@ -121,6 +120,7 @@ class Cell extends React.Component {
         aria-selected={isSelected}
       >
         <div
+          role="button"
           className={cx(['content', { selectable: isSelectable, selected: isSelected }])}
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
@@ -132,7 +132,6 @@ class Cell extends React.Component {
           {children}
         </div>
       </div>
-      /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     );
   }
 }

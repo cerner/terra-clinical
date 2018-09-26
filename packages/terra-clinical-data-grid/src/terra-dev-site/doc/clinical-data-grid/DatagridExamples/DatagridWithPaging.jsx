@@ -93,7 +93,7 @@ class DatagridWithPaging extends React.Component {
     return (
       <div style={{ height: '800px', position: 'relative' }}>
         <DataGrid
-          accessibilityPrefix="paging-example"
+          id="paging-example"
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={this.state.sections}

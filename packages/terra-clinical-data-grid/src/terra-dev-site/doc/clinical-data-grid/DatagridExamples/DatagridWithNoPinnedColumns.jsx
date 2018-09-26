@@ -82,7 +82,7 @@ class DatagridWithNoPinnedColumns extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
-          accessibilityPrefix="no-pinning-example"
+          id="no-pinning-example"
           overflowColumns={overflowColumns}
           sections={[
             DatagridWithNoPinnedColumns.buildSection('section_0', 30),

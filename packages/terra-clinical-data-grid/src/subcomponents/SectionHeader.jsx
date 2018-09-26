@@ -107,12 +107,12 @@ class SectionHeader extends React.Component {
     }
 
     return (
-      /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
       <div
         className={cx('section-header')}
         data-section-header
       >
         <div
+          role="button"
           className={cx(['content', { selectable: isCollapsible }])}
           onClick={isCollapsible ? this.handleClick : undefined}
           onKeyDown={isCollapsible ? this.handleKeyDown : undefined}
@@ -127,7 +127,6 @@ class SectionHeader extends React.Component {
           {content}
         </div>
       </div>
-      /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */
     );
   }
 }

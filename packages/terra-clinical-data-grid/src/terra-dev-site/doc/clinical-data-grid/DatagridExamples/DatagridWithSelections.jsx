@@ -95,7 +95,7 @@ class DatagridWithSelections extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
-          accessibilityPrefix="selections-example"
+          id="selections-example"
           pinnedColumns={[
             columns['Column-0'],
             columns['Column-1'],

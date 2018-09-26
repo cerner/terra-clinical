@@ -100,7 +100,7 @@ class DatagridWithSubsections extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
-          accessibilityPrefix="subsections-example"
+          id="subsections-example"
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[

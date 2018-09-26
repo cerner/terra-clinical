@@ -117,7 +117,7 @@ class DatagridWithCustomContent extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
-          accessibilityPrefix="basic-example"
+          id="basic-example"
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[

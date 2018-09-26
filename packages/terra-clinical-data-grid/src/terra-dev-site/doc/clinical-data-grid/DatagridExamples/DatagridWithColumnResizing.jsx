@@ -95,7 +95,7 @@ class DatagridWithColumnResizing extends React.Component {
     return (
       <div style={{ height: '800px' }}>
         <DataGrid
-          accessibilityPrefix="column-resize-example"
+          id="column-resize-example"
           pinnedColumns={[
             columns['Column-0'],
             columns['Column-1'],
