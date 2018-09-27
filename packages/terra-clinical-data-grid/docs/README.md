@@ -22,7 +22,7 @@ Columns are provided to the DataGrid through two props: `pinnedColumns` and `ove
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**id**|string|required|none|An identifier for the column. This identifier should be unique across the set of columns provided to the DataGrid.|
-|**width**|number|optional|none|An number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.|
+|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the DataGrid's default column width will be used.|
 |**isSelectable**|bool|optional|none|A boolean indicating whether or not the column header is selectable. If true, the DataGrid's `onColumnSelect` prop will be called upon column header selection.|
 |**isResizable**|bool|optional|none|A boolean indicating whether or not the column header is resizable. If true, a resize indicator will be rendered over the column header's contents, and the DataGrid's `onRequestColumnResize` function will be called upon interaction with the resize indicator. The new width will be provided with the function call so that the column's width property can be updated as needed.|
 |**text**|string|optional|none|A string of text to render within the column header. This text will follow standard truncation rules as necessary. If a `component` value is specified, `text` will be ignored.|
@@ -41,8 +41,8 @@ Sections are provided to the DataGrid through the `sections` prop. The order in 
 |**isCollapsible**|bool|optional|none|A boolean indicating whether or not the the section is collapsible. If true, the DataGrid's `onRequestSectionCollapse` function will be called upon selection of the section header, and an icon indicating collapsibility will be rendered within the seaction header.|
 |**isCollapsed**|bool|optional|none|A boolean indicating whether or not the section is collapsed. If true, the DataGrid will not render the contents of the section.|
 |**text**|string|optional|none|A text string to render within the section header.|
-|**startAccessory**|component|optional|none|A component to render within the section header's start accessory position. This will be rendered ahead of `text`.
-|**endAccessory**|component|optional|none|A component to render within the section header's end accessory position. This will be rendered behind `text`.
+|**startAccessory**|component|optional|none|A component to render within the section header's start accessory position. This will be rendered ahead of `text`.|
+|**endAccessory**|component|optional|none|A component to render within the section header's end accessory position. This will be rendered behind `text`.|
 |**component**|component|optional|none|A custom component to render within the section header. If provided, the `text`, `startAccessory`, and `endAccessory` values will be ignored.|
 |**rows**|array|optional|[]|An array of row objects to be rendered within the section.|
 
