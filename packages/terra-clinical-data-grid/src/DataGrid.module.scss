@@ -99,4 +99,20 @@
     height: 0;
     outline: none;
   }
+
+  .footer-container {
+    display: flex;
+    overflow: hidden;
+
+    .pinned-column-buffer {
+      background-color: lightgrey;
+      box-shadow: var(--terra-clinical-data-grid-pinned-column-box-shadow, 3px 0 5px grey);
+      flex: 0 0 auto;
+      z-index: 1;
+    }
+
+    .scrollbar-container {
+      flex: 1 1 auto;
+    }
+  }
 }

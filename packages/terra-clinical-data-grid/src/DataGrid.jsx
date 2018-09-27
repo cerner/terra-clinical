@@ -19,7 +19,6 @@ import {
   getPinnedColumns,
   getOverflowColumns,
   matchesSelector,
-  calculateScrollbarPosition,
   generateAccessibleContentIndex,
 } from './utils/dataGridUtils';
 
@@ -600,24 +599,32 @@ class DataGrid extends React.Component {
   }
 
   synchronizeScrollbar(event, data) {
-    const { pinnedColumnWidth, overflowColumnWidth } = this.state;
-
     if (this.headerIsScrolling || this.contentIsScrolling) {
       return;
     }
 
     this.scrollbarIsScrolling = true;
 
-    const { position, ratio } = calculateScrollbarPosition(this.scrollbarRef.clientWidth, this.verticalOverflowContainerRef.clientWidth, this.scrollbarPosition, data.deltaX);
+    const newPosition = this.scrollbarPosition + data.deltaX;
 
-    this.scrollbarPosition = position;
+    let finalPosition;
+    if (newPosition < 0) {
+      finalPosition = 0;
+    } else if (newPosition > this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth) {
+      finalPosition = this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth;
+    } else {
+      finalPosition = newPosition;
+    }
 
-    const maxScrollLeft = (pinnedColumnWidth + overflowColumnWidth) - this.verticalOverflowContainerRef.clientWidth;
+    this.scrollbarPosition = finalPosition;
+
+    const positionRatio = finalPosition / (this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth);
+    const maxScrollLeft = this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth;
 
     requestAnimationFrame(() => {
       this.scrollbarRef.style.left = `${this.scrollbarPosition}px`;
-      this.headerOverflowContainerRef.scrollLeft = maxScrollLeft * ratio;
-      this.horizontalOverflowContainerRef.scrollLeft = maxScrollLeft * ratio;
+      this.headerOverflowContainerRef.scrollLeft = maxScrollLeft * positionRatio;
+      this.horizontalOverflowContainerRef.scrollLeft = maxScrollLeft * positionRatio;
     });
   }
 
@@ -642,19 +649,19 @@ class DataGrid extends React.Component {
   }
 
   updateScrollbarPosition() {
-    const { pinnedColumnWidth, overflowColumnWidth } = this.state;
+    const { overflowColumnWidth } = this.state;
 
     /**
-     * The scrollbar width is determined by squaring the container width and dividing by the overflow value. The scrollbar cannot be larger than the container.
+     * The scrollbar width is determined by squaring the horizontal container width and dividing by the overflow value. The scrollbar cannot be larger than the container.
      */
-    const scrollbarWidth = Math.min(this.verticalOverflowContainerRef.clientWidth, (this.verticalOverflowContainerRef.clientWidth * this.verticalOverflowContainerRef.clientWidth) / (pinnedColumnWidth + overflowColumnWidth));
+    const scrollbarWidth = Math.min(this.horizontalOverflowContainerRef.clientWidth, (this.horizontalOverflowContainerRef.clientWidth * this.horizontalOverflowContainerRef.clientWidth) / (overflowColumnWidth));
 
     /**
      * The scrollbar position is determined by calculating its position within the horizontalOverflowContainerRef and applying its relative position
-     * to the overall container width.
+     * to the overall horizontal container width.
      */
     const positionRatio = this.horizontalOverflowContainerRef.scrollLeft / (this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth);
-    const position = (this.verticalOverflowContainerRef.clientWidth - scrollbarWidth) * positionRatio;
+    const position = (this.horizontalOverflowContainerRef.clientWidth - scrollbarWidth) * positionRatio;
 
     this.scrollbarRef.style.width = `${scrollbarWidth}px`;
     this.scrollbarRef.style.left = `${position}px`;
@@ -889,13 +896,23 @@ class DataGrid extends React.Component {
   }
 
   renderScrollbar() {
+    const { pinnedColumnWidth } = this.state;
+
     return (
-      <Scrollbar
-        refCallback={this.setScrollbarContainerRef}
-        scrollbarRefCallback={this.setScrollbarRef}
-        onMove={this.synchronizeScrollbar}
-        onMoveEnd={this.resetScrollbarEventMarkers}
-      />
+      <div className={cx('footer-container')}>
+        <div
+          className={cx('pinned-column-buffer')}
+          style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
+        />
+        <div className={cx('scrollbar-container')}>
+          <Scrollbar
+            refCallback={this.setScrollbarContainerRef}
+            scrollbarRefCallback={this.setScrollbarRef}
+            onMove={this.synchronizeScrollbar}
+            onMoveEnd={this.resetScrollbarEventMarkers}
+          />
+        </div>
+      </div>
     );
   }
 

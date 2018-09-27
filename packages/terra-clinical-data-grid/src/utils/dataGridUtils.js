@@ -101,33 +101,6 @@ const matchesSelector = (element, selector) => {
 };
 
 /**
- * Returns the new position and offset ratio of the scrollbar given the change in width.
- * @param {Number} scrollbarWidth The current scrollbar width.
- * @param {Number} containerWidth The width of the container in which the scrollbar is presented.
- * @param {Number} currentScrollbarPosition The current scrollbar position.
- * @param {Number} delta The desired difference in position.
- */
-const calculateScrollbarPosition = (scrollbarWidth, containerWidth, currentScrollbarPosition, delta) => {
-  const newPosition = currentScrollbarPosition + delta;
-
-  let finalPosition;
-  if (newPosition < 0) {
-    finalPosition = 0;
-  } else if (newPosition > containerWidth - scrollbarWidth) {
-    finalPosition = containerWidth - scrollbarWidth;
-  } else {
-    finalPosition = newPosition;
-  }
-
-  const scrollerPositionRatio = finalPosition / (containerWidth - scrollbarWidth);
-
-  return {
-    position: finalPosition,
-    ratio: scrollerPositionRatio,
-  };
-};
-
-/**
  * Generates identifiers for accessible elements within the DataGrid.
  * @param {Object} props The DataGrid props.
  * @param {Object} headerCellRefs The references to accessible header cell elements.
@@ -221,7 +194,6 @@ const dataGridUtils = {
   getPinnedColumns,
   getOverflowColumns,
   matchesSelector,
-  calculateScrollbarPosition,
   generateAccessibleContentIndex,
 };
 
@@ -236,6 +208,5 @@ export {
   getPinnedColumns,
   getOverflowColumns,
   matchesSelector,
-  calculateScrollbarPosition,
   generateAccessibleContentIndex,
 };
