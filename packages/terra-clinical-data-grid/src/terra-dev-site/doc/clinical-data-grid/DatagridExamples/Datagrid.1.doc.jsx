@@ -1,9 +1,9 @@
 import React from 'react';
 import ExampleTemplate from 'terra-doc-template/lib/ExampleTemplate';
 
-import Datagrid from './Datagrid';
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
-import DatagridSrc from '!raw-loader!./Datagrid';
+import Datagrid from './Datagrid';
+import DatagridSrc from '!raw-loader!../../../../../src/terra-dev-site/doc/clinical-data-grid/DatagridExamples/Datagrid';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DatagridExample = () => (
