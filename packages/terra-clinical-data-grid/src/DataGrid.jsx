@@ -606,19 +606,20 @@ class DataGrid extends React.Component {
     this.scrollbarIsScrolling = true;
 
     const newPosition = this.scrollbarPosition + data.deltaX;
+    const scrollArea = this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth;
 
     let finalPosition;
     if (newPosition < 0) {
       finalPosition = 0;
-    } else if (newPosition > this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth) {
-      finalPosition = this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth;
+    } else if (newPosition > scrollArea) {
+      finalPosition = scrollArea;
     } else {
       finalPosition = newPosition;
     }
 
     this.scrollbarPosition = finalPosition;
 
-    const positionRatio = finalPosition / (this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth);
+    const positionRatio = finalPosition / scrollArea;
     const maxScrollLeft = this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth;
 
     requestAnimationFrame(() => {
