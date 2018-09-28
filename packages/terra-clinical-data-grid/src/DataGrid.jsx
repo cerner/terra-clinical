@@ -134,8 +134,7 @@ class DataGrid extends React.Component {
      * Keyboard Events
      */
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleGlobalShiftDown = this.handleGlobalShiftDown.bind(this);
-    this.handleGlobalShiftUp = this.handleGlobalShiftUp.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
     this.shiftIsPressed = false;
 
     /**
@@ -228,8 +227,8 @@ class DataGrid extends React.Component {
     /**
      * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
      */
-    document.addEventListener('keydown', this.handleGlobalShiftDown);
-    document.addEventListener('keyup', this.handleGlobalShiftUp);
+    document.addEventListener('keydown', this.handleKeyDown);
+    document.addEventListener('keyup', this.handleKeyUp);
 
     this.postRenderUpdate();
 
@@ -252,8 +251,8 @@ class DataGrid extends React.Component {
 
   componentWillUnmount() {
     this.resizeObserver.disconnect(this.verticalOverflowContainerRef);
-    document.removeEventListener('keydown', this.handleGlobalShiftDown);
-    document.removeEventListener('keyup', this.handleGlobalShiftUp);
+    document.removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   /**
@@ -340,7 +339,11 @@ class DataGrid extends React.Component {
    * Keyboard Events
    */
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEYCODES.TAB) {
+    if (event.keyCode === KEYCODES.SHIFT) {
+      this.shiftIsPressed = true;
+    }
+
+    if (event.keyCode === KEYCODES.TAB) {
       const { activeElement } = document;
 
       if (!activeElement) {
@@ -366,13 +369,7 @@ class DataGrid extends React.Component {
     }
   }
 
-  handleGlobalShiftDown(event) {
-    if (event.keyCode === KEYCODES.SHIFT) {
-      this.shiftIsPressed = true;
-    }
-  }
-
-  handleGlobalShiftUp(event) {
+  handleKeyUp(event) {
     if (event.keyCode === KEYCODES.SHIFT) {
       this.shiftIsPressed = false;
     }
@@ -933,15 +930,13 @@ class DataGrid extends React.Component {
     return (
       <div
         {...customProps}
-        role="grid"
         id={id}
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
-        onKeyDown={this.handleKeyDown}
-        tabIndex="0"
       >
         <div
           role="button"
+          aria-hidden
           className={cx('leading-focus-anchor')}
           tabIndex="0"
           onFocus={this.handleLeadingFocusAnchorFocus}
@@ -980,6 +975,7 @@ class DataGrid extends React.Component {
         </ContentContainer>
         <div
           role="button"
+          aria-hidden
           className={cx('terminal-focus-anchor')}
           tabIndex="0"
           onFocus={this.handleTerminalFocusAnchorFocus}
