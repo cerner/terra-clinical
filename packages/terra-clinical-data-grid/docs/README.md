@@ -78,13 +78,13 @@ The DataGrid will provide a explicitly sized container within which the Cell `co
 
 ## Creating Custom Content
 
-The various DataGrid containers (column header, section header, cell) support the presentation of custom components. However, there are a few rules that must successful component implementation must adhere to.
+The various DataGrid containers (column header, section header, cell) support the presentation of custom components. However, there are a few rules that a component must adhere to.
 
 The DataGrid provides a number of styles for mouse/keyboard interaction states (click, hover, selection). Custom components should generally render with a transparent background to ensure those default styles bleed through the component.
 
 The DataGrid will provide a explicitly sized container within which the component will rendered. A height and width of `100%` should be set on the component to ensure it fills the area provided to it.
 
-If there are any mouse/keyboard interactive elements within the component, and the component is rendered inside a selectable DataGrid container (column header, section header, cell), events may propagate in ways that the component is not expecting. If necessary, the events originating from those interactive elements could not be propagated to prevent undesired DataGrid interactions.
+If there are any mouse/keyboard interactive elements within the component, and the component is rendered inside a selectable DataGrid container (column header, section header, cell), events may propagate in ways that the component is not expecting. Events triggered by those interactive elements should not be propagated to prevent undesired DataGrid interactions.
 
 Additionally, these interactive elements must include a special data attribute called `data-accessible-data-grid-content`. The DataGrid utilizes a custom tabbing implementation to ensure a propper tabbing order, and including that attribute on all interactive elements of custom components will ensure that they are still sensibly keyboard accessible.
 
