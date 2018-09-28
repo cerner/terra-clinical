@@ -768,41 +768,35 @@ class DataGrid extends React.Component {
   }
 
   renderRowSelectionCell(section, row, column) {
-    const { onRowSelect, defaultColumnWidth } = this.props;
-    const cellKey = `${section.id}-${row.id}-${column.id}`;
-
-    return (
-      <Cell
-        key={cellKey}
-        sectionId={section.id}
-        rowId={row.id}
-        columnId={column.id}
-        width={`${dataGridUtils.getWidthForColumn(column, defaultColumnWidth)}px`}
-        isSelectable={row.isSelectable}
-        selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
-        onHoverStart={() => {
-          /**
-           * Because the pinned and overflow rows are two separate elements, we need to retrieve them and add the appropriate hover styles
-           * to both to ensure a consistent row styling.
-           */
-          const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
-          for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
-            rowElements[i].classList.add('hover');
-          }
-        }}
-        onHoverEnd={() => {
-          const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
-          for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
-            rowElements[i].classList.remove('hover');
-          }
-        }}
-        onSelect={onRowSelect}
-      />
+    return this.renderCell(
+      section,
+      row,
+      column,
+      this.props.onRowSelect,
+      row.isSelectable,
+      () => {
+        /**
+         * Because the pinned and overflow rows are two separate elements, we need to retrieve them and add the appropriate hover styles
+         * to both to ensure a consistent row styling.
+         */
+        const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
+        for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
+          rowElements[i].classList.add('hover');
+        }
+      },
+      () => {
+        const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
+        for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
+          rowElements[i].classList.remove('hover');
+        }
+      },
     );
   }
 
-  renderCell(cell, section, row, column) {
+  renderCell(section, row, column, onSelect, isSelectable, onHoverStart, onHoverEnd) {
     const { onCellSelect, defaultColumnWidth } = this.props;
+
+    const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
     const cellKey = `${section.id}-${row.id}-${column.id}`;
 
     return (
@@ -812,10 +806,12 @@ class DataGrid extends React.Component {
         rowId={row.id}
         columnId={column.id}
         width={`${dataGridUtils.getWidthForColumn(column, defaultColumnWidth)}px`}
-        onSelect={onCellSelect}
-        isSelectable={cell.isSelectable}
+        onSelect={onSelect || onCellSelect}
+        isSelectable={isSelectable || cell.isSelectable}
         isSelected={cell.isSelected}
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
+        onHoverStart={onHoverStart}
+        onHoverEnd={onHoverEnd}
       >
         {cell.component}
       </Cell>
@@ -858,8 +854,7 @@ class DataGrid extends React.Component {
             return undefined;
           }
 
-          const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
-          return this.renderCell(cell, section, row, column);
+          return this.renderCell(section, row, column);
         })}
       </Row>
     );
