@@ -70,6 +70,11 @@ class Cell extends React.Component {
   }
 
   /* eslint-disable class-methods-use-this */
+
+  /**
+   * This function is memoized in the constructor so that for a given width value, the same object reference will be returned.
+   * This allows for repeat renders of the Cell to occur more efficiently if the width value has not changed between renders.
+   */
   getCellStyles(width) {
     return {
       width,
