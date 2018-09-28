@@ -21,13 +21,11 @@
     position: relative;
     width: 100%;
 
-
     .pinned-header {
       background-color: var(--terra-clinical-data-grid-column-header-background-color, lightgrey);
       display: flex;
       flex: 0 0 auto;
       height: 100%;
-      z-index: 1;
     }
 
     .header-overflow-container {
