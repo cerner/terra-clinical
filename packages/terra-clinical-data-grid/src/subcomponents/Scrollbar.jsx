@@ -78,7 +78,11 @@ class Scrollbar extends React.Component {
           <div
             className={cx('scrollbar')}
             ref={scrollbarRefCallback}
-          />
+          >
+            <div
+              className={cx('scrollbar-handle')}
+            />
+          </div>
         </DraggableCore>
       </div>
     );
