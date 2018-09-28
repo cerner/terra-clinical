@@ -89,7 +89,12 @@ class DatagridWithSubsections extends React.Component {
     return {
       id: sectionId,
       text: sectionName,
-      endAccessory: (sectionId === 'section_1') ? <span><Button text="Button 1" data-accessible-data-grid-content /><Button text="Button 2" data-accessible-data-grid-content /></span> : null,
+      endAccessory: (sectionId === 'section_1') ? (
+        <span>
+          <Button text="Button 1" data-accessible-data-grid-content />
+          <Button text="Button 2" data-accessible-data-grid-content />
+        </span>
+      ) : null,
       isCollapsible: sectionId === 'section_0',
       isCollapsed: this.state.collapsedSectionId === sectionId,
       rows: DatagridWithSubsections.buildRows(sectionId, numberOfRows),

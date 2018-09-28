@@ -31,4 +31,3 @@ describe('Row Snapshot Tests', () => {
     expect(row).toMatchSnapshot();
   });
 });
-

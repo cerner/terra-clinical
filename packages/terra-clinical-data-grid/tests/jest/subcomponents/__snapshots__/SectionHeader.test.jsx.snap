@@ -9,6 +9,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar as collapsed 1`]
     className="content selectable"
     onClick={[Function]}
     onKeyDown={[Function]}
+    role="button"
     tabIndex="0"
   >
     <div
@@ -57,6 +58,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar with child conte
     className="content selectable"
     onClick={[Function]}
     onKeyDown={[Function]}
+    role="button"
     tabIndex="0"
   >
     <div
@@ -89,6 +91,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar with default tex
     className="content selectable"
     onClick={[Function]}
     onKeyDown={[Function]}
+    role="button"
     tabIndex="0"
   >
     <div
@@ -135,6 +138,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar with minimal pro
 >
   <div
     className="content"
+    role="button"
   >
     <div
       className="start-accessory"

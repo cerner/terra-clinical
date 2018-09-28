@@ -127,11 +127,11 @@ class DatagridWithSelections extends React.Component {
               }
             }
 
-            this.setState({
-              columns: Object.assign({}, this.state.columns, newColumns),
+            this.setState(prevState => ({
+              columns: Object.assign({}, prevState.columns, newColumns),
               sortedColumnId: columnId,
               sortedColumnDirection: columnToSort.sortIndicator,
-            });
+            }));
           }}
           onCellSelect={(sectionId, rowId, columnId) => {
             this.setState({

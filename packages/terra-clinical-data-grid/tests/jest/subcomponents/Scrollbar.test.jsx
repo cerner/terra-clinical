@@ -24,4 +24,3 @@ describe('Scrollbar Snapshot Tests', () => {
     expect(scrollbar).toMatchSnapshot();
   });
 });
-

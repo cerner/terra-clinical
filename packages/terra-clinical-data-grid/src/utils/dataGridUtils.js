@@ -198,15 +198,3 @@ const dataGridUtils = {
 };
 
 export default dataGridUtils;
-export {
-  PAGED_CONTENT_OFFSET_BUFFER,
-  VOID_COLUMN,
-  ROW_SELECTION_COLUMN,
-  getAccessibleContents,
-  getWidthForColumn,
-  getTotalColumnWidth,
-  getPinnedColumns,
-  getOverflowColumns,
-  matchesSelector,
-  generateAccessibleContentIndex,
-};

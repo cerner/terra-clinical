@@ -51,4 +51,3 @@ describe('HeaderCell Snapshot Tests', () => {
     expect(cell).toMatchSnapshot();
   });
 });
-

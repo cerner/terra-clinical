@@ -102,7 +102,7 @@ class DatagridWithPaging extends React.Component {
             this.setState({ isLoading: true }, () => {
               clearTimeout(this.pagingTimeout);
               this.pagingTimeout = setTimeout(() => {
-                this.setState({ sectionCount: this.state.sectionCount + 1, isLoading: false, sections: DatagridWithPaging.buildSections(this.state.sectionCount + 1) });
+                this.setState(prevState => ({ sectionCount: prevState.sectionCount + 1, isLoading: false, sections: DatagridWithPaging.buildSections(prevState.sectionCount + 1) }));
               }, 2000);
             });
           }) : undefined}

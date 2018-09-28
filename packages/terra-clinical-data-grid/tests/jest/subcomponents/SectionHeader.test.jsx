@@ -61,4 +61,3 @@ describe('SectionHeader Snapshot Tests', () => {
     expect(sectionHeader).toMatchSnapshot();
   });
 });
-

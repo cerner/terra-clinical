@@ -21,4 +21,3 @@ describe('ResizeHandle Snapshot Tests', () => {
     expect(resizeHandle).toMatchSnapshot();
   });
 });
-

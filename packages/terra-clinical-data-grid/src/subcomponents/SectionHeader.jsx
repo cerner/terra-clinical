@@ -123,7 +123,7 @@ class SectionHeader extends React.Component {
             <div className={cx('collapsible-icon')}>
               {isCollapsed ? <IconCaretRight /> : <IconCaretDown />}
             </div>
-            ) : null}
+          ) : null}
           {content}
         </div>
       </div>

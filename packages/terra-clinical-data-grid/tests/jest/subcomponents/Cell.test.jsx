@@ -38,4 +38,3 @@ describe('Cell Snapshot Tests', () => {
     expect(cell).toMatchSnapshot();
   });
 });
-

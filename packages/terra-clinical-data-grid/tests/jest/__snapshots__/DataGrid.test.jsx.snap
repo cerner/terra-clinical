@@ -3,23 +3,42 @@
 exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`] = `
 <div
   className="data-grid-container fill"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={true}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -60,7 +79,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
             style={
               Object {
                 "height": "3rem",
-                "width": "450px",
+                "width": "300px",
               }
             }
           >
@@ -158,7 +177,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
             key="section-0-row-0"
             rowId="row-0"
             sectionId="section-0"
-            width="450px"
+            width="300px"
           >
             <Cell
               columnId="Column-1"
@@ -180,6 +199,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>
@@ -188,23 +208,42 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
 exports[`DataGrid Snapshots should render a DataGrid with custom row and header heights 1`] = `
 <div
   className="data-grid-container fill"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={true}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "0px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -232,7 +271,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             style={
               Object {
                 "height": "10rem",
-                "width": "950px",
+                "width": "800px",
               }
             }
           >
@@ -316,7 +355,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             key="section-0-row-0"
             rowId="row-0"
             sectionId="section-0"
-            width="950px"
+            width="800px"
           >
             <Cell
               columnId="Column-0"
@@ -373,7 +412,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             key="section-0-row-1"
             rowId="row-1"
             sectionId="section-0"
-            width="950px"
+            width="800px"
           >
             <Cell
               columnId="Column-0"
@@ -431,6 +470,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>
@@ -439,23 +479,42 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
 exports[`DataGrid Snapshots should render a DataGrid with custom section header 1`] = `
 <div
   className="data-grid-container fill"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={true}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -492,7 +551,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
             style={
               Object {
                 "height": "3rem",
-                "width": "450px",
+                "width": "300px",
               }
             }
           >
@@ -590,7 +649,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
             key="section-0-row-0"
             rowId="row-0"
             sectionId="section-0"
-            width="450px"
+            width="300px"
           >
             <Cell
               columnId="Column-1"
@@ -612,6 +671,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>
@@ -620,23 +680,42 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
 exports[`DataGrid Snapshots should render a DataGrid with missing optional props 1`] = `
 <div
   className="data-grid-container"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={false}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "0px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -664,7 +743,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
             style={
               Object {
                 "height": "3rem",
-                "width": "150px",
+                "width": "0px",
               }
             }
           />
@@ -700,6 +779,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>
@@ -708,23 +788,42 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
 exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 1`] = `
 <div
   className="data-grid-container fill"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={true}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "0px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -752,7 +851,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             style={
               Object {
                 "height": "3rem",
-                "width": "950px",
+                "width": "800px",
               }
             }
           >
@@ -836,7 +935,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             key="section-0-row-0"
             rowId="row-0"
             sectionId="section-0"
-            width="950px"
+            width="800px"
           >
             <Cell
               columnId="Column-0"
@@ -893,7 +992,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             key="section-0-row-1"
             rowId="row-1"
             sectionId="section-0"
-            width="950px"
+            width="800px"
           >
             <Cell
               columnId="Column-0"
@@ -951,6 +1050,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>
@@ -959,23 +1059,42 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
 exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow columns 1`] = `
 <div
   className="data-grid-container fill"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={true}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "400px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -1018,7 +1137,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             style={
               Object {
                 "height": "3rem",
-                "width": "550px",
+                "width": "400px",
               }
             }
           >
@@ -1138,7 +1257,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             key="section-0-row-0"
             rowId="row-0"
             sectionId="section-0"
-            width="550px"
+            width="400px"
           >
             <Cell
               columnId="Column-2"
@@ -1171,7 +1290,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             key="section-0-row-1"
             rowId="row-1"
             sectionId="section-0"
-            width="550px"
+            width="400px"
           >
             <Cell
               columnId="Column-2"
@@ -1205,6 +1324,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>
@@ -1213,23 +1333,42 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
 exports[`DataGrid Snapshots should render a DataGrid with selectable rows, columns, and cells 1`] = `
 <div
   className="data-grid-container fill"
+  id="test"
   onKeyDown={[Function]}
+  role="grid"
   tabIndex="0"
 >
   <div
     className="leading-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
   <ContentContainer
     fill={true}
     footer={
-      <Scrollbar
-        onMove={[Function]}
-        onMoveEnd={[Function]}
-        refCallback={[Function]}
-        scrollbarRefCallback={[Function]}
-      />
+      <div
+        className="footer-container"
+      >
+        <div
+          className="pinned-column-buffer"
+          style={
+            Object {
+              "width": "250px",
+            }
+          }
+        />
+        <div
+          className="scrollbar-container"
+        >
+          <Scrollbar
+            onMove={[Function]}
+            onMoveEnd={[Function]}
+            refCallback={[Function]}
+            scrollbarRefCallback={[Function]}
+          />
+        </div>
+      </div>
     }
     header={
       <div
@@ -1257,7 +1396,6 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           />
           <HeaderCell
             columnId="Column-0"
-            isResizable={true}
             isSelectable={true}
             onResizeEnd={[Function]}
             onSelect={[Function]}
@@ -1276,7 +1414,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
             style={
               Object {
                 "height": "3rem",
-                "width": "450px",
+                "width": "300px",
               }
             }
           >
@@ -1389,7 +1527,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
             key="section-0-row-0"
             rowId="row-0"
             sectionId="section-0"
-            width="450px"
+            width="300px"
           >
             <Cell
               columnId="Column-1"
@@ -1413,6 +1551,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
   <div
     className="terminal-focus-anchor"
     onFocus={[Function]}
+    role="button"
     tabIndex="0"
   />
 </div>

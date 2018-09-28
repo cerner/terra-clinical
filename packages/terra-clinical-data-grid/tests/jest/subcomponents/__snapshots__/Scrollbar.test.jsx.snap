@@ -20,7 +20,11 @@ exports[`Scrollbar Snapshot Tests should render a Scrollbar with all provided pr
   >
     <div
       className="scrollbar"
-    />
+    >
+      <div
+        className="scrollbar-handle"
+      />
+    </div>
   </DraggableCore>
 </div>
 `;
@@ -45,7 +49,11 @@ exports[`Scrollbar Snapshot Tests should render a Scrollbar with minimal props 1
   >
     <div
       className="scrollbar"
-    />
+    >
+      <div
+        className="scrollbar-handle"
+      />
+    </div>
   </DraggableCore>
 </div>
 `;

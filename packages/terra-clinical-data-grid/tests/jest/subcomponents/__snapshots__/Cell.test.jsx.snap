@@ -17,6 +17,7 @@ exports[`Cell Snapshot Tests should render a Cell with all provided props 1`] = 
     onKeyDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    role="button"
     tabIndex="0"
   >
     <div>
@@ -37,6 +38,7 @@ exports[`Cell Snapshot Tests should render a Cell with minimal props 1`] = `
 >
   <div
     className="content"
+    role="button"
   />
 </div>
 `;

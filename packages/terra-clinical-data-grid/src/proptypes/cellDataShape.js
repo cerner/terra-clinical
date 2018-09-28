@@ -20,4 +20,3 @@ const cellDataShape = PropTypes.shape({
 });
 
 export default cellDataShape;
-
