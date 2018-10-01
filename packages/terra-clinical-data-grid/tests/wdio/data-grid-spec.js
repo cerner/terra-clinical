@@ -121,5 +121,14 @@
 
       Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
     });
+
+    describe('with paging', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/paged-content-data-grid');
+        browser.waitForVisible('#paging-example-Pinned-Row-section_1-Row0-Section-section_1');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#paged-data-grid' });
+    });
   });
 });
