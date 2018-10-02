@@ -60,6 +60,7 @@ exports[`HeaderCell Snapshot Tests should render a Cell with custom contents if 
 
 exports[`HeaderCell Snapshot Tests should render a HeaderCell with minimal props 1`] = `
 <Cell
+  aria-hidden={true}
   className="header-cell"
   columnId="column-test"
   onSelect={[Function]}

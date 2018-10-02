@@ -8,6 +8,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   text: PropTypes.string,
+  label: PropTypes.string,
 };
 
 const ContentCellLayout = ({ text, label }) => (

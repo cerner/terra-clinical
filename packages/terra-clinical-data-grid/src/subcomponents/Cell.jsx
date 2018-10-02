@@ -114,6 +114,7 @@ class Cell extends React.Component {
       selectableRefCallback,
       onHoverStart,
       onHoverEnd,
+      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -133,6 +134,7 @@ class Cell extends React.Component {
           onMouseLeave={onHoverEnd}
           tabIndex={isSelectable ? '0' : undefined}
           ref={selectableRefCallback}
+          aria-label={ariaLabel}
         >
           {children}
         </div>

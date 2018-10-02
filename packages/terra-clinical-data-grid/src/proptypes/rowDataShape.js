@@ -7,6 +7,11 @@ const rowDataShape = PropTypes.shape({
    */
   id: PropTypes.string.isRequired,
   /**
+   * A string identifier used to describe the row contents. This value will be used to contruct additional labels
+   * for internal controls (e.g. row selection cells).
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * A boolean indicating whether or not the row is selectable.
    */
   isSelectable: PropTypes.bool,

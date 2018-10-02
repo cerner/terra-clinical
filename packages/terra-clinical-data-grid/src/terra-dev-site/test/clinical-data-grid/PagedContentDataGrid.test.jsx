@@ -2,7 +2,6 @@ import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
-import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 
 import ContentCellLayout from './ContentCellLayout';
 
@@ -51,6 +50,7 @@ class PagedContentDataGrid extends React.Component {
   static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
+      ariaLabel: `Row ${sectionId}-${rowIndex}`,
       cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
         component: <ContentCellLayout text={`Row-${rowIndex}, Column ${columnKey}`} />,

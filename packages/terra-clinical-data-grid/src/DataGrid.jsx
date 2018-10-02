@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
+import { injectIntl, intlShape } from 'terra-base';
 
 import Cell from './subcomponents/Cell';
 import HeaderCell from './subcomponents/HeaderCell';
@@ -92,6 +93,10 @@ const propTypes = {
    * Boolean that indicates whether or not the DataGrid should fill its parent container.
    */
   fill: PropTypes.bool,
+  /**
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -787,10 +792,15 @@ class DataGrid extends React.Component {
           rowElements[i].classList.remove('hover');
         }
       },
+      this.props.intl.formatMessage({
+        id: 'Terra.data-grid.row-selection-template',
+      }, {
+        'row-description': row.ariaLabel,
+      }),
     );
   }
 
-  renderCell(section, row, column, onSelect, isSelectable, onHoverStart, onHoverEnd) {
+  renderCell(section, row, column, onSelect, isSelectable, onHoverStart, onHoverEnd, ariaLabel) {
     const { onCellSelect, defaultColumnWidth } = this.props;
 
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
@@ -809,6 +819,7 @@ class DataGrid extends React.Component {
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
         onHoverStart={onHoverStart}
         onHoverEnd={onHoverEnd}
+        ariaLabel={ariaLabel}
       >
         {cell.component}
       </Cell>
@@ -989,4 +1000,4 @@ class DataGrid extends React.Component {
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
-export default DataGrid;
+export default injectIntl(DataGrid);

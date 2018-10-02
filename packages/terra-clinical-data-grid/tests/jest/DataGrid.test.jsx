@@ -1,6 +1,11 @@
 import React from 'react';
+import { IntlProvider } from 'react-intl';
+
 import DataGrid from '../../src/DataGrid';
 import dataGridUtils from '../../src/utils/dataGridUtils';
+import messages from '../../translations/en-US.json';
+
+const locale = 'en-US';
 
 const testColumns = {
   'Column-0': {
@@ -60,9 +65,15 @@ const testSections = [{
   }],
 }];
 
+const witIntl = component => (
+  <IntlProvider locale={locale} messages={messages}>
+    {component}
+  </IntlProvider>
+);
+
 describe('DataGrid Snapshots', () => {
   it('should render a DataGrid with missing optional props', () => {
-    const dataGrid = shallow(<DataGrid id="test" />);
+    const dataGrid = shallow(witIntl(<DataGrid id="test" />));
     expect(dataGrid).toMatchSnapshot();
   });
 
@@ -76,7 +87,7 @@ describe('DataGrid Snapshots', () => {
       />
     );
 
-    const dataGrid = shallow(dataGridComp);
+    const dataGrid = shallow(witIntl(dataGridComp));
     expect(dataGrid).toMatchSnapshot();
   });
 
@@ -91,7 +102,7 @@ describe('DataGrid Snapshots', () => {
       />
     );
 
-    const dataGrid = shallow(dataGridComp);
+    const dataGrid = shallow(witIntl(dataGridComp));
     expect(dataGrid).toMatchSnapshot();
   });
 
@@ -107,7 +118,7 @@ describe('DataGrid Snapshots', () => {
       />
     );
 
-    const dataGrid = shallow(dataGridComp);
+    const dataGrid = shallow(witIntl(dataGridComp));
     expect(dataGrid).toMatchSnapshot();
   });
 
@@ -161,7 +172,7 @@ describe('DataGrid Snapshots', () => {
       />
     );
 
-    const dataGrid = shallow(dataGridComp);
+    const dataGrid = shallow(witIntl(dataGridComp));
     expect(dataGrid).toMatchSnapshot();
   });
 
@@ -205,7 +216,7 @@ describe('DataGrid Snapshots', () => {
       />
     );
 
-    const dataGrid = shallow(dataGridComp);
+    const dataGrid = shallow(witIntl(dataGridComp));
     expect(dataGrid).toMatchSnapshot();
   });
 
@@ -248,7 +259,7 @@ describe('DataGrid Snapshots', () => {
       />
     );
 
-    const dataGrid = shallow(dataGridComp);
+    const dataGrid = shallow(witIntl(dataGridComp));
     expect(dataGrid).toMatchSnapshot();
   });
 });
@@ -287,7 +298,7 @@ describe('getDerivedStateFromProps', () => {
       return -1;
     });
 
-    const result = DataGrid.getDerivedStateFromProps({}, 300);
+    const result = DataGrid.WrappedComponent.getDerivedStateFromProps({}, 300);
     expect(result.pinnedColumnWidth).toEqual(555);
     expect(result.overflowColumnWidth).toEqual(777);
   });

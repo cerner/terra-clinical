@@ -1,5 +1,5 @@
 
-['medium', 'large', 'huge', 'enormous'].forEach((viewport) => {
+['medium', 'huge'].forEach((viewport) => {
   describe(`DataGrid - ${viewport}`, () => {
     before(() => browser.setViewportSize(Terra.viewports(viewport)[0]));
 
@@ -20,6 +20,7 @@
         });
 
         Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.should.beAccessible();
       });
 
       describe('with vertical overflow', () => {
@@ -29,6 +30,7 @@
         });
 
         Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.should.beAccessible();
       });
     });
 
@@ -39,6 +41,7 @@
         });
 
         Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.should.beAccessible();
       });
 
       describe('with horizontal overflow', () => {
@@ -48,6 +51,7 @@
         });
 
         Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.should.beAccessible();
       });
 
       describe('with vertical overflow', () => {
@@ -57,6 +61,7 @@
         });
 
         Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.should.beAccessible();
       });
     });
 
@@ -84,6 +89,8 @@
         browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
       });
       Terra.should.matchScreenshot('#backward-sections', { selector: '#selectable-data-grid' });
+
+      Terra.should.beAccessible();
     });
 
     describe('with cell selections', () => {
@@ -93,6 +100,7 @@
       });
 
       Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
     });
 
     describe('with row selections', () => {
@@ -102,6 +110,7 @@
       });
 
       Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
     });
 
     describe('with column header selections', () => {
@@ -111,6 +120,7 @@
       });
 
       Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
     });
 
     describe('with subsection selections', () => {
@@ -120,6 +130,7 @@
       });
 
       Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
+      Terra.should.beAccessible();
     });
 
     describe('with paging', () => {
@@ -129,6 +140,7 @@
       });
 
       Terra.should.matchScreenshot({ selector: '#paged-data-grid' });
+      Terra.should.beAccessible();
     });
   });
 });

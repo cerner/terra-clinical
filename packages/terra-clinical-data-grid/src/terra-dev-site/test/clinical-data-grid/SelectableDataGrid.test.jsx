@@ -68,6 +68,7 @@ class SelectableDataGrid extends React.Component {
   buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `Row-${rowIndex}`,
+      ariaLabel: `Row ${sectionId}-${rowIndex}`,
       isSelectable: true,
       isSelected: this.state.selectedRow && this.state.selectedRow.sectionId === sectionId && this.state.selectedRow.rowId === `Row-${rowIndex}`,
       cells: ((new Array(7).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({

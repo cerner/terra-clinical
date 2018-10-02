@@ -66,6 +66,7 @@ class SubsectionDataGrid extends React.Component {
   static buildRows(sectionId, num) {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-Row${rowIndex}`,
+      ariaLabel: `Row ${sectionId}-${rowIndex}`,
       cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
         component: <ContentCellLayout text={`Row-${rowIndex}, Column ${columnKey}`} />,
