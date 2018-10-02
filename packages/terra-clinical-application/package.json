@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-application",
   "main": "lib/Application.js",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "A wrapper component around `terra-base` that provides clinical application-specific properties",
   "repository": {
     "type": "git",
