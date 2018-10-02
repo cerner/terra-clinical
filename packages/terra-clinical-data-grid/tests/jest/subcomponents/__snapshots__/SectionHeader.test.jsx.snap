@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SectionHeader Snapshot Tests should render a Scrollbar as collapsed 1`] = `
+exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed 1`] = `
 <div
   className="section-header"
   data-section-header={true}
@@ -49,7 +49,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar as collapsed 1`]
 </div>
 `;
 
-exports[`SectionHeader Snapshot Tests should render a Scrollbar with child content if provided 1`] = `
+exports[`SectionHeader Snapshot Tests should render a SectionHeader with child content if provided 1`] = `
 <div
   className="section-header"
   data-section-header={true}
@@ -82,7 +82,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar with child conte
 </div>
 `;
 
-exports[`SectionHeader Snapshot Tests should render a Scrollbar with default text/accessory props 1`] = `
+exports[`SectionHeader Snapshot Tests should render a SectionHeader with default text/accessory props 1`] = `
 <div
   className="section-header"
   data-section-header={true}
@@ -131,7 +131,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar with default tex
 </div>
 `;
 
-exports[`SectionHeader Snapshot Tests should render a Scrollbar with minimal props 1`] = `
+exports[`SectionHeader Snapshot Tests should render a SectionHeader with minimal props 1`] = `
 <div
   className="section-header"
   data-section-header={true}
@@ -141,13 +141,7 @@ exports[`SectionHeader Snapshot Tests should render a Scrollbar with minimal pro
     role="button"
   >
     <div
-      className="start-accessory"
-    />
-    <div
       className="flex-content"
-    />
-    <div
-      className="end-accessory"
     />
   </div>
 </div>

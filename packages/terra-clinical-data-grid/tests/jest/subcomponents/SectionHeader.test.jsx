@@ -2,7 +2,7 @@ import React from 'react';
 import SectionHeader from '../../../src/subcomponents/SectionHeader';
 
 describe('SectionHeader Snapshot Tests', () => {
-  it('should render a Scrollbar with minimal props', () => {
+  it('should render a SectionHeader with minimal props', () => {
     const sectionHeader = shallow((
       <SectionHeader sectionId="test-section" />
     ));
@@ -10,7 +10,7 @@ describe('SectionHeader Snapshot Tests', () => {
     expect(sectionHeader).toMatchSnapshot();
   });
 
-  it('should render a Scrollbar with default text/accessory props', () => {
+  it('should render a SectionHeader with default text/accessory props', () => {
     const sectionHeader = shallow((
       <SectionHeader
         sectionId="test-section"
@@ -26,7 +26,7 @@ describe('SectionHeader Snapshot Tests', () => {
     expect(sectionHeader).toMatchSnapshot();
   });
 
-  it('should render a Scrollbar with child content if provided', () => {
+  it('should render a SectionHeader with child content if provided', () => {
     const sectionHeader = shallow((
       <SectionHeader
         sectionId="test-section"
@@ -44,7 +44,7 @@ describe('SectionHeader Snapshot Tests', () => {
     expect(sectionHeader).toMatchSnapshot();
   });
 
-  it('should render a Scrollbar as collapsed', () => {
+  it('should render a SectionHeader as collapsed', () => {
     const sectionHeader = shallow((
       <SectionHeader
         sectionId="test-section"

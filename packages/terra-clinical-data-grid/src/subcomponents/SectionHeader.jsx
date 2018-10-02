@@ -93,15 +93,19 @@ class SectionHeader extends React.Component {
     } else {
       content = (
         <React.Fragment>
-          <div className={cx('start-accessory')}>
-            {startAccessory}
-          </div>
+          {startAccessory ? (
+            <div className={cx('start-accessory')}>
+              {startAccessory}
+            </div>
+          ) : undefined}
           <div className={cx('flex-content')}>
             {text ? <div className={cx('text')}>{text}</div> : null}
           </div>
-          <div className={cx('end-accessory')}>
-            {endAccessory}
-          </div>
+          {endAccessory ? (
+            <div className={cx('end-accessory')}>
+              {endAccessory}
+            </div>
+          ) : undefined}
         </React.Fragment>
       );
     }
