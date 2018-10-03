@@ -65,6 +65,27 @@
       });
     });
 
+    describe('with no oveflow columns', () => {
+      describe('with initial rendering', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
+        });
+
+        Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
+        Terra.should.beAccessible();
+      });
+
+      describe('with vertical overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
+          browser.click('[data-cell-label="section_0-29-Column-0"]');
+        });
+
+        Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
+        Terra.should.beAccessible();
+      });
+    });
+
     describe('with tabbing', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
@@ -140,6 +161,15 @@
       });
 
       Terra.should.matchScreenshot({ selector: '#paged-data-grid' });
+      Terra.should.beAccessible();
+    });
+
+    describe('with custom row/header heights', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/custom-height-data-grid');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#custom-height-data-grid' });
       Terra.should.beAccessible();
     });
   });
