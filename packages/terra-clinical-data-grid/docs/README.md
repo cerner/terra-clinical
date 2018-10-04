@@ -90,5 +90,5 @@ If there are any mouse/keyboard interactive elements within the component, and t
 Additionally, these interactive elements must include a special data attribute called `data-accessible-data-grid-content`. The DataGrid utilizes a custom tabbing implementation to ensure a propper tabbing order, and including that attribute on all interactive elements of custom components will ensure that they are still sensibly keyboard accessible.
 
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-core/wiki/Component-Features#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-core/wiki/Component-Features#responsive-support)
+* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
