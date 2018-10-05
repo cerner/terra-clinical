@@ -89,7 +89,7 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
-    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#selenium_IE_set_viewport",
-    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#selenium_IE_set_viewport"
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#ie_viewport_2",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#ie_viewport_2"
   }
 }
