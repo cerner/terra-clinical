@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Enable color contrast accessibility rule
+
+2.15.0 - (October 2, 2018)
+----------
+### Changed
+* Minor dependency updates
 
 2.14.0 - (September 5, 2018)
 ----------

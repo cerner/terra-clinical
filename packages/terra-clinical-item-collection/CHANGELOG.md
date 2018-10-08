@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.17.0 - (October 2, 2018)
+----------
 ### Changed
 * Formatting changes per eslint v5 update
 
