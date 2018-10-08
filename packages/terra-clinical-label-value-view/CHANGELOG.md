@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+2.16.0 - (August 30, 2018)
+----------
 ### Changed
 * Enable color contrast accessibility rule
 
