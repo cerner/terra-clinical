@@ -1,0 +1,61 @@
+{
+  "name": "terra-clinical",
+  "private": true,
+  "version": "0.1.0",
+  "description": "terra-clinical",
+  "engines": {
+    "node": "8.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-clinical.git"
+  },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Terra Clinical",
+    "terra-clinical"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-clinical/issues"
+  },
+  "browserslist": [
+    "extends browserslist-config-terra"
+  ],
+  "eslintConfig": {
+    "extends": "terra"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-terra"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "bootstrap:hoist": "lerna bootstrap --hoist",
+    "clean:all": "lerna clean --yes && node scripts/clean-modules/index.js",
+    "clean:install": "npm run clean:all && npm install",
+    "clean:obsolete-snapshots": "npm test -- -u",
+    "compile": "lerna run compile",
+    "compile:prod": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p",
+    "danger": "danger ci",
+    "deploy": "npm run compile:prod && gh-pages -d build",
+    "heroku-prebuild": "npm install -g lerna@2.1.2 && lerna init",
+    "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
+    "jest": "jest --config jestconfig.js",
+    "jest:coverage": "jest --coverage --config jestconfig.js",
+    "link-parent-bin": "link-parent-bin",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:scss": "stylelint 'packages/**/src/**/*.scss' --syntax scss",
+    "pretest": "npm run lint",
+    "prepare:package": "npm run compile && npm run bootstrap",
+    "prepare:project": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
+    "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
+    "start": "tt-serve",
+    "start-heroku": "tt-heroku-serve-static",
+    "start-static": "tt-serve-static",
+    "test": "npm run jest && npm run wdio",
+    "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
+  }
+}

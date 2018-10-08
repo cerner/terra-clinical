@@ -1,0 +1,78 @@
+:local {
+  .flex-header {
+    background-color: var(--terra-clinical-header-background-color, #f4f4f4);
+    border-bottom-color: var(--terra-clinical-header-border-bottom-color, #dedfe0);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    display: flex;
+    height: 3.587rem;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.714rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .flex-fill {
+    align-self: center;
+    flex: 1 1 auto;
+    height: 100%;
+    min-width: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .flex-end {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+    position: relative;
+  }
+
+  .flex-collapse {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+    max-width: 40%;
+    position: relative;
+  }
+
+  .title-container {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.285rem;
+    font-weight: normal;
+    height: 100%;
+    line-height: 1.75;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    word-break: normal;
+    word-wrap: normal;
+  }
+
+  .flex-subheader {
+    background-color: var(--terra-clinical-header-subheader-background-color, #c8cacb);
+    border-bottom-color: currentColor;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    display: flex;
+    height: 2.857rem;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.3571rem 0.7143rem;
+    position: relative;
+    width: 100%;
+  }
+}

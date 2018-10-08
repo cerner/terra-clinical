@@ -1,0 +1,59 @@
+@import './mixins';
+
+:local {
+  .item-display {
+    @include terra-clinical-item-body;
+    align-items: center;
+    display: flex;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .text {
+    flex: 1 1 auto;
+    min-width: 10px; // Need min-width, as IE10 will completely squish display
+  }
+
+  .inline-icon {
+    flex: 0 0 auto;
+    overflow: hidden;
+    padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.357142857142857rem);
+  }
+
+  .inline-icon > * {
+    min-height: 1em;
+    min-width: 1em;
+  }
+
+  .is-truncated {
+    @include terra-clinical-text-truncate;
+  }
+
+  .is-disabled {
+    opacity: var(--terra-clinical-item-display-disabled-inline-icon-opacity, 0.2);
+
+    .inline-icon {
+      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
+    }
+  }
+
+  // Text Styles
+  .secondary {
+    color: var(--terra-clinical-item-display-secondary-color, #75767d);
+  }
+
+  .attention {
+    color: var(--terra-clinical-item-display-attention-color, #c00);
+    font-weight: var(--terra-clinical-item-display-attention-font-weight, 700);
+  }
+
+  .strong {
+    color: var(--terra-clinical-item-display-strong-color);
+    font-weight: var(--terra-clinical-item-display-strong-font-weight, 700);
+  }
+
+  .strike-through {
+    color: var(--terra-clinical-item-display-strike-through-color);
+    text-decoration: line-through;
+  }
+}

@@ -1,0 +1,12 @@
+@import './mixins';
+
+:local {
+  .item-comment {
+    @include terra-clinical-item-body;
+    color: var(--terra-clinical-item-comment-color, #75767d);
+
+    .inline-icon {
+      color: var(--terra-clinical-item-comment-inline-icon-color, rgba(117, 118, 125, 0.3));
+    }
+  }
+}
