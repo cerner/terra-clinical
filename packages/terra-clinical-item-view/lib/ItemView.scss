@@ -1,0 +1,116 @@
+@import './mixins';
+
+// Temporary until it is added to application.
+:local {
+  .item-view {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+
+  .accessory {
+    display: flex;
+    flex: 0 0 auto;
+    margin: 5px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  // Start Accessory is of fixed size and does not shrink or grow.
+  .start-accessory {
+    justify-content: flex-start;
+    width: 2.8571rem;
+  }
+
+  .start-accessory > * {
+    max-width: 2.8571rem;
+  }
+
+  .end-accessory {
+    justify-content: flex-end;
+    max-width: 20%;
+  }
+
+  .accessory-align-top {
+    align-self: flex-start;
+  }
+
+  .accessory-align-center {
+    align-self: center;
+  }
+
+  // Content Structure
+  .body {
+    flex: 1 1 auto;
+    margin: 5px;
+    min-width: 0;
+    overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .content {
+    align-items: flex-start;
+    color: var(--terra-item-view-content-color, #64696c);
+    display: flex;
+    overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .is-truncated,
+  .is-truncated [class*='ItemDisplay__text'] {
+    @include terra-clinical-text-truncate;
+  }
+
+  // Layouts
+  /* stylelint-disable selector-max-compound-selectors */
+  .one-column {
+    .row-container {
+      display: flex;
+      flex-flow: row wrap;
+
+      .content {
+        width: 100%;
+      }
+    }
+  }
+  /* stylelint-enable selector-max-compound-selectors */
+
+  .two-columns {
+    .content:nth-child(odd) {
+      flex: 1 1 auto;
+      justify-content: flex-start;
+    }
+
+    .content:nth-child(even) {
+      flex: 1 0 auto;
+      justify-content: flex-end;
+      // Set a max-width and disable flexbox-squishing on the right-most displays. This will ensure that they aren't
+      // prematurely squished and maximize the available space for all labels.
+      max-width: 60%;
+      padding-left: 5px;
+    }
+  }
+
+  //Emphasis Content Styles
+  .content-primary-color {
+    color: var(--terra-item-view-content-primary-color, #1c1f21);
+  }
+
+  .content-primary-size {
+    @include terra-clinical-tiny-heading;
+  }
+
+  .content-secondary-color {
+    color: var(--terra-item-view-content-secondary-color, #64696c);
+  }
+
+  .content-secondary-size {
+    @include terra-clinical-text-body;
+  }
+}

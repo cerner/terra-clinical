@@ -1,0 +1,20 @@
+:local {
+  .label-value-view {
+    border: 0;
+    padding: 0;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+
+  .label {
+    color: var(--terra-label-value-view-label-color, #75767d);
+    font-size: 0.8571428571rem;
+    line-height: 1.4285714286;
+    margin-bottom: 0.3571428571rem;
+  }
+
+  .value {
+    font-size: 1rem;
+    line-height: 1.4285714286;
+  }
+}

@@ -1,0 +1,87 @@
+:local {
+  .detail-view {
+    padding: 1.4285714286rem;
+
+    > * {
+      margin-bottom: 0.7142857143rem;
+    }
+  }
+
+  .titles-section {
+    line-height: 1.2;
+    margin-bottom: 0.7142857143rem;
+
+    &:first-child {
+      margin-bottom: 1.4285714286rem;
+    }
+  }
+
+  .primary-text {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    word-wrap: break-word;
+  }
+
+  .secondary-text {
+    font-size: 1.2857rem;
+    margin-bottom: 0.7142857143rem;
+    word-wrap: break-word;
+
+    ~ .subtitle {
+      margin-top: 1.2857142857rem;
+    }
+  }
+
+  .subtitle {
+    color: var(--terra-detail-view-subtitle-color, #75767d);
+    font-size: 1.1428571429rem;
+    line-height: 1.4285714286;
+    word-wrap: break-word;
+
+    ~ .subtitle {
+      margin-top: 0;
+    }
+  }
+
+  .accessory {
+    color: var(--terra-detail-view-accessory-color, #262424);
+    font-size: 1rem;
+    margin-top: 1.2857142857rem;
+  }
+
+  .titles-smaller {
+    > .primary-text {
+      font-size: 1.2857rem;
+      font-weight: bold;
+    }
+
+    > .secondary-text {
+      font-size: 1.143rem;
+    }
+
+    > .subtitle {
+      font-size: 1rem;
+    }
+
+    > .accessory {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-text {
+    color: var(--terra-detail-view-footer-text-color, #75767d);
+    font-size: 0.8571428571rem;
+    line-height: 1.4285714286;
+    text-align: center;
+  }
+
+  .divider {
+    border-color: var(--terra-detail-view-divider-border-color, #d3d4d5);
+    border-style: solid;
+    border-width: 1px 0 0;
+    margin: 0;
+    margin-bottom: 0.7142857143rem;
+  }
+}
