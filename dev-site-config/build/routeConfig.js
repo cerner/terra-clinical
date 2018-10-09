@@ -2,61 +2,61 @@
  import Component2 from '/Users/rm012685/terra/terra-clinical/README.md';
  import Component3 from 'terra-doc-template';
  import ContentWrapper from 'terra-dev-site/lib/app/components/ContentWrapper';
- import Component5 from '../../packages/terra-clinical-application/lib/terra-dev-site/doc/clinicalApplication.doc';
- import Component6 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/doc/clinicalDetailView.doc';
- import Component7 from '../../packages/terra-clinical-header/lib/terra-dev-site/doc/clinicalHeader.doc';
- import Component8 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/doc/clinicalItemCollection.doc';
- import Component9 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/doc/clinicalItemDisplay.doc';
- import Component10 from '../../packages/terra-clinical-item-view/lib/terra-dev-site/doc/clinicalItemView.doc';
- import Component11 from '../../packages/terra-clinical-label-value-view/lib/terra-dev-site/doc/clinicalLabelValueView.doc';
- import Component12 from '../../packages/terra-clinical-onset-picker/lib/terra-dev-site/doc/ClinicalOnsetPicker.doc';
+ import Component5 from '../../packages/terra-clinical-application/src/terra-dev-site/doc/clinicalApplication.doc';
+ import Component6 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/doc/clinicalDetailView.doc';
+ import Component7 from '../../packages/terra-clinical-header/src/terra-dev-site/doc/clinicalHeader.doc';
+ import Component8 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/doc/clinicalItemCollection.doc';
+ import Component9 from '../../packages/terra-clinical-item-display/src/terra-dev-site/doc/clinicalItemDisplay.doc';
+ import Component10 from '../../packages/terra-clinical-item-view/src/terra-dev-site/doc/clinicalItemView.doc';
+ import Component11 from '../../packages/terra-clinical-label-value-view/src/terra-dev-site/doc/clinicalLabelValueView.doc';
+ import Component12 from '../../packages/terra-clinical-onset-picker/src/terra-dev-site/doc/ClinicalOnsetPicker.doc';
  import RoutingMenu from 'terra-application-layout/lib/menu/RoutingMenu';
  import { Redirect } from 'react-router-dom';
  import TerraDevSitePlaceholder from 'terra-dev-site/lib/app/common/Placeholder';
- import Component16 from '../../packages/terra-clinical-application/lib/terra-dev-site/test/Clinical Application/DefaultApplication.test';
- import Component17 from '../../packages/terra-clinical-application/lib/terra-dev-site/test/Clinical Application/NoAppDelegateApplication.test';
- import Component18 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailList/LargeItemList.test';
- import Component19 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailList/NormalItemList.test';
- import Component20 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailListItem/DefaultListItem.test';
- import Component21 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewDivided.test';
- import Component22 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewDividedSmallerTitles.test';
- import Component23 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewNoDivider.test';
- import Component24 from '../../packages/terra-clinical-detail-view/lib/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewOverflowText.test';
- import Component25 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/DefaultHeader.test';
- import Component26 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/LeftAndRightContentHeader.test';
- import Component27 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/LeftAndRightContentSubheader.test';
- import Component28 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/LeftContentHeader.test';
- import Component29 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/LongTitleAndContentHeader.test';
- import Component30 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/LongTitleHeader.test';
- import Component31 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/NoTitleRightContentHeader.test';
- import Component32 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/RightContentHeader.test';
- import Component33 from '../../packages/terra-clinical-header/lib/terra-dev-site/test/clinical-header/TitleHeader.test';
- import Component34 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/test/clinical-item-collection/ItemCollectionAllElements.test';
- import Component35 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/test/clinical-item-collection/ItemCollectionItemStyles.test';
- import Component36 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/test/clinical-item-collection/ItemCollectionListStyles.test';
- import Component37 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/test/clinical-item-collection/ItemCollectionSelectable.test';
- import Component38 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/test/clinical-item-collection/ItemCollectionTableStyles.test';
- import Component39 from '../../packages/terra-clinical-item-collection/lib/terra-dev-site/test/clinical-item-collection/ItemCollectionVaryingItems.test';
- import Component40 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/comment/DefaultItemComment.test';
- import Component41 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/comment/TextItemComment.test';
- import Component42 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/display/DefaultItemDisplay.test';
- import Component43 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/display/DisabledItemDisplay.test';
- import Component44 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/display/IconItemDisplay.test';
- import Component45 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/display/ScalingIconItemDisplay.test';
- import Component46 from '../../packages/terra-clinical-item-display/lib/terra-dev-site/test/clinical-item-display/display/TextStyleItemDisplay.test';
- import Component47 from '../../packages/terra-clinical-item-view/lib/terra-dev-site/test/clinical-item-view/AccessoryItemView.test';
- import Component48 from '../../packages/terra-clinical-item-view/lib/terra-dev-site/test/clinical-item-view/CommentItemView.test';
- import Component49 from '../../packages/terra-clinical-item-view/lib/terra-dev-site/test/clinical-item-view/DefaultItemView.test';
- import Component50 from '../../packages/terra-clinical-item-view/lib/terra-dev-site/test/clinical-item-view/DisplaysItemView.test';
- import Component51 from '../../packages/terra-clinical-item-view/lib/terra-dev-site/test/clinical-item-view/OverflowDisplaysItemView.test';
- import Component52 from '../../packages/terra-clinical-label-value-view/lib/terra-dev-site/test/clinical-label-value-view/DefaultLabelValueView.test';
- import Component53 from '../../packages/terra-clinical-label-value-view/lib/terra-dev-site/test/clinical-label-value-view/MultipleValueLabelValueView.test';
- import Component54 from '../../packages/terra-clinical-label-value-view/lib/terra-dev-site/test/clinical-label-value-view/NodeValueLabelValueView.test';
- import Component55 from '../../packages/terra-clinical-label-value-view/lib/terra-dev-site/test/clinical-label-value-view/TextValueLabelValueView.test';
- import Component56 from '../../packages/terra-clinical-onset-picker/lib/terra-dev-site/test/clinical-onset-picker/Default.test';
- import Component57 from '../../packages/terra-clinical-onset-picker/lib/terra-dev-site/test/clinical-onset-picker/FiveYears.test';
- import Component58 from '../../packages/terra-clinical-onset-picker/lib/terra-dev-site/test/clinical-onset-picker/LessMonth.test';
- import Component59 from '../../packages/terra-clinical-onset-picker/lib/terra-dev-site/test/clinical-onset-picker/LessYear.test';
+ import Component16 from '../../packages/terra-clinical-application/src/terra-dev-site/test/Clinical Application/DefaultApplication.test';
+ import Component17 from '../../packages/terra-clinical-application/src/terra-dev-site/test/Clinical Application/NoAppDelegateApplication.test';
+ import Component18 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailList/LargeItemList.test';
+ import Component19 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailList/NormalItemList.test';
+ import Component20 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailListItem/DefaultListItem.test';
+ import Component21 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewDivided.test';
+ import Component22 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewDividedSmallerTitles.test';
+ import Component23 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewNoDivider.test';
+ import Component24 from '../../packages/terra-clinical-detail-view/src/terra-dev-site/test/clinical-detail-view/DetailView/DetailViewOverflowText.test';
+ import Component25 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/DefaultHeader.test';
+ import Component26 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/LeftAndRightContentHeader.test';
+ import Component27 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/LeftAndRightContentSubheader.test';
+ import Component28 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/LeftContentHeader.test';
+ import Component29 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/LongTitleAndContentHeader.test';
+ import Component30 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/LongTitleHeader.test';
+ import Component31 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/NoTitleRightContentHeader.test';
+ import Component32 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/RightContentHeader.test';
+ import Component33 from '../../packages/terra-clinical-header/src/terra-dev-site/test/clinical-header/TitleHeader.test';
+ import Component34 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/test/clinical-item-collection/ItemCollectionAllElements.test';
+ import Component35 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/test/clinical-item-collection/ItemCollectionItemStyles.test';
+ import Component36 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/test/clinical-item-collection/ItemCollectionListStyles.test';
+ import Component37 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/test/clinical-item-collection/ItemCollectionSelectable.test';
+ import Component38 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/test/clinical-item-collection/ItemCollectionTableStyles.test';
+ import Component39 from '../../packages/terra-clinical-item-collection/src/terra-dev-site/test/clinical-item-collection/ItemCollectionVaryingItems.test';
+ import Component40 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/comment/DefaultItemComment.test';
+ import Component41 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/comment/TextItemComment.test';
+ import Component42 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/display/DefaultItemDisplay.test';
+ import Component43 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/display/DisabledItemDisplay.test';
+ import Component44 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/display/IconItemDisplay.test';
+ import Component45 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/display/ScalingIconItemDisplay.test';
+ import Component46 from '../../packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/display/TextStyleItemDisplay.test';
+ import Component47 from '../../packages/terra-clinical-item-view/src/terra-dev-site/test/clinical-item-view/AccessoryItemView.test';
+ import Component48 from '../../packages/terra-clinical-item-view/src/terra-dev-site/test/clinical-item-view/CommentItemView.test';
+ import Component49 from '../../packages/terra-clinical-item-view/src/terra-dev-site/test/clinical-item-view/DefaultItemView.test';
+ import Component50 from '../../packages/terra-clinical-item-view/src/terra-dev-site/test/clinical-item-view/DisplaysItemView.test';
+ import Component51 from '../../packages/terra-clinical-item-view/src/terra-dev-site/test/clinical-item-view/OverflowDisplaysItemView.test';
+ import Component52 from '../../packages/terra-clinical-label-value-view/src/terra-dev-site/test/clinical-label-value-view/DefaultLabelValueView.test';
+ import Component53 from '../../packages/terra-clinical-label-value-view/src/terra-dev-site/test/clinical-label-value-view/MultipleValueLabelValueView.test';
+ import Component54 from '../../packages/terra-clinical-label-value-view/src/terra-dev-site/test/clinical-label-value-view/NodeValueLabelValueView.test';
+ import Component55 from '../../packages/terra-clinical-label-value-view/src/terra-dev-site/test/clinical-label-value-view/TextValueLabelValueView.test';
+ import Component56 from '../../packages/terra-clinical-onset-picker/src/terra-dev-site/test/clinical-onset-picker/Default.test';
+ import Component57 from '../../packages/terra-clinical-onset-picker/src/terra-dev-site/test/clinical-onset-picker/FiveYears.test';
+ import Component58 from '../../packages/terra-clinical-onset-picker/src/terra-dev-site/test/clinical-onset-picker/LessMonth.test';
+ import Component59 from '../../packages/terra-clinical-onset-picker/src/terra-dev-site/test/clinical-onset-picker/LessYear.test';
  import Component60 from 'terra-dev-site/lib/app/components/ScreenshotWrapper';
  import Component61 from '../../packages/terra-clinical-application/tests/wdio/__snapshots__/reference/en/chrome_enormous/application-spec/Renders_the_Application_with_provided_AppDelegate[default].png';
  import Component62 from '../../packages/terra-clinical-application/tests/wdio/__snapshots__/reference/en/chrome_huge/application-spec/Renders_the_Application_with_provided_AppDelegate[default].png';
@@ -194,233 +194,234 @@
  import Component194 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/disabled[themed].png';
  import Component195 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/icon[default].png';
  import Component196 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-display-spec/icon[default].png';
- import Component197 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/scaling[default].png';
- import Component198 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-display-spec/scaling[default].png';
- import Component199 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-comment-spec/Text[default].png';
- import Component200 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-comment-spec/Text[default].png';
- import Component201 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/text_style[default].png';
- import Component202 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-display-spec/text_style[default].png';
- import Component203 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/text_style[themed].png';
- import Component204 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_accessories[default].png';
- import Component205 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_accessories[default].png';
- import Component206 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_accessories[default].png';
- import Component207 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_accessories[default].png';
- import Component208 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_accessories[default].png';
- import Component209 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_accessories[default].png';
- import Component210 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_default_comment_set[default].png';
- import Component211 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_default_comment_set[default].png';
- import Component212 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_default_comment_set[default].png';
- import Component213 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_default_comment_set[default].png';
- import Component214 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_default_comment_set[default].png';
- import Component215 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_default_comment_set[default].png';
- import Component216 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_one_column_displays[default].png';
- import Component217 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_one_column_displays[default].png';
- import Component218 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_one_column_displays[default].png';
- import Component219 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_one_column_displays[default].png';
- import Component220 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_one_column_displays[default].png';
- import Component221 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_one_column_displays[default].png';
- import Component222 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_one_column_displays[themed].png';
- import Component223 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_truncated_-_one_truncated[default].png';
- import Component224 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_truncated_-_two_truncated[default].png';
- import Component225 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
- import Component226 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
- import Component227 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
- import Component228 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
- import Component229 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
- import Component230 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
- import Component231 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
- import Component232 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
- import Component233 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
- import Component234 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
- import Component235 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
- import Component236 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
- import Component237 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_truncated_comment_set[default].png';
- import Component238 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_truncated_comment_set[default].png';
- import Component239 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_truncated_comment_set[default].png';
- import Component240 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_truncated_comment_set[default].png';
- import Component241 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_truncated_comment_set[default].png';
- import Component242 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_truncated_comment_set[default].png';
- import Component243 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_two_column_and_start_displays[default].png';
- import Component244 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_two_column_and_start_displays[default].png';
- import Component245 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_two_column_and_start_displays[default].png';
- import Component246 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_two_column_and_start_displays[default].png';
- import Component247 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_two_column_and_start_displays[default].png';
- import Component248 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_two_column_and_start_displays[default].png';
- import Component249 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_two_column_displays[default].png';
- import Component250 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_two_column_displays[default].png';
- import Component251 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_two_column_displays[default].png';
- import Component252 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_two_column_displays[default].png';
- import Component253 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_two_column_displays[default].png';
- import Component254 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_two_column_displays[default].png';
- import Component255 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_a_node_input_is_provided[default].png';
- import Component256 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_a_node_input_is_provided[default].png';
- import Component257 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_a_node_input_is_provided[default].png';
- import Component258 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_a_node_input_is_provided[default].png';
- import Component259 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_a_node_input_is_provided[default].png';
- import Component260 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_a_node_input_is_provided[default].png';
- import Component261 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_a_text_input_is_provided[default].png';
- import Component262 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_a_text_input_is_provided[default].png';
- import Component263 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_a_text_input_is_provided[default].png';
- import Component264 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_a_text_input_is_provided[default].png';
- import Component265 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_a_text_input_is_provided[default].png';
- import Component266 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_a_text_input_is_provided[default].png';
- import Component267 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_no_value_input_is_provided[default].png';
- import Component268 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_no_value_input_is_provided[default].png';
- import Component269 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_no_value_input_is_provided[default].png';
- import Component270 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_no_value_input_is_provided[default].png';
- import Component271 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_no_value_input_is_provided[default].png';
- import Component272 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_no_value_input_is_provided[default].png';
- import Component273 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_no_value_input_is_provided[themed].png';
- import Component274 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
- import Component275 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
- import Component276 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
- import Component277 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
- import Component278 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
- import Component279 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
- import Component280 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
- import Component281 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
- import Component282 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
- import Component283 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
- import Component284 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
- import Component285 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
- import Component286 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
- import Component287 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
- import Component288 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
- import Component289 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
- import Component290 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
- import Component291 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
- import Component292 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
- import Component293 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
- import Component294 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
- import Component295 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
- import Component296 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
- import Component297 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
- import Component298 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_month_in_the_future[default].png';
- import Component299 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_month_in_the_future[default].png';
- import Component300 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_month_in_the_future[default].png';
- import Component301 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_month_in_the_future[default].png';
- import Component302 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_month_in_the_future[default].png';
- import Component303 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_month_in_the_future[default].png';
- import Component304 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
- import Component305 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
- import Component306 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
- import Component307 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
- import Component308 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
- import Component309 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
- import Component310 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_year_in_the_future[default].png';
- import Component311 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_year_in_the_future[default].png';
- import Component312 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_year_in_the_future[default].png';
- import Component313 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_year_in_the_future[default].png';
- import Component314 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_year_in_the_future[default].png';
- import Component315 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_year_in_the_future[default].png';
- import Component316 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
- import Component317 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
- import Component318 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
- import Component319 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
- import Component320 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
- import Component321 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
- import Component322 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_more_than_24_months[default].png';
- import Component323 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_more_than_24_months[default].png';
- import Component324 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_more_than_24_months[default].png';
- import Component325 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_more_than_24_months[default].png';
- import Component326 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_more_than_24_months[default].png';
- import Component327 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_more_than_24_months[default].png';
- import Component328 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_more_than_8_weeks[default].png';
- import Component329 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_more_than_8_weeks[default].png';
- import Component330 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_more_than_8_weeks[default].png';
- import Component331 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_more_than_8_weeks[default].png';
- import Component332 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_more_than_8_weeks[default].png';
- import Component333 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_more_than_8_weeks[default].png';
- import Component334 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
- import Component335 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
- import Component336 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
- import Component337 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
- import Component338 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
- import Component339 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
- import Component340 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
- import Component341 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
- import Component342 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
- import Component343 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
- import Component344 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
- import Component345 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
- import Component346 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
- import Component347 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
- import Component348 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
- import Component349 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
- import Component350 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
- import Component351 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
- import Component352 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
- import Component353 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
- import Component354 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
- import Component355 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
- import Component356 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
- import Component357 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
- import Component358 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
- import Component359 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
- import Component360 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
- import Component361 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
- import Component362 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
- import Component363 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
- import Component364 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
- import Component365 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
- import Component366 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
- import Component367 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
- import Component368 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
- import Component369 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
- import Component370 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
- import Component371 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
- import Component372 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
- import Component373 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
- import Component374 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
- import Component375 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
- import Component376 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
- import Component377 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
- import Component378 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
- import Component379 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
- import Component380 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
- import Component381 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
- import Component382 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
- import Component383 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
- import Component384 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
- import Component385 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
- import Component386 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
- import Component387 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
- import Component388 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component389 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component390 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component391 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component392 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component393 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component394 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component395 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component396 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component397 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component398 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component399 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component400 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component401 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component402 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component403 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component404 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component405 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component406 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component407 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component408 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component409 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component410 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component411 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
- import Component412 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
- import Component413 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
- import Component414 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
- import Component415 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
- import Component416 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
- import Component417 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
- import Component418 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/when_unknown_precision_selected[default].png';
- import Component419 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/when_unknown_precision_selected[default].png';
- import Component420 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/when_unknown_precision_selected[default].png';
- import Component421 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/when_unknown_precision_selected[default].png';
- import Component422 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/when_unknown_precision_selected[default].png';
- import Component423 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/when_unknown_precision_selected[default].png';
+ import Component197 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/icon[themed].png';
+ import Component198 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/scaling[default].png';
+ import Component199 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-display-spec/scaling[default].png';
+ import Component200 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-comment-spec/Text[default].png';
+ import Component201 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-comment-spec/Text[default].png';
+ import Component202 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/text_style[default].png';
+ import Component203 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-display-spec/text_style[default].png';
+ import Component204 from '../../packages/terra-clinical-item-display/tests/wdio/__snapshots__/reference/en/chrome_medium/item-display-spec/text_style[themed].png';
+ import Component205 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_accessories[default].png';
+ import Component206 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_accessories[default].png';
+ import Component207 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_accessories[default].png';
+ import Component208 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_accessories[default].png';
+ import Component209 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_accessories[default].png';
+ import Component210 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_accessories[default].png';
+ import Component211 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_default_comment_set[default].png';
+ import Component212 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_default_comment_set[default].png';
+ import Component213 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_default_comment_set[default].png';
+ import Component214 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_default_comment_set[default].png';
+ import Component215 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_default_comment_set[default].png';
+ import Component216 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_default_comment_set[default].png';
+ import Component217 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_one_column_displays[default].png';
+ import Component218 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_one_column_displays[default].png';
+ import Component219 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_one_column_displays[default].png';
+ import Component220 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_one_column_displays[default].png';
+ import Component221 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_one_column_displays[default].png';
+ import Component222 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_one_column_displays[default].png';
+ import Component223 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_one_column_displays[themed].png';
+ import Component224 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_truncated_-_one_truncated[default].png';
+ import Component225 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_truncated_-_two_truncated[default].png';
+ import Component226 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
+ import Component227 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
+ import Component228 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
+ import Component229 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
+ import Component230 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
+ import Component231 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_the_full_example_word_wrap_-_one_column[default].png';
+ import Component232 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
+ import Component233 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
+ import Component234 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
+ import Component235 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
+ import Component236 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
+ import Component237 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_the_full_example_word_wrap_-_two_column[default].png';
+ import Component238 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_truncated_comment_set[default].png';
+ import Component239 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_truncated_comment_set[default].png';
+ import Component240 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_truncated_comment_set[default].png';
+ import Component241 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_truncated_comment_set[default].png';
+ import Component242 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_truncated_comment_set[default].png';
+ import Component243 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_truncated_comment_set[default].png';
+ import Component244 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_two_column_and_start_displays[default].png';
+ import Component245 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_two_column_and_start_displays[default].png';
+ import Component246 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_two_column_and_start_displays[default].png';
+ import Component247 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_two_column_and_start_displays[default].png';
+ import Component248 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_two_column_and_start_displays[default].png';
+ import Component249 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_two_column_and_start_displays[default].png';
+ import Component250 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/item-view-spec/with_two_column_displays[default].png';
+ import Component251 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_huge/item-view-spec/with_two_column_displays[default].png';
+ import Component252 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_large/item-view-spec/with_two_column_displays[default].png';
+ import Component253 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_medium/item-view-spec/with_two_column_displays[default].png';
+ import Component254 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_small/item-view-spec/with_two_column_displays[default].png';
+ import Component255 from '../../packages/terra-clinical-item-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/item-view-spec/with_two_column_displays[default].png';
+ import Component256 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_a_node_input_is_provided[default].png';
+ import Component257 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_a_node_input_is_provided[default].png';
+ import Component258 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_a_node_input_is_provided[default].png';
+ import Component259 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_a_node_input_is_provided[default].png';
+ import Component260 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_a_node_input_is_provided[default].png';
+ import Component261 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_a_node_input_is_provided[default].png';
+ import Component262 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_a_text_input_is_provided[default].png';
+ import Component263 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_a_text_input_is_provided[default].png';
+ import Component264 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_a_text_input_is_provided[default].png';
+ import Component265 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_a_text_input_is_provided[default].png';
+ import Component266 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_a_text_input_is_provided[default].png';
+ import Component267 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_a_text_input_is_provided[default].png';
+ import Component268 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_no_value_input_is_provided[default].png';
+ import Component269 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_no_value_input_is_provided[default].png';
+ import Component270 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_no_value_input_is_provided[default].png';
+ import Component271 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_no_value_input_is_provided[default].png';
+ import Component272 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_no_value_input_is_provided[default].png';
+ import Component273 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_no_value_input_is_provided[default].png';
+ import Component274 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_no_value_input_is_provided[themed].png';
+ import Component275 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_enormous/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
+ import Component276 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_huge/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
+ import Component277 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_large/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
+ import Component278 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_medium/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
+ import Component279 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_small/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
+ import Component280 from '../../packages/terra-clinical-label-value-view/tests/wdio/__snapshots__/reference/en/chrome_tiny/label-value-view-spec/when_text_and_node_inputs_are_provided[default].png';
+ import Component281 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
+ import Component282 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
+ import Component283 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
+ import Component284 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
+ import Component285 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
+ import Component286 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Can_select_a_month_between_the_birthdate_and_current_date[default].png';
+ import Component287 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
+ import Component288 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
+ import Component289 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
+ import Component290 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
+ import Component291 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
+ import Component292 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Can_select_a_year_between_the_birthdate_and_current_year[default].png';
+ import Component293 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
+ import Component294 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
+ import Component295 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
+ import Component296 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
+ import Component297 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
+ import Component298 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_month_before_the_birthdate[default].png';
+ import Component299 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_month_in_the_future[default].png';
+ import Component300 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_month_in_the_future[default].png';
+ import Component301 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_month_in_the_future[default].png';
+ import Component302 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_month_in_the_future[default].png';
+ import Component303 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_month_in_the_future[default].png';
+ import Component304 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_month_in_the_future[default].png';
+ import Component305 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
+ import Component306 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
+ import Component307 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
+ import Component308 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
+ import Component309 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
+ import Component310 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_year_before_the_birthdate[default].png';
+ import Component311 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_a_year_in_the_future[default].png';
+ import Component312 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_a_year_in_the_future[default].png';
+ import Component313 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_a_year_in_the_future[default].png';
+ import Component314 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_a_year_in_the_future[default].png';
+ import Component315 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_a_year_in_the_future[default].png';
+ import Component316 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_a_year_in_the_future[default].png';
+ import Component317 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
+ import Component318 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
+ import Component319 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
+ import Component320 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
+ import Component321 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
+ import Component322 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_months_duration_if_age_is_less_than_a_month_old[default].png';
+ import Component323 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_more_than_24_months[default].png';
+ import Component324 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_more_than_24_months[default].png';
+ import Component325 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_more_than_24_months[default].png';
+ import Component326 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_more_than_24_months[default].png';
+ import Component327 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_more_than_24_months[default].png';
+ import Component328 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_more_than_24_months[default].png';
+ import Component329 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_more_than_8_weeks[default].png';
+ import Component330 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_more_than_8_weeks[default].png';
+ import Component331 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_more_than_8_weeks[default].png';
+ import Component332 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_more_than_8_weeks[default].png';
+ import Component333 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_more_than_8_weeks[default].png';
+ import Component334 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_more_than_8_weeks[default].png';
+ import Component335 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
+ import Component336 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
+ import Component337 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
+ import Component338 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
+ import Component339 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
+ import Component340 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_number_of_months_that_exceede_age[default].png';
+ import Component341 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
+ import Component342 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
+ import Component343 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
+ import Component344 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
+ import Component345 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
+ import Component346 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_number_of_weeks_that_exceede_age[default].png';
+ import Component347 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
+ import Component348 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
+ import Component349 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
+ import Component350 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
+ import Component351 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
+ import Component352 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_number_of_years_greater_than_age[default].png';
+ import Component353 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
+ import Component354 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
+ import Component355 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
+ import Component356 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
+ import Component357 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
+ import Component358 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Cannot_select_years_duration_if_age_is_less_than_a_year_old[default].png';
+ import Component359 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
+ import Component360 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
+ import Component361 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
+ import Component362 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
+ import Component363 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
+ import Component364 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_age_inputs_when_Age_granularity_is_selected[default].png';
+ import Component365 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
+ import Component366 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
+ import Component367 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
+ import Component368 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
+ import Component369 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
+ import Component370 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_date_input_when_Date_granularity_is_selected[default].png';
+ import Component371 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
+ import Component372 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
+ import Component373 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
+ import Component374 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
+ import Component375 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
+ import Component376 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_month_and_year_selection_only_when_Month-Year_granularity_selected[default].png';
+ import Component377 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
+ import Component378 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
+ import Component379 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
+ import Component380 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
+ import Component381 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
+ import Component382 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/Displays_year_selection_only_when_Year_granularity_selected[default].png';
+ import Component383 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
+ import Component384 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
+ import Component385 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
+ import Component386 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
+ import Component387 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
+ import Component388 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_granularity_is_changed_an_event_is_fired_to_the_granularitySelectOnChange_callback[default].png';
+ import Component389 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component390 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component391 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component392 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component393 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component394 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_age_input_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component395 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component396 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component397 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component398 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component399 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component400 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_ageUnit_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component401 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component402 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component403 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component404 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component405 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component406 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_month_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component407 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component408 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component409 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component410 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component411 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component412 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_onsetDate_is_changed_by_the_year_select_an_event_is_fired_to_the_onsetDateInputOnChange_callback[default].png';
+ import Component413 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
+ import Component414 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
+ import Component415 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
+ import Component416 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
+ import Component417 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
+ import Component418 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/When_precision_is_changed_an_event_is_fired_to_the_precisionSelectOnChange_callback[default].png';
+ import Component419 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_enormous/onset-spec/when_unknown_precision_selected[default].png';
+ import Component420 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_huge/onset-spec/when_unknown_precision_selected[default].png';
+ import Component421 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_large/onset-spec/when_unknown_precision_selected[default].png';
+ import Component422 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_medium/onset-spec/when_unknown_precision_selected[default].png';
+ import Component423 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_small/onset-spec/when_unknown_precision_selected[default].png';
+ import Component424 from '../../packages/terra-clinical-onset-picker/tests/wdio/__snapshots__/reference/en/chrome_tiny/onset-spec/when_unknown_precision_selected[default].png';
 
  export default {
    'menu': {
@@ -1077,6 +1078,10 @@
                      {
                         'text': 'Icon Default',
                         'path': '/evidence/terra-clinical-item-display/terra-clinical-item-display/en/terra-clinical-item-display/en/icon-default'
+                     },
+                     {
+                        'text': 'Icon Themed',
+                        'path': '/evidence/terra-clinical-item-display/terra-clinical-item-display/en/terra-clinical-item-display/en/icon-themed'
                      },
                      {
                         'text': 'Scaling Default',
@@ -3320,6 +3325,23 @@
             }
          }
       },
+      '/evidence/terra-clinical-item-display/terra-clinical-item-display/en/terra-clinical-item-display/en/icon-themed': {
+         'path': '/evidence/terra-clinical-item-display/terra-clinical-item-display/en/terra-clinical-item-display/en/icon-themed',
+         'component': {
+            'default': {
+               'componentClass': ContentWrapper,
+               'props': {
+                  'content': Component60,
+                  'props': {
+                     'imageConfig': [{
+                           'viewport': 'chrome_medium',
+                           'contentPath': Component197
+                        }]
+                  }
+               }
+            }
+         }
+      },
       '/evidence/terra-clinical-item-display/terra-clinical-item-display/en/terra-clinical-item-display/en/scaling-default': {
          'path': '/evidence/terra-clinical-item-display/terra-clinical-item-display/en/terra-clinical-item-display/en/scaling-default',
          'component': {
@@ -3331,11 +3353,11 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_medium',
-                           'contentPath': Component197
+                           'contentPath': Component198
                         },
                         {
                            'viewport': 'chrome_tiny',
-                           'contentPath': Component198
+                           'contentPath': Component199
                         }
                      ]
                   }
@@ -3354,11 +3376,11 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_medium',
-                           'contentPath': Component199
+                           'contentPath': Component200
                         },
                         {
                            'viewport': 'chrome_tiny',
-                           'contentPath': Component200
+                           'contentPath': Component201
                         }
                      ]
                   }
@@ -3377,11 +3399,11 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_medium',
-                           'contentPath': Component201
+                           'contentPath': Component202
                         },
                         {
                            'viewport': 'chrome_tiny',
-                           'contentPath': Component202
+                           'contentPath': Component203
                         }
                      ]
                   }
@@ -3399,7 +3421,7 @@
                   'props': {
                      'imageConfig': [{
                            'viewport': 'chrome_medium',
-                           'contentPath': Component203
+                           'contentPath': Component204
                         }]
                   }
                }
@@ -3448,27 +3470,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component204
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component205
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component206
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component207
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component208
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component209
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component210
                         }
                      ]
                   }
@@ -3487,27 +3509,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component210
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component211
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component212
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component213
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component214
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component215
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component216
                         }
                      ]
                   }
@@ -3526,27 +3548,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component216
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component217
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component218
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component219
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component220
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component221
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component222
                         }
                      ]
                   }
@@ -3564,7 +3586,7 @@
                   'props': {
                      'imageConfig': [{
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component222
+                           'contentPath': Component223
                         }]
                   }
                }
@@ -3581,7 +3603,7 @@
                   'props': {
                      'imageConfig': [{
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component223
+                           'contentPath': Component224
                         }]
                   }
                }
@@ -3598,7 +3620,7 @@
                   'props': {
                      'imageConfig': [{
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component224
+                           'contentPath': Component225
                         }]
                   }
                }
@@ -3616,27 +3638,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component225
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component226
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component227
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component228
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component229
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component230
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component231
                         }
                      ]
                   }
@@ -3655,27 +3677,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component231
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component232
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component233
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component234
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component235
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component236
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component237
                         }
                      ]
                   }
@@ -3694,27 +3716,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component237
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component238
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component239
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component240
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component241
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component242
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component243
                         }
                      ]
                   }
@@ -3733,27 +3755,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component243
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component244
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component245
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component246
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component247
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component248
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component249
                         }
                      ]
                   }
@@ -3772,27 +3794,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component249
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component250
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component251
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component252
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component253
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component254
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component255
                         }
                      ]
                   }
@@ -3842,27 +3864,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component255
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component256
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component257
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component258
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component259
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component260
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component261
                         }
                      ]
                   }
@@ -3881,27 +3903,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component261
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component262
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component263
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component264
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component265
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component266
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component267
                         }
                      ]
                   }
@@ -3920,27 +3942,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component267
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component268
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component269
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component270
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component271
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component272
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component273
                         }
                      ]
                   }
@@ -3958,7 +3980,7 @@
                   'props': {
                      'imageConfig': [{
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component273
+                           'contentPath': Component274
                         }]
                   }
                }
@@ -3976,27 +3998,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component274
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component275
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component276
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component277
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component278
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component279
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component280
                         }
                      ]
                   }
@@ -4046,27 +4068,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component280
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component281
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component282
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component283
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component284
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component285
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component286
                         }
                      ]
                   }
@@ -4085,27 +4107,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component286
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component287
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component288
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component289
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component290
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component291
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component292
                         }
                      ]
                   }
@@ -4124,27 +4146,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component292
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component293
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component294
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component295
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component296
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component297
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component298
                         }
                      ]
                   }
@@ -4163,27 +4185,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component298
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component299
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component300
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component301
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component302
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component303
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component304
                         }
                      ]
                   }
@@ -4202,27 +4224,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component304
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component305
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component306
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component307
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component308
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component309
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component310
                         }
                      ]
                   }
@@ -4241,27 +4263,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component310
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component311
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component312
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component313
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component314
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component315
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component316
                         }
                      ]
                   }
@@ -4280,27 +4302,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component316
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component317
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component318
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component319
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component320
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component321
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component322
                         }
                      ]
                   }
@@ -4319,27 +4341,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component322
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component323
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component324
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component325
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component326
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component327
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component328
                         }
                      ]
                   }
@@ -4358,27 +4380,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component328
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component329
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component330
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component331
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component332
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component333
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component334
                         }
                      ]
                   }
@@ -4397,27 +4419,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component334
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component335
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component336
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component337
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component338
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component339
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component340
                         }
                      ]
                   }
@@ -4436,27 +4458,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component340
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component341
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component342
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component343
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component344
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component345
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component346
                         }
                      ]
                   }
@@ -4475,27 +4497,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component346
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component347
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component348
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component349
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component350
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component351
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component352
                         }
                      ]
                   }
@@ -4514,27 +4536,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component352
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component353
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component354
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component355
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component356
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component357
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component358
                         }
                      ]
                   }
@@ -4553,27 +4575,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component358
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component359
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component360
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component361
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component362
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component363
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component364
                         }
                      ]
                   }
@@ -4592,27 +4614,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component364
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component365
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component366
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component367
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component368
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component369
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component370
                         }
                      ]
                   }
@@ -4631,27 +4653,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component370
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component371
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component372
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component373
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component374
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component375
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component376
                         }
                      ]
                   }
@@ -4670,27 +4692,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component376
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component377
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component378
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component379
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component380
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component381
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component382
                         }
                      ]
                   }
@@ -4709,27 +4731,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component382
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component383
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component384
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component385
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component386
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component387
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component388
                         }
                      ]
                   }
@@ -4748,27 +4770,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component388
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component389
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component390
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component391
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component392
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component393
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component394
                         }
                      ]
                   }
@@ -4787,27 +4809,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component394
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component395
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component396
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component397
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component398
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component399
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component400
                         }
                      ]
                   }
@@ -4826,27 +4848,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component400
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component401
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component402
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component403
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component404
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component405
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component406
                         }
                      ]
                   }
@@ -4865,27 +4887,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component406
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component407
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component408
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component409
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component410
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component411
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component412
                         }
                      ]
                   }
@@ -4904,27 +4926,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component412
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component413
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component414
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component415
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component416
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component417
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component418
                         }
                      ]
                   }
@@ -4943,27 +4965,27 @@
                      'imageConfig': [
                         {
                            'viewport': 'chrome_enormous',
-                           'contentPath': Component418
-                        },
-                        {
-                           'viewport': 'chrome_huge',
                            'contentPath': Component419
                         },
                         {
-                           'viewport': 'chrome_large',
+                           'viewport': 'chrome_huge',
                            'contentPath': Component420
                         },
                         {
-                           'viewport': 'chrome_medium',
+                           'viewport': 'chrome_large',
                            'contentPath': Component421
                         },
                         {
-                           'viewport': 'chrome_small',
+                           'viewport': 'chrome_medium',
                            'contentPath': Component422
                         },
                         {
-                           'viewport': 'chrome_tiny',
+                           'viewport': 'chrome_small',
                            'contentPath': Component423
+                        },
+                        {
+                           'viewport': 'chrome_tiny',
+                           'contentPath': Component424
                         }
                      ]
                   }
