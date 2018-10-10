@@ -1,6 +1,6 @@
 :local {
   .resize-handle {
-    cursor: col-resize;
+    cursor: col-resize; /* stylelint-disable-line plugin/no-unsupported-browser-features */ // cursor isn't supported by Android/iOS browsers
     height: 100%;
     position: absolute;
     right: 0;
