@@ -34,7 +34,7 @@
     "terra-icon": "^2.9.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build",
+    "compile": "npm run compile:clean && npm run compile:build && npm pack --ignore-scripts && mv *.tgz terra-clinical-detail-view.tgz",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
