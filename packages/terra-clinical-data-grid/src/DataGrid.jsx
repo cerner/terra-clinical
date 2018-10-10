@@ -103,7 +103,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rowHeight: '2.5rem',
-  headerHeight: '3rem',
+  headerHeight: '2.5rem',
   defaultColumnWidth: 200,
   sections: [],
 };

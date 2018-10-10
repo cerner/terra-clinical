@@ -1,6 +1,6 @@
 :local {
   .container {
-    background-color: var(--terra-clinical-data-grid-scrollbar-background-color, lightgrey);
+    background-color: var(--terra-clinical-data-grid-scrollbar-background-color, #e8e9ea);
     height: var(--terra-clinical-data-grid-scrollbar-height, 10px);
 
     left: 0;
@@ -16,7 +16,7 @@
 
   .container:hover,
   .container.dragging {
-    height: var(--terra-clinical-data-grid-scrollbar-hover-height, 12px);
+    height: var(--terra-clinical-data-grid-scrollbar-hover-height, 14px);
   }
 
   .scrollbar {
@@ -28,7 +28,7 @@
     position: absolute;
 
     .scrollbar-handle {
-      background-color: var(--terra-clinical-data-grid-scrollbar-color, grey);
+      background-color: var(--terra-clinical-data-grid-scrollbar-color, #9b9fa1);
       border-radius: var(--terra-clinical-data-grid-scrollbar-border-radius, 25px);
       flex: 0 0 auto;
       height: calc(100% - 2px);
@@ -38,7 +38,7 @@
 
   .container.dragging {
     .scrollbar-handle {
-      background-color: var(--terra-clinical-data-grid-scrollbar-active-color, darkslategray);
+      background-color: var(--terra-clinical-data-grid-scrollbar-active-color, #868a8c);
     }
   }
 }

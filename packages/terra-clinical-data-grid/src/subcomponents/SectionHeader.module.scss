@@ -1,11 +1,7 @@
 :local {
   .section-header {
-    background-color: var(--terra-clinical-data-grid-section-header-background-color, lightgrey);
-
-    border-bottom-color: var(--terra-clinical-data-grid-section-header-border-bottom-width, #646464);
-    border-bottom-style: var(--terra-clinical-data-grid-section-header-border-bottom-width, solid);
-    border-bottom-width: var(--terra-clinical-data-grid-section-header-border-bottom-width, 1px);
-
+    background-color: var(--terra-clinical-data-grid-section-header-background-color, #e8e9ea);
+    border-bottom: var(--terra-clinical-data-grid-section-header-border-bottom, 1px solid #c8cacb);
     height: 100%;
     position: relative;
     width: 100%;
@@ -50,12 +46,12 @@
   }
 
   .content:focus {
-    box-shadow: inset 0 0 5px 0 #0092e0;
+    box-shadow: inset 0 0 0 3px rgba(76, 178, 233, 0.2);
     outline: none;
   }
 
   .content.selectable:hover {
-    background-color: var(--terra-clinical-data-grid-section-header-hover-background-color, #e2f2fc);
+    background-color: var(--terra-clinical-data-grid-section-header-hover-background-color, #d7d8d9);
     cursor: pointer;
   }
 }
