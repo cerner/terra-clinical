@@ -22,6 +22,7 @@ Cerner Corporation
 - Mayuri Kini [@mayurikini]
 - Christian Alten [@cwalten]
 - Alvin Cheung [@pseudofaux]
+- Brett Jankord [@bjankord]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -45,3 +46,4 @@ Cerner Corporation
 [@mayurikini]: https://github.com/mayurikini
 [@cwalten]: https://github.com/cwalten
 [@pseudofaux]: https://github.com/pseudofaux
+[@bjankord]: https://github.com/bjankord
