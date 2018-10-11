@@ -23,6 +23,7 @@ Cerner Corporation
 - Christian Alten [@cwalten]
 - Alvin Cheung [@pseudofaux]
 - Brett Jankord [@bjankord]
+- Eric Wilson [@eawww]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -47,3 +48,4 @@ Cerner Corporation
 [@cwalten]: https://github.com/cwalten
 [@pseudofaux]: https://github.com/pseudofaux
 [@bjankord]: https://github.com/bjankord
+[@eawww]: https://github.com/eawww
