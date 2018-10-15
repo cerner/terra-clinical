@@ -17,7 +17,7 @@ const themedProperties = {
   '--terra-clinical-data-grid-resize-handle-active-background-color': 'red',
   '--terra-clinical-data-grid-row-background-color': 'lightgreen',
   '--terra-clinical-data-grid-row-striped-background-color': 'lightpink',
-  '--terra-clinical-data-grid-row-hover-background-color': 'pink',
+  '--terra-clinical-data-grid-row-hover-background-color': 'blue',
   '--terra-clinical-data-grid-row-selected-background-color': 'darksalmon',
   '--terra-clinical-data-grid-row-selected-box-shadow': 'inset 0 1px 0 0 yellow, inset 0 -1px 0 0 yellow',
   '--terra-clinical-data-grid-row-selected-hover-background-color': 'salmon',
@@ -176,6 +176,23 @@ const themedProperties = {
       });
     });
 
+    describe('with cell selection hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.moveToObject('[data-accessibility-id="8"]');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-cell-hover-background-color': 'blue',
+        },
+      });
+    });
+
     describe('with row selections', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
@@ -188,6 +205,23 @@ const themedProperties = {
         testName: 'themed',
         selector: '#selectable-data-grid',
         properties: themedProperties,
+      });
+    });
+
+    describe('with row selection hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.moveToObject('[data-accessibility-id="7"]');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-row-hover-background-color': 'blue',
+        },
       });
     });
 
@@ -218,6 +252,23 @@ const themedProperties = {
         testName: 'themed',
         selector: '#subsection-data-grid',
         properties: themedProperties,
+      });
+    });
+
+    describe('with subsection selection hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
+        browser.moveToObject('[data-accessibility-id="0"]');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#subsection-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
+        },
       });
     });
 

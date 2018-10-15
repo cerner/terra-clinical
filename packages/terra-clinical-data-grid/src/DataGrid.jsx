@@ -19,8 +19,10 @@ import columnDataShape from './proptypes/columnDataShape';
 import sectionDataShape from './proptypes/sectionDataShape';
 
 import styles from './DataGrid.module.scss';
+import rowStyles from './subcomponents/Row.module.scss';
 
 const cx = classNames.bind(styles);
+const cxRow = classNames.bind(rowStyles);
 
 const propTypes = {
   /**
@@ -783,13 +785,13 @@ class DataGrid extends React.Component {
          */
         const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
         for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
-          rowElements[i].classList.add('hover');
+          rowElements[i].classList.add(cxRow('hover'));
         }
       },
       () => {
         const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
         for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
-          rowElements[i].classList.remove('hover');
+          rowElements[i].classList.remove(cxRow('hover'));
         }
       },
       this.props.intl.formatMessage({
