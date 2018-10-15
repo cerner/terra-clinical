@@ -97,12 +97,12 @@
   .footer-container {
     display: flex;
     overflow: hidden;
+    z-index: 1;
 
     .pinned-column-buffer {
       background-color: var(--terra-clinical-data-grid-scrollbar-background-color, #e8e9ea);
       box-shadow: var(--terra-clinical-data-grid-pinned-column-box-shadow, 0 0 12px 0 rgba(100, 105, 108, 0.5), inset -1px 0 0 0 #c8cacb);
       flex: 0 0 auto;
-      z-index: 1;
     }
 
     .scrollbar-container {

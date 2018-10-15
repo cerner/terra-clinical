@@ -567,7 +567,11 @@ class DataGrid extends React.Component {
 
     this.synchronizeScrollTimeout = setTimeout(this.resetHeaderScrollEventMarkers, 100);
 
-    requestAnimationFrame(() => {
+    if (this.scrollSyncAnimationFrame) {
+      cancelAnimationFrame(this.scrollSyncAnimationFrame);
+    }
+
+    this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
       this.horizontalOverflowContainerRef.scrollLeft = this.headerOverflowContainerRef.scrollLeft;
 
       this.updateScrollbarPosition();
@@ -587,7 +591,11 @@ class DataGrid extends React.Component {
 
     this.synchronizeScrollTimeout = setTimeout(this.resetContentScrollEventMarkers, 100);
 
-    requestAnimationFrame(() => {
+    if (this.scrollSyncAnimationFrame) {
+      cancelAnimationFrame(this.scrollSyncAnimationFrame);
+    }
+
+    this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
       this.headerOverflowContainerRef.scrollLeft = this.horizontalOverflowContainerRef.scrollLeft;
 
       this.updateScrollbarPosition();
@@ -618,8 +626,12 @@ class DataGrid extends React.Component {
     const positionRatio = finalPosition / scrollArea;
     const maxScrollLeft = this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth;
 
-    requestAnimationFrame(() => {
-      this.scrollbarRef.style.left = `${this.scrollbarPosition}px`;
+    if (this.scrollSyncAnimationFrame) {
+      cancelAnimationFrame(this.scrollSyncAnimationFrame);
+    }
+
+    this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
+      this.scrollbarRef.style.transform = `translateX(${this.scrollbarPosition}px)`;
       this.headerOverflowContainerRef.scrollLeft = maxScrollLeft * positionRatio;
       this.horizontalOverflowContainerRef.scrollLeft = maxScrollLeft * positionRatio;
     });
@@ -660,9 +672,9 @@ class DataGrid extends React.Component {
     const positionRatio = this.horizontalOverflowContainerRef.scrollLeft / (this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth);
     const position = (this.horizontalOverflowContainerRef.clientWidth - scrollbarWidth) * positionRatio;
 
-    this.scrollbarRef.style.width = `${scrollbarWidth}px`;
-    this.scrollbarRef.style.left = `${position}px`;
     this.scrollbarPosition = position;
+    this.scrollbarRef.style.width = `${scrollbarWidth}px`;
+    this.scrollbarRef.style.transform = `translateX(${this.scrollbarPosition}px)`;
   }
 
   /**
