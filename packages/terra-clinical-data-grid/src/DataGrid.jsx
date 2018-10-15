@@ -232,6 +232,15 @@ class DataGrid extends React.Component {
     this.resizeObserver.observe(this.verticalOverflowContainerRef);
 
     /**
+     * Another ResizeObserver is used to track changes to the pinned column section height.
+     */
+    this.pinnedColumnResizeObserver = new ResizeObserver((entries) => {
+      this.rowContentHeight = entries[0].contentRect.height;
+      this.overflowedContentContainerRef.style.height = `${this.rowContentHeight}px`;
+    });
+    this.pinnedColumnResizeObserver.observe(this.pinnedContentContainerRef);
+
+    /**
      * We need to keep track of the user's usage of SHIFT to properly handle tabbing paths.
      */
     document.addEventListener('keydown', this.handleKeyDown);
@@ -258,6 +267,8 @@ class DataGrid extends React.Component {
 
   componentWillUnmount() {
     this.resizeObserver.disconnect(this.verticalOverflowContainerRef);
+    this.pinnedColumnResizeObserver.disconnect(this.pinnedContentContainerRef);
+
     document.removeEventListener('keydown', this.handleKeyDown);
     document.removeEventListener('keyup', this.handleKeyUp);
   }
@@ -462,7 +473,7 @@ class DataGrid extends React.Component {
        * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
        * want defer to the custom scrollbar that rendered by the DataGrid.
        */
-      this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.clientHeight}px`;
+      this.overflowedContentContainerRef.style.height = `${this.rowContentHeight}px`;
     });
   }
 
