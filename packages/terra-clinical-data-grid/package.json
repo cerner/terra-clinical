@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-data-grid",
   "main": "lib/DataGrid.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An organizational component that renders a collection of data in a grid-like format.",
   "repository": {
     "type": "git",
@@ -27,14 +27,14 @@
     "terra-base": "^3.0.0"
   },
   "devDependencies": {
+    "react-intl": "^2.7.0",
     "react-router-dom": "^4.2.2",
-    "terra-props-table": "^2.0.0",
-    "react-intl": "^2.7.0"
+    "terra-props-table": "^2.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
     "memoize-one": "^4.0.0",
+    "prop-types": "^15.5.8",
     "react-draggable": "^3.0.5",
     "resize-observer-polyfill": "^1.4.1",
     "terra-button": "^2.0.1",
