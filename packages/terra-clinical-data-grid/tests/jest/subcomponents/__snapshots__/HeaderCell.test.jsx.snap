@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderCell Snapshot Tests should render a Cell with all provided props for default rendering 1`] = `
+<Cell
+  className="header-cell"
+  columnId="column-test"
+  isSelectable={true}
+  onSelect={[Function]}
+  rowId=""
+  sectionId=""
+  selectableRefCallback={[Function]}
+  width="123px"
+>
+  <div
+    className="default-layout"
+  >
+    <div
+      className="text"
+    >
+      Test HeaderCell
+    </div>
+    <div
+      className="sort-indicator"
+    >
+      <IconCaretUp
+        className=""
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+  <ResizeHandle
+    id="column-test"
+    onResizeStop={[Function]}
+  />
+</Cell>
+`;
+
+exports[`HeaderCell Snapshot Tests should render a Cell with custom contents if provided 1`] = `
+<Cell
+  className="header-cell"
+  columnId="column-test"
+  isSelectable={true}
+  onSelect={[Function]}
+  rowId=""
+  sectionId=""
+  selectableRefCallback={[Function]}
+  width="123px"
+>
+  <div>
+    Custom HeaderCell Content
+  </div>
+  <ResizeHandle
+    id="column-test"
+    onResizeStop={[Function]}
+  />
+</Cell>
+`;
+
+exports[`HeaderCell Snapshot Tests should render a HeaderCell with minimal props 1`] = `
+<Cell
+  aria-hidden={true}
+  className="header-cell"
+  columnId="column-test"
+  onSelect={[Function]}
+  rowId=""
+  sectionId=""
+  width="123px"
+/>
+`;
