@@ -20,19 +20,23 @@ const propTypes = {
    */
   children: PropTypes.node.isRequired,
   /**
-  * Whether or not the item collection should display a start accessory.
+  * Whether or not the item collection's child items should display start accessories.
+  * If *false*, `startAccessory` prop of each child item is set to `null` before it is rendered.
   */
   hasStartAccessory: PropTypes.bool,
   /**
   * The number of displays the item collection should display.
+  * Array of child items is truncated to this length if there is more than one child.
   */
   numberOfDisplays: PropTypes.number,
   /**
-  * Whether or not the item collection should display a comment.
+  * Whether or not the item collection's child items should display comments.
+  * If *false*, `comment` prop of each child item is set to `null` before it is rendered.
   */
   hasComment: PropTypes.bool,
   /**
-  * Whether or not the item collection should display an end accessory.
+  * Whether or not the item collection's child items should display an end accessories.
+  * If *false*, `endAccessory` prop of each child item is set to `null` before it is rendered.
   */
   hasEndAccessory: PropTypes.bool,
   /**
