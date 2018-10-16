@@ -1,0 +1,30 @@
+:local {
+  .header-cell {
+    border-right: var(--terra-clinical-data-grid-header-cell-border-right, 1px solid #dedfe0);
+  }
+
+  .default-layout {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    padding: 5px;
+    width: 100%;
+
+    .sort-indicator {
+      color: var(--terra-clinical-data-grid-column-header-text-color, #64696c);
+      flex: 0 0 auto;
+      margin-left: 0.5rem;
+    }
+
+    .text {
+      color: var(--terra-clinical-data-grid-column-header-text-color, #64696c);
+      flex: 0 1 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResizeHandle Snapshot Tests should render a ResizeHandle with all props 1`] = `
+<DraggableCore
+  allowAnyClick={false}
+  cancel={null}
+  disabled={false}
+  enableUserSelectHack={true}
+  grid={null}
+  handle={null}
+  offsetParent={null}
+  onDrag={[Function]}
+  onMouseDown={[Function]}
+  onStart={[Function]}
+  onStop={[Function]}
+  transform={null}
+>
+  <div
+    className="resize-handle"
+    onClick={[Function]}
+  />
+</DraggableCore>
+`;
+
+exports[`ResizeHandle Snapshot Tests should render a ResizeHandle with minimal props 1`] = `
+<DraggableCore
+  allowAnyClick={false}
+  cancel={null}
+  disabled={false}
+  enableUserSelectHack={true}
+  grid={null}
+  handle={null}
+  offsetParent={null}
+  onDrag={[Function]}
+  onMouseDown={[Function]}
+  onStart={[Function]}
+  onStop={[Function]}
+  transform={null}
+>
+  <div
+    className="resize-handle"
+    onClick={[Function]}
+  />
+</DraggableCore>
+`;

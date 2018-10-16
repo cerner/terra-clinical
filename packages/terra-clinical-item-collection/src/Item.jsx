@@ -16,22 +16,27 @@ const propTypes = {
   children: PropTypes.node,
   /**
    * The start accessory element to be presented.
+   * This will only be shown if the Item Collection component's `hasStartAccessory` prop is *true*.
    */
   startAccessory: PropTypes.node,
   /**
    * The comment element to be presented.
+   * This will only be shown if the Item Collection component's `hasComment` prop is *true*.
    */
   comment: PropTypes.node,
   /**
    * The end accessory element to be presented.
+   * This will only be shown if the Item Collection component's `hasEndAccessory` prop is *true*.
    */
   endAccessory: PropTypes.node,
   /**
    * When displayed as a list item, the column layout in which to present the displays.
+   * One of `'oneColumn'`, `'twoColumns'`.
    */
   listItemLayout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
   /**
    * When displayed as a list item, the text color emphasis when using the two columns layout.
+   * One of `'default'`, `'start'`.
    */
   listItemTextEmphasis: PropTypes.oneOf(['default', 'start']),
   /**
@@ -39,7 +44,7 @@ const propTypes = {
    */
   isListItemTruncated: PropTypes.bool,
   /**
-   * The vertical alignment of the start and end accessories.
+   * The vertical alignment of the start and end accessories. One of `'alignTop'`,`'alignCenter'`.
    */
   accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
   /**

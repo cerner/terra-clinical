@@ -1,0 +1,13 @@
+:local {
+  .content-cell {
+    height: 100%;
+    overflow: hidden;
+    padding: 8px;
+    text-overflow: ellipsis;
+    vertical-align: center;
+    white-space: nowrap;
+    width: 100%;
+    word-break: normal;
+    word-wrap: normal;
+  }
+}
