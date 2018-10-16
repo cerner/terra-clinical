@@ -90,6 +90,6 @@
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
     "terra-dev-site": "^2.0.0",
-    "terra-toolkit": "^4.5.0"
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#ie_viewport_2"
   }
 }
