@@ -13,39 +13,40 @@
     background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
     border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
     display: flex;
+    min-width: 100%;
     overflow: hidden;
     position: relative;
+  }
+
+  .pinned-header {
+    background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
+    display: flex;
+    flex: 0 0 auto;
+    height: 100%;
+  }
+
+  .header-overflow-container {
+    flex: 1 1 auto;
+    height: calc(100% + 20px);
+    margin-bottom: -20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
     width: 100%;
+  }
 
-    .pinned-header {
-      background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-      display: flex;
-      flex: 0 0 auto;
-      height: 100%;
-    }
+  .overflow-header {
+    background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
+    display: flex;
+    height: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+  }
 
-    .header-overflow-container {
-      flex: 1 1 auto;
-      height: calc(100% + 20px);
-      margin-bottom: -20px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding-bottom: 20px;
-      width: 100%;
-    }
-
-    .overflow-header {
-      background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-      display: flex;
-      min-width: 100%;
-      position: relative;
-      top: 0;
-    }
-
-    .header-scrollbar-buffer {
-      flex: 0 0 auto;
-      height: 100%;
-    }
+  .header-scrollbar-buffer {
+    flex: 0 0 auto;
+    height: 100%;
   }
 
   .vertical-overflow-container {
@@ -62,9 +63,12 @@
   .horizontal-overflow-container {
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 20px;
     position: relative;
     width: 100%;
+  }
+
+  .horizontal-overflow-container.padded-container {
+    padding-bottom: 20px;
   }
 
   .overflowed-content-container {

@@ -5,7 +5,7 @@
     min-width: 100%;
   }
 
-  .row:nth-child(odd) {
+  .row.striped {
     background-color: var(--terra-clinical-data-grid-row-striped-background-color, #f0f0f0);
   }
 

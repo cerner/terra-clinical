@@ -29,6 +29,10 @@ const propTypes = {
    */
   isSelected: PropTypes.bool,
   /**
+   * Boolean indicating whether the row should be styled with alternate background styling.
+   */
+  isStriped: PropTypes.bool,
+  /**
    * Content to render within the Row.
    */
   children: PropTypes.node,
@@ -57,6 +61,7 @@ class Row extends React.Component {
       width,
       height,
       isSelected,
+      isStriped,
       children,
       ...customProps
     } = this.props;
@@ -64,7 +69,7 @@ class Row extends React.Component {
     return (
       <div
         {...customProps}
-        className={cx(['row', { selected: isSelected }, customProps.className])}
+        className={cx(['row', { selected: isSelected, striped: isStriped }, customProps.className])}
         style={this.getRowStyles(width, height)}
         data-row
         data-row-id={rowId}
