@@ -14,8 +14,11 @@
     border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
     display: flex;
     min-width: 100%;
-    overflow: hidden;
     position: relative;
+  }
+
+  .header-container.fixed {
+    overflow: hidden;
   }
 
   .pinned-header {

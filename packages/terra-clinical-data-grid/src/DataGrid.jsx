@@ -775,7 +775,7 @@ class DataGrid extends React.Component {
 
     return (
       <div
-        className={cx('header-container')}
+        className={cx(['header-container', 'fixed'])}
         style={this.generateHeaderContainerStyle(headerHeight)}
       >
         <div
