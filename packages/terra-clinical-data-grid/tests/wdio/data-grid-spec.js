@@ -71,6 +71,42 @@ const themedProperties = {
       });
     });
 
+    describe('with fill disabled', () => {
+      describe('with initial rendering', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
+        });
+
+        Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.should.beAccessible();
+        Terra.should.themeCombinationOfCustomProperties({
+          testName: 'themed with no fill',
+          selector: '#no-fill-data-grid',
+          properties: themedProperties,
+        });
+      });
+
+      describe('with horizontal overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
+          browser.click('[data-cell-label="section_0-0-Column-12"]');
+        });
+
+        Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.should.beAccessible();
+      });
+
+      describe('with vertical overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
+          browser.click('[data-cell-label="section_0-29-Column-12"]');
+        });
+
+        Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.should.beAccessible();
+      });
+    });
+
     describe('with no pinned columns', () => {
       describe('with initial rendering', () => {
         beforeEach(() => {
