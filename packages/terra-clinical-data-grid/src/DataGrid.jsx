@@ -423,16 +423,16 @@ class DataGrid extends React.Component {
     };
   }
 
-  generatePinnedContainerWidthStyle(pinnedColumnWidth) {
-    return {
-      width: `${pinnedColumnWidth}px`,
-    };
-  }
-
   generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight) {
     return {
       width: `${pinnedColumnWidth}px`,
       height: `${headerHeight}`,
+    };
+  }
+
+  generatePinnedContainerWidthStyle(pinnedColumnWidth) {
+    return {
+      width: `${pinnedColumnWidth}px`,
     };
   }
 

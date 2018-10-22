@@ -10,8 +10,6 @@
 
   .header-container {
     align-items: center;
-    background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-    border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
     display: flex;
     min-width: 100%;
     position: relative;
@@ -23,8 +21,9 @@
 
   .pinned-header {
     background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-    display: flex;
+    border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
     flex: 0 0 auto;
+    float: left;
     height: 100%;
   }
 
@@ -40,7 +39,8 @@
 
   .overflow-header {
     background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-    display: flex;
+    border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
+    float: left;
     height: 100%;
     min-width: 100%;
     position: relative;
@@ -48,6 +48,8 @@
   }
 
   .header-scrollbar-buffer {
+    background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
+    border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
     flex: 0 0 auto;
     height: 100%;
   }
