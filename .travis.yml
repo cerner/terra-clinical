@@ -36,7 +36,7 @@ jobs:
       script:
         - 'wget -q -O docker-compose.yml https://raw.github.com/cerner/terra-toolkit/master/config/docker/ci-docker-compose.yml'
         - "travis_wait docker-compose run -e DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN -e TRAVIS=$TRAVIS -e CI=$CI -e HAS_JOSH_K_SEAL_OF_APPROVAL=$HAS_JOSH_K_SEAL_OF_APPROVAL -e TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG test-chrome bash -c 'npm run danger; npm run lint; npm run jest'"
-    - stage: test
+    - stage: wdio
       script:
         - 'wget -q -O docker-compose.yml https://raw.github.com/cerner/terra-toolkit/master/config/docker/ci-docker-compose.yml'
         - "travis_wait docker-compose run -e TRAVIS=$TRAVIS -e CI=$CI test-chrome npm run wdio -- --suite suite1"
@@ -75,7 +75,7 @@ jobs:
 stages:
   - build
   - danger lint and jest
-  - test
+  - wdio
   - name: deploy
     if: type != pull_request
   - clean up cache
