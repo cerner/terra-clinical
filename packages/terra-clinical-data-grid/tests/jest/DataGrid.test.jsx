@@ -1,0 +1,305 @@
+import React from 'react';
+import { IntlProvider } from 'react-intl';
+
+import DataGrid from '../../src/DataGrid';
+import dataGridUtils from '../../src/utils/dataGridUtils';
+import messages from '../../translations/en-US.json';
+
+const locale = 'en-US';
+
+const testColumns = {
+  'Column-0': {
+    id: 'Column-0',
+    width: 200,
+    text: 'Column 0',
+  },
+  'Column-1': {
+    id: 'Column-1',
+    width: 200,
+    text: 'Column 1',
+  },
+  'Column-2': {
+    id: 'Column-2',
+    width: 200,
+    text: 'Column 2',
+  },
+  'Column-3': {
+    id: 'Column-3',
+    width: 200,
+    text: 'Column 3',
+  },
+};
+
+const testSections = [{
+  id: 'section-0',
+  rows: [{
+    id: 'row-0',
+    cells: [{
+      columnId: 'Column-0',
+      component: <div>0</div>,
+    }, {
+      columnId: 'Column-1',
+      component: <div>1</div>,
+    }, {
+      columnId: 'Column-2',
+      component: <div>2</div>,
+    }, {
+      columnId: 'Column-3',
+      component: <div>3</div>,
+    }],
+  }, {
+    id: 'row-1',
+    cells: [{
+      columnId: 'Column-0',
+      component: <div>0</div>,
+    }, {
+      columnId: 'Column-1',
+      component: <div>1</div>,
+    }, {
+      columnId: 'Column-2',
+      component: <div>2</div>,
+    }, {
+      columnId: 'Column-3',
+      component: <div>3</div>,
+    }],
+  }],
+}];
+
+const witIntl = component => (
+  <IntlProvider locale={locale} messages={messages}>
+    {component}
+  </IntlProvider>
+);
+
+describe('DataGrid Snapshots', () => {
+  it('should render a DataGrid with missing optional props', () => {
+    const dataGrid = shallow(witIntl(<DataGrid id="test" />));
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with only overflow columns', () => {
+    const dataGridComp = (
+      <DataGrid
+        id="test"
+        overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        fill
+      />
+    );
+
+    const dataGrid = shallow(witIntl(dataGridComp));
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with pinned and overflow columns', () => {
+    const dataGridComp = (
+      <DataGrid
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        fill
+      />
+    );
+
+    const dataGrid = shallow(witIntl(dataGridComp));
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with custom row and header heights', () => {
+    const dataGridComp = (
+      <DataGrid
+        id="test"
+        overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        rowHeight="5rem"
+        headerHeight="10rem"
+        fill
+      />
+    );
+
+    const dataGrid = shallow(witIntl(dataGridComp));
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with selectable rows, columns, and cells', () => {
+    const dataGridComp = (
+      <DataGrid
+        id="test"
+        pinnedColumns={[{
+          id: 'Column-0',
+          width: 200,
+          text: 'Column 0',
+          isSelectable: true,
+          isResizable: true,
+          sortIndicator: 'ascending',
+        }]}
+        overflowColumns={[{
+          id: 'Column-1',
+          width: 300,
+          text: 'Column 1',
+          isSelectable: true,
+          sortIndicator: 'descending',
+        }]}
+        sections={[{
+          id: 'section-0',
+          isCollapsible: true,
+          isCollapsed: false,
+          text: 'Section 0',
+          startAccessory: <div>Start Accessory</div>,
+          endAccessory: <div>End Accessory</div>,
+          rows: [{
+            id: 'row-0',
+            isSelectable: true,
+            isSelected: true,
+            cells: [{
+              columnId: 'Column-0',
+              isSelectable: true,
+              isSelected: true,
+              component: <div>0</div>,
+            }, {
+              columnId: 'Column-1',
+              isSelectable: true,
+              component: <div>1</div>,
+            }],
+          }],
+        }]}
+        hasSelectableRows
+        onColumnSelect={() => {}}
+        onCellSelect={() => {}}
+        onRowSelect={() => {}}
+        fill
+      />
+    );
+
+    const dataGrid = shallow(witIntl(dataGridComp));
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with custom header cells', () => {
+    const dataGridComp = (
+      <DataGrid
+        id="test"
+        pinnedColumns={[{
+          id: 'Column-0',
+          width: 200,
+          text: 'Column 0',
+          sortIndicator: 'ascending',
+          component: <div>Custom Header 0</div>,
+        }]}
+        overflowColumns={[{
+          id: 'Column-1',
+          width: 300,
+          text: 'Column 1',
+          sortIndicator: 'descending',
+          component: <div>Custom Header 1</div>,
+        }]}
+        sections={[{
+          id: 'section-0',
+          isCollapsible: true,
+          isCollapsed: false,
+          text: 'Section 0',
+          startAccessory: <div>Start Accessory</div>,
+          endAccessory: <div>End Accessory</div>,
+          rows: [{
+            id: 'row-0',
+            cells: [{
+              columnId: 'Column-0',
+              component: <div>0</div>,
+            }, {
+              columnId: 'Column-1',
+              component: <div>1</div>,
+            }],
+          }],
+        }]}
+        fill
+      />
+    );
+
+    const dataGrid = shallow(witIntl(dataGridComp));
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with custom section header', () => {
+    const dataGridComp = (
+      <DataGrid
+        id="test"
+        pinnedColumns={[{
+          id: 'Column-0',
+          width: 200,
+          text: 'Column 0',
+          sortIndicator: 'ascending',
+        }]}
+        overflowColumns={[{
+          id: 'Column-1',
+          width: 300,
+          text: 'Column 1',
+          sortIndicator: 'descending',
+        }]}
+        sections={[{
+          id: 'section-0',
+          isCollapsible: true,
+          isCollapsed: false,
+          text: 'Section 0',
+          startAccessory: <div>Start Accessory</div>,
+          endAccessory: <div>End Accessory</div>,
+          component: <div>Custom Section Header</div>,
+          rows: [{
+            id: 'row-0',
+            cells: [{
+              columnId: 'Column-0',
+              component: <div>0</div>,
+            }, {
+              columnId: 'Column-1',
+              component: <div>1</div>,
+            }],
+          }],
+        }]}
+        fill
+      />
+    );
+
+    const dataGrid = shallow(witIntl(dataGridComp));
+    expect(dataGrid).toMatchSnapshot();
+  });
+});
+
+describe('getDerivedStateFromProps', () => {
+  let getPinnedColumnsRef;
+  let getOverflowColumnsRef;
+  let getTotalColumnWidthRef;
+
+  beforeEach(() => {
+    getPinnedColumnsRef = dataGridUtils.getPinnedColumns;
+    getOverflowColumnsRef = dataGridUtils.getOverflowColumns;
+    getTotalColumnWidthRef = dataGridUtils.getTotalColumnWidth;
+  });
+
+  afterEach(() => {
+    dataGridUtils.getPinnedColumns = getPinnedColumnsRef;
+    dataGridUtils.getOverflowColumns = getOverflowColumnsRef;
+    dataGridUtils.getTotalColumnWidth = getTotalColumnWidthRef;
+  });
+
+  it('should return the calculated pinned/overflow column widths', () => {
+    const pinnedColumns = {};
+    const overflowColumns = {};
+
+    dataGridUtils.getPinnedColumns = jest.fn().mockReturnValue(pinnedColumns);
+    dataGridUtils.getOverflowColumns = jest.fn().mockReturnValue(overflowColumns);
+    dataGridUtils.getTotalColumnWidth = jest.fn().mockImplementation((columns) => {
+      if (columns === pinnedColumns) {
+        return 555;
+      }
+
+      if (columns === overflowColumns) {
+        return 777;
+      }
+      return -1;
+    });
+
+    const result = DataGrid.WrappedComponent.getDerivedStateFromProps({}, 300);
+    expect(result.pinnedColumnWidth).toEqual(555);
+    expect(result.overflowColumnWidth).toEqual(777);
+  });
+});

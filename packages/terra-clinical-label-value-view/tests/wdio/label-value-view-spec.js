@@ -1,6 +1,4 @@
 const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-// Remove once #306 is resolved
-const rules = { 'color-contrast': { enabled: false } };
 
 describe('Label Value View', () => {
   describe('when no value input is provided', () => {
@@ -15,8 +13,7 @@ describe('Label Value View', () => {
         '--terra-label-value-view-label-color': 'purple',
       },
     });
-    // Remove {rules} once #306 is resolved
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('when a text input is provided', () => {
@@ -25,8 +22,7 @@ describe('Label Value View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports });
-    // Remove {rules} once #306 is resolved
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('when a node input is provided', () => {
@@ -35,8 +31,7 @@ describe('Label Value View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports });
-    // Remove {rules} once #306 is resolved
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 
   describe('when text and node inputs are provided', () => {
@@ -45,7 +40,6 @@ describe('Label Value View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports });
-    // Remove {rules} once #306 is resolved
-    Terra.should.beAccessible({ rules });
+    Terra.should.beAccessible();
   });
 });

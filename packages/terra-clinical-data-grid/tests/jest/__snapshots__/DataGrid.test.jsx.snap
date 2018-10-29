@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`] = `
+<InjectIntl(DataGrid)
+  fill={true}
+  id="test"
+  overflowColumns={
+    Array [
+      Object {
+        "component": <div>
+          Custom Header 1
+        </div>,
+        "id": "Column-1",
+        "sortIndicator": "descending",
+        "text": "Column 1",
+        "width": 300,
+      },
+    ]
+  }
+  pinnedColumns={
+    Array [
+      Object {
+        "component": <div>
+          Custom Header 0
+        </div>,
+        "id": "Column-0",
+        "sortIndicator": "ascending",
+        "text": "Column 0",
+        "width": 200,
+      },
+    ]
+  }
+  sections={
+    Array [
+      Object {
+        "endAccessory": <div>
+          End Accessory
+        </div>,
+        "id": "section-0",
+        "isCollapsed": false,
+        "isCollapsible": true,
+        "rows": Array [
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+            ],
+            "id": "row-0",
+          },
+        ],
+        "startAccessory": <div>
+          Start Accessory
+        </div>,
+        "text": "Section 0",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with custom row and header heights 1`] = `
+<InjectIntl(DataGrid)
+  fill={true}
+  headerHeight="10rem"
+  id="test"
+  overflowColumns={
+    Array [
+      Object {
+        "id": "Column-0",
+        "text": "Column 0",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-1",
+        "text": "Column 1",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-2",
+        "text": "Column 2",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-3",
+        "text": "Column 3",
+        "width": 200,
+      },
+    ]
+  }
+  rowHeight="5rem"
+  sections={
+    Array [
+      Object {
+        "id": "section-0",
+        "rows": Array [
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+              Object {
+                "columnId": "Column-2",
+                "component": <div>
+                  2
+                </div>,
+              },
+              Object {
+                "columnId": "Column-3",
+                "component": <div>
+                  3
+                </div>,
+              },
+            ],
+            "id": "row-0",
+          },
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+              Object {
+                "columnId": "Column-2",
+                "component": <div>
+                  2
+                </div>,
+              },
+              Object {
+                "columnId": "Column-3",
+                "component": <div>
+                  3
+                </div>,
+              },
+            ],
+            "id": "row-1",
+          },
+        ],
+      },
+    ]
+  }
+/>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with custom section header 1`] = `
+<InjectIntl(DataGrid)
+  fill={true}
+  id="test"
+  overflowColumns={
+    Array [
+      Object {
+        "id": "Column-1",
+        "sortIndicator": "descending",
+        "text": "Column 1",
+        "width": 300,
+      },
+    ]
+  }
+  pinnedColumns={
+    Array [
+      Object {
+        "id": "Column-0",
+        "sortIndicator": "ascending",
+        "text": "Column 0",
+        "width": 200,
+      },
+    ]
+  }
+  sections={
+    Array [
+      Object {
+        "component": <div>
+          Custom Section Header
+        </div>,
+        "endAccessory": <div>
+          End Accessory
+        </div>,
+        "id": "section-0",
+        "isCollapsed": false,
+        "isCollapsible": true,
+        "rows": Array [
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+            ],
+            "id": "row-0",
+          },
+        ],
+        "startAccessory": <div>
+          Start Accessory
+        </div>,
+        "text": "Section 0",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with missing optional props 1`] = `
+<InjectIntl(DataGrid)
+  id="test"
+/>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 1`] = `
+<InjectIntl(DataGrid)
+  fill={true}
+  id="test"
+  overflowColumns={
+    Array [
+      Object {
+        "id": "Column-0",
+        "text": "Column 0",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-1",
+        "text": "Column 1",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-2",
+        "text": "Column 2",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-3",
+        "text": "Column 3",
+        "width": 200,
+      },
+    ]
+  }
+  sections={
+    Array [
+      Object {
+        "id": "section-0",
+        "rows": Array [
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+              Object {
+                "columnId": "Column-2",
+                "component": <div>
+                  2
+                </div>,
+              },
+              Object {
+                "columnId": "Column-3",
+                "component": <div>
+                  3
+                </div>,
+              },
+            ],
+            "id": "row-0",
+          },
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+              Object {
+                "columnId": "Column-2",
+                "component": <div>
+                  2
+                </div>,
+              },
+              Object {
+                "columnId": "Column-3",
+                "component": <div>
+                  3
+                </div>,
+              },
+            ],
+            "id": "row-1",
+          },
+        ],
+      },
+    ]
+  }
+/>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow columns 1`] = `
+<InjectIntl(DataGrid)
+  fill={true}
+  id="test"
+  overflowColumns={
+    Array [
+      Object {
+        "id": "Column-2",
+        "text": "Column 2",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-3",
+        "text": "Column 3",
+        "width": 200,
+      },
+    ]
+  }
+  pinnedColumns={
+    Array [
+      Object {
+        "id": "Column-0",
+        "text": "Column 0",
+        "width": 200,
+      },
+      Object {
+        "id": "Column-1",
+        "text": "Column 1",
+        "width": 200,
+      },
+    ]
+  }
+  sections={
+    Array [
+      Object {
+        "id": "section-0",
+        "rows": Array [
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+              Object {
+                "columnId": "Column-2",
+                "component": <div>
+                  2
+                </div>,
+              },
+              Object {
+                "columnId": "Column-3",
+                "component": <div>
+                  3
+                </div>,
+              },
+            ],
+            "id": "row-0",
+          },
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+              },
+              Object {
+                "columnId": "Column-2",
+                "component": <div>
+                  2
+                </div>,
+              },
+              Object {
+                "columnId": "Column-3",
+                "component": <div>
+                  3
+                </div>,
+              },
+            ],
+            "id": "row-1",
+          },
+        ],
+      },
+    ]
+  }
+/>
+`;
+
+exports[`DataGrid Snapshots should render a DataGrid with selectable rows, columns, and cells 1`] = `
+<InjectIntl(DataGrid)
+  fill={true}
+  hasSelectableRows={true}
+  id="test"
+  onCellSelect={[Function]}
+  onColumnSelect={[Function]}
+  onRowSelect={[Function]}
+  overflowColumns={
+    Array [
+      Object {
+        "id": "Column-1",
+        "isSelectable": true,
+        "sortIndicator": "descending",
+        "text": "Column 1",
+        "width": 300,
+      },
+    ]
+  }
+  pinnedColumns={
+    Array [
+      Object {
+        "id": "Column-0",
+        "isResizable": true,
+        "isSelectable": true,
+        "sortIndicator": "ascending",
+        "text": "Column 0",
+        "width": 200,
+      },
+    ]
+  }
+  sections={
+    Array [
+      Object {
+        "endAccessory": <div>
+          End Accessory
+        </div>,
+        "id": "section-0",
+        "isCollapsed": false,
+        "isCollapsible": true,
+        "rows": Array [
+          Object {
+            "cells": Array [
+              Object {
+                "columnId": "Column-0",
+                "component": <div>
+                  0
+                </div>,
+                "isSelectable": true,
+                "isSelected": true,
+              },
+              Object {
+                "columnId": "Column-1",
+                "component": <div>
+                  1
+                </div>,
+                "isSelectable": true,
+              },
+            ],
+            "id": "row-0",
+            "isSelectable": true,
+            "isSelected": true,
+          },
+        ],
+        "startAccessory": <div>
+          Start Accessory
+        </div>,
+        "text": "Section 0",
+      },
+    ]
+  }
+/>
+`;

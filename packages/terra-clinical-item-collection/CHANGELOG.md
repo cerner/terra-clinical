@@ -1,8 +1,10 @@
 ChangeLog
 =========
 
-Unreleased
-----------
+3.18.0 - (October 16, 2018)
+-----------------
+### Changed
+* Updated prop descriptions in ItemCollections.jsx and Item.jsx.
 
 3.17.0 - (October 2, 2018)
 ----------

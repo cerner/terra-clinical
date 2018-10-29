@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed 1`] = `
+<div
+  className="section-header"
+  data-section-header={true}
+>
+  <div
+    className="content selectable"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <div
+      className="collapsible-icon"
+    >
+      <IconCaretRight
+        className=""
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="start-accessory"
+    >
+      <div>
+        Start
+      </div>
+    </div>
+    <div
+      className="flex-content"
+    >
+      <div
+        className="text"
+      >
+        Default Text
+      </div>
+    </div>
+    <div
+      className="end-accessory"
+    >
+      <div>
+        End
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SectionHeader Snapshot Tests should render a SectionHeader with child content if provided 1`] = `
+<div
+  className="section-header"
+  data-section-header={true}
+>
+  <div
+    className="content selectable"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <div
+      className="collapsible-icon"
+    >
+      <IconCaretDown
+        className=""
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="flex-content"
+    >
+      <div>
+        Custom Section Header Layout
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SectionHeader Snapshot Tests should render a SectionHeader with default text/accessory props 1`] = `
+<div
+  className="section-header"
+  data-section-header={true}
+>
+  <div
+    className="content selectable"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex="0"
+  >
+    <div
+      className="collapsible-icon"
+    >
+      <IconCaretDown
+        className=""
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+    <div
+      className="start-accessory"
+    >
+      <div>
+        Start
+      </div>
+    </div>
+    <div
+      className="flex-content"
+    >
+      <div
+        className="text"
+      >
+        Default Text
+      </div>
+    </div>
+    <div
+      className="end-accessory"
+    >
+      <div>
+        End
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SectionHeader Snapshot Tests should render a SectionHeader with minimal props 1`] = `
+<div
+  className="section-header"
+  data-section-header={true}
+>
+  <div
+    className="content"
+    role="button"
+  >
+    <div
+      className="flex-content"
+    />
+  </div>
+</div>
+`;
