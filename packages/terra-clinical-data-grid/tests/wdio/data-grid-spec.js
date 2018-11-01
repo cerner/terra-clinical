@@ -261,6 +261,25 @@ const themedProperties = {
       });
     });
 
+    describe('with selected row hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.click('[data-accessibility-id="7"]');
+        browser.moveToObject('[data-accessibility-id="8"]');
+        browser.moveToObject('[data-accessibility-id="7"]');
+      });
+
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-row-selected-hover-background-color': 'salmon',
+        },
+      });
+    });
+
     describe('with column header selections', () => {
       beforeEach(() => {
         browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
