@@ -45,7 +45,7 @@
     "terra-overlay": "^2.16.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build && npm pack --ignore-scripts && mv *.tgz terra-clinical-data-grid.tgz",
+    "compile": "npm run compile:clean && npm run compile:build && rm -f terra-clinical-data-grid.tgz && npm pack --ignore-scripts && mv *.tgz terra-clinical-data-grid.tgz",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
