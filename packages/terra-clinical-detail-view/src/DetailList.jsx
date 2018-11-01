@@ -13,6 +13,7 @@ const propTypes = {
    */
   title: PropTypes.string,
 
+
   /**
    * The detail item(s) to display information. Must be either a
    * DetailListItem element or array of DetailListItem elements.
