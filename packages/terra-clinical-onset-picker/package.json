@@ -42,7 +42,7 @@
     "terra-i18n": "^2.0.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build && rm -f terra-clinical-onset-picker.tgz && npm pack --ignore-scripts && mv *.tgz terra-clinical-onset-picker.tgz",
+    "compile": "npm run compile:clean && npm run compile:build && rm terra-clinical-onset-picker.tgz && npm pack --ignore-scripts && mv *.tgz terra-clinical-onset-picker.tgz",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js",
