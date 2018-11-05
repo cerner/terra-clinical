@@ -29,6 +29,7 @@ const themedProperties = {
   '--terra-clinical-data-grid-section-header-background-color': 'yellow',
   '--terra-clinical-data-grid-section-header-border-bottom': 'blueviolet',
   '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
+  '--terra-clinical-data-grid-scrollbar-pinned-column-box-shadow': '0 0 12px 0 blue, inset -1px 0 0 0 blue',
 };
 
 ['medium', 'huge'].forEach((viewport) => {
