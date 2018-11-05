@@ -1,45 +1,28 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('Label Value View', () => {
-  describe('when no value input is provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/default-label-value-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
+const testSetup = {
+  examples: {
+    'Default Label Value View': {
+      parentName: 'when no value input is provided',
+      themedTestName: 'themed',
+      themeableProperties: {
         '--terra-label-value-view-label-color': 'purple',
       },
-    });
-    Terra.should.beAccessible();
-  });
+    },
+    'Text Value Label Value View': {
+      parentName: 'when a text input is provided',
+    },
+    'Node Value Label Value View': {
+      parentName: 'when a node input is provided',
+    },
+    'Multiple Value Label Value View': {
+      parentName: 'when text and node inputs are provided',
+    },
+  },
+};
 
-  describe('when a text input is provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/text-value-label-value-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
-
-  describe('when a node input is provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/node-value-label-value-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
-
-  describe('when text and node inputs are provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/multiple-value-label-value-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-label-value-view',
+  testSetup,
 });

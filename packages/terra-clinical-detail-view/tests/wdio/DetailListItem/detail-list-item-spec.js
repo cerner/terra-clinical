@@ -1,12 +1,16 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('Detail List Item', () => {
-  describe('Displays a Detail List Item as expected', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-list-item/default-list-item');
-    });
+const testSetup = {
+  viewports: ['tiny', 'small', 'medium', 'large', 'huge'],
+  examples: {
+    'Default List Item': {
+      parentName: 'Displays a Detail List Item as expected',
+    },
+  },
+};
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-detail-view',
+  testSetup,
 });

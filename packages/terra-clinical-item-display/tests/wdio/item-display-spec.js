@@ -1,46 +1,38 @@
-const viewports = Terra.viewports('tiny', 'medium');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('ItemDisplay', () => {
-  describe('default', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/default-item-display'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-  });
-
-  describe('text style', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/text-style-item-display'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
+const testSetup = {
+  viewports: ['tiny', 'medium'],
+  examples: {
+    'Default Item Display': {
+      viewports: ['tiny', 'medium', 'large'],
+      parentName: 'default',
+    },
+    'Text Style Item Display': {
+      parentName: 'text style',
+      themedTestName: 'themed',
+      themeableProperties: {
         '--terra-item-display-attention-color': 'pink',
         '--terra-item-display-secondary-color': 'green',
       },
-    });
-  });
-
-  describe('disabled', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/disabled-item-display'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
+    },
+    'Disabled Item Display': {
+      parentName: 'disabled',
+      themedTestName: 'themed',
+      themeableProperties: {
         '--terra-item-display-disabled-inline-icon-color': 'rgba(255, 0, 0, 1)',
       },
-    });
-  });
+    },
+    'Icon Item Display': {
+      parentName: 'icon',
+    },
+    'Scaling Icon Item Display': {
+      parentName: 'scaling',
+    },
+  },
+};
 
-  describe('icon', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/icon-item-display'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-  });
-
-  describe('scaling', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/scaling-icon-item-display'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-  });
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-item-display',
+  testSetup,
 });

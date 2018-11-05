@@ -1,44 +1,33 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge');
-const selector = '#root';
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('Detail View', () => {
-  describe('Displays a divided Detail View with provided components', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-divided');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector,
-      properties: {
+const testSetup = {
+  viewports: ['tiny', 'small', 'medium', 'large', 'huge'],
+  selector: '#root',
+  examples: {
+    'Detail View Divided': {
+      parentName: 'Displays a divided Detail View with provided components',
+      themedTestName: 'themed',
+      themeableProperties: {
         '--terra-detail-view-subtitle-color': 'purple',
         '--terra-detail-view-accessory-color': 'red',
         '--terra-detail-view-divider-border-color': 'yellow',
         '--terra-detail-view-footer-text-color': 'green',
       },
-    });
-  });
+    },
+    'Detail View No Divider': {
+      parentName: 'Displays a Detail View that is not divided with provided components',
+    },
+    'Detail View Divided Smaller Titles': {
+      parentName: 'Displays a Detail View with provided components and when title size is smaller',
+    },
+    'Detail View Overflow Text': {
+      parentName: 'Displays a Detail View with overflowed title text',
+    },
+  },
+};
 
-  describe('Displays a Detail View that is not divided with provided components', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-no-divider');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector });
-  });
-
-  describe('Displays a Detail View with provided components and when title size is smaller', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-divided-smaller-titles');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector });
-  });
-
-  describe('Displays a Detail View with overflowed title text', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-overflow-text'));
-
-    Terra.should.matchScreenshot({ viewports, selector });
-  });
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-detail-view',
+  testSetup,
 });

@@ -1,32 +1,25 @@
-const viewports = Terra.viewports('tiny', 'medium');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('ItemComment', () => {
-  describe('Default', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/default-item-comment'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-  });
-
-  describe('Text', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/text-item-comment'));
-    Terra.should.beAccessible({ viewports });
-    Terra.should.matchScreenshot({ viewports });
-  });
-});
-
-describe('ItemComment - Themeable', () => {
-  before(() => {
-    browser.setViewportSize(Terra.viewports('large')[0]);
-  });
-
-  describe('Default', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/default-item-comment'));
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
+const testSetup = {
+  viewports: ['tiny', 'medium'],
+  examples: {
+    'Default Item Comment': {
+      viewports: ['tiny', 'medium', 'large'],
+      parentName: 'Default',
+      themedTestName: 'themed',
+      themeableProperties: {
         '--terra-clinical-item-comment-color': '#75767d',
         '--terra-clinical-item-comment-inline-icon-color': 'rgba(117, 118, 125, 0.3)',
       },
-    });
-  });
+    },
+    'Text Item Comment': {
+      parentName: 'Text',
+    },
+  },
+};
+
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-item-display',
+  testSetup,
 });

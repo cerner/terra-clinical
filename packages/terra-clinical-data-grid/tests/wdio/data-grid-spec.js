@@ -1,4 +1,7 @@
-const themedProperties = {
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
+
+const themeableProperties = {
   '--terra-clinical-data-grid-border': '5px dashed red',
   '--terra-clinical-data-grid-column-header-background-color': 'blue',
   '--terra-clinical-data-grid-column-header-border-bottom': 'yellow',
@@ -31,25 +34,46 @@ const themedProperties = {
   '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
 };
 
-['medium', 'huge'].forEach((viewport) => {
+const viewports = ['medium', 'huge'];
+
+const testSetup = {
+  viewports,
+  themeableProperties,
+  parentName: 'with initial rendering',
+  examples: {
+    'Standard Data Grid': {
+      selector: '#standard-data-grid',
+      testName: '#pinned-and-overflow',
+      themedTestName: 'themed with pinned columns and overflow columns',
+    },
+    'No Pinned Column Data Grid': {
+      selector: '#no-pinned-column-data-grid',
+      testName: '#no-pinned',
+      themedTestName: 'themed with no pinned columns',
+    },
+    'No Overflow Column Data Grid': {
+      selector: '#no-overflow-column-data-grid',
+      testName: '#no-overflow',
+      themedTestName: 'themed with no oveflow columns',
+    },
+    'Custom Height Data Grid': {
+      selector: '#custom-height-data-grid',
+      parentName: 'with custom row-header heights',
+      themedTestName: 'themed',
+    },
+  },
+};
+
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-data-grid',
+  testSetup,
+});
+
+viewports.forEach((viewport) => {
   describe(`DataGrid - ${viewport}`, () => {
     before(() => browser.setViewportSize(Terra.viewports(viewport)[0]));
 
     describe('with pinned columns and overflow columns', () => {
-      describe('with initial rendering', () => {
-        beforeEach(() => {
-          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
-        });
-
-        Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
-        Terra.should.beAccessible();
-        Terra.should.themeCombinationOfCustomProperties({
-          testName: 'themed with pinned columns and overflow columns',
-          selector: '#standard-data-grid',
-          properties: themedProperties,
-        });
-      });
-
       describe('with horizontal overflow', () => {
         beforeEach(() => {
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
@@ -72,20 +96,6 @@ const themedProperties = {
     });
 
     describe('with no pinned columns', () => {
-      describe('with initial rendering', () => {
-        beforeEach(() => {
-          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
-        });
-
-        Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
-        Terra.should.beAccessible();
-        Terra.should.themeCombinationOfCustomProperties({
-          testName: 'themed with no pinned columns',
-          selector: '#no-pinned-column-data-grid',
-          properties: themedProperties,
-        });
-      });
-
       describe('with horizontal overflow', () => {
         beforeEach(() => {
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
@@ -108,20 +118,6 @@ const themedProperties = {
     });
 
     describe('with no oveflow columns', () => {
-      describe('with initial rendering', () => {
-        beforeEach(() => {
-          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
-        });
-
-        Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
-        Terra.should.beAccessible();
-        Terra.should.themeCombinationOfCustomProperties({
-          testName: 'themed with no oveflow columns',
-          selector: '#no-overflow-column-data-grid',
-          properties: themedProperties,
-        });
-      });
-
       describe('with vertical overflow', () => {
         beforeEach(() => {
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
@@ -172,7 +168,7 @@ const themedProperties = {
       Terra.should.themeCombinationOfCustomProperties({
         testName: 'themed',
         selector: '#selectable-data-grid',
-        properties: themedProperties,
+        properties: themeableProperties,
       });
     });
 
@@ -204,7 +200,7 @@ const themedProperties = {
       Terra.should.themeCombinationOfCustomProperties({
         testName: 'themed',
         selector: '#selectable-data-grid',
-        properties: themedProperties,
+        properties: themeableProperties,
       });
     });
 
@@ -236,7 +232,7 @@ const themedProperties = {
       Terra.should.themeCombinationOfCustomProperties({
         testName: 'themed',
         selector: '#selectable-data-grid',
-        properties: themedProperties,
+        properties: themeableProperties,
       });
     });
 
@@ -251,7 +247,7 @@ const themedProperties = {
       Terra.should.themeCombinationOfCustomProperties({
         testName: 'themed',
         selector: '#subsection-data-grid',
-        properties: themedProperties,
+        properties: themeableProperties,
       });
     });
 
@@ -280,20 +276,6 @@ const themedProperties = {
 
       Terra.should.matchScreenshot({ selector: '#paged-data-grid' });
       Terra.should.beAccessible();
-    });
-
-    describe('with custom row/header heights', () => {
-      beforeEach(() => {
-        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/custom-height-data-grid');
-      });
-
-      Terra.should.matchScreenshot({ selector: '#custom-height-data-grid' });
-      Terra.should.beAccessible();
-      Terra.should.themeCombinationOfCustomProperties({
-        testName: 'themed',
-        selector: '#custom-height-data-grid',
-        properties: themedProperties,
-      });
     });
   });
 });

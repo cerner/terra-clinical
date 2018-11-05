@@ -1,21 +1,18 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('Clinical Application', () => {
-  describe('Renders the Application with provided AppDelegate', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-application/clinical-application/default-application');
-    });
+const testSetup = {
+  examples: {
+    'Default Application': {
+      parentName: 'Renders the Application with provided AppDelegate',
+    },
+    'No App Delegate Application': {
+      parentName: 'Renders the Application without provided AppDelegate',
+    },
+  },
+};
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
-
-  describe('Renders the Application without provided AppDelegate', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-application/clinical-application/no-app-delegate-application');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-application',
+  testSetup,
 });

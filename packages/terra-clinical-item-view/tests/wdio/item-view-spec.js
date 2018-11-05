@@ -1,103 +1,65 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const wdioTestDevSiteSnapshots = require('terra-dev-site/lib/dev-site-snapshots/wdio/wdioTestDevSiteSnapshots').default;
 
-describe('Clinical Item View', () => {
-  describe('with one column displays', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#test-displays' });
-
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector: '#test-displays',
-      properties: {
-        '--terra-item-view-content-color': 'green',
-        '--terra-item-view-content-primary-color': 'purple',
-        '--terra-item-view-content-secondary-color': 'maroon',
+const testSetup = {
+  examples: {
+    'Displays Item View': [
+      {
+        selector: '#test-displays',
+        parentName: 'with one column displays',
+        themedTestName: 'themed',
+        themeableProperties: {
+          '--terra-item-view-content-color': 'green',
+          '--terra-item-view-content-primary-color': 'purple',
+          '--terra-item-view-content-secondary-color': 'maroon',
+        },
       },
-    });
-    Terra.should.beAccessible();
-  });
+      {
+        selector: '#test-displays-two',
+        parentName: 'with two column displays',
+      },
+      {
+        selector: '#test-displays-two-start',
+        parentName: 'with two column and start displays',
+      },
+    ],
+    'Accessory Item View': {
+      parentName: 'with accessories',
+    },
+    'Comment Item View': [
+      {
+        parentName: 'with default comment set',
+        selector: '#ItemView1',
+      },
+      {
+        parentName: 'with truncated comment set',
+        selector: '#ItemView2',
+      },
+    ],
+    'Overflow Displays Item View Truncated': [
+      {
+        parentName: 'with the full example word wrap - one truncated',
+        selector: '#ItemView-one-truncate',
+      },
+      {
+        parentName: 'with the full example word wrap - two truncated',
+        selector: '#ItemView-two-truncate',
+      },
+    ],
+    'Overflow Displays Item View Wrap': [
+      {
+        parentName: 'with the full example word wrap - one column',
+        selector: '#ItemView-one-wrap',
+      },
+      {
+        parentName: 'with the full example word wrap - two column',
+        selector: '#ItemView-two-wrap',
+      },
+    ],
+  },
+};
 
-  describe('with two column displays', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with two column and start displays', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two-start' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with accessories', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/accessory-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
-
-  describe('with default comment set', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView1' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with truncated comment set', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView2' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example word wrap - one column', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example word wrap - two column', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example truncated - one truncated', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example truncated - two truncated', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
-    Terra.should.beAccessible();
-  });
+wdioTestDevSiteSnapshots({
+  package: 'terra-clinical-item-view',
+  testSetup,
 });
