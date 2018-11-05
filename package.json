@@ -89,7 +89,7 @@
     "shelljs": "^0.8.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
-    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#dev-site-spec",
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#dev-site-spec-trim-down",
     "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#dev-site-spec"
   }
 }
