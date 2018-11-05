@@ -2,6 +2,7 @@
   .section-header {
     background-color: var(--terra-clinical-data-grid-section-header-background-color, #e8e9ea);
     border-bottom: var(--terra-clinical-data-grid-section-header-border-bottom, 1px solid #c8cacb);
+    border-top: var(--terra-clinical-data-grid-section-header-border-top, none);
     height: 100%;
     position: relative;
     width: 100%;
