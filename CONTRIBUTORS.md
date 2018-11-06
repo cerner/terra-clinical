@@ -24,6 +24,7 @@ Cerner Corporation
 - Alvin Cheung [@pseudofaux]
 - Brett Jankord [@bjankord]
 - Eric Wilson [@eawww]
+- Matt Anderson [@mndrsn]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -49,3 +50,4 @@ Cerner Corporation
 [@pseudofaux]: https://github.com/pseudofaux
 [@bjankord]: https://github.com/bjankord
 [@eawww]: https://github.com/eawww
+[@mndrsn]: https://github.com/mndrsn
