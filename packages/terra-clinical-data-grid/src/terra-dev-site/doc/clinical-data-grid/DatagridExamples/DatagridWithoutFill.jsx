@@ -5,7 +5,7 @@ import DataGrid from 'terra-clinical-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
 
-class DatagidWithoutFill extends React.Component {
+class DatagridWithoutFill extends React.Component {
   constructor(props) {
     super(props);
 
@@ -195,4 +195,4 @@ class DatagidWithoutFill extends React.Component {
   }
 }
 
-export default DatagidWithoutFill;
+export default DatagridWithoutFill;
