@@ -25,6 +25,7 @@ Cerner Corporation
 - Brett Jankord [@bjankord]
 - Eric Wilson [@eawww]
 - Matt Anderson [@mndrsn]
+- Stephen Esser [@StephenEsser]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -51,3 +52,4 @@ Cerner Corporation
 [@bjankord]: https://github.com/bjankord
 [@eawww]: https://github.com/eawww
 [@mndrsn]: https://github.com/mndrsn
+[@StephenEsser]: https://github.com/StephenEsser
