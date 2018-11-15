@@ -148,8 +148,9 @@ class DataGrid extends React.Component {
      * Memoized Style Generators
      */
     this.generateHeaderContainerStyle = memoize(this.generateHeaderContainerStyle);
-    this.generateOverflowContainerStyle = memoize(this.generateOverflowContainerStyle);
-    this.generatePinnedContainerStyle = memoize(this.generatePinnedContainerStyle);
+    this.generateOverflowColumnHeaderStyle = memoize(this.generateOverflowColumnHeaderStyle);
+    this.generatePinnedContainerWidthStyle = memoize(this.generatePinnedContainerWidthStyle);
+    this.generatePinnedColumnHeaderStyle = memoize(this.generatePinnedColumnHeaderStyle);
 
     /**
      * Paging
@@ -205,7 +206,7 @@ class DataGrid extends React.Component {
     this.renderCell = this.renderCell.bind(this);
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
     this.renderRowSelectionCell = this.renderRowSelectionCell.bind(this);
-    this.renderHeaderRow = this.renderHeaderRow.bind(this);
+    this.renderFixedHeaderRow = this.renderFixedHeaderRow.bind(this);
     this.renderOverflowContent = this.renderOverflowContent.bind(this);
     this.renderPinnedContent = this.renderPinnedContent.bind(this);
     this.renderRow = this.renderRow.bind(this);
@@ -235,8 +236,15 @@ class DataGrid extends React.Component {
      * Another ResizeObserver is used to track changes to the pinned column section height.
      */
     this.pinnedColumnResizeObserver = new ResizeObserver((entries) => {
-      this.rowContentHeight = entries[0].contentRect.height;
-      this.overflowedContentContainerRef.style.height = `${this.rowContentHeight}px`;
+      this.contentHeight = entries[0].contentRect.height;
+
+      if (this.scrollbarRef) {
+        /**
+         * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+         * want defer to the custom scrollbar that rendered by the DataGrid.
+         */
+        this.overflowedContentContainerRef.style.height = `${this.contentHeight}px`;
+      }
     });
     this.pinnedColumnResizeObserver.observe(this.pinnedContentContainerRef);
 
@@ -408,18 +416,26 @@ class DataGrid extends React.Component {
     };
   }
 
-  generateOverflowContainerStyle(overflowColumnWidth, headerHeight) {
+  generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight) {
     return {
       width: `${overflowColumnWidth}px`,
       height: `${headerHeight}`,
     };
   }
 
-  generatePinnedContainerStyle(pinnedColumnWidth) {
+  generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight) {
+    return {
+      width: `${pinnedColumnWidth}px`,
+      height: `${headerHeight}`,
+    };
+  }
+
+  generatePinnedContainerWidthStyle(pinnedColumnWidth) {
     return {
       width: `${pinnedColumnWidth}px`,
     };
   }
+
   /* eslint-enable class-methods-use-this */
 
   /**
@@ -469,11 +485,13 @@ class DataGrid extends React.Component {
        */
       this.updateHeaderScrollbarBuffer();
 
-      /**
-       * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
-       * want defer to the custom scrollbar that rendered by the DataGrid.
-       */
-      this.overflowedContentContainerRef.style.height = `${this.rowContentHeight}px`;
+      if (this.scrollbarRef) {
+        /**
+         * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+         * want defer to the custom scrollbar that rendered by the DataGrid.
+         */
+        this.overflowedContentContainerRef.style.height = `${this.contentHeight}px`;
+      }
     });
   }
 
@@ -493,7 +511,7 @@ class DataGrid extends React.Component {
   }
 
   setHeaderScrollbarBufferRef(ref) {
-    this.headerScrollbarBuffer = ref;
+    this.headerScrollbarBufferRef = ref;
   }
 
   setHorizontalOverflowContainerRef(ref) {
@@ -553,13 +571,21 @@ class DataGrid extends React.Component {
   updateHeaderScrollbarBuffer() {
     const { pinnedColumnWidth } = this.state;
 
+    if (!this.headerScrollbarBufferRef) {
+      /**
+       * The buffer element will not be rendered if the 'fill' prop is not provided.
+       * If the ref to the buffer element does not exist, it must not be rendered, so there is no work to do here.
+       */
+      return;
+    }
+
     /**
      * If there is a vertical overflow and fixed scrollbars are present (due to the presence of a mouse, etc.), the header columns
      * and content columns can move out of alignment. We need to account for the potential presence of the scrollbar and set the size of the
      * header scrollbar buffer element to equalize any differences in width.
      */
     const scrollbarOffset = this.dataGridContainerRef.clientWidth - pinnedColumnWidth - this.horizontalOverflowContainerRef.clientWidth;
-    this.headerScrollbarBuffer.style.width = `${scrollbarOffset}px`;
+    this.headerScrollbarBufferRef.style.width = `${scrollbarOffset}px`;
   }
 
   /**
@@ -661,6 +687,14 @@ class DataGrid extends React.Component {
   }
 
   updateScrollbarVisibility() {
+    if (!this.scrollbarContainerRef) {
+      /**
+       * The scrollbar will not be rendered if the 'fill' prop is not provided.
+       * If the ref to the scrollbar does not exist, it must not be rendered, so there is no work to do here.
+       */
+      return;
+    }
+
     if (Math.abs(this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.getBoundingClientRect().width) < 1) {
       this.scrollbarContainerRef.setAttribute('aria-hidden', true);
     } else {
@@ -670,6 +704,14 @@ class DataGrid extends React.Component {
 
   updateScrollbarPosition() {
     const { overflowColumnWidth } = this.state;
+
+    if (!this.scrollbarRef) {
+      /**
+       * The scrollbar will not be rendered if the 'fill' prop is not provided.
+       * If the ref to the scrollbar does not exist, it must not be rendered, so there is no work to do here.
+       */
+      return;
+    }
 
     /**
      * The scrollbar width is determined by squaring the horizontal container width and dividing by the overflow value. The scrollbar cannot be larger than the container.
@@ -721,7 +763,7 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderHeaderRow() {
+  renderFixedHeaderRow() {
     const {
       headerHeight,
     } = this.props;
@@ -733,12 +775,12 @@ class DataGrid extends React.Component {
 
     return (
       <div
-        className={cx('header-container')}
+        className={cx(['header-container', 'fixed'])}
         style={this.generateHeaderContainerStyle(headerHeight)}
       >
         <div
           className={cx('pinned-header')}
-          style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
+          style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}
         >
           {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
         </div>
@@ -749,7 +791,7 @@ class DataGrid extends React.Component {
         >
           <div
             className={cx('overflow-header')}
-            style={this.generateOverflowContainerStyle(overflowColumnWidth, headerHeight)}
+            style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}
           >
             {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
           </div>
@@ -851,7 +893,7 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderRow(row, section, columns, width, isPinned) {
+  renderRow(row, section, columns, width, isPinned, isStriped) {
     const { rowHeight, id } = this.props;
 
     /**
@@ -875,6 +917,7 @@ class DataGrid extends React.Component {
         width={width}
         height={rowHeight}
         isSelected={row.isSelected}
+        isStriped={isStriped}
         {...ariaStyles}
 
       >
@@ -897,25 +940,47 @@ class DataGrid extends React.Component {
     return (
       <React.Fragment key={section.id}>
         {this.renderSectionHeader(section, isPinned)}
-        {!section.isCollapsed && section.rows && section.rows.map(row => (
-          this.renderRow(row, section, columns, width, isPinned)
+        {!section.isCollapsed && section.rows && section.rows.map((row, index) => (
+          this.renderRow(row, section, columns, width, isPinned, !!(index % 2))
         ))}
       </React.Fragment>
     );
   }
 
   renderPinnedContent() {
-    const { sections } = this.props;
+    const { headerHeight, fill, sections } = this.props;
     const { pinnedColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, dataGridUtils.getPinnedColumns(this.props), `${pinnedColumnWidth}px`, true));
+    return (
+      <React.Fragment>
+        {!fill && (
+          <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}>
+            <div className={cx('pinned-header')}>
+              {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
+            </div>
+          </div>
+        )}
+        {sections.map(section => this.renderSection(section, dataGridUtils.getPinnedColumns(this.props), `${pinnedColumnWidth}px`, true))}
+      </React.Fragment>
+    );
   }
 
   renderOverflowContent() {
-    const { sections } = this.props;
+    const { headerHeight, fill, sections } = this.props;
     const { overflowColumnWidth } = this.state;
 
-    return sections.map(section => this.renderSection(section, dataGridUtils.getOverflowColumns(this.props), `${overflowColumnWidth}px`));
+    return (
+      <React.Fragment>
+        {!fill && (
+          <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}>
+            <div className={cx('overflow-header')}>
+              {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
+            </div>
+          </div>
+        )}
+        {sections.map(section => this.renderSection(section, dataGridUtils.getOverflowColumns(this.props), `${overflowColumnWidth}px`))}
+      </React.Fragment>
+    );
   }
 
   renderScrollbar() {
@@ -925,7 +990,7 @@ class DataGrid extends React.Component {
       <div className={cx('footer-container')}>
         <div
           className={cx('pinned-column-buffer')}
-          style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
+          style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
         />
         <div className={cx('scrollbar-container')}>
           <Scrollbar
@@ -957,6 +1022,7 @@ class DataGrid extends React.Component {
       defaultColumnWidth,
       fill,
       onRequestContent,
+      intl,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
@@ -979,19 +1045,19 @@ class DataGrid extends React.Component {
           ref={this.setLeadingFocusAnchorRef}
         />
         <ContentContainer
-          header={this.renderHeaderRow()}
-          footer={this.renderScrollbar()}
+          header={fill ? this.renderFixedHeaderRow() : undefined}
+          footer={fill ? this.renderScrollbar() : undefined}
           fill={fill}
         >
           <div
             className={cx('vertical-overflow-container')}
             ref={this.setVerticalOverflowContainerRef}
-            onScroll={this.checkForMoreContent}
+            onScroll={onRequestContent ? this.checkForMoreContent : undefined}
           >
             <div
               className={cx('pinned-content-container')}
               ref={this.setPinnedContentContainerRef}
-              style={this.generatePinnedContainerStyle(pinnedColumnWidth)}
+              style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
             >
               {this.renderPinnedContent()}
             </div>
@@ -1000,9 +1066,9 @@ class DataGrid extends React.Component {
               ref={this.setOverflowedContentContainerRef}
             >
               <div
-                className={cx('horizontal-overflow-container')}
+                className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
                 ref={this.setHorizontalOverflowContainerRef}
-                onScroll={this.synchronizeContentScroll}
+                onScroll={fill ? this.synchronizeContentScroll : undefined}
               >
                 {this.renderOverflowContent()}
               </div>

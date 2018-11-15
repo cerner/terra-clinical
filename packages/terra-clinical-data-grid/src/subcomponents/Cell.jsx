@@ -123,7 +123,7 @@ class Cell extends React.Component {
         {...customProps}
         className={cx(['container', customProps.className])}
         style={this.getCellStyles(width)}
-        aria-selected={isSelected}
+        aria-selected={isSelected ? true : undefined}
       >
         <div
           role="button"

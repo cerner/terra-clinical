@@ -10,42 +10,48 @@
 
   .header-container {
     align-items: center;
+    display: flex;
+    min-width: 100%;
+    position: relative;
+  }
+
+  .header-container.fixed {
+    overflow: hidden;
+  }
+
+  .pinned-header {
     background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
     border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
-    display: flex;
-    overflow: hidden;
-    position: relative;
+    flex: 0 0 auto;
+    float: left;
+    height: 100%;
+  }
+
+  .header-overflow-container {
+    flex: 1 1 auto;
+    height: calc(100% + 20px);
+    margin-bottom: -20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
     width: 100%;
+  }
 
-    .pinned-header {
-      background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-      display: flex;
-      flex: 0 0 auto;
-      height: 100%;
-    }
+  .overflow-header {
+    background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
+    border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
+    float: left;
+    height: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+  }
 
-    .header-overflow-container {
-      flex: 1 1 auto;
-      height: calc(100% + 20px);
-      margin-bottom: -20px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding-bottom: 20px;
-      width: 100%;
-    }
-
-    .overflow-header {
-      background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
-      display: flex;
-      min-width: 100%;
-      position: relative;
-      top: 0;
-    }
-
-    .header-scrollbar-buffer {
-      flex: 0 0 auto;
-      height: 100%;
-    }
+  .header-scrollbar-buffer {
+    background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
+    border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
+    flex: 0 0 auto;
+    height: 100%;
   }
 
   .vertical-overflow-container {
@@ -62,9 +68,12 @@
   .horizontal-overflow-container {
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 20px;
     position: relative;
     width: 100%;
+  }
+
+  .horizontal-overflow-container.padded-container {
+    padding-bottom: 20px;
   }
 
   .overflowed-content-container {
@@ -101,7 +110,7 @@
 
     .pinned-column-buffer {
       background-color: var(--terra-clinical-data-grid-scrollbar-background-color, #e8e9ea);
-      box-shadow: var(--terra-clinical-data-grid-pinned-column-box-shadow, 0 0 12px 0 rgba(100, 105, 108, 0.5), inset -1px 0 0 0 #c8cacb);
+      box-shadow: var(--terra-clinical-data-grid-scrollbar-pinned-column-box-shadow, 0 0 12px 0 rgba(100, 105, 108, 0.5), inset -1px 0 0 0 #c8cacb);
       flex: 0 0 auto;
     }
 

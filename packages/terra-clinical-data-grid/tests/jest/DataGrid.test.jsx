@@ -1,11 +1,8 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
 
 import DataGrid from '../../src/DataGrid';
 import dataGridUtils from '../../src/utils/dataGridUtils';
 import messages from '../../translations/en-US.json';
-
-const locale = 'en-US';
 
 const testColumns = {
   'Column-0': {
@@ -34,6 +31,7 @@ const testSections = [{
   id: 'section-0',
   rows: [{
     id: 'row-0',
+    ariaLabel: 'Row 0',
     cells: [{
       columnId: 'Column-0',
       component: <div>0</div>,
@@ -49,6 +47,7 @@ const testSections = [{
     }],
   }, {
     id: 'row-1',
+    ariaLabel: 'Row 1',
     cells: [{
       columnId: 'Column-0',
       component: <div>0</div>,
@@ -65,66 +64,74 @@ const testSections = [{
   }],
 }];
 
-const witIntl = component => (
-  <IntlProvider locale={locale} messages={messages}>
-    {component}
-  </IntlProvider>
-);
+const mockIntl = {
+  formatDate: () => {},
+  formatTime: () => {},
+  formatRelative: () => {},
+  formatNumber: () => {},
+  formatPlural: () => {},
+  formatMessage: ({ id }, values) => `${messages[id]}-${JSON.stringify(values)}`,
+  formatHTMLMessage: () => {},
+  now: () => {},
+};
 
 describe('DataGrid Snapshots', () => {
   it('should render a DataGrid with missing optional props', () => {
-    const dataGrid = shallow(witIntl(<DataGrid id="test" />));
+    const dataGrid = shallow(<DataGrid.WrappedComponent id="test" intl={mockIntl} />);
     expect(dataGrid).toMatchSnapshot();
   });
 
   it('should render a DataGrid with only overflow columns', () => {
     const dataGridComp = (
-      <DataGrid
+      <DataGrid.WrappedComponent
         id="test"
         overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
         sections={testSections}
         fill
+        intl={mockIntl}
       />
     );
 
-    const dataGrid = shallow(witIntl(dataGridComp));
+    const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
 
   it('should render a DataGrid with pinned and overflow columns', () => {
     const dataGridComp = (
-      <DataGrid
+      <DataGrid.WrappedComponent
         id="test"
         pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
         overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
         sections={testSections}
         fill
+        intl={mockIntl}
       />
     );
 
-    const dataGrid = shallow(witIntl(dataGridComp));
+    const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
 
   it('should render a DataGrid with custom row and header heights', () => {
     const dataGridComp = (
-      <DataGrid
+      <DataGrid.WrappedComponent
         id="test"
         overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
         sections={testSections}
         rowHeight="5rem"
         headerHeight="10rem"
         fill
+        intl={mockIntl}
       />
     );
 
-    const dataGrid = shallow(witIntl(dataGridComp));
+    const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
 
   it('should render a DataGrid with selectable rows, columns, and cells', () => {
     const dataGridComp = (
-      <DataGrid
+      <DataGrid.WrappedComponent
         id="test"
         pinnedColumns={[{
           id: 'Column-0',
@@ -152,6 +159,7 @@ describe('DataGrid Snapshots', () => {
             id: 'row-0',
             isSelectable: true,
             isSelected: true,
+            ariaLabel: 'Row 0',
             cells: [{
               columnId: 'Column-0',
               isSelectable: true,
@@ -169,16 +177,17 @@ describe('DataGrid Snapshots', () => {
         onCellSelect={() => {}}
         onRowSelect={() => {}}
         fill
+        intl={mockIntl}
       />
     );
 
-    const dataGrid = shallow(witIntl(dataGridComp));
+    const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
 
   it('should render a DataGrid with custom header cells', () => {
     const dataGridComp = (
-      <DataGrid
+      <DataGrid.WrappedComponent
         id="test"
         pinnedColumns={[{
           id: 'Column-0',
@@ -213,16 +222,17 @@ describe('DataGrid Snapshots', () => {
           }],
         }]}
         fill
+        intl={mockIntl}
       />
     );
 
-    const dataGrid = shallow(witIntl(dataGridComp));
+    const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
 
   it('should render a DataGrid with custom section header', () => {
     const dataGridComp = (
-      <DataGrid
+      <DataGrid.WrappedComponent
         id="test"
         pinnedColumns={[{
           id: 'Column-0',
@@ -256,12 +266,28 @@ describe('DataGrid Snapshots', () => {
           }],
         }]}
         fill
+        intl={mockIntl}
       />
     );
 
-    const dataGrid = shallow(witIntl(dataGridComp));
+    const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
+});
+
+it('should render a DataGrid with the fill prop missing', () => {
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+    />
+  );
+
+  const dataGrid = shallow(dataGridComp);
+  expect(dataGrid).toMatchSnapshot();
 });
 
 describe('getDerivedStateFromProps', () => {

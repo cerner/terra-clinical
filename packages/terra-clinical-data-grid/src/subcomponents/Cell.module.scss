@@ -1,7 +1,8 @@
 :local {
   .container {
     border-right: var(--terra-clinical-data-grid-cell-border-right, 1px solid #dedfe0);
-    flex: 0 0 auto;
+    float: left;
+    height: 100%;
     position: relative;
   }
 

@@ -2,7 +2,7 @@
 
 exports[`Row Snapshot Tests should render a Row with all provided props 1`] = `
 <div
-  className="row selected"
+  className="row selected striped"
   data-row={true}
   data-row-id="row-test"
   data-section-id="section-test"
