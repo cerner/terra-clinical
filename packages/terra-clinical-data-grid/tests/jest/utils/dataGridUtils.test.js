@@ -49,7 +49,7 @@ describe('ROW_SELECTION_COLUMN', () => {
     const rowSelectionColumn = ROW_SELECTION_COLUMN;
 
     expect(rowSelectionColumn.id).toBe('DataGrid-rowSelectionColumn');
-    expect(rowSelectionColumn.width).toEqual(50);
+    expect(rowSelectionColumn.width).toEqual(40);
   });
 });
 

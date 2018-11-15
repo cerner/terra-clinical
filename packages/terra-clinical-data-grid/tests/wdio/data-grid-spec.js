@@ -30,6 +30,8 @@ const themedProperties = {
   '--terra-clinical-data-grid-section-header-border-bottom': 'blueviolet',
   '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
   '--terra-clinical-data-grid-scrollbar-pinned-column-box-shadow': '0 0 12px 0 blue, inset -1px 0 0 0 blue',
+  '--terra-clinical-data-grid-row-selection-icon-height': '2rem',
+  '--terra-clinical-data-grid-row-selection-icon-width': '2rem',
 };
 
 ['medium', 'huge'].forEach((viewport) => {

@@ -1328,7 +1328,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           className="pinned-column-buffer"
           style={
             Object {
-              "width": "250px",
+              "width": "240px",
             }
           }
         />
@@ -1358,7 +1358,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           style={
             Object {
               "height": "2.5rem",
-              "width": "250px",
+              "width": "240px",
             }
           }
         >
@@ -1367,7 +1367,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
             onResizeEnd={[Function]}
             onSelect={[Function]}
             selectableRefCallback={[Function]}
-            width="50px"
+            width="40px"
           />
           <HeaderCell
             columnId="Column-0"
@@ -1418,7 +1418,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         className="pinned-content-container"
         style={
           Object {
-            "width": "250px",
+            "width": "240px",
           }
         }
       >
@@ -1453,12 +1453,13 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           key="section-0-row-0"
           rowId="row-0"
           sectionId="section-0"
-          width="250px"
+          width="240px"
         >
-          <Cell
+          <RowSelectionCell
             ariaLabel="Select: {row-description}-{\\"row-description\\":\\"Row 0\\"}"
             columnId="DataGrid-rowSelectionColumn"
             isSelectable={true}
+            isSelected={true}
             key="section-0-row-0-DataGrid-rowSelectionColumn"
             onHoverEnd={[Function]}
             onHoverStart={[Function]}
@@ -1466,7 +1467,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
             rowId="row-0"
             sectionId="section-0"
             selectableRefCallback={[Function]}
-            width="50px"
+            width="40px"
           />
           <Cell
             columnId="Column-0"
