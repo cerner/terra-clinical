@@ -3,4 +3,3 @@ node_modules
 target
 reports
 tests/**/__snapshots__/
-terra-clinical-label-value-view.tgz
