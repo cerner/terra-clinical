@@ -7,12 +7,6 @@ describe('Label Value View', () => {
     });
 
     Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
-        '--terra-label-value-view-label-color': 'purple',
-      },
-    });
     Terra.should.beAccessible();
   });
 

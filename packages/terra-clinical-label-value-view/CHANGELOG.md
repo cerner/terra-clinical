@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Restructured theme tests into a separate file
 
 2.16.0 - (August 30, 2018)
 ----------
