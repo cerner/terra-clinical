@@ -1,6 +1,11 @@
 ChangeLog
 =========
 
+3.19.0 - (November 21, 2018)
+----------
+### Changed
+* Minor dependency updates
+
 3.18.0 - (October 16, 2018)
 -----------------
 ### Changed
