@@ -8,6 +8,7 @@ import { injectIntl, intlShape } from 'terra-base';
 
 import Cell from './subcomponents/Cell';
 import HeaderCell from './subcomponents/HeaderCell';
+import RowSelectionCell from './subcomponents/RowSelectionCell';
 import Row from './subcomponents/Row';
 import Scrollbar from './subcomponents/Scrollbar';
 import SectionHeader from './subcomponents/SectionHeader';
@@ -837,37 +838,50 @@ class DataGrid extends React.Component {
   }
 
   renderRowSelectionCell(section, row, column) {
-    return this.renderCell(
-      section,
-      row,
-      column,
-      this.props.onRowSelect,
-      row.isSelectable,
-      () => {
-        /**
-         * Because the pinned and overflow rows are two separate elements, we need to retrieve them and add the appropriate hover styles
-         * to both to ensure a consistent row styling.
-         */
-        const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
-        for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
-          rowElements[i].classList.add(cxRow('hover'));
+    const { defaultColumnWidth } = this.props;
+    const cellKey = `${section.id}-${row.id}-${column.id}`;
+
+    return (
+      <RowSelectionCell
+        key={cellKey}
+        sectionId={section.id}
+        rowId={row.id}
+        columnId={column.id}
+        width={`${dataGridUtils.getWidthForColumn(column, defaultColumnWidth)}px`}
+        isSelectable={row.isSelectable}
+        isSelected={row.isSelected}
+        onSelect={this.props.onRowSelect}
+        selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
+        onHoverStart={
+          () => {
+            /**
+             * Because the pinned and overflow rows are two separate elements, we need to retrieve them and add the appropriate hover styles
+             * to both to ensure a consistent row styling.
+             */
+            const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
+            for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
+              rowElements[i].classList.add(cxRow('hover'));
+            }
+          }
         }
-      },
-      () => {
-        const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
-        for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
-          rowElements[i].classList.remove(cxRow('hover'));
+        onHoverEnd={
+          () => {
+            const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
+            for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
+              rowElements[i].classList.remove(cxRow('hover'));
+            }
+          }
         }
-      },
-      this.props.intl.formatMessage({
-        id: 'Terra.data-grid.row-selection-template',
-      }, {
-        'row-description': row.ariaLabel,
-      }),
+        ariaLabel={this.props.intl.formatMessage({
+          id: 'Terra.data-grid.row-selection-template',
+        }, {
+          'row-description': row.ariaLabel,
+        })}
+      />
     );
   }
 
-  renderCell(section, row, column, onSelect, isSelectable, onHoverStart, onHoverEnd, ariaLabel) {
+  renderCell(section, row, column) {
     const { onCellSelect, defaultColumnWidth } = this.props;
 
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
@@ -880,13 +894,10 @@ class DataGrid extends React.Component {
         rowId={row.id}
         columnId={column.id}
         width={`${dataGridUtils.getWidthForColumn(column, defaultColumnWidth)}px`}
-        onSelect={onSelect || onCellSelect}
-        isSelectable={isSelectable || cell.isSelectable}
+        onSelect={onCellSelect}
+        isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
-        onHoverStart={onHoverStart}
-        onHoverEnd={onHoverEnd}
-        ariaLabel={ariaLabel}
       >
         {cell.component}
       </Cell>

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell Snapshot Tests should render a Cell with all provided props 1`] = `
+<Cell
+  ariaLabel="test label"
+  className="selectable selected"
+  columnId="column-test"
+  isSelectable={true}
+  onHoverEnd={[Function]}
+  onHoverStart={[Function]}
+  onSelect={[Function]}
+  rowId="row-test"
+  sectionId="section-test"
+  selectableRefCallback={[Function]}
+  width="123px"
+>
+  <div
+    className="icon-container"
+  >
+    <div
+      className="icon"
+    />
+  </div>
+</Cell>
+`;
+
+exports[`Cell Snapshot Tests should render a Cell with minimal props 1`] = `
+<Cell
+  aria-hidden={true}
+  className=""
+  columnId="column-test"
+  onSelect={[Function]}
+  rowId="row-test"
+  sectionId="section-test"
+  width="123px"
+>
+  <div
+    className="icon-container"
+  >
+    <div
+      className="icon"
+    />
+  </div>
+</Cell>
+`;

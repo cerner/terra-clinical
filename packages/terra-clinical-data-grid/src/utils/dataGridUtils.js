@@ -19,7 +19,7 @@ const VOID_COLUMN = {
  */
 const ROW_SELECTION_COLUMN = {
   id: 'DataGrid-rowSelectionColumn',
-  width: 50,
+  width: 40,
 };
 
 /**

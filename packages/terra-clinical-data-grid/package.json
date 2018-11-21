@@ -42,6 +42,7 @@
     "terra-content-container": "^2.0.1",
     "terra-doc-template": "^1.12.0",
     "terra-icon": "^2.6.0",
+    "terra-mixins": "^1.21.0",
     "terra-overlay": "^2.16.0"
   },
   "scripts": {
