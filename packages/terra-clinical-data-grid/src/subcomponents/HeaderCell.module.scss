@@ -1,6 +1,6 @@
 :local {
   .header-cell {
-    border-right: var(--terra-clinical-data-grid-header-cell-border-right, 1px solid #dedfe0);
+    border-right: var(--terra-clinical-data-grid-v1-header-cell-border-right, 1px solid #dedfe0);
   }
 
   .default-layout {
@@ -12,13 +12,13 @@
     width: 100%;
 
     .sort-indicator {
-      color: var(--terra-clinical-data-grid-column-header-text-color, #64696c);
+      color: var(--terra-clinical-data-grid-v1-column-header-text-color, #64696c);
       flex: 0 0 auto;
       margin-left: 0.5rem;
     }
 
     .text {
-      color: var(--terra-clinical-data-grid-column-header-text-color, #64696c);
+      color: var(--terra-clinical-data-grid-v1-column-header-text-color, #64696c);
       flex: 0 1 auto;
       overflow: hidden;
       text-overflow: ellipsis;

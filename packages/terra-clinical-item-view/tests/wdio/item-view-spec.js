@@ -12,9 +12,9 @@ describe('Clinical Item View', () => {
       testName: 'themed',
       selector: '#test-displays',
       properties: {
-        '--terra-item-view-content-color': 'green',
-        '--terra-item-view-content-primary-color': 'purple',
-        '--terra-item-view-content-secondary-color': 'maroon',
+        '--terra-clinical-item-view-v2-content-color': 'green',
+        '--terra-clinical-item-view-v2-content-primary-color': 'purple',
+        '--terra-clinical-item-view-v2-content-secondary-color': 'maroon',
       },
     });
     Terra.should.beAccessible();

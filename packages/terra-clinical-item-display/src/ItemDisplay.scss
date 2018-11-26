@@ -17,7 +17,7 @@
   .inline-icon {
     flex: 0 0 auto;
     overflow: hidden;
-    padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.357142857142857rem);
+    padding-right: var(--terra-clinical-item-display-v2-inline-icon-padding-right, 0.357142857142857rem);
   }
 
   .inline-icon > * {
@@ -30,30 +30,30 @@
   }
 
   .is-disabled {
-    opacity: var(--terra-clinical-item-display-disabled-inline-icon-opacity, 0.2);
+    opacity: var(--terra-clinical-item-display-v2-disabled-inline-icon-opacity, 0.2);
 
     .inline-icon {
-      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
+      color: var(--terra-clinical-item-display-v2-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
     }
   }
 
   // Text Styles
   .secondary {
-    color: var(--terra-clinical-item-display-secondary-color, #75767d);
+    color: var(--terra-clinical-item-display-v2-secondary-color, #75767d);
   }
 
   .attention {
-    color: var(--terra-clinical-item-display-attention-color, #c00);
-    font-weight: var(--terra-clinical-item-display-attention-font-weight, 700);
+    color: var(--terra-clinical-item-display-v2-attention-color, #c00);
+    font-weight: var(--terra-clinical-item-display-v2-attention-font-weight, 700);
   }
 
   .strong {
-    color: var(--terra-clinical-item-display-strong-color);
-    font-weight: var(--terra-clinical-item-display-strong-font-weight, 700);
+    color: var(--terra-clinical-item-display-v2-strong-color);
+    font-weight: var(--terra-clinical-item-display-v2-strong-font-weight, 700);
   }
 
   .strike-through {
-    color: var(--terra-clinical-item-display-strike-through-color);
+    color: var(--terra-clinical-item-display-v2-strike-through-color);
     text-decoration: line-through;
   }
 }

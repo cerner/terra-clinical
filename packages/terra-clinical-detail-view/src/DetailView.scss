@@ -35,7 +35,7 @@
   }
 
   .subtitle {
-    color: var(--terra-detail-view-subtitle-color, #75767d);
+    color: var(--terra-clinical-detail-view-v2-subtitle-color, #75767d);
     font-size: 1.1428571429rem;
     line-height: 1.4285714286;
     word-wrap: break-word;
@@ -46,7 +46,7 @@
   }
 
   .accessory {
-    color: var(--terra-detail-view-accessory-color, #262424);
+    color: var(--terra-clinical-detail-view-v2-accessory-color, #262424);
     font-size: 1rem;
     margin-top: 1.2857142857rem;
   }
@@ -71,14 +71,14 @@
   }
 
   .footer-text {
-    color: var(--terra-detail-view-footer-text-color, #75767d);
+    color: var(--terra-clinical-detail-view-v2-footer-text-color, #75767d);
     font-size: 0.8571428571rem;
     line-height: 1.4285714286;
     text-align: center;
   }
 
   .divider {
-    border-color: var(--terra-detail-view-divider-border-color, #d3d4d5);
+    border-color: var(--terra-clinical-detail-view-v2-divider-border-color, #d3d4d5);
     border-style: solid;
     border-width: 1px 0 0;
     margin: 0;
