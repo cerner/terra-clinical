@@ -10,11 +10,9 @@
 
   .header-container {
     align-items: center;
-    box-shadow: var(--terra-clinical-data-grid-column-header-box-shadow, none);
     display: flex;
     min-width: 100%;
     position: relative;
-    z-index: 2;
   }
 
   .header-container.fixed {
@@ -24,9 +22,11 @@
   .pinned-header {
     background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
     border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
+    box-shadow: var(--terra-clinical-data-grid-column-header-box-shadow, none);
     flex: 0 0 auto;
     float: left;
     height: 100%;
+    z-index: 2;
   }
 
   .header-overflow-container {
