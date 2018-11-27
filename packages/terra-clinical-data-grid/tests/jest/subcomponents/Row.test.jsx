@@ -23,6 +23,7 @@ describe('Row Snapshot Tests', () => {
         width="123px"
         height="4rem"
         isSelected
+        isStriped
       >
         <div>Row Content</div>
       </Row>

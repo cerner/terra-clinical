@@ -1,11 +1,10 @@
 :local {
   .row {
     background-color: var(--terra-clinical-data-grid-row-background-color, #fff);
-    display: flex;
     min-width: 100%;
   }
 
-  .row:nth-child(odd) {
+  .row.striped {
     background-color: var(--terra-clinical-data-grid-row-striped-background-color, #f0f0f0);
   }
 
@@ -19,6 +18,6 @@
   }
 
   .row.selected.hover {
-    background-color: var(--terra-clinical-data-grid-row-hover-background-color, #b3ddf7);
+    background-color: var(--terra-clinical-data-grid-row-selected-hover-background-color, #b3ddf7);
   }
 }

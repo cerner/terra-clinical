@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-data-grid",
   "main": "lib/DataGrid.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An organizational component that renders a collection of data in a grid-like format.",
   "repository": {
     "type": "git",
@@ -38,14 +38,15 @@
     "react-draggable": "^3.0.5",
     "resize-observer-polyfill": "^1.4.1",
     "terra-button": "^2.0.1",
-    "terra-clinical-item-view": "^2.12.0",
+    "terra-clinical-item-view": "^2.16.0",
     "terra-content-container": "^2.0.1",
     "terra-doc-template": "^1.12.0",
     "terra-icon": "^2.6.0",
+    "terra-mixins": "^1.21.0",
     "terra-overlay": "^2.16.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build && tt-pack",
+    "compile": "npm run compile:clean && npm run compile:build",
     "compile:clean": "rimraf lib",
     "compile:build": "babel src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
