@@ -3,6 +3,7 @@
     background-color: var(--terra-clinical-data-grid-section-header-background-color, #e8e9ea);
     border-bottom: var(--terra-clinical-data-grid-section-header-border-bottom, 1px solid #c8cacb);
     border-top: var(--terra-clinical-data-grid-section-header-border-top, none);
+    color: var(--terra-clinical-data-grid-section-header-color, #1c1f21);
     height: 100%;
     position: relative;
     width: 100%;
@@ -21,6 +22,7 @@
   .collapsible-icon,
   .start-accessory,
   .end-accessory {
+    color: var(--terra-clinical-data-grid-section-header-collapsible-icon-color, #1c1f21);
     flex: 0 0 auto;
     max-height: 100%;
   }
