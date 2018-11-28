@@ -3,10 +3,10 @@
 :local {
   .item-comment {
     @include terra-clinical-item-body;
-    color: var(--terra-clinical-item-display-v2-comment-color, #75767d);
+    color: var(--terra-clinical-item-display-comment-color, #75767d);
 
     .inline-icon {
-      color: var(--terra-clinical-item-display-v2-comment-inline-icon-color, rgba(117, 118, 125, 0.3));
+      color: var(--terra-clinical-item-display-comment-inline-icon-color, rgba(117, 118, 125, 0.3));
     }
   }
 }

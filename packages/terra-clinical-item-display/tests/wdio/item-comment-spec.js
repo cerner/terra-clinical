@@ -24,8 +24,8 @@ describe('ItemComment - Themeable', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-clinical-item-display-v2-comment-color': '#75767d',
-        '--terra-clinical-item-display-v2-comment-inline-icon-color': 'rgba(117, 118, 125, 0.3)',
+        '--terra-clinical-item-display-comment-color': '#75767d',
+        '--terra-clinical-item-display-comment-inline-icon-color': 'rgba(117, 118, 125, 0.3)',
       },
     });
   });
