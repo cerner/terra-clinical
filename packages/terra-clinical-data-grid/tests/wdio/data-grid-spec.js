@@ -227,7 +227,7 @@ const themedProperties = {
         testName: 'themed',
         selector: '#selectable-data-grid',
         properties: {
-          '--terra-clinical-data-grid-v1-cell-hover-background-color': 'blue',
+          '--terra-clinical-data-grid-cell-hover-background-color': 'blue',
         },
       });
     });
@@ -259,7 +259,7 @@ const themedProperties = {
         testName: 'themed',
         selector: '#selectable-data-grid',
         properties: {
-          '--terra-clinical-data-grid-v1-row-hover-background-color': 'blue',
+          '--terra-clinical-data-grid-row-hover-background-color': 'blue',
         },
       });
     });
@@ -325,7 +325,7 @@ const themedProperties = {
         testName: 'themed',
         selector: '#subsection-data-grid',
         properties: {
-          '--terra-clinical-data-grid-v1-section-header-hover-background-color': 'green',
+          '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
         },
       });
     });
