@@ -12,4 +12,26 @@
     margin-bottom: 0.357em;
     margin-right: 0.357em;
   }
+
+  .precision {
+    min-width: 150px;
+  }
+
+  .granularity {
+    min-width: 100px;
+  }
+
+  .month {
+    min-width: 150px;
+  }
+
+  .age-unit {
+    min-width: 100px;
+  }
+
+  @media screen and (min-width: 544px) {
+    .field-inline {
+      display: inline-block;
+    }
+  }
 }

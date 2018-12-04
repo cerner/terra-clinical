@@ -55,12 +55,10 @@ class FiveYears extends React.Component {
           <OnsetPicker
             birthdate={moment('2011-09-20').format()}
             granularity={this.state.granularity}
-            granularitySelectName="test-granularity"
             granularitySelectOnChange={this.handleGranularity}
+            id="test"
             precision={this.state.precision}
-            precisionSelectName="test-precision"
             precisionSelectOnChange={this.handlePrecision}
-            onsetDateInputName="test-onsetDate"
             onsetDateInputOnChange={this.handleOnset}
             onsetDate={moment(this.state.onsetDate).format()}
           />

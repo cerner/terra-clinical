@@ -50,8 +50,8 @@ class HandledOnsetExample extends React.Component {
         <OnsetPicker
           birthdate={moment().subtract(6, 'years').format()}
           granularity={this.state.granularity}
-          granularitySelectName="doogs-supplied-granularity"
           granularitySelectOnChange={this.handleGranularity}
+          id="doogs-supplied"
           precision={this.state.precision}
           precisionSet={[
             OnsetPicker.Opts.Precisions.UNKNOWN,
@@ -59,21 +59,17 @@ class HandledOnsetExample extends React.Component {
             OnsetPicker.Opts.Precisions.BEFORE,
             OnsetPicker.Opts.Precisions.ONAT,
           ]}
-          precisionSelectName="doogs-supplied-precision"
           precisionSelectOnChange={this.handlePrecision}
           onsetDate={this.state.onsetDate}
-          onsetDateInputName="doogs-supplied-onsetDate"
           onsetDateInputOnChange={this.handleOnset}
         />
         <button type="submit">Submit</button>
         {this.state.submittedData && (
-        <div>
-          <hr />
-          <p>
-Form was submitted with
-            {JSON.stringify(this.state.submittedData)}
-          </p>
-        </div>
+          <div>
+            <hr />
+            <p>Form was submitted with</p>
+            <p>{JSON.stringify(this.state.submittedData)}</p>
+          </div>
         )}
       </form>
     );

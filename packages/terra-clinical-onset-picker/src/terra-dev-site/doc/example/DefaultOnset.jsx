@@ -7,9 +7,7 @@ import OnsetPicker from 'terra-clinical-onset-picker/lib/OnsetPicker';
 const picker = () => (
   <OnsetPicker
     birthdate={moment().subtract(6, 'years').format()}
-    granularitySelectName="doogs-granularity"
-    precisionSelectName="doogs-precision"
-    onsetDateInputName="doogs-onsetDate"
+    id="doogs"
   />
 );
 
