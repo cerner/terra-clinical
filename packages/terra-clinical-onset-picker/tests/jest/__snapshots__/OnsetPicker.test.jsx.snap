@@ -2,7 +2,6 @@
 
 exports[`should render a default onset picker with specified onset date 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
   id="test"
 >
   <fieldset
@@ -151,7 +150,6 @@ exports[`should render a default onset picker with specified onset date 1`] = `
 
 exports[`should render only a select when supplied with the UNKNOWN precision 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
   id="test"
 >
   <fieldset
@@ -226,7 +224,6 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
 
 exports[`should render only the supplied precisions 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
   id="test"
 >
   <fieldset
@@ -375,7 +372,6 @@ exports[`should render only the supplied precisions 1`] = `
 
 exports[`should render the same when onChange functions are supplied 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
   id="test"
 >
   <fieldset
@@ -524,7 +520,6 @@ exports[`should render the same when onChange functions are supplied 1`] = `
 
 exports[`should render with non default inputs when supplied 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
   id="test"
 >
   <fieldset
@@ -661,7 +656,6 @@ exports[`should render with non default inputs when supplied 1`] = `
     >
       <div
         class="field field-inline"
-        data-terra-clinical-onset-picker="year"
       >
         <div
           class="label-group label-group-hidden"
