@@ -18,10 +18,10 @@
   }
 
   .selectable .icon {
-    background: var(--terra-clinical-data-grid-row-selection-icon, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgba(28, 31, 33, 0.04)" d="M42,4H6C4.9,4,4,4.9,4,6v36c0,1.1,0.9,2,2,2h36c1.1,0,2-0.9,2-2V6C44,4.9,43.1,4,42,4z"/><path fill="rgba(28, 31, 33, 0.40)" d="M42,4c1.1,0,2,0.9,2,2v36c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2H42 M42,0H6C2.7,0,0,2.7,0,6v36 c0,3.3,2.7,6,6,6h36c3.3,0,6-2.7,6-6V6C48,2.7,45.3,0,42,0L42,0z"/></svg>'));
-  } 
+    background: var(--terra-clinical-data-grid-row-selection-icon-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgba(28, 31, 33, 0.04)" d="M42,4H6C4.9,4,4,4.9,4,6v36c0,1.1,0.9,2,2,2h36c1.1,0,2-0.9,2-2V6C44,4.9,43.1,4,42,4z"/><path fill="rgba(28, 31, 33, 0.40)" d="M42,4c1.1,0,2,0.9,2,2v36c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2H42 M42,0H6C2.7,0,0,2.7,0,6v36 c0,3.3,2.7,6,6,6h36c3.3,0,6-2.7,6-6V6C48,2.7,45.3,0,42,0L42,0z"/></svg>'));
+  }
 
   .selected .icon {
-    background: var(--terra-clinical-data-grid-selected-row-selection-icon, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgba(0, 135, 209, 0.28)" d="M42,4H6C4.9,4,4,4.9,4,6v36c0,1.1,0.9,2,2,2h36c1.1,0,2-0.9,2-2V6C44,4.9,43.1,4,42,4z"/><path fill="#0079BE" d="M42,4c1.1,0,2,0.9,2,2v36c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2H42 M42,0H6C2.7,0,0,2.7,0,6v36   c0,3.3,2.7,6,6,6h36c3.3,0,6-2.7,6-6V6C48,2.7,45.3,0,42,0L42,0z"/><path fill="#0059A8" d="M20,36.4L6.7,23.1l3.6-3.6l9.7,9.9l17.7-17.9l3.6,3.6L20,36.4z"/></svg>'));
+    background: var(--terra-clinical-data-grid-selected-row-selection-icon-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="rgba(0, 135, 209, 0.28)" d="M42,4H6C4.9,4,4,4.9,4,6v36c0,1.1,0.9,2,2,2h36c1.1,0,2-0.9,2-2V6C44,4.9,43.1,4,42,4z"/><path fill="#0079BE" d="M42,4c1.1,0,2,0.9,2,2v36c0,1.1-0.9,2-2,2H6c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2H42 M42,0H6C2.7,0,0,2.7,0,6v36   c0,3.3,2.7,6,6,6h36c3.3,0,6-2.7,6-6V6C48,2.7,45.3,0,42,0L42,0z"/><path fill="#0059A8" d="M20,36.4L6.7,23.1l3.6-3.6l9.7,9.9l17.7-17.9l3.6,3.6L20,36.4z"/></svg>'));
   }
 }
