@@ -9,27 +9,31 @@
   }
 
   .field-inline {
-    margin-bottom: 0.357em;
-    margin-right: 0.357em;
+    margin-bottom: var(--terra-onset-picker-field-margin-bottom, 0.357em);
+    margin-right: var(--terra-onset-picker-field-margin-right, 0.357em);
   }
 
   .precision {
-    min-width: 150px;
+    min-width: var(--terra-onset-picker-precision-select-min-width, 10.5em);
   }
 
   .granularity {
-    min-width: 100px;
+    min-width: var(--terra-onset-picker-granularity-select-min-width, 7em);
   }
 
   .month {
-    min-width: 150px;
+    min-width: var(--terra-onset-picker-month-select-min-width, 10.5em);
   }
 
   .age-unit {
-    min-width: 100px;
+    min-width: var(--terra-onset-picker-age-granularity-select-min-width, 7em);
   }
 
   @media screen and (min-width: 544px) {
+    .age {
+      width: var(--terra-onset-picker-age-input-width, 4em);
+    }
+
     .field-inline {
       display: inline-block;
     }

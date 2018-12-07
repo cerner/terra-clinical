@@ -175,24 +175,38 @@ class OnsetPicker extends React.Component {
   changeAge(event) {
     const age = Number(event.target.value);
 
-    this.setState(prevState => ({
-      age,
-      onsetDate: Number.isInteger(age) && prevState.ageUnit
-        ? moment(this.props.birthdate).add(age, prevState.ageUnit) : undefined,
-    }), () => this.handleDateChange(this.state.onsetDate));
+    this.setState(prevState => {
+      // Check if date can be calculated
+      const ageDate = Number.isInteger(age) && prevState.ageUnit
+        ? moment(this.props.birthdate).add(age, prevState.ageUnit) : undefined;
+      // Check if date is valid
+      const validDate = ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment();
+
+      return {
+        age,
+        onsetDate: validDate ? ageDate : undefined,
+      }
+    }, () => this.handleDateChange(this.state.onsetDate));
   }
 
   /*
-   * Change state for duration when using age granularity, and update onset date
+   * Change state for age unit when using AGE granularity, and update onset date
    */
   changeAgeUnit(value) {
     const ageUnit = value;
 
-    this.setState(prevState => ({
-      ageUnit,
-      onsetDate: Number.isInteger(prevState.age) && ageUnit
-        ? moment(this.props.birthdate).add(prevState.age, ageUnit) : undefined,
-    }), () => this.handleDateChange(this.state.onsetDate));
+    this.setState(prevState => {
+      // Check if date can be calculated
+      const ageDate = Number.isInteger(prevState.age) && ageUnit
+        ? moment(this.props.birthdate).add(prevState.age, ageUnit) : undefined;
+      // Check if date is valid
+      const validDate = ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment();
+
+      return {
+        ageUnit,
+        onsetDate: validDate ? ageDate : undefined,
+      }
+    }, () => this.handleDateChange(this.state.onsetDate));
   }
 
   /*
@@ -306,7 +320,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === GranularityOptions.AGE) {
       ageInput = (
         <InputField
-          className={cx('field-inline')}
+          className={cx('field-inline', 'age')}
           defaultValue={this.state.age}
           inputAttrs={{
             type: 'number',
