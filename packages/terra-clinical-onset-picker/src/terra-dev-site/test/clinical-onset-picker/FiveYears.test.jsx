@@ -10,8 +10,8 @@ class FiveYears extends React.Component {
     moment.now = () => new Date(2016, 8, 20);
 
     this.state = {
-      precision: OnsetPicker.Opts.Precisions.BEFORE,
-      granularity: OnsetPicker.Opts.Granularities.YEAR,
+      precision: 'before',
+      granularity: 'year',
       onsetDate: moment('2013-02-14'),
     };
 

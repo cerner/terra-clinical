@@ -10,8 +10,8 @@ export default class LessMonth extends React.Component {
     moment.now = () => new Date(2016, 8, 20);
 
     this.state = {
-      precision: OnsetPicker.Opts.Precisions.ONAT,
-      granularity: OnsetPicker.Opts.Granularities.MONTH,
+      precision: 'on/at',
+      granularity: 'month',
       onsetDate: moment(),
     };
 

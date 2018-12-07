@@ -77,7 +77,7 @@ it('should render only the supplied precisions', () => {
       <OnsetPicker
         birthdate="2011-08-16T17:40:49-05:00"
         id="test"
-        precisionSet={[OnsetPicker.Opts.Precisions.UNKNOWN, OnsetPicker.Opts.Precisions.BEFORE, OnsetPicker.Opts.Precisions.AFTER]}
+        precisionSet={['unknown', 'before', 'after']}
       />
     </IntlProvider>);
   expect(render(onsetPicker)).toMatchSnapshot();
