@@ -36,6 +36,7 @@
     "mockdate": "^2.0.2",
     "moment": "^2.22.2",
     "prop-types": "^15.5.8",
+    "terra-breakpoints": "^1.0.0",
     "terra-date-picker": "^2.0.1",
     "terra-doc-template": "^1.2.0",
     "terra-form-field": "^2.29.0",

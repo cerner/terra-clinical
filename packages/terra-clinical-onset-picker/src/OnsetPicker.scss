@@ -1,4 +1,16 @@
+@import '~terra-breakpoints/lib/media-queries';
+
 :local {
+  @include terra-mq-small-up {
+    .age {
+      width: var(--terra-clinical-onset-picker-age-input-width, 4em);
+    }
+
+    .field-inline {
+      display: inline-block;
+    }
+  }
+
   .fieldset {
     margin-bottom: 0;
 
@@ -27,15 +39,5 @@
 
   .age-unit {
     min-width: var(--terra-clinical-onset-picker-age-granularity-select-min-width, 7em);
-  }
-
-  @media screen and (min-width: 544px) {
-    .age {
-      width: var(--terra-clinical-onset-picker-age-input-width, 4em);
-    }
-
-    .field-inline {
-      display: inline-block;
-    }
   }
 }
