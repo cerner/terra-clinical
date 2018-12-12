@@ -9,7 +9,7 @@ import FieldSet from 'terra-form-fieldset';
 import InputField from 'terra-form-input/lib/InputField';
 import SelectField from 'terra-form-select/lib/SelectField';
 import OnsetUtils from './OnsetUtils';
-import styles from './OnsetPicker.scss';
+import styles from './OnsetPicker.module.scss';
 
 const cx = classNames.bind(styles);
 

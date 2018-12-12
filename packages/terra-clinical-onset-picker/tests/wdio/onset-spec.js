@@ -1,4 +1,4 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
+const viewports = Terra.viewports('tiny', 'medium', 'enormous');
 // Color contrast rule disabled due to https://github.com/cerner/terra-core/issues/1917
 const rules = { label: { enabled: false }, 'color-contrast': { enabled: false } };
 
