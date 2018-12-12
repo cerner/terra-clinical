@@ -5,6 +5,7 @@
 [![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
 The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for onset scenarios.
+NOTE: This component does not support arabic translations.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-onset-picker/docs)
