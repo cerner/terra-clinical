@@ -291,10 +291,16 @@ class OnsetPicker extends React.Component {
         <SelectField
           className={cx('field-inline', 'granularity')}
           defaultValue={this.state.granularity}
-          onChange={this.changeGranularity}
-          placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.granularity' })}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.granularityLabel' })}
+          labelAttrs={{
+            id: `${this.props.id}-granularity-select-label`,
+          }}
+          onChange={this.changeGranularity}
+          placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.granularity' })}
+          selectAttrs={{
+            'aria-labelledby': `${this.props.id}-granularity-select-label`,
+          }}
           selectId={`${this.props.id}-granularity-select`}
         >
           <SelectField.Option
@@ -333,10 +339,14 @@ class OnsetPicker extends React.Component {
             min: 0,
             max: OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit),
             step: 1,
+            'aria-labelledby': `${this.props.id}-age-input-label`,
           }}
           inputId={`${this.props.id}-age-input`}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.ageLabel' })}
+          labelAttrs={{
+            id: `${this.props.id}-age-input-label`,
+          }}
           onChange={this.changeAge}
         />
       );
@@ -347,9 +357,15 @@ class OnsetPicker extends React.Component {
           defaultValue={this.state.ageUnit}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionLabel' })}
+          labelAttrs={{
+            id: `${this.props.id}-age-unit-select-label`,
+          }}
           onChange={this.changeAgeUnit}
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.agePrecision' })}
-          selectId={`${this.props.id}-age-precision-select`}
+          selectAttrs={{
+            'aria-labelledby': `${this.props.id}-age-unit-select-label`,
+          }}
+          selectId={`${this.props.id}-age-unit-select`}
         >
           {OnsetUtils.allowedAgeUnits(this.props.birthdate, intl)
             .map(unit => <SelectField.Option value={unit.value} display={unit.display} key={unit.value} />)}
@@ -364,9 +380,15 @@ class OnsetPicker extends React.Component {
           className={cx('field-inline', 'month')}
           value={this.state.onsetDate ? this.state.onsetDate.month().toString() : undefined}
           label={intl.formatMessage({ id: 'Terra.onsetPicker.monthLabel' })}
+          labelAttrs={{
+            id: `${this.props.id}-month-select-label`,
+          }}
           isLabelHidden
           onChange={this.changeMonth}
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.month' })}
+          selectAttrs={{
+            'aria-labelledby': `${this.props.id}-month-select-label`,
+          }}
           selectId={`${this.props.id}-month-select`}
         >
           {OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)
@@ -379,12 +401,18 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === GranularityOptions.YEAR || this.state.granularity === GranularityOptions.MONTH) {
       yearSelect = (
         <SelectField
-          className={cx('field-inline')}
+          className={cx('field-inline', 'year')}
           value={this.state.onsetDate ? this.state.onsetDate.year().toString() : undefined}
           label={intl.formatMessage({ id: 'Terra.onsetPicker.yearLabel' })}
+          labelAttrs={{
+            id: `${this.props.id}-year-select-label`,
+          }}
           isLabelHidden
           onChange={this.changeYear}
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
+          selectAttrs={{
+            'aria-labelledby': `${this.props.id}-year-select-label`,
+          }}
           selectId={`${this.props.id}-year-select`}
         >
           {OnsetUtils.allowedYears(this.props.birthdate)
@@ -400,8 +428,14 @@ class OnsetPicker extends React.Component {
           className={cx('field-inline')}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.dateLabel' })}
+          labelAttrs={{
+            id: `${this.props.id}-date-input-label`,
+          }}
         >
           <DatePicker
+            inputAttributes={{
+              'aria-labelledby': `${this.props.id}-date-input-label`,
+            }}
             onChange={this.changeDate}
             minDate={this.props.birthdate}
             maxDate={moment().format()}
@@ -420,9 +454,15 @@ class OnsetPicker extends React.Component {
             className={cx('field-inline', 'precision')}
             defaultValue={this.state.precision}
             label={intl.formatMessage({ id: 'Terra.onsetPicker.precisionLabel' })}
+            labelAttrs={{
+              id: `${this.props.id}-precision-select-label`,
+            }}
             isLabelHidden
             onChange={this.changePrecision}
             placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.precision' })}
+            selectAttrs={{
+              'aria-labelledby': `${this.props.id}-precision-select-label`,
+            }}
             selectId={`${this.props.id}-precision-select`}
           >
             {OnsetUtils.allowedPrecisions(intl, this.props.precisionSet)

@@ -19,6 +19,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           <label
             class="label"
             for="test-precision-select"
+            id="test-precision-select-label"
           >
             Select a date precision
           </label>
@@ -49,6 +50,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
           class="select default"
           id="test-precision-select"
           role="combobox"
@@ -82,6 +84,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           <label
             class="label"
             for="test-granularity-select"
+            id="test-granularity-select-label"
           >
             Select a date granularity
           </label>
@@ -112,6 +115,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
           class="select default"
           id="test-granularity-select"
           role="combobox"
@@ -167,6 +171,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           <label
             class="label"
             for="test-precision-select"
+            id="test-precision-select-label"
           >
             Select a date precision
           </label>
@@ -197,6 +202,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
           class="select default"
           id="test-precision-select"
           role="combobox"
@@ -241,6 +247,7 @@ exports[`should render only the supplied precisions 1`] = `
           <label
             class="label"
             for="test-precision-select"
+            id="test-precision-select-label"
           >
             Select a date precision
           </label>
@@ -271,6 +278,7 @@ exports[`should render only the supplied precisions 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
           class="select default"
           id="test-precision-select"
           role="combobox"
@@ -304,6 +312,7 @@ exports[`should render only the supplied precisions 1`] = `
           <label
             class="label"
             for="test-granularity-select"
+            id="test-granularity-select-label"
           >
             Select a date granularity
           </label>
@@ -334,6 +343,7 @@ exports[`should render only the supplied precisions 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
           class="select default"
           id="test-granularity-select"
           role="combobox"
@@ -389,6 +399,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           <label
             class="label"
             for="test-precision-select"
+            id="test-precision-select-label"
           >
             Select a date precision
           </label>
@@ -419,6 +430,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
           class="select default"
           id="test-precision-select"
           role="combobox"
@@ -452,6 +464,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           <label
             class="label"
             for="test-granularity-select"
+            id="test-granularity-select-label"
           >
             Select a date granularity
           </label>
@@ -482,6 +495,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
           class="select default"
           id="test-granularity-select"
           role="combobox"
@@ -537,6 +551,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           <label
             class="label"
             for="test-precision-select"
+            id="test-precision-select-label"
           >
             Select a date precision
           </label>
@@ -567,6 +582,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
           class="select default"
           id="test-precision-select"
           role="combobox"
@@ -596,6 +612,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           <label
             class="label"
             for="test-granularity-select"
+            id="test-granularity-select-label"
           >
             Select a date granularity
           </label>
@@ -626,6 +643,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
           class="select default"
           id="test-granularity-select"
           role="combobox"
@@ -655,7 +673,7 @@ exports[`should render with non default inputs when supplied 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline"
+        class="field field-inline year"
       >
         <div
           class="label-group label-group-hidden"
@@ -663,6 +681,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           <label
             class="label"
             for="test-year-select"
+            id="test-year-select-label"
           >
             Select a year
           </label>
@@ -693,6 +712,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-labelledby="test-year-select-label"
           class="select default"
           id="test-year-select"
           role="combobox"

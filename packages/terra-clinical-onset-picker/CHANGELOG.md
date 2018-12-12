@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+
+### Breaking Change
 * Updated to use new form inputs and selects to support blank defaults - issue #256
 * Resolved crash from issue #396, now returns an empty string if date is blank
 * Condensed props for input/select id's to a shared base id value

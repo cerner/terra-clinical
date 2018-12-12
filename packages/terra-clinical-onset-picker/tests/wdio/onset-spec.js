@@ -1,6 +1,6 @@
 const viewports = Terra.viewports('tiny', 'medium', 'enormous');
 // Color contrast rule disabled due to https://github.com/cerner/terra-core/issues/1917
-const rules = { label: { enabled: false }, 'color-contrast': { enabled: false } };
+const rules = { 'color-contrast': { enabled: false } };
 
 viewports.forEach((viewport) => {
   describe('Onset Picker', () => {
@@ -161,7 +161,7 @@ viewports.forEach((viewport) => {
         browser.click('#test-granularity-select');
         browser.click('#terra-select-option-age');
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-years');
 
         browser.clearElement('#test-age-input');
@@ -180,7 +180,7 @@ viewports.forEach((viewport) => {
         browser.click('#test-granularity-select');
         browser.click('#terra-select-option-age');
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-months');
 
         browser.clearElement('#test-age-input');
@@ -199,7 +199,7 @@ viewports.forEach((viewport) => {
         browser.click('#test-granularity-select');
         browser.click('#terra-select-option-age');
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-months');
 
         browser.clearElement('#test-age-input');
@@ -218,7 +218,7 @@ viewports.forEach((viewport) => {
         browser.click('#test-granularity-select');
         browser.click('#terra-select-option-age');
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-weeks');
 
         browser.clearElement('#test-age-input');
@@ -237,7 +237,7 @@ viewports.forEach((viewport) => {
         browser.click('#test-granularity-select');
         browser.click('#terra-select-option-age');
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-weeks');
 
         browser.clearElement('#test-age-input');
@@ -257,7 +257,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-age');
       });
 
-      browser.click('#test-age-precision-select');
+      browser.click('#test-age-unit-select');
       browser.click('#terra-select-option-years');
       Terra.should.matchScreenshot();
       Terra.should.beAccessible({ rules });
@@ -270,7 +270,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-age');
       });
 
-      browser.click('#test-age-precision-select');
+      browser.click('#test-age-unit-select');
       browser.click('#terra-select-option-months');
       Terra.should.matchScreenshot();
       Terra.should.beAccessible({ rules });
@@ -337,7 +337,7 @@ viewports.forEach((viewport) => {
         browser.click('#test-granularity-select');
         browser.click('#terra-select-option-age');
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-years');
 
         browser.clearElement('#test-age-input');
@@ -358,7 +358,7 @@ viewports.forEach((viewport) => {
         browser.clearElement('#test-age-input');
         browser.setValue('#test-age-input', 4);
 
-        browser.click('#test-age-precision-select');
+        browser.click('#test-age-unit-select');
         browser.click('#terra-select-option-years');
         browser.click('button[type="submit"]');
         browser.pause(2900);

@@ -33,11 +33,15 @@
     min-width: var(--terra-clinical-onset-picker-granularity-select-min-width, 7em);
   }
 
+  .age-unit {
+    min-width: var(--terra-clinical-onset-picker-age-granularity-select-min-width, 7em);
+  }
+
   .month {
     min-width: var(--terra-clinical-onset-picker-month-select-min-width, 10.5em);
   }
 
-  .age-unit {
-    min-width: var(--terra-clinical-onset-picker-age-granularity-select-min-width, 7em);
+  .year {
+    min-width: var(--terra-clinical-onset-picker-year-select-min-width, 4.5em);
   }
 }
