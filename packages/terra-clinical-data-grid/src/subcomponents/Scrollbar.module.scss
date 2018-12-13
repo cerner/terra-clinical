@@ -27,7 +27,7 @@
 
     .scrollbar-handle {
       background-color: var(--terra-clinical-data-grid-scrollbar-handle-background-color, #9b9fa1);
-      border-radius: var(--terra-clinical-data-grid-scrollbar-border-radius, 25px);
+      border-radius: var(--terra-clinical-data-grid-scrollbar-handle-border-radius, 25px);
       flex: 0 0 auto;
       height: calc(100% - 2px);
       width: 100%;
