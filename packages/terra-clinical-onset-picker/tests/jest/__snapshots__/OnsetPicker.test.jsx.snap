@@ -2,7 +2,7 @@
 
 exports[`should render a default onset picker with specified onset date 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
+  id="test"
 >
   <fieldset
     class="fieldset fieldset"
@@ -11,69 +11,134 @@ exports[`should render a default onset picker with specified onset date 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline field-inline"
+        class="field field-inline precision"
       >
-        <select
-          class="select"
-          name="test-precision"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            selected=""
-            value="on/at"
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
           >
-            On/At
-          </option>
-          <option
-            value="about"
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            About
-          </option>
-          <option
-            value="before"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
+          class="select default"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
-            Before
-          </option>
-          <option
-            value="after"
+            <div
+              class="placeholder"
+            >
+              Precision
+            </div>
+          </div>
+          <div
+            class="toggle"
           >
-            After
-          </option>
-          <option
-            value="unknown"
-          >
-            Unknown
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="field field-inline field-inline"
+        class="field field-inline granularity"
       >
-        <select
-          class="select"
-          name="test-granularity"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="age"
+          <label
+            class="label"
+            for="test-granularity-select"
+            id="test-granularity-select-label"
           >
-            Age
-          </option>
-          <option
-            value="year"
+            Select a date granularity
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            Year
-          </option>
-          <option
-            selected=""
-            value="month"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
+          class="select default"
+          id="test-granularity-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
-            Month
-          </option>
-          <option
-            value="date"
+            <div
+              class="placeholder"
+            >
+              Granularity
+            </div>
+          </div>
+          <div
+            class="toggle"
           >
-            Date
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </fieldset>
@@ -82,125 +147,14 @@ exports[`should render a default onset picker with specified onset date 1`] = `
   >
     <div
       class="fieldset-children"
-    >
-      <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="month"
-      >
-        <select
-          class="select"
-        >
-          <option
-            value="0"
-          >
-            January
-          </option>
-          <option
-            value="1"
-          >
-            February
-          </option>
-          <option
-            value="2"
-          >
-            March
-          </option>
-          <option
-            value="3"
-          >
-            April
-          </option>
-          <option
-            value="4"
-          >
-            May
-          </option>
-          <option
-            value="5"
-          >
-            June
-          </option>
-          <option
-            value="6"
-          >
-            July
-          </option>
-          <option
-            value="7"
-          >
-            August
-          </option>
-          <option
-            selected=""
-            value="8"
-          >
-            September
-          </option>
-          <option
-            value="9"
-          >
-            October
-          </option>
-          <option
-            value="10"
-          >
-            November
-          </option>
-        </select>
-      </div>
-      <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="year"
-      >
-        <select
-          class="select"
-        >
-          <option
-            value="2011"
-          >
-            2011
-          </option>
-          <option
-            value="2012"
-          >
-            2012
-          </option>
-          <option
-            value="2013"
-          >
-            2013
-          </option>
-          <option
-            value="2014"
-          >
-            2014
-          </option>
-          <option
-            value="2015"
-          >
-            2015
-          </option>
-          <option
-            value="2016"
-          >
-            2016
-          </option>
-          <option
-            selected=""
-            value="2017"
-          >
-            2017
-          </option>
-        </select>
-      </div>
-    </div>
+    />
   </fieldset>
 </div>
 `;
 
 exports[`should render only a select when supplied with the UNKNOWN precision 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
+  id="test"
 >
   <fieldset
     class="fieldset fieldset"
@@ -209,39 +163,65 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
       class="fieldset-children"
     >
       <div
-        class="field field-inline field-inline"
+        class="field field-inline precision"
       >
-        <select
-          class="select"
-          name="test-precision"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="on/at"
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
           >
-            On/At
-          </option>
-          <option
-            value="about"
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            About
-          </option>
-          <option
-            value="before"
-          >
-            Before
-          </option>
-          <option
-            value="after"
-          >
-            After
-          </option>
-          <option
-            selected=""
-            value="unknown"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
+          class="select default"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
             Unknown
-          </option>
-        </select>
+          </div>
+          <div
+            class="toggle"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </fieldset>
@@ -250,7 +230,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
 
 exports[`should render only the supplied precisions 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
+  id="test"
 >
   <fieldset
     class="fieldset fieldset"
@@ -259,58 +239,134 @@ exports[`should render only the supplied precisions 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline field-inline"
+        class="field field-inline precision"
       >
-        <select
-          class="select"
-          name="test-precision"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="unknown"
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
           >
-            Unknown
-          </option>
-          <option
-            value="before"
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            Before
-          </option>
-          <option
-            value="after"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
+          class="select default"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
-            After
-          </option>
-        </select>
+            <div
+              class="placeholder"
+            >
+              Precision
+            </div>
+          </div>
+          <div
+            class="toggle"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="field field-inline field-inline"
+        class="field field-inline granularity"
       >
-        <select
-          class="select"
-          name="test-granularity"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="age"
+          <label
+            class="label"
+            for="test-granularity-select"
+            id="test-granularity-select-label"
           >
-            Age
-          </option>
-          <option
-            value="year"
+            Select a date granularity
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            Year
-          </option>
-          <option
-            selected=""
-            value="month"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
+          class="select default"
+          id="test-granularity-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
-            Month
-          </option>
-          <option
-            value="date"
+            <div
+              class="placeholder"
+            >
+              Granularity
+            </div>
+          </div>
+          <div
+            class="toggle"
           >
-            Date
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </fieldset>
@@ -319,125 +375,14 @@ exports[`should render only the supplied precisions 1`] = `
   >
     <div
       class="fieldset-children"
-    >
-      <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="month"
-      >
-        <select
-          class="select"
-        >
-          <option
-            value="0"
-          >
-            January
-          </option>
-          <option
-            value="1"
-          >
-            February
-          </option>
-          <option
-            value="2"
-          >
-            March
-          </option>
-          <option
-            value="3"
-          >
-            April
-          </option>
-          <option
-            value="4"
-          >
-            May
-          </option>
-          <option
-            value="5"
-          >
-            June
-          </option>
-          <option
-            value="6"
-          >
-            July
-          </option>
-          <option
-            value="7"
-          >
-            August
-          </option>
-          <option
-            value="8"
-          >
-            September
-          </option>
-          <option
-            value="9"
-          >
-            October
-          </option>
-          <option
-            selected=""
-            value="10"
-          >
-            November
-          </option>
-        </select>
-      </div>
-      <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="year"
-      >
-        <select
-          class="select"
-        >
-          <option
-            value="2011"
-          >
-            2011
-          </option>
-          <option
-            value="2012"
-          >
-            2012
-          </option>
-          <option
-            value="2013"
-          >
-            2013
-          </option>
-          <option
-            value="2014"
-          >
-            2014
-          </option>
-          <option
-            value="2015"
-          >
-            2015
-          </option>
-          <option
-            value="2016"
-          >
-            2016
-          </option>
-          <option
-            selected=""
-            value="2017"
-          >
-            2017
-          </option>
-        </select>
-      </div>
-    </div>
+    />
   </fieldset>
 </div>
 `;
 
 exports[`should render the same when onChange functions are supplied 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
+  id="test"
 >
   <fieldset
     class="fieldset fieldset"
@@ -446,69 +391,134 @@ exports[`should render the same when onChange functions are supplied 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline field-inline"
+        class="field field-inline precision"
       >
-        <select
-          class="select"
-          name="test-precision"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            selected=""
-            value="on/at"
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
           >
-            On/At
-          </option>
-          <option
-            value="about"
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            About
-          </option>
-          <option
-            value="before"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
+          class="select default"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
-            Before
-          </option>
-          <option
-            value="after"
+            <div
+              class="placeholder"
+            >
+              Precision
+            </div>
+          </div>
+          <div
+            class="toggle"
           >
-            After
-          </option>
-          <option
-            value="unknown"
-          >
-            Unknown
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="field field-inline field-inline"
+        class="field field-inline granularity"
       >
-        <select
-          class="select"
-          name="test-granularity"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="age"
+          <label
+            class="label"
+            for="test-granularity-select"
+            id="test-granularity-select-label"
           >
-            Age
-          </option>
-          <option
-            value="year"
+            Select a date granularity
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            Year
-          </option>
-          <option
-            selected=""
-            value="month"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
+          class="select default"
+          id="test-granularity-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
-            Month
-          </option>
-          <option
-            value="date"
+            <div
+              class="placeholder"
+            >
+              Granularity
+            </div>
+          </div>
+          <div
+            class="toggle"
           >
-            Date
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </fieldset>
@@ -517,125 +527,14 @@ exports[`should render the same when onChange functions are supplied 1`] = `
   >
     <div
       class="fieldset-children"
-    >
-      <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="month"
-      >
-        <select
-          class="select"
-        >
-          <option
-            value="0"
-          >
-            January
-          </option>
-          <option
-            value="1"
-          >
-            February
-          </option>
-          <option
-            value="2"
-          >
-            March
-          </option>
-          <option
-            value="3"
-          >
-            April
-          </option>
-          <option
-            value="4"
-          >
-            May
-          </option>
-          <option
-            value="5"
-          >
-            June
-          </option>
-          <option
-            value="6"
-          >
-            July
-          </option>
-          <option
-            value="7"
-          >
-            August
-          </option>
-          <option
-            value="8"
-          >
-            September
-          </option>
-          <option
-            value="9"
-          >
-            October
-          </option>
-          <option
-            selected=""
-            value="10"
-          >
-            November
-          </option>
-        </select>
-      </div>
-      <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="year"
-      >
-        <select
-          class="select"
-        >
-          <option
-            value="2011"
-          >
-            2011
-          </option>
-          <option
-            value="2012"
-          >
-            2012
-          </option>
-          <option
-            value="2013"
-          >
-            2013
-          </option>
-          <option
-            value="2014"
-          >
-            2014
-          </option>
-          <option
-            value="2015"
-          >
-            2015
-          </option>
-          <option
-            value="2016"
-          >
-            2016
-          </option>
-          <option
-            selected=""
-            value="2017"
-          >
-            2017
-          </option>
-        </select>
-      </div>
-    </div>
+    />
   </fieldset>
 </div>
 `;
 
 exports[`should render with non default inputs when supplied 1`] = `
 <div
-  data-terra-clinical-onset-picker="true"
+  id="test"
 >
   <fieldset
     class="fieldset fieldset"
@@ -644,69 +543,126 @@ exports[`should render with non default inputs when supplied 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline field-inline"
+        class="field field-inline precision"
       >
-        <select
-          class="select"
-          name="test-precision"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="on/at"
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
           >
-            On/At
-          </option>
-          <option
-            value="about"
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            About
-          </option>
-          <option
-            selected=""
-            value="before"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
+          class="select default"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
             Before
-          </option>
-          <option
-            value="after"
+          </div>
+          <div
+            class="toggle"
           >
-            After
-          </option>
-          <option
-            value="unknown"
-          >
-            Unknown
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="field field-inline field-inline"
+        class="field field-inline granularity"
       >
-        <select
-          class="select"
-          name="test-granularity"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="age"
+          <label
+            class="label"
+            for="test-granularity-select"
+            id="test-granularity-select-label"
           >
-            Age
-          </option>
-          <option
-            selected=""
-            value="year"
+            Select a date granularity
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
+          class="select default"
+          id="test-granularity-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
             Year
-          </option>
-          <option
-            value="month"
+          </div>
+          <div
+            class="toggle"
           >
-            Month
-          </option>
-          <option
-            value="date"
-          >
-            Date
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </fieldset>
@@ -717,49 +673,65 @@ exports[`should render with non default inputs when supplied 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline field-inline"
-        data-terra-clinical-onset-picker="year"
+        class="field field-inline year"
       >
-        <select
-          class="select"
+        <div
+          class="label-group label-group-hidden"
         >
-          <option
-            value="2011"
+          <label
+            class="label"
+            for="test-year-select"
+            id="test-year-select-label"
           >
-            2011
-          </option>
-          <option
-            value="2012"
+            Select a year
+          </label>
+          <div
+            class="error-icon-hidden"
           >
-            2012
-          </option>
-          <option
-            value="2013"
-          >
-            2013
-          </option>
-          <option
-            selected=""
-            value="2014"
+            <svg
+              aria-hidden="true"
+              class="icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-year-select-label"
+          class="select default"
+          id="test-year-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="display"
+            role="textbox"
           >
             2014
-          </option>
-          <option
-            value="2015"
+          </div>
+          <div
+            class="toggle"
           >
-            2015
-          </option>
-          <option
-            value="2016"
-          >
-            2016
-          </option>
-          <option
-            value="2017"
-          >
-            2017
-          </option>
-        </select>
+            <span
+              class="arrow-icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </fieldset>
