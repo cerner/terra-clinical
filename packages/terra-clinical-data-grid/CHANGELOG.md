@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Fixed
+* Fixed paging logic when rows are being removed from the DataGrid
+
 1.1.0 - (November 21, 2018)
 -----------------
 ### Changed
