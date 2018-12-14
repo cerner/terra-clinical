@@ -24,7 +24,7 @@ const themedProperties = {
   '--terra-clinical-data-grid-scrollbar-height': '20px',
   '--terra-clinical-data-grid-scrollbar-hover-height': '30px',
   '--terra-clinical-data-grid-scrollbar-handle-background-color': 'purple',
-  '--terra-clinical-data-grid-scrollbar-border-radius': '0px',
+  '--terra-clinical-data-grid-scrollbar-handle-border-radius': '0px',
   '--terra-clinical-data-grid-scrollbar-handle-active-background-color': 'darkgreen',
   '--terra-clinical-data-grid-section-header-background-color': 'yellow',
   '--terra-clinical-data-grid-section-header-border-bottom': 'blueviolet',
