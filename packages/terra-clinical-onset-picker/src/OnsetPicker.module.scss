@@ -1,0 +1,47 @@
+@import '~terra-breakpoints/lib/media-queries';
+
+:local {
+  @include terra-mq-small-up {
+    .age {
+      width: var(--terra-clinical-onset-picker-age-input-width, 4em);
+    }
+
+    .field-inline {
+      display: inline-block;
+    }
+  }
+
+  .fieldset {
+    margin-bottom: 0;
+
+    > div {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  .field-inline {
+    margin-bottom: var(--terra-clinical-onset-picker-field-margin-bottom, 0.357em);
+    margin-right: var(--terra-clinical-onset-picker-field-margin-right, 0.357em);
+  }
+
+  .precision {
+    min-width: var(--terra-clinical-onset-picker-precision-select-min-width, 10.5em);
+  }
+
+  .granularity {
+    min-width: var(--terra-clinical-onset-picker-granularity-select-min-width, 7em);
+  }
+
+  .age-unit {
+    min-width: var(--terra-clinical-onset-picker-age-granularity-select-min-width, 7em);
+  }
+
+  .month {
+    min-width: var(--terra-clinical-onset-picker-month-select-min-width, 10.5em);
+  }
+
+  .year {
+    min-width: var(--terra-clinical-onset-picker-year-select-min-width, 4.5em);
+  }
+}

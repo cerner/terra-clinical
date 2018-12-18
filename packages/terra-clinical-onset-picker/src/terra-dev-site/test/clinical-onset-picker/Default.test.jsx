@@ -12,9 +12,7 @@ export default () => {
       <p>Current date locked to September 20, 2016</p>
       <OnsetPicker
         birthdate={moment('2011-09-20').format()}
-        granularitySelectName="test-granularity"
-        precisionSelectName="test-precision"
-        onsetDateInputName="test-onsetDate"
+        id="test"
       />
     </div>
   );

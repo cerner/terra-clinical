@@ -10,8 +10,8 @@ export default class LessYear extends React.Component {
     moment.now = () => new Date(2016, 8, 20);
 
     this.state = {
-      precision: OnsetPicker.Opts.Precisions.ONAT,
-      granularity: OnsetPicker.Opts.Granularities.MONTH,
+      precision: 'on/at',
+      granularity: 'month',
       onsetDate: moment(),
     };
 
@@ -55,11 +55,9 @@ export default class LessYear extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
             birthdate={moment().subtract(11, 'months').format()}
-            granularitySelectName="test-granularity"
             granularitySelectOnChange={this.handleGranularity}
-            precisionSelectName="test-precision"
+            id="test"
             precisionSelectOnChange={this.handlePrecision}
-            onsetDateInputName="test-onsetDate"
             onsetDateInputOnChange={this.handleOnset}
           />
           <button type="submit">Submit</button>

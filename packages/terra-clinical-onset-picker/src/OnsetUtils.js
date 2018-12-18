@@ -18,7 +18,7 @@ class OnsetUtils {
   static allowedMonths(intl, birthdate, onsetDate) {
     const start = moment(birthdate);
     const end = moment();
-    const onsetYear = onsetDate.year();
+    const onsetYear = onsetDate ? onsetDate.year() : moment().year();
     let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
       { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
       { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
@@ -112,6 +112,8 @@ class OnsetUtils {
    * Converts onset date to a age value with loweset possible age unit (weeks, then months, then years).
    */
   static onsetToAge(birthdate, onsetDate) {
+    if (onsetDate === undefined) { return { age: undefined, ageUnit: undefined }; }
+
     const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const onsetMoment = onsetDate.startOf('day');
     let ageDiff = onsetMoment.diff(birthMoment, 'weeks');
