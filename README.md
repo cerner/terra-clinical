@@ -5,7 +5,7 @@
 
 <!-- Name -->
 <h1 align="center">
-  Terra Clinical
+  Terra Clinical.
 </h1>
 
 [![Cerner OSS](https://badgen.net/badge/Cerner/OSS/blue)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
