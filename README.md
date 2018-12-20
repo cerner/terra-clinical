@@ -1,10 +1,10 @@
 <!-- Logo -->
-<p align="center">
-  <img height="128" width="128" src="https://github.com/cerner/terra-clinical/raw/master/terra.png">
+<p style="text-align:center">
+  <img alt="Terra Logo" height="128" width="128" src="https://github.com/cerner/terra-clinical/raw/master/terra.png">
 </p>
 
 <!-- Name -->
-<h1 align="center">
+<h1 style="text-align:center">
   Terra Clinical
 </h1>
 
@@ -19,7 +19,9 @@
 - [Contributing](#contributing)
 - [LICENSE](#license)
 
-## Packages
+<h2 id="packages">
+  Packages
+</h2>
 
 ### Status
 ![Stable](https://badgen.net/badge/status/Stable/green)
@@ -49,7 +51,9 @@
 ## Internationalization (I18n)
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
-## Contributing
+<h2 id="contributing">
+  Contributing
+</h2>
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for issue reporting and pull requests.
 
@@ -62,7 +66,9 @@ npm install
 npm run test
 ```
 
-## LICENSE
+<h2 id="license">
+  LICENSE
+</h2>
 
 Copyright 2017 - 2018 Cerner Innovation, Inc.
 
