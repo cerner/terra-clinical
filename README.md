@@ -16,14 +16,19 @@
 
 - [Supported Browsers](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
 - [Packages](#packages)
+  - [Status](#status)
+- [Internationalization (I18n)](#internationalization-i18n)
 - [Contributing](#contributing)
+- [Local Development](#local-development)
 - [LICENSE](#license)
 
 <h2 id="packages">
   Packages
 </h2>
 
-### Status
+<h3 id="status">
+  Status
+</h3>
 ![Stable](https://badgen.net/badge/status/Stable/green)
 ![Beta](https://badgen.net/badge/status/Beta/orange)
 ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)
@@ -48,7 +53,9 @@
 | terra-clinical-site |[![NPM version](https://badgen.net/npm/v/terra-clinical-site)](https://www.npmjs.org/package/terra-clinical-site) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-site](https://badgen.net/badge/dependencies/n%2Fa/grey) |
 | terra-clinical-slide-group |[![NPM version](https://badgen.net/npm/v/terra-clinical-slide-group)](https://www.npmjs.org/package/terra-clinical-slide-group) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-slide-group](https://badgen.net/badge/dependencies/n%2Fa/grey) |
 
-## Internationalization (I18n)
+<h2 id="internationalization-i18n">
+  Internationalization (I18n)
+</h2>
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
 <h2 id="contributing">
@@ -57,7 +64,9 @@ Please review [Terra's Internationalization documentation](https://engineering.c
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for issue reporting and pull requests.
 
-## Local Development
+<h2 id="local-development">
+  Local Development
+</h2>
 
 1. Install docker https://www.docker.com/ to run browser tests.
 2. Install dependencies and run tests.
