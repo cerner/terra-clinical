@@ -1,5 +1,7 @@
 ChangeLog
 =========
+### Changed
+* Removed local wdio timeout from clinical-item-collection test
 
 3.19.0 - (November 21, 2018)
 ----------
