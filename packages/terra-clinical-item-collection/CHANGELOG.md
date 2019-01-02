@@ -5,6 +5,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.20.0 - (January 2, 2019)
+-----------------
 ### Changed
 * Updated readme to have logically nested headers.
 
