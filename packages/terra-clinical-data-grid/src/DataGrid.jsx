@@ -237,14 +237,12 @@ class DataGrid extends React.Component {
      * Another ResizeObserver is used to track changes to the pinned column section height.
      */
     this.pinnedColumnResizeObserver = new ResizeObserver((entries) => {
-      this.contentHeight = entries[0].contentRect.height;
-
       if (this.scrollbarRef) {
         /**
          * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
          * want defer to the custom scrollbar that rendered by the DataGrid.
          */
-        this.overflowedContentContainerRef.style.height = `${this.contentHeight}px`;
+        this.overflowedContentContainerRef.style.height = `${entries[0].contentRect.height}px`;
       }
     });
     this.pinnedColumnResizeObserver.observe(this.pinnedContentContainerRef);
@@ -256,13 +254,9 @@ class DataGrid extends React.Component {
     document.addEventListener('keyup', this.handleKeyUp);
 
     this.postRenderUpdate();
-
-    this.checkForMoreContent();
   }
 
   componentDidUpdate(prevProps) {
-    this.postRenderUpdate();
-
     /**
      * If the sections prop has been updated, we invalidate the content request flag before potentially requesting
      * more content.
@@ -271,7 +265,7 @@ class DataGrid extends React.Component {
       this.hasRequestedContent = false;
     }
 
-    this.checkForMoreContent();
+    this.postRenderUpdate();
   }
 
   componentWillUnmount() {
@@ -491,8 +485,10 @@ class DataGrid extends React.Component {
          * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
          * want defer to the custom scrollbar that rendered by the DataGrid.
          */
-        this.overflowedContentContainerRef.style.height = `${this.contentHeight}px`;
+        this.overflowedContentContainerRef.style.height = `${this.pinnedContentContainerRef.getBoundingClientRect().height}px`;
       }
+
+      this.checkForMoreContent();
     });
   }
 
