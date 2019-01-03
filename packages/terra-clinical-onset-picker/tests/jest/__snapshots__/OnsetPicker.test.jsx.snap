@@ -28,7 +28,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -93,7 +93,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -180,7 +180,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -256,7 +256,7 @@ exports[`should render only the supplied precisions 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -321,7 +321,7 @@ exports[`should render only the supplied precisions 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -408,7 +408,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -473,7 +473,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -560,7 +560,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -621,7 +621,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -690,7 +690,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="icon"
+              class="tui-Icon icon"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
