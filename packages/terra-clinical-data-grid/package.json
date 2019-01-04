@@ -37,13 +37,13 @@
     "prop-types": "^15.5.8",
     "react-draggable": "^3.0.5",
     "resize-observer-polyfill": "^1.4.1",
-    "terra-button": "^2.0.1",
+    "terra-button": "^2.0.0",
     "terra-clinical-item-view": "^2.16.0",
-    "terra-content-container": "^2.0.1",
-    "terra-doc-template": "^1.12.0",
-    "terra-icon": "^2.6.0",
-    "terra-mixins": "^1.21.0",
-    "terra-overlay": "^2.16.0"
+    "terra-content-container": "^2.0.0",
+    "terra-doc-template": "^1.0.0",
+    "terra-icon": "^2.0.0",
+    "terra-mixins": "^1.0.0",
+    "terra-overlay": "^2.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
