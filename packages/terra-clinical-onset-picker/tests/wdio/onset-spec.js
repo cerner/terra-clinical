@@ -7,6 +7,7 @@ viewports.forEach((viewport) => {
     before(() => {
       browser.setViewportSize(viewport);
     });
+
     describe('when unknown precision selected', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default');
@@ -51,9 +52,12 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-year');
       });
 
-      browser.click('#test-year-select');
-      browser.click('#terra-select-option-2010');
-      Terra.should.matchScreenshot();
+      it('does not show a year before birthdate', () => {
+        browser.click('#test-year-select');
+        browser.isExisting('#terra-select-option-2010').should.equal(false);
+      });
+
+      Terra.should.matchScreenshot({ selector: '#root' });
       Terra.should.beAccessible({ rules });
     });
 
@@ -64,9 +68,13 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-year');
       });
 
-      browser.click('#test-year-select');
-      browser.click('#terra-select-option-2017');
-      Terra.should.matchScreenshot();
+      it('does not show a year in the future', () => {
+        browser.click('#test-year-select');
+        browser.screenshot('./latest/onset-picker/cannot-select-year-in-future.png');
+        browser.isExisting('#terra-select-option-2017').should.equal(false);
+      });
+
+      Terra.should.matchScreenshot({ selector: '#root' });
       Terra.should.beAccessible({ rules });
     });
 
@@ -109,8 +117,11 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-2011');
       });
 
-      browser.click('#test-month-select');
-      browser.click('#terra-select-option-1');
+      it('does not show a month before the birthdate', () => {
+        browser.click('#test-month-select');
+        browser.isExisting('#terra-select-option-1').should.equal(false);
+      });
+
       Terra.should.matchScreenshot();
       Terra.should.beAccessible({ rules });
     });
@@ -125,8 +136,11 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-2016');
       });
 
-      browser.click('#test-month-select');
-      browser.click('#terra-select-option-9');
+      it('does not show a month in the future', () => {
+        browser.click('#test-month-select');
+        browser.isExisting('#terra-select-option-9').should.equal(false);
+      });
+
       Terra.should.matchScreenshot();
       Terra.should.beAccessible({ rules });
     });
@@ -257,9 +271,12 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-age');
       });
 
-      browser.click('#test-age-unit-select');
-      browser.click('#terra-select-option-years');
-      Terra.should.matchScreenshot();
+      it('does not show years if less than a year old', () => {
+        browser.click('#test-age-unit-select');
+        browser.isExisting('#terra-select-option-years').should.equal(false);
+      });
+
+      Terra.should.matchScreenshot({ selector: '#root' });
       Terra.should.beAccessible({ rules });
     });
 
@@ -270,9 +287,12 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-age');
       });
 
-      browser.click('#test-age-unit-select');
-      browser.click('#terra-select-option-months');
-      Terra.should.matchScreenshot();
+      it('does not show months if less than a month old', () => {
+        browser.click('#test-age-unit-select');
+        browser.isExisting('#terra-select-option-months').should.equal(false);
+      });
+
+      Terra.should.matchScreenshot({ selector: '#root' });
       Terra.should.beAccessible({ rules });
     });
 
