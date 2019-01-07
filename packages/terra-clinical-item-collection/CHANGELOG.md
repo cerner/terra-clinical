@@ -1,5 +1,15 @@
 ChangeLog
 =========
+### Changed
+* Removed local wdio timeout from clinical-item-collection test
+
+Unreleased
+----------
+
+3.20.0 - (January 2, 2019)
+-----------------
+### Changed
+* Updated readme to have logically nested headers.
 
 3.19.0 - (November 21, 2018)
 ----------
