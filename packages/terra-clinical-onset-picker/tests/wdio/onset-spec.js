@@ -122,7 +122,7 @@ viewports.forEach((viewport) => {
         browser.isExisting('#terra-select-option-1').should.equal(false);
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.matchScreenshot({ selector: '#root' });
       Terra.should.beAccessible({ rules });
     });
 
@@ -141,7 +141,7 @@ viewports.forEach((viewport) => {
         browser.isExisting('#terra-select-option-9').should.equal(false);
       });
 
-      Terra.should.matchScreenshot();
+      Terra.should.matchScreenshot({ selector: '#root' });
       Terra.should.beAccessible({ rules });
     });
 
