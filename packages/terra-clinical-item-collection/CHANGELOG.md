@@ -1,5 +1,7 @@
 ChangeLog
 =========
+### Changed
+* Removed local wdio timeout from clinical-item-collection test
 
 Unreleased
 ----------
