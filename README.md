@@ -1,10 +1,10 @@
 <!-- Logo -->
-<p style="text-align:center">
+<p align="center">
   <img alt="Terra Logo" height="128" width="128" src="https://github.com/cerner/terra-clinical/raw/master/terra.png">
 </p>
 
 <!-- Name -->
-<h1 style="text-align:center">
+<h1 align="center">
   Terra Clinical
 </h1>
 
@@ -29,6 +29,7 @@
 <h3 id="status">
   Status
 </h3>
+
 ![Stable](https://badgen.net/badge/status/Stable/green)
 ![Beta](https://badgen.net/badge/status/Beta/orange)
 ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)
