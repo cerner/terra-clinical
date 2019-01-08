@@ -4,7 +4,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-clinical-header)](https://www.npmjs.org/package/terra-clinical-header)
 [![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
 
-A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. 
+A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-header/docs)
@@ -16,7 +16,7 @@ A Header component that allows elements to be placed on the left and right ends 
 
 ## LICENSE
 
-Copyright 2017 Cerner Innovation, Inc.
+Copyright 2017 - 2019 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
