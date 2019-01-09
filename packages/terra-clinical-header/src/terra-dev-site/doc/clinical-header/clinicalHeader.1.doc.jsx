@@ -1,23 +1,23 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import ReadMe from '../../../docs/README.md';
-import { name } from '../../../package.json';
+import ReadMe from '../../../../docs/README.md';
+import { name } from '../../../../package.json';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
-import HeaderSrc from '!raw-loader!../../../src/Header';
+import HeaderSrc from '!raw-loader!../../../../src/Header';
 
 // Example Files
-import TitleHeader from './example/TitleHeader';
-import TitleHeaderSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/TitleHeader';
-import ContentHeader from './example/ContentHeader';
-import ContentHeaderSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ContentHeader';
-import HeaderLongText from './example/HeaderLongText';
-import HeaderLongTextSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/HeaderLongText';
-import HeaderLongTextWithContent from './example/HeaderLongTextWithContent';
-import HeaderLongTextWithContentSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/HeaderLongTextWithContent';
-import Subheader from './example/Subheader';
-import SubheaderSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/Subheader';
+import TitleHeader from '../example/TitleHeader';
+import TitleHeaderSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TitleHeader';
+import ContentHeader from '../example/ContentHeader';
+import ContentHeaderSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ContentHeader';
+import HeaderLongText from '../example/HeaderLongText';
+import HeaderLongTextSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HeaderLongText';
+import HeaderLongTextWithContent from '../example/HeaderLongTextWithContent';
+import HeaderLongTextWithContentSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HeaderLongTextWithContent';
+import Subheader from '../example/Subheader';
+import SubheaderSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/Subheader';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (

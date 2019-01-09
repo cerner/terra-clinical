@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Changelog dev site doc page
 
 1.2.0 - (January 2, 2019)
 -----------------
