@@ -3,7 +3,7 @@ import ExampleTemplate from 'terra-doc-template/lib/ExampleTemplate';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 import Datagrid from './Datagrid';
-import DatagridSrc from '!raw-loader!../../../../../src/terra-dev-site/doc/clinical-data-grid/DatagridExamples/Datagrid';
+import DatagridSrc from '!raw-loader!../../../../../src/terra-dev-site/doc/clinical-data-grid/DatagridExamples.2/Datagrid';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DatagridExample = () => (
