@@ -56,9 +56,6 @@ viewports.forEach((viewport) => {
         browser.click('#test-year-select');
         browser.isExisting('#terra-select-option-2010').should.equal(false);
       });
-
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
     });
 
     describe('Cannot select a year in the future', () => {
@@ -73,9 +70,6 @@ viewports.forEach((viewport) => {
         browser.screenshot('./latest/onset-picker/cannot-select-year-in-future.png');
         browser.isExisting('#terra-select-option-2017').should.equal(false);
       });
-
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
     });
 
     // Monthly granularity
@@ -121,9 +115,6 @@ viewports.forEach((viewport) => {
         browser.click('#test-month-select');
         browser.isExisting('#terra-select-option-1').should.equal(false);
       });
-
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
     });
 
     describe('Cannot select a month in the future', () => {
@@ -140,9 +131,6 @@ viewports.forEach((viewport) => {
         browser.click('#test-month-select');
         browser.isExisting('#terra-select-option-9').should.equal(false);
       });
-
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
     });
 
     // Date granularity
