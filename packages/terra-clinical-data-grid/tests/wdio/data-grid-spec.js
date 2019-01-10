@@ -9,6 +9,7 @@ const themedProperties = {
   '--terra-clinical-data-grid-cell-border-right': '2px solid black',
   '--terra-clinical-data-grid-cell-hover-background-color': 'lightblue',
   '--terra-clinical-data-grid-cell-selected-background-color': 'brown',
+  '--terra-clinical-data-grid-cell-selected-focus-background-color': 'brown',
   '--terra-clinical-data-grid-cell-selected-hover-background-color': 'darkblue',
   '--terra-clinical-data-grid-header-cell-border-right': '3px solid black',
   '--terra-clinical-data-grid-column-header-text-color': 'green',
