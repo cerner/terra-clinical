@@ -40,7 +40,6 @@
     "compile:prod": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
-    "docs": "node scripts/generate-markdown/markdown.config.js",
     "heroku-prebuild": "npm install -g lerna@2.1.2 && lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest --config jestconfig.js",
@@ -58,6 +57,7 @@
     "start-heroku": "tt-heroku-serve-static",
     "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
+    "update-package-readme": "node scripts/generate-markdown/markdown.config.js",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {

@@ -2,12 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const markdownMagic = require('markdown-magic'); // eslint-disable-line import/no-extraneous-dependencies
 
-const defaults = {
-  dir: './packages',
-  verbose: false,
-  bullet: '*',
-};
-
 const header = `| Terra Package      | Version | Status | Dependencies |
 |--------------------|---------|--------|--------------|
 `;
@@ -16,27 +10,19 @@ const config = {
   transforms: {
     // see: https://github.com/camacho/markdown-magic-subpackage-list
     SUBPACKAGELIST(content, _options, configuration) {
-      const options = Object.assign({}, defaults, _options);
-
       const packagesDir = path.resolve(
-        path.dirname(configuration.originalPath), options.dir,
+        path.dirname(configuration.originalPath), './packages',
       );
 
       return header + fs
         .readdirSync(packagesDir)
-        .map(filename => path.join(packagesDir, filename))
-        .filter(filePath => fs.statSync(filePath).isDirectory())
-        .filter(dirPath => fs.existsSync(path.join(dirPath, 'package.json')))
-        .map(dirPath => [
-          path.relative(path.dirname(configuration.originalPath), dirPath),
-          JSON.parse(fs.readFileSync(path.resolve(dirPath, 'package.json'))),
-        ])
-        .map(([link, packages]) => {
-          let entry = `| [${packages.name}](https://github.com/cerner/terra-clinical/tree/master/${link}) | [![NPM version](https://badgen.net/npm/v/${packages.name})](https://www.npmjs.org/package/${packages.name}) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![${packages.name}](https://badgen.net/david/dep/cerner/terra-clinical/packages/${packages.name})](https://david-dm.org/cerner/terra-clinical?path=packages/${packages.name}) |`;
-          if (options.verbose === 'true' && packages.description.trim().length) {
-            entry += ` - ${packages.description.trim()}`;
-          }
-          return entry;
+        .map((packageName) => {
+          const packageLink = `[${packageName}](https://github.com/cerner/terra-clinical/tree/master/packages/${packageName})`;
+          const npmBadge = `[![NPM version](https://badgen.net/npm/v/${packageName})](https://www.npmjs.org/package/${packageName})`;
+          const buildBadge = '![Stable](https://badgen.net/badge/status/Stable/green)';
+          const dependenciesBadge = `[![${packageName}](https://badgen.net/david/dep/cerner/terra-clinical/packages/${packageName})](https://david-dm.org/cerner/terra-clinical?path=packages/${packageName})`;
+
+          return `| ${packageLink} | ${npmBadge} | ${buildBadge} | ${dependenciesBadge} |`;
         })
         .join('\n');
     },
