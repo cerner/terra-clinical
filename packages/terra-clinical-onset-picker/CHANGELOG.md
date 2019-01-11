@@ -3,7 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Changelog dev site doc page
 
+3.0.0 - (January 2, 2019)
+-----------------
 ### Breaking Change
 * Updated to use new form inputs and selects to support blank defaults - issue #256
 * Resolved crash from issue #396, now returns an empty string if date is blank

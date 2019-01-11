@@ -40,7 +40,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
     describe('Returns child key for click when onSelect is given to a selectable item collection', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
-        browser.waitForValue('#item1', 3000);
+        browser.waitForValue('#item1');
         browser.click('#item1');
         browser.click('#selected-key');
       });
