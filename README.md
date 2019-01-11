@@ -26,7 +26,6 @@
   Packages
 </h2>
 
-<<<<<<< HEAD
 <h3 id="status">
   Status
 </h3>
@@ -35,8 +34,6 @@
 ![Beta](https://badgen.net/badge/status/Beta/orange)
 ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)
 
-=======
->>>>>>> db313c79cc74e404687cd8cc660e9a789d1621ac
 <!-- AUTO-GENERATED-CONTENT:START (SUBPACKAGELIST) -->
 | Terra Package      | Version | Status | Dependencies |
 |--------------------|---------|--------|--------------|
@@ -53,15 +50,15 @@
 
 ### Deprecated
 
-| Terra Package      | Version | Status | Dependencies |
-|--------------------|---------|--------|--------------|
-| terra-clinical-action-header | [![NPM version](https://badgen.net/npm/v/terra-clinical-action-header)](https://www.npmjs.org/package/terra-clinical-action-header) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-action-header](https://badgen.net/badge/dependencies/n%2Fa/grey) |
-| terra-clinical-app-delegate |[![NPM version](https://badgen.net/npm/v/terra-clinical-app-delegate)](https://www.npmjs.org/package/terra-clinical-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-app-delegate](https://badgen.net/badge/dependencies/n%2Fa/grey) |
-| terra-clinical-error-view | [![NPM version](https://badgen.net/npm/v/terra-clinical-error-view)](https://www.npmjs.org/package/terra-clinical-error-view) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-error-view](https://badgen.net/badge/dependencies/n%2Fa/grey) |
-| terra-clinical-modal-manager |[![NPM version](https://badgen.net/npm/v/terra-clinical-modal-manager)](https://www.npmjs.org/package/terra-clinical-modal-manager) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-modal-manager](https://badgen.net/badge/dependencies/n%2Fa/grey) |
-| terra-clinical-no-data-view | [![NPM version](https://badgen.net/npm/v/terra-clinical-no-data-view)](https://www.npmjs.org/package/terra-clinical-no-data-view) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-no-data-view](https://badgen.net/badge/dependencies/n%2Fa/grey) |
-| terra-clinical-site |[![NPM version](https://badgen.net/npm/v/terra-clinical-site)](https://www.npmjs.org/package/terra-clinical-site) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-site](https://badgen.net/badge/dependencies/n%2Fa/grey) |
-| terra-clinical-slide-group |[![NPM version](https://badgen.net/npm/v/terra-clinical-slide-group)](https://www.npmjs.org/package/terra-clinical-slide-group) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)| ![terra-clinical-slide-group](https://badgen.net/badge/dependencies/n%2Fa/grey) |
+| Terra Package      | Version | Status |
+|--------------------|---------|--------|
+| terra-clinical-action-header | [![NPM version](https://badgen.net/npm/v/terra-clinical-action-header)](https://www.npmjs.org/package/terra-clinical-action-header) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
+| terra-clinical-app-delegate |[![NPM version](https://badgen.net/npm/v/terra-clinical-app-delegate)](https://www.npmjs.org/package/terra-clinical-app-delegate) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
+| terra-clinical-error-view | [![NPM version](https://badgen.net/npm/v/terra-clinical-error-view)](https://www.npmjs.org/package/terra-clinical-error-view) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
+| terra-clinical-modal-manager |[![NPM version](https://badgen.net/npm/v/terra-clinical-modal-manager)](https://www.npmjs.org/package/terra-clinical-modal-manager) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
+| terra-clinical-no-data-view | [![NPM version](https://badgen.net/npm/v/terra-clinical-no-data-view)](https://www.npmjs.org/package/terra-clinical-no-data-view) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
+| terra-clinical-site |[![NPM version](https://badgen.net/npm/v/terra-clinical-site)](https://www.npmjs.org/package/terra-clinical-site) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
+| terra-clinical-slide-group |[![NPM version](https://badgen.net/npm/v/terra-clinical-slide-group)](https://www.npmjs.org/package/terra-clinical-slide-group) | ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)|
 
 <h2 id="internationalization-i18n">
   Internationalization (I18n)
