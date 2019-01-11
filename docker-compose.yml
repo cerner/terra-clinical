@@ -23,15 +23,16 @@ services:
       - '/dev/shm:/dev/shm'
     # Necessary to lock down screen sizes for our screen shot comparisons.
     environment:
+      TZ: 'America/Chicago'
       SCREEN_WIDTH: 1070
       SCREEN_HEIGHT: 1020
   test:
     image: "terra-clinical:${BRANCH:-latest}"
-    command: "npm run test"
+    command: "sh /opt/entrypoint/test.sh"
     depends_on:
       - base
       - standalone-chrome
     environment:
       - CI=true
     volumes:
-      - ./packages/:/opt/module/packages
+      - .:/opt/module
