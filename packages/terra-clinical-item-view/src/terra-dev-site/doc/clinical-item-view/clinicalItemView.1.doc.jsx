@@ -1,25 +1,25 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
-import ReadMe from '../../../docs/README.md';
-import { name } from '../../../package.json';
+import ReadMe from '../../../../docs/README.md';
+import { name } from '../../../../package.json';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
-import ItemViewSrc from '!raw-loader!../../../src/ItemView.jsx';
+import ItemViewSrc from '!raw-loader!../../../../src/ItemView.jsx';
 
 // Example Files
-import ItemViewStandard from './example/ItemViewStandard';
-import ItemViewStandardSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewStandard';
-import ItemViewTwoColumn from './example/ItemViewTwoColumn';
-import ItemViewTwoColumnSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewTwoColumn';
-import ItemViewTwoColumnStart from './example/ItemViewTwoColumnStart';
-import ItemViewTwoColumnStartSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewTwoColumnStart';
-import ItemViewComment from './example/ItemViewComment';
-import ItemViewCommentSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewComment';
-import ItemViewAll from './example/ItemViewAll';
-import ItemViewAllSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewAll';
-import ItemViewAllTopAligned from './example/ItemViewAllTopAligned';
-import ItemViewAllTopAlignedSrc from '!raw-loader!../../../src/terra-dev-site/doc/example/ItemViewAllTopAligned';
+import ItemViewStandard from '../example/ItemViewStandard';
+import ItemViewStandardSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ItemViewStandard';
+import ItemViewTwoColumn from '../example/ItemViewTwoColumn';
+import ItemViewTwoColumnSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ItemViewTwoColumn';
+import ItemViewTwoColumnStart from '../example/ItemViewTwoColumnStart';
+import ItemViewTwoColumnStartSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ItemViewTwoColumnStart';
+import ItemViewComment from '../example/ItemViewComment';
+import ItemViewCommentSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ItemViewComment';
+import ItemViewAll from '../example/ItemViewAll';
+import ItemViewAllSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ItemViewAll';
+import ItemViewAllTopAligned from '../example/ItemViewAllTopAligned';
+import ItemViewAllTopAlignedSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ItemViewAllTopAligned';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (

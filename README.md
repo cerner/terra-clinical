@@ -1,10 +1,10 @@
 <!-- Logo -->
-<p style="text-align: center;">
+<p align="center">
   <img alt="Terra Logo" height="128" width="128" src="https://github.com/cerner/terra-clinical/raw/master/terra.png">
 </p>
 
 <!-- Name -->
-<h1 style="text-align: center;">
+<h1 align="center">
   Terra Clinical
 </h1>
 
@@ -26,6 +26,7 @@
   Packages
 </h2>
 
+<<<<<<< HEAD
 <h3 id="status">
   Status
 </h3>
@@ -34,6 +35,8 @@
 ![Beta](https://badgen.net/badge/status/Beta/orange)
 ![Deprecated](https://badgen.net/badge/status/Deprecated/grey)
 
+=======
+>>>>>>> db313c79cc74e404687cd8cc660e9a789d1621ac
 <!-- AUTO-GENERATED-CONTENT:START (SUBPACKAGELIST) -->
 | Terra Package      | Version | Status | Dependencies |
 |--------------------|---------|--------|--------------|
@@ -63,6 +66,7 @@
 <h2 id="internationalization-i18n">
   Internationalization (I18n)
 </h2>
+
 Please review [Terra's Internationalization documentation](https://engineering.cerner.com/terra-ui/#/getting-started/terra-ui/internationalization) for more information. Included are directions on consumption and how internationalization is setup.
 
 <h2 id="contributing">
