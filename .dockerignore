@@ -4,4 +4,7 @@
 .idea
 log/*
 tmp
+node_modules
+packages/*/node_modules
+lib
 build
