@@ -10,17 +10,16 @@ const config = {
   transforms: {
     // see: https://github.com/camacho/markdown-magic-subpackage-list
     SUBPACKAGELIST() {
-      const packagesDir = path.join(process.cwd(), 'packages');
+      const packagesDir = path.resolve('packages');
 
       return header + fs
         .readdirSync(packagesDir)
-        .map(filename => path.join(packagesDir, filename))
-        .map(dirPath => JSON.parse(fs.readFileSync(path.resolve(dirPath, 'package.json'))))
-        .map((packages) => {
-          const packageLink = `[${packages.name}](https://github.com/cerner/terra-clinical/tree/master/packages/${packages.name})`;
-          const npmBadge = `[![NPM version](https://badgen.net/npm/v/${packages.name})](https://www.npmjs.org/package/${packages.name})`;
+        .filter(dirPath => fs.existsSync(path.join(packagesDir, dirPath, 'package.json')))
+        .map((packageName) => {
+          const packageLink = `[${packageName}](https://github.com/cerner/terra-clinical/tree/master/packages/${packageName})`;
+          const npmBadge = `[![NPM version](https://badgen.net/npm/v/${packageName})](https://www.npmjs.org/package/${packageName})`;
           const buildBadge = '![Stable](https://badgen.net/badge/status/Stable/green)';
-          const dependenciesBadge = `[![${packages.name}](https://badgen.net/david/dep/cerner/terra-clinical/packages/${packages.name})](https://david-dm.org/cerner/terra-clinical?path=packages/${packages.name})`;
+          const dependenciesBadge = `[![${packageName}](https://badgen.net/david/dep/cerner/terra-clinical/packages/${packageName})](https://david-dm.org/cerner/terra-clinical?path=packages/${packageName})`;
 
           return `| ${packageLink} | ${npmBadge} | ${buildBadge} | ${dependenciesBadge} |`;
         })
