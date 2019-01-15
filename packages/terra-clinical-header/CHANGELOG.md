@@ -5,10 +5,10 @@ Unreleased
 ----------
 ### Breaking Change
 * Terra-core dependency updates
+* Added new theming variables
 
 ### Added
 * Changelog dev site doc page
-* Added new theming variables
 
 2.14.0 - (November 21, 2018)
 ----------

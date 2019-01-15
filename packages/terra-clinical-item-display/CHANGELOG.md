@@ -6,10 +6,10 @@ Unreleased
 ### Breaking Change
 * Terra-doc-template dependency update
 * Renamed css theming variables to fit linter standard.
+* Added new css theming variables
 
 ### Added
 * Changelog dev site doc page
-* Added new css theming variables
 
 2.15.0 - (November 21, 2018)
 ----------
