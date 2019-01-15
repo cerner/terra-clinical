@@ -34,8 +34,7 @@ const themedProperties = {
   '--terra-clinical-data-grid-row-selection-icon-width': '2rem',
 };
 
-['medium'].forEach((viewport) => {
-  // ['medium', 'huge'].forEach((viewport) => {
+['medium', 'huge'].forEach((viewport) => {
   describe(`DataGrid - ${viewport}`, () => {
     before(() => browser.setViewportSize(Terra.viewports(viewport)[0]));
 
@@ -45,314 +44,314 @@ const themedProperties = {
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
         });
 
-        // Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
         Terra.should.beAccessible();
-        // Terra.should.themeCombinationOfCustomProperties({
-          // testName: 'themed with pinned columns and overflow columns',
-          // selector: '#standard-data-grid',
-          // properties: themedProperties,
-        // });
+        Terra.should.themeCombinationOfCustomProperties({
+          testName: 'themed with pinned columns and overflow columns',
+          selector: '#standard-data-grid',
+          properties: themedProperties,
+        });
       });
 
-      // describe('with horizontal overflow', () => {
-      //   beforeEach(() => {
-      //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
-      //     browser.click('[data-cell-label="section_0-0-Column-12"]');
-      //   });
+      describe('with horizontal overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
+          browser.click('[data-cell-label="section_0-0-Column-12"]');
+        });
 
-      //   Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
-      //   Terra.should.beAccessible();
-      // });
+        Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.should.beAccessible();
+      });
 
-    //   describe('with vertical overflow', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
-    //       browser.click('[data-cell-label="section_0-29-Column-12"]');
-    //     });
+      describe('with vertical overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
+          browser.click('[data-cell-label="section_0-29-Column-12"]');
+        });
 
-    //     Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
-    //     Terra.should.beAccessible();
-    //   });
-    // });
+        Terra.should.matchScreenshot('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.should.beAccessible();
+      });
+    });
 
-    // describe('with fill disabled', () => {
-    //   describe('with initial rendering', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
-    //     });
+    describe('with fill disabled', () => {
+      describe('with initial rendering', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
+        });
 
-    //     Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
-    //     Terra.should.beAccessible();
-    //     Terra.should.themeCombinationOfCustomProperties({
-    //       testName: 'themed with no fill',
-    //       selector: '#no-fill-data-grid',
-    //       properties: themedProperties,
-    //     });
-    //   });
+        Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.should.beAccessible();
+        Terra.should.themeCombinationOfCustomProperties({
+          testName: 'themed with no fill',
+          selector: '#no-fill-data-grid',
+          properties: themedProperties,
+        });
+      });
 
-    //   describe('with horizontal overflow', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
-    //       browser.click('[data-cell-label="section_0-0-Column-12"]');
-    //     });
+      describe('with horizontal overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
+          browser.click('[data-cell-label="section_0-0-Column-12"]');
+        });
 
-    //     Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
-    //     Terra.should.beAccessible();
-    //   });
+        Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.should.beAccessible();
+      });
 
-    //   describe('with vertical overflow', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
-    //       browser.click('[data-cell-label="section_0-29-Column-12"]');
-    //     });
+      describe('with vertical overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
+          browser.click('[data-cell-label="section_0-29-Column-12"]');
+        });
 
-    //     Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
-    //     Terra.should.beAccessible();
-    //   });
-    // });
+        Terra.should.matchScreenshot('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.should.beAccessible();
+      });
+    });
 
-    // describe('with no pinned columns', () => {
-    //   describe('with initial rendering', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
-    //     });
+    describe('with no pinned columns', () => {
+      describe('with initial rendering', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
+        });
 
-    //     Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
-    //     Terra.should.beAccessible();
-    //     Terra.should.themeCombinationOfCustomProperties({
-    //       testName: 'themed with no pinned columns',
-    //       selector: '#no-pinned-column-data-grid',
-    //       properties: themedProperties,
-    //     });
-    //   });
+        Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.should.beAccessible();
+        Terra.should.themeCombinationOfCustomProperties({
+          testName: 'themed with no pinned columns',
+          selector: '#no-pinned-column-data-grid',
+          properties: themedProperties,
+        });
+      });
 
-    //   describe('with horizontal overflow', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
-    //       browser.click('[data-cell-label="section_0-0-Column-12"]');
-    //     });
+      describe('with horizontal overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
+          browser.click('[data-cell-label="section_0-0-Column-12"]');
+        });
 
-    //     Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
-    //     Terra.should.beAccessible();
-    //   });
+        Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.should.beAccessible();
+      });
 
-    //   describe('with vertical overflow', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
-    //       browser.click('[data-cell-label="section_0-29-Column-12"]');
-    //     });
+      describe('with vertical overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
+          browser.click('[data-cell-label="section_0-29-Column-12"]');
+        });
 
-    //     Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
-    //     Terra.should.beAccessible();
-    //   });
-    // });
+        Terra.should.matchScreenshot('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.should.beAccessible();
+      });
+    });
 
-    // describe('with no oveflow columns', () => {
-    //   describe('with initial rendering', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
-    //     });
+    describe('with no oveflow columns', () => {
+      describe('with initial rendering', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
+        });
 
-    //     Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
-    //     Terra.should.beAccessible();
-    //     Terra.should.themeCombinationOfCustomProperties({
-    //       testName: 'themed with no oveflow columns',
-    //       selector: '#no-overflow-column-data-grid',
-    //       properties: themedProperties,
-    //     });
-    //   });
+        Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
+        Terra.should.beAccessible();
+        Terra.should.themeCombinationOfCustomProperties({
+          testName: 'themed with no oveflow columns',
+          selector: '#no-overflow-column-data-grid',
+          properties: themedProperties,
+        });
+      });
 
-    //   describe('with vertical overflow', () => {
-    //     beforeEach(() => {
-    //       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
-    //       browser.click('[data-cell-label="section_0-29-Column-0"]');
-    //     });
+      describe('with vertical overflow', () => {
+        beforeEach(() => {
+          browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
+          browser.click('[data-cell-label="section_0-29-Column-0"]');
+        });
 
-    //     Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
-    //     Terra.should.beAccessible();
-    //   });
-    // });
+        Terra.should.matchScreenshot('#no-overflow', { selector: '#no-overflow-column-data-grid' });
+        Terra.should.beAccessible();
+      });
+    });
 
-    // describe('with tabbing', () => {
-    //   before(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //   });
+    describe('with tabbing', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+      });
 
-    //   it('tabs across selectable headers', () => {
-    //     browser.keys(new Array(4).fill('Tab'));
-    //   });
-    //   Terra.should.matchScreenshot('#forward-headers', { selector: '#selectable-data-grid' });
+      it('tabs across selectable headers', () => {
+        browser.keys(new Array(4).fill('Tab'));
+      });
+      Terra.should.matchScreenshot('#forward-headers', { selector: '#selectable-data-grid' });
 
-    //   it('tabs backwards across selectable headers', () => {
-    //     browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
-    //   });
-    //   Terra.should.matchScreenshot('#backward-headers', { selector: '#selectable-data-grid' });
+      it('tabs backwards across selectable headers', () => {
+        browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
+      });
+      Terra.should.matchScreenshot('#backward-headers', { selector: '#selectable-data-grid' });
 
-    //   it('tabs across selectable sections and cells', () => {
-    //     browser.keys(new Array(128).fill('Tab'));
-    //   });
-    //   Terra.should.matchScreenshot('#forward-sections', { selector: '#selectable-data-grid' });
+      it('tabs across selectable sections and cells', () => {
+        browser.keys(new Array(128).fill('Tab'));
+      });
+      Terra.should.matchScreenshot('#forward-sections', { selector: '#selectable-data-grid' });
 
-    //   it('tabs backwards selectable sections and cells', () => {
-    //     browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
-    //   });
-    //   Terra.should.matchScreenshot('#backward-sections', { selector: '#selectable-data-grid' });
+      it('tabs backwards selectable sections and cells', () => {
+        browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
+      });
+      Terra.should.matchScreenshot('#backward-sections', { selector: '#selectable-data-grid' });
 
-    //   Terra.should.beAccessible();
-    // });
+      Terra.should.beAccessible();
+    });
 
-    // describe('with cell selections', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //     browser.click('[data-cell-label="section_0-0-Column-0"]');
-    //   });
+    describe('with cell selections', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.click('[data-cell-label="section_0-0-Column-0"]');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#selectable-data-grid',
-    //     properties: themedProperties,
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: themedProperties,
+      });
+    });
 
-    // describe('with cell selection hover', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //     browser.moveToObject('[data-accessibility-id="8"]');
-    //   });
+    describe('with cell selection hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.moveToObject('[data-accessibility-id="8"]');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#selectable-data-grid',
-    //     properties: {
-    //       '--terra-clinical-data-grid-cell-hover-background-color': 'blue',
-    //     },
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-cell-hover-background-color': 'blue',
+        },
+      });
+    });
 
-    // describe('with row selections', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //     browser.click('#selections-example-Pinned-Row-Row-0-Section-section_0 > *:first-child');
-    //   });
+    describe('with row selections', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.click('#selections-example-Pinned-Row-Row-0-Section-section_0 > *:first-child');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#selectable-data-grid',
-    //     properties: themedProperties,
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: themedProperties,
+      });
+    });
 
-    // describe('with row selection hover', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //     browser.moveToObject('[data-accessibility-id="7"]');
-    //   });
+    describe('with row selection hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.moveToObject('[data-accessibility-id="7"]');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#selectable-data-grid',
-    //     properties: {
-    //       '--terra-clinical-data-grid-row-hover-background-color': 'blue',
-    //     },
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-row-hover-background-color': 'blue',
+        },
+      });
+    });
 
-    // describe('with selected row hover', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //     browser.click('[data-accessibility-id="7"]');
-    //     browser.moveToObject('[data-accessibility-id="8"]');
-    //     browser.moveToObject('[data-accessibility-id="7"]');
-    //   });
+    describe('with selected row hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.click('[data-accessibility-id="7"]');
+        browser.moveToObject('[data-accessibility-id="8"]');
+        browser.moveToObject('[data-accessibility-id="7"]');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#selectable-data-grid',
-    //     properties: {
-    //       '--terra-clinical-data-grid-row-selected-hover-background-color': 'salmon',
-    //     },
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-row-selected-hover-background-color': 'salmon',
+        },
+      });
+    });
 
-    // describe('with column header selections', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    //     browser.click('#selectable-data-grid [class*="HeaderCell"]:nth-child(2)');
-    //   });
+    describe('with column header selections', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
+        browser.click('#selectable-data-grid [class*="HeaderCell"]:nth-child(2)');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#selectable-data-grid',
-    //     properties: themedProperties,
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#selectable-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#selectable-data-grid',
+        properties: themedProperties,
+      });
+    });
 
-    // describe('with subsection selections', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
-    //     browser.click('#subsection-data-grid [class*="SectionHeader"]');
-    //   });
+    describe('with subsection selections', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
+        browser.click('#subsection-data-grid [class*="SectionHeader"]');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#subsection-data-grid',
-    //     properties: themedProperties,
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#subsection-data-grid',
+        properties: themedProperties,
+      });
+    });
 
-    // describe('with subsection selection hover', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
-    //     browser.moveToObject('[data-accessibility-id="0"]');
-    //   });
+    describe('with subsection selection hover', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
+        browser.moveToObject('[data-accessibility-id="0"]');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#subsection-data-grid',
-    //     properties: {
-    //       '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
-    //     },
-    //   });
-    // });
+      Terra.should.matchScreenshot({ selector: '#subsection-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#subsection-data-grid',
+        properties: {
+          '--terra-clinical-data-grid-section-header-hover-background-color': 'green',
+        },
+      });
+    });
 
-    // describe('with paging', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/paged-content-data-grid');
-    //     browser.waitForVisible('#paging-example-Pinned-Row-section_1-Row0-Section-section_1');
-    //   });
+    describe('with paging', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/paged-content-data-grid');
+        browser.waitForVisible('#paging-example-Pinned-Row-section_1-Row0-Section-section_1');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#paged-data-grid' });
-    //   Terra.should.beAccessible();
-    // });
+      Terra.should.matchScreenshot({ selector: '#paged-data-grid' });
+      Terra.should.beAccessible();
+    });
 
-    // describe('with custom row/header heights', () => {
-    //   beforeEach(() => {
-    //     browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/custom-height-data-grid');
-    //   });
+    describe('with custom row/header heights', () => {
+      beforeEach(() => {
+        browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/custom-height-data-grid');
+      });
 
-    //   Terra.should.matchScreenshot({ selector: '#custom-height-data-grid' });
-    //   Terra.should.beAccessible();
-    //   Terra.should.themeCombinationOfCustomProperties({
-    //     testName: 'themed',
-    //     selector: '#custom-height-data-grid',
-    //     properties: themedProperties,
-    //   });
+      Terra.should.matchScreenshot({ selector: '#custom-height-data-grid' });
+      Terra.should.beAccessible();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#custom-height-data-grid',
+        properties: themedProperties,
+      });
     });
   });
 });
