@@ -3,7 +3,12 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Updated terra-core dependencies
+
 ### Added
+* Added new variables for css theming
 * Changelog dev site doc page
 
 1.2.0 - (January 2, 2019)

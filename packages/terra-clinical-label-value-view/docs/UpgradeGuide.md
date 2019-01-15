@@ -1,9 +1,8 @@
+# Terra Clinical Label Value View Upgrade Guide
+## Changes from version 2 to version 3
 ### Changes to CSS Custom Properties
 
-CSS Custom Properties have been updated to follow naming conventions. A CSS property should define the component, state, and property it controls.
-
 #### Renamed
-
-| Previous | Updated |
+| Previous | New |
 |-|-|
 | --terra-label-value-view-label-color | --terra-clinical-label-value-view-label-color |

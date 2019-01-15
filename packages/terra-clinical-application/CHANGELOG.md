@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Dependency terra-doc-template upgraded
+
 ### Added
 * Changelog dev site doc page
 

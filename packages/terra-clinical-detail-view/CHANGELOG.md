@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated terra-doc-template dependency
+* Renamed theming variables to match new lint standards
+
 ### Added
 * Changelog dev site doc page
 

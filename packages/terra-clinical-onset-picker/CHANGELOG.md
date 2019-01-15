@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* terra-core dependency updates
+
 ### Added
 * Changelog dev site doc page
 

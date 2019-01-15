@@ -1,5 +1,8 @@
 ChangeLog
 =========
+### Breaking Change
+* Terra-core dependency updates
+
 ### Changed
 * Removed local wdio timeout from clinical-item-collection test
 
