@@ -55,7 +55,7 @@
     margin-bottom: 0;
     margin-top: 0;
     overflow: hidden;
-    padding: var(--terra-clinical-header-title-padding, none);
+    padding: var(--terra-clinical-header-title-padding, 0);
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
