@@ -28,7 +28,14 @@
     "extends": "terra"
   },
   "stylelint": {
-    "extends": "stylelint-config-terra"
+    "extends": "stylelint-config-terra",
+    "rules": {
+      "terra/custom-property-name": true,
+      "terra/custom-property-no-duplicate-declaration": true,
+      "terra/custom-property-pattern": true,
+      "terra/custom-property-pseudo-selectors": true,
+      "terra/custom-property-namespace": true
+    }
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",

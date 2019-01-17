@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Breaking Change
+* Updated variable names to match new naming standard
+* Added new variables for css theming
+* Updated terra-core dependencies
+
 ### Added
 * Changelog dev site doc page
 

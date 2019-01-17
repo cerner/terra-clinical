@@ -10,7 +10,7 @@ describe('Label Value View', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-label-value-view-label-color': 'purple',
+        '--terra-clinical-label-value-view-label-color': 'purple',
       },
     });
     Terra.should.beAccessible();
