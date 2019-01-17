@@ -8,7 +8,7 @@ describe('ItemComment', () => {
   });
 
   describe('Text', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/text-item-comment'));
+    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/text-item-comment'));
     Terra.should.beAccessible({ viewports });
     Terra.should.matchScreenshot({ viewports });
   });
@@ -24,8 +24,8 @@ describe('ItemComment - Themeable', () => {
     Terra.should.themeCombinationOfCustomProperties({
       testName: 'themed',
       properties: {
-        '--terra-clinical-item-comment-color': '#75767d',
-        '--terra-clinical-item-comment-inline-icon-color': 'rgba(117, 118, 125, 0.3)',
+        '--terra-clinical-item-display-item-comment-color': '#75767d',
+        '--terra-clinical-item-display-item-comment-inline-icon-color': 'rgba(117, 118, 125, 0.3)',
       },
     });
   });

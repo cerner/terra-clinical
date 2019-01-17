@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Terra-core dependency updates
+* Added new theming variables
+
 ### Added
 * Changelog dev site doc page
 

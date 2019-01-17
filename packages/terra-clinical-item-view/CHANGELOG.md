@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking Change
+* Renamed css theming variables to match linter standards.
+* Terra-doc-template dependency update
+
 ### Added
 * Changelog dev site doc page
 
