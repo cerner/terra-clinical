@@ -3,9 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.0.0 - (January 17, 2019)
+----------
 ### Breaking Change
 * Updated css theming variable name to fit linter standards
-* Terra-doc-template dependency update
 
 ### Added
 * Changelog dev site doc page

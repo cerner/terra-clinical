@@ -3,8 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.0.0 - (January 17, 2019)
+----------
 ### Breaking Change
-* Terra-core dependency updates
 * Added new theming variables
 
 ### Added
