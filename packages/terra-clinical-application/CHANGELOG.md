@@ -3,9 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
-### Breaking Change
-* Dependency terra-doc-template upgraded
 
+2.11.0 - (January 17, 2019)
+----------
 ### Added
 * Changelog dev site doc page
 
