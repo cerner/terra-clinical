@@ -2,9 +2,9 @@ ChangeLog
 =========
 Unreleased
 ----------
-### Breaking Change
-* Terra-core dependency updates
 
+3.21.0 - (January 17, 2019)
+----------
 ### Changed
 * Removed local wdio timeout from clinical-item-collection test
 

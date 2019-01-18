@@ -3,8 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.0.0 - (January 17, 2019)
+----------
 ### Breaking Change
-* Terra-doc-template dependency update
 * Renamed css theming variables to fit linter standard.
 * Added new css theming variables
 

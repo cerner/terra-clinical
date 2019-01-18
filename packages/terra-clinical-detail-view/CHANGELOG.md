@@ -3,8 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.0.0 - (January 17, 2019)
+----------
 ### Breaking Change
-* Updated terra-doc-template dependency
 * Renamed theming variables to match new lint standards
 
 ### Added
