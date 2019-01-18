@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-collection",
   "main": "lib/ItemCollection.js",
-  "version": "3.20.0",
+  "version": "3.21.0",
   "description": "Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size.",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-clinical-item-view": "^2.16.0",
+    "terra-clinical-item-view": "^3.0.0",
     "terra-doc-template": "^2.0.0",
     "terra-icon": "^2.9.0",
     "terra-list": "^3.0.0",
