@@ -33,7 +33,7 @@
     "terra-icon": "^2.0.0",
     "terra-list": "^3.0.0",
     "terra-responsive-element": "^3.0.0",
-    "terra-table": "^2.32.0"
+    "terra-table": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
