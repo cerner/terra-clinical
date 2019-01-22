@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.0.0 - (January 17, 2019)
+----------
+### Breaking Change
+* Added new theming variables
+
 ### Added
 * Changelog dev site doc page
 
