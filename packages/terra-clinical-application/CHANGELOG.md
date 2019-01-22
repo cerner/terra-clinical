@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+2.12.0 - (January 22, 2019)
+----------
+### Changed
+* Updated dependencies to fix major version bump issues
+
 2.11.0 - (January 17, 2019)
 ----------
 ### Added
