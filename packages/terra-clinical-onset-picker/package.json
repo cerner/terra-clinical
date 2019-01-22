@@ -29,21 +29,21 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "terra-base": "^3.0.0"
+    "terra-base": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "mockdate": "^2.0.2",
     "moment": "^2.22.2",
     "prop-types": "^15.5.8",
-    "terra-breakpoints": "^1.0.0",
+    "terra-breakpoints": "^2.0.0",
     "terra-date-picker": "^3.0.0",
     "terra-doc-template": "^2.0.0",
-    "terra-form-field": "^2.29.0",
-    "terra-form-fieldset": "^1.27.0",
+    "terra-form-field": "^3.0.0",
+    "terra-form-fieldset": "^2.0.0",
     "terra-form-input": "^2.0.0",
     "terra-form-select": "^5.0.0",
-    "terra-i18n": "^2.0.0"
+    "terra-i18n": "^3.0.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
