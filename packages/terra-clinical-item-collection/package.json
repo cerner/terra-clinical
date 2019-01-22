@@ -28,12 +28,12 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-clinical-item-view": "^3.0.0",
+    "terra-clinical-item-view": "^2.16.0",
     "terra-doc-template": "^2.0.0",
     "terra-icon": "^2.9.0",
-    "terra-list": "^3.0.0",
+    "terra-list": "^2.32.0",
     "terra-responsive-element": "^3.0.0",
-    "terra-table": "^3.0.0"
+    "terra-table": "^2.32.0"
   },
   "scripts": {
     "compile": "npm run compile:clean && npm run compile:build",
