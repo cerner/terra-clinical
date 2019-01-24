@@ -4,6 +4,11 @@ Changelog
 Unreleased
 ----------
 
+2.1.0 - (January 22, 2019)
+----------
+### Change
+* Dependency updates
+
 2.0.0 - (January 17, 2019)
 ----------
 ### Breaking Change
