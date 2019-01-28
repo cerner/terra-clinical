@@ -57,7 +57,7 @@
 
   .content {
     align-items: flex-start;
-    color: var(--terra-item-view-content-color, #64696c);
+    color: var(--terra-clinical-item-view-content-color, #64696c);
     display: flex;
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
@@ -99,7 +99,7 @@
 
   //Emphasis Content Styles
   .content-primary-color {
-    color: var(--terra-item-view-content-primary-color, #1c1f21);
+    color: var(--terra-clinical-item-view-content-primary-color, #1c1f21);
   }
 
   .content-primary-size {
@@ -107,7 +107,7 @@
   }
 
   .content-secondary-color {
-    color: var(--terra-item-view-content-secondary-color, #64696c);
+    color: var(--terra-clinical-item-view-content-secondary-color, #64696c);
   }
 
   .content-secondary-size {
