@@ -61,6 +61,7 @@
     "start-heroku": "tt-heroku-serve-static",
     "start-static": "tt-serve-static",
     "test": "npm run jest && npm run wdio",
+    "update-package-readme": "node scripts/generate-markdown/markdown.config.js",
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
@@ -84,6 +85,7 @@
     "jest": "^23.0.2",
     "lerna": "^2.11.0",
     "link-parent-bin": "^0.2.0",
+    "markdown-magic": "^0.1.25",
     "nightwatch": "^0.9.19",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
