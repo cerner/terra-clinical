@@ -39,7 +39,7 @@
   },
   "scripts": {
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "clean:all": "lerna clean --yes && shx rm -rf node_modules",
+    "clean:all": "lerna clean --yes && node_modules",
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "lerna run compile",
@@ -91,7 +91,6 @@
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.2.2",
     "react-test-renderer": "^16.4.2",
-    "shx": "^0.3.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^1.0.0",
     "terra-dev-site": "^2.0.0",
