@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "react-intl": "^2.4.0"
+    "react-intl": "^2.7.0"
   },
   "peerDependencies": {
     "react": "^16.4.2",
