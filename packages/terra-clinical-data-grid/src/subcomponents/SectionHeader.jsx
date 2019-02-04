@@ -80,7 +80,7 @@ class SectionHeader extends React.Component {
 
   render() {
     const {
-      text, startAccessory, endAccessory, children, isCollapsible, isCollapsed, selectableRefCallback,
+      sectionId, text, startAccessory, endAccessory, children, isCollapsible, isCollapsed, selectableRefCallback,
     } = this.props;
 
     let content;
@@ -114,6 +114,7 @@ class SectionHeader extends React.Component {
       <div
         className={cx('section-header')}
         data-section-header
+        data-section-header-id={sectionId}
       >
         <div
           role="button"

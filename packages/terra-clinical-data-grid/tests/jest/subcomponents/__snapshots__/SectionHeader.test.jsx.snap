@@ -4,6 +4,7 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed
 <div
   className="section-header"
   data-section-header={true}
+  data-section-header-id="test-section"
 >
   <div
     className="content selectable"
@@ -53,6 +54,7 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with child c
 <div
   className="section-header"
   data-section-header={true}
+  data-section-header-id="test-section"
 >
   <div
     className="content selectable"
@@ -86,6 +88,7 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with default
 <div
   className="section-header"
   data-section-header={true}
+  data-section-header-id="test-section"
 >
   <div
     className="content selectable"
@@ -135,6 +138,7 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with minimal
 <div
   className="section-header"
   data-section-header={true}
+  data-section-header-id="test-section"
 >
   <div
     className="content"
