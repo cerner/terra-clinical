@@ -26,6 +26,7 @@ Cerner Corporation
 - Eric Wilson [@eawww]
 - Matt Anderson [@mndrsn]
 - Stephen Esser [@StephenEsser]
+- Jeff Merten [@jeffmerten]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -53,3 +54,4 @@ Cerner Corporation
 [@eawww]: https://github.com/eawww
 [@mndrsn]: https://github.com/mndrsn
 [@StephenEsser]: https://github.com/StephenEsser
+[@jeffmerten]: https://github.com/jeffmerten
