@@ -113,7 +113,7 @@ class SectionHeader extends React.Component {
     return (
       <div
         className={cx('section-header')}
-        data-terra-clinical-data-grid-section-header
+        data-section-header
         data-terra-clinical-data-grid-section-header-id={sectionId}
       >
         <div
