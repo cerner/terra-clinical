@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Changed
+* Updated unmount implementation to cancel any pending animation frames
+
 2.2.0 - (February 5, 2019)
 ----------
 ### Added
