@@ -48,7 +48,7 @@ Sections are provided to the DataGrid through the `sections` prop. The order in 
 
 > Note: if `text`, `startAccessory`, `endAccessory`, and `component` are not provided, and if `isCollapsible` is false, no section header will be rendered. However, the `rows` of the section will continue to be rendered.
 
-Section headers will be provided the attribute `data-section-header-id="${sectionId}` for interested consumers.
+Section headers will be provided the attribute `data-terra-clinical-data-grid-section-header-id="${sectionId}` for interested consumers.
 
 ### Rows
 

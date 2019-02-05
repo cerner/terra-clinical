@@ -113,8 +113,8 @@ class SectionHeader extends React.Component {
     return (
       <div
         className={cx('section-header')}
-        data-section-header
-        data-section-header-id={sectionId}
+        data-terra-clinical-data-grid-section-header
+        data-terra-clinical-data-grid-section-header-id={sectionId}
       >
         <div
           role="button"

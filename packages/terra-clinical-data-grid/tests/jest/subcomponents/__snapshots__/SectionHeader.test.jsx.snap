@@ -3,8 +3,8 @@
 exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed 1`] = `
 <div
   className="section-header"
-  data-section-header={true}
-  data-section-header-id="test-section"
+  data-terra-clinical-data-grid-section-header={true}
+  data-terra-clinical-data-grid-section-header-id="test-section"
 >
   <div
     className="content selectable"
@@ -53,8 +53,8 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed
 exports[`SectionHeader Snapshot Tests should render a SectionHeader with child content if provided 1`] = `
 <div
   className="section-header"
-  data-section-header={true}
-  data-section-header-id="test-section"
+  data-terra-clinical-data-grid-section-header={true}
+  data-terra-clinical-data-grid-section-header-id="test-section"
 >
   <div
     className="content selectable"
@@ -87,8 +87,8 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with child c
 exports[`SectionHeader Snapshot Tests should render a SectionHeader with default text/accessory props 1`] = `
 <div
   className="section-header"
-  data-section-header={true}
-  data-section-header-id="test-section"
+  data-terra-clinical-data-grid-section-header={true}
+  data-terra-clinical-data-grid-section-header-id="test-section"
 >
   <div
     className="content selectable"
@@ -137,8 +137,8 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with default
 exports[`SectionHeader Snapshot Tests should render a SectionHeader with minimal props 1`] = `
 <div
   className="section-header"
-  data-section-header={true}
-  data-section-header-id="test-section"
+  data-terra-clinical-data-grid-section-header={true}
+  data-terra-clinical-data-grid-section-header-id="test-section"
 >
   <div
     className="content"
