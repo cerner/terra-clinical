@@ -4,6 +4,8 @@ Changelog
 Unreleased
 ----------
 
+2.2.0 - (February 5, 2019)
+----------
 ### Added
 * Added attribute containing id on section headers
 
