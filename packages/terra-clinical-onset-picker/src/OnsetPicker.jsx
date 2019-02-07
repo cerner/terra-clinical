@@ -271,14 +271,11 @@ class OnsetPicker extends React.Component {
     const {
       birthdate,
       granularity,
-      granularitySelectName,
       granularitySelectOnChange,
       precision,
       precisionSet,
-      precisionSelectName,
       precisionSelectOnChange,
       onsetDate,
-      onsetDateInputName,
       onsetDateInputOnChange,
       ...customProps
     } = this.props;
@@ -479,8 +476,8 @@ class OnsetPicker extends React.Component {
             {monthSelect}
             {yearSelect}
             {dateSelect}
-          </FieldSet>)
-        }
+          </FieldSet>
+        )}
       </div>
     );
   }
