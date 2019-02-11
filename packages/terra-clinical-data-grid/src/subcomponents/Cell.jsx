@@ -13,7 +13,7 @@ const propTypes = {
   /**
    * Accessible text provided for the Cell.
    */
-  ariaLabel: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
   /**
    * String identifier of the section in which the Cell will be rendered.
    */
