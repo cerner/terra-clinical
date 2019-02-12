@@ -57,6 +57,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -73,6 +74,12 @@ exports[`should render a default onset picker with specified onset date 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
       <div
@@ -122,6 +129,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -138,6 +146,12 @@ exports[`should render a default onset picker with specified onset date 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
     </div>
@@ -209,6 +223,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -221,6 +236,12 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
     </div>
@@ -285,6 +306,7 @@ exports[`should render only the supplied precisions 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -301,6 +323,12 @@ exports[`should render only the supplied precisions 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
       <div
@@ -350,6 +378,7 @@ exports[`should render only the supplied precisions 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -366,6 +395,12 @@ exports[`should render only the supplied precisions 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
     </div>
@@ -437,6 +472,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -453,6 +489,12 @@ exports[`should render the same when onChange functions are supplied 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
       <div
@@ -502,6 +544,7 @@ exports[`should render the same when onChange functions are supplied 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -518,6 +561,12 @@ exports[`should render the same when onChange functions are supplied 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
     </div>
@@ -589,6 +638,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -601,6 +651,12 @@ exports[`should render with non default inputs when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
       <div
@@ -650,6 +706,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -662,6 +719,12 @@ exports[`should render with non default inputs when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
     </div>
@@ -719,6 +782,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           tabindex="0"
         >
           <div
+            aria-disabled="false"
             class="display"
             role="textbox"
           >
@@ -731,6 +795,12 @@ exports[`should render with non default inputs when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
         </div>
       </div>
     </div>

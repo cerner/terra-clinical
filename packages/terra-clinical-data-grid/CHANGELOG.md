@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added PropTypes for ariaLabel on Cell
 
 ### Changed
 * Updated unmount implementation to cancel any pending animation frames

@@ -94,7 +94,7 @@ class PagedContentDataGrid extends React.Component {
           sections={this.state.sections}
           fill
           onRequestContent={this.state.sectionCount < 2 ? (() => {
-            this.setState(prevState => ({ sectionCount: prevState.sectionCount + 1, isLoading: false, sections: PagedContentDataGrid.buildSections(prevState.sectionCount + 1) }));
+            this.setState(prevState => ({ sectionCount: prevState.sectionCount + 1, sections: PagedContentDataGrid.buildSections(prevState.sectionCount + 1) }));
           }) : undefined}
         />
       </div>

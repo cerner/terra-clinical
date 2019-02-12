@@ -43,7 +43,8 @@ it('should render subtitles', () => {
     <DetailView
       title="Header"
       subtitles={['Subtitle 1', 'Subtitle 2']}
-    />);
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
@@ -65,7 +66,8 @@ it('should render graph', () => {
       title="Header"
       subtitles={['Subtitle 1', 'Subtitle 2']}
       graph={<div> This is where a graph would go </div>}
-    />);
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
@@ -76,7 +78,8 @@ it('should render details', () => {
       title="Header"
       subtitles={['Subtitle 1', 'Subtitle 2']}
       details={[<p key="DetailInformation"> Detail information </p>]}
-    />);
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
@@ -88,7 +91,8 @@ it('should render footer', () => {
       subtitles={['Subtitle 1', 'Subtitle 2']}
       details={[<p key="DetailInformation"> Detail information </p>]}
       footer="Footer text"
-    />);
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
@@ -101,7 +105,8 @@ it('should render without a divider when indicated', () => {
       details={[<p key="DetailInformation"> Detail information </p>]}
       footer="Footer text"
       isDivided={false}
-    />);
+    />
+  );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });

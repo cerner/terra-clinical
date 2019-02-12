@@ -12,6 +12,7 @@ const DefaultDetailList = () => (
     <DetailView.DetailListItem item={item2} />
     <DetailView.DetailListItem item={item} />
     <DetailView.DetailListItem item={item} />
-  </DetailView.DetailList>);
+  </DetailView.DetailList>
+);
 
 export default DefaultDetailList;
