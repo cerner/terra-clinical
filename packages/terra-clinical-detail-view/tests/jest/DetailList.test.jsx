@@ -4,7 +4,8 @@ import DetailView from '../../src/DetailView';
 const defaultVariety = (
   <DetailView.DetailList title="Title">
     <DetailView.DetailListItem item={<p>Test</p>} />
-  </DetailView.DetailList>);
+  </DetailView.DetailList>
+);
 
 // Snapshot Tests
 it('should render a default component', () => {
@@ -24,7 +25,8 @@ it('should render a list', () => {
     <DetailView.DetailList>
       <DetailView.DetailListItem item={<p>Test</p>} />
       <DetailView.DetailListItem item={<p>Test</p>} />
-    </DetailView.DetailList>);
+    </DetailView.DetailList>
+  );
   const wrapper = render(detailList);
   expect(wrapper).toMatchSnapshot();
 });

@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added PropTypes for ariaLabel on Cell
 
 2.2.0 - (February 5, 2019)
 ----------

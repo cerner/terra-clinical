@@ -39,7 +39,8 @@ it('should render only a select when supplied with the UNKNOWN precision', () =>
         id="test"
         precision="unknown"
       />
-    </IntlProvider>);
+    </IntlProvider>
+  );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 
@@ -53,7 +54,8 @@ it('should render with non default inputs when supplied', () => {
         precision="before"
         onsetDate="2014-08-16T17:40:49-05:00"
       />
-    </IntlProvider>);
+    </IntlProvider>
+  );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 
@@ -67,7 +69,8 @@ it('should render the same when onChange functions are supplied', () => {
         precisionSelectOnChange={() => {}}
         onsetDateInputOnChange={() => {}}
       />
-    </IntlProvider>);
+    </IntlProvider>
+  );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 
@@ -79,7 +82,8 @@ it('should render only the supplied precisions', () => {
         id="test"
         precisionSet={['unknown', 'before', 'after']}
       />
-    </IntlProvider>);
+    </IntlProvider>
+  );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 

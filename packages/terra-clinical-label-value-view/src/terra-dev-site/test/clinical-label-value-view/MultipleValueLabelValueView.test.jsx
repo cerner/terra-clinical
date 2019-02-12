@@ -8,4 +8,5 @@ export default () => (
       <h2>Sample Title</h2>
       Sample Text to Follow
     </div>
-  </LabelValueView>);
+  </LabelValueView>
+);
