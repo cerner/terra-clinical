@@ -79,7 +79,7 @@
     "lerna": "^2.11.0",
     "link-parent-bin": "^0.2.0",
     "markdown-magic": "^0.1.25",
-    "nightwatch": "^0.9.19",
+    "nightwatch": "^1.0.19",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.2.2",
