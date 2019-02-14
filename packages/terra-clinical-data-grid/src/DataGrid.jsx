@@ -274,6 +274,13 @@ class DataGrid extends React.Component {
 
     document.removeEventListener('keydown', this.handleKeyDown);
     document.removeEventListener('keyup', this.handleKeyUp);
+
+    /**
+     * If the component is unmounting, we need to cancel any post-render manipulation before the DOM elements
+     * go out of scope.
+     */
+    cancelAnimationFrame(this.postRenderUpdateAnimationFrame);
+    cancelAnimationFrame(this.scrollSyncAnimationFrame);
   }
 
   /**
@@ -463,7 +470,12 @@ class DataGrid extends React.Component {
      */
     this.accessibilityStack = dataGridUtils.generateAccessibleContentIndex(this.props, this.headerCellRefs, this.sectionRefs, this.cellRefs);
 
-    requestAnimationFrame(() => {
+    /**
+     * The previous animation frame is canceled if it is still pending.
+     */
+    cancelAnimationFrame(this.postRenderUpdateAnimationFrame);
+
+    this.postRenderUpdateAnimationFrame = requestAnimationFrame(() => {
       /**
        * The SectionHeader widths must be updated after rendering to match the rendered DataGrid's width.
        */
@@ -601,9 +613,7 @@ class DataGrid extends React.Component {
 
     this.synchronizeScrollTimeout = setTimeout(this.resetHeaderScrollEventMarkers, 100);
 
-    if (this.scrollSyncAnimationFrame) {
-      cancelAnimationFrame(this.scrollSyncAnimationFrame);
-    }
+    cancelAnimationFrame(this.scrollSyncAnimationFrame);
 
     this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
       this.horizontalOverflowContainerRef.scrollLeft = this.headerOverflowContainerRef.scrollLeft;
@@ -625,9 +635,7 @@ class DataGrid extends React.Component {
 
     this.synchronizeScrollTimeout = setTimeout(this.resetContentScrollEventMarkers, 100);
 
-    if (this.scrollSyncAnimationFrame) {
-      cancelAnimationFrame(this.scrollSyncAnimationFrame);
-    }
+    cancelAnimationFrame(this.scrollSyncAnimationFrame);
 
     this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
       this.headerOverflowContainerRef.scrollLeft = this.horizontalOverflowContainerRef.scrollLeft;
@@ -660,9 +668,7 @@ class DataGrid extends React.Component {
     const positionRatio = finalPosition / scrollArea;
     const maxScrollLeft = this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth;
 
-    if (this.scrollSyncAnimationFrame) {
-      cancelAnimationFrame(this.scrollSyncAnimationFrame);
-    }
+    cancelAnimationFrame(this.scrollSyncAnimationFrame);
 
     this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
       this.scrollbarRef.style.transform = `translateX(${this.scrollbarPosition}px)`;
