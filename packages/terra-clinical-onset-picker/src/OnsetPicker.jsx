@@ -20,6 +20,8 @@ const GranularityOptions = {
   DATE: 'date',
 };
 
+const DATE_FORMAT = 'YYYY-MM-DD';
+
 const propTypes = {
   /**
    * The date unit of the age value. One of 'weeks', 'months', or 'years'.
@@ -262,7 +264,7 @@ class OnsetPicker extends React.Component {
     const onsetObject = {
       precision: this.state.precision,
       granularity: this.state.granularity,
-      onsetDate: this.state.onsetDate ? this.state.onsetDate.format('YYYY-MM-DD') : '',
+      onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : '',
     };
 
     if (this.state.granularity === GranularityOptions.AGE) {
@@ -439,8 +441,8 @@ class OnsetPicker extends React.Component {
             }}
             onChange={this.changeDate}
             minDate={this.props.birthdate}
-            maxDate={moment().format('YYYY-MM-DD')}
-            selectedDate={this.state.onsetDate ? this.state.onsetDate.format('YYYY-MM-DD') : undefined}
+            maxDate={moment().format(DATE_FORMAT)}
+            selectedDate={this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined}
             name={`${this.props.id}-date-input`}
           />
         </Field>
