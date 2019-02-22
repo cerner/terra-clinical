@@ -5,11 +5,14 @@ Unreleased
 ----------
 ### Breaking Change
 * Condensed onChange function props into a single prop that returns an Object for the onsetDate.
-* New prop `ageUnit`
-* New prop `onsetOnChange`
 * Removed prop `granularitySelectOnChange`
 * Removed prop `precisionSelectOnChange`
 * Removed prop `onsetDateInputOnChange`
+
+### Added
+* Added en-AU translations
+* New prop `ageUnit`
+* New prop `onsetOnChange`
 
 3.3.0 - (February 5, 2019)
 ----------
