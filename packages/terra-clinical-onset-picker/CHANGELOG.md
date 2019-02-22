@@ -7,6 +7,9 @@ Unreleased
 * Condensed onChange function props into a single prop that returns an Object for the onsetDate.
 * New prop `ageUnit`
 * New prop `onsetOnChange`
+* Removed prop `granularitySelectOnChange`
+* Removed prop `precisionSelectOnChange`
+* Removed prop `onsetDateInputOnChange`
 
 3.3.0 - (February 5, 2019)
 ----------
