@@ -156,9 +156,9 @@ class OnsetPicker extends React.Component {
           ageUnit: ageValues.ageUnit,
           onsetDate: moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit),
         };
-      }, () => this.handleOnsetUpdate());
+      }, this.handleOnsetUpdate);
     } else {
-      this.setState({ granularity }, () => this.handleOnsetUpdate());
+      this.setState({ granularity }, this.handleOnsetUpdate);
     }
   }
 
@@ -168,7 +168,7 @@ class OnsetPicker extends React.Component {
    * @param {precision} - New precision value
    */
   changePrecision(precision) {
-    this.setState({ precision }, () => this.handleOnsetUpdate());
+    this.setState({ precision }, this.handleOnsetUpdate);
   }
 
   /**
@@ -190,7 +190,7 @@ class OnsetPicker extends React.Component {
         age,
         onsetDate: validDate ? ageDate : undefined,
       };
-    }, () => this.handleOnsetUpdate());
+    }, this.handleOnsetUpdate);
   }
 
   /**
@@ -210,7 +210,7 @@ class OnsetPicker extends React.Component {
         ageUnit,
         onsetDate: validDate ? ageDate : undefined,
       };
-    }, () => this.handleOnsetUpdate());
+    }, this.handleOnsetUpdate);
   }
 
   /**
@@ -229,7 +229,7 @@ class OnsetPicker extends React.Component {
       }
 
       return { onsetDate: newDate };
-    }, () => this.handleOnsetUpdate());
+    }, this.handleOnsetUpdate);
   }
 
   /**
@@ -240,7 +240,7 @@ class OnsetPicker extends React.Component {
   changeMonth(month) {
     this.setState(prevState => ({
       onsetDate: prevState.onsetDate ? prevState.onsetDate.month(month) : moment().month(month),
-    }), () => this.handleOnsetUpdate());
+    }), this.handleOnsetUpdate);
   }
 
   /**
@@ -251,9 +251,9 @@ class OnsetPicker extends React.Component {
    */
   changeDate(event, date) {
     if (date === '') {
-      this.setState({ onsetDate: undefined }, () => this.handleOnsetUpdate());
+      this.setState({ onsetDate: undefined }, this.handleOnsetUpdate);
     } else {
-      this.setState({ onsetDate: moment(date) }, () => this.handleOnsetUpdate());
+      this.setState({ onsetDate: moment(date) }, this.handleOnsetUpdate);
     }
   }
 
