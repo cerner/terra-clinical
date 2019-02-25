@@ -1,84 +1,79 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-
-describe('Clinical header', () => {
-  describe('Header with no content', () => {
+Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
+  describe('Clinical header', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/default-header');
+      browser.setViewportSize(viewport);
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with no content', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/default-header');
+      });
 
-  describe('Header with a title only', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/title-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with a title only', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/title-header');
+      });
 
-  describe('Header with a long title that truncates', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/long-title-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with a long title that truncates', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/long-title-header');
+      });
 
-  describe('Header with content on the left', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/left-content-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with content on the left', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/left-content-header');
+      });
 
-  describe('Header with content on the right', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/right-content-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with content on the right', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/right-content-header');
+      });
 
-  describe('Header with content on both sides', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/left-and-right-content-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with content on both sides', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/left-and-right-content-header');
+      });
 
-  describe('Header with a long title that truncates with content', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/long-title-and-content-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Header with a long title that truncates with content', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/long-title-and-content-header');
+      });
 
-  describe('Subsection header with content on both sides', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/left-and-right-content-subheader');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Subsection header with content on both sides', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/left-and-right-content-subheader');
+      });
 
-  describe('Header with no title and content on the right', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-header/clinical-header/no-title-right-content-header');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
+    describe('Header with no title and content on the right', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-header/clinical-header/no-title-right-content-header');
+      });
+
+      Terra.should.validateElement();
+    });
   });
 });

@@ -1,6 +1,6 @@
 const viewports = Terra.viewports('tiny', 'medium', 'enormous');
 // Color contrast rule disabled due to https://github.com/cerner/terra-core/issues/1917
-const rules = { 'color-contrast': { enabled: false } };
+const axeRules = { 'color-contrast': { enabled: false } };
 
 viewports.forEach((viewport) => {
   describe(`Onset Picker [${viewport}]`, () => {
@@ -15,8 +15,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-unknown');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     // Year granularity
@@ -27,8 +26,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-year');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('Can select a year between the birthdate and current year', () => {
@@ -41,8 +39,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-2015');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('Cannot select a year before the birthdate', () => {
@@ -59,8 +56,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#terra-select-option-2011');
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select a year in the future', () => {
@@ -77,8 +73,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#terra-select-option-2016');
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     // Monthly granularity
@@ -89,8 +84,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-month');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('Can select a month between the birthdate and current date', () => {
@@ -106,8 +100,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-3');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('Cannot select a month before the birthdate', () => {
@@ -127,8 +120,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#terra-select-option-8');
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select a month in the future', () => {
@@ -148,8 +140,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#terra-select-option-8');
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     // Date granularity
@@ -160,8 +151,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-date');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     // Age granularity
@@ -172,8 +162,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-age');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('Cannot select number of years greater than age', () => {
@@ -191,8 +180,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select more than 24 months', () => {
@@ -210,8 +198,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select number of months that exceede age', () => {
@@ -229,8 +216,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select more than 8 weeks', () => {
@@ -248,8 +234,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select number of weeks that exceede age', () => {
@@ -267,8 +252,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select years duration if age is less than a year old', () => {
@@ -283,8 +267,7 @@ viewports.forEach((viewport) => {
         browser.isExisting('#terra-select-option-years').should.equal(false);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     describe('Cannot select months duration if age is less than a month old', () => {
@@ -299,8 +282,7 @@ viewports.forEach((viewport) => {
         browser.isExisting('#terra-select-option-months').should.equal(false);
       });
 
-      Terra.should.matchScreenshot({ selector: '#root' });
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ selector: '#root', axeRules });
     });
 
     // onChange Handlers
@@ -312,8 +294,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('When granularity is changed an event is fired to the granularitySelectOnChange callback', () => {
@@ -324,8 +305,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('When onsetDate is changed by the month select an event is fired to the onsetDateInputOnChange callback', () => {
@@ -339,8 +319,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('When onsetDate is changed by the year select an event is fired to the onsetDateInputOnChange callback', () => {
@@ -354,8 +333,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('When onsetDate is changed by the age input an event is fired to the onsetDateInputOnChange callback', () => {
@@ -372,8 +350,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
 
     describe('When onsetDate is changed by the ageUnit select an event is fired to the onsetDateInputOnChange callback', () => {
@@ -391,8 +368,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules });
+      Terra.should.validateElement({ axeRules });
     });
   });
 });

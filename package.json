@@ -87,6 +87,6 @@
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
     "terra-dev-site": "^3.0.0",
-    "terra-toolkit": "^4.16.0"
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit#screenshot_accessibility"
   }
 }

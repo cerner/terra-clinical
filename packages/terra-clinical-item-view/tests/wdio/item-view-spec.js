@@ -1,103 +1,103 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-
 describe('Clinical Item View', () => {
-  describe('with one column displays', () => {
+  Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
+      browser.setViewportSize(viewport);
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '#test-displays' });
+    describe('with one column displays', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
+      });
 
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      selector: '#test-displays',
-      properties: {
-        '--terra-clinical-item-view-content-color': 'green',
-        '--terra-clinical-item-view-content-primary-color': 'purple',
-        '--terra-clinical-item-view-content-secondary-color': 'maroon',
-      },
+      Terra.should.validateElement({ selector: '#test-displays' });
+
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        selector: '#test-displays',
+        properties: {
+          '--terra-clinical-item-view-content-color': 'green',
+          '--terra-clinical-item-view-content-primary-color': 'purple',
+          '--terra-clinical-item-view-content-secondary-color': 'maroon',
+        },
+      });
     });
-    Terra.should.beAccessible();
+
+    describe('with two column displays', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
+      });
+
+      Terra.should.validateElement({ selector: '#test-displays-two' });
+    });
+
+    describe('with two column and start displays', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
+      });
+
+      Terra.should.validateElement({ selector: '#test-displays-two-start' });
+    });
+
+    describe('with accessories', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/accessory-item-view');
+      });
+
+      Terra.should.validateElement();
+    });
+
+    describe('with default comment set', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
+      });
+
+      Terra.should.validateElement({ selector: '#ItemView1' });
+    });
+
+    describe('with truncated comment set', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
+      });
+
+      Terra.should.validateElement({ selector: '#ItemView2' });
+    });
+
+    describe('with the full example word wrap - one column', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
+      });
+
+      Terra.should.validateElement({ selector: '#ItemView-one-wrap' });
+    });
+
+    describe('with the full example word wrap - two column', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
+      });
+
+      Terra.should.validateElement({ selector: '#ItemView-two-wrap' });
+    });
   });
 
-  describe('with two column displays', () => {
+  Terra.viewports('enormous').forEach((viewport) => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
+      browser.setViewportSize(viewport);
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two' });
-    Terra.should.beAccessible();
-  });
+    describe('with the full example truncated - one truncated', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
+      });
 
-  describe('with two column and start displays', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
+      Terra.should.validateElement({ selector: '#ItemView-one-truncate' });
     });
 
-    Terra.should.matchScreenshot({ viewports, selector: '#test-displays-two-start' });
-    Terra.should.beAccessible();
-  });
+    describe('with the full example truncated - two truncated', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
+      });
 
-  describe('with accessories', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/accessory-item-view');
+      Terra.should.validateElement({ selector: '#ItemView-one-truncate' });
     });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
-
-  describe('with default comment set', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView1' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with truncated comment set', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView2' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example word wrap - one column', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-one-wrap' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example word wrap - two column', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports, selector: '#ItemView-two-wrap' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example truncated - one truncated', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
-    Terra.should.beAccessible();
-  });
-
-  describe('with the full example truncated - two truncated', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
-    });
-
-    Terra.should.matchScreenshot({ selector: '#ItemView-one-truncate' });
-    Terra.should.beAccessible();
   });
 });
