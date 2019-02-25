@@ -26,7 +26,11 @@ const propTypes = {
   /**
    * The date unit of the age value. One of 'weeks', 'months', or 'years'.
    */
-  ageUnit: PropTypes.string,
+  ageUnit: PropTypes.oneOf([
+    'weeks',
+    'months',
+    'years',
+  ]),
   /**
    * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the 'age' precision.
    * Also limits the earliest possible date that can be selected for an onset date for 'year', 'month', and 'date' precision.
