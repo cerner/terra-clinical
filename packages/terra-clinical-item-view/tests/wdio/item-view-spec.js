@@ -1,5 +1,5 @@
-describe('Clinical Item View', () => {
-  Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
+Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
+  describe('Clinical Item View', () => {
     before(() => {
       browser.setViewportSize(viewport);
     });
@@ -78,8 +78,10 @@ describe('Clinical Item View', () => {
       Terra.should.validateElement({ selector: '#ItemView-two-wrap' });
     });
   });
+});
 
-  Terra.viewports('enormous').forEach((viewport) => {
+Terra.viewports('enormous').forEach((viewport) => {
+  describe('Clinical Item View', () => {
     before(() => {
       browser.setViewportSize(viewport);
     });

@@ -1,9 +1,9 @@
 Terra.viewports('tiny', 'medium').forEach((viewport) => {
-  before(() => {
-    browser.setViewportSize(viewport);
-  });
-
   describe('ItemComment', () => {
+    before(() => {
+      browser.setViewportSize(viewport);
+    });
+
     describe('Default', () => {
       before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/default-item-comment'));
       Terra.should.validateElement();
