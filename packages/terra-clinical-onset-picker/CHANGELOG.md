@@ -8,13 +8,13 @@ Unreleased
 * Removed prop `granularitySelectOnChange`
 * Removed prop `precisionSelectOnChange`
 * Removed prop `onsetDateInputOnChange`
+* New prop `ageUnit`
+* New prop `onsetOnChange`
 
 3.4.0 - (February 26, 2019)
 ----------
 ### Added
 * Added en-AU translations
-* New prop `ageUnit`
-* New prop `onsetOnChange`
 
 3.3.0 - (February 5, 2019)
 ----------
