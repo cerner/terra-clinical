@@ -9,6 +9,8 @@ Unreleased
 * Removed prop `precisionSelectOnChange`
 * Removed prop `onsetDateInputOnChange`
 
+3.4.0 - (February 26, 2019)
+----------
 ### Added
 * Added en-AU translations
 * New prop `ageUnit`
