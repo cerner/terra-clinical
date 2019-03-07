@@ -22,9 +22,9 @@ it('should render a default onset picker with specified onset date', () => {
   const onsetPicker = (
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
-        birthdate="2011-08-16T17:40:49-05:00"
+        birthdate="2011-08-16"
         id="test"
-        onsetDate="2017-09-10T17:40:49-05:00"
+        onsetDate="2017-09-10"
       />
     </IntlProvider>
   );
@@ -35,7 +35,7 @@ it('should render only a select when supplied with the UNKNOWN precision', () =>
   const onsetPicker = (
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
-        birthdate="2011-08-16T17:40:49-05:00"
+        birthdate="2011-08-16"
         id="test"
         precision="unknown"
       />
@@ -48,26 +48,40 @@ it('should render with non default inputs when supplied', () => {
   const onsetPicker = (
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
-        birthdate="2011-08-16T17:40:49-05:00"
+        birthdate="2011-08-16"
         granularity="year"
         id="test"
         precision="before"
-        onsetDate="2014-08-16T17:40:49-05:00"
+        onsetDate="2014-08-16"
       />
     </IntlProvider>
   );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 
-it('should render the same when onChange functions are supplied', () => {
+it('should render with age inputs filled in when supplied', () => {
   const onsetPicker = (
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
-        birthdate="2011-08-16T17:40:49-05:00"
-        granularitySelectOnChange={() => {}}
+        ageUnit="years"
+        birthdate="2011-08-16"
+        granularity="age"
         id="test"
-        precisionSelectOnChange={() => {}}
-        onsetDateInputOnChange={() => {}}
+        precision="before"
+        onsetDate="2014-08-16"
+      />
+    </IntlProvider>
+  );
+  expect(render(onsetPicker)).toMatchSnapshot();
+});
+
+it('should render the same when onChange function is supplied', () => {
+  const onsetPicker = (
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate="2011-08-16"
+        id="test"
+        onsetOnChange={() => {}}
       />
     </IntlProvider>
   );
@@ -78,7 +92,7 @@ it('should render only the supplied precisions', () => {
   const onsetPicker = (
     <IntlProvider locale={locale} messages={messages}>
       <OnsetPicker
-        birthdate="2011-08-16T17:40:49-05:00"
+        birthdate="2011-08-16"
         id="test"
         precisionSet={['unknown', 'before', 'after']}
       />
@@ -90,7 +104,7 @@ it('should render only the supplied precisions', () => {
 it('throws error on missing locale prop in Base', () => {
   const onsetPicker = (
     <OnsetPicker
-      birthdate="2011-08-16T17:40:49-05:00"
+      birthdate="2011-08-16"
       id="test"
     />
   );
