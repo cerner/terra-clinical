@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+Color Contrast Accessibility issue
 
 3.2.0 - (February 5, 2019)
 ----------
