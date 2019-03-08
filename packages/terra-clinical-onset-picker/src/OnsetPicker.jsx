@@ -20,9 +20,19 @@ const GranularityOptions = {
   DATE: 'date',
 };
 
+const DATE_FORMAT = 'YYYY-MM-DD';
+
 const propTypes = {
   /**
-   * The ISO 8601 string representation of the birth date to calculate an onset date for the 'age' precision.
+   * The date unit of the age value. One of 'weeks', 'months', or 'years'.
+   */
+  ageUnit: PropTypes.oneOf([
+    'weeks',
+    'months',
+    'years',
+  ]),
+  /**
+   * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the 'age' precision.
    * Also limits the earliest possible date that can be selected for an onset date for 'year', 'month', and 'date' precision.
    */
   birthdate: PropTypes.string.isRequired,
@@ -36,12 +46,6 @@ const propTypes = {
     GranularityOptions.MONTH,
     GranularityOptions.DATE,
   ]),
-
-  /**
-   * A callback function to execute when a granularity is selected.
-   * The first parameter is the changed granularity value.
-   */
-  granularitySelectOnChange: PropTypes.func,
 
   /**
    * The id of the onset picker. Used as the base for other required id/name in sub-components.
@@ -73,21 +77,16 @@ const propTypes = {
   ])),
 
   /**
-   * A callback function to execute when a precision is selected.
-   * The first parameter is the changed precision value.
-   */
-  precisionSelectOnChange: PropTypes.func,
-
-  /**
-   * The ISO 8601 string representation of the onset date to view/modify. Defaults to current date.
+   * The ISO 8601 **DATE ONLY** string representation of the onset date to view/modify.
    */
   onsetDate: PropTypes.string,
 
   /**
-   * A callback function to execute when a onsetDate is changed.
-   * The first parameter is the changed onsetDate value.
+   * A callback function to execute when any value of the onsetDate is changed.
+   * The first parameter is a Object that contains `precision`, `granularity`, `onsetDate`, and `ageUnit`.
+   * `ageUnit` is only present if the granularity is 'age'.
    */
-  onsetDateInputOnChange: PropTypes.func,
+  onsetOnChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -120,9 +119,17 @@ class OnsetPicker extends React.Component {
     this.changeYear = this.changeYear.bind(this);
     this.changeMonth = this.changeMonth.bind(this);
     this.changeDate = this.changeDate.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleOnsetUpdate = this.handleOnsetUpdate.bind(this);
 
-    const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, moment(this.props.onsetDate));
+    let ageValues;
+    if (this.props.ageUnit) {
+      ageValues = {
+        age: this.props.onsetDate ? moment(this.props.onsetDate).diff(moment(this.props.birthdate), this.props.ageUnit) : undefined,
+        ageUnit: this.props.ageUnit,
+      };
+    } else {
+      ageValues = OnsetUtils.onsetToAge(this.props.birthdate, moment(this.props.onsetDate));
+    }
 
     this.state = {
       granularity: this.props.granularity,
@@ -144,16 +151,14 @@ class OnsetPicker extends React.Component {
         const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);
 
         return {
+          granularity,
           age: ageValues.age,
           ageUnit: ageValues.ageUnit,
           onsetDate: moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit),
         };
-      }, () => this.handleDateChange(this.state.onsetDate));
-    }
-    this.setState({ granularity });
-
-    if (this.props.granularitySelectOnChange) {
-      this.props.granularitySelectOnChange(granularity);
+      }, this.handleOnsetUpdate);
+    } else {
+      this.setState({ granularity }, this.handleOnsetUpdate);
     }
   }
 
@@ -163,11 +168,7 @@ class OnsetPicker extends React.Component {
    * @param {precision} - New precision value
    */
   changePrecision(precision) {
-    this.setState({ precision });
-
-    if (this.props.precisionSelectOnChange) {
-      this.props.precisionSelectOnChange(precision);
-    }
+    this.setState({ precision }, this.handleOnsetUpdate);
   }
 
   /**
@@ -189,7 +190,7 @@ class OnsetPicker extends React.Component {
         age,
         onsetDate: validDate ? ageDate : undefined,
       };
-    }, () => this.handleDateChange(this.state.onsetDate));
+    }, this.handleOnsetUpdate);
   }
 
   /**
@@ -209,7 +210,7 @@ class OnsetPicker extends React.Component {
         ageUnit,
         onsetDate: validDate ? ageDate : undefined,
       };
-    }, () => this.handleDateChange(this.state.onsetDate));
+    }, this.handleOnsetUpdate);
   }
 
   /**
@@ -228,7 +229,7 @@ class OnsetPicker extends React.Component {
       }
 
       return { onsetDate: newDate };
-    }, () => this.handleDateChange(this.state.onsetDate));
+    }, this.handleOnsetUpdate);
   }
 
   /**
@@ -239,7 +240,7 @@ class OnsetPicker extends React.Component {
   changeMonth(month) {
     this.setState(prevState => ({
       onsetDate: prevState.onsetDate ? prevState.onsetDate.month(month) : moment().month(month),
-    }), () => this.handleDateChange(this.state.onsetDate));
+    }), this.handleOnsetUpdate);
   }
 
   /**
@@ -250,33 +251,42 @@ class OnsetPicker extends React.Component {
    */
   changeDate(event, date) {
     if (date === '') {
-      this.setState({ onsetDate: undefined }, () => this.handleDateChange(this.state.onsetDate));
+      this.setState({ onsetDate: undefined }, this.handleOnsetUpdate);
     } else {
-      this.setState({ onsetDate: moment(date) }, () => this.handleDateChange(this.state.onsetDate));
+      this.setState({ onsetDate: moment(date) }, this.handleOnsetUpdate);
     }
   }
 
   /**
-   * Handle passing formatted onsetDate to callback function
-   *
-   * @param {date} - Moment Object or undefined
+   * Trigger supplied callback function with an object of the current state data
    */
-  handleDateChange(date) {
-    if (this.props.onsetDateInputOnChange) {
-      this.props.onsetDateInputOnChange(date ? date.format() : '');
+  handleOnsetUpdate() {
+    if (this.props.onsetOnChange === undefined) {
+      return;
     }
+
+    const onsetObject = {
+      precision: this.state.precision,
+      granularity: this.state.granularity,
+      onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : '',
+    };
+
+    if (this.state.granularity === GranularityOptions.AGE) {
+      onsetObject.ageUnit = this.state.ageUnit;
+    }
+
+    this.props.onsetOnChange(onsetObject);
   }
 
   render() {
     const {
+      ageUnit,
       birthdate,
       granularity,
-      granularitySelectOnChange,
       precision,
       precisionSet,
-      precisionSelectOnChange,
       onsetDate,
-      onsetDateInputOnChange,
+      onsetOnChange,
       ...customProps
     } = this.props;
 
@@ -435,8 +445,8 @@ class OnsetPicker extends React.Component {
             }}
             onChange={this.changeDate}
             minDate={this.props.birthdate}
-            maxDate={moment().format()}
-            selectedDate={this.state.onsetDate ? this.state.onsetDate.format() : undefined}
+            maxDate={moment().format(DATE_FORMAT)}
+            selectedDate={this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined}
             name={`${this.props.id}-date-input`}
           />
         </Field>

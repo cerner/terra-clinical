@@ -12,25 +12,20 @@ class FiveYears extends React.Component {
     this.state = {
       precision: 'before',
       granularity: 'year',
-      onsetDate: moment('2013-02-14'),
+      onsetDate: moment('2013-02-14').format('YYYY-MM-DD'),
     };
 
-    this.handleGranularity = this.handleGranularity.bind(this);
-    this.handlePrecision = this.handlePrecision.bind(this);
     this.handleOnset = this.handleOnset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleGranularity(granularity) {
-    this.setState({ granularity });
-  }
-
-  handlePrecision(precision) {
-    this.setState({ precision });
-  }
-
-  handleOnset(onsetDate) {
-    this.setState({ onsetDate });
+  handleOnset(onsetObject) {
+    this.setState({
+      precision: onsetObject.precision,
+      granularity: onsetObject.granularity,
+      onsetDate: onsetObject.onsetDate,
+      ageUnit: onsetObject.ageUnit,
+    });
   }
 
   handleSubmit(e) {
@@ -40,6 +35,7 @@ class FiveYears extends React.Component {
         precision: prevState.precision,
         granularity: prevState.granularity,
         onsetDate: prevState.onsetDate,
+        ageUnit: prevState.ageUnit,
       },
     }));
   }
@@ -53,14 +49,12 @@ class FiveYears extends React.Component {
         <p>Also tests age caps for months and years.</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
-            birthdate={moment('2011-09-20').format()}
+            birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
-            granularitySelectOnChange={this.handleGranularity}
             id="test"
             precision={this.state.precision}
-            precisionSelectOnChange={this.handlePrecision}
-            onsetDateInputOnChange={this.handleOnset}
-            onsetDate={moment(this.state.onsetDate).format()}
+            onsetDate={this.state.onsetDate}
+            onsetOnChange={this.handleOnset}
           />
           <button type="submit">Submit</button>
         </form>

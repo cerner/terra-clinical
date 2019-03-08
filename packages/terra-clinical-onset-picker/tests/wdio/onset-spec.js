@@ -8,7 +8,7 @@ viewports.forEach((viewport) => {
       browser.setViewportSize(viewport);
     });
 
-    describe('when unknown precision selected', () => {
+    describe('When unknown precision selected', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default');
         browser.click('#test-precision-select');
@@ -303,8 +303,8 @@ viewports.forEach((viewport) => {
       Terra.should.beAccessible({ rules });
     });
 
-    // onChange Handlers
-    describe('When precision is changed an event is fired to the precisionSelectOnChange callback', () => {
+    // onChange Handler
+    describe('When precision is changed an event is fired to the onsetOnChange callback', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');
         browser.click('#test-precision-select');
@@ -316,7 +316,7 @@ viewports.forEach((viewport) => {
       Terra.should.beAccessible({ rules });
     });
 
-    describe('When granularity is changed an event is fired to the granularitySelectOnChange callback', () => {
+    describe('When granularity is changed an event is fired to the onsetOnChange callback', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');
         browser.click('#test-granularity-select');
@@ -328,7 +328,7 @@ viewports.forEach((viewport) => {
       Terra.should.beAccessible({ rules });
     });
 
-    describe('When onsetDate is changed by the month select an event is fired to the onsetDateInputOnChange callback', () => {
+    describe('When onsetDate is changed by the month select an event is fired to the onsetOnChange callback', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');
         browser.click('#test-granularity-select');
@@ -343,7 +343,7 @@ viewports.forEach((viewport) => {
       Terra.should.beAccessible({ rules });
     });
 
-    describe('When onsetDate is changed by the year select an event is fired to the onsetDateInputOnChange callback', () => {
+    describe('When onsetDate is changed by the year select an event is fired to the onsetOnChange callback', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');
         browser.click('#test-granularity-select');
@@ -358,7 +358,7 @@ viewports.forEach((viewport) => {
       Terra.should.beAccessible({ rules });
     });
 
-    describe('When onsetDate is changed by the age input an event is fired to the onsetDateInputOnChange callback', () => {
+    describe('When onsetDate is changed by the age input an event is fired to the onsetOnChange callback', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');
         browser.click('#test-granularity-select');
@@ -376,7 +376,7 @@ viewports.forEach((viewport) => {
       Terra.should.beAccessible({ rules });
     });
 
-    describe('When onsetDate is changed by the ageUnit select an event is fired to the onsetDateInputOnChange callback', () => {
+    describe('When onsetDate is changed by the ageUnit select an event is fired to the onsetOnChange callback', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');
         browser.click('#test-granularity-select');

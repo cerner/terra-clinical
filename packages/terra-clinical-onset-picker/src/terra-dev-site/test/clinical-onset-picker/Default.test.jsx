@@ -11,7 +11,7 @@ export default () => {
       <p>Onset picker with minimum required fields, birthdate of 2011-09-20</p>
       <p>Current date locked to September 20, 2016</p>
       <OnsetPicker
-        birthdate={moment('2011-09-20').format()}
+        birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
         id="test"
       />
     </div>
