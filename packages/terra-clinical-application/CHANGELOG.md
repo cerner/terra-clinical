@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed baseStyles import from terra-base
 
 3.1.0 - (February 5, 2019)
 ----------

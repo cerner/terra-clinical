@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
 ### Fixed
 Color Contrast Accessibility issue
 
