@@ -7,6 +7,9 @@ Unreleased
 * Removed peer dependency on terra-base
 * Removed baseStyles import from terra-base
 
+### Fixed
+Color Contrast Accessibility issue
+
 3.2.0 - (February 5, 2019)
 ----------
 ### Changed
