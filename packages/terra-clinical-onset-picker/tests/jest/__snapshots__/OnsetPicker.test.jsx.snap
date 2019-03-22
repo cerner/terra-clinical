@@ -415,7 +415,7 @@ exports[`should render only the supplied precisions 1`] = `
 </div>
 `;
 
-exports[`should render the same when onChange functions are supplied 1`] = `
+exports[`should render the same when onChange function is supplied 1`] = `
 <div
   id="test"
 >
@@ -577,6 +577,280 @@ exports[`should render the same when onChange functions are supplied 1`] = `
     <div
       class="fieldset-children"
     />
+  </fieldset>
+</div>
+`;
+
+exports[`should render with age inputs filled in when supplied 1`] = `
+<div
+  id="test"
+>
+  <fieldset
+    class="fieldset fieldset"
+  >
+    <div
+      class="fieldset-children"
+    >
+      <div
+        class="field field-inline precision"
+      >
+        <div
+          class="label-group label-group-hidden"
+        >
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
+          >
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="tui-Icon icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-precision-select-label"
+          class="select default"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            aria-disabled="false"
+            class="display"
+            role="textbox"
+          >
+            Before
+          </div>
+          <div
+            class="toggle"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
+        </div>
+      </div>
+      <div
+        class="field field-inline granularity"
+      >
+        <div
+          class="label-group label-group-hidden"
+        >
+          <label
+            class="label"
+            for="test-granularity-select"
+            id="test-granularity-select-label"
+          >
+            Select a date granularity
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="tui-Icon icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-granularity-select-label"
+          class="select default"
+          id="test-granularity-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            aria-disabled="false"
+            class="display"
+            role="textbox"
+          >
+            Age
+          </div>
+          <div
+            class="toggle"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset
+    class="fieldset fieldset"
+  >
+    <div
+      class="fieldset-children"
+    >
+      <div
+        class="field field-inline age"
+      >
+        <div
+          class="label-group label-group-hidden"
+        >
+          <label
+            class="label"
+            for="test-age-input"
+            id="test-age-input-label"
+          >
+            Enter an age
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="tui-Icon icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <input
+          aria-labelledby="test-age-input-label"
+          class="form-input"
+          id="test-age-input"
+          max="6"
+          min="0"
+          step="1"
+          type="number"
+          value="3"
+        />
+      </div>
+      <div
+        class="field field-inline age-unit"
+      >
+        <div
+          class="label-group label-group-hidden"
+        >
+          <label
+            class="label"
+            for="test-age-unit-select"
+            id="test-age-unit-select-label"
+          >
+            Select an age precision
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="tui-Icon icon"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="test-age-unit-select-label"
+          class="select default"
+          id="test-age-unit-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            aria-disabled="false"
+            class="display"
+            role="textbox"
+          >
+            Year(s)
+          </div>
+          <div
+            class="toggle"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
+        </div>
+      </div>
+    </div>
   </fieldset>
 </div>
 `;

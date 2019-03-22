@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.3.0 - (February 26, 2019)
+----------
 ### Added
 * Added PropTypes for ariaLabel on Cell
 * Added en-AU translations 

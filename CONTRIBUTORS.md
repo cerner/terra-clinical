@@ -27,6 +27,8 @@ Cerner Corporation
 - Matt Anderson [@mndrsn]
 - Stephen Esser [@StephenEsser]
 - Jeff Merten [@jeffmerten]
+- Gabe Parra [@gabeparra01]
+- Akarsh Shetty [@ShettyAkarsh]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -55,3 +57,5 @@ Cerner Corporation
 [@mndrsn]: https://github.com/mndrsn
 [@StephenEsser]: https://github.com/StephenEsser
 [@jeffmerten]: https://github.com/jeffmerten
+[@gabeparra01]: https://github.com/gabeparra01
+[@ShettyAkarsh]: https://github.com/ShettyAkarsh

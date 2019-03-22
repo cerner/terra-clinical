@@ -12,35 +12,29 @@ export default class LessMonth extends React.Component {
     this.state = {
       precision: 'on/at',
       granularity: 'month',
-      onsetDate: moment(),
     };
 
-    this.handleGranularity = this.handleGranularity.bind(this);
-    this.handlePrecision = this.handlePrecision.bind(this);
     this.handleOnset = this.handleOnset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleGranularity(granularity) {
-    this.setState({ granularity });
-  }
-
-  handlePrecision(precision) {
-    this.setState({ precision });
-  }
-
-  handleOnset(onsetDate) {
-    this.setState({ onsetDate });
+  handleOnset(onsetObject) {
+    this.setState({
+      precision: onsetObject.precision,
+      granularity: onsetObject.granularity,
+      onsetDate: onsetObject.onsetDate,
+      ageUnit: onsetObject.ageUnit,
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
     this.setState(prevState => ({
       submittedData: {
         precision: prevState.precision,
         granularity: prevState.granularity,
         onsetDate: prevState.onsetDate,
+        ageUnit: prevState.ageUnit,
       },
     }));
   }
@@ -54,11 +48,9 @@ export default class LessMonth extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
-            birthdate={moment().subtract(3, 'weeks').format()}
-            granularitySelectOnChange={this.handleGranularity}
+            birthdate={moment().subtract(3, 'weeks').format('YYYY-MM-DD')}
             id="test"
-            precisionSelectOnChange={this.handlePrecision}
-            onsetDateInputOnChange={this.handleOnset}
+            onsetOnChange={this.handleOnset}
           />
           <button type="submit">Submit</button>
         </form>

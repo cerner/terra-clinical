@@ -6,7 +6,7 @@ import OnsetPicker from 'terra-clinical-onset-picker/lib/OnsetPicker';
 
 const picker = () => (
   <OnsetPicker
-    birthdate={moment().subtract(6, 'years').format()}
+    birthdate={moment().subtract(6, 'years').format('YYYY-MM-DD')}
     id="doogs"
   />
 );

@@ -3,6 +3,19 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.0.0 - (March 8, 2019)
+----------
+### Breaking Change
+* Condensed onChange function props into a single prop that returns an Object for the onsetDate.
+* Removed prop `granularitySelectOnChange`
+* Removed prop `precisionSelectOnChange`
+* Removed prop `onsetDateInputOnChange`
+* New prop `ageUnit`
+* New prop `onsetOnChange`
+
+3.4.0 - (February 26, 2019)
+----------
 ### Added
 * Added en-AU translations
 

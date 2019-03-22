@@ -14,22 +14,17 @@ class HandledOnsetExample extends React.Component {
       onsetDate: moment().subtract(2, 'years').format('YYYY-MM-DD'),
     };
 
-    this.handleGranularity = this.handleGranularity.bind(this);
-    this.handlePrecision = this.handlePrecision.bind(this);
     this.handleOnset = this.handleOnset.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleGranularity(granularity) {
-    this.setState({ granularity });
-  }
-
-  handlePrecision(precision) {
-    this.setState({ precision });
-  }
-
-  handleOnset(onsetDate) {
-    this.setState({ onsetDate });
+  handleOnset(onsetObject) {
+    this.setState({
+      precision: onsetObject.precision,
+      granularity: onsetObject.granularity,
+      onsetDate: onsetObject.onsetDate,
+      ageUnit: onsetObject.ageUnit,
+    });
   }
 
   handleSubmit(e) {
@@ -40,6 +35,7 @@ class HandledOnsetExample extends React.Component {
         precision: prevState.precision,
         granularity: prevState.granularity,
         onsetDate: prevState.onsetDate,
+        ageUnit: prevState.ageUnit,
       },
     }));
   }
@@ -48,9 +44,8 @@ class HandledOnsetExample extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <OnsetPicker
-          birthdate={moment().subtract(6, 'years').format()}
+          birthdate={moment().subtract(6, 'years').format('YYYY-MM-DD')}
           granularity={this.state.granularity}
-          granularitySelectOnChange={this.handleGranularity}
           id="doogs-supplied"
           precision={this.state.precision}
           precisionSet={[
@@ -59,9 +54,8 @@ class HandledOnsetExample extends React.Component {
             'before',
             'on/at',
           ]}
-          precisionSelectOnChange={this.handlePrecision}
           onsetDate={this.state.onsetDate}
-          onsetDateInputOnChange={this.handleOnset}
+          onsetOnChange={this.handleOnset}
         />
         <button type="submit">Submit</button>
         {this.state.submittedData && (
