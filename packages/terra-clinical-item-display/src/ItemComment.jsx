@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import CommentIndicator from 'terra-icon/lib/icon/IconComment';
 /* eslint-disable-next-line import/no-cycle */
 import ItemDisplay from './ItemDisplay';

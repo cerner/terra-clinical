@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
-import { injectIntl, intlShape } from 'terra-base';
+import { injectIntl, intlShape } from 'react-intl';
 
 import Cell from './subcomponents/Cell';
 import HeaderCell from './subcomponents/HeaderCell';

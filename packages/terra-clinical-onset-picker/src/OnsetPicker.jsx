@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 import DatePicker from 'terra-date-picker';
 import Field from 'terra-form-field';
 import FieldSet from 'terra-form-fieldset';
