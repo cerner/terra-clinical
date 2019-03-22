@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Changed react-intl to be a peerDependency instead of a devDependency
+* Updated lower bound for react-intl to ^2.8.0 to be consistent with changes in terra-core and terra-framework
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
 
 4.0.0 - (March 8, 2019)
 ----------
