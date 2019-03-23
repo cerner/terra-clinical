@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
 * Changed injectIntl, intlShape to be imported from react-intl
 * Changed react-intl to be a peerDependency instead of a devDependency
 * Updated lower bound for react-intl to ^2.8.0 to be consistent with changes in terra-core and terra-framework
