@@ -4,17 +4,19 @@
   .item-display {
     @include terra-clinical-item-body;
     align-items: center;
-    display: flex;
+    display: inline;
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
 
   .text {
+    display: inline;
     flex: 1 1 auto;
     min-width: 10px; // Need min-width, as IE10 will completely squish display
   }
 
   .inline-icon {
+    display: inline;
     flex: 0 0 auto;
     overflow: hidden;
     padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.357142857142857rem);
