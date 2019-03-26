@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.1.0 - (March 26, 2019)
+----------
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
 * Changed react-intl to be a peerDependency instead of a devDependency

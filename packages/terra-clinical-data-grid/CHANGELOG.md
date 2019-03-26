@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.4.0 - (March 26, 2019)
+----------
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
 * Changed injectIntl, intlShape to be imported from react-intl
