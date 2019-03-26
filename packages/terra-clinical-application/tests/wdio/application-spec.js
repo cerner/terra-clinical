@@ -1,21 +1,23 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-
-describe('Clinical Application', () => {
-  describe('Renders the Application with provided AppDelegate', () => {
+Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
+  describe('Clinical Application', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-application/clinical-application/default-application');
+      browser.setViewportSize(viewport);
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('Renders the Application with provided AppDelegate', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-application/clinical-application/default-application');
+      });
 
-  describe('Renders the Application without provided AppDelegate', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-application/clinical-application/no-app-delegate-application');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
+    describe('Renders the Application without provided AppDelegate', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-application/clinical-application/no-app-delegate-application');
+      });
+
+      Terra.should.validateElement();
+    });
   });
 });
