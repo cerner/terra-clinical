@@ -87,7 +87,7 @@ class Cell extends React.Component {
   /* eslint-enable class-methods-use-this */
 
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_ENTER || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       const { onSelect } = this.props;
 
       if (onSelect) {

@@ -367,11 +367,11 @@ class DataGrid extends React.Component {
    * Keyboard Events
    */
   handleKeyDown(event) {
-    if (event.keyCode === KEYCODES.SHIFT) {
+    if (event.keyCode === KeyCode.KEY_SHIFT) {
       this.shiftIsPressed = true;
     }
 
-    if (event.keyCode === KEYCODES.TAB) {
+    if (event.keyCode === KeyCode.KEY_TAB) {
       const { activeElement } = document;
 
       if (!activeElement) {
@@ -398,7 +398,7 @@ class DataGrid extends React.Component {
   }
 
   handleKeyUp(event) {
-    if (event.keyCode === KEYCODES.SHIFT) {
+    if (event.keyCode === KeyCode.KEY_SHIFT) {
       this.shiftIsPressed = false;
     }
   }

@@ -102,8 +102,8 @@ function createOnSelectProps(onSelect, key) {
     onSelect(event, key);
   };
 
-  selectableProps.onKeyDown = (event) => {
-    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+  selectableProps.onKeyDown = (event) => { 
+    if (event.nativeEvent.keyCode === KeyCode.KEY_ENTER || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       onSelect(event, key);
     }
   };
