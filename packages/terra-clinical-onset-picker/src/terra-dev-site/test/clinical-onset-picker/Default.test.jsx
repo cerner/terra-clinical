@@ -13,6 +13,7 @@ export default () => {
       <OnsetPicker
         birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
         id="test"
+        legend="Date of Birth"
       />
     </div>
   );

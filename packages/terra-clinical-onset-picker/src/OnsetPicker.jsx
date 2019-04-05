@@ -86,6 +86,16 @@ const propTypes = {
    * `ageUnit` is only present if the granularity is 'age'.
    */
   onsetOnChange: PropTypes.func,
+
+  /**
+   * Legend for the input group.
+   */
+  legend: PropTypes.string,
+
+  /**
+   * Whether or not the legend is visible. Use this props to hide a legend while still creating it on the DOM for accessibility.
+   */
+  isLegendHidden: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -96,6 +106,7 @@ const defaultProps = {
     'after',
     'unknown',
   ],
+  isLegendHidden: false,
 };
 
 const contextTypes = {
@@ -284,6 +295,8 @@ class OnsetPicker extends React.Component {
       granularity,
       precision,
       precisionSet,
+      legend,
+      isLegendHidden,
       onsetDate,
       onsetOnChange,
       ...customProps
@@ -456,6 +469,7 @@ class OnsetPicker extends React.Component {
       <div id={this.props.id} {...customProps}>
         <FieldSet className={cx('fieldset')}>
           {/* Precision */}
+          <legend className={cx(['legend', { 'legend-hidden': isLegendHidden }])}>{legend}</legend>
           <SelectField
             className={cx('field-inline', 'precision')}
             defaultValue={this.state.precision}
@@ -476,17 +490,17 @@ class OnsetPicker extends React.Component {
           </SelectField>
 
           {granularitySelect}
-        </FieldSet>
 
-        {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) && (
-          <FieldSet className={cx('fieldset')}>
-            {ageInput}
-            {ageUnitSelect}
-            {monthSelect}
-            {yearSelect}
-            {dateSelect}
-          </FieldSet>
-        )}
+          {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) && (
+            <div className={cx('fieldset')}>
+              {ageInput}
+              {ageUnitSelect}
+              {monthSelect}
+              {yearSelect}
+              {dateSelect}
+            </div>
+          )}
+        </FieldSet>
       </div>
     );
   }
