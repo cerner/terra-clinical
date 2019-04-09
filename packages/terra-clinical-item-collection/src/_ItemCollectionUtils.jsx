@@ -1,8 +1,4 @@
-const KEYCODES = {
-  ENTER: 13,
-  SPACE: 32,
-};
-
+import KeyCode from 'keycode-js';
 /**
  * This function ensures the correct elements are provided to create a consistent item view layout. To handle a
  * potential missing required accessory element, a boolean is provided to indicate if start accessory space is needed.
@@ -102,7 +98,7 @@ function createOnSelectProps(onSelect, key) {
     onSelect(event, key);
   };
 
-  selectableProps.onKeyDown = (event) => { 
+  selectableProps.onKeyDown = (event) => {
     if (event.nativeEvent.keyCode === KeyCode.KEY_ENTER || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       onSelect(event, key);
     }

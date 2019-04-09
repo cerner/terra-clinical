@@ -6,6 +6,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 import { injectIntl, intlShape } from 'terra-base';
 
+import KeyCode from 'keycode-js';
 import Cell from './subcomponents/Cell';
 import HeaderCell from './subcomponents/HeaderCell';
 import RowSelectionCell from './subcomponents/RowSelectionCell';
@@ -13,7 +14,6 @@ import Row from './subcomponents/Row';
 import Scrollbar from './subcomponents/Scrollbar';
 import SectionHeader from './subcomponents/SectionHeader';
 
-import { KEYCODES } from './utils/keycodes';
 import dataGridUtils from './utils/dataGridUtils';
 
 import columnDataShape from './proptypes/columnDataShape';

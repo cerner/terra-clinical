@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
-
-import { KEYCODES } from '../utils/keycodes';
+import KeyCode from 'keycode-js';
 
 import styles from './Cell.module.scss';
 

@@ -28,6 +28,7 @@ Cerner Corporation
 - Stephen Esser [@StephenEsser]
 - Jeff Merten [@jeffmerten]
 - Gabe Parra [@gabeparra01]
+- Anjali Roy [@anjaliroy19]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -57,3 +58,4 @@ Cerner Corporation
 [@StephenEsser]: https://github.com/StephenEsser
 [@jeffmerten]: https://github.com/jeffmerten
 [@gabeparra01]: https://github.com/gabeparra01
+[@anjaliroy19]: https://github.com/anjaliroy19
