@@ -87,8 +87,6 @@
     "stylelint-config-terra": "^2.0.0",
     "terra-dev-site": "^3.0.0",
     "terra-toolkit": "^4.16.0"
-  },
-  "dependencies": {
-    "keycode-js": "^1.0.4"
+    
   }
 }
