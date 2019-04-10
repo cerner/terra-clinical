@@ -1359,7 +1359,7 @@ exports[`should render with provided legend 1`] = `
       class="fieldset-children"
     >
       <legend
-        class="legend legend-hidden"
+        class="legend"
       >
         Date of Birth
       </legend>
