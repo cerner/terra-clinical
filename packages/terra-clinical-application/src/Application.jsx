@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Base from 'terra-base';
 import AppDelegate from 'terra-app-delegate';
-import 'terra-base/lib/baseStyles';
 import styles from './Application.scss';
 
 const cx = classNames.bind(styles);

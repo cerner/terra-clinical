@@ -3,13 +3,25 @@ Changelog
 
 Unreleased
 ----------
+
+2.4.0 - (March 26, 2019)
+----------
 ### Changed
+* Update react/react-dom peer-dependency to latest stable minor release
+* Changed injectIntl, intlShape to be imported from react-intl
+* Changed react-intl to be a peerDependency instead of a devDependency
+* Updated lower bound for react-intl to ^2.8.0 to be consistent with changes in terra-core and terra-framework
 * Replaced local key code value with keycode-js
+
+### Removed
+* Removed peer dependency on terra-base
+* Removed baseStyles import from terra-base
+
 2.3.0 - (February 26, 2019)
 ----------
 ### Added
 * Added PropTypes for ariaLabel on Cell
-* Added en-AU translations 
+* Added en-AU translations
 
 ### Changed
 * Updated unmount implementation to cancel any pending animation frames

@@ -1,45 +1,45 @@
-const viewports = Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous');
-
-describe('Label Value View', () => {
-  describe('when no value input is provided', () => {
+Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
+  describe('Label Value View', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/default-label-value-view');
+      browser.setViewportSize(viewport);
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.themeCombinationOfCustomProperties({
-      testName: 'themed',
-      properties: {
-        '--terra-clinical-label-value-view-label-color': 'purple',
-      },
-    });
-    Terra.should.beAccessible();
-  });
+    describe('when no value input is provided', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/default-label-value-view');
+      });
 
-  describe('when a text input is provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/text-value-label-value-view');
-    });
-
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
-
-  describe('when a node input is provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/node-value-label-value-view');
+      Terra.should.validateElement();
+      Terra.should.themeCombinationOfCustomProperties({
+        testName: 'themed',
+        properties: {
+          '--terra-clinical-label-value-view-label-color': 'purple',
+        },
+      });
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
-  });
+    describe('when a text input is provided', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/text-value-label-value-view');
+      });
 
-  describe('when text and node inputs are provided', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/multiple-value-label-value-view');
+      Terra.should.validateElement();
     });
 
-    Terra.should.matchScreenshot({ viewports });
-    Terra.should.beAccessible();
+    describe('when a node input is provided', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/node-value-label-value-view');
+      });
+
+      Terra.should.validateElement();
+    });
+
+    describe('when text and node inputs are provided', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-label-value-view/clinical-label-value-view/multiple-value-label-value-view');
+      });
+
+      Terra.should.validateElement();
+    });
   });
 });

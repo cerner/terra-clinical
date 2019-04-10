@@ -1,8 +1,4 @@
 /* eslint no-unused-expressions: 0 */
-const ignoredA11y = {
-  // https://github.com/cerner/terra-clinical/issues/378
-  'color-contrast': { enabled: false },
-};
 
 Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach((viewport) => {
   describe('Item Collection', () => {
@@ -15,8 +11,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-all-elements');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible();
+      Terra.should.validateElement();
     });
 
     describe('Displays the correct collection when responding to breakpoint', () => {
@@ -24,8 +19,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-all-elements');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible();
+      Terra.should.validateElement();
     });
 
     describe('Displays a selectable item collection', () => {
@@ -33,8 +27,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.should.validateElement();
     });
 
     describe('Returns child key for click when onSelect is given to a selectable item collection', () => {
@@ -45,8 +38,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.click('#selected-key');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.should.validateElement();
     });
 
     describe('Returns child key for ENTER when onSelect is given to a selectable item collection', () => {
@@ -57,8 +49,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.click('#selected-key');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.should.validateElement();
     });
 
     describe('Returns child key for SPACE when onSelect is given to a selectable item collection', () => {
@@ -69,8 +60,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.click('#selected-key');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.should.validateElement();
     });
 
     describe('Displays an item collection with table styles', () => {
@@ -78,8 +68,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-table-styles');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible({ rules: ignoredA11y });
+      Terra.should.validateElement();
     });
 
     describe('Displays an item collection with list styles', () => {
@@ -87,8 +76,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-list-styles');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible();
+      Terra.should.validateElement();
     });
 
     describe('Displays an item collection with styles applied to list items', () => {
@@ -96,8 +84,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-item-styles');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible();
+      Terra.should.validateElement();
     });
 
     describe('Displays an item collection with items with varying content', () => {
@@ -105,8 +92,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-varying-items');
       });
 
-      Terra.should.matchScreenshot();
-      Terra.should.beAccessible();
+      Terra.should.validateElement();
     });
   });
 });

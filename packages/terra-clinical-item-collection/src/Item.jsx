@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import ItemView from 'terra-clinical-item-view';
 import List from 'terra-list';
 import Table from 'terra-table';
-import 'terra-base/lib/baseStyles';
 import styles from './ItemCollection.scss';
 
 const cx = classNames.bind(styles);

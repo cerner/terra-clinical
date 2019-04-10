@@ -29,6 +29,7 @@ Cerner Corporation
 - Jeff Merten [@jeffmerten]
 - Gabe Parra [@gabeparra01]
 - Anjali Roy [@anjaliroy19]
+- Akarsh Shetty [@ShettyAkarsh]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -59,3 +60,4 @@ Cerner Corporation
 [@jeffmerten]: https://github.com/jeffmerten
 [@gabeparra01]: https://github.com/gabeparra01
 [@anjaliroy19]: https://github.com/anjaliroy19
+[@ShettyAkarsh]: https://github.com/ShettyAkarsh

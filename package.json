@@ -35,7 +35,9 @@
     "clean:all": "lerna clean --yes && rm -rf node_modules",
     "clean:install": "npm run clean:all && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
-    "compile": "lerna run compile",
+    "compile": "npm run compile:clean && npm run compile:build",
+    "compile:build": "lerna ls | cut -d ' ' -f1 | xargs -I {} sh -c './node_modules/.bin/babel packages/{}/src --out-dir packages/{}/lib --copy-files'",
+    "compile:clean": "rm -rf packages/**/lib",
     "compile:prod": "webpack --config node_modules/terra-dev-site/config/webpack/webpack.config.js -p",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
@@ -79,14 +81,13 @@
     "lerna": "^2.11.0",
     "link-parent-bin": "^0.2.0",
     "markdown-magic": "^0.1.25",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-router-dom": "^4.2.2",
     "react-test-renderer": "^16.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
     "terra-dev-site": "^3.0.0",
-    "terra-toolkit": "^4.16.0"
-    
+    "terra-toolkit": "^4.26.0"
   }
 }
