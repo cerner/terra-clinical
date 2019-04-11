@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Regenerated failing jest snapshots due to select changes.
 
 4.1.0 - (March 26, 2019)
 ----------

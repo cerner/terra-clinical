@@ -28,7 +28,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -47,28 +47,47 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-4"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-precision-select-label"
+          aria-labelledby="terra-select-screen-reader-label-1 terra-select-screen-reader-display-2 terra-select-screen-reader-placeholder-3"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-precision-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-1"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-4"
+            >
+              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
+              id="terra-select-screen-reader-placeholder-3"
             >
               Precision
             </div>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -76,7 +95,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -100,7 +119,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -119,28 +138,47 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-8"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-granularity-select-label"
+          aria-labelledby="terra-select-screen-reader-label-5 terra-select-screen-reader-display-6 terra-select-screen-reader-placeholder-7"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-granularity-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-5"
+            >
+              Select a date granularity
+            </span>
+            <span
+              id="terra-select-screen-reader-description-8"
+            >
+              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
+              id="terra-select-screen-reader-placeholder-7"
             >
               Granularity
             </div>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -148,7 +186,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -194,7 +232,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -213,24 +251,46 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-12"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-precision-select-label"
+          aria-labelledby="terra-select-screen-reader-label-9 terra-select-screen-reader-display-10 terra-select-screen-reader-placeholder-11"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-precision-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-9"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-12"
+            >
+              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            Unknown
+            <span
+              id="terra-select-screen-reader-display-10"
+            >
+              Unknown
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -238,7 +298,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -277,7 +337,7 @@ exports[`should render only the supplied precisions 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -296,28 +356,47 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-48"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-precision-select-label"
+          aria-labelledby="terra-select-screen-reader-label-45 terra-select-screen-reader-display-46 terra-select-screen-reader-placeholder-47"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-precision-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-45"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-48"
+            >
+              List of 3 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
+              id="terra-select-screen-reader-placeholder-47"
             >
               Precision
             </div>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -325,7 +404,7 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -349,7 +428,7 @@ exports[`should render only the supplied precisions 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -368,28 +447,47 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-52"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-granularity-select-label"
+          aria-labelledby="terra-select-screen-reader-label-49 terra-select-screen-reader-display-50 terra-select-screen-reader-placeholder-51"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-granularity-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-49"
+            >
+              Select a date granularity
+            </span>
+            <span
+              id="terra-select-screen-reader-description-52"
+            >
+              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
+              id="terra-select-screen-reader-placeholder-51"
             >
               Granularity
             </div>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -397,7 +495,7 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -443,7 +541,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -462,28 +560,47 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-40"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-precision-select-label"
+          aria-labelledby="terra-select-screen-reader-label-37 terra-select-screen-reader-display-38 terra-select-screen-reader-placeholder-39"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-precision-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-37"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-40"
+            >
+              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
+              id="terra-select-screen-reader-placeholder-39"
             >
               Precision
             </div>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -491,7 +608,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -515,7 +632,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -534,28 +651,47 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-44"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-granularity-select-label"
+          aria-labelledby="terra-select-screen-reader-label-41 terra-select-screen-reader-display-42 terra-select-screen-reader-placeholder-43"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-granularity-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-41"
+            >
+              Select a date granularity
+            </span>
+            <span
+              id="terra-select-screen-reader-description-44"
+            >
+              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
+              id="terra-select-screen-reader-placeholder-43"
             >
               Granularity
             </div>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -563,7 +699,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -609,7 +745,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -628,24 +764,46 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-28"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-precision-select-label"
+          aria-labelledby="terra-select-screen-reader-label-25 terra-select-screen-reader-display-26 terra-select-screen-reader-placeholder-27"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-precision-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-25"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-28"
+            >
+              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            Before
+            <span
+              id="terra-select-screen-reader-display-26"
+            >
+              Before
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -653,7 +811,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -677,7 +835,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -696,24 +854,46 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-32"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-granularity-select-label"
+          aria-labelledby="terra-select-screen-reader-label-29 terra-select-screen-reader-display-30 terra-select-screen-reader-placeholder-31"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-granularity-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-29"
+            >
+              Select a date granularity
+            </span>
+            <span
+              id="terra-select-screen-reader-description-32"
+            >
+              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            Age
+            <span
+              id="terra-select-screen-reader-display-30"
+            >
+              Age
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -721,7 +901,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -753,7 +933,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -800,7 +980,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -819,24 +999,46 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-36"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-age-unit-select-label"
+          aria-labelledby="terra-select-screen-reader-label-33 terra-select-screen-reader-display-34 terra-select-screen-reader-placeholder-35"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-age-unit-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-33"
+            >
+              Select an age precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-36"
+            >
+              List of 3 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            Year(s)
+            <span
+              id="terra-select-screen-reader-display-34"
+            >
+              Year(s)
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -844,7 +1046,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -883,7 +1085,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -902,24 +1104,46 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-16"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-precision-select-label"
+          aria-labelledby="terra-select-screen-reader-label-13 terra-select-screen-reader-display-14 terra-select-screen-reader-placeholder-15"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-precision-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-13"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-16"
+            >
+              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            Before
+            <span
+              id="terra-select-screen-reader-display-14"
+            >
+              Before
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -927,7 +1151,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -951,7 +1175,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -970,24 +1194,46 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-20"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-granularity-select-label"
+          aria-labelledby="terra-select-screen-reader-label-17 terra-select-screen-reader-display-18 terra-select-screen-reader-placeholder-19"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-granularity-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-17"
+            >
+              Select a date granularity
+            </span>
+            <span
+              id="terra-select-screen-reader-description-20"
+            >
+              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            Year
+            <span
+              id="terra-select-screen-reader-display-18"
+            >
+              Year
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -995,7 +1241,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
@@ -1027,7 +1273,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="tui-Icon icon"
+              class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
               viewBox="0 0 48 48"
@@ -1046,24 +1292,46 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
         </div>
         <div
+          aria-describedby="terra-select-screen-reader-description-24"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="test-year-select-label"
+          aria-labelledby="terra-select-screen-reader-label-21 terra-select-screen-reader-display-22 terra-select-screen-reader-placeholder-23"
           class="select default"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
           id="test-year-select"
           role="combobox"
           tabindex="0"
         >
           <div
-            aria-disabled="false"
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-21"
+            >
+              Select a year
+            </span>
+            <span
+              id="terra-select-screen-reader-description-24"
+            >
+              List of 7 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
             class="display"
             role="textbox"
           >
-            2014
+            <span
+              id="terra-select-screen-reader-display-22"
+            >
+              2014
+            </span>
           </div>
           <div
             class="toggle"
+            data-terra-form-select-toggle="true"
           >
             <span
               class="arrow-icon"
@@ -1071,7 +1339,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
           <span
             aria-atomic="true"
-            aria-live="polite"
+            aria-live="assertive"
             aria-relevant="additions text"
             class="visually-hidden-component"
           />
