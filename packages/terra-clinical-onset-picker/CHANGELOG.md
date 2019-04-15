@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added Legend element to Field-set for better accessibility
+* Added terra-enzyme-intl dependency to verify props in test
+* Added Example for Onset picker with Legend on terra-dev-site
 
 4.1.0 - (March 26, 2019)
 ----------

@@ -165,6 +165,14 @@ viewports.forEach((viewport) => {
       Terra.should.validateElement({ axeRules });
     });
 
+    describe('Displays Legend with given value', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default');
+      });
+
+      Terra.should.validateElement({ axeRules });
+    });
+
     describe('Cannot select number of years greater than age', () => {
       before(() => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/five-years');

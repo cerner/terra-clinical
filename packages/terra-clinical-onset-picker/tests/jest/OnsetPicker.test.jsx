@@ -1,6 +1,8 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import MockDate from 'mockdate';
+// eslint-disable-next-line import/no-unresolved
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import { IntlProvider } from 'react-intl';
 import selectMessages from 'terra-form-select/translations/en-US.json';
 
@@ -98,6 +100,23 @@ it('should render only the supplied precisions', () => {
       />
     </IntlProvider>
   );
+  expect(render(onsetPicker)).toMatchSnapshot();
+});
+
+it('should render with provided legend', () => {
+  const legend = 'Date of Birth';
+  const onsetPicker = (
+    <IntlProvider locale={locale} messages={messages}>
+      <OnsetPicker
+        birthdate="2011-08-16"
+        id="test"
+        legend={legend}
+      />
+    </IntlProvider>
+  );
+
+  const wrapper = shallowWithIntl(onsetPicker);
+  expect(wrapper.prop('legend')).toBe(legend);
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 
