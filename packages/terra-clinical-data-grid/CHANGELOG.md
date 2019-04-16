@@ -4,6 +4,9 @@ Changelog
 Unreleased
 ----------
 
+### Changed 
+* Replaced local key code value with keycode-js
+
 2.4.0 - (March 26, 2019)
 ----------
 ### Changed
@@ -11,7 +14,7 @@ Unreleased
 * Changed injectIntl, intlShape to be imported from react-intl
 * Changed react-intl to be a peerDependency instead of a devDependency
 * Updated lower bound for react-intl to ^2.8.0 to be consistent with changes in terra-core and terra-framework
-* Replaced local key code value with keycode-js
+
 
 ### Removed
 * Removed peer dependency on terra-base
