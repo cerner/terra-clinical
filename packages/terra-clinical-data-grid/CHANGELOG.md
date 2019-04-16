@@ -3,7 +3,6 @@ Changelog
 
 Unreleased
 ----------
-
 ### Changed 
 * Replaced local key code value with keycode-js
 
