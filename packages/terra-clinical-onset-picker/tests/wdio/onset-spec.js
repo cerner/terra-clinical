@@ -370,5 +370,22 @@ viewports.forEach((viewport) => {
 
       Terra.should.validateElement({ axeRules });
     });
+
+    describe('Displays legend when specified', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/with-legend');
+      });
+
+      Terra.should.validateElement({ axeRules });
+    });
+
+    describe('Hides legend when hide button is clicked', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/with-legend');
+        browser.click('button');
+      });
+
+      Terra.should.validateElement({ axeRules });
+    });
   });
 });
