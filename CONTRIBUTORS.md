@@ -55,7 +55,7 @@ Cerner Corporation
 [@pseudofaux]: https://github.com/pseudofaux
 [@bjankord]: https://github.com/bjankord
 [@eawww]: https://github.com/eawww
-[@mndrsn]: https://github.com/mndrsnq
+[@mndrsn]: https://github.com/mndrsn
 [@StephenEsser]: https://github.com/StephenEsser
 [@jeffmerten]: https://github.com/jeffmerten
 [@gabeparra01]: https://github.com/gabeparra01
