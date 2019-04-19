@@ -67,7 +67,7 @@ class SectionHeader extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_ENTER || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       const { onRequestSectionCollapse, sectionId } = this.props;
 
       if (onRequestSectionCollapse) {
