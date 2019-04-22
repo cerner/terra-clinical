@@ -7,11 +7,12 @@ export default () => {
 
   return (
     <div>
-      <p>Onset picker with Legend</p>
+      <p>Onset picker with Hidden Legend </p>
       <OnsetPicker
         birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
         id="test"
         legend="Date of Birth"
+        isLegendHidden
       />
     </div>
   );

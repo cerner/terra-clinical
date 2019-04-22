@@ -29,6 +29,7 @@ Cerner Corporation
 - Jeff Merten [@jeffmerten]
 - Gabe Parra [@gabeparra01]
 - Akarsh Shetty [@ShettyAkarsh]
+- Supreeth MR [@supreethmr]
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -59,3 +60,4 @@ Cerner Corporation
 [@jeffmerten]: https://github.com/jeffmerten
 [@gabeparra01]: https://github.com/gabeparra01
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
+[@supreethmr]: https://github.com/supreethmr
