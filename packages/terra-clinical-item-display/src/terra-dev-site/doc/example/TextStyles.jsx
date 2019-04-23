@@ -3,12 +3,13 @@ import React from 'react';
 import ItemDisplay from 'terra-clinical-item-display/lib/ItemDisplay';
 
 const component = () => (
-  <span>
-    <ItemDisplay text="Attention" textStyle="attention" />
+  <React.Fragment>
+    <ItemDisplay text="Primary" />
     <ItemDisplay text="Strong" textStyle="strong" />
+    <ItemDisplay text="Attention" textStyle="attention" />
     <ItemDisplay text="Secondary" textStyle="secondary" />
     <ItemDisplay text="Strike-through" textStyle="strikeThrough" />
-  </span>
+  </React.Fragment>
 );
 
 export default component;

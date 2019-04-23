@@ -59,3 +59,8 @@ target
 **/__snapshots__/latest
 errorScreenshots
 themeable-variables.json
+packages/terra-clinical-item-view/.DS_Store
+packages/terra-clinical-item-view/src/terra-dev-site/test/.DS_Store
+packages/terra-clinical-item-display/.DS_Store
+packages/.DS_Store
+packages/terra-clinical-item-display/src/terra-dev-site/test/clinical-item-display/.DS_Store

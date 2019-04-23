@@ -8,8 +8,9 @@ import ItemComment from './ItemComment';
 const cx = classNames.bind(styles);
 
 const textStyles = [
-  'secondary',
+  'primary',
   'attention',
+  'secondary',
   'strikeThrough',
   'strong',
 ];
@@ -20,7 +21,8 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
-   * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, or `strong`.
+   * The visual style to be applied to the display element.
+   * One of `'primary'`, `'secondary'`, `'strong'`, `'attention'`, or `'strikeThrough'`.
    */
   textStyle: PropTypes.oneOf(textStyles),
   /**
@@ -35,14 +37,21 @@ const propTypes = {
    * The icon react element to be displayed next to the display text.
    */
   icon: PropTypes.element,
+  /**
+   * The position of the icon to be displayed next to the text,
+   * noticeable when the text display wraps multiple line.
+   * One of `'center'`, `'top'`, `'inline'`.
+   */
+  iconAlignment: PropTypes.oneOf(['center', 'top', 'inline']),
 };
 
 const defaultProps = {
   text: '',
-  textStyle: undefined,
+  textStyle: 'primary',
   isTruncated: false,
   isDisabled: false,
   icon: undefined,
+  iconAlignment: 'center',
 };
 
 const ItemDisplay = ({
@@ -51,11 +60,13 @@ const ItemDisplay = ({
   isTruncated,
   isDisabled,
   icon,
+  iconAlignment,
   ...customProps
 }) => {
   const componentClassNames = cx([
     'item-display',
     { 'is-disabled': isDisabled },
+    { [`icon-${iconAlignment}`]: iconAlignment && icon },
     customProps.className,
   ]);
   const textClassNames = cx([
@@ -66,7 +77,10 @@ const ItemDisplay = ({
 
   let displayIcon;
   if (icon) {
-    displayIcon = <div className={cx('inline-icon')}>{icon}</div>;
+    const iconClassNames = cx([
+      'icon',
+    ]);
+    displayIcon = <div className={iconClassNames}>{icon}</div>;
   }
 
   return (
