@@ -43,19 +43,25 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 2"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 3"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -102,19 +108,25 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 2"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 3"
+            textStyle="primary"
           />
         </Item>
       </TableView>
@@ -306,9 +318,11 @@ exports[`should render an ItemCollection with all elements 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -355,9 +369,11 @@ exports[`should render an ItemCollection with all elements 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </TableView>
@@ -482,10 +498,12 @@ exports[`should render an ItemCollection with custom props 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isSelectable={true}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -533,10 +551,12 @@ exports[`should render an ItemCollection with custom props 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isSelectable={true}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </TableView>
@@ -588,9 +608,11 @@ exports[`should render an ItemCollection with displays 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -637,9 +659,11 @@ exports[`should render an ItemCollection with displays 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </TableView>
@@ -691,19 +715,25 @@ exports[`should render an ItemCollection with list styles 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 2"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 3"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -750,19 +780,25 @@ exports[`should render an ItemCollection with list styles 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 2"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 3"
+            textStyle="primary"
           />
         </Item>
       </TableView>
@@ -815,10 +851,12 @@ exports[`should render an ItemCollection with onSelect 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isSelectable={true}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -866,10 +904,12 @@ exports[`should render an ItemCollection with onSelect 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isSelectable={true}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
         </Item>
       </TableView>
@@ -921,19 +961,25 @@ exports[`should render an ItemCollection with table styles 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 2"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 3"
+            textStyle="primary"
           />
         </Item>
       </ListView>
@@ -980,19 +1026,25 @@ exports[`should render an ItemCollection with table styles 1`] = `
           view="list"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 1"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 2"
+            textStyle="primary"
           />
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="Display 3"
+            textStyle="primary"
           />
         </Item>
       </TableView>

@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Right-aligned text and icons using new prop in clinical-item-display
 
 3.3.0 - (March 26, 2019)
 ----------

@@ -19,9 +19,11 @@ exports[`should render 1 start theme display 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -49,9 +51,11 @@ exports[`should render 2 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -64,9 +68,11 @@ exports[`should render 2 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -94,9 +100,11 @@ exports[`should render 3 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -109,9 +117,11 @@ exports[`should render 3 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -124,9 +134,11 @@ exports[`should render 3 start theme displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 3"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -248,9 +260,11 @@ exports[`should render one column 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -263,9 +277,11 @@ exports[`should render one column 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -306,9 +322,11 @@ exports[`should render truncated display 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={true}
             text="display1display1display1display1display1display1display1display1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -336,9 +354,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
         <div
@@ -346,9 +366,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -361,9 +383,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 3"
+            textStyle="primary"
           />
         </div>
         <div
@@ -371,9 +395,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 4"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -386,9 +412,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 5"
+            textStyle="primary"
           />
         </div>
         <div
@@ -396,9 +424,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 6"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -411,9 +441,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 7"
+            textStyle="primary"
           />
         </div>
         <div
@@ -421,9 +453,11 @@ exports[`should render two columns with 8 displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 8"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -451,9 +485,11 @@ exports[`should render two columns with odd number of displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
         <div
@@ -461,9 +497,11 @@ exports[`should render two columns with odd number of displays 1`] = `
           key="1"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -476,9 +514,11 @@ exports[`should render two columns with odd number of displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 3"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -506,9 +546,11 @@ exports[`should render with 1 display 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -536,9 +578,11 @@ exports[`should render with 2 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -551,9 +595,11 @@ exports[`should render with 2 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -581,9 +627,11 @@ exports[`should render with 3 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -596,9 +644,11 @@ exports[`should render with 3 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 2"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -611,9 +661,11 @@ exports[`should render with 3 displays 1`] = `
           key="0"
         >
           <ItemDisplay
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 3"
+            textStyle="primary"
           />
         </div>
       </div>
@@ -646,9 +698,11 @@ exports[`should render with a display and graphic 1`] = `
                 alt="Graphic"
               />
             }
+            iconAlignment="center"
             isDisabled={false}
             isTruncated={false}
             text="display 1"
+            textStyle="primary"
           />
         </div>
       </div>
