@@ -2,7 +2,7 @@
 
 exports[`should render a default component 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text primary"
@@ -12,7 +12,7 @@ exports[`should render a default component 1`] = `
 
 exports[`should render a disabled display 1`] = `
 <div
-  className="item-display is-disabled"
+  className="item-display is-disabled icon-center"
 >
   <div
     className="text primary"
@@ -24,7 +24,7 @@ exports[`should render a disabled display 1`] = `
 
 exports[`should render a display with the attention textStyle on text 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text attention"
@@ -36,7 +36,7 @@ exports[`should render a display with the attention textStyle on text 1`] = `
 
 exports[`should render a display with the primary textStyle on text 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text primary"
@@ -48,7 +48,7 @@ exports[`should render a display with the primary textStyle on text 1`] = `
 
 exports[`should render a display with the secondary textStyle on text 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text secondary"
@@ -60,7 +60,7 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
 
 exports[`should render a display with the strikeThrough textStyle on text 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text strike-through strikeThrough"
@@ -72,7 +72,7 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
 
 exports[`should render a display with the strong textStyle on text 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text strong"
@@ -84,7 +84,7 @@ exports[`should render a display with the strong textStyle on text 1`] = `
 
 exports[`should render a truncated display 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text is-truncated primary"
@@ -132,7 +132,7 @@ exports[`should render with a graphic 1`] = `
 
 exports[`should render with text 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
     className="text primary"

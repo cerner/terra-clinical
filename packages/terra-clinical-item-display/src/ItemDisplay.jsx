@@ -66,7 +66,7 @@ const ItemDisplay = ({
   const componentClassNames = cx([
     'item-display',
     { 'is-disabled': isDisabled },
-    { [`icon-${iconAlignment}`]: iconAlignment && icon },
+    { [`icon-${iconAlignment}`]: iconAlignment },
     customProps.className,
   ]);
   const textClassNames = cx([
@@ -77,10 +77,7 @@ const ItemDisplay = ({
 
   let displayIcon;
   if (icon) {
-    const iconClassNames = cx([
-      'icon',
-    ]);
-    displayIcon = <div className={iconClassNames}>{icon}</div>;
+    displayIcon = <div className={cx('icon')}>{icon}</div>;
   }
 
   return (
