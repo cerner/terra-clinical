@@ -2,8 +2,8 @@ import React from 'react';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import ItemView from '../../../ItemView';
 
-const display1 = <ItemView.Display icon={<IconAlert />} iconAlignment="inline" text="display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text" key="123" />;
-const display2 = <ItemView.Display icon={<IconAlert />} iconAlignment="inline" text="display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text" key="124" />;
+const display1 = <ItemView.Display icon={<IconAlert />} iconAlignment="inline" text="display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text display1 Text" key="123" />;
+const display2 = <ItemView.Display icon={<IconAlert />} iconAlignment="inline" text="display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text display2 Text" key="124" />;
 const display3 = <ItemView.Display text="display 3" key="125" />;
 const display4 = <ItemView.Display text="display 4" key="126" />;
 const display5 = <ItemView.Display text="display 5" key="127" />;
