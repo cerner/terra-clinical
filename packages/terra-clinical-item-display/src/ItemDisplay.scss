@@ -51,8 +51,8 @@
   .is-disabled {
     opacity: var(--terra-clinical-item-display-disabled-inline-icon-opacity, 0.2);
 
-    .inline-icon {
-      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
+    .icon {
+      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 1));
     }
   }
 
