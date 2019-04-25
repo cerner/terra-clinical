@@ -3,8 +3,11 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
-* Added new prop for icon alignment and missing default primary text style
+### Added
+* iconAlignment prop
+
+### Fixed 
+* Added missing primary text style
 
 3.3.0 - (March 26, 2019)
 ----------

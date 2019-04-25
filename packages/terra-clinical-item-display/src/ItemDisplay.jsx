@@ -47,7 +47,8 @@ const propTypes = {
 
 const defaultProps = {
   text: '',
-  textStyle: 'primary',
+  // TODO: textStyle should be set to 'primary' on the next major version bump
+  textStyle: undefined,
   isTruncated: false,
   isDisabled: false,
   icon: undefined,
@@ -66,7 +67,7 @@ const ItemDisplay = ({
   const componentClassNames = cx([
     'item-display',
     { 'is-disabled': isDisabled },
-    { [`icon-${iconAlignment}`]: iconAlignment },
+    { [`icon-${iconAlignment}`]: icon },
     customProps.className,
   ]);
   const textClassNames = cx([
