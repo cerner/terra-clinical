@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
-
-import { KEYCODES } from '../utils/keycodes';
+import KeyCode from 'keycode-js';
 
 import styles from './Cell.module.scss';
 
@@ -87,7 +86,7 @@ class Cell extends React.Component {
   /* eslint-enable class-methods-use-this */
 
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KEYCODES.ENTER || event.nativeEvent.keyCode === KEYCODES.SPACE) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       const { onSelect } = this.props;
 
       if (onSelect) {
