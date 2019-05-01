@@ -28,6 +28,7 @@ Cerner Corporation
 - Stephen Esser [@StephenEsser]
 - Jeff Merten [@jeffmerten]
 - Gabe Parra [@gabeparra01]
+- Anjali Roy [@anjaliroy19]
 - Akarsh Shetty [@ShettyAkarsh]
 
 Community
@@ -62,5 +63,6 @@ Community
 [@StephenEsser]: https://github.com/StephenEsser
 [@jeffmerten]: https://github.com/jeffmerten
 [@gabeparra01]: https://github.com/gabeparra01
+[@anjaliroy19]: https://github.com/anjaliroy19
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@PayalSawant]: https://github.com/PayalSawant
