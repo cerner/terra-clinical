@@ -31,6 +31,10 @@ Cerner Corporation
 - Anjali Roy [@anjaliroy19]
 - Akarsh Shetty [@ShettyAkarsh]
 
+Community
+
+- Payal Sawant @PayalSawant
+
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
 [@emilyrohrbough]: https://github.com/emilyrohrbough
@@ -61,3 +65,4 @@ Cerner Corporation
 [@gabeparra01]: https://github.com/gabeparra01
 [@anjaliroy19]: https://github.com/anjaliroy19
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
+[@PayalSawant]: https://github.com/PayalSawant
