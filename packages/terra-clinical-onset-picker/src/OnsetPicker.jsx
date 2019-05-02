@@ -88,7 +88,7 @@ const propTypes = {
   onsetOnChange: PropTypes.func,
 
   /**
-   * Legend for the Onset Picker field group..
+   * Legend for the Onset Picker field group.
    */
   legend: PropTypes.string,
 
