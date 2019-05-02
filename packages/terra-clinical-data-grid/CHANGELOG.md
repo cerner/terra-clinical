@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Changed 
+* Replaced local key code value with keycode-js
 
 2.4.0 - (March 26, 2019)
 ----------
