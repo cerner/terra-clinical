@@ -87,7 +87,7 @@
     "react-test-renderer": "^16.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
-    "terra-dev-site": "^3.0.0",
-    "terra-toolkit": "^4.26.0"
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#remove-wdio-refresh-hook",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#clean-up-VR-helpers"
   }
 }
