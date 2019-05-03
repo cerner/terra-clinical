@@ -87,7 +87,8 @@
     "react-test-renderer": "^16.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
-    "terra-dev-site": "^3.0.0",
+    "terra-dev-site": "^4.0.0",
+    "terra-base": "^4.0.0",
     "terra-toolkit": "^4.26.0"
   }
 }
