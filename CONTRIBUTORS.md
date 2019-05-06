@@ -32,6 +32,10 @@ Cerner Corporation
 - Akarsh Shetty [@ShettyAkarsh]
 - Naveen Kumar Ramamurthy [@nramamurth]
 
+Community
+
+- Payal Sawant @PayalSawant
+
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
 [@emilyrohrbough]: https://github.com/emilyrohrbough
@@ -63,3 +67,4 @@ Cerner Corporation
 [@anjaliroy19]: https://github.com/anjaliroy19
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@nramamurth]: https://github.com/nramamurth
+[@PayalSawant]: https://github.com/PayalSawant
