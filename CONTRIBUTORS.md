@@ -32,6 +32,10 @@ Cerner Corporation
 - Akarsh Shetty [@ShettyAkarsh]
 - Supreeth MR [@supreethmr]
 
+Community
+
+- Payal Sawant @PayalSawant
+
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
 [@emilyrohrbough]: https://github.com/emilyrohrbough
@@ -63,3 +67,4 @@ Cerner Corporation
 [@anjaliroy19]: https://github.com/anjaliroy19
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@supreethmr]: https://github.com/supreethmr
+[@PayalSawant]: https://github.com/PayalSawant
