@@ -60,12 +60,14 @@
     "wdio": "wdio node_modules/terra-dev-site/config/wdio/wdio.conf.js"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-jest": "^23.0.1",
-    "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-jest": "^24.8.0",
     "babel-preset-react": "^6.24.1",
     "browserslist-config-terra": "^1.0.0",
     "check-installed-dependencies": "^1.0.0",
@@ -87,8 +89,7 @@
     "react-test-renderer": "^16.4.2",
     "stylelint": "^9.2.0",
     "stylelint-config-terra": "^2.0.0",
-    "terra-dev-site": "^4.0.0",
-    "terra-base": "^4.0.0",
-    "terra-toolkit": "^4.26.0"
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#toolkit-as-peer-dep",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#v5-update-deps"
   }
 }
