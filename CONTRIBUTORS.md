@@ -30,6 +30,7 @@ Cerner Corporation
 - Gabe Parra [@gabeparra01]
 - Anjali Roy [@anjaliroy19]
 - Akarsh Shetty [@ShettyAkarsh]
+- Naveen Kumar Ramamurthy [@nramamurth]
 
 Community
 
@@ -65,4 +66,5 @@ Community
 [@gabeparra01]: https://github.com/gabeparra01
 [@anjaliroy19]: https://github.com/anjaliroy19
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
+[@nramamurth]: https://github.com/nramamurth
 [@PayalSawant]: https://github.com/PayalSawant

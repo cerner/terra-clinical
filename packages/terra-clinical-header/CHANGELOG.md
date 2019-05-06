@@ -4,6 +4,9 @@ ChangeLog
 Unreleased
 ----------
 
+## Fixed
+* Fixed the issue of overlapping content on IE 10 by increasing the rule specificty for the header child element.
+
 3.3.0 - (March 26, 2019)
 ----------
 ### Changed
