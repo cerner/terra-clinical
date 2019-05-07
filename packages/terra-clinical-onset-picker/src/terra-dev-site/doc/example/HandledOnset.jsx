@@ -41,10 +41,12 @@ class HandledOnsetExample extends React.Component {
   }
 
   render() {
+    const birthdate = moment().subtract(6, 'years');
     return (
       <form onSubmit={this.handleSubmit}>
+        <p>{`Birthdate: ${birthdate.format('MM-DD-YYYY')}`}</p>
         <OnsetPicker
-          birthdate={moment().subtract(6, 'years').format('YYYY-MM-DD')}
+          birthdate={birthdate.format('YYYY-MM-DD')}
           granularity={this.state.granularity}
           id="doogs-supplied"
           precision={this.state.precision}
