@@ -1,4 +1,4 @@
-# Terra Client Item View
+# Terra Clinical Item View
 
 
 [![NPM version](https://badgen.net/npm/v/terra-clinical-item-view)](https://www.npmjs.org/package/terra-clinical-item-view)
