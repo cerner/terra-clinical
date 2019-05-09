@@ -12,8 +12,8 @@ import DefaultOnset from '../example/DefaultOnset';
 import DefaultOnsetSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultOnset';
 import HandledOnset from '../example/HandledOnset';
 import HandledOnsetSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HandledOnset';
-import OnsetWithLegend from '../example/OnsetWithLegend';
-import OnsetWithLegendSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/OnsetWithLegend';
+import OnsetWithHiddenLegend from '../example/OnsetWithHiddenLegend';
+import OnsetWithHiddenLegendSrc from '../example/OnsetWithHiddenLegend';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
@@ -33,9 +33,9 @@ const DocPage = () => (
         source: HandledOnsetSrc,
       },
       {
-        title: 'Onset picker with legend',
-        example: <OnsetWithLegend />,
-        source: OnsetWithLegendSrc,
+        title: 'Onset picker with Hidden legend',
+        example: <OnsetWithHiddenLegend />,
+        source: OnsetWithHiddenLegendSrc,
       },
     ]}
     propsTables={[
