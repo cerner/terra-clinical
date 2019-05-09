@@ -31,6 +31,7 @@ Cerner Corporation
 - Anjali Roy [@anjaliroy19]
 - Akarsh Shetty [@ShettyAkarsh]
 - Naveen Kumar Ramamurthy [@nramamurth]
+- Lokesh P [@lokesh-0813]
 
 Community
 
@@ -68,3 +69,4 @@ Community
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
 [@nramamurth]: https://github.com/nramamurth
 [@PayalSawant]: https://github.com/PayalSawant
+[@lokesh-0813]: https://github.com/lokesh-0813
