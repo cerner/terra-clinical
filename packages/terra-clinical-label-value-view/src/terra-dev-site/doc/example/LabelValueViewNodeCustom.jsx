@@ -1,18 +1,15 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import LabelValueView from 'terra-clinical-label-value-view/lib/LabelValueView';
+import classNames from 'classnames/bind';
+import styles from './LabelValueViewNodeCustom.scss';
 
-const divStyle = {
-  border: '1px solid #d3d4d5',
-  borderRadius: '5px',
-  padding: '0 20px',
-  width: '280px',
-};
+const cx = classNames.bind(styles);
 
 const LabelValueViewNodeCustom = () => (
   <div>
     <LabelValueView label="Label">
-      <div style={divStyle}>
+      <div className={cx('label-value-view-content-div-style')}>
         <h3>Custom H3 for the Value</h3>
         <p>Custom paragraph of text for the Value. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>

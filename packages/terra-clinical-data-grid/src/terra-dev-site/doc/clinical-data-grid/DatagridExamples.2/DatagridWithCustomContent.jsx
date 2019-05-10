@@ -3,8 +3,11 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 import ItemView from 'terra-clinical-item-view';
+import classNames from 'classnames/bind';
 import CustomHeaderCellLayout from './CustomHeaderCellLayout';
+import styles from './DatagridWithCustomContent.scss';
 
+const cx = classNames.bind(styles);
 const pinnedColumns = [
   {
     id: 'Column-0',
@@ -94,10 +97,7 @@ class DatagridWithCustomContent extends React.Component {
               <ItemView.Display isTruncated text="Item View" />,
               <ItemView.Display isTruncated text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae." />,
             ]}
-            style={{
-              height: '100%',
-              width: '100%',
-            }}
+            className={cx('data-grid-row-style')}
           />
         ),
       })),
@@ -115,7 +115,7 @@ class DatagridWithCustomContent extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '800px' }}>
+      <div className={cx('data-grid-div-style')}>
         <DataGrid
           id="basic-example"
           pinnedColumns={pinnedColumns}
