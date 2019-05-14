@@ -32,6 +32,7 @@ Cerner Corporation
 - Akarsh Shetty [@ShettyAkarsh]
 - Supreeth MR [@supreethmr]
 - Naveen Kumar Ramamurthy [@nramamurth]
+- Lokesh P [@lokesh-0813]
 
 Community
 
@@ -70,3 +71,4 @@ Community
 [@supreethmr]: https://github.com/supreethmr
 [@nramamurth]: https://github.com/nramamurth
 [@PayalSawant]: https://github.com/PayalSawant
+[@lokesh-0813]: https://github.com/lokesh-0813
