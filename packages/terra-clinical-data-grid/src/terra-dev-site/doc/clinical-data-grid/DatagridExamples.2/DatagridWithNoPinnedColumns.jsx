@@ -83,7 +83,7 @@ class DatagridWithNoPinnedColumns extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-div-style')}>
+      <div className={cx('data-grid-no-pinned-columns')}>
         <DataGrid
           id="no-pinning-example"
           overflowColumns={overflowColumns}

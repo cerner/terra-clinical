@@ -96,7 +96,7 @@ class DatagridWithSelections extends React.Component {
     const { columns } = this.state;
 
     return (
-      <div className={cx('data-grid-div-style')}>
+      <div className={cx('data-grid-with-selections')}>
         <DataGrid
           id="selections-example"
           pinnedColumns={[

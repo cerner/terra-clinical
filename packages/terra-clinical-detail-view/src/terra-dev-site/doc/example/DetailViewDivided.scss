@@ -1,5 +1,7 @@
+@import './Detailview';
+
 :local {
-  .detail-view-divided-div-style {
-    border: 3px dotted #d3d4d5;
+  .detail-view-divided {
+    @extend %detail-view-border;
   }
 }

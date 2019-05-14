@@ -96,7 +96,7 @@ class DatagridWithColumnResizing extends React.Component {
     const { columns } = this.state;
 
     return (
-      <div className={cx('data-grid-div-style')}>
+      <div className={cx('data-grid-column-resizing')}>
         <DataGrid
           id="column-resize-example"
           pinnedColumns={[

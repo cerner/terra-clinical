@@ -77,7 +77,7 @@ class StaticDataGrid extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-div-style')}>
+      <div className={cx('data-grid-basic')}>
         <DataGrid
           id="basic-example"
           pinnedColumns={pinnedColumns}

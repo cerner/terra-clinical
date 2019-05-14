@@ -10,9 +10,9 @@ const cx = classNames.bind(styles);
 const Subheader = () => (
   <div>
     <Header
-      startContent={<div><Button text="Button" className={cx('button-margin')} /></div>}
+      startContent={<div><Button text="Button" className={cx('button')} /></div>}
       title="Default Subheader"
-      endContent={<div><Button text="Button" className={cx('button-margin')} /></div>}
+      endContent={<div><Button text="Button" className={cx('button')} /></div>}
       isSubheader
     />
   </div>

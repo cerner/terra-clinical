@@ -1,5 +1,7 @@
+@import './Datagrid';
+
 :local {
-  .data-grid-div-style {
-    height: 800px;
+  .data-grid-with-selections {
+    @extend %data-grid-height;
   }
 }

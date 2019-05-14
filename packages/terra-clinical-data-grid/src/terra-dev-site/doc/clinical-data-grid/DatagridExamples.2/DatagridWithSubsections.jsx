@@ -106,7 +106,7 @@ class DatagridWithSubsections extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-div-style')}>
+      <div className={cx('data-grid-with-subsections')}>
         <DataGrid
           id="subsections-example"
           pinnedColumns={pinnedColumns}

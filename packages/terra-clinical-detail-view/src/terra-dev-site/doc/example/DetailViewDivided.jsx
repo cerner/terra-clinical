@@ -19,7 +19,7 @@ const detail2item3 = (<LabelValueView label="Comments" textValue="Lorem ipsum do
 
 
 const DetailViewDivided = () => (
-  <div className={cx('detail-view-divided-div-style')}>
+  <div className={cx('detail-view-divided')}>
     <DetailView
       title="Mother"
       subtitles={['Martha (58 years)', '[second line for subtitles]']}

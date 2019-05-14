@@ -13,7 +13,7 @@ const item3 = (<LabelValueView label="Collected By" textValue="Nuse Collect" />)
 const item4 = (<LabelValueView label="Priority" textValue="High" />);
 
 const DetailViewDivided = () => (
-  <div className={cx('detail-view-div-style')}>
+  <div className={cx('detail-view-no-divider')}>
     <DetailView
       title="Complete Blood Count Order"
       subtitles={['Accession', '239493849']}

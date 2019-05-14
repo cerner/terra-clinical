@@ -115,7 +115,7 @@ class DatagridWithCustomContent extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-div-style')}>
+      <div className={cx('data-grid-custom-content')}>
         <DataGrid
           id="basic-example"
           pinnedColumns={pinnedColumns}
