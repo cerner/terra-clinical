@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added legend and isLegendHidden prop to Onsetpicker field group.
 
 4.2.0 - (April 16, 2019)
 ----------

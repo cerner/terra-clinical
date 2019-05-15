@@ -4,12 +4,13 @@ import moment from 'moment';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import OnsetPicker from 'terra-clinical-onset-picker/lib/OnsetPicker';
 
-const picker = () => (
+const OnsetWithHiddenLegend = () => (
   <OnsetPicker
-    legend="Date of Birth"
     birthdate={moment().subtract(6, 'years').format('YYYY-MM-DD')}
-    id="doogs"
+    id="onsetlegend"
+    legend="Date of Birth"
+    isLegendHidden
   />
 );
 
-export default picker;
+export default OnsetWithHiddenLegend;
