@@ -370,5 +370,13 @@ viewports.forEach((viewport) => {
 
       Terra.should.validateElement({ axeRules });
     });
+
+    describe('Hides legend when isLegendHidden is true', () => {
+      before(() => {
+        browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/with-hidden-legend');
+      });
+
+      Terra.should.validateElement({ axeRules });
+    });
   });
 });
