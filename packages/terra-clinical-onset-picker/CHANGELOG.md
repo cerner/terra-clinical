@@ -4,6 +4,8 @@ ChangeLog
 Unreleased
 ----------
 ### Added
+* Documentation of violation scenarios.
+* Indicate in site examples what birthdate is set to.
 * Added legend and isLegendHidden prop to Onsetpicker field group.
 
 4.2.0 - (April 16, 2019)
