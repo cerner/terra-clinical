@@ -87,8 +87,8 @@
     "react-test-renderer": "^16.4.2",
     "stylelint": "^10.0.1",
     "stylelint-config-terra": "^3.0.0",
-    "terra-dev-site": "^4.0.0",
-    "terra-base": "^4.0.0",
-    "terra-toolkit": "^4.26.0"
+    "terra-base": "^5.0.0",
+    "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#v5",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#master"
   }
 }

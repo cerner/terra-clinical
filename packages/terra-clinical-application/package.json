@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
   "devDependencies": {
-    "terra-app-delegate": "^2.0.0"
+    "terra-app-delegate": "^2.0.0",
+    "terra-base": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",
