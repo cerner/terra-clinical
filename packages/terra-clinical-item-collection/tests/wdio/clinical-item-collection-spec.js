@@ -37,6 +37,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.click('#item1');
         browser.click('#selected-key');
       });
+      after(() => browser.moveToObject('#root', 0, 0));
 
       Terra.should.validateElement();
     });
@@ -48,6 +49,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.keys(['Tab', 'Tab', 'Tab', 'Enter']);
         browser.click('#selected-key');
       });
+      after(() => browser.moveToObject('#root', 0, 0));
 
       Terra.should.validateElement();
     });
@@ -59,6 +61,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.keys(['Tab', 'Tab', 'Tab', 'Tab', 'Tab', ' ']);
         browser.click('#selected-key');
       });
+      after(() => browser.moveToObject('#root', 0, 0));
 
       Terra.should.validateElement();
     });
