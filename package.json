@@ -88,6 +88,10 @@
     "stylelint-config-terra": "^3.0.0",
     "terra-base": "^5.0.0",
     "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#v5",
-    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#master"
+    "terra-disclosure-manager": "^4.9.0",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#master",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1",
+    "webpack": "^4.30.0"
   }
 }
