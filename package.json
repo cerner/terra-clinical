@@ -52,7 +52,7 @@
     "pretest": "npm run lint",
     "postinstall": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
     "publish": "npm whoami && check-installed-dependencies && npm run compile && npm test && lerna publish",
-    "start": "tt-serve",
+    "start": "tt-serve --config node_modules/terra-dev-site/config/webpack/webpack.config.js",
     "start-heroku": " npm run compile:prod && tt-serve-static --port $PORT --site './build' ",
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
