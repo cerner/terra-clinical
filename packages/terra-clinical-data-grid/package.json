@@ -27,7 +27,6 @@
     "react-intl": "^2.8.0"
   },
   "devDependencies": {
-    "react-router-dom": "^4.2.2",
     "terra-props-table": "^2.0.0"
   },
   "dependencies": {
