@@ -1,12 +1,6 @@
 version: '3'
 
 services:
-  test-ci:
-    build: ./
-    image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
-    depends_on:
-      - standalone-chrome
-
   dev: &dev
     image: "terra-clinical:dev"
     build:
@@ -35,3 +29,11 @@ services:
   term:
     <<: *dev
     command: "/bin/zsh"
+  
+  test-ci:
+    build: ./
+    image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
+    environment:
+      - CI=true
+    depends_on:
+      - standalone-chrome
