@@ -42,7 +42,7 @@ jobs:
         - "travis_wait docker-compose run test-ci npm run wdio -- --suite suite2"
     -
       script:
-        - "travis_wait docker-compose run npm run wdio -- --suite suite3"
+        - "travis_wait docker-compose run test-ci npm run wdio -- --suite suite3"
     -
       script:
         - "travis_wait docker-compose run test-ci npm run wdio -- --suite suite4"
