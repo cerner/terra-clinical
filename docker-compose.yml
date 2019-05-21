@@ -1,6 +1,12 @@
 version: '3'
 
 services:
+  test-ci:
+    build: ./
+    image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
+    depends_on:
+      - standalone-chrome
+
   dev: &dev
     image: "terra-clinical:dev"
     build:
@@ -23,7 +29,6 @@ services:
     # Necessary due to some issues with chrome in docker.  See https://github.com/SeleniumHQ/docker-selenium#running-the-images
     volumes:
       - '/dev/shm:/dev/shm'
-    # Necessary to lock down screen sizes for our screen shot comparisons.
     environment:
       TZ: 'America/Chicago'
 
