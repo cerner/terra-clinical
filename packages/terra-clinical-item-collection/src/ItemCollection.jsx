@@ -9,11 +9,26 @@ import './ItemCollection.scss';
 
 const maxDisplays = 8;
 
+const breakpoints = {
+  TINY: 'tiny',
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  HUGE: 'huge',
+};
+
 const propTypes = {
   /**
-   * The breakpoint to switch from a table view to a list view. Breakpoint options are tiny, small, medium, large, or huge.
+   * The breakpoint to switch from a table view to a list view.
+   * Breakpoint options are `tiny`, `small`, `medium`, `large`, or `huge`.
    */
-  breakpoint: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
+  breakpoint: PropTypes.oneOf([
+    breakpoints.TINY,
+    breakpoints.SMALL,
+    breakpoints.MEDIUM,
+    breakpoints.LARGE,
+    breakpoints.HUGE,
+  ]),
   /**
    * The items that will flex between either a list item or a table row.
    */
@@ -58,7 +73,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  breakpoint: 'small',
+  breakpoint: breakpoints.SMALL,
   hasStartAccessory: false,
   numberOfDisplays: 0,
   hasComment: false,
@@ -129,6 +144,9 @@ const ItemCollection = (props) => {
 
 ItemCollection.propTypes = propTypes;
 ItemCollection.defaultProps = defaultProps;
+
+ItemCollection.Opts = {};
+ItemCollection.Opts.Breakpoints = breakpoints;
 
 // Item Collection Building Blocks
 ItemCollection.Item = Item;

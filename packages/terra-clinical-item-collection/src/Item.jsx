@@ -8,6 +8,26 @@ import styles from './ItemCollection.scss';
 
 const cx = classNames.bind(styles);
 
+const layouts = {
+  ONE_COLUMN: 'oneColumn',
+  TWO_COLUMNS: 'twoColumns',
+};
+
+const emphasisTypes = {
+  DEFAULT: 'default',
+  START: 'start',
+};
+
+const alignments = {
+  ALIGN_TOP: 'alignTop',
+  ALIGN_CENTER: 'alignCenter',
+};
+
+const views = {
+  LIST: 'list',
+  TABLE: 'table',
+};
+
 const propTypes = {
   /**
    * The display elements to be presented.
@@ -32,12 +52,12 @@ const propTypes = {
    * When displayed as a list item, the column layout in which to present the displays.
    * One of `'oneColumn'`, `'twoColumns'`.
    */
-  listItemLayout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
+  listItemLayout: PropTypes.oneOf([layouts.ONE_COLUMN, layouts.TWO_COLUMNS]),
   /**
    * When displayed as a list item, the text color emphasis when using the two columns layout.
    * One of `'default'`, `'start'`.
    */
-  listItemTextEmphasis: PropTypes.oneOf(['default', 'start']),
+  listItemTextEmphasis: PropTypes.oneOf([emphasisTypes.DEFAULT, emphasisTypes.START]),
   /**
    * When displayed as a list item, whether or not all text should truncate.
    */
@@ -45,7 +65,7 @@ const propTypes = {
   /**
    * The vertical alignment of the start and end accessories. One of `'alignTop'`,`'alignCenter'`.
    */
-  accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
+  accessoryAlignment: PropTypes.oneOf([alignments.ALIGN_TOP, alignments.ALIGN_CENTER]),
   /**
    * When displayed as a list item, indicates whether or not space is allocated for the start accessory.
    * This will be set by the Item Collection component.
@@ -67,24 +87,24 @@ const propTypes = {
   isSelected: PropTypes.bool,
   /**
    * The view in which the item should be presented. Options are list or table and this will be set by the
-   * Item Collection component.
+   * Item Collection component. One of `list`, `table`.
    */
-  view: PropTypes.oneOf(['list', 'table']),
+  view: PropTypes.oneOf([views.LIST, views.TABLE]),
 };
 
 const defaultProps = {
   startAccessory: undefined,
   comment: undefined,
   endAccessory: undefined,
-  accessoryAlignment: 'alignCenter',
+  accessoryAlignment: alignments.ALIGN_CENTER,
   isListItemTruncated: false,
   isSelectable: false,
   isSelected: false,
-  listItemLayout: 'oneColumn',
-  listItemTextEmphasis: 'default',
+  listItemLayout: layouts.ONE_COLUMN,
+  listItemTextEmphasis: emphasisTypes.DEFAULT,
   reserveStartAccessorySpace: false,
   showListItemChevron: false,
-  view: 'list',
+  view: views.LIST,
 };
 
 function createListItem(elements, selectableProps, customProps, isSelected, itemViewStyles, showListItemChevron) {
@@ -118,8 +138,8 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
   const cellClassNames = cx(
     `content-${contentType}`,
     { 'content-end-accessory': keyValue === 'end_accessory' },
-    { 'content-accessory-align-center': (contentType.includes('accessory') && accessoryAlignment === 'alignCenter') },
-    { 'content-accessory-align-top': (contentType.includes('accessory') && accessoryAlignment === 'alignTop') },
+    { 'content-accessory-align-center': (contentType.includes('accessory') && accessoryAlignment === alignments.ALIGN_CENTER) },
+    { 'content-accessory-align-top': (contentType.includes('accessory') && accessoryAlignment === alignments.ALIGN_TOP) },
   );
 
   return (<Table.Cell content={content} key={keyValue} className={cellClassNames} />);
@@ -168,7 +188,7 @@ const Item = (props) => {
   };
   const selectableProps = isSelectable ? { isSelectable, tabIndex: 0 } : {};
 
-  if (view === 'table') {
+  if (view === views.TABLE) {
     return createTableRow(elements, selectableProps, customProps, isSelected, accessoryAlignment);
   }
 
@@ -182,5 +202,14 @@ Item.propTypes = propTypes;
 Item.defaultProps = defaultProps;
 Item.Display = ItemView.Display;
 Item.Comment = ItemView.Comment;
+
+const opts = {
+  Layouts: layouts,
+  EmphasisTypes: emphasisTypes,
+  Alignments: alignments,
+  Views: views,
+};
+
+Item.Opts = opts;
 
 export default Item;

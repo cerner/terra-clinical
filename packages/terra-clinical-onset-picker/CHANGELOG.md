@@ -7,6 +7,7 @@ Unreleased
 * Documentation of violation scenarios.
 * Indicate in site examples what birthdate is set to.
 * Added legend and isLegendHidden prop to Onsetpicker field group.
+* Added enumeration for valid age unit, granularity, precision, and precision set values
 
 4.2.0 - (April 16, 2019)
 ----------

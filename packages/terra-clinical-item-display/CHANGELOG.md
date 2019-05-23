@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added enumeration for valid text style values
 
 3.3.0 - (March 26, 2019)
 ----------

@@ -6,23 +6,38 @@ import styles from './ItemView.scss';
 
 const cx = classNames.bind(styles);
 
+const layouts = {
+  ONE_COLUMN: 'oneColumn',
+  TWO_COLUMNS: 'twoColumns',
+};
+
+const emphasisTypes = {
+  DEFAULT: 'default',
+  START: 'start',
+};
+
+const alignments = {
+  ALIGN_TOP: 'alignTop',
+  ALIGN_CENTER: 'alignCenter',
+};
+
 const propTypes = {
   /**
-   * The column layout in which to present the displays.
+   * The column layout in which to present the displays. One of `oneColumn`, `twoColumn`.
    */
-  layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
+  layout: PropTypes.oneOf([layouts.ONE_COLUMN, layouts.TWO_COLUMNS]),
   /**
-   * The text color emphasis when using two columns.
+   * The text color emphasis when using two columns. One of `default`, `start`.
    */
-  textEmphasis: PropTypes.oneOf(['default', 'start']),
+  textEmphasis: PropTypes.oneOf([emphasisTypes.DEFAULT, emphasisTypes.START]),
   /**
    * Whether or not all text on the view should be truncated.
    */
   isTruncated: PropTypes.bool,
   /**
-   * The vertical alignment of the start and end accesories.
+   * The vertical alignment of the start and end accesories. One of `alignTop`, `alignCenter`.
    */
-  accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
+  accessoryAlignment: PropTypes.oneOf([alignments.ALIGN_TOP, alignments.ALIGN_CENTER]),
   /**
    * The react element to be placed in the start aligned accessory position.
    */
@@ -50,10 +65,10 @@ const propTypes = {
 };
 
 const defaultProps = {
-  layout: 'oneColumn',
-  textEmphasis: 'default',
+  layout: layouts.ONE_COLUMN,
+  textEmphasis: emphasisTypes.DEFAULT,
   isTruncated: false,
-  accessoryAlignment: 'alignCenter',
+  accessoryAlignment: alignments.ALIGN_CENTER,
   startAccessory: undefined,
   reserveStartAccessorySpace: false,
   endAccessory: undefined,
@@ -67,8 +82,8 @@ const renderAccessory = (accessory, reserveSpace, accessoryAlignment, type) => {
     const accessoryClassNames = cx(
       'accessory',
       `${type}-accessory`,
-      { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
-      { 'accessory-align-top': accessoryAlignment === 'alignTop' },
+      { 'accessory-align-center': accessoryAlignment === alignments.ALIGN_CENTER },
+      { 'accessory-align-top': accessoryAlignment === alignments.ALIGN_TOP },
     );
 
     accessorySection = (
@@ -107,7 +122,7 @@ const startEmphasisContentClassesFromIndexes = (rowIndex, rowCount, contentIndex
 
 const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
   let classes;
-  if (emphasis === 'start') {
+  if (emphasis === emphasisTypes.START) {
     classes = startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
   } else {
     classes = defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
@@ -139,7 +154,7 @@ const renderRows = (displays, layout, emphasis) => {
 
   const displayGroups = [];
   const displaysSlice = displays.slice(0, 8);
-  const spliceValue = layout === 'twoColumns' ? 2 : 1;
+  const spliceValue = layout === layouts.TWO_COLUMNS ? 2 : 1;
 
   while (displaysSlice.length) {
     displayGroups.push(displaysSlice.splice(0, spliceValue));
@@ -171,8 +186,8 @@ const ItemView = ({
   const viewClassNames = cx([
     'item-view',
     { 'is-truncated': isTruncated },
-    { 'one-column': layout === 'oneColumn' },
-    { 'two-columns': layout === 'twoColumns' },
+    { 'one-column': layout === layouts.ONE_COLUMN },
+    { 'two-columns': layout === layouts.TWO_COLUMNS },
     customProps.className,
   ]);
 
@@ -190,6 +205,14 @@ const ItemView = ({
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
+
+const opts = {
+  Layouts: layouts,
+  EmphasisTypes: emphasisTypes,
+  Alignments: alignments,
+};
+ItemView.Opts = opts;
+
 ItemView.Display = ItemDisplay;
 ItemView.Comment = ItemDisplay.Comment;
 

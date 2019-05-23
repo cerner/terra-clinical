@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added enumeration for valid breakpoint values
+* Added enumeration for valid Item layout, emphasis, alignment, and view values
 
 4.3.0 - (May 7, 2019)
 ----------

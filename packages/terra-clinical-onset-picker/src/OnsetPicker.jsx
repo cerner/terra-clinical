@@ -12,6 +12,12 @@ import styles from './OnsetPicker.module.scss';
 
 const cx = classNames.bind(styles);
 
+const ageUnits = {
+  WEEKS: 'weeks',
+  MONTHS: 'months',
+  YEARS: 'years',
+};
+
 const GranularityOptions = {
   AGE: 'age',
   YEAR: 'year',
@@ -23,21 +29,22 @@ const DATE_FORMAT = 'YYYY-MM-DD';
 
 const propTypes = {
   /**
-   * The date unit of the age value. One of 'weeks', 'months', or 'years'.
+   * The date unit of the age value. One of `weeks`, `months`, or `years`.
    */
   ageUnit: PropTypes.oneOf([
-    'weeks',
-    'months',
-    'years',
+    ageUnits.WEEKS,
+    ageUnits.MONTHS,
+    ageUnits.YEARS,
   ]),
+
   /**
-   * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the 'age' precision.
-   * Also limits the earliest possible date that can be selected for an onset date for 'year', 'month', and 'date' precision.
+   * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the `age` precision.
+   * Also limits the earliest possible date that can be selected for an onset date for `year`, `month`, and `date` precision.
    */
   birthdate: PropTypes.string.isRequired,
 
   /**
-   * The granularity of the onset date. One of 'age', 'year', 'month', or 'date' is accepted.
+   * The granularity of the onset date. One of `age`, `year`, `month`, or `date` is accepted.
    */
   granularity: PropTypes.oneOf([
     GranularityOptions.AGE,
@@ -53,6 +60,7 @@ const propTypes = {
 
   /**
    * The precision of the onset date. This should be one of precisions passed to the precisionSet prop.
+   * One of `on/at`, `about`, `before`, `after`, or `unknown`.
    */
   precision: PropTypes.oneOf([
     OnsetUtils.PrecisionOptions.ONAT,
@@ -64,7 +72,7 @@ const propTypes = {
 
   /**
    * The set of precisions that can be used with the onset picker.
-   * One of 'on/at', 'about', 'before', 'after', or 'unknown'.
+   * Combination of `on/at`, `about`, `before`, `after`, and `unknown`.
    * Order of precisions determines order in precision select.
    */
   precisionSet: PropTypes.arrayOf(PropTypes.oneOf([
@@ -508,5 +516,12 @@ class OnsetPicker extends React.Component {
 OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
 OnsetPicker.contextTypes = contextTypes;
+
+const opts = {
+  AgeUnits: ageUnits,
+  GranularityOptions,
+  PrecisionOptions: OnsetUtils.PrecisionOptions,
+};
+OnsetPicker.Opts = opts;
 
 export default OnsetPicker;

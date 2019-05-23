@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added enumeration for valid layout, emphasis, and alignment values
 
 3.3.0 - (March 26, 2019)
 ----------
