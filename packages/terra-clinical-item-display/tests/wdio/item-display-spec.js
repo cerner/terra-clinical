@@ -6,7 +6,7 @@ Terra.viewports('tiny', 'medium').forEach((viewport) => {
 
     describe('default', () => {
       before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/default-item-display'));
-       
+      Terra.it.validatesElement();
     });
 
     describe('text style', () => {
