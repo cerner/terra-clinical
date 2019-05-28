@@ -11,7 +11,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge').forEach((viewport) =
         browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-divided');
       });
 
-      it.validatesElement({ selector });
+      Terra.it.validatesElement();({ selector });
     });
 
     describe('Displays a Detail View that is not divided with provided components', () => {
@@ -19,7 +19,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge').forEach((viewport) =
         browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-no-divider');
       });
 
-      it.validatesElement({ selector });
+      Terra.it.validatesElement();({ selector });
     });
 
     describe('Displays a Detail View with provided components and when title size is smaller', () => {
@@ -27,13 +27,13 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge').forEach((viewport) =
         browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-divided-smaller-titles');
       });
 
-      it.validatesElement({ selector });
+      Terra.it.validatesElement();({ selector });
     });
 
     describe('Displays a Detail View with overflowed title text', () => {
       before(() => browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-overflow-text'));
 
-      it.validatesElement({ selector });
+      Terra.it.validatesElement();({ selector });
     });
   });
 });

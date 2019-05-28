@@ -8,7 +8,7 @@
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/standard-data-grid');
         });
 
-        it.validatesElement('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.it.validatesElement();('#pinned-and-overflow', { selector: '#standard-data-grid' });
       });
 
       describe('with horizontal overflow', () => {
@@ -17,7 +17,7 @@
           browser.click('[data-cell-label="section_0-0-Column-12"]');
         });
 
-        it.validatesElement('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.it.validatesElement();('#pinned-and-overflow', { selector: '#standard-data-grid' });
 
         after(() => browser.moveToObject('#root', 0, 0));
       });
@@ -28,7 +28,7 @@
           browser.click('[data-cell-label="section_0-29-Column-12"]');
         });
 
-        it.validatesElement('#pinned-and-overflow', { selector: '#standard-data-grid' });
+        Terra.it.validatesElement();('#pinned-and-overflow', { selector: '#standard-data-grid' });
         after(() => browser.moveToObject('#root', 0, 0));
       });
     });
@@ -39,7 +39,7 @@
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-fill-data-grid');
         });
 
-        it.validatesElement('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.it.validatesElement();('#no-fill', { selector: '#no-fill-data-grid' });
       });
 
       describe('with horizontal overflow', () => {
@@ -48,7 +48,7 @@
           browser.click('[data-cell-label="section_0-0-Column-12"]');
         });
 
-        it.validatesElement('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.it.validatesElement();('#no-fill', { selector: '#no-fill-data-grid' });
 
         after(() => browser.moveToObject('#root', 0, 0));
       });
@@ -59,7 +59,7 @@
           browser.click('[data-cell-label="section_0-29-Column-12"]');
         });
 
-        it.validatesElement('#no-fill', { selector: '#no-fill-data-grid' });
+        Terra.it.validatesElement();('#no-fill', { selector: '#no-fill-data-grid' });
 
         after(() => browser.moveToObject('#root', 0, 0));
       });
@@ -71,7 +71,7 @@
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-pinned-column-data-grid');
         });
 
-        it.validatesElement('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.it.validatesElement();('#no-pinned', { selector: '#no-pinned-column-data-grid' });
       });
 
       describe('with horizontal overflow', () => {
@@ -80,7 +80,7 @@
           browser.click('[data-cell-label="section_0-0-Column-12"]');
         });
 
-        it.validatesElement('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.it.validatesElement();('#no-pinned', { selector: '#no-pinned-column-data-grid' });
 
         after(() => browser.moveToObject('#root', 0, 0));
       });
@@ -91,7 +91,7 @@
           browser.click('[data-cell-label="section_0-29-Column-12"]');
         });
 
-        it.validatesElement('#no-pinned', { selector: '#no-pinned-column-data-grid' });
+        Terra.it.validatesElement();('#no-pinned', { selector: '#no-pinned-column-data-grid' });
 
         after(() => browser.moveToObject('#root', 0, 0));
       });
@@ -103,7 +103,7 @@
           browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/no-overflow-column-data-grid');
         });
 
-        it.validatesElement('#no-overflow', { selector: '#no-overflow-column-data-grid' });
+        Terra.it.validatesElement();('#no-overflow', { selector: '#no-overflow-column-data-grid' });
       });
 
       describe('with vertical overflow', () => {
@@ -112,7 +112,7 @@
           browser.click('[data-cell-label="section_0-29-Column-0"]');
         });
 
-        it.validatesElement('#no-overflow', { selector: '#no-overflow-column-data-grid' });
+        Terra.it.validatesElement();('#no-overflow', { selector: '#no-overflow-column-data-grid' });
 
         after(() => browser.moveToObject('#root', 0, 0));
       });
@@ -126,22 +126,22 @@
       it('tabs across selectable headers', () => {
         browser.keys(new Array(4).fill('Tab'));
       });
-      it.validatesElement('#forward-headers', { selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();('#forward-headers', { selector: '#selectable-data-grid' });
 
       it('tabs backwards across selectable headers', () => {
         browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
       });
-      it.validatesElement('#backward-headers', { selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();('#backward-headers', { selector: '#selectable-data-grid' });
 
       it('tabs across selectable sections and cells', () => {
         browser.keys(new Array(128).fill('Tab'));
       });
-      it.validatesElement('#forward-sections', { selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();('#forward-sections', { selector: '#selectable-data-grid' });
 
       it('tabs backwards selectable sections and cells', () => {
         browser.keys(['Shift'].concat(new Array(3).fill('Tab')).concat(['Shift']));
       });
-      it.validatesElement('#backward-sections', { selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();('#backward-sections', { selector: '#selectable-data-grid' });
 
       after(() => browser.refresh());
     });
@@ -152,7 +152,7 @@
         browser.moveToObject('[data-accessibility-id="8"]');
       });
 
-      it.validatesElement({ selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();({ selector: '#selectable-data-grid' });
     });
 
     describe('with cell selections', () => {
@@ -161,7 +161,7 @@
         browser.click('[data-cell-label="section_0-0-Column-0"]');
       });
 
-      it.validatesElement({ selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();({ selector: '#selectable-data-grid' });
 
       after(() => browser.refresh());
     });
@@ -172,7 +172,7 @@
         browser.moveToObject('[data-accessibility-id="7"]');
       });
 
-      it.validatesElement({ selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();({ selector: '#selectable-data-grid' });
     });
 
     describe('with row selections', () => {
@@ -181,7 +181,7 @@
         browser.click('#selections-example-Pinned-Row-Row-0-Section-section_0 > *:first-child');
       });
 
-      it.validatesElement({ selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();({ selector: '#selectable-data-grid' });
     });
 
     describe('with selected row hover', () => {
@@ -194,7 +194,7 @@
         browser.moveToObject('[data-accessibility-id="7"]');
       });
 
-      it.validatesElement({ selector: '#selectable-data-grid', axeRules });
+      Terra.it.validatesElement();({ selector: '#selectable-data-grid', axeRules });
 
       after(() => browser.refresh());
     });
@@ -205,7 +205,7 @@
         browser.click('#selectable-data-grid [class*="HeaderCell"]:nth-child(2)');
       });
 
-      it.validatesElement({ selector: '#selectable-data-grid' });
+      Terra.it.validatesElement();({ selector: '#selectable-data-grid' });
 
       after(() => browser.moveToObject('#root', 0, 0));
     });
@@ -216,7 +216,7 @@
         browser.moveToObject('[data-accessibility-id="0"]');
       });
 
-      it.validatesElement({ selector: '#subsection-data-grid' });
+      Terra.it.validatesElement();({ selector: '#subsection-data-grid' });
 
       after(() => browser.moveToObject('#root', 0, 0));
     });
@@ -227,7 +227,7 @@
         browser.click('#subsection-data-grid [class*="SectionHeader"]');
       });
 
-      it.validatesElement({ selector: '#subsection-data-grid' });
+      Terra.it.validatesElement();({ selector: '#subsection-data-grid' });
 
       after(() => browser.moveToObject('#root', 0, 0));
     });
@@ -238,7 +238,7 @@
         browser.waitForVisible('#paging-example-Pinned-Row-section_1-Row0-Section-section_1');
       });
 
-      it.validatesElement({ selector: '#paged-data-grid' });
+      Terra.it.validatesElement();({ selector: '#paged-data-grid' });
     });
 
     describe('with custom row/header heights', () => {
@@ -246,7 +246,7 @@
         browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/custom-height-data-grid');
       });
 
-      it.validatesElement({ selector: '#custom-height-data-grid' });
+      Terra.it.validatesElement();({ selector: '#custom-height-data-grid' });
     });
   });
 });

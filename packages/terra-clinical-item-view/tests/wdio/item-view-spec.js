@@ -9,7 +9,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
       });
 
-      it.validatesElement({ selector: '#test-displays' });
+      Terra.it.validatesElement();({ selector: '#test-displays' });
     });
 
     describe('with two column displays', () => {
@@ -17,7 +17,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
       });
 
-      it.validatesElement({ selector: '#test-displays-two' });
+      Terra.it.validatesElement();({ selector: '#test-displays-two' });
     });
 
     describe('with two column and start displays', () => {
@@ -25,7 +25,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
       });
 
-      it.validatesElement({ selector: '#test-displays-two-start' });
+      Terra.it.validatesElement();({ selector: '#test-displays-two-start' });
     });
 
     describe('with accessories', () => {
@@ -41,7 +41,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
       });
 
-      it.validatesElement({ selector: '#ItemView1' });
+      Terra.it.validatesElement();({ selector: '#ItemView1' });
     });
 
     describe('with truncated comment set', () => {
@@ -49,7 +49,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
       });
 
-      it.validatesElement({ selector: '#ItemView2' });
+      Terra.it.validatesElement();({ selector: '#ItemView2' });
     });
 
     describe('with the full example word wrap - one column', () => {
@@ -57,7 +57,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      it.validatesElement({ selector: '#ItemView-one-wrap' });
+      Terra.it.validatesElement();({ selector: '#ItemView-one-wrap' });
     });
 
     describe('with the full example word wrap - two column', () => {
@@ -65,7 +65,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      it.validatesElement({ selector: '#ItemView-two-wrap' });
+      Terra.it.validatesElement();({ selector: '#ItemView-two-wrap' });
     });
   });
 });
@@ -81,7 +81,7 @@ Terra.viewports('enormous').forEach((viewport) => {
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      it.validatesElement({ selector: '#ItemView-one-truncate' });
+      Terra.it.validatesElement();({ selector: '#ItemView-one-truncate' });
     });
 
     describe('with the full example truncated - two truncated', () => {
@@ -89,7 +89,7 @@ Terra.viewports('enormous').forEach((viewport) => {
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      it.validatesElement({ selector: '#ItemView-one-truncate' });
+      Terra.it.validatesElement();({ selector: '#ItemView-one-truncate' });
     });
   });
 });
