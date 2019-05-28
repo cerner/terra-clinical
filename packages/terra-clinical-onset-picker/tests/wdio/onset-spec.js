@@ -12,7 +12,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-year');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
 
       it('has year options', () => {
         browser.click('#test-year-select');
@@ -20,7 +20,7 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#terra-select-option-2015');
       });
 
-      Terra.should.validateElement('year options', { selector: '#root' });
+      it.validatesElement('year options', { selector: '#root' });
 
       it('does not show a year before birth date', () => {
         browser.isExisting('#terra-select-option-2010').should.equal(false);
@@ -34,7 +34,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-2015');
       });
 
-      Terra.should.validateElement('year option selected');
+      it.validatesElement('year option selected');
     });
 
     describe('has [month-year granularity] select', () => {
@@ -45,7 +45,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-month');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
 
       it('does not show a month before the birth date', () => {
         browser.click('#test-year-select');
@@ -73,13 +73,13 @@ viewports.forEach((viewport) => {
         browser.moveToObject('#terra-select-option-3');
       });
 
-      Terra.should.validateElement('month options', { selector: '#root' });
+      it.validatesElement('month options', { selector: '#root' });
 
       it('Can select a month between the birth date and current year', () => {
         browser.click('#terra-select-option-3');
       });
 
-      Terra.should.validateElement('month option selected');
+      it.validatesElement('month option selected');
     });
 
     describe('has [date granularity]', () => {
@@ -90,7 +90,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-date');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('has [age granularity]', () => {
@@ -101,7 +101,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-age');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('has [unknown precision]', () => {
@@ -112,7 +112,7 @@ viewports.forEach((viewport) => {
         browser.click('#terra-select-option-unknown');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('age set to [five years]', () => {
@@ -131,7 +131,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.validateElement('invalid year input', { selector: '#root' });
+      it.validatesElement('invalid year input', { selector: '#root' });
 
       it('cannot select more than 24 months', () => {
         browser.click('#test-age-unit-select');
@@ -143,7 +143,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.validateElement('invalid month input', { selector: '#root' });
+      it.validatesElement('invalid month input', { selector: '#root' });
 
       it('cannot select more than 8 weeks', () => {
         browser.click('#test-age-unit-select');
@@ -155,7 +155,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.validateElement('invalid week input', { selector: '#root' });
+      it.validatesElement('invalid week input', { selector: '#root' });
     });
 
     describe('has age set to [less than one year] ', () => {
@@ -178,7 +178,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.validateElement('invalid month input', { selector: '#root' });
+      it.validatesElement('invalid month input', { selector: '#root' });
     });
 
     describe('has age set to [less than one month] ', () => {
@@ -202,7 +202,7 @@ viewports.forEach((viewport) => {
         browser.pause(2900);
       });
 
-      Terra.should.validateElement('invalid month input', { selector: '#root' });
+      it.validatesElement('invalid month input', { selector: '#root' });
     });
 
     describe('has [onsetOnChange callback]', () => {
@@ -214,7 +214,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.validateElement('granularity changed');
+      it.validatesElement('granularity changed');
 
       it('that fires when month select is changed', () => {
         browser.click('#test-month-select');
@@ -222,7 +222,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.validateElement('month select changed');
+      it.validatesElement('month select changed');
 
       it('that fires when year select is changed', () => {
         browser.click('#test-granularity-select');
@@ -232,7 +232,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.validateElement('year select changed');
+      it.validatesElement('year select changed');
 
       it('that fires when age input is changed', () => {
         browser.click('#test-granularity-select');
@@ -244,7 +244,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.validateElement('age input changed');
+      it.validatesElement('age input changed');
 
       it('that fires when ageUnit select is changed', () => {
         browser.click('#test-age-unit-select');
@@ -252,7 +252,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.validateElement('ageUnit select changed');
+      it.validatesElement('ageUnit select changed');
 
       it('that fires when precision is changed', () => {
         browser.click('#test-precision-select');
@@ -260,7 +260,7 @@ viewports.forEach((viewport) => {
         browser.click('button[type="submit"]');
       });
 
-      Terra.should.validateElement('precision changed');
+      it.validatesElement('precision changed');
     });
 
     describe('Hides legend when isLegendHidden is true', () => {
@@ -268,7 +268,7 @@ viewports.forEach((viewport) => {
         browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/with-hidden-legend');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
   });
 });

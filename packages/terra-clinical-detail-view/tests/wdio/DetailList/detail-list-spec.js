@@ -11,7 +11,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge').forEach((viewport) =
         browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-list/normal-item-list');
       });
 
-      Terra.should.validateElement({ selector });
+      it.validatesElement({ selector });
     });
 
     describe('Displays a default Detail List with a title and large list', () => {
@@ -19,7 +19,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge').forEach((viewport) =
         browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-list/large-item-list');
       });
 
-      Terra.should.validateElement({ selector });
+      it.validatesElement({ selector });
     });
   });
 });

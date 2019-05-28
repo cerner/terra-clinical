@@ -9,17 +9,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#test-displays' });
-
-      Terra.should.themeCombinationOfCustomProperties({
-        testName: 'themed',
-        selector: '#test-displays',
-        properties: {
-          '--terra-clinical-item-view-content-color': 'green',
-          '--terra-clinical-item-view-content-primary-color': 'purple',
-          '--terra-clinical-item-view-content-secondary-color': 'maroon',
-        },
-      });
+      it.validatesElement({ selector: '#test-displays' });
     });
 
     describe('with two column displays', () => {
@@ -27,7 +17,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#test-displays-two' });
+      it.validatesElement({ selector: '#test-displays-two' });
     });
 
     describe('with two column and start displays', () => {
@@ -35,7 +25,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#test-displays-two-start' });
+      it.validatesElement({ selector: '#test-displays-two-start' });
     });
 
     describe('with accessories', () => {
@@ -43,7 +33,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/accessory-item-view');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('with default comment set', () => {
@@ -51,7 +41,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#ItemView1' });
+      it.validatesElement({ selector: '#ItemView1' });
     });
 
     describe('with truncated comment set', () => {
@@ -59,7 +49,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/comment-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#ItemView2' });
+      it.validatesElement({ selector: '#ItemView2' });
     });
 
     describe('with the full example word wrap - one column', () => {
@@ -67,7 +57,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#ItemView-one-wrap' });
+      it.validatesElement({ selector: '#ItemView-one-wrap' });
     });
 
     describe('with the full example word wrap - two column', () => {
@@ -75,7 +65,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#ItemView-two-wrap' });
+      it.validatesElement({ selector: '#ItemView-two-wrap' });
     });
   });
 });
@@ -91,7 +81,7 @@ Terra.viewports('enormous').forEach((viewport) => {
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#ItemView-one-truncate' });
+      it.validatesElement({ selector: '#ItemView-one-truncate' });
     });
 
     describe('with the full example truncated - two truncated', () => {
@@ -99,7 +89,7 @@ Terra.viewports('enormous').forEach((viewport) => {
         browser.url('/#/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
       });
 
-      Terra.should.validateElement({ selector: '#ItemView-one-truncate' });
+      it.validatesElement({ selector: '#ItemView-one-truncate' });
     });
   });
 });
