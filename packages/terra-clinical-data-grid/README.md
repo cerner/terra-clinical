@@ -3,7 +3,7 @@
 The DataGrid is an organizational component that renders a collection of data in a grid-like format.
 
 [![NPM version](http://img.shields.io/npm/v/terra-clinical-data-grid.svg)](https://www.npmjs.org/package/terra-clinical-data-grid)
-[![Build Status](https://travis-ci.org/cerner/terra-clinical.svg?branch=master)](https://travis-ci.org/cerner/terra-clinical)
+[![Build Status](https://travis-ci.com/cerner/terra-clinical.svg?branch=master)](https://travis-ci.com/cerner/terra-clinical)
 
 - [Getting Started](#getting-started)
 - [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-data-grid/docs)
