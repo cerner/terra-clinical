@@ -84,7 +84,6 @@
     "markdown-magic": "^0.1.25",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0",
     "react-test-renderer": "^16.4.2",
     "stylelint": "^10.0.1",
     "stylelint-config-terra": "^3.0.0",
