@@ -9,7 +9,10 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-application/clinical-application/default-application');
       });
 
-      Terra.should.validateElement();
+      it('has the app delegate', () => {
+        const pageMessage = browser.element('#test-ContainerComponent').getText();
+        expect(pageMessage).to.include('is present');
+      });
     });
 
     describe('Renders the Application without provided AppDelegate', () => {
@@ -17,7 +20,10 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-application/clinical-application/no-app-delegate-application');
       });
 
-      Terra.should.validateElement();
+      it('does not have the app delegate', () => {
+        const pageMessage = browser.getText('#test-ContainerComponent');
+        expect(pageMessage).to.include('is not present');
+      });
     });
   });
 });
