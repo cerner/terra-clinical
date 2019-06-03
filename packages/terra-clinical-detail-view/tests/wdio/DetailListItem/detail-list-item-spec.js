@@ -6,7 +6,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge').forEach((viewport) =
         browser.url('/#/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-list-item/default-list-item');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
   });
 });
