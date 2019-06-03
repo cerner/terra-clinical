@@ -11,7 +11,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-all-elements');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Displays the correct collection when responding to breakpoint', () => {
@@ -19,7 +19,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-all-elements');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Displays a selectable item collection', () => {
@@ -27,7 +27,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Returns child key for click when onSelect is given to a selectable item collection', () => {
@@ -37,8 +37,9 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.click('#item1');
         browser.click('#selected-key');
       });
+      after(() => browser.moveToObject('#root', 0, 0));
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Returns child key for ENTER when onSelect is given to a selectable item collection', () => {
@@ -48,8 +49,9 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.keys(['Tab', 'Tab', 'Tab', 'Enter']);
         browser.click('#selected-key');
       });
+      after(() => browser.moveToObject('#root', 0, 0));
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Returns child key for SPACE when onSelect is given to a selectable item collection', () => {
@@ -59,8 +61,9 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.keys(['Tab', 'Tab', 'Tab', 'Tab', 'Tab', ' ']);
         browser.click('#selected-key');
       });
+      after(() => browser.moveToObject('#root', 0, 0));
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Displays an item collection with table styles', () => {
@@ -68,7 +71,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-table-styles');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Displays an item collection with list styles', () => {
@@ -76,7 +79,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-list-styles');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Displays an item collection with styles applied to list items', () => {
@@ -84,7 +87,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-item-styles');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
 
     describe('Displays an item collection with items with varying content', () => {
@@ -92,7 +95,7 @@ Terra.viewports('tiny', 'small', 'medium', 'large', 'huge', 'enormous').forEach(
         browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-varying-items');
       });
 
-      Terra.should.validateElement();
+      Terra.it.validatesElement();
     });
   });
 });

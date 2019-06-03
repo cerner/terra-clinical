@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-clinical-application)](https://www.npmjs.org/package/terra-clinical-application)
-[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
+[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.com/cerner/terra-clinical)
 
 The Application is a wrapper component around `terra-base` that provides clinical application-specific properties.
 

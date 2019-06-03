@@ -3,6 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Documentation of violation scenarios.
+* Indicate in site examples what birthdate is set to.
+* Added legend and isLegendHidden prop to Onsetpicker field group.
+
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 4.2.0 - (April 16, 2019)
 ----------

@@ -6,6 +6,8 @@ Unreleased
 ### Changed 
 * Replaced inline stylings for terra-dev-site components with .scss files
 
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
 2.5.0 - (May 7, 2019)
 ----------
