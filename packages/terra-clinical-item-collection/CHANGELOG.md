@@ -7,6 +7,9 @@ Unreleased
 * Added enumeration for valid breakpoint values
 * Added enumeration for valid Item layout, emphasis, alignment, and view values
 
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+
 4.3.0 - (May 7, 2019)
 ----------
 ### Changed
