@@ -8,6 +8,7 @@ Unreleased
 ----------
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
+* Update wdio spec to use Terra.describeViewports
 
 ### Removed
 * Removed peer dependency on terra-base
