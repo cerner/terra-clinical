@@ -1,4 +1,4 @@
-Terra.describeViewports('ItemDisplay', ['tiny', 'medium'], () => { 
+Terra.describeViewports('ItemDisplay', ['tiny', 'medium'], () => {
   describe('default', () => {
     before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/default-item-display'));
     Terra.it.validatesElement();
