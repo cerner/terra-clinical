@@ -1,4 +1,4 @@
-Terra.describeViewports('Clinical Application', ['tiny', 'enormous'], () => {
+Terra.describeViewports('Clinical Application', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   describe('Renders the Application with provided AppDelegate', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-application/clinical-application/default-application');
