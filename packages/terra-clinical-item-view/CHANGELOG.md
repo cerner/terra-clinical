@@ -3,7 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
-###Updated
+
+3.4.0 - (June 11, 2019)
+----------
+### Updated
 * Updated displays documentation
 
 ### Removed

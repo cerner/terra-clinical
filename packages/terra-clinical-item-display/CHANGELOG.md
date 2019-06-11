@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.4.0 - (June 11, 2019)
+----------
 ### Removed
 * Removed node_modules from .npmignore
 
