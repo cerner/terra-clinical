@@ -51,7 +51,7 @@ const propTypes = {
    */
   endAccessory: PropTypes.node,
   /**
-   * An array of react display elements to be presented.
+   * An array of terra-clinical-item-display's to be presented.
    */
   displays: PropTypes.arrayOf(PropTypes.element),
   /**

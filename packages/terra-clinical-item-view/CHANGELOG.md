@@ -12,6 +12,9 @@ Unreleased
 ### Removed
 * Removed node_modules from .npmignore
 
+###Updated
+* Updated displays documentation
+
 3.3.0 - (March 26, 2019)
 ----------
 ### Changed
