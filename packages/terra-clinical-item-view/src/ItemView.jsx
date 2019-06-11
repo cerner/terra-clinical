@@ -11,12 +11,12 @@ const layouts = {
   TWO_COLUMNS: 'twoColumns',
 };
 
-const emphasisTypes = {
+const textEmphasisTypes = {
   DEFAULT: 'default',
   START: 'start',
 };
 
-const alignments = {
+const accessoryAlignments = {
   ALIGN_TOP: 'alignTop',
   ALIGN_CENTER: 'alignCenter',
 };
@@ -29,7 +29,7 @@ const propTypes = {
   /**
    * The text color emphasis when using two columns. One of `default`, `start`.
    */
-  textEmphasis: PropTypes.oneOf([emphasisTypes.DEFAULT, emphasisTypes.START]),
+  textEmphasis: PropTypes.oneOf([textEmphasisTypes.DEFAULT, textEmphasisTypes.START]),
   /**
    * Whether or not all text on the view should be truncated.
    */
@@ -37,7 +37,7 @@ const propTypes = {
   /**
    * The vertical alignment of the start and end accesories. One of `alignTop`, `alignCenter`.
    */
-  accessoryAlignment: PropTypes.oneOf([alignments.ALIGN_TOP, alignments.ALIGN_CENTER]),
+  accessoryAlignment: PropTypes.oneOf([accessoryAlignments.ALIGN_TOP, accessoryAlignments.ALIGN_CENTER]),
   /**
    * The react element to be placed in the start aligned accessory position.
    */
@@ -66,9 +66,9 @@ const propTypes = {
 
 const defaultProps = {
   layout: layouts.ONE_COLUMN,
-  textEmphasis: emphasisTypes.DEFAULT,
+  textEmphasis: textEmphasisTypes.DEFAULT,
   isTruncated: false,
-  accessoryAlignment: alignments.ALIGN_CENTER,
+  accessoryAlignment: accessoryAlignments.ALIGN_CENTER,
   startAccessory: undefined,
   reserveStartAccessorySpace: false,
   endAccessory: undefined,
@@ -82,8 +82,8 @@ const renderAccessory = (accessory, reserveSpace, accessoryAlignment, type) => {
     const accessoryClassNames = cx(
       'accessory',
       `${type}-accessory`,
-      { 'accessory-align-center': accessoryAlignment === alignments.ALIGN_CENTER },
-      { 'accessory-align-top': accessoryAlignment === alignments.ALIGN_TOP },
+      { 'accessory-align-center': accessoryAlignment === accessoryAlignments.ALIGN_CENTER },
+      { 'accessory-align-top': accessoryAlignment === accessoryAlignments.ALIGN_TOP },
     );
 
     accessorySection = (
@@ -122,7 +122,7 @@ const startEmphasisContentClassesFromIndexes = (rowIndex, rowCount, contentIndex
 
 const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
   let classes;
-  if (emphasis === emphasisTypes.START) {
+  if (emphasis === textEmphasisTypes.START) {
     classes = startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
   } else {
     classes = defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
@@ -208,8 +208,8 @@ ItemView.defaultProps = defaultProps;
 
 const opts = {
   Layouts: layouts,
-  EmphasisTypes: emphasisTypes,
-  Alignments: alignments,
+  TextEmphasisTypes: textEmphasisTypes,
+  AccessoryAlignments: accessoryAlignments,
 };
 ItemView.Opts = opts;
 

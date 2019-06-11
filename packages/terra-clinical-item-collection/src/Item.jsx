@@ -8,17 +8,17 @@ import styles from './ItemCollection.scss';
 
 const cx = classNames.bind(styles);
 
-const layouts = {
+const listItemLayouts = {
   ONE_COLUMN: 'oneColumn',
   TWO_COLUMNS: 'twoColumns',
 };
 
-const emphasisTypes = {
+const listItemTextEmphasisTypes = {
   DEFAULT: 'default',
   START: 'start',
 };
 
-const alignments = {
+const accessoryAlignments = {
   ALIGN_TOP: 'alignTop',
   ALIGN_CENTER: 'alignCenter',
 };
@@ -52,12 +52,12 @@ const propTypes = {
    * When displayed as a list item, the column layout in which to present the displays.
    * One of `'oneColumn'`, `'twoColumns'`.
    */
-  listItemLayout: PropTypes.oneOf([layouts.ONE_COLUMN, layouts.TWO_COLUMNS]),
+  listItemLayout: PropTypes.oneOf([listItemLayouts.ONE_COLUMN, listItemLayouts.TWO_COLUMNS]),
   /**
    * When displayed as a list item, the text color emphasis when using the two columns layout.
    * One of `'default'`, `'start'`.
    */
-  listItemTextEmphasis: PropTypes.oneOf([emphasisTypes.DEFAULT, emphasisTypes.START]),
+  listItemTextEmphasis: PropTypes.oneOf([listItemTextEmphasisTypes.DEFAULT, listItemTextEmphasisTypes.START]),
   /**
    * When displayed as a list item, whether or not all text should truncate.
    */
@@ -65,7 +65,7 @@ const propTypes = {
   /**
    * The vertical alignment of the start and end accessories. One of `'alignTop'`,`'alignCenter'`.
    */
-  accessoryAlignment: PropTypes.oneOf([alignments.ALIGN_TOP, alignments.ALIGN_CENTER]),
+  accessoryAlignment: PropTypes.oneOf([accessoryAlignments.ALIGN_TOP, accessoryAlignments.ALIGN_CENTER]),
   /**
    * When displayed as a list item, indicates whether or not space is allocated for the start accessory.
    * This will be set by the Item Collection component.
@@ -96,12 +96,12 @@ const defaultProps = {
   startAccessory: undefined,
   comment: undefined,
   endAccessory: undefined,
-  accessoryAlignment: alignments.ALIGN_CENTER,
+  accessoryAlignment: accessoryAlignments.ALIGN_CENTER,
   isListItemTruncated: false,
   isSelectable: false,
   isSelected: false,
-  listItemLayout: layouts.ONE_COLUMN,
-  listItemTextEmphasis: emphasisTypes.DEFAULT,
+  listItemLayout: listItemLayouts.ONE_COLUMN,
+  listItemTextEmphasis: listItemTextEmphasisTypes.DEFAULT,
   reserveStartAccessorySpace: false,
   showListItemChevron: false,
   view: views.LIST,
@@ -138,8 +138,8 @@ function createTableCell(content, keyValue, contentType, accessoryAlignment) {
   const cellClassNames = cx(
     `content-${contentType}`,
     { 'content-end-accessory': keyValue === 'end_accessory' },
-    { 'content-accessory-align-center': (contentType.includes('accessory') && accessoryAlignment === alignments.ALIGN_CENTER) },
-    { 'content-accessory-align-top': (contentType.includes('accessory') && accessoryAlignment === alignments.ALIGN_TOP) },
+    { 'content-accessory-align-center': (contentType.includes('accessory') && accessoryAlignment === accessoryAlignments.ALIGN_CENTER) },
+    { 'content-accessory-align-top': (contentType.includes('accessory') && accessoryAlignment === accessoryAlignments.ALIGN_TOP) },
   );
 
   return (<Table.Cell content={content} key={keyValue} className={cellClassNames} />);
@@ -204,9 +204,9 @@ Item.Display = ItemView.Display;
 Item.Comment = ItemView.Comment;
 
 const opts = {
-  Layouts: layouts,
-  EmphasisTypes: emphasisTypes,
-  Alignments: alignments,
+  ListItemLayouts: listItemLayouts,
+  ListItemTextEmphasisTypes: listItemTextEmphasisTypes,
+  AccessoryAlignments: accessoryAlignments,
   Views: views,
 };
 
