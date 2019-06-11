@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+###Updated
+* Updated displays documentation
+
 ### Removed
 * Removed node_modules from .npmignore
 
