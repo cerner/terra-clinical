@@ -9,6 +9,9 @@ Unreleased
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
+### Removed
+* Removed node_modules from .npmignore
+
 2.5.0 - (May 7, 2019)
 ----------
 ### Changed 

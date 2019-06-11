@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added enumeration for valid text style values
 
+### Removed
+* Removed node_modules from .npmignore
+
 3.3.0 - (March 26, 2019)
 ----------
 ### Changed

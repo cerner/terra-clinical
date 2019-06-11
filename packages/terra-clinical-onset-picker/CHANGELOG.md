@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Added
 * Documentation of violation scenarios.
 * Indicate in site examples what birthdate is set to.
