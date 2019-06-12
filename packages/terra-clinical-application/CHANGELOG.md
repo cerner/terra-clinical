@@ -6,9 +6,6 @@ Unreleased
 
 3.3.0 - (June 11, 2019)
 ----------
-### Removed
-* Removed node_modules from .npmignore
-
 ### Changed
 * Update tests for terra-toolkit v5 changes
 
