@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added enumeration for valid age unit, granularity, precision, and precision set values
 
 4.3.0 - (June 11, 2019)
 ----------
@@ -13,7 +15,6 @@ Unreleased
 * Documentation of violation scenarios.
 * Indicate in site examples what birthdate is set to.
 * Added legend and isLegendHidden prop to Onsetpicker field group.
-* Added enumeration for valid age unit, granularity, precision, and precision set values
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
