@@ -7,6 +7,11 @@ Unreleased
 * Added enumeration for valid breakpoint values
 * Added enumeration for valid Item layout, emphasis, alignment, and view values
 
+4.4.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 
