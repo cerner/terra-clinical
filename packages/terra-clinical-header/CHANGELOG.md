@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Update wdio spec to use Terra.describeViewports
 
+3.5.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
 3.4.0 - (May 7, 2019)
 ----------
 ## Fixed
