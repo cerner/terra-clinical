@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update wdio spec to use Terra.describeViewports
 
 3.5.0 - (June 11, 2019)
 ----------

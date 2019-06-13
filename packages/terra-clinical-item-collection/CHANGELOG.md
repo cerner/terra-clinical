@@ -11,6 +11,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
 
 4.3.0 - (May 7, 2019)
 ----------
