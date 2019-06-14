@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed IE10 wrapping issue for label-value-views inside of detail-view-list.
 
 3.4.0 - (March 26, 2019)
 ----------
