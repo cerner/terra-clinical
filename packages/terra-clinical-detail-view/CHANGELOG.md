@@ -3,8 +3,16 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update wdio specs to use Terra.describeViewports
+
 ### Fixed
 * Fixed IE10 wrapping issue for label-value-views inside of detail-view-list.
+
+3.5.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
 
 3.4.0 - (March 26, 2019)
 ----------
