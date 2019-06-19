@@ -1,7 +1,0 @@
-@import './Datagrid';
-
-:local {
-  .data-grid-no-pinned-columns {
-    @extend %data-grid-height;
-  }
-}

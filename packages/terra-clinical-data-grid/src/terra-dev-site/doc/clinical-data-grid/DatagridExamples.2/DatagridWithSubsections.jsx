@@ -5,7 +5,7 @@ import Button from 'terra-button';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
-import styles from './DatagridWithSubsections.scss';
+import styles from './Datagrid.scss';
 
 const cx = classNames.bind(styles);
 
@@ -106,7 +106,7 @@ class DatagridWithSubsections extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-with-subsections')}>
+      <div className={cx('data-grid-basic')}>
         <DataGrid
           id="subsections-example"
           pinnedColumns={pinnedColumns}

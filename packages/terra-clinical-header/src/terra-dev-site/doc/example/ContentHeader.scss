@@ -1,7 +1,5 @@
-@import './Header';
-
 :local {
-  .button {
-    @extend %button-margin;
+  .header-button {
+    margin: 0 10px;
   }
 }

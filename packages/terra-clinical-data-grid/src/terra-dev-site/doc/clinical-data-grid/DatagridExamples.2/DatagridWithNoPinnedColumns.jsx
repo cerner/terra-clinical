@@ -4,7 +4,7 @@ import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
-import styles from './DatagridWithNoPinnedColumns.scss';
+import styles from './Datagrid.scss';
 
 const cx = classNames.bind(styles);
 
@@ -83,7 +83,7 @@ class DatagridWithNoPinnedColumns extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-no-pinned-columns')}>
+      <div className={cx('data-grid-basic')}>
         <DataGrid
           id="no-pinning-example"
           overflowColumns={overflowColumns}

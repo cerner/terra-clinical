@@ -10,9 +10,9 @@ const cx = classNames.bind(styles);
 const TitleHeader = () => (
   <div>
     <Header
-      startContent={<div><Button text="Button" className={cx('button')} /></div>}
+      startContent={<div><Button text="Button" className={cx('header-button')} /></div>}
       title="Default Header"
-      endContent={<div><Button text="Button" className={cx('button')} /></div>}
+      endContent={<div><Button text="Button" className={cx('header-button')} /></div>}
     />
   </div>
 );

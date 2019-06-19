@@ -5,7 +5,7 @@ import DataGrid from 'terra-clinical-data-grid';
 import ItemView from 'terra-clinical-item-view';
 import classNames from 'classnames/bind';
 import CustomHeaderCellLayout from './CustomHeaderCellLayout';
-import styles from './DatagridWithCustomContent.scss';
+import styles from './Datagrid.scss';
 
 const cx = classNames.bind(styles);
 const pinnedColumns = [
@@ -115,7 +115,7 @@ class DatagridWithCustomContent extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-custom-content')}>
+      <div className={cx('data-grid-basic')}>
         <DataGrid
           id="basic-example"
           pinnedColumns={pinnedColumns}

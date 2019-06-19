@@ -5,7 +5,7 @@ import DataGrid from 'terra-clinical-data-grid';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
-import styles from './DatagridWithPaging.scss';
+import styles from './Datagrid.scss';
 
 const cx = classNames.bind(styles);
 
@@ -94,7 +94,7 @@ class DatagridWithPaging extends React.Component {
 
   render() {
     return (
-      <div className={cx('data-grid-with-paging')}>
+      <div className={cx('data-grid-paging')}>
         <DataGrid
           id="paging-example"
           pinnedColumns={pinnedColumns}
@@ -110,7 +110,7 @@ class DatagridWithPaging extends React.Component {
             });
           }) : undefined}
         />
-        {<LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('overlay')} />}
+        {<LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('loading-overlay')} />}
       </div>
     );
   }

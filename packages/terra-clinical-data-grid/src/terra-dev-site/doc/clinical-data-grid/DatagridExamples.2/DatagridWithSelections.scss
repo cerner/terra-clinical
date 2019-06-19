@@ -1,7 +1,0 @@
-@import './Datagrid';
-
-:local {
-  .data-grid-with-selections {
-    @extend %data-grid-height;
-  }
-}

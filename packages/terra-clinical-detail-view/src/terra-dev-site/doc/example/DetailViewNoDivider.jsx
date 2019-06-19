@@ -3,7 +3,7 @@ import LabelValueView from 'terra-clinical-label-value-view';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DetailView from 'terra-clinical-detail-view/lib/DetailView';
 import classNames from 'classnames/bind';
-import styles from './DetailViewNoDivider.scss';
+import styles from './DetailViewDivided.scss';
 
 const cx = classNames.bind(styles);
 

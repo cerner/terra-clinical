@@ -1,7 +1,0 @@
-@import './Detailview';
-
-:local {
-  .detail-view-no-divider {
-    @extend %detail-view-border;
-  }
-}

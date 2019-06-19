@@ -1,7 +1,0 @@
-@import './Datagrid';
-
-:local {
-  .data-grid-column-resizing {
-    @extend %data-grid-height;
-  }
-}

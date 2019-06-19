@@ -4,7 +4,7 @@ import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
-import styles from './DatagridWithSelections.scss';
+import styles from './Datagrid.scss';
 
 const cx = classNames.bind(styles);
 
@@ -96,7 +96,7 @@ class DatagridWithSelections extends React.Component {
     const { columns } = this.state;
 
     return (
-      <div className={cx('data-grid-with-selections')}>
+      <div className={cx('data-grid-basic')}>
         <DataGrid
           id="selections-example"
           pinnedColumns={[
