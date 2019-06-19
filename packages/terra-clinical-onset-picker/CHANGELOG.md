@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated jest snapshots.
 
 4.3.0 - (June 11, 2019)
 ----------
