@@ -7,7 +7,7 @@ Unreleased
 * Update wdio specs to use Terra.describeViewports
 
 ### Fixed
-* Fixed IE10 wrapping issue for label-value-views inside of detail-view-list.
+* Added max-width to DetailListItem resolving IE10 wrapping issue for label-value-views inside of detail-view-list.
 
 3.5.0 - (June 11, 2019)
 ----------
