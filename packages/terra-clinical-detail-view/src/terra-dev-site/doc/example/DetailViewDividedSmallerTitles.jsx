@@ -26,7 +26,7 @@ const detail2item4 = (<LabelValueView label="Admin Notes" textValue="Try med for
 
 
 const DetailViewDivided = () => (
-  <div className={cx('detail-view-divided-small-title')}>
+  <div className={cx('detail-view-divided')}>
     <DetailView
       title="Multiple Ingredients"
       secondaryTitles={['M. V. I. Adult 10 mL = 10 mL', 'Sodium bicarbonate 8.4% 50 mL', 'Dextrose 5% in Water 1000 mL']}
