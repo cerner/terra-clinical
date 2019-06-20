@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const sortIndicators = {
+const SortIndicators = {
   ASCENDING: 'ascending',
   DESCENDING: 'descending',
 };
@@ -34,11 +34,11 @@ const columnDataShape = PropTypes.shape({
    * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
-  sortIndicator: PropTypes.oneOf([sortIndicators.ASCENDING, sortIndicators.DESCENDING]),
+  sortIndicator: PropTypes.oneOf([SortIndicators.ASCENDING, SortIndicators.DESCENDING]),
   /**
    * A custom component to render within the column header. If provided, the `text` and `sortIndicator` values will be ignored.
    */
   component: PropTypes.node,
 });
 
-export { columnDataShape, sortIndicators };
+export { columnDataShape, SortIndicators };

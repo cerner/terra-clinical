@@ -6,7 +6,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 import Cell from './Cell';
 import ResizeHandle from './ResizeHandle';
-import { sortIndicators as SortIndicators } from '../proptypes/columnDataShape';
+import { SortIndicators } from '../proptypes/columnDataShape';
 
 import styles from './HeaderCell.module.scss';
 

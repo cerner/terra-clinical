@@ -16,7 +16,7 @@ import SectionHeader from './subcomponents/SectionHeader';
 
 import dataGridUtils from './utils/dataGridUtils';
 
-import { columnDataShape, sortIndicators as ColumnSortIndicators } from './proptypes/columnDataShape';
+import { columnDataShape, SortIndicators as ColumnSortIndicators } from './proptypes/columnDataShape';
 import sectionDataShape from './proptypes/sectionDataShape';
 
 import styles from './DataGrid.module.scss';
