@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.3.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Added
 * Documentation of violation scenarios.
 * Indicate in site examples what birthdate is set to.
@@ -10,6 +16,7 @@ Unreleased
 
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
 
 4.2.0 - (April 16, 2019)
 ----------

@@ -3,9 +3,16 @@ Changelog
 
 Unreleased
 ----------
+
+2.6.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Update data grid button navigation to communicate usage to users
+* Update wdio spec to use Terra.describeViewports
 
 2.5.0 - (May 7, 2019)
 ----------

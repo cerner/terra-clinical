@@ -3,8 +3,15 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.4.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
 
 4.3.0 - (May 7, 2019)
 ----------

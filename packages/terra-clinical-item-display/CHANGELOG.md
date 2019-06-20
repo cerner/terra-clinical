@@ -4,10 +4,16 @@ ChangeLog
 Unreleased
 ----------
 
+3.4.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
 3.3.0 - (March 26, 2019)
 ----------
 ### Changed
 * Update react/react-dom peer-dependency to latest stable minor release
+* Update wdio spec to use Terra.describeViewports
 
 ### Removed
 * Removed peer dependency on terra-base
