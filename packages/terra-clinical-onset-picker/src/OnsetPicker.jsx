@@ -12,7 +12,7 @@ import styles from './OnsetPicker.module.scss';
 
 const cx = classNames.bind(styles);
 
-const ageUnits = {
+const AgeUnits = {
   WEEKS: 'weeks',
   MONTHS: 'months',
   YEARS: 'years',
@@ -25,6 +25,8 @@ const GranularityOptions = {
   DATE: 'date',
 };
 
+const { PrecisionOptions } = OnsetUtils;
+
 const DATE_FORMAT = 'YYYY-MM-DD';
 
 const propTypes = {
@@ -32,9 +34,9 @@ const propTypes = {
    * The date unit of the age value. One of `weeks`, `months`, or `years`.
    */
   ageUnit: PropTypes.oneOf([
-    ageUnits.WEEKS,
-    ageUnits.MONTHS,
-    ageUnits.YEARS,
+    AgeUnits.WEEKS,
+    AgeUnits.MONTHS,
+    AgeUnits.YEARS,
   ]),
 
   /**
@@ -63,11 +65,11 @@ const propTypes = {
    * One of `on/at`, `about`, `before`, `after`, or `unknown`.
    */
   precision: PropTypes.oneOf([
-    OnsetUtils.PrecisionOptions.ONAT,
-    OnsetUtils.PrecisionOptions.ABOUT,
-    OnsetUtils.PrecisionOptions.BEFORE,
-    OnsetUtils.PrecisionOptions.AFTER,
-    OnsetUtils.PrecisionOptions.UNKNOWN,
+    PrecisionOptions.ONAT,
+    PrecisionOptions.ABOUT,
+    PrecisionOptions.BEFORE,
+    PrecisionOptions.AFTER,
+    PrecisionOptions.UNKNOWN,
   ]),
 
   /**
@@ -76,11 +78,11 @@ const propTypes = {
    * Order of precisions determines order in precision select.
    */
   precisionSet: PropTypes.arrayOf(PropTypes.oneOf([
-    OnsetUtils.PrecisionOptions.ONAT,
-    OnsetUtils.PrecisionOptions.ABOUT,
-    OnsetUtils.PrecisionOptions.BEFORE,
-    OnsetUtils.PrecisionOptions.AFTER,
-    OnsetUtils.PrecisionOptions.UNKNOWN,
+    PrecisionOptions.ONAT,
+    PrecisionOptions.ABOUT,
+    PrecisionOptions.BEFORE,
+    PrecisionOptions.AFTER,
+    PrecisionOptions.UNKNOWN,
   ])),
 
   /**
@@ -313,7 +315,7 @@ class OnsetPicker extends React.Component {
     const { intl } = this.context;
 
     let granularitySelect = null;
-    if (this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) {
+    if (this.state.precision !== PrecisionOptions.UNKNOWN) {
       granularitySelect = (
         <SelectField
           className={cx('field-inline', 'granularity')}
@@ -498,7 +500,7 @@ class OnsetPicker extends React.Component {
 
           {granularitySelect}
 
-          {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) && (
+          {(this.state.precision !== PrecisionOptions.UNKNOWN) && (
             <div>
               {ageInput}
               {ageUnitSelect}
@@ -517,11 +519,9 @@ OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
 OnsetPicker.contextTypes = contextTypes;
 
-const opts = {
-  AgeUnits: ageUnits,
-  GranularityOptions,
-  PrecisionOptions: OnsetUtils.PrecisionOptions,
-};
-OnsetPicker.Opts = opts;
-
 export default OnsetPicker;
+export {
+  AgeUnits,
+  GranularityOptions,
+  PrecisionOptions,
+};

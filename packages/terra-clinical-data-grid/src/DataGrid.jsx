@@ -16,7 +16,7 @@ import SectionHeader from './subcomponents/SectionHeader';
 
 import dataGridUtils from './utils/dataGridUtils';
 
-import { columnDataShape, sortIndicators as columnSortIndicators } from './proptypes/columnDataShape';
+import { columnDataShape, sortIndicators as ColumnSortIndicators } from './proptypes/columnDataShape';
 import sectionDataShape from './proptypes/sectionDataShape';
 
 import styles from './DataGrid.module.scss';
@@ -1103,7 +1103,6 @@ class DataGrid extends React.Component {
 
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
-DataGrid.Opts = {};
-DataGrid.Opts.ColumnSortIndicators = columnSortIndicators;
 
 export default injectIntl(DataGrid);
+export { ColumnSortIndicators };

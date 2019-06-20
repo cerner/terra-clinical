@@ -9,7 +9,7 @@ import './ItemCollection.scss';
 
 const maxDisplays = 8;
 
-const breakpoints = {
+const Breakpoints = {
   TINY: 'tiny',
   SMALL: 'small',
   MEDIUM: 'medium',
@@ -23,11 +23,11 @@ const propTypes = {
    * Breakpoint options are `tiny`, `small`, `medium`, `large`, or `huge`.
    */
   breakpoint: PropTypes.oneOf([
-    breakpoints.TINY,
-    breakpoints.SMALL,
-    breakpoints.MEDIUM,
-    breakpoints.LARGE,
-    breakpoints.HUGE,
+    Breakpoints.TINY,
+    Breakpoints.SMALL,
+    Breakpoints.MEDIUM,
+    Breakpoints.LARGE,
+    Breakpoints.HUGE,
   ]),
   /**
    * The items that will flex between either a list item or a table row.
@@ -73,7 +73,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  breakpoint: breakpoints.SMALL,
+  breakpoint: Breakpoints.SMALL,
   hasStartAccessory: false,
   numberOfDisplays: 0,
   hasComment: false,
@@ -145,12 +145,10 @@ const ItemCollection = (props) => {
 ItemCollection.propTypes = propTypes;
 ItemCollection.defaultProps = defaultProps;
 
-ItemCollection.Opts = {};
-ItemCollection.Opts.Breakpoints = breakpoints;
-
 // Item Collection Building Blocks
 ItemCollection.Item = Item;
 ItemCollection.Comment = Item.Comment;
 ItemCollection.Display = Item.Display;
 
 export default ItemCollection;
+export { Breakpoints };

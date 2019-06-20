@@ -6,7 +6,7 @@ import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
 import Cell from './Cell';
 import ResizeHandle from './ResizeHandle';
-import { sortIndicators } from '../proptypes/columnDataShape';
+import { sortIndicators as SortIndicators } from '../proptypes/columnDataShape';
 
 import styles from './HeaderCell.module.scss';
 
@@ -30,7 +30,7 @@ const propTypes = {
    * rendered within in the header. However, if custom children are also provided, the sorting indicator will
    * not be rendered.
    */
-  sortIndicator: PropTypes.oneOf([sortIndicators.ASCENDING, sortIndicators.DESCENDING]),
+  sortIndicator: PropTypes.oneOf([SortIndicators.ASCENDING, SortIndicators.DESCENDING]),
   /**
    * Boolean indicating whether or not the HeaderCell is selectable.
    */
@@ -94,8 +94,8 @@ class HeaderCell extends React.Component {
       if (sortIndicator) {
         sortIndicatorComponent = (
           <div className={cx('sort-indicator')}>
-            {sortIndicator === sortIndicators.ASCENDING ? <IconCaretUp /> : null}
-            {sortIndicator === sortIndicators.DESCENDING ? <IconCaretDown /> : null}
+            {sortIndicator === SortIndicators.ASCENDING ? <IconCaretUp /> : null}
+            {sortIndicator === SortIndicators.DESCENDING ? <IconCaretDown /> : null}
           </div>
         );
       }
@@ -130,7 +130,6 @@ class HeaderCell extends React.Component {
 }
 
 HeaderCell.propTypes = propTypes;
-HeaderCell.Opts = {};
-HeaderCell.Opts.SortIndicators = sortIndicators;
 
 export default HeaderCell;
+export { SortIndicators };
