@@ -1051,7 +1051,7 @@ class DataGrid extends React.Component {
       >
         <div
           role="button"
-          aria-hidden
+          aria-label="Navigate to date grid"
           className={cx('leading-focus-anchor')}
           tabIndex="0"
           onFocus={this.handleLeadingFocusAnchorFocus}
@@ -1090,7 +1090,7 @@ class DataGrid extends React.Component {
         </ContentContainer>
         <div
           role="button"
-          aria-hidden
+          aria-label="Navigate to date grid"
           className={cx('terminal-focus-anchor')}
           tabIndex="0"
           onFocus={this.handleTerminalFocusAnchorFocus}
