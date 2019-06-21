@@ -25,11 +25,11 @@ const propTypes = {
   /**
    * The column layout in which to present the displays. One of `oneColumn`, `twoColumn`.
    */
-  layout: PropTypes.oneOf([Layouts.ONE_COLUMN, Layouts.TWO_COLUMNS]),
+  layout: PropTypes.oneOf(Object.values(Layouts)),
   /**
    * The text color emphasis when using two columns. One of `default`, `start`.
    */
-  textEmphasis: PropTypes.oneOf([TextEmphasisTypes.DEFAULT, TextEmphasisTypes.START]),
+  textEmphasis: PropTypes.oneOf(Object.values(TextEmphasisTypes)),
   /**
    * Whether or not all text on the view should be truncated.
    */
@@ -37,7 +37,7 @@ const propTypes = {
   /**
    * The vertical alignment of the start and end accesories. One of `alignTop`, `alignCenter`.
    */
-  accessoryAlignment: PropTypes.oneOf([AccessoryAlignments.ALIGN_TOP, AccessoryAlignments.ALIGN_CENTER]),
+  accessoryAlignment: PropTypes.oneOf(Object.values(AccessoryAlignments)),
   /**
    * The react element to be placed in the start aligned accessory position.
    */

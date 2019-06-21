@@ -33,11 +33,7 @@ const propTypes = {
   /**
    * The date unit of the age value. One of `weeks`, `months`, or `years`.
    */
-  ageUnit: PropTypes.oneOf([
-    AgeUnits.WEEKS,
-    AgeUnits.MONTHS,
-    AgeUnits.YEARS,
-  ]),
+  ageUnit: PropTypes.oneOf(Object.values(AgeUnits)),
 
   /**
    * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the `age` precision.
@@ -48,12 +44,7 @@ const propTypes = {
   /**
    * The granularity of the onset date. One of `age`, `year`, `month`, or `date` is accepted.
    */
-  granularity: PropTypes.oneOf([
-    GranularityOptions.AGE,
-    GranularityOptions.YEAR,
-    GranularityOptions.MONTH,
-    GranularityOptions.DATE,
-  ]),
+  granularity: PropTypes.oneOf(Object.values(GranularityOptions)),
 
   /**
    * The id of the onset picker. Used as the base for other required id/name in sub-components.
@@ -64,26 +55,14 @@ const propTypes = {
    * The precision of the onset date. This should be one of precisions passed to the precisionSet prop.
    * One of `on/at`, `about`, `before`, `after`, or `unknown`.
    */
-  precision: PropTypes.oneOf([
-    PrecisionOptions.ONAT,
-    PrecisionOptions.ABOUT,
-    PrecisionOptions.BEFORE,
-    PrecisionOptions.AFTER,
-    PrecisionOptions.UNKNOWN,
-  ]),
+  precision: PropTypes.oneOf(Object.values(PrecisionOptions)),
 
   /**
    * The set of precisions that can be used with the onset picker.
    * Combination of `on/at`, `about`, `before`, `after`, and `unknown`.
    * Order of precisions determines order in precision select.
    */
-  precisionSet: PropTypes.arrayOf(PropTypes.oneOf([
-    PrecisionOptions.ONAT,
-    PrecisionOptions.ABOUT,
-    PrecisionOptions.BEFORE,
-    PrecisionOptions.AFTER,
-    PrecisionOptions.UNKNOWN,
-  ])),
+  precisionSet: PropTypes.arrayOf(PropTypes.oneOf(Object.values(PrecisionOptions))),
 
   /**
    * The ISO 8601 **DATE ONLY** string representation of the onset date to view/modify.

@@ -52,12 +52,12 @@ const propTypes = {
    * When displayed as a list item, the column layout in which to present the displays.
    * One of `'oneColumn'`, `'twoColumns'`.
    */
-  listItemLayout: PropTypes.oneOf([ListItemLayouts.ONE_COLUMN, ListItemLayouts.TWO_COLUMNS]),
+  listItemLayout: PropTypes.oneOf(Object.values(ListItemLayouts)),
   /**
    * When displayed as a list item, the text color emphasis when using the two columns layout.
    * One of `'default'`, `'start'`.
    */
-  listItemTextEmphasis: PropTypes.oneOf([ListItemTextEmphasisTypes.DEFAULT, ListItemTextEmphasisTypes.START]),
+  listItemTextEmphasis: PropTypes.oneOf(Object.values(ListItemTextEmphasisTypes)),
   /**
    * When displayed as a list item, whether or not all text should truncate.
    */
@@ -65,7 +65,7 @@ const propTypes = {
   /**
    * The vertical alignment of the start and end accessories. One of `'alignTop'`,`'alignCenter'`.
    */
-  accessoryAlignment: PropTypes.oneOf([AccessoryAlignments.ALIGN_TOP, AccessoryAlignments.ALIGN_CENTER]),
+  accessoryAlignment: PropTypes.oneOf(Object.values(AccessoryAlignments)),
   /**
    * When displayed as a list item, indicates whether or not space is allocated for the start accessory.
    * This will be set by the Item Collection component.
@@ -89,7 +89,7 @@ const propTypes = {
    * The view in which the item should be presented. Options are list or table and this will be set by the
    * Item Collection component. One of `list`, `table`.
    */
-  view: PropTypes.oneOf([Views.LIST, Views.TABLE]),
+  view: PropTypes.oneOf(Object.values(Views)),
 };
 
 const defaultProps = {

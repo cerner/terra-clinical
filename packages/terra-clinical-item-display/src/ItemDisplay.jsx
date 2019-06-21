@@ -22,7 +22,7 @@ const propTypes = {
   /**
    * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, or `strong`.
    */
-  textStyle: PropTypes.oneOf([TextStyles.SECONDARY, TextStyles.ATTENTION, TextStyles.STRIKETHROUGH, TextStyles.STRONG]),
+  textStyle: PropTypes.oneOf(Object.values(TextStyles)),
   /**
    * Whether or not the text should be truncated.
    */

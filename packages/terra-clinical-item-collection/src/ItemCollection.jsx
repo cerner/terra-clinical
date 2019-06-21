@@ -22,13 +22,7 @@ const propTypes = {
    * The breakpoint to switch from a table view to a list view.
    * Breakpoint options are `tiny`, `small`, `medium`, `large`, or `huge`.
    */
-  breakpoint: PropTypes.oneOf([
-    Breakpoints.TINY,
-    Breakpoints.SMALL,
-    Breakpoints.MEDIUM,
-    Breakpoints.LARGE,
-    Breakpoints.HUGE,
-  ]),
+  breakpoint: PropTypes.oneOf(Object.values(Breakpoints)),
   /**
    * The items that will flex between either a list item or a table row.
    */

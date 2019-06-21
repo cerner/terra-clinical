@@ -30,7 +30,7 @@ const propTypes = {
    * rendered within in the header. However, if custom children are also provided, the sorting indicator will
    * not be rendered.
    */
-  sortIndicator: PropTypes.oneOf([SortIndicators.ASCENDING, SortIndicators.DESCENDING]),
+  sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
   /**
    * Boolean indicating whether or not the HeaderCell is selectable.
    */
