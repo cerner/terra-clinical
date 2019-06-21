@@ -8,7 +8,7 @@ import IconGlasses from 'terra-icon/lib/icon/IconGlasses';
 import classNames from 'classnames/bind';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DetailView from 'terra-clinical-detail-view/lib/DetailView';
-import styles from './DetailViewDivided.scss';
+import styles from './DetailViewDivided.module.scss';
 
 const cx = classNames.bind(styles);
 

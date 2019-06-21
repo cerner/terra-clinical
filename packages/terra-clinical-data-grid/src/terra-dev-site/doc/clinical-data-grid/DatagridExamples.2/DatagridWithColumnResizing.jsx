@@ -4,7 +4,7 @@ import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
-import styles from './Datagrid.scss';
+import styles from './Datagrid.module.scss';
 
 const cx = classNames.bind(styles);
 

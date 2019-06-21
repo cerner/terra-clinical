@@ -5,7 +5,7 @@ import DataGrid from 'terra-clinical-data-grid';
 import ItemView from 'terra-clinical-item-view';
 import classNames from 'classnames/bind';
 import CustomHeaderCellLayout from './CustomHeaderCellLayout';
-import styles from './Datagrid.scss';
+import styles from './Datagrid.module.scss';
 
 const cx = classNames.bind(styles);
 const pinnedColumns = [

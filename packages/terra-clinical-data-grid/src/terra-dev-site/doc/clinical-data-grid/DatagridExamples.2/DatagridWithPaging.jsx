@@ -5,7 +5,7 @@ import DataGrid from 'terra-clinical-data-grid';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
-import styles from './Datagrid.scss';
+import styles from './Datagrid.module.scss';
 
 const cx = classNames.bind(styles);
 

@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import LabelValueView from 'terra-clinical-label-value-view/lib/LabelValueView';
 import classNames from 'classnames/bind';
-import styles from './LabelValueViewNodeCustom.scss';
+import styles from './LabelValueView.module.scss';
 
 const cx = classNames.bind(styles);
 
