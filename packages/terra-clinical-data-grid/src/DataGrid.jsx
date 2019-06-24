@@ -1090,7 +1090,7 @@ class DataGrid extends React.Component {
         </ContentContainer>
         <div
           role="button"
-          aria-label="Navigate to date grid"
+          aria-label="Navigate to data grid"
           className={cx('terminal-focus-anchor')}
           tabIndex="0"
           onFocus={this.handleTerminalFocusAnchorFocus}
