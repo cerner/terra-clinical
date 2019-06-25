@@ -6,12 +6,12 @@ Unreleased
 
 3.3.0 - (June 11, 2019)
 ----------
-### Removed
-* Removed node_modules from .npmignore
-
 ### Changed
 * Update tests for terra-toolkit v5 changes
 * Update wdio spec to use Terra.describeViewports
+
+### Removed
+* Removed node_modules from .npmignore
 
 3.2.0 - (March 26, 2019)
 ----------
