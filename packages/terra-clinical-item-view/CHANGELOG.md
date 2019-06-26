@@ -6,6 +6,21 @@ Unreleased
 ### Fixed
 * Right-aligned text and icons using new prop in clinical-item-display
 
+### Added
+* Added enumeration for valid layout, emphasis, and alignment values
+
+3.4.0 - (June 11, 2019)
+----------
+### Changed
+* Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update wdio spec to use Terra.describeViewports
+
+### Removed
+* Removed node_modules from .npmignore
+
+### Updated
+* Updated displays documentation
+
 3.3.0 - (March 26, 2019)
 ----------
 ### Changed
