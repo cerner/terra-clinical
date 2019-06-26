@@ -7,12 +7,12 @@ import ItemComment from './ItemComment';
 
 const cx = classNames.bind(styles);
 
-const textStyles = [
-  'secondary',
-  'attention',
-  'strikeThrough',
-  'strong',
-];
+const TextStyles = {
+  SECONDARY: 'secondary',
+  ATTENTION: 'attention',
+  STRIKETHROUGH: 'strikeThrough',
+  STRONG: 'strong',
+};
 
 const propTypes = {
   /**
@@ -22,7 +22,7 @@ const propTypes = {
   /**
    * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, or `strong`.
    */
-  textStyle: PropTypes.oneOf(textStyles),
+  textStyle: PropTypes.oneOf(Object.values(TextStyles)),
   /**
    * Whether or not the text should be truncated.
    */
@@ -61,7 +61,7 @@ const ItemDisplay = ({
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
-    { 'strike-through': textStyle === 'strikeThrough', [`${textStyle}`]: textStyle },
+    { 'strike-through': textStyle === TextStyles.STRIKETHROUGH, [`${textStyle}`]: textStyle },
   ]);
 
   let displayIcon;
@@ -79,6 +79,8 @@ const ItemDisplay = ({
 
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
+
 ItemDisplay.Comment = ItemComment;
 
 export default ItemDisplay;
+export { TextStyles };
