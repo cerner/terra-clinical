@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated jest snapshots for ItemDisplay's new iconAlignment default prop.
+
 ### Added
 * Added enumeration for valid breakpoint values
 * Added enumeration for valid Item layout, emphasis, alignment, and view values

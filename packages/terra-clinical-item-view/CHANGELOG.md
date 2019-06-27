@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Right-aligned text and icons using new prop in clinical-item-display
+
 ### Added
 * Added enumeration for valid layout, emphasis, and alignment values
 
