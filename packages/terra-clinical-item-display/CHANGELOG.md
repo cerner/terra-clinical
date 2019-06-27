@@ -7,7 +7,7 @@ Unreleased
 * iconAlignment prop
 
 ### Fixed 
-* Added missing primary text style
+* Added missing primary text style and corresponding --terra-clinical-item-display-primary-color variable
 * Added enumeration for valid text style values
 
 3.4.0 - (June 11, 2019)
