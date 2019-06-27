@@ -34,6 +34,18 @@ exports[`should render a display with the attention textStyle on text 1`] = `
 </div>
 `;
 
+exports[`should render a display with the primary textStyle on text 1`] = `
+<div
+  className="item-display"
+>
+  <div
+    className="text primary"
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a display with the secondary textStyle on text 1`] = `
 <div
   className="item-display"
@@ -84,10 +96,10 @@ exports[`should render a truncated display 1`] = `
 
 exports[`should render disabled display with text and graphic 1`] = `
 <div
-  className="item-display is-disabled"
+  className="item-display is-disabled icon-center"
 >
   <div
-    className="inline-icon"
+    className="icon"
   >
     <img
       alt="Graphic"
@@ -103,10 +115,10 @@ exports[`should render disabled display with text and graphic 1`] = `
 
 exports[`should render with a graphic 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
-    className="inline-icon"
+    className="icon"
   >
     <img
       alt="Graphic"
@@ -130,12 +142,50 @@ exports[`should render with text 1`] = `
 </div>
 `;
 
-exports[`should render with text and graphic 1`] = `
+exports[`should render with text and graphic center aligned 1`] = `
 <div
-  className="item-display"
+  className="item-display icon-center"
 >
   <div
-    className="inline-icon"
+    className="icon"
+  >
+    <img
+      alt="Graphic"
+    />
+  </div>
+  <div
+    className="text"
+  >
+    Display
+  </div>
+</div>
+`;
+
+exports[`should render with text and graphic inline aligned 1`] = `
+<div
+  className="item-display icon-inline"
+>
+  <div
+    className="icon"
+  >
+    <img
+      alt="Graphic"
+    />
+  </div>
+  <div
+    className="text"
+  >
+    Display
+  </div>
+</div>
+`;
+
+exports[`should render with text and graphic top aligned 1`] = `
+<div
+  className="item-display icon-top"
+>
+  <div
+    className="icon"
   >
     <img
       alt="Graphic"
