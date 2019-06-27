@@ -12,6 +12,12 @@ import styles from './OnsetPicker.module.scss';
 
 const cx = classNames.bind(styles);
 
+const AgeUnits = {
+  WEEKS: 'weeks',
+  MONTHS: 'months',
+  YEARS: 'years',
+};
+
 const GranularityOptions = {
   AGE: 'age',
   YEAR: 'year',
@@ -19,32 +25,26 @@ const GranularityOptions = {
   DATE: 'date',
 };
 
+const { PrecisionOptions } = OnsetUtils;
+
 const DATE_FORMAT = 'YYYY-MM-DD';
 
 const propTypes = {
   /**
-   * The date unit of the age value. One of 'weeks', 'months', or 'years'.
+   * The date unit of the age value. One of `weeks`, `months`, or `years`.
    */
-  ageUnit: PropTypes.oneOf([
-    'weeks',
-    'months',
-    'years',
-  ]),
+  ageUnit: PropTypes.oneOf(Object.values(AgeUnits)),
+
   /**
-   * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the 'age' precision.
-   * Also limits the earliest possible date that can be selected for an onset date for 'year', 'month', and 'date' precision.
+   * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the `age` precision.
+   * Also limits the earliest possible date that can be selected for an onset date for `year`, `month`, and `date` precision.
    */
   birthdate: PropTypes.string.isRequired,
 
   /**
-   * The granularity of the onset date. One of 'age', 'year', 'month', or 'date' is accepted.
+   * The granularity of the onset date. One of `age`, `year`, `month`, or `date` is accepted.
    */
-  granularity: PropTypes.oneOf([
-    GranularityOptions.AGE,
-    GranularityOptions.YEAR,
-    GranularityOptions.MONTH,
-    GranularityOptions.DATE,
-  ]),
+  granularity: PropTypes.oneOf(Object.values(GranularityOptions)),
 
   /**
    * The id of the onset picker. Used as the base for other required id/name in sub-components.
@@ -53,27 +53,16 @@ const propTypes = {
 
   /**
    * The precision of the onset date. This should be one of precisions passed to the precisionSet prop.
+   * One of `on/at`, `about`, `before`, `after`, or `unknown`.
    */
-  precision: PropTypes.oneOf([
-    OnsetUtils.PrecisionOptions.ONAT,
-    OnsetUtils.PrecisionOptions.ABOUT,
-    OnsetUtils.PrecisionOptions.BEFORE,
-    OnsetUtils.PrecisionOptions.AFTER,
-    OnsetUtils.PrecisionOptions.UNKNOWN,
-  ]),
+  precision: PropTypes.oneOf(Object.values(PrecisionOptions)),
 
   /**
    * The set of precisions that can be used with the onset picker.
-   * One of 'on/at', 'about', 'before', 'after', or 'unknown'.
+   * Combination of `on/at`, `about`, `before`, `after`, and `unknown`.
    * Order of precisions determines order in precision select.
    */
-  precisionSet: PropTypes.arrayOf(PropTypes.oneOf([
-    OnsetUtils.PrecisionOptions.ONAT,
-    OnsetUtils.PrecisionOptions.ABOUT,
-    OnsetUtils.PrecisionOptions.BEFORE,
-    OnsetUtils.PrecisionOptions.AFTER,
-    OnsetUtils.PrecisionOptions.UNKNOWN,
-  ])),
+  precisionSet: PropTypes.arrayOf(PropTypes.oneOf(Object.values(PrecisionOptions))),
 
   /**
    * The ISO 8601 **DATE ONLY** string representation of the onset date to view/modify.
@@ -305,7 +294,7 @@ class OnsetPicker extends React.Component {
     const { intl } = this.context;
 
     let granularitySelect = null;
-    if (this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) {
+    if (this.state.precision !== PrecisionOptions.UNKNOWN) {
       granularitySelect = (
         <SelectField
           className={cx('field-inline', 'granularity')}
@@ -490,7 +479,7 @@ class OnsetPicker extends React.Component {
 
           {granularitySelect}
 
-          {(this.state.precision !== OnsetUtils.PrecisionOptions.UNKNOWN) && (
+          {(this.state.precision !== PrecisionOptions.UNKNOWN) && (
             <div>
               {ageInput}
               {ageUnitSelect}
@@ -510,3 +499,8 @@ OnsetPicker.defaultProps = defaultProps;
 OnsetPicker.contextTypes = contextTypes;
 
 export default OnsetPicker;
+export {
+  AgeUnits,
+  GranularityOptions,
+  PrecisionOptions,
+};
