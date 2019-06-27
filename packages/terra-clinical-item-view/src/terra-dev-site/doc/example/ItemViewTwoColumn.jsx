@@ -1,4 +1,5 @@
 import React from 'react';
+import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
