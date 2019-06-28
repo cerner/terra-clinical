@@ -23,7 +23,6 @@
   }
 
   .flex-fill {
-    align-self: center;
     flex: 1 1 auto;
     min-width: 0;
     position: relative;
@@ -31,7 +30,6 @@
   }
 
   .flex-end {
-    align-items: center;
     display: flex;
     flex: 0 0 auto;
     position: relative;
@@ -51,6 +49,7 @@
     margin-top: 0;
     overflow: hidden;
     padding: var(--terra-clinical-header-title-padding, 0);
+    height: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
