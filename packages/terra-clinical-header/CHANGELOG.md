@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Update wdio spec to use Terra.describeViewports
+* Remove absolute positioning from title container
 
 3.5.0 - (June 11, 2019)
 ----------
