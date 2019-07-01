@@ -10,6 +10,7 @@ Unreleased
 ----------
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update data grid button navigation to communicate usage to users
 * Update wdio spec to use Terra.describeViewports
 
 ### Removed
@@ -17,7 +18,7 @@ Unreleased
 
 2.5.0 - (May 7, 2019)
 ----------
-### Changed 
+### Changed
 * Replaced local key code value with keycode-js
 
 2.4.0 - (March 26, 2019)
