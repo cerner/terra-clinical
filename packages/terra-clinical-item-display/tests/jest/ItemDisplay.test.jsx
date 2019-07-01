@@ -18,9 +18,21 @@ it('should render with a graphic', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render with text and graphic', () => {
+it('should render with text and graphic center aligned', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display text="Display" icon={graphic} />);
+  const itemDisplay = shallow(<Display text="Display" icon={graphic} iconAlignment="center" />);
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render with text and graphic top aligned', () => {
+  const graphic = <img alt="Graphic" />;
+  const itemDisplay = shallow(<Display text="Display" icon={graphic} iconAlignment="top" />);
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render with text and graphic inline aligned', () => {
+  const graphic = <img alt="Graphic" />;
+  const itemDisplay = shallow(<Display text="Display" icon={graphic} iconAlignment="inline" />);
   expect(itemDisplay).toMatchSnapshot();
 });
 
@@ -37,6 +49,11 @@ it('should render a truncated display', () => {
 
 it('should render a disabled display', () => {
   const itemDisplay = shallow(<Display text="Display" isDisabled />);
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render a display with the primary textStyle on text', () => {
+  const itemDisplay = shallow(<Display text="Display" textStyle="primary" />);
   expect(itemDisplay).toMatchSnapshot();
 });
 

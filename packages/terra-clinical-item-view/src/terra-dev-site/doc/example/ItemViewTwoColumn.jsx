@@ -1,12 +1,13 @@
 import React from 'react';
+import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import ItemView from 'terra-clinical-item-view/lib/ItemView';
 
 
-const display1 = <ItemView.Display icon={<IconPerson />} text="Asif Khan" />;
-const display2 = <ItemView.Display text="Care Position: Primary" />;
+const display1 = <ItemView.Display icon={<IconPerson />} iconAlignment="inline" text="Asif Khan" />;
+const display2 = <ItemView.Display icon={<IconBriefcase />} iconAlignment="inline" text="Care Position: Primary" />;
 const display3 = <ItemView.Display text="Room 100A" />;
 const display4 = <ItemView.Display text="Acuity: 5" />;
 const display5 = <ItemView.Display text="Start Time: 08-05-2016 12:00:00" />;
