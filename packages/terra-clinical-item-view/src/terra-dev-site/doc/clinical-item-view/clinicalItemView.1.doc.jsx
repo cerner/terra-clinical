@@ -1,6 +1,8 @@
 import React from 'react';
 import DocTemplate from 'terra-doc-template';
+import Markdown from 'terra-markdown';
 import ReadMe from '../../../../docs/README.md';
+import ItemViewTwoColumnDocs from '../../../../docs/item-view-two-column.md';
 import { name } from '../../../../package.json';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
@@ -35,6 +37,7 @@ const DocPage = () => (
       },
       {
         title: 'ItemView - Two Column Layout',
+        description: <Markdown id="item-view-two-column-docs" src={ItemViewTwoColumnDocs} />,
         example: <ItemViewTwoColumn />,
         source: ItemViewTwoColumnSrc,
       },
