@@ -1,3 +1,4 @@
+@import '~terra-mixins/lib/Mixins';
 @import './mixins';
 
 // Temporary until it is added to application.
@@ -88,6 +89,7 @@
     }
 
     .content:nth-child(even) {
+      @include terra-text-align-end();
       flex: 1 0 auto;
       justify-content: flex-end;
       // Set a max-width and disable flexbox-squishing on the right-most displays. This will ensure that they aren't
