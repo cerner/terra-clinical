@@ -1,3 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Sélectionner : {row-description}"
+  "Terra.data-grid.row-selection-template": "Sélectionner : {row-description}",
+  "Terra.data-grid.navigate": "Accéder à la grille de données"
 }
