@@ -24,6 +24,7 @@
   }
 
   .flex-fill {
+    align-self: center;
     flex: 1 1 auto;
     min-width: 0;
     position: relative;
