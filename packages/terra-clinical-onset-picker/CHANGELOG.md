@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Removed react legacy `contexttypes`.
+* Updated the component with `formatMessage` to interface with `react-intl`.
+
 ### Added
 * Added enumeration for valid age unit, granularity, precision, and precision set values
 
