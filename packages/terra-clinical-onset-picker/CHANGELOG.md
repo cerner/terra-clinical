@@ -5,7 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed react legacy `contexttypes`.
-* Updated the component with `formatMessage` to interface with `react-intl`.
+* Updated to implement `formatMessage` to interface with `injectIntl`.
 
 ### Added
 * Added enumeration for valid age unit, granularity, precision, and precision set values
