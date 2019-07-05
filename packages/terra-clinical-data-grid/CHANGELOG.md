@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added enumeration for valid column sort indicator values
 
+### Fixed
+* Fix issue with test consistency
+
 2.6.0 - (June 11, 2019)
 ----------
 ### Changed
