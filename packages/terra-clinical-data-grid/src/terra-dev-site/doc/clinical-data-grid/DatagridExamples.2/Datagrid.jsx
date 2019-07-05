@@ -2,8 +2,11 @@ import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
-
+import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
+import styles from './Datagrid.module.scss';
+
+const cx = classNames.bind(styles);
 
 const pinnedColumns = [
   {
@@ -74,7 +77,7 @@ class StaticDataGrid extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '800px' }}>
+      <div className={cx('data-grid-basic')}>
         <DataGrid
           id="basic-example"
           pinnedColumns={pinnedColumns}
