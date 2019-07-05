@@ -3,7 +3,6 @@
 :local {
   .item-display {
     @include terra-clinical-item-body;
-    align-items: center;
     display: flex;
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // VERY IMPORTANT FOR IE10
@@ -14,15 +13,35 @@
     min-width: 10px; // Need min-width, as IE10 will completely squish display
   }
 
-  .inline-icon {
+  .icon {
     flex: 0 0 auto;
     overflow: hidden;
     padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.357142857142857rem);
   }
 
-  .inline-icon > * {
+  .icon > * {
     min-height: 1em;
     min-width: 1em;
+  }
+
+  .icon-center {
+    align-items: center;
+  }
+
+  .icon-top {
+    align-items: flex-start;
+  }
+
+  .icon-inline {
+    display: inline;
+
+    .text {
+      display: inline;
+    }
+
+    .icon {
+      display: inline;
+    }
   }
 
   .is-truncated {
@@ -32,12 +51,16 @@
   .is-disabled {
     opacity: var(--terra-clinical-item-display-disabled-inline-icon-opacity, 0.2);
 
-    .inline-icon {
-      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 0.3));
+    .icon {
+      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 1));
     }
   }
 
   // Text Styles
+  .primary {
+    color: var(--terra-clinical-item-display-primary-color);
+  }
+
   .secondary {
     color: var(--terra-clinical-item-display-secondary-color, rgba(28, 31, 33, 0.65));
   }

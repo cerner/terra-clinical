@@ -3,15 +3,21 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated jest snapshots for ItemDisplay's new iconAlignment default prop.
+
+### Added
+* Added enumeration for valid breakpoint values
+* Added enumeration for valid Item layout, emphasis, alignment, and view values
 
 4.4.0 - (June 11, 2019)
 ----------
-### Removed
-* Removed node_modules from .npmignore
-
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
 * Update wdio spec to use Terra.describeViewports
+
+### Removed
+* Removed node_modules from .npmignore
 
 4.3.0 - (May 7, 2019)
 ----------

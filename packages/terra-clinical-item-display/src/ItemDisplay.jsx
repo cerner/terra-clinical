@@ -7,12 +7,13 @@ import ItemComment from './ItemComment';
 
 const cx = classNames.bind(styles);
 
-const textStyles = [
-  'secondary',
-  'attention',
-  'strikeThrough',
-  'strong',
-];
+const TextStyles = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  ATTENTION: 'attention',
+  STRIKETHROUGH: 'strikeThrough',
+  STRONG: 'strong',
+};
 
 const propTypes = {
   /**
@@ -20,9 +21,10 @@ const propTypes = {
    */
   text: PropTypes.string,
   /**
-   * The visual style to be applied to the display element. One of: `secondary`, `attention`, `strikeThrough`, or `strong`.
+   * The visual style to be applied to the display element.
+   * One of `'primary'`, `'secondary'`, `'strong'`, `'attention'`, or `'strikeThrough'`.
    */
-  textStyle: PropTypes.oneOf(textStyles),
+  textStyle: PropTypes.oneOf(Object.values(TextStyles)),
   /**
    * Whether or not the text should be truncated.
    */
@@ -35,14 +37,22 @@ const propTypes = {
    * The icon react element to be displayed next to the display text.
    */
   icon: PropTypes.element,
+  /**
+   * The position of the icon to be displayed next to the text,
+   * noticeable when the text display wraps multiple line.
+   * One of `'center'`, `'top'`, `'inline'`.
+   */
+  iconAlignment: PropTypes.oneOf(['center', 'top', 'inline']),
 };
 
 const defaultProps = {
   text: '',
+  // TODO: textStyle should be set to 'primary' on the next major version bump: https://github.com/cerner/terra-clinical/issues/526
   textStyle: undefined,
   isTruncated: false,
   isDisabled: false,
   icon: undefined,
+  iconAlignment: 'center',
 };
 
 const ItemDisplay = ({
@@ -51,22 +61,24 @@ const ItemDisplay = ({
   isTruncated,
   isDisabled,
   icon,
+  iconAlignment,
   ...customProps
 }) => {
   const componentClassNames = cx([
     'item-display',
     { 'is-disabled': isDisabled },
+    { [`icon-${iconAlignment}`]: icon },
     customProps.className,
   ]);
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
-    { 'strike-through': textStyle === 'strikeThrough', [`${textStyle}`]: textStyle },
+    { 'strike-through': textStyle === TextStyles.STRIKETHROUGH, [`${textStyle}`]: textStyle },
   ]);
 
   let displayIcon;
   if (icon) {
-    displayIcon = <div className={cx('inline-icon')}>{icon}</div>;
+    displayIcon = <div className={cx('icon')}>{icon}</div>;
   }
 
   return (
@@ -79,6 +91,8 @@ const ItemDisplay = ({
 
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
+
 ItemDisplay.Comment = ItemComment;
 
 export default ItemDisplay;
+export { TextStyles };

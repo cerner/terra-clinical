@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
 import KeyCode from 'keycode-js';
 import Cell from './subcomponents/Cell';
@@ -16,7 +16,7 @@ import SectionHeader from './subcomponents/SectionHeader';
 
 import dataGridUtils from './utils/dataGridUtils';
 
-import columnDataShape from './proptypes/columnDataShape';
+import { columnDataShape, SortIndicators as ColumnSortIndicators } from './proptypes/columnDataShape';
 import sectionDataShape from './proptypes/sectionDataShape';
 
 import styles from './DataGrid.module.scss';
@@ -1049,14 +1049,18 @@ class DataGrid extends React.Component {
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
       >
-        <div
-          role="button"
-          aria-hidden
-          className={cx('leading-focus-anchor')}
-          tabIndex="0"
-          onFocus={this.handleLeadingFocusAnchorFocus}
-          ref={this.setLeadingFocusAnchorRef}
-        />
+        <FormattedMessage id="Terra.data-grid.navigate">
+          {label => (
+            <div
+              role="button"
+              aria-label={label}
+              className={cx('leading-focus-anchor')}
+              tabIndex="0"
+              onFocus={this.handleLeadingFocusAnchorFocus}
+              ref={this.setLeadingFocusAnchorRef}
+            />
+          )}
+        </FormattedMessage>
         <ContentContainer
           header={fill ? this.renderFixedHeaderRow() : undefined}
           footer={fill ? this.renderScrollbar() : undefined}
@@ -1088,14 +1092,18 @@ class DataGrid extends React.Component {
             </div>
           </div>
         </ContentContainer>
-        <div
-          role="button"
-          aria-hidden
-          className={cx('terminal-focus-anchor')}
-          tabIndex="0"
-          onFocus={this.handleTerminalFocusAnchorFocus}
-          ref={this.setTerminalFocusAnchorRef}
-        />
+        <FormattedMessage id="Terra.data-grid.navigate">
+          {label => (
+            <div
+              role="button"
+              aria-label={label}
+              className={cx('terminal-focus-anchor')}
+              tabIndex="0"
+              onFocus={this.handleTerminalFocusAnchorFocus}
+              ref={this.setTerminalFocusAnchorRef}
+            />
+          )}
+        </FormattedMessage>
       </div>
     );
   }
@@ -1105,3 +1113,4 @@ DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
 export default injectIntl(DataGrid);
+export { ColumnSortIndicators };
