@@ -3,9 +3,6 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
-* Updated jest snapshots.
-
 ### Added
 * Added enumeration for valid age unit, granularity, precision, and precision set values
 
