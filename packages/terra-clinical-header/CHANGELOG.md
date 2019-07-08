@@ -5,10 +5,14 @@ Unreleased
 ----------
 ### Changed
 * Update wdio spec to use Terra.describeViewports
-* Remove absolute positioning from title container
+
+### Added
 * Add new theme variables for height
-** --terra-clinical-header-height
-** --terra-clinical-header-subheader-height
+  * --terra-clinical-header-height
+  * --terra-clinical-header-subheader-height
+
+### Removed
+* Remove absolute positioning from title container
 
 3.5.0 - (June 11, 2019)
 ----------
