@@ -5,13 +5,12 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
   className="data-grid-container fill"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={true}
     footer={
@@ -196,13 +195,12 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -211,13 +209,12 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
   className="data-grid-container fill"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={true}
     footer={
@@ -470,13 +467,12 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -485,13 +481,12 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
   className="data-grid-container fill"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={true}
     footer={
@@ -672,13 +667,12 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -687,13 +681,12 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
   className="data-grid-container"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={false}
   >
@@ -745,13 +738,12 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -760,13 +752,12 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
   className="data-grid-container fill"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={true}
     footer={
@@ -1019,13 +1010,12 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -1034,13 +1024,12 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
   className="data-grid-container fill"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={true}
     footer={
@@ -1296,13 +1285,12 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -1311,13 +1299,12 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
   className="data-grid-container fill"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={true}
     footer={
@@ -1526,13 +1513,12 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;
 
@@ -1541,13 +1527,12 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
   className="data-grid-container"
   id="test"
 >
-  <div
-    aria-hidden={true}
-    className="leading-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
   <ContentContainer
     fill={false}
   >
@@ -1771,12 +1756,11 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
       </div>
     </div>
   </ContentContainer>
-  <div
-    aria-hidden={true}
-    className="terminal-focus-anchor"
-    onFocus={[Function]}
-    role="button"
-    tabIndex="0"
-  />
+  <FormattedMessage
+    id="Terra.data-grid.navigate"
+    values={Object {}}
+  >
+    <Component />
+  </FormattedMessage>
 </div>
 `;

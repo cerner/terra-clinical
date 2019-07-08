@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed 
+* Replaced inline stylings for terra-dev-site components with .scss files
+
 ### Changed
 * Update wdio spec to use Terra.describeViewports
 * Remove absolute positioning from title container

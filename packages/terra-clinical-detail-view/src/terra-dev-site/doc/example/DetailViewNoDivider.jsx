@@ -2,6 +2,10 @@ import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DetailView from 'terra-clinical-detail-view/lib/DetailView';
+import classNames from 'classnames/bind';
+import styles from './DetailViewDivided.module.scss';
+
+const cx = classNames.bind(styles);
 
 const item1 = (<LabelValueView label="Start Date" textValue="12/12/12 00:00AM" />);
 const item2 = (<LabelValueView label="Stop Date" textValue="12/12/12 10:00AM" />);
@@ -9,7 +13,7 @@ const item3 = (<LabelValueView label="Collected By" textValue="Nuse Collect" />)
 const item4 = (<LabelValueView label="Priority" textValue="High" />);
 
 const DetailViewDivided = () => (
-  <div style={{ border: '3px dotted #d3d4d5' }}>
+  <div className={cx('detail-view-divided')}>
     <DetailView
       title="Complete Blood Count Order"
       subtitles={['Accession', '239493849']}
