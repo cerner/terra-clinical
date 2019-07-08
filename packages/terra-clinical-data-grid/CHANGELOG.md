@@ -3,13 +3,20 @@ Changelog
 
 Unreleased
 ----------
+### Changed 
+* Replaced inline stylings for terra-dev-site components with .scss files
+
 ### Added
 * Added enumeration for valid column sort indicator values
+
+### Fixed
+* Fix issue with test consistency
 
 2.6.0 - (June 11, 2019)
 ----------
 ### Changed
 * Update tests for terra-toolkit v5 and terra-dev-site v5 changes
+* Update data grid button navigation to communicate usage to users
 * Update wdio spec to use Terra.describeViewports
 
 ### Removed
@@ -17,7 +24,7 @@ Unreleased
 
 2.5.0 - (May 7, 2019)
 ----------
-### Changed 
+### Changed
 * Replaced local key code value with keycode-js
 
 2.4.0 - (March 26, 2019)

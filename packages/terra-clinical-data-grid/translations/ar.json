@@ -1,3 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "تحديد: {row-description}"
+  "Terra.data-grid.row-selection-template": "تحديد: {row-description}",
+  "Terra.data-grid.navigate": "انتقل إلى شبكة البيانات"
 }

@@ -176,6 +176,7 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
       browser.click('#selections-example-Pinned-Row-Row-0-Section-section_0 > *:first-child');
+      browser.moveTo(null, 0, 0);
     });
 
     Terra.it.validatesElement({ selector: '#selectable-data-grid' });
