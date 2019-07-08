@@ -1,0 +1,20 @@
+:local {
+  .data-grid-basic {
+    height: 800px;
+  }
+
+  .data-grid-row-style {
+    height: 100%;
+    width: 100%;
+  }
+
+  .data-grid-paging {
+    height: 800px;
+    position: relative;
+  }
+  
+  .loading-overlay {
+    top: 0;
+  }
+}
+

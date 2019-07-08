@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+### Changed 
+* Replaced inline stylings for terra-dev-site components with .scss files
+
 ### Added
 * Added enumeration for valid column sort indicator values
 
