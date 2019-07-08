@@ -1,6 +1,5 @@
 :local {
   .flex-header {
-    align-items: flex-start;
     background-color: var(--terra-clinical-header-background-color, #f4f4f4);
     border-bottom-color: var(--terra-clinical-header-border-bottom-color, #dedfe0);
     border-bottom-style: solid;
@@ -32,6 +31,7 @@
   }
 
   .flex-end {
+    align-self: center;
     display: flex;
     flex: 0 0 auto;
     position: relative;
