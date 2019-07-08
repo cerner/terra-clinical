@@ -3,10 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed 
-* Replaced inline stylings for terra-dev-site components with .scss files
-
 ### Changed
+* Replaced inline stylings for terra-dev-site components with .scss files
 * Update wdio spec to use Terra.describeViewports
 
 ### Added
