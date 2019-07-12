@@ -10,9 +10,9 @@
 
 [![Cerner OSS](https://badgen.net/badge/Cerner/OSS/blue)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
 [![License](https://badgen.net/github/license/cerner/terra-clinical)](https://github.com/cerner/terra-clinical/blob/master/LICENSE)
-[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
+[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.com/cerner/terra-clinical)
 [![devDependencies status](https://badgen.net/david/dev/cerner/terra-clinical)](https://david-dm.org/cerner/terra-clinical?type=dev)
-[![lerna](https://badgen.net/badge/maintained%20with/lerna/cc00ff)](https://lernajs.io/)
+[![lerna](https://badgen.net/badge/maintained%20with/lerna/cc00ff)](https://lerna.js.org/)
 
 - [Supported Browsers](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
 - [Packages](#packages)
@@ -87,7 +87,7 @@ npm run test
   LICENSE
 </h2>
 
-Copyright 2017 - 2018 Cerner Innovation, Inc.
+Copyright 2017 - 2019 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

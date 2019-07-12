@@ -52,6 +52,7 @@ class FiveYears extends React.Component {
             birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
+            legend="Date of Birth"
             precision={this.state.precision}
             onsetDate={this.state.onsetDate}
             onsetOnChange={this.handleOnset}

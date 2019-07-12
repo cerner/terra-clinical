@@ -3,6 +3,16 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed 
+* Replaced inline stylings for terra-dev-site components with .scss files
+
+### Changed
+* Update wdio spec to use Terra.describeViewports
+
+3.5.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
 
 3.4.0 - (March 26, 2019)
 ----------

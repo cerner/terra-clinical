@@ -6,23 +6,38 @@ import styles from './ItemView.scss';
 
 const cx = classNames.bind(styles);
 
+const Layouts = {
+  ONE_COLUMN: 'oneColumn',
+  TWO_COLUMNS: 'twoColumns',
+};
+
+const TextEmphasisTypes = {
+  DEFAULT: 'default',
+  START: 'start',
+};
+
+const AccessoryAlignments = {
+  ALIGN_TOP: 'alignTop',
+  ALIGN_CENTER: 'alignCenter',
+};
+
 const propTypes = {
   /**
-   * The column layout in which to present the displays.
+   * The column layout in which to present the displays. One of `oneColumn`, `twoColumn`.
    */
-  layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
+  layout: PropTypes.oneOf(Object.values(Layouts)),
   /**
-   * The text color emphasis when using two columns.
+   * The text color emphasis when using two columns. One of `default`, `start`.
    */
-  textEmphasis: PropTypes.oneOf(['default', 'start']),
+  textEmphasis: PropTypes.oneOf(Object.values(TextEmphasisTypes)),
   /**
    * Whether or not all text on the view should be truncated.
    */
   isTruncated: PropTypes.bool,
   /**
-   * The vertical alignment of the start and end accesories.
+   * The vertical alignment of the start and end accesories. One of `alignTop`, `alignCenter`.
    */
-  accessoryAlignment: PropTypes.oneOf(['alignTop', 'alignCenter']),
+  accessoryAlignment: PropTypes.oneOf(Object.values(AccessoryAlignments)),
   /**
    * The react element to be placed in the start aligned accessory position.
    */
@@ -36,7 +51,7 @@ const propTypes = {
    */
   endAccessory: PropTypes.node,
   /**
-   * An array of react display elements to be presented.
+   * An array of terra-clinical-item-display's to be presented.
    */
   displays: PropTypes.arrayOf(PropTypes.element),
   /**
@@ -50,10 +65,10 @@ const propTypes = {
 };
 
 const defaultProps = {
-  layout: 'oneColumn',
-  textEmphasis: 'default',
+  layout: Layouts.ONE_COLUMN,
+  textEmphasis: TextEmphasisTypes.DEFAULT,
   isTruncated: false,
-  accessoryAlignment: 'alignCenter',
+  accessoryAlignment: AccessoryAlignments.ALIGN_CENTER,
   startAccessory: undefined,
   reserveStartAccessorySpace: false,
   endAccessory: undefined,
@@ -67,8 +82,8 @@ const renderAccessory = (accessory, reserveSpace, accessoryAlignment, type) => {
     const accessoryClassNames = cx(
       'accessory',
       `${type}-accessory`,
-      { 'accessory-align-center': accessoryAlignment === 'alignCenter' },
-      { 'accessory-align-top': accessoryAlignment === 'alignTop' },
+      { 'accessory-align-center': accessoryAlignment === AccessoryAlignments.ALIGN_CENTER },
+      { 'accessory-align-top': accessoryAlignment === AccessoryAlignments.ALIGN_TOP },
     );
 
     accessorySection = (
@@ -107,7 +122,7 @@ const startEmphasisContentClassesFromIndexes = (rowIndex, rowCount, contentIndex
 
 const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
   let classes;
-  if (emphasis === 'start') {
+  if (emphasis === TextEmphasisTypes.START) {
     classes = startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
   } else {
     classes = defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
@@ -139,7 +154,7 @@ const renderRows = (displays, layout, emphasis) => {
 
   const displayGroups = [];
   const displaysSlice = displays.slice(0, 8);
-  const spliceValue = layout === 'twoColumns' ? 2 : 1;
+  const spliceValue = layout === Layouts.TWO_COLUMNS ? 2 : 1;
 
   while (displaysSlice.length) {
     displayGroups.push(displaysSlice.splice(0, spliceValue));
@@ -171,8 +186,8 @@ const ItemView = ({
   const viewClassNames = cx([
     'item-view',
     { 'is-truncated': isTruncated },
-    { 'one-column': layout === 'oneColumn' },
-    { 'two-columns': layout === 'twoColumns' },
+    { 'one-column': layout === Layouts.ONE_COLUMN },
+    { 'two-columns': layout === Layouts.TWO_COLUMNS },
     customProps.className,
   ]);
 
@@ -190,7 +205,13 @@ const ItemView = ({
 
 ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
+
 ItemView.Display = ItemDisplay;
 ItemView.Comment = ItemDisplay.Comment;
 
 export default ItemView;
+export {
+  Layouts,
+  TextEmphasisTypes,
+  AccessoryAlignments,
+};

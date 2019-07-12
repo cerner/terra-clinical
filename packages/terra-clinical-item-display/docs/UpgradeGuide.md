@@ -18,3 +18,4 @@
 * --terra-clinical-item-display-strong-color
 * --terra-clinical-item-display-strong-font-weight
 * --terra-clinical-item-display-strike-through-color
+* --terra-clinical-item-display-primary-color

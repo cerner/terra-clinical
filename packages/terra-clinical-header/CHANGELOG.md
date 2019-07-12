@@ -3,6 +3,27 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Replaced inline stylings for terra-dev-site components with .scss files
+* Update wdio spec to use Terra.describeViewports
+
+### Added
+* Add new theme variables for height
+  * --terra-clinical-header-height
+  * --terra-clinical-header-subheader-height
+
+### Removed
+* Remove absolute positioning from title container
+
+3.5.0 - (June 11, 2019)
+----------
+### Removed
+* Removed node_modules from .npmignore
+
+3.4.0 - (May 7, 2019)
+----------
+## Fixed
+* Fixed the issue of overlapping content on IE 10 by increasing the rule specificty for the header child element.
 
 3.3.0 - (March 26, 2019)
 ----------

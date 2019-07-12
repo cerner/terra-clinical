@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
 
+const SortIndicators = {
+  ASCENDING: 'ascending',
+  DESCENDING: 'descending',
+};
+
 const columnDataShape = PropTypes.shape({
   /**
    * An identifier for the column. This identifier should be unique across the set of columns provided to the DataGrid.
@@ -27,13 +32,13 @@ const columnDataShape = PropTypes.shape({
   text: PropTypes.string,
   /**
    * A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
-   * If a `component` value is specified, `sortIndicator` will be ignored.
+   * If a `component` value is specified, `sortIndicator` will be ignored. One of `ascending`, `descending`.
    */
-  sortIndicator: PropTypes.oneOf(['ascending', 'descending']),
+  sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
   /**
    * A custom component to render within the column header. If provided, the `text` and `sortIndicator` values will be ignored.
    */
   component: PropTypes.node,
 });
 
-export default columnDataShape;
+export { columnDataShape, SortIndicators };

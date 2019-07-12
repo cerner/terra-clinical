@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-data-grid",
   "main": "lib/DataGrid.js",
-  "version": "2.4.0",
+  "version": "2.6.0",
   "description": "An organizational component that renders a collection of data in a grid-like format.",
   "repository": {
     "type": "git",
@@ -27,7 +27,6 @@
     "react-intl": "^2.8.0"
   },
   "devDependencies": {
-    "react-router-dom": "^4.2.2",
     "terra-props-table": "^2.0.0"
   },
   "dependencies": {
@@ -38,7 +37,7 @@
     "react-draggable": "^3.0.5",
     "resize-observer-polyfill": "^1.4.1",
     "terra-button": "^3.0.0",
-    "terra-clinical-item-view": "^3.3.0",
+    "terra-clinical-item-view": "^3.4.0",
     "terra-content-container": "^3.0.0",
     "terra-doc-template": "^2.0.0",
     "terra-icon": "^3.0.0",
@@ -46,12 +45,11 @@
     "terra-overlay": "^3.0.0"
   },
   "scripts": {
-    "compile": "npm run compile:clean && npm run compile:build",
-    "compile:clean": "rm -rf lib",
-    "compile:build": "babel src --out-dir lib --copy-files",
+    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
+    "precompile": "rm -rf lib",
     "test": "npm run test:jest && npm run test:wdio",
     "test:jest": "jest --config ../../jestconfig.js",
     "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"

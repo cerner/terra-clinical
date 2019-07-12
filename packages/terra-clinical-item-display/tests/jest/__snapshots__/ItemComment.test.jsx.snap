@@ -12,6 +12,7 @@ exports[`should render a comment with text 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  iconAlignment="center"
   isDisabled={false}
   isTruncated={false}
   text="comment"
@@ -30,6 +31,7 @@ exports[`should render a comment with the attention textStyle on text 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  iconAlignment="center"
   isDisabled={false}
   isTruncated={false}
   text="ItemComment"
@@ -49,6 +51,7 @@ exports[`should render a comment with the secondary textStyle on text 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  iconAlignment="center"
   isDisabled={false}
   isTruncated={false}
   text="ItemComment"
@@ -68,6 +71,7 @@ exports[`should render a comment with the strikeThrough textStyle on text 1`] = 
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  iconAlignment="center"
   isDisabled={false}
   isTruncated={false}
   text="ItemComment"
@@ -87,6 +91,7 @@ exports[`should render a default component 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  iconAlignment="center"
   isDisabled={false}
   isTruncated={false}
   text=""
@@ -105,6 +110,7 @@ exports[`should render a truncated comment 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
   }
+  iconAlignment="center"
   isDisabled={false}
   isTruncated={true}
   text="comment1comment1comment1comment1comment1comment1comment1comment1"

@@ -1,3 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Valitse: {row-description}"
+  "Terra.data-grid.row-selection-template": "Valitse: {row-description}",
+  "Terra.data-grid.navigate": "Siirry tietoverkkoon"
 }

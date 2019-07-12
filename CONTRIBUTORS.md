@@ -30,6 +30,15 @@ Cerner Corporation
 - Gabe Parra [@gabeparra01]
 - Anjali Roy [@anjaliroy19]
 - Akarsh Shetty [@ShettyAkarsh]
+- Supreeth MR [@supreethmr]
+- Naveen Kumar Ramamurthy [@nramamurth]
+- Lokesh P [@lokesh-0813]
+- Avinash Gupta [@avinashg1994]
+- Pranav Agarwal [@pranav300]
+
+Community
+
+- Payal Sawant @PayalSawant
 
 [@dkasper-was-taken]: https://github.com/dkasper-was-taken
 [@jmsv6d]: https://github.com/jmsv6d
@@ -61,3 +70,9 @@ Cerner Corporation
 [@gabeparra01]: https://github.com/gabeparra01
 [@anjaliroy19]: https://github.com/anjaliroy19
 [@ShettyAkarsh]: https://github.com/ShettyAkarsh
+[@supreethmr]: https://github.com/supreethmr
+[@nramamurth]: https://github.com/nramamurth
+[@PayalSawant]: https://github.com/PayalSawant
+[@lokesh-0813]: https://github.com/lokesh-0813
+[@avinashg1994]: https://github.com/avinashg1994
+[@pranav300]: https://github.com/pranav300

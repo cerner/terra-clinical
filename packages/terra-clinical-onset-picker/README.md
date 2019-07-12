@@ -2,7 +2,7 @@
 
 
 [![NPM version](https://badgen.net/npm/v/terra-clinical-onset-picker)](https://www.npmjs.org/package/terra-clinical-onset-picker)
-[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.org/cerner/terra-clinical)
+[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.com/cerner/terra-clinical)
 
 The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for onset scenarios.
 
