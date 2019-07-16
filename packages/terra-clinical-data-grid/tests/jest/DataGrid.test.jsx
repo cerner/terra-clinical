@@ -48,6 +48,7 @@ const testSections = [{
   }, {
     id: 'row-1',
     ariaLabel: 'Row 1',
+    height: '123px',
     cells: [{
       columnId: 'Column-0',
       component: <div>0</div>,

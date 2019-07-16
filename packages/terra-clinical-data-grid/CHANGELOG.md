@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added option to set a height on specific rows
 
 2.7.0 - (July 16, 2019)
 ----------
