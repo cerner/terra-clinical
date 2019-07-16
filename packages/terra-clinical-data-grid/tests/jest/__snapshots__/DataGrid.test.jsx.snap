@@ -331,7 +331,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         />
         <Row
           aria-owns="test-Overflow-Row-row-1-Section-section-0"
-          height="123px"
+          height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
           key="section-0-row-1"
@@ -406,7 +406,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             </Cell>
           </Row>
           <Row
-            height="123px"
+            height="8rem"
             id="test-Overflow-Row-row-1-Section-section-0"
             isStriped={true}
             key="section-0-row-1"
@@ -874,7 +874,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         />
         <Row
           aria-owns="test-Overflow-Row-row-1-Section-section-0"
-          height="123px"
+          height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
           key="section-0-row-1"
@@ -949,7 +949,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             </Cell>
           </Row>
           <Row
-            height="123px"
+            height="8rem"
             id="test-Overflow-Row-row-1-Section-section-0"
             isStriped={true}
             key="section-0-row-1"
@@ -1172,7 +1172,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         </Row>
         <Row
           aria-owns="test-Overflow-Row-row-1-Section-section-0"
-          height="123px"
+          height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
           key="section-0-row-1"
@@ -1248,7 +1248,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             </Cell>
           </Row>
           <Row
-            height="123px"
+            height="8rem"
             id="test-Overflow-Row-row-1-Section-section-0"
             isStriped={true}
             key="section-0-row-1"
@@ -1614,7 +1614,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
         </Row>
         <Row
           aria-owns="test-Overflow-Row-row-1-Section-section-0"
-          height="123px"
+          height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
           key="section-0-row-1"
@@ -1719,7 +1719,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
             </Cell>
           </Row>
           <Row
-            height="123px"
+            height="8rem"
             id="test-Overflow-Row-row-1-Section-section-0"
             isStriped={true}
             key="section-0-row-1"
