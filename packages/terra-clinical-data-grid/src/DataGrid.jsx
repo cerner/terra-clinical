@@ -60,12 +60,12 @@ const propTypes = {
    */
   onRequestSectionCollapse: PropTypes.func,
   /**
-   * String that specifies the row height. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * String that specifies the row height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    * This value can be overridden by for a row by specifying a height on the given height.
    */
   rowHeight: PropTypes.string,
   /**
-   * String that specifies the DataGrid header height. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * String that specifies the DataGrid header height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   headerHeight: PropTypes.string,
   /**

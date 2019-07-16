@@ -24,7 +24,7 @@ const rowDataShape = PropTypes.shape({
    */
   cells: PropTypes.arrayOf(cellDataShape),
   /**
-   * The height for this row. This overrides the `DataGrid` `rowHeight` property. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * The height for this row. This overrides the `DataGrid` `rowHeight` property. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   height: PropTypes.string,
 });
