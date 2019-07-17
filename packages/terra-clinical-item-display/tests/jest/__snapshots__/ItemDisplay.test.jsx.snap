@@ -5,7 +5,7 @@ exports[`should render a default component 1`] = `
   className="item-display"
 >
   <div
-    className="text"
+    className="text primary"
   />
 </div>
 `;
@@ -15,7 +15,7 @@ exports[`should render a disabled display 1`] = `
   className="item-display is-disabled"
 >
   <div
-    className="text"
+    className="text primary"
   >
     Display
   </div>
@@ -87,7 +87,7 @@ exports[`should render a truncated display 1`] = `
   className="item-display"
 >
   <div
-    className="text is-truncated"
+    className="text is-truncated primary"
   >
     display1display1display1display1display1display1display1display1
   </div>
@@ -106,7 +106,7 @@ exports[`should render disabled display with text and graphic 1`] = `
     />
   </div>
   <div
-    className="text"
+    className="text primary"
   >
     Display
   </div>
@@ -125,7 +125,7 @@ exports[`should render with a graphic 1`] = `
     />
   </div>
   <div
-    className="text"
+    className="text primary"
   />
 </div>
 `;
@@ -135,7 +135,7 @@ exports[`should render with text 1`] = `
   className="item-display"
 >
   <div
-    className="text"
+    className="text primary"
   >
     Display
   </div>
@@ -154,7 +154,7 @@ exports[`should render with text and graphic center aligned 1`] = `
     />
   </div>
   <div
-    className="text"
+    className="text primary"
   >
     Display
   </div>
@@ -173,7 +173,7 @@ exports[`should render with text and graphic inline aligned 1`] = `
     />
   </div>
   <div
-    className="text"
+    className="text primary"
   >
     Display
   </div>
@@ -192,7 +192,7 @@ exports[`should render with text and graphic top aligned 1`] = `
     />
   </div>
   <div
-    className="text"
+    className="text primary"
   >
     Display
   </div>

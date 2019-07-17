@@ -47,8 +47,7 @@ const propTypes = {
 
 const defaultProps = {
   text: '',
-  // TODO: textStyle should be set to 'primary' on the next major version bump: https://github.com/cerner/terra-clinical/issues/526
-  textStyle: undefined,
+  textStyle: 'primary',
   isTruncated: false,
   isDisabled: false,
   icon: undefined,

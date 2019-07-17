@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Changed the text style to primary by default and updated Jest snapshots.
 
 3.5.0 - (July 16, 2019)
 ----------
