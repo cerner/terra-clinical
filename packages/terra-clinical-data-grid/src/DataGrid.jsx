@@ -61,7 +61,7 @@ const propTypes = {
   onRequestSectionCollapse: PropTypes.func,
   /**
    * String that specifies the row height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
-   * This value can be overridden by for a row by specifying a height on the given height.
+   * This value can be overridden for a row by specifying a height on the given row.
    */
   rowHeight: PropTypes.string,
   /**
