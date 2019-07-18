@@ -191,7 +191,7 @@ class DataGrid extends React.Component {
     /**
      * Scroll synchronization
      */
-    this.synchronizeHeaderScroll = this.synchronizeHeaderScroll.bind(this);
+    // this.synchronizeHeaderScroll = this.synchronizeHeaderScroll.bind(this);
     this.synchronizeContentScroll = this.synchronizeContentScroll.bind(this);
     this.synchronizeScrollbar = this.synchronizeScrollbar.bind(this);
     this.resetHeaderScrollEventMarkers = this.resetHeaderScrollEventMarkers.bind(this);
@@ -208,12 +208,33 @@ class DataGrid extends React.Component {
     this.renderHeaderCell = this.renderHeaderCell.bind(this);
     this.renderRowSelectionCell = this.renderRowSelectionCell.bind(this);
     this.renderFixedHeaderRow = this.renderFixedHeaderRow.bind(this);
-    this.renderOverflowContent = this.renderOverflowContent.bind(this);
-    this.renderPinnedContent = this.renderPinnedContent.bind(this);
-    this.renderRow = this.renderRow.bind(this);
+    // this.renderOverflowContent = this.renderOverflowContent.bind(this);
+    // this.renderPinnedContent = this.renderPinnedContent.bind(this);
+    // this.renderRow = this.renderRow.bind(this);
     this.renderScrollbar = this.renderScrollbar.bind(this);
     this.renderSection = this.renderSection.bind(this);
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
+
+    this.renderPinnedSection = this.renderPinnedSection.bind(this);
+    this.renderBodySection = this.renderBodySection.bind(this);
+
+    this.fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    this.getPxFromSize = (sizeWithUnit) => {
+      if (typeof sizeWithUnit === 'number') {
+        return sizeWithUnit;
+      }
+
+      if (sizeWithUnit.endsWith('rem')) {
+        return +(sizeWithUnit.slice(0, -3)) * this.fontSize;
+      }
+
+      if (sizeWithUnit.endsWith('em')) {
+        return +(sizeWithUnit.slice(0, -2)) * parseFloat(getComputedStyle(this.dataGridContainerRef).fontSize);
+      }
+
+      return +(sizeWithUnit.slice(0, -2));
+    };
+
 
     /**
      * Determining the widths of the pinned and overflow sections requires iterating over the prop arrays. The widths are
@@ -253,6 +274,8 @@ class DataGrid extends React.Component {
     document.addEventListener('keydown', this.handleKeyDown);
     document.addEventListener('keyup', this.handleKeyUp);
 
+    this.horizontalOverflowContentWidth = this.horizontalOverflowContainerRef.clientWidth;
+
     this.postRenderUpdate();
   }
 
@@ -264,6 +287,8 @@ class DataGrid extends React.Component {
     if (prevProps.sections !== this.props.sections) {
       this.hasRequestedContent = false;
     }
+
+    this.horizontalOverflowContentWidth = this.horizontalOverflowContainerRef.clientWidth;
 
     this.postRenderUpdate();
   }
@@ -432,9 +457,10 @@ class DataGrid extends React.Component {
     };
   }
 
-  generatePinnedContainerWidthStyle(pinnedColumnWidth) {
+  generatePinnedContainerWidthStyle(pinnedColumnWidth, height) {
     return {
       width: `${pinnedColumnWidth}px`,
+      height: `${height}px`,
     };
   }
 
@@ -555,6 +581,8 @@ class DataGrid extends React.Component {
    * Resize Events
    */
   handleDataGridResize(newWidth) {
+    this.horizontalOverflowContentWidth = this.horizontalOverflowContainerRef.clientWidth;
+
     this.resizeSectionHeaders(newWidth);
     this.updateHeaderScrollbarBuffer();
     this.updateScrollbarPosition();
@@ -600,47 +628,61 @@ class DataGrid extends React.Component {
   /**
    * Scroll synchronization
    */
-  synchronizeHeaderScroll() {
-    if (this.scrollbarIsScrolling || this.contentIsScrolling) {
-      return;
-    }
+  // synchronizeHeaderScroll() {
+  //   if (this.scrollbarIsScrolling || this.contentIsScrolling) {
+  //     return;
+  //   }
 
-    this.headerIsScrolling = true;
+  //   this.headerIsScrolling = true;
 
-    if (this.synchronizeScrollTimeout) {
-      clearTimeout(this.synchronizeScrollTimeout);
-    }
+  //   if (this.synchronizeScrollTimeout) {
+  //     clearTimeout(this.synchronizeScrollTimeout);
+  //   }
 
-    this.synchronizeScrollTimeout = setTimeout(this.resetHeaderScrollEventMarkers, 100);
+  //   this.synchronizeScrollTimeout = setTimeout(this.resetHeaderScrollEventMarkers, 100);
 
-    cancelAnimationFrame(this.scrollSyncAnimationFrame);
+  //   cancelAnimationFrame(this.scrollSyncAnimationFrame);
 
-    this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
-      this.horizontalOverflowContainerRef.scrollLeft = this.headerOverflowContainerRef.scrollLeft;
+  //   this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
+  //     console.log('sync header scroll');
+  //     this.horizontalOverflowContainerRef.scrollLeft = this.headerOverflowContainerRef.scrollLeft;
 
-      this.updateScrollbarPosition();
-    });
-  }
+  //     this.updateScrollbarPosition();
+  //   });
+  // }
 
-  synchronizeContentScroll() {
+  synchronizeContentScroll(event) {
+    // event.preventDefault();
     if (this.scrollbarIsScrolling || this.headerIsScrolling) {
       return;
     }
 
     this.contentIsScrolling = true;
 
-    if (this.synchronizeScrollTimeout) {
-      clearTimeout(this.synchronizeScrollTimeout);
-    }
+    // if (this.synchronizeScrollTimeout) {
+    //   clearTimeout(this.synchronizeScrollTimeout);
+    // }
 
-    this.synchronizeScrollTimeout = setTimeout(this.resetContentScrollEventMarkers, 100);
+    // this.synchronizeScrollTimeout = setTimeout(this.resetContentScrollEventMarkers, 1000);
+
+    const scrollLeft = Math.floor(this.horizontalOverflowContainerRef.scrollLeft);
+
+    // console.log(`on scroll: ${scrollLeft}`);
 
     cancelAnimationFrame(this.scrollSyncAnimationFrame);
 
     this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
-      this.headerOverflowContainerRef.scrollLeft = this.horizontalOverflowContainerRef.scrollLeft;
+    // console.log(`header scroll: ${this.horizontalOverflowContainerRef.scrollLeft}`);
 
-      this.updateScrollbarPosition();
+      // this.headerOverflowContainerRef.scrollLeft = this.horizontalOverflowContainerRef.scrollLeft;
+      // this.headerOverflowContainerRef.scrollLeft = 0;
+      // this.horizontalOverflowContainerRef.scrollLeft = Math.floor(this.horizontalOverflowContainerRef.scrollLeft);
+      // console.log(`updating header position: ${this.horizontalOverflowContainerRef.scrollLeft}`);
+      console.log(`Updating scroll position: ${scrollLeft}`);
+      this.overflowHeaderRef.style.transform = `translate3d(-${scrollLeft}px, 0, 0)`;
+      // this.updateScrollbarPosition();
+
+    // console.log(`updating scroll position: ${this.horizontalOverflowContainerRef.scrollLeft}`);
     });
   }
 
@@ -652,7 +694,7 @@ class DataGrid extends React.Component {
     this.scrollbarIsScrolling = true;
 
     const newPosition = this.scrollbarPosition + data.deltaX;
-    const scrollArea = this.horizontalOverflowContainerRef.clientWidth - this.scrollbarRef.clientWidth;
+    const scrollArea = this.horizontalOverflowContentWidth - this.scrollbarRef.clientWidth;
 
     let finalPosition;
     if (newPosition < 0) {
@@ -666,14 +708,14 @@ class DataGrid extends React.Component {
     this.scrollbarPosition = finalPosition;
 
     const positionRatio = finalPosition / scrollArea;
-    const maxScrollLeft = this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth;
+    const maxScrollLeft = this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContentWidth;
 
     cancelAnimationFrame(this.scrollSyncAnimationFrame);
 
     this.scrollSyncAnimationFrame = requestAnimationFrame(() => {
-      this.scrollbarRef.style.transform = `translateX(${this.scrollbarPosition}px)`;
-      this.headerOverflowContainerRef.scrollLeft = maxScrollLeft * positionRatio;
-      this.horizontalOverflowContainerRef.scrollLeft = maxScrollLeft * positionRatio;
+      this.scrollbarRef.style.transform = `translate3d(${this.scrollbarPosition}px, 0, 0)`;
+      this.overflowHeaderRef.style.transform = `translate3d(-${Math.floor(maxScrollLeft * positionRatio)}, 0, 0)`;
+      this.horizontalOverflowContainerRef.scrollLeft = Math.floor(maxScrollLeft * positionRatio);
     });
   }
 
@@ -682,6 +724,9 @@ class DataGrid extends React.Component {
   }
 
   resetContentScrollEventMarkers() {
+    // this.headerOverflowContainerRef.scrollLeft = this.horizontalOverflowContainerRef.scrollLeft;
+    // this.overflowHeaderRef.style.transform = `translateX(-${Math.floor(this.horizontalOverflowContainerRef.scrollLeft)})`;
+
     this.contentIsScrolling = false;
   }
 
@@ -719,24 +764,24 @@ class DataGrid extends React.Component {
     /**
      * The scrollbar width is determined by squaring the horizontal container width and dividing by the overflow value. The scrollbar cannot be larger than the container.
      */
-    const scrollbarWidth = Math.min(this.horizontalOverflowContainerRef.clientWidth, (this.horizontalOverflowContainerRef.clientWidth * this.horizontalOverflowContainerRef.clientWidth) / (overflowColumnWidth));
+    const scrollbarWidth = Math.min(this.horizontalOverflowContentWidth, (this.horizontalOverflowContentWidth * this.horizontalOverflowContentWidth) / (overflowColumnWidth));
 
     /**
      * The scrollbar position is determined by calculating its position within the horizontalOverflowContainerRef and applying its relative position
      * to the overall horizontal container width.
      */
-    const positionRatio = this.horizontalOverflowContainerRef.scrollLeft / (this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContainerRef.clientWidth);
-    const position = (this.horizontalOverflowContainerRef.clientWidth - scrollbarWidth) * positionRatio;
+    const positionRatio = this.horizontalOverflowContainerRef.scrollLeft / (this.horizontalOverflowContainerRef.scrollWidth - this.horizontalOverflowContentWidth);
+    const position = (this.horizontalOverflowContentWidth - scrollbarWidth) * positionRatio;
 
     this.scrollbarPosition = position;
     this.scrollbarRef.style.width = `${scrollbarWidth}px`;
-    this.scrollbarRef.style.transform = `translateX(${this.scrollbarPosition}px)`;
+    this.scrollbarRef.style.transform = `translate3d(${this.scrollbarPosition}px, 0, 0)`;
   }
 
   /**
    * Rendering
    */
-  renderHeaderCell(columnData) {
+  renderHeaderCell(columnData, leftPosition) {
     const columnId = columnData.id;
     const { onColumnSelect, hasResizableColumns, defaultColumnWidth } = this.props;
 
@@ -755,6 +800,7 @@ class DataGrid extends React.Component {
         text={columnData.text}
         sortIndicator={columnData.sortIndicator}
         width={`${dataGridUtils.getWidthForColumn(columnData, defaultColumnWidth)}px`}
+        left={`${leftPosition}px`}
         isSelectable={columnData.isSelectable}
         isResizable={hasResizableColumns && columnData.isResizable}
         onResizeEnd={this.updateColumnWidth}
@@ -769,12 +815,16 @@ class DataGrid extends React.Component {
   renderFixedHeaderRow() {
     const {
       headerHeight,
+      defaultColumnWidth,
     } = this.props;
 
     const {
       pinnedColumnWidth,
       overflowColumnWidth,
     } = this.state;
+
+    let runningPinnedColumnPosition = 0;
+    let runningBodyColumnPosition = 0;
 
     return (
       <div
@@ -785,18 +835,30 @@ class DataGrid extends React.Component {
           className={cx('pinned-header')}
           style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}
         >
-          {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
+          {dataGridUtils.getPinnedColumns(this.props).map((column) => {
+            const leftPosition = runningPinnedColumnPosition;
+            runningPinnedColumnPosition += this.getPxFromSize(dataGridUtils.getWidthForColumn(column, defaultColumnWidth));
+            return this.renderHeaderCell(column, leftPosition);
+          })}
         </div>
         <div
           className={cx('header-overflow-container')}
-          ref={this.setHeaderOverflowContainerRef}
-          onScroll={this.synchronizeHeaderScroll}
+          style={{ position: 'absolute', left: `${pinnedColumnWidth}px` }}
         >
           <div
+            ref={(ref) => { this.overflowHeaderRef = ref; }}
             className={cx('overflow-header')}
             style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}
           >
-            {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
+            {/* <div
+              style={{ width: `${overflowColumnWidth}px`, height: '100%', position: 'absolute' }}
+            > */}
+            {dataGridUtils.getOverflowColumns(this.props).map((column) => {
+              const leftPosition = runningBodyColumnPosition;
+              runningBodyColumnPosition += this.getPxFromSize(dataGridUtils.getWidthForColumn(column, defaultColumnWidth));
+              return this.renderHeaderCell(column, leftPosition);
+            })}
+            {/* </div> */}
           </div>
         </div>
         <div
@@ -807,7 +869,7 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderSectionHeader(section, isPinned) {
+  renderSectionHeader(section, isPinned, offsetY) {
     const { onRequestSectionCollapse } = this.props;
 
     const shouldRenderSectionHeaderContainer = section.isCollapsible || section.text || section.startAccessory || section.endAccessory || section.component;
@@ -816,6 +878,7 @@ class DataGrid extends React.Component {
       shouldRenderSectionHeaderContainer ? (
         <div
           key={section.id}
+          style={{ transform: `translate3d(0, ${offsetY}, 0)` }}
           className={cx('section-header-container')}
         >
           { isPinned ? (
@@ -830,6 +893,7 @@ class DataGrid extends React.Component {
               selectableRefCallback={(ref) => {
                 this.sectionRefs[section.id] = ref;
               }}
+              top={`${offsetY}px`}
             >
               {section.component}
             </SectionHeader>
@@ -883,7 +947,7 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderCell(section, row, column) {
+  renderCell(section, row, column, leftPosition) {
     const { onCellSelect, defaultColumnWidth } = this.props;
 
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
@@ -896,6 +960,7 @@ class DataGrid extends React.Component {
         rowId={row.id}
         columnId={column.id}
         width={`${dataGridUtils.getWidthForColumn(column, defaultColumnWidth)}px`}
+        left={leftPosition}
         onSelect={onCellSelect}
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
@@ -906,95 +971,135 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderRow(row, section, columns, width, isPinned, isStriped) {
-    const { rowHeight, id } = this.props;
+  // renderRow(row, section, columns, width, isPinned, isStriped) {
+  //   const { rowHeight, id } = this.props;
 
-    /**
-     * Because of the DOM structure necessary to properly render the pinned and overflow sections,
-     * each 'row' of the DataGrid is actually two rows, side-by-side. However, we can use aria attributes
-     * to ensure screen readers will read both rows as one contiguous row.
-     */
-    const ariaStyles = {};
-    if (isPinned) {
-      ariaStyles.id = `${id}-Pinned-Row-${row.id}-Section-${section.id}`;
-      ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
-    } else {
-      ariaStyles.id = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
-    }
+  //   /**
+  //    * Because of the DOM structure necessary to properly render the pinned and overflow sections,
+  //    * each 'row' of the DataGrid is actually two rows, side-by-side. However, we can use aria attributes
+  //    * to ensure screen readers will read both rows as one contiguous row.
+  //    */
+  //   const ariaStyles = {};
+  //   if (isPinned) {
+  //     ariaStyles.id = `${id}-Pinned-Row-${row.id}-Section-${section.id}`;
+  //     ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
+  //   } else {
+  //     ariaStyles.id = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
+  //   }
 
-    return (
-      <Row
-        key={`${section.id}-${row.id}`}
-        sectionId={section.id}
-        rowId={row.id}
-        width={width}
-        height={rowHeight}
-        isSelected={row.isSelected}
-        isStriped={isStriped}
-        {...ariaStyles}
+  //   return (
+  //     <Row
+  //       key={`${section.id}-${row.id}`}
+  //       sectionId={section.id}
+  //       rowId={row.id}
+  //       width={width}
+  //       height={rowHeight}
+  //       isSelected={row.isSelected}
+  //       isStriped={isStriped}
+  //       {...ariaStyles}
 
-      >
-        {columns.map((column) => {
-          if (column.id === 'DataGrid-rowSelectionColumn') {
-            return this.renderRowSelectionCell(section, row, column);
-          }
+  //     >
+  //       {columns.map((column, index) => {
+  //         if (column.id === 'DataGrid-rowSelectionColumn') {
+  //           return this.renderRowSelectionCell(section, row, column);
+  //         }
 
-          if (column.id === 'DataGrid-voidColumn') {
-            return undefined;
-          }
+  //         if (column.id === 'DataGrid-voidColumn') {
+  //           return undefined;
+  //         }
 
-          return this.renderCell(section, row, column);
-        })}
-      </Row>
-    );
-  }
+  //         return this.renderCell(section, row, column, index);
+  //       })}
+  //     </Row>
+  //   );
+  // }
 
   renderSection(section, columns, width, isPinned) {
     return (
       <React.Fragment key={section.id}>
-        {this.renderSectionHeader(section, isPinned)}
-        {!section.isCollapsed && section.rows && section.rows.map((row, index) => (
-          this.renderRow(row, section, columns, width, isPinned, !!(index % 2))
-        ))}
+        {this.renderSectionHeader(section, isPinned, this.positionMap.rowOffsets[section.id])}
+        {!section.isCollapsed && section.rows && section.rows.map((row, index) => {
+          const { rowHeight, id } = this.props;
+
+          /**
+           * Because of the DOM structure necessary to properly render the pinned and overflow sections,
+           * each 'row' of the DataGrid is actually two rows, side-by-side. However, we can use aria attributes
+           * to ensure screen readers will read both rows as one contiguous row.
+           */
+          const ariaStyles = {};
+          if (isPinned) {
+            ariaStyles.id = `${id}-Pinned-Row-${row.id}-Section-${section.id}`;
+            ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
+          } else {
+            ariaStyles.id = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
+          }
+
+          return (
+            <Row
+              key={`${section.id}-${row.id}`}
+              sectionId={section.id}
+              rowId={row.id}
+              width={width}
+              height={rowHeight}
+              top={`${this.positionMap.rowOffsets[`${section.id}-${row.id}`]}px`}
+              isSelected={row.isSelected}
+              isStriped={!!(index % 2)}
+              {...ariaStyles}
+
+            >
+              {columns.map((column) => {
+                if (column.id === 'DataGrid-rowSelectionColumn') {
+                  return this.renderRowSelectionCell(section, row, column);
+                }
+
+                if (column.id === 'DataGrid-voidColumn') {
+                  return undefined;
+                }
+
+                return this.renderCell(section, row, column, `${this.positionMap.columnOffsets[column.id].leftPosition}px`);
+              })}
+            </Row>
+          );
+        })}
       </React.Fragment>
     );
   }
 
-  renderPinnedContent() {
-    const { headerHeight, fill, sections } = this.props;
-    const { pinnedColumnWidth } = this.state;
+  // renderPinnedContent() {
+  //   const { headerHeight, fill, sections } = this.props;
+  //   const { pinnedColumnWidth } = this.state;
 
-    return (
-      <React.Fragment>
-        {!fill && (
-          <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}>
-            <div className={cx('pinned-header')}>
-              {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
-            </div>
-          </div>
-        )}
-        {sections.map(section => this.renderSection(section, dataGridUtils.getPinnedColumns(this.props), `${pinnedColumnWidth}px`, true))}
-      </React.Fragment>
-    );
-  }
+  //   return (
+  //     <React.Fragment>
+  //       {!fill && (
+  //         <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}>
+  //           <div className={cx('pinned-header')}>
+  //             {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
+  //           </div>
+  //         </div>
+  //       )}
+  //       {sections.map(section => this.renderSection(section, dataGridUtils.getPinnedColumns(this.props), `${pinnedColumnWidth}px`, true))}
+  //     </React.Fragment>
+  //   );
+  // }
 
-  renderOverflowContent() {
-    const { headerHeight, fill, sections } = this.props;
-    const { overflowColumnWidth } = this.state;
+  // renderOverflowContent() {
+  //   const { headerHeight, fill, sections } = this.props;
+  //   const { overflowColumnWidth } = this.state;
 
-    return (
-      <React.Fragment>
-        {!fill && (
-          <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}>
-            <div className={cx('overflow-header')}>
-              {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
-            </div>
-          </div>
-        )}
-        {sections.map(section => this.renderSection(section, dataGridUtils.getOverflowColumns(this.props), `${overflowColumnWidth}px`))}
-      </React.Fragment>
-    );
-  }
+  //   return (
+  //     <React.Fragment>
+  //       {!fill && (
+  //         <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}>
+  //           <div className={cx('overflow-header')}>
+  //             {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
+  //           </div>
+  //         </div>
+  //       )}
+  //       {sections.map(section => this.renderSection(section, dataGridUtils.getOverflowColumns(this.props), `${overflowColumnWidth}px`))}
+  //     </React.Fragment>
+  //   );
+  // }
 
   renderScrollbar() {
     const { pinnedColumnWidth } = this.state;
@@ -1015,6 +1120,101 @@ class DataGrid extends React.Component {
         </div>
       </div>
     );
+  }
+
+  renderPinnedSection() {
+    const { sections, rowHeight } = this.props;
+    const { pinnedColumnWidth } = this.state;
+
+    return (
+      <div
+        className={cx('pinned-content-container')}
+        ref={this.setPinnedContentContainerRef}
+        style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth, this.positionMap.totalRowHeight)}
+      >
+        {sections.map(section => this.renderSection(section, dataGridUtils.getPinnedColumns(this.props), `${this.positionMap.totalPinnedColumnWidth}px`, true))}
+      </div>
+    );
+  }
+
+  renderBodySection() {
+    const { fill, sections, rowHeight } = this.props;
+    const { overflowColumnWidth } = this.state;
+
+    return (
+      <div
+        className={cx('overflowed-content-container')}
+        ref={this.setOverflowedContentContainerRef}
+        style={{ height: `${this.positionMap.totalRowHeight}px` }}
+      >
+        <div
+          className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
+          ref={(ref) => {
+            if (ref) {
+              console.log('adding event listener');
+              this.setHorizontalOverflowContainerRef(ref);
+              ref.addEventListener('scroll', this.synchronizeContentScroll, {
+                passive: false,
+              });
+            }
+          }}
+        >
+          {sections.map(section => this.renderSection(section, dataGridUtils.getOverflowColumns(this.props), `${this.positionMap.totalOverflowColumnWidth}px`))}
+        </div>
+      </div>
+    );
+  }
+
+  buildRenderMap() {
+    const {
+      sections, pinnedColumns, overflowColumns, rowHeight, defaultColumnWidth,
+    } = this.props;
+
+    const mapping = {
+      columnOffsets: {},
+      rowOffsets: {},
+    };
+
+    let columnLeftPosition = 0;
+    pinnedColumns.forEach((column) => {
+      mapping.columnOffsets[column.id] = {
+        leftPosition: columnLeftPosition,
+      };
+
+      columnLeftPosition += dataGridUtils.getWidthForColumn(column, defaultColumnWidth);
+    });
+    mapping.totalPinnedColumnWidth = columnLeftPosition;
+
+    columnLeftPosition = 0;
+    overflowColumns.forEach((column) => {
+      mapping.columnOffsets[column.id] = {
+        leftPosition: columnLeftPosition,
+      };
+
+      columnLeftPosition += dataGridUtils.getWidthForColumn(column, defaultColumnWidth);
+    });
+    mapping.totalOverflowColumnWidth = columnLeftPosition;
+
+    let offsetYPosition = 0;
+    sections.forEach((section) => {
+      mapping.rowOffsets[section.id] = offsetYPosition;
+
+      const shouldRenderSectionHeaderContainer = section.isCollapsible || section.text || section.startAccessory || section.endAccessory || section.component;
+
+      if (shouldRenderSectionHeaderContainer) {
+        offsetYPosition += this.getPxFromSize('2.5rem');
+      }
+
+      section.rows.forEach((row) => {
+        mapping.rowOffsets[`${section.id}-${row.id}`] = offsetYPosition;
+
+        offsetYPosition += this.getPxFromSize(rowHeight);
+      });
+    });
+
+    mapping.totalRowHeight = offsetYPosition;
+
+    return mapping;
   }
 
   render() {
@@ -1038,9 +1238,8 @@ class DataGrid extends React.Component {
       intl,
       ...customProps
     } = this.props;
-    const { pinnedColumnWidth } = this.state;
-
     const dataGridClassnames = cx(['data-grid-container', { fill }, customProps.className]);
+    this.positionMap = this.buildRenderMap();
 
     return (
       <div
@@ -1061,37 +1260,16 @@ class DataGrid extends React.Component {
             />
           )}
         </FormattedMessage>
-        <ContentContainer
-          header={fill ? this.renderFixedHeaderRow() : undefined}
-          footer={fill ? this.renderScrollbar() : undefined}
-          fill={fill}
+        {this.renderFixedHeaderRow()}
+        <div
+          className={cx('vertical-overflow-container')}
+          ref={this.setVerticalOverflowContainerRef}
+          onScroll={onRequestContent ? this.checkForMoreContent : undefined}
+          style={{ height: `calc(100% - ${headerHeight})` }}
         >
-          <div
-            className={cx('vertical-overflow-container')}
-            ref={this.setVerticalOverflowContainerRef}
-            onScroll={onRequestContent ? this.checkForMoreContent : undefined}
-          >
-            <div
-              className={cx('pinned-content-container')}
-              ref={this.setPinnedContentContainerRef}
-              style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
-            >
-              {this.renderPinnedContent()}
-            </div>
-            <div
-              className={cx('overflowed-content-container')}
-              ref={this.setOverflowedContentContainerRef}
-            >
-              <div
-                className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
-                ref={this.setHorizontalOverflowContainerRef}
-                onScroll={fill ? this.synchronizeContentScroll : undefined}
-              >
-                {this.renderOverflowContent()}
-              </div>
-            </div>
-          </div>
-        </ContentContainer>
+          {this.renderPinnedSection()}
+          {this.renderBodySection()}
+        </div>
         <FormattedMessage id="Terra.data-grid.navigate">
           {label => (
             <div

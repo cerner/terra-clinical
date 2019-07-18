@@ -36,6 +36,7 @@ const propTypes = {
    * Content to render within the Row.
    */
   children: PropTypes.node,
+  top: PropTypes.string,
 };
 
 class Row extends React.Component {
@@ -46,10 +47,12 @@ class Row extends React.Component {
   }
 
   /* eslint-disable class-methods-use-this */
-  getRowStyles(width, height) {
+  getRowStyles(width, height, top) {
     return {
       width,
       height,
+      position: 'absolute',
+      transform: `translate3d(0, ${top}, 0)`,
     };
   }
   /* eslint-enable class-methods-use-this */
@@ -63,6 +66,7 @@ class Row extends React.Component {
       isSelected,
       isStriped,
       children,
+      top,
       ...customProps
     } = this.props;
 
@@ -70,7 +74,7 @@ class Row extends React.Component {
       <div
         {...customProps}
         className={cx(['row', { selected: isSelected, striped: isStriped }, customProps.className])}
-        style={this.getRowStyles(width, height)}
+        style={this.getRowStyles(width, height, top)}
         data-row
         data-row-id={rowId}
         data-section-id={sectionId}

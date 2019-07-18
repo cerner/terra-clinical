@@ -7,11 +7,7 @@ import DatagridWithCustomContentSrc from '!raw-loader!../../../../../src/terra-d
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DatagridWithColumnResizingExample = () => (
-  <ExampleTemplate
-    description="This example features custom header cell implementations and more complex content cells."
-    example={<DatagridWithCustomContent />}
-    exampleSrc={DatagridWithCustomContentSrc}
-  />
+  <DatagridWithCustomContent />
 );
 
 export default DatagridWithColumnResizingExample;

@@ -78,9 +78,10 @@ class Cell extends React.Component {
    * This function is memoized in the constructor so that for a given width value, the same object reference will be returned.
    * This allows for repeat renders of the Cell to occur more efficiently if the width value has not changed between renders.
    */
-  getCellStyles(width) {
+  getCellStyles(width, left) {
     return {
       width,
+      transform: `translate3d(${left}, 0, 0)`,
     };
   }
   /* eslint-enable class-methods-use-this */
@@ -118,6 +119,7 @@ class Cell extends React.Component {
       onHoverStart,
       onHoverEnd,
       ariaLabel,
+      left,
       ...customProps
     } = this.props;
 
@@ -125,7 +127,7 @@ class Cell extends React.Component {
       <div
         {...customProps}
         className={cx(['container', customProps.className])}
-        style={this.getCellStyles(width)}
+        style={this.getCellStyles(width, left)}
         aria-selected={isSelected ? true : undefined}
       >
         <div

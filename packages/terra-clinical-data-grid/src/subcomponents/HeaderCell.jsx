@@ -86,6 +86,7 @@ class HeaderCell extends React.Component {
       children,
       onResizeEnd,
       selectableRefCallback,
+      left,
     } = this.props;
 
     let content = children;
@@ -121,6 +122,7 @@ class HeaderCell extends React.Component {
         onSelect={this.handleCellSelect}
         selectableRefCallback={selectableRefCallback}
         aria-hidden={!content || undefined} // Using '|| undefined' to unset the attribute instead of setting it to false.
+        left={left}
       >
         {content}
         {isResizable ? <ResizeHandle id={columnId} onResizeStop={onResizeEnd} /> : null }
