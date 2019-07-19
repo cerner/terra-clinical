@@ -60,11 +60,12 @@ const propTypes = {
    */
   onRequestSectionCollapse: PropTypes.func,
   /**
-   * String that specifies the row height. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * String that specifies the row height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
+   * This value can be overridden for a row by specifying a height on the given row.
    */
   rowHeight: PropTypes.string,
   /**
-   * String that specifies the DataGrid header height. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * String that specifies the DataGrid header height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   headerHeight: PropTypes.string,
   /**
@@ -907,7 +908,8 @@ class DataGrid extends React.Component {
   }
 
   renderRow(row, section, columns, width, isPinned, isStriped) {
-    const { rowHeight, id } = this.props;
+    const { id } = this.props;
+    const height = row.height || this.props.rowHeight;
 
     /**
      * Because of the DOM structure necessary to properly render the pinned and overflow sections,
@@ -928,7 +930,7 @@ class DataGrid extends React.Component {
         sectionId={section.id}
         rowId={row.id}
         width={width}
-        height={rowHeight}
+        height={height}
         isSelected={row.isSelected}
         isStriped={isStriped}
         {...ariaStyles}

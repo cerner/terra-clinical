@@ -59,10 +59,11 @@ Rows are provided to sections to be rendered by the DataGrid. The order in which
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**id**|string|required|none|An identifier for the row. This identifier should be unique across the set of rows provided to a given section.|
-|**ariaLabel**|string|optional|A string identifier used to describe the row contents. This value will be used to contruct additional labels for internal controls (e.g. row selection cells).|
+|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used to contruct additional labels for internal controls (e.g. row selection cells).|
 |**isSelectable**|bool|optional|none|A boolean indicating whether or not the row is selectable.|
 |**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
 |**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. The order in which the cells are rendered is determined by the order of the `pinnedColumns` and `overflowColumns` props.|
+|**height**|string|optional|none|The height for this row. This overrides the `DataGrid` `rowHeight` property. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.|
 
 ### Cells
 
