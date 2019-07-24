@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.6.0 - (July 16, 2019)
+----------
 ### Changed 
 * Replaced inline stylings for terra-dev-site components with .scss files
 

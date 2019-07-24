@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.5.0 - (July 16, 2019)
+----------
 ### Changed
 * Updated jest snapshots for ItemDisplay's new iconAlignment default prop.
 

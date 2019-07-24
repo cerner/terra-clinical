@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.4.0 - (July 16, 2019)
+----------
 ### Added
 * Added enumeration for valid age unit, granularity, precision, and precision set values
 
