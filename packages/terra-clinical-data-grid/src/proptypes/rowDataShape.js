@@ -23,6 +23,10 @@ const rowDataShape = PropTypes.shape({
    * An array of cell objects that define the content to be rendered in the row. The order in which the cells are rendered is determined by the order of the `pinnedColumns` and `overflowColumns` props.
    */
   cells: PropTypes.arrayOf(cellDataShape),
+  /**
+   * The height for this row. This overrides the `DataGrid` `rowHeight` property. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
+   */
+  height: PropTypes.string,
 });
 
 export default rowDataShape;
