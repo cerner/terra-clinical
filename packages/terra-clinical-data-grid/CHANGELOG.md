@@ -6,9 +6,12 @@ Unreleased
 ### Added
 * Added option to set a height on specific rows
 
+### Changed
+* Update tests for dev-site v6
+
 2.7.0 - (July 16, 2019)
 ----------
-### Changed 
+### Changed
 * Replaced inline stylings for terra-dev-site components with .scss files
 
 ### Added
