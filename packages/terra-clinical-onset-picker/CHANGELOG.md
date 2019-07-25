@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Blank Age granularity fixed to return a blank onset date value.
 
 4.4.0 - (July 16, 2019)
 ----------
