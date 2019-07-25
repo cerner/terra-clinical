@@ -69,6 +69,7 @@ class CustomHeightDataGrid extends React.Component {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-${rowIndex}`,
       ariaLabel: `Row ${sectionId}-${rowIndex}`,
+      height: rowIndex % 3 === 0 ? '3rem' : undefined,
       cells: ((new Array(13).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
         component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} label={`${sectionId}-${rowIndex}-${columnKey}`} />,
