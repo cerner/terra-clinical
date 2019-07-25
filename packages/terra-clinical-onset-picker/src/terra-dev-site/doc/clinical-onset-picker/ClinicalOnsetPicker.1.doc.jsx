@@ -13,7 +13,7 @@ import DefaultOnsetSrc from '!raw-loader!../../../../src/terra-dev-site/doc/exam
 import HandledOnset from '../example/HandledOnset';
 import HandledOnsetSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/HandledOnset';
 import OnsetWithHiddenLegend from '../example/OnsetWithHiddenLegend';
-import OnsetWithHiddenLegendSrc from '../example/OnsetWithHiddenLegend';
+import OnsetWithHiddenLegendSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/OnsetWithHiddenLegend';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
