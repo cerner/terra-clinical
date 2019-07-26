@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import DetailView from '../../../../DetailView';
-import styles from './DetailView.test.module.scss';
+import styles from './DetailViewCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
