@@ -145,7 +145,9 @@ class OnsetPicker extends React.Component {
    * @param {granularity} - New granularity value
    */
   changeGranularity(granularity) {
-    if (granularity === GranularityOptions.AGE) { // Calculate age values and update onsetDate to match age calculation
+    // eslint-disable-next-line no-console
+    console.log('Age =', this.state.age, 'Unit=', this.state.ageUnit);
+    if (granularity === GranularityOptions.AGE && this.state.age !== undefined) { // Calculate age values and update onsetDate to match age calculation
       this.setState((prevState) => {
         const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);
 
@@ -153,7 +155,7 @@ class OnsetPicker extends React.Component {
           granularity,
           age: ageValues.age,
           ageUnit: ageValues.ageUnit,
-          onsetDate: undefined,
+          onsetDate: moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit),
         };
       }, this.handleOnsetUpdate);
     } else {
@@ -176,8 +178,8 @@ class OnsetPicker extends React.Component {
    * @param {event} - Triggered change event
    */
   changeAge(event) {
-    const age = Number(event.target.value);
     if (event.target.value !== '') {
+      const age = Number(event.target.value);
       this.setState((prevState) => {
       // Check if date can be calculated
         const ageDate = Number.isInteger(age) && prevState.ageUnit
@@ -191,6 +193,7 @@ class OnsetPicker extends React.Component {
         };
       }, this.handleOnsetUpdate);
     } else {
+      const age = undefined;
       this.setState(() => ({
         age,
         onsetDate: undefined,
