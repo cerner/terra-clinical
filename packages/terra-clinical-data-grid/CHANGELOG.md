@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added option to set a height on specific rows
 
+### Changed
+* Removed inline styles from dev site components.
+
 2.7.0 - (July 16, 2019)
 ----------
 ### Changed 

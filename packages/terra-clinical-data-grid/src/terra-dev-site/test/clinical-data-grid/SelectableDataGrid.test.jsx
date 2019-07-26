@@ -2,8 +2,12 @@ import React from 'react';
 
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
+import classNames from 'classnames/bind';
 
 import ContentCellLayout from './ContentCellLayout';
+import styles from './ClinicalDataGrid.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class SelectableDataGrid extends React.Component {
   constructor(props) {
@@ -95,7 +99,7 @@ class SelectableDataGrid extends React.Component {
     const { columns } = this.state;
 
     return (
-      <div id="selectable-data-grid" style={{ height: '100%', width: '100%' }}>
+      <div id="selectable-data-grid" className={cx('content-wrapper')}>
         <DataGrid
           id="selections-example"
           pinnedColumns={[
