@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Removed inline styles from dev site components.
 
 3.5.0 - (July 16, 2019)
 ----------

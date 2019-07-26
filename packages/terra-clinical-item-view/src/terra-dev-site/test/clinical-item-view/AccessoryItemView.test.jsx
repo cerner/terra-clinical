@@ -1,13 +1,17 @@
 import React from 'react';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
+import classNames from 'classnames/bind';
 import ItemView from '../../../ItemView';
+import styles from './ItemViewCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const display1 = <ItemView.Display text="Display for context" />;
 const displays = [display1, display1, display1, display1, display1, display1];
 
 const views = () => (
-  <div style={{ maxWidth: '700px', border: '1px grey solid' }}>
+  <div className={cx('accessory-itemview-wrapper')}>
     <p>Applied width of 700px to show the start and end accessory alignment.</p>
     <h2>Start Acessory</h2>
     <ItemView
@@ -38,7 +42,7 @@ const views = () => (
     />
     <h2>Start Accessory with Font Size 100px</h2>
     <ul><li><h3>The max-height and max-width of 40px is maintained</h3></li></ul>
-    <ItemView startAccessory={<IconAlert />} id="test-scale" style={{ fontSize: '100px' }} />
+    <ItemView startAccessory={<IconAlert />} id="test-scale" className={cx('itemview-fontsize')} />
   </div>
 );
 
