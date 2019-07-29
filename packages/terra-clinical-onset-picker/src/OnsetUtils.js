@@ -89,10 +89,6 @@ class OnsetUtils {
     const ageMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const currentMoment = moment().startOf('day');
 
-    if (currentMoment.diff(ageMoment, 'weeks') === 0) {
-      return null;
-    }
-
     const ageUnits = [{ value: 'weeks', display: intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionWeek' }) }];
 
     // Do not add month option if less than a month old

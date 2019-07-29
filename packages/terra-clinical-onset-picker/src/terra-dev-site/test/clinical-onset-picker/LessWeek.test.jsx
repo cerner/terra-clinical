@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import OnsetPicker from '../../../OnsetPicker';
 
-class HandledOnsetExample extends React.Component {
+class LessWeek extends React.Component {
   constructor(props) {
     super(props);
 
@@ -43,6 +43,7 @@ class HandledOnsetExample extends React.Component {
       <div>
         <p>Onset picker with age to be less than a week.</p>
         <p>{`Current date locked to ${moment().format('MM-DD-YYYY')}`}</p>
+        <p>{`Birthdate locked to ${birthdate.format('MM-DD-YYYY')}`}</p>
         <p>Testing age granularity to not be populated for age less than a week.</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
@@ -65,4 +66,4 @@ class HandledOnsetExample extends React.Component {
   }
 }
 
-export default HandledOnsetExample;
+export default LessWeek;

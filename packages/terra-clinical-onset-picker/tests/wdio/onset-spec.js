@@ -265,4 +265,15 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('has age set to [less than one week] ', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/less-week'));
+
+    it('Does not display age granularity', () => {
+      browser.click('#test-granularity-select');
+      browser.isExisting('#terra-select-option-age').should.equal(false);
+    });
+
+    Terra.it.validatesElement('invalid age input', { selector: '#root' });
+  });
 });
