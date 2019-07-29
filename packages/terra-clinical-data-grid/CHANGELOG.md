@@ -9,6 +9,9 @@ Unreleased
 ### Changed
 * Update tests for dev-site v6
 
+### Removed
+* Removed DEPENDENCIES.md file
+
 2.7.0 - (July 16, 2019)
 ----------
 ### Changed
