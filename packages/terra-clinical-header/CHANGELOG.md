@@ -3,11 +3,20 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed 
-* Replaced inline stylings for terra-dev-site components with .scss files
 
+3.6.0 - (July 16, 2019)
+----------
 ### Changed
+* Replaced inline stylings for terra-dev-site components with .scss files
 * Update wdio spec to use Terra.describeViewports
+
+### Added
+* Add new theme variables for height
+  * --terra-clinical-header-height
+  * --terra-clinical-header-subheader-height
+
+### Removed
+* Remove absolute positioning from title container
 
 3.5.0 - (June 11, 2019)
 ----------

@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.5.0 - (July 16, 2019)
+----------
 ### Added
 * iconAlignment prop
 

@@ -4,9 +4,10 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
-* Removed react legacy `contexttypes`.
-* Updated to implement `formatMessage` to interface with `injectIntl`.
+* Removed react legacy `contexttypes`. Updated to implement `formatMessage` to interface with `injectIntl`.
 
+4.4.0 - (July 16, 2019)
+----------
 ### Added
 * Added enumeration for valid age unit, granularity, precision, and precision set values
 
