@@ -9,6 +9,10 @@ Unreleased
 ### Added
 * Added option to set a height on specific rows
 
+### Changed
+* Update tests for dev-site v6
+* Updated package.json test scripts
+
 ### Removed
 * Removed DEPENDENCIES.md file
 
