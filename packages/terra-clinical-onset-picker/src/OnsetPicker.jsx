@@ -7,6 +7,7 @@ import Field from 'terra-form-field';
 import FieldSet from 'terra-form-fieldset';
 import InputField from 'terra-form-input/lib/InputField';
 import SelectField from 'terra-form-select/lib/SelectField';
+import { injectIntl, intlShape } from 'react-intl';
 import OnsetUtils from './OnsetUtils';
 import styles from './OnsetPicker.module.scss';
 
@@ -85,6 +86,11 @@ const propTypes = {
    * Whether or not the legend is visible. Use this props to hide a legend while still creating it on the DOM for accessibility.
    */
   isLegendHidden: PropTypes.bool,
+
+  /**
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -98,14 +104,6 @@ const defaultProps = {
   isLegendHidden: false,
 };
 
-const contextTypes = {
-  /* eslint-disable consistent-return */
-  intl: (context) => {
-    if (context.intl === undefined) {
-      return new Error('Please add locale prop to Base component to load translations');
-    }
-  },
-};
 
 class OnsetPicker extends React.Component {
   constructor(props) {
@@ -220,7 +218,7 @@ class OnsetPicker extends React.Component {
   changeYear(year) {
     this.setState((prevState) => {
       let newDate = prevState.onsetDate ? prevState.onsetDate.year(year) : moment().year(year);
-      const newMonths = OnsetUtils.allowedMonths(this.context.intl, this.props.birthdate, newDate);
+      const newMonths = OnsetUtils.allowedMonths(this.props.intl, this.props.birthdate, newDate);
 
       // Check if new onset month is available, otherwise change month to first possible month
       if (newMonths.filter(month => parseInt(month.value, 10) === newDate.month()).length === 0) {
@@ -287,11 +285,11 @@ class OnsetPicker extends React.Component {
       onsetDate,
       onsetOnChange,
       legend,
+      intl,
       isLegendHidden,
       ...customProps
     } = this.props;
 
-    const { intl } = this.context;
 
     let granularitySelect = null;
     if (this.state.precision !== PrecisionOptions.UNKNOWN) {
@@ -496,9 +494,8 @@ class OnsetPicker extends React.Component {
 
 OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
-OnsetPicker.contextTypes = contextTypes;
 
-export default OnsetPicker;
+export default injectIntl(OnsetPicker);
 export {
   AgeUnits,
   GranularityOptions,
