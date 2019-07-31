@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Update tests for dev-site v6
 * Updated package.json test scripts
+* Removed react legacy `contexttypes`. Updated to implement `formatMessage` to interface with `injectIntl`.
 
 4.4.0 - (July 16, 2019)
 ----------
