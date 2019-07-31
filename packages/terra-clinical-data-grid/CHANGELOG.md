@@ -8,6 +8,7 @@ Unreleased
 
 ### Changed
 * Update tests for dev-site v6
+* Updated package.json test scripts
 
 ### Removed
 * Removed DEPENDENCIES.md file
