@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Jest snapshot updated for ItemDisplay's primary textStyle default prop.
+* Updated package.json test scripts
 
 4.5.0 - (July 16, 2019)
 ----------

@@ -7,7 +7,6 @@
   "commands": {
     "publish": {
       "ignore": [
-        "DEPENDENCIES.md",
         "terra-clinical-action-header",
         "terra-clinical-error-view",
         "terra-clinical-no-data-view",

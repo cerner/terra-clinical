@@ -5,13 +5,14 @@ Unreleased
 ----------
 ### Changed
 * Changed the text style to primary by default and updated Jest snapshots.
+* Updated package.json test scripts
 
 3.5.0 - (July 16, 2019)
 ----------
 ### Added
 * iconAlignment prop
 
-### Fixed 
+### Fixed
 * Added missing primary text style and corresponding --terra-clinical-item-display-primary-color variable
 * Added enumeration for valid text style values
 
