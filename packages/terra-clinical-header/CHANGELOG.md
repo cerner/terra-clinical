@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Removed inline styles from dev site components.
+* Updated package.json test scripts
 
 3.6.0 - (July 16, 2019)
 ----------
@@ -14,8 +15,8 @@ Unreleased
 
 ### Added
 * Add new theme variables for height
-  * --terra-clinical-header-height
-  * --terra-clinical-header-subheader-height
+* --terra-clinical-header-height
+* --terra-clinical-header-subheader-height
 
 ### Removed
 * Remove absolute positioning from title container

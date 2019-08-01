@@ -3,11 +3,17 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed inline styles from dev site components.
+
+2.8.0 - (July 30, 2019)
+----------
 ### Added
 * Added option to set a height on specific rows
 
 ### Changed
-* Removed inline styles from dev site components.
+* Update tests for dev-site v6
+* Updated package.json test scripts
 
 ### Removed
 * Removed DEPENDENCIES.md file

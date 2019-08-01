@@ -5,13 +5,12 @@ Unreleased
 ----------
 ### Changed
 * Removed inline styles from dev site components.
+* Updated package.json test scripts
 
 3.6.0 - (July 16, 2019)
 ----------
-### Changed 
-* Replaced inline stylings for terra-dev-site components with .scss files
-
 ### Changed
+* Replaced inline stylings for terra-dev-site components with .scss files
 * Update wdio specs to use Terra.describeViewports
 
 ### Fixed
