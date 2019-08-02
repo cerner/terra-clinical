@@ -13,7 +13,7 @@ Releasing the project requires these steps:
   - `npm login` - Make sure to use the `cerner-oss` account.
   - `npm whoami` - This should return `cerner-oss`.
 
-- Execute the npm publish script from the root directory. Make sure to follow [semantic versioning][semantic-versioning].
+- Execute the npm release script from the root directory. Make sure to follow [semantic versioning][semantic-versioning].
 
 When run, this command does the following:
 
