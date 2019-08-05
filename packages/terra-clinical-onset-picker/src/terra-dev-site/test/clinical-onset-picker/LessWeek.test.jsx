@@ -6,6 +6,9 @@ class LessWeek extends React.Component {
   constructor(props) {
     super(props);
 
+    // Lock date to September 20, 2016
+    moment.now = () => new Date(2016, 8, 20);
+
     this.state = {
       precision: 'before',
       granularity: 'year',
