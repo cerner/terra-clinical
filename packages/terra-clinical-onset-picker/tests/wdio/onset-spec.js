@@ -33,8 +33,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [month-year granularity] select', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays month and year selects', () => {
       browser.click('#test-granularity-select');
       browser.click('#terra-select-option-month');
@@ -78,8 +76,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [date granularity]', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays date input', () => {
       browser.click('#test-granularity-select');
       browser.click('#terra-select-option-date');
@@ -89,8 +85,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [age granularity]', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays age inputs', () => {
       browser.click('#test-granularity-select');
       browser.click('#terra-select-option-age');
@@ -100,8 +94,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [unknown precision]', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays no onset options', () => {
       browser.click('#test-precision-select');
       browser.click('#terra-select-option-unknown');
