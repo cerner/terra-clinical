@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Fixed
+* Fixed the 'resizeObserver loop limit exceeded' error with animation frames.
 
 2.8.0 - (July 30, 2019)
 ----------
