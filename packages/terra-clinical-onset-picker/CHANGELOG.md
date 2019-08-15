@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.5.0 - (August 14, 2019)
+----------
 ### Changed
 * Removed age granularity from being populated for age less than a week.
 * Update tests for dev-site v6
