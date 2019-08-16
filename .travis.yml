@@ -46,6 +46,18 @@ jobs:
     -
       script:
         - "travis_wait docker-compose run test-ci npm run wdio -- --suite suite4"
+    -
+      script:
+        - travis_wait docker-compose run test-ci npm run wdio-fusion -- --suite suite1
+    -
+      script:
+        - travis_wait docker-compose run test-ci npm run wdio-fusion -- --suite suite2
+    -
+      script:
+        - travis_wait docker-compose run test-ci npm run wdio-fusion -- --suite suite3
+    -
+      script:
+        - travis_wait docker-compose run test-ci npm run wdio-fusion -- --suite suite4
     - stage: deploy
       script: skip
       before_deploy:
