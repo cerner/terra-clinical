@@ -117,12 +117,12 @@ class SelectableDataGrid extends React.Component {
           onColumnSelect={(columnId) => {
             const newColumns = {};
 
-            const columnToSort = Object.assign({}, this.state.columns[columnId]);
+            const columnToSort = { ...this.state.columns[columnId] };
             columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
             newColumns[`${columnId}`] = columnToSort;
 
             if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = Object.assign({}, this.state.columns[this.state.sortedColumnId]);
+              const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
               if (previouslySortedColumn) {
                 previouslySortedColumn.sortIndicator = undefined;
                 newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -130,7 +130,7 @@ class SelectableDataGrid extends React.Component {
             }
 
             this.setState(prevState => ({
-              columns: Object.assign({}, prevState.columns, newColumns),
+              columns: { ...prevState.columns, ...newColumns },
               sortedColumnId: columnId,
               sortedColumnDirection: columnToSort.sortIndicator,
             }));

@@ -119,10 +119,10 @@ class DatagridWithColumnResizing extends React.Component {
           hasResizableColumns
           fill
           onRequestColumnResize={(columnId, width) => {
-            const columnToUpdate = Object.assign({}, this.state.columns[columnId]);
+            const columnToUpdate = { ...this.state.columns[columnId] };
             columnToUpdate.width = Math.max(width, 50);
             this.setState(prevState => (
-              { columns: Object.assign({}, prevState.columns, { [`${columnId}`]: columnToUpdate }) }
+              { columns: { ...prevState.columns, [`${columnId}`]: columnToUpdate } }
             ));
           }}
         />
