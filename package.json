@@ -34,7 +34,7 @@
     }
   },
   "scripts": {
-    "clean": "npx lerna clean --yes && rm -rf node_modules",
+    "clean": "lerna clean --yes && rm -rf node_modules",
     "bootstrap:hoist": "lerna bootstrap --hoist",
     "clean:install": "npm run clean && npm install",
     "clean:obsolete-snapshots": "npm test -- -u",
