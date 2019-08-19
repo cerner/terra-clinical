@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.6.0 - (August 14, 2019)
+----------
 ### Changed
 * Changed the text style to primary by default and updated Jest snapshots.
 * Updated package.json test scripts
