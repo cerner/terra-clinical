@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Removed inline styles from dev site components.
 
+2.9.0 - (August 14, 2019)
+----------
+### Changed
+* Minor dependency updates
+
 2.8.0 - (July 30, 2019)
 ----------
 ### Added
