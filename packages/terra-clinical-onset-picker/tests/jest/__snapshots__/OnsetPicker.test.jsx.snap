@@ -76,6 +76,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -168,6 +169,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
@@ -276,6 +278,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -382,6 +385,7 @@ exports[`should render only the supplied precisions 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -474,6 +478,7 @@ exports[`should render only the supplied precisions 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
@@ -582,6 +587,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -674,6 +680,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
@@ -782,6 +789,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -873,6 +881,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
@@ -1012,6 +1021,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               </span>
             </div>
             <div
+              aria-label="Select an age precision"
               class="display"
               role="textbox"
             >
@@ -1119,6 +1129,7 @@ exports[`should render with non default inputs when supplied 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -1210,6 +1221,7 @@ exports[`should render with non default inputs when supplied 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
@@ -1302,6 +1314,7 @@ exports[`should render with non default inputs when supplied 1`] = `
               </span>
             </div>
             <div
+              aria-label="Select a year"
               class="display"
               role="textbox"
             >

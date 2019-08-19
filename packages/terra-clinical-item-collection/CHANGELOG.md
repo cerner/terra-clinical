@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+4.6.0 - (August 14, 2019)
+----------
+### Changed
+* Updated package.json test scripts
+
 4.5.0 - (July 16, 2019)
 ----------
 ### Changed

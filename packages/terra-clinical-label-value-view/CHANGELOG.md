@@ -4,9 +4,14 @@ ChangeLog
 Unreleased
 ----------
 
+3.7.0 - (August 14, 2019)
+----------
+### Changed
+* Updated package.json test scripts
+
 3.6.0 - (July 16, 2019)
 ----------
-### Changed 
+### Changed
 * Replaced inline stylings for terra-dev-site components with .scss files
 
 ### Changed

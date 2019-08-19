@@ -100,18 +100,3 @@ it('should render only the supplied precisions', () => {
   );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
-
-it('throws error on missing locale prop in Base', () => {
-  const onsetPicker = (
-    <OnsetPicker
-      birthdate="2011-08-16"
-      id="test"
-    />
-  );
-
-  try {
-    shallow(onsetPicker);
-  } catch (e) {
-    expect(e.message).toContain('add locale prop to Base component');
-  }
-});
