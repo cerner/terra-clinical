@@ -66,6 +66,7 @@ class Row extends React.Component {
       ...customProps
     } = this.props;
 
+    /* eslint-disable react/forbid-dom-props */
     return (
       <div
         {...customProps}
@@ -78,6 +79,7 @@ class Row extends React.Component {
         {children}
       </div>
     );
+    /* eslint-enable react/forbid-dom-props */
   }
 }
 

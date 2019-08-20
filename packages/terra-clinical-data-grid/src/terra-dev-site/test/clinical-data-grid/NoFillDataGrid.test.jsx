@@ -85,6 +85,7 @@ class NoFillDataGrid extends React.Component {
     };
   }
 
+  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="no-fill-data-grid" style={{ height: '100%', width: '100%', overflow: 'auto' }}>
@@ -100,6 +101,7 @@ class NoFillDataGrid extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/forbid-dom-props */
 }
 
 export default NoFillDataGrid;

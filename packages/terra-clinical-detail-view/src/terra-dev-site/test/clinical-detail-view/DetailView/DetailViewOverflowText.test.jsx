@@ -1,6 +1,7 @@
 import React from 'react';
 
 import DetailView from '../../../../DetailView';
+import styles from './styles.module.scss';
 
 const item = (<p>A Detail List Item</p>);
 const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
@@ -12,11 +13,7 @@ const DetailViewOverflowText = () => (
     secondaryTitles={['secondaryTitle1'.repeat(15), 'secondaryTitle2'.repeat(15)]}
     subtitles={['Subtitle1'.repeat(25), 'Subtitle2'.repeat(25)]}
     graph={(
-      <div
-        style={{
-          border: '1px solid black', height: '20em', width: '25em', marginBottom: '0.714rem',
-        }}
-      >
+      <div className={styles.placeholder}>
       This is where any visualizations would go
       </div>
 )}
