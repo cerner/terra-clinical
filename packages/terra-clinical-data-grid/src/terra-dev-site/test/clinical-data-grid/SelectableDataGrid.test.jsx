@@ -91,6 +91,7 @@ class SelectableDataGrid extends React.Component {
     };
   }
 
+  /* eslint-disable react/forbid-dom-props */
   render() {
     const { columns } = this.state;
 
@@ -159,6 +160,7 @@ class SelectableDataGrid extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/forbid-dom-props */
 }
 
 export default SelectableDataGrid;

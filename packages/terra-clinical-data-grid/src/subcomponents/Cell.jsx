@@ -121,6 +121,7 @@ class Cell extends React.Component {
       ...customProps
     } = this.props;
 
+    /* eslint-disable react/forbid-dom-props */
     return (
       <div
         {...customProps}
@@ -143,6 +144,7 @@ class Cell extends React.Component {
         </div>
       </div>
     );
+    /* eslint-enable react/forbid-dom-props */
   }
 }
 

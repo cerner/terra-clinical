@@ -42,6 +42,7 @@ class NoOverflowColumnDataGrid extends React.Component {
     };
   }
 
+  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="no-overflow-column-data-grid" style={{ height: '100%', width: '100%' }}>
@@ -57,6 +58,7 @@ class NoOverflowColumnDataGrid extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/forbid-dom-props */
 }
 
 export default NoOverflowColumnDataGrid;
