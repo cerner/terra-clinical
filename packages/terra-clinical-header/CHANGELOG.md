@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.7.0 - (August 14, 2019)
+----------
 ### Changed
 * Updated package.json test scripts
 * Fixed start content components that were not aligning to the center
