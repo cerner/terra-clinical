@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 const views = () => (
   <div>
     <ItemDisplay text="Test Text" icon={<IconSuccess />} id="Default" />
-    <ItemDisplay text="Test Text" icon={<IconSuccess />} id="Larger" className={styles.large} />
+    <ItemDisplay text="Test Text" icon={<IconSuccess />} id="Larger" className={styles.larger} />
     <ItemDisplay text="Test Text" icon={<IconSuccess />} id="Smaller" className={styles.smaller} />
   </div>
 );

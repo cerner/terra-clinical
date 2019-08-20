@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const content = (
   <div
     id="headerTest--content"
-    className={styles.startcontent}
+    className={styles.endwidecontent}
   />
 );
 
