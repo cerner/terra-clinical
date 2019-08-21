@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Blank Age granularity fixed to return a blank onset date value.
+* Replaced Object.assign syntax with Object spread syntax
 
 4.5.0 - (August 14, 2019)
 ----------

@@ -84,6 +84,7 @@ class PagedContentDataGrid extends React.Component {
     };
   }
 
+  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="paged-data-grid" style={{ height: '100%', width: '100%' }}>
@@ -100,6 +101,7 @@ class PagedContentDataGrid extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/forbid-dom-props */
 }
 
 export default PagedContentDataGrid;

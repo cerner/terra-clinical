@@ -15,6 +15,7 @@ const accessoryStart = id => <IconAlert id={id} />;
 const accessoryEnd = id => <IconInformation id={id} />;
 const comment = id => <ItemView.Comment id={id} text="comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1" />;
 
+/* eslint-disable react/forbid-dom-props */
 const views = () => (
   <div style={{ maxWidth: '900px' }}>
     <p>Applied width of 900px to show the default vs truncated styling.</p>
@@ -30,5 +31,6 @@ const views = () => (
     <ItemView displays={displays} isTruncated comment={comment(4)} startAccessory={accessoryStart(8)} endAccessory={accessoryEnd(12)} layout="twoColumns" textEmphasis="start" id="ItemView-two-truncate" />
   </div>
 );
+/* eslint-enable react/forbid-dom-props */
 
 export default views;

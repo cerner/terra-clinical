@@ -2,6 +2,7 @@ import React from 'react';
 
 import LabelValueView from '../../../LabelValueView';
 
+/* eslint-disable react/forbid-dom-props */
 const examples = () => (
   <div>
     <h3>Default Example:</h3>
@@ -12,5 +13,6 @@ const examples = () => (
     </div>
   </div>
 );
+/* eslint-enable react/forbid-dom-props */
 
 export default examples;
