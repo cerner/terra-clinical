@@ -6,6 +6,7 @@ import ItemView from '../../../ItemView';
 const display1 = <ItemView.Display text="Display for context" />;
 const displays = [display1, display1, display1, display1, display1, display1];
 
+/* eslint-disable react/forbid-dom-props, react/forbid-component-props */
 const views = () => (
   <div style={{ maxWidth: '700px', border: '1px grey solid' }}>
     <p>Applied width of 700px to show the start and end accessory alignment.</p>
@@ -41,5 +42,6 @@ const views = () => (
     <ItemView startAccessory={<IconAlert />} id="test-scale" style={{ fontSize: '100px' }} />
   </div>
 );
+/* eslint-enable react/forbid-dom-props, react/forbid-component-props */
 
 export default views;

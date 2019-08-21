@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Add comments for ESlint 6
 
 3.7.0 - (August 14, 2019)
 ----------
