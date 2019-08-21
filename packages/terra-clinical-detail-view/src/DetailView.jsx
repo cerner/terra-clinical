@@ -79,7 +79,7 @@ const DetailView = (props) => {
     isSmallerTitles,
     ...customProps
   } = props;
-  const attributes = Object.assign({}, customProps);
+  const attributes = { ...customProps };
   attributes.className = cx(['detail-view',
     attributes.className,
   ]);

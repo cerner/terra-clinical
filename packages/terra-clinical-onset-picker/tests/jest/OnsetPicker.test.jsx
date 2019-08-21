@@ -8,7 +8,7 @@ import OnsetPicker from '../../lib/OnsetPicker';
 import onsetMessages from '../../translations/en-US.json';
 
 const locale = 'en-US';
-const messages = Object.assign({}, selectMessages, onsetMessages);
+const messages = { ...selectMessages, ...onsetMessages };
 
 beforeEach(() => {
   MockDate.set('11/15/2017');

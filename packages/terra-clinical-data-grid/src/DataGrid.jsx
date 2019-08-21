@@ -112,7 +112,7 @@ const defaultProps = {
   sections: [],
 };
 
-/* eslint-disable react/sort-comp */
+/* eslint-disable react/sort-comp, react/forbid-dom-props */
 class DataGrid extends React.Component {
   /**
    * Returns a new state object containing the pinned/overflowed section widths based on the incoming props.
@@ -299,7 +299,7 @@ class DataGrid extends React.Component {
   }
 
   /**
-   * Accessiblity
+   * Accessibility
    */
   handleLeadingFocusAnchorFocus() {
     if (!this.shiftIsPressed) {

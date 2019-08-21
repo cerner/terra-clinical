@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemView from '../../../ItemView';
 
+/* eslint-disable react/forbid-dom-props */
 const DefaultItemView = () => (
   <div>
     <p>Given no props, the div is created, but there is no content to show. The ItemView is outlined below.</p>
@@ -9,5 +10,6 @@ const DefaultItemView = () => (
     </div>
   </div>
 );
+/* eslint-enable react/forbid-dom-props */
 
 export default DefaultItemView;
