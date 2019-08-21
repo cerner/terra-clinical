@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Resolved dependency cycle.
+
 ### Changed
 * Add comments for ESlint 6
 

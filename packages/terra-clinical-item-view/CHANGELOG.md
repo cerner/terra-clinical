@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Updated
+* Updated source file for changes in clinical-item-display
+
 ### Changed
 * Add comments for ESlint 6
 

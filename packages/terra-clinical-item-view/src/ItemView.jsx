@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import ItemDisplay from 'terra-clinical-item-display';
+import ItemDisplay from 'terra-clinical-item-display/lib/ItemDisplay';
+// import ItemDisplay from '../../terra-clinical-item-display/lib/ItemDisplay';
+import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
 import styles from './ItemView.scss';
 
 const cx = classNames.bind(styles);
@@ -207,7 +209,7 @@ ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
 
 ItemView.Display = ItemDisplay;
-ItemView.Comment = ItemDisplay.Comment;
+ItemView.Comment = ItemComment;
 
 export default ItemView;
 export {
