@@ -26,7 +26,7 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   /**
-   * String-formatted width that the Cell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   * String-formatted width that the Cell should be rendered as. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   width: PropTypes.string.isRequired,
   /**
