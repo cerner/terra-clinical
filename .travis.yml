@@ -40,37 +40,37 @@ jobs:
         - travis_wait docker-compose run test-ci npm run compile:prod
     - stage: wdio - default theme
       script:
-        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['tiny']
+        - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
     -
       script:
-        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['small']
+        - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['small']
     -
       script:
-        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['medium']
+        - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['medium']
     -
       script:
-        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['large']
+        - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['large']
     -
       script:
-        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['enormous']
+        - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['enormous']
     - stage: compile fusion theme assets
       script:
-        - travis_wait docker-compose run test-ci npm run compile:fusion
+        - travis_wait docker-compose run fusion npm run compile:fusion
     - stage: wdio - fusion theme
       script:
-        - travis_wait docker-compose run test-ci SITE=./build npm run wdio-fusion -- --formFactors ['tiny']
+        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['tiny']
     -
       script:
-        - travis_wait docker-compose run test-ci SITE=./build npm run wdio-fusion -- --formFactors ['small']
+        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['small']
     -
       script:
-        - travis_wait docker-compose run test-ci SITE=./build npm run wdio-fusion -- --formFactors ['medium']
+        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['medium']
     -
       script:
-        - travis_wait docker-compose run test-ci SITE=./build npm run wdio-fusion -- --formFactors ['large']
+        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['large']
     -
       script:
-        - travis_wait docker-compose run test-ci SITE=./build npm run wdio-fusion -- --formFactors ['enormous']
+        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['enormous']
     - stage: deploy
       script: skip
       before_deploy:
