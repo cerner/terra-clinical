@@ -42,6 +42,7 @@
     "compile:build": "lerna ls | cut -d ' ' -f1 | xargs -I {} babel packages/{}/src --out-dir packages/{}/lib --copy-files",
     "compile:clean": "rm -rf packages/**/lib",
     "compile:prod": "rm -rf ./build; webpack -p",
+    "compile:fusion": "rm -rf ./build; THEME=orion-fusion-theme webpack -p",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "heroku-prebuild": "npx lerna init",
