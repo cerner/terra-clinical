@@ -40,19 +40,19 @@ jobs:
         - travis_wait docker-compose run test-ci npm run compile:prod
     - stage: wdio - default theme
       script:
-        - SITE=./build travis_wait docker-compose run test-ci  npm run wdio -- --formFactors ['tiny']
+        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['tiny']
     -
       script:
-        - SITE=./build travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['small']
+        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['small']
     -
       script:
-        - SITE=./build travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['medium']
+        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['medium']
     -
       script:
-        - SITE=./build travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['large']
+        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['large']
     -
       script:
-        - SITE=./build travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['enormous']
+        - travis_wait docker-compose run test-ci npm run wdio SITE=./build -- --formFactors ['enormous']
     - stage: compile fusion theme assets
       script:
         - travis_wait docker-compose run test-ci npm run compile:fusion
