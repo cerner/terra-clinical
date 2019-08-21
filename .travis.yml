@@ -28,6 +28,7 @@ jobs:
         - sudo chown -R travis:travis $HOME/docker
         - 'rm -f $HOME/docker/*.tar.gz'
         - travis_wait docker-compose build test-ci
+        - travis_wait docker-compose build fusion
         - travis_wait docker-compose --verbose pull standalone-chrome
         - >
           mkdir -p $HOME/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
