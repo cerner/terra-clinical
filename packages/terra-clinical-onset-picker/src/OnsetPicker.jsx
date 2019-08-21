@@ -145,8 +145,6 @@ class OnsetPicker extends React.Component {
    * @param {granularity} - New granularity value
    */
   changeGranularity(granularity) {
-    // eslint-disable-next-line no-console
-    console.log('Age =', this.state.age, 'Unit=', this.state.ageUnit);
     if (granularity === GranularityOptions.AGE && this.state.age !== undefined) { // Calculate age values and update onsetDate to match age calculation
       this.setState((prevState) => {
         const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);

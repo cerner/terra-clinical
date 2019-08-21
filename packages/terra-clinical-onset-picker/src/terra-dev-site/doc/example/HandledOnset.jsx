@@ -65,7 +65,7 @@ class HandledOnsetExample extends React.Component {
           <div>
             <hr />
             <p>Form was submitted with</p>
-            <p>{JSON.stringify(this.state.submittedData)}</p>
+            <p>{JSON.stringify(this.state.submittedData, null, 2)}</p>
           </div>
         )}
       </form>

@@ -55,7 +55,7 @@ export default class LessMonth extends React.Component {
           />
           <button type="submit">Submit</button>
         </form>
-        <p data-test-json>{JSON.stringify(this.state.submittedData)}</p>
+        <p data-test-json>{JSON.stringify(this.state.submittedData, null, 2)}</p>
       </div>
     );
   }
