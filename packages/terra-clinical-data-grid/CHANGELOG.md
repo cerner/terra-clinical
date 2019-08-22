@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
 * Add comments for ESlint 6
+* Cleaned up imports in examples and test files
 
 ### Fixed
 * Fixed the 'resizeObserver loop limit exceeded' error with animation frames.
