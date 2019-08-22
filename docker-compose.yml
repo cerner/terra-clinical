@@ -44,7 +44,7 @@ services:
     image: "${DOCKER_IMAGE}-fusion-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
-      - THEME='orion-fusion-theme'
+      - THEME=orion-fusion-theme
       - SITE=./build
     depends_on:
       - standalone-chrome
