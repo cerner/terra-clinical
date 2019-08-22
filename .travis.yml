@@ -27,7 +27,7 @@ jobs:
       script:
         - sudo chown -R travis:travis $HOME/docker
         - 'rm -f $HOME/docker/*.tar.gz'
-        - travis_wait docker-compose build test-ci fusion
+        - travis_wait docker-compose build test-ci test-ci-fusion
         - travis_wait docker-compose --verbose pull standalone-chrome
         - >
           mkdir -p $HOME/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
@@ -40,9 +40,10 @@ jobs:
         - travis_wait docker-compose run test-ci npm run compile:prod
     -
       script:
-        - travis_wait docker-compose run fusion npm run compile:fusion
+        - travis_wait docker-compose run test-ci-fusion npm run compile:fusion
     - stage: wdio - default theme
       script:
+
         - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
     -
       script:
@@ -58,19 +59,19 @@ jobs:
         - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['enormous']
     - stage: wdio - fusion theme
       script:
-        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['tiny']
+        - travis_wait docker-compose run test-ci-fusion npm run wdio-fusion -- --formFactors ['tiny']
     -
       script:
-        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['small']
+        - travis_wait docker-compose run test-ci-fusion npm run wdio-fusion -- --formFactors ['small']
     -
       script:
-        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['medium']
+        - travis_wait docker-compose run test-ci-fusion npm run wdio-fusion -- --formFactors ['medium']
     -
       script:
-        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['large']
+        - travis_wait docker-compose run test-ci-fusion npm run wdio-fusion -- --formFactors ['large']
     -
       script:
-        - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['enormous']
+        - travis_wait docker-compose run test-ci-fusion npm run wdio-fusion -- --formFactors ['enormous']
     - stage: deploy
       script: skip
       before_deploy:
@@ -93,7 +94,9 @@ jobs:
 stages:
   - build
   - danger lint and jest
-  - wdio
+  - pack sites
+  - wdio - default theme
+  - wdio - fusion theme
   - name: deploy
     if: type != pull_request
   - clean up cache
