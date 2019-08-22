@@ -27,8 +27,7 @@ jobs:
       script:
         - sudo chown -R travis:travis $HOME/docker
         - 'rm -f $HOME/docker/*.tar.gz'
-        - travis_wait docker-compose build test-ci
-        - travis_wait docker-compose build fusion
+        - travis_wait docker-compose build test-ci fusion
         - travis_wait docker-compose --verbose pull standalone-chrome
         - >
           mkdir -p $HOME/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
@@ -36,9 +35,12 @@ jobs:
     - stage: danger lint and jest
       script:
         - "travis_wait docker-compose run -e DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN -e TRAVIS=$TRAVIS -e CI=$CI -e HAS_JOSH_K_SEAL_OF_APPROVAL=$HAS_JOSH_K_SEAL_OF_APPROVAL -e TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG test-ci bash -c 'npm run danger && npm run lint && npm run jest'"
-    - stage: compile default theme assets
+    - stage: pack sites
       script:
         - travis_wait docker-compose run test-ci npm run compile:prod
+    -
+      script:
+        - travis_wait docker-compose run fusion npm run compile:fusion
     - stage: wdio - default theme
       script:
         - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
@@ -54,9 +56,6 @@ jobs:
     -
       script:
         - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['enormous']
-    - stage: compile fusion theme assets
-      script:
-        - travis_wait docker-compose run fusion npm run compile:fusion
     - stage: wdio - fusion theme
       script:
         - travis_wait docker-compose run fusion npm run wdio-fusion -- --formFactors ['tiny']
