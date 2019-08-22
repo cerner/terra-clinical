@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Removed inline styles from dev site components.
 * Replaced Object.assign syntax with Object spread syntax
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
@@ -17,8 +18,6 @@ Unreleased
 ----------
 ### Changed
 * Replaced inline stylings for terra-dev-site components with .scss files
-
-### Changed
 * Update wdio specs to use Terra.describeViewports
 
 ### Fixed

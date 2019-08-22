@@ -1,7 +1,11 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
+import classNames from 'classnames/bind';
 
 import ContentCellLayout from './ContentCellLayout';
+import styles from './ClinicalDataGridCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const overflowColumns = [
   {
@@ -80,10 +84,9 @@ class NoPinnedColumnDataGrid extends React.Component {
     };
   }
 
-  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
-      <div id="no-pinned-column-data-grid" style={{ height: '100%', width: '100%' }}>
+      <div id="no-pinned-column-data-grid" className={cx('content-wrapper')}>
         <DataGrid
           id="no-pinned-column"
           overflowColumns={overflowColumns}
@@ -96,7 +99,6 @@ class NoPinnedColumnDataGrid extends React.Component {
       </div>
     );
   }
-  /* eslint-enable react/forbid-dom-props */
 }
 
 export default NoPinnedColumnDataGrid;

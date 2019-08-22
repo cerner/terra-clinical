@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Removed inline styles from dev site components.
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
 
@@ -16,8 +17,6 @@ Unreleased
 ----------
 ### Changed
 * Replaced inline stylings for terra-dev-site components with .scss files
-
-### Changed
 * Update wdio spec to use Terra.describeViewports
 
 3.5.0 - (June 11, 2019)

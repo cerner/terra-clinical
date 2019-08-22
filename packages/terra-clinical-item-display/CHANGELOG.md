@@ -7,6 +7,7 @@ Unreleased
 * Resolved dependency cycle.
 
 ### Changed
+* Removed inline styles from dev site components.
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
 
