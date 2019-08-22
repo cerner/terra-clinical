@@ -6,7 +6,6 @@ import styles from './TextValueLabelValueView.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-/* eslint-disable react/forbid-dom-props */
 const examples = () => (
   <div>
     <h3>Default Example:</h3>
@@ -17,6 +16,5 @@ const examples = () => (
     </div>
   </div>
 );
-/* eslint-enable react/forbid-dom-props */
 
 export default examples;

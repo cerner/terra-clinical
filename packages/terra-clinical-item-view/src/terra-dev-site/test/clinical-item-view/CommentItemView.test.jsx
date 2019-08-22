@@ -7,7 +7,6 @@ const cx = classNames.bind(styles);
 
 const comment = id => <ItemView.Comment id={id} text="comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1" />;
 
-/* eslint-disable react/forbid-dom-props */
 const ItemViews = () => (
   <div className={cx('comment-itemview-wrapper')}>
     <h2>Default</h2>
@@ -17,6 +16,5 @@ const ItemViews = () => (
     <ItemView isTruncated comment={comment(2)} id="ItemView2" />
   </div>
 );
-/* eslint-enable react/forbid-dom-props */
 
 export default ItemViews;

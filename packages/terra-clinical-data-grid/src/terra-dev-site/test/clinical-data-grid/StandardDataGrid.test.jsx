@@ -87,7 +87,6 @@ class StandardDataGrid extends React.Component {
     };
   }
 
-  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="standard-data-grid" className={cx('content-wrapper')}>
@@ -104,7 +103,6 @@ class StandardDataGrid extends React.Component {
       </div>
     );
   }
-  /* eslint-enable react/forbid-dom-props */
 }
 
 export default StandardDataGrid;

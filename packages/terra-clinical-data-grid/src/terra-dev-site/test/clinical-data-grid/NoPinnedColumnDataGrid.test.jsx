@@ -84,7 +84,6 @@ class NoPinnedColumnDataGrid extends React.Component {
     };
   }
 
-  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="no-pinned-column-data-grid" className={cx('content-wrapper')}>
@@ -100,7 +99,6 @@ class NoPinnedColumnDataGrid extends React.Component {
       </div>
     );
   }
-  /* eslint-enable react/forbid-dom-props */
 }
 
 export default NoPinnedColumnDataGrid;

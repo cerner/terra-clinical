@@ -105,7 +105,6 @@ class SubsectionDataGrid extends React.Component {
     };
   }
 
-  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="subsection-data-grid" className={cx('content-wrapper')}>
@@ -130,7 +129,6 @@ class SubsectionDataGrid extends React.Component {
       </div>
     );
   }
-  /* eslint-enable react/forbid-dom-props */
 }
 
 export default SubsectionDataGrid;
