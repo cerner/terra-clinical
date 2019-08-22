@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
 import MockDate from 'mockdate';
 import { IntlProvider } from 'react-intl';
 import selectMessages from 'terra-form-select/translations/en-US.json';
@@ -8,7 +7,7 @@ import OnsetPicker from '../../lib/OnsetPicker';
 import onsetMessages from '../../translations/en-US.json';
 
 const locale = 'en-US';
-const messages = Object.assign({}, selectMessages, onsetMessages);
+const messages = { ...selectMessages, ...onsetMessages };
 
 beforeEach(() => {
   MockDate.set('11/15/2017');

@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 const display1 = <ItemView.Display text="Display for context" />;
 const displays = [display1, display1, display1, display1, display1, display1];
 
+/* eslint-disable react/forbid-dom-props, react/forbid-component-props */
 const views = () => (
   <div className={cx('accessory-itemview-wrapper')}>
     <p>Applied width of 700px to show the start and end accessory alignment.</p>
@@ -45,5 +46,6 @@ const views = () => (
     <ItemView startAccessory={<IconAlert />} id="test-scale" className={cx('itemview-fontsize')} />
   </div>
 );
+/* eslint-enable react/forbid-dom-props, react/forbid-component-props */
 
 export default views;

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Button from 'terra-button';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 
@@ -106,6 +105,7 @@ class SubsectionDataGrid extends React.Component {
     };
   }
 
+  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="subsection-data-grid" className={cx('content-wrapper')}>
@@ -130,6 +130,7 @@ class SubsectionDataGrid extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/forbid-dom-props */
 }
 
 export default SubsectionDataGrid;

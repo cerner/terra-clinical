@@ -1,6 +1,4 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 
@@ -46,6 +44,7 @@ class NoOverflowColumnDataGrid extends React.Component {
     };
   }
 
+  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
       <div id="no-overflow-column-data-grid" className={cx('content-wrapper')}>
@@ -61,6 +60,7 @@ class NoOverflowColumnDataGrid extends React.Component {
       </div>
     );
   }
+  /* eslint-enable react/forbid-dom-props */
 }
 
 export default NoOverflowColumnDataGrid;

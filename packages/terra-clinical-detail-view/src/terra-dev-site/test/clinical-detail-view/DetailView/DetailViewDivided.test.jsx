@@ -17,7 +17,7 @@ const DetailViewDivided = () => (
     subtitles={['subtitle1', 'subTitle2']}
     graph={(
       <div className={cx('graph-content')}>
-      This is where any visualizations would go
+        This is where any visualizations would go
       </div>
 )}
     accessory={accessoryElement}

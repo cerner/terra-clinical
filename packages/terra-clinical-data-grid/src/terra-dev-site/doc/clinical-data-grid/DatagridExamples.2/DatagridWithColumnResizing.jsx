@@ -1,6 +1,4 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
@@ -119,10 +117,10 @@ class DatagridWithColumnResizing extends React.Component {
           hasResizableColumns
           fill
           onRequestColumnResize={(columnId, width) => {
-            const columnToUpdate = Object.assign({}, this.state.columns[columnId]);
+            const columnToUpdate = { ...this.state.columns[columnId] };
             columnToUpdate.width = Math.max(width, 50);
             this.setState(prevState => (
-              { columns: Object.assign({}, prevState.columns, { [`${columnId}`]: columnToUpdate }) }
+              { columns: { ...prevState.columns, [`${columnId}`]: columnToUpdate } }
             ));
           }}
         />

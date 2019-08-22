@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Replaced Object.assign syntax with Object spread syntax
+* Add comments for ESlint 6
+* Cleaned up imports in examples and test files
 
 3.7.0 - (August 14, 2019)
 ----------

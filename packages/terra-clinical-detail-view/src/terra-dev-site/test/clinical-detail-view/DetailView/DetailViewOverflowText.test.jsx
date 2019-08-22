@@ -17,7 +17,7 @@ const DetailViewOverflowText = () => (
     subtitles={['Subtitle1'.repeat(25), 'Subtitle2'.repeat(25)]}
     graph={(
       <div className={cx('graph-content')}>
-      This is where any visualizations would go
+        This is where any visualizations would go
       </div>
 )}
     accessory={accessoryElement}
