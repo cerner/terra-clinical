@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Removed inline styles from dev site components.
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
 
@@ -20,8 +21,8 @@ Unreleased
 
 ### Added
 * Add new theme variables for height
-  * --terra-clinical-header-height
-  * --terra-clinical-header-subheader-height
+* --terra-clinical-header-height
+* --terra-clinical-header-subheader-height
 
 ### Removed
 * Remove absolute positioning from title container
