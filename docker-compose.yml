@@ -35,9 +35,9 @@ services:
     image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
-      - SITE=./build
+      - SITE=$TRAVIS_BUILD_DIR/build
     volumes:
-      - ./build:/opt/module/build
+      - $TRAVIS_BUILD_DIR/build:/opt/module/build
     depends_on:
       - standalone-chrome
 
@@ -46,8 +46,8 @@ services:
     image: "${DOCKER_IMAGE}-test-fusion-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
-      - SITE=./build
+      - SITE=$TRAVIS_BUILD/build
     volumes:
-      - ./build:/opt/module/build
+      - $TRAVIS_BUILD_DIR/build:/opt/module/build
     depends_on:
       - standalone-chrome
