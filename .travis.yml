@@ -35,9 +35,10 @@ jobs:
     - stage: danger lint and jest
       script:
         - "travis_wait docker-compose run -e DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN -e TRAVIS=$TRAVIS -e CI=$CI -e HAS_JOSH_K_SEAL_OF_APPROVAL=$HAS_JOSH_K_SEAL_OF_APPROVAL -e TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG test-ci bash -c 'npm run danger && npm run lint && npm run jest'"
-    - stage: wdio - default theme
-      before_script:
+    - stage: pack default theme
+      script:
         - travis_wait docker-compose run test-ci npm run compile:prod
+    - stage: wdio - default theme
       script:
         - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
     -
@@ -56,8 +57,6 @@ jobs:
       script:
         - travis_wait docker-compose run test-ci-fusion npm run compile:fusion
     - stage: wdio - fusion theme
-      before_script:
-        - travis_wait docker-compose run test-ci npm run compile:fusion
       script:
         - travis_wait docker-compose run test-ci-fusion npm run wdio-fusion -- --formFactors ['tiny']
     -
@@ -94,7 +93,9 @@ jobs:
 stages:
   - build
   - danger lint and jest
+  - pack default theme
   - wdio - default theme
+  - pack fusion theme
   - wdio - fusion theme
   - name: deploy
     if: type != pull_request
