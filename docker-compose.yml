@@ -41,7 +41,7 @@ services:
 
   test-ci-fusion:
     build: ./
-    image: "${DOCKER_IMAGE}-fusion-standalone-chrome:${TAG:-latest}"
+    image: "${DOCKER_IMAGE}-test-fusion-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
       - THEME=orion-fusion-theme

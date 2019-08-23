@@ -43,7 +43,6 @@ jobs:
         - travis_wait docker-compose run test-ci-fusion npm run compile:fusion
     - stage: wdio - default theme
       script:
-
         - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
     -
       script:
