@@ -35,7 +35,7 @@ services:
     image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
-      - SITE=build
+      - SITE=./build
     volumes:
       - ./build:/opt/module/build
     depends_on:
@@ -47,7 +47,7 @@ services:
     environment:
       - CI=true
       - THEME=orion-fusion-theme
-      - SITE=build
+      - SITE=./build
     volumes:
       - ./build:/opt/module/build
     depends_on:
