@@ -3,8 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
-### Fixed
+### Breaking Change
 * Resolved dependency cycle.
+* Removed `ItemDisplay.Comment`.
 
 ### Changed
 * Add comments for ESlint 6
