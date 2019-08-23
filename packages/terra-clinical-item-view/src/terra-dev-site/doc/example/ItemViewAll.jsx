@@ -3,9 +3,7 @@ import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import IconBedRequested from 'terra-icon/lib/icon/IconBedRequested';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import ItemView from 'terra-clinical-item-view/lib/ItemView';
+import ItemView from 'terra-clinical-item-view';
 
 const display1 = <ItemView.Display icon={<IconPerson />} iconAlignment="inline" text="Asif Khan" />;
 const display2 = <ItemView.Display icon={<IconBedRequested />} iconAlignment="inline" text="Pending Admit: Bed Requested" />;

@@ -1,7 +1,10 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import DetailView from '../../../../DetailView';
-import styles from './styles.module.scss';
+import styles from './DetailViewCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const item = (<p>A Detail List Item</p>);
 const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
@@ -13,8 +16,8 @@ const DetailViewDivided = () => (
     secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
     subtitles={['subtitle1', 'subTitle2']}
     graph={(
-      <div className={styles.placeholder}>
-      This is where any visualizations would go
+      <div className={cx('graph-content')}>
+        This is where any visualizations would go
       </div>
 )}
     accessory={accessoryElement}
