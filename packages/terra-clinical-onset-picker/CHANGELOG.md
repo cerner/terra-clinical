@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Removed age granularity from being populated for age less than a week.
+
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
 * Cleaned up imports in examples and test files
@@ -10,7 +13,6 @@ Unreleased
 4.5.0 - (August 14, 2019)
 ----------
 ### Changed
-* Removed age granularity from being populated for age less than a week.
 * Update tests for dev-site v6
 * Updated package.json test scripts
 * Removed react legacy `contexttypes`. Updated to implement `formatMessage` to interface with `injectIntl`.
