@@ -36,6 +36,8 @@ services:
     environment:
       - CI=true
       - SITE=build
+    volumes:
+      - ./build:/opt/module/build
     depends_on:
       - standalone-chrome
 
@@ -46,5 +48,7 @@ services:
       - CI=true
       - THEME=orion-fusion-theme
       - SITE=build
+    volumes:
+      - ./build:/opt/module/build
     depends_on:
       - standalone-chrome
