@@ -1,13 +1,15 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import Header from '../../../Header';
+import styles from './ClinicalHeaderCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const content = (
   <div
     id="headerTest--content"
-    style={{
-      backgroundColor: 'black', height: '30px', width: '300px', margin: '0 10px 0 0',
-    }}
+    className={cx('content')}
   />
 );
 

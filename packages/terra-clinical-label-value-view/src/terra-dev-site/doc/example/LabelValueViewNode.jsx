@@ -1,8 +1,7 @@
 import React from 'react';
 import ItemDisplay from 'terra-clinical-item-display';
 import IconCritical from 'terra-icon/lib/icon/IconCritical';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import LabelValueView from 'terra-clinical-label-value-view/lib/LabelValueView';
+import LabelValueView from 'terra-clinical-label-value-view';
 
 const LabelValueViewNode = () => (
   <div>

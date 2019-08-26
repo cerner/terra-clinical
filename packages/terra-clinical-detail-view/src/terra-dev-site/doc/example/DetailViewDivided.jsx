@@ -1,7 +1,6 @@
 import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DetailView from 'terra-clinical-detail-view/lib/DetailView';
+import DetailView from 'terra-clinical-detail-view';
 import classNames from 'classnames/bind';
 import styles from './DetailViewDivided.module.scss';
 

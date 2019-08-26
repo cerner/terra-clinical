@@ -3,6 +3,11 @@ Changelog
 
 Unreleased
 ----------
+### Changed
+* Removed inline styles from dev site components.
+* Replaced Object.assign syntax with Object spread syntax
+* Add comments for ESlint 6
+* Cleaned up imports in examples and test files
 
 2.9.0 - (August 14, 2019)
 ----------

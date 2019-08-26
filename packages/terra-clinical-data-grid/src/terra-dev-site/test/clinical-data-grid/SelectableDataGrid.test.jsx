@@ -1,9 +1,11 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
+import classNames from 'classnames/bind';
 
 import ContentCellLayout from './ContentCellLayout';
+import styles from './ClinicalDataGridCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 class SelectableDataGrid extends React.Component {
   constructor(props) {
@@ -95,7 +97,7 @@ class SelectableDataGrid extends React.Component {
     const { columns } = this.state;
 
     return (
-      <div id="selectable-data-grid" style={{ height: '100%', width: '100%' }}>
+      <div id="selectable-data-grid" className={cx('content-wrapper')}>
         <DataGrid
           id="selections-example"
           pinnedColumns={[
@@ -117,12 +119,12 @@ class SelectableDataGrid extends React.Component {
           onColumnSelect={(columnId) => {
             const newColumns = {};
 
-            const columnToSort = Object.assign({}, this.state.columns[columnId]);
+            const columnToSort = { ...this.state.columns[columnId] };
             columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
             newColumns[`${columnId}`] = columnToSort;
 
             if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = Object.assign({}, this.state.columns[this.state.sortedColumnId]);
+              const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
               if (previouslySortedColumn) {
                 previouslySortedColumn.sortIndicator = undefined;
                 newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -130,7 +132,7 @@ class SelectableDataGrid extends React.Component {
             }
 
             this.setState(prevState => ({
-              columns: Object.assign({}, prevState.columns, newColumns),
+              columns: { ...prevState.columns, ...newColumns },
               sortedColumnId: columnId,
               sortedColumnDirection: columnToSort.sortIndicator,
             }));
