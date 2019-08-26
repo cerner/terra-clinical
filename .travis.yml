@@ -5,8 +5,6 @@ services:
 branches:
   only:
     - master
-    - verify-theme-aggregation-no-docker
-cache:
   directories:
     - $HOME/docker
 env:
