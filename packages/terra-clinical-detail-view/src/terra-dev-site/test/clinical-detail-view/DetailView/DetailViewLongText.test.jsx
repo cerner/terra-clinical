@@ -6,7 +6,7 @@ const longText = 'Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodt
 const item = (<p>{longText}</p>);
 const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
 const accessoryElement = (<p>{longText}</p>);
-// eslint-disable react/forbid-dom-props
+/* eslint-disable react/forbid-dom-props */
 const DetailViewLongText = () => (
   <DetailView
     title={longText}
