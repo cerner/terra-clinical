@@ -5,6 +5,7 @@ services:
 branches:
   only:
     - master
+cache:
   directories:
     - $HOME/docker
 env:
