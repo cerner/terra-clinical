@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import DetailViewSrc from '!raw-loader!../../../../src/DetailView';
 import DetailListSrc from '!raw-loader!../../../../src/DetailList';
@@ -16,7 +15,6 @@ import DetailViewNoDivider from '../example/DetailViewNoDivider';
 import DetailViewNoDividerSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DetailViewNoDivider';
 import DetailViewDividedSmallerTitles from '../example/DetailViewDividedSmallerTitles';
 import DetailViewDividedSmallerTitlesSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DetailViewDividedSmallerTitles';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate

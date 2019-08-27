@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
 import MockDate from 'mockdate';
 import { IntlProvider } from 'react-intl';
 import selectMessages from 'terra-form-select/translations/en-US.json';
