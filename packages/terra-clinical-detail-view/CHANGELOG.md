@@ -8,7 +8,7 @@ Unreleased
 * Replaced Object.assign syntax with Object spread syntax
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
-* Removed clinical-item-display from examples.
+* Removed clinical-item-display as a dependency.
 
 3.7.0 - (August 14, 2019)
 ----------

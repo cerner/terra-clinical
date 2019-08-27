@@ -28,7 +28,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-clinical-item-display": "^3.6.0",
     "terra-doc-template": "^2.0.0",
     "terra-icon": "^3.0.0"
   },
