@@ -47,7 +47,7 @@ const detail1item4 = (
       <IconPharmacyReject />
     </div>
     <div className={cx('text')}>
-      IconPharmacyReject
+      Pharmacy Reject
     </div>
   </div>
 );
