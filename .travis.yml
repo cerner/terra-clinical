@@ -20,7 +20,7 @@ jobs:
         - travis_wait docker-compose --verbose pull standalone-chrome
     - stage: print!
       script:
-        - "travis_wait docker-compose run ls -al"
+        - ls -al $HOME/$TRAVIS_BUILD_ID
     - stage: clean up cache
       script:
         - sudo chown -R travis:travis $HOME/docker
