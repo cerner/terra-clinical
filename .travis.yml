@@ -27,9 +27,5 @@ jobs:
         - 'rm -f $HOME/$TRAVIS_BUILD_ID'
 stages:
   - build
-  - danger lint and jest
-  - wdio - default theme
-  - wdio - fusion theme
-  - name: deploy
-    if: type != pull_request
+  - print!
   - clean up cache
