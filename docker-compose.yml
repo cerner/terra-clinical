@@ -35,5 +35,7 @@ services:
     image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
+    volumes:
+      - $HOME/$TRAVIS_BUILD_ID:/opt/module
     depends_on:
       - standalone-chrome
