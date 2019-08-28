@@ -13,9 +13,9 @@ env:
     - DOCKER_IMAGE='cerner/terra-clinical'
     - TAG="${TRAVIS_PULL_REQUEST_SHA:=latest}"
 before_install:
-  - rsync -an $HOME/$TRAVIS_BUILD_ID .
+  - rsync -a --ignore-existing $HOME/$TRAVIS_BUILD_ID .
 before_cache:
-  - rsync . $HOME/$TRAVIS_BUILD_ID
+  - rsync -a . $HOME/$TRAVIS_BUILD_ID
 jobs:
   include:
     - stage: build
