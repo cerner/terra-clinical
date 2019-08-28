@@ -40,8 +40,6 @@ services:
       - CI=true
       - SITE=build
     volumes:
-      - $HOME/$TRAVIS_BUILD_ID/node_modules:/opt/module/node_modules
-      - $HOME/$TRAVIS_BUILD_ID/build:/opt/module/build
-      - $HOME/$TRAVIS_BUILD_ID/lib:/opt/module/lib
+      - .:/opt/module
     depends_on:
       - standalone-chrome
