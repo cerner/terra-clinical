@@ -33,9 +33,11 @@ services:
   test-ci:
     build: ./
     image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
+    args:
+        - npm_install=false
     environment:
       - CI=true
     volumes:
-      - $HOME/$TRAVIS_BUILD_ID:/opt/module
+      - $HOME/$TRAVIS_BUILD_ID/node_modules:/opt/module/node_modules
     depends_on:
       - standalone-chrome

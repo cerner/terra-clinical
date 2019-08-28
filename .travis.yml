@@ -18,6 +18,7 @@ jobs:
       script:
         - travis_wait docker-compose build test-ci
         - travis_wait docker-compose --verbose pull standalone-chrome
+        - travis_wait docker-compose run test-ci npm install
     - stage: print!
       script:
         - ls -al $HOME/$TRAVIS_BUILD_ID
