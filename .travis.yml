@@ -16,18 +16,19 @@ jobs:
   include:
     - stage: build
       script:
-        - travis_wait docker-compose build test-ci
-        - travis_wait docker-compose --verbose pull standalone-chrome
         - travis_wait docker-compose run test-ci npm install
-    - stage: print!
+    - stage: danger lint and jest
       script:
-        - ls -al $HOME
-        - ls -al $HOME/$TRAVIS_BUILD_ID
-    - stage: clean up cache
+        - "travis_wait docker-compose run -e DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN -e TRAVIS=$TRAVIS -e CI=$CI -e HAS_JOSH_K_SEAL_OF_APPROVAL=$HAS_JOSH_K_SEAL_OF_APPROVAL -e TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG test-ci bash -c 'npm run danger && npm run lint && npm run jest'"
+    - stage: compile - default theme
       script:
-        # - sudo chown -R travis:travis $HOME/$TRAVIS_BUILD_ID
-        - 'rm -rf $HOME/$TRAVIS_BUILD_ID'
+        - travis_wait docker-compose run test-ci npm run compile:prod
+    - stage: wdio - default theme
+      script:
+        - travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
+
 stages:
   - build
-  - print!
-  - clean up cache
+  - danger lint and jest
+  - compile - default theme
+  - wdio - default theme
