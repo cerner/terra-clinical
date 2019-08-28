@@ -1,19 +1,22 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import Header from '../../../Header';
-import styles from './styles.module.scss';
+import styles from './ClinicalHeaderCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const startContent = (
   <div
     id="headerTest--startContent"
-    className={styles.startcontent}
+    className={cx('start-content')}
   />
 );
 
 const endContent = (
   <div
     id="headerTest--endContent"
-    className={styles.endcontent}
+    className={cx('end-content')}
   />
 );
 
