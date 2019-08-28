@@ -6,8 +6,7 @@ import IconPharmacyReview from 'terra-icon/lib/icon/IconPharmacyReview';
 import IconPharmacyReject from 'terra-icon/lib/icon/IconPharmacyReject';
 import IconGlasses from 'terra-icon/lib/icon/IconGlasses';
 import classNames from 'classnames/bind';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DetailView from 'terra-clinical-detail-view/lib/DetailView';
+import DetailView from 'terra-clinical-detail-view';
 import styles from './DetailViewDivided.module.scss';
 
 const cx = classNames.bind(styles);
