@@ -6,6 +6,7 @@ Unreleased
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
 * Cleaned up imports in examples and test files
+* Added fusion theme
 
 4.6.0 - (August 14, 2019)
 ----------
