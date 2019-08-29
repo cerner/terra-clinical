@@ -31,7 +31,7 @@ services:
     command: "/bin/zsh"
 
   test-ci:
-    context: ./
+    build: ./
     image: "${DOCKER_IMAGE}-test-standalone-chrome:${TAG:-latest}"
     environment:
       - CI=true
