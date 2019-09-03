@@ -217,6 +217,12 @@ class DataGrid extends React.Component {
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
 
     /**
+     * Animation Frame ID's
+     */
+    this.animationFrameIDPinned = null;
+    this.animationFrameIDVertical = null;
+
+    /**
      * Determining the widths of the pinned and overflow sections requires iterating over the prop arrays. The widths are
      * generated and cached in state to limit the amount of iteration performed by the render functions.
      */
@@ -231,7 +237,11 @@ class DataGrid extends React.Component {
      * A ResizeObserver is used to manage changes to the DataGrid's overall size. The handler will execute once upon the start of
      * observation and on every subsequent resize.
      */
-    this.resizeObserver = new ResizeObserver((entries) => { this.handleDataGridResize(entries[0].contentRect.width, entries[0].contentRect.height); });
+    this.resizeObserver = new ResizeObserver((entries) => {
+      this.animationFrameIDVertical = window.requestAnimationFrame(() => {
+        this.handleDataGridResize(entries[0].contentRect.width, entries[0].contentRect.height);
+      });
+    });
     this.resizeObserver.observe(this.verticalOverflowContainerRef);
 
     /**
@@ -239,11 +249,13 @@ class DataGrid extends React.Component {
      */
     this.pinnedColumnResizeObserver = new ResizeObserver((entries) => {
       if (this.scrollbarRef) {
-        /**
-         * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
-         * want defer to the custom scrollbar that rendered by the DataGrid.
-         */
-        this.overflowedContentContainerRef.style.height = `${entries[0].contentRect.height}px`;
+        this.animationFrameIDPinned = window.requestAnimationFrame(() => {
+          /**
+           * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+           * want defer to the custom scrollbar that rendered by the DataGrid.
+           */
+          this.overflowedContentContainerRef.style.height = `${entries[0].contentRect.height}px`;
+        });
       }
     });
     this.pinnedColumnResizeObserver.observe(this.pinnedContentContainerRef);
@@ -270,7 +282,9 @@ class DataGrid extends React.Component {
   }
 
   componentWillUnmount() {
+    window.cancelAnimationFrame(this.animationFrameIDVertical);
     this.resizeObserver.disconnect(this.verticalOverflowContainerRef);
+    window.cancelAnimationFrame(this.animationFrameIDPinned);
     this.pinnedColumnResizeObserver.disconnect(this.pinnedContentContainerRef);
 
     document.removeEventListener('keydown', this.handleKeyDown);
