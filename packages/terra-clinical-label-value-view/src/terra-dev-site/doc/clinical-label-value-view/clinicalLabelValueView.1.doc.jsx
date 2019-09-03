@@ -3,7 +3,6 @@ import DocTemplate from 'terra-doc-template';
 import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
-/* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Component Source
 import LabelValueViewSrc from '!raw-loader!../../../../src/LabelValueView';
 
@@ -14,7 +13,6 @@ import LabelValueViewNode from '../example/LabelValueViewNode';
 import LabelValueViewNodeSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/LabelValueViewNode';
 import LabelValueViewNodeCustom from '../example/LabelValueViewNodeCustom';
 import LabelValueViewNodeCustomSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/LabelValueViewNodeCustom';
-/* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const DocPage = () => (
   <DocTemplate
