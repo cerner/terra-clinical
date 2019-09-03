@@ -9,6 +9,9 @@ Unreleased
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
 
+### Fixed
+* Fixed the 'resizeObserver loop limit exceeded' error with animation frames.
+
 2.9.0 - (August 14, 2019)
 ----------
 ### Changed
