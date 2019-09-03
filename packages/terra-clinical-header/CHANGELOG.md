@@ -12,6 +12,7 @@ Unreleased
 ----------
 ### Changed
 * Updated package.json test scripts
+* Fixed start content components that were not aligning to the center
 
 3.6.0 - (July 16, 2019)
 ----------
