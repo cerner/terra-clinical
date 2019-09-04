@@ -84,9 +84,9 @@
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio && npm run wdio-fusion",
     "update-package-readme": "node scripts/root-readme-updater/index.js",
-    "wdio": "wdio-default && wdio-fusion",
     "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
-    "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js"
+    "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio": "wdio-default && wdio-fusion"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
