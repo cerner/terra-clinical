@@ -86,7 +86,7 @@
     "update-package-readme": "node scripts/root-readme-updater/index.js",
     "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
     "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
-    "wdio": "wdio-default && wdio-fusion"
+    "wdio": "npm run wdio-default && npm run wdio-fusion"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
