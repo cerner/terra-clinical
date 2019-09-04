@@ -38,27 +38,27 @@ jobs:
       script: travis_wait docker-compose run test-ci npm run compile:prod
     - stage: wdio - default theme
       name: tiny
-      script: travis_wait docker-compose run test-ci npm run wdio-default -- --formFactors ['tiny']
-    - script: travis_wait docker-compose run test-ci npm run wdio-default -- --formFactors ['small']
+      script: travis_wait docker-compose run test-ci npm run wdio-default -- -- --formFactors ['tiny']
+    - script: travis_wait docker-compose run test-ci npm run wdio-default -- -- --formFactors ['small']
       name: small
-    - script: travis_wait docker-compose run test-ci npm run wdio-default -- --formFactors ['medium']
+    - script: travis_wait docker-compose run test-ci npm run wdio-default -- -- --formFactors ['medium']
       name: medium
-    - script: travis_wait docker-compose run test-ci npm run wdio-default -- --formFactors ['large']
+    - script: travis_wait docker-compose run test-ci npm run wdio-default -- -- --formFactors ['large']
       name: large
-    - script: travis_wait docker-compose run test-ci npm run wdio-default -- --formFactors ['enormous']
+    - script: travis_wait docker-compose run test-ci npm run wdio-default -- -- --formFactors ['enormous']
       name: enormous
     - stage: compile - fusion theme
       script: travis_wait docker-compose run test-ci npm run compile:fusion
     - stage: wdio - fusion theme
       name: tiny
-      script: travis_wait docker-compose run test-ci npm run wdio-fusion -- --formFactors ['tiny']
-    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- --formFactors ['small']
+      script: travis_wait docker-compose run test-ci npm run wdio-fusion -- -- --formFactors ['tiny']
+    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- -- --formFactors ['small']
       name: small
-    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- --formFactors ['medium']
+    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- -- --formFactors ['medium']
       name: medium
-    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- --formFactors ['large']
+    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- -- --formFactors ['large']
       name: large
-    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- --formFactors ['enormous']
+    - script: travis_wait docker-compose run test-ci npm run wdio-fusion -- -- --formFactors ['enormous']
       name: enormous
     - stage: clean up cache
       before_install: true
