@@ -32,13 +32,24 @@ jobs:
         - >
           mkdir -p $HOME/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
           | xargs -n 2 -t sh -c 'test -e $HOME/docker/$1.tar.gz || docker save $0 | gzip -2 > $HOME/docker/$1.tar.gz'
-    # - stage: ls
-      # script: travis_wait docker-compose run test-ci /bin/ls -al
     - stage: danger lint and jest
       script: "travis_wait docker-compose run -e DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN -e TRAVIS=$TRAVIS -e CI=$CI -e HAS_JOSH_K_SEAL_OF_APPROVAL=$HAS_JOSH_K_SEAL_OF_APPROVAL -e TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST -e TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG test-ci bash -c 'npm run danger && npm run lint && npm run jest'"
     - stage: compile - default theme
       script: travis_wait docker-compose run test-ci npm run compile:prod
     - stage: wdio - default theme
+      name: tiny
+      script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
+    - script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['small']
+      name: small
+    - script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['medium']
+      name: medium
+    - script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['large']
+      name: large
+    - script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['enormous']
+      name: enormous
+    - stage: compile - fusion theme
+      script: travis_wait docker-compose run test-ci npm run compile:prod
+    - stage: wdio - fusion theme
       name: tiny
       script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['tiny']
     - script: travis_wait docker-compose run test-ci npm run wdio -- --formFactors ['small']
@@ -57,8 +68,9 @@ jobs:
 
 stages:
   - build
-  # - ls
   - danger lint and jest
   - compile - default theme
   - wdio - default theme
+  - compile - fusion theme
+  - wdio - fusion theme
   - clean up cache
