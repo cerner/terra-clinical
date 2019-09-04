@@ -203,25 +203,15 @@ class OnsetPicker extends React.Component {
    * @param {ageUnit} - New ageUnit
    */
   changeAgeUnit(ageUnit) {
-    if (this.state.age !== undefined) {
-      this.setState((prevState) => {
-      // Check if date can be calculated
-        const ageDate = Number.isInteger(prevState.age) && ageUnit
-          ? moment(this.props.birthdate).add(prevState.age, ageUnit) : undefined;
-        // Check if date is valid
-        const validDate = ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment();
-
-        return {
-          ageUnit,
-          onsetDate: validDate ? ageDate : undefined,
-        };
-      }, this.handleOnsetUpdate);
-    } else {
-      this.setState(() => ({
-        ageUnit,
-        onsetDate: undefined,
-      }), this.handleOnsetUpdate);
-    }
+    const age = (this.state.age !== undefined) ? Number.isInteger(this.state.age) : undefined;
+    // Check if date can be calculated
+    const ageDate = age && ageUnit ? moment(this.props.birthdate).add(this.state.age, ageUnit) : undefined;
+    // Check if date is valid
+    const validDate = (this.state.age !== undefined) ? (ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment()) : undefined;
+    this.setState(() => ({
+      ageUnit,
+      onsetDate: validDate ? ageDate : undefined,
+    }), this.handleOnsetUpdate);
   }
 
   /**
