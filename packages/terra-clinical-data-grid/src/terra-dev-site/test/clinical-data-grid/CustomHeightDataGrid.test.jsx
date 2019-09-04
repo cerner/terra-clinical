@@ -1,9 +1,11 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
+import classNames from 'classnames/bind';
 
 import ContentCellLayout from './ContentCellLayout';
+import styles from './ClinicalDataGridCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const pinnedColumns = [
   {
@@ -86,10 +88,9 @@ class CustomHeightDataGrid extends React.Component {
     };
   }
 
-  /* eslint-disable react/forbid-dom-props */
   render() {
     return (
-      <div id="custom-height-data-grid" style={{ height: '100%', width: '100%' }}>
+      <div id="custom-height-data-grid" className={cx('content-wrapper')}>
         <DataGrid
           id="custom-height"
           pinnedColumns={pinnedColumns}
@@ -105,7 +106,6 @@ class CustomHeightDataGrid extends React.Component {
       </div>
     );
   }
-  /* eslint-enable react/forbid-dom-props */
 }
 
 export default CustomHeightDataGrid;

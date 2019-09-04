@@ -4,12 +4,15 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Removed inline styles from dev site components.
 * Add comments for ESlint 6
+* Cleaned up imports in examples and test files
 
 3.7.0 - (August 14, 2019)
 ----------
 ### Changed
 * Updated package.json test scripts
+* Fixed start content components that were not aligning to the center
 
 3.6.0 - (July 16, 2019)
 ----------
@@ -19,8 +22,8 @@ Unreleased
 
 ### Added
 * Add new theme variables for height
-  * --terra-clinical-header-height
-  * --terra-clinical-header-subheader-height
+* --terra-clinical-header-height
+* --terra-clinical-header-subheader-height
 
 ### Removed
 * Remove absolute positioning from title container
