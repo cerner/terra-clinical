@@ -174,8 +174,9 @@ class OnsetPicker extends React.Component {
    * @param {event} - Triggered change event
    */
   changeAge(event) {
-    if (event.target.value !== '') {
-      const age = Number(event.target.value);
+    let age;
+    if (event.target.value) {
+      age = Number(event.target.value);
       this.setState((prevState) => {
       // Check if date can be calculated
         const ageDate = Number.isInteger(age) && prevState.ageUnit
@@ -189,9 +190,8 @@ class OnsetPicker extends React.Component {
         };
       }, this.handleOnsetUpdate);
     } else {
-      const age = undefined;
       this.setState(() => ({
-        age,
+        age: undefined,
         onsetDate: undefined,
       }), this.handleOnsetUpdate);
     }
