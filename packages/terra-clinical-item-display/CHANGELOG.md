@@ -3,8 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
-### Breaking Change
+### Changed
 * Resolved dependency cycle.
+
+### Removed
 * Removed `ItemDisplay.Comment`.
 
 ### Changed
