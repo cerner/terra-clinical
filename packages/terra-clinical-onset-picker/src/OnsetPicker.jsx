@@ -131,7 +131,7 @@ class OnsetPicker extends React.Component {
     const birthMoment = moment(props.birthdate).startOf('day');
     const currentMoment = moment().startOf('day');
     /* The granularity is added so that if 'age' is passed as granularity with invalid birthdate,
-    then the qranularity is set to default i.e 'undefined' */
+    then the granularity is set to default i.e 'undefined' */
     const granularity = (currentMoment.diff(birthMoment, 'weeks') !== 0 || this.props.granularity !== GranularityOptions.AGE) ? this.props.granularity : undefined;
 
     this.state = {
