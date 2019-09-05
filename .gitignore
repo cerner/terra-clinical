@@ -60,3 +60,4 @@ target
 **/__snapshots__/latest
 errorScreenshots
 themeable-variables.json
+generatedThemes
