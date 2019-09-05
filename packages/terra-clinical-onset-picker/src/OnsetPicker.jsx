@@ -297,16 +297,19 @@ class OnsetPicker extends React.Component {
     } = this.props;
 
     let granularitySelect = null;
+    const optionAge = [];
     const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const currentMoment = moment().startOf('day');
     if (this.state.precision !== PrecisionOptions.UNKNOWN) {
-      const optionAge = (currentMoment.diff(birthMoment, 'weeks') !== 0) ? (
-        <SelectField.Option
-          value={GranularityOptions.AGE}
-          display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
-          key={GranularityOptions.AGE}
-        />
-      ) : <React.Fragment />;
+      if (currentMoment.diff(birthMoment, 'weeks') !== 0) {
+        optionAge.push(
+          <SelectField.Option
+            value={GranularityOptions.AGE}
+            display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
+            key={GranularityOptions.AGE}
+          />,
+        );
+      }
       granularitySelect = (
         <SelectField
           className={cx('field-inline', 'granularity')}
