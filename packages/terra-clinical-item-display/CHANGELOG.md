@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.7.0 - (September 6, 2019)
+----------
 ### Changed
 * Removed inline styles from dev site components.
 * Add comments for ESlint 6
