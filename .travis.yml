@@ -60,6 +60,20 @@ jobs:
       name: large
     - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['enormous']
       name: enormous
+    - stage: deploy
+      script: skip
+      before_deploy:
+        - sudo chown -R travis:travis $HOME/docker
+        # Load cached docker images
+        - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
+        - "travis_wait docker-compose run --volume=$TRAVIS_BUILD_DIR/build:/opt/module/build -e TERRA_DEV_SITE_NEW_RELIC_LICENSE_KEY='c494ac44c8' -e TERRA_DEV_SITE_NEW_RELIC_APPLICATION_ID='142399777' -e TERRA_DEV_SITE_PUBLIC_PATH='/terra-clinical/' test-ci npm run compile:prod"
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN # Set in travis-ci.com dashboard
+        local_dir: build
+        on:
+          branch: master
     - stage: clean up cache
       before_install: true
       script:
@@ -73,4 +87,6 @@ stages:
   - wdio - default theme
   - compile - fusion theme
   - wdio - fusion theme
+  - name: deploy
+    if: type != pull_request
   - clean up cache
