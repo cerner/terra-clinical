@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.7.0 - (September 6, 2019)
+----------
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
 * Cleaned up imports in examples and test files

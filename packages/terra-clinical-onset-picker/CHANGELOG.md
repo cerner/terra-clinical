@@ -6,6 +6,8 @@ Unreleased
 ### Fixed
 * Removed age granularity from being populated for age less than a week.
 
+4.6.0 - (September 6, 2019)
+----------
 ### Changed
 * Replaced Object.assign syntax with Object spread syntax
 * Cleaned up imports in examples and test files
