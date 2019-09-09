@@ -86,7 +86,7 @@
     "wdio": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js"
   },
   "dependencies": {
-    "terra-toolkit": "cerner/terra-toolkit#post-install"
+    "terra-toolkit": "https://github.com/cerner/terra-toolkit/blob/post-install-message/terra-toolkit-5.6.2.tgz?raw=true"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
