@@ -51,15 +51,15 @@ jobs:
       script: travis_wait docker-compose run test-ci npm run compile:fusion
     - stage: wdio - fusion theme
       name: tiny
-      script: travis_wait docker-compose run -e THEME=orion-fusion FORM_FACTOR=tiny test-ci
+      script: travis_wait docker-compose run -e THEME=orion-fusion -e FORM_FACTOR=tiny test-ci
     - name: small
-      script: travis_wait docker-compose run -e THEME=orion-fusion FORM_FACTOR=small test-ci
+      script: travis_wait docker-compose run -e THEME=orion-fusion -e FORM_FACTOR=small test-ci
     - name: medium
-      script: travis_wait docker-compose run -e THEME=orion-fusion FORM_FACTOR=medium test-ci
+      script: travis_wait docker-compose run -e THEME=orion-fusion -e FORM_FACTOR=medium test-ci
     - name: large
-      script: travis_wait docker-compose run -e THEME=orion-fusion FORM_FACTOR=large test-ci
+      script: travis_wait docker-compose run -e THEME=orion-fusion -e FORM_FACTOR=large test-ci
     - name: enormous
-      script: travis_wait docker-compose run -e THEME=orion-fusion FORM_FACTOR=enormous test-ci
+      script: travis_wait docker-compose run -e THEME=orion-fusion -e FORM_FACTOR=enormous test-ci
     - stage: deploy
       script: skip
       before_deploy:
