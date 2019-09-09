@@ -6,6 +6,8 @@ Unreleased
 ### Updated
 * Updated source file for changes in clinical-item-display
 
+3.7.0 - (September 6, 2019)
+----------
 ### Changed
 * Removed inline styles from dev site components.
 * Add comments for ESlint 6
