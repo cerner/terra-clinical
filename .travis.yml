@@ -38,28 +38,28 @@ jobs:
       script: travis_wait docker-compose run test-ci npm run compile:prod
     - stage: wdio - default theme
       name: tiny
-      script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['tiny']
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['small']
-      name: small
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['medium']
-      name: medium
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['large']
-      name: large
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['enormous']
-      name: enormous
+      script: travis_wait docker-compose run -e FORM_FACTOR=tiny test-ci npm run wdio-default
+    - name: small
+      script: travis_wait docker-compose run -e FORM_FACTOR=small test-ci npm run wdio-default
+    - name: medium
+      script: travis_wait docker-compose run -e FORM_FACTOR=medium test-ci npm run wdio-default
+    - name: large
+      script: travis_wait docker-compose run -e FORM_FACTOR=large test-ci npm run wdio-default
+    - name: enormous
+      script: travis_wait docker-compose run -e FORM_FACTOR=enormous test-ci npm run wdio-default
     - stage: compile - fusion theme
       script: travis_wait docker-compose run test-ci npm run compile:fusion
     - stage: wdio - fusion theme
       name: tiny
-      script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['tiny']
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['small']
-      name: small
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['medium']
-      name: medium
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['large']
-      name: large
-    - script: travis_wait docker-compose run test-ci npm run tt-wdio -- --formFactors ['enormous']
-      name: enormous
+      script: travis_wait docker-compose run -e FORM_FACTOR=tiny test-ci npm run wdio-default
+    - name: small
+      script: travis_wait docker-compose run -e FORM_FACTOR=small test-ci npm run wdio-default
+    - name: medium
+      script: travis_wait docker-compose run -e FORM_FACTOR=medium test-ci npm run wdio-default
+    - name: large
+      script: travis_wait docker-compose run -e FORM_FACTOR=large test-ci npm run wdio-default
+    - name: enormous
+      script: travis_wait docker-compose run -e FORM_FACTOR=enormous test-ci npm run wdio-default
     - stage: deploy
       script: skip
       before_deploy:
