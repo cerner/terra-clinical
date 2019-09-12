@@ -7,6 +7,7 @@ import { name } from '../../../../package.json';
 
 // Component Source
 import ItemViewSrc from '!raw-loader!../../../../src/ItemView.jsx';
+import ItemViewPropsTable from '!terra-props-table-loader!../../../../src/ItemView.jsx';
 
 // Example Files
 import ItemViewStandard from '../example/ItemViewStandard';
@@ -64,6 +65,7 @@ const DocPage = () => (
       {
         componentName: 'Item View',
         componentSrc: ItemViewSrc,
+        componentProps: ItemViewPropsTable,
       },
     ]}
   />

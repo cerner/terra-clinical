@@ -5,6 +5,7 @@ import { name } from '../../../../package.json';
 
 // Component Source
 import HeaderSrc from '!raw-loader!../../../../src/Header';
+import HeaderPropsTable from '!terra-props-table-loader!../../../../src/Header';
 
 // Example Files
 import TitleHeader from '../example/TitleHeader';
@@ -54,6 +55,7 @@ const DocPage = () => (
       {
         componentName: 'Header',
         componentSrc: HeaderSrc,
+        componentProps: HeaderPropsTable,
       },
     ]}
   />

@@ -5,6 +5,7 @@ import { name } from '../../../../package.json';
 
 // Component Source
 import LabelValueViewSrc from '!raw-loader!../../../../src/LabelValueView';
+import LabelValueViewPropsTable from '!terra-props-table-loader!../../../../src/LabelValueView';
 
 // Example Files
 import LabelValueViewText from '../example/LabelValueViewText';
@@ -40,6 +41,7 @@ const DocPage = () => (
       {
         componentName: 'Label Value View',
         componentSrc: LabelValueViewSrc,
+        componentProps: LabelValueViewPropsTable,
       },
     ]}
   />

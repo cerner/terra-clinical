@@ -5,6 +5,7 @@ import { name } from '../../../../package.json';
 
 // Component Source
 import OnsetPickerSrc from '!raw-loader!../../../../src/OnsetPicker';
+import OnsetPickerPropsTable from '!terra-props-table-loader!../../../../src/OnsetPicker';
 
 // Example Files
 import DefaultOnset from '../example/DefaultOnset';
@@ -40,6 +41,7 @@ const DocPage = () => (
       {
         componentName: 'Onset Picker',
         componentSrc: OnsetPickerSrc,
+        componentProps: OnsetPickerPropsTable,
       },
     ]}
   />

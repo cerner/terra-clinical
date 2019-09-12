@@ -4,6 +4,7 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 // Component Source
 import DataGridSrc from '!raw-loader!../../../../src/DataGrid';
+import DataGridPropsTable from '!terra-props-table-loader!../../../../src/DataGrid';
 
 const DocPage = () => (
   <DocTemplate
@@ -14,6 +15,7 @@ const DocPage = () => (
       {
         componentName: 'DataGrid',
         componentSrc: DataGridSrc,
+        componentProps: DataGridPropsTable,
       },
     ]}
   />

@@ -6,6 +6,8 @@ import { name } from '../../../../package.json';
 // Component Source
 import ItemCollectionSrc from '!raw-loader!../../../../src/ItemCollection';
 import ItemSrc from '!raw-loader!../../../../src/Item';
+import ItemCollectionPropsTable from '!terra-props-table-loader!../../../../src/ItemCollection';
+import ItemPropsTable from '!terra-props-table-loader!../../../../src/Item';
 
 // Example Files
 import ItemCollectionExample from '../example/ItemCollectionExample';
@@ -27,10 +29,12 @@ const DocPage = () => (
       {
         componentName: 'Item Collection',
         componentSrc: ItemCollectionSrc,
+        componentProps: ItemCollectionPropsTable,
       },
       {
         componentName: 'Item',
         componentSrc: ItemSrc,
+        componentProps: ItemPropsTable,
       },
     ]}
   />

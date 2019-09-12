@@ -6,6 +6,9 @@ import { name } from '../../../../package.json';
 // Component Source
 import ItemDisplaySrc from '!raw-loader!../../../../src/ItemDisplay';
 import CommentSrc from '!raw-loader!../../../../src/ItemComment';
+import ItemDisplayPropsTable from '!terra-props-table-loader!../../../../src/ItemDisplay';
+import CommentPropsTable from '!terra-props-table-loader!../../../../src/ItemComment';
+
 
 // Example Files
 import TextStyles from '../example/TextStyles';
@@ -56,10 +59,12 @@ const DocPage = () => (
       {
         componentName: 'Item Display',
         componentSrc: ItemDisplaySrc,
+        componentProps: ItemDisplayPropsTable,
       },
       {
         componentName: 'Item Comment',
         componentSrc: CommentSrc,
+        componentProps: CommentPropsTable,
       },
     ]}
   />
