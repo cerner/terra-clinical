@@ -143,7 +143,7 @@ class OnsetPicker extends React.Component {
    * @param {granularity} - New granularity value
    */
   changeGranularity(granularity) {
-    if (granularity === GranularityOptions.AGE && this.state.age !== undefined) { // Calculate age values and update onsetDate to match age calculation
+    if (granularity === GranularityOptions.AGE) { // Calculate age values and update onsetDate to match age calculation
       this.setState((prevState) => {
         const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);
 
@@ -151,7 +151,7 @@ class OnsetPicker extends React.Component {
           granularity,
           age: ageValues.age,
           ageUnit: ageValues.ageUnit,
-          onsetDate: moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit),
+          onsetDate: prevState.onsetDate ? moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit) : undefined,
         };
       }, this.handleOnsetUpdate);
     } else {
@@ -165,7 +165,14 @@ class OnsetPicker extends React.Component {
    * @param {precision} - New precision value
    */
   changePrecision(precision) {
-    this.setState({ precision }, this.handleOnsetUpdate);
+    if (precision !== PrecisionOptions.UNKNOWN) {
+      this.setState({ precision }, this.handleOnsetUpdate);
+    } else {
+      this.setState(() => ({
+        precision,
+        onsetDate: undefined,
+      }), this.handleOnsetUpdate);
+    }
   }
 
   /**
@@ -268,11 +275,12 @@ class OnsetPicker extends React.Component {
 
     const onsetObject = {
       precision: this.state.precision,
-      granularity: this.state.granularity,
       onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : '',
     };
-
-    if (this.state.granularity === GranularityOptions.AGE) {
+    if (this.state.precision !== PrecisionOptions.UNKNOWN) {
+      onsetObject.granularity = this.state.granularity;
+    }
+    if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
       onsetObject.ageUnit = this.state.ageUnit;
     }
 
