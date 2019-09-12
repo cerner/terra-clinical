@@ -276,10 +276,8 @@ class OnsetPicker extends React.Component {
     const onsetObject = {
       precision: this.state.precision,
       onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : '',
+      granularity: this.state.precision !== PrecisionOptions.UNKNOWN ? this.state.granularity : '',
     };
-    if (this.state.precision !== PrecisionOptions.UNKNOWN) {
-      onsetObject.granularity = this.state.granularity;
-    }
     if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
       onsetObject.ageUnit = this.state.ageUnit;
     }
