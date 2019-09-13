@@ -7,6 +7,7 @@ Unreleased
 4.6.0 - (September 6, 2019)
 ----------
 ### Changed
+* Blank Age granularity fixed to return a blank onset date value.
 * Replaced Object.assign syntax with Object spread syntax
 * Cleaned up imports in examples and test files
 
