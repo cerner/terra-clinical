@@ -1,5 +1,0 @@
-const siteConfig = {
-  includePropsTableLoader: true,
-};
-
-module.exports = siteConfig;
