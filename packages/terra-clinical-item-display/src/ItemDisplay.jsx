@@ -84,7 +84,7 @@ const ItemDisplay = ({
   return (
     <div {...customProps} className={componentClassNames}>
       {displayIcon}
-      <div className={textClassNames}>{text}</div>
+      <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
     </div>
   );
 };
