@@ -6,7 +6,6 @@ import ItemViewTwoColumnDocs from '../../../../docs/item-view-two-column.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import ItemViewSrc from '!raw-loader!../../../../src/ItemView.jsx';
 import ItemViewPropsTable from '!terra-props-table-loader!../../../../src/ItemView.jsx';
 
 // Example Files
@@ -64,7 +63,6 @@ const DocPage = () => (
     propsTables={[
       {
         componentName: 'Item View',
-        componentSrc: ItemViewSrc,
         componentProps: ItemViewPropsTable,
       },
     ]}

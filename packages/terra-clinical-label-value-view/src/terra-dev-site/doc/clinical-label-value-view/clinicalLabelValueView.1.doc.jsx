@@ -4,7 +4,6 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import LabelValueViewSrc from '!raw-loader!../../../../src/LabelValueView';
 import LabelValueViewPropsTable from '!terra-props-table-loader!../../../../src/LabelValueView';
 
 // Example Files
@@ -40,7 +39,6 @@ const DocPage = () => (
     propsTables={[
       {
         componentName: 'Label Value View',
-        componentSrc: LabelValueViewSrc,
         componentProps: LabelValueViewPropsTable,
       },
     ]}

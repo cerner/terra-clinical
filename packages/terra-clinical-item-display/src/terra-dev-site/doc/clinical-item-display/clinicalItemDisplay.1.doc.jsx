@@ -4,8 +4,6 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import ItemDisplaySrc from '!raw-loader!../../../../src/ItemDisplay';
-import CommentSrc from '!raw-loader!../../../../src/ItemComment';
 import ItemDisplayPropsTable from '!terra-props-table-loader!../../../../src/ItemDisplay';
 import CommentPropsTable from '!terra-props-table-loader!../../../../src/ItemComment';
 
@@ -58,12 +56,10 @@ const DocPage = () => (
     propsTables={[
       {
         componentName: 'Item Display',
-        componentSrc: ItemDisplaySrc,
         componentProps: ItemDisplayPropsTable,
       },
       {
         componentName: 'Item Comment',
-        componentSrc: CommentSrc,
         componentProps: CommentPropsTable,
       },
     ]}

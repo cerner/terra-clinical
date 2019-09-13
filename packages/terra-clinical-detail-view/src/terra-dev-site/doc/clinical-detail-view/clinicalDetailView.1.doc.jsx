@@ -4,9 +4,6 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import DetailViewSrc from '!raw-loader!../../../../src/DetailView';
-import DetailListSrc from '!raw-loader!../../../../src/DetailList';
-import DetailListItemSrc from '!raw-loader!../../../../src/DetailListItem';
 import DetailViewPropsTable from '!terra-props-table-loader!../../../../src/DetailView';
 import DetailListPropsTable from '!terra-props-table-loader!../../../../src/DetailList';
 import DetailListItemPropsTable from '!terra-props-table-loader!../../../../src/DetailListItem';
@@ -44,17 +41,14 @@ const DocPage = () => (
     propsTables={[
       {
         componentName: 'Detail View',
-        componentSrc: DetailViewSrc,
         componentProps: DetailViewPropsTable,
       },
       {
         componentName: 'Detail List',
-        componentSrc: DetailListSrc,
         componentProps: DetailListPropsTable,
       },
       {
         componentName: 'Detail List Item',
-        componentSrc: DetailListItemSrc,
         componentProps: DetailListItemPropsTable,
       },
     ]}

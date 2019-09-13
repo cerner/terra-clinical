@@ -4,7 +4,6 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import HeaderSrc from '!raw-loader!../../../../src/Header';
 import HeaderPropsTable from '!terra-props-table-loader!../../../../src/Header';
 
 // Example Files
@@ -54,7 +53,6 @@ const DocPage = () => (
     propsTables={[
       {
         componentName: 'Header',
-        componentSrc: HeaderSrc,
         componentProps: HeaderPropsTable,
       },
     ]}
