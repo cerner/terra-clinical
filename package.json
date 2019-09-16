@@ -122,7 +122,7 @@
     "terra-base": "^5.0.0",
     "terra-dev-site": "^6.1.1",
     "terra-disclosure-manager": "^4.9.0",
-    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#theme-patch",
+    "terra-toolkit": "git://github.com/cerner/terra-toolkit.git#update-theme-aggregation",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"

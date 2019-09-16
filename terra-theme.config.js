@@ -1,7 +1,7 @@
 const themeConfig = {
   exclude: [],
-  theme: '',
-  scoped: ['orion-fusion-theme'],
+  theme: 'orion-fusion-theme',
+  scoped: [],
 };
 
 module.exports = themeConfig;
