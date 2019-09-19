@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed terra-i18n as a dependency since it is not being used.
 
 4.7.0 - (September 19, 2019)
 ----------
