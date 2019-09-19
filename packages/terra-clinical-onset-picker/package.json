@@ -34,7 +34,7 @@
     "moment": "^2.22.2",
     "prop-types": "^15.5.8",
     "terra-breakpoints": "^2.0.0",
-    "terra-date-picker": "^3.0.0",
+    "terra-date-picker": "^4.0.0",
     "terra-doc-template": "^2.0.0",
     "terra-form-field": "^3.0.0",
     "terra-form-fieldset": "^2.0.0",
