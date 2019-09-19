@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.7.0 - (September 19, 2019)
+----------
 ### Changed
 * Bump terra-date-picker dependency to 4.0.0.
 

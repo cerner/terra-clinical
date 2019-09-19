@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.9.0 - (September 19, 2019)
+----------
 ### Changed
 * Convert SCSS files to .module.scss
 

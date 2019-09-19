@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.11.0 - (September 19, 2019)
+----------
 ### Added
 * Added en-CA translations.
 
