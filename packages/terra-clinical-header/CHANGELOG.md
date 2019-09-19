@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.8.0 - (September 6, 2019)
+----------
 ### Changed
 * Removed inline styles from dev site components.
 * Add comments for ESlint 6
@@ -12,6 +15,7 @@ Unreleased
 ----------
 ### Changed
 * Updated package.json test scripts
+* Fixed start content components that were not aligning to the center
 
 3.6.0 - (July 16, 2019)
 ----------

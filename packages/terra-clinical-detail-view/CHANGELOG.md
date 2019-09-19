@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.8.0 - (September 6, 2019)
+----------
 ### Changed
 * Removed inline styles from dev site components.
 * Replaced Object.assign syntax with Object spread syntax

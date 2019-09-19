@@ -143,7 +143,7 @@ class OnsetPicker extends React.Component {
    * @param {granularity} - New granularity value
    */
   changeGranularity(granularity) {
-    if (granularity === GranularityOptions.AGE) { // Calculate age values and update onsetDate to match age calculation
+    if (granularity === GranularityOptions.AGE && this.state.age !== undefined) { // Calculate age values and update onsetDate to match age calculation
       this.setState((prevState) => {
         const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);
 
@@ -174,20 +174,27 @@ class OnsetPicker extends React.Component {
    * @param {event} - Triggered change event
    */
   changeAge(event) {
-    const age = Number(event.target.value);
-
-    this.setState((prevState) => {
+    let age;
+    if (event.target.value) {
+      age = Number(event.target.value);
+      this.setState((prevState) => {
       // Check if date can be calculated
-      const ageDate = Number.isInteger(age) && prevState.ageUnit
-        ? moment(this.props.birthdate).add(age, prevState.ageUnit) : undefined;
-      // Check if date is valid
-      const validDate = ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment();
+        const ageDate = Number.isInteger(age) && prevState.ageUnit
+          ? moment(this.props.birthdate).add(age, prevState.ageUnit) : undefined;
+        // Check if date is valid
+        const validDate = ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment();
 
-      return {
-        age,
-        onsetDate: validDate ? ageDate : undefined,
-      };
-    }, this.handleOnsetUpdate);
+        return {
+          age,
+          onsetDate: validDate ? ageDate : undefined,
+        };
+      }, this.handleOnsetUpdate);
+    } else {
+      this.setState(() => ({
+        age: undefined,
+        onsetDate: undefined,
+      }), this.handleOnsetUpdate);
+    }
   }
 
   /**
@@ -196,18 +203,15 @@ class OnsetPicker extends React.Component {
    * @param {ageUnit} - New ageUnit
    */
   changeAgeUnit(ageUnit) {
-    this.setState((prevState) => {
-      // Check if date can be calculated
-      const ageDate = Number.isInteger(prevState.age) && ageUnit
-        ? moment(this.props.birthdate).add(prevState.age, ageUnit) : undefined;
-      // Check if date is valid
-      const validDate = ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment();
-
-      return {
-        ageUnit,
-        onsetDate: validDate ? ageDate : undefined,
-      };
-    }, this.handleOnsetUpdate);
+    const validAge = Number.isInteger(this.state.age);
+    // Check if date can be calculated
+    const ageDate = validAge && ageUnit ? moment(this.props.birthdate).add(this.state.age, ageUnit) : undefined;
+    // Check if date is valid
+    const validDate = (this.state.age !== undefined) ? (ageDate && ageDate >= moment(this.props.birthdate) && ageDate <= moment()) : false;
+    this.setState(() => ({
+      ageUnit,
+      onsetDate: validDate ? ageDate : undefined,
+    }), this.handleOnsetUpdate);
   }
 
   /**
