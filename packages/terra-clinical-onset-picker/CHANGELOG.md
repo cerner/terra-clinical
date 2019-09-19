@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Bump terra-date-picker dependency to 4.0.0.
+
 ### Added
 * Added en-CA translations.
 
