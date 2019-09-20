@@ -6,6 +6,14 @@ Unreleased
 ### Fixed
 * Removed age granularity from being populated for age less than a week.
 
+4.7.0 - (September 19, 2019)
+----------
+### Changed
+* Bump terra-date-picker dependency to 4.0.0.
+
+### Added
+* Added en-CA translations.
+
 4.6.0 - (September 6, 2019)
 ----------
 ### Changed
