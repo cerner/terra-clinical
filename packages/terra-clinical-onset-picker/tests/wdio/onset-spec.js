@@ -267,6 +267,7 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     });
 
     Terra.it.validatesElement('invalid age input', { selector: '#root' });
+  });
 
   describe('has Age Empty', () => {
     before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/less-month'));
