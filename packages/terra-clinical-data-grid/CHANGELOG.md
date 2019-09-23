@@ -3,6 +3,13 @@ Changelog
 
 Unreleased
 ----------
+### Removed
+* Removed used keycodes file
+
+2.11.0 - (September 19, 2019)
+----------
+### Added
+* Added en-CA translations.
 
 2.10.0 - (September 6, 2019)
 ----------
