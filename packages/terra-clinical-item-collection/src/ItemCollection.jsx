@@ -5,7 +5,7 @@ import ResponsiveElement from 'terra-responsive-element';
 import Item from './Item';
 import ListView from './_ListView';
 import TableView from './_TableView';
-import './ItemCollection.scss';
+import './ItemCollection.module.scss';
 
 const maxDisplays = 8;
 

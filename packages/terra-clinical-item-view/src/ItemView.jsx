@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ItemDisplay from 'terra-clinical-item-display';
 import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
-import styles from './ItemView.scss';
+import styles from './ItemView.module.scss';
 
 const cx = classNames.bind(styles);
 

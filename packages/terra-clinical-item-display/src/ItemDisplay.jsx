@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './ItemDisplay.scss';
+import styles from './ItemDisplay.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -82,7 +82,7 @@ const ItemDisplay = ({
   return (
     <div {...customProps} className={componentClassNames}>
       {displayIcon}
-      <div className={textClassNames}>{text}</div>
+      <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
     </div>
   );
 };
