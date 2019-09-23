@@ -22,8 +22,8 @@
 
   .text {
     color: #c00;
-    font-weight: 700;
     flex: 1 1 auto;
+    font-weight: 700;
     min-width: 10px; // Need min-width, as IE10 will completely squish display
   }
 }
