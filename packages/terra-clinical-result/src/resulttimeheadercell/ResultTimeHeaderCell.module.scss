@@ -1,0 +1,51 @@
+@import '../common/mixins';
+
+:local {
+  .clinical-result-time-header-cell {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+
+    .date {
+      @include terra-clinical-result-cell-truncate;
+      color: var(--terra-clinical-result-time-header-cell-date-color, rgba(28, 31, 33, 0.65));
+      flex: 0 1 auto;
+      font-size: var(--terra-clinical-result-time-header-cell-date-font-size, 1em); // Must use ems for font rescaling
+      line-height: var(--terra-clinical-result-time-header-cell-date-line-height, 1.42857);
+      max-width: 100%;
+      min-height: var(--terra-clinical-result-time-header-cell-date-min-height, 1.42857em); // Set to same as line-height in ems
+      min-width: 10px; // Needed for IE10
+
+      &.hide-date {
+        @include terra-clinical-result-visually-hidden-text;
+        min-height: var(--terra-clinical-result-time-header-cell-date-min-height, 1.42857em); // Set to same as line-height in ems
+      }
+    }
+
+    .time {
+      @include terra-clinical-result-cell-truncate;
+      color: var(--terra-clinical-result-time-header-cell-time-color);
+      flex: 0 1 auto;
+      font-size: var(--terra-clinical-result-time-header-cell-time-font-size, 1em); // Must use ems for font rescaling
+      line-height: var(--terra-clinical-result-time-header-cell-time-line-height, 1.42857);
+      max-width: 100%;
+      min-height: var(--terra-clinical-result-time-header-cell-time-min-height, 1.42857em); // Set to same as line-height in ems
+      min-width: 10px; // Needed for IE10
+    }
+
+    /* stylelint-disable-next-line selector-max-compound-selectors */
+    .date + .time {
+      margin-top: var(--terra-clinical-result-time-header-cell-time-margin-top, 0.1em); // Must use ems for font rescaling
+    }
+  }
+
+  .padding-standard {
+    padding: var(--terra-clinical-result-label-header-cell-padding-standard-padding, 0.71428rem 0.71428rem);
+  }
+
+  .padding-compact {
+    padding: var(--terra-clinical-result-label-header-cell-padding-compact-padding, 0.35714rem 0.71428rem);
+  }
+}
