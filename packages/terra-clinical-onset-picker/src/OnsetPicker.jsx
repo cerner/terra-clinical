@@ -165,13 +165,13 @@ class OnsetPicker extends React.Component {
    * @param {precision} - New precision value
    */
   changePrecision(precision) {
-    if (precision !== PrecisionOptions.UNKNOWN) {
-      this.setState({ precision }, this.handleOnsetUpdate);
-    } else {
+    if (precision === PrecisionOptions.UNKNOWN) {
       this.setState(() => ({
         precision,
         onsetDate: undefined,
       }), this.handleOnsetUpdate);
+    } else {
+      this.setState({ precision }, this.handleOnsetUpdate);
     }
   }
 
