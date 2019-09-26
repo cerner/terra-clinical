@@ -1,0 +1,50 @@
+:local {
+  .dashed-border-group {
+    border: 2px dashed #333;
+  }
+
+  .mock-flowsheet-header {
+    background-color: #f1f1f1;
+    border: 1px solid #dedfe0;
+    border-bottom-color: #868a8c;
+    max-width: 1055px;
+    padding-left: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .mock-flowsheet-header-cell {
+    border-left: 1px solid #868a8c;
+    border-right: 1px solid #868a8c;
+    display: inline-block;
+    margin-right: -1px;
+    width: 120px;
+    
+    &.new-date {
+      border-left: 2px solid #4e5558;
+    }
+  }
+
+  
+  .mock-flowsheet-firstcolumn {
+    background-color: #f1f1f1;
+    border: 1px solid #dedfe0;
+    border-right: 2px solid #4e5558;
+    max-width: 222px;
+    padding-top: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+
+  }
+
+  .mock-flowsheet-firstcolumn-cell {
+    border-top: 1px solid #868a8c;
+    border-bottom: 1px solid #868a8c;
+    margin-bottom: -1px;
+
+    &.zebra {
+      background-color: #dedfe0;
+    }
+  }
+
+}

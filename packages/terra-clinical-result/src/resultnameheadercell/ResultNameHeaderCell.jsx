@@ -7,11 +7,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Content to be displayed as the primary
+   * Content to be displayed for the Result Name row label.
    */
   resultName: PropTypes.string,
   /**
-   * Content to be displayed as the secondary
+   * Content to be displayed as the supporting Unit of Measure row label.
    */
   unit: PropTypes.string,
   /**

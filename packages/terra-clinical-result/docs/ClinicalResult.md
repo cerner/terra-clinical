@@ -1,6 +1,7 @@
-# Result Time Header Cell
+# Terra Clinical Result
 
-Result-Time-Header-Cell is a component of terra-clinical-result that creates a standardized view for the Date/Time Header cells (column headers) for each bucketed time column within a flowsheet.
+The Clinical Result is a starndardized view for single result values added to a Patient's Medical Chart. Applies to Vital Signs, Laboratory test results, etc.
+
 
 ## Getting Started
 

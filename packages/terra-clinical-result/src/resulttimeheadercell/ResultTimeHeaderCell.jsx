@@ -7,15 +7,15 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Content to be displayed as the primary
+   * Content to be displayed on the first line, typically abbrivated date, e.g. `Dec 12, 2010`
    */
   date: PropTypes.string,
   /**
-   * Content to be displayed as the secondary
+   * Content to be displayed on the second line, typically 24 hour time in hours and minutes, e.g. `23:59`
    */
   time: PropTypes.string,
   /**
-   * Visually hides the date because is presented as the same day in a series of side-by-side columns
+   * Visually hides the date when presented in a series of side-by-side columns of the same date.
    */
   hideDate: PropTypes.bool,
   /**
