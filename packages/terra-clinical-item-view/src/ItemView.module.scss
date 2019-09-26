@@ -64,7 +64,7 @@
   }
 
   .is-truncated,
-  .is-truncated [class*='ItemDisplay__text'] {
+  .is-truncated [data-terra-clinical-item-display-text] {
     @include terra-clinical-text-truncate;
   }
 

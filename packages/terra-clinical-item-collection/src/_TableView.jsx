@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Table from 'terra-table';
 import Utils from './_ItemCollectionUtils';
-import styles from './ItemCollection.scss';
+import styles from './ItemCollection.module.scss';
 
 const propTypes = {
   /**
