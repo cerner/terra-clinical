@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.8.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Removed
 * Removed terra-i18n as a dependency since it is not being used.
 
