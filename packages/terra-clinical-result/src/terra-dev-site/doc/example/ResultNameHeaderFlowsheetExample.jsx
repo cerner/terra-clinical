@@ -10,25 +10,25 @@ const ResultNameColumnFlowsheetExample = () => (
     <div className={cx('mock-flowsheet-firstcolumn-cell')}>
       <ResultNameHeaderCell resultName="Temp" unit="degC" />
     </div>
-    <div className={cx(['mock-flowsheet-firstcolumn-cell','zebra'])}>
+    <div className={cx(['mock-flowsheet-firstcolumn-cell', 'zebra'])}>
       <ResultNameHeaderCell resultName="HR" unit="bpm" />
     </div>
     <div className={cx('mock-flowsheet-firstcolumn-cell')}>
       <ResultNameHeaderCell resultName="BP" unit="mmHg" />
     </div>
-    <div className={cx(['mock-flowsheet-firstcolumn-cell','zebra'])}>
+    <div className={cx(['mock-flowsheet-firstcolumn-cell', 'zebra'])}>
       <ResultNameHeaderCell resultName="Respiratory Rate" unit="br/min" />
     </div>
     <div className={cx('mock-flowsheet-firstcolumn-cell')}>
       <ResultNameHeaderCell resultName="SpO2" unit="%" />
     </div>
-    <div className={cx(['mock-flowsheet-firstcolumn-cell','zebra'])}>
+    <div className={cx(['mock-flowsheet-firstcolumn-cell', 'zebra'])}>
       <ResultNameHeaderCell resultName="Height/Length Dosing" unit="cm" />
     </div>
     <div className={cx('mock-flowsheet-firstcolumn-cell')}>
       <ResultNameHeaderCell resultName="Height/Length Measured" unit="cm" />
     </div>
-    <div className={cx(['mock-flowsheet-firstcolumn-cell','zebra'])}>
+    <div className={cx(['mock-flowsheet-firstcolumn-cell', 'zebra'])}>
       <ResultNameHeaderCell resultName="Weight Dosing" unit="kg" />
     </div>
     <div className={cx('mock-flowsheet-firstcolumn-cell')}>
@@ -36,5 +36,5 @@ const ResultNameColumnFlowsheetExample = () => (
     </div>
   </div>
 );
- 
+
 export default ResultNameColumnFlowsheetExample;
