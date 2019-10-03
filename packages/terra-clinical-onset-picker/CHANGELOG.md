@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.9.0 - (October 3, 2019)
+------------------
 ### Fixed
 * Unknown precision fixed to return blank onset date value.
 
