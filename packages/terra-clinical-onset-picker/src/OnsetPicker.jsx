@@ -308,9 +308,9 @@ class OnsetPicker extends React.Component {
 
     let granularitySelect = null;
     const optionAge = [];
-    const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
-    const currentMoment = moment().startOf('day');
     if (this.state.precision !== PrecisionOptions.UNKNOWN) {
+      const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
+      const currentMoment = moment().startOf('day');
       if (currentMoment.diff(birthMoment, 'weeks') !== 0) {
         optionAge.push(
           <SelectField.Option
