@@ -6,6 +6,11 @@ Unreleased
 ### Updated
 * Updated source file for changes in clinical-item-display
 
+3.9.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 3.8.0 - (September 19, 2019)
 ----------
 ### Changed

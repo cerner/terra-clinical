@@ -4,6 +4,19 @@ ChangeLog
 Unreleased
 ----------
 
+4.9.0 - (October 3, 2019)
+------------------
+### Fixed
+* Unknown precision fixed to return blank onset date value.
+
+4.8.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Removed
+* Removed terra-i18n as a dependency since it is not being used.
+
 4.7.0 - (September 19, 2019)
 ----------
 ### Changed
