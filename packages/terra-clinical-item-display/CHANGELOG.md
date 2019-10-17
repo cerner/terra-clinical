@@ -19,7 +19,7 @@ Unreleased
 ### Changed
 * Resolved dependency cycle.
 
-### Removed
+### Breaking
 * Removed `ItemDisplay.Comment`.
 
 ### Changed
