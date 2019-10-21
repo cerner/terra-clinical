@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import IconModified from 'terra-icon/lib/icon/IconModified';
-import IconComment from 'terra-icon/lib/icon/IconComment';
 import Observation from './common/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
+// import { valueQuantityPropType, interpretationPropType } from './common/propTypes';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -13,7 +12,16 @@ const propTypes = {
   /**
    * Result Object with the clinical result data.
    */
-  resultData: observationPropShape,
+  resultData: PropTypes.shape({
+    /**
+     *  Systolic result for Blood Pressure
+     */
+    systolic: observationPropShape,
+    /**
+     *  Diastolic result for Blood Pressure
+     */
+    diastolic: observationPropShape,
+  }),
   /**
    * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
    */
@@ -30,13 +38,44 @@ const defaultProps = {
   isTruncated: false,
 };
 
-const ClincalResult = (props) => {
+const ClinicalResultBloodPressure = (props) => {
   const {
-    resultData, 
+    resultData,
     hideUnit,
     isTruncated,
     ...customProps
   } = props;
+
+  const ResultClassNames = cx([
+    'blood-pressure-result',
+    customProps.className,
+  ]);
+
+  const isEmpty = (str) => (!str || str.length === 0);
+
+  const decoratedResultDisplay = [];
+  const systolicUnitCompare = resultData.systolic.result.unit.trim().toLowerCase();
+  const diastolicUnitCompare = resultData.diastolic.result.unit.trim().toLowerCase();
+
+  const checkforFullResult = () => {
+    if (isEmpty(systolicUnitCompare) || isEmpty(diastolicUnitCompare)) {
+      console.log('Unexpected Result.');
+    } else {
+      if (systolicUnitCompare === diastolicUnitCompare) {
+        // console.log('the two match');
+        const systolicDisplay = <Observation eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit />;
+        decoratedResultDisplay.push(systolicDisplay);
+      } else {
+        // console.log('they don\'t match');
+        const systolicDisplay = <Observation eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit={hideUnit} />;
+        decoratedResultDisplay.push(systolicDisplay);
+      }
+      decoratedResultDisplay.push(<span className={cx('result-display-separator')}>/</span>);
+      const diastolicDisplay = <Observation eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} hideUnit={hideUnit} />;
+      decoratedResultDisplay.push(diastolicDisplay);
+    }
+  };
+  checkforFullResult();
 
   const modifiedIconElement = resultData.isModified ? (<IconModified className={cx('icon-modified')} />) : null;
   const commentIconElement = resultData.hasComment ? (<IconComment className={cx('icon-comment')} />) : null;
@@ -64,12 +103,7 @@ const ClincalResult = (props) => {
     <div {...customProps} className={clinicalresultClassnames}>
       <div className={decoratedResultClassnames}>
         <div className={cx('result-display')}>
-          <Observation
-            eventId={resultData.eventId}
-            result={resultData.result}
-            interpretation={resultData.interpretation}
-            hideUnit={hideUnit}
-          />
+          {decoratedResultDisplay}
           {isTruncated ? null : iconGroupModifiedComment}
         </div>
         {isTruncated ? iconGroupModifiedComment : null}
@@ -80,24 +114,7 @@ const ClincalResult = (props) => {
   );
 };
 
-ClincalResult.propTypes = propTypes;
-ClincalResult.defaultProps = defaultProps;
+ClinicalResultBloodPressure.propTypes = propTypes;
+ClinicalResultBloodPressure.defaultProps = defaultProps;
 
-export default ClincalResult;
-
-/*
-  return (
-    <Observation
-      {...customProps}
-      className={clinicalresultClassnames}
-      eventId={resultData.eventId}
-      result={resultData.result}
-      interpretation={resultData.interpretation}
-      isModified={resultData.isModified}
-      hasComment={resultData.hasComment}
-      conceptDisplay={resultData.conceptDisplay}
-      datetimeDisplay={resultData.datetimeDisplay}
-      isTruncated={isTruncated}
-    />
-  );
-*/
+export default ClinicalResultBloodPressure;

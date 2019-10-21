@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResultTimeHeaderCell } from 'terra-clinical-result/lib/index';
 import classNames from 'classnames/bind';
-import styles from './Examples.module.scss';
+import styles from '../Examples.module.scss';
 
 const cx = classNames.bind(styles);
 

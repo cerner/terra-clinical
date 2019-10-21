@@ -3,6 +3,26 @@
     border: 2px dashed #333;
   }
 
+  .clinical-result-fontsize-16 {
+    font-size: 1.14285rem;
+  }
+
+  .clinical-result-fontsize-18 {
+    font-size: 1.28571rem;
+  }
+
+  .clinical-result-fontsize-21 {
+    font-size: 1.5rem;
+  }
+
+  .clinical-result-fontsize-24 {
+    font-size: 1.71428rem;
+  }
+
+  .bottom-space {
+    margin-bottom: 1.42857rem;
+  }
+
   .mock-flowsheet-header {
     background-color: #f1f1f1;
     border: 1px solid #dedfe0;
@@ -25,7 +45,6 @@
     }
   }
 
-  
   .mock-flowsheet-firstcolumn {
     background-color: #f1f1f1;
     border: 1px solid #dedfe0;

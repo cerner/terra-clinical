@@ -7,11 +7,18 @@ import { name } from '../../../../package.json';
 import ClinicalResultsProps from '!raw-loader!../../../../src/ClinicalResult';
 
 // Example Files
-import DefaultResult from '../example/DefaultClinicalResult';
-import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/DefaultClinicalResult.jsx';
-import TruncatedDefaultResult from '../example/TruncatedClinicalResult';
-import TruncatedDefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/TruncatedClinicalResult.jsx';
-
+import DefaultResult from '../example/clinicalresult/ClinicalResultDefault';
+import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultDefault.jsx';
+import DecoratedResult from '../example/clinicalresult/ClinicalResultDecorated';
+import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultDecorated.jsx';
+import ExtraDisplaysResult from '../example/clinicalresult/ClinicalResultExtraDisplays';
+import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultExtraDisplays.jsx';
+import TruncatedResult from '../example/clinicalresult/ClinicalResultTruncated';
+import TruncatedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultTruncated.jsx';
+import InterpretationResults from '../example/clinicalresult/ClinicalResultInterpretation';
+import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultInterpretation.jsx';
+import SizeChangeResult from '../example/clinicalresult/ClinicalResultChangeSize';
+import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultChangeSize.jsx';
 
 
 const DocPage = () => (
@@ -26,9 +33,34 @@ const DocPage = () => (
         source: DefaultResultSrc,
       },
       {
+        title: 'Modifiied Clinical Result with Comments',
+        description: '',
+        example: <DecoratedResult />,
+        source: DecoratedResultSrc,
+      },
+      {
+        title: 'Clinical Result with additional displays',
+        description: '',
+        example: <ExtraDisplaysResult />,
+        source: ExtraDisplaysResultSrc,
+      },
+      {
+        title: 'Clinical Results with Intrepretation',
+        description: '',
+        example: <InterpretationResults />,
+        source: InterpretationResultsSrc,
+      },
+      {
+        title: 'Changing the Clinical Result Size',
+        description: '',
+        example: <SizeChangeResult />,
+        source: SizeChangeResultSrc,
+      },
+      {
         title: 'Truncated Clinical Result',
-        example: <TruncatedDefaultResult />,
-        source: TruncatedDefaultResultSrc,
+        description: '',
+        example: <TruncatedResult />,
+        source: TruncatedResultSrc,
       },
     ]}
     propsTables={[

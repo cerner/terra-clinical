@@ -7,10 +7,10 @@ import { name } from '../../../../package.json';
 import ResultSrc from '!raw-loader!../../../../src/resultnameheadercell/ResultNameHeaderCell';
 
 // Example Files
-import Default from '../example/ResultNameHeaderCell';
-import DefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ResultNameHeaderCell.jsx';
-import FlowsheetExample from '../example/ResultNameHeaderFlowsheetExample';
-import FlowsheetExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ResultNameHeaderFlowsheetExample.jsx';
+import Default from '../example/resultnameheadercell/ResultNameHeaderCell';
+import DefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/resultnameheadercell/ResultNameHeaderCell.jsx';
+import FlowsheetExample from '../example/resultnameheadercell/ResultNameHeaderFlowsheetExample';
+import FlowsheetExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/resultnameheadercell/ResultNameHeaderFlowsheetExample.jsx';
 
 const DocPage = () => (
   <DocTemplate

@@ -1,120 +1,65 @@
 
 
 :local {
-  .result {
-    // add styles
-  }
-  .decorated-result-display {
-    align-items: baseline;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 100%;  // Needed for IE10 truncation
-    overflow: hidden; // Needed for IE10
-
-    &.truncated {
-      flex-wrap: nowrap;
-
-      .result-display {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        word-break: normal;
-        word-wrap: normal;
-      }
-    }
-
-    .icon-modified {
-      color: var(--terra-clinical-result-display-icon-modified-color, #26a2e5);
-      flex: 0 0 auto;
-      height: 0.875em;
-      margin-left: var(--terra-clinical-result-display-icon-modified-margin-left, 0.125em); // Must use ems for font rescaling
-      overflow: hidden;
-    }
-
-    .icon-comment {
-      color: var(--terra-clinical-result--icon-comment-display-color, rgba(28, 31, 33, 0.65));
-      flex: 0 0 auto;
-      // height: 0.9375em;
-      margin-left: var(--terra-clinical-result-display-icon-comment-margin-left, 0.125em); // Must use ems for font rescaling
-      overflow: hidden;
-      position: relative;
-      top: var(--terra-clinical-result-display-icon-comment-top, 0.125em); // Must use ems for font rescaling
-    }
-
-    .icon-unverified {
-      flex: 0 0 auto;
-      margin-left: var(--terra-clinical-result-display-icon-unverified-margin-left, 0.25em); // Must use ems for font rescaling
-      overflow: hidden;
-    }
-  }
-
-  .result-display {
-    color: var(--terra-clinical-result-display-unit-color, rgba(28, 31, 33, 0.65));
-    flex: 0 1 auto;
-    white-space: normal;
-    word-break: break-word;
-    word-wrap: break-word;
+  .value {
+    color: var(--terra-clinical-result-display-value-color);
+    display: inline;
+    font-size: var(--terra-clinical-result-display-value-font-size, 1em); // Must use ems for font rescaling
+    line-height: var(--terra-clinical-result-display-value-line-height, 1.125);
+    overflow: visible;
+    // word-break: break-all; // This is needed for all non-word value types
 
     .icon-interpretation {
-      display: inline;
+      float: left;
       margin-right: var(--terra-clinical-result-display-icon-interpretation-margin-right, 0.25em); // Must use ems for font rescaling
+      position: relative;
+      top: var(--terra-clinical-result-display-icon-interpretation-top, 0.15em); // Must use ems for font rescaling
+    }
+  
+    &.abnormal {
+      color: var(--terra-clinical-result-display-interpretation-abnormal-color, #654a08);
+      font-weight: var(--terra-clinical-result-display-interpretation-abnormal-font-weight, bold);
     }
 
-    .value {
-      color: var(--terra-clinical-result-display-value-color);
-      display: inline;
-      font-size: var(--terra-clinical-result-display-value-font-size, 1em); // Must use ems for font rescaling
-      line-height: var(--terra-clinical-result-display-value-line-height, 1.125);
-      // word-break: break-all; // This is needed for all non-word value types
-
-      &.abnormal {
-        color: var(--terra-clinical-result-display-interpretation-abnormal-color, #654a08);
-        font-weight: var(--terra-clinical-result-display-interpretation-abnormal-font-weight, bold);
-      }
-
-      &.critical {
-        color: var(--terra-clinical-result-display-interpretation-critical-color, #c00);
-        font-weight: var(--terra-clinical-result-display-interpretation-critical-font-weight, bold);
-      }
-    
-      &.high {
-        color: var(--terra-clinical-result-display-interpretation-high-color, #ff6100); // new a11y color: #da3b03;
-        font-weight: var(--terra-clinical-result-display-interpretation-high-font-weight, bold);
-      }
-    
-      &.low {
-        color: var(--terra-clinical-result-display-interpretation-low-color, #0053e6);
-        font-weight: var(--terra-clinical-result-display-interpretation-low-font-weight, bold);
-      }
-    
-      &.positive {
-        color: var(--terra-clinical-result-display-interpretation-positive-color, #c00);
-        font-weight: var(--terra-clinical-result-display-interpretation-positive-font-weight, bold);
-      }
-    
-      &.unverified {
-        color: var(--terra-clinical-result-display-status-unverified-color, #9932cc);
-        font-weight: var(--terra-clinical-result-display-status-unverified-font-weight, bold);
-      }
+    &.critical {
+      color: var(--terra-clinical-result-display-interpretation-critical-color, #c00);
+      font-weight: var(--terra-clinical-result-display-interpretation-critical-font-weight, bold);
     }
-      
-    .unit {
-      color: var(--terra-clinical-result-display-unit-color, rgba(28, 31, 33, 0.65));
-      display: inline;
-      font-size: var(--terra-clinical-result-display-unit-font-size, 0.875em); // Must use ems for font rescaling
-      line-height: var(--terra-clinical-result-display-unit-line-height, 1.28571);
-      margin-left: var(--terra-clinical-result-display-unit-margin-left, 0.375em); // Must use ems for font rescaling
-      word-break: break-all;
+    
+    &.high {
+      color: var(--terra-clinical-result-display-interpretation-high-color, #ff6100); // new a11y color: #da3b03;
+      font-weight: var(--terra-clinical-result-display-interpretation-high-font-weight, bold);
     }
+    
+    &.low {
+      color: var(--terra-clinical-result-display-interpretation-low-color, #0053e6);
+      font-weight: var(--terra-clinical-result-display-interpretation-low-font-weight, bold);
+    }
+    
+    &.positive {
+      color: var(--terra-clinical-result-display-interpretation-positive-color, #c00);
+      font-weight: var(--terra-clinical-result-display-interpretation-positive-font-weight, bold);
+    }    
   }
+      
+  .unit {
+    color: var(--terra-clinical-result-display-unit-color, rgba(28, 31, 33, 0.65));
+    display: inline;
+    font-size: var(--terra-clinical-result-display-unit-font-size, 0.875em); // Must use ems for font rescaling
+    line-height: var(--terra-clinical-result-display-unit-line-height, 1.28571);
+    margin-left: var(--terra-clinical-result-display-unit-margin-left, 0.375em); // Must use ems for font rescaling
+    word-break: break-all;
 
-  .concept-display,
-  .datetime-display {
-    color: var(--terra-clinical-result-display-datetime-color, rgba(28, 31, 33, 0.65));
-    font-size: var(--terra-clinical-result-display-datetime-font-size, 0.78571em); // Must use ems for font rescaling
-    line-height: var(--terra-clinical-result-display-datetime-line-height, 1.27272);
-    margin-top: var(--terra-clinical-result-display-datetime-margin-top, 0.375em); // Must use ems for font rescaling
-    text-transform: uppercase;
+    &.unit-hidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap; /* Ensures words are not read one at a time on screen readers*/
+      width: 1px;  
+    }
   }
 }

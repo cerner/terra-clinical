@@ -1,5 +1,5 @@
 import React from 'react';
-import ClinicalResult from '../../../ClinicalResult';
+import ClinicalResult from 'terra-clinical-result/lib/index';
 
 const data = {
   eventId: '111',
@@ -7,7 +7,8 @@ const data = {
     value: '12345.678',
     unit: 'mL',
   },
+  isModified: true,
+  hasComment: true,
 };
-  
+
 export default () => <ClinicalResult resultData={data} />;
-  
