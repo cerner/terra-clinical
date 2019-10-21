@@ -257,4 +257,20 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('has Age Empty', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/less-month'));
+
+    it('that fires when age is empty', () => {
+      browser.click('#test-precision-select');
+      browser.click('#terra-select-option-before');
+      browser.click('#test-granularity-select');
+      browser.click('#terra-select-option-age');
+      browser.click('#test-age-unit-select');
+      browser.click('#terra-select-option-weeks');
+      browser.click('button[type="submit"]');
+    });
+
+    Terra.it.validatesElement('Age value is empty');
+  });
 });

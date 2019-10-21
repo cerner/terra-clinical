@@ -36,6 +36,7 @@ Cerner Corporation
 - Avinash Gupta [@avinashg1994]
 - Pranav Agarwal [@pranav300]
 - Saket Bajaj [@saket2403]
+- Gyandeep Singh [@gyandeeps]
 
 Community
 

@@ -3,7 +3,29 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Unknown precision fixed to return blank onset date value.
+
+4.8.0 - (September 26, 2019)
+------------------
 ### Changed
+* Minor dependency updates
+
+### Removed
+* Removed terra-i18n as a dependency since it is not being used.
+
+4.7.0 - (September 19, 2019)
+----------
+### Changed
+* Bump terra-date-picker dependency to 4.0.0.
+
+### Added
+* Added en-CA translations.
+
+4.6.0 - (September 6, 2019)
+----------
+### Changed
+* Blank Age granularity fixed to return a blank onset date value.
 * Replaced Object.assign syntax with Object spread syntax
 * Cleaned up imports in examples and test files
 
