@@ -3,6 +3,12 @@ Changelog
 
 Unreleased
 ----------
+
+2.12.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
 ### Removed
 * Removed used keycodes file
 
