@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -806,6 +807,7 @@ class DataGrid extends React.Component {
           className={cx('header-overflow-container')}
           ref={this.setHeaderOverflowContainerRef}
           onScroll={this.synchronizeHeaderScroll}
+          tabIndex="0"
         >
           <div
             className={cx('overflow-header')}
@@ -1086,6 +1088,7 @@ class DataGrid extends React.Component {
             className={cx('vertical-overflow-container')}
             ref={this.setVerticalOverflowContainerRef}
             onScroll={onRequestContent ? this.checkForMoreContent : undefined}
+            tabIndex="0"
           >
             <div
               className={cx('pinned-content-container')}
@@ -1102,6 +1105,7 @@ class DataGrid extends React.Component {
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
                 ref={this.setHorizontalOverflowContainerRef}
                 onScroll={fill ? this.synchronizeContentScroll : undefined}
+                tabIndex="0"
               >
                 {this.renderOverflowContent()}
               </div>

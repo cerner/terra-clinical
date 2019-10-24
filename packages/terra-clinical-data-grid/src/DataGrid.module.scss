@@ -37,6 +37,10 @@
     width: 100%;
   }
 
+  .header-overflow-container:focus {
+    outline: none;
+  }
+
   .overflow-header {
     background-color: var(--terra-clinical-data-grid-column-header-background-color, #f9f9f9);
     border-bottom: var(--terra-clinical-data-grid-column-header-border-bottom, 2px solid #9b9fa1);
@@ -65,6 +69,10 @@
     width: 100%;
   }
 
+  .vertical-overflow-container:focus {
+    outline: none;
+  }
+
   .horizontal-overflow-container {
     overflow-x: auto;
     overflow-y: hidden;
@@ -74,6 +82,10 @@
 
   .horizontal-overflow-container.padded-container {
     padding-bottom: 20px;
+  }
+
+  .horizontal-overflow-container:focus {
+    outline: none;
   }
 
   .overflowed-content-container {

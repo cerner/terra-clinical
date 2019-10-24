@@ -71,6 +71,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         <div
           className="header-overflow-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="overflow-header"
@@ -103,6 +104,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -164,6 +166,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         <div
           className="horizontal-overflow-container padded-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="section-header-container"
@@ -262,6 +265,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         <div
           className="header-overflow-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="overflow-header"
@@ -310,6 +314,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -346,6 +351,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         <div
           className="horizontal-overflow-container padded-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <Row
             height="5rem"
@@ -543,6 +549,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         <div
           className="header-overflow-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="overflow-header"
@@ -571,6 +578,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -636,6 +644,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         <div
           className="horizontal-overflow-container padded-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="section-header-container"
@@ -692,6 +701,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -720,6 +730,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
       >
         <div
           className="horizontal-overflow-container"
+          tabIndex="0"
         >
           <div
             className="header-container"
@@ -805,6 +816,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         <div
           className="header-overflow-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="overflow-header"
@@ -853,6 +865,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -889,6 +902,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         <div
           className="horizontal-overflow-container padded-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <Row
             height="2.5rem"
@@ -1092,6 +1106,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         <div
           className="header-overflow-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="overflow-header"
@@ -1126,6 +1141,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -1212,6 +1228,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         <div
           className="horizontal-overflow-container padded-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <Row
             height="2.5rem"
@@ -1370,6 +1387,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         <div
           className="header-overflow-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="overflow-header"
@@ -1400,6 +1418,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -1479,6 +1498,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         <div
           className="horizontal-overflow-container padded-container"
           onScroll={[Function]}
+          tabIndex="0"
         >
           <div
             className="section-header-container"
@@ -1538,6 +1558,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
   >
     <div
       className="vertical-overflow-container"
+      tabIndex="0"
     >
       <div
         className="pinned-content-container"
@@ -1653,6 +1674,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
       >
         <div
           className="horizontal-overflow-container"
+          tabIndex="0"
         >
           <div
             className="header-container"
