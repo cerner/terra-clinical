@@ -2,4 +2,23 @@
   .detail-view-divided {
     border: 3px dotted #d3d4d5;
   }
+
+  .indicator-container {
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.4285714285714286;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    overflow: hidden;
+    padding-right: 0.357142857142857rem;
+  }
+
+  .text { 
+    flex: 1 1 auto;
+    min-width: 10px; // Need min-width, as IE10 will completely squish display
+  }
 }
