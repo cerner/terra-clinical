@@ -33,13 +33,13 @@ const observationPropShape = PropTypes.shape({
    */
   resultData: PropTypes.shape({
     /**
-     *  Systolic Result for blood pressure.
+     *  Systolic Result for blood pressure. (see observationPropShape from clinical-result)
      */
-    systolic: (see observationPropShape from clinical-result),
+    systolic: observationPropShape,
     /**
-     *  Diastolic Result for blood pressure.
+     *  Diastolic Result for blood pressure. (see observationPropShape from clinical-result)
      */
-    diastolic: (see observationPropShape from clinical-result),
+    diastolic: observationPropShape,
   }),
 });
 ```
