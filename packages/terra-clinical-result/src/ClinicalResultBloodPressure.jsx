@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import IconModified from 'terra-icon/lib/icon/IconModified';
+import IconComment from 'terra-icon/lib/icon/IconComment';
+import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
 import Observation from './common/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
-// import { valueQuantityPropType, interpretationPropType } from './common/propTypes';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -14,11 +16,11 @@ const propTypes = {
    */
   resultData: PropTypes.shape({
     /**
-     *  Systolic result for Blood Pressure
+     *  Systolic Result for blood pressure.
      */
     systolic: observationPropShape,
     /**
-     *  Diastolic result for Blood Pressure
+     *  Diastolic Result for blood pressure.
      */
     diastolic: observationPropShape,
   }),
@@ -46,51 +48,93 @@ const ClinicalResultBloodPressure = (props) => {
     ...customProps
   } = props;
 
-  const ResultClassNames = cx([
-    'blood-pressure-result',
-    customProps.className,
-  ]);
-
   const isEmpty = (str) => (!str || str.length === 0);
 
   const decoratedResultDisplay = [];
-  const systolicUnitCompare = resultData.systolic.result.unit.trim().toLowerCase();
-  const diastolicUnitCompare = resultData.diastolic.result.unit.trim().toLowerCase();
 
-  const checkforFullResult = () => {
-    if (isEmpty(systolicUnitCompare) || isEmpty(diastolicUnitCompare)) {
-      console.log('Unexpected Result.');
+  const systolicUnitCompare = !isEmpty(resultData.systolic.result.unit) ? resultData.systolic.result.unit.trim().toLowerCase() : null;
+  const diastolicUnitCompare = !isEmpty(resultData.diastolic.result.unit) ? resultData.diastolic.result.unit.trim().toLowerCase() : null;
+
+  const createDecoratedResultDisplay = () => {
+    if (systolicUnitCompare === diastolicUnitCompare) {
+      const systolicDisplay = <Observation eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit />;
+      decoratedResultDisplay.push(systolicDisplay);
     } else {
-      if (systolicUnitCompare === diastolicUnitCompare) {
-        // console.log('the two match');
-        const systolicDisplay = <Observation eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit />;
-        decoratedResultDisplay.push(systolicDisplay);
-      } else {
-        // console.log('they don\'t match');
-        const systolicDisplay = <Observation eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit={hideUnit} />;
-        decoratedResultDisplay.push(systolicDisplay);
-      }
-      decoratedResultDisplay.push(<span className={cx('result-display-separator')}>/</span>);
-      const diastolicDisplay = <Observation eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} hideUnit={hideUnit} />;
-      decoratedResultDisplay.push(diastolicDisplay);
+      const systolicDisplay = <Observation eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit={hideUnit} />;
+      decoratedResultDisplay.push(systolicDisplay);
     }
-  };
-  checkforFullResult();
+    decoratedResultDisplay.push(<span className={cx('result-display-separator')}>/</span>);
+    const diastolicDisplay = <Observation eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} hideUnit={hideUnit} />;
+    decoratedResultDisplay.push(diastolicDisplay);
 
-  const modifiedIconElement = resultData.isModified ? (<IconModified className={cx('icon-modified')} />) : null;
-  const commentIconElement = resultData.hasComment ? (<IconComment className={cx('icon-comment')} />) : null;
-  const iconGroupModifiedComment = resultData.isModified || resultData.hasComment ? (
+    return decoratedResultDisplay;
+  };
+
+  const hasModifiedIcon = (resultData.systolic.isModified || resultData.diastolic.isModified);
+  const hasCommentIcon = (resultData.systolic.hasComment || resultData.diastolic.hasComment);
+  const hasUnverifiedIcon = (resultData.systolic.isUnverified || resultData.diastolic.isUnverified);
+  const modifiedIconElement = hasModifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
+  const commentIconElement = hasCommentIcon ? (<IconComment className={cx('icon-comment')} />) : null;
+  const unverifiedIconElement = hasUnverifiedIcon ? (<IconUnverified className={cx('icon-unverified')} />) : null;
+  const iconGroupModifiedComment = hasModifiedIcon || hasCommentIcon || hasUnverifiedIcon ? (
     <React.Fragment>
       {modifiedIconElement}
       {commentIconElement}
+      {unverifiedIconElement}
     </React.Fragment>
   ) : null;
 
-  const conceptDisplayElement = resultData.conceptDisplay ? (<div className={cx('concept-display')}>{resultData.conceptDisplay}</div>) : null;
-  const datetimeDisplayElement = resultData.datetimeDisplay ? (<div className={cx('datetime-display')}>{resultData.datetimeDisplay}</div>) : null;
+  let conceptDisplayElement;
+  const systolicConceptDisplayCompare = !isEmpty(resultData.systolic.conceptDisplay) ? resultData.systolic.conceptDisplay.trim().toLowerCase() : null;
+  const diastolicConceptDisplayCompare = !isEmpty(resultData.diastolic.conceptDisplay) ? resultData.diastolic.conceptDisplay.trim().toLowerCase() : null;
+
+  let datetimeDisplayElement;
+  const systolicDatetimeDisplayCompare = !isEmpty(resultData.systolic.datetimeDisplay) ? resultData.systolic.datetimeDisplay.trim().toLowerCase() : null;
+  const diastolicDatetimeDisplayCompare = !isEmpty(resultData.diastolic.datetimeDisplay) ? resultData.diastolic.datetimeDisplay.trim().toLowerCase() : null;
+
+  const createConceptDisplay = () => {
+    if (systolicConceptDisplayCompare && diastolicConceptDisplayCompare) {
+      if (systolicConceptDisplayCompare === diastolicConceptDisplayCompare) {
+        conceptDisplayElement = <div className={cx('concept-display')}>{resultData.systolic.conceptDisplay}</div>;
+      } else {
+        conceptDisplayElement = (
+          <div className={cx('concept-display')}>
+            {resultData.systolic.conceptDisplay}
+            {' / '}
+            {resultData.diastolic.conceptDisplay}
+          </div>
+        );
+      }
+    } else if (systolicConceptDisplayCompare || diastolicConceptDisplayCompare) {
+      const conceptDisplayValue = systolicConceptDisplayCompare ? resultData.systolic.conceptDisplay : resultData.diastolic.conceptDisplay;
+      conceptDisplayElement = <div className={cx('concept-display')}>{conceptDisplayValue}</div>;
+    }
+    return conceptDisplayElement;
+  };
+
+  const createDatetimeDisplay = () => {
+    if (systolicDatetimeDisplayCompare && diastolicDatetimeDisplayCompare) {
+      if (systolicDatetimeDisplayCompare === diastolicDatetimeDisplayCompare) {
+        datetimeDisplayElement = <div className={cx('concept-display')}>{resultData.systolic.datetimeDisplay}</div>;
+      } else {
+        datetimeDisplayElement = (
+          <div className={cx('concept-display')}>
+            {resultData.systolic.datetimeDisplay}
+            {' / '}
+            {resultData.diastolic.datetimeDisplay}
+          </div>
+        );
+      }
+    } else if (systolicDatetimeDisplayCompare || diastolicDatetimeDisplayCompare) {
+      const conceptDisplayValue = systolicDatetimeDisplayCompare ? resultData.systolic.datetimeDisplay : resultData.diastolic.datetimeDisplay;
+      datetimeDisplayElement = <div className={cx('concept-display')}>{conceptDisplayValue}</div>;
+    }
+    return datetimeDisplayElement;
+  };
 
   const clinicalresultClassnames = cx([
     'clinical-result',
+    'blood-pressure-result',
     customProps.className,
   ]);
 
@@ -103,13 +147,13 @@ const ClinicalResultBloodPressure = (props) => {
     <div {...customProps} className={clinicalresultClassnames}>
       <div className={decoratedResultClassnames}>
         <div className={cx('result-display')}>
-          {decoratedResultDisplay}
+          {createDecoratedResultDisplay()}
           {isTruncated ? null : iconGroupModifiedComment}
         </div>
         {isTruncated ? iconGroupModifiedComment : null}
       </div>
-      {conceptDisplayElement}
-      {datetimeDisplayElement}
+      {createConceptDisplay()}
+      {createDatetimeDisplay()}
     </div>
   );
 };

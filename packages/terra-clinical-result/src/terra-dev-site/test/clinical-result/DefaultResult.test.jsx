@@ -8,6 +8,5 @@ const data = {
     unit: 'mL',
   },
 };
-  
+
 export default () => <ClinicalResult resultData={data} />;
-  

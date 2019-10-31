@@ -10,24 +10,28 @@ const bloodpressureResultValue = {
   systolic: {
     eventId: '111.1',
     result: {
-      value: '111111',
-      unit: 'ml',
+      value: '180',
+      unit: 'mm Hg',
     },
     interpretation: 'CRITICAL',
     isModified: true,
     hasComment: true,
-    resultDateTime: '10/10/2020 11:11',
+    isUnverified: true,
+    conceptDisplay: 'Systolic / Diastolic Blood Pressure',
+    datetimeDisplay: 'Nov 23, 2019 13:31:31',
   },
   diastolic: {
     eventId: '111.2',
     result: {
-      value: '7777',
-      unit: 'mL',
+      value: '60',
+      unit: 'mmHg',
     },
     interpretation: 'LOW',
     isModified: true,
     hasComment: true,
-    resultDateTime: '10/10/2020 11:11',
+    isUnverified: true,
+    conceptDisplay: 'Systolic / Diastolic Blood Pressure',
+    datetimeDisplay: 'Nov 23, 2019 13:31:31',
   },
 };
 

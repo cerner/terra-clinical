@@ -12,7 +12,7 @@ const bloodpressureResultValue = {
     isModified: true,
     hasComment: true,
     conceptDisplay: 'Blood Pressure',
-    datetimeDisplay: 'Nov 23, 2019 13:31:31', 
+    datetimeDisplay: 'Nov 23, 2019 13:31:31',
   },
   diastolic: {
     eventId: '111.2',
@@ -23,7 +23,7 @@ const bloodpressureResultValue = {
     isModified: true,
     hasComment: true,
     conceptDisplay: 'Blood Pressure',
-    datetimeDisplay: 'Nov 23, 2019 13:31:31', 
+    datetimeDisplay: 'Nov 23, 2019 13:31:31',
   },
 };
 

@@ -12,6 +12,8 @@ import DefaultResult from '../example/clinicalresultbloodpressure/ClinicalResult
 import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureDefault.jsx';
 import DecoratedResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureDecorated';
 import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureDecorated.jsx';
+import UnverifiedResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureUnverified';
+import UnverifiedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureUnverified.jsx';
 import ExtraDisplaysResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureExtraDisplays';
 import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureExtraDisplays.jsx';
 import TruncatedResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureTruncated';
@@ -34,10 +36,16 @@ const DocPage = () => (
         source: DefaultResultSrc,
       },
       {
-        title: 'Modifiied Blood Pressure Clinical Result with Comments',
+        title: 'Modified Blood Pressure Clinical Result with Comments',
         description: '',
         example: <DecoratedResult />,
         source: DecoratedResultSrc,
+      },
+      {
+        title: 'Unverified Blood Pressure Result with Hide Unit of Measure',
+        description: '',
+        example: <UnverifiedResult />,
+        source: UnverifiedResultSrc,
       },
       {
         title: 'Clinical Blood Pressure Result with additional displays',

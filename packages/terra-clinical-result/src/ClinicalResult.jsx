@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
+import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
 import Observation from './common/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
 import styles from './ClinicalResult.module.scss';
@@ -32,7 +33,7 @@ const defaultProps = {
 
 const ClincalResult = (props) => {
   const {
-    resultData, 
+    resultData,
     hideUnit,
     isTruncated,
     ...customProps
@@ -40,10 +41,12 @@ const ClincalResult = (props) => {
 
   const modifiedIconElement = resultData.isModified ? (<IconModified className={cx('icon-modified')} />) : null;
   const commentIconElement = resultData.hasComment ? (<IconComment className={cx('icon-comment')} />) : null;
-  const iconGroupModifiedComment = resultData.isModified || resultData.hasComment ? (
+  const unverifiedIconElement = resultData.isUnverified ? (<IconUnverified className={cx('icon-unverified')} />) : null;
+  const iconGroupModifiedComment = resultData.isModified || resultData.hasComment || resultData.isUnverified ? (
     <React.Fragment>
       {modifiedIconElement}
       {commentIconElement}
+      {unverifiedIconElement}
     </React.Fragment>
   ) : null;
 
@@ -84,20 +87,3 @@ ClincalResult.propTypes = propTypes;
 ClincalResult.defaultProps = defaultProps;
 
 export default ClincalResult;
-
-/*
-  return (
-    <Observation
-      {...customProps}
-      className={clinicalresultClassnames}
-      eventId={resultData.eventId}
-      result={resultData.result}
-      interpretation={resultData.interpretation}
-      isModified={resultData.isModified}
-      hasComment={resultData.hasComment}
-      conceptDisplay={resultData.conceptDisplay}
-      datetimeDisplay={resultData.datetimeDisplay}
-      isTruncated={isTruncated}
-    />
-  );
-*/

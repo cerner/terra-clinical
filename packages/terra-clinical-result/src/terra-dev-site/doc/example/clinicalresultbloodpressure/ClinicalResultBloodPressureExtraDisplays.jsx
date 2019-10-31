@@ -6,24 +6,20 @@ const bloodpressureResultValue = {
   systolic: {
     eventId: '111.1',
     result: {
-      value: '111111',
-      unit: 'ml',
+      value: '120',
+      unit: 'mmHg',
     },
-    isModified: true,
-    hasComment: true,
-    conceptDisplay: 'Blood Pressure',
-    datetimeDisplay: 'Nov 23, 2019 13:31:31', 
+    conceptDisplay: 'Blood Pressure Systolic',
+    datetimeDisplay: 'Nov 23, 2019 13:31:31',
   },
   diastolic: {
     eventId: '111.2',
     result: {
-      value: '7777',
-      unit: 'mL',
+      value: '80',
+      unit: 'mmHg',
     },
-    isModified: true,
-    hasComment: true,
-    conceptDisplay: 'Blood Pressure',
-    datetimeDisplay: 'Nov 23, 2019 13:31:31', 
+    conceptDisplay: 'Blood Pressure Diastolic',
+    datetimeDisplay: 'Nov 23, 2019 13:31:44',
   },
 };
 

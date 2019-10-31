@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
 import classNames from 'classnames/bind';
 import styles from './ResultNameHeaderCell.module.scss';
 
@@ -19,12 +20,23 @@ const propTypes = {
    * One of `'none'`, `'standard'`, `'compact'`.
    */
   paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
+  /**
+   * Adds additional icon at beginning of row before the ResultName, indicating additinonal information about results or cells.
+   * One of `'none'`, `'calculated'`.
+   */
+  typeIndicator: PropTypes.oneOf(['none', 'calculated']),
 };
 
 const defaultProps = {
   resultName: '',
   unit: undefined,
   paddingStyle: 'compact',
+  typeIndicator: 'none',
+};
+
+const resultRowIndicators = {
+  none: null,
+  calculated: <IconCalculator className={cx('icon-rowindicator')} />,
 };
 
 const ResultNameHeaderCell = (props) => {
@@ -32,6 +44,7 @@ const ResultNameHeaderCell = (props) => {
     resultName,
     unit,
     paddingStyle,
+    typeIndicator,
     ...customProps
   } = props;
 
@@ -44,7 +57,10 @@ const ResultNameHeaderCell = (props) => {
 
   return (
     <div {...customProps} className={nameHeaderCellClassnames}>
-      <div className={cx('name')}>{resultName}</div>
+      <div className={cx('name')}>
+        {typeIndicator ? resultRowIndicators[typeIndicator.toLowerCase()] : null}
+        {resultName}
+      </div>
       {unit && <div className={cx('unit')}>{unit}</div> }
     </div>
   );

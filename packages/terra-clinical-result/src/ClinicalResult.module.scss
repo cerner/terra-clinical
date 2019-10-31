@@ -31,25 +31,39 @@
     .icon-modified {
       color: var(--terra-clinical-result-display-icon-modified-color, #26a2e5);
       flex: 0 0 auto;
-      height: 0.875em;
+      height: var(--terra-clinical-result-display-icon-modified-height, 0.875em); // Must use ems for font rescaling
       margin-left: var(--terra-clinical-result-display-icon-modified-margin-left, 0.125em); // Must use ems for font rescaling
       overflow: hidden;
+      position: relative;
+      top: var(--terra-clinical-result-display-icon-modified-top); // Must use ems for font rescaling
+      vertical-align: baseline;
     }
 
     .icon-comment {
-      color: var(--terra-clinical-result--icon-comment-display-color, rgba(28, 31, 33, 0.65));
+      color: var(--terra-clinical-result-display-icon-comment-color, rgba(28, 31, 33, 0.65));
       flex: 0 0 auto;
-      // height: 0.9375em;
+      height: var(--terra-clinical-result-display-icon-comment-height, 1em); // 0.9375em; Must use ems for font rescaling
       margin-left: var(--terra-clinical-result-display-icon-comment-margin-left, 0.125em); // Must use ems for font rescaling
       overflow: hidden;
       position: relative;
       top: var(--terra-clinical-result-display-icon-comment-top, 0.125em); // Must use ems for font rescaling
+      vertical-align: baseline;
     }
 
     .icon-unverified {
       flex: 0 0 auto;
+      height: var(--terra-clinical-result-display-icon-unverified-height, 0.85em); // Must use ems for font rescaling
       margin-left: var(--terra-clinical-result-display-icon-unverified-margin-left, 0.25em); // Must use ems for font rescaling
       overflow: hidden;
+      position: relative;
+      top: var(--terra-clinical-result-display-icon-unverified-top, 0.09375em); // Must use ems for font rescaling
+      vertical-align: baseline;
+    }
+    
+    .icon-modified + .icon-unverified,
+    .icon-comment + .icon-unverified {
+      margin-left: var(--terra-clinical-result-display-icon-unverified-after-icons-margin-left, 0.4375em); // Must use ems for font rescaling
+      top: var(--terra-clinical-result-display-icon-unverified-after-icons-top, 0); // Must use ems for font rescaling
     }
   }
 
@@ -69,7 +83,7 @@
 
   .result-display-separator {
     // color: var(--terra-clinical-result-display-separator-color, rgba(28, 31, 33, 0.65));
-    font-weight: var(--terra-clinical-result-display-separator-font-weight, bold);
+    font-weight: var(--terra-clinical-result-display-separator-font-weight, normal);
     margin-left: var(--terra-clinical-result-display-separator-margin-left, 0.25em); // Must use ems for font rescaling
     margin-right: var(--terra-clinical-result-display-separator-margin-right, 0.25em); // Must use ems for font rescaling
   }

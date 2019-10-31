@@ -5,9 +5,7 @@ import IconCritical from 'terra-icon/lib/icon/IconCritical';
 import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
 import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
-import IconModified from 'terra-icon/lib/icon/IconModified';
-import IconComment from 'terra-icon/lib/icon/IconComment';
-// import observationPropShape from '../proptypes/observationPropTypes';
+import IconError from 'terra-icon/lib/icon/IconError';
 import { interpretationPropOneOf } from '../proptypes/interpretationPropTypes';
 import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from '../proptypes/valuePropTypes';
 import styles from './Observation.module.scss';
@@ -46,10 +44,16 @@ const defaultProps = {
 };
 
 const interpretationIndicators = {
+  CRITICAL: <IconCritical className={cx('icon-interpretation')} />,
+  EXTREMEHIGH: <IconCritical className={cx('icon-interpretation')} />,
+  EXTREMELOW: <IconCritical className={cx('icon-interpretation')} />,
+  PANICHIGH: <IconCritical className={cx('icon-interpretation')} />,
+  PANICLOW: <IconCritical className={cx('icon-interpretation')} />,
+  VABNORMAL: <IconCritical className={cx('icon-interpretation')} />,
+  POSITIVE: <IconCritical className={cx('icon-interpretation')} />,
+  ABNORMAL: <IconAbnormal className={cx('icon-interpretation')} />,
   HIGH: <IconHigh className={cx('icon-interpretation')} />,
   LOW: <IconLow className={cx('icon-interpretation')} />,
-  CRITICAL: <IconCritical className={cx('icon-interpretation')} />,
-  ABNORMAL: <IconAbnormal className={cx('icon-interpretation')} />,
 };
 
 const Observation = (props) => {
@@ -66,44 +70,50 @@ const Observation = (props) => {
 
   const valueTextClasses = cx([
     'value',
-    { abnormal: isValidValue && interpretation === 'ABNORMAL' },
-    { critical: isValidValue && interpretation === 'CRITICAL' },
-    { high: isValidValue && interpretation === 'HIGH' },
-    { low: isValidValue && interpretation === 'LOW' },
+    { critical: interpretation === 'CRITICAL' },
+    { critical: interpretation === 'EXTREMEHIGH' },
+    { critical: interpretation === 'EXTREMELOW' },
+    { critical: interpretation === 'PANICHIGH' },
+    { critical: interpretation === 'PANICLOW' },
+    { critical: interpretation === 'VABNORMAL' },
+    { positive: interpretation === 'POSITIVE' },
+    { abnormal: interpretation === 'ABNORMAL' },
+    { high: interpretation === 'HIGH' },
+    { low: interpretation === 'LOW' },
   ]);
-
-  
-  let valueText,valueIcon;
-
-  const resultDisplay = () => {
-    if (isValidValue) {
-      valueText = result.value;
-      valueIcon = interpretation ? interpretationIndicators[interpretation.toUpperCase()] : null;
-    } else {
-      valueText = result.value === null ? '--' : '-?-' ;  
-    }
-  };
-
-  const valueDisplayElement = (
-    <span className={valueTextClasses}>
-      {resultDisplay()}
-      {valueIcon}
-      {valueText}
-    </span>
-  );
 
   const unitClassNames = cx([
     'unit',
     { 'unit-hidden': hideUnit },
   ]);
-  const valueUnitElement = result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null;
-  
-  return (
-    <React.Fragment>
-      {valueDisplayElement}
-      {valueUnitElement}
-    </React.Fragment>
-  );
+
+  const observationDisplay = () => {
+    let valueDisplayElements;
+    if (isValidValue) {
+      valueDisplayElements = (
+        <React.Fragment>
+          <span {...customProps} className={valueTextClasses}>
+            {interpretation ? interpretationIndicators[interpretation.toUpperCase()] : null}
+            {result.value}
+          </span>
+          {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}
+        </React.Fragment>
+      );
+    } else if (result.value === null) {
+      valueDisplayElements = (
+        <span className="value">--</span>
+      );
+    } else {
+      valueDisplayElements = (
+        <span className={['value', 'error']}>
+          <IconError className={cx('icon-error')} />
+        </span>
+      );
+    }
+    return valueDisplayElements;
+  };
+
+  return observationDisplay();
 };
 
 Observation.propTypes = propTypes;

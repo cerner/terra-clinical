@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { interpretationPropOneOf } from './interpretationPropTypes';
+import { resulttypePropOneOf } from './resulttypePropTypes';
 import { valueQuantityPropShape, valueStringPropShape } from './valuePropTypes';
 
 const observationPropShape = PropTypes.shape({
   /**
-   *  Add description
+   *  Event ID for result
    */
   eventId: PropTypes.string,
   /**
@@ -15,27 +16,37 @@ const observationPropShape = PropTypes.shape({
     valueStringPropShape,
   ]),
   /**
-   *  Add description
+   * Enum for possible Result Interpretation values (also called `Clinical Severity` and `Normalcy`).
+   * One of `'CRITICAL'`, `'EXTREMEHIGH'`, `'EXTREMELOW'`, `'PANICHIGH'`, `'PANICLOW'`, `'VABNORMAL'`, `'POSITIVE'`, `'ABNORMAL'`, `'HIGH'`, `'LOW'`, `'NORMAL'`, `'NEUTRAL'`.
    */
   interpretation: interpretationPropOneOf,
   /**
-   *  Add description
+   *  Enum for possible Result Types.
+   * One of `'ALPHA'`, `'MULTIALPHA'`, `'FREETEXT'`, `'NUMERIC'`, `'BLOODPRESSURE'`, `'CALCULATION'`, `'DATE'`, `'DATETIME'`, `'TIME'`, `'PROVIDER'`.
+   */
+  type: resulttypePropOneOf,
+  /**
+   *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */
   isModified: PropTypes.bool,
   /**
-   *  Add description
+   *  If the Result value has an appended comment.
    */
   hasComment: PropTypes.bool,
   /**
-   *  Add description
+   *  If the Result value has not been authenticated and committed to patient chart.
+   */
+  isUnverified: PropTypes.bool,
+  /**
+   *  Display to show the full Result Name/Label Concept, e.g. `'Temperature Oral'`.
    */
   conceptDisplay: PropTypes.string,
   /**
-   *  Add description
+   *  Display to show an appropriate clinically relevant documented datetime.
    */
   datetimeDisplay: PropTypes.string,
   /**
-   * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
+   * Visually hides the unit of measure, e.g. when presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
 });

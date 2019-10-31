@@ -11,6 +11,8 @@ import DefaultResult from '../example/clinicalresult/ClinicalResultDefault';
 import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultDefault.jsx';
 import DecoratedResult from '../example/clinicalresult/ClinicalResultDecorated';
 import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultDecorated.jsx';
+import UnverifiedResult from '../example/clinicalresult/ClinicalResultUnverified';
+import UnverifiedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultUnverified.jsx';
 import ExtraDisplaysResult from '../example/clinicalresult/ClinicalResultExtraDisplays';
 import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultExtraDisplays.jsx';
 import TruncatedResult from '../example/clinicalresult/ClinicalResultTruncated';
@@ -37,6 +39,12 @@ const DocPage = () => (
         description: '',
         example: <DecoratedResult />,
         source: DecoratedResultSrc,
+      },
+      {
+        title: 'Unverified Clinical Result with Hide Unit of Measure',
+        description: '',
+        example: <UnverifiedResult />,
+        source: UnverifiedResultSrc,
       },
       {
         title: 'Clinical Result with additional displays',

@@ -23,6 +23,13 @@
       margin-left: var(--terra-clinical-result-name-header-cell-unit-margin-left, 0.35714em); // Must use ems for font rescaling
       overflow: hidden;
     }
+
+    .icon-rowindicator {
+      margin-right: var(--terra-clinical-result-display-icon-interpretation-margin-right, 0.25em); // Must use ems for font rescaling
+      position: relative;
+      top: var(--terra-clinical-result-display-icon-interpretation-top, 0.15em); // Must use ems for font rescaling
+      vertical-align: baseline;
+    }
   }
 
   .padding-standard {
