@@ -24,7 +24,8 @@ $ npm install terra-clinical-result
 -->
 
 ## Usage Guide
-The basic result is constructed by providing structured object literal with a specific construction that follows a similar patter to HL7 FHIR Observation standard (https://www.hl7.org/fhir/observation.html).
+
+The blood pressure result is constructed similarly to the single clinical result by providing structured object with a specific construction that follows a similar patter to the [HL7 FHIR Observation Blood Pressure](https://www.hl7.org/fhir/observation-example-bloodpressure.html) example.
 ```jsx
 const observationPropShape = PropTypes.shape({
   /**
@@ -44,7 +45,7 @@ const observationPropShape = PropTypes.shape({
 ```
 
 
-The basic result is constructed by providing a structured object like:
+An example of a single blood pressure result value:
 ```jsx
 import React from 'react';
 import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
