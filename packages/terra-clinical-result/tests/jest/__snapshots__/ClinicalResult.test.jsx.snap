@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a default ResultTimeHeaderCell component 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="date"
+  >
+    Dec 21, 2010
+  </div>
+  <div
+    className="time"
+  >
+    23:59
+  </div>
+</div>
+`;
+
+exports[`should render a default component 1`] = `
+<div
+  className="clinical-result-name-header-cell padding-compact"
+>
+  <div
+    className="name"
+  >
+    Blood Pressure
+  </div>
+  <div
+    className="unit"
+  >
+    mmHg
+  </div>
+</div>
+`;

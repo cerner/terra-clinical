@@ -28,8 +28,8 @@
     border: 1px solid #dedfe0;
     border-bottom-color: #868a8c;
     max-width: 1055px;
-    padding-left: 220px;
     overflow: hidden;
+    padding-left: 220px;
     white-space: nowrap;
   }
 
@@ -50,20 +50,18 @@
     border: 1px solid #dedfe0;
     border-right: 2px solid #4e5558;
     max-width: 222px;
-    padding-top: 48px;
     overflow: hidden;
+    padding-top: 48px;
     white-space: nowrap;
-
   }
 
   .mock-flowsheet-firstcolumn-cell {
-    border-top: 1px solid #868a8c;
     border-bottom: 1px solid #868a8c;
+    border-top: 1px solid #868a8c;
     margin-bottom: -1px;
 
     &.zebra {
       background-color: #dedfe0;
     }
   }
-
 }

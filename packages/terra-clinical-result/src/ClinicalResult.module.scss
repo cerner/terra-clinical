@@ -60,11 +60,13 @@
       vertical-align: baseline;
     }
     
+    /* stylelint-disable selector-max-compound-selectors */
     .icon-modified + .icon-unverified,
     .icon-comment + .icon-unverified {
       margin-left: var(--terra-clinical-result-display-icon-unverified-after-icons-margin-left, 0.4375em); // Must use ems for font rescaling
       top: var(--terra-clinical-result-display-icon-unverified-after-icons-top, 0); // Must use ems for font rescaling
     }
+    /* stylelint-enable selector-max-compound-selectors */
   }
 
   .concept-display {
