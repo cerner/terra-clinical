@@ -4,7 +4,7 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import ClinicalResultsProps from '!raw-loader!../../../../src/ClinicalResult';
+// import ClinicalResultsProps from '!raw-loader!../../../../src/ClinicalResult';
 
 // Example Files
 import DefaultResult from '../example/clinicalresult/ClinicalResultDefault';
@@ -71,12 +71,14 @@ const DocPage = () => (
         source: TruncatedResultSrc,
       },
     ]}
+    /*
     propsTables={[
       {
         componentName: 'Clinical Result Props',
         componentSrc: ClinicalResultsProps,
       },
     ]}
+    */
   />
 );
 

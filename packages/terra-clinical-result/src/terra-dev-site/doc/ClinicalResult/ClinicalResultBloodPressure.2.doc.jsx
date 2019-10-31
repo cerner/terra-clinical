@@ -4,7 +4,7 @@ import ReadMe from '../../../../docs/ClinicalResultBloodPressure.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import ClinicalResultBloodPressureProps from '!raw-loader!../../../../src/ClinicalResultBloodPressure';
+// import ClinicalResultBloodPressureProps from '!raw-loader!../../../../src/ClinicalResultBloodPressure';
 
 
 // Example Files
@@ -72,12 +72,14 @@ const DocPage = () => (
         source: TruncatedResultSrc,
       },
     ]}
+    /*
     propsTables={[
       {
         componentName: 'Clinical-Result-Blood-Pressure Props',
         componentSrc: ClinicalResultBloodPressureProps,
       },
     ]}
+    */
   />
 );
 

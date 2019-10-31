@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { interpretationPropOneOf } from './interpretationPropTypes';
 import { resulttypePropOneOf } from './resulttypePropTypes';
-import { valueQuantityPropShape, valueStringPropShape } from './valuePropTypes';
+import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from './valuePropTypes';
 
 const observationPropShape = PropTypes.shape({
   /**
@@ -14,6 +14,7 @@ const observationPropShape = PropTypes.shape({
   result: PropTypes.oneOfType([
     valueQuantityPropShape,
     valueStringPropShape,
+    valueNullPropShape,
   ]),
   /**
    * Enum for possible Result Interpretation values (also called `Clinical Severity` and `Normalcy`).
