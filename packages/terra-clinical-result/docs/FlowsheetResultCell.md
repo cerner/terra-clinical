@@ -26,6 +26,10 @@ $ npm install terra-clinical-result
 ## Usage Guide
 
 The flowsheet cell for clinical results is constructed by providing the same structured object as the clinical result in an array, allowing for multiple results to be indicated in the same time cell.
+
+Currently the Flowsheet exepects an array of one or more results - and if there are mulitple, it will display the first in the array, with an indication of additional results. Enhancments are in progress to also look at the performedDateTime value and will always show the most recent, regardless of which order index position in the array it is.
+
+
 ```jsx
   /**
    *  A set of clinical results.                                                          .
@@ -41,12 +45,138 @@ The flowsheet cell for clinical results is constructed by providing the same str
 
 An example of a single clinical result value:
 ```jsx
+import React from 'react';
+import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
+
+const singleResultValue = [
+  {
+    eventId: '111',
+    result: {
+      value: '101.9',
+      unit: 'degC',
+    },
+    interpretation: 'CRITICAL',
+    status: 'FINAL',
+    type: 'NUMERIC',
+    performedDateTime: '2019-11-23T13:31:31+05:00',
+    updateDateTime: '2019-11-23T13:31:31+05:00',
+    isModified: true,
+    hasComment: true,
+    isUnverified: true,
+    conceptDisplay: 'Temperature Oral',
+    datetimeDisplay: 'Nov 23, 2019 13:31:31',
+  },
+];
+
+export default () => <FlowsheetResultCell resultDataSet={singleResultValue} />;
 
 ```
 
 
 An example of mulitple clinical blood pressure result values:
 ```jsx
+import React from 'react';
+import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
+import classNames from 'classnames/bind';
+import styles from '../Examples.module.scss';
+
+const cx = classNames.bind(styles);
+
+const multipleResultBPValues = [
+  {
+    id: '111',
+    systolic: {
+      eventId: '111.1',
+      result: {
+        value: '111',
+        unit: 'mmHg',
+      },
+      interpretation: 'HIGH',
+      status: 'FINAL',
+      performedDateTime: '2020-10-10T11:11:00+05:00',
+      updateDateTime: '2020-10-10T11:11:00+05:00',
+      isModified: true,
+      hasComment: true,
+      resultDateTime: '10/10/2020 11:11',
+    },
+    diastolic: {
+      eventId: '111.2',
+      result: {
+        value: '77',
+        unit: 'mmHg',
+      },
+      interpretation: 'LOW',
+      status: 'FINAL',
+      performedDateTime: '2020-10-10T11:11:00+05:00',
+      updateDateTime: '2020-10-10T11:11:00+05:00',
+      isModified: true,
+      hasComment: true,
+      resultDateTime: '10/10/2020 11:11',
+    },
+  },
+  {
+    id: '111',
+    systolic: {
+      eventId: '111.1',
+      result: {
+        value: '111',
+        unit: 'mmHg',
+      },
+      interpretation: 'CRITICAL',
+      status: 'FINAL',
+      performedDateTime: '2020-10-10T11:11:00+05:00',
+      updateDateTime: '2020-10-10T11:11:00+05:00',
+      isModified: true,
+      hasComment: true,
+      resultDateTime: '10/10/2020 11:11',
+    },
+    diastolic: {
+      eventId: '111.2',
+      result: {
+        value: '77',
+        unit: 'mmHg',
+      },
+      status: 'FINAL',
+      performedDateTime: '2020-10-10T11:11:00+05:00',
+      updateDateTime: '2020-10-10T11:11:00+05:00',
+      isModified: true,
+      hasComment: true,
+      resultDateTime: '10/10/2020 11:11',
+    },
+  },
+  {
+    id: '111',
+    systolic: {
+      eventId: '111.1',
+      result: {
+        value: '111',
+        unit: 'mmHg',
+      },
+      interpretation: 'CRITICAL',
+      status: 'FINAL',
+      performedDateTime: '2020-10-10T11:11:00+05:00',
+      updateDateTime: '2020-10-10T11:11:00+05:00',
+      isModified: true,
+      hasComment: true,
+      resultDateTime: '10/10/2020 11:11',
+    },
+    diastolic: {
+      eventId: '111.2',
+      result: {
+        value: '77',
+        unit: 'mmHg',
+      },
+      status: 'FINAL',
+      performedDateTime: '2020-10-10T11:11:00+05:00',
+      updateDateTime: '2020-10-10T11:11:00+05:00',
+      isModified: true,
+      hasComment: true,
+      resultDateTime: '10/10/2020 11:11',
+    },
+  },
+];
+
+export default () => <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit />;
 
 ```
 

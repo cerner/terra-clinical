@@ -4,7 +4,7 @@ const valueQuantityPropShape = PropTypes.shape({
   /**
    *  Numeric Value for an Observation Result
    */
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
   /**
    *  Unit of Measure representation for an Observation Result
    */
@@ -23,14 +23,14 @@ const valueStringPropShape = PropTypes.shape({
   /**
    *  String Value for an Observation Result
    */
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 });
 
 const valueNullPropShape = PropTypes.shape({
   /**
    *  Using Object to set Null as Value for an Observation Result
    */
-  value: PropTypes.object.isRequired,
+  value: PropTypes.object,
 });
 
 

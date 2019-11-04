@@ -75,6 +75,13 @@ const observationPropShape = PropTypes.shape({
     'NEUTRAL',
   ]),
   /**
+   * Enum for possible Result Statuses.
+   */
+  status: PropTypes.oneOf([,
+    'FINAL',
+    'INERROR',
+  ]),
+  /**
    *  Enum for possible Result Types.
    */
   type: PropTypes.oneOf([
@@ -89,6 +96,14 @@ const observationPropShape = PropTypes.shape({
     'TIME',
     'PROVIDER',
   ]),
+  /**
+   *  Clinical datetime for the Result (this may need to be renamed)
+   */
+  performedDateTime: PropTypes.instanceOf(Date),
+  /**
+   *  Last updated datetime for the Result (this may need to be renamed)
+   */
+  updateDateTime: PropTypes.instanceOf(Date),
   /**
    *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */
@@ -125,6 +140,7 @@ const singleResultValue = {
     unit: 'degC',
   },
   interpretation: 'CRITICAL',
+  status: 'FINAL',
   type: 'NUMERIC',
   isModified: true,
   hasComment: true,

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { interpretationPropOneOf } from './interpretationPropTypes';
 import { resulttypePropOneOf } from './resulttypePropTypes';
+import { statusPropOneOf } from './statusPropTypes';
 import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from './valuePropTypes';
 
 const observationPropShape = PropTypes.shape({
@@ -22,10 +23,23 @@ const observationPropShape = PropTypes.shape({
    */
   interpretation: interpretationPropOneOf,
   /**
+   * Enum for possible Result Statuses.
+   * One of `'FINAL'`, `'INERROR'`.
+   */
+  status: statusPropOneOf,
+  /**
    *  Enum for possible Result Types.
    * One of `'ALPHA'`, `'MULTIALPHA'`, `'FREETEXT'`, `'NUMERIC'`, `'BLOODPRESSURE'`, `'CALCULATION'`, `'DATE'`, `'DATETIME'`, `'TIME'`, `'PROVIDER'`.
    */
   type: resulttypePropOneOf,
+  /**
+   *  Clinical datetime for the Result (this may need to be renamed)
+   */
+  performedDateTime: PropTypes.instanceOf(Date),
+  /**
+   *  Last updated datetime for the Result (this may need to be renamed)
+   */
+  updateDateTime: PropTypes.instanceOf(Date),
   /**
    *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */
