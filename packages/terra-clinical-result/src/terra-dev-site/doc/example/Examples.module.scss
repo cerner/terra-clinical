@@ -64,15 +64,16 @@
       background-color: #dedfe0;
     }
   }
+
   .mock-flowsheet-resultcolumn {
     background-color: #f1f1f1;
     border: 1px solid #dedfe0;
     display: inline-block;
-    width: 162px;
+    margin-left: -1px;
     overflow: hidden;
     padding-top: 24px;
+    width: 162px;
     white-space: nowrap;
-    margin-left: -1px;
   }
 
   .mock-flowsheet-resultcolumn-cell {
