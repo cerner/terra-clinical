@@ -27,21 +27,19 @@ $ npm install terra-clinical-result
 
 The blood pressure result is constructed similarly to the single clinical result by providing structured object with a specific construction that follows a similar patter to the [HL7 FHIR Observation Blood Pressure](https://www.hl7.org/fhir/observation-example-bloodpressure.html) example.
 ```jsx
-const observationPropShape = PropTypes.shape({
   /**
    * Result Object with the clinical result data.
    */
   resultData: PropTypes.shape({
     /**
-     *  Systolic Result for blood pressure. (see observationPropShape from clinical-result)
+     *  Systolic Result for blood pressure.
      */
     systolic: observationPropShape,
     /**
-     *  Diastolic Result for blood pressure. (see observationPropShape from clinical-result)
+     *  Diastolic Result for blood pressure.
      */
     diastolic: observationPropShape,
   }),
-});
 ```
 
 

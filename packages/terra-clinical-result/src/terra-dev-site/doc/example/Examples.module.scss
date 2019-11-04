@@ -64,4 +64,30 @@
       background-color: #dedfe0;
     }
   }
+  .mock-flowsheet-resultcolumn {
+    background-color: #f1f1f1;
+    border: 1px solid #dedfe0;
+    display: inline-block;
+    width: 162px;
+    overflow: hidden;
+    padding-top: 24px;
+    white-space: nowrap;
+    margin-left: -1px;
+  }
+
+  .mock-flowsheet-resultcolumn-cell {
+    background-color: #fff;
+    border-bottom: 1px solid #dedfe0;
+    border-top: 1px solid #dedfe0;
+    box-sizing: border-box;
+    margin-bottom: -1px;
+
+    &.zebra {
+      background-color: #f1f1f1;
+    }
+
+    &.empty {
+      min-height: 31px;
+    }
+  }
 }

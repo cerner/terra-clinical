@@ -1,0 +1,94 @@
+@import '~terra-mixins/lib/Mixins';
+
+:local {
+  .flowsheet-result-cell {
+    margin: 0;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .has-additional-results {
+    padding-right: var(--terra-clinical-result-flowsheet-has-additional-result-padding-right, 1.5em); // Must use ems for font rescaling
+  }
+
+  .additional-results-display {
+    position: absolute;
+    right: var(--terra-clinical-result-flowsheet-additional-result-display-right, 0.25em); // Must use ems for font rescaling
+    top: var(--terra-clinical-result-flowsheet-additional-result-display-top, 0.3125em); // temporary only
+  }
+
+  .flowsheet-additional-result-interpretation {
+    &.abnormal {
+      // add style here
+    }
+
+    &.critical {
+      // add style here
+    }
+    
+    &.high {
+      // add style here
+    }
+    
+    &.low {
+      // add style here
+    }
+    
+    &.positive {
+      // add style here
+    }
+
+    &.nuetral {
+      // add style here
+    }
+  }
+
+  .flowsheet-additional-result-icon-interpretation {
+    position: absolute;
+    right: 0;
+    top: 0;
+  
+    &.abnormal {
+      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-abnormal-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M2.41,1,47,45.59V1ZM41.75,17.5H32s.08,6.82,3,9.75a10.37,10.37,0,0,1-6.75-9.75V13H38s-.08-6.83-3-9.75A10.37,10.37,0,0,1,41.75,13Z" /><path fill="#654a08" d="M0,0,48,48V0ZM47,45.59,2.41,1H47ZM41.75,17.5H32s.08,6.82,3,9.75a10.37,10.37,0,0,1-6.75-9.75V13H38s-.08-6.83-3-9.75A10.37,10.37,0,0,1,41.75,13Z" /></svg>'));
+    }
+
+    &.critical {
+      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-critical-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#e50000" d="M0,0l48,48V0H0z M37,25h-5v-5h5V25z M37,16h-5V3h5V16z"/></svg>'));
+    }
+    
+    &.high {
+      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-high-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M2.41,1,47,45.59V1ZM37.85,12V27h-4.7V12H26.88L35.5,3.2,44.12,12Z" /><path fill="#ff6100" d="M0,0,48,48V0ZM47,45.59,2.41,1H47ZM44.12,12H37.85V27h-4.7V12H26.88L35.5,3.2Z" /></svg>'));
+    }
+    
+    &.low {
+      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-low-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M2.41,1,47,45.59V1ZM35.5,27l-8.62-8.8h6.27V3.2h4.7v15h6.27Z" /><path fill="#0053e6" d="M44.12,18.2,35.5,27l-8.62-8.8h6.27V3.2h4.7v15ZM48,0V48L0,0ZM47,1H2.41L47,45.59Z" /></svg>'));
+    }
+    
+    &.positive {
+      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-positive-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#e50000" d="M0,0l48,48V0H0z M37,25h-5v-5h5V25z M37,16h-5V3h5V16z"/></svg>'));
+    }
+
+    &.nuetral {
+      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-nuetral-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#1c1f21" d="M0,0,48,48V0Z" /></svg>'));
+    }
+  }
+
+  .error-display {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-evenly;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+  }
+
+  .padding-standard {
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-standard-padding, 0.71428rem 0.71428rem);
+  }
+
+  .padding-compact {
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-compact-padding, 0.35714rem 0.71428rem);
+  }
+}
