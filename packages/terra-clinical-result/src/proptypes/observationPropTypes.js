@@ -23,15 +23,15 @@ const observationPropShape = PropTypes.shape({
    */
   interpretation: interpretationPropOneOf,
   /**
-   * Enum for possible Result Statuses.
-   * One of `'FINAL'`, `'INERROR'`.
-   */
-  status: statusPropOneOf,
-  /**
    *  Enum for possible Result Types.
    * One of `'ALPHA'`, `'MULTIALPHA'`, `'FREETEXT'`, `'NUMERIC'`, `'BLOODPRESSURE'`, `'CALCULATION'`, `'DATE'`, `'DATETIME'`, `'TIME'`, `'PROVIDER'`.
    */
   type: resulttypePropOneOf,
+  /**
+   * Enum for possible Result Statuses.
+   * One of `'registered'`, `'preliminary'`, `'final'`, `'amended'`, `'corrected'`, `'cancelled'`, `'entered-in-error'`, `'unknown'`.
+   */
+  status: statusPropOneOf,
   /**
    *  Clinical datetime for the Result (this may need to be renamed)
    */

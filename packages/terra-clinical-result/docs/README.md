@@ -75,13 +75,6 @@ const observationPropShape = PropTypes.shape({
     'NEUTRAL',
   ]),
   /**
-   * Enum for possible Result Statuses.
-   */
-  status: PropTypes.oneOf([,
-    'FINAL',
-    'INERROR',
-  ]),
-  /**
    *  Enum for possible Result Types.
    */
   type: PropTypes.oneOf([
@@ -95,6 +88,19 @@ const observationPropShape = PropTypes.shape({
     'DATETIME',
     'TIME',
     'PROVIDER',
+  ]),
+  /**
+   * Enum for possible Result Statuses.
+   */
+  status: PropTypes.oneOf([,
+    'registered',
+    'preliminary',
+    'final',
+    'amended',
+    'corrected',
+    'cancelled',
+    'entered-in-error',
+    'unknown'
   ]),
   /**
    *  Clinical datetime for the Result (this may need to be renamed)
@@ -140,7 +146,6 @@ const singleResultValue = {
     unit: 'degC',
   },
   interpretation: 'CRITICAL',
-  status: 'FINAL',
   type: 'NUMERIC',
   isModified: true,
   hasComment: true,

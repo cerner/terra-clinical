@@ -2,11 +2,17 @@ import PropTypes from 'prop-types';
 
 /**
  * Enum for possible Result Statuses.
- * One of `'FINAL'`, `'INERROR'`.
+ * values mapped from http //hl7.org/fhir/2018Sep/valueset-observation-status.html
  */
 const statusPropOneOf = PropTypes.oneOf([
-  'FINAL',
-  'INERROR',
+  'registered',
+  'preliminary',
+  'final',
+  'amended',
+  'corrected',
+  'cancelled',
+  'entered-in-error',
+  'unknown',
 ]);
 
 export default statusPropOneOf;
