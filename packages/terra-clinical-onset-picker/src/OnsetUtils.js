@@ -88,9 +88,8 @@ class OnsetUtils {
   static allowedAgeUnits(birthdate, intl) {
     const ageMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const currentMoment = moment().startOf('day');
-
     if (currentMoment.diff(ageMoment, 'weeks') === 0) {
-      return null;
+      return [];
     }
 
     const ageUnits = [{ value: 'weeks', display: intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionWeek' }) }];

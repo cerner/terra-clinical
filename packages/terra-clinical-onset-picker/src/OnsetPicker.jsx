@@ -128,8 +128,14 @@ class OnsetPicker extends React.Component {
       ageValues = OnsetUtils.onsetToAge(this.props.birthdate, moment(this.props.onsetDate));
     }
 
+    const birthMoment = moment(props.birthdate).startOf('day');
+    const currentMoment = moment().startOf('day');
+    /* The granularity is added so that if 'age' is passed as granularity with invalid birthdate,
+    then the granularity is set to default i.e 'undefined' */
+    const granularity = (currentMoment.diff(birthMoment, 'weeks') !== 0 || this.props.granularity !== GranularityOptions.AGE) ? this.props.granularity : undefined;
+
     this.state = {
-      granularity: this.props.granularity,
+      granularity,
       precision: this.props.precision,
       onsetDate: this.props.onsetDate ? moment(this.props.onsetDate) : undefined,
       age: ageValues.age,
@@ -300,9 +306,20 @@ class OnsetPicker extends React.Component {
       ...customProps
     } = this.props;
 
-
     let granularitySelect = null;
+    const optionAge = [];
     if (this.state.precision !== PrecisionOptions.UNKNOWN) {
+      const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
+      const currentMoment = moment().startOf('day');
+      if (currentMoment.diff(birthMoment, 'weeks') !== 0) {
+        optionAge.push(
+          <SelectField.Option
+            value={GranularityOptions.AGE}
+            display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
+            key={GranularityOptions.AGE}
+          />,
+        );
+      }
       granularitySelect = (
         <SelectField
           className={cx('field-inline', 'granularity')}
@@ -319,11 +336,7 @@ class OnsetPicker extends React.Component {
           }}
           selectId={`${this.props.id}-granularity-select`}
         >
-          <SelectField.Option
-            value={GranularityOptions.AGE}
-            display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
-            key={GranularityOptions.AGE}
-          />
+          {optionAge}
           <SelectField.Option
             value={GranularityOptions.YEAR}
             display={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
