@@ -27,7 +27,7 @@ $ npm install terra-clinical-result
 
 The flowsheet cell for clinical results is constructed by providing the same structured object as the clinical result in an array, allowing for multiple results to be indicated in the same time cell.
 
-Currently the Flowsheet exepects an array of one or more results - and if there are mulitple, it will display the first in the array, with an indication of additional results. Enhancments are in progress to also look at the performedDateTime value and will always show the most recent, regardless of which order index position in the array it is.
+Currently the Flowsheet expects an array of one or more results - and if there are multiple, it will display the first in the array, with an indication of additional results. Enhancements are in progress to also look at the performedDateTime value and to always show the most recent, regardless of which order index position in the array it is.
 
 
 ```jsx
