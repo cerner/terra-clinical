@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Added
+* Added prop `overflowContainerRefCallback`.
 
 2.12.0 - (September 26, 2019)
 ------------------
