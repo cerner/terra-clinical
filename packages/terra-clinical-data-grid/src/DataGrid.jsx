@@ -101,6 +101,10 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: intlShape.isRequired,
+  /**
+   * Callback ref to pass into overflow container.
+   */
+  overflowContainerRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -1052,6 +1056,7 @@ class DataGrid extends React.Component {
       fill,
       onRequestContent,
       intl,
+      overflowContainerRefCallback,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
@@ -1084,7 +1089,12 @@ class DataGrid extends React.Component {
         >
           <div
             className={cx('vertical-overflow-container')}
-            ref={this.setVerticalOverflowContainerRef}
+            ref={(ref) => {
+              this.setVerticalOverflowContainerRef(ref);
+              if (overflowContainerRefCallback) {
+                overflowContainerRefCallback(ref);
+              }
+            }}
             onScroll={onRequestContent ? this.checkForMoreContent : undefined}
           >
             <div
