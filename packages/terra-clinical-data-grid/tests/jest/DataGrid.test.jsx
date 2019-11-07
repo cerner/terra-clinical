@@ -292,7 +292,7 @@ it('should render a DataGrid with the fill prop missing', () => {
   expect(dataGrid).toMatchSnapshot();
 });
 
-it('should pass in refCallback as the ref prop of the input element', () => {
+it('should pass in refCallback as the ref prop of the overflow container element', () => {
   const refCallback = jest.fn();
   const dataGridComp = (
     <DataGrid.WrappedComponent

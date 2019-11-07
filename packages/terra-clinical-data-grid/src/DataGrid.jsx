@@ -102,7 +102,7 @@ const propTypes = {
    */
   intl: intlShape.isRequired,
   /**
-   * Callback ref to pass into overflow container.
+   * Callback ref to pass into vertical overflow container.
    */
   overflowContainerRefCallback: PropTypes.func,
 };

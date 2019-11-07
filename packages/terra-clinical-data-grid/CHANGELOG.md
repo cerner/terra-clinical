@@ -4,7 +4,7 @@ Changelog
 Unreleased
 ----------
 ### Added
-* Added prop `overflowContainerRefCallback`.
+* Added `overflowContainerRefCallback` prop to pass callback ref to `vertical-overflow-container`.
 
 2.12.0 - (September 26, 2019)
 ------------------
