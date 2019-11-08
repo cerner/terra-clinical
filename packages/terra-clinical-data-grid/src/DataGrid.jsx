@@ -104,7 +104,11 @@ const propTypes = {
   /**
    * Callback ref to pass into vertical overflow container.
    */
-  overflowContainerRefCallback: PropTypes.func,
+  verticalOverflowContainerRefCallback: PropTypes.func,
+  /**
+   * Callback ref to pass into horizontal overflow container.
+   */
+  horizontalOverflowContainerRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -1056,7 +1060,8 @@ class DataGrid extends React.Component {
       fill,
       onRequestContent,
       intl,
-      overflowContainerRefCallback,
+      verticalOverflowContainerRefCallback,
+      horizontalOverflowContainerRefCallback,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
@@ -1091,8 +1096,8 @@ class DataGrid extends React.Component {
             className={cx('vertical-overflow-container')}
             ref={(ref) => {
               this.setVerticalOverflowContainerRef(ref);
-              if (overflowContainerRefCallback) {
-                overflowContainerRefCallback(ref);
+              if (verticalOverflowContainerRefCallback) {
+                verticalOverflowContainerRefCallback(ref);
               }
             }}
             onScroll={onRequestContent ? this.checkForMoreContent : undefined}
@@ -1110,7 +1115,12 @@ class DataGrid extends React.Component {
             >
               <div
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
-                ref={this.setHorizontalOverflowContainerRef}
+                ref={(ref) => {
+                  this.setHorizontalOverflowContainerRef(ref);
+                  if (horizontalOverflowContainerRefCallback) {
+                    horizontalOverflowContainerRefCallback(ref);
+                  }
+                }}
                 onScroll={fill ? this.synchronizeContentScroll : undefined}
               >
                 {this.renderOverflowContent()}

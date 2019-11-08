@@ -292,7 +292,7 @@ it('should render a DataGrid with the fill prop missing', () => {
   expect(dataGrid).toMatchSnapshot();
 });
 
-it('should pass in refCallback as the ref prop of the overflow container element', () => {
+it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
   const refCallback = jest.fn();
   const dataGridComp = (
     <DataGrid.WrappedComponent
@@ -301,7 +301,24 @@ it('should pass in refCallback as the ref prop of the overflow container element
       overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
       sections={testSections}
       intl={mockIntl}
-      overflowContainerRefCallback={refCallback}
+      verticalOverflowContainerRefCallback={refCallback}
+    />
+  );
+
+  mountWithIntl(dataGridComp);
+  expect(refCallback).toBeCalled();
+});
+
+it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
+  const refCallback = jest.fn();
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+      horizontalOverflowContainerRefCallback={refCallback}
     />
   );
 
