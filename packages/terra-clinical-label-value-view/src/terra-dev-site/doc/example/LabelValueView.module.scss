@@ -5,4 +5,25 @@
     padding: 0 20px;
     width: 280px;
   }
+
+  .container {
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.4285714285714286;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    overflow: hidden;
+    padding-right: 0.357142857142857rem;
+  }
+
+  .text {
+    color: #c00;
+    flex: 1 1 auto;
+    font-weight: 700;
+    min-width: 10px; // Need min-width, as IE10 will completely squish display
+  }
 }
