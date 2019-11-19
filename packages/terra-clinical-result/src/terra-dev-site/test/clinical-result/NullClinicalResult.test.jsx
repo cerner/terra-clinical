@@ -1,10 +1,5 @@
 import React from 'react';
 import ClinicalResult from '../../../ClinicalResult';
+import { NullResult } from './TestResults';
 
-const data = {
-  result: {
-    value: null,
-  },
-};
-
-export default () => <ClinicalResult resultData={data} />;
+export default () => <ClinicalResult resultData={NullResult} />;
