@@ -192,6 +192,7 @@ const ItemView = ({
   ]);
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
     <div {...customProps} tabIndex="0" className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>

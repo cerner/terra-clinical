@@ -16,6 +16,7 @@ const DetailViewNoDivider = () => (
     secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
     subtitles={['Subtitle 1', 'Subtitle 2']}
     graph={(
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       <div className={cx('graph-content')} tabIndex="0">
         This is where any visualizations would go
       </div>
