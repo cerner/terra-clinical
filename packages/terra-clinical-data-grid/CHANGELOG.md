@@ -6,6 +6,19 @@ Unreleased
 ### Changed
 * Axe violation fixed for scrollable content.
 
+2.12.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Removed
+* Removed used keycodes file
+
+2.11.0 - (September 19, 2019)
+----------
+### Added
+* Added en-CA translations.
+
 2.10.0 - (September 6, 2019)
 ----------
 ### Changed

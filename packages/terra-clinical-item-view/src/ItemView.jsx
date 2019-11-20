@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ItemDisplay from 'terra-clinical-item-display';
-import styles from './ItemView.scss';
+import styles from './ItemView.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -192,7 +192,7 @@ const ItemView = ({
   ]);
 
   return (
-    <div {...customProps} className={viewClassNames} ref={refCallback}>
+    <div {...customProps} tabIndex="0" className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>
         {renderRows(displays, layout, textEmphasis)}

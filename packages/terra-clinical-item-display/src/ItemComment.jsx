@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import CommentIndicator from 'terra-icon/lib/icon/IconComment';
 /* eslint-disable-next-line import/no-cycle */
 import ItemDisplay from './ItemDisplay';
-import styles from './ItemComment.scss';
+import styles from './ItemComment.module.scss';
 
 const cx = classNames.bind(styles);
 

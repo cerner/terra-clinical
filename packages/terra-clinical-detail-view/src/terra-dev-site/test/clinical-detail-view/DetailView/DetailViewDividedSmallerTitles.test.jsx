@@ -15,7 +15,7 @@ const DetailViewDividedSmallerTitles = () => (
     secondaryTitles={['secondaryTitle1', 'secondaryTitle2']}
     subtitles={['subtitle1', 'subTitle2']}
     graph={(
-      <div className={cx('graph-content')}>
+      <div className={cx('graph-content')} tabIndex="0">
         This is where any visualizations would go
       </div>
 )}

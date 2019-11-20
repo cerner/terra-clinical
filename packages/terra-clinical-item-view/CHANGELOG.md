@@ -6,6 +6,16 @@ Unreleased
 ### Changed
 * Axe violation fixed for scrollable content.
 
+3.9.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+3.8.0 - (September 19, 2019)
+----------
+### Changed
+* Convert SCSS files to .module.scss
+
 3.7.0 - (September 6, 2019)
 ----------
 ### Changed

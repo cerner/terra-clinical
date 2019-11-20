@@ -4,6 +4,32 @@ ChangeLog
 Unreleased
 ----------
 
+4.10.0 - (November 7, 2019)
+------------------
+### Fixed
+* Removed age granularity from being populated for age less than a week.
+
+4.9.0 - (October 3, 2019)
+------------------
+### Fixed
+* Unknown precision fixed to return blank onset date value.
+
+4.8.0 - (September 26, 2019)
+------------------
+### Changed
+* Minor dependency updates
+
+### Removed
+* Removed terra-i18n as a dependency since it is not being used.
+
+4.7.0 - (September 19, 2019)
+----------
+### Changed
+* Bump terra-date-picker dependency to 4.0.0.
+
+### Added
+* Added en-CA translations.
+
 4.6.0 - (September 6, 2019)
 ----------
 ### Changed

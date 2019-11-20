@@ -128,8 +128,14 @@ class OnsetPicker extends React.Component {
       ageValues = OnsetUtils.onsetToAge(this.props.birthdate, moment(this.props.onsetDate));
     }
 
+    const birthMoment = moment(props.birthdate).startOf('day');
+    const currentMoment = moment().startOf('day');
+    /* The granularity is added so that if 'age' is passed as granularity with invalid birthdate,
+    then the granularity is set to default i.e 'undefined' */
+    const granularity = (currentMoment.diff(birthMoment, 'weeks') !== 0 || this.props.granularity !== GranularityOptions.AGE) ? this.props.granularity : undefined;
+
     this.state = {
-      granularity: this.props.granularity,
+      granularity,
       precision: this.props.precision,
       onsetDate: this.props.onsetDate ? moment(this.props.onsetDate) : undefined,
       age: ageValues.age,
@@ -143,7 +149,7 @@ class OnsetPicker extends React.Component {
    * @param {granularity} - New granularity value
    */
   changeGranularity(granularity) {
-    if (granularity === GranularityOptions.AGE && this.state.age !== undefined) { // Calculate age values and update onsetDate to match age calculation
+    if (granularity === GranularityOptions.AGE) { // Calculate age values and update onsetDate to match age calculation
       this.setState((prevState) => {
         const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);
 
@@ -151,7 +157,7 @@ class OnsetPicker extends React.Component {
           granularity,
           age: ageValues.age,
           ageUnit: ageValues.ageUnit,
-          onsetDate: moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit),
+          onsetDate: prevState.onsetDate ? moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit) : undefined,
         };
       }, this.handleOnsetUpdate);
     } else {
@@ -165,7 +171,14 @@ class OnsetPicker extends React.Component {
    * @param {precision} - New precision value
    */
   changePrecision(precision) {
-    this.setState({ precision }, this.handleOnsetUpdate);
+    if (precision === PrecisionOptions.UNKNOWN) {
+      this.setState(() => ({
+        precision,
+        onsetDate: undefined,
+      }), this.handleOnsetUpdate);
+    } else {
+      this.setState({ precision }, this.handleOnsetUpdate);
+    }
   }
 
   /**
@@ -268,11 +281,10 @@ class OnsetPicker extends React.Component {
 
     const onsetObject = {
       precision: this.state.precision,
-      granularity: this.state.granularity,
       onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : '',
+      granularity: this.state.precision !== PrecisionOptions.UNKNOWN ? this.state.granularity : '',
     };
-
-    if (this.state.granularity === GranularityOptions.AGE) {
+    if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
       onsetObject.ageUnit = this.state.ageUnit;
     }
 
@@ -294,9 +306,20 @@ class OnsetPicker extends React.Component {
       ...customProps
     } = this.props;
 
-
     let granularitySelect = null;
+    const optionAge = [];
     if (this.state.precision !== PrecisionOptions.UNKNOWN) {
+      const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
+      const currentMoment = moment().startOf('day');
+      if (currentMoment.diff(birthMoment, 'weeks') !== 0) {
+        optionAge.push(
+          <SelectField.Option
+            value={GranularityOptions.AGE}
+            display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
+            key={GranularityOptions.AGE}
+          />,
+        );
+      }
       granularitySelect = (
         <SelectField
           className={cx('field-inline', 'granularity')}
@@ -313,11 +336,7 @@ class OnsetPicker extends React.Component {
           }}
           selectId={`${this.props.id}-granularity-select`}
         >
-          <SelectField.Option
-            value={GranularityOptions.AGE}
-            display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
-            key={GranularityOptions.AGE}
-          />
+          {optionAge}
           <SelectField.Option
             value={GranularityOptions.YEAR}
             display={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
