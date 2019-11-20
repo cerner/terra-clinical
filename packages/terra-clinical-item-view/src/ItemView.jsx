@@ -192,7 +192,7 @@ const ItemView = ({
   ]);
 
   return (
-    <div {...customProps} className={viewClassNames} ref={refCallback}>
+    <div {...customProps} tabIndex="0" className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>
         {renderRows(displays, layout, textEmphasis)}

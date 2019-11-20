@@ -16,7 +16,7 @@ const DetailViewOverflowText = () => (
     secondaryTitles={['secondaryTitle1'.repeat(15), 'secondaryTitle2'.repeat(15)]}
     subtitles={['Subtitle1'.repeat(25), 'Subtitle2'.repeat(25)]}
     graph={(
-      <div className={cx('graph-content')}>
+      <div className={cx('graph-content')} tabIndex="0">
         This is where any visualizations would go
       </div>
 )}
