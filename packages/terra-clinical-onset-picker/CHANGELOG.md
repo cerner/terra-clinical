@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Increased `min-width` of year field to fit values and scrollbar.
 
 4.10.0 - (November 7, 2019)
 ------------------
