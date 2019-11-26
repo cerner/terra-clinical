@@ -16,6 +16,7 @@ const DecoratedResult = {
   ...DefaultResult,
   isModified: true,
   hasComment: true,
+  isUnverified: true,
 };
 
 const BadData = {
@@ -64,11 +65,13 @@ const DecoratedBloodpressureResult = {
     ...DefaultSystolicResult,
     isModified: false,
     hasComment: true,
+    isUnverified: true,
   },
   diastolic: {
     ...DefaultDiastolicResult,
     isModified: true,
     hasComment: false,
+    isUnverified: true,
   },
 };
 

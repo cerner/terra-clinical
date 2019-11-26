@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowsheetResultCell paddingStyle - should render with compact 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+/>
+`;
+
+exports[`FlowsheetResultCell paddingStyle - should render with none 1`] = `
+<div
+  className="clinical-result-time-header-cell"
+/>
+`;
+
+exports[`FlowsheetResultCell paddingStyle - should render with standard 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-standard"
+/>
+`;
+
+exports[`FlowsheetResultCell should hide date 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="date hide-date"
+  >
+    December 31st 1999
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+/>
+`;
+
+exports[`FlowsheetResultCell should render a date 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render a time 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
+`;

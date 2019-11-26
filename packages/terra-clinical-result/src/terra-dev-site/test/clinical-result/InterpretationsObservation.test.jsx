@@ -1,0 +1,68 @@
+import React from 'react';
+import Observation from '../../../common/_Observation';
+import DefaultResult from './TestResults';
+
+export default () => (
+  <>
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="CRITICAL"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="EXTREMEHIGH"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="EXTREMELOW"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="PANICHIGH"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="PANICLOW"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="VABNORMAL"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="POSITIVE"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="ABNORMAL"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="HIGH"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="LOW"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="NORMAL"
+    />
+    <Observation
+      eventId={DefaultResult.eventId}
+      result={DefaultResult.result}
+      interpretation="NEUTRAL"
+    />
+  </>
+);

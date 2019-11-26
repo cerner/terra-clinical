@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <ClincalResult
+    className="has-additional-results"
+    hideUnit={false}
+    isTruncated={true}
+    resultData={
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      }
+    }
+  />
+  <div
+    className="additional-results-display"
+  >
+    [ 1 ]
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
+<div
+  className="flowsheet-result-cell"
+>
+  <ClincalResult
+    className="has-additional-results"
+    hideUnit={false}
+    isTruncated={true}
+    resultData={
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      }
+    }
+  />
+  <div
+    className="additional-results-display"
+  >
+    [ 1 ]
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] = `
+<div
+  className="flowsheet-result-cell padding-standard"
+>
+  <ClincalResult
+    className="has-additional-results"
+    hideUnit={false}
+    isTruncated={true}
+    resultData={
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      }
+    }
+  />
+  <div
+    className="additional-results-display"
+  >
+    [ 1 ]
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <ClincalResult
+    className="has-additional-results"
+    hideUnit={true}
+    isTruncated={true}
+    resultData={
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      }
+    }
+  />
+  <div
+    className="additional-results-display"
+  >
+    [ 1 ]
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <span
+    className="error-display"
+  >
+    <ClincalResult
+      hideUnit={false}
+      isTruncated={true}
+      resultData={
+        Object {
+          "error": "empty",
+        }
+      }
+    />
+  </span>
+</div>
+`;
