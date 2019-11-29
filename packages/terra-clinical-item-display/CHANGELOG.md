@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 3.9.0 - (September 26, 2019)
 ------------------
