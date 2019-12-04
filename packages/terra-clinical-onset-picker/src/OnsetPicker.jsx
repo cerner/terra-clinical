@@ -35,59 +35,50 @@ const propTypes = {
    * The date unit of the age value. One of `weeks`, `months`, or `years`.
    */
   ageUnit: PropTypes.oneOf(Object.values(AgeUnits)),
-
   /**
    * The ISO 8601 **DATE ONLY** string representation of the birth date to calculate an onset date for the `age` precision.
    * Also limits the earliest possible date that can be selected for an onset date for `year`, `month`, and `date` precision.
    */
   birthdate: PropTypes.string.isRequired,
-
   /**
    * The granularity of the onset date. One of `age`, `year`, `month`, or `date` is accepted.
    */
   granularity: PropTypes.oneOf(Object.values(GranularityOptions)),
-
   /**
    * The id of the onset picker. Used as the base for other required id/name in sub-components.
    */
   id: PropTypes.string.isRequired,
-
   /**
    * The precision of the onset date. This should be one of precisions passed to the precisionSet prop.
    * One of `on/at`, `about`, `before`, `after`, or `unknown`.
    */
   precision: PropTypes.oneOf(Object.values(PrecisionOptions)),
-
   /**
    * The set of precisions that can be used with the onset picker.
    * Combination of `on/at`, `about`, `before`, `after`, and `unknown`.
    * Order of precisions determines order in precision select.
    */
   precisionSet: PropTypes.arrayOf(PropTypes.oneOf(Object.values(PrecisionOptions))),
-
   /**
    * The ISO 8601 **DATE ONLY** string representation of the onset date to view/modify.
    */
   onsetDate: PropTypes.string,
-
   /**
    * A callback function to execute when any value of the onsetDate is changed.
    * The first parameter is a Object that contains `precision`, `granularity`, `onsetDate`, and `ageUnit`.
    * `ageUnit` is only present if the granularity is 'age'.
    */
   onsetOnChange: PropTypes.func,
-
   /**
    * Legend for the Onset Picker field group.
    */
   legend: PropTypes.string,
-
   /**
    * Whether or not the legend is visible. Use this props to hide a legend while still creating it on the DOM for accessibility.
    */
   isLegendHidden: PropTypes.bool,
-
   /**
+   * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: intlShape.isRequired,
