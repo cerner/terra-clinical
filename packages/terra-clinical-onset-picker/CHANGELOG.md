@@ -4,6 +4,7 @@ ChangeLog
 Unreleased
 ----------
 ### Changed
+* Increased `min-width` of year dropdown to fit values and scrollbar.
 * Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
 
 4.10.0 - (November 7, 2019)
