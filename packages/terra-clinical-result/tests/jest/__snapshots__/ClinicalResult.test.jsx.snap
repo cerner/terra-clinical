@@ -60,6 +60,32 @@ exports[`ClinicalResult should render a commented result  1`] = `
 </div>
 `;
 
+exports[`ClinicalResult should render a default ClinicalResult 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <Observation
+        eventId="111"
+        hideUnit={false}
+        isTruncated={false}
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ClinicalResult should render a modified result  1`] = `
 <div
   className="clinical-result"
@@ -280,6 +306,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -288,6 +315,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
         hideUnit={true}
         interpretation="CRITICAL"
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -313,6 +341,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -320,6 +349,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -352,6 +382,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -359,6 +390,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -389,6 +421,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -396,6 +429,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -426,6 +460,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -433,6 +468,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -463,6 +499,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -470,6 +507,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -495,6 +533,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
       --
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.2"
       >
         /
       </span>
@@ -502,6 +541,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",
@@ -534,6 +574,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
         hideUnit={true}
         interpretation="CRITICAL"
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -543,6 +584,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -566,6 +608,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
         eventId="111.1"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -575,6 +618,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -605,6 +649,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
         eventId="111.1"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -614,6 +659,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -642,6 +688,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         eventId="111.1"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -651,6 +698,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -679,6 +727,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         eventId="111.1"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -688,6 +737,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -716,6 +766,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
         eventId="111.1"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -725,6 +776,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -748,6 +800,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
         eventId="111.1"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -757,6 +810,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -765,6 +819,51 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
         className="icon-unverified"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render a default ClinicalResultBloodPressure 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <Observation
+        eventId="111.1"
+        hideUnit={true}
+        isTruncated={false}
+        key="Observation-111.1"
+        result={
+          Object {
+            "unit": "mmHg",
+            "value": "180",
+          }
+        }
+      />
+      <span
+        className="result-display-separator"
+        key="ObservationSeperator-111.1"
+      >
+        /
+      </span>
+      <Observation
+        eventId="111.2"
+        hideUnit={false}
+        isTruncated={false}
+        key="Observation-111.2"
+        result={
+          Object {
+            "unit": "mmHg",
+            "value": "80",
+          }
+        }
       />
     </div>
   </div>
@@ -785,6 +884,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         eventId="111.1"
         hideUnit={true}
         isTruncated={false}
+        key="Observation-111.1"
         result={
           Object {
             "unit": "mmHg",
@@ -794,6 +894,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       />
       <span
         className="result-display-separator"
+        key="ObservationSeperator-111.1"
       >
         /
       </span>
@@ -801,6 +902,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         eventId="111.2"
         hideUnit={false}
         isTruncated={false}
+        key="Observation-111.2"
         result={
           Object {
             "unit": "mmHg",

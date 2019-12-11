@@ -31,7 +31,7 @@ const defaultProps = {
   isTruncated: false,
 };
 
-const ClincalResult = (props) => {
+const ClinicalResult = (props) => {
   const {
     resultData,
     hideUnit,
@@ -83,7 +83,7 @@ const ClincalResult = (props) => {
   );
 };
 
-ClincalResult.propTypes = propTypes;
-ClincalResult.defaultProps = defaultProps;
+ClinicalResult.propTypes = propTypes;
+ClinicalResult.defaultProps = defaultProps;
 
-export default ClincalResult;
+export default ClinicalResult;

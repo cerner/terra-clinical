@@ -55,7 +55,7 @@ const FlowsheetResultCell = (props) => {
 
     if (!resultSet || !resultSet.length) {
       const errorDisplay = (
-        <span className={cx('error-display')}>
+        <span key="FlowsheetResultCellError" className={cx('error-display')}>
           <ClinicalResult resultData={{ error: 'empty' }} isTruncated />
         </span>
       );
@@ -66,14 +66,15 @@ const FlowsheetResultCell = (props) => {
       for (let i = 0; i < resultSet.length; i += 1) {
         if (Object.prototype.hasOwnProperty.call(resultSet[i], 'result')) {
           if (i === 0) {
-            resultsInnerDisplay = !isEmpty(resultSet[i].result.value) ? <ClinicalResult resultData={resultSet[i]} hideUnit={hideUnit} isTruncated className={cx({ 'has-additional-results': additionalResultCount > 0 })} /> : null;
+            resultsInnerDisplay = !isEmpty(resultSet[i].result.value) ? <ClinicalResult key={(`ClinicalResult-${resultSet[i].eventId}`)} resultData={resultSet[i]} hideUnit={hideUnit} isTruncated className={cx({ 'has-additional-results': additionalResultCount > 0 })} /> : null;
           } else if (i > 0) {
             const hasInterpretation = !isEmpty(resultSet[i].interpretation) ? resultSet[i].interpretation : null;
             additionalResultInterpretations.push(hasInterpretation);
           }
         } else if (Object.prototype.hasOwnProperty.call(resultSet[i], 'systolic') || Object.prototype.hasOwnProperty.call(resultSet[i], 'diastolic')) {
           if (i === 0) {
-            resultsInnerDisplay = !isEmpty(resultSet[i].systolic.result.value) && !isEmpty(resultSet[i].diastolic.result.value) ? <ClinicalResultBloodPressure resultData={resultSet[i]} hideUnit={hideUnit} isTruncated className={cx({ 'has-additional-results': additionalResultCount > 0 })} /> : null;
+            const keyID = (!resultSet[i].systolic) ? resultSet[i].systolic.eventId : resultSet[i].diastolic.eventId;
+            resultsInnerDisplay = !isEmpty(resultSet[i].systolic.result.value) && !isEmpty(resultSet[i].diastolic.result.value) ? <ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${keyID}`)} resultData={resultSet[i]} hideUnit={hideUnit} isTruncated className={cx({ 'has-additional-results': additionalResultCount > 0 })} /> : null;
           } else if (i > 0) {
             const sysInterpretation = !isEmpty(resultSet[i].systolic.interpretation) ? resultSet[i].systolic.interpretation : null;
             const diaInterpretation = !isEmpty(resultSet[i].diastolic.interpretation) ? resultSet[i].diastolic.interpretation : null;
@@ -89,14 +90,14 @@ const FlowsheetResultCell = (props) => {
       if (additionalResultCount > 0) {
         const additionalCountDisplayValue = (additionalResultCount > 9) ? '[9+]' : `[ ${additionalResultCount} ]`;
         additionalResultInnerDisplay = (
-          <div className={additionalResultClassNames}>
+          <div key="AdditionalResultsCount" className={additionalResultClassNames}>
             {additionalCountDisplayValue}
           </div>
         );
       }
+      resultsDisplay.push(resultsInnerDisplay);
+      resultsDisplay.push(additionalResultInnerDisplay);
     }
-    resultsDisplay.push(resultsInnerDisplay);
-    resultsDisplay.push(additionalResultInnerDisplay);
     return resultsDisplay;
   };
 

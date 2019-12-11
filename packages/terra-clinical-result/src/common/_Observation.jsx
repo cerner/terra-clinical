@@ -12,7 +12,7 @@ import styles from './Observation.module.scss';
 
 const cx = classNames.bind(styles);
 
-const propTypes = PropTypes.shape({
+const propTypes = {
   /**
    *  Event ID
    */
@@ -33,7 +33,7 @@ const propTypes = PropTypes.shape({
    * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
-});
+};
 
 const defaultProps = {
   eventId: undefined,

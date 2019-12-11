@@ -4,10 +4,11 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
 <div
   className="flowsheet-result-cell padding-compact"
 >
-  <ClincalResult
+  <ClinicalResult
     className="has-additional-results"
     hideUnit={false}
     isTruncated={true}
+    key="ClinicalResult-111"
     resultData={
       Object {
         "eventId": "111",
@@ -20,6 +21,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
   />
   <div
     className="additional-results-display"
+    key="AdditionalResultsCount"
   >
     [ 1 ]
   </div>
@@ -30,10 +32,11 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
 <div
   className="flowsheet-result-cell"
 >
-  <ClincalResult
+  <ClinicalResult
     className="has-additional-results"
     hideUnit={false}
     isTruncated={true}
+    key="ClinicalResult-111"
     resultData={
       Object {
         "eventId": "111",
@@ -46,6 +49,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
   />
   <div
     className="additional-results-display"
+    key="AdditionalResultsCount"
   >
     [ 1 ]
   </div>
@@ -56,10 +60,11 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
 <div
   className="flowsheet-result-cell padding-standard"
 >
-  <ClincalResult
+  <ClinicalResult
     className="has-additional-results"
     hideUnit={false}
     isTruncated={true}
+    key="ClinicalResult-111"
     resultData={
       Object {
         "eventId": "111",
@@ -72,6 +77,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
   />
   <div
     className="additional-results-display"
+    key="AdditionalResultsCount"
   >
     [ 1 ]
   </div>
@@ -82,10 +88,11 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
 <div
   className="flowsheet-result-cell padding-compact"
 >
-  <ClincalResult
+  <ClinicalResult
     className="has-additional-results"
     hideUnit={true}
     isTruncated={true}
+    key="ClinicalResult-111"
     resultData={
       Object {
         "eventId": "111",
@@ -98,6 +105,7 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
   />
   <div
     className="additional-results-display"
+    key="AdditionalResultsCount"
   >
     [ 1 ]
   </div>
@@ -110,8 +118,9 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
 >
   <span
     className="error-display"
+    key="FlowsheetResultCellError"
   >
-    <ClincalResult
+    <ClinicalResult
       hideUnit={false}
       isTruncated={true}
       resultData={
@@ -121,5 +130,33 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
       }
     />
   </span>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render when given result data 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <ClinicalResult
+    className="has-additional-results"
+    hideUnit={false}
+    isTruncated={true}
+    key="ClinicalResult-111"
+    resultData={
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      }
+    }
+  />
+  <div
+    className="additional-results-display"
+    key="AdditionalResultsCount"
+  >
+    [ 1 ]
+  </div>
 </div>
 `;

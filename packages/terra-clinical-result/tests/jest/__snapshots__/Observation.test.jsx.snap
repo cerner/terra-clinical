@@ -204,6 +204,23 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </span>
 `;
 
+exports[`Observation should render a default Observation 1`] = `
+<span
+  className={
+    Array [
+      "value",
+      "error",
+    ]
+  }
+>
+  <IconError
+    className="icon-error"
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</span>
+`;
+
 exports[`Observation should render an Observation with eventId 1`] = `
 <span
   className={
