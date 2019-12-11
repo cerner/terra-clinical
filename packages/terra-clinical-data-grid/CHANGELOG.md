@@ -3,6 +3,9 @@ Changelog
 
 Unreleased
 ----------
+
+2.13.0 - (December 10, 2019)
+------------------
 ### Changed
 * Axe violation fixed for scrollable content.
 * Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
