@@ -44,4 +44,8 @@
   .year {
     min-width: var(--terra-clinical-onset-picker-year-select-min-width, 5.5em);
   }
+
+  .content-wrapper {
+    display: flex;
+  }
 }
