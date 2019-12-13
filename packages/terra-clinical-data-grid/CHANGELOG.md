@@ -6,6 +6,11 @@ Unreleased
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
+2.13.0 - (December 10, 2019)
+------------------
+### Changed
+* Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
+
 2.12.0 - (September 26, 2019)
 ------------------
 ### Changed
