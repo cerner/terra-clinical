@@ -49,7 +49,7 @@ class FiveYears extends React.Component {
         <p>Also tests age caps for months and years.</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
-            birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
+            birthdate={moment('1990-09-20').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
             legend="Date of Birth"
