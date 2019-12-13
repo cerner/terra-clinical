@@ -4,8 +4,8 @@ ChangeLog
 Unreleased
 ----------
 
-### Added
-* Added styles for misalignment of `age-field`.
+### Fixed
+* Fixed `age-field` misalignment in IE.
 
 4.11.0 - (December 10, 2019)
 ------------------

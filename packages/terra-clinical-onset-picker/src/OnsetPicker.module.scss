@@ -46,6 +46,8 @@
   }
 
   .content-wrapper {
-    display: flex;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // -ms needed for icon alignment in IE
+      display: flex;
+    }
   }
 }
