@@ -42,11 +42,11 @@ class DefaultOnsetNotSet extends React.Component {
   render() {
     return (
       <div>
-        <p>Birth Date: 2000-02-29 (February 29, 2000)</p>
+        <p>Birth Date: 2000-02-29 (March 06, 2001)</p>
         <p>Default Onset Date: NOT SET!</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
-            birthdate={moment('2000-02-29').format('YYYY-MM-DD')}
+            birthdate={moment('2001-03-06').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
             legend="Date of Birth"

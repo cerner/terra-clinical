@@ -46,7 +46,7 @@ class NonLeapYear extends React.Component {
         <p>Default Onset Date: 2013-02-14 (February 14, 2013)</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
-            birthdate={moment('2000-02-29').format('YYYY-MM-DD')}
+            birthdate={moment('2001-03-06').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
             legend="Date of Birth"
