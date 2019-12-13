@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update docs to use mdx syntax
 
 3.10.0 - (September 26, 2019)
 ------------------
