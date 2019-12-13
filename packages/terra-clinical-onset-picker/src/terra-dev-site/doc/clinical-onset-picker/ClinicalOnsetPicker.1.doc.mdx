@@ -1,0 +1,49 @@
+import { Badge } from '../../../../package.json?dev-site-package';
+
+import OnsetPickerPropsTable from '../../../OnsetPicker?dev-site-props-table';
+
+import DefaultOnset from '../example/DefaultOnset?dev-site-example';
+import HandledOnset from '../example/HandledOnset?dev-site-example';
+import OnsetWithHiddenLegend from '../example/OnsetWithHiddenLegend?dev-site-example';
+
+<Badge />
+
+# Terra Clinical Onset Picker
+
+The `terra-clinical-onset-picker` component provides users a way to enter or select an approximate date for use in onset scenarios. The onset date is limited to occurring after the birth date supplied. For `AGE` granularity, the age input has a maximum of `8` for `Week(s)` unit, and `24` for `Month(s)` unit. The user is expected to use `Month(s)` and `Year(s)` respectively for larger values.
+
+## Getting Started
+
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-onset-picker`
+
+
+## Component Features
+
+* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
+* [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
+* [Internationalization Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#internationalization-i18n-support)**
+* [Localization Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#ltr--rtl-support)
+
+** This component does not support Arabic translations
+
+
+[View component source code](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-onset-picker)
+
+## Usage
+
+```jsx
+import OnsetPicker from 'terra-clinical-onset-picker';
+```
+
+## Examples
+
+<DefaultOnset title="Default with initialization" />
+<HandledOnset title="Onset picker with supplied data and handlers" />
+<OnsetWithHiddenLegend title="Onset picker with Hidden legend" />
+
+## Onset Picker Props
+
+<OnsetPickerPropsTable />
