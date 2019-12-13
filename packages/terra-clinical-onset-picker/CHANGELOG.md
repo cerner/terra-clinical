@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Clear existing data when granularity is changed.
 
 4.11.0 - (December 10, 2019)
 ------------------
