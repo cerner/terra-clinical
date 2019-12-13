@@ -108,7 +108,7 @@ class OnsetUtils {
   }
 
   /**
-   * Converts onset date to a age value with loweset possible age unit (weeks, then months, then years).
+   * Converts onset date to a age value with lowest possible age unit (weeks, then months, then years).
    */
   static onsetToAge(birthdate, onsetDate) {
     if (onsetDate === undefined) { return { age: undefined, ageUnit: undefined }; }
