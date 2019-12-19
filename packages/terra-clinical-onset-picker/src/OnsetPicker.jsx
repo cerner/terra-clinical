@@ -133,6 +133,14 @@ class OnsetPicker extends React.Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.onsetDate) {
+      this.setState({
+        granularity: GranularityOptions.DATE,
+      }, this.handleOnsetUpdate);
+    }
+  }
+
   getYearInput(intl, id) {
     return (
       <SelectField
@@ -389,7 +397,7 @@ class OnsetPicker extends React.Component {
       granularitySelect = (
         <SelectField
           className={cx('field-inline', 'granularity')}
-          defaultValue={this.state.granularity}
+          value={this.state.granularity}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.granularityLabel' })}
           labelAttrs={{
