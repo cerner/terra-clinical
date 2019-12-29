@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Add upgrade guides to dev-site docs
 
 4.11.0 - (December 10, 2019)
 ------------------

@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Add upgrade guides to dev-site docs
 
 4.9.0 - (September 26, 2019)
 ------------------
