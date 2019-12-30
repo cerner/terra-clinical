@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Add upgrade guides to dev-site docs
 
+### Removed
+* Removed yarn reference in docs
+
 4.9.0 - (September 26, 2019)
 ------------------
 ### Changed
