@@ -549,6 +549,9 @@ class DataGrid extends React.Component {
 
   setHorizontalOverflowContainerRef(ref) {
     this.horizontalOverflowContainerRef = ref;
+    if (this.props.horizontalOverflowContainerRefCallback) {
+      this.props.horizontalOverflowContainerRefCallback(ref);
+    }
   }
 
   setLeadingFocusAnchorRef(ref) {
@@ -573,6 +576,9 @@ class DataGrid extends React.Component {
 
   setVerticalOverflowContainerRef(ref) {
     this.verticalOverflowContainerRef = ref;
+    if (this.props.verticalOverflowContainerRefCallback) {
+      this.props.verticalOverflowContainerRefCallback(ref);
+    }
   }
 
   /**
@@ -1097,9 +1103,6 @@ class DataGrid extends React.Component {
             className={cx('vertical-overflow-container')}
             ref={(ref) => {
               this.setVerticalOverflowContainerRef(ref);
-              if (verticalOverflowContainerRefCallback) {
-                verticalOverflowContainerRefCallback(ref);
-              }
             }}
             onScroll={onRequestContent ? this.checkForMoreContent : undefined}
           >
@@ -1118,9 +1121,6 @@ class DataGrid extends React.Component {
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
                 ref={(ref) => {
                   this.setHorizontalOverflowContainerRef(ref);
-                  if (horizontalOverflowContainerRefCallback) {
-                    horizontalOverflowContainerRefCallback(ref);
-                  }
                 }}
                 onScroll={fill ? this.synchronizeContentScroll : undefined}
               >
