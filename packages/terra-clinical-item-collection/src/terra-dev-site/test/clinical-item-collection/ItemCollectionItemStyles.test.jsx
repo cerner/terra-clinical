@@ -44,7 +44,6 @@ const LayoutDisplay = () => (
   </ItemCollection>
 );
 
-
 const AlignmentDisplay = () => (
   <ItemCollection
     hasStartAccessory
