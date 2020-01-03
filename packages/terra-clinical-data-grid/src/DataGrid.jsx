@@ -1101,9 +1101,7 @@ class DataGrid extends React.Component {
         >
           <div
             className={cx('vertical-overflow-container')}
-            ref={(ref) => {
-              this.setVerticalOverflowContainerRef(ref);
-            }}
+            ref={this.setVerticalOverflowContainerRef}
             onScroll={onRequestContent ? this.checkForMoreContent : undefined}
           >
             <div
@@ -1119,9 +1117,7 @@ class DataGrid extends React.Component {
             >
               <div
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
-                ref={(ref) => {
-                  this.setHorizontalOverflowContainerRef(ref);
-                }}
+                ref={this.setHorizontalOverflowContainerRef}
                 onScroll={fill ? this.synchronizeContentScroll : undefined}
               >
                 {this.renderOverflowContent()}
