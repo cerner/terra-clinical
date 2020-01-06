@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
+* Add upgrade guides to dev-site docs
 
 4.11.0 - (December 10, 2019)
 ------------------
