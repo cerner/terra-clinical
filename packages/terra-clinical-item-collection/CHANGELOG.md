@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Add upgrade guides to dev-site docs
+
 ### Removed
 * Removed yarn reference in docs
 
