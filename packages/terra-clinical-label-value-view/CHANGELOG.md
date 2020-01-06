@@ -6,6 +6,9 @@ Unreleased
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
+### Changed
+* Update docs to use mdx syntax
+
 3.10.0 - (September 26, 2019)
 ------------------
 ### Changed
