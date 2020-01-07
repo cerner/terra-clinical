@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.12.0 - (January 7, 2020)
+------------------
 ### Added
 * Add upgrade guides to dev-site docs
 
