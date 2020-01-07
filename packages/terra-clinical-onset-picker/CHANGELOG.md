@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Add upgrade guides to dev-site docs
 
 ### Fixed
 * Fixed `age-field` misalignment in IE.
