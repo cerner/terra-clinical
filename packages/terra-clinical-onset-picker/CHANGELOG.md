@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.12.0 - (January 7, 2020)
+------------------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 * Add upgrade guides to dev-site docs
