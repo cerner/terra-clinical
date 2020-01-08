@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.10.0 - (January 7, 2020)
+------------------
+### Added
+* Add upgrade guides to dev-site docs
+
 ### Removed
 * Removed yarn reference in docs
 
