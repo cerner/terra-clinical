@@ -313,7 +313,7 @@ class OnsetPicker extends React.Component {
       }
       granularitySelect = (
         <SelectField
-          className={cx('field-inline', 'granularity')}
+          className={cx('field-inline')}
           defaultValue={this.state.granularity}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.granularityLabel' })}
@@ -324,6 +324,7 @@ class OnsetPicker extends React.Component {
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.granularity' })}
           selectAttrs={{
             'aria-labelledby': `${this.props.id}-granularity-select-label`,
+            'className': cx('granularity'),
           }}
           selectId={`${this.props.id}-granularity-select`}
         >
@@ -373,7 +374,7 @@ class OnsetPicker extends React.Component {
 
       ageUnitSelect = (
         <SelectField
-          className={cx('field-inline', 'age-unit')}
+          className={cx('field-inline')}
           defaultValue={this.state.ageUnit}
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionLabel' })}
@@ -384,6 +385,7 @@ class OnsetPicker extends React.Component {
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.agePrecision' })}
           selectAttrs={{
             'aria-labelledby': `${this.props.id}-age-unit-select-label`,
+            'className': cx('age-unit'),
           }}
           selectId={`${this.props.id}-age-unit-select`}
         >
@@ -397,7 +399,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === GranularityOptions.MONTH) {
       monthSelect = (
         <SelectField
-          className={cx('field-inline', 'month')}
+          className={cx('field-inline')}
           value={this.state.onsetDate ? this.state.onsetDate.month().toString() : undefined}
           label={intl.formatMessage({ id: 'Terra.onsetPicker.monthLabel' })}
           labelAttrs={{
@@ -408,6 +410,7 @@ class OnsetPicker extends React.Component {
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.month' })}
           selectAttrs={{
             'aria-labelledby': `${this.props.id}-month-select-label`,
+            'className': cx('month'),
           }}
           selectId={`${this.props.id}-month-select`}
         >
@@ -421,7 +424,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === GranularityOptions.YEAR || this.state.granularity === GranularityOptions.MONTH) {
       yearSelect = (
         <SelectField
-          className={cx('field-inline', 'year')}
+          className={cx('field-inline')}
           value={this.state.onsetDate ? this.state.onsetDate.year().toString() : undefined}
           label={intl.formatMessage({ id: 'Terra.onsetPicker.yearLabel' })}
           labelAttrs={{
@@ -432,6 +435,7 @@ class OnsetPicker extends React.Component {
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
           selectAttrs={{
             'aria-labelledby': `${this.props.id}-year-select-label`,
+            'className': cx('year'),
           }}
           selectId={`${this.props.id}-year-select`}
         >
@@ -471,7 +475,7 @@ class OnsetPicker extends React.Component {
         <FieldSet className={cx('fieldset')} legend={legend} isLegendHidden={isLegendHidden}>
           {/* Precision */}
           <SelectField
-            className={cx('field-inline', 'precision')}
+            className={cx('field-inline')}
             defaultValue={this.state.precision}
             label={intl.formatMessage({ id: 'Terra.onsetPicker.precisionLabel' })}
             labelAttrs={{
@@ -482,6 +486,7 @@ class OnsetPicker extends React.Component {
             placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.precision' })}
             selectAttrs={{
               'aria-labelledby': `${this.props.id}-precision-select-label`,
+              'className': cx('precision'),
             }}
             selectId={`${this.props.id}-precision-select`}
           >
