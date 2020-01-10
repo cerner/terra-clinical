@@ -16,7 +16,6 @@ Additionally, this component will export the ItemView.Display and ItemView.Comme
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-clinical-item-collection`
-  - `yarn add terra-clinical-item-collection`
 
 ## Component Features
 * [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)

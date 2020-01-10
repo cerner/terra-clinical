@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Clear existing data when granularity is changed.
 
+4.12.0 - (January 7, 2020)
+------------------
+### Added
+* Add upgrade guides to dev-site docs
+
 4.11.0 - (December 10, 2019)
 ------------------
 ### Changed
