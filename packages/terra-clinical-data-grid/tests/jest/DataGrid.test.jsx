@@ -1,5 +1,6 @@
 import React from 'react';
-
+/* eslint-disable import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
 import DataGrid from '../../src/DataGrid';
 import dataGridUtils from '../../src/utils/dataGridUtils';
 import messages from '../../translations/en-US.json';
@@ -289,6 +290,40 @@ it('should render a DataGrid with the fill prop missing', () => {
 
   const dataGrid = shallow(dataGridComp);
   expect(dataGrid).toMatchSnapshot();
+});
+
+it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
+  const refCallback = jest.fn();
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+      verticalOverflowContainerRefCallback={refCallback}
+    />
+  );
+
+  mountWithIntl(dataGridComp);
+  expect(refCallback).toBeCalled();
+});
+
+it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
+  const refCallback = jest.fn();
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+      horizontalOverflowContainerRefCallback={refCallback}
+    />
+  );
+
+  mountWithIntl(dataGridComp);
+  expect(refCallback).toBeCalled();
 });
 
 describe('getDerivedStateFromProps', () => {

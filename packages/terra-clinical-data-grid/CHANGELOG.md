@@ -5,6 +5,8 @@ Unreleased
 ----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
+* Added `verticalOverflowContainerRefCallback` prop to pass callback ref to `vertical-overflow-container`.
+* Added `horizontalOverflowContainerRefCallback` prop to pass callback ref to `horizontal-overflow-container`.
 
 2.13.0 - (December 10, 2019)
 ------------------
