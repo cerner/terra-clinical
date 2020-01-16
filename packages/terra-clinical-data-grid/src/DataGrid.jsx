@@ -98,9 +98,18 @@ const propTypes = {
    */
   fill: PropTypes.bool,
   /**
+   * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: intlShape.isRequired,
+  /**
+   * Callback ref to pass into vertical overflow container.
+   */
+  verticalOverflowContainerRefCallback: PropTypes.func,
+  /**
+   * Callback ref to pass into horizontal overflow container.
+   */
+  horizontalOverflowContainerRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -540,6 +549,9 @@ class DataGrid extends React.Component {
 
   setHorizontalOverflowContainerRef(ref) {
     this.horizontalOverflowContainerRef = ref;
+    if (this.props.horizontalOverflowContainerRefCallback) {
+      this.props.horizontalOverflowContainerRefCallback(ref);
+    }
   }
 
   setLeadingFocusAnchorRef(ref) {
@@ -564,6 +576,9 @@ class DataGrid extends React.Component {
 
   setVerticalOverflowContainerRef(ref) {
     this.verticalOverflowContainerRef = ref;
+    if (this.props.verticalOverflowContainerRefCallback) {
+      this.props.verticalOverflowContainerRefCallback(ref);
+    }
   }
 
   /**
@@ -1052,6 +1067,8 @@ class DataGrid extends React.Component {
       fill,
       onRequestContent,
       intl,
+      verticalOverflowContainerRefCallback,
+      horizontalOverflowContainerRefCallback,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
