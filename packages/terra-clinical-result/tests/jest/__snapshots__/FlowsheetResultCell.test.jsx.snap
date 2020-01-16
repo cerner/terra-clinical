@@ -180,20 +180,24 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
 <div
   className="flowsheet-result-cell padding-compact"
 >
-  <span
-    className="error-display"
-    key="FlowsheetResultCellError"
+  <div
+    className="single-result-display"
   >
-    <ClinicalResult
-      hideUnit={false}
-      isTruncated={true}
-      resultData={
-        Object {
-          "error": "empty",
+    <span
+      className="error-display"
+      key="FlowsheetResultCellError"
+    >
+      <ClinicalResult
+        hideUnit={false}
+        isTruncated={true}
+        resultData={
+          Object {
+            "error": "empty",
+          }
         }
-      }
-    />
-  </span>
+      />
+    </span>
+  </div>
 </div>
 `;
 
