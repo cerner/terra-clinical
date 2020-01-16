@@ -1,6 +1,6 @@
 # Terra Clinical Flowsheet Result Cell
 
-The Clinical Result is a standardized view for single result values added to a Patient's Medical Chart. The flowsheet result cell is specifically for the grid display of a result collection, and can handle displaying indicaiton of multiple results.
+The Clinical Result is a standardized view for single result values added to a Patient's Medical Chart. The flowsheet result cell is specifically for the grid display of a result collection, and can handle displaying an indication of multiple results.
 
 ## Getting Started
 

@@ -54,7 +54,7 @@ const FlowsheetResultCell = (props) => {
     let additionalResultCount = 0;
     let additionalResultInnerDisplay;
     const additionalResultInterpretations = [];
-    let additionalResultIntrepretationIndicator;
+    let additionalResultInterpretationIndicator;
     let endAccessoryIcons;
     let singleResultHasComment = false;
     let singleResultIsModified = false;
@@ -112,21 +112,21 @@ const FlowsheetResultCell = (props) => {
           || additionalResultInterpretations.includes('PANICLOW')
           || additionalResultInterpretations.includes('VABNORMAL')
         ) {
-          additionalResultIntrepretationIndicator = 'CRITICAL';
+          additionalResultInterpretationIndicator = 'CRITICAL';
         } else if (additionalResultInterpretations.includes('POSITIVE')
           || additionalResultInterpretations.includes('ABNORMAL')
           || additionalResultInterpretations.includes('HIGH')
           || additionalResultInterpretations.includes('LOW')
         ) {
-          additionalResultIntrepretationIndicator = 'HIGH';
+          additionalResultInterpretationIndicator = 'HIGH';
         }
       }
 
       const additionalResultClassNames = cx([
         'additional-results-display',
         { 'add-end-accessory-space': !(singleResultHasComment || singleResultIsModified || singleResultIsUnverified) },
-        { 'interpretation-critical': additionalResultIntrepretationIndicator === 'CRITICAL' },
-        { 'interpretation-high': additionalResultIntrepretationIndicator === 'HIGH' },
+        { 'interpretation-critical': additionalResultInterpretationIndicator === 'CRITICAL' },
+        { 'interpretation-high': additionalResultInterpretationIndicator === 'HIGH' },
       ]);
 
       if (additionalResultCount > 0) {

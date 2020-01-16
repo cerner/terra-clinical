@@ -25,7 +25,7 @@ $ npm install terra-clinical-result
 
 ## Usage Guide
 
-The blood pressure result is constructed similarly to the single clinical result by providing structured object with a specific construction that follows a similar patter to the [HL7 FHIR Observation Blood Pressure](https://www.hl7.org/fhir/observation-example-bloodpressure.html) example.
+The blood pressure result is constructed similarly to the single clinical result by providing structured object with a specific construction that follows a similar pattern to the [HL7 FHIR Observation Blood Pressure](https://www.hl7.org/fhir/observation-example-bloodpressure.html) example.
 ```jsx
   /**
    * Result Object with the clinical result data.
