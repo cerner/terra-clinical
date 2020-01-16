@@ -82,13 +82,14 @@
     border-top: 1px solid #dedfe0;
     box-sizing: border-box;
     margin-bottom: -1px;
+    min-height: 37px;
 
     &.zebra {
       background-color: #f1f1f1;
     }
 
     &.empty {
-      min-height: 31px;
+      min-height: 37px;
     }
   }
 }

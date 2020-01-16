@@ -12,8 +12,10 @@
   }
 
   .single-result-display {
+    align-items: center;
     display: flex;
     flex-grow: 1;
+    height: 1.78571em;
     margin: 0;
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // Needed for IE10

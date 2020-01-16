@@ -62,9 +62,11 @@ const FlowsheetResultCell = (props) => {
 
     if (!resultSet || !resultSet.length) {
       const errorDisplay = (
-        <span key="FlowsheetResultCellError" className={cx('error-display')}>
-          <ClinicalResult resultData={{ error: 'empty' }} isTruncated />
-        </span>
+        <div className={cx('single-result-display')}>
+          <span key="FlowsheetResultCellError" className={cx('error-display')}>
+            <ClinicalResult resultData={{ error: 'empty' }} isTruncated />
+          </span>
+        </div>
       );
       resultsDisplay.push(errorDisplay);
     } else {
