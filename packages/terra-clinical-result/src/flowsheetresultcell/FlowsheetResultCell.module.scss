@@ -2,80 +2,166 @@
 
 :local {
   .flowsheet-result-cell {
+    align-items: center;
+    display: flex;
     margin: 0;
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // Needed for IE10
     padding: 0;
+    width: 100%;
+  }
+
+  .single-result-display {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+    padding: 0;
+  }
+
+  .additional-results-display {
+    display: flex;
+    flex: 0 0 auto;
+    height: 1.78571em;
+    min-width: 0;
+
+    &.add-end-accessory-space {
+      padding-right: 1em;
+    }
+
+    &.interpretation-nuetral {
+      .additional-results-value {
+        background-color: #f3f3f3;
+        border: 1px solid #686c6e;
+        color: #6a6c6e;
+        font-weight: normal;
+
+        /* stylelint-disable max-nesting-depth */
+        &:nth-of-type(2) {
+          color: #686c6e;
+        }
+        /* stylelint-enable max-nesting-depth */
+      }
+    }
+      
+    &.interpretation-high {
+      .additional-results-value {
+        background-color: #ffdede;
+        border: 1px solid #f00;
+        color: #6a6c6e;
+        font-weight: bold;
+  
+        /* stylelint-disable max-nesting-depth */
+        &:nth-of-type(2) {
+          color: #ffdede;
+        }
+        /* stylelint-enable max-nesting-depth */
+      }
+    }
+  
+    &.interpretation-critical {
+      .additional-results-value {
+        background-color: #de0000;
+        border: 1px solid #fff;
+        color: #fff;
+        font-weight: bold;
+  
+        /* stylelint-disable max-nesting-depth */
+        &:nth-of-type(2) {
+          color: #de0000;
+          left: 0.30769em; // Must use ems for font rescaling
+          top: -1.30769em; // Must use ems for font rescaling
+        }
+        /* stylelint-enable max-nesting-depth */
+      }
+    }
+  }
+
+  .additional-results-stack {
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    min-width: 0;
+    padding: 0 0.28571em; // Must use ems for font rescaling
     position: relative;
     width: 100%;
   }
 
-  .has-additional-results {
-    padding-right: var(--terra-clinical-result-flowsheet-has-additional-result-padding-right, 1.5em); // Must use ems for font rescaling
-  }
-
-  .additional-results-display {
-    position: absolute;
-    right: var(--terra-clinical-result-flowsheet-additional-result-display-right, 0.25em); // Must use ems for font rescaling
-    top: var(--terra-clinical-result-flowsheet-additional-result-display-top, 0.3125em); // temporary only
-  }
-
-  .flowsheet-additional-result-interpretation {
-    &.abnormal {
-      // add style here
-    }
-
-    &.critical {
-      // add style here
-    }
-    
-    &.high {
-      // add style here
-    }
-    
-    &.low {
-      // add style here
-    }
-    
-    &.positive {
-      // add style here
-    }
-
-    &.nuetral {
-      // add style here
-    }
-  }
-
-  .flowsheet-additional-result-icon-interpretation {
-    position: absolute;
-    right: 0;
+  .additional-results-value {
+    background-color: #f3f3f3;
+    border: 1px solid #686c6e;
+    box-sizing: border-box;
+    color: #6a6c6e;
+    display: block;
+    font-size: 0.92857em; // Must use ems for font rescaling
+    font-weight: normal;
+    //height: 1.69230em; // Must use ems for font rescaling
+    left: 0;
+    line-height: 1.53846;
+    min-width: 1.07142em; // Must use ems for font rescaling
+    overflow: hidden;
+    padding: 0 0.21428em; // Must use ems for font rescaling
+    position: relative;
     top: 0;
-  
-    &.abnormal {
-      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-abnormal-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M2.41,1,47,45.59V1ZM41.75,17.5H32s.08,6.82,3,9.75a10.37,10.37,0,0,1-6.75-9.75V13H38s-.08-6.83-3-9.75A10.37,10.37,0,0,1,41.75,13Z" /><path fill="#654a08" d="M0,0,48,48V0ZM47,45.59,2.41,1H47ZM41.75,17.5H32s.08,6.82,3,9.75a10.37,10.37,0,0,1-6.75-9.75V13H38s-.08-6.83-3-9.75A10.37,10.37,0,0,1,41.75,13Z" /></svg>'));
+    z-index: 2;
+
+    &:nth-of-type(2) {
+      color: #686c6e;
+      left: 0.23076em; // Must use ems for font rescaling
+      top: -1.38461em; // Must use ems for font rescaling
+      z-index: 1;
     }
 
-    &.critical {
-      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-critical-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#e50000" d="M0,0l48,48V0H0z M37,25h-5v-5h5V25z M37,16h-5V3h5V16z"/></svg>'));
-    }
-    
-    &.high {
-      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-high-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M2.41,1,47,45.59V1ZM37.85,12V27h-4.7V12H26.88L35.5,3.2,44.12,12Z" /><path fill="#ff6100" d="M0,0,48,48V0ZM47,45.59,2.41,1H47ZM44.12,12H37.85V27h-4.7V12H26.88L35.5,3.2Z" /></svg>'));
-    }
-    
-    &.low {
-      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-low-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M2.41,1,47,45.59V1ZM35.5,27l-8.62-8.8h6.27V3.2h4.7v15h6.27Z" /><path fill="#0053e6" d="M44.12,18.2,35.5,27l-8.62-8.8h6.27V3.2h4.7v15ZM48,0V48L0,0ZM47,1H2.41L47,45.59Z" /></svg>'));
-    }
-    
-    &.positive {
-      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-positive-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#e50000" d="M0,0l48,48V0H0z M37,25h-5v-5h5V25z M37,16h-5V3h5V16z"/></svg>'));
-    }
-
-    &.nuetral {
-      background: var(--terra-clinical-result-flowsheet-additional-result-icon-interpreration-nuetral-background, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#1c1f21" d="M0,0,48,48V0Z" /></svg>'));
+    &.additional-results-max-value {
+      padding: 0 0.07142em 0 0.14285em; // Must use ems for font rescaling
     }
   }
 
+  .end-accessory-icons {
+    display: flex;
+    flex: 0 0 auto;
+    height: 1.78571em; //1.71428em; // Must use ems for font rescaling
+    width: 1em; // Must use ems for font rescaling
+
+    .end-accessory-stack {
+      box-sizing: border-box;
+      display: block;
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+
+    .icon-comment {
+      color: var(--terra-clinical-result-display-icon-comment-color, rgba(28, 31, 33, 0.65));
+      font-size: var(--terra-clinical-result-display-icon-comment-font-size, 0.78571em); // Must use ems for font rescaling
+      margin-left: var(--terra-clinical-result-display-icon-comment-margin-left, 0.27272em); // Must use ems for font rescaling
+      overflow: hidden;
+      position: absolute;
+      top: var(--terra-clinical-result-display-icon-comment-top, 0); // Must use ems for font rescaling
+      vertical-align: baseline;
+    }
+
+    .icon-modified {
+      color: var(--terra-clinical-result-display-icon-modified-color, #26a2e5);
+      font-size: var(--terra-clinical-result-display-icon-modified-font-size, 0.78571em); // Must use ems for font rescaling
+      margin-left: var(--terra-clinical-result-display-icon-modified-margin-left, 0.27272em); // Must use ems for font rescaling
+      overflow: hidden;
+      position: absolute;
+      top: var(--terra-clinical-result-display-icon-modified-top, 1.18181em); // Must use ems for font rescaling
+      vertical-align: baseline;
+    }
+
+    .icon-unverified {
+      font-size: var(--terra-clinical-result-display-icon-unverified-font-size, 0.85em); // Must use ems for font rescaling
+      margin-left: var(--terra-clinical-result-display-icon-unverified-margin-left, 0.16806em); // Must use ems for font rescaling
+      overflow: hidden;
+      position: absolute;
+      top: var(--terra-clinical-result-display-icon-unverified-top, 0.5042em); // Must use ems for font rescaling
+      vertical-align: baseline;
+    }    
+  }
+  
   .error-display {
     display: flex;
     flex: 0 0 auto;

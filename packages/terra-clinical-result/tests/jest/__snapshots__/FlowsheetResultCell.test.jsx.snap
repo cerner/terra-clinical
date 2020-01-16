@@ -4,26 +4,42 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
 <div
   className="flowsheet-result-cell padding-compact"
 >
-  <ClinicalResult
-    className="has-additional-results"
-    hideUnit={false}
-    isTruncated={true}
-    key="ClinicalResult-111"
-    resultData={
-      Object {
-        "eventId": "111",
-        "result": Object {
-          "unit": "mL",
-          "value": "12345.678",
-        },
-      }
-    }
-  />
   <div
-    className="additional-results-display"
-    key="AdditionalResultsCount"
+    className="single-result-display"
   >
-    [ 1 ]
+    <ClinicalResult
+      hideUnit={false}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      resultData={
+        Object {
+          "eventId": "111",
+          "result": Object {
+            "unit": "mL",
+            "value": "12345.678",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-results-display add-end-accessory-space"
+    key="AdditionalResultsDisplay"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -32,26 +48,42 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
 <div
   className="flowsheet-result-cell"
 >
-  <ClinicalResult
-    className="has-additional-results"
-    hideUnit={false}
-    isTruncated={true}
-    key="ClinicalResult-111"
-    resultData={
-      Object {
-        "eventId": "111",
-        "result": Object {
-          "unit": "mL",
-          "value": "12345.678",
-        },
-      }
-    }
-  />
   <div
-    className="additional-results-display"
-    key="AdditionalResultsCount"
+    className="single-result-display"
   >
-    [ 1 ]
+    <ClinicalResult
+      hideUnit={false}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      resultData={
+        Object {
+          "eventId": "111",
+          "result": Object {
+            "unit": "mL",
+            "value": "12345.678",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-results-display add-end-accessory-space"
+    key="AdditionalResultsDisplay"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -60,26 +92,42 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
 <div
   className="flowsheet-result-cell padding-standard"
 >
-  <ClinicalResult
-    className="has-additional-results"
-    hideUnit={false}
-    isTruncated={true}
-    key="ClinicalResult-111"
-    resultData={
-      Object {
-        "eventId": "111",
-        "result": Object {
-          "unit": "mL",
-          "value": "12345.678",
-        },
-      }
-    }
-  />
   <div
-    className="additional-results-display"
-    key="AdditionalResultsCount"
+    className="single-result-display"
   >
-    [ 1 ]
+    <ClinicalResult
+      hideUnit={false}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      resultData={
+        Object {
+          "eventId": "111",
+          "result": Object {
+            "unit": "mL",
+            "value": "12345.678",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-results-display add-end-accessory-space"
+    key="AdditionalResultsDisplay"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -88,26 +136,42 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
 <div
   className="flowsheet-result-cell padding-compact"
 >
-  <ClinicalResult
-    className="has-additional-results"
-    hideUnit={true}
-    isTruncated={true}
-    key="ClinicalResult-111"
-    resultData={
-      Object {
-        "eventId": "111",
-        "result": Object {
-          "unit": "mL",
-          "value": "12345.678",
-        },
-      }
-    }
-  />
   <div
-    className="additional-results-display"
-    key="AdditionalResultsCount"
+    className="single-result-display"
   >
-    [ 1 ]
+    <ClinicalResult
+      hideUnit={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      resultData={
+        Object {
+          "eventId": "111",
+          "result": Object {
+            "unit": "mL",
+            "value": "12345.678",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-results-display add-end-accessory-space"
+    key="AdditionalResultsDisplay"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+    </div>
   </div>
 </div>
 `;

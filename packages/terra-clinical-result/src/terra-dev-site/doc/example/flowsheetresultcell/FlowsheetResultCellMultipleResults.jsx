@@ -15,7 +15,6 @@ const multipleResultValues = [
     type: 'NUMERIC',
     isModified: true,
     hasComment: true,
-    isUnverified: true,
     effectiveDateTime: '10/10/2020 11:11:11',
   },
   {
@@ -24,7 +23,6 @@ const multipleResultValues = [
       value: '101.2',
       unit: 'degC',
     },
-    interpretation: 'HIGH',
     type: 'NUMERIC',
     isModified: false,
     hasComment: false,
