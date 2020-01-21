@@ -11,7 +11,7 @@ class NonLeapYear extends React.Component {
     this.state = {
       precision: 'before',
       granularity: 'year',
-      onsetDate: moment('2013-02-14').format('YYYY-MM-DD'),
+      onsetDate: moment('2013-01-01').format('YYYY-MM-DD'),
     };
 
     this.handleOnset = this.handleOnset.bind(this);
@@ -43,7 +43,8 @@ class NonLeapYear extends React.Component {
     return (
       <div>
         <p>Birth Date: 2001-03-06 (March 06, 2001)</p>
-        <p>Default Onset Date: 2013-02-14 (February 14, 2013)</p>
+        <p>Default Onset Date: 2013-01-01 (January 01, 2013)</p>
+        <p>Default Onset Date MATCHES with calculated onset date using defualt parameters</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
             birthdate={moment('2001-03-06').format('YYYY-MM-DD')}

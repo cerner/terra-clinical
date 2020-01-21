@@ -44,6 +44,7 @@ class LeapYear extends React.Component {
       <div>
         <p>Birth Date: 2000-02-29 (February 29, 2000)</p>
         <p>Default Onset Date: 2013-02-14 (February 14, 2013)</p>
+        <p>Default Onset Date MISMATCHES with calculated onset date using defualt parameters</p>
         <form onSubmit={this.handleSubmit}>
           <OnsetPicker
             birthdate={moment('2000-02-29').format('YYYY-MM-DD')}
