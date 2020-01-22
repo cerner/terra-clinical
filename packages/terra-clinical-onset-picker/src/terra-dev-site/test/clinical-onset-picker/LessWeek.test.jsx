@@ -52,7 +52,7 @@ class LessWeek extends React.Component {
           <OnsetPicker
             birthdate={birthdate.format('YYYY-MM-DD')}
             id="test"
-            legend="Date of Birth"
+            legend="Date of Onset"
             onsetOnChange={this.handleOnset}
           />
           <button type="submit">Submit</button>

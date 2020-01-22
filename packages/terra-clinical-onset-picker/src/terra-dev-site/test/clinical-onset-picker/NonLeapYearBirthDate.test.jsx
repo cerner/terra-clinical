@@ -50,7 +50,7 @@ class NonLeapYear extends React.Component {
             birthdate={moment('2001-03-06').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
-            legend="Date of Birth"
+            legend="Date of Onset"
             precision={this.state.precision}
             onsetDate={this.state.onsetDate}
             onsetOnChange={this.handleOnset}

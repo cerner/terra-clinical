@@ -50,7 +50,7 @@ class LeapYear extends React.Component {
             birthdate={moment('2000-02-29').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
-            legend="Date of Birth"
+            legend="Date of Onset"
             precision={this.state.precision}
             onsetDate={this.state.onsetDate}
             onsetOnChange={this.handleOnset}

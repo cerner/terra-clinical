@@ -17,10 +17,7 @@ class OnsetUtils {
    * Create object to pass to SelectField for month options
    * Filters out months before birth or after the current date.
    */
-  static allowedMonths(intl, birthdate, onsetDate) {
-    const start = moment(birthdate);
-    const end = moment();
-    const onsetYear = onsetDate ? onsetDate.year() : moment().year();
+  static allowedMonths(intl) {
     const possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
       { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
       { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
@@ -33,15 +30,6 @@ class OnsetUtils {
       { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
       { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
       { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
-
-    // If populating months for the start or end year, exclude months before the starting date or after the ending date
-    // if (start.year() === onsetYear) {
-    //   possibleMonths = possibleMonths.filter(month => month.value > start.month());
-    // }
-
-    // if (end.year() === onsetYear && onsetDate !== undefined) {
-    //   possibleMonths = possibleMonths.filter(month => month.value <= end.month());
-    // }
 
     return possibleMonths;
   }

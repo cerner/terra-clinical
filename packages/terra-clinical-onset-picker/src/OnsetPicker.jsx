@@ -370,7 +370,7 @@ class OnsetPicker extends React.Component {
     }
     if (this.state.onsetDate && moment(this.state.onsetDate) > moment()) {
       this.setState(() => ({
-        onsetDate: moment().startOf('month'),
+        onsetDate: moment().startOf('month') > birthDate ? moment().startOf('month') : birthDate,
       }), this.handleOnsetUpdate);
     }
     const onsetObject = {
@@ -516,7 +516,7 @@ class OnsetPicker extends React.Component {
             }}
             selectId={`${this.props.id}-month-select`}
           >
-            {OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.onsetDate)
+            {OnsetUtils.allowedMonths(intl)
               .map(month => <SelectField.Option value={month.value} display={month.display} key={month.value} />)}
           </SelectField>
           {this.getYearInput(intl, this.props.id)}
