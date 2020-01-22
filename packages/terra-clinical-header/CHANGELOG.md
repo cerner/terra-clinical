@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.11.0 - (January 22, 2020)
+------------------
 ### Added
 * Added reference wdio screenshots for "orion-fusion-theme".
 
