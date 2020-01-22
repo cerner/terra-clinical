@@ -4,6 +4,12 @@ Changelog
 Unreleased
 ----------
 
+2.14.0 - (January 17, 2020)
+------------------
+### Added
+* Added `verticalOverflowContainerRefCallback` prop to pass callback ref to `vertical-overflow-container`.
+* Added `horizontalOverflowContainerRefCallback` prop to pass callback ref to `horizontal-overflow-container`.
+
 2.13.0 - (December 10, 2019)
 ------------------
 ### Changed
