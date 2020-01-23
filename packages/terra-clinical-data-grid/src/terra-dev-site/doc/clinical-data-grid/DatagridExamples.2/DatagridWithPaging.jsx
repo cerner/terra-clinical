@@ -75,7 +75,6 @@ class DatagridWithPaging extends React.Component {
     return sections;
   }
 
-
   constructor(props) {
     super(props);
 

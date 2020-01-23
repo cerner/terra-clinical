@@ -95,7 +95,6 @@ const defaultProps = {
   isLegendHidden: false,
 };
 
-
 class OnsetPicker extends React.Component {
   constructor(props) {
     super(props);

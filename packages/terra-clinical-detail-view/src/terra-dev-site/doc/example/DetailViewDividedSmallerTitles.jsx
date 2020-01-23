@@ -58,7 +58,6 @@ const detail2item2 = (<LabelValueView label="Mar Notes" textValue="Using the med
 const detail2item3 = (<LabelValueView label="Special Instructions" textValue="Never to be taken without eating" />);
 const detail2item4 = (<LabelValueView label="Admin Notes" textValue="Try med for 2 more months" />);
 
-
 const DetailViewDivided = () => (
   <div className={cx('detail-view-divided')}>
     <DetailView

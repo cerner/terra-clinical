@@ -16,7 +16,6 @@ const detail2item1 = (<LabelValueView label="Age of onset" textValue="--" />);
 const detail2item2 = (<LabelValueView label="Reviewed" textValue="07/10/2012 10:00AM" />);
 const detail2item3 = (<LabelValueView label="Comments" textValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. (Hollister MD, David 09/12/2011 11:34:12AM)" />);
 
-
 const DetailViewDivided = () => (
   <div className={cx('detail-view-divided')}>
     <DetailView
