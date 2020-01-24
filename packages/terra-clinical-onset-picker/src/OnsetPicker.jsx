@@ -115,7 +115,7 @@ class OnsetPicker extends React.Component {
         ageUnit: this.props.ageUnit,
       };
     } else if (this.props.onsetDate) {
-      ageValues = OnsetUtils.OnsetToAge(this.props.birthdate, moment(this.props.onsetDate));
+      ageValues = OnsetUtils.onsetToAge(this.props.birthdate, moment(this.props.onsetDate));
     }
 
     const birthMoment = moment(props.birthdate).startOf('day');

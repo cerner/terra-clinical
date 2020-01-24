@@ -99,7 +99,7 @@ class OnsetUtils {
   /**
    * Converts onset date to a age value with lowest possible age unit (weeks, then months, then years).
    */
-  static OnsetToAge(birthdate, onsetDate) {
+  static onsetToAge(birthdate, onsetDate) {
     if (onsetDate === undefined) { return { age: undefined, ageUnit: undefined }; }
 
     const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
