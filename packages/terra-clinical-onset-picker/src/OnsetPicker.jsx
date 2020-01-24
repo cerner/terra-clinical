@@ -115,7 +115,7 @@ class OnsetPicker extends React.Component {
         ageUnit: this.props.ageUnit,
       };
     } else if (this.props.onsetDate) {
-      ageValues = OnsetUtils.initialOnsetToAge(this.props.birthdate, moment(this.props.onsetDate));
+      ageValues = OnsetUtils.OnsetToAge(this.props.birthdate, moment(this.props.onsetDate));
     }
 
     const birthMoment = moment(props.birthdate).startOf('day');
@@ -137,12 +137,14 @@ class OnsetPicker extends React.Component {
 
   componentDidMount() {
     if (this.props.onsetDate) {
-      if (this.props.granularity === 'year' && this.props.onsetDate === moment().year(moment(this.props.onsetDate).year()).startOf('year').format(DATE_FORMAT)) {
+      const firstDayOfYear = moment().year(moment(this.props.onsetDate).year()).startOf('year').format(DATE_FORMAT);
+      const firstDayOfMonth = moment().year(moment(this.props.onsetDate).year()).month(moment(this.props.onsetDate).month()).startOf('month')
+        .format(DATE_FORMAT);
+      if (this.props.granularity === 'year' && this.props.onsetDate === firstDayOfYear) {
         this.setState({
           granularity: GranularityOptions.YEAR,
         }, this.handleOnsetUpdate);
-      } else if (this.props.granularity === 'month' && this.props.onsetDate === moment().year(moment(this.props.onsetDate).year()).month(moment(this.props.onsetDate).month()).startOf('month')
-        .format(DATE_FORMAT)) {
+      } else if (this.props.granularity === 'month' && this.props.onsetDate === firstDayOfMonth) {
         this.setState({
           granularity: GranularityOptions.MONTH,
         }, this.handleOnsetUpdate);
@@ -187,47 +189,18 @@ class OnsetPicker extends React.Component {
    * @param {granularity} - New granularity value
    */
   changeGranularity(granularity) {
-    if (granularity === GranularityOptions.AGE) { // Calculate age values and update onsetDate to match age calculation
-      this.setState((prevState) => {
-        if (!!prevState.onsetDate || prevState.granularity !== granularity) {
-          // RESET DATA IF GRANULARITY IS CHANGED.
-          return {
-            granularity,
-            precision: prevState.precision,
-            onsetDate: undefined,
-            age: undefined,
-            ageUnit: undefined,
-            year: undefined,
-            month: undefined,
-          };
-        }
-
-        const ageValues = OnsetUtils.onsetToAge(this.props.birthdate, prevState.onsetDate);
-        const onsetDate = moment(this.props.birthdate).add(ageValues.age, ageValues.ageUnit);
-        return {
-          granularity,
-          age: ageValues.age,
-          ageUnit: ageValues.ageUnit,
-          onsetDate,
-        };
-      }, this.handleOnsetUpdate);
-    } else {
-      this.setState((prevState) => {
-        if (!!prevState.onsetDate || prevState.granularity !== granularity) {
-          // RESET DATA IF GRANULARITY IS CHANGED.
-          return {
-            granularity,
-            precision: prevState.precision,
-            onsetDate: undefined,
-            age: undefined,
-            ageUnit: undefined,
-            year: undefined,
-            month: undefined,
-          };
-        }
-
-        return { granularity };
-      }, this.handleOnsetUpdate);
+    if (granularity !== this.state.granularity) {
+    // RESET DATA IF GRANULARITY IS CHANGED.
+      this.setState((prevState) => ({
+        granularity,
+        precision: prevState.precision,
+        onsetDate: undefined,
+        age: undefined,
+        ageUnit: undefined,
+        year: undefined,
+        month: undefined,
+      }),
+      this.handleOnsetUpdate);
     }
   }
 
@@ -260,6 +233,7 @@ class OnsetPicker extends React.Component {
       // Check if date can be calculated
         const momentBirthDate = moment(this.props.birthdate);
         let ageDate = moment(momentBirthDate).add(age, prevState.ageUnit);
+        // Add 1 day to onset date if birthdate is a leap day or onset month has less days than birth month.
         if (Number.isInteger(age) && prevState.ageUnit) {
           if ((momentBirthDate.isLeapYear() && !ageDate.isLeapYear() && prevState.ageUnit === AgeUnits.YEARS) || (ageDate.daysInMonth() < momentBirthDate.daysInMonth())) {
             ageDate = ageDate.add('1', 'days');
@@ -363,19 +337,22 @@ class OnsetPicker extends React.Component {
       return;
     }
     const birthDate = moment(this.props.birthdate);
+    // Set onset date to 1st day of next month of birthdate if onset date is less than birthdate.
     if (this.state.onsetDate && moment(this.state.onsetDate) < birthDate) {
       this.setState(() => ({
         onsetDate: birthDate.month() !== 11 ? moment().year(birthDate.year()).month(birthDate.month() + 1).startOf('month') : moment().year(birthDate.year() + 1).startOf('year'),
       }), this.handleOnsetUpdate);
     }
+    // Set Onset date to start of month if onset date is more than current date.
     if (this.state.onsetDate && moment(this.state.onsetDate) > moment()) {
       this.setState(() => ({
+        // Condition for age less than a week.
         onsetDate: moment().startOf('month') > birthDate ? moment().startOf('month') : birthDate,
       }), this.handleOnsetUpdate);
     }
     const onsetObject = {
       precision: this.state.precision,
-      onsetDate: ((this.state.onsetDate !== undefined)) && (this.props.onsetDate === undefined || this.props.onsetDate !== this.state.onsetDate.format(DATE_FORMAT)) ? this.state.onsetDate.format(DATE_FORMAT) : this.props.onsetDate,
+      onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined,
       granularity: this.state.precision !== PrecisionOptions.UNKNOWN ? this.state.granularity : '',
     };
     if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
@@ -450,9 +427,8 @@ class OnsetPicker extends React.Component {
       );
     }
 
-    let ageInput = null;
-    let ageUnitSelect = null;
-    let yearSelect = null;
+    let ageInput;
+    let ageUnitSelect;
     if (this.state.granularity === GranularityOptions.AGE) {
       ageInput = (
         <InputField
@@ -497,7 +473,7 @@ class OnsetPicker extends React.Component {
       );
     }
 
-    let monthSelect = null;
+    let monthSelect;
     if (this.state.granularity === GranularityOptions.MONTH) {
       monthSelect = (
         <React.Fragment>
@@ -523,12 +499,12 @@ class OnsetPicker extends React.Component {
         </React.Fragment>
       );
     }
-
+    let yearSelect;
     if (this.state.granularity === GranularityOptions.YEAR) {
       yearSelect = this.getYearInput(intl, this.props.id);
     }
 
-    let dateSelect = null;
+    let dateSelect;
     if (this.state.granularity === GranularityOptions.DATE) {
       dateSelect = (
         <Field

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import moment from 'moment';
 
 const maxWeeks = 8;
@@ -100,30 +99,7 @@ class OnsetUtils {
   /**
    * Converts onset date to a age value with lowest possible age unit (weeks, then months, then years).
    */
-  static onsetToAge(birthdate, onsetDate) {
-    if (onsetDate === undefined) { return { age: undefined, ageUnit: undefined }; }
-
-    const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
-    const onsetMoment = onsetDate.startOf('day');
-    let ageDiff = onsetMoment.diff(birthMoment, 'weeks');
-
-    if (ageDiff > maxWeeks) {
-      ageDiff = onsetMoment.diff(birthMoment, 'months');
-
-      if (ageDiff > maxMonths) {
-        return { age: onsetMoment.diff(birthMoment, 'years'), ageUnit: 'years' };
-      }
-
-      return { age: ageDiff, ageUnit: 'months' };
-    }
-
-    return { age: ageDiff, ageUnit: 'weeks' };
-  }
-
-  /**
-   * Converts onset date to a age value with lowest possible age unit (weeks, then months, then years).
-   */
-  static initialOnsetToAge(birthdate, onsetDate) {
+  static OnsetToAge(birthdate, onsetDate) {
     if (onsetDate === undefined) { return { age: undefined, ageUnit: undefined }; }
 
     const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
