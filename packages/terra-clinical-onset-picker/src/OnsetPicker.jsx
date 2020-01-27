@@ -337,10 +337,12 @@ class OnsetPicker extends React.Component {
       return;
     }
     const birthDate = moment(this.props.birthdate);
+    const yearOfBirth = birthDate.year();
+    const monthOfBirth = birthDate.month();
     // Set onset date to 1st day of next month of birthdate if onset date is less than birthdate.
     if (this.state.onsetDate && moment(this.state.onsetDate) < birthDate) {
       this.setState(() => ({
-        onsetDate: birthDate.month() !== 11 ? moment().year(birthDate.year()).month(birthDate.month() + 1).startOf('month') : moment().year(birthDate.year() + 1).startOf('year'),
+        onsetDate: monthOfBirth !== 11 ? moment().year(yearOfBirth).month(monthOfBirth + 1).startOf('month') : moment().year(yearOfBirth + 1).startOf('year'),
       }), this.handleOnsetUpdate);
     }
     // Set Onset date to start of month if onset date is more than current date.
