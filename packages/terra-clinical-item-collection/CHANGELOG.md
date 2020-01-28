@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Update copyright to include 2020
 
+4.11.0 - (January 22, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
 4.10.0 - (January 7, 2020)
 ------------------
 ### Added

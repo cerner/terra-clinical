@@ -6,6 +6,11 @@ Unreleased
 ### Changed
 * Update copyright to include 2020
 
+3.13.0 - (January 22, 2020)
+------------------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
 3.12.0 - (January 7, 2020)
 ------------------
 ### Changed
