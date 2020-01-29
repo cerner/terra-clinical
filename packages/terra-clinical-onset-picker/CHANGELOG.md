@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Added clinical-lowlight-theme wdio config file
 
 4.14.0 - (January 28, 2020)
 ----------
