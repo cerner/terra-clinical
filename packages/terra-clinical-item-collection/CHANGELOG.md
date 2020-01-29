@@ -4,6 +4,24 @@ ChangeLog
 Unreleased
 ----------
 
+4.12.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+4.11.0 - (January 22, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+4.10.0 - (January 7, 2020)
+------------------
+### Added
+* Add upgrade guides to dev-site docs
+
+### Removed
+* Removed yarn reference in docs
+
 4.9.0 - (September 26, 2019)
 ------------------
 ### Changed

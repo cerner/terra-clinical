@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-view",
   "main": "lib/ItemView.js",
-  "version": "3.9.0",
+  "version": "3.11.0",
   "description": "The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-clinical-item-display": "^3.9.0",
+    "terra-clinical-item-display": "^3.11.0",
     "terra-doc-template": "^2.0.0",
     "terra-icon": "^3.0.0",
     "terra-markdown": "^2.9.0",
@@ -44,6 +44,7 @@
     "jest": "jest --config ../../jestconfig.js",
     "wdio-default": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js",
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio ./packages/$npm_package_name/clinical-lowlight-wdio.conf.js",
-    "wdio": "npm run wdio-default && npm run wdio-lowlight"
+    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }
