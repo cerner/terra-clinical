@@ -16,8 +16,10 @@ class OnsetUtils {
    * Create object to pass to SelectField for month options
    * Filters out months before birth or after the current date.
    */
-  static allowedMonths(intl) {
-    const possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
+  static allowedMonths(intl, birthdate, year) {
+    const start = moment(birthdate);
+    const end = moment(moment.now());
+    let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
       { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
       { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
       { value: '3', display: intl.formatMessage({ id: 'Terra.onsetPicker.april' }) },
@@ -29,7 +31,13 @@ class OnsetUtils {
       { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
       { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
       { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
+    if (start.year().toString() === year || start.year() === end.year()) {
+      possibleMonths = possibleMonths.filter(month => month.value > start.month());
+    }
 
+    if (end.year().toString() === year || start.year() === end.year()) {
+      possibleMonths = possibleMonths.filter(month => month.value <= end.month());
+    }
     return possibleMonths;
   }
 
@@ -37,13 +45,23 @@ class OnsetUtils {
    * Create object to pass to SelectField for year options.
    * Populates birth year to current year.
    */
-  static allowedYears(birthdate) {
-    const start = moment(birthdate).year();
-    const end = moment().year();
+  static allowedYears(granularity, month, birthdate) {
+    let start = moment(birthdate).year();
+    if ((granularity === 'month' && month <= moment(birthdate).month()) || granularity === 'year') {
+      start += 1;
+    }
+    let end = moment().year();
+    if ((granularity === 'month' && month > moment().month())) {
+      end -= 1;
+    }
+    if (month > moment().month() && start === end && granularity !== 'month') {
+      start = '';
+      end = '';
+    }
 
     return Array((end - start) + 1).fill(undefined).map((x, idx) => {
       const year = start + idx;
-      return { value: year.toString(), display: year.toString() };
+      return { value: start !== '' ? year.toString() : '', display: start !== '' ? year.toString() : '' };
     });
   }
 
@@ -111,16 +129,17 @@ class OnsetUtils {
     const onset = onsetMoment.format(DATE_FORMAT);
     let addYear = '';
     let addMonth = '';
-    if ((birthMoment.isLeapYear() && !onsetMoment.isLeapYear() && yearDiff > 0) || (onsetMoment.daysInMonth() < birthMoment.daysInMonth())) {
+    if (birthMoment.format(DATE_FORMAT) === moment().year(birthMoment.year()).month(birthMoment.month()).endOf('month')
+      .format(DATE_FORMAT) && (onsetMoment.subtract(1, 'days').daysInMonth() < birthMoment.daysInMonth())) {
       addYear = moment(birthMoment).add(yearDiff, 'years').add(1, 'days').format(DATE_FORMAT);
       addMonth = moment(birthMoment).add(monthDiff, 'months').add(1, 'days').format(DATE_FORMAT);
     } else {
       addYear = moment(birthMoment).add(yearDiff, 'years').format(DATE_FORMAT);
       addMonth = moment(birthMoment).add(monthDiff, 'months').format(DATE_FORMAT);
     }
-    if (monthDiff / 12 > 2 && monthDiff % 12 === 0 && addYear === onset) {
+    if (monthDiff > 24 && monthDiff % 12 === 0 && addYear === onset) {
       return { age: yearDiff, ageUnit: 'years' };
-    } if (yearDiff <= 2 && addMonth === onset) {
+    } if (monthDiff <= 24 && addMonth === onset) {
       return { age: monthDiff, ageUnit: 'months' };
     } if (weekDiff <= 8 && dayDiff % 7 === 0) {
       return { age: weekDiff, ageUnit: 'weeks' };

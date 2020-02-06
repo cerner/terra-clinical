@@ -285,17 +285,24 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     });
 
     Terra.it.validatesElement('Onset Date for Leap year birthdate');
+  });
 
-    it('Defaults to first day of next month of birthdate if onset date is less than birthdate.', () => {
+  describe('has 31st of month as birthdate', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/birthdate-31-st'));
+
+    it('that fires when age is passed as input', () => {
+      browser.click('#test-precision-select');
+      browser.click('#terra-select-option-before');
       browser.click('#test-granularity-select');
-      browser.click('#terra-select-option-month');
-      browser.click('#test-year-select');
-      browser.click('#terra-select-option-2000');
-      browser.click('#test-month-select');
-      browser.click('#terra-select-option-1');
+      browser.click('#terra-select-option-age');
+      browser.click('#test-age-unit-select');
+      browser.click('#terra-select-option-months');
+      browser.clearElement('#test-age-input');
+      browser.setValue('#test-age-input', 3);
       browser.click('button[type="submit"]');
     });
-    Terra.it.validatesElement('Onset Date Less that birthdate');
+
+    Terra.it.validatesElement('Onset Date for 31st as birthdate');
   });
 
   describe('has non leap year as birthdate', () => {

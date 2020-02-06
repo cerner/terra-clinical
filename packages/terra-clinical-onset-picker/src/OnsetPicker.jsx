@@ -177,7 +177,7 @@ class OnsetPicker extends React.Component {
         }}
         selectId={`${id}-year-select`}
       >
-        {OnsetUtils.allowedYears(this.props.birthdate)
+        {OnsetUtils.allowedYears(this.state.granularity, this.state.month, this.props.birthdate)
           .map(year => <SelectField.Option value={year.value} display={year.display} key={year.value} />)}
       </SelectField>
     );
@@ -235,7 +235,8 @@ class OnsetPicker extends React.Component {
         let ageDate = moment(momentBirthDate).add(age, prevState.ageUnit);
         // Add 1 day to onset date if birthdate is a leap day or onset month has less days than birth month.
         if (Number.isInteger(age) && prevState.ageUnit) {
-          if ((momentBirthDate.isLeapYear() && !ageDate.isLeapYear() && prevState.ageUnit === AgeUnits.YEARS) || (ageDate.daysInMonth() < momentBirthDate.daysInMonth())) {
+          if (ageDate.daysInMonth() < momentBirthDate.daysInMonth() && ageDate.format(DATE_FORMAT) === moment().year(ageDate.year()).month(ageDate.month()).endOf('month')
+            .format(DATE_FORMAT)) {
             ageDate = ageDate.add('1', 'days');
           }
         } else {
@@ -268,7 +269,8 @@ class OnsetPicker extends React.Component {
     const momentBirthDate = moment(this.props.birthdate);
     let ageDate = moment(momentBirthDate).add(this.state.age, ageUnit);
     if (validAge && ageUnit) {
-      if ((momentBirthDate.isLeapYear() && !ageDate.isLeapYear() && ageUnit === AgeUnits.YEARS) || (ageDate.daysInMonth() < momentBirthDate.daysInMonth())) {
+      if (ageDate.daysInMonth() < momentBirthDate.daysInMonth() && ageDate.format(DATE_FORMAT) === moment().year(ageDate.year()).month(ageDate.month()).endOf('month')
+        .format(DATE_FORMAT)) {
         ageDate = ageDate.add('1', 'days');
       }
     } else {
@@ -336,22 +338,6 @@ class OnsetPicker extends React.Component {
     if (this.props.onsetOnChange === undefined) {
       return;
     }
-    const birthDate = moment(this.props.birthdate);
-    const yearOfBirth = birthDate.year();
-    const monthOfBirth = birthDate.month();
-    // Set onset date to 1st day of next month of birthdate if onset date is less than birthdate.
-    if (this.state.onsetDate && moment(this.state.onsetDate) < birthDate) {
-      this.setState(() => ({
-        onsetDate: monthOfBirth !== 11 ? moment().year(yearOfBirth).month(monthOfBirth + 1).startOf('month') : moment().year(yearOfBirth + 1).startOf('year'),
-      }), this.handleOnsetUpdate);
-    }
-    // Set Onset date to start of month if onset date is more than current date.
-    if (this.state.onsetDate && moment(this.state.onsetDate) > moment()) {
-      this.setState(() => ({
-        // Condition for age less than a week.
-        onsetDate: moment().startOf('month') > birthDate ? moment().startOf('month') : birthDate,
-      }), this.handleOnsetUpdate);
-    }
     const onsetObject = {
       precision: this.state.precision,
       onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined,
@@ -380,16 +366,34 @@ class OnsetPicker extends React.Component {
     } = this.props;
 
     let granularitySelect = null;
-    const optionAge = [];
+    const granularityOptions = [];
     if (this.state.precision !== PrecisionOptions.UNKNOWN) {
       const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
       const currentMoment = moment().startOf('day');
       if (currentMoment.diff(birthMoment, 'weeks') !== 0) {
-        optionAge.push(
+        granularityOptions.push(
           <SelectField.Option
             value={GranularityOptions.AGE}
             display={intl.formatMessage({ id: 'Terra.onsetPicker.age' })}
             key={GranularityOptions.AGE}
+          />,
+        );
+      }
+      if ((currentMoment.diff(birthMoment, 'years') === 0 && currentMoment.year() !== birthMoment.year()) || (currentMoment.diff(birthMoment, 'years') !== 0)) {
+        granularityOptions.push(
+          <SelectField.Option
+            value={GranularityOptions.YEAR}
+            display={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
+            key={GranularityOptions.YEAR}
+          />,
+        );
+      }
+      if ((currentMoment.diff(birthMoment, 'months') === 0 && currentMoment.month() !== birthMoment.month()) || (currentMoment.diff(birthMoment, 'months') !== 0)) {
+        granularityOptions.push(
+          <SelectField.Option
+            value={GranularityOptions.MONTH}
+            display={intl.formatMessage({ id: 'Terra.onsetPicker.month' })}
+            key={GranularityOptions.MONTH}
           />,
         );
       }
@@ -409,17 +413,7 @@ class OnsetPicker extends React.Component {
           }}
           selectId={`${this.props.id}-granularity-select`}
         >
-          {optionAge}
-          <SelectField.Option
-            value={GranularityOptions.YEAR}
-            display={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
-            key={GranularityOptions.YEAR}
-          />
-          <SelectField.Option
-            value={GranularityOptions.MONTH}
-            display={intl.formatMessage({ id: 'Terra.onsetPicker.month' })}
-            key={GranularityOptions.MONTH}
-          />
+          {granularityOptions}
           <SelectField.Option
             value={GranularityOptions.DATE}
             display={intl.formatMessage({ id: 'Terra.onsetPicker.date' })}
@@ -494,7 +488,7 @@ class OnsetPicker extends React.Component {
             }}
             selectId={`${this.props.id}-month-select`}
           >
-            {OnsetUtils.allowedMonths(intl)
+            {OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.year)
               .map(month => <SelectField.Option value={month.value} display={month.display} key={month.value} />)}
           </SelectField>
           {this.getYearInput(intl, this.props.id)}
