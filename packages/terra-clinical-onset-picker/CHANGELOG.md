@@ -24,6 +24,9 @@ Unreleased
 ### Added
 * Add upgrade guides to dev-site docs
 
+### Fixed
+* Fixed `age-field` misalignment in IE.
+
 4.11.0 - (December 10, 2019)
 ------------------
 ### Changed
