@@ -8,6 +8,7 @@
 
     .field-inline {
       display: inline-block;
+      vertical-align: top;
     }
   }
 
@@ -43,11 +44,5 @@
 
   .year {
     min-width: var(--terra-clinical-onset-picker-year-select-min-width, 5.5em);
-  }
-
-  .content-wrapper {
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // -ms needed for icon alignment in IE
-      display: flex;
-    }
   }
 }

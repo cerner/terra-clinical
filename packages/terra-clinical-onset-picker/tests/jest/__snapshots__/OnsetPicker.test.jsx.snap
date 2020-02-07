@@ -196,9 +196,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           />
         </div>
       </div>
-      <div
-        class="content-wrapper"
-      />
+      <div />
     </div>
   </fieldset>
 </div>
@@ -507,9 +505,7 @@ exports[`should render only the supplied precisions 1`] = `
           />
         </div>
       </div>
-      <div
-        class="content-wrapper"
-      />
+      <div />
     </div>
   </fieldset>
 </div>
@@ -711,9 +707,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
           />
         </div>
       </div>
-      <div
-        class="content-wrapper"
-      />
+      <div />
     </div>
   </fieldset>
 </div>
@@ -913,9 +907,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           />
         </div>
       </div>
-      <div
-        class="content-wrapper"
-      >
+      <div>
         <div
           class="field field-inline age"
         >
@@ -1255,9 +1247,7 @@ exports[`should render with non default inputs when supplied 1`] = `
           />
         </div>
       </div>
-      <div
-        class="content-wrapper"
-      >
+      <div>
         <div
           class="field field-inline year"
         >
