@@ -3,6 +3,19 @@ Changelog
 
 Unreleased
 ----------
+
+2.16.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+2.15.0 - (January 22, 2020)
+------------------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+2.14.0 - (January 17, 2020)
+------------------
 ### Added
 * Added `verticalOverflowContainerRefCallback` prop to pass callback ref to `vertical-overflow-container`.
 * Added `horizontalOverflowContainerRefCallback` prop to pass callback ref to `horizontal-overflow-container`.

@@ -31,7 +31,6 @@ it('should render a list', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-
 it('should render a title and a list', () => {
   const wrapper = render(defaultVariety);
   expect(wrapper).toMatchSnapshot();
