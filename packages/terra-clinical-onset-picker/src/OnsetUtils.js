@@ -18,7 +18,7 @@ class OnsetUtils {
    */
   static allowedMonths(intl, birthdate, year) {
     const start = moment(birthdate);
-    const end = moment(moment.now());
+    const end = moment();
     let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
       { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
       { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
