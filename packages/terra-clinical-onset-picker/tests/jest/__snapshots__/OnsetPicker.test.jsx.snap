@@ -1310,7 +1310,7 @@ exports[`should render with non default inputs when supplied 1`] = `
               <span
                 id="terra-select-screen-reader-description-29"
               >
-                List of 7 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+                List of 6 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
               </span>
             </div>
             <div

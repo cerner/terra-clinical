@@ -6,6 +6,12 @@ Unreleased
 ### Added
 * Added clinical-lowlight-theme wdio config file
 
+### Changed
+* Added logic to show default or `date` granularity initially.
+* Clear existing data when granularity is changed.
+* Set Onset date to first day of `month` or `year` as per chosen granularity.
+* Calculation for leap year corrected.
+
 4.14.0 - (January 28, 2020)
 ----------
 ### Changed
@@ -20,6 +26,9 @@ Unreleased
 ------------------
 ### Added
 * Add upgrade guides to dev-site docs
+
+### Fixed
+* Fixed `age-field` misalignment in IE.
 
 4.11.0 - (December 10, 2019)
 ------------------
