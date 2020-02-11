@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.15.0 - (February 11, 2020)
+----------
 ### Changed
 * Added logic to show default or `date` granularity initially.
 * Clear existing data when granularity is changed.
