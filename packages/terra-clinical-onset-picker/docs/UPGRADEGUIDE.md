@@ -1,5 +1,25 @@
 # Terra Clinical Onset Picker Upgrade Guide
 
+## Changes from 3.0 to 4.0
+
+### Breaking Change
+* Condensed onChange function props into a single prop (`onsetOnChange`) that returns an Object for the onsetDate.
+
+## New Feature
+
+* Added support for age units.
+
+### Removed Props
+
+* Removed prop `granularitySelectOnChange`
+* Removed prop `precisionSelectOnChange`
+* Removed prop `onsetDateInputOnChange`
+
+
+### New Props
+* New prop `ageUnit`
+* New prop `onsetOnChange`
+
 ## Changes from 2.0 to 3.0
 
 ### Breaking Changes
