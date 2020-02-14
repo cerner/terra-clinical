@@ -2,19 +2,50 @@
 
 ## Changes from 3.0 to 4.0
 
-### Breaking Change
-* Condensed onChange function props into a single prop (`onsetOnChange`) that returns an Object for the onsetDate.
-
-## New Feature
-
-* Added support for age units.
-
-### Removed Props
-
+### Breaking Changes
 * Removed prop `granularitySelectOnChange`
 * Removed prop `precisionSelectOnChange`
 * Removed prop `onsetDateInputOnChange`
+* Condensed onChange function props into a single prop (`onsetOnChange`) that returns an Object for the onsetDate.
 
+### Changes for onsetOnChange
+
+``` diff
+-  this.handleGranularity = this.handleGranularity.bind(this);
+-  this.handlePrecision = this.handlePrecision.bind(this);
+-  handleGranularity(granularity) {
+-    this.setState({ granularity });
+-  }
+
+- handlePrecision(precision) {
+-    this.setState({ precision });
+-  }
+
+-  handleOnset(onsetDate) {
+-    this.setState({ onsetDate });
++  handleOnset(onsetObject) {
++    this.setState({
++      precision: onsetObject.precision,
++      granularity: onsetObject.granularity,
++      onsetDate: onsetObject.onsetDate,
++      ageUnit: onsetObject.ageUnit,
++    });
+        <OnsetPicker
+          birthdate={moment().subtract(6, 'years').format()}
+          granularity={this.state.granularity}
+-         granularitySelectOnChange={this.handleGranularity}
+          id="doogs-supplied"
+          precision={this.state.precision}
+-         precisionSelectOnChange={this.handlePrecision}
+          onsetDate={this.state.onsetDate}
+-         onsetDateInputOnChange={this.handleOnset}
++         onsetOnChange={this.handleOnset}
+        />
+```
+
+### New Feature
+
+* Added support for age units. Use new `ageUnit` prop to pass default age unit values, accepted values are `weeks`, `months`, or `years` 
 
 ### New Props
 * New prop `ageUnit`
