@@ -54,7 +54,7 @@ const DocPage = () => (
       },
       {
         title: 'Flowsheet Result Cell for "Known No Result" and Blood Pressure partial "No Result"',
-        description: 'Use the \'hasResultNoData\' prop to show the "No Data" display for the Flowsheet Result Cell. For Blood Pressure, Use either the \'resultNoData\' key or \'value: null\' to show the "No Data" display for either the Systolic or Diastolic result:',
+        description: 'Use the \'hasResultNoData\' prop to show the "No Data" display for the Flowsheet Result Cell. For Blood Pressure, Use either the \'resultNoData\' property name or \' result: { value: null, }\' to show the "No Data" display for either the Systolic or Diastolic result:',
         example: <KnownAndPartialNoData />,
         source: KnownAndPartialNoDataSrc,
       },

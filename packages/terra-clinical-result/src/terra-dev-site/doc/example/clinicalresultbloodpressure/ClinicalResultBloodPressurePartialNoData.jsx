@@ -1,7 +1,7 @@
 import React from 'react';
 import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
 
-const partialResultValueWithNoDataKeySystolic = {
+const partialResultValueWithNoDataPropSystolic = {
   id: '111',
   systolic: {
     eventId: '111.1',
@@ -18,7 +18,7 @@ const partialResultValueWithNoDataKeySystolic = {
   },
 };
 
-const partialResultValueWithNoDataKeyDiastolic = {
+const partialResultValueWithNoDataPropDiastolic = {
   id: '222',
   systolic: {
     eventId: '222.1',
@@ -41,7 +41,6 @@ const partialResultValueWithNullValue = {
     eventId: '333.1',
     result: {
       value: null,
-      unit: '',
     },
   },
   diastolic: {
@@ -57,12 +56,15 @@ const partialResultValueWithNullValue = {
 
 export default () => (
   <React.Fragment>
-  <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataKeySystolic} />
-  <br />
-  <br />
-  <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataKeyDiastolic} />
-  <br />
-  <br />
-  <ClinicalResultBloodPressure resultData={partialResultValueWithNullValue} />
+    {/* This example shows the No Data display using the `resultNoData` property name for Systolic */}
+    <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataPropSystolic} />
+    <br />
+    <br />
+    {/* This example shows the No Data display using the `resultNoData` property name for Diastolic */}
+    <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataPropDiastolic} />
+    <br />
+    <br />
+    {/* This example column shows the No Data display using `result: { value: null, }` for Systolic */}
+    <ClinicalResultBloodPressure resultData={partialResultValueWithNullValue} />
   </React.Fragment>
 );

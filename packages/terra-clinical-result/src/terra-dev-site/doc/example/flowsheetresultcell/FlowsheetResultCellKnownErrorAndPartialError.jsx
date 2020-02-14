@@ -37,17 +37,23 @@ const partialResultValueWithNoDiastolic = [
 
 export default () => (
   <React.Fragment>
+    {/* This example column shows how to use the `hasResultError` prop */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell hasResultError />
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
     </div>
+    {/* This example column shows the error display when the Systolic property name is not present */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoSystolic} hideUnit />
+      </div>
+    </div>
+    {/* This example column shows the error display when the Diastolic property name is not present */}
+    <div className={cx('mock-flowsheet-resultcolumn')}>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoDiastolic} hideUnit />
+      </div>
     </div>
   </React.Fragment>
 );

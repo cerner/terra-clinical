@@ -29,12 +29,15 @@ const partialResultValueWithNoDiastolic = {
 
 export default () => (
   <React.Fragment>
+    {/* This example shows how to use the `hasResultError` prop */}
     <ClinicalResultBloodPressure hasResultError />
     <br />
     <br />
+    {/* This example shows the error display when the Systolic property name is not present */}
     <ClinicalResultBloodPressure resultData={partialResultValueWithNoSystolic} />
     <br />
     <br />
+    {/* This example shows the error display when the Diastolic property name is not present */}
     <ClinicalResultBloodPressure resultData={partialResultValueWithNoDiastolic} />
   </React.Fragment>
 );

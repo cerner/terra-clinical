@@ -103,15 +103,21 @@ const FlowsheetResultCell = (props) => {
         } else if (hasSystolic || hasDiastolic) {
           if (i === 0) {
             const resultItem = resultSet[i];
-            if (resultSet[i].systolic.hasComment) { singleResultHasComment = true; resultItem.systolic.hasComment = false; }
-            if (resultSet[i].systolic.isModified) { singleResultIsModified = true; resultItem.systolic.isModified = false; }
-            if (resultSet[i].systolic.isUnverified) { singleResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
-            
-            if (resultSet[i].diastolic.hasComment) { singleResultHasComment = true; resultItem.diastolic.hasComment = false; }
-            if (resultSet[i].diastolic.isModified) { singleResultIsModified = true; resultItem.diastolic.isModified = false; }
-            if (resultSet[i].diastolic.isUnverified) { singleResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
-            
-            const keyID = (!resultItem.systolic) ? resultItem.systolic.eventId : resultItem.diastolic.eventId;
+            if (hasSystolic) {
+              if (resultSet[i].systolic.hasComment) { singleResultHasComment = true; resultItem.systolic.hasComment = false; }
+              if (resultSet[i].systolic.isModified) { singleResultIsModified = true; resultItem.systolic.isModified = false; }
+              if (resultSet[i].systolic.isUnverified) { singleResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
+            }
+            if (hasDiastolic) {
+              if (resultSet[i].diastolic.hasComment) { singleResultHasComment = true; resultItem.diastolic.hasComment = false; }
+              if (resultSet[i].diastolic.isModified) { singleResultIsModified = true; resultItem.diastolic.isModified = false; }
+              if (resultSet[i].diastolic.isUnverified) { singleResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
+            }
+            let keyID;
+            if (resultItem.id) keyID = resultItem.id;
+            else if (hasSystolic && resultItem.systolic.eventId) keyID = resultItem.systolic.eventId;
+            else if (hasDiastolic && resultItem.diastolic.eventId) keyID = resultItem.diastolic.eventId;
+            else keyID = Math.floor(100000 + Math.random() * 900000);
             resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${keyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
           } else if (i > 0) {
             const sysInterpretation = !isEmpty(resultSet[i].systolic.interpretation) ? resultSet[i].systolic.interpretation : null;
