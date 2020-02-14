@@ -4,8 +4,10 @@ import classNames from 'classnames/bind';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
-import Observation from './common/_Observation';
+import Observation from './common/observation/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
+import ResultError from './common/other/_ResultError';
+import NoData from './common/other/_KnownNoData';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -32,24 +34,42 @@ const propTypes = {
    * Whether or not the text should be truncated in display. Restricts clinical result details each to one line.
    */
   isTruncated: PropTypes.bool,
+  /**
+   * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
+   */
+  hasResultError: PropTypes.bool,
+  /**
+   * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
+   */
+  hasResultNoData: PropTypes.bool,
 };
 
 const defaultProps = {
   resultData: {},
   hideUnit: false,
   isTruncated: false,
+  hasResultError: false,
+  hasResultNoData: false,
 };
+
+const isEmpty = (str) => (!str || str.length === 0);
 
 const ClinicalResultBloodPressure = (props) => {
   const {
     resultData,
     hideUnit,
     isTruncated,
+    hasResultError,
+    hasResultNoData,
     ...customProps
   } = props;
 
-  const isEmpty = (str) => (!str || str.length === 0);
+  let clinicalResultBloodPressureDisplay = null;
 
+  if (hasResultError || hasResultNoData) {
+    clinicalResultBloodPressureDisplay = hasResultError ? (<ResultError />) : (<NoData />);
+  } else {
+  
   const CompareTemplate = (s, d) => ({
     systolic: s,
     diastolic: d,
@@ -69,7 +89,8 @@ const ClinicalResultBloodPressure = (props) => {
   const decoratedResultDisplay = [];
 
   const hasSystolic = resultData.systolic;
-  if (hasSystolic) {
+  const noDataSystolic = (hasSystolic) ? resultData.systolic.resultNoData : false;
+  if (hasSystolic && !noDataSystolic) {
     if (!isEmpty(resultData.systolic.result.unit)) compareUnits.systolic = resultData.systolic.result.unit.trim().toLowerCase();
     if (!isEmpty(resultData.systolic.conceptDisplay)) compareConceptDisplays.systolic = resultData.systolic.conceptDisplay.trim().toLowerCase();
     if (!isEmpty(resultData.systolic.datetimeDisplay)) compareDatetimeDisplays.systolic = resultData.systolic.datetimeDisplay.trim().toLowerCase();
@@ -79,7 +100,8 @@ const ClinicalResultBloodPressure = (props) => {
   }
 
   const hasDiastolic = resultData.diastolic;
-  if (hasDiastolic) {
+  const noDataDiastolic = (hasDiastolic) ? resultData.diastolic.resultNoData : false;
+  if (hasDiastolic && !noDataDiastolic) {
     if (!isEmpty(resultData.diastolic.result.unit)) compareUnits.diastolic = resultData.diastolic.result.unit.trim().toLowerCase();
     if (!isEmpty(resultData.diastolic.conceptDisplay)) compareConceptDisplays.diastolic = resultData.diastolic.conceptDisplay.trim().toLowerCase();
     if (!isEmpty(resultData.diastolic.datetimeDisplay)) compareDatetimeDisplays.diastolic = resultData.diastolic.datetimeDisplay.trim().toLowerCase();
@@ -93,15 +115,17 @@ const ClinicalResultBloodPressure = (props) => {
       const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit />;
       decoratedResultDisplay.push(systolicDisplay);
     } else {
-      if (!hasSystolic) decoratedResultDisplay.push('--'); // TODO: change to correct display if systolic not present
-      if (hasSystolic) {
+      if (!hasSystolic) decoratedResultDisplay.push(<ResultError />);
+      else if (noDataSystolic) decoratedResultDisplay.push(<NoData />);
+      else if (hasSystolic) {
         const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit={hideUnit} />;
         decoratedResultDisplay.push(systolicDisplay);
       }
     }
     decoratedResultDisplay.push(<span key={`ObservationSeperator-${(hasSystolic) ? resultData.systolic.eventId : resultData.diastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
-    if (!hasDiastolic) decoratedResultDisplay.push('--'); // TODO: change to correct display if diastolic not present
-    if (hasDiastolic) {
+    if (!hasDiastolic) decoratedResultDisplay.push(<ResultError />);
+    else if (noDataDiastolic) decoratedResultDisplay.push(<NoData />);
+    else if (hasDiastolic) {
       const diastolicDisplay = <Observation key={`Observation-${resultData.diastolic.eventId}`} eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} hideUnit={hideUnit} />;
       decoratedResultDisplay.push(diastolicDisplay);
     }
@@ -154,19 +178,13 @@ const ClinicalResultBloodPressure = (props) => {
     }
   }
 
-  const clinicalresultClassnames = cx([
-    'clinical-result',
-    'blood-pressure-result',
-    customProps.className,
-  ]);
-
   const decoratedResultClassnames = cx([
     'decorated-result-display',
     { truncated: isTruncated },
   ]);
 
-  return (
-    <div {...customProps} className={clinicalresultClassnames}>
+    clinicalResultBloodPressureDisplay = (
+      <React.Fragment>
       <div className={decoratedResultClassnames}>
         <div className={cx('result-display')}>
           {decoratedResultDisplay}
@@ -176,6 +194,19 @@ const ClinicalResultBloodPressure = (props) => {
       </div>
       {conceptDisplayElement}
       {datetimeDisplayElement}
+      </React.Fragment>
+    );
+  }
+
+  const clinicalResultClassnames = cx([
+    'clinical-result',
+    'blood-pressure-result',
+    customProps.className,
+  ]);
+
+  return (
+    <div {...customProps} className={clinicalResultClassnames}>
+      {clinicalResultBloodPressureDisplay}
     </div>
   );
 };

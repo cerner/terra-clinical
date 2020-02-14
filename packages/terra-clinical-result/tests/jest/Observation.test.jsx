@@ -1,5 +1,5 @@
 import React from 'react';
-import Observation from '../../src/common/_Observation';
+import Observation from '../../src/common/observation/_Observation';
 import DefaultResult from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 // Snapshot Tests

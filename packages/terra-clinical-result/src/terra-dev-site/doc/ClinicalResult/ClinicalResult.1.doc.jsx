@@ -21,7 +21,12 @@ import InterpretationResults from '../example/clinicalresult/ClinicalResultInter
 import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultInterpretation.jsx';
 import SizeChangeResult from '../example/clinicalresult/ClinicalResultChangeSize';
 import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultChangeSize.jsx';
-
+import KnownNoData from '../example/clinicalresult/ClinicalResultKnownNoData';
+import KnownNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultKnownNoData.jsx';
+import KnownError from '../example/clinicalresult/ClinicalResultKnownError';
+import KnownErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultKnownError.jsx';
+import AccidentalError from '../example/clinicalresult/ClinicalResultAccidentalError';
+import AccidentalErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultAccidentalError.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -69,6 +74,24 @@ const DocPage = () => (
         description: '',
         example: <TruncatedResult />,
         source: TruncatedResultSrc,
+      },
+      {
+        title: 'Display for "Known No Result"',
+        description: 'Use the \'hasResultNoData\' prop to show the "No Data" display for the Clinical Result:',
+        example: <KnownNoData />,
+        source: KnownNoDataSrc,
+      },
+      {
+        title: 'Display for "Known Error"',
+        description: 'Use the \'hasResultError\' prop to show the "Error" display for the Clinical Result:',
+        example: <KnownError />,
+        source: KnownErrorSrc,
+      },
+      {
+        title: 'Display for Accidental Errors',
+        description: 'Built-in fallback display for when there is an error or malformation of the \'resultData\' object:',
+        example: <AccidentalError />,
+        source: AccidentalErrorSrc,
       },
     ]}
     /*

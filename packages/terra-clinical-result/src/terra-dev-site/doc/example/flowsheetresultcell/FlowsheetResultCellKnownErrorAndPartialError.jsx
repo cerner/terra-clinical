@@ -5,40 +5,33 @@ import styles from '../Examples.module.scss';
 
 const cx = classNames.bind(styles);
 
-const multipleResultValues = [
+const partialResultValueWithNoSystolic = [
   {
-    eventId: '111',
-    result: {
-      value: '101.1',
-      unit: 'degC',
+    id: '111',
+    diastolic: {
+      eventId: '111.2',
+      result: {
+        value: '77',
+        unit: 'mmHg',
+      },
+      interpretation: 'CRITICAL',
+      resultDateTime: '10/10/2020 11:11',
     },
-    type: 'NUMERIC',
-    isModified: true,
-    hasComment: true,
-    isUnverified: true,
-    effectiveDateTime: '10/10/2020 11:11:11',
   },
+];
+
+const partialResultValueWithNoDiastolic = [
   {
-    eventId: '222',
-    result: {
-      value: '101.2',
-      unit: 'degC',
+    id: '222',
+    systolic: {
+      eventId: '222.1',
+      result: {
+        value: '140',
+        unit: 'mmHg',
+      },
+      interpretation: 'HIGH',
+      effectiveDateTime: '2015-02-07T13:28:17-05:00',
     },
-    type: 'NUMERIC',
-    isModified: false,
-    hasComment: false,
-    effectiveDateTime: '10/10/2020 11:11:22',
-  },
-  {
-    eventId: '333',
-    result: {
-      value: '101.3',
-      unit: 'degC',
-    },
-    type: 'NUMERIC',
-    isModified: false,
-    hasComment: false,
-    effectiveDateTime: '10/10/2020 11:11:33',
   },
 ];
 
@@ -46,11 +39,13 @@ export default () => (
   <React.Fragment>
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        <FlowsheetResultCell hasResultError />
       </div>
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
     </div>
     <div className={cx('mock-flowsheet-resultcolumn')}>
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
     </div>

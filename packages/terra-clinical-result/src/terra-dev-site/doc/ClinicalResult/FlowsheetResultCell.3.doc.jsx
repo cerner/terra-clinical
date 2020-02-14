@@ -9,14 +9,18 @@ import { name } from '../../../../package.json';
 // Example Files
 import DefaultCell from '../example/flowsheetresultcell/FlowsheetResultCellDefault';
 import DefaultCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellDefault.jsx';
-import MulitpleResultsCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleResults';
-import MulitpleResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleResults.jsx';
+import MultipleResultsCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleResults';
+import MultipleResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleResults.jsx';
 import BloodPressureCell from '../example/flowsheetresultcell/FlowsheetResultCellBloodPressure';
 import BloodPressureCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellBloodPressure.jsx';
 import MultipleBloodPressuresCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures';
 import MultipleBloodPressuresCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures.jsx';
-import EmptyValueCell from '../example/flowsheetresultcell/FlowsheetResultCellEmptyValue';
-import EmptyValueCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellEmptyValue.jsx';
+import KnownAndPartialNoData from '../example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData';
+import KnownAndPartialNoDataSrc from '../example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
+import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError';
+import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
+// import EmptyValueCell from '../example/flowsheetresultcell/FlowsheetResultCellEmptyValue';
+// import EmptyValueCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellEmptyValue.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -33,8 +37,8 @@ const DocPage = () => (
       {
         title: 'Flowsheet Result Cell with Multiple Results',
         description: '',
-        example: <MulitpleResultsCell />,
-        source: MulitpleResultsCellSrc,
+        example: <MultipleResultsCell />,
+        source: MultipleResultsCellSrc,
       },
       {
         title: 'Flowsheet Result Cell with Blood Pressure Result',
@@ -49,10 +53,16 @@ const DocPage = () => (
         source: MultipleBloodPressuresCellSrc,
       },
       {
-        title: 'Flowsheet Result Cell and empty value',
-        description: '',
-        example: <EmptyValueCell />,
-        source: EmptyValueCellSrc,
+        title: 'Flowsheet Result Cell for "Known No Result" and Blood Pressure partial "No Result"',
+        description: 'Use the \'hasResultNoData\' prop to show the "No Data" display for the Flowsheet Result Cell. For Blood Pressure, Use either the \'resultNoData\' key or \'value: null\' to show the "No Data" display for either the Systolic or Diastolic result:',
+        example: <KnownAndPartialNoData />,
+        source: KnownAndPartialNoDataSrc,
+      },
+      {
+        title: 'Displays for a full "Known Error" and for partial missing results',
+        description: 'Use the \'hasResultError\' prop to show the "Error" display for the full Flowsheet Result Cell. Or if there is a missing part results (e.g. Systolic or Diastolic), that portion will show the error display:',
+        example: <KnownErrorAndPartialError />,
+        source: KnownErrorAndPartialErrorSrc,
       },
     ]}
     /*

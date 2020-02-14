@@ -1,0 +1,24 @@
+
+
+:local {
+  .entered-in-error {
+    color: var(--terra-clinical-result-entered-in-error-color);
+    display: inline;
+    font-size: var(--terra-clinical-result-entered-in-error-font-size, 1em); // Must use ems for font rescaling
+    line-height: var(--terra-clinical-result-entered-in-error-line-height, 1.125);
+  }
+
+  .no-data {
+    color: var(--terra-clinical-result-no-data-color);
+    display: inline;
+    font-size: var(--terra-clinical-result-no-data-font-size, 1em); // Must use ems for font rescaling
+    line-height: var(--terra-clinical-result-no-data-line-height, 1.125);
+  }
+
+  .system-error {
+    color: var(--terra-clinical-result-system-error-color);
+    display: inline;
+    font-size: var(--terra-clinical-result-system-error-font-size, 1em); // Must use ems for font rescaling
+    line-height: var(--terra-clinical-result-system-error-line-height, 1.125);
+  }
+}

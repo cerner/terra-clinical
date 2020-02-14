@@ -7,6 +7,8 @@ import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
 import ClinicalResult from '../ClinicalResult';
 import ClinicalResultBloodPressure from '../ClinicalResultBloodPressure';
 import observationPropShape from '../proptypes/observationPropTypes';
+import ResultError from '../common/other/_ResultError';
+import NoData from '../common/other/_KnownNoData';
 import styles from './FlowsheetResultCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -30,12 +32,22 @@ const propTypes = {
    * One of `'none'`, `'standard'`, `'compact'`.
    */
   paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
+  /**
+   * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
+   */
+  hasResultError: PropTypes.bool,
+  /**
+   * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
+   */
+  hasResultNoData: PropTypes.bool,
 };
 
 const defaultProps = {
   resultDataSet: [],
   hideUnit: false,
   paddingStyle: 'compact',
+  hasResultError: false,
+  hasResultNoData: false,
 };
 
 const isEmpty = (str) => (!str || str.length === 0);
@@ -45,8 +57,16 @@ const FlowsheetResultCell = (props) => {
     resultDataSet,
     hideUnit,
     paddingStyle,
+    hasResultError,
+    hasResultNoData,
     ...customProps
   } = props;
+
+  let flowsheetResultCellDisplay = null;
+
+  if (hasResultError || hasResultNoData) {
+    flowsheetResultCellDisplay = hasResultError ? (<div className={cx('single-result-display')}><ResultError /></div>) : (<div className={cx('single-result-display')}><NoData /></div>);
+  } else {
 
   const createResultsDisplay = (resultSet) => {
     let resultsDisplay = [];
@@ -61,19 +81,15 @@ const FlowsheetResultCell = (props) => {
     let singleResultIsUnverified = false;
 
     if (!resultSet || !resultSet.length) {
-      const errorDisplay = (
-        <div className={cx('single-result-display')}>
-          <span key="FlowsheetResultCellError" className={cx('error-display')}>
-            <ClinicalResult resultData={{ error: 'empty' }} isTruncated />
-          </span>
-        </div>
-      );
-      resultsDisplay.push(errorDisplay);
+      resultsDisplay.push(<div className={cx('single-result-display')}><ResultError /></div>);
     } else {
       resultsDisplay = [];
       additionalResultCount = resultSet.length - 1;
       for (let i = 0; i < resultSet.length; i += 1) {
-        if (Object.prototype.hasOwnProperty.call(resultSet[i], 'result')) {
+        const hasStandardResult = resultSet[i].result;
+        const hasSystolic = resultSet[i].systolic;
+        const hasDiastolic = resultSet[i].diastolic;
+        if (hasStandardResult) {
           if (i === 0) {
             const resultItem = resultSet[i];
             if (resultSet[i].hasComment) { singleResultHasComment = true; resultItem.hasComment = false; }
@@ -84,17 +100,19 @@ const FlowsheetResultCell = (props) => {
             const hasInterpretation = !isEmpty(resultSet[i].interpretation) ? resultSet[i].interpretation : null;
             additionalResultInterpretations.push(hasInterpretation);
           }
-        } else if (Object.prototype.hasOwnProperty.call(resultSet[i], 'systolic') || Object.prototype.hasOwnProperty.call(resultSet[i], 'diastolic')) {
+        } else if (hasSystolic || hasDiastolic) {
           if (i === 0) {
             const resultItem = resultSet[i];
             if (resultSet[i].systolic.hasComment) { singleResultHasComment = true; resultItem.systolic.hasComment = false; }
             if (resultSet[i].systolic.isModified) { singleResultIsModified = true; resultItem.systolic.isModified = false; }
             if (resultSet[i].systolic.isUnverified) { singleResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
+            
             if (resultSet[i].diastolic.hasComment) { singleResultHasComment = true; resultItem.diastolic.hasComment = false; }
             if (resultSet[i].diastolic.isModified) { singleResultIsModified = true; resultItem.diastolic.isModified = false; }
             if (resultSet[i].diastolic.isUnverified) { singleResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
+            
             const keyID = (!resultItem.systolic) ? resultItem.systolic.eventId : resultItem.diastolic.eventId;
-            resultsInnerDisplay = !isEmpty(resultItem.systolic.result.value) && !isEmpty(resultItem.diastolic.result.value) ? <ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${keyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated /> : null;
+            resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${keyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
           } else if (i > 0) {
             const sysInterpretation = !isEmpty(resultSet[i].systolic.interpretation) ? resultSet[i].systolic.interpretation : null;
             const diaInterpretation = !isEmpty(resultSet[i].diastolic.interpretation) ? resultSet[i].diastolic.interpretation : null;
@@ -173,6 +191,9 @@ const FlowsheetResultCell = (props) => {
     return resultsDisplay;
   };
 
+    flowsheetResultCellDisplay = createResultsDisplay(resultDataSet);
+  };
+
   const flowsheetCellClassNames = cx([
     'flowsheet-result-cell',
     { 'padding-standard': paddingStyle === 'standard' },
@@ -182,7 +203,7 @@ const FlowsheetResultCell = (props) => {
 
   return (
     <div {...customProps} className={flowsheetCellClassNames}>
-      {createResultsDisplay(resultDataSet)}
+      {flowsheetResultCellDisplay}
     </div>
   );
 };

@@ -8,8 +8,7 @@ const singleResultValue = [
       value: '12345.678',
       unit: 'mL',
     },
-    isModified: true,
-    hasComment: true,
+    isUnverified: true,
     resultDateTime: '10/10/2020 11:11:11',
   },
 ];

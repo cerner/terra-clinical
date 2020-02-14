@@ -5,9 +5,10 @@ import IconCritical from 'terra-icon/lib/icon/IconCritical';
 import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
 import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
-import IconError from 'terra-icon/lib/icon/IconError';
-import { interpretationPropOneOf } from '../proptypes/interpretationPropTypes';
-import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from '../proptypes/valuePropTypes';
+import { interpretationPropOneOf } from '../../proptypes/interpretationPropTypes';
+import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from '../../proptypes/valuePropTypes';
+import ResultError from '../other/_ResultError';
+import NoData from '../other/_KnownNoData';
 import styles from './Observation.module.scss';
 
 const cx = classNames.bind(styles);
@@ -26,7 +27,7 @@ const propTypes = {
     valueNullPropShape,
   ]),
   /**
-   * Interpretaion of the Result, indicates Criticality
+   * Interpretation of the Result, indicates Criticality
    */
   interpretation: interpretationPropOneOf,
   /**
@@ -100,15 +101,9 @@ const Observation = (props) => {
         </React.Fragment>
       );
     } else if (result.value === null) {
-      valueDisplayElements = (
-        <span className="value">--</span>
-      );
+      valueDisplayElements = (<NoData />);
     } else {
-      valueDisplayElements = (
-        <span className={['value', 'error']}>
-          <IconError className={cx('icon-error')} />
-        </span>
-      );
+      valueDisplayElements = (<ResultError />);
     }
     return valueDisplayElements;
   };

@@ -6,7 +6,6 @@ import { name } from '../../../../package.json';
 // Component Source
 // import ClinicalResultBloodPressureProps from '!raw-loader!../../../../src/ClinicalResultBloodPressure';
 
-
 // Example Files
 import DefaultResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureDefault';
 import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureDefault.jsx';
@@ -22,7 +21,12 @@ import InterpretationResults from '../example/clinicalresultbloodpressure/Clinic
 import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureInterpretation.jsx';
 import SizeChangeResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureChangeSize';
 import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureChangeSize.jsx';
-
+import KnownNoData from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownNoData';
+import KnownNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownNoData.jsx';
+import PartialNoData from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressurePartialNoData';
+import PartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressurePartialNoData.jsx';
+import KnownErrorAndPartialError from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownErrorAndPartialError';
+import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownErrorAndPartialError.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -70,6 +74,24 @@ const DocPage = () => (
         description: '',
         example: <TruncatedResult />,
         source: TruncatedResultSrc,
+      },
+      {
+        title: 'Display for "Known No Result"',
+        description: 'Use the \'hasResultNoData\' prop to show the "No Data" display for the Blood Pressure Clinical Result:',
+        example: <KnownNoData />,
+        source: KnownNoDataSrc,
+      },
+      {
+        title: 'Display for a Partial "No Result"',
+        description: 'Use either the \'resultNoData\' key or \'value: null\' to show the "No Data" display for either the Systolic or Diastolic result:',
+        example: <PartialNoData />,
+        source: PartialNoDataSrc,
+      },
+      {
+        title: 'Displays for a full "Known Error" and for partial missing results',
+        description: 'Use the \'hasResultError\' prop to show the "Error" display for the full Blood Pressure result. Or if there is a missing Systolic or Diastolic result, that portion will show the error display:',
+        example: <KnownErrorAndPartialError />,
+        source: KnownErrorAndPartialErrorSrc,
       },
     ]}
     /*
