@@ -12,7 +12,7 @@ describe('FlowsheetResultCell', () => {
     const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
     expect(cell).toMatchSnapshot();
   });
-  
+
   it('should render an error when given no result data', () => {
     const cell = shallow(<FlowsheetResultCell />);
     expect(cell).toMatchSnapshot();
