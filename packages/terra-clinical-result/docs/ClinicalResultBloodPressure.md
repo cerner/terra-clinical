@@ -91,3 +91,5 @@ export default () => <ClinicalResultBloodPressure resultData={bloodpressureResul
 |**resultData**|a structured object as shown above|required|none|Result Object with the clinical result data.|
 |**hideUnit**|bool|optional|false|Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.|
 |**isTruncated**|bool|optional|false|Whether or not the text should be truncated in display. Restricts clinical result details each to one line.|
+|**hasResultError**|bool|optional|false|Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.|
+|**hasResultNoData**|bool|optional|false|Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.|

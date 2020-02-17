@@ -180,3 +180,5 @@ export default () => <FlowsheetResultCell resultDataSet={multipleResultBPValues}
 |**resultDataSet**|an array of structured objects as shown above|required|none|Result Set with the clinical results data.|
 |**hideUnit**|bool|optional|false|Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.|
 |**paddingStyle**|enum|optional|'compact'|The padding styling to apply to the FLowsheet Cell. One of `'none'`, `'standard'`, `'compact'`.|
+|**hasResultError**|bool|optional|false|Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.|
+|**hasResultNoData**|bool|optional|false|Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.|

@@ -158,9 +158,9 @@ const FlowsheetResultCell = (props) => {
         ]);
 
         if (additionalResultCount > 0) {
-          const additionalCountDisplayValue = (additionalResultCount > 99)
+          const additionalCountDisplayValue = ((additionalResultCount + 1) > 99)
             ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
-            : (<span className={cx('additional-results-value')}>{additionalResultCount}</span>);
+            : (<span className={cx('additional-results-value')}>{additionalResultCount + 1}</span>);
           additionalResultInnerDisplay = (
             <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
               <div className={cx('additional-results-stack')}>

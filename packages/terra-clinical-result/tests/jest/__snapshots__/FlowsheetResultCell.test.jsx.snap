@@ -35,12 +35,12 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
     </div>
   </div>
@@ -82,12 +82,12 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
     </div>
   </div>
@@ -129,12 +129,12 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
     </div>
   </div>
@@ -176,12 +176,12 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
     </div>
   </div>
@@ -236,12 +236,12 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
       <span
         className="additional-results-value"
       >
-        1
+        2
       </span>
     </div>
   </div>
