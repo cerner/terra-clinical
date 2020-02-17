@@ -1,6 +1,6 @@
 import React from 'react';
 import ClinicalResult, { ResultNameHeaderCell, ResultTimeHeaderCell, ClinicalResultBloodPressure } from '../../lib/index';
-import DefaultResult, { DefaultBloodpressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
+import DefaultResult, { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 // Snapshot Tests
 it('should render a default component', () => {
@@ -103,12 +103,12 @@ describe('ClinicalResult', () => {
 
 describe('ClinicalResultBloodPressure', () => {
   it('should render a default ClinicalResultBloodPressure', () => {
-    const result = shallow(<ClinicalResultBloodPressure resultData={DefaultBloodpressureResult} />);
+    const result = shallow(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a truncated ClinicalResultBloodPressure', () => {
-    const result = shallow(<ClinicalResultBloodPressure resultData={DefaultBloodpressureResult} isTruncated />);
+    const result = shallow(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} isTruncated />);
     expect(result).toMatchSnapshot();
   });
 

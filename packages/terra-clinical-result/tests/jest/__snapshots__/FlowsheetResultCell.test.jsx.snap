@@ -6,8 +6,11 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
 >
   <div
     className="single-result-display"
+    key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
+      hasResultError={false}
+      hasResultNoData={false}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
@@ -24,7 +27,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
   </div>
   <div
     className="additional-results-display add-end-accessory-space"
-    key="AdditionalResultsDisplay"
+    key="AdditionalResultsDisplay-111"
   >
     <div
       className="additional-results-stack"
@@ -50,8 +53,11 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
 >
   <div
     className="single-result-display"
+    key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
+      hasResultError={false}
+      hasResultNoData={false}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
@@ -68,7 +74,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
   </div>
   <div
     className="additional-results-display add-end-accessory-space"
-    key="AdditionalResultsDisplay"
+    key="AdditionalResultsDisplay-111"
   >
     <div
       className="additional-results-stack"
@@ -94,8 +100,11 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
 >
   <div
     className="single-result-display"
+    key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
+      hasResultError={false}
+      hasResultNoData={false}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
@@ -112,7 +121,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
   </div>
   <div
     className="additional-results-display add-end-accessory-space"
-    key="AdditionalResultsDisplay"
+    key="AdditionalResultsDisplay-111"
   >
     <div
       className="additional-results-stack"
@@ -138,8 +147,11 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
 >
   <div
     className="single-result-display"
+    key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
+      hasResultError={false}
+      hasResultNoData={false}
       hideUnit={true}
       isTruncated={true}
       key="ClinicalResult-111"
@@ -156,7 +168,7 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
   </div>
   <div
     className="additional-results-display add-end-accessory-space"
-    key="AdditionalResultsDisplay"
+    key="AdditionalResultsDisplay-111"
   >
     <div
       className="additional-results-stack"
@@ -181,22 +193,10 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="single-result-display"
+    className="single-result-display "
+    key="ClinicalResultDisplay-Error"
   >
-    <span
-      className="error-display"
-      key="FlowsheetResultCellError"
-    >
-      <ClinicalResult
-        hideUnit={false}
-        isTruncated={true}
-        resultData={
-          Object {
-            "error": "empty",
-          }
-        }
-      />
-    </span>
+    <ResultError />
   </div>
 </div>
 `;
@@ -205,26 +205,45 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
 <div
   className="flowsheet-result-cell padding-compact"
 >
-  <ClinicalResult
-    className="has-additional-results"
-    hideUnit={false}
-    isTruncated={true}
-    key="ClinicalResult-111"
-    resultData={
-      Object {
-        "eventId": "111",
-        "result": Object {
-          "unit": "mL",
-          "value": "12345.678",
-        },
-      }
-    }
-  />
   <div
-    className="additional-results-display"
-    key="AdditionalResultsCount"
+    className="single-result-display"
+    key="ClinicalResultDisplay-111"
   >
-    [ 1 ]
+    <ClinicalResult
+      hasResultError={false}
+      hasResultNoData={false}
+      hideUnit={false}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      resultData={
+        Object {
+          "eventId": "111",
+          "result": Object {
+            "unit": "mL",
+            "value": "12345.678",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-results-display add-end-accessory-space"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        1
+      </span>
+    </div>
   </div>
 </div>
 `;

@@ -19,6 +19,10 @@ const propTypes = {
    */
   resultDataSet: PropTypes.arrayOf(PropTypes.shape({
     /**
+     *  A single clinical result or blood pressure result id.
+     */
+    id: PropTypes.string,
+    /**
      *  A single clinical result or blood pressure result.
      */
     resultData: observationPropShape,
@@ -68,6 +72,7 @@ const FlowsheetResultCell = (props) => {
     flowsheetResultCellDisplay = hasResultError ? (<div className={cx('single-result-display')}><ResultError /></div>) : (<div className={cx('single-result-display')}><NoData /></div>);
   } else {
     const createResultsDisplay = (resultSet) => {
+      let resultKeyID;
       let resultsDisplay = [];
       let resultsInnerDisplay;
       let additionalResultCount = 0;
@@ -80,7 +85,8 @@ const FlowsheetResultCell = (props) => {
       let singleResultIsUnverified = false;
 
       if (!resultSet || !resultSet.length) {
-        resultsDisplay.push(<div className={cx('single-result-display')}><ResultError /></div>);
+        resultKeyID = 'Error';
+        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={cx('single-result-display ')}><ResultError /></div>);
       } else {
         resultsDisplay = [];
         additionalResultCount = resultSet.length - 1;
@@ -94,7 +100,8 @@ const FlowsheetResultCell = (props) => {
               if (resultSet[i].hasComment) { singleResultHasComment = true; resultItem.hasComment = false; }
               if (resultSet[i].isModified) { singleResultIsModified = true; resultItem.isModified = false; }
               if (resultSet[i].isUnverified) { singleResultIsUnverified = true; resultItem.isUnverified = false; }
-              resultsInnerDisplay = !isEmpty(resultItem.result.value) ? <ClinicalResult key={(`ClinicalResult-${resultItem.eventId}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated /> : null;
+              if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
+              resultsInnerDisplay = !isEmpty(resultItem.result.value) ? <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated /> : null;
             } else if (i > 0) {
               const hasInterpretation = !isEmpty(resultSet[i].interpretation) ? resultSet[i].interpretation : null;
               additionalResultInterpretations.push(hasInterpretation);
@@ -112,12 +119,10 @@ const FlowsheetResultCell = (props) => {
                 if (resultSet[i].diastolic.isModified) { singleResultIsModified = true; resultItem.diastolic.isModified = false; }
                 if (resultSet[i].diastolic.isUnverified) { singleResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
               }
-              let keyID;
-              if (resultItem.id) keyID = resultItem.id;
-              else if (hasSystolic && resultItem.systolic.eventId) keyID = resultItem.systolic.eventId;
-              else if (hasDiastolic && resultItem.diastolic.eventId) keyID = resultItem.diastolic.eventId;
-              else keyID = Math.floor(100000 + Math.random() * 900000);
-              resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${keyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
+              if (resultSet[i].id) resultKeyID = resultSet[i].id;
+              else if (hasSystolic && resultSet[i].systolic.eventId) resultKeyID = resultSet[i].systolic.eventId;
+              else if (hasDiastolic && resultSet[i].diastolic.eventId) resultKeyID = resultSet[i].diastolic.eventId;
+              resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
             } else if (i > 0) {
               const sysInterpretation = !isEmpty(resultSet[i].systolic.interpretation) ? resultSet[i].systolic.interpretation : null;
               const diaInterpretation = !isEmpty(resultSet[i].diastolic.interpretation) ? resultSet[i].diastolic.interpretation : null;
@@ -157,7 +162,7 @@ const FlowsheetResultCell = (props) => {
             ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
             : (<span className={cx('additional-results-value')}>{additionalResultCount}</span>);
           additionalResultInnerDisplay = (
-            <div key="AdditionalResultsDisplay" className={additionalResultClassNames}>
+            <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
               <div className={cx('additional-results-stack')}>
                 {additionalCountDisplayValue}
                 {additionalCountDisplayValue}
@@ -166,7 +171,7 @@ const FlowsheetResultCell = (props) => {
           );
         }
 
-        resultsDisplay.push(<div className={cx('single-result-display')}>{resultsInnerDisplay}</div>);
+        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={cx('single-result-display')}>{resultsInnerDisplay}</div>);
         resultsDisplay.push(additionalResultInnerDisplay);
 
         const commentIconElement = singleResultHasComment ? (<IconComment className={cx('icon-comment')} />) : null;
@@ -175,13 +180,13 @@ const FlowsheetResultCell = (props) => {
         if (singleResultHasComment || singleResultIsModified || singleResultIsUnverified) {
           endAccessoryIcons = (singleResultIsUnverified)
             ? (
-              <div key="EndAccessoryIcons" className={cx('end-accessory-icons')}>
+              <div key={(`EndAccessoryIcons-${resultDataSet[0].id}`)} className={cx('end-accessory-icons')}>
                 <div className={cx('end-accessory-stack')}>
                   {unverifiedIconElement}
                 </div>
               </div>
             ) : (
-              <div key="EndAccessoryIcons" className={cx('end-accessory-icons')}>
+              <div key={(`EndAccessoryIcons-${resultDataSet[0].id}`)} className={cx('end-accessory-icons')}>
                 <div className={cx('end-accessory-stack')}>
                   {commentIconElement}
                   {modifiedIconElement}

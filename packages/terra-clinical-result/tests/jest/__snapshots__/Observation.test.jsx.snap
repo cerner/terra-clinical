@@ -1,259 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Observation - Interpretaion should render an Observation with interpretation ABNORMAL 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation ABNORMAL 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation CRITICAL 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation CRITICAL 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation EXTREMEHIGH 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation EXTREMEHIGH 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation EXTREMELOW 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation EXTREMELOW 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation HIGH 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation HIGH 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation LOW 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation LOW 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation NEUTRAL 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation NEUTRAL 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation NORMAL 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation NORMAL 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation PANICHIGH 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation PANICHIGH 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation PANICLOW 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation PANICLOW 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation POSITIVE 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation POSITIVE 1`] = `<ResultError />`;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation VABNORMAL 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation - Interpretaion should render an Observation with interpretation VABNORMAL 1`] = `<ResultError />`;
 
-exports[`Observation should render a default Observation 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation should render a default Observation 1`] = `<ResultError />`;
 
-exports[`Observation should render an Observation with eventId 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation should render an Observation with eventId 1`] = `<ResultError />`;
 
-exports[`Observation should render an Observation with hideUnit 1`] = `
-<span
-  className={
-    Array [
-      "value",
-      "error",
-    ]
-  }
->
-  <IconError
-    className="icon-error"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-</span>
-`;
+exports[`Observation should render an Observation with hideUnit 1`] = `<ResultError />`;
 
 exports[`Observation should render an Observation with result 1`] = `
 <Fragment>

@@ -18,6 +18,10 @@ const propTypes = {
    */
   resultData: PropTypes.shape({
     /**
+     *  Blood Pressure grouped result id
+     */
+    id: PropTypes.string,
+    /**
      *  Systolic Result for blood pressure.
      */
     systolic: observationPropShape,
@@ -114,16 +118,16 @@ const ClinicalResultBloodPressure = (props) => {
         const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit />;
         decoratedResultDisplay.push(systolicDisplay);
       } else {
-        if (!hasSystolic) decoratedResultDisplay.push(<ResultError />);
-        if (noDataSystolic) decoratedResultDisplay.push(<NoData />);
+        if (!hasSystolic) decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${resultData.id}`} />);
+        if (noDataSystolic) decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${resultData.id}`} />);
         else if (hasSystolic) {
           const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit={hideUnit} />;
           decoratedResultDisplay.push(systolicDisplay);
         }
       }
       decoratedResultDisplay.push(<span key={`ObservationSeperator-${(hasSystolic) ? resultData.systolic.eventId : resultData.diastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
-      if (!hasDiastolic) decoratedResultDisplay.push(<ResultError />);
-      else if (noDataDiastolic) decoratedResultDisplay.push(<NoData />);
+      if (!hasDiastolic) decoratedResultDisplay.push(<ResultError key={`Error-Diastolic-${resultData.id}`} />);
+      else if (noDataDiastolic) decoratedResultDisplay.push(<NoData key={`NoData-Diastolic-${resultData.id}`} />);
       else if (hasDiastolic) {
         const diastolicDisplay = <Observation key={`Observation-${resultData.diastolic.eventId}`} eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} hideUnit={hideUnit} />;
         decoratedResultDisplay.push(diastolicDisplay);

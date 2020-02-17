@@ -1,4 +1,5 @@
 // Terra.describeViewports('Clinical Result', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
+/*
 Terra.describeViewports('Clinical Result', ['medium'], () => {
   describe('default', () => {
     before(() => {
@@ -158,7 +159,7 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
     Terra.it.validatesElement();
   });
 });
-
+*/
 Terra.describeViewports('ResultNameHeaderCell', ['medium'], () => {
   describe('default', () => {
     before(() => {
@@ -184,7 +185,7 @@ Terra.describeViewports('ResultNameHeaderCell', ['medium'], () => {
     Terra.it.validatesElement();
   });
 });
-
+/*
 Terra.describeViewports('ResultTimeHeaderCell', ['medium'], () => {
   describe('default', () => {
     before(() => {
@@ -210,3 +211,4 @@ Terra.describeViewports('ResultTimeHeaderCell', ['medium'], () => {
     Terra.it.validatesElement();
   });
 });
+*/

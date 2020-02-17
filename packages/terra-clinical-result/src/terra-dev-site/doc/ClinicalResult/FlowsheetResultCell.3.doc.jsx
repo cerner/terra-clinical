@@ -16,7 +16,7 @@ import BloodPressureCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc
 import MultipleBloodPressuresCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures';
 import MultipleBloodPressuresCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures.jsx';
 import KnownAndPartialNoData from '../example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData';
-import KnownAndPartialNoDataSrc from '../example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
+import KnownAndPartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
 import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError';
 import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
 // import EmptyValueCell from '../example/flowsheetresultcell/FlowsheetResultCellEmptyValue';

@@ -1,20 +1,20 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import DefaultResult, { DefaultBloodpressureResult } from './TestResults';
+import DefaultResult, { DefaultBloodPressureResult } from './TestResults';
 
 const results = [
   DefaultResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
   DefaultResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
   DefaultResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
   DefaultResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
   DefaultResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
   DefaultResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
 ];
 
 const ResultTimeHeaderCellExample = () => (

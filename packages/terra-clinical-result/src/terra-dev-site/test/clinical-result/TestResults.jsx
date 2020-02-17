@@ -49,7 +49,7 @@ const DefaultDiastolicResult = {
   },
 };
 
-const DefaultBloodpressureResult = {
+const DefaultBloodPressureResult = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
@@ -175,7 +175,7 @@ export {
   NullResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
-  DefaultBloodpressureResult,
+  DefaultBloodPressureResult,
   DecoratedBloodpressureResult,
   ExtraDisplaysBloodpressureResult,
   InterpretationBPResultsArray,
