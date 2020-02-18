@@ -7,9 +7,9 @@ const cx = classNames.bind(styles);
 
 const multipleResultBPValues = [
   {
-    id: '111',
+    id: '1602328271-1',
     systolic: {
-      eventId: '111.1',
+      eventId: '1602328271-1.1',
       result: {
         value: '111',
         unit: 'mmHg',
@@ -20,7 +20,7 @@ const multipleResultBPValues = [
       resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
-      eventId: '111.2',
+      eventId: '1602328271-1.2',
       result: {
         value: '77',
         unit: 'mmHg',
@@ -32,9 +32,9 @@ const multipleResultBPValues = [
     },
   },
   {
-    id: '111',
+    id: '1602328271-2',
     systolic: {
-      eventId: '111.1',
+      eventId: '1602328271-2.1',
       result: {
         value: '111',
         unit: 'mmHg',
@@ -45,7 +45,7 @@ const multipleResultBPValues = [
       resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
-      eventId: '111.2',
+      eventId: '1602328271-2.2',
       result: {
         value: '77',
         unit: 'mmHg',
@@ -57,9 +57,9 @@ const multipleResultBPValues = [
     },
   },
   {
-    id: '111',
+    id: '1602328271-3',
     systolic: {
-      eventId: '111.1',
+      eventId: '1602328271-3.1',
       result: {
         value: '111',
         unit: 'mmHg',
@@ -69,7 +69,7 @@ const multipleResultBPValues = [
       resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
-      eventId: '111.2',
+      eventId: '1602328271-3.2',
       result: {
         value: '77',
         unit: 'mmHg',

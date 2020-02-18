@@ -101,7 +101,8 @@ const FlowsheetResultCell = (props) => {
               if (resultSet[i].isModified) { singleResultIsModified = true; resultItem.isModified = false; }
               if (resultSet[i].isUnverified) { singleResultIsUnverified = true; resultItem.isUnverified = false; }
               if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
-              resultsInnerDisplay = !isEmpty(resultItem.result.value) ? <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated /> : null;
+              else if (resultSet[i].id) resultKeyID = resultSet[i].id;
+              resultsInnerDisplay = (<ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
             } else if (i > 0) {
               const hasInterpretation = !isEmpty(resultSet[i].interpretation) ? resultSet[i].interpretation : null;
               additionalResultInterpretations.push(hasInterpretation);

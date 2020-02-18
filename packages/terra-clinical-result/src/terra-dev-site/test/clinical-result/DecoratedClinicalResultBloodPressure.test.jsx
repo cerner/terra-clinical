@@ -1,9 +1,9 @@
 import React from 'react';
 import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
-import { DecoratedBloodpressureResult } from './TestResults';
+import { DecoratedBloodPressureResult } from './TestResults';
 
 const ClinicalResultBloodPressureExample = () => (
-  <ClinicalResultBloodPressure resultData={DecoratedBloodpressureResult} />
+  <ClinicalResultBloodPressure resultData={DecoratedBloodPressureResult} />
 );
 
 export default ClinicalResultBloodPressureExample;

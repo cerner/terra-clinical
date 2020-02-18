@@ -92,7 +92,7 @@ const ClinicalResultBloodPressure = (props) => {
     const decoratedResultDisplay = [];
 
     const hasSystolic = resultData.systolic;
-    const noDataSystolic = (hasSystolic) ? resultData.systolic.resultNoData : false;
+    const noDataSystolic = (hasSystolic && resultData.systolic.resultNoData === true);
     if (hasSystolic && !noDataSystolic) {
       if (!isEmpty(resultData.systolic.result.unit)) compareUnits.systolic = resultData.systolic.result.unit.trim().toLowerCase();
       if (!isEmpty(resultData.systolic.conceptDisplay)) compareConceptDisplays.systolic = resultData.systolic.conceptDisplay.trim().toLowerCase();
@@ -103,7 +103,7 @@ const ClinicalResultBloodPressure = (props) => {
     }
 
     const hasDiastolic = resultData.diastolic;
-    const noDataDiastolic = (hasDiastolic) ? resultData.diastolic.resultNoData : false;
+    const noDataDiastolic = (hasDiastolic && resultData.diastolic.resultNoData === true);
     if (hasDiastolic && !noDataDiastolic) {
       if (!isEmpty(resultData.diastolic.result.unit)) compareUnits.diastolic = resultData.diastolic.result.unit.trim().toLowerCase();
       if (!isEmpty(resultData.diastolic.conceptDisplay)) compareConceptDisplays.diastolic = resultData.diastolic.conceptDisplay.trim().toLowerCase();

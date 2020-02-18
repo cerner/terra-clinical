@@ -5,6 +5,15 @@ import styles from '../Examples.module.scss';
 
 const cx = classNames.bind(styles);
 
+const standardResultValueWithNullValue = [
+  {
+    eventId: '1577836800',
+    result: {
+      value: null,
+    },
+  },
+];
+
 const partialResultValueWithNoDataPropSystolic = [
   {
     id: '111',
@@ -87,16 +96,16 @@ const partialResultValueWithNullValueDiastolic = [
 
 export default () => (
   <React.Fragment>
-    {/* This example column shows how to use the `hasResultNoData` prop */}
+    {/* This example column shows a standard result with the `hasResultNoData` prop or `result: { value: null, }` */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell hasResultNoData />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell hasResultNoData />
+        <FlowsheetResultCell resultDataSet={standardResultValueWithNullValue} />
       </div>
     </div>
-    {/* This example column shows the No Data display using the `resultNoData` property name */}
+    {/* This example column shows a partial Blood Pressure no data display using the `resultNoData` property name */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropSystolic} hideUnit />
@@ -105,7 +114,7 @@ export default () => (
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropDiastolic} hideUnit />
       </div>
     </div>
-    {/* This example column shows the No Data display using `result: { value: null, }`  */}
+    {/* This example column shows a partial Blood Pressure no data display using `result: { value: null, }` */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={partialResultValueWithNullValueSystolic} hideUnit />

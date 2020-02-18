@@ -50,15 +50,15 @@ import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
 
 const singleResultValue = [
   {
-    eventId: '111',
+    eventId: '1574537491',
     result: {
       value: '101.9',
       unit: 'degC',
     },
     interpretation: 'CRITICAL',
     type: 'NUMERIC',
-    performedDateTime: '2019-11-23T13:31:31+05:00',
-    updateDateTime: '2019-11-23T13:31:31+05:00',
+    performedDateTime: '2019-11-23T13:31:31-06:00',
+    updateDateTime: '2019-11-23T13:31:31-06:00',
     isModified: true,
     hasComment: true,
     isUnverified: true,
@@ -72,7 +72,7 @@ export default () => <FlowsheetResultCell resultDataSet={singleResultValue} />;
 ```
 
 
-An example of mulitple clinical blood pressure result values:
+An example of multiple clinical blood pressure result values:
 ```jsx
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
@@ -83,88 +83,88 @@ const cx = classNames.bind(styles);
 
 const multipleResultBPValues = [
   {
-    id: '111',
+    id: '1577895000-1',
     systolic: {
-      eventId: '111.1',
+      eventId: '1577895000-1.1',
       result: {
         value: '111',
         unit: 'mmHg',
       },
       interpretation: 'HIGH',
-      performedDateTime: '2020-10-10T11:11:00+05:00',
-      updateDateTime: '2020-10-10T11:11:00+05:00',
+      performedDateTime: '2020-01-01T10:10:00-06:00',
+      updateDateTime: '2020-01-01T10:10:00-06:00',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
+      resultDateTime: '01/01/2020 10:10:00',
     },
     diastolic: {
-      eventId: '111.2',
+      eventId: '1577895000-1.2',
       result: {
         value: '77',
         unit: 'mmHg',
       },
       interpretation: 'LOW',
-      performedDateTime: '2020-10-10T11:11:00+05:00',
-      updateDateTime: '2020-10-10T11:11:00+05:00',
+      performedDateTime: '2020-01-01T10:10:00-06:00',
+      updateDateTime: '2020-01-01T10:10:00-06:00',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
+      resultDateTime: '01/01/2020 10:10:00',
     },
   },
   {
-    id: '111',
+    id: '1577895000-2',
     systolic: {
-      eventId: '111.1',
+      eventId: '1577895000-2.1',
       result: {
         value: '111',
         unit: 'mmHg',
       },
       interpretation: 'CRITICAL',
-      performedDateTime: '2020-10-10T11:11:00+05:00',
-      updateDateTime: '2020-10-10T11:11:00+05:00',
+      performedDateTime: '2020-01-01T10:10:00-06:00',
+      updateDateTime: '2020-01-01T10:10:00-06:00',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
+      resultDateTime: '01/01/2020 10:10:00',
     },
     diastolic: {
-      eventId: '111.2',
+      eventId: '1577895000-2.2',
       result: {
         value: '77',
         unit: 'mmHg',
       },
-      performedDateTime: '2020-10-10T11:11:00+05:00',
-      updateDateTime: '2020-10-10T11:11:00+05:00',
+      performedDateTime: '2020-01-01T10:10:00-06:00',
+      updateDateTime: '2020-01-01T10:10:00-06:00',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
+      resultDateTime: '01/01/2020 10:10:00',
     },
   },
   {
-    id: '111',
+    id: '1577895000-3',
     systolic: {
-      eventId: '111.1',
+      eventId: '1577895000-3.1',
       result: {
         value: '111',
         unit: 'mmHg',
       },
       interpretation: 'CRITICAL',
-      performedDateTime: '2020-10-10T11:11:00+05:00',
-      updateDateTime: '2020-10-10T11:11:00+05:00',
+      performedDateTime: '2020-01-01T10:10:00-06:00',
+      updateDateTime: '2020-01-01T10:10:00-06:00',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
+      resultDateTime: '01/01/2020 10:10:00',
     },
     diastolic: {
-      eventId: '111.2',
+      eventId: '1577895000-3.2',
       result: {
         value: '77',
         unit: 'mmHg',
       },
-      performedDateTime: '2020-10-10T11:11:00+05:00',
-      updateDateTime: '2020-10-10T11:11:00+05:00',
+      performedDateTime: '2020-01-01T10:10:00-06:00',
+      updateDateTime: '2020-01-01T10:10:00-06:00',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
+      resultDateTime: '01/01/2020 10:10:00',
     },
   },
 ];

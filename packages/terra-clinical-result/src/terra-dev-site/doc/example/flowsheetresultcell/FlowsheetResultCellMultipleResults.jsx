@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const multipleResultValues = [
   {
-    eventId: '111',
+    eventId: '1602328271',
     result: {
       value: '101.1',
       unit: 'degC',
@@ -19,7 +19,7 @@ const multipleResultValues = [
     effectiveDateTime: '10/10/2020 11:11:11',
   },
   {
-    eventId: '222',
+    eventId: '1602328282',
     result: {
       value: '101.2',
       unit: 'degC',
@@ -30,7 +30,7 @@ const multipleResultValues = [
     effectiveDateTime: '10/10/2020 11:11:22',
   },
   {
-    eventId: '333',
+    eventId: '1602328293',
     result: {
       value: '101.3',
       unit: 'degC',

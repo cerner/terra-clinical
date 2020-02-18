@@ -29,6 +29,7 @@ const BadData = {
 };
 
 const NullResult = {
+  eventId: '1577836800',
   result: {
     value: null,
   },
@@ -59,7 +60,7 @@ const DefaultBloodPressureResult = {
   },
 };
 
-const DecoratedBloodpressureResult = {
+const DecoratedBloodPressureResult = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
@@ -75,7 +76,7 @@ const DecoratedBloodpressureResult = {
   },
 };
 
-const ExtraDisplaysBloodpressureResult = {
+const ExtraDisplaysBloodPressureResult = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
@@ -176,7 +177,7 @@ export {
   DefaultSystolicResult,
   DefaultDiastolicResult,
   DefaultBloodPressureResult,
-  DecoratedBloodpressureResult,
-  ExtraDisplaysBloodpressureResult,
+  DecoratedBloodPressureResult,
+  ExtraDisplaysBloodPressureResult,
   InterpretationBPResultsArray,
 };
