@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 
-4.15.0 - (February 18, 2020)
+4.16.0 - (February 18, 2020)
 ----------
 ### Added
 * Added upgrade guide for `v3` to `v4`.
