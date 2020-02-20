@@ -94,23 +94,41 @@ const ClinicalResultBloodPressure = (props) => {
     const hasSystolic = resultData.systolic;
     const noDataSystolic = (hasSystolic && resultData.systolic.resultNoData === true);
     if (hasSystolic && !noDataSystolic) {
-      if (!isEmpty(resultData.systolic.result.unit)) compareUnits.systolic = resultData.systolic.result.unit.trim().toLowerCase();
-      if (!isEmpty(resultData.systolic.conceptDisplay)) compareConceptDisplays.systolic = resultData.systolic.conceptDisplay.trim().toLowerCase();
-      if (!isEmpty(resultData.systolic.datetimeDisplay)) compareDatetimeDisplays.systolic = resultData.systolic.datetimeDisplay.trim().toLowerCase();
-      if (resultData.systolic.isModified) hasModifiedIcon = resultData.systolic.isModified;
-      if (resultData.systolic.hasComment) hasCommentIcon = resultData.systolic.hasComment;
-      if (resultData.systolic.isUnverified) hasUnverifiedIcon = resultData.systolic.isUnverified;
+      const {
+        result = null,
+        conceptDisplay = null,
+        dateTimeDisplay = null,
+        isModified = null,
+        hasComment = null,
+        isUnverified = null,
+      } = hasSystolic;
+
+      if (!isEmpty(result.unit)) { compareUnits.systolic = result.unit.trim().toLowerCase() }
+      if (!isEmpty(conceptDisplay)) { compareConceptDisplays.systolic = conceptDisplay.trim().toLowerCase() }
+      if (!isEmpty(dateTimeDisplay)) { compareDatetimeDisplays.systolic = dateTimeDisplay.trim().toLowerCase() }
+      if (!isEmpty(isModified)) { hasModifiedIcon = isModified }
+      if (!isEmpty(hasComment)) { hasCommentIcon = hasComment }
+      if (!isEmpty(isUnverified)) { hasUnverifiedIcon = isUnverified }
     }
 
     const hasDiastolic = resultData.diastolic;
     const noDataDiastolic = (hasDiastolic && resultData.diastolic.resultNoData === true);
     if (hasDiastolic && !noDataDiastolic) {
-      if (!isEmpty(resultData.diastolic.result.unit)) compareUnits.diastolic = resultData.diastolic.result.unit.trim().toLowerCase();
-      if (!isEmpty(resultData.diastolic.conceptDisplay)) compareConceptDisplays.diastolic = resultData.diastolic.conceptDisplay.trim().toLowerCase();
-      if (!isEmpty(resultData.diastolic.datetimeDisplay)) compareDatetimeDisplays.diastolic = resultData.diastolic.datetimeDisplay.trim().toLowerCase();
-      if (resultData.diastolic.isModified) hasModifiedIcon = resultData.diastolic.isModified;
-      if (resultData.diastolic.hasComment) hasCommentIcon = resultData.diastolic.hasComment;
-      if (resultData.diastolic.isUnverified) hasUnverifiedIcon = resultData.diastolic.isUnverified;
+      const {
+        result = null,
+        conceptDisplay = null,
+        dateTimeDisplay = null,
+        isModified = null,
+        hasComment = null,
+        isUnverified = null,
+      } = hasDiastolic;
+
+      if (!isEmpty(result.unit)) { compareUnits.diastolic = result.unit.trim().toLowerCase() }
+      if (!isEmpty(conceptDisplay)) { compareConceptDisplays.diastolic = conceptDisplay.trim().toLowerCase() }
+      if (!isEmpty(dateTimeDisplay)) { compareDatetimeDisplays.diastolic = dateTimeDisplay.trim().toLowerCase() }
+      if (!isEmpty(isModified)) { hasModifiedIcon = isModified }
+      if (!isEmpty(hasComment)) { hasCommentIcon = hasComment }
+      if (!isEmpty(isUnverified)) { hasUnverifiedIcon = isUnverified }
     }
 
     if (hasSystolic || hasDiastolic) {

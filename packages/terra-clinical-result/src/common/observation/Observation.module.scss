@@ -7,7 +7,6 @@
     font-size: var(--terra-clinical-result-display-value-font-size, 1em); // Must use ems for font rescaling
     line-height: var(--terra-clinical-result-display-value-line-height, 1.125);
     overflow: visible;
-    // word-break: break-all; // This is needed for all non-word value types
 
     .icon-interpretation {
       margin-right: var(--terra-clinical-result-display-icon-interpretation-margin-right, 0.25em); // Must use ems for font rescaling
@@ -15,7 +14,7 @@
       top: var(--terra-clinical-result-display-icon-interpretation-top, 0.15em); // Must use ems for font rescaling
       vertical-align: baseline;
     }
-  
+
     &.abnormal {
       color: var(--terra-clinical-result-display-interpretation-abnormal-color, #654a08);
       font-weight: var(--terra-clinical-result-display-interpretation-abnormal-font-weight, bold);
@@ -25,17 +24,17 @@
       color: var(--terra-clinical-result-display-interpretation-critical-color, #c00);
       font-weight: var(--terra-clinical-result-display-interpretation-critical-font-weight, bold);
     }
-    
+
     &.high {
       color: var(--terra-clinical-result-display-interpretation-high-color, #ff6100); // new a11y color: #da3b03;
       font-weight: var(--terra-clinical-result-display-interpretation-high-font-weight, bold);
     }
-    
+
     &.low {
       color: var(--terra-clinical-result-display-interpretation-low-color, #0053e6);
       font-weight: var(--terra-clinical-result-display-interpretation-low-font-weight, bold);
     }
-    
+
     &.positive {
       color: var(--terra-clinical-result-display-interpretation-positive-color, #c00);
       font-weight: var(--terra-clinical-result-display-interpretation-positive-font-weight, bold);
@@ -46,7 +45,7 @@
       font-weight: var(--terra-clinical-result-display-status-unverified-font-weight);
     }
   }
-      
+
   .unit {
     color: var(--terra-clinical-result-display-unit-color, rgba(28, 31, 33, 0.65));
     display: inline;
@@ -64,7 +63,7 @@
       padding: 0;
       position: absolute;
       white-space: nowrap; /* Ensures words are not read one at a time on screen readers*/
-      width: 1px;  
+      width: 1px;
     }
   }
 }

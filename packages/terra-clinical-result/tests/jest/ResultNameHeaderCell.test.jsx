@@ -2,7 +2,7 @@ import React from 'react';
 import ResultNameHeaderCell from '../../src/resultnameheadercell/ResultNameHeaderCell';
 
 // Snapshot Tests
-describe('FlowsheetResultCell', () => {
+describe('ResultNameHeaderCell', () => {
   it('should render', () => {
     const cell = shallow(<ResultNameHeaderCell />);
     expect(cell).toMatchSnapshot();

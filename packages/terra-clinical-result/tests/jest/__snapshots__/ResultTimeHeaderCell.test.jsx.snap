@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlowsheetResultCell paddingStyle - should render with compact 1`] = `
+exports[`ResultTimeHeaderCell paddingStyle - should render with compact 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
 />
 `;
 
-exports[`FlowsheetResultCell paddingStyle - should render with none 1`] = `
+exports[`ResultTimeHeaderCell paddingStyle - should render with none 1`] = `
 <div
   className="clinical-result-time-header-cell"
 />
 `;
 
-exports[`FlowsheetResultCell paddingStyle - should render with standard 1`] = `
+exports[`ResultTimeHeaderCell paddingStyle - should render with standard 1`] = `
 <div
   className="clinical-result-time-header-cell padding-standard"
 />
 `;
 
-exports[`FlowsheetResultCell should hide date 1`] = `
+exports[`ResultTimeHeaderCell should hide date 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
 >
@@ -30,13 +30,13 @@ exports[`FlowsheetResultCell should hide date 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell should render 1`] = `
+exports[`ResultTimeHeaderCell should render 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
 />
 `;
 
-exports[`FlowsheetResultCell should render a date 1`] = `
+exports[`ResultTimeHeaderCell should render a date 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
 >
@@ -48,7 +48,7 @@ exports[`FlowsheetResultCell should render a date 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell should render a time 1`] = `
+exports[`ResultTimeHeaderCell should render a time 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
 >

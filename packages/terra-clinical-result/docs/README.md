@@ -1,7 +1,7 @@
 # Terra Clinical Result
 
-The Terra Clinical Result package is a collection of standardized views for presenting clinical results documented to a Patient's Medical Chart, 
-such as Vital Signs, Laboratory Results, and Discretely Documented Values. It also includes additional supporting views where clinical results 
+The Terra Clinical Result package is a collection of standardized views for presenting clinical results documented to a Patient's Medical Chart,
+such as Vital Signs, Laboratory Results, and Discretely Documented Values. It also includes additional supporting views where clinical results
 are commonly displayed like flowsheets, result detail viewers, etc.
 
 This default Clinical Result component is intended for displaying a single result value.
@@ -22,11 +22,6 @@ $ npm install terra-clinical-result
 * [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
 * [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
 * [LTR/RTL Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#ltr--rtl-support)
- 
-<!-- Uncomment supported features.
-* [Internationalization Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#internationalization-i18n-support)
--->
-
 
 ## Usage Guide
 The clinical result is constructed by providing structured object with a specific construction that follows a similar patter to the [HL7 FHIR Observation](https://www.hl7.org/fhir/observation.html) standard.
@@ -157,13 +152,3 @@ const singleResultValue = {
 export default () => <ClinicalResult resultData={singleResultValue} hideUnit isTruncated />;
 
 ```
-
-## Clinical Result Props
-
-|Prop Name|Type|Is Required|Default Value|Description|
-|---|---|---|---|---|
-|**resultData**|a structured object as shown above|required|none|Result Object with the clinical result data.|
-|**hideUnit**|bool|optional|false|Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.|
-|**isTruncated**|bool|optional|false|Whether or not the text should be truncated in display. Restricts clinical result details each to one line.|
-|**hasResultError**|bool|optional|false|Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.|
-|**hasResultNoData**|bool|optional|false|Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.|

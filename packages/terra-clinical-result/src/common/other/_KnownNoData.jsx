@@ -14,9 +14,7 @@ const KnownNoData = (props) => {
   ]);
 
   return (
-    <React.Fragment>
-      <span {...customProps} className={templateClassnames}>--</span>
-    </React.Fragment>
+    <span {...customProps} className={templateClassnames}>--</span>
   );
 };
 

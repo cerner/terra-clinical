@@ -1,9 +1,4 @@
 :local {
-  .clinical-result {
-    // margin: 0;
-    // padding: 0;
-  }
-
   .decorated-result-display {
     align-items: baseline;
     display: flex;
@@ -59,7 +54,7 @@
       top: var(--terra-clinical-result-display-icon-unverified-top, 0.0625em); // Must use ems for font rescaling
       vertical-align: baseline;
     }
-    
+
     /* stylelint-disable selector-max-compound-selectors */
     .icon-modified + .icon-unverified,
     .icon-comment + .icon-unverified {

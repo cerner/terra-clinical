@@ -5,7 +5,7 @@ import IconCritical from 'terra-icon/lib/icon/IconCritical';
 import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
 import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
-import { interpretationPropOneOf } from '../../proptypes/interpretationPropTypes';
+import interpretationPropType from '../../proptypes/interpretationPropTypes';
 import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from '../../proptypes/valuePropTypes';
 import ResultError from '../other/_ResultError';
 import NoData from '../other/_KnownNoData';
@@ -29,7 +29,7 @@ const propTypes = {
   /**
    * Interpretation of the Result, indicates Criticality
    */
-  interpretation: interpretationPropOneOf,
+  interpretation: interpretationPropType,
   /**
    * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
    */

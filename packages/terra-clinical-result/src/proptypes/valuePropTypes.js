@@ -33,11 +33,6 @@ const valueNullPropShape = PropTypes.shape({
   value: PropTypes.object,
 });
 
-export default {
-  valueQuantityPropShape,
-  valueStringPropShape,
-  valueNullPropShape,
-};
 export {
   valueQuantityPropShape,
   valueStringPropShape,

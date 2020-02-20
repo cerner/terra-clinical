@@ -2,7 +2,7 @@ import React from 'react';
 import ResultTimeHeaderCell from '../../src/resulttimeheadercell/ResultTimeHeaderCell';
 
 // Snapshot Tests
-describe('FlowsheetResultCell', () => {
+describe('ResultTimeHeaderCell', () => {
   it('should render', () => {
     const cell = shallow(<ResultTimeHeaderCell />);
     expect(cell).toMatchSnapshot();

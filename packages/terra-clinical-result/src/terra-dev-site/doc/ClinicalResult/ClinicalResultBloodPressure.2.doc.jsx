@@ -4,7 +4,7 @@ import ReadMe from '../../../../docs/ClinicalResultBloodPressure.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-// import ClinicalResultBloodPressureProps from '!raw-loader!../../../../src/ClinicalResultBloodPressure';
+import ClinicalResultBloodPressureProps from '!raw-loader!../../../../src/ClinicalResultBloodPressure';
 
 // Example Files
 import DefaultResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureDefault';
@@ -41,37 +41,31 @@ const DocPage = () => (
       },
       {
         title: 'Modified Blood Pressure Clinical Result with Comments',
-        description: '',
         example: <DecoratedResult />,
         source: DecoratedResultSrc,
       },
       {
         title: 'Unverified Blood Pressure Result with Hide Unit of Measure',
-        description: '',
         example: <UnverifiedResult />,
         source: UnverifiedResultSrc,
       },
       {
         title: 'Clinical Blood Pressure Result with additional displays',
-        description: '',
         example: <ExtraDisplaysResult />,
         source: ExtraDisplaysResultSrc,
       },
       {
         title: 'Blood Pressure Clinical Results with Intrepretation',
-        description: '',
         example: <InterpretationResults />,
         source: InterpretationResultsSrc,
       },
       {
         title: 'Changing the Blood Pressure Clinical Result Size',
-        description: '',
         example: <SizeChangeResult />,
         source: SizeChangeResultSrc,
       },
       {
         title: 'Truncated Blood Pressure Clinical Result',
-        description: '',
         example: <TruncatedResult />,
         source: TruncatedResultSrc,
       },
@@ -94,14 +88,12 @@ const DocPage = () => (
         source: KnownErrorAndPartialErrorSrc,
       },
     ]}
-    /*
     propsTables={[
       {
         componentName: 'Clinical-Result-Blood-Pressure Props',
         componentSrc: ClinicalResultBloodPressureProps,
       },
     ]}
-    */
   />
 );
 

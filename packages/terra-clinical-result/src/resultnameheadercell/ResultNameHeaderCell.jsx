@@ -17,19 +17,17 @@ const propTypes = {
   unit: PropTypes.string,
   /**
    * The padding styling to apply to the Time Column Header Cell.
-   * One of `'none'`, `'standard'`, `'compact'`.
+   * One of `'none'`, `'standard'`, or `'compact'`.
    */
   paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
   /**
    * Adds additional icon at beginning of row before the ResultName, indicating additinonal information about results or cells.
-   * One of `'none'`, `'calculated'`.
+   * One of `'none'` or `'calculated'`.
    */
   typeIndicator: PropTypes.oneOf(['none', 'calculated']),
 };
 
 const defaultProps = {
-  resultName: '',
-  unit: undefined,
   paddingStyle: 'compact',
   typeIndicator: 'none',
 };
@@ -58,7 +56,7 @@ const ResultNameHeaderCell = (props) => {
   return (
     <div {...customProps} className={nameHeaderCellClassnames}>
       <div className={cx('name')}>
-        {typeIndicator ? resultRowIndicators[typeIndicator.toLowerCase()] : null}
+        {resultRowIndicators[typeIndicator.toLowerCase()]}
         {resultName}
       </div>
       {unit && <div className={cx('unit')}>{unit}</div> }

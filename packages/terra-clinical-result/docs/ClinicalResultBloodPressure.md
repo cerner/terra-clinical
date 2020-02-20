@@ -18,10 +18,6 @@ $ npm install terra-clinical-result
 * [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
 * [Mobile Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#mobile-support)
 * [LTR/RTL Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#ltr--rtl-support)
- 
-<!-- Uncomment supported features.
-* [Internationalization Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#internationalization-i18n-support)
--->
 
 ## Usage Guide
 
@@ -83,13 +79,3 @@ const bloodpressureResultValue = {
 export default () => <ClinicalResultBloodPressure resultData={bloodpressureResultValue} hideUnit isTruncated />;
 
 ```
-
-## Clinical Result Props
-
-|Prop Name|Type|Is Required|Default Value|Description|
-|---|---|---|---|---|
-|**resultData**|a structured object as shown above|required|none|Result Object with the clinical result data.|
-|**hideUnit**|bool|optional|false|Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.|
-|**isTruncated**|bool|optional|false|Whether or not the text should be truncated in display. Restricts clinical result details each to one line.|
-|**hasResultError**|bool|optional|false|Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.|
-|**hasResultNoData**|bool|optional|false|Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.|

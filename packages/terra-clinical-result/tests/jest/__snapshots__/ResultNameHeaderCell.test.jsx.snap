@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlowsheetResultCell paddingStyle - should render with compact 1`] = `
+exports[`ResultNameHeaderCell paddingStyle - should render with compact 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
 >
@@ -10,7 +10,7 @@ exports[`FlowsheetResultCell paddingStyle - should render with compact 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell paddingStyle - should render with none 1`] = `
+exports[`ResultNameHeaderCell paddingStyle - should render with none 1`] = `
 <div
   className="clinical-result-name-header-cell"
 >
@@ -20,7 +20,7 @@ exports[`FlowsheetResultCell paddingStyle - should render with none 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell paddingStyle - should render with standard 1`] = `
+exports[`ResultNameHeaderCell paddingStyle - should render with standard 1`] = `
 <div
   className="clinical-result-name-header-cell padding-standard"
 >
@@ -30,7 +30,7 @@ exports[`FlowsheetResultCell paddingStyle - should render with standard 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell should render 1`] = `
+exports[`ResultNameHeaderCell should render 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
 >
@@ -40,7 +40,7 @@ exports[`FlowsheetResultCell should render 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell should render a result name 1`] = `
+exports[`ResultNameHeaderCell should render a result name 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
 >
@@ -52,7 +52,7 @@ exports[`FlowsheetResultCell should render a result name 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell should render a unit 1`] = `
+exports[`ResultNameHeaderCell should render a unit 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
 >
@@ -67,7 +67,7 @@ exports[`FlowsheetResultCell should render a unit 1`] = `
 </div>
 `;
 
-exports[`FlowsheetResultCell typeIndicator - should render with calculated 1`] = `
+exports[`ResultNameHeaderCell typeIndicator - should render with calculated 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
 >
@@ -84,7 +84,7 @@ exports[`FlowsheetResultCell typeIndicator - should render with calculated 1`] =
 </div>
 `;
 
-exports[`FlowsheetResultCell typeIndicator - should render with none 1`] = `
+exports[`ResultNameHeaderCell typeIndicator - should render with none 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
 >

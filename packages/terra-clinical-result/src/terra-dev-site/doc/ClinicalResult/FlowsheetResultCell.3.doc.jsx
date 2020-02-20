@@ -4,7 +4,7 @@ import ReadMe from '../../../../docs/FlowsheetResultCell.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-// import FlowsheetResultCellProps from '!raw-loader!../../../../src/flowsheetresultcell/FlowsheetResultCell';
+import FlowsheetResultCellProps from '!raw-loader!../../../../src/flowsheetresultcell/FlowsheetResultCell';
 
 // Example Files
 import DefaultCell from '../example/flowsheetresultcell/FlowsheetResultCellDefault';
@@ -19,8 +19,6 @@ import KnownAndPartialNoData from '../example/flowsheetresultcell/FlowsheetResul
 import KnownAndPartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
 import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError';
 import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
-// import EmptyValueCell from '../example/flowsheetresultcell/FlowsheetResultCellEmptyValue';
-// import EmptyValueCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellEmptyValue.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -36,19 +34,16 @@ const DocPage = () => (
       },
       {
         title: 'Flowsheet Result Cell with Multiple Results',
-        description: '',
         example: <MultipleResultsCell />,
         source: MultipleResultsCellSrc,
       },
       {
         title: 'Flowsheet Result Cell with Blood Pressure Result',
-        description: '',
         example: <BloodPressureCell />,
         source: BloodPressureCellSrc,
       },
       {
         title: 'Flowsheet Result Cell with Multiple Blood Pressure Results',
-        description: '',
         example: <MultipleBloodPressuresCell />,
         source: MultipleBloodPressuresCellSrc,
       },
@@ -65,14 +60,12 @@ const DocPage = () => (
         source: KnownErrorAndPartialErrorSrc,
       },
     ]}
-    /*
     propsTables={[
       {
         componentName: 'Flowsheet Result Cell',
         componentSrc: FlowsheetResultCellProps,
       },
     ]}
-    */
   />
 );
 

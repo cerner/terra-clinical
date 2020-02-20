@@ -20,14 +20,12 @@ const propTypes = {
   hideDate: PropTypes.bool,
   /**
    * The padding styling to apply to the Time Column Header Cell.
-   * One of `'none'`, `'standard'`, `'compact'`.
+   * One of `'none'`, `'standard'`, or `'compact'`.
    */
   paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
 };
 
 const defaultProps = {
-  date: undefined,
-  time: undefined,
   hideDate: false,
   paddingStyle: 'compact',
 };

@@ -15,11 +15,9 @@ const ResultError = (props) => {
   ]);
 
   return (
-    <React.Fragment>
-      <span {...customProps} className={templateClassnames}>
-        <IconError className={cx('icon-error')} />
-      </span>
-    </React.Fragment>
+    <span {...customProps} className={templateClassnames}>
+      <IconError className={cx('icon-error')} />
+    </span>
   );
 };
 

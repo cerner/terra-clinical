@@ -488,11 +488,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       />
     </div>
   </div>
-  <div
-    className="concept-display"
-  >
-    Nov 23, 2019 13:31:31
-  </div>
 </div>
 `;
 
@@ -767,11 +762,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         key="Error-Diastolic-111"
       />
     </div>
-  </div>
-  <div
-    className="concept-display"
-  >
-    Nov 23, 2019 13:31:31
   </div>
 </div>
 `;

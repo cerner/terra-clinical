@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const resulttypePropOneOf = PropTypes.oneOf([
+const resultTypePropType = PropTypes.oneOf([
   'ALPHA',
   'MULTIALPHA',
   'FREETEXT',
@@ -13,7 +13,4 @@ const resulttypePropOneOf = PropTypes.oneOf([
   'PROVIDER',
 ]);
 
-export default resulttypePropOneOf;
-export {
-  resulttypePropOneOf,
-};
+export default resultTypePropType;

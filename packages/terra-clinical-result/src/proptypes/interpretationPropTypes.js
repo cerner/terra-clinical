@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /**
  *  Enum for possible Result Interpretation values (also called `Clinical Severity` and `Normalcy`)
  */
-const interpretationPropOneOf = PropTypes.oneOf([
+const interpretationPropType = PropTypes.oneOf([
   'CRITICAL',
   'EXTREMEHIGH',
   'EXTREMELOW',
@@ -18,7 +18,4 @@ const interpretationPropOneOf = PropTypes.oneOf([
   'NEUTRAL',
 ]);
 
-export default interpretationPropOneOf;
-export {
-  interpretationPropOneOf,
-};
+export default interpretationPropType;

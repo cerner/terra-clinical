@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
  * Enum for possible Result Statuses.
  * values mapped from http //hl7.org/fhir/2018Sep/valueset-observation-status.html
  */
-const statusPropOneOf = PropTypes.oneOf([
+const statusPropType = PropTypes.oneOf([
   'registered',
   'preliminary',
   'final',
@@ -15,7 +15,4 @@ const statusPropOneOf = PropTypes.oneOf([
   'unknown',
 ]);
 
-export default statusPropOneOf;
-export {
-  statusPropOneOf,
-};
+export default statusPropType;

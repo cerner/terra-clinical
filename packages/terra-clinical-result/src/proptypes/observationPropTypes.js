@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { interpretationPropOneOf } from './interpretationPropTypes';
-import { resulttypePropOneOf } from './resulttypePropTypes';
-import { statusPropOneOf } from './statusPropTypes';
+import interpretationPropType from './interpretationPropTypes';
+import resultTypePropType from './resulttypePropTypes';
+import statusPropType from './statusPropTypes';
 import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from './valuePropTypes';
 
 const observationPropShape = PropTypes.shape({
@@ -21,17 +21,17 @@ const observationPropShape = PropTypes.shape({
    * Enum for possible Result Interpretation values (also called `Clinical Severity` and `Normalcy`).
    * One of `'CRITICAL'`, `'EXTREMEHIGH'`, `'EXTREMELOW'`, `'PANICHIGH'`, `'PANICLOW'`, `'VABNORMAL'`, `'POSITIVE'`, `'ABNORMAL'`, `'HIGH'`, `'LOW'`, `'NORMAL'`, `'NEUTRAL'`.
    */
-  interpretation: interpretationPropOneOf,
+  interpretation: interpretationPropType,
   /**
    *  Enum for possible Result Types.
    * One of `'ALPHA'`, `'MULTIALPHA'`, `'FREETEXT'`, `'NUMERIC'`, `'BLOODPRESSURE'`, `'CALCULATION'`, `'DATE'`, `'DATETIME'`, `'TIME'`, `'PROVIDER'`.
    */
-  type: resulttypePropOneOf,
+  type: resultTypePropType,
   /**
    * Enum for possible Result Statuses.
    * One of `'registered'`, `'preliminary'`, `'final'`, `'amended'`, `'corrected'`, `'cancelled'`, `'entered-in-error'`, `'unknown'`.
    */
-  status: statusPropOneOf,
+  status: statusPropType,
   /**
    *  Clinical datetime for the Result (this may need to be renamed)
    */

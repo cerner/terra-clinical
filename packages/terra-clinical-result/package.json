@@ -2,7 +2,7 @@
   "name": "terra-clinical-result",
   "main": "lib/ClincalResult.js",
   "version": "0.0.0",
-  "description": "A set of components for displaying Clinical Observations like Vital Signs and Laboratory Results.",
+  "description": "The Terra Clinical Result package is a collection of standardized views for presenting clinical results documented to a Patient's Medical Chart, such as Vital Signs, Laboratory Results, and Discretely Documented Values",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"
@@ -42,6 +42,9 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
-    "wdio": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js"
+    "wdio-default": "cd ../.. && npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio ./packages/$npm_package_name/clinical-lowlight-wdio.conf.js",
+    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio ./packages/$npm_package_name/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }

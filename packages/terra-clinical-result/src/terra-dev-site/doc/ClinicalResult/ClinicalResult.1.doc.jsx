@@ -4,7 +4,7 @@ import ReadMe from '../../../../docs/README.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-// import ClinicalResultsProps from '!raw-loader!../../../../src/ClinicalResult';
+import ClinicalResultsProps from '!raw-loader!../../../../src/ClinicalResult';
 
 // Example Files
 import DefaultResult from '../example/clinicalresult/ClinicalResultDefault';
@@ -41,37 +41,31 @@ const DocPage = () => (
       },
       {
         title: 'Modifiied Clinical Result with Comments',
-        description: '',
         example: <DecoratedResult />,
         source: DecoratedResultSrc,
       },
       {
         title: 'Unverified Clinical Result with Hide Unit of Measure',
-        description: '',
         example: <UnverifiedResult />,
         source: UnverifiedResultSrc,
       },
       {
         title: 'Clinical Result with additional displays',
-        description: '',
         example: <ExtraDisplaysResult />,
         source: ExtraDisplaysResultSrc,
       },
       {
         title: 'Clinical Results with Intrepretation',
-        description: '',
         example: <InterpretationResults />,
         source: InterpretationResultsSrc,
       },
       {
         title: 'Changing the Clinical Result Size',
-        description: '',
         example: <SizeChangeResult />,
         source: SizeChangeResultSrc,
       },
       {
         title: 'Truncated Clinical Result',
-        description: '',
         example: <TruncatedResult />,
         source: TruncatedResultSrc,
       },
@@ -94,14 +88,12 @@ const DocPage = () => (
         source: AccidentalErrorSrc,
       },
     ]}
-    /*
     propsTables={[
       {
         componentName: 'Clinical Result Props',
         componentSrc: ClinicalResultsProps,
       },
     ]}
-    */
   />
 );
 
