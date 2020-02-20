@@ -1,6 +1,6 @@
 # Terra Clinical Result Blood Pressure
 
-The Clinical Result is a starndardized view for single result values added to a Patient's Medical Chart. This is specifically for Blood Pressure Vital Sign results.
+The Clinical Result is a standardized view for single result values added to a Patient's Medical Chart. This is specifically for Blood Pressure Vital Sign results.
 
 ## Getting Started
 
