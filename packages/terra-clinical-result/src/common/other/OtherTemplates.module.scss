@@ -16,6 +16,13 @@
     line-height: var(--terra-clinical-result-no-data-line-height, 1.125);
   }
 
+  .numeric-overflow {
+    color: var(--terra-clinical-result-numeric-overflow-color);
+    display: inline;
+    font-size: var(--terra-clinical-result-numeric-overflow-font-size, 1em); // Must use ems for font rescaling
+    line-height: var(--terra-clinical-result-numeric-overflow-line-height, 1.125);
+  }
+
   .system-error {
     color: var(--terra-clinical-result-system-error-color);
     display: inline;
