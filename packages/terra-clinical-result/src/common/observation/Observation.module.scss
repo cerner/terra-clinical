@@ -9,7 +9,7 @@
     overflow: visible;
 
     .icon-interpretation {
-      margin-right: var(--terra-clinical-result-display-icon-interpretation-margin-right, 0.25em); // Must use ems for font rescaling
+      margin-right: var(--terra-clinical-result-display-icon-interpretation-margin-right, 0.1875em); // Must use ems for font rescaling
       position: relative;
       top: var(--terra-clinical-result-display-icon-interpretation-top, 0.15em); // Must use ems for font rescaling
       vertical-align: baseline;
@@ -17,7 +17,7 @@
 
     &.abnormal {
       color: var(--terra-clinical-result-display-interpretation-abnormal-color, #654a08);
-      font-weight: var(--terra-clinical-result-display-interpretation-abnormal-font-weight, bold);
+      font-weight: var(--terra-clinical-result-display-interpretation-abnormal-font-weight, normal);
     }
 
     &.critical {
@@ -26,13 +26,13 @@
     }
 
     &.high {
-      color: var(--terra-clinical-result-display-interpretation-high-color, #ff6100); // new a11y color: #da3b03;
-      font-weight: var(--terra-clinical-result-display-interpretation-high-font-weight, bold);
+      color: var(--terra-clinical-result-display-interpretation-high-color, #b53203);
+      font-weight: var(--terra-clinical-result-display-interpretation-high-font-weight, normal);
     }
 
     &.low {
       color: var(--terra-clinical-result-display-interpretation-low-color, #0053e6);
-      font-weight: var(--terra-clinical-result-display-interpretation-low-font-weight, bold);
+      font-weight: var(--terra-clinical-result-display-interpretation-low-font-weight, normal);
     }
 
     &.positive {
@@ -41,8 +41,8 @@
     }
 
     &.unverified {
-      color: var(--terra-clinical-result-display-status-unverified-color);
-      font-weight: var(--terra-clinical-result-display-status-unverified-font-weight);
+      color: var(--terra-clinical-result-display-status-unverified-color, #78288c);
+      font-weight: var(--terra-clinical-result-display-status-unverified-font-weight, normal);
     }
   }
 
@@ -62,7 +62,7 @@
       overflow: hidden;
       padding: 0;
       position: absolute;
-      white-space: nowrap; /* Ensures words are not read one at a time on screen readers*/
+      white-space: nowrap; // Ensures words are not read one at a time on screen readers
       width: 1px;
     }
   }

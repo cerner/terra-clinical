@@ -69,7 +69,7 @@ const FlowsheetResultCell = (props) => {
   let flowsheetResultCellDisplay = null;
 
   if (hasResultError || hasResultNoData) {
-    flowsheetResultCellDisplay = hasResultError ? (<div className={cx('single-result-display')}><ResultError /></div>) : (<div className={cx('single-result-display')}><NoData /></div>);
+    flowsheetResultCellDisplay = hasResultError ? (<div className={cx(['primary-display', 'error'])}><ResultError /></div>) : (<div className={cx('primary-display')}><NoData /></div>);
   } else {
     const createResultsDisplay = (resultSet) => {
       let resultKeyID;
@@ -80,13 +80,14 @@ const FlowsheetResultCell = (props) => {
       const additionalResultInterpretations = [];
       let additionalResultInterpretationIndicator;
       let endAccessoryIcons;
-      let singleResultHasComment = false;
-      let singleResultIsModified = false;
-      let singleResultIsUnverified = false;
+      let primaryResultHasComment = false;
+      let primaryResultIsModified = false;
+      let primaryResultIsUnverified = false;
+      let primaryDisplayWithInterpretation = false;
 
       if (!resultSet || !resultSet.length) {
         resultKeyID = 'Error';
-        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={cx('single-result-display ')}><ResultError /></div>);
+        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={cx(['primary-display', 'error'])}><ResultError /></div>);
       } else {
         resultsDisplay = [];
         additionalResultCount = resultSet.length - 1;
@@ -97,9 +98,10 @@ const FlowsheetResultCell = (props) => {
           if (hasStandardResult) {
             if (i === 0) {
               const resultItem = resultSet[i];
-              if (resultSet[i].hasComment) { singleResultHasComment = true; resultItem.hasComment = false; }
-              if (resultSet[i].isModified) { singleResultIsModified = true; resultItem.isModified = false; }
-              if (resultSet[i].isUnverified) { singleResultIsUnverified = true; resultItem.isUnverified = false; }
+              primaryDisplayWithInterpretation = !isEmpty(resultSet[i].interpretation);
+              if (resultSet[i].hasComment) { primaryResultHasComment = true; resultItem.hasComment = false; }
+              if (resultSet[i].isModified) { primaryResultIsModified = true; resultItem.isModified = false; }
+              if (resultSet[i].isUnverified) { primaryResultIsUnverified = true; resultItem.isUnverified = false; }
               if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
               else if (resultSet[i].id) resultKeyID = resultSet[i].id;
               resultsInnerDisplay = (<ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
@@ -111,14 +113,15 @@ const FlowsheetResultCell = (props) => {
             if (i === 0) {
               const resultItem = resultSet[i];
               if (hasSystolic) {
-                if (resultSet[i].systolic.hasComment) { singleResultHasComment = true; resultItem.systolic.hasComment = false; }
-                if (resultSet[i].systolic.isModified) { singleResultIsModified = true; resultItem.systolic.isModified = false; }
-                if (resultSet[i].systolic.isUnverified) { singleResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
+                primaryDisplayWithInterpretation = !isEmpty(resultSet[i].systolic.interpretation);
+                if (resultSet[i].systolic.hasComment) { primaryResultHasComment = true; resultItem.systolic.hasComment = false; }
+                if (resultSet[i].systolic.isModified) { primaryResultIsModified = true; resultItem.systolic.isModified = false; }
+                if (resultSet[i].systolic.isUnverified) { primaryResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
               }
               if (hasDiastolic) {
-                if (resultSet[i].diastolic.hasComment) { singleResultHasComment = true; resultItem.diastolic.hasComment = false; }
-                if (resultSet[i].diastolic.isModified) { singleResultIsModified = true; resultItem.diastolic.isModified = false; }
-                if (resultSet[i].diastolic.isUnverified) { singleResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
+                if (resultSet[i].diastolic.hasComment) { primaryResultHasComment = true; resultItem.diastolic.hasComment = false; }
+                if (resultSet[i].diastolic.isModified) { primaryResultIsModified = true; resultItem.diastolic.isModified = false; }
+                if (resultSet[i].diastolic.isUnverified) { primaryResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
               }
               if (resultSet[i].id) resultKeyID = resultSet[i].id;
               else if (hasSystolic && resultSet[i].systolic.eventId) resultKeyID = resultSet[i].systolic.eventId;
@@ -132,6 +135,14 @@ const FlowsheetResultCell = (props) => {
             }
           }
         }
+
+        const primaryResultClassnames = cx([
+          'primary-display',
+          { unverified: primaryResultIsUnverified },
+          { interpretation: primaryDisplayWithInterpretation },
+        ]);
+
+        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames}>{resultsInnerDisplay}</div>);
 
         if (additionalResultInterpretations.length > 0) {
           if (additionalResultInterpretations.includes('CRITICAL')
@@ -152,8 +163,8 @@ const FlowsheetResultCell = (props) => {
         }
 
         const additionalResultClassNames = cx([
-          'additional-results-display',
-          { 'add-end-accessory-space': !(singleResultHasComment || singleResultIsModified || singleResultIsUnverified) },
+          'additional-end-display',
+          { 'no-accessory-icons': !(primaryResultHasComment || primaryResultIsModified || primaryResultIsUnverified) },
           { 'interpretation-critical': additionalResultInterpretationIndicator === 'CRITICAL' },
           { 'interpretation-high': additionalResultInterpretationIndicator === 'HIGH' },
         ]);
@@ -171,29 +182,21 @@ const FlowsheetResultCell = (props) => {
             </div>
           );
         }
-
-        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={cx('single-result-display')}>{resultsInnerDisplay}</div>);
         resultsDisplay.push(additionalResultInnerDisplay);
 
-        const commentIconElement = singleResultHasComment ? (<IconComment className={cx('icon-comment')} />) : null;
-        const modifiedIconElement = singleResultIsModified ? (<IconModified className={cx('icon-modified')} />) : null;
-        const unverifiedIconElement = singleResultIsUnverified ? (<IconUnverified className={cx('icon-unverified')} />) : null;
-        if (singleResultHasComment || singleResultIsModified || singleResultIsUnverified) {
-          endAccessoryIcons = (singleResultIsUnverified)
-            ? (
-              <div key={(`EndAccessoryIcons-${resultDataSet[0].id}`)} className={cx('end-accessory-icons')}>
-                <div className={cx('end-accessory-stack')}>
-                  {unverifiedIconElement}
-                </div>
+        const commentIconElement = primaryResultHasComment && !primaryResultIsUnverified ? (<IconComment className={cx('icon-comment')} />) : null;
+        const modifiedIconElement = primaryResultIsModified && !primaryResultIsUnverified ? (<IconModified className={cx('icon-modified')} />) : null;
+        const unverifiedIconElement = primaryResultIsUnverified ? (<IconUnverified className={cx('icon-unverified')} />) : null;
+        if (primaryResultHasComment || primaryResultIsModified || primaryResultIsUnverified) {
+          endAccessoryIcons = (
+            <div key={(`EndAccessoryIcons-${resultDataSet[0].id}`)} className={cx('end-accessory-icons')}>
+              <div className={cx('end-accessory-stack')}>
+                {commentIconElement}
+                {modifiedIconElement}
+                {unverifiedIconElement}
               </div>
-            ) : (
-              <div key={(`EndAccessoryIcons-${resultDataSet[0].id}`)} className={cx('end-accessory-icons')}>
-                <div className={cx('end-accessory-stack')}>
-                  {commentIconElement}
-                  {modifiedIconElement}
-                </div>
-              </div>
-            );
+            </div>
+          );
         } else {
           endAccessoryIcons = null;
         }

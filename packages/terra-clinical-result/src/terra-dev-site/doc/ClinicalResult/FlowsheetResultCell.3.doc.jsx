@@ -15,6 +15,10 @@ import BloodPressureCell from '../example/flowsheetresultcell/FlowsheetResultCel
 import BloodPressureCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellBloodPressure.jsx';
 import MultipleBloodPressuresCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures';
 import MultipleBloodPressuresCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures.jsx';
+import UnverifiedResultsCell from '../example/flowsheetresultcell/FlowsheetResultCellUnverifiedResults';
+import UnverifiedResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellUnverifiedResults.jsx';
+import PaddingStyleCell from '../example/flowsheetresultcell/FlowsheetResultCellPaddingStyle';
+import PaddingStyleCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellPaddingStyle.jsx';
 import KnownAndPartialNoData from '../example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData';
 import KnownAndPartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
 import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError';
@@ -46,6 +50,18 @@ const DocPage = () => (
         title: 'Flowsheet Result Cell with Multiple Blood Pressure Results',
         example: <MultipleBloodPressuresCell />,
         source: MultipleBloodPressuresCellSrc,
+      },
+      {
+        title: 'Flowsheet Result Cell with Unverified Results',
+        description: '',
+        example: <UnverifiedResultsCell />,
+        source: UnverifiedResultsCellSrc,
+      },
+      {
+        title: 'Flowsheet Result Cell Padding Styles',
+        description: '',
+        example: <PaddingStyleCell />,
+        source: PaddingStyleCellSrc,
       },
       {
         title: 'Flowsheet Result Cell for "Known No Result" and Blood Pressure partial "No Result"',

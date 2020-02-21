@@ -58,8 +58,8 @@ const ClinicalResult = (props) => {
   if (hasResultError || hasResultNoData) {
     clinicalResultDisplay = hasResultError ? (<ResultError />) : (<NoData />);
   } else {
-    const modifiedIconElement = resultData.isModified ? (<IconModified className={cx('icon-modified')} />) : null;
-    const commentIconElement = resultData.hasComment ? (<IconComment className={cx('icon-comment')} />) : null;
+    const modifiedIconElement = resultData.isModified && !resultData.isUnverified ? (<IconModified className={cx('icon-modified')} />) : null;
+    const commentIconElement = resultData.hasComment && !resultData.isUnverified ? (<IconComment className={cx('icon-comment')} />) : null;
     const unverifiedIconElement = resultData.isUnverified ? (<IconUnverified className={cx('icon-unverified')} />) : null;
     const iconGroupModifiedComment = resultData.isModified || resultData.hasComment || resultData.isUnverified ? (
       <React.Fragment>
@@ -85,6 +85,7 @@ const ClinicalResult = (props) => {
               eventId={resultData.eventId}
               result={resultData.result}
               interpretation={resultData.interpretation}
+              isUnverified={resultData.isUnverified}
               hideUnit={hideUnit}
             />
             {isTruncated ? null : iconGroupModifiedComment}

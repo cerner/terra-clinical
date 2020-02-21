@@ -45,9 +45,9 @@ import React from 'react';
 import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
 
 const bloodpressureResultValue = {
-  id: '111',
+  id: '1577836800',
   systolic: {
-    eventId: '111.1',
+    eventId: '1577836800.1',
     result: {
       value: '180',
       unit: 'mmHg',
@@ -61,7 +61,7 @@ const bloodpressureResultValue = {
     datetimeDisplay: 'Nov 23, 2019 13:31:31',
   },
   diastolic: {
-    eventId: '111.2',
+    eventId: '1577836800.2',
     result: {
       value: '60',
       unit: 'mmHg',

@@ -9,9 +9,10 @@
   }
 
   .no-data {
-    color: var(--terra-clinical-result-no-data-color);
+    color: var(--terra-clinical-result-no-data-color, rgba(28, 31, 33, 0.65));
     display: inline;
     font-size: var(--terra-clinical-result-no-data-font-size, 1em); // Must use ems for font rescaling
+    letter-spacing: var(--terra-clinical-result-no-data-letter-spacing, 0.3ch); // Must use ch for font rescaling
     line-height: var(--terra-clinical-result-no-data-line-height, 1.125);
   }
 

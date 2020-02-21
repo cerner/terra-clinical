@@ -5,7 +5,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="single-result-display"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
@@ -26,7 +26,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
     />
   </div>
   <div
-    className="additional-results-display add-end-accessory-space"
+    className="additional-end-display no-accessory-icons"
     key="AdditionalResultsDisplay-111"
   >
     <div
@@ -52,7 +52,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
   className="flowsheet-result-cell"
 >
   <div
-    className="single-result-display"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
@@ -73,7 +73,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
     />
   </div>
   <div
-    className="additional-results-display add-end-accessory-space"
+    className="additional-end-display no-accessory-icons"
     key="AdditionalResultsDisplay-111"
   >
     <div
@@ -99,7 +99,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
   className="flowsheet-result-cell padding-standard"
 >
   <div
-    className="single-result-display"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
@@ -120,7 +120,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
     />
   </div>
   <div
-    className="additional-results-display add-end-accessory-space"
+    className="additional-end-display no-accessory-icons"
     key="AdditionalResultsDisplay-111"
   >
     <div
@@ -146,7 +146,7 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="single-result-display"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
@@ -167,7 +167,7 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
     />
   </div>
   <div
-    className="additional-results-display add-end-accessory-space"
+    className="additional-end-display no-accessory-icons"
     key="AdditionalResultsDisplay-111"
   >
     <div
@@ -193,7 +193,7 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="single-result-display "
+    className="primary-display error"
     key="ClinicalResultDisplay-Error"
   >
     <ResultError />
@@ -206,7 +206,7 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="single-result-display"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <ClinicalResult
@@ -227,7 +227,7 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
     />
   </div>
   <div
-    className="additional-results-display add-end-accessory-space"
+    className="additional-end-display no-accessory-icons"
     key="AdditionalResultsDisplay-111"
   >
     <div

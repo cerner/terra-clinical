@@ -5,7 +5,7 @@ import styles from '../Examples.module.scss';
 
 const cx = classNames.bind(styles);
 
-const multipleResultValues = [
+const unverifiedResultValue = [
   {
     eventId: '1602328271',
     result: {
@@ -13,31 +13,8 @@ const multipleResultValues = [
       unit: 'degC',
     },
     type: 'NUMERIC',
-    isModified: true,
-    hasComment: true,
+    isUnverified: true,
     effectiveDateTime: '10/10/2020 11:11:11',
-  },
-  {
-    eventId: '1602328282',
-    result: {
-      value: '101.2',
-      unit: 'degC',
-    },
-    type: 'NUMERIC',
-    isModified: false,
-    hasComment: false,
-    effectiveDateTime: '10/10/2020 11:11:22',
-  },
-  {
-    eventId: '1602328293',
-    result: {
-      value: '101.3',
-      unit: 'degC',
-    },
-    type: 'NUMERIC',
-    isModified: false,
-    hasComment: false,
-    effectiveDateTime: '10/10/2020 11:11:33',
   },
 ];
 
@@ -45,7 +22,7 @@ export default () => (
   <React.Fragment>
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit />
       </div>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
     </div>

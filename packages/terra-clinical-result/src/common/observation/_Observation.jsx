@@ -31,6 +31,10 @@ const propTypes = {
    */
   interpretation: interpretationPropType,
   /**
+   * If Result has not been verified
+   */
+  isUnverified: PropTypes.bool,
+  /**
    * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
@@ -40,8 +44,8 @@ const defaultProps = {
   eventId: undefined,
   result: {},
   interpretation: undefined,
+  isUnverified: false,
   hideUnit: false,
-  isTruncated: false,
 };
 
 const interpretationIndicators = {
@@ -62,8 +66,8 @@ const Observation = (props) => {
     eventId,
     result,
     interpretation,
+    isUnverified,
     hideUnit,
-    isTruncated,
     ...customProps
   } = props;
 
@@ -71,16 +75,17 @@ const Observation = (props) => {
 
   const valueTextClasses = cx([
     'value',
-    { critical: interpretation === 'CRITICAL' },
-    { critical: interpretation === 'EXTREMEHIGH' },
-    { critical: interpretation === 'EXTREMELOW' },
-    { critical: interpretation === 'PANICHIGH' },
-    { critical: interpretation === 'PANICLOW' },
-    { critical: interpretation === 'VABNORMAL' },
-    { positive: interpretation === 'POSITIVE' },
-    { abnormal: interpretation === 'ABNORMAL' },
-    { high: interpretation === 'HIGH' },
-    { low: interpretation === 'LOW' },
+    { abnormal: interpretation === 'ABNORMAL' && !isUnverified },
+    { low: interpretation === 'LOW' && !isUnverified },
+    { high: interpretation === 'HIGH' && !isUnverified },
+    { critical: interpretation === 'CRITICAL' && !isUnverified },
+    { critical: interpretation === 'EXTREMEHIGH' && !isUnverified },
+    { critical: interpretation === 'EXTREMELOW' && !isUnverified },
+    { critical: interpretation === 'PANICHIGH' && !isUnverified },
+    { critical: interpretation === 'PANICLOW' && !isUnverified },
+    { critical: interpretation === 'VABNORMAL' && !isUnverified },
+    { positive: interpretation === 'POSITIVE' && !isUnverified },
+    { unverified: isUnverified },
   ]);
 
   const unitClassNames = cx([
@@ -94,7 +99,7 @@ const Observation = (props) => {
       valueDisplayElements = (
         <React.Fragment>
           <span {...customProps} className={valueTextClasses}>
-            {interpretation ? interpretationIndicators[interpretation.toUpperCase()] : null}
+            {interpretation && !isUnverified ? interpretationIndicators[interpretation.toUpperCase()] : null}
             {result.value}
           </span>
           {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}

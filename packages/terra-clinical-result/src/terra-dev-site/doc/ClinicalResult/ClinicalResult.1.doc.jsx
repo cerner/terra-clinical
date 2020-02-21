@@ -71,7 +71,6 @@ const DocPage = () => (
       },
       {
         title: 'Display for "Known No Result"',
-        description: 'Use the \'hasResultNoData\' prop to show the "No Data" display for the Clinical Result:',
         example: <KnownNoData />,
         source: KnownNoDataSrc,
       },

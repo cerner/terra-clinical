@@ -1,4 +1,10 @@
 :local {
+  .example-description-text {
+    color: #434a4d;
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+  }
+
   .dashed-border-group {
     border: 2px dashed #333;
   }
@@ -82,14 +88,14 @@
     border-top: 1px solid #dedfe0;
     box-sizing: border-box;
     margin-bottom: -1px;
-    min-height: 37px;
+    min-height: 33px;
 
     &.zebra {
       background-color: #f1f1f1;
     }
 
     &.empty {
-      min-height: 37px;
+      min-height: 33px;
     }
   }
 }

@@ -14,7 +14,7 @@ exports[`ClinicalResult should pass certain props to Observation  1`] = `
         eventId="111"
         hideUnit={true}
         interpretation="CRITICAL"
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -40,7 +40,7 @@ exports[`ClinicalResult should render a commented result  1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -73,7 +73,7 @@ exports[`ClinicalResult should render a default ClinicalResult 1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -99,7 +99,7 @@ exports[`ClinicalResult should render a modified result  1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -130,7 +130,7 @@ exports[`ClinicalResult should render a result with a concept display 1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -161,7 +161,7 @@ exports[`ClinicalResult should render a result with a date time display 1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -192,7 +192,7 @@ exports[`ClinicalResult should render a result with unit hidden 1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -218,7 +218,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -244,7 +244,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult with icons move
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={
           Object {
             "unit": "mL",
@@ -275,7 +275,7 @@ exports[`ClinicalResult should render an unverified result  1`] = `
       <Observation
         eventId="111"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={true}
         result={
           Object {
             "unit": "mL",
@@ -316,7 +316,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
         eventId="111.2"
         hideUnit={true}
         interpretation="CRITICAL"
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -352,7 +352,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -395,7 +395,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -436,7 +436,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -477,7 +477,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -513,7 +513,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -549,7 +549,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -582,7 +582,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
         eventId="111.1"
         hideUnit={true}
         interpretation="CRITICAL"
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -618,7 +618,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -661,7 +661,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -702,7 +702,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -743,7 +743,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -779,7 +779,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -815,7 +815,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -856,7 +856,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
       <Observation
         eventId="111.1"
         hideUnit={true}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -874,7 +874,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -901,7 +901,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       <Observation
         eventId="111.1"
         hideUnit={true}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.1"
         result={
           Object {
@@ -919,7 +919,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         key="Observation-111.2"
         result={
           Object {
@@ -945,7 +945,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     >
       <Observation
         hideUnit={false}
-        isTruncated={false}
+        isUnverified={false}
         result={Object {}}
       />
     </div>

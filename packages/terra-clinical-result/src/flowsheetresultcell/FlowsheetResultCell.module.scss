@@ -11,65 +11,76 @@
     width: 100%;
   }
 
-  .single-result-display {
+  .primary-display {
     align-items: center;
     display: flex;
     flex-grow: 1;
     height: 1.78571em;
     margin: 0;
+    margin-left: var(--terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left, 1.1875em); // Must use ems for font rescaling
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // Needed for IE10
     padding: 0;
+
+    &.unverified {
+      color: var(--terra-clinical-result-flowsheet-cell-status-unverified-color, #78288c);
+      font-weight: var(--terra-clinical-result-flowsheet-cell-status-unverified-font-weight, normal);
+    }
+
+    &.interpretation,
+    &.error {
+      margin-left: 0;
+    }
   }
 
-  .additional-results-display {
+  .additional-end-display {
     display: flex;
     flex: 0 0 auto;
-    height: 1.78571em;
+    height: var(--terra-clinical-result-flowsheet-cell-end-display-height, 1.78571em); // Must use ems for font rescaling
     min-width: 0;
 
-    &.add-end-accessory-space {
-      padding-right: 1em;
+    &.no-accessory-icons {
+      margin-right: var(--terra-clinical-result-flowsheet-cell-end-icons-reserved-space-margin-right, 1em); // Must use ems for font rescaling
     }
 
     /* stylelint-disable max-nesting-depth */
     &.interpretation-neutral {
       .additional-results-value {
-        background-color: #f3f3f3;
-        border: 1px solid #686c6e;
-        color: #6a6c6e;
-        font-weight: normal;
+        background-color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-background-color, #f3f3f3);
+        border: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-border, 1px solid #686c6e);
+        color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-color, #6a6c6e);
+        font-weight: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-font-weight, normal);
 
         &:nth-of-type(2) {
-          color: #686c6e;
+          color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-neutral-color, #686c6e);
         }
       }
     }
 
     &.interpretation-high {
       .additional-results-value {
-        background-color: #ffdede;
-        border: 1px solid #f00;
-        color: #6a6c6e;
-        font-weight: bold;
+        background-color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-high-background-color, #ffdede);
+        border: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-high-border, 1px solid #f00);
+        color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-high-color, 6a6c6e);
+        font-weight: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-high-font-weight, bold);
 
         &:nth-of-type(2) {
-          color: #ffdede;
+          color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-high-color, #ffdede);
         }
       }
     }
 
     &.interpretation-critical {
       .additional-results-value {
-        background-color: #de0000;
-        border: 1px solid #fff;
-        color: #fff;
-        font-weight: bold;
+        background-color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-critical-background-color, #de0000);
+        border: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-critical-border, 1px solid #fff);
+        color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-critical-color, #fff);
+        font-weight: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-critical-font-weight, bold);
 
         &:nth-of-type(2) {
-          color: #de0000;
-          left: 0.30769em; // Must use ems for font re-scaling
-          top: -1.30769em; // Must use ems for font re-scaling
+          color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-critical-color, #de0000);
+          left: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-critical-left, 0.30769em); // Must use ems for font re-scaling
+          top: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-critical-top, -1.30769em); // Must use ems for font re-scaling
         }
       }
     }
@@ -81,45 +92,45 @@
     display: block;
     height: 100%;
     min-width: 0;
-    padding: 0 0.28571em; // Must use ems for font re-scaling
+    padding: var(--terra-clinical-result-flowsheet-cell-additional-results-stack-padding, 0 0.28571em); // Must use ems for font re-scaling
     position: relative;
     width: 100%;
   }
 
   .additional-results-value {
-    background-color: #f3f3f3;
-    border: 1px solid #686c6e;
+    background-color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-background-color, #f3f3f3);
+    border: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-border, 1px solid #686c6e);
     box-sizing: border-box;
-    color: #6a6c6e;
+    color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-color, #6a6c6e);
     display: block;
-    font-size: 0.92857em; // Must use ems for font re-scaling
-    font-weight: normal;
+    font-size: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-font-size, 0.92857em); // Must use ems for font re-scaling
+    font-weight: var(--terra-clinical-result-flowsheet-cell-font-weight, normal);
     left: 0;
-    line-height: 1.53846;
-    min-width: 1.07142em; // Must use ems for font re-scaling
+    line-height: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-line-height, 1.53846);
+    min-width: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-min-width, 1.07142em); // Must use ems for font re-scaling
     overflow: hidden;
-    padding: 0 0.21428em; // Must use ems for font re-scaling
+    padding: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-padding, 0 0.21428em); // Must use ems for font re-scaling
     position: relative;
     top: 0;
     z-index: 2;
 
     &:nth-of-type(2) {
-      color: #686c6e;
-      left: 0.23076em; // Must use ems for font re-scaling
-      top: -1.38461em; // Must use ems for font re-scaling
+      color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-color, #686c6e);
+      left: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-left, 0.23076em); // Must use ems for font re-scaling
+      top: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-top, -1.38461em); // Must use ems for font re-scaling
       z-index: 1;
     }
 
     &.additional-results-max-value {
-      padding: 0 0.07142em 0 0.14285em; // Must use ems for font re-scaling
+      padding: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-max-value-padding, 0 0.07142em 0 0.14285em); // Must use ems for font re-scaling
     }
   }
 
   .end-accessory-icons {
     display: flex;
     flex: 0 0 auto;
-    height: 1.78571em; // Must use ems for font re-scaling
-    width: 1em; // Must use ems for font re-scaling
+    height: var(--terra-clinical-result-flowsheet-cell-end-accessory-icon-space-height, 1.78571em); //1.71428em; // Must use ems for font re-scaling
+    width: var(--terra-clinical-result-flowsheet-cell-end-accessory-icon-space-width, 1em); // Must use ems for font re-scaling
 
     .end-accessory-stack {
       box-sizing: border-box;
@@ -168,10 +179,10 @@
   }
 
   .padding-standard {
-    padding: var(--terra-clinical-result-flowsheet-cell-padding-standard-padding, 0.71428rem 0.71428rem);
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-standard-padding, 0.71428rem 0.28571rem);
   }
 
   .padding-compact {
-    padding: var(--terra-clinical-result-flowsheet-cell-padding-compact-padding, 0.35714rem 0.71428rem);
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-compact-padding, 0.21428rem 0.28571rem); //0.35714rem  
   }
 }
