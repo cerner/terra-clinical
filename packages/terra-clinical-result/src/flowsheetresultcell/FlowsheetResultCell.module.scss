@@ -17,7 +17,7 @@
     flex-grow: 1;
     height: 1.78571em;
     margin: 0;
-    margin-left: var(--terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left, 1.1875em); // Must use ems for font rescaling
+    margin-left: var(--terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left, 1.1875em); // Must use ems for font scaling
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // Needed for IE10
     padding: 0;
@@ -36,11 +36,11 @@
   .additional-end-display {
     display: flex;
     flex: 0 0 auto;
-    height: var(--terra-clinical-result-flowsheet-cell-end-display-height, 1.78571em); // Must use ems for font rescaling
+    height: var(--terra-clinical-result-flowsheet-cell-end-display-height, 1.78571em); // Must use ems for font scaling
     min-width: 0;
 
     &.no-accessory-icons {
-      margin-right: var(--terra-clinical-result-flowsheet-cell-end-icons-reserved-space-margin-right, 1em); // Must use ems for font rescaling
+      margin-right: var(--terra-clinical-result-flowsheet-cell-end-icons-reserved-space-margin-right, 1em); // Must use ems for font scaling
     }
 
     /* stylelint-disable max-nesting-depth */

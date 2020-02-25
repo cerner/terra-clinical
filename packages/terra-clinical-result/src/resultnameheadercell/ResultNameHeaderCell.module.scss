@@ -12,22 +12,22 @@
       @include terra-clinical-result-cell-truncate;
       color: var(--terra-clinical-result-name-header-cell-name-color);
       flex: 1 1 auto;
-      font-size: var(--terra-clinical-result-name-header-cell-name-font-size, 1em); // Must use ems for font rescaling
+      font-size: var(--terra-clinical-result-name-header-cell-name-font-size, 1em); // Must use ems for font scaling
       min-width: 10px; // Needed for IE10
     }
 
     .unit {
       color: var(--terra-clinical-result-name-header-cell-unit-color, rgba(28, 31, 33, 0.65));
       flex: 0 0 auto;
-      font-size: var(--terra-clinical-result-name-header-cell-unit-font-size, 0.875em); // Must use ems for font rescaling
-      margin-left: var(--terra-clinical-result-name-header-cell-unit-margin-left, 0.35714em); // Must use ems for font rescaling
+      font-size: var(--terra-clinical-result-name-header-cell-unit-font-size, 0.875em); // Must use ems for font scaling
+      margin-left: var(--terra-clinical-result-name-header-cell-unit-margin-left, 0.35714em); // Must use ems for font scaling
       overflow: hidden;
     }
 
     .icon-rowindicator {
-      margin-right: var(--terra-clinical-result-display-icon-rowindicator-margin-right, 0.25em); // Must use ems for font rescaling
+      margin-right: var(--terra-clinical-result-display-icon-rowindicator-margin-right, 0.25em); // Must use ems for font scaling
       position: relative;
-      top: var(--terra-clinical-result-display-icon-rowindicator-top, 0.15em); // Must use ems for font rescaling
+      top: var(--terra-clinical-result-display-icon-rowindicator-top, 0.15em); // Must use ems for font scaling
       vertical-align: baseline;
     }
   }
