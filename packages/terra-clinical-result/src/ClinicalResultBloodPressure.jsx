@@ -133,13 +133,13 @@ const ClinicalResultBloodPressure = (props) => {
 
     if (hasSystolic || hasDiastolic) {
       if (compareUnits.systolic === compareUnits.diastolic) {
-        const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit />;
+        const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} interpretation={resultData.systolic.interpretation} isUnverified={resultData.systolic.isUnverified} hideUnit />;
         decoratedResultDisplay.push(systolicDisplay);
       } else {
         if (!hasSystolic) decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${resultData.id}`} />);
         if (noDataSystolic) decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${resultData.id}`} />);
         else if (hasSystolic) {
-          const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} hideUnit={hideUnit} />;
+          const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} isUnverified={resultData.systolic.isUnverified} hideUnit={hideUnit} hideUnit={hideUnit} />;
           decoratedResultDisplay.push(systolicDisplay);
         }
       }
@@ -147,12 +147,12 @@ const ClinicalResultBloodPressure = (props) => {
       if (!hasDiastolic) decoratedResultDisplay.push(<ResultError key={`Error-Diastolic-${resultData.id}`} />);
       else if (noDataDiastolic) decoratedResultDisplay.push(<NoData key={`NoData-Diastolic-${resultData.id}`} />);
       else if (hasDiastolic) {
-        const diastolicDisplay = <Observation key={`Observation-${resultData.diastolic.eventId}`} eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} hideUnit={hideUnit} />;
+        const diastolicDisplay = <Observation key={`Observation-${resultData.diastolic.eventId}`} eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} isUnverified={resultData.diastolic.isUnverified} hideUnit={hideUnit} />;
         decoratedResultDisplay.push(diastolicDisplay);
       }
 
-      const modifiedIconElement = hasModifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
-      const commentIconElement = hasCommentIcon ? (<IconComment className={cx('icon-comment')} />) : null;
+      const modifiedIconElement = hasModifiedIcon && !hasUnverifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
+      const commentIconElement = hasCommentIcon && !hasUnverifiedIcon ? (<IconComment className={cx('icon-comment')} />) : null;
       const unverifiedIconElement = hasUnverifiedIcon ? (<IconUnverified className={cx('icon-unverified')} />) : null;
       if (hasModifiedIcon || hasCommentIcon || hasUnverifiedIcon) {
         iconGroupDisplayElement = (
