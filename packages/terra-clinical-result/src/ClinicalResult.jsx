@@ -43,6 +43,23 @@ const defaultProps = {
   hasResultNoData: false,
 };
 
+const createIcons = (resultData) => (resultData.isUnverified
+  ? (<IconUnverified className={cx('icon-unverified')} />)
+  : (
+    <React.Fragment>
+      {resultData.isModified ? (<IconModified className={cx('icon-modified')} />) : null}
+      {resultData.hasComment ? (<IconComment className={cx('icon-comment')} />) : null}
+    </React.Fragment>
+  )
+);
+
+const createSecondaryDisplays = (resultData) => (
+  <React.Fragment>
+    {resultData.conceptDisplay ? (<div className={cx('concept-display')}>{resultData.conceptDisplay}</div>) : null}
+    {resultData.datetimeDisplay ? (<div className={cx('datetime-display')}>{resultData.datetimeDisplay}</div>) : null}
+  </React.Fragment>
+);
+
 const ClinicalResult = (props) => {
   const {
     resultData,
@@ -53,31 +70,18 @@ const ClinicalResult = (props) => {
     ...customProps
   } = props;
 
-  let clinicalResultDisplay = null;
-
-  if (hasResultError || hasResultNoData) {
-    clinicalResultDisplay = hasResultError ? (<ResultError />) : (<NoData />);
-  } else {
-    const modifiedIconElement = resultData.isModified && !resultData.isUnverified ? (<IconModified className={cx('icon-modified')} />) : null;
-    const commentIconElement = resultData.hasComment && !resultData.isUnverified ? (<IconComment className={cx('icon-comment')} />) : null;
-    const unverifiedIconElement = resultData.isUnverified ? (<IconUnverified className={cx('icon-unverified')} />) : null;
-    const iconGroupModifiedComment = resultData.isModified || resultData.hasComment || resultData.isUnverified ? (
-      <React.Fragment>
-        {modifiedIconElement}
-        {commentIconElement}
-        {unverifiedIconElement}
-      </React.Fragment>
-    ) : null;
-
-    const conceptDisplayElement = resultData.conceptDisplay ? (<div className={cx('concept-display')}>{resultData.conceptDisplay}</div>) : null;
-    const datetimeDisplayElement = resultData.datetimeDisplay ? (<div className={cx('datetime-display')}>{resultData.datetimeDisplay}</div>) : null;
-
+  const clinicalResultDisplay = () => {
+    if (hasResultError) {
+      return <ResultError />;
+    }
+    if (hasResultNoData) {
+      return <NoData />;
+    }
     const decoratedResultClassnames = cx([
       'decorated-result-display',
       { truncated: isTruncated },
     ]);
-
-    clinicalResultDisplay = (
+    return (
       <React.Fragment>
         <div className={decoratedResultClassnames}>
           <div className={cx('result-display')}>
@@ -88,15 +92,14 @@ const ClinicalResult = (props) => {
               isUnverified={resultData.isUnverified}
               hideUnit={hideUnit}
             />
-            {isTruncated ? null : iconGroupModifiedComment}
+            {isTruncated ? null : createIcons(resultData)}
           </div>
-          {isTruncated ? iconGroupModifiedComment : null}
+          {isTruncated ? createIcons(resultData) : null}
         </div>
-        {conceptDisplayElement}
-        {datetimeDisplayElement}
+        {createSecondaryDisplays(resultData)}
       </React.Fragment>
     );
-  }
+  };
 
   const clinicalResultClassnames = cx([
     'clinical-result',
