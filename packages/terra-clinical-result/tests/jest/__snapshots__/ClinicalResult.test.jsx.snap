@@ -191,7 +191,7 @@ exports[`ClinicalResult should render a result with unit hidden 1`] = `
     >
       <Observation
         eventId="111"
-        hideUnit={false}
+        hideUnit={true}
         isUnverified={false}
         result={
           Object {
@@ -512,7 +512,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
       </span>
       <Observation
         eventId="111.2"
-        hideUnit={false}
+        hideUnit={true}
         isUnverified={false}
         key="Observation-111.2"
         result={
@@ -549,7 +549,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
       <Observation
         eventId="111.2"
         hideUnit={false}
-        isUnverified={false}
+        isUnverified={true}
         key="Observation-111.2"
         result={
           Object {
@@ -778,7 +778,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
     >
       <Observation
         eventId="111.1"
-        hideUnit={false}
+        hideUnit={true}
         isUnverified={false}
         key="Observation-111.1"
         result={
@@ -815,7 +815,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
       <Observation
         eventId="111.1"
         hideUnit={false}
-        isUnverified={false}
+        isUnverified={true}
         key="Observation-111.1"
         result={
           Object {

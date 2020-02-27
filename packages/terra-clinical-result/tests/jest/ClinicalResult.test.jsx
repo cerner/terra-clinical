@@ -76,9 +76,8 @@ describe('ClinicalResult', () => {
   it('should render a result with unit hidden', () => {
     const resultData = {
       ...DefaultResult,
-      hideUnit: true,
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallow(<ClinicalResult resultData={resultData} hideUnit />);
     expect(result).toMatchSnapshot();
   });
 
@@ -186,10 +185,9 @@ describe('ClinicalResultBloodPressure', () => {
         id: '111',
         systolic: {
           ...DefaultSystolicResult,
-          hideUnit: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
       expect(result).toMatchSnapshot();
     });
 
@@ -276,10 +274,9 @@ describe('ClinicalResultBloodPressure', () => {
         id: '111',
         diastolic: {
           ...DefaultDiastolicResult,
-          hideUnit: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
       expect(result).toMatchSnapshot();
     });
 

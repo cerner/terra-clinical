@@ -60,6 +60,37 @@ const createSecondaryDisplays = (resultData) => (
   </React.Fragment>
 );
 
+const createClinicalResultDisplay = (resultData, hideUnit, isTruncated, hasResultError, hasResultNoData) => {
+  if (hasResultError) {
+    return <ResultError />;
+  }
+  if (hasResultNoData) {
+    return <NoData />;
+  }
+  const decoratedResultClassnames = cx([
+    'decorated-result-display',
+    { truncated: isTruncated },
+  ]);
+  return (
+    <React.Fragment>
+      <div className={decoratedResultClassnames}>
+        <div className={cx('result-display')}>
+          <Observation
+            eventId={resultData.eventId}
+            result={resultData.result}
+            interpretation={resultData.interpretation}
+            isUnverified={resultData.isUnverified}
+            hideUnit={hideUnit}
+          />
+          {isTruncated ? null : createIcons(resultData)}
+        </div>
+        {isTruncated ? createIcons(resultData) : null}
+      </div>
+      {createSecondaryDisplays(resultData)}
+    </React.Fragment>
+  );
+};
+
 const ClinicalResult = (props) => {
   const {
     resultData,
@@ -70,36 +101,7 @@ const ClinicalResult = (props) => {
     ...customProps
   } = props;
 
-  const clinicalResultDisplay = () => {
-    if (hasResultError) {
-      return <ResultError />;
-    }
-    if (hasResultNoData) {
-      return <NoData />;
-    }
-    const decoratedResultClassnames = cx([
-      'decorated-result-display',
-      { truncated: isTruncated },
-    ]);
-    return (
-      <React.Fragment>
-        <div className={decoratedResultClassnames}>
-          <div className={cx('result-display')}>
-            <Observation
-              eventId={resultData.eventId}
-              result={resultData.result}
-              interpretation={resultData.interpretation}
-              isUnverified={resultData.isUnverified}
-              hideUnit={hideUnit}
-            />
-            {isTruncated ? null : createIcons(resultData)}
-          </div>
-          {isTruncated ? createIcons(resultData) : null}
-        </div>
-        {createSecondaryDisplays(resultData)}
-      </React.Fragment>
-    );
-  };
+  const clinicalResultDisplay = createClinicalResultDisplay(resultData, hideUnit, isTruncated, hasResultError, hasResultNoData);
 
   const clinicalResultClassnames = cx([
     'clinical-result',
