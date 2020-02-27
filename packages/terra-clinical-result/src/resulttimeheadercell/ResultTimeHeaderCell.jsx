@@ -39,20 +39,22 @@ const ResultTimeHeaderCell = (props) => {
     ...customProps
   } = props;
 
-  const timeHeaderCellClassnames = cx([
-    'clinical-result-time-header-cell',
-    { 'padding-standard': paddingStyle === 'standard' },
-    { 'padding-compact': paddingStyle === 'compact' },
-    customProps.className,
-  ]);
-
   const dateClassnames = cx([
     'date',
     { 'hide-date': hideDate },
   ]);
 
+  const timeHeaderCellClassnames = cx([
+    'clinical-result-time-header-cell',
+    { 'padding-standard': paddingStyle === 'standard' },
+    { 'padding-compact': paddingStyle === 'compact' },
+  ]);
+
   return (
-    <div {...customProps} className={timeHeaderCellClassnames}>
+    <div
+      {...customProps}
+      className={customProps.className ? `${timeHeaderCellClassnames} ${customProps.className}` : timeHeaderCellClassnames}
+    >
       {date && <div className={dateClassnames}>{date}</div>}
       {time && <div className={cx('time')}>{time}</div>}
     </div>

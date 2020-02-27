@@ -50,11 +50,13 @@ const ResultNameHeaderCell = (props) => {
     'clinical-result-name-header-cell',
     { 'padding-standard': paddingStyle === 'standard' },
     { 'padding-compact': paddingStyle === 'compact' },
-    customProps.className,
   ]);
 
   return (
-    <div {...customProps} className={nameHeaderCellClassnames}>
+    <div
+      {...customProps}
+      className={customProps.className ? `${nameHeaderCellClassnames} ${customProps.className}` : nameHeaderCellClassnames}
+    >
       <div className={cx('name')}>
         {resultRowIndicators[typeIndicator.toLowerCase()]}
         {resultName}

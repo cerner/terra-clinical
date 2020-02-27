@@ -15,7 +15,10 @@ const ResultError = (props) => {
   ]);
 
   return (
-    <span {...customProps} className={templateClassnames}>
+    <span
+      {...customProps}
+      className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
+    >
       <IconError className={cx('icon-error')} />
     </span>
   );

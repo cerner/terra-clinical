@@ -222,11 +222,13 @@ const ClinicalResultBloodPressure = (props) => {
   const clinicalResultClassnames = cx([
     'clinical-result',
     'blood-pressure-result',
-    customProps.className,
   ]);
 
   return (
-    <div {...customProps} className={clinicalResultClassnames}>
+    <div
+      {...customProps}
+      className={customProps.className ? `${clinicalResultClassnames} ${customProps.className}` : clinicalResultClassnames}
+    >
       {clinicalResultBloodPressureDisplay}
     </div>
   );

@@ -14,7 +14,7 @@ const KnownNoData = (props) => {
   ]);
 
   return (
-    <span {...customProps} className={templateClassnames}>--</span>
+    <span {...customProps} className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}>--</span>
   );
 };
 

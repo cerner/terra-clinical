@@ -98,7 +98,10 @@ const Observation = (props) => {
     if (isValidValue) {
       valueDisplayElements = (
         <React.Fragment>
-          <span {...customProps} className={valueTextClasses}>
+          <span
+            {...customProps}
+            className={customProps.className ? `${valueTextClasses} ${customProps.className}` : valueTextClasses}
+          >
             {interpretation && !isUnverified ? interpretationIndicators[interpretation.toUpperCase()] : null}
             {result.value}
           </span>

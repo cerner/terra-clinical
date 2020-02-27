@@ -103,13 +103,13 @@ const ClinicalResult = (props) => {
 
   const clinicalResultDisplay = createClinicalResultDisplay(resultData, hideUnit, isTruncated, hasResultError, hasResultNoData);
 
-  const clinicalResultClassnames = cx([
-    'clinical-result',
-    customProps.className,
-  ]);
+  const clinicalResultClassnames = cx('clinical-result');
 
   return (
-    <div {...customProps} className={clinicalResultClassnames}>
+    <div
+      {...customProps}
+      className={customProps.className ? `${clinicalResultClassnames} ${customProps.className}` : clinicalResultClassnames}
+    >
       {clinicalResultDisplay}
     </div>
   );

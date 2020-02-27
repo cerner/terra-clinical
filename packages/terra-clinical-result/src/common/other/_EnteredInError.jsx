@@ -15,7 +15,12 @@ const EnteredInError = (props) => {
 
   return (
     // TODO add i18n - in progress
-    <span {...customProps} className={templateClassnames}>In Error</span>
+    <span
+      {...customProps}
+      className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
+    >
+      In Error
+    </span>
   );
 };
 

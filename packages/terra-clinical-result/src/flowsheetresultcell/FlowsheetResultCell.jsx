@@ -212,11 +212,13 @@ const FlowsheetResultCell = (props) => {
     'flowsheet-result-cell',
     { 'padding-standard': paddingStyle === 'standard' },
     { 'padding-compact': paddingStyle === 'compact' },
-    customProps.className,
   ]);
 
   return (
-    <div {...customProps} className={flowsheetCellClassNames}>
+    <div
+      {...customProps}
+      className={customProps.className ? `${flowsheetCellClassNames} ${customProps.className}` : flowsheetCellClassNames}
+    >
       {flowsheetResultCellDisplay}
     </div>
   );
