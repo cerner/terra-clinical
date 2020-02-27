@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconComment from 'terra-icon/lib/icon/IconComment';
@@ -62,20 +62,6 @@ const FlowsheetResultCell = (props) => {
   const [numericOverflow, setNumericOverflow] = useState(false);
   const [contentWidth, setContentWidth] = useState(null);
 
-  useEffect(() => {
-    if(containerDiv.current && resultDataSet[0].type && resultDataSet[0].type === 'NUMERIC' ) {
-      if(!contentWidth) {
-        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
-      }
-      if(containerDiv.current.getBoundingClientRect().width <= contentWidth  && !numericOverflow) {
-        setNumericOverflow(true);
-      }
-      else if(containerDiv.current.getBoundingClientRect().width > contentWidth) {
-        setNumericOverflow(false);
-      }
-    }
-  });
-
   const {
     resultDataSet,
     hideUnit,
@@ -84,6 +70,20 @@ const FlowsheetResultCell = (props) => {
     hasResultNoData,
     ...customProps
   } = props;
+
+  useEffect(() => {
+    if (containerDiv.current && resultDataSet[0].type && resultDataSet[0].type === 'NUMERIC') {
+      if (!contentWidth) {
+        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
+      }
+      if (containerDiv.current.getBoundingClientRect().width <= contentWidth && !numericOverflow) {
+        setNumericOverflow(true);
+      }
+      else if (containerDiv.current.getBoundingClientRect().width > contentWidth) {
+        setNumericOverflow(false);
+      }
+    }
+  });
 
   let flowsheetResultCellDisplay = null;
 
@@ -123,7 +123,7 @@ const FlowsheetResultCell = (props) => {
               if (resultSet[i].isUnverified) { primaryResultIsUnverified = true; resultItem.isUnverified = false; }
               if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
               else if (resultSet[i].id) resultKeyID = resultSet[i].id;
-              if(numericOverflow) {
+              if (numericOverflow) {
                 resultsInnerDisplay = <NumericOverflow />;
               }
               else {
