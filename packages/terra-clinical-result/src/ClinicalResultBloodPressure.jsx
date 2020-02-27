@@ -70,8 +70,11 @@ const ClinicalResultBloodPressure = (props) => {
 
   let clinicalResultBloodPressureDisplay = null;
 
-  if (hasResultError || hasResultNoData) {
-    clinicalResultBloodPressureDisplay = hasResultError ? (<ResultError />) : (<NoData />);
+  if (hasResultError) {
+    clinicalResultBloodPressureDisplay = <ResultError />;
+  }
+  else if (hasResultNoData) {
+    clinicalResultBloodPressureDisplay = <NoData />;
   } else {
     const CompareTemplate = (s, d) => ({
       systolic: s,

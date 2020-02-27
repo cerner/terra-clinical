@@ -23,6 +23,8 @@ import KnownAndPartialNoData from '../example/flowsheetresultcell/FlowsheetResul
 import KnownAndPartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
 import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError';
 import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
+import NumericOverflow from '../example/flowsheetresultcell/FlowsheetResultCellNumericOverflow';
+import NumericOverflowSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellNumericOverflow.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -74,6 +76,12 @@ const DocPage = () => (
         description: 'Use the \'hasResultError\' prop to show the "Error" display for the full Flowsheet Result Cell. Or if there is a missing part results (e.g. Systolic or Diastolic), that portion will show the error display:',
         example: <KnownErrorAndPartialError />,
         source: KnownErrorAndPartialErrorSrc,
+      },
+      {
+        title: 'Flowsheet Result Cell with a numeric result that overflows the container',
+        description: 'When displaying a result with an overflowed numeric value, instead of truncating the value, shows "View Results" message.',
+        example: <NumericOverflow />,
+        source: NumericOverflowSrc,
       },
     ]}
     propsTables={[

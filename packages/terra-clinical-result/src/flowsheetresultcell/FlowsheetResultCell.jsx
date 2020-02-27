@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconComment from 'terra-icon/lib/icon/IconComment';
@@ -9,6 +9,7 @@ import ClinicalResultBloodPressure from '../ClinicalResultBloodPressure';
 import observationPropShape from '../proptypes/observationPropTypes';
 import ResultError from '../common/other/_ResultError';
 import NoData from '../common/other/_KnownNoData';
+import NumericOverflow from '../common/other/_NumericOverflow';
 import styles from './FlowsheetResultCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -57,6 +58,24 @@ const defaultProps = {
 const isEmpty = (str) => (!str || str.length === 0);
 
 const FlowsheetResultCell = (props) => {
+  const containerDiv = useRef(null);
+  const [numericOverflow, setNumericOverflow] = useState(false);
+  const [contentWidth, setContentWidth] = useState(null);
+
+  useEffect(() => {
+    if(containerDiv.current && resultDataSet[0].type && resultDataSet[0].type === 'NUMERIC' ) {
+      if(!contentWidth) {
+        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
+      }
+      if(containerDiv.current.getBoundingClientRect().width <= contentWidth  && !numericOverflow) {
+        setNumericOverflow(true);
+      }
+      else if(containerDiv.current.getBoundingClientRect().width > contentWidth) {
+        setNumericOverflow(false);
+      }
+    }
+  });
+
   const {
     resultDataSet,
     hideUnit,
@@ -104,7 +123,12 @@ const FlowsheetResultCell = (props) => {
               if (resultSet[i].isUnverified) { primaryResultIsUnverified = true; resultItem.isUnverified = false; }
               if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
               else if (resultSet[i].id) resultKeyID = resultSet[i].id;
-              resultsInnerDisplay = (<ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
+              if(numericOverflow) {
+                resultsInnerDisplay = <NumericOverflow />;
+              }
+              else {
+                resultsInnerDisplay = (<ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
+              }
             } else if (i > 0) {
               const hasInterpretation = !isEmpty(resultSet[i].interpretation) ? resultSet[i].interpretation : null;
               additionalResultInterpretations.push(hasInterpretation);
@@ -142,7 +166,7 @@ const FlowsheetResultCell = (props) => {
           { interpretation: primaryDisplayWithInterpretation },
         ]);
 
-        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames}>{resultsInnerDisplay}</div>);
+        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDiv}>{resultsInnerDisplay}</div>);
 
         if (additionalResultInterpretations.length > 0) {
           if (additionalResultInterpretations.includes('CRITICAL')
