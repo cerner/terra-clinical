@@ -191,15 +191,15 @@ const multipleBPResults = [
 
 export default () => (
   <React.Fragment>
-    <div className={cx('mock-flowsheet-resultcolumn')}>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+    <div className={cx(['mock-flowsheet-resultcolumn', 'double-column'])}>
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
         standard result
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        partial bp
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
+      blood pressure: systolic-only
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        full bp
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
+        blood pressure: both systolic & diastolic
       </div>
     </div>
     <div className={cx('mock-flowsheet-resultcolumn')}>

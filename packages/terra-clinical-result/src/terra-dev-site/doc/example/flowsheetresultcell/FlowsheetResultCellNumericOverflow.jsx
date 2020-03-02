@@ -51,7 +51,15 @@ export default () => (
         <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
       </div>
     </div>
-    <div className={cx('mock-flowsheet-resultcolumn')}>
+    <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+      </div>
+    </div>
+    <div className={cx(['mock-flowsheet-resultcolumn', 'triple-column'])}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
       </div>
