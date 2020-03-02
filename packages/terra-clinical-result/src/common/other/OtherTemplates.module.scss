@@ -36,4 +36,16 @@
       vertical-align: baseline;
     }
   }
+
+  .entered-in-error,
+  .numeric-overflow,
+  .system-error,
+  .truncated {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    word-wrap: normal;
+  }
 }

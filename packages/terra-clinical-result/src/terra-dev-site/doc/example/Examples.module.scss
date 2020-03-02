@@ -81,7 +81,19 @@
     white-space: nowrap;
     width: 162px;
 
-    &.wide-column {
+    &.half-column {
+      width: 99px;
+    }
+
+    &.double-column {
+      width: 324px;
+    }
+
+    &.triple-column {
+      width: 477px;
+    }
+
+    &.flexible50-column {
       width: 50%;
     }
   }
@@ -100,6 +112,10 @@
 
     &.empty {
       min-height: 33px;
+    }
+
+    &.with-padding{
+      padding: 7px 7px 0;
     }
   }
 }
