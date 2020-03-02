@@ -1,26 +1,27 @@
 import React from 'react';
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import ClinicalResult, { ResultNameHeaderCell, ResultTimeHeaderCell, ClinicalResultBloodPressure } from '../../lib/index';
 import DefaultResult, { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 // Snapshot Tests
 it('should render a default component', () => {
-  const nameHeaderCell = shallow(<ResultNameHeaderCell resultName="Blood Pressure" unit="mmHg" />);
+  const nameHeaderCell = shallowWithIntl(<ResultNameHeaderCell resultName="Blood Pressure" unit="mmHg" />);
   expect(nameHeaderCell).toMatchSnapshot();
 });
 
 it('should render a default ResultTimeHeaderCell component', () => {
-  const timeHeaderCell = shallow(<ResultTimeHeaderCell date="Dec 21, 2010" time="23:59" />);
+  const timeHeaderCell = shallowWithIntl(<ResultTimeHeaderCell date="Dec 21, 2010" time="23:59" />);
   expect(timeHeaderCell).toMatchSnapshot();
 });
 
 describe('ClinicalResult', () => {
   it('should render a default ClinicalResult', () => {
-    const result = shallow(<ClinicalResult resultData={DefaultResult} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={DefaultResult} />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a truncated ClinicalResult', () => {
-    const result = shallow(<ClinicalResult resultData={DefaultResult} isTruncated />);
+    const result = shallowWithIntl(<ClinicalResult resultData={DefaultResult} isTruncated />);
     expect(result).toMatchSnapshot();
   });
 
@@ -29,7 +30,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       isModified: true,
     };
-    const result = shallow(<ClinicalResult resultData={resultData} isTruncated />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} isTruncated />);
     expect(result).toMatchSnapshot();
   });
 
@@ -42,7 +43,7 @@ describe('ClinicalResult', () => {
       performedDateTime: '1995-12-17T03:24:00-06:00',
       updateDateTime: '1995-12-17T04:04:00-06:00',
     };
-    const result = shallow(<ClinicalResult resultData={resultData} hideUnit />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} hideUnit />);
     expect(result).toMatchSnapshot();
   });
 
@@ -51,7 +52,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       isModified: true,
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -60,7 +61,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       hasComment: true,
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -69,7 +70,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       isUnverified: true,
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -77,7 +78,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
     };
-    const result = shallow(<ClinicalResult resultData={resultData} hideUnit />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} hideUnit />);
     expect(result).toMatchSnapshot();
   });
 
@@ -86,7 +87,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       conceptDisplay: 'Temperature Oral',
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -95,7 +96,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       datetimeDisplay: 'Nov 23, 2019 13:31:31',
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -105,19 +106,19 @@ describe('ClinicalResult', () => {
       status: 'entered-in-error',
       interpretation: 'CRITICAL',
     };
-    const result = shallow(<ClinicalResult resultData={resultData} />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
 });
 
 describe('ClinicalResultBloodPressure', () => {
   it('should render a default ClinicalResultBloodPressure', () => {
-    const result = shallow(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} />);
+    const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a truncated ClinicalResultBloodPressure', () => {
-    const result = shallow(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} isTruncated />);
+    const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} isTruncated />);
     expect(result).toMatchSnapshot();
   });
 
@@ -133,7 +134,7 @@ describe('ClinicalResultBloodPressure', () => {
         isModified: true,
       },
     };
-    const result = shallow(<ClinicalResult resultData={resultData} isTruncated />);
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} isTruncated />);
     expect(result).toMatchSnapshot();
   });
 
@@ -150,7 +151,7 @@ describe('ClinicalResultBloodPressure', () => {
           updateDateTime: '1995-12-17T04:04:00-06:00',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
       expect(result).toMatchSnapshot();
     });
 
@@ -162,7 +163,7 @@ describe('ClinicalResultBloodPressure', () => {
           isModified: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -174,7 +175,7 @@ describe('ClinicalResultBloodPressure', () => {
           hasComment: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -186,7 +187,7 @@ describe('ClinicalResultBloodPressure', () => {
           isUnverified: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -197,7 +198,7 @@ describe('ClinicalResultBloodPressure', () => {
           ...DefaultSystolicResult,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
       expect(result).toMatchSnapshot();
     });
 
@@ -209,7 +210,7 @@ describe('ClinicalResultBloodPressure', () => {
           conceptDisplay: 'Temperature Oral',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -221,7 +222,7 @@ describe('ClinicalResultBloodPressure', () => {
           datetimeDisplay: 'Nov 23, 2019 13:31:31',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -234,7 +235,7 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'CRITICAL',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
   });
@@ -252,7 +253,7 @@ describe('ClinicalResultBloodPressure', () => {
           updateDateTime: '1995-12-17T04:04:00-06:00',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
       expect(result).toMatchSnapshot();
     });
 
@@ -264,7 +265,7 @@ describe('ClinicalResultBloodPressure', () => {
           isModified: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -276,7 +277,7 @@ describe('ClinicalResultBloodPressure', () => {
           hasComment: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -288,7 +289,7 @@ describe('ClinicalResultBloodPressure', () => {
           isUnverified: true,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -299,7 +300,7 @@ describe('ClinicalResultBloodPressure', () => {
           ...DefaultDiastolicResult,
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
       expect(result).toMatchSnapshot();
     });
 
@@ -311,7 +312,7 @@ describe('ClinicalResultBloodPressure', () => {
           conceptDisplay: 'Temperature Oral',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -323,7 +324,7 @@ describe('ClinicalResultBloodPressure', () => {
           datetimeDisplay: 'Nov 23, 2019 13:31:31',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
 
@@ -336,7 +337,7 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'CRITICAL',
         },
       };
-      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
   });

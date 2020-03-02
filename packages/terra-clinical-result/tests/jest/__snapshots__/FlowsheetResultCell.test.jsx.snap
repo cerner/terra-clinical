@@ -1,345 +1,568 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      hasResultError={false}
-      hasResultNoData={false}
-      hideUnit={false}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      resultData={
-        Object {
-          "eventId": "111",
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={
+    Array [
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
           "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
+            "unit": "mmHg",
+            "value": "80",
           },
-        }
-      }
-    />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
-<div
-  className="flowsheet-result-cell"
->
-  <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      hasResultError={false}
-      hasResultNoData={false}
-      hideUnit={false}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      resultData={
-        Object {
-          "eventId": "111",
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="none"
+  resultDataSet={
+    Array [
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
           "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
+            "unit": "mmHg",
+            "value": "80",
           },
-        }
-      }
-    />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] = `
-<div
-  className="flowsheet-result-cell padding-standard"
->
-  <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      hasResultError={false}
-      hasResultNoData={false}
-      hideUnit={false}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      resultData={
-        Object {
-          "eventId": "111",
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="standard"
+  resultDataSet={
+    Array [
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
           "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
+            "unit": "mmHg",
+            "value": "80",
           },
-        }
-      }
-    />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      hasResultError={false}
-      hasResultNoData={false}
-      hideUnit={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      resultData={
-        Object {
-          "eventId": "111",
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={true}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={
+    Array [
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
           "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
+            "unit": "mmHg",
+            "value": "80",
           },
-        }
-      }
-    />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell should render a entered-in-error status standard result 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display interpretation"
-    key="ClinicalResultDisplay-111"
-  >
-    <EnteredInError />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={true}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={
+    Array [
+      Object {
+        "eventId": "111",
+        "interpretation": "CRITICAL",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+        "status": "entered-in-error",
+      },
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display error"
-    key="ClinicalResultDisplay-Error"
-  >
-    <ResultError />
-  </div>
-</div>
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={Array []}
+/>
 `;
 
 exports[`FlowsheetResultCell should render both entered-in-error status bloodpressure result 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display interpretation"
-    key="ClinicalResultDisplay-111"
-  >
-    <EnteredInError />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={true}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={
+    Array [
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
+          "interpretation": "CRITICAL",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+          "status": "entered-in-error",
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "interpretation": "CRITICAL",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+          "status": "entered-in-error",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell should render systolic entered-in-error status bloodpressure result 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display interpretation"
-    key="ClinicalResultDisplay-111"
-  >
-    <EnteredInError />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={true}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={
+    Array [
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "interpretation": "CRITICAL",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+          "status": "entered-in-error",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;
 
 exports[`FlowsheetResultCell should render when given result data 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      hasResultError={false}
-      hasResultNoData={false}
-      hideUnit={false}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      resultData={
-        Object {
-          "eventId": "111",
+<FlowsheetResultCell
+  hasResultError={false}
+  hasResultNoData={false}
+  hideUnit={false}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={
+    Array [
+      Object {
+        "eventId": "111",
+        "result": Object {
+          "unit": "mL",
+          "value": "12345.678",
+        },
+      },
+      Object {
+        "diastolic": Object {
+          "eventId": "111.2",
           "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
+            "unit": "mmHg",
+            "value": "80",
           },
-        }
-      }
-    />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
-    </div>
-  </div>
-</div>
+        },
+        "id": "111",
+        "systolic": Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        },
+      },
+    ]
+  }
+/>
 `;

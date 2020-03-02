@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
@@ -34,6 +35,11 @@ const propTypes = {
    * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -108,6 +114,7 @@ const ClinicalResult = (props) => {
     isTruncated,
     hasResultError,
     hasResultNoData,
+    intl,
     ...customProps
   } = props;
 
@@ -128,4 +135,4 @@ const ClinicalResult = (props) => {
 ClinicalResult.propTypes = propTypes;
 ClinicalResult.defaultProps = defaultProps;
 
-export default ClinicalResult;
+export default injectIntl(ClinicalResult);
