@@ -98,13 +98,13 @@ const observationPropShape = PropTypes.shape({
     'unknown'
   ]),
   /**
-   *  Clinical datetime for the Result (this may need to be renamed)
+   *  Clinical datetime for the Result
    */
-  performedDateTime: PropTypes.instanceOf(Date),
+  performedDateTime: PropTypes.string,
   /**
-   *  Last updated datetime for the Result (this may need to be renamed)
+   *  Last updated datetime for the Result
    */
-  updateDateTime: PropTypes.instanceOf(Date),
+  updateDateTime: PropTypes.string,
   /**
    *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */

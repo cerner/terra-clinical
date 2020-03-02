@@ -39,8 +39,8 @@ describe('ClinicalResult', () => {
       interpretation: 'CRITICAL',
       type: 'ALPHA',
       status: 'registered',
-      performedDateTime: new Date('December 17, 1995 03:24:00'),
-      updateDateTime: new Date('October 21, 1995 04:24:00'),
+      performedDateTime: '1995-12-17T03:24:00-06:00',
+      updateDateTime: '1995-12-17T04:04:00-06:00',
     };
     const result = shallow(<ClinicalResult resultData={resultData} hideUnit />);
     expect(result).toMatchSnapshot();
@@ -146,8 +146,8 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'CRITICAL',
           type: 'ALPHA',
           status: 'registered',
-          performedDateTime: new Date('December 17, 1995 03:24:00'),
-          updateDateTime: new Date('October 21, 1995 04:24:00'),
+          performedDateTime: '1995-12-17T03:24:00-06:00',
+          updateDateTime: '1995-12-17T04:04:00-06:00',
         },
       };
       const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
@@ -248,8 +248,8 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'CRITICAL',
           type: 'ALPHA',
           status: 'registered',
-          performedDateTime: new Date('December 17, 1995 03:24:00'),
-          updateDateTime: new Date('October 21, 1995 04:24:00'),
+          performedDateTime: '1995-12-17T03:24:00-06:00',
+          updateDateTime: '1995-12-17T04:04:00-06:00',
         },
       };
       const result = shallow(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
