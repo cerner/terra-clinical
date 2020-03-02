@@ -8,6 +8,7 @@ import Observation from './common/observation/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
 import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
+import { isEmpty, checkIsStatusInError, ConditionalWrapper } from './common/utils';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -56,8 +57,6 @@ const defaultProps = {
   hasResultNoData: false,
 };
 
-const isEmpty = (str) => (!str || str.length === 0);
-
 const ClinicalResultBloodPressure = (props) => {
   const {
     resultData,
@@ -72,18 +71,17 @@ const ClinicalResultBloodPressure = (props) => {
 
   if (hasResultError) {
     clinicalResultBloodPressureDisplay = <ResultError />;
-  }
-  else if (hasResultNoData) {
+  } else if (hasResultNoData) {
     clinicalResultBloodPressureDisplay = <NoData />;
   } else {
-    const CompareTemplate = (s, d) => ({
+    const CompareTemplate = (s = null, d = null) => ({
       systolic: s,
       diastolic: d,
     });
-
-    const compareUnits = new CompareTemplate(null, null);
-    const compareConceptDisplays = new CompareTemplate(null, null);
-    const compareDatetimeDisplays = new CompareTemplate(null, null);
+    const compareUnits = new CompareTemplate();
+    const compareConceptDisplays = new CompareTemplate();
+    const compareDatetimeDisplays = new CompareTemplate();
+    const compareStatusIsInError = new CompareTemplate();
 
     let hasModifiedIcon = false;
     let hasCommentIcon = false;
@@ -99,16 +97,18 @@ const ClinicalResultBloodPressure = (props) => {
     if (hasSystolic && !noDataSystolic) {
       const {
         result = null,
+        status = null,
         conceptDisplay = null,
-        dateTimeDisplay = null,
+        datetimeDisplay = null,
         isModified = null,
         hasComment = null,
         isUnverified = null,
       } = hasSystolic;
 
       if (!isEmpty(result.unit)) { compareUnits.systolic = result.unit.trim().toLowerCase(); }
+      if (!isEmpty(status)) { compareStatusIsInError.systolic = checkIsStatusInError(hasSystolic); }
       if (!isEmpty(conceptDisplay)) { compareConceptDisplays.systolic = conceptDisplay.trim().toLowerCase(); }
-      if (!isEmpty(dateTimeDisplay)) { compareDatetimeDisplays.systolic = dateTimeDisplay.trim().toLowerCase(); }
+      if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.systolic = datetimeDisplay.trim().toLowerCase(); }
       if (!isEmpty(isModified)) { hasModifiedIcon = isModified; }
       if (!isEmpty(hasComment)) { hasCommentIcon = hasComment; }
       if (!isEmpty(isUnverified)) { hasUnverifiedIcon = isUnverified; }
@@ -119,38 +119,79 @@ const ClinicalResultBloodPressure = (props) => {
     if (hasDiastolic && !noDataDiastolic) {
       const {
         result = null,
+        status = null,
         conceptDisplay = null,
-        dateTimeDisplay = null,
+        datetimeDisplay = null,
         isModified = null,
         hasComment = null,
         isUnverified = null,
       } = hasDiastolic;
 
       if (!isEmpty(result.unit)) { compareUnits.diastolic = result.unit.trim().toLowerCase(); }
+      if (!isEmpty(status)) { compareStatusIsInError.diastolic = checkIsStatusInError(hasDiastolic); }
       if (!isEmpty(conceptDisplay)) { compareConceptDisplays.diastolic = conceptDisplay.trim().toLowerCase(); }
-      if (!isEmpty(dateTimeDisplay)) { compareDatetimeDisplays.diastolic = dateTimeDisplay.trim().toLowerCase(); }
+      if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.diastolic = datetimeDisplay.trim().toLowerCase(); }
       if (!isEmpty(isModified)) { hasModifiedIcon = isModified; }
       if (!isEmpty(hasComment)) { hasCommentIcon = hasComment; }
       if (!isEmpty(isUnverified)) { hasUnverifiedIcon = isUnverified; }
     }
 
     if (hasSystolic || hasDiastolic) {
-      if (compareUnits.systolic === compareUnits.diastolic) {
-        const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} isUnverified={resultData.systolic.isUnverified} hideUnit />;
+      if ((compareUnits.systolic === compareUnits.diastolic) && !compareStatusIsInError.systolic) {
+        const systolicDisplay = (
+          <Observation
+            key={`Observation-Systolic-${resultData.systolic.eventId}`}
+            eventId={resultData.systolic.eventId}
+            result={resultData.systolic.result}
+            interpretation={!compareStatusIsInError.systolic ? resultData.systolic.interpretation : null}
+            isUnverified={resultData.systolic.isUnverified}
+            hideUnit
+          />
+        );
         decoratedResultDisplay.push(systolicDisplay);
       } else {
         if (!hasSystolic) decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${resultData.id}`} />);
         if (noDataSystolic) decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${resultData.id}`} />);
         else if (hasSystolic) {
-          const systolicDisplay = <Observation key={`Observation-${resultData.systolic.eventId}`} eventId={resultData.systolic.eventId} result={resultData.systolic.result} interpretation={resultData.systolic.interpretation} isUnverified={resultData.systolic.isUnverified} hideUnit={hideUnit} />;
+          const systolicDisplay = (
+            <ConditionalWrapper
+              key={`del-Systolic-${hasSystolic.eventId}`}
+              condition={compareStatusIsInError.systolic}
+              wrapper={children => <del>{children}</del>}
+            >
+              <Observation
+                key={`Observation-Systolic-${resultData.systolic.eventId}`}
+                eventId={resultData.systolic.eventId}
+                result={resultData.systolic.result}
+                interpretation={!compareStatusIsInError.systolic ? resultData.systolic.interpretation : null}
+                isUnverified={resultData.systolic.isUnverified}
+                hideUnit={hideUnit}
+              />
+            </ConditionalWrapper>
+          );
           decoratedResultDisplay.push(systolicDisplay);
         }
       }
-      decoratedResultDisplay.push(<span key={`ObservationSeperator-${(hasSystolic) ? resultData.systolic.eventId : resultData.diastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
+      decoratedResultDisplay.push(<span key={`Observation-Separator-${(hasSystolic) ? hasSystolic.eventId : hasDiastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
       if (!hasDiastolic) decoratedResultDisplay.push(<ResultError key={`Error-Diastolic-${resultData.id}`} />);
       else if (noDataDiastolic) decoratedResultDisplay.push(<NoData key={`NoData-Diastolic-${resultData.id}`} />);
       else if (hasDiastolic) {
-        const diastolicDisplay = <Observation key={`Observation-${resultData.diastolic.eventId}`} eventId={resultData.diastolic.eventId} result={resultData.diastolic.result} interpretation={resultData.diastolic.interpretation} isUnverified={resultData.diastolic.isUnverified} hideUnit={hideUnit} />;
+        const diastolicDisplay = (
+          <ConditionalWrapper
+            key={`del-Diastolic-${hasDiastolic.eventId}`}
+            condition={compareStatusIsInError.diastolic}
+            wrapper={children => <del>{children}</del>}
+          >
+            <Observation
+              key={`Observation-Diastolic-${resultData.diastolic.eventId}`}
+              eventId={resultData.diastolic.eventId}
+              result={resultData.diastolic.result}
+              interpretation={!compareStatusIsInError.diastolic ? resultData.diastolic.interpretation : null}
+              isUnverified={resultData.diastolic.isUnverified}
+              hideUnit={hideUnit}
+            />
+          </ConditionalWrapper>
+        );
         decoratedResultDisplay.push(diastolicDisplay);
       }
 
@@ -197,14 +238,15 @@ const ClinicalResultBloodPressure = (props) => {
           );
         }
       } else if (compareDatetimeDisplays.systolic || compareDatetimeDisplays.diastolic) {
-        const conceptDisplayValue = compareDatetimeDisplays.systolic ? resultData.systolic.datetimeDisplay : resultData.diastolic.datetimeDisplay;
-        datetimeDisplayElement = <div className={cx('concept-display')}>{conceptDisplayValue}</div>;
+        const conceptDisplayValue1 = compareDatetimeDisplays.systolic ? resultData.systolic.datetimeDisplay : resultData.diastolic.datetimeDisplay;
+        datetimeDisplayElement = <div className={cx('concept-display')}>{conceptDisplayValue1}</div>;
       }
     }
 
     const decoratedResultClassnames = cx([
       'decorated-result-display',
       { truncated: isTruncated },
+      { 'status-in-error': compareStatusIsInError.systolic || compareStatusIsInError.diastolic },
     ]);
 
     clinicalResultBloodPressureDisplay = (

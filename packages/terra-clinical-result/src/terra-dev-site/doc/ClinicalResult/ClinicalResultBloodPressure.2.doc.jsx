@@ -27,6 +27,8 @@ import PartialNoData from '../example/clinicalresultbloodpressure/ClinicalResult
 import PartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressurePartialNoData.jsx';
 import KnownErrorAndPartialError from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownErrorAndPartialError';
 import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownErrorAndPartialError.jsx';
+import StatusEnteredInError from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureStatusEnteredInError';
+import StatusEnteredInErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureStatusEnteredInError.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -86,6 +88,12 @@ const DocPage = () => (
         description: 'Use the \'hasResultError\' prop to show the "Error" display for the full Blood Pressure result. Or if there is a missing Systolic or Diastolic result, that portion will show the error display:',
         example: <KnownErrorAndPartialError />,
         source: KnownErrorAndPartialErrorSrc,
+      },
+      {
+        title: 'Uncharted Result as "Entered In Error"',
+        description: 'Display for when the result status has been set to \'entered-in-error\'',
+        example: <StatusEnteredInError />,
+        source: StatusEnteredInErrorSrc,
       },
     ]}
     propsTables={[

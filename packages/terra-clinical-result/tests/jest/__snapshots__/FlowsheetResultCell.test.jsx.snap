@@ -188,6 +188,38 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
 </div>
 `;
 
+exports[`FlowsheetResultCell should render a entered-in-error status standard result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display interpretation"
+    key="ClinicalResultDisplay-111"
+  >
+    <EnteredInError />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
 <div
   className="flowsheet-result-cell padding-compact"
@@ -197,6 +229,70 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
     key="ClinicalResultDisplay-Error"
   >
     <ResultError />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render both entered-in-error status bloodpressure result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display interpretation"
+    key="ClinicalResultDisplay-111"
+  >
+    <EnteredInError />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render systolic entered-in-error status bloodpressure result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display interpretation"
+    key="ClinicalResultDisplay-111"
+  >
+    <EnteredInError />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
   </div>
 </div>
 `;

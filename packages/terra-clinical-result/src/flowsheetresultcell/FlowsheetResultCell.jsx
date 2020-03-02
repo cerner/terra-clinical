@@ -7,9 +7,11 @@ import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
 import ClinicalResult from '../ClinicalResult';
 import ClinicalResultBloodPressure from '../ClinicalResultBloodPressure';
 import observationPropShape from '../proptypes/observationPropTypes';
+import EnteredInError from '../common/other/_EnteredInError';
 import ResultError from '../common/other/_ResultError';
 import NoData from '../common/other/_KnownNoData';
 import NumericOverflow from '../common/other/_NumericOverflow';
+import { isEmpty, checkIsStatusInError, checkIsOfType } from '../common/utils';
 import styles from './FlowsheetResultCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -55,13 +57,7 @@ const defaultProps = {
   hasResultNoData: false,
 };
 
-const isEmpty = (str) => (!str || str.length === 0);
-
 const FlowsheetResultCell = (props) => {
-  const containerDiv = useRef(null);
-  const [numericOverflow, setNumericOverflow] = useState(false);
-  const [contentWidth, setContentWidth] = useState(null);
-
   const {
     resultDataSet,
     hideUnit,
@@ -70,25 +66,31 @@ const FlowsheetResultCell = (props) => {
     hasResultNoData,
     ...customProps
   } = props;
+  const containerDiv = useRef(null);
+  const [contentWidth, setContentWidth] = useState(null);
+  const [numericOverflow, setNumericOverflow] = useState(false);
 
   useEffect(() => {
-    if (containerDiv.current && resultDataSet[0].type && resultDataSet[0].type === 'NUMERIC') {
-      if (!contentWidth) {
-        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
-      }
-      if (containerDiv.current.getBoundingClientRect().width <= contentWidth && !numericOverflow) {
-        setNumericOverflow(true);
-      }
-      else if (containerDiv.current.getBoundingClientRect().width > contentWidth) {
-        setNumericOverflow(false);
+    if (containerDiv.current && resultDataSet[0]) {
+      if (checkIsOfType(resultDataSet[0], 'NUMERIC')) {
+        if (!contentWidth) {
+          setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
+        }
+        if (containerDiv.current.getBoundingClientRect().width <= contentWidth && !numericOverflow) {
+          setNumericOverflow(true);
+        } else if (containerDiv.current.getBoundingClientRect().width > contentWidth) {
+          setNumericOverflow(false);
+        }
       }
     }
-  });
+  }, [resultDataSet, contentWidth, numericOverflow]);
 
   let flowsheetResultCellDisplay = null;
 
-  if (hasResultError || hasResultNoData) {
-    flowsheetResultCellDisplay = hasResultError ? (<div className={cx(['primary-display', 'error'])}><ResultError /></div>) : (<div className={cx('primary-display')}><NoData /></div>);
+  if (hasResultError) {
+    flowsheetResultCellDisplay = <div className={cx(['primary-display', 'error'])}><ResultError /></div>;
+  } else if (hasResultNoData) {
+    flowsheetResultCellDisplay = <div className={cx('primary-display')}><NoData /></div>;
   } else {
     const createResultsDisplay = (resultSet) => {
       let resultKeyID;
@@ -123,10 +125,11 @@ const FlowsheetResultCell = (props) => {
               if (resultSet[i].isUnverified) { primaryResultIsUnverified = true; resultItem.isUnverified = false; }
               if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
               else if (resultSet[i].id) resultKeyID = resultSet[i].id;
-              if (numericOverflow) {
+              if (checkIsStatusInError(resultSet[i])) {
+                resultsInnerDisplay = <EnteredInError />;
+              } else if (numericOverflow) {
                 resultsInnerDisplay = <NumericOverflow />;
-              }
-              else {
+              } else {
                 resultsInnerDisplay = (<ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
               }
             } else if (i > 0) {
@@ -136,21 +139,31 @@ const FlowsheetResultCell = (props) => {
           } else if (hasSystolic || hasDiastolic) {
             if (i === 0) {
               const resultItem = resultSet[i];
+              const isStatusInError = (s = null, d = null) => ({
+                systolic: s,
+                diastolic: d,
+              });
               if (hasSystolic) {
                 primaryDisplayWithInterpretation = !isEmpty(resultSet[i].systolic.interpretation);
                 if (resultSet[i].systolic.hasComment) { primaryResultHasComment = true; resultItem.systolic.hasComment = false; }
                 if (resultSet[i].systolic.isModified) { primaryResultIsModified = true; resultItem.systolic.isModified = false; }
                 if (resultSet[i].systolic.isUnverified) { primaryResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
+                isStatusInError.systolic = checkIsStatusInError(resultSet[i].systolic);
               }
               if (hasDiastolic) {
                 if (resultSet[i].diastolic.hasComment) { primaryResultHasComment = true; resultItem.diastolic.hasComment = false; }
                 if (resultSet[i].diastolic.isModified) { primaryResultIsModified = true; resultItem.diastolic.isModified = false; }
                 if (resultSet[i].diastolic.isUnverified) { primaryResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
+                isStatusInError.diastolic = checkIsStatusInError(resultSet[i].diastolic);
               }
               if (resultSet[i].id) resultKeyID = resultSet[i].id;
               else if (hasSystolic && resultSet[i].systolic.eventId) resultKeyID = resultSet[i].systolic.eventId;
               else if (hasDiastolic && resultSet[i].diastolic.eventId) resultKeyID = resultSet[i].diastolic.eventId;
-              resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
+              if (isStatusInError.systolic || isStatusInError.diastolic) {
+                resultsInnerDisplay = <EnteredInError />;
+              } else {
+                resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
+              }
             } else if (i > 0) {
               const sysInterpretation = !isEmpty(resultSet[i].systolic.interpretation) ? resultSet[i].systolic.interpretation : null;
               const diaInterpretation = !isEmpty(resultSet[i].diastolic.interpretation) ? resultSet[i].diastolic.interpretation : null;

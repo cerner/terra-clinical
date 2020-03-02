@@ -8,6 +8,7 @@ import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
 import Observation from './common/observation/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
+import { checkIsStatusInError, ConditionalWrapper } from './common/utils';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -67,21 +68,30 @@ const createClinicalResultDisplay = (resultData, hideUnit, isTruncated, hasResul
   if (hasResultNoData) {
     return <NoData />;
   }
+  const isStatusInError = checkIsStatusInError(resultData);
   const decoratedResultClassnames = cx([
     'decorated-result-display',
     { truncated: isTruncated },
+    { 'status-in-error': isStatusInError },
   ]);
   return (
     <React.Fragment>
       <div className={decoratedResultClassnames}>
         <div className={cx('result-display')}>
-          <Observation
-            eventId={resultData.eventId}
-            result={resultData.result}
-            interpretation={resultData.interpretation}
-            isUnverified={resultData.isUnverified}
-            hideUnit={hideUnit}
-          />
+          <ConditionalWrapper
+            key={`del-Observation-${resultData.eventId}`}
+            condition={isStatusInError}
+            wrapper={children => <del>{children}</del>}
+          >
+            <Observation
+              key={`Observation-${resultData.eventId}`}
+              eventId={resultData.eventId}
+              result={resultData.result}
+              interpretation={!isStatusInError ? resultData.interpretation : null}
+              isUnverified={resultData.isUnverified}
+              hideUnit={hideUnit}
+            />
+          </ConditionalWrapper>
           {isTruncated ? null : createIcons(resultData)}
         </div>
         {isTruncated ? createIcons(resultData) : null}

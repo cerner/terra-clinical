@@ -15,11 +15,13 @@ const ResultError = (props) => {
   ]);
 
   return (
+    // TODO add i18n - in progress
     <span
       {...customProps}
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
     >
       <IconError className={cx('icon-error')} />
+      Error
     </span>
   );
 };

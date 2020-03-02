@@ -27,6 +27,8 @@ import KnownError from '../example/clinicalresult/ClinicalResultKnownError';
 import KnownErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultKnownError.jsx';
 import AccidentalError from '../example/clinicalresult/ClinicalResultAccidentalError';
 import AccidentalErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultAccidentalError.jsx';
+import StatusEnteredInError from '../example/clinicalresult/ClinicalResultStatusEnteredInError';
+import StatusEnteredInErrorSrc from '../example/clinicalresult/ClinicalResultStatusEnteredInError.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -85,6 +87,12 @@ const DocPage = () => (
         description: 'Built-in fallback display for when there is an error or malformation of the \'resultData\' object:',
         example: <AccidentalError />,
         source: AccidentalErrorSrc,
+      },
+      {
+        title: 'Uncharted Result as "Entered In Error"',
+        description: 'Display for when the result status has been set to \'entered-in-error\'',
+        example: <StatusEnteredInError />,
+        source: StatusEnteredInErrorSrc,
       },
     ]}
     propsTables={[

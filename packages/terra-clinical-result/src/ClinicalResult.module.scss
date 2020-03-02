@@ -7,6 +7,11 @@
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // Needed for IE10
 
+    &.status-in-error del {
+      color: var(--terra-clinical-result-display-status-entered-in-error-color, rgba(28, 31, 33, 0.65));
+      text-decoration: line-through;
+    }
+
     &.truncated {
       flex-wrap: nowrap;
 

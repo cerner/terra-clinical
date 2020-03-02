@@ -25,6 +25,8 @@ import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetR
 import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
 import NumericOverflow from '../example/flowsheetresultcell/FlowsheetResultCellNumericOverflow';
 import NumericOverflowSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellNumericOverflow.jsx';
+import StatusEnteredInError from '../example/flowsheetresultcell/FlowsheetResultCellStatusEnteredInError';
+import StatusEnteredInErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellStatusEnteredInError.jsx';
 
 const DocPage = () => (
   <DocTemplate
@@ -82,6 +84,12 @@ const DocPage = () => (
         description: 'When displaying a result with an overflowed numeric value, instead of truncating the value, shows "View Results" message.',
         example: <NumericOverflow />,
         source: NumericOverflowSrc,
+      },
+      {
+        title: 'Uncharted Result as "Entered In Error"',
+        description: 'Display for when the result status has been set to \'entered-in-error\'',
+        example: <StatusEnteredInError />,
+        source: StatusEnteredInErrorSrc,
       },
     ]}
     propsTables={[

@@ -80,6 +80,10 @@
     padding-top: 24px;
     white-space: nowrap;
     width: 162px;
+
+    &.wide-column {
+      width: 50%;
+    }
   }
 
   .mock-flowsheet-resultcolumn-cell {

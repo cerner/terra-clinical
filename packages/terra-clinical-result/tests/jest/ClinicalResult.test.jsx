@@ -98,6 +98,16 @@ describe('ClinicalResult', () => {
     const result = shallow(<ClinicalResult resultData={resultData} />);
     expect(result).toMatchSnapshot();
   });
+
+  it('should render a entered-in-error status result ', () => {
+    const resultData = {
+      ...DefaultResult,
+      status: 'entered-in-error',
+      interpretation: 'CRITICAL',
+    };
+    const result = shallow(<ClinicalResult resultData={resultData} />);
+    expect(result).toMatchSnapshot();
+  });
 });
 
 describe('ClinicalResultBloodPressure', () => {
@@ -214,6 +224,19 @@ describe('ClinicalResultBloodPressure', () => {
       const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
       expect(result).toMatchSnapshot();
     });
+
+    it('should render a entered-in-error status result', () => {
+      const resultData = {
+        id: '111',
+        systolic: {
+          ...DefaultSystolicResult,
+          status: 'entered-in-error',
+          interpretation: 'CRITICAL',
+        },
+      };
+      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      expect(result).toMatchSnapshot();
+    });
   });
 
   describe('- Diastolic -', () => {
@@ -298,6 +321,19 @@ describe('ClinicalResultBloodPressure', () => {
         diastolic: {
           ...DefaultDiastolicResult,
           datetimeDisplay: 'Nov 23, 2019 13:31:31',
+        },
+      };
+      const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
+      expect(result).toMatchSnapshot();
+    });
+
+    it('should render a entered-in-error status result', () => {
+      const resultData = {
+        id: '111',
+        diastolic: {
+          ...DefaultDiastolicResult,
+          status: 'entered-in-error',
+          interpretation: 'CRITICAL',
         },
       };
       const result = shallow(<ClinicalResultBloodPressure resultData={resultData} />);
