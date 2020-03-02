@@ -28,7 +28,7 @@ import KnownErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/exampl
 import AccidentalError from '../example/clinicalresult/ClinicalResultAccidentalError';
 import AccidentalErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultAccidentalError.jsx';
 import StatusEnteredInError from '../example/clinicalresult/ClinicalResultStatusEnteredInError';
-import StatusEnteredInErrorSrc from '../example/clinicalresult/ClinicalResultStatusEnteredInError.jsx';
+import StatusEnteredInErrorSrc from '../example/clinicalresult/ClinicalResultStatusEnteredInError';
 
 const DocPage = () => (
   <DocTemplate
