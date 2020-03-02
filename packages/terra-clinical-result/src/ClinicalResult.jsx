@@ -67,13 +67,7 @@ const createSecondaryDisplays = (resultData) => (
   </React.Fragment>
 );
 
-const createClinicalResultDisplay = (resultData, hideUnit, isTruncated, hasResultError, hasResultNoData) => {
-  if (hasResultError) {
-    return <ResultError />;
-  }
-  if (hasResultNoData) {
-    return <NoData />;
-  }
+const createClinicalResultDisplay = (resultData, hideUnit, isTruncated) => {
   const isStatusInError = checkIsStatusInError(resultData);
   const decoratedResultClassnames = cx([
     'decorated-result-display',
@@ -118,7 +112,15 @@ const ClinicalResult = (props) => {
     ...customProps
   } = props;
 
-  const clinicalResultDisplay = createClinicalResultDisplay(resultData, hideUnit, isTruncated, hasResultError, hasResultNoData);
+  let clinicalResultDisplay;
+
+  if (hasResultError) {
+    clinicalResultDisplay = <ResultError />;
+  } else if (hasResultNoData) {
+    clinicalResultDisplay = <NoData />;
+  } else {
+    clinicalResultDisplay = createClinicalResultDisplay(resultData, hideUnit, isTruncated);
+  }
 
   const clinicalResultClassnames = cx('clinical-result');
 
