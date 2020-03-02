@@ -1,11 +1,21 @@
 import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import styles from './OtherTemplates.module.scss';
 
 const cx = classNames.bind(styles);
 
+const propTypes = {
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: intlShape.isRequired,
+};
+
 const EnteredInError = (props) => {
   const {
+    intl,
     ...customProps
   } = props;
 
@@ -14,14 +24,17 @@ const EnteredInError = (props) => {
   ]);
 
   return (
-    // TODO add i18n - in progress
     <span
       {...customProps}
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
     >
-      In Error
+      <span ariaLabel={intl.formatMessage({id: 'Terra.clinicalResult.statusInErrorAria'})}>
+        {intl.formatMessage({id: 'Terra.clinicalResult.statusInError'})}
+      </span>
     </span>
   );
 };
 
-export default EnteredInError;
+EnteredInError.propTypes = propTypes;
+
+export default injectIntl(EnteredInError);

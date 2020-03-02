@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
@@ -47,6 +48,11 @@ const propTypes = {
    * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -64,6 +70,7 @@ const FlowsheetResultCell = (props) => {
     paddingStyle,
     hasResultError,
     hasResultNoData,
+    intl,
     ...customProps
   } = props;
   const containerDiv = useRef(null);
@@ -212,7 +219,10 @@ const FlowsheetResultCell = (props) => {
             : (<span className={cx('additional-results-value')}>{additionalResultCount + 1}</span>);
           additionalResultInnerDisplay = (
             <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
-              <div className={cx('additional-results-stack')}>
+              <div 
+                className={cx('additional-results-stack')}
+                ariaLabel={intl.formatMessage({ id: 'Terra.clinicalResult.additionalResults' }, { numberOfAdditionalResults: additionalResultCount })}
+              >
                 {additionalCountDisplayValue}
                 {additionalCountDisplayValue}
               </div>
@@ -264,4 +274,4 @@ const FlowsheetResultCell = (props) => {
 FlowsheetResultCell.propTypes = propTypes;
 FlowsheetResultCell.defaultProps = defaultProps;
 
-export default FlowsheetResultCell;
+export default injectIntl(FlowsheetResultCell);

@@ -1,0 +1,21 @@
+{
+  "Terra.clinicalResult.resultError": "Fel",
+  "Terra.clinicalResult.statusInError": "In Error",
+  "Terra.clinicalResult.statusInErrorAria": "Value Uncharted as In Error",
+  "Terra.clinicalResult.selectToViewAria": "Select to view more details",
+  "Terra.clinicalResult.includesAdditionalValuesAria": "Result includes additional values",
+  "Terra.clinicalResult.viewResults": "View Results",
+  "Terra.clinicalResult.resultNoData": "No Results",
+  "Terra.clinicalResult.resultComment": "Result includes a Comment",
+  "Terra.clinicalResult.resultModified": "Modified Result",
+  "Terra.clinicalResult.resultUnverified": "Unverified Result",
+  "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} additional results",
+  "Terra.clinicalResult.interpretationCritical": "Critical",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Critical High",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Critical Low",
+  "Terra.clinicalResult.interpretationCriticalAbnormal": "Critical Abnormal",
+  "Terra.clinicalResult.interpretationPositive": "Positive",
+  "Terra.clinicalResult.interpretationAbnormal": "Abnormal",
+  "Terra.clinicalResult.interpretationHigh": "High",
+  "Terra.clinicalResult.interpretationLow": "Low"
+}
