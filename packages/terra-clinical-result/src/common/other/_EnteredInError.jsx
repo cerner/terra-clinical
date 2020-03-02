@@ -28,8 +28,8 @@ const EnteredInError = (props) => {
       {...customProps}
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
     >
-      <span ariaLabel={intl.formatMessage({id: 'Terra.clinicalResult.statusInErrorAria'})}>
-        {intl.formatMessage({id: 'Terra.clinicalResult.statusInError'})}
+      <span ariaLabel={intl.formatMessage({ id: 'Terra.clinicalResult.statusInErrorAria' })}>
+        {intl.formatMessage({ id: 'Terra.clinicalResult.statusInError' })}
       </span>
     </span>
   );

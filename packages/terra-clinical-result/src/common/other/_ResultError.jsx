@@ -29,8 +29,8 @@ const ResultError = (props) => {
       {...customProps}
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
     >
-      <IconError className={cx('icon-error')} aria-hidden='true' />
-      {intl.formatMessage({id: 'Terra.clinicalResult.resultError'})}
+      <IconError className={cx('icon-error')} aria-hidden="true" />
+      {intl.formatMessage({ id: 'Terra.clinicalResult.resultError' })}
     </span>
   );
 };

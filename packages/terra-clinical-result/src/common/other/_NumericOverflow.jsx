@@ -28,11 +28,10 @@ const NumericOverflow = (props) => {
       {...customProps}
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
     >
-      {intl.formatMessage({id: 'Terra.clinicalResult.viewResults'})}
+      {intl.formatMessage({ id: 'Terra.clinicalResult.viewResults' })}
     </span>
   );
 };
-
 
 NumericOverflow.propTypes = propTypes;
 

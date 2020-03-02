@@ -219,7 +219,7 @@ const FlowsheetResultCell = (props) => {
             : (<span className={cx('additional-results-value')}>{additionalResultCount + 1}</span>);
           additionalResultInnerDisplay = (
             <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
-              <div 
+              <div
                 className={cx('additional-results-stack')}
                 ariaLabel={intl.formatMessage({ id: 'Terra.clinicalResult.additionalResults' }, { numberOfAdditionalResults: additionalResultCount })}
               >
