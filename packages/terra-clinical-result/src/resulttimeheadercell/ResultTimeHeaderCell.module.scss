@@ -2,7 +2,7 @@
 
 :local {
   .clinical-result-time-header-cell {
-    align-items: baseline;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     max-width: 100%;  // Needed for IE10 truncation
@@ -44,10 +44,10 @@
   }
 
   .padding-standard {
-    padding: var(--terra-clinical-result-label-header-cell-padding-standard-padding, 0.71428rem 0.71428rem);
+    padding: var(--terra-clinical-result-label-header-cell-padding-standard-padding, 0.42857rem 0.57142rem);
   }
 
   .padding-compact {
-    padding: var(--terra-clinical-result-label-header-cell-padding-compact-padding, 0.35714rem 0.71428rem);
+    padding: var(--terra-clinical-result-label-header-cell-padding-compact-padding, 0.14285rem 0.42857rem);
   }
 }
