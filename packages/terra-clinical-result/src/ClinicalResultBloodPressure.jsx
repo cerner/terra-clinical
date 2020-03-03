@@ -113,7 +113,7 @@ const ClinicalResultBloodPressure = (props) => {
       } = hasSystolic;
 
       if (!isEmpty(result.unit)) { compareUnits.systolic = result.unit.trim().toLowerCase(); }
-      if (!isEmpty(status)) { compareStatusIsInError.systolic = checkIsStatusInError(hasSystolic); }
+      if (!isEmpty(status)) { compareStatusIsInError.systolic = checkIsStatusInError(status); }
       if (!isEmpty(conceptDisplay)) { compareConceptDisplays.systolic = conceptDisplay.trim().toLowerCase(); }
       if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.systolic = datetimeDisplay.trim().toLowerCase(); }
       if (!isEmpty(isModified)) { hasModifiedIcon = isModified; }
@@ -135,7 +135,7 @@ const ClinicalResultBloodPressure = (props) => {
       } = hasDiastolic;
 
       if (!isEmpty(result.unit)) { compareUnits.diastolic = result.unit.trim().toLowerCase(); }
-      if (!isEmpty(status)) { compareStatusIsInError.diastolic = checkIsStatusInError(hasDiastolic); }
+      if (!isEmpty(status)) { compareStatusIsInError.diastolic = checkIsStatusInError(status); }
       if (!isEmpty(conceptDisplay)) { compareConceptDisplays.diastolic = conceptDisplay.trim().toLowerCase(); }
       if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.diastolic = datetimeDisplay.trim().toLowerCase(); }
       if (!isEmpty(isModified)) { hasModifiedIcon = isModified; }

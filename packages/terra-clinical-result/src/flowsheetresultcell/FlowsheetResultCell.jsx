@@ -12,7 +12,7 @@ import EnteredInError from '../common/other/_EnteredInError';
 import ResultError from '../common/other/_ResultError';
 import NoData from '../common/other/_KnownNoData';
 import NumericOverflow from '../common/other/_NumericOverflow';
-import { isEmpty, checkIsStatusInError, checkIsOfType } from '../common/utils';
+import { isEmpty, checkIsStatusInError, checkResultType } from '../common/utils';
 import styles from './FlowsheetResultCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -39,7 +39,7 @@ const propTypes = {
    * The padding styling to apply to the Time Column Header Cell.
    * One of `'none'`, `'standard'`, `'compact'`.
    */
-  paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
+  paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact', 'alignCenter']),
   /**
    * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
    */
@@ -63,6 +63,248 @@ const defaultProps = {
   hasResultNoData: false,
 };
 
+const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID) => {
+  if (!hasCommentIcon && !hasModifiedIcon && !hasUnverifiedIcon) {
+    return null;
+  }
+  let iconElements;
+  if (hasUnverifiedIcon) {
+    iconElements = <IconUnverified className={cx('icon-unverified')} />;
+  } else {
+    iconElements = (
+      <React.Fragment>
+        {hasCommentIcon ? (<IconComment className={cx('icon-comment')} />) : null}
+        {hasModifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null}
+      </React.Fragment>
+    );
+  }
+  return (
+    <div key={(`EndAccessoryIcons-${resultKeyID}`)} className={cx('end-accessory-icons')}>
+      <div className={cx('end-accessory-stack')}>
+        {iconElements}
+      </div>
+    </div>
+  );
+};
+
+const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessoryIcons, resultKeyID) => {
+  const displayCount = count;
+  if (displayCount < 1) {
+    return null;
+  }
+  let additionalResultInterpretationIndicator;
+  if ([
+    'CRITICAL',
+    'EXTREMEHIGH',
+    'EXTREMELOW',
+    'PANICHIGH',
+    'PANICLOW',
+    'VABNORMAL',
+  ].some(r => interpretationsArr.indexOf(r) >= 0)) {
+    additionalResultInterpretationIndicator = 'CRITICAL';
+  } else if ([
+    'POSITIVE',
+    'ABNORMAL',
+    'HIGH',
+    'LOW',
+  ].some(r => interpretationsArr.indexOf(r) >= 0)) {
+    additionalResultInterpretationIndicator = 'HIGH';
+  }
+  const additionalResultClassNames = cx([
+    'additional-end-display',
+    { 'no-accessory-icons': !hasAccessoryIcons },
+    { 'interpretation-critical': additionalResultInterpretationIndicator === 'CRITICAL' },
+    { 'interpretation-high': additionalResultInterpretationIndicator === 'HIGH' },
+  ]);
+  const additionalCountDisplayValue = (displayCount > 99)
+    ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
+    : (<span className={cx('additional-results-value')}>{displayCount}</span>);
+  return (
+    <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
+      <div className={cx('additional-results-stack')}>
+        {additionalCountDisplayValue}
+        {additionalCountDisplayValue}
+      </div>
+    </div>
+  );
+};
+
+const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID) => {
+  const primaryResultClassnames = cx([
+    'primary-display',
+    { unverified: hasUnverifiedIcon },
+    { interpretation: hasInterpretationIcon },
+  ]);
+  return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
+};
+
+const createStandardResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
+  const {
+    status,
+  } = resultDataItem;
+  let resultsInnerDisplay;
+  const isStatusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
+  if (isStatusInError) {
+    resultsInnerDisplay = <EnteredInError />;
+  } else if (numericOverflow) {
+    resultsInnerDisplay = <NumericOverflow />;
+  } else {
+    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated />;
+  }
+  const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
+  return clinicalResultDisplay;
+};
+
+const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
+  const {
+    systolic,
+    diastolic,
+  } = resultDataItem;
+  let resultsInnerDisplay;
+  const isStatusInError = {
+    systolic: !isEmpty(systolic) ? checkIsStatusInError(systolic.status) : false,
+    diastolic: !isEmpty(diastolic) ? checkIsStatusInError(diastolic.status) : false,
+  };
+  if (isStatusInError.systolic || isStatusInError.diastolic) {
+    resultsInnerDisplay = <EnteredInError />;
+  } else {
+    resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated />);
+  }
+  const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
+  return clinicalResultDisplay;
+};
+
+const setResultKeyID = (isBloodPressureResult, resultData) => {
+  if (isBloodPressureResult) {
+    if (resultData.id) {
+      return resultData.id;
+    }
+    if (!isEmpty(resultData.systolic) && resultData.systolic.eventId) {
+      return resultData.systolic.eventId;
+    }
+    if (!isEmpty(resultData.diastolic) && resultData.diastolic.eventId) {
+      return resultData.diastolic.eventId;
+    }
+  } else {
+    if (resultData.eventId) {
+      return resultData.eventId;
+    }
+    if (resultData.id) {
+      return resultData.id;
+    }
+  }
+  return null;
+};
+
+const AttributesTemplate = (interpretationValue = false, commentBool = false, modifiedBool = false, unverifiedBool = false) => ({
+  interpretation: !!(interpretationValue),
+  comment: commentBool,
+  modified: modifiedBool,
+  unverified: unverifiedBool,
+});
+
+const unpackResultAttributes = (resultDataItem) => {
+  const {
+    interpretation,
+    hasComment,
+    isModified,
+    isUnverified,
+  } = resultDataItem;
+  const itemAttributes = new AttributesTemplate();
+  itemAttributes.interpretation = interpretation;
+  itemAttributes.comment = hasComment;
+  itemAttributes.modified = isModified;
+  itemAttributes.unverified = isUnverified;
+  return itemAttributes;
+};
+
+const unpackResultDataSet = (resultDataSet) => {
+  const systolicData = resultDataSet[0].systolic;
+  const diastolicData = resultDataSet[0].diastolic;
+  const isfirstBloodPressureResult = (!isEmpty(diastolicData) || !isEmpty(systolicData)) || false;
+  let firstResultAttributes = {};
+  let firstResultData = {};
+  if (isfirstBloodPressureResult) {
+    const bpAttribute = {
+      systolic: null,
+      diastolic: null,
+    };
+    bpAttribute.systolic = !isEmpty(systolicData) ? unpackResultAttributes(systolicData) : new AttributesTemplate();
+    bpAttribute.diastolic = !isEmpty(diastolicData) ? unpackResultAttributes(diastolicData) : new AttributesTemplate();
+    firstResultAttributes = new AttributesTemplate(
+      (bpAttribute.systolic.interpretation),
+      (bpAttribute.systolic.comment || bpAttribute.diastolic.comment),
+      (bpAttribute.systolic.modified || bpAttribute.diastolic.modified),
+      (bpAttribute.systolic.unverified || bpAttribute.diastolic.unverified),
+    );
+    firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
+    if (!isEmpty(firstResultData.systolic)) {
+      firstResultData.systolic.hasComment = false;
+      firstResultData.systolic.isModified = false;
+      firstResultData.systolic.isUnverified = false;
+    }
+    if (!isEmpty(firstResultData.diastolic)) {
+      firstResultData.diastolic.hasComment = false;
+      firstResultData.diastolic.isModified = false;
+      firstResultData.diastolic.isUnverified = false;
+    }
+  } else {
+    firstResultAttributes = unpackResultAttributes(resultDataSet[0]);
+    firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
+    firstResultData.hasComment = false;
+    firstResultData.isModified = false;
+    firstResultData.isUnverified = false;
+  }
+  const resultKeyID = setResultKeyID(isfirstBloodPressureResult, firstResultData);
+  return {
+    isfirstBloodPressureResult,
+    firstResultAttributes,
+    firstResultData,
+    resultKeyID,
+  };
+};
+
+const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverflow, containerDivRef) => {
+  const {
+    isfirstBloodPressureResult,
+    firstResultAttributes,
+    firstResultData,
+    resultKeyID,
+  } = unpackResultDataSet(resultDataSet);
+  const compositeCell = [];
+  if (isfirstBloodPressureResult) {
+    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, numericOverflow, containerDivRef);
+    compositeCell.push(firstResultDisplay);
+  } else {
+    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, numericOverflow, containerDivRef);
+    compositeCell.push(firstResultDisplay);
+  }
+  const additionalResultCount = resultDataSet.length - 1;
+  if (additionalResultCount > 0) {
+    const additionalResultInterpretations = [];
+    const additionalResultList = resultDataSet.slice(1, resultDataSet.length);
+    additionalResultList.forEach((result) => {
+      if (isfirstBloodPressureResult) {
+        const sysInterpretation = !isEmpty(result.systolic.interpretation) ? result.systolic.interpretation : null;
+        const diaInterpretation = !isEmpty(result.diastolic.interpretation) ? result.diastolic.interpretation : null;
+        additionalResultInterpretations.push(sysInterpretation);
+        additionalResultInterpretations.push(diaInterpretation);
+      } else {
+        const resultInterpretation = !isEmpty(result.interpretation) ? result.interpretation : null;
+        additionalResultInterpretations.push(resultInterpretation);
+      }
+    });
+    const displayCount = additionalResultCount + 1;
+    const hasAccessoryIcons = (firstResultAttributes.comment || firstResultAttributes.modified || firstResultAttributes.unverified);
+    const additionalResultsStackDisplay = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID);
+    compositeCell.push(additionalResultsStackDisplay);
+  }
+  const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
+  compositeCell.push(endAccessoryIcons);
+
+  return compositeCell;
+};
+
 const FlowsheetResultCell = (props) => {
   const {
     resultDataSet,
@@ -78,187 +320,39 @@ const FlowsheetResultCell = (props) => {
   const [numericOverflow, setNumericOverflow] = useState(false);
 
   useEffect(() => {
-    if (containerDiv.current && resultDataSet[0]) {
-      if (checkIsOfType(resultDataSet[0], 'NUMERIC')) {
-        if (!contentWidth) {
-          setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
-        }
-        if (containerDiv.current.getBoundingClientRect().width <= contentWidth && !numericOverflow) {
-          setNumericOverflow(true);
-        } else if (containerDiv.current.getBoundingClientRect().width > contentWidth) {
-          setNumericOverflow(false);
-        }
+    if (!containerDiv.current || !resultDataSet[0]) {
+      return;
+    }
+    if (checkResultType(resultDataSet[0], 'NUMERIC')) {
+      if (!contentWidth) {
+        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
+      }
+      const containerWidth = containerDiv.current.getBoundingClientRect().width;
+      if (containerWidth <= contentWidth && !numericOverflow) {
+        setNumericOverflow(true);
+      } else if (containerWidth > contentWidth) {
+        setNumericOverflow(false);
       }
     }
   }, [resultDataSet, contentWidth, numericOverflow]);
 
-  let flowsheetResultCellDisplay = null;
+  let flowsheetResultCellDisplay;
 
   if (hasResultError) {
-    flowsheetResultCellDisplay = <div className={cx(['primary-display', 'error'])}><ResultError /></div>;
+    flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-Error" className={cx(['primary-display', 'error'])}><ResultError /></div>;
   } else if (hasResultNoData) {
-    flowsheetResultCellDisplay = <div className={cx('primary-display')}><NoData /></div>;
+    flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-NoData" className={cx('primary-display')}><NoData /></div>;
+  } else if (!resultDataSet || !resultDataSet.length) {
+    flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-Error" className={cx(['primary-display', 'error'])}><ResultError /></div>;
   } else {
-    const createResultsDisplay = (resultSet) => {
-      let resultKeyID;
-      let resultsDisplay = [];
-      let resultsInnerDisplay;
-      let additionalResultCount = 0;
-      let additionalResultInnerDisplay;
-      const additionalResultInterpretations = [];
-      let additionalResultInterpretationIndicator;
-      let endAccessoryIcons;
-      let primaryResultHasComment = false;
-      let primaryResultIsModified = false;
-      let primaryResultIsUnverified = false;
-      let primaryDisplayWithInterpretation = false;
-
-      if (!resultSet || !resultSet.length) {
-        resultKeyID = 'Error';
-        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={cx(['primary-display', 'error'])}><ResultError /></div>);
-      } else {
-        resultsDisplay = [];
-        additionalResultCount = resultSet.length - 1;
-        for (let i = 0; i < resultSet.length; i += 1) {
-          const hasStandardResult = resultSet[i].result;
-          const hasSystolic = resultSet[i].systolic;
-          const hasDiastolic = resultSet[i].diastolic;
-          if (hasStandardResult) {
-            if (i === 0) {
-              const resultItem = resultSet[i];
-              primaryDisplayWithInterpretation = !isEmpty(resultSet[i].interpretation);
-              if (resultSet[i].hasComment) { primaryResultHasComment = true; resultItem.hasComment = false; }
-              if (resultSet[i].isModified) { primaryResultIsModified = true; resultItem.isModified = false; }
-              if (resultSet[i].isUnverified) { primaryResultIsUnverified = true; resultItem.isUnverified = false; }
-              if (resultSet[i].eventId) resultKeyID = resultSet[i].eventId;
-              else if (resultSet[i].id) resultKeyID = resultSet[i].id;
-              if (checkIsStatusInError(resultSet[i])) {
-                resultsInnerDisplay = <EnteredInError />;
-              } else if (numericOverflow) {
-                resultsInnerDisplay = <NumericOverflow />;
-              } else {
-                resultsInnerDisplay = (<ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
-              }
-            } else if (i > 0) {
-              const hasInterpretation = !isEmpty(resultSet[i].interpretation) ? resultSet[i].interpretation : null;
-              additionalResultInterpretations.push(hasInterpretation);
-            }
-          } else if (hasSystolic || hasDiastolic) {
-            if (i === 0) {
-              const resultItem = resultSet[i];
-              const isStatusInError = (s = null, d = null) => ({
-                systolic: s,
-                diastolic: d,
-              });
-              if (hasSystolic) {
-                primaryDisplayWithInterpretation = !isEmpty(resultSet[i].systolic.interpretation);
-                if (resultSet[i].systolic.hasComment) { primaryResultHasComment = true; resultItem.systolic.hasComment = false; }
-                if (resultSet[i].systolic.isModified) { primaryResultIsModified = true; resultItem.systolic.isModified = false; }
-                if (resultSet[i].systolic.isUnverified) { primaryResultIsUnverified = true; resultItem.systolic.isUnverified = false; }
-                isStatusInError.systolic = checkIsStatusInError(resultSet[i].systolic);
-              }
-              if (hasDiastolic) {
-                if (resultSet[i].diastolic.hasComment) { primaryResultHasComment = true; resultItem.diastolic.hasComment = false; }
-                if (resultSet[i].diastolic.isModified) { primaryResultIsModified = true; resultItem.diastolic.isModified = false; }
-                if (resultSet[i].diastolic.isUnverified) { primaryResultIsUnverified = true; resultItem.diastolic.isUnverified = false; }
-                isStatusInError.diastolic = checkIsStatusInError(resultSet[i].diastolic);
-              }
-              if (resultSet[i].id) resultKeyID = resultSet[i].id;
-              else if (hasSystolic && resultSet[i].systolic.eventId) resultKeyID = resultSet[i].systolic.eventId;
-              else if (hasDiastolic && resultSet[i].diastolic.eventId) resultKeyID = resultSet[i].diastolic.eventId;
-              if (isStatusInError.systolic || isStatusInError.diastolic) {
-                resultsInnerDisplay = <EnteredInError />;
-              } else {
-                resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultItem} hideUnit={hideUnit} isTruncated />);
-              }
-            } else if (i > 0) {
-              const sysInterpretation = !isEmpty(resultSet[i].systolic.interpretation) ? resultSet[i].systolic.interpretation : null;
-              const diaInterpretation = !isEmpty(resultSet[i].diastolic.interpretation) ? resultSet[i].diastolic.interpretation : null;
-              additionalResultInterpretations.push(sysInterpretation);
-              additionalResultInterpretations.push(diaInterpretation);
-            }
-          }
-        }
-
-        const primaryResultClassnames = cx([
-          'primary-display',
-          { unverified: primaryResultIsUnverified },
-          { interpretation: primaryDisplayWithInterpretation },
-        ]);
-
-        resultsDisplay.push(<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDiv}>{resultsInnerDisplay}</div>);
-
-        if (additionalResultInterpretations.length > 0) {
-          if (additionalResultInterpretations.includes('CRITICAL')
-            || additionalResultInterpretations.includes('EXTREMEHIGH')
-            || additionalResultInterpretations.includes('EXTREMELOW')
-            || additionalResultInterpretations.includes('PANICHIGH')
-            || additionalResultInterpretations.includes('PANICLOW')
-            || additionalResultInterpretations.includes('VABNORMAL')
-          ) {
-            additionalResultInterpretationIndicator = 'CRITICAL';
-          } else if (additionalResultInterpretations.includes('POSITIVE')
-            || additionalResultInterpretations.includes('ABNORMAL')
-            || additionalResultInterpretations.includes('HIGH')
-            || additionalResultInterpretations.includes('LOW')
-          ) {
-            additionalResultInterpretationIndicator = 'HIGH';
-          }
-        }
-
-        const additionalResultClassNames = cx([
-          'additional-end-display',
-          { 'no-accessory-icons': !(primaryResultHasComment || primaryResultIsModified || primaryResultIsUnverified) },
-          { 'interpretation-critical': additionalResultInterpretationIndicator === 'CRITICAL' },
-          { 'interpretation-high': additionalResultInterpretationIndicator === 'HIGH' },
-        ]);
-
-        if (additionalResultCount > 0) {
-          const additionalCountDisplayValue = ((additionalResultCount + 1) > 99)
-            ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
-            : (<span className={cx('additional-results-value')}>{additionalResultCount + 1}</span>);
-          additionalResultInnerDisplay = (
-            <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
-              <div
-                className={cx('additional-results-stack')}
-                ariaLabel={intl.formatMessage({ id: 'Terra.clinicalResult.additionalResults' }, { numberOfAdditionalResults: additionalResultCount })}
-              >
-                {additionalCountDisplayValue}
-                {additionalCountDisplayValue}
-              </div>
-            </div>
-          );
-        }
-        resultsDisplay.push(additionalResultInnerDisplay);
-
-        const commentIconElement = primaryResultHasComment && !primaryResultIsUnverified ? (<IconComment className={cx('icon-comment')} />) : null;
-        const modifiedIconElement = primaryResultIsModified && !primaryResultIsUnverified ? (<IconModified className={cx('icon-modified')} />) : null;
-        const unverifiedIconElement = primaryResultIsUnverified ? (<IconUnverified className={cx('icon-unverified')} />) : null;
-        if (primaryResultHasComment || primaryResultIsModified || primaryResultIsUnverified) {
-          endAccessoryIcons = (
-            <div key={(`EndAccessoryIcons-${resultDataSet[0].id}`)} className={cx('end-accessory-icons')}>
-              <div className={cx('end-accessory-stack')}>
-                {commentIconElement}
-                {modifiedIconElement}
-                {unverifiedIconElement}
-              </div>
-            </div>
-          );
-        } else {
-          endAccessoryIcons = null;
-        }
-        resultsDisplay.push(endAccessoryIcons);
-      }
-      return resultsDisplay;
-    };
-
-    flowsheetResultCellDisplay = createResultsDisplay(resultDataSet);
+    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv);
   }
 
   const flowsheetCellClassNames = cx([
     'flowsheet-result-cell',
     { 'padding-standard': paddingStyle === 'standard' },
     { 'padding-compact': paddingStyle === 'compact' },
+    { 'align-center': paddingStyle === 'alignCenter' },
   ]);
 
   return (

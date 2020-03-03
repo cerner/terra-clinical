@@ -9,7 +9,7 @@ import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
 import Observation from './common/observation/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
-import { checkIsStatusInError, ConditionalWrapper } from './common/utils';
+import { isEmpty, checkIsStatusInError, ConditionalWrapper } from './common/utils';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -68,7 +68,7 @@ const createSecondaryDisplays = (resultData) => (
 );
 
 const createClinicalResultDisplay = (resultData, hideUnit, isTruncated) => {
-  const isStatusInError = checkIsStatusInError(resultData);
+  const isStatusInError = !isEmpty(resultData.status) ? checkIsStatusInError(resultData.status) : false;
   const decoratedResultClassnames = cx([
     'decorated-result-display',
     { truncated: isTruncated },

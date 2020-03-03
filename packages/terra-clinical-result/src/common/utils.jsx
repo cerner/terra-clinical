@@ -10,8 +10,8 @@ const isEmpty = (str) => (!str || str.length === 0);
  * -param       object    Observation.propTypes.result
  * -return      boolean   status is in-error|true || not in-error|false
  */
-const checkIsStatusInError = (resultData) => {
-  const resultStatus = (!isEmpty(resultData.status)) ? resultData.status.trim().toLowerCase() : undefined;
+const checkIsStatusInError = (status) => {
+  const resultStatus = (!isEmpty(status)) ? status.trim().toLowerCase() : undefined;
   return (resultStatus === 'entered-in-error');
 };
 
@@ -21,7 +21,7 @@ const checkIsStatusInError = (resultData) => {
  * -param       string    type value to match
  * -return      boolean   type match|true || no match|false
  */
-const checkIsOfType = (resultData, matchType) => {
+const checkResultType = (resultData, matchType) => {
   const resultType = (!isEmpty(resultData.type)) ? resultData.type.trim().toUpperCase() : undefined;
   return (resultType === matchType);
 };
@@ -39,7 +39,7 @@ const ConditionalWrapper = ({ condition, wrapper, children }) => (condition ? wr
 const ClinicalResultUtils = {
   isEmpty,
   checkIsStatusInError,
-  checkIsOfType,
+  checkResultType,
   ConditionalWrapper,
 };
 
@@ -47,6 +47,6 @@ export default ClinicalResultUtils;
 export {
   isEmpty,
   checkIsStatusInError,
-  checkIsOfType,
+  checkResultType,
   ConditionalWrapper,
 };

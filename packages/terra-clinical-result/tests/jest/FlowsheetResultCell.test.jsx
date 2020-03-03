@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import FlowsheetResultCell from '../../src/flowsheetresultcell/FlowsheetResultCell';
 import DefaultResult, { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
@@ -106,6 +107,14 @@ describe('FlowsheetResultCell', () => {
         DefaultBloodPressureResult,
       ];
       const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="compact" />);
+      expect(cell).toMatchSnapshot();
+    });
+    it('should render when given alignCenter', () => {
+      const results = [
+        DefaultResult,
+        DefaultBloodPressureResult,
+      ];
+      const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="alignCenter" />);
       expect(cell).toMatchSnapshot();
     });
   });

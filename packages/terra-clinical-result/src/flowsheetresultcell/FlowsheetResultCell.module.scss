@@ -99,9 +99,9 @@
 
   .additional-results-value {
     background-color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-background-color, #f3f3f3);
-    border: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-border, 1px solid #686c6e);
+    border: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-border, 1px solid #6a6c6e);
     box-sizing: border-box;
-    color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-color, #6a6c6e);
+    color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-color, #595f62);
     display: block;
     font-size: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-font-size, 0.92857em); // Must use ems for font re-scaling
     font-weight: var(--terra-clinical-result-flowsheet-cell-font-weight, normal);
@@ -115,7 +115,7 @@
     z-index: 2;
 
     &:nth-of-type(2) {
-      color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-color, #686c6e);
+      color: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-color, #f3f3f3);
       left: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-left, 0.23076em); // Must use ems for font re-scaling
       top: var(--terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-top, -1.38461em); // Must use ems for font re-scaling
       z-index: 1;
@@ -179,10 +179,17 @@
   }
 
   .padding-standard {
-    padding: var(--terra-clinical-result-flowsheet-cell-padding-standard-padding, 0.71428rem 0.28571rem);
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-standard-padding, 0.5rem 0.28571rem);
   }
 
   .padding-compact {
-    padding: var(--terra-clinical-result-flowsheet-cell-padding-compact-padding, 0.21428rem 0.28571rem); //0.35714rem  
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-compact-padding, 0.21428rem 0.28571rem);
+  }
+
+  .align-center {
+    align-items: center;
+    height: 100%;
+    max-height: 100%;
+    padding: var(--terra-clinical-result-flowsheet-cell-padding-compact-padding, 0.21428rem 0.28571rem);
   }
 }

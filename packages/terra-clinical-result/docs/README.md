@@ -24,7 +24,7 @@ $ npm install terra-clinical-result
 * [LTR/RTL Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#ltr--rtl-support)
 
 ## Usage Guide
-The clinical result is constructed by providing structured object with a specific construction that follows a similar patter to the [HL7 FHIR Observation](https://www.hl7.org/fhir/observation.html) standard.
+The clinical result is constructed by providing structured object with a specific construction that follows a similar pattern to the [HL7 FHIR Observation](https://www.hl7.org/fhir/observation.html) standard.
 ```jsx
 const observationPropShape = PropTypes.shape({
   /**

@@ -104,14 +104,26 @@
     border-top: 1px solid #dedfe0;
     box-sizing: border-box;
     margin-bottom: -1px;
-    min-height: 33px;
+    height: 33px;
 
     &.zebra {
       background-color: #f1f1f1;
     }
 
     &.empty {
-      min-height: 33px;
+      height: 33px;
+    }
+
+    &.short {
+      height: 25px;
+    }
+
+    &.medium {
+      height: 41px;
+    }
+
+    &.tall {
+      height: 55px;
     }
 
     &.with-padding {
