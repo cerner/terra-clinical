@@ -1,6 +1,6 @@
 import React from 'react';
 import Observation from '../../src/common/observation/_Observation';
-import DefaultResult from '../../src/terra-dev-site/test/clinical-result/TestResults';
+import DefaultResult from '../../src/terra-dev-site/test/TestResults';
 
 // Snapshot Tests
 describe('Observation', () => {

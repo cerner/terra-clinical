@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import ClinicalResult, { ResultNameHeaderCell, ResultTimeHeaderCell, ClinicalResultBloodPressure } from '../../lib/index';
-import DefaultResult, { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
+import DefaultResult, { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/TestResults';
 
 // Snapshot Tests
 it('should render a default component', () => {
