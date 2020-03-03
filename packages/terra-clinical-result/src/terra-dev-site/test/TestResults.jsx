@@ -16,6 +16,13 @@ const DecoratedResult = {
   ...DefaultResult,
   isModified: true,
   hasComment: true,
+  isUnverified: false,
+};
+
+const UnverifiedResult = {
+  ...DefaultResult,
+  isModified: false,
+  hasComment: false,
   isUnverified: true,
 };
 
@@ -60,17 +67,65 @@ const DefaultBloodPressureResult = {
   },
 };
 
-const DecoratedBloodPressureResult = {
+const DecoratedBloodPressureResult1 = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    isModified: true,
+    hasComment: true,
+    isUnverified: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    isModified: false,
+    hasComment: false,
+    isUnverified: false,
+  },
+};
+
+const DecoratedBloodPressureResult2 = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
     isModified: false,
-    hasComment: true,
-    isUnverified: true,
+    hasComment: false,
+    isUnverified: false,
   },
   diastolic: {
     ...DefaultDiastolicResult,
     isModified: true,
+    hasComment: true,
+    isUnverified: false,
+  },
+};
+
+const UnverifiedBloodPressureResult1 = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    isModified: false,
+    hasComment: false,
+    isUnverified: true,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    isModified: false,
+    hasComment: false,
+    isUnverified: false,
+  },
+};
+
+const UnverifiedBloodPressureResult2 = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    isModified: false,
+    hasComment: false,
+    isUnverified: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    isModified: false,
     hasComment: false,
     isUnverified: true,
   },
@@ -172,12 +227,16 @@ export default DefaultResult;
 export {
   SingleResultValue,
   DecoratedResult,
+  UnverifiedResult,
   BadData,
   NullResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
   DefaultBloodPressureResult,
-  DecoratedBloodPressureResult,
+  DecoratedBloodPressureResult1,
+  DecoratedBloodPressureResult2,
+  UnverifiedBloodPressureResult1,
+  UnverifiedBloodPressureResult2,
   ExtraDisplaysBloodPressureResult,
   InterpretationBPResultsArray,
 };
