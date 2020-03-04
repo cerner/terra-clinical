@@ -80,7 +80,6 @@
     overflow: hidden;
     padding-top: 24px;
     vertical-align: top;
-    white-space: nowrap;
     width: 162px;
 
     &.half-column {
@@ -107,10 +106,13 @@
     box-sizing: border-box;
     height: 33px;
     margin-bottom: -1px;
+    white-space: nowrap;
 
-    &.zebra {
-      background-color: #f1f1f1;
-    }
+    &.allow-wrapping {
+      overflow: auto;
+      white-space: normal;
+      word-wrap: normal;
+    }  
 
     &.empty {
       height: 33px;
@@ -131,5 +133,21 @@
     &.with-padding {
       padding: 7px 7px 0;
     }
+    
+    &.zebra {
+      background-color: #f1f1f1;
+    }
+  }
+
+  .vertical-center-align-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    max-height: 100%;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+    padding: 0;
+    width: 100%;
   }
 }

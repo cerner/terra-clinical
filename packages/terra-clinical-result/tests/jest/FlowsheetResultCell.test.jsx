@@ -109,13 +109,5 @@ describe('FlowsheetResultCell', () => {
       const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="compact" />);
       expect(cell).toMatchSnapshot();
     });
-    it('should render when given alignCenter', () => {
-      const results = [
-        DefaultResult,
-        DefaultBloodPressureResult,
-      ];
-      const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="alignCenter" />);
-      expect(cell).toMatchSnapshot();
-    });
   });
 });

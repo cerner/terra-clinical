@@ -39,7 +39,7 @@ const propTypes = {
    * The padding styling to apply to the Time Column Header Cell.
    * One of `'none'`, `'standard'`, `'compact'`.
    */
-  paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact', 'alignCenter']),
+  paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
   /**
    * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
    */
@@ -352,7 +352,6 @@ const FlowsheetResultCell = (props) => {
     'flowsheet-result-cell',
     { 'padding-standard': paddingStyle === 'standard' },
     { 'padding-compact': paddingStyle === 'compact' },
-    { 'align-center': paddingStyle === 'alignCenter' },
   ]);
 
   return (

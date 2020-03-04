@@ -5,33 +5,6 @@ import styles from '../Examples.module.scss';
 
 const cx = classNames.bind(styles);
 
-const CompactLabel = [
-  {
-    eventId: '1',
-    result: {
-      value: 'compact',
-    },
-  },
-];
-
-const StandardLabel = [
-  {
-    eventId: '2',
-    result: {
-      value: 'standard',
-    },
-  },
-];
-
-const AlignCenterLabel = [
-  {
-    eventId: '3',
-    result: {
-      value: 'alignCenter',
-    },
-  },
-];
-
 const multipleResultBPValues = [
   {
     id: '1602328271-1',
@@ -128,14 +101,14 @@ export default () => (
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
         none
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={CompactLabel} paddingStyle="compact" />
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
+        compact
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'medium'])}>
-        <FlowsheetResultCell resultDataSet={StandardLabel} paddingStyle="standard" />
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding', 'medium'])}>
+        standard
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'tall'])}>
-        <FlowsheetResultCell resultDataSet={AlignCenterLabel} paddingStyle="alignCenter" />
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding', 'tall', 'allow-wrapping'])}>
+        compact + vertically center-aligned
       </div>
     </div>
     {/* --- */}
@@ -150,7 +123,9 @@ export default () => (
         <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="standard" />
       </div>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'tall'])}>
-        <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="alignCenter" />
+        <div className={cx(['vertical-center-align-wrapper'])}>
+          <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="compact" />
+        </div>
       </div>
     </div>
     {/* --- */}
@@ -165,7 +140,9 @@ export default () => (
         <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="standard" />
       </div>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'tall'])}>
-        <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="alignCenter" />
+        <div className={cx(['vertical-center-align-wrapper'])}>
+          <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="compact" />
+        </div>
       </div>
     </div>
   </React.Fragment>
