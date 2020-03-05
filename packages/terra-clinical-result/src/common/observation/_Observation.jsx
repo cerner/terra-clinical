@@ -6,7 +6,7 @@ import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
 import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
 import interpretationPropType from '../../proptypes/interpretationPropTypes';
-import { valueQuantityPropShape, valueStringPropShape, valueNullPropShape } from '../../proptypes/valuePropTypes';
+import valueQuantityPropType from '../../proptypes/valuePropTypes';
 import ResultError from '../other/_ResultError';
 import NoData from '../other/_KnownNoData';
 import styles from './Observation.module.scss';
@@ -21,11 +21,7 @@ const propTypes = {
   /**
    *  Value and optional Unit of Measure for the Observation Result
    */
-  result: PropTypes.oneOfType([
-    valueQuantityPropShape,
-    valueStringPropShape,
-    valueNullPropShape,
-  ]),
+  result: valueQuantityPropType,
   /**
    * Interpretation of the Result, indicates Criticality
    */

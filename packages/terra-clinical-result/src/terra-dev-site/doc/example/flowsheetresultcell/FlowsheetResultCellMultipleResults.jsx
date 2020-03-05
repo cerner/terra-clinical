@@ -15,7 +15,6 @@ const multipleResultValues = [
     type: 'NUMERIC',
     isModified: true,
     hasComment: true,
-    effectiveDateTime: '10/10/2020 11:11:11',
   },
   {
     eventId: '1602328282',
@@ -26,7 +25,6 @@ const multipleResultValues = [
     type: 'NUMERIC',
     isModified: false,
     hasComment: false,
-    effectiveDateTime: '10/10/2020 11:11:22',
   },
   {
     eventId: '1602328293',
@@ -37,7 +35,6 @@ const multipleResultValues = [
     type: 'NUMERIC',
     isModified: false,
     hasComment: false,
-    effectiveDateTime: '10/10/2020 11:11:33',
   },
 ];
 

@@ -39,10 +39,6 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
       interpretation: 'CRITICAL',
-      type: 'ALPHA',
-      status: 'registered',
-      performedDateTime: '1995-12-17T03:24:00-06:00',
-      updateDateTime: '1995-12-17T04:04:00-06:00',
     };
     const result = shallowWithIntl(<ClinicalResult resultData={resultData} hideUnit />);
     expect(result).toMatchSnapshot();
@@ -146,10 +142,6 @@ describe('ClinicalResultBloodPressure', () => {
         systolic: {
           ...DefaultSystolicResult,
           interpretation: 'CRITICAL',
-          type: 'ALPHA',
-          status: 'registered',
-          performedDateTime: '1995-12-17T03:24:00-06:00',
-          updateDateTime: '1995-12-17T04:04:00-06:00',
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);
@@ -248,10 +240,6 @@ describe('ClinicalResultBloodPressure', () => {
         diastolic: {
           ...DefaultDiastolicResult,
           interpretation: 'CRITICAL',
-          type: 'ALPHA',
-          status: 'registered',
-          performedDateTime: '1995-12-17T03:24:00-06:00',
-          updateDateTime: '1995-12-17T04:04:00-06:00',
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />);

@@ -15,7 +15,6 @@ const bloodpressureResultValue = [
         unit: 'mmHg',
       },
       interpretation: 'CRITICAL',
-      resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
       eventId: '111.2',
@@ -23,7 +22,6 @@ const bloodpressureResultValue = [
         value: '77',
         unit: 'mmHg',
       },
-      resultDateTime: '10/10/2020 11:11',
     },
   },
 ];

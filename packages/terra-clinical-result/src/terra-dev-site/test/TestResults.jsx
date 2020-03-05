@@ -150,12 +150,10 @@ const mixedBPResultValue = {
   systolic: {
     ...DefaultSystolicResult,
     interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
   diastolic: {
     ...DefaultDiastolicResult,
     interpretation: 'LOW',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
 };
 
@@ -164,12 +162,10 @@ const criticalBPResultValue = {
   systolic: {
     ...DefaultSystolicResult,
     interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
   diastolic: {
     ...DefaultDiastolicResult,
     interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
 };
 
@@ -178,12 +174,10 @@ const highBPResultValue = {
   systolic: {
     ...DefaultSystolicResult,
     interpretation: 'HIGH',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
   diastolic: {
     ...DefaultDiastolicResult,
     interpretation: 'HIGH',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
 };
 
@@ -192,12 +186,10 @@ const lowBPResultValue = {
   systolic: {
     ...DefaultSystolicResult,
     interpretation: 'LOW',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
   diastolic: {
     ...DefaultDiastolicResult,
     interpretation: 'LOW',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
 };
 
@@ -206,12 +198,10 @@ const abnormalBPResultValue = {
   systolic: {
     ...DefaultSystolicResult,
     interpretation: 'ABNORMAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
   diastolic: {
     ...DefaultDiastolicResult,
     interpretation: 'ABNORMAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
 };
 

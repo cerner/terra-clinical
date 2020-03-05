@@ -14,7 +14,6 @@ const unverifiedResultValue = [
     },
     type: 'NUMERIC',
     isUnverified: true,
-    effectiveDateTime: '10/10/2020 11:11:11',
   },
 ];
 

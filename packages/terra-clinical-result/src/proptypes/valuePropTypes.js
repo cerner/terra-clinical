@@ -1,40 +1,15 @@
 import PropTypes from 'prop-types';
 
-const valueQuantityPropShape = PropTypes.shape({
+const valueQuantityPropType = PropTypes.shape({
   /**
-   *  Numeric Value for an Observation Result
+   *  Value for a single Observation Result.
+   *  can be either single string or array of string values for multi-alpha responses
    */
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   /**
-   *  Unit of Measure representation for an Observation Result
+   *  Unit of Measure representation for an Observation Result.
    */
   unit: PropTypes.string,
-  /**
-   *  Optional (FHIR) - System that defines coded unit form
-   */
-  system: PropTypes.string,
-  /**
-   *  Optional (FHIR) - Coded form of the unit
-   */
-  code: PropTypes.string,
 });
 
-const valueStringPropShape = PropTypes.shape({
-  /**
-   *  String Value for an Observation Result
-   */
-  value: PropTypes.string,
-});
-
-const valueNullPropShape = PropTypes.shape({
-  /**
-   *  Using Object to set Null as Value for an Observation Result
-   */
-  value: PropTypes.object,
-});
-
-export {
-  valueQuantityPropShape,
-  valueStringPropShape,
-  valueNullPropShape,
-};
+export default valueQuantityPropType;

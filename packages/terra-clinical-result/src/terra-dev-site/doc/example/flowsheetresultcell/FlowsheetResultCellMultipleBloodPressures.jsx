@@ -17,7 +17,6 @@ const multipleResultBPValues = [
       interpretation: 'HIGH',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
       eventId: '1602328271-1.2',
@@ -28,7 +27,6 @@ const multipleResultBPValues = [
       interpretation: 'LOW',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
     },
   },
   {
@@ -42,7 +40,6 @@ const multipleResultBPValues = [
       interpretation: 'HIGH',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
       eventId: '1602328271-2.2',
@@ -53,7 +50,6 @@ const multipleResultBPValues = [
       interpretation: 'LOW',
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
     },
   },
   {
@@ -66,7 +62,6 @@ const multipleResultBPValues = [
       },
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
     },
     diastolic: {
       eventId: '1602328271-3.2',
@@ -76,7 +71,6 @@ const multipleResultBPValues = [
       },
       isModified: true,
       hasComment: true,
-      resultDateTime: '10/10/2020 11:11',
     },
   },
 ];

@@ -10,7 +10,6 @@ const singleResultValue = [
     },
     isModified: true,
     hasComment: true,
-    resultDateTime: '10/10/2020 11:11:11',
   },
 ];
 

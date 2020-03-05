@@ -37,14 +37,10 @@ exports[`ClinicalResult should pass certain props to Observation  1`] = `
     Object {
       "eventId": "111",
       "interpretation": "CRITICAL",
-      "performedDateTime": "1995-12-17T03:24:00-06:00",
       "result": Object {
         "unit": "mL",
         "value": "12345.678",
       },
-      "status": "registered",
-      "type": "ALPHA",
-      "updateDateTime": "1995-12-17T04:04:00-06:00",
     }
   }
 />
@@ -546,14 +542,10 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
       "diastolic": Object {
         "eventId": "111.2",
         "interpretation": "CRITICAL",
-        "performedDateTime": "1995-12-17T03:24:00-06:00",
         "result": Object {
           "unit": "mmHg",
           "value": "80",
         },
-        "status": "registered",
-        "type": "ALPHA",
-        "updateDateTime": "1995-12-17T04:04:00-06:00",
       },
       "id": "111",
     }
@@ -943,14 +935,10 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
       "systolic": Object {
         "eventId": "111.1",
         "interpretation": "CRITICAL",
-        "performedDateTime": "1995-12-17T03:24:00-06:00",
         "result": Object {
           "unit": "mmHg",
           "value": "180",
         },
-        "status": "registered",
-        "type": "ALPHA",
-        "updateDateTime": "1995-12-17T04:04:00-06:00",
       },
     }
   }
