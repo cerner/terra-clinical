@@ -27,7 +27,7 @@ const KnownNoData = (props) => {
     <span
       {...customProps}
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
-      ariaLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultNoData' })}
+      aria-label={intl.formatMessage({ id: 'Terra.clinicalResult.resultNoData' })}
     >
     --
     </span>

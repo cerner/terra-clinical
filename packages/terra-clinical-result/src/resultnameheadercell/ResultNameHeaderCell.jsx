@@ -16,12 +16,12 @@ const propTypes = {
    */
   unit: PropTypes.string,
   /**
-   * The padding styling to apply to the Time Column Header Cell.
-   * One of `'none'`, `'standard'`, or `'compact'`.
+   * The padding styling to apply to the Result Name row header cell.
+   * One of `'none'`, `'compact'`, or `'standard'`.
    */
-  paddingStyle: PropTypes.oneOf(['none', 'standard', 'compact']),
+  paddingStyle: PropTypes.oneOf(['none', 'compact', 'standard']),
   /**
-   * Adds additional icon at beginning of row before the ResultName, indicating additinonal information about results or cells.
+   * Adds additional icon at beginning of row before the ResultName, indicating special information about results or cells.
    * One of `'none'` or `'calculated'`.
    */
   typeIndicator: PropTypes.oneOf(['none', 'calculated']),
