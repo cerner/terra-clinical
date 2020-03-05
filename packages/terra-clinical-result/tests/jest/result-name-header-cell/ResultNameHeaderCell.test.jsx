@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultNameHeaderCell from '../../src/resultnameheadercell/ResultNameHeaderCell';
+import ResultNameHeaderCell from '../../../src/resultnameheadercell/ResultNameHeaderCell';
 
 // Snapshot Tests
 describe('ResultNameHeaderCell', () => {

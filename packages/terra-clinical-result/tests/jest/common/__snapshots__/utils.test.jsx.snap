@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConditionalWrapper returns the component by itself if the condition does not match 1`] = `
+<div>
+  Inner Component
+</div>
+`;
+
+exports[`ConditionalWrapper returns the wrapped component if the condition matches 1`] = `
+<del>
+  <div>
+    Inner Component
+  </div>
+</del>
+`;

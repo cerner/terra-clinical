@@ -1,3 +1,11 @@
+const DefaultResultWithNoEventId = {
+  id: '111',
+  result: {
+    value: '12345.678',
+    unit: 'mL',
+  },
+};
+
 const DefaultResult = {
   eventId: '111',
   result: {
@@ -54,6 +62,18 @@ const DefaultDiastolicResult = {
   result: {
     value: '80',
     unit: 'mmHg',
+  },
+};
+
+const DefaultBloodPressureSystolicResultWithNoId = {
+  systolic: {
+    ...DefaultSystolicResult,
+  },
+};
+
+const DefaultBloodPressureDiastolicResultWithNoId = {
+  diastolic: {
+    ...DefaultDiastolicResult,
   },
 };
 
@@ -229,4 +249,7 @@ export {
   UnverifiedBloodPressureResult2,
   ExtraDisplaysBloodPressureResult,
   InterpretationBPResultsArray,
+  DefaultResultWithNoEventId,
+  DefaultBloodPressureSystolicResultWithNoId,
+  DefaultBloodPressureDiastolicResultWithNoId,
 };

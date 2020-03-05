@@ -1,1544 +1,414 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ClinicalResult should pass certain props to Observation  1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={true}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "interpretation": "CRITICAL",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a commented result  1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "hasComment": true,
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a default ClinicalResult 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a entered-in-error status result  1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "interpretation": "CRITICAL",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-      "status": "entered-in-error",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a modified result  1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "isModified": true,
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a result with a concept display 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "conceptDisplay": "Temperature Oral",
-      "eventId": "111",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a result with a date time display 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "datetimeDisplay": "Nov 23, 2019 13:31:31",
-      "eventId": "111",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a result with unit hidden 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={true}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={true}
-  resultData={
-    Object {
-      "eventId": "111",
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render a truncated ClinicalResult with icons moved 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={true}
-  resultData={
-    Object {
-      "eventId": "111",
-      "isModified": true,
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResult should render an unverified result  1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "eventId": "111",
-      "isUnverified": true,
-      "result": Object {
-        "unit": "mL",
-        "value": "12345.678",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to Observation  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={true}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "interpretation": "CRITICAL",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render a commented result  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "hasComment": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-error status result 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "interpretation": "CRITICAL",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-        "status": "entered-in-error",
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render a modified result  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "isModified": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a concept display 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "conceptDisplay": "Temperature Oral",
-        "eventId": "111.2",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a date time display 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "datetimeDisplay": "Nov 23, 2019 13:31:31",
-        "eventId": "111.2",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render a result with unit hidden 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={true}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified result  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "isUnverified": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to Observation  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={true}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "interpretation": "CRITICAL",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render a commented result  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "hasComment": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-error status result 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "interpretation": "CRITICAL",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-        "status": "entered-in-error",
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render a modified result  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "isModified": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render a result with a concept display 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "conceptDisplay": "Temperature Oral",
-        "eventId": "111.1",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render a result with a date time display 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "datetimeDisplay": "Nov 23, 2019 13:31:31",
-        "eventId": "111.1",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render a result with unit hidden 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={true}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure - Systolic - should render an unverified result  1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "isUnverified": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure should render a default ClinicalResultBloodPressure 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={false}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure 1`] = `
-<ClinicalResultBloodPressure
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={true}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure with icons moved 1`] = `
-<ClinicalResult
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  isTruncated={true}
-  resultData={
-    Object {
-      "diastolic": Object {
-        "eventId": "111.2",
-        "isModified": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "80",
-        },
-      },
-      "id": "111",
-      "systolic": Object {
-        "eventId": "111.1",
-        "isModified": true,
-        "result": Object {
-          "unit": "mmHg",
-          "value": "180",
-        },
-      },
-    }
-  }
-/>
-`;
-
-exports[`should render a default ResultTimeHeaderCell component 1`] = `
 <div
-  className="clinical-result-time-header-cell padding-compact"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
+  className="clinical-result"
 >
   <div
-    className="date"
+    className="decorated-result-display"
   >
-    Dec 21, 2010
-  </div>
-  <div
-    className="time"
-  >
-    23:59
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={true}
+          interpretation="CRITICAL"
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
   </div>
 </div>
 `;
 
-exports[`should render a default component 1`] = `
+exports[`ClinicalResult should render a NoData if hasResultNoData is true 1`] = `
 <div
-  className="clinical-result-name-header-cell padding-compact"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
+  className="clinical-result"
+>
+  <InjectIntl(KnownNoData) />
+</div>
+`;
+
+exports[`ClinicalResult should render a ResultError if hasResultError is true 1`] = `
+<div
+  className="clinical-result"
+>
+  <InjectIntl(ResultError) />
+</div>
+`;
+
+exports[`ClinicalResult should render a commented result  1`] = `
+<div
+  className="clinical-result"
 >
   <div
-    className="name"
+    className="decorated-result-display"
   >
-    Blood Pressure
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <IconComment
+        className="icon-comment"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a default ClinicalResult 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a entered-in-error status result 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display status-in-error"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={true}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          interpretation={null}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a modified result  1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <IconModified
+        className="icon-modified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a result with a concept display 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
   </div>
   <div
-    className="unit"
+    className="concept-display"
   >
-    mmHg
+    Temperature Oral
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a result with a date time display 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+  <div
+    className="datetime-display"
+  >
+    Nov 23, 2019 13:31:31
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a result with unit hidden 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={true}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display truncated"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render a truncated ClinicalResult with icons moved 1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display truncated"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={false}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+    <IconModified
+      className="icon-modified"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+</div>
+`;
+
+exports[`ClinicalResult should render an unverified result  1`] = `
+<div
+  className="clinical-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={false}
+          isUnverified={true}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
   </div>
 </div>
 `;
