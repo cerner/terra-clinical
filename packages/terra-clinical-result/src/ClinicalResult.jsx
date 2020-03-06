@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   *  Event ID
+   * A unique event identifier attached to the result data
    */
   eventId: PropTypes.string,
   /**
