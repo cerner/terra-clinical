@@ -28,7 +28,7 @@ const propTypes = {
    */
   diastolic: observationPropShape,
   /**
-   * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
+   * Whether or not the unit of measure should be presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
   /**
