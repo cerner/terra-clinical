@@ -28,7 +28,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
           eventId="111.2"
           hideUnit={true}
           interpretation="critical"
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -70,7 +69,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -120,7 +118,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
           eventId="111.2"
           hideUnit={false}
           interpretation={null}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -162,7 +159,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -209,7 +205,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -256,7 +251,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -303,7 +297,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
         <Observation
           eventId="111.2"
           hideUnit={true}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -384,7 +377,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
           eventId="111.1"
           hideUnit={true}
           interpretation="critical"
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -426,7 +418,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
         <Observation
           eventId="111.1"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -476,7 +467,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
           eventId="111.1"
           hideUnit={false}
           interpretation={null}
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -518,7 +508,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
         <Observation
           eventId="111.1"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -565,7 +554,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         <Observation
           eventId="111.1"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -612,7 +600,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         <Observation
           eventId="111.1"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -659,7 +646,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
         <Observation
           eventId="111.1"
           hideUnit={true}
-          isUnverified={false}
           key="Observation-Systolic-111.1"
           result={
             Object {
@@ -759,7 +745,6 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
       <Observation
         eventId="111.1"
         hideUnit={true}
-        isUnverified={false}
         key="Observation-Systolic-111.1"
         result={
           Object {
@@ -782,7 +767,6 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -810,7 +794,6 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       <Observation
         eventId="111.1"
         hideUnit={true}
-        isUnverified={false}
         key="Observation-Systolic-111.1"
         result={
           Object {
@@ -833,7 +816,6 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {
@@ -861,7 +843,6 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       <Observation
         eventId="111.1"
         hideUnit={true}
-        isUnverified={false}
         key="Observation-Systolic-111.1"
         result={
           Object {
@@ -884,7 +865,6 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         <Observation
           eventId="111.2"
           hideUnit={false}
-          isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
             Object {

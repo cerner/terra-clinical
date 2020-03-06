@@ -17,7 +17,6 @@ exports[`ClinicalResultDisplay should pass certain props to Observation  1`] = `
           eventId="111"
           hideUnit={true}
           interpretation="critical"
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -49,8 +48,6 @@ exports[`ClinicalResultDisplay should render a commented result  1`] = `
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -84,8 +81,6 @@ exports[`ClinicalResultDisplay should render a default ClinicalResultDisplay 1`]
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -117,9 +112,7 @@ exports[`ClinicalResultDisplay should render a entered-in-error status result 1`
       >
         <Observation
           eventId="111"
-          hideUnit={false}
           interpretation={null}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -151,8 +144,6 @@ exports[`ClinicalResultDisplay should render a modified result  1`] = `
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -186,8 +177,6 @@ exports[`ClinicalResultDisplay should render a result with a concept display 1`]
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -221,8 +210,6 @@ exports[`ClinicalResultDisplay should render a result with a date time display 1
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -257,7 +244,6 @@ exports[`ClinicalResultDisplay should render a result with unit hidden 1`] = `
         <Observation
           eventId="111"
           hideUnit={true}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -289,8 +275,6 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -322,8 +306,6 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay w
       >
         <Observation
           eventId="111"
-          hideUnit={false}
-          isUnverified={false}
           key="Observation-111"
           result={
             Object {
@@ -357,7 +339,6 @@ exports[`ClinicalResultDisplay should render an unverified result  1`] = `
       >
         <Observation
           eventId="111"
-          hideUnit={false}
           isUnverified={true}
           key="Observation-111"
           result={

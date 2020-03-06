@@ -33,13 +33,8 @@ exports[`ClinicalResult should pass certain props to Observation  1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
     hideUnit={true}
     interpretation="critical"
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -154,11 +149,6 @@ exports[`ClinicalResult should render a commented result  1`] = `
   <ClinicalResultDisplay
     eventId="111"
     hasComment={true}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -202,12 +192,6 @@ exports[`ClinicalResult should render a default ClinicalResult 1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -251,13 +235,7 @@ exports[`ClinicalResult should render a entered-in-error status result 1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
     interpretation="critical"
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -302,12 +280,7 @@ exports[`ClinicalResult should render a modified result  1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
     isModified={true}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -352,12 +325,6 @@ exports[`ClinicalResult should render a result with a concept display 1`] = `
   <ClinicalResultDisplay
     conceptDisplay="Temperature Oral"
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -402,12 +369,6 @@ exports[`ClinicalResult should render a result with a date time display 1`] = `
   <ClinicalResultDisplay
     datetimeDisplay="Nov 23, 2019 13:31:31"
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -451,12 +412,7 @@ exports[`ClinicalResult should render a result with unit hidden 1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
     hideUnit={true}
-    isModified={false}
-    isTruncated={false}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -500,12 +456,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
-    isModified={false}
     isTruncated={true}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -549,12 +500,8 @@ exports[`ClinicalResult should render a truncated ClinicalResult with icons move
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
     isModified={true}
     isTruncated={true}
-    isUnverified={false}
     result={
       Object {
         "unit": "mL",
@@ -598,11 +545,6 @@ exports[`ClinicalResult should render an unverified result  1`] = `
 >
   <ClinicalResultDisplay
     eventId="111"
-    hasComment={false}
-    hideAccessoryDisplays={false}
-    hideUnit={false}
-    isModified={false}
-    isTruncated={false}
     isUnverified={true}
     result={
       Object {

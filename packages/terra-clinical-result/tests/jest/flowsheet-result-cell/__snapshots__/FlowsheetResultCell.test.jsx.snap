@@ -11,7 +11,6 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
     <InjectIntl(ClinicalResult)
       eventId="111"
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       result={
@@ -55,7 +54,6 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
     <InjectIntl(ClinicalResult)
       eventId="111"
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       result={
@@ -99,7 +97,6 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
     <InjectIntl(ClinicalResult)
       eventId="111"
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       result={
@@ -236,9 +233,6 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
 
 exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
 <FlowsheetResultCell
-  hasResultError={false}
-  hasResultNoData={false}
-  hideUnit={false}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -305,7 +299,6 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
         }
       }
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111"
       systolic={
@@ -500,7 +493,6 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
         }
       }
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.2"
     />
@@ -518,7 +510,6 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
   >
     <InjectIntl(ClinicalResultBloodPressure)
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.1"
       systolic={
@@ -546,7 +537,6 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
     <InjectIntl(ClinicalResult)
       eventId="111"
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       result={
@@ -589,7 +579,6 @@ exports[`FlowsheetResultCell should render when given result data with no event 
   >
     <InjectIntl(ClinicalResult)
       hideAccessoryDisplays={true}
-      hideUnit={false}
       id="111"
       isTruncated={true}
       key="ClinicalResult-111"
