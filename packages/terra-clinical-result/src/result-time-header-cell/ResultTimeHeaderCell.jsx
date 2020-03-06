@@ -9,11 +9,11 @@ const propTypes = {
   /**
    * Content to be displayed on the first line, typically abbrivated date, e.g. `Dec 12, 2010`
    */
-  date: PropTypes.string,
+  date: PropTypes.string.isRequired,
   /**
    * Content to be displayed on the second line, typically 24 hour time in hours and minutes, e.g. `23:59`
    */
-  time: PropTypes.string,
+  time: PropTypes.string.isRequired,
   /**
    * Visually hides the date when presented in a series of side-by-side columns of the same date.
    */
@@ -54,8 +54,8 @@ const ResultTimeHeaderCell = (props) => {
       {...customProps}
       className={customProps.className ? `${timeHeaderCellClassnames} ${customProps.className}` : timeHeaderCellClassnames}
     >
-      {date && <div className={dateClassnames}>{date}</div>}
-      {time && <div className={cx('time')}>{time}</div>}
+      <div className={dateClassnames}>{date}</div>
+      <div className={cx('time')}>{time}</div>
     </div>
   );
 };

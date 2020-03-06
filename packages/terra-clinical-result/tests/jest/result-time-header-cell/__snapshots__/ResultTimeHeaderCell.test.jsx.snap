@@ -3,19 +3,52 @@
 exports[`ResultTimeHeaderCell paddingStyle - should render with compact 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
-/>
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
 `;
 
 exports[`ResultTimeHeaderCell paddingStyle - should render with none 1`] = `
 <div
   className="clinical-result-time-header-cell"
-/>
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
 `;
 
 exports[`ResultTimeHeaderCell paddingStyle - should render with standard 1`] = `
 <div
   className="clinical-result-time-header-cell padding-standard"
-/>
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
 `;
 
 exports[`ResultTimeHeaderCell should hide date 1`] = `
@@ -27,16 +60,15 @@ exports[`ResultTimeHeaderCell should hide date 1`] = `
   >
     December 31st 1999
   </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
 </div>
 `;
 
-exports[`ResultTimeHeaderCell should render 1`] = `
-<div
-  className="clinical-result-time-header-cell padding-compact"
-/>
-`;
-
-exports[`ResultTimeHeaderCell should render a date 1`] = `
+exports[`ResultTimeHeaderCell should render a date and time 1`] = `
 <div
   className="clinical-result-time-header-cell padding-compact"
 >
@@ -45,13 +77,6 @@ exports[`ResultTimeHeaderCell should render a date 1`] = `
   >
     December 31st 1999
   </div>
-</div>
-`;
-
-exports[`ResultTimeHeaderCell should render a time 1`] = `
-<div
-  className="clinical-result-time-header-cell padding-compact"
->
   <div
     className="time"
   >

@@ -10,7 +10,7 @@ const propTypes = {
   /**
    * Content to be displayed for the Result Name row label.
    */
-  resultName: PropTypes.string,
+  resultName: PropTypes.string.isRequired,
   /**
    * Content to be displayed as the supporting Unit of Measure row label.
    */

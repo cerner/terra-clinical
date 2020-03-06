@@ -6,7 +6,9 @@ exports[`ResultNameHeaderCell paddingStyle - should render with compact 1`] = `
 >
   <div
     className="name"
-  />
+  >
+    Name
+  </div>
 </div>
 `;
 
@@ -16,7 +18,9 @@ exports[`ResultNameHeaderCell paddingStyle - should render with none 1`] = `
 >
   <div
     className="name"
-  />
+  >
+    Name
+  </div>
 </div>
 `;
 
@@ -26,17 +30,9 @@ exports[`ResultNameHeaderCell paddingStyle - should render with standard 1`] = `
 >
   <div
     className="name"
-  />
-</div>
-`;
-
-exports[`ResultNameHeaderCell should render 1`] = `
-<div
-  className="clinical-result-name-header-cell padding-compact"
->
-  <div
-    className="name"
-  />
+  >
+    Name
+  </div>
 </div>
 `;
 
@@ -58,7 +54,9 @@ exports[`ResultNameHeaderCell should render a unit 1`] = `
 >
   <div
     className="name"
-  />
+  >
+    Name
+  </div>
   <div
     className="unit"
   >
@@ -80,6 +78,7 @@ exports[`ResultNameHeaderCell typeIndicator - should render with calculated 1`] 
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
+    Name
   </div>
 </div>
 `;
@@ -90,6 +89,8 @@ exports[`ResultNameHeaderCell typeIndicator - should render with none 1`] = `
 >
   <div
     className="name"
-  />
+  >
+    Name
+  </div>
 </div>
 `;
