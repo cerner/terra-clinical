@@ -36,11 +36,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  eventId: undefined,
   result: {},
-  interpretation: undefined,
-  isUnverified: false,
-  hideUnit: false,
 };
 
 const interpretationIndicatorMap = {
@@ -73,7 +69,7 @@ const Observation = (props) => {
     ...customProps
   } = props;
 
-  const isValidValue = !(!result.value || result.value.length === 0);
+  const isValidValue = !!result.value;
 
   const interpretationLC = interpretation && interpretation.toLowerCase();
 

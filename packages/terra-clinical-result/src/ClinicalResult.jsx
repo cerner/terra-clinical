@@ -79,17 +79,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  eventId: undefined,
   result: {},
-  interpretation: undefined,
-  isUnverified: false,
-  hideUnit: false,
-  isTruncated: false,
-  isModified: false,
-  hasComment: false,
-  hasResultError: false,
-  hasResultNoData: false,
-  hideAccessoryDisplays: false,
 };
 
 const ClinicalResult = (props) => {
