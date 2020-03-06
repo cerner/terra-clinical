@@ -300,6 +300,81 @@ exports[`FlowsheetResultCell should render an error with bad data 1`] = `
 </div>
 `;
 
+exports[`FlowsheetResultCell should render blood pressure correctly with an interpretation and unverified result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display unverified"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResultBloodPressure)
+      hideUnit={false}
+      isTruncated={true}
+      key="ClinicalResultBloodPressure-111"
+      resultData={
+        Object {
+          "diastolic": Object {
+            "eventId": "111.2",
+            "hasComment": false,
+            "isModified": false,
+            "isUnverified": false,
+            "result": Object {
+              "unit": "mmHg",
+              "value": "80",
+            },
+          },
+          "id": "111",
+          "systolic": Object {
+            "eventId": "111.1",
+            "hasComment": false,
+            "isModified": false,
+            "isUnverified": false,
+            "result": Object {
+              "unit": "mmHg",
+              "value": "180",
+            },
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+  <div
+    className="end-accessory-icons"
+    key="EndAccessoryIcons-111"
+  >
+    <div
+      className="end-accessory-stack"
+    >
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FlowsheetResultCell should render both entered-in-error status bloodpressure result 1`] = `
 <div
   className="flowsheet-result-cell padding-compact"
@@ -327,6 +402,68 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
       >
         2
       </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render correctly with an interpretation and unverified result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display unverified"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      hideUnit={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      resultData={
+        Object {
+          "eventId": "111",
+          "hasComment": false,
+          "isModified": false,
+          "isUnverified": false,
+          "result": Object {
+            "unit": "mL",
+            "value": "12345.678",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+  <div
+    className="end-accessory-icons"
+    key="EndAccessoryIcons-111"
+  >
+    <div
+      className="end-accessory-stack"
+    >
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
     </div>
   </div>
 </div>

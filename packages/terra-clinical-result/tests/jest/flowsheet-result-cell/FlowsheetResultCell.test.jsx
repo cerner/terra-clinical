@@ -83,6 +83,23 @@ describe('FlowsheetResultCell', () => {
     expect(cell).toMatchSnapshot();
   });
 
+  it('should render correctly with an interpretation and unverified result', () => {
+    const results = [
+      {
+        ...DefaultResult,
+        isUnverified: true,
+        interpretation: 'CRITICAL',
+      },
+      {
+        ...DefaultResult,
+        isUnverified: true,
+        interpretation: 'CRITICAL',
+      },
+    ];
+    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    expect(cell).toMatchSnapshot();
+  });
+
   it('should render systolic entered-in-error status bloodpressure result', () => {
     const results = [
       {
@@ -120,6 +137,39 @@ describe('FlowsheetResultCell', () => {
       DefaultBloodPressureResult,
     ];
     const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    expect(cell).toMatchSnapshot();
+  });
+
+  it('should render blood pressure correctly with an interpretation and unverified result', () => {
+    const results = [
+      {
+        id: '111',
+        systolic: {
+          ...DefaultSystolicResult,
+          isUnverified: true,
+          interpretation: 'CRITICAL',
+        },
+        diastolic: {
+          ...DefaultDiastolicResult,
+          isUnverified: true,
+          interpretation: 'CRITICAL',
+        },
+      },
+      {
+        id: '111',
+        systolic: {
+          ...DefaultSystolicResult,
+          isUnverified: true,
+          interpretation: 'CRITICAL',
+        },
+        diastolic: {
+          ...DefaultDiastolicResult,
+          isUnverified: true,
+          interpretation: 'CRITICAL',
+        },
+      },
+    ];
+    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} />).dive();
     expect(cell).toMatchSnapshot();
   });
 

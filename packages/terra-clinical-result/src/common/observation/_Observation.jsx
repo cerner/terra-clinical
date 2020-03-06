@@ -96,7 +96,7 @@ const Observation = (props) => {
             {...customProps}
             className={customProps.className ? `${valueTextClasses} ${customProps.className}` : valueTextClasses}
           >
-            {interpretation && !isUnverified ? interpretationIndicators[interpretation.toLowerCase()] : null}
+            {interpretation && !isUnverified && interpretationIndicators[interpretation.toLowerCase()]}
             {result.value}
           </span>
           {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}
