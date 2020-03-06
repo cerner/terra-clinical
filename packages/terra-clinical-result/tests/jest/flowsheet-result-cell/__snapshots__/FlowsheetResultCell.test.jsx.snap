@@ -426,7 +426,7 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
     />
   </div>
   <div
-    className="additional-end-display interpretation-critical"
+    className="additional-end-display"
     key="AdditionalResultsDisplay-111"
   >
     <div
