@@ -70,4 +70,15 @@ describe('ConditionalWrapper', () => {
     );
     expect(result).toMatchSnapshot();
   });
+
+  it('returns the component by itself if the condition is not present', () => {
+    const result = shallow(
+      <ConditionalWrapper
+        wrapper={wrapper}
+      >
+        <div>Inner Component</div>
+      </ConditionalWrapper>,
+    );
+    expect(result).toMatchSnapshot();
+  });
 });

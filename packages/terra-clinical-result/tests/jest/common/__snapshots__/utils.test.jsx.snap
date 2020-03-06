@@ -6,6 +6,12 @@ exports[`ConditionalWrapper returns the component by itself if the condition doe
 </div>
 `;
 
+exports[`ConditionalWrapper returns the component by itself if the condition is not present 1`] = `
+<div>
+  Inner Component
+</div>
+`;
+
 exports[`ConditionalWrapper returns the wrapped component if the condition matches 1`] = `
 <del>
   <div>

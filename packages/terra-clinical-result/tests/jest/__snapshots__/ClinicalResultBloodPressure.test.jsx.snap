@@ -20,7 +20,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -62,7 +61,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -152,7 +150,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -198,7 +195,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -244,7 +240,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -290,7 +285,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -331,7 +325,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -369,7 +362,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -411,7 +403,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -501,7 +492,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -547,7 +537,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -593,7 +582,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -639,7 +627,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -680,7 +667,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
       className="result-display"
     >
       <ConditionalWrapper
-        condition={null}
         key="del-Systolic-111.1"
         wrapper={[Function]}
       >
@@ -760,7 +746,6 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -809,7 +794,6 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >
@@ -858,7 +842,6 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         /
       </span>
       <ConditionalWrapper
-        condition={null}
         key="del-Diastolic-111.2"
         wrapper={[Function]}
       >

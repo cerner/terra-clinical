@@ -63,6 +63,46 @@ const defaultProps = {
   hideAccessoryDisplays: false,
 };
 
+const createConcpetDisplays = (compareConceptDisplays) => {
+  if (compareConceptDisplays.systolic && compareConceptDisplays.diastolic) {
+    if (compareConceptDisplays.systolic === compareConceptDisplays.diastolic) {
+      return <div className={cx('concept-display')}>{compareConceptDisplays.originalSystolic}</div>;
+    }
+    return (
+      <div className={cx('concept-display')}>
+        {compareConceptDisplays.originalSystolic}
+        {' / '}
+        {compareConceptDisplays.originalDiastolic}
+      </div>
+    );
+  }
+  if (compareConceptDisplays.systolic || compareConceptDisplays.diastolic) {
+    const conceptDisplayValue = compareConceptDisplays.originalSystolic || compareConceptDisplays.originalDiastolic;
+    return <div className={cx('concept-display')}>{conceptDisplayValue}</div>;
+  }
+  return null;
+};
+
+const createDatetimeDisplays = (compareDatetimeDisplays) => {
+  if (compareDatetimeDisplays.systolic && compareDatetimeDisplays.diastolic) {
+    if (compareDatetimeDisplays.systolic === compareDatetimeDisplays.diastolic) {
+      return <div className={cx('concept-display')}>{compareDatetimeDisplays.originalSystolic}</div>;
+    }
+    return (
+      <div className={cx('concept-display')}>
+        {compareDatetimeDisplays.originalSystolic}
+        {' / '}
+        {compareDatetimeDisplays.originalDiastolic}
+      </div>
+    );
+  }
+  if (compareDatetimeDisplays.systolic || compareDatetimeDisplays.diastolic) {
+    const conceptDisplayValue1 = compareDatetimeDisplays.originalSystolic || compareDatetimeDisplays.originalDiastolic;
+    return <div className={cx('concept-display')}>{conceptDisplayValue1}</div>;
+  }
+  return null;
+};
+
 const ClinicalResultBloodPressure = (props) => {
   const {
     id,
@@ -84,65 +124,56 @@ const ClinicalResultBloodPressure = (props) => {
   } else if (hasResultNoData) {
     clinicalResultBloodPressureDisplay = <NoData />;
   } else {
-    const CompareTemplate = (s = null, d = null) => ({
-      systolic: s,
-      diastolic: d,
-    });
-    const compareUnits = new CompareTemplate();
-    const compareConceptDisplays = new CompareTemplate();
-    const compareDatetimeDisplays = new CompareTemplate();
-    const compareStatusIsInError = new CompareTemplate();
+    const compareUnits = {};
+    const compareStatusIsInError = {};
 
-    let hasModifiedIcon = false;
-    let hasCommentIcon = false;
-    let hasUnverifiedIcon = false;
+    const compareConceptDisplays = {
+      originalSystolic: systolic && systolic.conceptDisplay,
+      originalDiastolic: diastolic && diastolic.conceptDisplay,
+    };
+    const compareDatetimeDisplays = {
+      originalSystolic: systolic && systolic.datetimeDisplay,
+      originalDiastolic: diastolic && diastolic.datetimeDisplay,
+    };
+    const decoratedResultDisplay = [];
 
     let iconGroupDisplayElement = null;
-    let conceptDisplayElement = null;
-    let datetimeDisplayElement = null;
-    const decoratedResultDisplay = [];
 
     const noDataSystolic = (systolic && systolic.resultNoData === true);
     if (systolic && !noDataSystolic) {
       const {
-        result = null,
-        status = null,
-        conceptDisplay = null,
-        datetimeDisplay = null,
-        isModified = null,
-        hasComment = null,
-        isUnverified = null,
+        result,
+        status,
+        conceptDisplay,
+        datetimeDisplay,
       } = systolic;
 
       if (!isEmpty(result.unit)) { compareUnits.systolic = result.unit.trim().toLowerCase(); }
       if (!isEmpty(status)) { compareStatusIsInError.systolic = checkIsStatusInError(status); }
       if (!isEmpty(conceptDisplay)) { compareConceptDisplays.systolic = conceptDisplay.trim().toLowerCase(); }
       if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.systolic = datetimeDisplay.trim().toLowerCase(); }
-      if (isModified) { hasModifiedIcon = isModified; }
-      if (hasComment) { hasCommentIcon = hasComment; }
-      if (isUnverified) { hasUnverifiedIcon = isUnverified; }
     }
 
     const noDataDiastolic = (diastolic && diastolic.resultNoData === true);
     if (diastolic && !noDataDiastolic) {
       const {
-        result = null,
-        status = null,
-        conceptDisplay = null,
-        datetimeDisplay = null,
-        isModified = null,
-        hasComment = null,
-        isUnverified = null,
+        result,
+        status,
+        conceptDisplay,
+        datetimeDisplay,
       } = diastolic;
 
       if (!isEmpty(result.unit)) { compareUnits.diastolic = result.unit.trim().toLowerCase(); }
       if (!isEmpty(status)) { compareStatusIsInError.diastolic = checkIsStatusInError(status); }
       if (!isEmpty(conceptDisplay)) { compareConceptDisplays.diastolic = conceptDisplay.trim().toLowerCase(); }
       if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.diastolic = datetimeDisplay.trim().toLowerCase(); }
-      if (isModified) { hasModifiedIcon = isModified; }
-      if (hasComment) { hasCommentIcon = hasComment; }
-      if (isUnverified) { hasUnverifiedIcon = isUnverified; }
     }
+
+    const hasModifiedIcon = (systolic && systolic.isModified) || (diastolic && diastolic.isModified);
+    const hasCommentIcon = (systolic && systolic.hasComment) || (diastolic && diastolic.hasComment);
+    const hasUnverifiedIcon = (systolic && systolic.isUnverified) || (diastolic && diastolic.isUnverified);
+    const datetimeDisplayElement = createDatetimeDisplays(compareDatetimeDisplays);
+    const conceptDisplayElement = createConcpetDisplays(compareConceptDisplays);
 
     if (systolic || diastolic) {
       if ((compareUnits.systolic === compareUnits.diastolic) && !compareStatusIsInError.systolic) {
@@ -214,40 +245,6 @@ const ClinicalResultBloodPressure = (props) => {
             {unverifiedIconElement}
           </React.Fragment>
         );
-      }
-
-      if (compareConceptDisplays.systolic && compareConceptDisplays.diastolic) {
-        if (compareConceptDisplays.systolic === compareConceptDisplays.diastolic) {
-          conceptDisplayElement = <div className={cx('concept-display')}>{systolic.conceptDisplay}</div>;
-        } else {
-          conceptDisplayElement = (
-            <div className={cx('concept-display')}>
-              {systolic.conceptDisplay}
-              {' / '}
-              {diastolic.conceptDisplay}
-            </div>
-          );
-        }
-      } else if (compareConceptDisplays.systolic || compareConceptDisplays.diastolic) {
-        const conceptDisplayValue = compareConceptDisplays.systolic ? systolic.conceptDisplay : diastolic.conceptDisplay;
-        conceptDisplayElement = <div className={cx('concept-display')}>{conceptDisplayValue}</div>;
-      }
-
-      if (compareDatetimeDisplays.systolic && compareDatetimeDisplays.diastolic) {
-        if (compareDatetimeDisplays.systolic === compareDatetimeDisplays.diastolic) {
-          datetimeDisplayElement = <div className={cx('concept-display')}>{systolic.datetimeDisplay}</div>;
-        } else {
-          datetimeDisplayElement = (
-            <div className={cx('concept-display')}>
-              {systolic.datetimeDisplay}
-              {' / '}
-              {diastolic.datetimeDisplay}
-            </div>
-          );
-        }
-      } else if (compareDatetimeDisplays.systolic || compareDatetimeDisplays.diastolic) {
-        const conceptDisplayValue1 = compareDatetimeDisplays.systolic ? systolic.datetimeDisplay : diastolic.datetimeDisplay;
-        datetimeDisplayElement = <div className={cx('concept-display')}>{conceptDisplayValue1}</div>;
       }
     }
 
