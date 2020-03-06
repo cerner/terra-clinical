@@ -272,7 +272,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
         additionalResultInterpretations.push(sysInterpretation);
         additionalResultInterpretations.push(diaInterpretation);
       } else {
-        const resultInterpretation = !isEmpty(result.interpretation)  && !result.isUnverified ? result.interpretation : null;
+        const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation : null;
         additionalResultInterpretations.push(resultInterpretation);
       }
     });
