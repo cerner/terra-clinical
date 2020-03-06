@@ -40,7 +40,7 @@ const propTypes = {
    */
   hasResultError: PropTypes.bool,
   /**
-   * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
+   * Whether or not the result has a value for a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
   /**
