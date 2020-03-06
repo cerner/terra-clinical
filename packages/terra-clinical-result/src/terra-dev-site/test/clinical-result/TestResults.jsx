@@ -40,7 +40,7 @@ const BadData = {
     value: '354.23377777758678567867856785687678567856767868678567856785678567856785678567857856785678567856785678567856785678578567856',
     unit: 'mmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHg',
   },
-  interpretation: 'CRITICAL',
+  interpretation: 'critical',
 };
 
 const NullResult = {
@@ -169,11 +169,11 @@ const mixedBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
-    interpretation: 'CRITICAL',
+    interpretation: 'critical',
   },
   diastolic: {
     ...DefaultDiastolicResult,
-    interpretation: 'LOW',
+    interpretation: 'low',
   },
 };
 
@@ -181,11 +181,11 @@ const criticalBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
-    interpretation: 'CRITICAL',
+    interpretation: 'critical',
   },
   diastolic: {
     ...DefaultDiastolicResult,
-    interpretation: 'CRITICAL',
+    interpretation: 'critical',
   },
 };
 
@@ -193,11 +193,11 @@ const highBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
-    interpretation: 'HIGH',
+    interpretation: 'high',
   },
   diastolic: {
     ...DefaultDiastolicResult,
-    interpretation: 'HIGH',
+    interpretation: 'high',
   },
 };
 
@@ -205,11 +205,11 @@ const lowBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
-    interpretation: 'LOW',
+    interpretation: 'low',
   },
   diastolic: {
     ...DefaultDiastolicResult,
-    interpretation: 'LOW',
+    interpretation: 'low',
   },
 };
 
@@ -217,11 +217,11 @@ const abnormalBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
-    interpretation: 'ABNORMAL',
+    interpretation: 'abnormal',
   },
   diastolic: {
     ...DefaultDiastolicResult,
-    interpretation: 'ABNORMAL',
+    interpretation: 'abnormal',
   },
 };
 

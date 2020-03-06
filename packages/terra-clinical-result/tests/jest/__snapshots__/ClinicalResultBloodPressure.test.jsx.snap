@@ -27,7 +27,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
         <Observation
           eventId="111.2"
           hideUnit={true}
-          interpretation="CRITICAL"
+          interpretation="critical"
           isUnverified={false}
           key="Observation-Diastolic-111.2"
           result={
@@ -383,7 +383,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
         <Observation
           eventId="111.1"
           hideUnit={true}
-          interpretation="CRITICAL"
+          interpretation="critical"
           isUnverified={false}
           key="Observation-Systolic-111.1"
           result={

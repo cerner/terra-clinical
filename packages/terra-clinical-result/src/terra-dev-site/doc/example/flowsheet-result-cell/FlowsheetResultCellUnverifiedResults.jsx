@@ -12,7 +12,7 @@ const unverifiedResultValue = [
       value: '101.1',
       unit: 'degC',
     },
-    type: 'NUMERIC',
+    interpretation: 'critical',
     isUnverified: true,
   },
 ];

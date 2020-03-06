@@ -18,7 +18,7 @@ exports[`ClinicalResult should pass certain props to Observation  1`] = `
         <Observation
           eventId="111"
           hideUnit={true}
-          interpretation="CRITICAL"
+          interpretation="critical"
           isUnverified={false}
           key="Observation-111"
           result={

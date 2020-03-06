@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import interpretationPropType from './interpretationPropTypes';
-import resultTypePropType from './resulttypePropTypes';
 import statusPropType from './statusPropTypes';
 import valueQuantityPropType from './valuePropTypes';
 
@@ -15,19 +14,18 @@ const observationPropShape = PropTypes.shape({
   result: valueQuantityPropType,
   /**
    * Enum for possible Result Interpretation values (also called `Clinical Severity` and `Normalcy`).
-   * One of `'CRITICAL'`, `'EXTREMEHIGH'`, `'EXTREMELOW'`, `'PANICHIGH'`, `'PANICLOW'`, `'VABNORMAL'`, `'POSITIVE'`, `'ABNORMAL'`, `'HIGH'`, `'LOW'`, `'NORMAL'`, `'NEUTRAL'`.
+   * One of `'critical'`, `'critical-high'`, `'critical-low'`, `'positive'`, `'abnormal'`, `'high'`, `'low'`, `'normal'`.
    */
   interpretation: interpretationPropType,
-  /**
-   *  Enum for possible Result Types.
-   * One of `'ALPHA'`, `'MULTIALPHA'`, `'FREETEXT'`, `'NUMERIC'`, `'BLOODPRESSURE'`, `'CALCULATION'`, `'DATE'`, `'DATETIME'`, `'TIME'`, `'PROVIDER'`.
-   */
-  type: resultTypePropType,
   /**
    * Enum for possible Result Statuses.
    * One of `'registered'`, `'preliminary'`, `'final'`, `'amended'`, `'corrected'`, `'cancelled'`, `'entered-in-error'`, `'unknown'`.
    */
   status: statusPropType,
+  /**
+   *  If the Result type is Numeric, in flowsheet cell will switch to alternate view if cannot fully display value.
+   */
+  isTypeNumeric: PropTypes.bool,
   /**
    *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */

@@ -9,8 +9,7 @@ const partialResultValueWithNoSystolic = {
       value: '80',
       unit: 'mmHg',
     },
-    interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'critical',
   },
 };
 
@@ -22,8 +21,7 @@ const partialResultValueWithNoDiastolic = {
       value: '140',
       unit: 'mmHg',
     },
-    interpretation: 'HIGH',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'high',
   },
 };
 

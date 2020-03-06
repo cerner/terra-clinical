@@ -9,8 +9,7 @@ const bloodpressureResultValue = {
       value: '180',
       unit: 'mmHg',
     },
-    interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'critical',
   },
   diastolic: {
     eventId: '111.2',
@@ -18,7 +17,6 @@ const bloodpressureResultValue = {
       value: '80',
       unit: 'mmHg',
     },
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
   },
 };
 

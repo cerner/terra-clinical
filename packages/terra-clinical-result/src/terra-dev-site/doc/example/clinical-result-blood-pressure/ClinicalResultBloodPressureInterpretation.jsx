@@ -15,8 +15,7 @@ const mixedBPResultValue = {
       value: '180',
       unit: 'mmHg',
     },
-    interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'critical',
   },
   diastolic: {
     eventId: '111.2',
@@ -24,8 +23,7 @@ const mixedBPResultValue = {
       value: '60',
       unit: 'mmHg',
     },
-    interpretation: 'LOW',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'low',
   },
 };
 
@@ -37,8 +35,7 @@ const criticalBPResultValue = {
       value: '180',
       unit: 'mmHg',
     },
-    interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'critical',
   },
   diastolic: {
     eventId: '111.2',
@@ -46,8 +43,7 @@ const criticalBPResultValue = {
       value: '120',
       unit: 'mmHg',
     },
-    interpretation: 'CRITICAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'critical',
   },
 };
 
@@ -59,8 +55,7 @@ const highBPResultValue = {
       value: '140',
       unit: 'mmHg',
     },
-    interpretation: 'HIGH',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'high',
   },
   diastolic: {
     eventId: '111.2',
@@ -68,8 +63,7 @@ const highBPResultValue = {
       value: '90',
       unit: 'mmHg',
     },
-    interpretation: 'HIGH',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'high',
   },
 };
 
@@ -81,8 +75,7 @@ const lowBPResultValue = {
       value: '88',
       unit: 'mmHg',
     },
-    interpretation: 'LOW',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'low',
   },
   diastolic: {
     eventId: '111.2',
@@ -90,8 +83,7 @@ const lowBPResultValue = {
       value: '60',
       unit: 'mmHg',
     },
-    interpretation: 'LOW',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'low',
   },
 };
 
@@ -103,8 +95,7 @@ const abnormalBPResultValue = {
       value: '100',
       unit: 'mmHg',
     },
-    interpretation: 'ABNORMAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'abnormal',
   },
   diastolic: {
     eventId: '111.2',
@@ -112,8 +103,7 @@ const abnormalBPResultValue = {
       value: '100',
       unit: 'mmHg',
     },
-    interpretation: 'ABNORMAL',
-    effectiveDateTime: '2015-02-07T13:28:17-05:00',
+    interpretation: 'abnormal',
   },
 };
 

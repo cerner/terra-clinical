@@ -12,7 +12,7 @@ import EnteredInError from '../common/other/_EnteredInError';
 import ResultError from '../common/other/_ResultError';
 import NoData from '../common/other/_KnownNoData';
 import NumericOverflow from '../common/other/_NumericOverflow';
-import { isEmpty, checkIsStatusInError, checkResultType } from '../common/utils';
+import { isEmpty, checkIsStatusInError, checkTypeNumeric } from '../common/utils';
 import styles from './FlowsheetResultCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -94,27 +94,24 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
   }
   let additionalResultInterpretationIndicator;
   if ([
-    'CRITICAL',
-    'EXTREMEHIGH',
-    'EXTREMELOW',
-    'POSITIVE',
-    'PANICHIGH',
-    'PANICLOW',
-    'VABNORMAL',
+    'critical',
+    'critical-high',
+    'critical-low',
+    'positive',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'CRITICAL';
   } else if ([
-    'ABNORMAL',
-    'HIGH',
-    'LOW',
+    'abnormal',
+    'high',
+    'low',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'HIGH';
   }
   const additionalResultClassNames = cx([
     'additional-end-display',
     { 'no-accessory-icons': !hasAccessoryIcons },
-    { 'interpretation-critical': additionalResultInterpretationIndicator === 'CRITICAL' },
-    { 'interpretation-high': additionalResultInterpretationIndicator === 'HIGH' },
+    { 'interpretation-critical': additionalResultInterpretationIndicator === 'critical' },
+    { 'interpretation-high': additionalResultInterpretationIndicator === 'high' },
   ]);
   const additionalCountDisplayValue = (displayCount > 99)
     ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
@@ -332,7 +329,7 @@ const FlowsheetResultCell = (props) => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
-    if (checkResultType(resultDataSet[0], 'NUMERIC')) {
+    if (checkTypeNumeric(resultDataSet[0])) {
       if (!contentWidth) {
         setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
       }

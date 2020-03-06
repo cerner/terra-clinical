@@ -13,7 +13,7 @@ const criticalResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  interpretation: 'CRITICAL',
+  interpretation: 'critical',
 };
 
 const highResultValue = {
@@ -22,7 +22,7 @@ const highResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  interpretation: 'HIGH',
+  interpretation: 'high',
 };
 
 const lowResultValue = {
@@ -31,7 +31,7 @@ const lowResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  interpretation: 'LOW',
+  interpretation: 'low',
 };
 
 const abnormalResultValue = {
@@ -40,7 +40,7 @@ const abnormalResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  interpretation: 'ABNORMAL',
+  interpretation: 'abnormal',
 };
 
 setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult resultData={criticalResultValue} /></div>);

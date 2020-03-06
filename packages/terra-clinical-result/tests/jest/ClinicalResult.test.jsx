@@ -27,7 +27,7 @@ describe('ClinicalResult', () => {
   it('should pass certain props to Observation ', () => {
     const resultData = {
       ...DefaultResult,
-      interpretation: 'CRITICAL',
+      interpretation: 'critical',
     };
     const result = shallowWithIntl(<ClinicalResult resultData={resultData} hideUnit />).dive();
     expect(result).toMatchSnapshot();
@@ -90,7 +90,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
       status: 'entered-in-error',
-      interpretation: 'CRITICAL',
+      interpretation: 'critical',
     };
     const result = shallowWithIntl(<ClinicalResult resultData={resultData} />).dive();
     expect(result).toMatchSnapshot();

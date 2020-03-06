@@ -16,14 +16,13 @@ const checkIsStatusInError = (status) => {
 };
 
 /**
- * Returns a boolean after check to see if a clinical result has included a resultData.type value that is equal to the type value provided
+ * Returns a boolean after check to see if a clinical result is type numeric
  * @param {object} Observation.propTypes.result
- * @param {string} type value to match
- * @return {boolean} type match|true || no match|false
+ * @return {boolean} is numeric|true || not numeric|false
  */
-const checkResultType = (resultData, matchType) => {
-  const resultType = (!isEmpty(resultData.type)) ? resultData.type.trim().toUpperCase() : undefined;
-  return (resultType === matchType);
+const checkTypeNumeric = (resultData) => {
+  const isNumeric = (!isEmpty(resultData.isTypeNumeric)) ? (resultData.isTypeNumeric === true) : false;
+  return isNumeric;
 };
 
 /**
@@ -39,7 +38,7 @@ const ConditionalWrapper = ({ condition, wrapper, children }) => (condition ? wr
 const ClinicalResultUtils = {
   isEmpty,
   checkIsStatusInError,
-  checkResultType,
+  checkTypeNumeric,
   ConditionalWrapper,
 };
 
@@ -47,6 +46,6 @@ export default ClinicalResultUtils;
 export {
   isEmpty,
   checkIsStatusInError,
-  checkResultType,
+  checkTypeNumeric,
   ConditionalWrapper,
 };

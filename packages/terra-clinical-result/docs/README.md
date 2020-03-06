@@ -35,54 +35,27 @@ const observationPropShape = PropTypes.shape({
    *  Value and optional Unit of Measure for the Observation Result
    */
   result: PropTypes.shape([
-     /**
-      *  Value for an Observation Result
-      */
-     value: PropTypes.oneOfType([number, string, object]).isRequired,
-     /**
-      *  Unit of Measure representation for an Observation Result
-      */
-     unit: PropTypes.string,
-     /**
-      *  Optional (FHIR) - System that defines coded unit form
-      */
-     system: PropTypes.string,
-     /**
-      *  Optional (FHIR) - Coded form of the unit
-      */
-     code: PropTypes.string,
+      /**
+       *  Value for a single Observation Result. Either single string or array of string values for multi-alpha responses
+       */
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+      /**
+       *  Unit of Measure representation for an Observation Result
+       */
+      unit: PropTypes.string,
   ]),
   /**
    * Enum for possible Result Interpretation values (also called `Clinical Severity` and `Normalcy`).
    */
   interpretation: PropTypes.oneOf([
-    'CRITICAL',
-    'EXTREMEHIGH',
-    'EXTREMELOW',
-    'PANICHIGH',
-    'PANICLOW',
-    'VABNORMAL',
-    'POSITIVE',
-    'ABNORMAL',
-    'HIGH',
-    'LOW',
-    'NORMAL',
-    'NEUTRAL',
-  ]),
-  /**
-   *  Enum for possible Result Types.
-   */
-  type: PropTypes.oneOf([
-    'ALPHA',
-    'MULTIALPHA',
-    'FREETEXT',
-    'NUMERIC',
-    'BLOODPRESSURE',
-    'CALCULATION',
-    'DATE',
-    'DATETIME',
-    'TIME',
-    'PROVIDER',
+    'critical',
+    'critical-high',
+    'critical-low',
+    'positive',
+    'abnormal',
+    'high',
+    'low',
+    'normal',
   ]),
   /**
    * Enum for possible Result Statuses.
@@ -106,11 +79,15 @@ const observationPropShape = PropTypes.shape({
    */
   updateDateTime: PropTypes.string,
   /**
+   *  If the Result type is Numeric, in flowsheet cell will switch to alternate view if cannot fully display value.
+   */
+  isTypeNumeric: PropTypes.bool,
+  /**
    *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */
   isModified: PropTypes.bool,
   /**
-   *  If the Result value has an appended comment.
+   * If the Result value has an appended comment.
    */
   hasComment: PropTypes.bool,
   /**
@@ -140,8 +117,8 @@ const singleResultValue = {
     value: '101.9',
     unit: 'degC',
   },
-  interpretation: 'CRITICAL',
-  type: 'NUMERIC',
+  interpretation: 'critical',
+  isTypeNumeric: true,
   isModified: true,
   hasComment: true,
   isUnverified: true,

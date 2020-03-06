@@ -25,63 +25,43 @@ describe('Observation', () => {
   });
 
   describe('- Interpretaion', () => {
-    it('should render an Observation with interpretation CRITICAL', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="CRITICAL" />);
+    it('should render an Observation with interpretation critical', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="critical" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation EXTREMEHIGH', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="EXTREMEHIGH" />);
+    it('should render an Observation with interpretation critical-high', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="critical-high" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation EXTREMELOW', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="EXTREMELOW" />);
+    it('should render an Observation with interpretation critical-low', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="critical-low" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation PANICHIGH', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="PANICHIGH" />);
+    it('should render an Observation with interpretation positive', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="positive" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation PANICLOW', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="PANICLOW" />);
+    it('should render an Observation with interpretation abnormal', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="abnormal" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation VABNORMAL', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="VABNORMAL" />);
+    it('should render an Observation with interpretation high', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="high" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation POSITIVE', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="POSITIVE" />);
+    it('should render an Observation with interpretation low', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="low" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
 
-    it('should render an Observation with interpretation ABNORMAL', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="ABNORMAL" />);
-      expect(nameHeaderCell).toMatchSnapshot();
-    });
-
-    it('should render an Observation with interpretation HIGH', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="HIGH" />);
-      expect(nameHeaderCell).toMatchSnapshot();
-    });
-
-    it('should render an Observation with interpretation LOW', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="LOW" />);
-      expect(nameHeaderCell).toMatchSnapshot();
-    });
-
-    it('should render an Observation with interpretation NORMAL', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="NORMAL" />);
-      expect(nameHeaderCell).toMatchSnapshot();
-    });
-
-    it('should render an Observation with interpretation NEUTRAL', () => {
-      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="NEUTRAL" />);
+    it('should render an Observation with interpretation normal', () => {
+      const nameHeaderCell = shallow(<Observation result={DefaultResult.result} interpretation="normal" />);
       expect(nameHeaderCell).toMatchSnapshot();
     });
   });

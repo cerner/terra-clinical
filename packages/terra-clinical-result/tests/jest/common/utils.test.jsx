@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  isEmpty, checkIsStatusInError, checkResultType, ConditionalWrapper,
+  isEmpty, checkIsStatusInError, checkTypeNumeric, ConditionalWrapper,
 } from '../../../src/common/utils';
 
 describe('isEmpty', () => {
@@ -30,18 +30,17 @@ describe('checkIsStatusInError', () => {
   });
 });
 
-describe('checkResultType', () => {
-  it('returns true if the result type matches', () => {
-    expect(checkResultType({ type: 'alpha' }, 'ALPHA')).toBe(true);
-    expect(checkResultType({ type: '  numeRic ' }, 'NUMERIC')).toBe(true);
+describe('checkTypeNumeric', () => {
+  it('returns true if the result isTypeNumeric is true', () => {
+    expect(checkTypeNumeric({ isTypeNumeric: true })).toBe(true);
   });
 
   it('returns false if the result type does not match', () => {
-    expect(checkResultType({ type: 'blpha' }, 'ALPHA')).toBe(false);
-    expect(checkResultType({ type: '  nuceRic ' }, 'NUMERIC')).toBe(false);
-    expect(checkResultType({ type: '' }, 'NUMERIC')).toBe(false);
-    expect(checkResultType({ }, 'NUMERIC')).toBe(false);
-    expect(checkResultType({ type: null }, 'NUMERIC')).toBe(false);
+    expect(checkTypeNumeric({ isTypeNumeric: false })).toBe(false);
+    expect(checkTypeNumeric({ isTypeNumeric: 'NUMERIC' })).toBe(false);
+    expect(checkTypeNumeric({ isTypeNumeric: '' })).toBe(false);
+    expect(checkTypeNumeric({ })).toBe(false);
+    expect(checkTypeNumeric({ isTypeNumeric: null })).toBe(false);
   });
 });
 

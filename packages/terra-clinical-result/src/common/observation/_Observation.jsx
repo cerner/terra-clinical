@@ -45,29 +45,23 @@ const defaultProps = {
 };
 
 const interpretationIndicators = {
-  CRITICAL: <IconCritical className={cx('icon-interpretation')} />,
-  EXTREMEHIGH: <IconCritical className={cx('icon-interpretation')} />,
-  EXTREMELOW: <IconCritical className={cx('icon-interpretation')} />,
-  PANICHIGH: <IconCritical className={cx('icon-interpretation')} />,
-  PANICLOW: <IconCritical className={cx('icon-interpretation')} />,
-  VABNORMAL: <IconCritical className={cx('icon-interpretation')} />,
-  POSITIVE: <IconCritical className={cx('icon-interpretation')} />,
-  ABNORMAL: <IconAbnormal className={cx('icon-interpretation')} />,
-  HIGH: <IconHigh className={cx('icon-interpretation')} />,
-  LOW: <IconLow className={cx('icon-interpretation')} />,
+  critical: <IconCritical className={cx('icon-interpretation')} />,
+  'critical-high': <IconCritical className={cx('icon-interpretation')} />,
+  'critical-low': <IconCritical className={cx('icon-interpretation')} />,
+  positive: <IconCritical className={cx('icon-interpretation')} />,
+  abnormal: <IconAbnormal className={cx('icon-interpretation')} />,
+  high: <IconHigh className={cx('icon-interpretation')} />,
+  low: <IconLow className={cx('icon-interpretation')} />,
 };
 
 const verifiedValueTextClassMap = {
-  CRITICAL: 'critical',
-  EXTREMEHIGH: 'critical',
-  EXTREMELOW: 'critical',
-  PANICHIGH: 'critical',
-  PANICLOW: 'critical',
-  VABNORMAL: 'critical',
-  POSITIVE: 'positive',
-  ABNORMAL: 'abnormal',
-  HIGH: 'high',
-  LOW: 'low',
+  critical: 'critical',
+  'critical-high': 'critical',
+  'critical-low': 'critical',
+  positive: 'positive',
+  abnormal: 'abnormal',
+  high: 'high',
+  low: 'low',
 };
 
 const Observation = (props) => {
@@ -102,7 +96,7 @@ const Observation = (props) => {
             {...customProps}
             className={customProps.className ? `${valueTextClasses} ${customProps.className}` : valueTextClasses}
           >
-            {interpretation && !isUnverified ? interpretationIndicators[interpretation.toUpperCase()] : null}
+            {interpretation && !isUnverified ? interpretationIndicators[interpretation.toLowerCase()] : null}
             {result.value}
           </span>
           {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}

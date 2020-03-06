@@ -75,7 +75,7 @@ describe('FlowsheetResultCell', () => {
       {
         ...DefaultResult,
         status: 'entered-in-error',
-        interpretation: 'CRITICAL',
+        interpretation: 'critical',
       },
       DefaultResult,
     ];
@@ -90,7 +90,7 @@ describe('FlowsheetResultCell', () => {
         systolic: {
           ...DefaultSystolicResult,
           status: 'entered-in-error',
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
         diastolic: {
           ...DefaultDiastolicResult,
@@ -109,12 +109,12 @@ describe('FlowsheetResultCell', () => {
         systolic: {
           ...DefaultSystolicResult,
           status: 'entered-in-error',
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
         diastolic: {
           ...DefaultDiastolicResult,
           status: 'entered-in-error',
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       },
       DefaultBloodPressureResult,

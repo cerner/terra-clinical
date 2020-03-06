@@ -27,7 +27,7 @@ const partialResultValueWithNoDataPropSystolic = [
         value: '77',
         unit: 'mmHg',
       },
-      interpretation: 'CRITICAL',
+      interpretation: 'critical',
     },
   },
 ];
@@ -41,7 +41,7 @@ const partialResultValueWithNoDataPropDiastolic = [
         value: '140',
         unit: 'mmHg',
       },
-      interpretation: 'HIGH',
+      interpretation: 'high',
     },
     diastolic: {
       eventId: '222.2',
@@ -65,7 +65,7 @@ const partialResultValueWithNullValueSystolic = [
         value: '77',
         unit: 'mmHg',
       },
-      interpretation: 'CRITICAL',
+      interpretation: 'critical',
     },
   },
 ];
@@ -79,7 +79,7 @@ const partialResultValueWithNullValueDiastolic = [
         value: '140',
         unit: 'mmHg',
       },
-      interpretation: 'HIGH',
+      interpretation: 'high',
     },
     diastolic: {
       eventId: '444.2',

@@ -47,7 +47,7 @@ describe('ClinicalResultBloodPressure', () => {
         id: '111',
         systolic: {
           ...DefaultSystolicResult,
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />).dive();
@@ -131,7 +131,7 @@ describe('ClinicalResultBloodPressure', () => {
         systolic: {
           ...DefaultSystolicResult,
           status: 'entered-in-error',
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
@@ -145,7 +145,7 @@ describe('ClinicalResultBloodPressure', () => {
         id: '111',
         diastolic: {
           ...DefaultDiastolicResult,
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />).dive();
@@ -229,7 +229,7 @@ describe('ClinicalResultBloodPressure', () => {
         diastolic: {
           ...DefaultDiastolicResult,
           status: 'entered-in-error',
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();

@@ -8,7 +8,7 @@ const singleResultValue = {
     unit: 'mL',
   },
   status: 'entered-in-error',
-  interpretation: 'CRITICAL',
+  interpretation: 'critical',
   hasComment: true,
   conceptDisplay: 'Temperature Oral',
   datetimeDisplay: 'Nov 23, 2019 13:31:31',

@@ -11,7 +11,7 @@ const singleResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  interpretation: 'CRITICAL',
+  interpretation: 'critical',
   isModified: true,
   hasComment: true,
   isUnverified: true,

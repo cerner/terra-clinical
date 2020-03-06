@@ -14,7 +14,8 @@ const bloodpressureResultValue = [
         value: '111',
         unit: 'mmHg',
       },
-      interpretation: 'CRITICAL',
+      interpretation: 'critical',
+      isUnverified: true,
     },
     diastolic: {
       eventId: '111.2',

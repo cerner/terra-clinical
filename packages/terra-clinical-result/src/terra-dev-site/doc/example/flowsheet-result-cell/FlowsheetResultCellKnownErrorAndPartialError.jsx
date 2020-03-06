@@ -14,7 +14,7 @@ const partialResultValueWithNoSystolic = [
         value: '77',
         unit: 'mmHg',
       },
-      interpretation: 'CRITICAL',
+      interpretation: 'critical',
     },
   },
 ];
@@ -28,7 +28,7 @@ const partialResultValueWithNoDiastolic = [
         value: '140',
         unit: 'mmHg',
       },
-      interpretation: 'HIGH',
+      interpretation: 'high',
     },
   },
 ];

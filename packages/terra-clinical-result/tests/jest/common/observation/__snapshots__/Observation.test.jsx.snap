@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Observation - Interpretaion should render an Observation with interpretation ABNORMAL 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation abnormal 1`] = `
 <Fragment>
   <span
     className="value abnormal"
@@ -20,7 +20,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation CRITICAL 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation critical 1`] = `
 <Fragment>
   <span
     className="value critical"
@@ -40,7 +40,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation EXTREMEHIGH 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation critical-high 1`] = `
 <Fragment>
   <span
     className="value critical"
@@ -60,7 +60,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation EXTREMELOW 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation critical-low 1`] = `
 <Fragment>
   <span
     className="value critical"
@@ -80,7 +80,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation HIGH 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation high 1`] = `
 <Fragment>
   <span
     className="value high"
@@ -101,7 +101,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation LOW 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation low 1`] = `
 <Fragment>
   <span
     className="value low"
@@ -121,7 +121,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation NEUTRAL 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation normal 1`] = `
 <Fragment>
   <span
     className="value"
@@ -136,85 +136,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
-exports[`Observation - Interpretaion should render an Observation with interpretation NORMAL 1`] = `
-<Fragment>
-  <span
-    className="value"
-  >
-    12345.678
-  </span>
-  <span
-    className="unit"
-  >
-    mL
-  </span>
-</Fragment>
-`;
-
-exports[`Observation - Interpretaion should render an Observation with interpretation PANICHIGH 1`] = `
-<Fragment>
-  <span
-    className="value critical"
-  >
-    <IconCritical
-      className="icon-interpretation"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    12345.678
-  </span>
-  <span
-    className="unit"
-  >
-    mL
-  </span>
-</Fragment>
-`;
-
-exports[`Observation - Interpretaion should render an Observation with interpretation PANICLOW 1`] = `
-<Fragment>
-  <span
-    className="value critical"
-  >
-    <IconCritical
-      className="icon-interpretation"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    12345.678
-  </span>
-  <span
-    className="unit"
-  >
-    mL
-  </span>
-</Fragment>
-`;
-
-exports[`Observation - Interpretaion should render an Observation with interpretation POSITIVE 1`] = `
+exports[`Observation - Interpretaion should render an Observation with interpretation positive 1`] = `
 <Fragment>
   <span
     className="value positive"
-  >
-    <IconCritical
-      className="icon-interpretation"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    12345.678
-  </span>
-  <span
-    className="unit"
-  >
-    mL
-  </span>
-</Fragment>
-`;
-
-exports[`Observation - Interpretaion should render an Observation with interpretation VABNORMAL 1`] = `
-<Fragment>
-  <span
-    className="value critical"
   >
     <IconCritical
       className="icon-interpretation"
