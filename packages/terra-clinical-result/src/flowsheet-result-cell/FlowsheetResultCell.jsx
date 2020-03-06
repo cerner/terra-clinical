@@ -194,8 +194,8 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
   if (isSingleResult) {
     return { isSingleResult, isPairedResult: false };
   }
-  const hasSystolicData = !!resultDataItem.systolic.result;
-  const hasDiastolicData = !!resultDataItem.diastolic.result;
+  const hasSystolicData = !isEmpty(resultDataItem.systolic) ? resultDataItem.systolic.result : false;
+  const hasDiastolicData = !isEmpty(resultDataItem.diastolic) ? resultDataItem.diastolic.result : false;
   const isPairedResult = (hasSystolicData || hasDiastolicData) || false;
   return { isSingleResult, isPairedResult };
 };
@@ -235,8 +235,8 @@ const unpackResultDataSet = (resultDataSet) => {
     };
     const systolicData = firstResultData.systolic;
     const diastolicData = firstResultData.diastolic;
-    bpAttribute.systolic = !isEmpty(systolicData.result) ? unpackResultAttributes(systolicData) : new AttributesTemplate();
-    bpAttribute.diastolic = !isEmpty(diastolicData.result) ? unpackResultAttributes(diastolicData) : new AttributesTemplate();
+    bpAttribute.systolic = !isEmpty(systolicData) ? unpackResultAttributes(systolicData) : new AttributesTemplate();
+    bpAttribute.diastolic = !isEmpty(diastolicData) ? unpackResultAttributes(diastolicData) : new AttributesTemplate();
     firstResultAttributes = new AttributesTemplate(
       (bpAttribute.systolic.interpretation),
       (bpAttribute.systolic.comment || bpAttribute.diastolic.comment),
