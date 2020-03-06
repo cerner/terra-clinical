@@ -38,4 +38,12 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('unverified', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/unverified-flowsheet-result-cell');
+    });
+
+    Terra.it.validatesElement();
+  });
 });
