@@ -23,14 +23,6 @@ Terra.describeViewports('Observation', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('null data', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/null-observation');
-    });
-
-    Terra.it.validatesElement();
-  });
-
   describe('interpretations', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/interpretations-observation');

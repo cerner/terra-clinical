@@ -137,9 +137,9 @@ const ClinicalResult = (props) => {
     ...customProps
   } = props;
 
-  resultData.isUnverified = isUnverified;
-  resultData.isModified = isModified;
-  resultData.hasComment = hasComment;
+  resultData.isUnverified = isUnverified || resultData.isUnverified;
+  resultData.isModified = isModified || resultData.isModified;
+  resultData.hasComment = hasComment || resultData.hasComment;
   const { resultNoData } = resultData;
 
   let clinicalResultDisplay;

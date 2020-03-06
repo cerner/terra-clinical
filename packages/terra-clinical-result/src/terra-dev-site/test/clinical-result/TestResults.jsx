@@ -43,13 +43,6 @@ const BadData = {
   interpretation: 'critical',
 };
 
-const NullResult = {
-  eventId: '1577836800',
-  result: {
-    value: null,
-  },
-};
-
 const DefaultSystolicResult = {
   eventId: '111.1',
   result: {
@@ -239,7 +232,6 @@ export {
   DecoratedResult,
   UnverifiedResult,
   BadData,
-  NullResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
   DefaultBloodPressureResult,
