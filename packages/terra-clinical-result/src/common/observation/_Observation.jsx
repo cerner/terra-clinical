@@ -44,7 +44,7 @@ const defaultProps = {
   hideUnit: false,
 };
 
-const interpretationIndicators = {
+const interpretationIndicatorMap = {
   critical: <IconCritical className={cx('icon-interpretation')} />,
   'critical-high': <IconCritical className={cx('icon-interpretation')} />,
   'critical-low': <IconCritical className={cx('icon-interpretation')} />,
@@ -54,7 +54,7 @@ const interpretationIndicators = {
   low: <IconLow className={cx('icon-interpretation')} />,
 };
 
-const verifiedValueTextClassMap = {
+const interpretationTextClassMap = {
   critical: 'critical',
   'critical-high': 'critical',
   'critical-low': 'critical',
@@ -76,9 +76,11 @@ const Observation = (props) => {
 
   const isValidValue = !(result.value === null || !result.value);
 
+  const interpretationLC = interpretation && interpretation.toLowerCase();
+
   const valueTextClasses = cx([
     'value',
-    !isUnverified && verifiedValueTextClassMap[interpretation],
+    !isUnverified && interpretationTextClassMap[interpretationLC],
     { unverified: isUnverified },
   ]);
 
@@ -96,7 +98,7 @@ const Observation = (props) => {
             {...customProps}
             className={customProps.className ? `${valueTextClasses} ${customProps.className}` : valueTextClasses}
           >
-            {interpretation && !isUnverified && interpretationIndicators[interpretation.toLowerCase()]}
+            {interpretation && !isUnverified && interpretationIndicatorMap[interpretationLC]}
             {result.value}
           </span>
           {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}

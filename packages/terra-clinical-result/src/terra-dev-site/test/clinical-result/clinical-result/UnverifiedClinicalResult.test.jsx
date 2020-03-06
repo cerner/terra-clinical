@@ -11,7 +11,7 @@ export default () => (
       <div>
         <ClinicalResult resultData={{
           ...UnverifiedResult,
-          interpretation: 'ABNORMAL',
+          interpretation: 'abnormal',
         }}
         />
       </div>

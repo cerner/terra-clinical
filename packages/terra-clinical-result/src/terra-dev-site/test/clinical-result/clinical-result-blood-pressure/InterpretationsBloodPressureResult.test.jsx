@@ -3,14 +3,14 @@ import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
 import { DefaultSystolicResult, DefaultDiastolicResult } from '../TestResults';
 
 const interpretations = [
-  'CRITICAL',
-  'EXTREMEHIGH',
-  'EXTREMELOW',
-  'POSITIVE',
-  'ABNORMAL',
-  'HIGH',
-  'LOW',
-  'NORMAL',
+  'critical',
+  'critical-high',
+  'critical-low',
+  'positive',
+  'abnormal',
+  'high',
+  'low',
+  'normal',
 ];
 
 const interpretationDivs = interpretations.map((interpretation => (

@@ -3,14 +3,14 @@ import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
 import DefaultResult, { DefaultSystolicResult, DefaultDiastolicResult } from '../TestResults';
 
 const interpretations = [
-  'CRITICAL',
-  'EXTREMEHIGH',
-  'EXTREMELOW',
-  'POSITIVE',
-  'ABNORMAL',
-  'HIGH',
-  'LOW',
-  'NORMAL',
+  'critical',
+  'critical-high',
+  'critical-low',
+  'positive',
+  'abnormal',
+  'high',
+  'low',
+  'normal',
 ];
 
 const results = (interpretation) => [

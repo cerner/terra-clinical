@@ -3,14 +3,14 @@ import ClinicalResult from '../../../../ClinicalResult';
 import DefaultResult from '../TestResults';
 
 const interpretations = [
-  'CRITICAL',
-  'EXTREMEHIGH',
-  'EXTREMELOW',
-  'POSITIVE',
-  'ABNORMAL',
-  'HIGH',
-  'LOW',
-  'NORMAL',
+  'critical',
+  'critical-high',
+  'critical-low',
+  'positive',
+  'abnormal',
+  'high',
+  'low',
+  'normal',
 ];
 
 const interpretationDivs = interpretations.map((interpretation => (

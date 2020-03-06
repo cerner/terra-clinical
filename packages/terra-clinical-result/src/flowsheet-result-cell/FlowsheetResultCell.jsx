@@ -99,13 +99,13 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
     'critical-low',
     'positive',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
-    additionalResultInterpretationIndicator = 'CRITICAL';
+    additionalResultInterpretationIndicator = 'critical';
   } else if ([
     'abnormal',
     'high',
     'low',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
-    additionalResultInterpretationIndicator = 'HIGH';
+    additionalResultInterpretationIndicator = 'high';
   }
   const additionalResultClassNames = cx([
     'additional-end-display',

@@ -10,11 +10,11 @@ const results = [
 const resultsAbnormal = [
   {
     ...UnverifiedResult,
-    interpretation: 'ABNORMAL',
+    interpretation: 'abnormal',
   },
   {
     ...UnverifiedResult,
-    interpretation: 'ABNORMAL',
+    interpretation: 'abnormal',
   },
 ];
 
@@ -48,12 +48,12 @@ const resultsBloodPressureAbnormal = [
     id: '111',
     systolic: {
       ...DefaultSystolicResult,
-      interpretation: 'ABNORMAL',
+      interpretation: 'abnormal',
       isUnverified: true,
     },
     diastolic: {
       ...DefaultDiastolicResult,
-      interpretation: 'ABNORMAL',
+      interpretation: 'abnormal',
       isUnverified: true,
     },
   },
@@ -61,12 +61,12 @@ const resultsBloodPressureAbnormal = [
     id: '111',
     systolic: {
       ...DefaultSystolicResult,
-      interpretation: 'ABNORMAL',
+      interpretation: 'abnormal',
       isUnverified: true,
     },
     diastolic: {
       ...DefaultDiastolicResult,
-      interpretation: 'ABNORMAL',
+      interpretation: 'abnormal',
       isUnverified: true,
     },
   },

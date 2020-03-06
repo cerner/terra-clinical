@@ -88,12 +88,12 @@ describe('FlowsheetResultCell', () => {
       {
         ...DefaultResult,
         isUnverified: true,
-        interpretation: 'CRITICAL',
+        interpretation: 'critical',
       },
       {
         ...DefaultResult,
         isUnverified: true,
-        interpretation: 'CRITICAL',
+        interpretation: 'critical',
       },
     ];
     const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
@@ -147,12 +147,12 @@ describe('FlowsheetResultCell', () => {
         systolic: {
           ...DefaultSystolicResult,
           isUnverified: true,
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
         diastolic: {
           ...DefaultDiastolicResult,
           isUnverified: true,
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       },
       {
@@ -160,12 +160,12 @@ describe('FlowsheetResultCell', () => {
         systolic: {
           ...DefaultSystolicResult,
           isUnverified: true,
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
         diastolic: {
           ...DefaultDiastolicResult,
           isUnverified: true,
-          interpretation: 'CRITICAL',
+          interpretation: 'critical',
         },
       },
     ];

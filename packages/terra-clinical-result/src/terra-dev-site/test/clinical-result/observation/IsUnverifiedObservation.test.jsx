@@ -16,7 +16,7 @@ export default () => (
         <Observation
           eventId={DefaultResult.eventId}
           result={DefaultResult.result}
-          interpretation="ABNORMAL"
+          interpretation="abnormal"
           isUnverified
         />
       </div>
