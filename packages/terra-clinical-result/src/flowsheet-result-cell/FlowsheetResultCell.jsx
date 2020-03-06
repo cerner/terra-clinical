@@ -145,7 +145,7 @@ const createStandardResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInter
   } else if (numericOverflow) {
     resultsInnerDisplay = <NumericOverflow />;
   } else {
-    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={hasUnverifiedIcon} hideAccessoryDisplays />;
+    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} {...resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={hasUnverifiedIcon} hideAccessoryDisplays />;
   }
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
   return clinicalResultDisplay;

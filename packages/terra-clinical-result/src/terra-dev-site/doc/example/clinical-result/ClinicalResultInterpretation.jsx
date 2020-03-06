@@ -43,9 +43,9 @@ const abnormalResultValue = {
   interpretation: 'abnormal',
 };
 
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult resultData={criticalResultValue} /></div>);
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult resultData={highResultValue} /></div>);
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult resultData={lowResultValue} /></div>);
-setofResultValues.push(<div><ClinicalResult resultData={abnormalResultValue} /></div>);
+setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult {...criticalResultValue} /></div>);
+setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult {...highResultValue} /></div>);
+setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResult {...lowResultValue} /></div>);
+setofResultValues.push(<div><ClinicalResult {...abnormalResultValue} /></div>);
 
 export default () => setofResultValues;

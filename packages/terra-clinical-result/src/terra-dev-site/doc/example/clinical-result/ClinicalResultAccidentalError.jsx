@@ -11,4 +11,4 @@ const malformedResultValue = {
   },
 };
 
-export default () => <ClinicalResult resultData={malformedResultValue} />;
+export default () => <ClinicalResult {...malformedResultValue} />;

@@ -9,17 +9,15 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      eventId="111"
       hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "eventId": "111",
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />
@@ -55,17 +53,15 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      eventId="111"
       hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "eventId": "111",
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />
@@ -101,17 +97,15 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      eventId="111"
       hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "eventId": "111",
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />
@@ -147,17 +141,15 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      eventId="111"
       hideAccessoryDisplays={true}
       hideUnit={true}
       isTruncated={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "eventId": "111",
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />
@@ -407,20 +399,17 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      eventId="111"
       hideAccessoryDisplays={true}
       hideUnit={true}
+      interpretation="critical"
       isTruncated={true}
       isUnverified={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "eventId": "111",
-          "interpretation": "critical",
-          "isUnverified": true,
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />
@@ -560,17 +549,15 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      eventId="111"
       hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "eventId": "111",
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />
@@ -608,15 +595,13 @@ exports[`FlowsheetResultCell should render when given result data with no event 
     <InjectIntl(ClinicalResult)
       hideAccessoryDisplays={true}
       hideUnit={false}
+      id="111"
       isTruncated={true}
       key="ClinicalResult-111"
-      resultData={
+      result={
         Object {
-          "id": "111",
-          "result": Object {
-            "unit": "mL",
-            "value": "12345.678",
-          },
+          "unit": "mL",
+          "value": "12345.678",
         }
       }
     />

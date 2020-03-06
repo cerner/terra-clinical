@@ -9,4 +9,4 @@ const singleResultValue = {
   },
 };
 
-export default () => <ClinicalResult resultData={singleResultValue} isModified hasComment />;
+export default () => <ClinicalResult {...singleResultValue} isModified hasComment />;

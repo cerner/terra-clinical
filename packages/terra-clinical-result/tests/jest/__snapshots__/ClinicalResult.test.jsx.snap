@@ -3,40 +3,83 @@
 exports[`ClinicalResult should pass certain props to Observation  1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={true}
-          interpretation="critical"
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={true}
+    interpretation="critical"
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a NoData if hasResultNoData is true 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <InjectIntl(KnownNoData) />
 </div>
@@ -45,6 +88,33 @@ exports[`ClinicalResult should render a NoData if hasResultNoData is true 1`] = 
 exports[`ClinicalResult should render a ResultError if hasResultError is true 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
   <InjectIntl(ResultError) />
 </div>
@@ -53,362 +123,493 @@ exports[`ClinicalResult should render a ResultError if hasResultError is true 1`
 exports[`ClinicalResult should render a commented result  1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-      <IconComment
-        className="icon-comment"
-        data-name="Layer 1"
-        isBidi={true}
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={true}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a default ClinicalResult 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a entered-in-error status result 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display status-in-error"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={true}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          interpretation={null}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    interpretation="critical"
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+    status="entered-in-error"
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a modified result  1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-      <IconModified
-        className="icon-modified"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={true}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a result with a concept display 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
-  <div
-    className="concept-display"
-  >
-    Temperature Oral
-  </div>
+  <ClinicalResultDisplay
+    conceptDisplay="Temperature Oral"
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a result with a date time display 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
-  <div
-    className="datetime-display"
-  >
-    Nov 23, 2019 13:31:31
-  </div>
+  <ClinicalResultDisplay
+    datetimeDisplay="Nov 23, 2019 13:31:31"
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a result with unit hidden 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={true}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={true}
+    isModified={false}
+    isTruncated={false}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display truncated"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={false}
+    isTruncated={true}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render a truncated ClinicalResult with icons moved 1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display truncated"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={false}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-    </div>
-    <IconModified
-      className="icon-modified"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={true}
+    isTruncated={true}
+    isUnverified={false}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;
 
 exports[`ClinicalResult should render an unverified result  1`] = `
 <div
   className="clinical-result"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
 >
-  <div
-    className="decorated-result-display"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={false}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111"
-          hideUnit={false}
-          isUnverified={true}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-      <IconDiamond
-        className="icon-unverified"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
-    </div>
-  </div>
+  <ClinicalResultDisplay
+    eventId="111"
+    hasComment={false}
+    hideAccessoryDisplays={false}
+    hideUnit={false}
+    isModified={false}
+    isTruncated={false}
+    isUnverified={true}
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
 </div>
 `;

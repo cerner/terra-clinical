@@ -9,4 +9,4 @@ const singleResultValue = {
   },
 };
 
-export default () => <ClinicalResult resultData={singleResultValue} hideUnit isUnverified />;
+export default () => <ClinicalResult {...singleResultValue} hideUnit isUnverified />;

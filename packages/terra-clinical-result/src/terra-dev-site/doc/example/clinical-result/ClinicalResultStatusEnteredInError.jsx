@@ -13,4 +13,4 @@ const singleResultValue = {
   datetimeDisplay: 'Nov 23, 2019 13:31:31',
 };
 
-export default () => <ClinicalResult resultData={singleResultValue} hasComment />;
+export default () => <ClinicalResult {...singleResultValue} hasComment />;

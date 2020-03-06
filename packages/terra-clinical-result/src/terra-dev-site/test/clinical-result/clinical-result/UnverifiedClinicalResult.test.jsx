@@ -6,13 +6,12 @@ export default () => (
   <>
     <div>
       <div>
-        <ClinicalResult resultData={UnverifiedResult} />
+        <ClinicalResult {...UnverifiedResult} />
       </div>
       <div>
-        <ClinicalResult resultData={{
-          ...UnverifiedResult,
-          interpretation: 'abnormal',
-        }}
+        <ClinicalResult
+          {...UnverifiedResult}
+          interpretation="abnormal"
         />
       </div>
     </div>
