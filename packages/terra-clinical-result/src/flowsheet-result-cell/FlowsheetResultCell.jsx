@@ -133,7 +133,7 @@ const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretat
   const primaryResultClassnames = cx([
     'primary-display',
     { unverified: hasUnverifiedIcon },
-    { interpretation: hasInterpretationIcon },
+    { interpretation: hasInterpretationIcon && !hasUnverifiedIcon },
   ]);
   return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
 };
@@ -239,11 +239,13 @@ const unpackResultDataSet = (resultDataSet) => {
     );
     firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
     if (!isEmpty(firstResultData.systolic)) {
+      firstResultData.systolic.interpretation = firstResultData.systolic.isUnverified ? undefined : firstResultData.systolic.interpretation;
       firstResultData.systolic.hasComment = false;
       firstResultData.systolic.isModified = false;
       firstResultData.systolic.isUnverified = false;
     }
     if (!isEmpty(firstResultData.diastolic)) {
+      firstResultData.diastolic.interpretation = firstResultData.diastolic.isUnverified ? undefined : firstResultData.diastolic.interpretation;
       firstResultData.diastolic.hasComment = false;
       firstResultData.diastolic.isModified = false;
       firstResultData.diastolic.isUnverified = false;
@@ -251,6 +253,7 @@ const unpackResultDataSet = (resultDataSet) => {
   } else {
     firstResultAttributes = unpackResultAttributes(resultDataSet[0]);
     firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
+    firstResultData.interpretation = firstResultData.isUnverified ? undefined : firstResultData.interpretation;
     firstResultData.hasComment = false;
     firstResultData.isModified = false;
     firstResultData.isUnverified = false;
@@ -285,12 +288,12 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     const additionalResultList = resultDataSet.slice(1, resultDataSet.length);
     additionalResultList.forEach((result) => {
       if (isfirstBloodPressureResult) {
-        const sysInterpretation = !isEmpty(result.systolic.interpretation) ? result.systolic.interpretation : null;
-        const diaInterpretation = !isEmpty(result.diastolic.interpretation) ? result.diastolic.interpretation : null;
+        const sysInterpretation = !isEmpty(result.systolic.interpretation) && !result.systolic.isUnverified ? result.systolic.interpretation : null;
+        const diaInterpretation = !isEmpty(result.diastolic.interpretation) && !result.diastolic.isUnverified ? result.diastolic.interpretation : null;
         additionalResultInterpretations.push(sysInterpretation);
         additionalResultInterpretations.push(diaInterpretation);
       } else {
-        const resultInterpretation = !isEmpty(result.interpretation) ? result.interpretation : null;
+        const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation : null;
         additionalResultInterpretations.push(resultInterpretation);
       }
     });
