@@ -36,7 +36,7 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
+   * Whether or not there is a known error or problem when retrieving or assembling the clinical result data.
    */
   hasResultError: PropTypes.bool,
   /**
