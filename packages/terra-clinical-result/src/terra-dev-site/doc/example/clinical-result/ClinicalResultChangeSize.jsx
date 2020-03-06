@@ -18,6 +18,6 @@ const singleResultValue = {
 
 export default () => (
   <div className={cx('clinical-result-fontsize-21')}>
-    <ClinicalResult {...singleResultValue} isModified hasComment isUnverified />
+    <ClinicalResult {...singleResultValue} isModified hasComment />
   </div>
 );
