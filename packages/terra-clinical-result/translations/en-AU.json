@@ -1,7 +1,7 @@
 {
   "Terra.clinicalResult.resultError": "Error",
   "Terra.clinicalResult.statusInError": "In Error",
-  "Terra.clinicalResult.statusInErrorAria": "Value Uncharted as In Error",
+  "Terra.clinicalResult.statusInErrorAria": "Value Unrecorded as In Error",
   "Terra.clinicalResult.selectToViewAria": "Select to view more details",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Result includes additional values",
   "Terra.clinicalResult.viewResults": "View Results",
