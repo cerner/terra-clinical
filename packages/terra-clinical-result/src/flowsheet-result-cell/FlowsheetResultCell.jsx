@@ -97,13 +97,13 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
     'CRITICAL',
     'EXTREMEHIGH',
     'EXTREMELOW',
+    'POSITIVE',
     'PANICHIGH',
     'PANICLOW',
     'VABNORMAL',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'CRITICAL';
   } else if ([
-    'POSITIVE',
     'ABNORMAL',
     'HIGH',
     'LOW',

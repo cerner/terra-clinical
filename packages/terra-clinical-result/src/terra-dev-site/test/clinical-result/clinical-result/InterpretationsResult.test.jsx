@@ -1,5 +1,5 @@
 import React from 'react';
-import Observation from '../../../../common/observation/_Observation';
+import ClinicalResult from '../../../../ClinicalResult';
 import DefaultResult from '../TestResults';
 
 const interpretations = [
@@ -15,10 +15,12 @@ const interpretations = [
 
 const interpretationDivs = interpretations.map((interpretation => (
   <div key={interpretation}>
-    <Observation
-      eventId={DefaultResult.eventId}
-      result={DefaultResult.result}
-      interpretation={interpretation}
+    <ClinicalResult resultData={
+      {
+        ...DefaultResult,
+        interpretation,
+      }
+    }
     />
   </div>
 )));

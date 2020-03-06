@@ -17,7 +17,7 @@ Terra.describeViewports('ResultTimeHeaderCell', ['medium'], () => {
 
   describe('paddingStyles', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-time-header-cell/paddingstyle-result-time-header-cell');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-time-header-cell/padding-style-result-time-header-cell');
     });
 
     Terra.it.validatesElement();

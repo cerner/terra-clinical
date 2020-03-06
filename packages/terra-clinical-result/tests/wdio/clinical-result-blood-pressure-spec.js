@@ -46,4 +46,12 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('interpretations', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/interpretations-blood-pressure-result');
+    });
+
+    Terra.it.validatesElement();
+  });
 });

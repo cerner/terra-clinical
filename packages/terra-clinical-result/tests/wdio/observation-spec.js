@@ -38,4 +38,12 @@ Terra.describeViewports('Observation', ['medium'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('is unverifieed', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/is-unverified-observation');
+    });
+
+    Terra.it.validatesElement();
+  });
 });
