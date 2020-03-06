@@ -12,7 +12,7 @@
   "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} additional results",
   "Terra.clinicalResult.interpretationCritical": "Critical",
   "Terra.clinicalResult.interpretationCriticalHigh": "Critical High",
-  "Terra.clinicalResult.interpretationCriticalHigh": "Critical Low",
+  "Terra.clinicalResult.interpretationCriticalLow": "Critical Low",
   "Terra.clinicalResult.interpretationCriticalAbnormal": "Critical Abnormal",
   "Terra.clinicalResult.interpretationPositive": "Positive",
   "Terra.clinicalResult.interpretationAbnormal": "Abnormal",
