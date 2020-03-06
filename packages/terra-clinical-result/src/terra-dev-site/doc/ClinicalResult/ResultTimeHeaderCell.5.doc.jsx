@@ -4,13 +4,13 @@ import ReadMe from '../../../../docs/ResultTimeHeaderCell.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import ResultSrc from '!raw-loader!../../../../src/resulttimeheadercell/ResultTimeHeaderCell';
+import ResultSrc from '!raw-loader!../../../../src/result-time-header-cell/ResultTimeHeaderCell';
 
 // Example Files
-import Default from '../example/resulttimeheadercell/ResultTimeHeaderCell';
-import DefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/resulttimeheadercell/ResultTimeHeaderCell.jsx';
-import FlowsheetExample from '../example/resulttimeheadercell/ResultTimeHeaderFlowsheetExample';
-import FlowsheetExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/resulttimeheadercell/ResultTimeHeaderFlowsheetExample.jsx';
+import Default from '../example/result-time-header-cell/ResultTimeHeaderCell';
+import DefaultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/result-time-header-cell/ResultTimeHeaderCell.jsx';
+import FlowsheetExample from '../example/result-time-header-cell/ResultTimeHeaderFlowsheetExample';
+import FlowsheetExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/result-time-header-cell/ResultTimeHeaderFlowsheetExample.jsx';
 
 const DocPage = () => (
   <DocTemplate

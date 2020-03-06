@@ -7,28 +7,28 @@ import { name } from '../../../../package.json';
 import ClinicalResultsProps from '!raw-loader!../../../../src/ClinicalResult';
 
 // Example Files
-import DefaultResult from '../example/clinicalresult/ClinicalResultDefault';
-import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultDefault.jsx';
-import DecoratedResult from '../example/clinicalresult/ClinicalResultDecorated';
-import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultDecorated.jsx';
-import UnverifiedResult from '../example/clinicalresult/ClinicalResultUnverified';
-import UnverifiedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultUnverified.jsx';
-import ExtraDisplaysResult from '../example/clinicalresult/ClinicalResultExtraDisplays';
-import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultExtraDisplays.jsx';
-import TruncatedResult from '../example/clinicalresult/ClinicalResultTruncated';
-import TruncatedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultTruncated.jsx';
-import InterpretationResults from '../example/clinicalresult/ClinicalResultInterpretation';
-import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultInterpretation.jsx';
-import SizeChangeResult from '../example/clinicalresult/ClinicalResultChangeSize';
-import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultChangeSize.jsx';
-import KnownNoData from '../example/clinicalresult/ClinicalResultKnownNoData';
-import KnownNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultKnownNoData.jsx';
-import KnownError from '../example/clinicalresult/ClinicalResultKnownError';
-import KnownErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultKnownError.jsx';
-import AccidentalError from '../example/clinicalresult/ClinicalResultAccidentalError';
-import AccidentalErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresult/ClinicalResultAccidentalError.jsx';
-import StatusEnteredInError from '../example/clinicalresult/ClinicalResultStatusEnteredInError';
-import StatusEnteredInErrorSrc from '../example/clinicalresult/ClinicalResultStatusEnteredInError';
+import DefaultResult from '../example/clinical-result/ClinicalResultDefault';
+import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultDefault.jsx';
+import DecoratedResult from '../example/clinical-result/ClinicalResultDecorated';
+import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultDecorated.jsx';
+import UnverifiedResult from '../example/clinical-result/ClinicalResultUnverified';
+import UnverifiedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultUnverified.jsx';
+import ExtraDisplaysResult from '../example/clinical-result/ClinicalResultExtraDisplays';
+import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultExtraDisplays.jsx';
+import TruncatedResult from '../example/clinical-result/ClinicalResultTruncated';
+import TruncatedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultTruncated.jsx';
+import InterpretationResults from '../example/clinical-result/ClinicalResultInterpretation';
+import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultInterpretation.jsx';
+import SizeChangeResult from '../example/clinical-result/ClinicalResultChangeSize';
+import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultChangeSize.jsx';
+import KnownNoData from '../example/clinical-result/ClinicalResultKnownNoData';
+import KnownNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultKnownNoData.jsx';
+import KnownError from '../example/clinical-result/ClinicalResultKnownError';
+import KnownErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultKnownError.jsx';
+import AccidentalError from '../example/clinical-result/ClinicalResultAccidentalError';
+import AccidentalErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result/ClinicalResultAccidentalError.jsx';
+import StatusEnteredInError from '../example/clinical-result/ClinicalResultStatusEnteredInError';
+import StatusEnteredInErrorSrc from '../example/clinical-result/ClinicalResultStatusEnteredInError';
 
 const DocPage = () => (
   <DocTemplate

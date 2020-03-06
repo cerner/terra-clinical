@@ -7,28 +7,28 @@ import { name } from '../../../../package.json';
 import ClinicalResultBloodPressureProps from '!raw-loader!../../../../src/ClinicalResultBloodPressure';
 
 // Example Files
-import DefaultResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureDefault';
-import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureDefault.jsx';
-import DecoratedResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureDecorated';
-import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureDecorated.jsx';
-import UnverifiedResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureUnverified';
-import UnverifiedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureUnverified.jsx';
-import ExtraDisplaysResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureExtraDisplays';
-import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureExtraDisplays.jsx';
-import TruncatedResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureTruncated';
-import TruncatedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureTruncated.jsx';
-import InterpretationResults from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureInterpretation';
-import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureInterpretation.jsx';
-import SizeChangeResult from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureChangeSize';
-import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureChangeSize.jsx';
-import KnownNoData from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownNoData';
-import KnownNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownNoData.jsx';
-import PartialNoData from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressurePartialNoData';
-import PartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressurePartialNoData.jsx';
-import KnownErrorAndPartialError from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownErrorAndPartialError';
-import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureKnownErrorAndPartialError.jsx';
-import StatusEnteredInError from '../example/clinicalresultbloodpressure/ClinicalResultBloodPressureStatusEnteredInError';
-import StatusEnteredInErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinicalresultbloodpressure/ClinicalResultBloodPressureStatusEnteredInError.jsx';
+import DefaultResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureDefault';
+import DefaultResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureDefault.jsx';
+import DecoratedResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureDecorated';
+import DecoratedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureDecorated.jsx';
+import UnverifiedResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureUnverified';
+import UnverifiedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureUnverified.jsx';
+import ExtraDisplaysResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureExtraDisplays';
+import ExtraDisplaysResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureExtraDisplays.jsx';
+import TruncatedResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureTruncated';
+import TruncatedResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureTruncated.jsx';
+import InterpretationResults from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureInterpretation';
+import InterpretationResultsSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureInterpretation.jsx';
+import SizeChangeResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureChangeSize';
+import SizeChangeResultSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureChangeSize.jsx';
+import KnownNoData from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureKnownNoData';
+import KnownNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureKnownNoData.jsx';
+import PartialNoData from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressurePartialNoData';
+import PartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressurePartialNoData.jsx';
+import KnownErrorAndPartialError from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureKnownErrorAndPartialError';
+import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureKnownErrorAndPartialError.jsx';
+import StatusEnteredInError from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureStatusEnteredInError';
+import StatusEnteredInErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/clinical-result-blood-pressure/ClinicalResultBloodPressureStatusEnteredInError.jsx';
 
 const DocPage = () => (
   <DocTemplate

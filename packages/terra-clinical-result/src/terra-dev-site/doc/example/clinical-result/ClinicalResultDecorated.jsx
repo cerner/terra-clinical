@@ -1,5 +1,5 @@
 import React from 'react';
-import ClinicalResult from 'terra-clinical-result/lib/index';
+import ClinicalResult from 'terra-clinical-result/lib';
 
 const singleResultValue = {
   eventId: '111',

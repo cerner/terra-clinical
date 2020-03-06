@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
+import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib';
 
 const bloodpressureResultValue = {
   id: '111',

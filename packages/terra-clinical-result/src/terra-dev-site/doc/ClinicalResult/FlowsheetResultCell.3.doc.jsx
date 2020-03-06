@@ -4,29 +4,29 @@ import ReadMe from '../../../../docs/FlowsheetResultCell.md';
 import { name } from '../../../../package.json';
 
 // Component Source
-import FlowsheetResultCellProps from '!raw-loader!../../../../src/flowsheetresultcell/FlowsheetResultCell';
+import FlowsheetResultCellProps from '!raw-loader!../../../../src/flowsheet-result-cell/FlowsheetResultCell';
 
 // Example Files
-import DefaultCell from '../example/flowsheetresultcell/FlowsheetResultCellDefault';
-import DefaultCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellDefault.jsx';
-import MultipleResultsCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleResults';
-import MultipleResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleResults.jsx';
-import BloodPressureCell from '../example/flowsheetresultcell/FlowsheetResultCellBloodPressure';
-import BloodPressureCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellBloodPressure.jsx';
-import MultipleBloodPressuresCell from '../example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures';
-import MultipleBloodPressuresCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellMultipleBloodPressures.jsx';
-import UnverifiedResultsCell from '../example/flowsheetresultcell/FlowsheetResultCellUnverifiedResults';
-import UnverifiedResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellUnverifiedResults.jsx';
-import PaddingStyleCell from '../example/flowsheetresultcell/FlowsheetResultCellPaddingStyle';
-import PaddingStyleCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellPaddingStyle.jsx';
-import KnownAndPartialNoData from '../example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData';
-import KnownAndPartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownAndPartialNoData.jsx';
-import KnownErrorAndPartialError from '../example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError';
-import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
-import NumericOverflow from '../example/flowsheetresultcell/FlowsheetResultCellNumericOverflow';
-import NumericOverflowSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellNumericOverflow.jsx';
-import StatusEnteredInError from '../example/flowsheetresultcell/FlowsheetResultCellStatusEnteredInError';
-import StatusEnteredInErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheetresultcell/FlowsheetResultCellStatusEnteredInError.jsx';
+import DefaultCell from '../example/flowsheet-result-cell/FlowsheetResultCellDefault';
+import DefaultCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellDefault.jsx';
+import MultipleResultsCell from '../example/flowsheet-result-cell/FlowsheetResultCellMultipleResults';
+import MultipleResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellMultipleResults.jsx';
+import BloodPressureCell from '../example/flowsheet-result-cell/FlowsheetResultCellBloodPressure';
+import BloodPressureCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellBloodPressure.jsx';
+import MultipleBloodPressuresCell from '../example/flowsheet-result-cell/FlowsheetResultCellMultipleBloodPressures';
+import MultipleBloodPressuresCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellMultipleBloodPressures.jsx';
+import UnverifiedResultsCell from '../example/flowsheet-result-cell/FlowsheetResultCellUnverifiedResults';
+import UnverifiedResultsCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellUnverifiedResults.jsx';
+import PaddingStyleCell from '../example/flowsheet-result-cell/FlowsheetResultCellPaddingStyle';
+import PaddingStyleCellSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellPaddingStyle.jsx';
+import KnownAndPartialNoData from '../example/flowsheet-result-cell/FlowsheetResultCellKnownAndPartialNoData';
+import KnownAndPartialNoDataSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellKnownAndPartialNoData.jsx';
+import KnownErrorAndPartialError from '../example/flowsheet-result-cell/FlowsheetResultCellKnownErrorAndPartialError';
+import KnownErrorAndPartialErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellKnownErrorAndPartialError.jsx';
+import NumericOverflow from '../example/flowsheet-result-cell/FlowsheetResultCellNumericOverflow';
+import NumericOverflowSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellNumericOverflow.jsx';
+import StatusEnteredInError from '../example/flowsheet-result-cell/FlowsheetResultCellStatusEnteredInError';
+import StatusEnteredInErrorSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/flowsheet-result-cell/FlowsheetResultCellStatusEnteredInError.jsx';
 
 const DocPage = () => (
   <DocTemplate

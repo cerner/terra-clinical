@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
+import { FlowsheetResultCell } from 'terra-clinical-result/lib';
 import classNames from 'classnames/bind';
 import styles from '../Examples.module.scss';
 
