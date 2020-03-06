@@ -57,10 +57,7 @@ const propTypes = {
 
 const defaultProps = {
   resultDataSet: [],
-  hideUnit: false,
   paddingStyle: 'compact',
-  hasResultError: false,
-  hasResultNoData: false,
 };
 
 const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID) => {

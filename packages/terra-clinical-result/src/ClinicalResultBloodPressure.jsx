@@ -28,7 +28,7 @@ const propTypes = {
    */
   diastolic: observationPropShape,
   /**
-   * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
+   * Whether or not the unit of measure should be presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
   /**
@@ -36,11 +36,11 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
+   * Whether or not there is a known error or problem when retrieving or assembling the clinical result data.
    */
   hasResultError: PropTypes.bool,
   /**
-   * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
+   * Whether or not the result has a value for a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
   /**

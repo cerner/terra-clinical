@@ -26,7 +26,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  hideDate: false,
   paddingStyle: 'compact',
 };
 
