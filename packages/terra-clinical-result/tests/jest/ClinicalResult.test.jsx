@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import ClinicalResult from '../../src/ClinicalResult';
-import DefaultResult from '../../src/terra-dev-site/test/TestResults';
+import DefaultResult from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 describe('ClinicalResult', () => {
   it('should render a default ClinicalResult', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultTimeHeaderCell from '../../../src/resulttimeheadercell/ResultTimeHeaderCell';
+import ResultTimeHeaderCell from '../../../src/result-time-header-cell/ResultTimeHeaderCell';
 
 // Snapshot Tests
 describe('ResultTimeHeaderCell', () => {

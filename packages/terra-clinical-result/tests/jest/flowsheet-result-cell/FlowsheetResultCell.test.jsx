@@ -1,10 +1,10 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
-import FlowsheetResultCell from '../../../src/flowsheetresultcell/FlowsheetResultCell';
+import FlowsheetResultCell from '../../../src/flowsheet-result-cell/FlowsheetResultCell';
 import DefaultResult, {
   DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult, DefaultResultWithNoEventId, DefaultBloodPressureDiastolicResultWithNoId, DefaultBloodPressureSystolicResultWithNoId,
-} from '../../../src/terra-dev-site/test/TestResults';
+} from '../../../src/terra-dev-site/test/clinical-result/TestResults';
 
 // Snapshot Tests
 describe('FlowsheetResultCell', () => {

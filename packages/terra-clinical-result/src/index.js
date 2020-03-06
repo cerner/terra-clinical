@@ -1,8 +1,8 @@
 import ClinicalResult from './ClinicalResult';
 import ClinicalResultBloodPressure from './ClinicalResultBloodPressure';
-import FlowsheetResultCell from './flowsheetresultcell/FlowsheetResultCell';
-import ResultNameHeaderCell from './resultnameheadercell/ResultNameHeaderCell';
-import ResultTimeHeaderCell from './resulttimeheadercell/ResultTimeHeaderCell';
+import FlowsheetResultCell from './flowsheet-result-cell/FlowsheetResultCell';
+import ResultNameHeaderCell from './result-name-header-cell/ResultNameHeaderCell';
+import ResultTimeHeaderCell from './result-time-header-cell/ResultTimeHeaderCell';
 
 export default ClinicalResult;
 export {
