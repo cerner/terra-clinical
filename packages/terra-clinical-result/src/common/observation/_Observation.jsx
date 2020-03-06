@@ -8,7 +8,6 @@ import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
 import interpretationPropType from '../../proptypes/interpretationPropTypes';
 import valueQuantityPropType from '../../proptypes/valuePropTypes';
 import ResultError from '../other/_ResultError';
-import NoData from '../other/_KnownNoData';
 import styles from './Observation.module.scss';
 
 const cx = classNames.bind(styles);
@@ -74,7 +73,7 @@ const Observation = (props) => {
     ...customProps
   } = props;
 
-  const isValidValue = !(result.value === null || !result.value);
+  const isValidValue = !(!result.value || result.value.length === 0);
 
   const interpretationLC = interpretation && interpretation.toLowerCase();
 
@@ -90,9 +89,8 @@ const Observation = (props) => {
   ]);
 
   const observationDisplay = () => {
-    let valueDisplayElements;
     if (isValidValue) {
-      valueDisplayElements = (
+      return (
         <React.Fragment>
           <span
             {...customProps}
@@ -104,12 +102,8 @@ const Observation = (props) => {
           {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}
         </React.Fragment>
       );
-    } else if (result.value === null) {
-      valueDisplayElements = (<NoData />);
-    } else {
-      valueDisplayElements = (<ResultError />);
     }
-    return valueDisplayElements;
+    return (<ResultError />);
   };
 
   return observationDisplay();

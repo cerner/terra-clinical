@@ -89,7 +89,6 @@ const unverifiedResultValue = [
 
 export default () => (
   <React.Fragment>
-    {/* --- */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
         none
@@ -100,11 +99,7 @@ export default () => (
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding', 'medium'])}>
         standard
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding', 'tall', 'allow-wrapping'])}>
-        compact + vertically center-aligned
-      </div>
     </div>
-    {/* --- */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
         <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="none" />
@@ -115,13 +110,7 @@ export default () => (
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'medium'])}>
         <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="standard" />
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'tall'])}>
-        <div className={cx(['vertical-center-align-wrapper'])}>
-          <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="compact" />
-        </div>
-      </div>
     </div>
-    {/* --- */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
         <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="none" />
@@ -131,11 +120,6 @@ export default () => (
       </div>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'medium'])}>
         <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="standard" />
-      </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'tall'])}>
-        <div className={cx(['vertical-center-align-wrapper'])}>
-          <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="compact" />
-        </div>
       </div>
     </div>
   </React.Fragment>

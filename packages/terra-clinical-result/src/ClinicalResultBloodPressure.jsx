@@ -16,7 +16,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Result Object with the clinical result data.
+   * Result Object with the clinical result data. Example object structure listed above.
    */
   resultData: PropTypes.shape({
     /**
@@ -50,6 +50,11 @@ const propTypes = {
   hasResultNoData: PropTypes.bool,
   /**
    * @private
+   * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
+   */
+  hideAccessoryDisplays: PropTypes.bool,
+  /**
+   * @private
    * The intl object to be injected for translations.
    */
   intl: intlShape.isRequired,
@@ -61,6 +66,7 @@ const defaultProps = {
   isTruncated: false,
   hasResultError: false,
   hasResultNoData: false,
+  hideAccessoryDisplays: false,
 };
 
 const ClinicalResultBloodPressure = (props) => {
@@ -70,6 +76,7 @@ const ClinicalResultBloodPressure = (props) => {
     isTruncated,
     hasResultError,
     hasResultNoData,
+    hideAccessoryDisplays,
     intl,
     ...customProps
   } = props;
@@ -261,12 +268,12 @@ const ClinicalResultBloodPressure = (props) => {
         <div className={decoratedResultClassnames}>
           <div className={cx('result-display')}>
             {decoratedResultDisplay}
-            {isTruncated ? null : iconGroupDisplayElement}
+            {isTruncated ? null : !hideAccessoryDisplays && iconGroupDisplayElement}
           </div>
-          {isTruncated ? iconGroupDisplayElement : null}
+          {isTruncated ? !hideAccessoryDisplays && iconGroupDisplayElement : null}
         </div>
-        {conceptDisplayElement}
-        {datetimeDisplayElement}
+        {!hideAccessoryDisplays && conceptDisplayElement}
+        {!hideAccessoryDisplays && datetimeDisplayElement}
       </React.Fragment>
     );
   }

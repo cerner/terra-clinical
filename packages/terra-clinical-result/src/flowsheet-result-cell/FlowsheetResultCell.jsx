@@ -19,7 +19,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   *  A set of clinical results.                                                          .
+   *  A set of clinical results. Example object structure listed above.                                              .
    */
   resultDataSet: PropTypes.arrayOf(PropTypes.shape({
     /**
@@ -129,7 +129,6 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
 const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID) => {
   const primaryResultClassnames = cx([
     'primary-display',
-    { unverified: hasUnverifiedIcon },
     { interpretation: hasInterpretationIcon && !hasUnverifiedIcon },
   ]);
   return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
@@ -146,13 +145,13 @@ const createStandardResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInter
   } else if (numericOverflow) {
     resultsInnerDisplay = <NumericOverflow />;
   } else {
-    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated />;
+    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={hasUnverifiedIcon} hideAccessoryDisplays />;
   }
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
   return clinicalResultDisplay;
 };
 
-const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
+const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, containerDivRef) => {
   const {
     systolic,
     diastolic,
@@ -165,7 +164,7 @@ const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, has
   if (isStatusInError.systolic || isStatusInError.diastolic) {
     resultsInnerDisplay = <EnteredInError />;
   } else {
-    resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated />);
+    resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
   }
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
   return clinicalResultDisplay;
@@ -183,11 +182,11 @@ const setResultKeyID = (isBloodPressureResult, resultData) => {
       return resultData.diastolic.eventId;
     }
   } else {
-    if (resultData.eventId) {
-      return resultData.eventId;
-    }
     if (resultData.id) {
       return resultData.id;
+    }
+    if (resultData.eventId) {
+      return resultData.eventId;
     }
   }
   return null;
@@ -216,11 +215,11 @@ const unpackResultAttributes = (resultDataItem) => {
 };
 
 const unpackResultDataSet = (resultDataSet) => {
-  const systolicData = resultDataSet[0].systolic;
-  const diastolicData = resultDataSet[0].diastolic;
+  const firstResultData = resultDataSet[0];
+  const systolicData = firstResultData.systolic;
+  const diastolicData = firstResultData.diastolic;
   const isfirstBloodPressureResult = (!isEmpty(diastolicData) || !isEmpty(systolicData)) || false;
   let firstResultAttributes = {};
-  let firstResultData = {};
   if (isfirstBloodPressureResult) {
     const bpAttribute = {
       systolic: null,
@@ -234,33 +233,10 @@ const unpackResultDataSet = (resultDataSet) => {
       (bpAttribute.systolic.modified || bpAttribute.diastolic.modified),
       (bpAttribute.systolic.unverified || bpAttribute.diastolic.unverified),
     );
-    firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
-    if (!isEmpty(firstResultData.systolic)) {
-      if (firstResultData.systolic.isUnverified) {
-        delete firstResultData.systolic.interpretation;
-      }
-      firstResultData.systolic.hasComment = false;
-      firstResultData.systolic.isModified = false;
-      firstResultData.systolic.isUnverified = false;
-    }
-    if (!isEmpty(firstResultData.diastolic)) {
-      if (firstResultData.diastolic.isUnverified) {
-        delete firstResultData.diastolic.interpretation;
-      }
-      firstResultData.diastolic.hasComment = false;
-      firstResultData.diastolic.isModified = false;
-      firstResultData.diastolic.isUnverified = false;
-    }
   } else {
-    firstResultAttributes = unpackResultAttributes(resultDataSet[0]);
-    firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
-    if (firstResultData.isUnverified) {
-      delete firstResultData.interpretation;
-    }
-    firstResultData.hasComment = false;
-    firstResultData.isModified = false;
-    firstResultData.isUnverified = false;
+    firstResultAttributes = unpackResultAttributes(firstResultData);
   }
+
   const resultKeyID = setResultKeyID(isfirstBloodPressureResult, firstResultData);
   return {
     isfirstBloodPressureResult,
@@ -279,7 +255,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
   } = unpackResultDataSet(resultDataSet);
   const compositeCell = [];
   if (isfirstBloodPressureResult) {
-    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, numericOverflow, containerDivRef);
+    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, containerDivRef);
     compositeCell.push(firstResultDisplay);
   } else {
     const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, numericOverflow, containerDivRef);
@@ -296,7 +272,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
         additionalResultInterpretations.push(sysInterpretation);
         additionalResultInterpretations.push(diaInterpretation);
       } else {
-        const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation : null;
+        const resultInterpretation = !isEmpty(result.interpretation) ? result.interpretation : null;
         additionalResultInterpretations.push(resultInterpretation);
       }
     });

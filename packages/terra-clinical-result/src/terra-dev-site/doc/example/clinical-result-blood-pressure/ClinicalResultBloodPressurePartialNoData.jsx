@@ -33,24 +33,6 @@ const partialResultValueWithNoDataPropDiastolic = {
   },
 };
 
-const partialResultValueWithNullValue = {
-  id: '333',
-  systolic: {
-    eventId: '333.1',
-    result: {
-      value: null,
-    },
-  },
-  diastolic: {
-    eventId: '333.2',
-    result: {
-      value: '80',
-      unit: 'mmHg',
-    },
-    interpretation: 'critical',
-  },
-};
-
 export default () => (
   <React.Fragment>
     {/* This example shows the No Data display using the `resultNoData` property name for Systolic */}
@@ -59,9 +41,5 @@ export default () => (
     <br />
     {/* This example shows the No Data display using the `resultNoData` property name for Diastolic */}
     <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataPropDiastolic} />
-    <br />
-    <br />
-    {/* This example column shows the No Data display using `result: { value: null, }` for Systolic */}
-    <ClinicalResultBloodPressure resultData={partialResultValueWithNullValue} />
   </React.Fragment>
 );

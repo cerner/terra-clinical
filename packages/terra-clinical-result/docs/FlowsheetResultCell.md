@@ -27,19 +27,43 @@ Currently the Flowsheet expects an array of one or more results - and if there a
 
 
 ```jsx
-  /**
-   *  A set of clinical results.                                                          .
-   */
-  resultDataSet: PropTypes.arrayOf(PropTypes.shape({
-    /**
-     *  A single clinical result or blood pressure result.
-     */
-    resultData: observationPropShape,
-  })),
+/* ------ Structure for the resultData object for the Flowsheet Result Cell, can support multiple results ------ */
+
+ /**
+  *  A set of clinical results.                                                          .
+  */
+
+  resultDataSet = [
+    {
+      /**
+       *  A single clinical result or blood pressure result.
+       *  Same as {resultData} for clinical-result and clinical-result-blood-pressure
+       */
+      eventId:'1574537491',
+      result: { /* ... */ },
+    },
+    {
+      /**
+       *  A single clinical result or blood pressure result.
+       *  Same as {resultData} for clinical-result and clinical-result-blood-pressure
+       */
+      eventId:'1574537491',
+      result: { /* ... */ },
+    },
+    {
+      /**
+       *  A single clinical result or blood pressure result.
+       *  Same as {resultData} for clinical-result and clinical-result-blood-pressure
+       */
+      eventId:'1574537491',
+      result: { /* ... */ },
+    },
+  ]
+
 ```
 
 
-An example of a single clinical result value:
+An example of a single clinical result value in a flowsheet cell:
 ```jsx
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';

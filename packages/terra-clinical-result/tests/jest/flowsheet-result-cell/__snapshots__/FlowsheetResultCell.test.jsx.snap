@@ -9,15 +9,13 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       resultData={
         Object {
           "eventId": "111",
-          "hasComment": false,
-          "isModified": false,
-          "isUnverified": false,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",
@@ -57,15 +55,13 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       resultData={
         Object {
           "eventId": "111",
-          "hasComment": false,
-          "isModified": false,
-          "isUnverified": false,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",
@@ -105,15 +101,13 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       resultData={
         Object {
           "eventId": "111",
-          "hasComment": false,
-          "isModified": false,
-          "isUnverified": false,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",
@@ -153,15 +147,13 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={true}
       isTruncated={true}
       key="ClinicalResult-111"
       resultData={
         Object {
           "eventId": "111",
-          "hasComment": false,
-          "isModified": false,
-          "isUnverified": false,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",
@@ -305,10 +297,11 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display unverified"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResultBloodPressure)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111"
@@ -316,9 +309,8 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
         Object {
           "diastolic": Object {
             "eventId": "111.2",
-            "hasComment": false,
-            "isModified": false,
-            "isUnverified": false,
+            "interpretation": "critical",
+            "isUnverified": true,
             "result": Object {
               "unit": "mmHg",
               "value": "80",
@@ -327,9 +319,8 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
           "id": "111",
           "systolic": Object {
             "eventId": "111.1",
-            "hasComment": false,
-            "isModified": false,
-            "isUnverified": false,
+            "interpretation": "critical",
+            "isUnverified": true,
             "result": Object {
               "unit": "mmHg",
               "value": "180",
@@ -412,19 +403,20 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display unverified"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={true}
       isTruncated={true}
+      isUnverified={true}
       key="ClinicalResult-111"
       resultData={
         Object {
           "eventId": "111",
-          "hasComment": false,
-          "isModified": false,
-          "isUnverified": false,
+          "interpretation": "critical",
+          "isUnverified": true,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",
@@ -434,7 +426,7 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
     />
   </div>
   <div
-    className="additional-end-display"
+    className="additional-end-display interpretation-critical"
     key="AdditionalResultsDisplay-111"
   >
     <div
@@ -510,6 +502,7 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
     key="ClinicalResultDisplay-111.2"
   >
     <InjectIntl(ClinicalResultBloodPressure)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.2"
@@ -517,9 +510,6 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
         Object {
           "diastolic": Object {
             "eventId": "111.2",
-            "hasComment": false,
-            "isModified": false,
-            "isUnverified": false,
             "result": Object {
               "unit": "mmHg",
               "value": "80",
@@ -541,6 +531,7 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
     key="ClinicalResultDisplay-111.1"
   >
     <InjectIntl(ClinicalResultBloodPressure)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.1"
@@ -548,9 +539,6 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
         Object {
           "systolic": Object {
             "eventId": "111.1",
-            "hasComment": false,
-            "isModified": false,
-            "isUnverified": false,
             "result": Object {
               "unit": "mmHg",
               "value": "180",
@@ -572,15 +560,13 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       resultData={
         Object {
           "eventId": "111",
-          "hasComment": false,
-          "isModified": false,
-          "isUnverified": false,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",
@@ -620,15 +606,13 @@ exports[`FlowsheetResultCell should render when given result data with no event 
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResult-111"
       resultData={
         Object {
-          "hasComment": false,
           "id": "111",
-          "isModified": false,
-          "isUnverified": false,
           "result": Object {
             "unit": "mL",
             "value": "12345.678",

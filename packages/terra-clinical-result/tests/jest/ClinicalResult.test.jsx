@@ -18,9 +18,8 @@ describe('ClinicalResult', () => {
   it('should render a truncated ClinicalResult with icons moved', () => {
     const resultData = {
       ...DefaultResult,
-      isModified: true,
     };
-    const result = shallowWithIntl(<ClinicalResult resultData={resultData} isTruncated />).dive();
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} isTruncated isModified />).dive();
     expect(result).toMatchSnapshot();
   });
 
@@ -36,27 +35,24 @@ describe('ClinicalResult', () => {
   it('should render a modified result ', () => {
     const resultData = {
       ...DefaultResult,
-      isModified: true,
     };
-    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />).dive();
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} isModified />).dive();
     expect(result).toMatchSnapshot();
   });
 
   it('should render a commented result ', () => {
     const resultData = {
       ...DefaultResult,
-      hasComment: true,
     };
-    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />).dive();
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} hasComment />).dive();
     expect(result).toMatchSnapshot();
   });
 
   it('should render an unverified result ', () => {
     const resultData = {
       ...DefaultResult,
-      isUnverified: true,
     };
-    const result = shallowWithIntl(<ClinicalResult resultData={resultData} />).dive();
+    const result = shallowWithIntl(<ClinicalResult resultData={resultData} isUnverified />).dive();
     expect(result).toMatchSnapshot();
   });
 

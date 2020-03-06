@@ -7,7 +7,6 @@ const singleResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  isUnverified: true,
 };
 
-export default () => <ClinicalResult resultData={singleResultValue} hideUnit />;
+export default () => <ClinicalResult resultData={singleResultValue} hideUnit isUnverified />;

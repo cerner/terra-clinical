@@ -5,15 +5,6 @@ import styles from '../Examples.module.scss';
 
 const cx = classNames.bind(styles);
 
-const standardResultValueWithNullValue = [
-  {
-    eventId: '1577836800',
-    result: {
-      value: null,
-    },
-  },
-];
-
 const partialResultValueWithNoDataPropSystolic = [
   {
     id: '111',
@@ -50,46 +41,6 @@ const partialResultValueWithNoDataPropDiastolic = [
   },
 ];
 
-const partialResultValueWithNullValueSystolic = [
-  {
-    id: '333',
-    systolic: {
-      eventId: '333.1',
-      result: {
-        value: null,
-      },
-    },
-    diastolic: {
-      eventId: '333.2',
-      result: {
-        value: '77',
-        unit: 'mmHg',
-      },
-      interpretation: 'critical',
-    },
-  },
-];
-
-const partialResultValueWithNullValueDiastolic = [
-  {
-    id: '444',
-    systolic: {
-      eventId: '444.1',
-      result: {
-        value: '140',
-        unit: 'mmHg',
-      },
-      interpretation: 'high',
-    },
-    diastolic: {
-      eventId: '444.2',
-      result: {
-        value: null,
-      },
-    },
-  },
-];
-
 export default () => (
   <React.Fragment>
     {/* This example column shows a standard result with the `hasResultNoData` prop or `result: { value: null, }` */}
@@ -97,26 +48,17 @@ export default () => (
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell hasResultNoData />
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={standardResultValueWithNullValue} />
-      </div>
     </div>
     {/* This example column shows a partial Blood Pressure no data display using the `resultNoData` property name */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropSystolic} hideUnit />
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropDiastolic} hideUnit />
-      </div>
     </div>
     {/* This example column shows a partial Blood Pressure no data display using `result: { value: null, }` */}
     <div className={cx('mock-flowsheet-resultcolumn')}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={partialResultValueWithNullValueSystolic} hideUnit />
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={partialResultValueWithNullValueDiastolic} hideUnit />
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropDiastolic} hideUnit />
       </div>
     </div>
   </React.Fragment>

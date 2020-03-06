@@ -7,8 +7,6 @@ const singleResultValue = {
     value: '12345.678',
     unit: 'mL',
   },
-  isModified: true,
-  hasComment: true,
 };
 
-export default () => <ClinicalResult resultData={singleResultValue} />;
+export default () => <ClinicalResult resultData={singleResultValue} isModified hasComment />;

@@ -16,7 +16,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * Result Object with the clinical result data.
+   * Result Object with the clinical result data. Example object structure listed above.
    */
   resultData: observationPropShape,
   /**
@@ -28,6 +28,18 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
+   *  If the Result value has an appended comment.
+   */
+  isUnverified: PropTypes.bool,
+  /**
+   *  If the Result value has not been authenticated and committed to patient chart.
+   */
+  isModified: PropTypes.bool,
+  /**
+   *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
+   */
+  hasComment: PropTypes.bool,
+  /**
    * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
    */
   hasResultError: PropTypes.bool,
@@ -35,6 +47,11 @@ const propTypes = {
    * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
+  /**
+   * @private
+   * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
+   */
+  hideAccessoryDisplays: PropTypes.bool,
   /**
    * @private
    * The intl object to be injected for translations.
@@ -46,8 +63,12 @@ const defaultProps = {
   resultData: {},
   hideUnit: false,
   isTruncated: false,
+  isUnverified: false,
+  isModified: false,
+  hasComment: false,
   hasResultError: false,
   hasResultNoData: false,
+  hideAccessoryDisplays: false,
 };
 
 const createIcons = (resultData) => (resultData.isUnverified
@@ -67,7 +88,7 @@ const createSecondaryDisplays = (resultData) => (
   </React.Fragment>
 );
 
-const createClinicalResultDisplay = (resultData, hideUnit, isTruncated) => {
+const createClinicalResultDisplay = (resultData, hideUnit, isTruncated, hideAccessoryDisplays) => {
   const isStatusInError = !isEmpty(resultData.status) ? checkIsStatusInError(resultData.status) : false;
   const decoratedResultClassnames = cx([
     'decorated-result-display',
@@ -92,11 +113,11 @@ const createClinicalResultDisplay = (resultData, hideUnit, isTruncated) => {
               hideUnit={hideUnit}
             />
           </ConditionalWrapper>
-          {isTruncated ? null : createIcons(resultData)}
+          {isTruncated ? null : !hideAccessoryDisplays && createIcons(resultData)}
         </div>
-        {isTruncated ? createIcons(resultData) : null}
+        {isTruncated ? !hideAccessoryDisplays && createIcons(resultData) : null}
       </div>
-      {createSecondaryDisplays(resultData)}
+      {!hideAccessoryDisplays && createSecondaryDisplays(resultData)}
     </React.Fragment>
   );
 };
@@ -106,20 +127,29 @@ const ClinicalResult = (props) => {
     resultData,
     hideUnit,
     isTruncated,
+    isUnverified,
+    isModified,
+    hasComment,
     hasResultError,
     hasResultNoData,
+    hideAccessoryDisplays,
     intl,
     ...customProps
   } = props;
+
+  resultData.isUnverified = isUnverified;
+  resultData.isModified = isModified;
+  resultData.hasComment = hasComment;
+  const { resultNoData } = resultData;
 
   let clinicalResultDisplay;
 
   if (hasResultError) {
     clinicalResultDisplay = <ResultError />;
-  } else if (hasResultNoData) {
+  } else if (hasResultNoData || resultNoData) {
     clinicalResultDisplay = <NoData />;
   } else {
-    clinicalResultDisplay = createClinicalResultDisplay(resultData, hideUnit, isTruncated);
+    clinicalResultDisplay = createClinicalResultDisplay(resultData, hideUnit, isTruncated, hideAccessoryDisplays);
   }
 
   const clinicalResultClassnames = cx('clinical-result');

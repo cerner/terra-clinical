@@ -79,7 +79,7 @@ const DocPage = () => (
       },
       {
         title: 'Display for a Partial "No Result"',
-        description: 'Use either the \'resultNoData\' property name or \'result: { value: null, }\' to show the "No Data" display for either the Systolic or Diastolic result:',
+        description: 'Use the \'resultNoData\' property name to show the "No Data" display for either the Systolic or Diastolic result:',
         example: <PartialNoData />,
         source: PartialNoDataSrc,
       },

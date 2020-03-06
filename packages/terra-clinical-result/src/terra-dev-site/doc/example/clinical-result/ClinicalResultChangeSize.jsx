@@ -12,15 +12,12 @@ const singleResultValue = {
     unit: 'mL',
   },
   interpretation: 'critical',
-  isModified: true,
-  hasComment: true,
-  isUnverified: true,
   conceptDisplay: 'Temperature Oral',
   datetimeDisplay: 'Nov 23, 2019 13:31:31',
 };
 
 export default () => (
   <div className={cx('clinical-result-fontsize-21')}>
-    <ClinicalResult resultData={singleResultValue} />
+    <ClinicalResult resultData={singleResultValue} isModified hasComment isUnverified />
   </div>
 );

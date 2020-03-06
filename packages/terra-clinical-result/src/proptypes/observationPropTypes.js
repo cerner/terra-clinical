@@ -19,7 +19,7 @@ const observationPropShape = PropTypes.shape({
   interpretation: interpretationPropType,
   /**
    * Enum for possible Result Statuses.
-   * One of `'registered'`, `'preliminary'`, `'final'`, `'amended'`, `'corrected'`, `'cancelled'`, `'entered-in-error'`, `'unknown'`.
+   * One of `'final'`, `'entered-in-error'`s.
    */
   status: statusPropType,
   /**
@@ -50,6 +50,10 @@ const observationPropShape = PropTypes.shape({
    * Visually hides the unit of measure, e.g. when presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
+  /**
+   * Shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
+   */
+  resultNoData: PropTypes.bool,
 });
 
 export default observationPropShape;
