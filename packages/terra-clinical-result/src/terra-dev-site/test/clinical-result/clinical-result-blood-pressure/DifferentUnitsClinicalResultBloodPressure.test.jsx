@@ -19,7 +19,7 @@ const resultData = {
 };
 
 const ClinicalResultBloodPressureExample = () => (
-  <ClinicalResultBloodPressure resultData={resultData} />
+  <ClinicalResultBloodPressure {...resultData} />
 );
 
 export default ClinicalResultBloodPressureExample;

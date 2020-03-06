@@ -36,10 +36,10 @@ const partialResultValueWithNoDataPropDiastolic = {
 export default () => (
   <React.Fragment>
     {/* This example shows the No Data display using the `resultNoData` property name for Systolic */}
-    <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataPropSystolic} />
+    <ClinicalResultBloodPressure {...partialResultValueWithNoDataPropSystolic} />
     <br />
     <br />
     {/* This example shows the No Data display using the `resultNoData` property name for Diastolic */}
-    <ClinicalResultBloodPressure resultData={partialResultValueWithNoDataPropDiastolic} />
+    <ClinicalResultBloodPressure {...partialResultValueWithNoDataPropDiastolic} />
   </React.Fragment>
 );

@@ -4,8 +4,8 @@ import { DecoratedBloodPressureResult1, DecoratedBloodPressureResult2 } from '..
 
 const ClinicalResultBloodPressureExample = () => (
   <>
-    <ClinicalResultBloodPressure resultData={DecoratedBloodPressureResult1} />
-    <ClinicalResultBloodPressure resultData={DecoratedBloodPressureResult2} />
+    <ClinicalResultBloodPressure {...DecoratedBloodPressureResult1} />
+    <ClinicalResultBloodPressure {...DecoratedBloodPressureResult2} />
   </>
 );
 

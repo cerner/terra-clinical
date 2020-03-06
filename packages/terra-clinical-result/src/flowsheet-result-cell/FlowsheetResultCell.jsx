@@ -164,7 +164,7 @@ const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, has
   if (isStatusInError.systolic || isStatusInError.diastolic) {
     resultsInnerDisplay = <EnteredInError />;
   } else {
-    resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} resultData={resultDataItem} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
+    resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} systolic={systolic} diastolic={diastolic} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
   }
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
   return clinicalResultDisplay;

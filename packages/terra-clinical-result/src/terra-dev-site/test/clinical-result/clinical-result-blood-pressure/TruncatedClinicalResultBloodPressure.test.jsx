@@ -4,7 +4,7 @@ import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
 export default () => (
   <div>
     <ClinicalResultBloodPressure
-      resultData={{
+      {...{
         systolic: {
           eventId: '111.1',
           result: {
@@ -23,7 +23,7 @@ export default () => (
       isTruncated
     />
     <ClinicalResultBloodPressure
-      resultData={{
+      {...{
         systolic: {
           eventId: '111.1',
           result: {

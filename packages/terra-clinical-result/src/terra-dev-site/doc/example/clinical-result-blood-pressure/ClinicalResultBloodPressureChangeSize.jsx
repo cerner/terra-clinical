@@ -35,6 +35,6 @@ const bloodpressureResultValue = {
 
 export default () => (
   <div className={cx('clinical-result-fontsize-21')}>
-    <ClinicalResultBloodPressure resultData={bloodpressureResultValue} />
+    <ClinicalResultBloodPressure {...bloodpressureResultValue} />
   </div>
 );

@@ -29,4 +29,4 @@ const bloodpressureResultValue = {
   },
 };
 
-export default () => <ClinicalResultBloodPressure resultData={bloodpressureResultValue} />;
+export default () => <ClinicalResultBloodPressure {...bloodpressureResultValue} />;

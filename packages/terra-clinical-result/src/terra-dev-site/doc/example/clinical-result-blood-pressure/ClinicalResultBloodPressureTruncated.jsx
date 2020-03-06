@@ -27,4 +27,4 @@ const bloodpressureResultValue = {
   },
 };
 
-export default () => <ClinicalResultBloodPressure resultData={bloodpressureResultValue} isTruncated />;
+export default () => <ClinicalResultBloodPressure {...bloodpressureResultValue} isTruncated />;

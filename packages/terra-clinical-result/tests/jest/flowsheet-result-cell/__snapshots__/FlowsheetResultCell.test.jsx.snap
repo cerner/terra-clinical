@@ -293,30 +293,29 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(ClinicalResultBloodPressure)
+      diastolic={
+        Object {
+          "eventId": "111.2",
+          "interpretation": "critical",
+          "isUnverified": true,
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        }
+      }
       hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111"
-      resultData={
+      systolic={
         Object {
-          "diastolic": Object {
-            "eventId": "111.2",
-            "interpretation": "critical",
-            "isUnverified": true,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
-          },
-          "id": "111",
-          "systolic": Object {
-            "eventId": "111.1",
-            "interpretation": "critical",
-            "isUnverified": true,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
+          "eventId": "111.1",
+          "interpretation": "critical",
+          "isUnverified": true,
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
           },
         }
       }
@@ -491,21 +490,19 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
     key="ClinicalResultDisplay-111.2"
   >
     <InjectIntl(ClinicalResultBloodPressure)
+      diastolic={
+        Object {
+          "eventId": "111.2",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        }
+      }
       hideAccessoryDisplays={true}
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.2"
-      resultData={
-        Object {
-          "diastolic": Object {
-            "eventId": "111.2",
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
-          },
-        }
-      }
     />
   </div>
 </div>
@@ -524,14 +521,12 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
       hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.1"
-      resultData={
+      systolic={
         Object {
-          "systolic": Object {
-            "eventId": "111.1",
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
           },
         }
       }

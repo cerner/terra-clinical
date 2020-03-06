@@ -16,12 +16,12 @@ describe('ClinicalResultBloodPressure', () => {
   });
 
   it('should render a default ClinicalResultBloodPressure', () => {
-    const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} />).dive();
+    const result = shallowWithIntl(<ClinicalResultBloodPressure {...DefaultBloodPressureResult} />).dive();
     expect(result).toMatchSnapshot();
   });
 
   it('should render a truncated ClinicalResultBloodPressure', () => {
-    const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={DefaultBloodPressureResult} isTruncated />).dive();
+    const result = shallowWithIntl(<ClinicalResultBloodPressure {...DefaultBloodPressureResult} isTruncated />).dive();
     expect(result).toMatchSnapshot();
   });
 
@@ -37,7 +37,7 @@ describe('ClinicalResultBloodPressure', () => {
         isModified: true,
       },
     };
-    const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} isTruncated />).dive();
+    const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} isTruncated />).dive();
     expect(result).toMatchSnapshot();
   });
 
@@ -50,7 +50,7 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'critical',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} hideUnit />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -62,7 +62,7 @@ describe('ClinicalResultBloodPressure', () => {
           isModified: true,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -74,7 +74,7 @@ describe('ClinicalResultBloodPressure', () => {
           hasComment: true,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -86,7 +86,7 @@ describe('ClinicalResultBloodPressure', () => {
           isUnverified: true,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -97,7 +97,7 @@ describe('ClinicalResultBloodPressure', () => {
           ...DefaultSystolicResult,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} hideUnit />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -109,7 +109,7 @@ describe('ClinicalResultBloodPressure', () => {
           conceptDisplay: 'Temperature Oral',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -121,7 +121,7 @@ describe('ClinicalResultBloodPressure', () => {
           datetimeDisplay: 'Nov 23, 2019 13:31:31',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -134,7 +134,7 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'critical',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
   });
@@ -148,7 +148,7 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'critical',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} hideUnit />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -160,7 +160,7 @@ describe('ClinicalResultBloodPressure', () => {
           isModified: true,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -172,7 +172,7 @@ describe('ClinicalResultBloodPressure', () => {
           hasComment: true,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -184,7 +184,7 @@ describe('ClinicalResultBloodPressure', () => {
           isUnverified: true,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -195,7 +195,7 @@ describe('ClinicalResultBloodPressure', () => {
           ...DefaultDiastolicResult,
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} hideUnit />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} hideUnit />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -207,7 +207,7 @@ describe('ClinicalResultBloodPressure', () => {
           conceptDisplay: 'Temperature Oral',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -219,7 +219,7 @@ describe('ClinicalResultBloodPressure', () => {
           datetimeDisplay: 'Nov 23, 2019 13:31:31',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
 
@@ -232,7 +232,7 @@ describe('ClinicalResultBloodPressure', () => {
           interpretation: 'critical',
         },
       };
-      const result = shallowWithIntl(<ClinicalResultBloodPressure resultData={resultData} />).dive();
+      const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
   });

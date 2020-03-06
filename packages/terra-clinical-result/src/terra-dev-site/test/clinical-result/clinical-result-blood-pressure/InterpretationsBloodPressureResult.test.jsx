@@ -15,7 +15,7 @@ const interpretations = [
 
 const interpretationDivs = interpretations.map((interpretation => (
   <div key={interpretation}>
-    <ClinicalResultBloodPressure resultData={
+    <ClinicalResultBloodPressure {...
       {
         id: '111',
         systolic: {

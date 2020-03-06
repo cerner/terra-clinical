@@ -21,4 +21,4 @@ const bloodpressureResultValue = {
   },
 };
 
-export default () => <ClinicalResultBloodPressure resultData={bloodpressureResultValue} hideUnit />;
+export default () => <ClinicalResultBloodPressure {...bloodpressureResultValue} hideUnit />;

@@ -32,10 +32,10 @@ export default () => (
     <br />
     <br />
     {/* This example shows the error display when the Systolic property name is not present */}
-    <ClinicalResultBloodPressure resultData={partialResultValueWithNoSystolic} />
+    <ClinicalResultBloodPressure {...partialResultValueWithNoSystolic} />
     <br />
     <br />
     {/* This example shows the error display when the Diastolic property name is not present */}
-    <ClinicalResultBloodPressure resultData={partialResultValueWithNoDiastolic} />
+    <ClinicalResultBloodPressure {...partialResultValueWithNoDiastolic} />
   </React.Fragment>
 );

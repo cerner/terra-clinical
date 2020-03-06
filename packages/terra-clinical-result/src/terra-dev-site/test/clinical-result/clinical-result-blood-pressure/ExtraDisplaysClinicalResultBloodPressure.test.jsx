@@ -3,7 +3,7 @@ import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib';
 import { ExtraDisplaysBloodPressureResult } from '../TestResults';
 
 const ClinicalResultBloodPressureExample = () => (
-  <ClinicalResultBloodPressure resultData={ExtraDisplaysBloodPressureResult} />
+  <ClinicalResultBloodPressure {...ExtraDisplaysBloodPressureResult} />
 );
 
 export default ClinicalResultBloodPressureExample;
