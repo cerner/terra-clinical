@@ -239,13 +239,17 @@ const unpackResultDataSet = (resultDataSet) => {
     );
     firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
     if (!isEmpty(firstResultData.systolic)) {
-      firstResultData.systolic.interpretation = firstResultData.systolic.isUnverified ? undefined : firstResultData.systolic.interpretation;
+      if (firstResultData.systolic.isUnverified) {
+        delete firstResultData.systolic.interpretation;
+      }
       firstResultData.systolic.hasComment = false;
       firstResultData.systolic.isModified = false;
       firstResultData.systolic.isUnverified = false;
     }
     if (!isEmpty(firstResultData.diastolic)) {
-      firstResultData.diastolic.interpretation = firstResultData.diastolic.isUnverified ? undefined : firstResultData.diastolic.interpretation;
+      if (firstResultData.diastolic.isUnverified) {
+        delete firstResultData.diastolic.interpretation;
+      }
       firstResultData.diastolic.hasComment = false;
       firstResultData.diastolic.isModified = false;
       firstResultData.diastolic.isUnverified = false;
@@ -253,7 +257,9 @@ const unpackResultDataSet = (resultDataSet) => {
   } else {
     firstResultAttributes = unpackResultAttributes(resultDataSet[0]);
     firstResultData = JSON.parse(JSON.stringify(resultDataSet[0]));
-    firstResultData.interpretation = firstResultData.isUnverified ? undefined : firstResultData.interpretation;
+    if (firstResultData.isUnverified) {
+      delete firstResultData.interpretation;
+    }
     firstResultData.hasComment = false;
     firstResultData.isModified = false;
     firstResultData.isUnverified = false;
