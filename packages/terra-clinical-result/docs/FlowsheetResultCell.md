@@ -76,7 +76,7 @@ const singleResultValue = [
       unit: 'degC',
     },
     interpretation: 'critical',
-    isTypeNumeric: true,
+    isNumeric: true,
     isModified: true,
     hasComment: true,
     isUnverified: true,

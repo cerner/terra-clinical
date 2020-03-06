@@ -39,7 +39,7 @@ export default () => (
       unit: 'degC',
     }}
     interpretation="critical"
-    isTypeNumeric
+    isNumeric
     conceptDisplay="Temperature Oral"
     datetimeDisplay="Nov 23, 2019 13:31:31"
     hideUnit

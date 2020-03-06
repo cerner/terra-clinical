@@ -25,7 +25,7 @@ const observationPropShape = PropTypes.shape({
   /**
    *  If the Result type is Numeric, in flowsheet cell will switch to alternate view if cannot fully display value.
    */
-  isTypeNumeric: PropTypes.bool,
+  isNumeric: PropTypes.bool,
   /**
    *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
    */

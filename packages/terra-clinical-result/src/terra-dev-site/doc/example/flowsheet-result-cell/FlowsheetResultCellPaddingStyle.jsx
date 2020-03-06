@@ -82,7 +82,7 @@ const unverifiedResultValue = [
       value: '101.1',
       unit: 'degC',
     },
-    isTypeNumeric: true,
+    isNumeric: true,
     isUnverified: true,
   },
 ];

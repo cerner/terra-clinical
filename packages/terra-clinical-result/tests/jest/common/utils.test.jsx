@@ -31,16 +31,16 @@ describe('checkIsStatusInError', () => {
 });
 
 describe('checkTypeNumeric', () => {
-  it('returns true if the result isTypeNumeric is true', () => {
-    expect(checkTypeNumeric({ isTypeNumeric: true })).toBe(true);
+  it('returns true if the result isNumeric is true', () => {
+    expect(checkTypeNumeric({ isNumeric: true })).toBe(true);
   });
 
   it('returns false if the result type does not match', () => {
-    expect(checkTypeNumeric({ isTypeNumeric: false })).toBe(false);
-    expect(checkTypeNumeric({ isTypeNumeric: 'NUMERIC' })).toBe(false);
-    expect(checkTypeNumeric({ isTypeNumeric: '' })).toBe(false);
+    expect(checkTypeNumeric({ isNumeric: false })).toBe(false);
+    expect(checkTypeNumeric({ isNumeric: 'NUMERIC' })).toBe(false);
+    expect(checkTypeNumeric({ isNumeric: '' })).toBe(false);
     expect(checkTypeNumeric({ })).toBe(false);
-    expect(checkTypeNumeric({ isTypeNumeric: null })).toBe(false);
+    expect(checkTypeNumeric({ isNumeric: null })).toBe(false);
   });
 });
 

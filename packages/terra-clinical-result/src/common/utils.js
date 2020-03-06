@@ -21,7 +21,7 @@ const checkIsStatusInError = (status) => {
  * @return {boolean} is numeric|true || not numeric|false
  */
 const checkTypeNumeric = (resultData) => {
-  const isNumeric = (!isEmpty(resultData.isTypeNumeric)) ? (resultData.isTypeNumeric === true) : false;
+  const isNumeric = (!isEmpty(resultData.isNumeric)) ? (resultData.isNumeric === true) : false;
   return isNumeric;
 };
 
