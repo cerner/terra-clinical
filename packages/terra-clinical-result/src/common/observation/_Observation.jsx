@@ -57,6 +57,19 @@ const interpretationIndicators = {
   LOW: <IconLow className={cx('icon-interpretation')} />,
 };
 
+const verifiedValueTextClassMap = {
+  CRITICAL: 'critical',
+  EXTREMEHIGH: 'critical',
+  EXTREMELOW: 'critical',
+  PANICHIGH: 'critical',
+  PANICLOW: 'critical',
+  VABNORMAL: 'critical',
+  POSITIVE: 'positive',
+  ABNORMAL: 'abnormal',
+  HIGH: 'high',
+  LOW: 'low',
+};
+
 const Observation = (props) => {
   const {
     eventId,
@@ -71,16 +84,7 @@ const Observation = (props) => {
 
   const valueTextClasses = cx([
     'value',
-    { abnormal: interpretation === 'ABNORMAL' && !isUnverified },
-    { low: interpretation === 'LOW' && !isUnverified },
-    { high: interpretation === 'HIGH' && !isUnverified },
-    { critical: interpretation === 'CRITICAL' && !isUnverified },
-    { critical: interpretation === 'EXTREMEHIGH' && !isUnverified },
-    { critical: interpretation === 'EXTREMELOW' && !isUnverified },
-    { critical: interpretation === 'PANICHIGH' && !isUnverified },
-    { critical: interpretation === 'PANICLOW' && !isUnverified },
-    { critical: interpretation === 'VABNORMAL' && !isUnverified },
-    { positive: interpretation === 'POSITIVE' && !isUnverified },
+    !isUnverified && verifiedValueTextClassMap[interpretation],
     { unverified: isUnverified },
   ]);
 

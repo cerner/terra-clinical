@@ -1,7 +1,7 @@
 Terra.describeViewports('ResultTimeHeaderCell', ['medium'], () => {
   describe('default', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/result-time-header-cell/result-time-header-cell');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-time-header-cell/result-time-header-cell');
     });
 
     Terra.it.validatesElement();
@@ -9,7 +9,7 @@ Terra.describeViewports('ResultTimeHeaderCell', ['medium'], () => {
 
   describe('with date hidden', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/result-time-header-cell/result-time-header-cell-hide-date');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-time-header-cell/result-time-header-cell-hide-date');
     });
 
     Terra.it.validatesElement();
@@ -17,7 +17,7 @@ Terra.describeViewports('ResultTimeHeaderCell', ['medium'], () => {
 
   describe('paddingStyles', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/result-time-header-cell/paddingstyle-result-time-header-cell');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-time-header-cell/paddingstyle-result-time-header-cell');
     });
 
     Terra.it.validatesElement();

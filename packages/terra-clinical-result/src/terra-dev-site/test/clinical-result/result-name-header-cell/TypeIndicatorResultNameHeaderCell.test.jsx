@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultNameHeaderCell } from 'terra-clinical-result/lib/index';
+import { ResultNameHeaderCell } from 'terra-clinical-result/lib';
 
 const ResultTimeHeaderCellExample = () => (
   <>

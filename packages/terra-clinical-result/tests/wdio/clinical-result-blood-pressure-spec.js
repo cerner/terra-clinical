@@ -1,7 +1,7 @@
 Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
   describe('default', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result-blood-pressure/clinical-result-blood-pressure');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/clinical-result-blood-pressure');
     });
 
     Terra.it.validatesElement();
@@ -9,7 +9,7 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
   describe('with truncated data', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result-blood-pressure/truncated-clinical-result-blood-pressure');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/truncated-clinical-result-blood-pressure');
     });
 
     Terra.it.validatesElement();
@@ -17,7 +17,7 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
   describe('with extra displays', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result-blood-pressure/extra-displays-clinical-result-blood-pressure');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/extra-displays-clinical-result-blood-pressure');
     });
 
     Terra.it.validatesElement();
@@ -25,7 +25,7 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
   describe('decorated', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result-blood-pressure/decorated-clinical-result-blood-pressure');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/decorated-clinical-result-blood-pressure');
     });
 
     Terra.it.validatesElement();
@@ -33,7 +33,7 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
   describe('unverified', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result-blood-pressure/unverified-clinical-result-blood-pressure');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/unverified-clinical-result-blood-pressure');
     });
 
     Terra.it.validatesElement();
@@ -41,7 +41,7 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
   describe('different units', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result-blood-pressure/different-units-clinical-result-blood-pressure');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result-blood-pressure/different-units-clinical-result-blood-pressure');
     });
 
     Terra.it.validatesElement();

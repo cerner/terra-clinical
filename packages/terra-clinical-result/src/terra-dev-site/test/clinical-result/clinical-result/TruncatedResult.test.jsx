@@ -1,5 +1,5 @@
 import React from 'react';
-import ClinicalResult from '../../../ClinicalResult';
+import ClinicalResult from '../../../../ClinicalResult';
 
 export default () => (
   <>

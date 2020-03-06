@@ -1,7 +1,7 @@
 Terra.describeViewports('Observation', ['medium'], () => {
   describe('default', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/observation/observation');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/observation');
     });
 
     Terra.it.validatesElement();
@@ -9,7 +9,7 @@ Terra.describeViewports('Observation', ['medium'], () => {
 
   describe('with unit hidden', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/observation/hidden-unit-observation');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/hidden-unit-observation');
     });
 
     Terra.it.validatesElement();
@@ -17,7 +17,7 @@ Terra.describeViewports('Observation', ['medium'], () => {
 
   describe('bad data', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/observation/bad-data-observation');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/bad-data-observation');
     });
 
     Terra.it.validatesElement();
@@ -25,7 +25,7 @@ Terra.describeViewports('Observation', ['medium'], () => {
 
   describe('null data', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/observation/null-observation');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/null-observation');
     });
 
     Terra.it.validatesElement();
@@ -33,7 +33,7 @@ Terra.describeViewports('Observation', ['medium'], () => {
 
   describe('interpretations', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/observation/interpretations-observation');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/interpretations-observation');
     });
 
     Terra.it.validatesElement();
