@@ -55,7 +55,7 @@ const propTypes = {
   hasComment: PropTypes.bool,
   /**
    * Enum for possible Result Statuses.
-   * One of `'final'`, `'entered-in-error'`s.
+   * One of `'entered-in-error'`s.
    */
   status: statusPropType,
   /**

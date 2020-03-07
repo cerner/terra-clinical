@@ -19,7 +19,7 @@ const observationPropShape = PropTypes.shape({
   interpretation: interpretationPropType,
   /**
    * Enum for possible Result Statuses.
-   * One of `'final'`, `'entered-in-error'`s.
+   * One of `'entered-in-error'`s.
    */
   status: statusPropType,
   /**
