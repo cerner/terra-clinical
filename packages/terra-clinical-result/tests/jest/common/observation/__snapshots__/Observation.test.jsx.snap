@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Observation - Interpretaion should render an Observation with interpretation abnormal 1`] = `
+<Fragment>
+  <span
+    className="value abnormal"
+  >
+    <IconAbnormal
+      className="icon-interpretation"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation critical 1`] = `
+<Fragment>
+  <span
+    className="value critical"
+  >
+    <IconCritical
+      className="icon-interpretation"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation critical-high 1`] = `
+<Fragment>
+  <span
+    className="value critical"
+  >
+    <IconCritical
+      className="icon-interpretation"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation critical-low 1`] = `
+<Fragment>
+  <span
+    className="value critical"
+  >
+    <IconCritical
+      className="icon-interpretation"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation high 1`] = `
+<Fragment>
+  <span
+    className="value high"
+  >
+    <IconHigh
+      className="icon-interpretation"
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation low 1`] = `
+<Fragment>
+  <span
+    className="value low"
+  >
+    <IconLow
+      className="icon-interpretation"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation normal 1`] = `
+<Fragment>
+  <span
+    className="value"
+  >
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation - Interpretaion should render an Observation with interpretation positive 1`] = `
+<Fragment>
+  <span
+    className="value positive"
+  >
+    <IconCritical
+      className="icon-interpretation"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation should render a default Observation 1`] = `<InjectIntl(ResultError) />`;
+
+exports[`Observation should render an Observation with eventId 1`] = `
+<Fragment>
+  <span
+    className="value"
+  >
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation should render an Observation with hideUnit 1`] = `
+<Fragment>
+  <span
+    className="value"
+  >
+    12345.678
+  </span>
+  <span
+    className="unit unit-hidden"
+  >
+    mL
+  </span>
+</Fragment>
+`;
+
+exports[`Observation should render an Observation with result 1`] = `
+<Fragment>
+  <span
+    className="value"
+  >
+    12345.678
+  </span>
+  <span
+    className="unit"
+  >
+    mL
+  </span>
+</Fragment>
+`;

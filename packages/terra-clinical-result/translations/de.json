@@ -1,0 +1,21 @@
+{
+  "Terra.clinicalResult.resultError": "Fehler",
+  "Terra.clinicalResult.statusInError": "Ungültig",
+  "Terra.clinicalResult.statusInErrorAria": "Wert für ungültig erklärt ",
+  "Terra.clinicalResult.selectToViewAria": "Zum Anzeigen weiterer Details auswählen",
+  "Terra.clinicalResult.includesAdditionalValuesAria": "Ergebnis enthält weitere Werte",
+  "Terra.clinicalResult.viewResults": "Ergebnisse anzeigen",
+  "Terra.clinicalResult.resultNoData": "Keine Ergebnisse",
+  "Terra.clinicalResult.resultComment": "Ergebnis enthält einen Kommentar",
+  "Terra.clinicalResult.resultModified": "Geändertes Ergebnis",
+  "Terra.clinicalResult.resultUnverified": "Nicht verifiziertes Ergebnis",
+  "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} weitere Ergebnisse",
+  "Terra.clinicalResult.interpretationCritical": "Kritisch",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Kritischer Maximalwert",
+  "Terra.clinicalResult.interpretationCriticalLow": "Kritischer Minimalwert",
+  "Terra.clinicalResult.interpretationCriticalAbnormal": " Kritisch abnorm ",
+  "Terra.clinicalResult.interpretationPositive": "Positiv",
+  "Terra.clinicalResult.interpretationAbnormal": "Abnorm",
+  "Terra.clinicalResult.interpretationHigh": "Hoch",
+  "Terra.clinicalResult.interpretationLow": "Niedrig"
+}

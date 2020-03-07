@@ -1,0 +1,868 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to Observation  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={true}
+          interpretation="critical"
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render a commented result  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <IconComment
+        className="icon-comment"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-error status result 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display status-in-error"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        condition={true}
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          interpretation={null}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render a modified result  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <IconModified
+        className="icon-modified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a concept display 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+  <div
+    className="concept-display"
+  >
+    Temperature Oral
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a date time display 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+  <div
+    className="concept-display"
+  >
+    Nov 23, 2019 13:31:31
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render a result with unit hidden 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={true}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified result  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-111"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          isUnverified={true}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to Observation  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          interpretation="critical"
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render a commented result  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+      <IconComment
+        className="icon-comment"
+        data-name="Layer 1"
+        isBidi={true}
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-error status result 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display status-in-error"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={true}
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          interpretation={null}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render a modified result  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+      <IconModified
+        className="icon-modified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render a result with a concept display 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+    </div>
+  </div>
+  <div
+    className="concept-display"
+  >
+    Temperature Oral
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render a result with a date time display 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+    </div>
+  </div>
+  <div
+    className="concept-display"
+  >
+    Nov 23, 2019 13:31:31
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render a result with unit hidden 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render an unverified result  1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          isUnverified={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-111"
+      />
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <InjectIntl(KnownNoData) />
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render a ResultError if hasResultError is true 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <InjectIntl(ResultError) />
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render a default ClinicalResultBloodPressure 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <Observation
+        eventId="111.1"
+        hideUnit={true}
+        key="Observation-Systolic-111.1"
+        result={
+          Object {
+            "unit": "mmHg",
+            "value": "180",
+          }
+        }
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display truncated"
+  >
+    <div
+      className="result-display"
+    >
+      <Observation
+        eventId="111.1"
+        hideUnit={true}
+        key="Observation-Systolic-111.1"
+        result={
+          Object {
+            "unit": "mmHg",
+            "value": "180",
+          }
+        }
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure with icons moved 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display truncated"
+  >
+    <div
+      className="result-display"
+    >
+      <Observation
+        eventId="111.1"
+        hideUnit={true}
+        key="Observation-Systolic-111.1"
+        result={
+          Object {
+            "unit": "mmHg",
+            "value": "180",
+          }
+        }
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+    <IconModified
+      className="icon-modified"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+</div>
+`;

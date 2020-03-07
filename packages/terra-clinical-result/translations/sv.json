@@ -1,0 +1,21 @@
+{
+  "Terra.clinicalResult.resultError": "Fel",
+  "Terra.clinicalResult.statusInError": "Felaktig",
+  "Terra.clinicalResult.statusInErrorAria": "Värdet togs bort eftersom det var felaktigt",
+  "Terra.clinicalResult.selectToViewAria": "Välj för att visa fler uppgifter.",
+  "Terra.clinicalResult.includesAdditionalValuesAria": "Resultatet innehåller fler värden",
+  "Terra.clinicalResult.viewResults": "Visa resultat",
+  "Terra.clinicalResult.resultNoData": "Inga resultat",
+  "Terra.clinicalResult.resultComment": "Resultatet innehåller en kommentar",
+  "Terra.clinicalResult.resultModified": "Ändrat resultat",
+  "Terra.clinicalResult.resultUnverified": "Overifierat resultat",
+  "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} ytterligare resultat",
+  "Terra.clinicalResult.interpretationCritical": "Kritiskt",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Kritiskt högt",
+  "Terra.clinicalResult.interpretationCriticalLow": "Kritiskt lågt",
+  "Terra.clinicalResult.interpretationCriticalAbnormal": "Kritiskt onormalt",
+  "Terra.clinicalResult.interpretationPositive": "Positiv",
+  "Terra.clinicalResult.interpretationAbnormal": "Onormalt",
+  "Terra.clinicalResult.interpretationHigh": "Högt",
+  "Terra.clinicalResult.interpretationLow": "Lågt"
+}
