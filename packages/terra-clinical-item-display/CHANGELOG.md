@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Breeaking
+* Changed the text style to primary by default and updated Jest snapshots.
 
 3.9.0 - (September 26, 2019)
 ------------------
@@ -24,7 +26,6 @@ Unreleased
 3.6.0 - (August 14, 2019)
 ----------
 ### Changed
-* Changed the text style to primary by default and updated Jest snapshots.
 * Updated package.json test scripts
 
 3.5.0 - (July 16, 2019)
