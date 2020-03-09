@@ -158,7 +158,7 @@ const ExtraDisplaysBloodPressureResult = {
   },
 };
 
-const mixedBPResultValue = {
+const MixedBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
@@ -169,62 +169,6 @@ const mixedBPResultValue = {
     interpretation: 'low',
   },
 };
-
-const criticalBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'critical',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'critical',
-  },
-};
-
-const highBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'high',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'high',
-  },
-};
-
-const lowBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'low',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'low',
-  },
-};
-
-const abnormalBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'abnormal',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'abnormal',
-  },
-};
-
-const InterpretationBPResultsArray = [
-  mixedBPResultValue,
-  criticalBPResultValue,
-  highBPResultValue,
-  lowBPResultValue,
-  abnormalBPResultValue,
-];
 
 export default DefaultResult;
 export {
@@ -234,14 +178,14 @@ export {
   BadData,
   DefaultSystolicResult,
   DefaultDiastolicResult,
+  DefaultResultWithNoEventId,
   DefaultBloodPressureResult,
   DecoratedBloodPressureResult1,
   DecoratedBloodPressureResult2,
   UnverifiedBloodPressureResult1,
   UnverifiedBloodPressureResult2,
   ExtraDisplaysBloodPressureResult,
-  InterpretationBPResultsArray,
-  DefaultResultWithNoEventId,
+  MixedBPResultValue,
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
 };
