@@ -64,6 +64,8 @@
     "compile:build": "lerna ls | cut -d ' ' -f1 | xargs -I {} babel packages/{}/src --out-dir packages/{}/lib --copy-files",
     "compile:clean": "rm -rf packages/**/lib",
     "compile:prod": "rm -rf ./build; webpack -p",
+    "compile:lowlight": "rm -rf ./build; THEME=clinical-lowlight-theme webpack -p",
+    "compile:fusion": "rm -rf ./build; THEME=orion-fusion-theme webpack -p",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
     "heroku-prebuild": "npx lerna init",
@@ -83,7 +85,10 @@
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
     "update-package-readme": "node scripts/root-readme-updater/index.js",
-    "wdio": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js"
+    "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio-lowlight": "THEME=clinical-lowlight-theme wdio config/wdio/clinical-lowlight-theme/wdio.conf.js",
+    "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -119,6 +124,7 @@
     "terra-base": "^5.0.0",
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
+    "terra-enzyme-intl": "^3.0.0",
     "terra-toolkit": "^5.0.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",

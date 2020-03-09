@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SecondaryDisplays should render a SecondaryDisplays with all displays 1`] = `
+<Fragment>
+  <div
+    className="concept-display"
+  >
+    concept
+  </div>
+  <div
+    className="datetime-display"
+  >
+    datetime
+  </div>
+</Fragment>
+`;
+
+exports[`SecondaryDisplays should render a SecondaryDisplays with concept display 1`] = `
+<Fragment>
+  <div
+    className="concept-display"
+  >
+    concept
+  </div>
+</Fragment>
+`;
+
+exports[`SecondaryDisplays should render a SecondaryDisplays with datetime displays 1`] = `
+<Fragment>
+  <div
+    className="datetime-display"
+  >
+    datetime
+  </div>
+</Fragment>
+`;
+
+exports[`SecondaryDisplays should render a default SecondaryDisplays 1`] = `<Fragment />`;

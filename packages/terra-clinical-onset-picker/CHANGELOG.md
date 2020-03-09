@@ -4,6 +4,38 @@ ChangeLog
 Unreleased
 ----------
 
+4.16.0 - (February 18, 2020)
+----------
+### Added
+* Added upgrade guide for `v3` to `v4`.
+* Added clinical-lowlight-theme wdio config file
+
+4.15.0 - (February 11, 2020)
+----------
+### Changed
+* Added logic to show default or `date` granularity initially.
+* Clear existing data when granularity is changed.
+* Set Onset date to first day of `month` or `year` as per chosen granularity.
+* Calculation for leap year corrected.
+
+4.14.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+4.13.0 - (January 22, 2020)
+------------------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+4.12.0 - (January 7, 2020)
+------------------
+### Added
+* Add upgrade guides to dev-site docs
+
+### Fixed
+* Fixed `age-field` misalignment in IE.
+
 4.11.0 - (December 10, 2019)
 ------------------
 ### Changed

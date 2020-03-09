@@ -1,0 +1,43 @@
+@import '../common/mixins';
+
+:local {
+  .clinical-result-name-header-cell {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+
+    .name {
+      @include terra-clinical-result-cell-truncate;
+      color: var(--terra-clinical-result-name-header-cell-name-color);
+      flex: 1 1 auto;
+      font-size: var(--terra-clinical-result-name-header-cell-name-font-size, 1em); // Must use ems for font scaling
+      min-width: 10px; // Needed for IE10
+    }
+
+    .unit {
+      color: var(--terra-clinical-result-name-header-cell-unit-color, rgba(28, 31, 33, 0.65));
+      flex: 0 0 auto;
+      font-size: var(--terra-clinical-result-name-header-cell-unit-font-size, 0.875em); // Must use ems for font scaling
+      margin-left: var(--terra-clinical-result-name-header-cell-unit-margin-left, 0.35714em); // Must use ems for font scaling
+      overflow: hidden;
+    }
+
+    .icon-rowindicator {
+      margin-right: var(--terra-clinical-result-display-icon-rowindicator-margin-right, 0.25em); // Must use ems for font scaling
+      position: relative;
+      top: var(--terra-clinical-result-display-icon-rowindicator-top, 0.15em); // Must use ems for font scaling
+      vertical-align: baseline;
+    }
+  }
+
+  .padding-standard {
+    padding: var(--terra-clinical-result-name-header-cell-padding-standard-padding, 0.71428rem 0.71428rem);
+  }
+
+  .padding-compact {
+    padding: var(--terra-clinical-result-name-header-cell-padding-compact-padding, 0.35714rem 0.71428rem);
+  }
+
+}

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultTimeHeaderCell paddingStyle - should render with compact 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
+`;
+
+exports[`ResultTimeHeaderCell paddingStyle - should render with none 1`] = `
+<div
+  className="clinical-result-time-header-cell"
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
+`;
+
+exports[`ResultTimeHeaderCell paddingStyle - should render with standard 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-standard"
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
+`;
+
+exports[`ResultTimeHeaderCell should hide date 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="date hide-date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
+`;
+
+exports[`ResultTimeHeaderCell should render a date and time 1`] = `
+<div
+  className="clinical-result-time-header-cell padding-compact"
+>
+  <div
+    className="date"
+  >
+    December 31st 1999
+  </div>
+  <div
+    className="time"
+  >
+    10:00 PM
+  </div>
+</div>
+`;

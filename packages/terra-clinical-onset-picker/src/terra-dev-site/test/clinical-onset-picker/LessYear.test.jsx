@@ -50,7 +50,7 @@ export default class LessYear extends React.Component {
           <OnsetPicker
             birthdate={moment().subtract(11, 'months').format('YYYY-MM-DD')}
             id="test"
-            legend="Date of Birth"
+            legend="Date of Onset"
             onsetOnChange={this.handleOnset}
           />
           <button type="submit">Submit</button>
