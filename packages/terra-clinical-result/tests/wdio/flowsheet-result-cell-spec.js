@@ -65,7 +65,7 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
 
   describe('numeric overflow', () => {
     before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/has-result-error-flowsheet-result-cell');
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/numeric-overflow-flowsheet-result-cell');
     });
 
     Terra.it.validatesElement();

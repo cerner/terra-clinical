@@ -170,6 +170,19 @@ const MixedBPResultValue = {
   },
 };
 
+const NoDataResult = {
+  eventId: '',
+  result: {
+    value: null,
+    unit: '',
+  },
+  interpretation: 'normal',
+  isModified: false,
+  hasComment: false,
+  isUnverified: false,
+  resultNoData: true,
+};
+
 export default DefaultResult;
 export {
   SingleResultValue,
@@ -188,4 +201,5 @@ export {
   MixedBPResultValue,
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
+  NoDataResult,
 };
