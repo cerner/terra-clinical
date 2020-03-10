@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ItemView from 'terra-clinical-item-view';
-import List from 'terra-list';
+import { Item as ListItem } from 'terra-list';
 import Table from 'terra-table';
 import styles from './ItemCollection.module.scss';
 
@@ -124,13 +124,14 @@ function createListItem(elements, selectableProps, customProps, isSelected, item
   );
 
   return (
-    <List.Item
-      content={listItemContent}
+    <ListItem
       isSelected={isSelected}
       hasChevron={showListItemChevron}
       {...selectableProps}
       {...customProps}
-    />
+    >
+      {listItemContent}
+    </ListItem>
   );
 }
 
