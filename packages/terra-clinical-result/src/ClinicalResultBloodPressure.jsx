@@ -176,45 +176,31 @@ const ClinicalResultBloodPressure = (props) => {
     const conceptDisplayElement = createConcpetDisplays(compareConceptDisplays);
 
     if (systolic || diastolic) {
-      if ((compareUnits.systolic === compareUnits.diastolic) && !compareStatusIsInError.systolic) {
+      if (!systolic) decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${id}`} />);
+      if (noDataSystolic) decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${id}`} />);
+      else if (systolic) {
         const systolicDisplay = (
-          <Observation
-            key={`Observation-Systolic-${systolic.eventId}`}
-            eventId={systolic.eventId}
-            result={systolic.result}
-            interpretation={!compareStatusIsInError.systolic ? systolic.interpretation : null}
-            isUnverified={systolic.isUnverified}
-            hideUnit
-          />
+          <ConditionalWrapper
+            key={`del-Systolic-${systolic.eventId}`}
+            condition={compareStatusIsInError.systolic}
+            wrapper={children => <del>{children}</del>}
+          >
+            <Observation
+              key={`Observation-Systolic-${systolic.eventId}`}
+              eventId={systolic.eventId}
+              result={systolic.result}
+              interpretation={!compareStatusIsInError.systolic ? systolic.interpretation : null}
+              isUnverified={systolic.isUnverified}
+              hideUnit={hideUnit || ((compareUnits.systolic === compareUnits.diastolic) && !compareStatusIsInError.systolic)}
+            />
+          </ConditionalWrapper>
         );
         decoratedResultDisplay.push(systolicDisplay);
-      } else {
-        if (!systolic) decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${id}`} />);
-        if (noDataSystolic) decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${id}`} />);
-        else if (systolic) {
-          const systolicDisplay = (
-            <ConditionalWrapper
-              key={`del-Systolic-${systolic.eventId}`}
-              condition={compareStatusIsInError.systolic}
-              wrapper={children => <del>{children}</del>}
-            >
-              <Observation
-                key={`Observation-Systolic-${systolic.eventId}`}
-                eventId={systolic.eventId}
-                result={systolic.result}
-                interpretation={!compareStatusIsInError.systolic ? systolic.interpretation : null}
-                isUnverified={systolic.isUnverified}
-                hideUnit={hideUnit}
-              />
-            </ConditionalWrapper>
-          );
-          decoratedResultDisplay.push(systolicDisplay);
-        }
       }
       decoratedResultDisplay.push(<span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
       if (!diastolic) decoratedResultDisplay.push(<ResultError key={`Error-Diastolic-${id}`} />);
       else if (noDataDiastolic) decoratedResultDisplay.push(<NoData key={`NoData-Diastolic-${id}`} />);
-      else if (diastolic) {
+      else if(diastolic) {
         const diastolicDisplay = (
           <ConditionalWrapper
             key={`del-Diastolic-${diastolic.eventId}`}

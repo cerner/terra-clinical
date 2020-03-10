@@ -728,17 +728,22 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
     <div
       className="result-display"
     >
-      <Observation
-        eventId="111.1"
-        hideUnit={true}
-        key="Observation-Systolic-111.1"
-        result={
-          Object {
-            "unit": "mmHg",
-            "value": "180",
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
           }
-        }
-      />
+        />
+      </ConditionalWrapper>
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
@@ -776,17 +781,22 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <Observation
-        eventId="111.1"
-        hideUnit={true}
-        key="Observation-Systolic-111.1"
-        result={
-          Object {
-            "unit": "mmHg",
-            "value": "180",
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
           }
-        }
-      />
+        />
+      </ConditionalWrapper>
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
@@ -824,17 +834,22 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <Observation
-        eventId="111.1"
-        hideUnit={true}
-        key="Observation-Systolic-111.1"
-        result={
-          Object {
-            "unit": "mmHg",
-            "value": "180",
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
           }
-        }
-      />
+        />
+      </ConditionalWrapper>
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
