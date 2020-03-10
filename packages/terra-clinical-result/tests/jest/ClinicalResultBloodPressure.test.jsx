@@ -6,7 +6,7 @@ import {
   DefaultBloodPressureResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
-  NoDataResult
+  NoDataResult,
 } from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 describe('ClinicalResultBloodPressure', () => {
