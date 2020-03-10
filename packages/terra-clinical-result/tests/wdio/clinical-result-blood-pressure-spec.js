@@ -62,4 +62,3 @@ Terra.describeViewports('ClinicalResultBloodPressure', ['medium'], () => {
 
   Terra.it.validatesElement();
 });
-});
