@@ -45,7 +45,7 @@ const ListView = ({
   const roleSpread = hasSelectableChild ? { role: 'listbox' } : {};
 
   return (
-    <List data-terra-clinical-item-collection-list-view isDivided={isListDivided} {...roleSpread}>
+    <List data-terra-clinical-item-collection-list-view dividerStyle={isListDivided ? 'standard' : 'none'} {...roleSpread}>
       {listItems}
     </List>
   );
