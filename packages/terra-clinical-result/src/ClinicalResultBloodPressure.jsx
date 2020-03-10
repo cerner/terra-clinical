@@ -135,7 +135,6 @@ const ClinicalResultBloodPressure = (props) => {
       originalSystolic: systolic && systolic.datetimeDisplay,
       originalDiastolic: diastolic && diastolic.datetimeDisplay,
     };
-    const decoratedResultDisplay = [];
 
     let iconGroupDisplayElement = null;
 
@@ -175,6 +174,7 @@ const ClinicalResultBloodPressure = (props) => {
     const datetimeDisplayElement = createDatetimeDisplays(compareDatetimeDisplays);
     const conceptDisplayElement = createConcpetDisplays(compareConceptDisplays);
 
+    const decoratedResultDisplay = [];
     if (systolic || diastolic) {
       if (!systolic) {
         decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${id}`} />);
