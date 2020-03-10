@@ -2,7 +2,12 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import ClinicalResultBloodPressure from '../../src/ClinicalResultBloodPressure';
-import { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult, NoDataResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
+import {
+  DefaultBloodPressureResult,
+  DefaultSystolicResult,
+  DefaultDiastolicResult,
+  NoDataResult
+} from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 describe('ClinicalResultBloodPressure', () => {
   it('should render a ResultError if hasResultError is true', () => {
