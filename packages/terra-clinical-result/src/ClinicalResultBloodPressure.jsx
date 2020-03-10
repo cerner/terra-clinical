@@ -176,8 +176,12 @@ const ClinicalResultBloodPressure = (props) => {
     const conceptDisplayElement = createConcpetDisplays(compareConceptDisplays);
 
     if (systolic || diastolic) {
-      if (!systolic) decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${id}`} />);
-      if (noDataSystolic) decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${id}`} />);
+      if (!systolic) {
+        decoratedResultDisplay.push(<ResultError key={`Error-Systolic-${id}`} />);
+      }
+      if (noDataSystolic) {
+        decoratedResultDisplay.push(<NoData key={`NoData-Systolic-${id}`} />);
+      }
       else if (systolic) {
         const systolicDisplay = (
           <ConditionalWrapper
@@ -198,9 +202,13 @@ const ClinicalResultBloodPressure = (props) => {
         decoratedResultDisplay.push(systolicDisplay);
       }
       decoratedResultDisplay.push(<span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
-      if (!diastolic) decoratedResultDisplay.push(<ResultError key={`Error-Diastolic-${id}`} />);
-      else if (noDataDiastolic) decoratedResultDisplay.push(<NoData key={`NoData-Diastolic-${id}`} />);
-      else if(diastolic) {
+      if (!diastolic) {
+        decoratedResultDisplay.push(<ResultError key={`Error-Diastolic-${id}`} />);
+      }
+      else if (noDataDiastolic) {
+        decoratedResultDisplay.push(<NoData key={`NoData-Diastolic-${id}`} />);
+      }
+      else if (diastolic) {
         const diastolicDisplay = (
           <ConditionalWrapper
             key={`del-Diastolic-${diastolic.eventId}`}
