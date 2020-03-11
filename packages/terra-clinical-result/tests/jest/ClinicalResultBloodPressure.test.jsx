@@ -2,7 +2,12 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import ClinicalResultBloodPressure from '../../src/ClinicalResultBloodPressure';
-import { DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult } from '../../src/terra-dev-site/test/clinical-result/TestResults';
+import {
+  DefaultBloodPressureResult,
+  DefaultSystolicResult,
+  DefaultDiastolicResult,
+  NoDataResult,
+} from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 describe('ClinicalResultBloodPressure', () => {
   it('should render a ResultError if hasResultError is true', () => {
@@ -38,6 +43,14 @@ describe('ClinicalResultBloodPressure', () => {
       },
     };
     const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} isTruncated />).dive();
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should render systolic and diastolic with no data', () => {
+    const result = shallowWithIntl(<ClinicalResultBloodPressure
+      systolic={NoDataResult}
+      diastolic={NoDataResult}
+    />).dive();
     expect(result).toMatchSnapshot();
   });
 
@@ -137,6 +150,19 @@ describe('ClinicalResultBloodPressure', () => {
       const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
       expect(result).toMatchSnapshot();
     });
+
+    it('should render with error', () => {
+      const result = shallowWithIntl(<ClinicalResultBloodPressure diastolic={DefaultDiastolicResult} />).dive();
+      expect(result).toMatchSnapshot();
+    });
+
+    it('should render with no data', () => {
+      const result = shallowWithIntl(<ClinicalResultBloodPressure
+        systolic={NoDataResult}
+        diastolic={DefaultDiastolicResult}
+      />).dive();
+      expect(result).toMatchSnapshot();
+    });
   });
 
   describe('- Diastolic -', () => {
@@ -233,6 +259,19 @@ describe('ClinicalResultBloodPressure', () => {
         },
       };
       const result = shallowWithIntl(<ClinicalResultBloodPressure {...resultData} />).dive();
+      expect(result).toMatchSnapshot();
+    });
+
+    it('should render with error', () => {
+      const result = shallowWithIntl(<ClinicalResultBloodPressure systolic={DefaultSystolicResult} />).dive();
+      expect(result).toMatchSnapshot();
+    });
+
+    it('should render diastolic with no data', () => {
+      const result = shallowWithIntl(<ClinicalResultBloodPressure
+        systolic={DefaultSystolicResult}
+        diastolic={NoDataResult}
+      />).dive();
       expect(result).toMatchSnapshot();
     });
   });

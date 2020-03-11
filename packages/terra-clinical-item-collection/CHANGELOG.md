@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 ----------
+4.14.0 - (March 10, 2020)
+----------
+### Changed
+* Upgraded terra-list to the new major version
 
 4.13.0 - (February 18, 2020)
 ----------

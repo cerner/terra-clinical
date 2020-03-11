@@ -1,4 +1,4 @@
-Terra.viewports('Item Collection', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
+Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   describe('Displays an item collection with all possible elements', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-all-elements');
