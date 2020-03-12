@@ -60,6 +60,16 @@ const defaultProps = {
   paddingStyle: 'compact',
 };
 
+const interpretationsWithIcons = [
+  'critical',
+  'critical-high',
+  'critical-low',
+  'positive',
+  'abnormal',
+  'high',
+  'low',
+];
+
 const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID) => {
   if (!hasCommentIcon && !hasModifiedIcon && !hasUnverifiedIcon) {
     return null;
@@ -201,7 +211,7 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
 };
 
 const AttributesTemplate = (interpretationValue = false, commentBool = false, modifiedBool = false, unverifiedBool = false) => ({
-  interpretation: !!(interpretationValue),
+  interpretation: !!interpretationValue,
   comment: commentBool,
   modified: modifiedBool,
   unverified: unverifiedBool,
@@ -215,7 +225,7 @@ const unpackResultAttributes = (resultDataItem) => {
     isUnverified,
   } = resultDataItem;
   const itemAttributes = new AttributesTemplate();
-  itemAttributes.interpretation = interpretation;
+  itemAttributes.interpretation = interpretationsWithIcons.includes(interpretation);
   itemAttributes.comment = hasComment;
   itemAttributes.modified = isModified;
   itemAttributes.unverified = isUnverified;
@@ -281,11 +291,11 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     additionalResultList.forEach((result) => {
       const { isSingleResult, isPairedResult } = checkIfSingleOrPairedResult(result);
       if (isSingleResult) {
-        const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation : null;
+        const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation.trim().toLowerCase() : null;
         additionalResultInterpretations.push(resultInterpretation);
       } else if (isPairedResult) {
-        const sysInterpretation = !isEmpty(result.systolic.interpretation) && !result.systolic.isUnverified ? result.systolic.interpretation : null;
-        const diaInterpretation = !isEmpty(result.diastolic.interpretation) && !result.diastolic.isUnverified ? result.diastolic.interpretation : null;
+        const sysInterpretation = !isEmpty(result.systolic.interpretation) && !result.systolic.isUnverified ? result.systolic.interpretation.trim().toLowerCase() : null;
+        const diaInterpretation = !isEmpty(result.diastolic.interpretation) && !result.diastolic.isUnverified ? result.diastolic.interpretation.trim().toLowerCase() : null;
         additionalResultInterpretations.push(sysInterpretation);
         additionalResultInterpretations.push(diaInterpretation);
       }

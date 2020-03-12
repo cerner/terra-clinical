@@ -3,6 +3,12 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+* Fixed an alignment issue with FlowsheetResultCell that caused normal interpretation results to be aligned to the left.
+
+### Added
+* Added additional defensive coding to ensure the multiple result icon is colored correctly according to interpretation.
+
 1.1.0 - (March 10, 2020)
 ----------
 ### Fixed
