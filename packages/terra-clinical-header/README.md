@@ -7,7 +7,7 @@
 A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-header/docs)
+- [Documentation](https://engineering.cerner.com/terra-clinical/components/terra-clinical-header/clinical-header/clinical-header)
 - [LICENSE](#license)
 
 ## Getting Started
