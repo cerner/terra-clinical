@@ -1,3 +1,9 @@
+import { Badge } from 'terra-clinical-data-grid/package.json?dev-site-package';
+
+import DataGridPropsTable from 'terra-clinical-data-grid/src/DataGrid?dev-site-props-table';
+
+<Badge />
+
 # Terra Clinical DataGrid
 
 The DataGrid is an organizational component that renders a collection of data in a grid-like format.
@@ -92,6 +98,16 @@ If there are any mouse/keyboard interactive elements within the component, and t
 
 Additionally, these interactive elements must include a special data attribute called `data-accessible-data-grid-content`. The DataGrid utilizes a custom tabbing implementation to ensure a propper tabbing order, and including that attribute on all interactive elements of custom components will ensure that they are still sensibly keyboard accessible.
 
+``` jsx
+import DataGrid from 'terra-clinical-data-grid';
+```
+
 ## Component Features
-* [Cross-Browser Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
-* [Responsive Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#responsive-support)
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+
+[View Component Source Code](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-data-grid)
+
+
+## Data Grid Props Table 
+<DataGridPropsTable />
