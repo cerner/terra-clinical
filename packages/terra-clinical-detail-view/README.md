@@ -11,7 +11,7 @@ A Detail List is a structural subcomponent of Detail View indented to be used wi
 Detail List Items are the elements to be placed within a Detail List. A Detail List Item accepts one element item and applies a minimum width of 50% so that the element spans at minimum half of the Detail List. This allows the Detail List to have either one or two items per row depending on the width of the item content in each item.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-detail-view/docs)
+- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-detail-view)
 - [LICENSE](#license)
 
 ## Getting Started
