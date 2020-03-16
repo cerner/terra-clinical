@@ -1,3 +1,7 @@
+import { Badge } from 'terra-clinical-item-collection/package.json?dev-site-package';
+
+<Badge />
+
 # Selectable Implementation
 
 The Item Collection provides the foundation to be rendered as a selectable component when a selection event is provided to the collection and items are indicated as selectable. The selection state management is then controlled by the component rendering the Item Collection. When an item receives a click or keydown event, the event and item key is returned such that the desired selection logic can be applied before updating the item's selection state. This means that the Item Collection is capable of being a single- or multi- selectable component.
