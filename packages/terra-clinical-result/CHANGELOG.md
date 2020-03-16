@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+* Fixed an alignment issue with FlowsheetResultCell that caused normal interpretation results to be aligned to the left.
+
 1.1.0 - (March 10, 2020)
 ----------
 ### Fixed
