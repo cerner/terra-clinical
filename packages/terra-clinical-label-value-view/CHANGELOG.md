@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changes
+* Update mdx syntax for docs
 
 3.15.0 - (February 18, 2020)
 ----------
