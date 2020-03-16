@@ -1,0 +1,64 @@
+import { Badge } from 'terra-clinical-result/package.json?dev-site-package';
+
+
+import DefaultResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureDefault?dev-site-example';
+import DecoratedResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureDecorated?dev-site-example';
+import UnverifiedResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureUnverified?dev-site-example';
+import ExtraDisplaysResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureExtraDisplays?dev-site-example';
+import TruncatedResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureTruncated?dev-site-example';
+import InterpretationResults from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureInterpretation?dev-site-example';
+import SizeChangeResult from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureChangeSize?dev-site-example';
+import KnownNoData from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureKnownNoData?dev-site-example';
+import PartialNoData from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressurePartialNoData?dev-site-example';
+import KnownErrorAndPartialError from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureKnownErrorAndPartialError?dev-site-example';
+import StatusEnteredInError from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureStatusEnteredInError?dev-site-example';
+
+import ClinicalResultBloodPressureProps from 'terra-clinical-result/src/ClinicalResultBloodPressure?dev-site-props-table';
+
+<Badge />
+
+# Terra Clinical Result Blood Pressure
+
+The Clinical Result is a standardized view for single result values added to a Patient's Medical Chart. This is specifically for Blood Pressure Vital Sign results.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-result`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage Guide
+
+The blood pressure result is constructed similarly to the single clinical result by providing structured object with a specific construction that follows a similar pattern to the [HL7 FHIR Observation Blood Pressure](https://www.hl7.org/fhir/observation-example-bloodpressure.html) example.
+
+An example of a single blood pressure result value:
+```jsx
+import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
+```
+
+## Component Features
+
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+[View component source code](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-result)
+
+## Examples
+<DefaultResult title="Default Blood Pressure Clinical Result" />
+<DecoratedResult title="Modifiied Blood Pressure Clinical Result with Comments" />
+<UnverifiedResult title="Unverified Blood Pressure Clinical Result with Hide Unit of Measure" />
+<ExtraDisplaysResult title="Clinical Blood Pressure Result with additional displays" />
+<InterpretationResults title="Blood Pressure Clinical Results with Intrepretation" />
+<SizeChangeResult title="Changing the Blood Pressure Clinical Result Size" />
+<TruncatedResult title="Truncated Blood Pressure Clinical Result" />
+<KnownNoData title="Display for 'Known No Result'" description="Use the 'hasResultNoData' prop to show the 'No Data' display for the Blood Pressure Clinical Result:" />
+<PartialNoData title="Display for a Partial 'No Result'" description="Use the 'resultNoData' property name to show the 'No Data' display for either the Systolic or Diastolic result:" />
+<KnownErrorAndPartialError title="Displays for a full 'Known Error' and for partial missing results" description="Use the 'hasResultError' prop to show the 'Error' display for the full Blood Pressure result. Or if there is a missing Systolic or Diastolic result, that portion will show the error display:" />
+<StatusEnteredInError title="Uncharted Result as 'Entered In Error'" description="Display for when the result status has been set to 'entered-in-error'" />
+
+## Clinical-Result-Blood-Pressure Props
+<ClinicalResultBloodPressureProps />
