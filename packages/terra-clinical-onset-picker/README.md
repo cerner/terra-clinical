@@ -7,7 +7,7 @@
 The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for onset scenarios.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-onset-picker/docs)
+- [Documentation](https://engineering.cerner.com/terra-clinical/components/terra-clinical-onset-picker/clinical-onset-picker/clinical-onset-picker)
 - [LICENSE](#license)
 
 ## Getting Started
@@ -18,7 +18,7 @@ The terra-clinical-onset-picker component provides users a way to enter or selec
 
 This component supports locales defined in the Terra component standards, except Arabic.
 
-* [Internationalization Support](https://github.com/cerner/terra-ui/blob/master/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#internationalization-i18n-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
 
 ## LICENSE
 
