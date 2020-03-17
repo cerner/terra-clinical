@@ -1,0 +1,47 @@
+import { Badge } from 'terra-clinical-item-display/package.json?dev-site-package';
+
+import ItemDisplayPropsTable from 'terra-clinical-item-display/src/ItemDisplay?dev-site-props-table';
+import CommentPropsTable from 'terra-clinical-item-display/src/ItemComment?dev-site-props-table';
+
+import TextStyles from '../example/TextStyles?dev-site-example';
+import TextStylesDisabled from '../example/TextStylesDisabled?dev-site-example';
+import Icon from '../example/Icon?dev-site-example';
+import IconText from '../example/IconText?dev-site-example';
+import DefaultComment from '../example/DefaultComment?dev-site-example';
+
+<Badge />
+
+# Terra Clinical Item Display
+
+The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-item-display`
+
+## Usage
+
+``` jsx
+import ItemDisplay from 'terra-clinical-item-display';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+[View Component Source Code](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-display)
+
+## Example 
+<TextStyles title='Item Display: Text styles' />
+<TextStylesDisabled title='Disabled Item Display: Text styles'/>
+<Icon title='Item Display: Icon' />
+<IconText title='Item Display: Icon and Text' />
+<DefaultComment title='Comment Item Display' />
+
+## Item Display Props Table 
+<ItemDisplayPropsTable />
+
+## Item Comment Props Table
+<CommentPropsTable />
