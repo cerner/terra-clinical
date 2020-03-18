@@ -1,0 +1,21 @@
+{
+  "Terra.clinicalResult.resultError": "Fout",
+  "Terra.clinicalResult.statusInError": "Fout",
+  "Terra.clinicalResult.statusInErrorAria": "Geschrapt als Fout beschouwen",
+  "Terra.clinicalResult.selectToViewAria": "Selecteer om meer details te bekijken",
+  "Terra.clinicalResult.includesAdditionalValuesAria": "Resultaat bevat aanvullende waarden",
+  "Terra.clinicalResult.viewResults": "Resultaten weergeven",
+  "Terra.clinicalResult.resultNoData": "Geen resultaten",
+  "Terra.clinicalResult.resultComment": "Resultaat bevat een opmerking",
+  "Terra.clinicalResult.resultModified": "Gewijzigd resultaat",
+  "Terra.clinicalResult.resultUnverified": "Niet-geverifieerd resultaat",
+  "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} aanvullende resultaten",
+  "Terra.clinicalResult.interpretationCritical": "Kritisch",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Kritisch hoog",
+  "Terra.clinicalResult.interpretationCriticalLow": "Kritisch laag",
+  "Terra.clinicalResult.interpretationCriticalAbnormal": "Kritiek afwijkend",
+  "Terra.clinicalResult.interpretationPositive": "Positief",
+  "Terra.clinicalResult.interpretationAbnormal": "Afwijkend",
+  "Terra.clinicalResult.interpretationHigh": "Hoog",
+  "Terra.clinicalResult.interpretationLow": "Laag"
+}

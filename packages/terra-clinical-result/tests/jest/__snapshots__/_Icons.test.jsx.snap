@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icons should render a default Icons 1`] = `<Fragment />`;
+
+exports[`Icons should render an Icons with hasComment and isModified set 1`] = `
+<Fragment>
+  <IconModified
+    className="icon-modified"
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+  <IconComment
+    className="icon-comment"
+    data-name="Layer 1"
+    isBidi={true}
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</Fragment>
+`;
+
+exports[`Icons should render an Icons with isUnverified set 1`] = `
+<IconDiamond
+  className="icon-unverified"
+  viewBox="0 0 48 48"
+  xmlns="http://www.w3.org/2000/svg"
+/>
+`;

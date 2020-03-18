@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EnteredInError should render a default EnteredInError 1`] = `
+<span
+  className="entered-in-error"
+>
+  <span
+    aria-label="Terra.clinicalResult.statusInErrorAria"
+  >
+    Terra.clinicalResult.statusInError
+  </span>
+</span>
+`;

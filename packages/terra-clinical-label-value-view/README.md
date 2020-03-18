@@ -8,7 +8,7 @@ The label value view component displays a label and the associated value or list
 of values underneath the label.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-label-value-view/docs)
+- [Documentation](https://engineering.cerner.com/terra-clinical/components/terra-clinical-label-value-view/clinical-label-value-view/clinical-label-value-view)
 - [LICENSE](#license)
 
 ## Getting Started
