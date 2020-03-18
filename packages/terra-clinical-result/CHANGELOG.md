@@ -6,6 +6,8 @@ Unreleased
 ### Changed
 * Update docs to use mdx syntax.
 
+1.2.0 - (March 17, 2020)
+----------
 ### Fixed
 * Fixed an alignment issue with FlowsheetResultCell that caused normal interpretation results to be aligned to the left.
 
