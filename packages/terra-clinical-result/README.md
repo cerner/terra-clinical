@@ -4,7 +4,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-clinical-result)](https://www.npmjs.org/package/terra-clinical-result)
 [![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.com/cerner/terra-clinical)
 
-The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for onset scenarios.
+The terra-clinical-result package is a collection of standardized views for presenting clinical results documented to a Patient's Medical Chart, such as Vital Signs, Laboratory Results, and Discretely Documented Values. It also includes additional supporting views where clinical results are commonly displayed like flowsheets, result detail viewers, etc.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://engineering.cerner.com/terra-clinical/components/terra-clinical-result/clinical-result/clinical-result)
@@ -13,7 +13,7 @@ The terra-clinical-onset-picker component provides users a way to enter or selec
 ## Getting Started
 
 - Install from [npmjs](https://www.npmjs.com)
-    - `npm install terra-clinical-onset-picker`
+    - `npm install terra-clinical-result`
 
 ## Component Features
 
@@ -24,7 +24,7 @@ The terra-clinical-onset-picker component provides users a way to enter or selec
 
 ## LICENSE
 
-Copyright 2017 - 2020 Cerner Innovation, Inc.
+Copyright 2020 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

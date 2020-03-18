@@ -26,6 +26,16 @@ The Clinical Result is a standardized view for single result values added to a P
   - `npm install terra-clinical-result`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Usage Guide
@@ -55,10 +65,22 @@ import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
 <MultipleBloodPressuresCell title="Flowsheet Result Cell with Multiple Blood Pressure Results" />
 <UnverifiedResultsCell title="Flowsheet Result Cell with Unverified Results" />
 <PaddingStyleCell title="Flowsheet Result Cell Padding Styles" />
-<KnownAndPartialNoData title="Flowsheet Result Cell for 'Known No Result' and Blood Pressure partial 'No Result'" description="Use the 'hasResultNoData' prop to show the 'No Data' display for the Flowsheet Result Cell. For Blood Pressure, Use either the 'resultNoData' property name or ' result: { value: null, }' to show the 'No Data' display for either the Systolic or Diastolic result:"/>
-<KnownErrorAndPartialError title="Displays for a full 'Known Error' and for partial missing results" description="Use the 'hasResultError' prop to show the 'Error' display for the full Flowsheet Result Cell. Or if there is a missing part results (e.g. Systolic or Diastolic), that portion will show the error display:"/>
-<NumericOverflow title="Flowsheet Result Cell with a numeric result that overflows the container" description="When displaying a result with an overflowed numeric value, instead of truncating the value, shows 'View Results' message."/>
-<StatusEnteredInError title="Uncharted Result as 'Entered In Error'" description="Display for when the result status has been set to 'entered-in-error'"/>
+<KnownAndPartialNoData
+  title="Flowsheet Result Cell for 'Known No Result' and Blood Pressure partial 'No Result'"
+  description="Use the 'hasResultNoData' prop to show the 'No Data' display for the Flowsheet Result Cell. For Blood Pressure, Use either the 'resultNoData' property name or ' result: { value: null, }' to show the 'No Data' display for either the Systolic or Diastolic result:"
+/>
+<KnownErrorAndPartialError
+  title="Displays for a full 'Known Error' and for partial missing results"
+  description="Use the 'hasResultError' prop to show the 'Error' display for the full Flowsheet Result Cell. Or if there is a missing part results (e.g. Systolic or Diastolic), that portion will show the error display:"
+/>
+<NumericOverflow
+  title="Flowsheet Result Cell with a numeric result that overflows the container"
+  description="When displaying a result with an overflowed numeric value, instead of truncating the value, shows 'View Results' message."
+/>
+<StatusEnteredInError
+  title="Uncharted Result as 'Entered In Error'"
+  description="Display for when the result status has been set to 'entered-in-error'"
+/>
 
 ## Flowsheet Result Cell Props
 <FlowsheetResultCellProps />

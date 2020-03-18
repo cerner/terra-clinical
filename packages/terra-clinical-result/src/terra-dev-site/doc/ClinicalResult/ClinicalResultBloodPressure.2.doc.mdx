@@ -27,6 +27,16 @@ The Clinical Result is a standardized view for single result values added to a P
   - `npm install terra-clinical-result`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Usage Guide
@@ -55,10 +65,22 @@ import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
 <InterpretationResults title="Blood Pressure Clinical Results with Intrepretation" />
 <SizeChangeResult title="Changing the Blood Pressure Clinical Result Size" />
 <TruncatedResult title="Truncated Blood Pressure Clinical Result" />
-<KnownNoData title="Display for 'Known No Result'" description="Use the 'hasResultNoData' prop to show the 'No Data' display for the Blood Pressure Clinical Result:" />
-<PartialNoData title="Display for a Partial 'No Result'" description="Use the 'resultNoData' property name to show the 'No Data' display for either the Systolic or Diastolic result:" />
-<KnownErrorAndPartialError title="Displays for a full 'Known Error' and for partial missing results" description="Use the 'hasResultError' prop to show the 'Error' display for the full Blood Pressure result. Or if there is a missing Systolic or Diastolic result, that portion will show the error display:" />
-<StatusEnteredInError title="Uncharted Result as 'Entered In Error'" description="Display for when the result status has been set to 'entered-in-error'" />
+<KnownNoData
+  title="Display for 'Known No Result'"
+  description="Use the 'hasResultNoData' prop to show the 'No Data' display for the Blood Pressure Clinical Result:"
+/>
+<PartialNoData
+  title="Display for a Partial 'No Result'"
+  description="Use the 'resultNoData' property name to show the 'No Data' display for either the Systolic or Diastolic result:"
+/>
+<KnownErrorAndPartialError
+  title="Displays for a full 'Known Error' and for partial missing results"
+  description="Use the 'hasResultError' prop to show the 'Error' display for the full Blood Pressure result. Or if there is a missing Systolic or Diastolic result, that portion will show the error display:" 
+/>
+<StatusEnteredInError
+  title="Uncharted Result as 'Entered In Error'"
+  description="Display for when the result status has been set to 'entered-in-error'"
+/>
 
 ## Clinical-Result-Blood-Pressure Props
 <ClinicalResultBloodPressureProps />
