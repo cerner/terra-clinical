@@ -3,6 +3,8 @@ import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import ItemView from 'terra-clinical-item-view';
 
+import JSXDoc from 'terra-clinical-item-view/docs/item-view-two-column.doc.jsx?dev-site-codeblock';
+
 const display1 = <ItemView.Display icon={<IconPerson />} iconAlignment="inline" text="Asif Khan" />;
 const display2 = <ItemView.Display icon={<IconBriefcase />} iconAlignment="inline" text="Care Position: Primary" />;
 const display3 = <ItemView.Display text="Room 100A" />;
@@ -11,4 +13,9 @@ const display5 = <ItemView.Display text="Start Time: 08-05-2016 12:00:00" />;
 const display6 = <ItemView.Display text="End Time: 08-05-2016 16:00:00" />;
 const displays = [display1, display2, display3, display4, display5, display6];
 
-export default () => <ItemView displays={displays} layout="twoColumns" />;
+export default () => (
+  <div>
+    <JSXDoc />
+    <ItemView displays={displays} layout="twoColumns" />
+  </div>
+);
