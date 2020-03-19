@@ -1,2 +1,0 @@
-const display1 = <ItemView.Display icon={<IconPerson />} iconAlignment="inline" text="Asif Khan" />;
-const display2 = <ItemView.Display icon={<IconBriefcase />} iconAlignment="inline" text="Care Position: Primary" />;
