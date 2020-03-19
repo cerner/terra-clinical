@@ -47,7 +47,7 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
-  describe('truncacation', () => {
+  describe('truncation', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/truncated-flowsheet-result-cell');
     });
