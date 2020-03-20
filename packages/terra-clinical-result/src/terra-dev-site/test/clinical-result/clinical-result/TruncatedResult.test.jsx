@@ -18,9 +18,10 @@ export default () => (
         unit: 'mmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHg',
       }}
       isTruncated
-      isUnverified
       isModified
       hasComment
+      conceptDisplay={'Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral'}
+      datetimeDisplay={'Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31'}
     />
     <ClinicalResult
       eventId="111"
@@ -29,10 +30,9 @@ export default () => (
         unit: 'mmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHgmmHg',
       }}
       isTruncated
+      isUnverified
       isModified
       hasComment
-      conceptDisplay={'Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral Temperature Oral'}
-      datetimeDisplay={'Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31 Nov 23, 2019 13:31:31'}
     />
   </>
 );
