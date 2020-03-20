@@ -86,7 +86,6 @@ const ClinicalResultDisplay = ({
   const isStatusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
   const decoratedResultClassnames = cx([
     'decorated-result-display',
-    { truncated: isTruncated },
     { 'status-in-error': isStatusInError },
   ]);
   return (
