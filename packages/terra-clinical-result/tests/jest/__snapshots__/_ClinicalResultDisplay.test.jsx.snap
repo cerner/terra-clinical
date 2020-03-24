@@ -263,7 +263,7 @@ exports[`ClinicalResultDisplay should render a result with unit hidden 1`] = `
 exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1`] = `
 <Fragment>
   <div
-    className="decorated-result-display truncated"
+    className="decorated-result-display"
   >
     <div
       className="result-display"
@@ -294,7 +294,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1
 exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay with icons moved 1`] = `
 <Fragment>
   <div
-    className="decorated-result-display truncated"
+    className="decorated-result-display"
   >
     <div
       className="result-display"
