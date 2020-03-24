@@ -63,7 +63,7 @@ const defaultProps = {
   hideAccessoryDisplays: false,
 };
 
-const createConceptDisplays = (compareConceptDisplays, isTruncated) => {
+const createConceptDisplays = (compareConceptDisplays) => {
   if (compareConceptDisplays.systolic && compareConceptDisplays.diastolic) {
     if (compareConceptDisplays.systolic === compareConceptDisplays.diastolic) {
       return <div className={cx('concept-display')}>{compareConceptDisplays.originalSystolic}</div>;
@@ -83,7 +83,7 @@ const createConceptDisplays = (compareConceptDisplays, isTruncated) => {
   return null;
 };
 
-const createDatetimeDisplays = (compareDatetimeDisplays, isTruncated) => {
+const createDatetimeDisplays = (compareDatetimeDisplays) => {
   if (compareDatetimeDisplays.systolic && compareDatetimeDisplays.diastolic) {
     if (compareDatetimeDisplays.systolic === compareDatetimeDisplays.diastolic) {
       return <div className={cx('datetime-display')}>{compareDatetimeDisplays.originalSystolic}</div>;
