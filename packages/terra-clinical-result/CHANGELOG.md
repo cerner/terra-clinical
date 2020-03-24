@@ -3,6 +3,10 @@ ChangeLog
 
 Unreleased
 -----------------
+### Fixed
+* Fixed alpha truncation issue with FlowsheetResultCell
+* Fixed misnamed class in ClinicalResultBloodPresure
+* Fixed extra display truncation issue in ClinicalResult and ClinicalResultBloodPresure
 
 1.2.0 - (March 17, 2020)
 ----------
