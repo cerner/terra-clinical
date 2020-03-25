@@ -240,6 +240,7 @@ const ClinicalResultBloodPressure = (props) => {
 
     const decoratedResultClassnames = cx([
       'decorated-result-display',
+      { truncated: isTruncated },
       { 'status-in-error': compareStatusIsInError.systolic || compareStatusIsInError.diastolic },
     ]);
 

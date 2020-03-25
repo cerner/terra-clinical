@@ -6,17 +6,10 @@
   .truncated {
     .decorated-result-display {
       flex-wrap: nowrap;
-
-      .result-display {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        word-break: normal;
-        word-wrap: normal;
-      }
     }
 
-    .concept-display, .datetime-display {
+    .concept-display,
+    .datetime-display {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -36,6 +29,18 @@
     &.status-in-error del {
       color: var(--terra-clinical-result-display-status-entered-in-error-color, rgba(28, 31, 33, 0.65));
       text-decoration: line-through;
+    }
+
+    &.truncated {
+      flex-wrap: nowrap;
+
+      .result-display {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: normal;
+        word-wrap: normal;
+      }
     }
 
     .result-display {
