@@ -6,7 +6,7 @@ import styles from '../../../doc/example/Examples.module.scss';
 const cx = classNames.bind(styles);
 
 const results = [];
-for (let i = 0; i < 102; i = i + 1) {
+for (let i = 0; i < 102; i += 1) {
   results[i] = {
     eventId: '1602328271',
     result: {
