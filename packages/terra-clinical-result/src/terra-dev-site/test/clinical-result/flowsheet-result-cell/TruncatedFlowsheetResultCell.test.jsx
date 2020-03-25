@@ -6,7 +6,7 @@ import styles from '../../../doc/example/Examples.module.scss';
 const cx = classNames.bind(styles);
 
 const results = [];
-for(var i = 0; i < 102; i++) {
+for (let i = 0; i < 102; i+1) {
   results[i] = {
     eventId: '1602328271',
     result: {
@@ -133,13 +133,13 @@ export default () => (
         <FlowsheetResultCell resultDataSet={multipleResultValues} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={results}  />
+        <FlowsheetResultCell resultDataSet={results} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues2}  />
+        <FlowsheetResultCell resultDataSet={multipleResultValues2} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues3}  />
+        <FlowsheetResultCell resultDataSet={multipleResultValues3} />
       </div>
     </div>
     <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
@@ -147,13 +147,13 @@ export default () => (
         <FlowsheetResultCell resultDataSet={multipleResultValues} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={results}  />
+        <FlowsheetResultCell resultDataSet={results} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues2}  />
+        <FlowsheetResultCell resultDataSet={multipleResultValues2} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues3}  />
+        <FlowsheetResultCell resultDataSet={multipleResultValues3} />
       </div>
     </div>
     <div className={cx(['mock-flowsheet-resultcolumn', 'triple-column'])}>
@@ -161,13 +161,13 @@ export default () => (
         <FlowsheetResultCell resultDataSet={multipleResultValues} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={results}  />
+        <FlowsheetResultCell resultDataSet={results} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues2}  />
+        <FlowsheetResultCell resultDataSet={multipleResultValues2} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues3}  />
+        <FlowsheetResultCell resultDataSet={multipleResultValues3} />
       </div>
     </div>
   </React.Fragment>
