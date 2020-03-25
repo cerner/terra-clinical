@@ -936,7 +936,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
   className="clinical-result blood-pressure-result truncated"
 >
   <div
-    className="decorated-result-display"
+    className="decorated-result-display truncated"
   >
     <div
       className="result-display"
@@ -989,7 +989,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
   className="clinical-result blood-pressure-result truncated"
 >
   <div
-    className="decorated-result-display"
+    className="decorated-result-display truncated"
   >
     <div
       className="result-display"
