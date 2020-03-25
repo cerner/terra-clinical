@@ -8,6 +8,9 @@ Unreleased
 * Fixed misnamed class in ClinicalResultBloodPresure
 * Fixed extra display truncation issue in ClinicalResult and ClinicalResultBloodPresure
 
+### Changed
+* Update docs to use mdx syntax.
+
 1.2.0 - (March 17, 2020)
 ----------
 ### Fixed
