@@ -1,5 +1,6 @@
 :local {
   .clinical-result {
+    max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden;
   }
 
@@ -10,6 +11,7 @@
 
     .concept-display,
     .datetime-display {
+      max-width: 100%;  // Needed for IE10 truncation
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -35,6 +37,7 @@
       flex-wrap: nowrap;
 
       .result-display {
+        max-width: 100%;  // Needed for IE10 truncation
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
