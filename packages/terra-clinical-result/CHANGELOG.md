@@ -10,6 +10,7 @@ Unreleased
 
 ### Changed
 * Update docs to use mdx syntax.
+* ClinicalResultBloodPresure no longer truncates in FlowsheetResultCell
 
 1.2.0 - (March 17, 2020)
 ----------
