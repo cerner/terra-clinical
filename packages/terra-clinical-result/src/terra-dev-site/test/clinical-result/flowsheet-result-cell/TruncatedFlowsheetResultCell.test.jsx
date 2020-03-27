@@ -191,19 +191,36 @@ export default () => (
     </div>
     <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
+        <FlowsheetResultCell resultDataSet={multipleResultValues} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={results} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
+        <FlowsheetResultCell resultDataSet={results} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues2} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
+        <FlowsheetResultCell resultDataSet={multipleResultValues2} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues3} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
+        <FlowsheetResultCell resultDataSet={multipleResultValues3} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={testExtremeWidthBloodPressure} hideUnit />
+      </div>
+    </div>
+    <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        { /* cell intentionally left empty */}
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        { /* cell intentionally left empty */}
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        { /* cell intentionally left empty */}
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        { /* cell intentionally left empty */}
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        { /* cell intentionally left empty */}
       </div>
     </div>
     <div className={cx(['mock-flowsheet-resultcolumn', 'triple-column'])}>
@@ -219,8 +236,8 @@ export default () => (
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={multipleResultValues3} />
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        { /* cell intentionally left empty */}
+      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
+        &larr; 2nd column shows when cells are smaller than 10em minWidth
       </div>
     </div>
   </React.Fragment>

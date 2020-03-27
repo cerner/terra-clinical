@@ -7,10 +7,10 @@ Unreleased
 * Fixed alpha truncation issue with FlowsheetResultCell
 * Fixed misnamed class in ClinicalResultBloodPresure
 * Fixed extra display truncation issue in ClinicalResult and ClinicalResultBloodPresure
+* ClinicalResultBloodPressure no longer truncates in FlowsheetResultCell
 
 ### Changed
 * Update docs to use mdx syntax.
-* ClinicalResultBloodPresure no longer truncates in FlowsheetResultCell
 
 1.2.0 - (March 17, 2020)
 ----------

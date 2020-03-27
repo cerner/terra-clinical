@@ -66,7 +66,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -115,7 +115,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           interpretation={null}
@@ -157,7 +157,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -203,7 +203,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -249,7 +249,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -295,7 +295,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={true}
           key="Observation-Diastolic-111.2"
@@ -336,7 +336,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           isUnverified={true}
@@ -814,7 +814,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -855,7 +855,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -925,7 +925,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -979,7 +979,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
@@ -1033,7 +1033,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
         wrapper={[Function]}
       >
         <Observation
-          className={null}
+          className=""
           eventId="111.2"
           hideUnit={false}
           key="Observation-Diastolic-111.2"
