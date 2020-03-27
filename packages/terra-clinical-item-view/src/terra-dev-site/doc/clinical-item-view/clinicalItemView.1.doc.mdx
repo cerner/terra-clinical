@@ -1,0 +1,47 @@
+import { Badge } from 'terra-clinical-item-view/package.json?dev-site-package';
+
+import ItemViewStandard from '../example/ItemViewStandard?dev-site-example';
+import ItemViewTwoColumn from '../example/ItemViewTwoColumn?dev-site-example';
+import ItemViewTwoColumnStart from '../example/ItemViewTwoColumnStart?dev-site-example';
+import ItemViewComment from '../example/ItemViewComment?dev-site-example';
+import ItemViewAll from '../example/ItemViewAll?dev-site-example';
+import ItemViewAllTopAligned from '../example/ItemViewAllTopAligned?dev-site-example';
+
+import ItemViewProps from 'terra-clinical-item-view/src/ItemView.jsx?dev-site-props-table';
+
+<Badge />
+
+# Terra Clinical Item View
+
+The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-item-view`
+
+## Usage
+```jsx
+import ItemView from 'terra-clinical-item-view';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+[View component source code](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-view)
+
+## Examples
+<ItemViewStandard title="ItemView - Default" />
+<ItemViewTwoColumn
+    title="ItemView - Two Column Layout"
+    description="When including icons as part of an '<ItemView.Display />'', it is recommended to use the iconAlignment='inline' prop for best alignment and wrapping with the text."
+/>
+<ItemViewTwoColumnStart title="ItemView - Start Emphasis" />
+<ItemViewComment title="ItemView - Comment" />
+<ItemViewAll title="ItemView - All Elements" />
+<ItemViewAllTopAligned title="ItemView - All Elements Top Aligned" />
+
+## Item View Props
+<ItemViewProps />
