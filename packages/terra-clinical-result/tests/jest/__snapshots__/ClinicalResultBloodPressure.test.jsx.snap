@@ -24,7 +24,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
         wrapper={[Function]}
       >
         <Observation
-          className="diastolic-intrepretation"
+          className="diastolic-interpretation"
           eventId="111.2"
           hideUnit={true}
           interpretation="critical"
