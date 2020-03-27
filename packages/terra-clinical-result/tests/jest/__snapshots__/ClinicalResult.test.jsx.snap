@@ -425,7 +425,7 @@ exports[`ClinicalResult should render a result with unit hidden 1`] = `
 
 exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
 <div
-  className="clinical-result"
+  className="clinical-result truncated"
   intl={
     Object {
       "defaultFormats": Object {},
@@ -469,7 +469,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
 
 exports[`ClinicalResult should render a truncated ClinicalResult with icons moved 1`] = `
 <div
-  className="clinical-result"
+  className="clinical-result truncated"
   intl={
     Object {
       "defaultFormats": Object {},
