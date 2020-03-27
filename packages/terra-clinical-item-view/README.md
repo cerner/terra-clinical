@@ -7,12 +7,13 @@
 The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-view/docs)
+- [Documentation](https://engineering.cerner.com/terra-clinical/components/terra-clinical-item-view/clinical-item-view/clinical-item-view)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-clinical-item-view`
+- Install from [npmjs](https://www.npmjs.com)
+    -   `npm install terra-clinical-item-view`
 
 ## LICENSE
 
