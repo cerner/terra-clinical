@@ -110,7 +110,11 @@
   .result-display-separator {
     color: var(--terra-clinical-result-display-separator-color);
     font-weight: var(--terra-clinical-result-display-separator-font-weight, normal);
-    margin-left: var(--terra-clinical-result-display-separator-margin-left, 0.25em); // Must use ems for font scaling
-    margin-right: var(--terra-clinical-result-display-separator-margin-right, 0.25em); // Must use ems for font scaling
+    margin-left: var(--terra-clinical-result-display-separator-margin-left, 0.07em); // Must use ems for font scaling
+    margin-right: var(--terra-clinical-result-display-separator-margin-right, 0.107em); // Must use ems for font scaling
+  }
+
+  .diastolic-intrepretation {
+    margin-left: var(--terra-clinical-result-display-diastolic-interpretation-margin-left, -0.107em); // Must use ems for font scaling
   }
 }

@@ -44,6 +44,7 @@ The flowsheet cell for clinical results is constructed by providing the same str
 
 Currently the Flowsheet expects an array of one or more results - and if there are multiple, it will display the first in the array, with an indication of additional results. Updates are in progress to also look at the performedDateTime value if provided to evaluate which result is the most recent to appropriately display, regardless of which order index position in the array it is.
 
+Note: The Flowsheet Result Cell has a minimum width requirement of 10em (10 times the font-size provided to it) to prevent a blood pressure value from being truncated. For normal Terra theme usage, this will typically be 140px (assuming for base font-size at 14px). 
 
 ```jsx
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';

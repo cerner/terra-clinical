@@ -126,6 +126,50 @@ const multipleResultValues3 = [
   },
 ];
 
+const testExtremeWidthBloodPressure = [];
+testExtremeWidthBloodPressure[0] = {
+  id: '1602328271-1',
+  systolic: {
+    eventId: '1602328271-1.1',
+    result: {
+      value: '888',
+      unit: 'mmHg',
+    },
+    interpretation: 'critical',
+    isModified: true,
+    hasComment: true,
+  },
+  diastolic: {
+    eventId: '1602328271-1.2',
+    result: {
+      value: '888',
+      unit: 'mmHg',
+    },
+    interpretation: 'critical',
+    isModified: true,
+    hasComment: true,
+  },
+};
+for (let i = 1; i < 102; i += 1) {
+  testExtremeWidthBloodPressure[i] = {
+    id: '1602328271-2',
+    systolic: {
+      eventId: '1602328271-2.1',
+      result: {
+        value: '111',
+        unit: 'mmHg',
+      },
+    },
+    diastolic: {
+      eventId: '1602328271-2.2',
+      result: {
+        value: '77',
+        unit: 'mmHg',
+      },
+    },
+  };
+}
+
 export default () => (
   <React.Fragment>
     <div className={cx('mock-flowsheet-resultcolumn')}>
@@ -141,19 +185,25 @@ export default () => (
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={multipleResultValues3} />
       </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        <FlowsheetResultCell resultDataSet={testExtremeWidthBloodPressure} hideUnit />
+      </div>
     </div>
     <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} />
+        <FlowsheetResultCell resultDataSet={multipleResultValues} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={results} />
+        <FlowsheetResultCell resultDataSet={results} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues2} />
+        <FlowsheetResultCell resultDataSet={multipleResultValues2} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues3} />
+        <FlowsheetResultCell resultDataSet={multipleResultValues3} className={cx('flowsheetresult-minwidth-override--for-testing-only')} />
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        <FlowsheetResultCell resultDataSet={testExtremeWidthBloodPressure} hideUnit />
       </div>
     </div>
     <div className={cx(['mock-flowsheet-resultcolumn', 'triple-column'])}>
@@ -168,6 +218,9 @@ export default () => (
       </div>
       <div className={cx('mock-flowsheet-resultcolumn-cell')}>
         <FlowsheetResultCell resultDataSet={multipleResultValues3} />
+      </div>
+      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+        { /* cell intentionally left empty */}
       </div>
     </div>
   </React.Fragment>

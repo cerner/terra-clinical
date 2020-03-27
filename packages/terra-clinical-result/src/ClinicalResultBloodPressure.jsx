@@ -213,6 +213,7 @@ const ClinicalResultBloodPressure = (props) => {
           >
             <Observation
               key={`Observation-Diastolic-${diastolic.eventId}`}
+              className={!compareStatusIsInError.diastolic && diastolic.interpretation ? cx('diastolic-intrepretation') : null}
               eventId={diastolic.eventId}
               result={diastolic.result}
               interpretation={!compareStatusIsInError.diastolic ? diastolic.interpretation : null}
