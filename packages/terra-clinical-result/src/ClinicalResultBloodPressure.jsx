@@ -63,7 +63,7 @@ const defaultProps = {
   hideAccessoryDisplays: false,
 };
 
-const createConcpetDisplays = (compareConceptDisplays) => {
+const createConceptDisplays = (compareConceptDisplays) => {
   if (compareConceptDisplays.systolic && compareConceptDisplays.diastolic) {
     if (compareConceptDisplays.systolic === compareConceptDisplays.diastolic) {
       return <div className={cx('concept-display')}>{compareConceptDisplays.originalSystolic}</div>;
@@ -86,10 +86,10 @@ const createConcpetDisplays = (compareConceptDisplays) => {
 const createDatetimeDisplays = (compareDatetimeDisplays) => {
   if (compareDatetimeDisplays.systolic && compareDatetimeDisplays.diastolic) {
     if (compareDatetimeDisplays.systolic === compareDatetimeDisplays.diastolic) {
-      return <div className={cx('concept-display')}>{compareDatetimeDisplays.originalSystolic}</div>;
+      return <div className={cx('datetime-display')}>{compareDatetimeDisplays.originalSystolic}</div>;
     }
     return (
-      <div className={cx('concept-display')}>
+      <div className={cx('datetime-display')}>
         {compareDatetimeDisplays.originalSystolic}
         {' / '}
         {compareDatetimeDisplays.originalDiastolic}
@@ -98,7 +98,7 @@ const createDatetimeDisplays = (compareDatetimeDisplays) => {
   }
   if (compareDatetimeDisplays.systolic || compareDatetimeDisplays.diastolic) {
     const conceptDisplayValue1 = compareDatetimeDisplays.originalSystolic || compareDatetimeDisplays.originalDiastolic;
-    return <div className={cx('concept-display')}>{conceptDisplayValue1}</div>;
+    return <div className={cx('datetime-display')}>{conceptDisplayValue1}</div>;
   }
   return null;
 };
@@ -172,7 +172,7 @@ const ClinicalResultBloodPressure = (props) => {
     const hasCommentIcon = (systolic && systolic.hasComment) || (diastolic && diastolic.hasComment);
     const hasUnverifiedIcon = (systolic && systolic.isUnverified) || (diastolic && diastolic.isUnverified);
     const datetimeDisplayElement = createDatetimeDisplays(compareDatetimeDisplays);
-    const conceptDisplayElement = createConcpetDisplays(compareConceptDisplays);
+    const conceptDisplayElement = createConceptDisplays(compareConceptDisplays);
 
     const decoratedResultDisplay = [];
     if (systolic || diastolic) {
@@ -262,6 +262,7 @@ const ClinicalResultBloodPressure = (props) => {
   const clinicalResultClassnames = cx([
     'clinical-result',
     'blood-pressure-result',
+    { truncated: isTruncated },
   ]);
 
   return (

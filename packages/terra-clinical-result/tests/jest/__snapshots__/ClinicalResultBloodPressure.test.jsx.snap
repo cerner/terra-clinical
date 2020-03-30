@@ -258,7 +258,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
     </div>
   </div>
   <div
-    className="concept-display"
+    className="datetime-display"
   >
     Nov 23, 2019 13:31:31
   </div>
@@ -689,7 +689,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
     </div>
   </div>
   <div
-    className="concept-display"
+    className="datetime-display"
   >
     Nov 23, 2019 13:31:31
   </div>
@@ -933,7 +933,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
 
 exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure 1`] = `
 <div
-  className="clinical-result blood-pressure-result"
+  className="clinical-result blood-pressure-result truncated"
 >
   <div
     className="decorated-result-display truncated"
@@ -986,7 +986,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
 
 exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure with icons moved 1`] = `
 <div
-  className="clinical-result blood-pressure-result"
+  className="clinical-result blood-pressure-result truncated"
 >
   <div
     className="decorated-result-display truncated"

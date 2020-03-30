@@ -71,11 +71,9 @@ const Observation = (props) => {
 
   const isValidValue = !!result.value;
 
-  const interpretationLC = interpretation && interpretation.toLowerCase();
-
   const valueTextClasses = cx([
     'value',
-    !isUnverified && interpretationTextClassMap[interpretationLC],
+    !isUnverified && interpretationTextClassMap[interpretation],
     { unverified: isUnverified },
   ]);
 
@@ -92,7 +90,7 @@ const Observation = (props) => {
             {...customProps}
             className={customProps.className ? `${valueTextClasses} ${customProps.className}` : valueTextClasses}
           >
-            {interpretation && !isUnverified && interpretationIndicatorMap[interpretationLC]}
+            {interpretation && !isUnverified && interpretationIndicatorMap[interpretation]}
             {result.value}
           </span>
           {result.unit ? (<span className={unitClassNames}>{result.unit}</span>) : null}
