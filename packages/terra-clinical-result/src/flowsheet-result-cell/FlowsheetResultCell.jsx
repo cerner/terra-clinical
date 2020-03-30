@@ -12,7 +12,7 @@ import EnteredInError from '../common/other/_EnteredInError';
 import ResultError from '../common/other/_ResultError';
 import NoData from '../common/other/_KnownNoData';
 import NumericOverflow from '../common/other/_NumericOverflow';
-import { isEmpty, checkIsStatusInError, checkTypeNumeric } from '../common/utils';
+import { isEmpty, checkIsStatusInError, checkTypeNumeric, checkTypeBloodpressure } from '../common/utils';
 import styles from './FlowsheetResultCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -158,7 +158,7 @@ const createStandardResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInter
   return clinicalResultDisplay;
 };
 
-const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, containerDivRef) => {
+const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
   const {
     systolic,
     diastolic,
@@ -170,6 +170,8 @@ const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, has
   };
   if (isStatusInError.systolic || isStatusInError.diastolic) {
     resultsInnerDisplay = <EnteredInError />;
+  } else if (numericOverflow) {
+    resultsInnerDisplay = <NumericOverflow />;
   } else {
     resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} systolic={systolic} diastolic={diastolic} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
   }
@@ -281,7 +283,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef);
     compositeCell.push(firstResultDisplay);
   } else {
-    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, containerDivRef);
+    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef);
     compositeCell.push(firstResultDisplay);
   }
   const additionalResultCount = resultDataSet.length - 1;
@@ -329,7 +331,12 @@ const FlowsheetResultCell = (props) => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
-    if (checkTypeNumeric(resultDataSet[0])) {
+    if (checkTypeNumeric(resultDataSet[0]) || checkTypeBloodpressure(resultDataSet[0])) {
+      if(checkTypeBloodpressure(resultDataSet[0])){
+        console.log(resultDataSet[0]);
+        console.log(contentWidth);
+        console.log(containerDiv.current.children[0]);
+      }
       if (!contentWidth) {
         setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
       }

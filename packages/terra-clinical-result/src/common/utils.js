@@ -26,6 +26,17 @@ const checkTypeNumeric = (resultData) => {
 };
 
 /**
+ * Returns a boolean after check to see if a clinical result is type blood pressure
+ * @param {object} Observation.propTypes.result
+ * @return {boolean} is blood pressure|true || not blood pressure|false
+ */
+const checkTypeBloodpressure = (resultData) => {
+  const hasSystolicData = !isEmpty(resultData.systolic);
+  const hasDiastolicData = !isEmpty(resultData.diastolic);
+  return hasSystolicData || hasDiastolicData;
+};
+
+/**
  * Private component to generate a new react.node with wrapper element around children content, dependant on a supplied condition.
  * Credit to Steufken, Olivier. “Conditionally Wrap an Element in React.” Medium, Hackages Blog, 30 Apr. 2019, blog.hackages.io/conditionally-wrap-an-element-in-react-a8b9a47fab2.
  * @param {boolean} result of condition to test --> wraps|true || does not wrap|false
@@ -47,5 +58,6 @@ export {
   isEmpty,
   checkIsStatusInError,
   checkTypeNumeric,
+  checkTypeBloodpressure,
   ConditionalWrapper,
 };
