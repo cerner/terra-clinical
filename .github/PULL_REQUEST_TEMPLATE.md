@@ -18,6 +18,7 @@ https://terra-clinical-deployed-pr-#.herokuapp.com/
 
 <!--
 *Before publishing*
+
 1. Assign yourself to the PR.
 2. Add the appropriate labels
 3. Add your name to the CONTRIBUTORS.md file. Adding your name to the CONTRIBUTORS.md file signifies agreement to all rights and reservations provided by the License.
