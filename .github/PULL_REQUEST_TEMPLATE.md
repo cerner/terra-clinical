@@ -16,7 +16,12 @@ https://terra-clinical-deployed-pr-#.herokuapp.com/
 ### Additional Details
 <!-- List anything else that is relevant to this issue. Additional information will help us better understand your changes and speed up the review process. -->
 
-<!-- Please add your name to the CONTRIBUTORS.md file. Adding your name to the CONTRIBUTORS.md file signifies agreement to all rights and reservations provided by the License. -->
+<!--
+*Before publishing*
+1. Assign yourself to the PR.
+2. Add the appropriate labels
+3. Add your name to the CONTRIBUTORS.md file. Adding your name to the CONTRIBUTORS.md file signifies agreement to all rights and reservations provided by the License.
+-->
 
 Thank you for contributing to Terra.
 @cerner/terra
