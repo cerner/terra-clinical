@@ -3,8 +3,22 @@ ChangeLog
 
 Unreleased
 ----------
+
 ### Updated
 * Updated source file for changes in clinical-item-display
+
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+3.14.0 - (March 27, 2020)
+------------------
+### Changed
+* Update docs to use mdx syntax.
+
+3.13.0 - (March 24, 2020)
+------------------
+### Changed
+* Minor dependency updates
 
 3.12.0 - (February 18, 2020)
 ----------

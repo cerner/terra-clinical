@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-header",
   "main": "lib/Header.js",
-  "version": "3.13.0",
+  "version": "3.14.0",
   "description": "A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. ",
   "repository": {
     "type": "git",
@@ -28,8 +28,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-button": "^3.0.0",
-    "terra-doc-template": "^2.0.0"
+    "terra-button": "^3.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

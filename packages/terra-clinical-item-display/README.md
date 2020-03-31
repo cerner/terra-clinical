@@ -7,7 +7,7 @@
 The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-item-display/docs)
+- [Documentation](https://engineering.cerner.com/terra-clinical/components/terra-clinical-item-display/clinical-item-display/clinical-item-display)
 - [LICENSE](#license)
 
 ## Getting Started

@@ -4,6 +4,26 @@ ChangeLog
 Unreleased
 ----------
 
+4.17.0 - (March 27, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+4.16.0 - (March 24, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+4.15.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
+4.14.0 - (March 10, 2020)
+----------
+### Changed
+* Upgraded terra-list to the new major version
+
 4.13.0 - (February 18, 2020)
 ----------
 ### Changed

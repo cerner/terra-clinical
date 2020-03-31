@@ -258,7 +258,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
     </div>
   </div>
   <div
-    className="concept-display"
+    className="datetime-display"
   >
     Nov 23, 2019 13:31:31
   </div>
@@ -345,6 +345,86 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
         className="icon-unverified"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with no data 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(KnownNoData)
+        key="NoData-Diastolic-undefined"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={false}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <InjectIntl(ResultError)
+        key="Error-Diastolic-undefined"
       />
     </div>
   </div>
@@ -609,7 +689,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
     </div>
   </div>
   <div
-    className="concept-display"
+    className="datetime-display"
   >
     Nov 23, 2019 13:31:31
   </div>
@@ -702,6 +782,86 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
 </div>
 `;
 
+exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(ResultError)
+        key="Error-Systolic-undefined"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.2"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(KnownNoData)
+        key="NoData-Systolic-undefined"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-"
+      >
+        /
+      </span>
+      <ConditionalWrapper
+        key="del-Diastolic-111.2"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.2"
+          hideUnit={false}
+          key="Observation-Diastolic-111.2"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "80",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `
 <div
   className="clinical-result blood-pressure-result"
@@ -728,17 +888,22 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
     <div
       className="result-display"
     >
-      <Observation
-        eventId="111.1"
-        hideUnit={true}
-        key="Observation-Systolic-111.1"
-        result={
-          Object {
-            "unit": "mmHg",
-            "value": "180",
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
           }
-        }
-      />
+        />
+      </ConditionalWrapper>
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
@@ -768,7 +933,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
 
 exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure 1`] = `
 <div
-  className="clinical-result blood-pressure-result"
+  className="clinical-result blood-pressure-result truncated"
 >
   <div
     className="decorated-result-display truncated"
@@ -776,17 +941,22 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <Observation
-        eventId="111.1"
-        hideUnit={true}
-        key="Observation-Systolic-111.1"
-        result={
-          Object {
-            "unit": "mmHg",
-            "value": "180",
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
           }
-        }
-      />
+        />
+      </ConditionalWrapper>
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
@@ -816,7 +986,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
 
 exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBloodPressure with icons moved 1`] = `
 <div
-  className="clinical-result blood-pressure-result"
+  className="clinical-result blood-pressure-result truncated"
 >
   <div
     className="decorated-result-display truncated"
@@ -824,17 +994,22 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <Observation
-        eventId="111.1"
-        hideUnit={true}
-        key="Observation-Systolic-111.1"
-        result={
-          Object {
-            "unit": "mmHg",
-            "value": "180",
+      <ConditionalWrapper
+        key="del-Systolic-111.1"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111.1"
+          hideUnit={true}
+          key="Observation-Systolic-111.1"
+          result={
+            Object {
+              "unit": "mmHg",
+              "value": "180",
+            }
           }
-        }
-      />
+        />
+      </ConditionalWrapper>
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
@@ -863,6 +1038,33 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
+  </div>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render systolic and diastolic with no data 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <InjectIntl(KnownNoData)
+        key="NoData-Systolic-undefined"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-"
+      >
+        /
+      </span>
+      <InjectIntl(KnownNoData)
+        key="NoData-Diastolic-undefined"
+      />
+    </div>
   </div>
 </div>
 `;
