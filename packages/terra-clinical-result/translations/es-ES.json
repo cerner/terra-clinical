@@ -1,0 +1,21 @@
+{
+  "Terra.clinicalResult.resultError": "Error",
+  "Terra.clinicalResult.statusInError": "Con errores",
+  "Terra.clinicalResult.statusInErrorAria": "El valor no se ha documentado como Con errores",
+  "Terra.clinicalResult.selectToViewAria": "Seleccione para ver más detalles",
+  "Terra.clinicalResult.includesAdditionalValuesAria": "El resultado incluye valores adicionales",
+  "Terra.clinicalResult.viewResults": "Ver resultados",
+  "Terra.clinicalResult.resultNoData": "Sin resultados",
+  "Terra.clinicalResult.resultComment": "El resultado incluye un comentario",
+  "Terra.clinicalResult.resultModified": "Resultado modificado",
+  "Terra.clinicalResult.resultUnverified": "Resultado sin verificar",
+  "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} resultados adicionales",
+  "Terra.clinicalResult.interpretationCritical": "Crítico",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Crítico alto",
+  "Terra.clinicalResult.interpretationCriticalLow": "Crítico bajo",
+  "Terra.clinicalResult.interpretationCriticalAbnormal": "Anómalo crítico",
+  "Terra.clinicalResult.interpretationPositive": "Positivo",
+  "Terra.clinicalResult.interpretationAbnormal": "Anómalo",
+  "Terra.clinicalResult.interpretationHigh": "Alto",
+  "Terra.clinicalResult.interpretationLow": "Bajo"
+}

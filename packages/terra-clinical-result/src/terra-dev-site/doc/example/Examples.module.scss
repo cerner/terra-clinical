@@ -1,0 +1,153 @@
+:local {
+  .example-description-text {
+    color: #434a4d;
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+  }
+
+  .dashed-border-group {
+    border: 2px dashed #333;
+  }
+
+  .clinical-result-fontsize-16 {
+    font-size: 1.14285rem;
+  }
+
+  .clinical-result-fontsize-18 {
+    font-size: 1.28571rem;
+  }
+
+  .clinical-result-fontsize-21 {
+    font-size: 1.5rem;
+  }
+
+  .clinical-result-fontsize-24 {
+    font-size: 1.71428rem;
+  }
+
+  .bottom-space {
+    margin-bottom: 1.42857rem;
+  }
+
+  .mock-flowsheet-header {
+    background-color: #f1f1f1;
+    border: 1px solid #dedfe0;
+    border-bottom-color: #868a8c;
+    line-height: 0;
+    max-width: 1055px;
+    overflow: hidden;
+    padding-left: 220px;
+    white-space: nowrap;
+  }
+
+  .mock-flowsheet-header-cell {
+    border-left: 1px solid #868a8c;
+    border-right: 1px solid #868a8c;
+    display: inline-block;
+    margin-right: -1px;
+    width: 120px;
+    
+    &.new-date {
+      border-left: 2px solid #4e5558;
+    }
+  }
+
+  .mock-flowsheet-firstcolumn {
+    background-color: #f1f1f1;
+    border: 1px solid #dedfe0;
+    border-right: 2px solid #4e5558;
+    max-width: 222px;
+    overflow: hidden;
+    padding-top: 48px;
+    white-space: nowrap;
+  }
+
+  .mock-flowsheet-firstcolumn-cell {
+    border-bottom: 1px solid #868a8c;
+    border-top: 1px solid #868a8c;
+    margin-bottom: -1px;
+
+    &.zebra {
+      background-color: #dedfe0;
+    }
+  }
+
+  .mock-flowsheet-resultcolumn {
+    background-color: #f1f1f1;
+    border: 1px solid #dedfe0;
+    display: inline-block;
+    margin-left: -1px;
+    overflow: hidden;
+    padding-top: 24px;
+    vertical-align: top;
+    width: 162px;
+
+    &.half-column {
+      width: 99px;
+    }
+
+    &.double-column {
+      width: 324px;
+    }
+
+    &.triple-column {
+      width: 477px;
+    }
+
+    &.flexible50-column {
+      width: 50%;
+    }
+  }
+
+  .mock-flowsheet-resultcolumn-cell {
+    background-color: #fff;
+    border-bottom: 1px solid #dedfe0;
+    border-top: 1px solid #dedfe0;
+    box-sizing: border-box;
+    height: 33px;
+    margin-bottom: -1px;
+    white-space: nowrap;
+
+    &.allow-wrapping {
+      overflow: auto;
+      white-space: normal;
+      word-wrap: normal;
+    }  
+
+    &.empty {
+      height: 33px;
+    }
+
+    &.short {
+      height: 25px;
+    }
+
+    &.medium {
+      height: 41px;
+    }
+
+    &.tall {
+      height: 155px;
+    }
+
+    &.with-padding {
+      padding: 7px 7px 0;
+    }
+    
+    &.zebra {
+      background-color: #f1f1f1;
+    }
+  }
+
+  .vertical-center-align-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    max-height: 100%;
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden; // Needed for IE10
+    padding: 0;
+    width: 100%;
+  }
+}

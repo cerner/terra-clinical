@@ -9,16 +9,16 @@ const PrecisionOptions = {
   AFTER: 'after',
   UNKNOWN: 'unknown',
 };
+const DATE_FORMAT = 'YYYY-MM-DD';
 
 class OnsetUtils {
   /*
    * Create object to pass to SelectField for month options
    * Filters out months before birth or after the current date.
    */
-  static allowedMonths(intl, birthdate, onsetDate) {
+  static allowedMonths(intl, birthdate, year) {
     const start = moment(birthdate);
     const end = moment();
-    const onsetYear = onsetDate ? onsetDate.year() : moment().year();
     let possibleMonths = [{ value: '0', display: intl.formatMessage({ id: 'Terra.onsetPicker.january' }) },
       { value: '1', display: intl.formatMessage({ id: 'Terra.onsetPicker.february' }) },
       { value: '2', display: intl.formatMessage({ id: 'Terra.onsetPicker.march' }) },
@@ -31,16 +31,13 @@ class OnsetUtils {
       { value: '9', display: intl.formatMessage({ id: 'Terra.onsetPicker.october' }) },
       { value: '10', display: intl.formatMessage({ id: 'Terra.onsetPicker.november' }) },
       { value: '11', display: intl.formatMessage({ id: 'Terra.onsetPicker.december' }) }];
-
-    // If populating months for the start or end year, exclude months before the starting date or after the ending date
-    if (start.year() === onsetYear) {
-      possibleMonths = possibleMonths.filter(month => month.value >= start.month());
+    if (start.year().toString() === year || start.year() === end.year()) {
+      possibleMonths = possibleMonths.filter(month => month.value > start.month());
     }
 
-    if (end.year() === onsetYear) {
+    if (end.year().toString() === year || start.year() === end.year()) {
       possibleMonths = possibleMonths.filter(month => month.value <= end.month());
     }
-
     return possibleMonths;
   }
 
@@ -48,13 +45,23 @@ class OnsetUtils {
    * Create object to pass to SelectField for year options.
    * Populates birth year to current year.
    */
-  static allowedYears(birthdate) {
-    const start = moment(birthdate).year();
-    const end = moment().year();
+  static allowedYears(granularity, month, birthdate) {
+    let start = moment(birthdate).year();
+    if ((granularity === 'month' && month <= moment(birthdate).month()) || granularity === 'year') {
+      start += 1;
+    }
+    let end = moment().year();
+    if ((granularity === 'month' && month > moment().month())) {
+      end -= 1;
+    }
+    if (month > moment().month() && start === end && granularity !== 'month') {
+      start = '';
+      end = '';
+    }
 
     return Array((end - start) + 1).fill(undefined).map((x, idx) => {
       const year = start + idx;
-      return { value: year.toString(), display: year.toString() };
+      return { value: start !== '' ? year.toString() : '', display: start !== '' ? year.toString() : '' };
     });
   }
 
@@ -88,9 +95,8 @@ class OnsetUtils {
   static allowedAgeUnits(birthdate, intl) {
     const ageMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const currentMoment = moment().startOf('day');
-
     if (currentMoment.diff(ageMoment, 'weeks') === 0) {
-      return null;
+      return [];
     }
 
     const ageUnits = [{ value: 'weeks', display: intl.formatMessage({ id: 'Terra.onsetPicker.agePrecisionWeek' }) }];
@@ -109,26 +115,36 @@ class OnsetUtils {
   }
 
   /**
-   * Converts onset date to a age value with loweset possible age unit (weeks, then months, then years).
+   * Converts onset date to a age value with lowest possible age unit (weeks, then months, then years).
    */
   static onsetToAge(birthdate, onsetDate) {
     if (onsetDate === undefined) { return { age: undefined, ageUnit: undefined }; }
 
     const birthMoment = moment(birthdate).startOf('day'); // startOf to clear time from values
     const onsetMoment = onsetDate.startOf('day');
-    let ageDiff = onsetMoment.diff(birthMoment, 'weeks');
-
-    if (ageDiff > maxWeeks) {
-      ageDiff = onsetMoment.diff(birthMoment, 'months');
-
-      if (ageDiff > maxMonths) {
-        return { age: onsetMoment.diff(birthMoment, 'years'), ageUnit: 'years' };
-      }
-
-      return { age: ageDiff, ageUnit: 'months' };
+    const yearDiff = onsetMoment.diff(birthMoment, 'years');
+    const monthDiff = onsetMoment.diff(birthMoment, 'months');
+    const weekDiff = onsetMoment.diff(birthMoment, 'weeks');
+    const dayDiff = onsetMoment.diff(birthMoment, 'days');
+    const onset = onsetMoment.format(DATE_FORMAT);
+    let addYear = '';
+    let addMonth = '';
+    if (birthMoment.format(DATE_FORMAT) === moment().year(birthMoment.year()).month(birthMoment.month()).endOf('month')
+      .format(DATE_FORMAT) && (onsetMoment.subtract(1, 'days').daysInMonth() < birthMoment.daysInMonth())) {
+      addYear = moment(birthMoment).add(yearDiff, 'years').add(1, 'days').format(DATE_FORMAT);
+      addMonth = moment(birthMoment).add(monthDiff, 'months').add(1, 'days').format(DATE_FORMAT);
+    } else {
+      addYear = moment(birthMoment).add(yearDiff, 'years').format(DATE_FORMAT);
+      addMonth = moment(birthMoment).add(monthDiff, 'months').format(DATE_FORMAT);
     }
-
-    return { age: ageDiff, ageUnit: 'weeks' };
+    if (monthDiff > 24 && monthDiff % 12 === 0 && addYear === onset) {
+      return { age: yearDiff, ageUnit: 'years' };
+    } if (monthDiff <= 24 && addMonth === onset) {
+      return { age: monthDiff, ageUnit: 'months' };
+    } if (weekDiff <= 8 && dayDiff % 7 === 0) {
+      return { age: weekDiff, ageUnit: 'weeks' };
+    }
+    return { age: undefined, ageUnit: undefined };
   }
 
   /**

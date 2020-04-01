@@ -6,6 +6,54 @@ Unreleased
 ### Changed
 * Jest snapshot updated for ItemDisplay's primary textStyle default prop.
 
+4.18.0 - (March 31, 2020)
+------------------
+### Change
+* Minor dependency updates
+
+4.17.0 - (March 27, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+4.16.0 - (March 24, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+4.15.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
+4.14.0 - (March 10, 2020)
+----------
+### Changed
+* Upgraded terra-list to the new major version
+
+4.13.0 - (February 18, 2020)
+----------
+### Changed
+* Minor dependency updates
+
+4.12.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+4.11.0 - (January 22, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+4.10.0 - (January 7, 2020)
+------------------
+### Added
+* Add upgrade guides to dev-site docs
+
+### Removed
+* Removed yarn reference in docs
+
 4.9.0 - (September 26, 2019)
 ------------------
 ### Changed

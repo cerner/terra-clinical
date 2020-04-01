@@ -8,6 +8,7 @@
 
     .field-inline {
       display: inline-block;
+      vertical-align: top;
     }
   }
 
@@ -42,6 +43,6 @@
   }
 
   .year {
-    min-width: var(--terra-clinical-onset-picker-year-select-min-width, 4.5em);
+    min-width: var(--terra-clinical-onset-picker-year-select-min-width, 5.5em);
   }
 }

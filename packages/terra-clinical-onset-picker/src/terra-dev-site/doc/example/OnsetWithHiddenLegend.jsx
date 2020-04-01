@@ -6,7 +6,7 @@ const OnsetWithHiddenLegend = () => (
   <OnsetPicker
     birthdate={moment().subtract(6, 'years').format('YYYY-MM-DD')}
     id="onsetlegend"
-    legend="Date of Birth"
+    legend="Date of Onset"
     isLegendHidden
   />
 );

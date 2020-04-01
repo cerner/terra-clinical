@@ -4,6 +4,41 @@ ChangeLog
 Unreleased
 ----------
 
+3.17.0 - (March 31, 2020)
+------------------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+3.16.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
+3.15.0 - (February 18, 2020)
+----------
+### Added
+* Added clinical-lowlight-theme theming files
+
+3.14.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+3.13.0 - (January 22, 2020)
+------------------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+3.12.0 - (January 7, 2020)
+------------------
+### Changed
+* Minor dependency updates
+
+3.11.0 - (October 30, 2019)
+------------------
+### Changed
+* Update docs to use mdx syntax
+
 3.10.0 - (September 26, 2019)
 ------------------
 ### Changed
@@ -21,6 +56,7 @@ Unreleased
 * Replaced Object.assign syntax with Object spread syntax
 * Add comments for ESlint 6
 * Cleaned up imports in examples and test files
+* Removed clinical-item-display as a dependency.
 
 3.7.0 - (August 14, 2019)
 ----------

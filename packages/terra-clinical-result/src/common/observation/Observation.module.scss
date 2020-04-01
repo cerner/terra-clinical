@@ -1,0 +1,69 @@
+
+
+:local {
+  .value {
+    color: var(--terra-clinical-result-display-value-color);
+    display: inline;
+    font-size: var(--terra-clinical-result-display-value-font-size, 1em); // Must use ems for font scaling
+    line-height: var(--terra-clinical-result-display-value-line-height, 1.125);
+    overflow: visible;
+
+    .icon-interpretation {
+      margin-right: var(--terra-clinical-result-display-icon-interpretation-margin-right, 0.1875em); // Must use ems for font scaling
+      position: relative;
+      top: var(--terra-clinical-result-display-icon-interpretation-top, 0.15em); // Must use ems for font scaling
+      vertical-align: baseline;
+    }
+
+    &.abnormal {
+      color: var(--terra-clinical-result-display-interpretation-abnormal-color, #654a08);
+      font-weight: var(--terra-clinical-result-display-interpretation-abnormal-font-weight, normal);
+    }
+
+    &.critical {
+      color: var(--terra-clinical-result-display-interpretation-critical-color, #c00);
+      font-weight: var(--terra-clinical-result-display-interpretation-critical-font-weight, bold);
+    }
+
+    &.high {
+      color: var(--terra-clinical-result-display-interpretation-high-color, #b53203);
+      font-weight: var(--terra-clinical-result-display-interpretation-high-font-weight, normal);
+    }
+
+    &.low {
+      color: var(--terra-clinical-result-display-interpretation-low-color, #0053e6);
+      font-weight: var(--terra-clinical-result-display-interpretation-low-font-weight, normal);
+    }
+
+    &.positive {
+      color: var(--terra-clinical-result-display-interpretation-positive-color, #c00);
+      font-weight: var(--terra-clinical-result-display-interpretation-positive-font-weight, bold);
+    }
+
+    &.unverified {
+      color: var(--terra-clinical-result-display-status-unverified-color, #78288c);
+      font-weight: var(--terra-clinical-result-display-status-unverified-font-weight, normal);
+    }
+  }
+
+  .unit {
+    color: var(--terra-clinical-result-display-unit-color, rgba(28, 31, 33, 0.65));
+    display: inline;
+    font-size: var(--terra-clinical-result-display-unit-font-size, 0.875em); // Must use ems for font scaling
+    line-height: var(--terra-clinical-result-display-unit-line-height, 1.28571);
+    margin-left: var(--terra-clinical-result-display-unit-margin-left, 0.375em); // Must use ems for font scaling
+    word-break: break-all;
+
+    &.unit-hidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap; // Ensures words are not read one at a time on screen readers
+      width: 1px;
+    }
+  }
+}

@@ -55,7 +55,7 @@ class HandledOnsetExample extends React.Component {
             'on/at',
           ]}
           onsetDate={this.state.onsetDate}
-          legend="Date of Birth"
+          legend="Date of Onset"
           onsetOnChange={this.handleOnset}
         />
         <button type="submit">Submit</button>

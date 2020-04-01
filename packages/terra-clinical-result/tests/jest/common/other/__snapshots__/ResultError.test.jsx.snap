@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultError should render a default ResultError 1`] = `
+<span
+  className="system-error"
+>
+  <IconError
+    aria-hidden="true"
+    className="icon-error"
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+  Terra.clinicalResult.resultError
+</span>
+`;

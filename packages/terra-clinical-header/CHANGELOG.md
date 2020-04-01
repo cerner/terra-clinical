@@ -4,6 +4,31 @@ ChangeLog
 Unreleased
 ----------
 
+3.15.0 - (March 31, 2020)
+------------------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+3.14.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
+3.13.0 - (February 18, 2020)
+----------
+### Added
+* Added clinical-lowlight-theme theming files
+
+3.12.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+3.11.0 - (January 22, 2020)
+------------------
+### Added
+* Added reference wdio screenshots for "orion-fusion-theme".
+
 3.10.0 - (September 26, 2019)
 ------------------
 ### Changed
