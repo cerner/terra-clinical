@@ -43,6 +43,12 @@ const BadData = {
   interpretation: 'critical',
 };
 
+const EnteredInErrorResult = {
+  ...DefaultResult,
+  interpretation: 'critical',
+  status: 'entered-in-error',
+};
+
 const DefaultSystolicResult = {
   eventId: '111.1',
   result: {
@@ -231,6 +237,38 @@ const abnormalBPResultValue = {
   },
 };
 
+const EnteredInErrorSysBPResult = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    status: 'entered-in-error',
+    interpretation: 'critical',
+    isModified: false,
+    hasComment: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    isModified: false,
+    hasComment: false,
+  },
+};
+
+const EnteredInErrorDiaBPResult = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    isModified: false,
+    hasComment: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    status: 'entered-in-error',
+    interpretation: 'critical',
+    isModified: false,
+    hasComment: false,
+  },
+};
+
 const InterpretationBPResultsArray = [
   mixedBPResultValue,
   criticalBPResultValue,
@@ -245,6 +283,7 @@ export {
   DecoratedResult,
   UnverifiedResult,
   BadData,
+  EnteredInErrorResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
   DefaultBloodPressureResult,
@@ -258,4 +297,6 @@ export {
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
   NoDataResult,
+  EnteredInErrorSysBPResult,
+  EnteredInErrorDiaBPResult,
 };

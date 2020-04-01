@@ -141,12 +141,11 @@ const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretat
   return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
 };
 
-const createStandardResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
+const createStandardResultDisplay = (resultDataItem, isStatusInError, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
   const {
     status,
   } = resultDataItem;
   let resultsInnerDisplay;
-  const isStatusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
   if (isStatusInError) {
     resultsInnerDisplay = <EnteredInError />;
   } else if (numericOverflow) {
@@ -158,17 +157,13 @@ const createStandardResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInter
   return clinicalResultDisplay;
 };
 
-const createBloodPressureResultDisplay = (resultDataItem, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, containerDivRef) => {
+const createBloodPressureResultDisplay = (resultDataItem, isStatusInError, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, containerDivRef) => {
   const {
     systolic,
     diastolic,
   } = resultDataItem;
   let resultsInnerDisplay;
-  const isStatusInError = {
-    systolic: !isEmpty(systolic) ? checkIsStatusInError(systolic.status) : false,
-    diastolic: !isEmpty(diastolic) ? checkIsStatusInError(diastolic.status) : false,
-  };
-  if (isStatusInError.systolic || isStatusInError.diastolic) {
+  if (isStatusInError) {
     resultsInnerDisplay = <EnteredInError />;
   } else {
     resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} systolic={systolic} diastolic={diastolic} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
@@ -210,7 +205,8 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
   return { isSingleResult, isPairedResult };
 };
 
-const AttributesTemplate = (interpretationValue = false, commentBool = false, modifiedBool = false, unverifiedBool = false) => ({
+const AttributesTemplate = (statusInError = false, interpretationValue = false, commentBool = false, modifiedBool = false, unverifiedBool = false) => ({
+  statusInError: statusInError,
   interpretationIcon: !!interpretationValue,
   comment: commentBool,
   modified: modifiedBool,
@@ -219,13 +215,15 @@ const AttributesTemplate = (interpretationValue = false, commentBool = false, mo
 
 const unpackResultAttributes = (resultDataItem) => {
   const {
+    status,
     interpretation,
     hasComment,
     isModified,
     isUnverified,
   } = resultDataItem;
   const itemAttributes = new AttributesTemplate();
-  itemAttributes.interpretationIcon = interpretationsWithIcons.includes(interpretation);
+  itemAttributes.statusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
+  itemAttributes.interpretationIcon = !itemAttributes.statusInError && interpretationsWithIcons.includes(interpretation);
   itemAttributes.comment = hasComment;
   itemAttributes.modified = isModified;
   itemAttributes.unverified = isUnverified;
@@ -248,6 +246,7 @@ const unpackResultDataSet = (resultDataSet) => {
     bpAttribute.systolic = !isEmpty(systolicData) ? unpackResultAttributes(systolicData) : new AttributesTemplate();
     bpAttribute.diastolic = !isEmpty(diastolicData) ? unpackResultAttributes(diastolicData) : new AttributesTemplate();
     firstResultAttributes = new AttributesTemplate(
+      (bpAttribute.systolic.statusInError || bpAttribute.diastolic.statusInError),
       (bpAttribute.systolic.interpretationIcon),
       (bpAttribute.systolic.comment || bpAttribute.diastolic.comment),
       (bpAttribute.systolic.modified || bpAttribute.diastolic.modified),
@@ -278,10 +277,10 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
   if (!isfirstSingleResult && !isfirstPairedResult) {
     compositeCell.push(<ResultError />);
   } else if (isfirstSingleResult) {
-    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef);
+    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.statusInError, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef);
     compositeCell.push(firstResultDisplay);
   } else {
-    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, containerDivRef);
+    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.statusInError, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, containerDivRef);
     compositeCell.push(firstResultDisplay);
   }
   const additionalResultCount = resultDataSet.length - 1;
@@ -291,13 +290,22 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     additionalResultList.forEach((result) => {
       const { isSingleResult, isPairedResult } = checkIfSingleOrPairedResult(result);
       if (isSingleResult) {
-        const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation : null;
-        additionalResultInterpretations.push(resultInterpretation);
+        const isStatusInError = !isEmpty(result.status) ? checkIsStatusInError(result.status) : false;
+        if (!isStatusInError) {
+          const resultInterpretation = !isEmpty(result.interpretation) && !result.isUnverified ? result.interpretation : null;
+          additionalResultInterpretations.push(resultInterpretation);
+        }
       } else if (isPairedResult) {
-        const sysInterpretation = !isEmpty(result.systolic.interpretation) && !result.systolic.isUnverified ? result.systolic.interpretation : null;
-        const diaInterpretation = !isEmpty(result.diastolic.interpretation) && !result.diastolic.isUnverified ? result.diastolic.interpretation : null;
-        additionalResultInterpretations.push(sysInterpretation);
-        additionalResultInterpretations.push(diaInterpretation);
+        const isStatusInError = {
+          systolic: !isEmpty(result.systolic) ? checkIsStatusInError(result.systolic.status) : false,
+          diastolic: !isEmpty(result.diastolic) ? checkIsStatusInError(result.diastolic.status) : false,
+        };
+        if (!isStatusInError.systolic && !isStatusInError.diastolic) {
+          const sysInterpretation = !isEmpty(result.systolic.interpretation) && !result.systolic.isUnverified ? result.systolic.interpretation : null;
+          const diaInterpretation = !isEmpty(result.diastolic.interpretation) && !result.diastolic.isUnverified ? result.diastolic.interpretation : null;
+          additionalResultInterpretations.push(sysInterpretation);
+          additionalResultInterpretations.push(diaInterpretation);
+        }
       }
     });
     const displayCount = additionalResultCount + 1;
