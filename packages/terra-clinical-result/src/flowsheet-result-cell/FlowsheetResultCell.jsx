@@ -142,9 +142,6 @@ const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretat
 };
 
 const createStandardResultDisplay = (resultDataItem, isStatusInError, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
-  const {
-    status,
-  } = resultDataItem;
   let resultsInnerDisplay;
   if (isStatusInError) {
     resultsInnerDisplay = <EnteredInError />;
@@ -206,7 +203,7 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
 };
 
 const AttributesTemplate = (statusInError = false, interpretationValue = false, commentBool = false, modifiedBool = false, unverifiedBool = false) => ({
-  statusInError: statusInError,
+  statusInError,
   interpretationIcon: !!interpretationValue,
   comment: commentBool,
   modified: modifiedBool,
