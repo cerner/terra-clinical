@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated wdio snapshots.
 
 3.15.0 - (March 31, 2020)
 ------------------
