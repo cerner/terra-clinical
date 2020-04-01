@@ -3,7 +3,7 @@ ChangeLog
 
 Unreleased
 ----------
-### Breeaking
+### Breaking
 * Changed the text style to primary by default and updated Jest snapshots.
 
 3.14.0 - (March 31, 2020)

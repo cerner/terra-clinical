@@ -3,7 +3,6 @@ import ItemDisplay from 'terra-clinical-item-display';
 
 const component = () => (
   <React.Fragment>
-    <ItemDisplay text="Default" isDisabled />
     <ItemDisplay text="Primary" textStyle="primary" isDisabled />
     <ItemDisplay text="Strong" textStyle="strong" isDisabled />
     <ItemDisplay text="Attention" textStyle="attention" isDisabled />
