@@ -4,7 +4,7 @@ import DefaultResult, {
   DefaultBloodPressureResult,
   EnteredInErrorResult,
   EnteredInErrorSysBPResult,
-  EnteredInErrorDiaBPResult
+  EnteredInErrorDiaBPResult,
 } from '../TestResults';
 
 const results1 = [
