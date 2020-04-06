@@ -141,31 +141,31 @@ const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretat
   return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
 };
 
-const createStandardResultDisplay = (resultDataItem, isStatusInError, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
+const createStandardResultDisplay = (resultDataItem, resultAttributes, hideUnit, resultKeyID, numericOverflow, containerDivRef) => {
   let resultsInnerDisplay;
-  if (isStatusInError) {
+  if (resultAttributes.statusInError) {
     resultsInnerDisplay = <EnteredInError />;
   } else if (numericOverflow) {
     resultsInnerDisplay = <NumericOverflow />;
   } else {
-    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} {...resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={hasUnverifiedIcon} hideAccessoryDisplays />;
+    resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} {...resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={resultAttributes.unverified} hideAccessoryDisplays />;
   }
-  const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
+  const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, resultAttributes.unverified, resultAttributes.interpretationIcon, containerDivRef, resultKeyID);
   return clinicalResultDisplay;
 };
 
-const createBloodPressureResultDisplay = (resultDataItem, isStatusInError, hasUnverifiedIcon, hasInterpretationIcon, hideUnit, resultKeyID, containerDivRef) => {
+const createBloodPressureResultDisplay = (resultDataItem, resultAttributes, hideUnit, resultKeyID, containerDivRef) => {
   const {
     systolic,
     diastolic,
   } = resultDataItem;
   let resultsInnerDisplay;
-  if (isStatusInError) {
+  if (resultAttributes.statusInError) {
     resultsInnerDisplay = <EnteredInError />;
   } else {
     resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} systolic={systolic} diastolic={diastolic} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
   }
-  const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, hasUnverifiedIcon, hasInterpretationIcon, containerDivRef, resultKeyID);
+  const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, resultAttributes.unverified, resultAttributes.interpretationIcon, containerDivRef, resultKeyID);
   return clinicalResultDisplay;
 };
 
@@ -274,10 +274,10 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
   if (!isfirstSingleResult && !isfirstPairedResult) {
     compositeCell.push(<ResultError />);
   } else if (isfirstSingleResult) {
-    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.statusInError, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef);
+    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes, hideUnit, resultKeyID, numericOverflow, containerDivRef);
     compositeCell.push(firstResultDisplay);
   } else {
-    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.statusInError, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, containerDivRef);
+    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes, hideUnit, resultKeyID, containerDivRef);
     compositeCell.push(firstResultDisplay);
   }
   const additionalResultCount = resultDataSet.length - 1;
