@@ -47,7 +47,7 @@ const defaultProps = {
 const Header = ({
   children, title, startContent, endContent, isSubheader, ...customProps
 }) => {
-  const theme = useContext(ThemeContext) || {};
+  const theme = useContext(ThemeContext);
 
   let titleElement;
   if (title) {
