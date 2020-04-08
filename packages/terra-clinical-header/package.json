@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git",
-    "dir": "packages/terra-clinical-header"
+    "directory": "packages/terra-clinical-header"
   },
   "keywords": [
     "Cerner",
