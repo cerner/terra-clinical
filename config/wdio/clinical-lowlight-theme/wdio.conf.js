@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const defaultConfig = require('terra-toolkit/config/wdio/wdio.conf');
 
 // Disabling color contrast rule for clinical-lowlight-theme. May not be addressed, since these rules
