@@ -6,7 +6,7 @@ Unreleased
 ### Added
 * Added orion-fusion-theme style values
 
-### Changes
+### Changed
 * Updated default theme styles to match terra-action-header
 
 3.15.0 - (March 31, 2020)
