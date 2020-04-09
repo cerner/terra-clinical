@@ -85,9 +85,9 @@
     "start-static": "npm run compile:prod && tt-serve-static --site ./build",
     "test": "npm run jest && npm run wdio",
     "update-package-readme": "node scripts/root-readme-updater/index.js",
-    "wdio-default": "wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
-    "wdio-lowlight": "THEME=clinical-lowlight-theme wdio config/wdio/clinical-lowlight-theme/wdio.conf.js",
-    "wdio-fusion": "THEME=orion-fusion-theme wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js",
+    "wdio-default": "wdio",
+    "wdio-lowlight": "THEME=clinical-lowlight-theme wdio",
+    "wdio-fusion": "THEME=orion-fusion-theme wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   },
   "devDependencies": {
