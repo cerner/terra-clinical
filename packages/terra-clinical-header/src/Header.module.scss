@@ -4,7 +4,7 @@
 
 :local {
   .flex-header {
-    align-items: var(--terra-clinical-header-align-items, flex-start);
+    align-items: center;
     background-color: var(--terra-clinical-header-background-color, #f9f9f9);
     border-bottom: var(--terra-clinical-header-border-bottom, 1px solid #d3d4d5);
     color: var(--terra-clinical-header-color);
@@ -16,7 +16,6 @@
     width: 100%;
 
     .flex-collapse {
-      align-self: var(--terra-clinical-header-flex-collapse-align-self);
       display: flex;
       flex: 0 0 auto;
       height: 100%;
@@ -33,7 +32,6 @@
   }
 
   .flex-fill {
-    align-self: center;
     flex: 1 1 auto;
     position: relative;
     width: 100%;
