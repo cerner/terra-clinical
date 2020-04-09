@@ -7,6 +7,7 @@ Unreleased
 * Added orion-fusion-theme style values
 
 ### Changed
+* Update wdio test configuration to use root wdio config
 * Updated default theme styles to match terra-action-header
 
 3.15.0 - (March 31, 2020)
