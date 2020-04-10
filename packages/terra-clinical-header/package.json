@@ -5,7 +5,8 @@
   "description": "A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. ",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-clinical.git"
+    "url": "git+https://github.com/cerner/terra-clinical.git",
+    "directory": "packages/terra-clinical-header"
   },
   "keywords": [
     "Cerner",
@@ -28,7 +29,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-button": "^3.0.0"
+    "terra-button": "^3.0.0",
+    "terra-theme-context": "^1.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
