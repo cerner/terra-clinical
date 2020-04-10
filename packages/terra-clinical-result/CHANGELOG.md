@@ -7,6 +7,9 @@ Unreleased
 * Fixed an issue with FlowsheetResultCell where status 'entered in error' and interpretations caused error text to be improperly aligned.
 * Fixed an issue with FlowsheetResultCell where status 'entered in error' and interpretations in an extra result caused the multiple result icon to still show interpretation color.
 
+### Changed
+* Update wdio test configuration to use root wdio config
+
 1.3.0 - (March 27, 2020)
 ----------
 ### Fixed
