@@ -140,7 +140,7 @@ describe('FlowsheetResultCell', () => {
     expect(cell).toMatchSnapshot();
   });
 
-  it('should render a multiple result stack icon that ignores interpretation due to status', () => {
+  it('should render the extra results icon with no regard to an entered in error result\'s interpretation.', () => {
     const results = [
       DefaultResult,
       {
@@ -159,7 +159,7 @@ describe('FlowsheetResultCell', () => {
       DefaultBloodPressureResult,
     ];
     const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
-    expect(cell).toMatchSnapshot();
+    expect(cell.find('.additional-end-display').hasClass('interpretation-critical')).toBe(false);
   });
 
   it('should render blood pressure correctly with an interpretation and unverified result', () => {

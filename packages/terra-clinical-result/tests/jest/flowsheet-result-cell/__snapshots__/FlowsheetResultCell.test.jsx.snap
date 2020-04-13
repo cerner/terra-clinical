@@ -231,50 +231,6 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
 </div>
 `;
 
-exports[`FlowsheetResultCell should render a multiple result stack icon that ignores interpretation due to status 1`] = `
-<div
-  className="flowsheet-result-cell padding-compact"
->
-  <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <InjectIntl(ClinicalResult)
-      eventId="111"
-      hideAccessoryDisplays={true}
-      hideUnit={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
-  >
-    <div
-      className="additional-results-stack"
-    >
-      <span
-        className="additional-results-value"
-      >
-        3
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        3
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
 <FlowsheetResultCell
   intl={
