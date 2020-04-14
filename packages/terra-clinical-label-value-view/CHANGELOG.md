@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update wdio test configuration to use root wdio config
 
 3.17.0 - (March 31, 2020)
 ------------------

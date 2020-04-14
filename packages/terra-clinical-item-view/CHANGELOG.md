@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Updated wdio snapshots.
+* Update wdio test configuration to use root wdio config
 
 3.15.0 - (March 31, 2020)
 ------------------

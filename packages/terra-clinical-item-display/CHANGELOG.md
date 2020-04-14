@@ -6,6 +6,9 @@ Unreleased
 ### Breaking
 * Changed the text style to primary by default and updated Jest snapshots.
 
+### Changed
+* Update wdio test configuration to use root wdio config
+
 3.14.0 - (March 31, 2020)
 ------------------
 ### Added

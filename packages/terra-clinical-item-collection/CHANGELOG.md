@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Jest and wdio snapshot updated for ItemDisplay's primary textStyle default prop.
+* Update wdio test configuration to use root wdio config
 
 4.18.0 - (March 31, 2020)
 ------------------
