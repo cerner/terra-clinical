@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Set `aria-disabled` for a disabled item display to fix color-contrast axe failure.
 
 3.15.0 - (April 14, 2020)
 ----------

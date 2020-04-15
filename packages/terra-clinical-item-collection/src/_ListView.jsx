@@ -37,15 +37,21 @@ function createListItems(children, onSelect, requiredElements) {
 }
 
 const ListView = ({
-  children, onSelect, isListDivided, requiredElements,
+  children, onSelect, isListDivided, requiredElements, ...customProps
 }) => {
   const hasSelectableChild = React.Children.toArray(children).some(child => child.props.isSelectable);
 
   const listItems = createListItems(children, onSelect, requiredElements);
   const roleSpread = hasSelectableChild ? { role: 'listbox' } : {};
+  const ariaLabel = customProps['aria-label'];
 
   return (
-    <List data-terra-clinical-item-collection-list-view dividerStyle={isListDivided ? 'standard' : 'none'} {...roleSpread}>
+    <List
+      data-terra-clinical-item-collection-list-view
+      dividerStyle={isListDivided ? 'standard' : 'none'}
+      aria-label={ariaLabel}
+      {...roleSpread}
+    >
       {listItems}
     </List>
   );

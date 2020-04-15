@@ -20,6 +20,7 @@ const PaddedTable = () => (
     hasComment
     hasEndAccessory
     isTablePadded
+    aria-label="Padded Table"
   >
     {defaultItem}
     {defaultItem}
@@ -34,6 +35,7 @@ const StrippedTable = () => (
     hasComment
     hasEndAccessory
     isTableStriped
+    aria-label="Stripped Table"
   >
     {defaultItem}
     {defaultItem}

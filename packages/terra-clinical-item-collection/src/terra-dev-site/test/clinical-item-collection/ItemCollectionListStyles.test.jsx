@@ -20,6 +20,7 @@ const DividedList = () => (
     hasComment
     hasEndAccessory
     isListDivided
+    aria-label="Item Collection"
   >
     {defaultItem}
     {defaultItem}

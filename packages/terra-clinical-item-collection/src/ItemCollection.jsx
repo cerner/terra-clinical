@@ -93,6 +93,7 @@ const ItemCollection = (props) => {
     ...customProps
   } = props;
 
+  const ariaLabel = customProps['aria-label'];
   const displaysRequired = (numberOfDisplays < maxDisplays) ? numberOfDisplays : maxDisplays;
   const requiredElements = {
     hasStartAccessory,
@@ -106,6 +107,7 @@ const ItemCollection = (props) => {
       requiredElements={requiredElements}
       onSelect={onSelect}
       isListDivided={isListDivided}
+      aria-label={ariaLabel}
     >
       {children}
     </ListView>
