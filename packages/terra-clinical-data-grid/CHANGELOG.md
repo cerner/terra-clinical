@@ -4,6 +4,31 @@ Changelog
 Unreleased
 ----------
 
+2.22.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+2.21.0 - (March 31, 2020)
+----------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+2.20.0 - (March 27, 2020)
+----------
+### Changed
+* Minor dependency updates
+
+2.19.0 - (March 24, 2020)
+----------
+### Changed
+* Minor dependency updates
+
+2.18.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
 2.17.0 - (February 18, 2020)
 ----------
 ### Added
@@ -15,23 +40,23 @@ Unreleased
 * Update copyright to include 2020
 
 2.15.0 - (January 22, 2020)
-------------------
+----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 2.14.0 - (January 17, 2020)
-------------------
+----------
 ### Added
 * Added `verticalOverflowContainerRefCallback` prop to pass callback ref to `vertical-overflow-container`.
 * Added `horizontalOverflowContainerRefCallback` prop to pass callback ref to `horizontal-overflow-container`.
 
 2.13.0 - (December 10, 2019)
-------------------
+----------
 ### Changed
 * Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
 
 2.12.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -138,17 +163,17 @@ Unreleased
 * Changelog dev site doc page
 
 1.2.0 - (January 2, 2019)
------------------
+----------
 ### Fixed
 * Fixed paging logic when rows are being removed from the DataGrid
 
 1.1.0 - (November 21, 2018)
------------------
+----------
 ### Changed
 * Updated row striping logic to be more consistent on a per-section basis
 * Removed unnecessary logic when `fill` prop is not provided
 * Added checkmark icons to row selection column
 
 1.0.0 - (October 16, 2018)
------------------
+----------
 Initial stable release

@@ -6,7 +6,6 @@
     display: flex;
     margin: 0;
     max-width: 100%;  // Needed for IE10 truncation
-    overflow: hidden; // Needed for IE10
     padding: 0;
     width: 100%;
   }
@@ -14,7 +13,7 @@
   .primary-display {
     align-items: center;
     display: flex;
-    flex-grow: 1;
+    flex: 1 1 100%;
     height: 1.78571em;
     margin: 0;
     margin-left: var(--terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left, 1.1875em); // Must use ems for font scaling

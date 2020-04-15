@@ -1,4 +1,25 @@
 :local {
+  .clinical-result {
+    max-width: 100%;  // Needed for IE10 truncation
+    overflow: hidden;
+  }
+
+  .truncated {
+    .decorated-result-display {
+      flex-wrap: nowrap;
+    }
+
+    .concept-display,
+    .datetime-display {
+      max-width: 100%;  // Needed for IE10 truncation
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-break: normal;
+      word-wrap: normal;
+    }
+  }
+
   .decorated-result-display {
     align-items: baseline;
     display: flex;
@@ -16,6 +37,7 @@
       flex-wrap: nowrap;
 
       .result-display {
+        max-width: 100%;  // Needed for IE10 truncation
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

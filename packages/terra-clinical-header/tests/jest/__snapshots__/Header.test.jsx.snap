@@ -100,7 +100,7 @@ exports[`should render a header with title only 1`] = `
 
 exports[`should render a subheader with all content 1`] = `
 <header
-  class="flex-subheader"
+  class="flex-header subheader"
 >
   <div
     class="flex-end"
@@ -134,7 +134,7 @@ exports[`should render a subheader with all content 1`] = `
 
 exports[`should render a subheader with title only 1`] = `
 <header
-  class="flex-subheader"
+  class="flex-header subheader"
 >
   <div
     class="flex-fill"

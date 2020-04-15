@@ -43,4 +43,12 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
     browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/numeric-overflow-flowsheet-result-cell');
     Terra.it.validatesElement();
   });
+
+  describe('truncation', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/truncated-flowsheet-result-cell');
+    });
+
+    Terra.it.validatesElement();
+  });
 });

@@ -60,6 +60,16 @@ const defaultProps = {
   paddingStyle: 'compact',
 };
 
+const interpretationsWithIcons = [
+  'critical',
+  'critical-high',
+  'critical-low',
+  'positive',
+  'abnormal',
+  'high',
+  'low',
+];
+
 const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID) => {
   if (!hasCommentIcon && !hasModifiedIcon && !hasUnverifiedIcon) {
     return null;
@@ -201,7 +211,7 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
 };
 
 const AttributesTemplate = (interpretationValue = false, commentBool = false, modifiedBool = false, unverifiedBool = false) => ({
-  interpretation: !!(interpretationValue),
+  interpretationIcon: !!interpretationValue,
   comment: commentBool,
   modified: modifiedBool,
   unverified: unverifiedBool,
@@ -215,7 +225,7 @@ const unpackResultAttributes = (resultDataItem) => {
     isUnverified,
   } = resultDataItem;
   const itemAttributes = new AttributesTemplate();
-  itemAttributes.interpretation = interpretation;
+  itemAttributes.interpretationIcon = interpretationsWithIcons.includes(interpretation);
   itemAttributes.comment = hasComment;
   itemAttributes.modified = isModified;
   itemAttributes.unverified = isUnverified;
@@ -238,7 +248,7 @@ const unpackResultDataSet = (resultDataSet) => {
     bpAttribute.systolic = !isEmpty(systolicData) ? unpackResultAttributes(systolicData) : new AttributesTemplate();
     bpAttribute.diastolic = !isEmpty(diastolicData) ? unpackResultAttributes(diastolicData) : new AttributesTemplate();
     firstResultAttributes = new AttributesTemplate(
-      (bpAttribute.systolic.interpretation),
+      (bpAttribute.systolic.interpretationIcon),
       (bpAttribute.systolic.comment || bpAttribute.diastolic.comment),
       (bpAttribute.systolic.modified || bpAttribute.diastolic.modified),
       (bpAttribute.systolic.unverified || bpAttribute.diastolic.unverified),
@@ -268,10 +278,10 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
   if (!isfirstSingleResult && !isfirstPairedResult) {
     compositeCell.push(<ResultError />);
   } else if (isfirstSingleResult) {
-    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, numericOverflow, containerDivRef);
+    const firstResultDisplay = createStandardResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, numericOverflow, containerDivRef);
     compositeCell.push(firstResultDisplay);
   } else {
-    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretation, hideUnit, resultKeyID, containerDivRef);
+    const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes.unverified, firstResultAttributes.interpretationIcon, hideUnit, resultKeyID, containerDivRef);
     compositeCell.push(firstResultDisplay);
   }
   const additionalResultCount = resultDataSet.length - 1;

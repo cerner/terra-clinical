@@ -4,6 +4,25 @@ ChangeLog
 Unreleased
 ----------
 
+3.16.0 - (April 14, 2020)
+----------
+### Added
+* Added orion-fusion-theme style values
+
+### Changed
+* Update wdio test configuration to use root wdio config
+* Updated default theme styles to match terra-action-header
+
+3.15.0 - (March 31, 2020)
+----------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+3.14.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
 3.13.0 - (February 18, 2020)
 ----------
 ### Added
@@ -15,12 +34,12 @@ Unreleased
 * Update copyright to include 2020
 
 3.11.0 - (January 22, 2020)
-------------------
+----------
 ### Added
 * Added reference wdio screenshots for "orion-fusion-theme".
 
 3.10.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -181,29 +200,29 @@ Unreleased
 * Minor dependency updates
 
 1.7.0 - (November 29, 2017)
------------------
+----------
 ### Added
 * Collapsible Content Section to enable use of CollapsibleMenuView
 
 1.6.0 - (November 15, 2017)
------------------
+----------
 ### Changed
 * Update flex-end styling
 
 1.5.0 - (September 26, 2017)
------------------
+----------
 ### Changed
 * Remove stylelint-disable selector-class-pattern
 * Update class names to follow selector-class-pattern
 
 1.4.0 - (September 1, 2017)
------------------
+----------
 ### Changed
 * Change dependency on terra-base to v2.0.0
 * Update nightwatch tests and test scripts.
 
 1.3.0 - (August 22, 2017)
------------------
+----------
 ### Fixed
 * End aligned items with no title.
 
@@ -211,16 +230,16 @@ Unreleased
 * isSubheader boolean prop to allow rendering of subheader component
 
 1.2.0 - (August 16, 2017)
------------------
+----------
 ### Fixed
 * Text Truncation in IE10 and IE11.
 
 1.1.1 - (July 27, 2017)
------------------
+----------
 * Updated spacing around react-docgen comments
 
 1.1.0 - (July 18, 2017)
------------------
+----------
 ### Changed
 * Converted component to use CSS modules
 * Updated nightwatch test scripts
@@ -229,5 +248,5 @@ Unreleased
 * Removed nightwatch.config file
 
 1.0.0 - (June 28, 2017)
------------------
+----------
 Initial stable release

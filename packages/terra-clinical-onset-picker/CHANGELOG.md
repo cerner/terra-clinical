@@ -4,6 +4,21 @@ ChangeLog
 Unreleased
 ----------
 
+4.19.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+4.18.0 - (March 31, 2020)
+----------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+4.17.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use mdx syntax.
+
 4.16.0 - (February 18, 2020)
 ----------
 ### Added
@@ -24,12 +39,12 @@ Unreleased
 * Update copyright to include 2020
 
 4.13.0 - (January 22, 2020)
-------------------
+----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 4.12.0 - (January 7, 2020)
-------------------
+----------
 ### Added
 * Add upgrade guides to dev-site docs
 
@@ -37,23 +52,23 @@ Unreleased
 * Fixed `age-field` misalignment in IE.
 
 4.11.0 - (December 10, 2019)
-------------------
+----------
 ### Changed
 * Increased `min-width` of year dropdown to fit values and scrollbar.
 * Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
 
 4.10.0 - (November 7, 2019)
-------------------
+----------
 ### Fixed
 * Removed age granularity from being populated for age less than a week.
 
 4.9.0 - (October 3, 2019)
-------------------
+----------
 ### Fixed
 * Unknown precision fixed to return blank onset date value.
 
 4.8.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 

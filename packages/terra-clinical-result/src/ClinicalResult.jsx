@@ -122,7 +122,10 @@ const ClinicalResult = (props) => {
     );
   }
 
-  const clinicalResultClassnames = cx('clinical-result');
+  const clinicalResultClassnames = cx([
+    'clinical-result',
+    { truncated: isTruncated },
+  ]);
 
   return (
     <div

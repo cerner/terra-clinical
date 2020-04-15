@@ -2,7 +2,28 @@ ChangeLog
 =========
 
 Unreleased
------------------
+----------
+
+1.4.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+1.3.0 - (March 27, 2020)
+----------
+### Fixed
+* Fixed alpha truncation issue with FlowsheetResultCell
+* Fixed misnamed class in ClinicalResultBloodPresure
+* Fixed extra display truncation issue in ClinicalResult and ClinicalResultBloodPresure
+
+### Changed
+* Update docs to use mdx syntax.
+
+1.2.0 - (March 17, 2020)
+----------
+### Fixed
+* Fixed an alignment issue with FlowsheetResultCell that caused normal interpretation results to be aligned to the left.
+
 1.1.0 - (March 10, 2020)
 ----------
 ### Fixed
