@@ -3,6 +3,23 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Changed the description of 'resultNoData' prop for observation prop types
+* Changed ClinicalResultBloodPresure to return early if result has an Error or doesn't have data
+
+### Added
+* Added to interpretation Bloodpressure test
+* Added single result bloodpressure test
+* Added Result hasError test
+* Added Result hasNoData test
+* Added Decorated Flowsheet test
+* Added Flowsheet hasError test
+* Added Flowsheet hasNoData test
+* Added Flowsheet numericOverflow test
+
+### Removed
+* Removed unused test data
+* Removed default empty object prop from ClinicalResult and Observation.
 
 1.4.0 - (April 14, 2020)
 ----------
