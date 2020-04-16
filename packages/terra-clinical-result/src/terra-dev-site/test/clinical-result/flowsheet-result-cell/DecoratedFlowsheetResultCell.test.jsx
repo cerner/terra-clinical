@@ -1,6 +1,11 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import DefaultResult, { DecoratedResult, DefaultBloodPressureResult, DecoratedBloodPressureResult1, DecoratedBloodPressureResult2 } from '../TestResults';
+import DefaultResult, {
+  DecoratedResult,
+  DefaultBloodPressureResult,
+  DecoratedBloodPressureResult1,
+  DecoratedBloodPressureResult2
+} from '../TestResults';
 
 const results1 = [
   DecoratedResult,

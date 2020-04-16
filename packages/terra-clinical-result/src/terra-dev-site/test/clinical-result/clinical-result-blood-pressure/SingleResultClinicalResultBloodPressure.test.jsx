@@ -1,6 +1,12 @@
 import React from 'react';
 import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
-import { DefaultSystolicResult, DefaultDiastolicResult, NoDataResult, DefaultBloodPressureSystolicResultWithNoId, DefaultBloodPressureDiastolicResultWithNoId } from '../TestResults';
+import {
+  DefaultSystolicResult,
+  DefaultDiastolicResult,
+  NoDataResult,
+  DefaultBloodPressureSystolicResultWithNoId,
+  DefaultBloodPressureDiastolicResultWithNoId
+} from '../TestResults';
 
 const noDataDiastolic = {
   systolic: {
