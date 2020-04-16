@@ -120,8 +120,10 @@ const ClinicalResultBloodPressure = (props) => {
   let clinicalResultBloodPressureDisplay = null;
 
   if (hasResultError) {
+    return <ResultError />;
     clinicalResultBloodPressureDisplay = <ResultError />;
   } else if (hasResultNoData) {
+    return <NoData />;
     clinicalResultBloodPressureDisplay = <NoData />;
   } else {
     const compareUnits = {};

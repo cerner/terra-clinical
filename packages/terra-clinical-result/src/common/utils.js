@@ -35,14 +35,6 @@ const checkTypeNumeric = (resultData) => {
  */
 const ConditionalWrapper = ({ condition, wrapper, children }) => (condition ? wrapper(children) : children);
 
-const ClinicalResultUtils = {
-  isEmpty,
-  checkIsStatusInError,
-  checkTypeNumeric,
-  ConditionalWrapper,
-};
-
-export default ClinicalResultUtils;
 export {
   isEmpty,
   checkIsStatusInError,
