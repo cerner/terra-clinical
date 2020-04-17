@@ -3,21 +3,24 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.16.0 - (April 14, 2020)
+----------
 ### Changed
 * Update wdio test configuration to use root wdio config
 
 3.15.0 - (March 31, 2020)
-------------------
+----------
 ### Added
 * Added wdio screenshots for clinical-lowlight-theme
 
 3.14.0 - (March 27, 2020)
-------------------
+----------
 ### Changed
 * Update docs to use mdx syntax.
 
 3.13.0 - (March 24, 2020)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -32,12 +35,12 @@ Unreleased
 * Update copyright to include 2020
 
 3.10.0 - (January 22, 2020)
-------------------
+----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 3.9.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -204,12 +207,12 @@ Unreleased
 * Minor dependency updates
 
 1.6.0 - (January 23, 2018)
------------------
+----------
 ### Changed
 * Coverted ItemView to be a functional component, removing static methods.
 
 1.5.0 - (November 28, 2017)
------------------
+----------
 ### Added
 * Added reserveStartAccessorySpace to allow for proper spacing when a start accessory is not provided.
 
@@ -219,19 +222,19 @@ Unreleased
 * startAccessory, comment and endAccessory props now accept node proptypes.
 
 1.4.0 - (September 26, 2017)
------------------
+----------
 ### Changed
 * Remove stylelint-disable selector-class-pattern
 * Update class names to follow selector-class-pattern
 
 1.3.0 - (September 1, 2017)
------------------
+----------
 ### Changed
 * Change dependency on terra-base to v2.0.0
 * Update nightwatch tests and test scripts.
 
 1.2.0 - (July 27, 2017)
------------------
+----------
 ### Fixed
 * Fixed accessory styling to scale with font size.
 * Fixed truncation styling to correctly apply an ellipse.
@@ -240,7 +243,7 @@ Unreleased
 * Updated Accessory nightwatch examples to include an icon.
 
 1.1.0 - (July 18, 2017)
------------------
+----------
 ### Changed
 * Converted component to use CSS modules
 * Updated nightwatch test scripts
@@ -249,5 +252,5 @@ Unreleased
 * Removed nightwatch.config file
 
 1.0.0 - (June 28, 2017)
------------------
+----------
 Initial stable release
