@@ -5,7 +5,7 @@ import {
   DefaultDiastolicResult,
   NoDataResult,
   DefaultBloodPressureSystolicResultWithNoId,
-  DefaultBloodPressureDiastolicResultWithNoId
+  DefaultBloodPressureDiastolicResultWithNoId,
 } from '../TestResults';
 
 const noDataDiastolic = {

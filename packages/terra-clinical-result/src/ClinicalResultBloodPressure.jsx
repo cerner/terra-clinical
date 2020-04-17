@@ -124,7 +124,7 @@ const ClinicalResultBloodPressure = (props) => {
   }
   if (hasResultNoData) {
     return <NoData />;
-  } 
+  }
   const compareUnits = {};
   const compareStatusIsInError = {};
 

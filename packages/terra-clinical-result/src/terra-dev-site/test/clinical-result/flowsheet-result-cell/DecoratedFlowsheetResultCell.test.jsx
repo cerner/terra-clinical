@@ -4,7 +4,7 @@ import DefaultResult, {
   DecoratedResult,
   DefaultBloodPressureResult,
   DecoratedBloodPressureResult1,
-  DecoratedBloodPressureResult2
+  DecoratedBloodPressureResult2,
 } from '../TestResults';
 
 const results1 = [
