@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Added
+* Backfilled missing lowlight theme vars
+
 ### Fixed
 * Fix terra-clinical-header-border-bottom theme name for low-light
 * Fix start and end content flex alignment
