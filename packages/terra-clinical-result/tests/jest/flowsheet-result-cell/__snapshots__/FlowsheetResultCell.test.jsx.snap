@@ -204,7 +204,7 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display interpretation"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(EnteredInError) />
@@ -355,7 +355,7 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display interpretation"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(EnteredInError) />
@@ -447,7 +447,7 @@ exports[`FlowsheetResultCell should render systolic entered-in-error status bloo
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display interpretation"
+    className="primary-display"
     key="ClinicalResultDisplay-111"
   >
     <InjectIntl(EnteredInError) />
