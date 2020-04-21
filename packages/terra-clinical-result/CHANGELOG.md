@@ -2,7 +2,10 @@ ChangeLog
 =========
 
 Unreleased
-----------
+-----------------
+### Fixed
+* Fixed an issue with FlowsheetResultCell where status 'entered in error' and interpretations caused error text to be improperly aligned.
+* Fixed an issue with FlowsheetResultCell where status 'entered in error' and interpretations in an extra result caused the multiple result icon to still show interpretation color.
 
 1.4.0 - (April 14, 2020)
 ----------
