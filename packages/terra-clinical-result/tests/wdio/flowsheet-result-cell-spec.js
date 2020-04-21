@@ -54,4 +54,12 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('entered in error', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/entered-in-error-flowsheet-result-cell');
+    });
+
+    Terra.it.validatesElement();
+  });
 });
