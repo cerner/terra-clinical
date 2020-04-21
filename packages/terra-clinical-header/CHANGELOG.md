@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Fix terra-clinical-header-border-bottom theme name for low-light
 
 3.16.0 - (April 14, 2020)
 ----------
