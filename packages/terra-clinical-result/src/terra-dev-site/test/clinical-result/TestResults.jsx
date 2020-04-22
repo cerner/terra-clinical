@@ -43,6 +43,12 @@ const BadData = {
   interpretation: 'critical',
 };
 
+const EnteredInErrorResult = {
+  ...DefaultResult,
+  interpretation: 'critical',
+  status: 'entered-in-error',
+};
+
 const DefaultSystolicResult = {
   eventId: '111.1',
   result: {
@@ -189,6 +195,7 @@ export {
   DecoratedResult,
   UnverifiedResult,
   BadData,
+  EnteredInErrorResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
   DefaultResultWithNoEventId,
@@ -202,4 +209,6 @@ export {
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
   NoDataResult,
+  EnteredInErrorSysBPResult,
+  EnteredInErrorDiaBPResult,
 };

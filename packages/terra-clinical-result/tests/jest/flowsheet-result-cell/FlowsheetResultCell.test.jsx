@@ -140,6 +140,28 @@ describe('FlowsheetResultCell', () => {
     expect(cell).toMatchSnapshot();
   });
 
+  it('should render the extra results icon with no regard to an entered in error result\'s interpretation.', () => {
+    const results = [
+      DefaultResult,
+      {
+        id: '111',
+        systolic: {
+          ...DefaultSystolicResult,
+          status: 'entered-in-error',
+          interpretation: 'critical',
+        },
+        diastolic: {
+          ...DefaultDiastolicResult,
+          status: 'entered-in-error',
+          interpretation: 'critical',
+        },
+      },
+      DefaultBloodPressureResult,
+    ];
+    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    expect(cell.find('.additional-end-display').hasClass('interpretation-critical')).toBe(false);
+  });
+
   it('should render blood pressure correctly with an interpretation and unverified result', () => {
     const results = [
       {
