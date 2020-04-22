@@ -209,6 +209,4 @@ export {
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
   NoDataResult,
-  EnteredInErrorSysBPResult,
-  EnteredInErrorDiaBPResult,
 };
