@@ -3,8 +3,13 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed
+### Added
+* Backfilled missing lowlight theme vars
+
+### Fixed
 * Fix terra-clinical-header-border-bottom theme name for low-light
+* Fix start and end content flex alignment
+* Fix left margin style
 
 3.16.0 - (April 14, 2020)
 ----------
