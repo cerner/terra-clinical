@@ -32,7 +32,7 @@ This example it set up to be a single-selection example, however the Item Collec
           hasComment
           hasEndAccessory
           breakpoint="medium"
-          aria-label="Item Collection"
+          ariaLabel="Item Collection"
         >
           <ItemCollection.Item
             id="item1"

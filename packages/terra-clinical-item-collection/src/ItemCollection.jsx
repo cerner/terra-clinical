@@ -19,6 +19,10 @@ const Breakpoints = {
 
 const propTypes = {
   /**
+   * The string that labels the List/Table for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * The breakpoint to switch from a table view to a list view.
    * Breakpoint options are `tiny`, `small`, `medium`, `large`, or `huge`.
    */
@@ -67,6 +71,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  ariaLabel: undefined,
   breakpoint: Breakpoints.SMALL,
   hasStartAccessory: false,
   numberOfDisplays: 0,
@@ -80,6 +85,7 @@ const defaultProps = {
 
 const ItemCollection = (props) => {
   const {
+    ariaLabel,
     children,
     breakpoint,
     onSelect,
@@ -93,7 +99,6 @@ const ItemCollection = (props) => {
     ...customProps
   } = props;
 
-  const ariaLabel = customProps['aria-label'];
   const displaysRequired = (numberOfDisplays < maxDisplays) ? numberOfDisplays : maxDisplays;
   const requiredElements = {
     hasStartAccessory,
@@ -107,7 +112,7 @@ const ItemCollection = (props) => {
       requiredElements={requiredElements}
       onSelect={onSelect}
       isListDivided={isListDivided}
-      aria-label={ariaLabel}
+      ariaLabel={ariaLabel}
     >
       {children}
     </ListView>
@@ -119,6 +124,7 @@ const ItemCollection = (props) => {
       onSelect={onSelect}
       isTablePadded={isTablePadded}
       isTableStriped={isTableStriped}
+      ariaLabel={ariaLabel}
     >
       {children}
     </TableView>

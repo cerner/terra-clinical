@@ -38,7 +38,7 @@ const LayoutDisplay = () => (
     hasComment
     hasEndAccessory
     isTablePadded
-    aria-label="Layout Display"
+    ariaLabel="Layout Display"
   >
     {oneColumnItem}
     {twoColumnItem}
@@ -52,7 +52,7 @@ const AlignmentDisplay = () => (
     hasComment
     hasEndAccessory
     isTablePadded
-    aria-label="Alignment Display"
+    ariaLabel="Alignment Display"
   >
     <ItemCollection.Item
       startAccessory="S"

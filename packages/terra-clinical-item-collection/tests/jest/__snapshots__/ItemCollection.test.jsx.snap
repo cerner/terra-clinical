@@ -445,14 +445,13 @@ exports[`should render an ItemCollection with an end accessory 1`] = `
 
 exports[`should render an ItemCollection with custom props 1`] = `
 <div
-  aria-label="Item Collection"
   className="bar"
   id="foo"
 >
   <ResponsiveElement
     defaultElement={
       <ListView
-        aria-label="Item Collection"
+        ariaLabel="Item Collection"
         isListDivided={false}
         onSelect={[Function]}
         requiredElements={
@@ -504,6 +503,7 @@ exports[`should render an ItemCollection with custom props 1`] = `
     responsiveTo="parent"
     small={
       <TableView
+        ariaLabel="Item Collection"
         isTablePadded={false}
         isTableStriped={false}
         onSelect={[Function]}

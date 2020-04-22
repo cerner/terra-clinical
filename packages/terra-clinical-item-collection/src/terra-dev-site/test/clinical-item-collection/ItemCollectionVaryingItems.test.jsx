@@ -10,7 +10,7 @@ const DefaultItemCollection = () => (
     hasComment
     hasEndAccessory
     breakpoint="small"
-    aria-label="Item Collection"
+    ariaLabel="Item Collection"
   >
     <ItemCollection.Item
       listItemLayout="twoColumns"

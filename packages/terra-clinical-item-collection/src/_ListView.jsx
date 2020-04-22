@@ -5,6 +5,10 @@ import Utils from './_ItemCollectionUtils';
 
 const propTypes = {
   /**
+   * The string that labels the List for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * The items be rendered as a list item.
    */
   children: PropTypes.node,
@@ -37,13 +41,12 @@ function createListItems(children, onSelect, requiredElements) {
 }
 
 const ListView = ({
-  children, onSelect, isListDivided, requiredElements, ...customProps
+  ariaLabel, children, onSelect, isListDivided, requiredElements,
 }) => {
   const hasSelectableChild = React.Children.toArray(children).some(child => child.props.isSelectable);
 
   const listItems = createListItems(children, onSelect, requiredElements);
   const roleSpread = hasSelectableChild ? { role: 'listbox' } : {};
-  const ariaLabel = customProps['aria-label'];
 
   return (
     <List
