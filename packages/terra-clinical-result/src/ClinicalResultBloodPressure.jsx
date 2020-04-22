@@ -125,21 +125,25 @@ const ClinicalResultBloodPressure = (props) => {
   if (hasResultNoData) {
     return <NoData />;
   }
+
+  const systolicResult = systolic || {};
+  const diastolicResult = diastolic || {};
+
   const compareUnits = {};
   const compareStatusIsInError = {};
 
   const compareConceptDisplays = {
-    originalSystolic: systolic && systolic.conceptDisplay,
-    originalDiastolic: diastolic && diastolic.conceptDisplay,
+    originalSystolic: systolicResult.conceptDisplay,
+    originalDiastolic: diastolicResult.conceptDisplay,
   };
   const compareDatetimeDisplays = {
-    originalSystolic: systolic && systolic.datetimeDisplay,
-    originalDiastolic: diastolic && diastolic.datetimeDisplay,
+    originalSystolic: systolicResult.datetimeDisplay,
+    originalDiastolic: diastolicResult.datetimeDisplay,
   };
 
   let iconGroupDisplayElement = null;
 
-  const noDataSystolic = (systolic && systolic.resultNoData === true);
+  const noDataSystolic = (systolicResult.resultNoData === true);
   if (systolic && !noDataSystolic) {
     const {
       result,
@@ -154,7 +158,7 @@ const ClinicalResultBloodPressure = (props) => {
     if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.systolic = datetimeDisplay.trim().toLowerCase(); }
   }
 
-  const noDataDiastolic = (diastolic && diastolic.resultNoData === true);
+  const noDataDiastolic = (diastolicResult.resultNoData === true);
   if (diastolic && !noDataDiastolic) {
     const {
       result,
@@ -169,9 +173,9 @@ const ClinicalResultBloodPressure = (props) => {
     if (!isEmpty(datetimeDisplay)) { compareDatetimeDisplays.diastolic = datetimeDisplay.trim().toLowerCase(); }
   }
 
-  const hasModifiedIcon = (systolic && systolic.isModified) || (diastolic && diastolic.isModified);
-  const hasCommentIcon = (systolic && systolic.hasComment) || (diastolic && diastolic.hasComment);
-  const hasUnverifiedIcon = (systolic && systolic.isUnverified) || (diastolic && diastolic.isUnverified);
+  const hasModifiedIcon = (systolicResult.isModified) || (diastolicResult.isModified);
+  const hasCommentIcon = (systolicResult.hasComment) || (diastolicResult.hasComment);
+  const hasUnverifiedIcon = (systolicResult.isUnverified) || (diastolicResult.isUnverified);
   const datetimeDisplayElement = createDatetimeDisplays(compareDatetimeDisplays);
   const conceptDisplayElement = createConceptDisplays(compareConceptDisplays);
 
