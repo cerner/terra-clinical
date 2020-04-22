@@ -189,6 +189,38 @@ const NoDataResult = {
   resultNoData: true,
 };
 
+const EnteredInErrorSysBPResult = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    status: 'entered-in-error',
+    interpretation: 'critical',
+    isModified: false,
+    hasComment: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    isModified: false,
+    hasComment: false,
+  },
+};
+
+const EnteredInErrorDiaBPResult = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    isModified: false,
+    hasComment: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    status: 'entered-in-error',
+    interpretation: 'critical',
+    isModified: false,
+    hasComment: false,
+  },
+};
+
 export default DefaultResult;
 export {
   SingleResultValue,
@@ -209,4 +241,6 @@ export {
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
   NoDataResult,
+  EnteredInErrorSysBPResult,
+  EnteredInErrorDiaBPResult,
 };
