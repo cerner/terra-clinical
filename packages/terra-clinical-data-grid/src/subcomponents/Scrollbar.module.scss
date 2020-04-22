@@ -13,9 +13,15 @@
     display: none;
   }
 
-  .container:hover,
+  
   .container.dragging {
     height: var(--terra-clinical-data-grid-scrollbar-hover-height, 14px);
+  }
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+    .container:hover {
+      height: var(--terra-clinical-data-grid-scrollbar-hover-height, 14px);
+    }
   }
 
   .scrollbar {
