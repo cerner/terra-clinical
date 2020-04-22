@@ -5,7 +5,8 @@
   "main": "lib/OnsetPicker.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-clinical.git"
+    "url": "git+https://github.com/cerner/terra-clinical.git",
+    "directory": "packages/terra-clinical-onset-picker"
   },
   "keywords": [
     "Cerner",

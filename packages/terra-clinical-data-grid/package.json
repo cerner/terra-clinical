@@ -5,7 +5,8 @@
   "description": "An organizational component that renders a collection of data in a grid-like format.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-clinical.git"
+    "url": "git+https://github.com/cerner/terra-clinical.git",
+    "directory": "packages/terra-clinical-data-grid"
   },
   "keywords": [
     "Cerner",
