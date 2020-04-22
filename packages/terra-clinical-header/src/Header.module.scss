@@ -4,14 +4,14 @@
 
 :local {
   .flex-header {
-    align-items: center;
+    align-items: flex-start;
     background-color: var(--terra-clinical-header-background-color, #f9f9f9);
     border-bottom: var(--terra-clinical-header-border-bottom, 1px solid #d3d4d5);
     color: var(--terra-clinical-header-color);
     display: flex;
     justify-content: space-between;
     min-height: var(--terra-clinical-header-min-height, 2.92857rem);
-    padding: var(--terra-clinical-header-padding, 0.35714rem 0.35714rem 0.35714rem 0);
+    padding: var(--terra-clinical-header-padding, 0.35714rem 0.35714rem 0.35714rem 0.35714rem);
     position: relative;
     width: 100%;
 
