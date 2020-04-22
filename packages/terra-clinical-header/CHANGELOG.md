@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.17.0 - (April 22, 2020)
+----------
 ### Added
 * Backfilled missing lowlight theme vars
 
