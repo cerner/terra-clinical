@@ -9,6 +9,9 @@ Unreleased
 ### Removed
 * Removed "View Component Source Code" from docs in favour of source code badge
 
+### Fixed
+* Set `aria-disabled` for a disabled item display to fix color-contrast axe failure.
+
 3.15.0 - (April 14, 2020)
 ----------
 ### Changed

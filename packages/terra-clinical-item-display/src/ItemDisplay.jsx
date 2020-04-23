@@ -82,7 +82,7 @@ const ItemDisplay = ({
   }
 
   return (
-    <div {...customProps} className={componentClassNames}>
+    <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
       <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
     </div>

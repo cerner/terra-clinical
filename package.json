@@ -125,7 +125,7 @@
     "terra-dev-site": "git://github.com/cerner/terra-dev-site.git#dev-site-source-code-badge",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^5.0.0",
+    "terra-toolkit": "^6.0.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"

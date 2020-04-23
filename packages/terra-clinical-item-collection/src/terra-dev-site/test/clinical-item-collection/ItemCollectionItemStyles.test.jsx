@@ -38,12 +38,12 @@ const LayoutDisplay = () => (
     hasComment
     hasEndAccessory
     isTablePadded
+    ariaLabel="Layout Display"
   >
     {oneColumnItem}
     {twoColumnItem}
   </ItemCollection>
 );
-
 
 const AlignmentDisplay = () => (
   <ItemCollection
@@ -52,6 +52,7 @@ const AlignmentDisplay = () => (
     hasComment
     hasEndAccessory
     isTablePadded
+    ariaLabel="Alignment Display"
   >
     <ItemCollection.Item
       startAccessory="S"

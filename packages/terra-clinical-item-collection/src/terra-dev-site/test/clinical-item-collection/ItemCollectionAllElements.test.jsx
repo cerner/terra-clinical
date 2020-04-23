@@ -8,6 +8,7 @@ const DefaultItemCollection = () => (
     numberOfDisplays={8}
     hasComment
     hasEndAccessory
+    ariaLabel="Item Collection"
   >
     <ItemCollection.Item
       startAccessory={<div>S</div>}
