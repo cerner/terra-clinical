@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Fixed lowlight variable that was missing part of its values after variable rename happened.
 
 3.17.0 - (April 22, 2020)
 ----------
