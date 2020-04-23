@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Fixed
+* Allow providing an `aria-label` to support a selectable List with the `listbox` role.
 
 4.19.0 - (April 14, 2020)
 ----------
