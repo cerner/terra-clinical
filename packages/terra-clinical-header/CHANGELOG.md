@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
 
 3.18.0 - (April 23, 2020)
 ----------
