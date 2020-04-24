@@ -9,6 +9,8 @@ Unreleased
 ### Removed
 * Removed "View Component Source Code" from docs in favour of source code badge
 
+4.20.0 - (April 23, 2020)
+----------
 ### Fixed
 * Allow providing an `aria-label` to support a selectable List with the `listbox` role.
 

@@ -6,6 +6,11 @@ Unreleased
 ### Removed
 * Removed "View Component Source Code" from docs in favour of source code badge
 
+3.18.0 - (April 23, 2020)
+----------
+### Fixed
+* Fixed lowlight variable that was missing part of its values after variable rename happened.
+
 3.17.0 - (April 22, 2020)
 ----------
 ### Added
