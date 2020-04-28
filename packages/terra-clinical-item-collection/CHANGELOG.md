@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.21.0 - (April 28, 2020)
+----------
 ### Added
 * Added `directory` as a sub attribute to the `repository` attribute in package.json
 
