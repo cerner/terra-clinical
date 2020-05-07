@@ -34,4 +34,8 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx)$': './jestBabelTransform',
   },
+  reporters: [
+    'default',
+    '<rootDir>/reporters/jest/TerraVerboseReporter.js',
+  ],
 };

@@ -129,5 +129,9 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "strip-ansi": "^6.0.0",
+    "@jest/reporters": "^25.3.0"
   }
 }
