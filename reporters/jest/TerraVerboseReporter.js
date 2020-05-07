@@ -3,17 +3,14 @@ const stripAnsi = require('strip-ansi');
 const fs = require('fs');
 const path = require('path');
 const endOfLine = require('os').EOL;
-// const Logger = require('../../scripts/utils/logger');
-
-// const LOG_CONTEXT = '[Terra-Toolkit:theme-aggregator]';
 
 class TerraVerboseReporter extends VerboseReporter {
   constructor(globalConfig) {
     super(globalConfig);
     if (!globalConfig.rootDir) {
-      this.resultDir = path.resolve(__dirname, '..', '..', 'tests/jest/reports/results');
+      this.resultDir = path.join(process.cwd(), '/tests/jest/reports/results');
     } else {
-      this.resultDir = path.resolve(globalConfig.rootDir, 'tests/jest/reports/results');
+      this.resultDir = path.join(globalConfig.rootDir, 'tests/jest/reports/results');
     }
     this.filePathLocation = `${this.resultDir}/terra-verbose-results.json`;
     this.results = {
@@ -23,27 +20,21 @@ class TerraVerboseReporter extends VerboseReporter {
     };
     this.unformattedResult = [];
     this.log = this.log.bind(this);
-    this.checkResultDirExist = this.checkResultDirExist.bind(this);
+    this.hasReportDir = this.hasReportDir.bind(this);
+    this.hasReportDir();
     this.setTestModule = this.setTestModule.bind(this);
-    this.checkResultDirExist();
     this.moduleName = '';
   }
 
   hasReportDir() {
-    const reportDir = path.resolve(this.resultDir, '..');
+    const reportDir = path.join(this.resultDir, '..');
     if (!fs.existsSync(reportDir)) {
-      fs.mkdirSync(reportDir);
+      fs.mkdirSync(this.resultDir, { recursive: true }, (err) => {
+        if (err) throw err;
+      });
     }
   }
 
-  checkResultDirExist() {
-    if (this.resultDir && !fs.existsSync(this.resultDir)) {
-      this.hasReportDir();
-      fs.mkdirSync(this.resultDir);
-    }
-  }
-
-  // eslint-disable-next-line class-methods-use-this
   setTestModule(testLog) {
     const index = testLog.lastIndexOf('packages/');
     if (index > -1) {
@@ -84,13 +75,12 @@ class TerraVerboseReporter extends VerboseReporter {
       moduleKeys.forEach(key => {
         const fileData = {
           startDate,
-          endDate,
           output: output[key],
+          endDate,
         };
         fs.writeFileSync(`${this.resultDir}/${key}.json`, `${JSON.stringify(fileData, null, 2)}`, { flag: 'w+' }, (err) => {
           if (err) {
-            console.log('err: ', err);
-            // Logger.error(err.message, { context: LOG_CONTEXT });
+            throw err;
           }
         });
       });
