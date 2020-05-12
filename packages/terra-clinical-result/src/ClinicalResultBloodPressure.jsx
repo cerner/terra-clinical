@@ -152,9 +152,9 @@ const ClinicalResultBloodPressure = (props) => {
   if (systolic || diastolic) {
     decoratedResultDisplay = (
       <>
-        <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type='Systolic' diastolicUnit={diastolicResult.cleanedUnit} />
+        <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type="Systolic" diastolicUnit={diastolicResult.cleanedUnit} />
         <span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>
-        <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type='Diastolic' />
+        <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type="Diastolic" />
       </>
     );
 
