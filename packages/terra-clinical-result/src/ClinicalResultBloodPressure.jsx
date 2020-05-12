@@ -5,12 +5,11 @@ import classNames from 'classnames/bind';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
-import Observation from './common/observation/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
 import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
 import BloodPressureDisplay from './_BloodPressureDisplay';
-import { sanitizeResult, ConditionalWrapper } from './common/utils';
+import { sanitizeResult } from './common/utils';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -153,9 +152,9 @@ const ClinicalResultBloodPressure = (props) => {
   if (systolic || diastolic) {
     decoratedResultDisplay = (
       <>
-        <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type={'Systolic'} diastolicUnit={diastolicResult.cleanedUnit} />
+        <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type='Systolic' diastolicUnit={diastolicResult.cleanedUnit} />
         <span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>
-        <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type={'Diastolic'} />
+        <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type='Diastolic' />
       </>
     );
 

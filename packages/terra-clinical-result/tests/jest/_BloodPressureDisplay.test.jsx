@@ -9,7 +9,9 @@ describe('BloodPressureDisplay', () => {
     cleanedUnit: 'mmhg',
     noData: false,
   };
-  const id = DefaultBloodPressureResult.id;
+  const {
+    id,
+  } = DefaultBloodPressureResult;
   const type = 'Systolic';
 
   it('should render a default BloodPressureDisplay', () => {

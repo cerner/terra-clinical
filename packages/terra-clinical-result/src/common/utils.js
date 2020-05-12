@@ -34,7 +34,7 @@ const sanitizeResult = (data) => {
   if (!data) {
     return {};
   }
-  const returnResult = {...data};
+  const returnResult = { ...data };
 
   returnResult.noData = (data.resultNoData === true);
   if (!returnResult.noData) {

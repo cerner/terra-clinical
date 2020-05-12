@@ -92,23 +92,23 @@ describe('sanitizeResult', () => {
   });
 
   it('returns noData parameter based on inputted resultNoData parameter', () => {
-    expect(sanitizeResult(NoDataResult)).toMatchObject({noData: true});
-    expect(sanitizeResult(DefaultBloodPressureResult.systolic)).toMatchObject({noData: false});
+    expect(sanitizeResult(NoDataResult)).toMatchObject({ noData: true });
+    expect(sanitizeResult(DefaultBloodPressureResult.systolic)).toMatchObject({ noData: false });
   });
 
   it('returns with a trimmed unit parameter', () => {
-    expect(sanitizeResult(DefaultBloodPressureResult.systolic)).toMatchObject({cleanedUnit: 'mmhg'});
+    expect(sanitizeResult(DefaultBloodPressureResult.systolic)).toMatchObject({ cleanedUnit: 'mmhg' });
   });
 
   it('returns with a statusInError parameter', () => {
-    expect(sanitizeResult(EnteredInErrorSysBPResult.systolic)).toMatchObject({statusInError: true});
+    expect(sanitizeResult(EnteredInErrorSysBPResult.systolic)).toMatchObject({ statusInError: true });
   });
 
   it('returns with a trimmed conceptDisplay parameter', () => {
-    expect(sanitizeResult(ExtraDisplaysBloodPressureResult.systolic)).toMatchObject({cleanedConceptDisplay: 'blood pressure systolic'});
+    expect(sanitizeResult(ExtraDisplaysBloodPressureResult.systolic)).toMatchObject({ cleanedConceptDisplay: 'blood pressure systolic' });
   });
 
   it('returns with a trimmed datetimeDisplay parameter', () => {
-    expect(sanitizeResult(ExtraDisplaysBloodPressureResult.systolic)).toMatchObject({cleanedDatetimeDisplay: 'nov 23, 2019 13:31:31'});
+    expect(sanitizeResult(ExtraDisplaysBloodPressureResult.systolic)).toMatchObject({ cleanedDatetimeDisplay: 'nov 23, 2019 13:31:31' });
   });
 });
