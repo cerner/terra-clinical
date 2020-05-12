@@ -5,7 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Changed the description of 'resultNoData' prop for observation prop types
-* Changed ClinicalResultBloodPresure to return early if result has an Error or doesn't have data
+* Changed 'ClinicalResultBloodPressure' to return early if result has an Error or doesn't have data
 
 ### Added
 * Added to interpretation Bloodpressure test
@@ -16,6 +16,7 @@ Unreleased
 * Added Flowsheet hasError test
 * Added Flowsheet hasNoData test
 * Added Flowsheet numericOverflow test
+* Added '\_BloodPressureDisplay' component to reduce clutter in 'ClinicalResultBloodPressure'
 
 ### Removed
 * Removed unused test data

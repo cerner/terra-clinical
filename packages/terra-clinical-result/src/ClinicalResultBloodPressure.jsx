@@ -9,12 +9,8 @@ import Observation from './common/observation/_Observation';
 import observationPropShape from './proptypes/observationPropTypes';
 import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
-import {
-  isEmpty,
-  checkIsStatusInError,
-  createResult,
-  ConditionalWrapper
-} from './common/utils';
+import BloodPressureDisplay from './_BloodPressureDisplay';
+import { sanitizeResult, ConditionalWrapper } from './common/utils';
 import styles from './ClinicalResult.module.scss';
 
 const cx = classNames.bind(styles);
@@ -108,58 +104,6 @@ const createDatetimeDisplays = (compareDatetimeDisplays) => {
   return null;
 };
 
-const createSystolicDisplay = (systolic, hideUnit, diastolicUnit, id) => {
-  if (!Object.prototype.hasOwnProperty.call(systolic, 'noData')) {
-    return <ResultError key={`Error-Systolic-${id}`} />;
-  }
-  if (systolic.noData) {
-    return <NoData key={`NoData-Systolic-${id}`} />;
-  }
-  const systolicDisplay = (
-    <ConditionalWrapper
-      key={`del-Systolic-${systolic.eventId}`}
-      condition={systolic.statusInError}
-      wrapper={children => <del>{children}</del>}
-    >
-      <Observation
-        key={`Observation-Systolic-${systolic.eventId}`}
-        eventId={systolic.eventId}
-        result={systolic.result}
-        interpretation={!systolic.statusInError ? systolic.interpretation : null}
-        isUnverified={systolic.isUnverified}
-        hideUnit={hideUnit || ((systolic.cleanedUnit === diastolicUnit) && !systolic.statusInError)}
-      />
-    </ConditionalWrapper>
-  );
-  return systolicDisplay;
-};
-
-const createDiastolicDisplay = (diastolic, hideUnit, id) => {
-  if (!Object.prototype.hasOwnProperty.call(diastolic, 'noData')) {
-    return <ResultError key={`Error-Diastolic-${id}`} />;
-  }
-  if (diastolic.noData) {
-    return <NoData key={`NoData-Diastolic-${id}`} />;
-  }
-  const diastolicDisplay = (
-    <ConditionalWrapper
-      key={`del-Diastolic-${diastolic.eventId}`}
-      condition={diastolic.statusInError}
-      wrapper={children => <del>{children}</del>}
-    >
-      <Observation
-        key={`Observation-Diastolic-${diastolic.eventId}`}
-        eventId={diastolic.eventId}
-        result={diastolic.result}
-        interpretation={!diastolic.statusInError ? diastolic.interpretation : null}
-        isUnverified={diastolic.isUnverified}
-        hideUnit={hideUnit}
-      />
-    </ConditionalWrapper>
-  );
-  return diastolicDisplay;
-};
-
 const ClinicalResultBloodPressure = (props) => {
   const {
     id,
@@ -183,8 +127,8 @@ const ClinicalResultBloodPressure = (props) => {
     return <NoData />;
   }
 
-  const systolicResult = createResult(systolic);
-  const diastolicResult = createResult(diastolic);
+  const systolicResult = sanitizeResult(systolic);
+  const diastolicResult = sanitizeResult(diastolic);
 
   const conceptDisplayElement = createConceptDisplays({
     originalSystolic: systolicResult.conceptDisplay,
@@ -205,11 +149,15 @@ const ClinicalResultBloodPressure = (props) => {
   const hasUnverifiedIcon = (systolicResult.isUnverified) || (diastolicResult.isUnverified);
 
   let iconGroupDisplayElement = null;
-  const decoratedResultDisplay = [];
+  let decoratedResultDisplay = null;
   if (systolic || diastolic) {
-    decoratedResultDisplay.push(createSystolicDisplay(systolicResult, hideUnit, diastolicResult.cleanedUnit, id));
-    decoratedResultDisplay.push(<span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>);
-    decoratedResultDisplay.push(createDiastolicDisplay(diastolicResult, hideUnit, id));
+    decoratedResultDisplay = (
+      <>
+        <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type={'Systolic'} diastolicUnit={diastolicResult.cleanedUnit} />
+        <span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>
+        <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type={'Diastolic'} />
+      </>
+    );
 
     const modifiedIconElement = hasModifiedIcon && !hasUnverifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
     const commentIconElement = hasCommentIcon && !hasUnverifiedIcon ? (<IconComment className={cx('icon-comment')} />) : null;

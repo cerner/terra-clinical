@@ -30,11 +30,11 @@ const checkTypeNumeric = (resultData) => {
  * @param {object} observationPropShape
  * @return {object} is an object with added trimmed values and information.
  */
-const createResult = (data) => {
-  if(!data) {
+const sanitizeResult = (data) => {
+  if (!data) {
     return {};
   }
-  const returnResult = JSON.parse(JSON.stringify(data));
+  const returnResult = {...data};
 
   returnResult.noData = (data.resultNoData === true);
   if (!returnResult.noData) {
@@ -45,10 +45,18 @@ const createResult = (data) => {
       datetimeDisplay,
     } = data;
 
-    if (!isEmpty(result.unit)) { returnResult.cleanedUnit = result.unit.trim().toLowerCase(); }
-    if (!isEmpty(status)) { returnResult.statusInError = checkIsStatusInError(status); }
-    if (!isEmpty(conceptDisplay)) { returnResult.cleanedConceptDisplay = conceptDisplay.trim().toLowerCase(); }
-    if (!isEmpty(datetimeDisplay)) { returnResult.cleanedDatetimeDisplay = datetimeDisplay.trim().toLowerCase(); }
+    if (!isEmpty(result.unit)) {
+      returnResult.cleanedUnit = result.unit.trim().toLowerCase();
+    }
+    if (!isEmpty(status)) {
+      returnResult.statusInError = checkIsStatusInError(status);
+    }
+    if (!isEmpty(conceptDisplay)) {
+      returnResult.cleanedConceptDisplay = conceptDisplay.trim().toLowerCase();
+    }
+    if (!isEmpty(datetimeDisplay)) {
+      returnResult.cleanedDatetimeDisplay = datetimeDisplay.trim().toLowerCase();
+    }
   }
   return returnResult;
 };
@@ -67,6 +75,6 @@ export {
   isEmpty,
   checkIsStatusInError,
   checkTypeNumeric,
-  createResult,
+  sanitizeResult,
   ConditionalWrapper,
 };
