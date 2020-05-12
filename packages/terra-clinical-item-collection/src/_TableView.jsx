@@ -6,6 +6,10 @@ import styles from './ItemCollection.module.scss';
 
 const propTypes = {
   /**
+   * The string that labels the Table for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * The items be rendered as a table row.
    */
   children: PropTypes.node,
@@ -64,7 +68,7 @@ function createTableRows(children, onSelect, requiredElements) {
 }
 
 const TableView = ({
-  children, onSelect, isTablePadded, isTableStriped, requiredElements,
+  ariaLabel, children, onSelect, isTablePadded, isTableStriped, requiredElements,
 }) => {
   const tableLayout = createTableLayout(requiredElements);
   const tableRows = createTableRows(children, onSelect, requiredElements);
@@ -75,6 +79,7 @@ const TableView = ({
       className={styles.table}
       isPadded={isTablePadded}
       isStriped={isTableStriped}
+      aria-label={ariaLabel}
     >
       {tableLayout}
       <Table.Rows>

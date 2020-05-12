@@ -22,6 +22,14 @@ Unreleased
 * Removed unused test data
 * Removed default empty object prop from ClinicalResult and Observation.
 
+1.6.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 1.5.0 - (April 22, 2020)
 ----------
 ### Fixed
