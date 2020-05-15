@@ -65,7 +65,7 @@ const Observation = (props) => {
     ...customProps
   } = props;
 
-  const isValidValue = result && !!result.value;
+  const isValidValue = result?.value;
 
   const valueTextClasses = cx([
     'value',

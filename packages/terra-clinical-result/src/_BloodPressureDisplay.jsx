@@ -42,7 +42,7 @@ const BloodPressureDisplay = ({
   if (result.noData) {
     return <NoData key={`NoData-${type}-${id}`} />;
   }
-  const resultDisplay = (
+  return (
     <ConditionalWrapper
       key={`del-${type}-${result.eventId}`}
       condition={result.statusInError}
@@ -58,7 +58,6 @@ const BloodPressureDisplay = ({
       />
     </ConditionalWrapper>
   );
-  return resultDisplay;
 };
 
 BloodPressureDisplay.propTypes = propTypes;
