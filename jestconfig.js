@@ -36,6 +36,6 @@ module.exports = {
   },
   reporters: [
     'default',
-    '<rootDir>/reporters/jest/TerraVerboseReporter.js',
+    'terra-toolkit/reporters/jest/TerraVerboseReporter.js',
   ],
 };
