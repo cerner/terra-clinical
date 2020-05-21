@@ -7,7 +7,7 @@ Unreleased
 1.6.0 - (April 28, 2020)
 ----------
 ### Added
-* Added `directory` as a sub attribute to the `repository` attribute in package.json
+* Added `directory` as a sub attribute to the `repository` attribute in package.json.
 
 ### Removed
 * Removed "View Component Source Code" from docs in favour of source code badge
