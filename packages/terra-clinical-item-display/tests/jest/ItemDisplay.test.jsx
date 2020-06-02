@@ -76,3 +76,12 @@ it('should render a display with the strong textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="strong" />);
   expect(itemDisplay).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = shallow(<Display text="Display" />);
+  expect(wrapper).toMatchSnapshot();
+});

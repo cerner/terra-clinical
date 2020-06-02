@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import CommentIndicator from 'terra-icon/lib/icon/IconComment';
 /* eslint-disable-next-line import/no-cycle */
 import ItemDisplay from './ItemDisplay';
 import styles from './ItemComment.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -28,15 +30,25 @@ const ItemComment = ({
   text,
   isTruncated,
   ...customProps
-}) => (
-  <ItemDisplay
-    text={text}
-    isTruncated={isTruncated}
-    icon={<CommentIndicator className={cx('inline-icon')} />}
-    {...customProps}
-    className={cx('item-comment', customProps.className)}
-  />
-);
+}) => {
+  const theme = React.useContext(ThemeContext);
+  const commentClass = classNames(
+    cx(
+      'item-comment',
+      theme.className,
+    ),
+    customProps.className,
+  );
+  return (
+    <ItemDisplay
+      text={text}
+      isTruncated={isTruncated}
+      icon={<CommentIndicator className={cx('inline-icon')} />}
+      {...customProps}
+      className={commentClass}
+    />
+  );
+};
 
 ItemComment.propTypes = propTypes;
 ItemComment.defaultProps = defaultProps;
