@@ -122,7 +122,7 @@ const ClinicalResultBloodPressure = (props) => {
   if (hasResultError) {
     return <ResultError />;
   }
-  if (hasResultNoData) {
+  if (hasResultNoData || (!systolic && !diastolic)) {
     return <NoData />;
   }
 
@@ -147,29 +147,26 @@ const ClinicalResultBloodPressure = (props) => {
   const hasCommentIcon = (systolicResult.hasComment) || (diastolicResult.hasComment);
   const hasUnverifiedIcon = (systolicResult.isUnverified) || (diastolicResult.isUnverified);
 
-  let iconGroupDisplayElement = null;
-  let decoratedResultDisplay = null;
-  if (systolic || diastolic) {
-    decoratedResultDisplay = (
-      <>
-        <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type="Systolic" diastolicUnit={diastolicResult.cleanedUnit} />
-        <span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>
-        <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type="Diastolic" />
-      </>
-    );
+  const decoratedResultDisplay = (
+    <>
+      <BloodPressureDisplay result={systolicResult} hideUnit={hideUnit} id={id} type="Systolic" diastolicUnit={diastolicResult.cleanedUnit} />
+      <span key={`Observation-Separator-${(systolic) ? systolic.eventId : diastolic.eventId}`} className={cx('result-display-separator')}>/</span>
+      <BloodPressureDisplay result={diastolicResult} hideUnit={hideUnit} id={id} type="Diastolic" />
+    </>
+  );
 
-    const modifiedIconElement = hasModifiedIcon && !hasUnverifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
-    const commentIconElement = hasCommentIcon && !hasUnverifiedIcon ? (<IconComment className={cx('icon-comment')} />) : null;
-    const unverifiedIconElement = hasUnverifiedIcon ? (<IconUnverified className={cx('icon-unverified')} />) : null;
-    if (hasModifiedIcon || hasCommentIcon || hasUnverifiedIcon) {
-      iconGroupDisplayElement = (
-        <React.Fragment>
-          {modifiedIconElement}
-          {commentIconElement}
-          {unverifiedIconElement}
-        </React.Fragment>
-      );
-    }
+  const modifiedIconElement = hasModifiedIcon && !hasUnverifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
+  const commentIconElement = hasCommentIcon && !hasUnverifiedIcon ? (<IconComment className={cx('icon-comment')} />) : null;
+  const unverifiedIconElement = hasUnverifiedIcon ? (<IconUnverified className={cx('icon-unverified')} />) : null;
+  let iconGroupDisplayElement = null;
+  if (hasModifiedIcon || hasCommentIcon || hasUnverifiedIcon) {
+    iconGroupDisplayElement = (
+      <React.Fragment>
+        {modifiedIconElement}
+        {commentIconElement}
+        {unverifiedIconElement}
+      </React.Fragment>
+    );
   }
 
   const decoratedResultClassnames = cx([
