@@ -67,4 +67,13 @@ describe('LabelValueView', () => {
     const wrapper = shallow(textInputView);
     expect(wrapper.childAt(1).prop('className')).toContain('value');
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const wrapper = shallow(defaultView);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

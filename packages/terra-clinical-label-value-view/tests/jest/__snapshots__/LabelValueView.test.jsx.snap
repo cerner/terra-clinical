@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LabelValueView correctly applies the theme context className 1`] = `
+<div
+  className="label-value-view orion-fusion-theme"
+>
+  <div
+    className="label"
+  >
+    Label
+  </div>
+  <div
+    className="value"
+  >
+    --
+  </div>
+</div>
+`;
+
 exports[`LabelValueView should render LabelValueView for an node input 1`] = `
 <div
   className="label-value-view"
