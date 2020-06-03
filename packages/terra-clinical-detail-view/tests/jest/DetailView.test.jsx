@@ -110,3 +110,12 @@ it('should render without a divider when indicated', () => {
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = shallow(defaultVariety);
+  expect(wrapper).toMatchSnapshot();
+});
