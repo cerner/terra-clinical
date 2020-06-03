@@ -1,4 +1,7 @@
 @import './mixins';
+// Themes
+@import './clinical-lowlight-theme/ItemComment.module';
+@import './orion-fusion-theme/ItemComment.module';
 
 :local {
   .item-comment {
