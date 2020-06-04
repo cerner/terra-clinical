@@ -57,14 +57,14 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     Terra.it.validatesElement('month option selected');
   });
 
-  describe('has [date granularity]', () => {
-    it('displays date input', () => {
-      browser.click('#test-granularity-select');
-      browser.click('#terra-select-option-date');
-    });
+  // describe('has [date granularity]', () => {
+  //   it('displays date input', () => {
+  //     browser.click('#test-granularity-select');
+  //     browser.click('#terra-select-option-date');
+  //   });
 
-    Terra.it.validatesElement();
-  });
+  //   Terra.it.validatesElement();
+  // });
 
   describe('has [age granularity]', () => {
     it('displays age inputs', () => {
