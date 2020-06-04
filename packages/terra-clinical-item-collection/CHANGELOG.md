@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Minor file changes to comply with eslint rules
+
 ### Removed
 * Removed unnecessary disable eslint rules
 
