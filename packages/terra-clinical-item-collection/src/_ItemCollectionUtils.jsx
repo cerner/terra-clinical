@@ -91,7 +91,6 @@ function createOnSelectProps(onSelect, key) {
   if (!key && process.env.NODE_ENV !== 'production') {
     /* eslint-disable no-console */
     console.warn('Keys are required for correct onSelect implementation.');
-    /* eslint-disable no-console */
   }
 
   selectableProps.onClick = (event) => {
