@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Removed
+* Removed unnecessary disable eslint rules
 
 4.21.0 - (April 28, 2020)
 ----------
