@@ -5,8 +5,6 @@ Unreleased
 ----------
 ### Changed
 * Minor file changes to comply with eslint rules
-
-### Removed
 * Removed unnecessary disable eslint rules
 
 4.21.0 - (April 28, 2020)
