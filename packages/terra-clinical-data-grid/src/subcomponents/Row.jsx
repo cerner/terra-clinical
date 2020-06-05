@@ -74,8 +74,8 @@ class Row extends React.Component {
         'row',
         { selected: isSelected, striped: isStriped },
         theme.className,
-        customProps.className,
       ),
+      customProps.className,
     );
 
     /* eslint-disable react/forbid-dom-props */
