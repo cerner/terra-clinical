@@ -1,6 +1,10 @@
 @import '~terra-mixins/lib/Mixins';
 @import './mixins';
 
+// Themes
+@import './clinical-lowlight-theme/ItemView.module';
+@import './orion-fusion-theme/ItemView.module';
+
 // Temporary until it is added to application.
 :local {
   .item-view {

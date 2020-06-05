@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<div
+  className="item-view one-column orion-fusion-theme"
+>
+  <div
+    className="body"
+  />
+</div>
+`;
+
 exports[`should render 1 start theme display 1`] = `
 <div
   className="item-view one-column"
