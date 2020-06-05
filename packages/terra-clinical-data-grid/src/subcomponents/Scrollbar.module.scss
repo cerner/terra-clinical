@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/Scrollbar.module';
+@import '../orion-fusion-theme/Scrollbar.module';
+
 :local {
   .container {
     background-color: var(--terra-clinical-data-grid-scrollbar-background-color, #e8e9ea);

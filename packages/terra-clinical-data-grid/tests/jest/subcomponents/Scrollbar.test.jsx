@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import Scrollbar from '../../../src/subcomponents/Scrollbar';
 
 describe('Scrollbar Snapshot Tests', () => {
@@ -21,6 +22,15 @@ describe('Scrollbar Snapshot Tests', () => {
       />
     ));
 
+    expect(scrollbar).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const scrollbar = mount(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <Scrollbar />
+      </ThemeContextProvider>,
+    );
     expect(scrollbar).toMatchSnapshot();
   });
 });

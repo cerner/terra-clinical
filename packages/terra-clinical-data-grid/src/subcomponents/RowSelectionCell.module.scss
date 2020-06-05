@@ -1,5 +1,9 @@
 @import '~terra-mixins/lib/Mixins';
 
+// Themes
+@import '../clinical-lowlight-theme/RowSelectionCell.module';
+@import '../orion-fusion-theme/RowSelectionCell.module';
+
 :local {
   .icon-container {
     align-items: center;

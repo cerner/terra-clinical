@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import KeyCode from 'keycode-js';
 
 import styles from './Cell.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -122,10 +124,11 @@ class Cell extends React.Component {
     } = this.props;
 
     /* eslint-disable react/forbid-dom-props */
+    const theme = this.context;
     return (
       <div
         {...customProps}
-        className={cx(['container', customProps.className])}
+        className={classNames(cx('container', theme.className), customProps.className)}
         style={this.getCellStyles(width)}
         aria-selected={isSelected ? true : undefined}
       >
@@ -149,5 +152,6 @@ class Cell extends React.Component {
 }
 
 Cell.propTypes = propTypes;
+Cell.contextType = ThemeContext;
 
 export default Cell;
