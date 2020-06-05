@@ -5,6 +5,10 @@ Unreleased
 ----------
 ### Changed
 * Apply themes by context and directly include packaged themes.
+* Minor file changes to comply with eslint rules
+
+### Removed
+* Removed unnecessary disable eslint rules
 
 2.24.0 - (April 28, 2020)
 ----------

@@ -605,7 +605,7 @@ class DataGrid extends React.Component {
      * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
      */
     for (let i = 0, numberOfSectionHeaders = sectionHeaderContainers.length; i < numberOfSectionHeaders; i += 1) {
-      sectionHeaderContainers[i].style.width = `${width}px`; // eslint-disable-line no-param-reassign
+      sectionHeaderContainers[i].style.width = `${width}px`;
     }
   }
 
