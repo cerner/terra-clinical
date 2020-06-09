@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ResizeHandle from '../../../src/subcomponents/ResizeHandle';
 
 describe('ResizeHandle Snapshot Tests', () => {
@@ -18,6 +19,15 @@ describe('ResizeHandle Snapshot Tests', () => {
       />
     ));
 
+    expect(resizeHandle).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const resizeHandle = mount(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <ResizeHandle id="test-handle" />
+      </ThemeContextProvider>,
+    );
     expect(resizeHandle).toMatchSnapshot();
   });
 });

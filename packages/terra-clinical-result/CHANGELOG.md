@@ -22,6 +22,11 @@ Unreleased
 * Removed unused test data
 * Removed default empty object prop from ClinicalResult and Observation.
 
+1.7.0 - (June 9, 2020)
+----------
+### Changed
+* Minor file changes to comply with eslint rules
+
 1.6.0 - (April 28, 2020)
 ----------
 ### Added

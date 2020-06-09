@@ -107,7 +107,7 @@ class DatagridWithPaging extends React.Component {
             });
           }) : undefined}
         />
-        {<LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('loading-overlay')} />}
+        <LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('loading-overlay')} />
       </div>
     );
   }

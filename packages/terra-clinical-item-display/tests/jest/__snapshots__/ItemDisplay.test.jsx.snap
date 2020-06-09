@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display orion-fusion-theme"
+>
+  <div
+    className="text"
+    data-terra-clinical-item-display-text={true}
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a default component 1`] = `
 <div
   aria-disabled={false}

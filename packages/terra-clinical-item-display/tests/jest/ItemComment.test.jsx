@@ -31,3 +31,12 @@ it('should render a comment with the strikeThrough textStyle on text', () => {
   const comment = shallow(<ItemComment text="ItemComment" textStyle="strikeThrough" />);
   expect(comment).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = shallow(<ItemComment text="comment" />);
+  expect(wrapper).toMatchSnapshot();
+});
