@@ -173,7 +173,7 @@ const ClinicalResultBloodPressure = (props) => {
     { 'status-in-error': systolicResult.statusInError || diastolicResult.statusInError },
   ]);
 
-  const = clinicalResultBloodPressureDisplay = (
+  const clinicalResultBloodPressureDisplay = (
     <React.Fragment>
       <div className={decoratedResultClassnames}>
         <div className={cx('result-display')}>
