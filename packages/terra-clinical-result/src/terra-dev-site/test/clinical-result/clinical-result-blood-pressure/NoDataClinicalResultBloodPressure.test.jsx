@@ -14,7 +14,7 @@ const ClinicalResultBloodPressureExample = () => (
       systolic={NoDataResult}
       diastolic={DefaultDiastolicResult}
     />
-  <ClinicalResultBloodPressure systolic={null} diastolic={null} />
+    <ClinicalResultBloodPressure systolic={null} diastolic={null} />
     <ClinicalResultBloodPressure
       systolic={NoDataResult}
       diastolic={NoDataResult}
