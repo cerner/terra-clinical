@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated terra form dependency to next major version.
 
 4.21.0 - (June 9, 2020)
 ----------
