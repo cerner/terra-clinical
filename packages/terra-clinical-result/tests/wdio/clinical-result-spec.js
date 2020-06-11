@@ -54,4 +54,20 @@ Terra.describeViewports('ClinicalResult', ['medium'], () => {
 
     Terra.it.validatesElement();
   });
+
+  describe('with result error', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/has-result-error-result');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('with has result no data', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/has-result-no-data-result');
+    });
+
+    Terra.it.validatesElement();
+  });
 });

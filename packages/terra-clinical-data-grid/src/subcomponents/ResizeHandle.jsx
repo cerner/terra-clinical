@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './ResizeHandle.module.scss';
 
@@ -66,6 +67,7 @@ class ResizeHandle extends React.Component {
   }
 
   render() {
+    const theme = this.context;
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
       <DraggableCore
@@ -73,7 +75,7 @@ class ResizeHandle extends React.Component {
         onStop={this.handleDragStop}
         onDrag={this.handleDragMove}
       >
-        <div className={cx('resize-handle')} onClick={ResizeHandle.preventClickEvent} />
+        <div className={cx('resize-handle', theme.className)} onClick={ResizeHandle.preventClickEvent} />
       </DraggableCore>
       /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     );
@@ -81,5 +83,6 @@ class ResizeHandle extends React.Component {
 }
 
 ResizeHandle.propTypes = propTypes;
+ResizeHandle.contextType = ThemeContext;
 
 export default ResizeHandle;

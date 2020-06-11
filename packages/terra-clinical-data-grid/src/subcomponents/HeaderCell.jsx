@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
+import ThemeContext from 'terra-theme-context';
 import Cell from './Cell';
 import ResizeHandle from './ResizeHandle';
 import { SortIndicators } from '../proptypes/columnDataShape';
@@ -89,6 +90,7 @@ class HeaderCell extends React.Component {
     } = this.props;
 
     let content = children;
+    const theme = this.context;
     if (!content && (text || sortIndicator)) {
       let sortIndicatorComponent;
       if (sortIndicator) {
@@ -112,7 +114,7 @@ class HeaderCell extends React.Component {
 
     return (
       <Cell
-        className={cx('header-cell')}
+        className={cx('header-cell', theme.className)}
         sectionId=""
         rowId=""
         columnId={columnId}
@@ -130,6 +132,7 @@ class HeaderCell extends React.Component {
 }
 
 HeaderCell.propTypes = propTypes;
+HeaderCell.contextType = ThemeContext;
 
 export default HeaderCell;
 export { SortIndicators };

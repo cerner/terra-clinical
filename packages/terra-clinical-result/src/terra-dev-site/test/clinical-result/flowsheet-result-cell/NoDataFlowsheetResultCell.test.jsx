@@ -1,8 +1,8 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
 
-const ResultTimeHeaderCellExample = () => (
+const NoDataFlowsheetResultCell = () => (
   <FlowsheetResultCell hasResultNoData />
 );
 
-export default ResultTimeHeaderCellExample;
+export default NoDataFlowsheetResultCell;
