@@ -1,3 +1,5 @@
+const { browserName } = browser.desiredCapabilities;
+
 Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   describe('has [year granularity] select', () => {
     before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
@@ -57,14 +59,15 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     Terra.it.validatesElement('month option selected');
   });
 
-  // describe('has [date granularity]', () => {
-  //   it('displays date input', () => {
-  //     browser.click('#test-granularity-select');
-  //     browser.click('#terra-select-option-date');
-  //   });
+  describe('has [date granularity]', () => {
+    it('displays date input', () => {
+      browser.click('#test-granularity-select');
+      browser.click('#terra-select-option-date');
+    });
 
-  //   Terra.it.validatesElement();
-  // });
+    const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName === 'internet explorer' } };
+    Terra.it.validatesElement({ rules: ignoreColorContrastRule });
+  });
 
   describe('has [age granularity]', () => {
     it('displays age inputs', () => {

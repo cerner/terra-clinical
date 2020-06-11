@@ -26,8 +26,8 @@ Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 
   describe('Returns child key for click when onSelect is given to a selectable item collection', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
-      browser.waitForVisible('#item1');
-      browser.click('#item1');
+      browser.waitForValue('#item1');
+      browser.leftClick('#item1'); // clicking a table row element in firefox is a bug. browser.leftClick() uses W3C actions.
       browser.click('#selected-key');
     });
 
