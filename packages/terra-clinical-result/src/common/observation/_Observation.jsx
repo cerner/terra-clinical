@@ -35,10 +35,6 @@ const propTypes = {
   hideUnit: PropTypes.bool,
 };
 
-const defaultProps = {
-  result: {},
-};
-
 const interpretationIndicatorMap = {
   critical: <IconCritical className={cx('icon-interpretation')} />,
   'critical-high': <IconCritical className={cx('icon-interpretation')} />,
@@ -69,7 +65,7 @@ const Observation = (props) => {
     ...customProps
   } = props;
 
-  const isValidValue = !!result.value;
+  const isValidValue = result?.value;
 
   const valueTextClasses = cx([
     'value',
@@ -104,6 +100,5 @@ const Observation = (props) => {
 };
 
 Observation.propTypes = propTypes;
-Observation.defaultProps = defaultProps;
 
 export default Observation;
