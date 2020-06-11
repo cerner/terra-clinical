@@ -1,3 +1,5 @@
+const { browserName } = browser.desiredCapabilities;
+
 Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   describe('Displays an item collection with all possible elements', () => {
     before(() => {
@@ -30,6 +32,9 @@ Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 
       browser.leftClick('#item1'); // clicking a table row element in firefox is a bug. browser.leftClick() uses W3C actions.
       browser.click('#selected-key');
     });
+
+    const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName === 'firefox' } };
+    Terra.it.validatesElement({ rules: ignoreColorContrastRule });
 
     Terra.it.validatesElement();
 

@@ -65,6 +65,7 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
       browser.click('#terra-select-option-date');
     });
 
+    // TODO: remove disabled color-contrast rule: https://github.com/cerner/terra-core/issues/2992
     const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName === 'internet explorer' } };
     Terra.it.validatesElement({ rules: ignoreColorContrastRule });
   });
