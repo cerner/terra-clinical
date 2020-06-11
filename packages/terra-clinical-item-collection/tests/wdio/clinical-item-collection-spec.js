@@ -33,7 +33,7 @@ Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 
       browser.click('#selected-key');
     });
 
-    const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName === 'firefox' } };
+    const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName !== 'firefox' } };
     Terra.it.validatesElement({ rules: ignoreColorContrastRule });
 
     Terra.it.validatesElement();
