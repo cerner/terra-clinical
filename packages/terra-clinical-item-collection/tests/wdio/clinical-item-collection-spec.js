@@ -33,6 +33,7 @@ Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 
       browser.click('#selected-key');
     });
 
+    // TODO: remove disabled color-contrast rule: https://github.com/cerner/terra-clinical/issues/673
     const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName !== 'firefox' } };
     Terra.it.validatesElement({ rules: ignoreColorContrastRule });
 
