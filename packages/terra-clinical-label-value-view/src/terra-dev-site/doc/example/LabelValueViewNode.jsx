@@ -1,13 +1,22 @@
 import React from 'react';
-import ItemDisplay from 'terra-clinical-item-display';
+import classNames from 'classnames/bind';
 import IconCritical from 'terra-icon/lib/icon/IconCritical';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import LabelValueView from 'terra-clinical-label-value-view/lib/LabelValueView';
+import LabelValueView from 'terra-clinical-label-value-view';
+import styles from './LabelValueView.module.scss';
+
+const cx = classNames.bind(styles);
 
 const LabelValueViewNode = () => (
   <div>
     <LabelValueView label="Label">
-      <ItemDisplay text="Clinical-Item-Display as Value" textStyle="attention" icon={<IconCritical />} />
+      <div className={cx('container')}>
+        <div className={cx('icon')}>
+          <IconCritical />
+        </div>
+        <div className={cx('text')}>
+          Clinical-Item-Display as Value
+        </div>
+      </div>
     </LabelValueView>
   </div>
 );

@@ -1,0 +1,594 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      eventId="111"
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
+<div
+  className="flowsheet-result-cell"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      eventId="111"
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] = `
+<div
+  className="flowsheet-result-cell padding-standard"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      eventId="111"
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      eventId="111"
+      hideAccessoryDisplays={true}
+      hideUnit={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render a NoData if hasResultNoData is true 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-NoData"
+  >
+    <InjectIntl(KnownNoData) />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render a ResultError if hasResultError is true 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display error"
+    key="ClinicalResultDisplay-Error"
+  >
+    <InjectIntl(ResultError) />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render a entered-in-error status standard result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(EnteredInError) />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
+<FlowsheetResultCell
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  paddingStyle="compact"
+  resultDataSet={Array []}
+/>
+`;
+
+exports[`FlowsheetResultCell should render an error with bad data 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display error"
+    key="ClinicalResultDisplay-Error"
+  >
+    <InjectIntl(ResultError) />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render blood pressure correctly with an interpretation and unverified result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResultBloodPressure)
+      diastolic={
+        Object {
+          "eventId": "111.2",
+          "interpretation": "critical",
+          "isUnverified": true,
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        }
+      }
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResultBloodPressure-111"
+      systolic={
+        Object {
+          "eventId": "111.1",
+          "interpretation": "critical",
+          "isUnverified": true,
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+  <div
+    className="end-accessory-icons"
+    key="EndAccessoryIcons-111"
+  >
+    <div
+      className="end-accessory-stack"
+    >
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render both entered-in-error status bloodpressure result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(EnteredInError) />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render correctly with an interpretation and unverified result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      eventId="111"
+      hideAccessoryDisplays={true}
+      hideUnit={true}
+      interpretation="critical"
+      isTruncated={true}
+      isUnverified={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+  <div
+    className="end-accessory-icons"
+    key="EndAccessoryIcons-111"
+  >
+    <div
+      className="end-accessory-stack"
+    >
+      <IconDiamond
+        className="icon-unverified"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render systolic entered-in-error status bloodpressure result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(EnteredInError) />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render when given blood pressure diastolic result data with no id 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111.2"
+  >
+    <InjectIntl(ClinicalResultBloodPressure)
+      diastolic={
+        Object {
+          "eventId": "111.2",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "80",
+          },
+        }
+      }
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResultBloodPressure-111.2"
+    />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render when given blood pressure systolic result data with no id 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111.1"
+  >
+    <InjectIntl(ClinicalResultBloodPressure)
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResultBloodPressure-111.1"
+      systolic={
+        Object {
+          "eventId": "111.1",
+          "result": Object {
+            "unit": "mmHg",
+            "value": "180",
+          },
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render when given result data 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      eventId="111"
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render when given result data with no event id 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <InjectIntl(ClinicalResult)
+      hideAccessoryDisplays={true}
+      id="111"
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+</div>
+`;

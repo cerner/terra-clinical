@@ -3,10 +3,87 @@ ChangeLog
 
 Unreleased
 ----------
-### Changed 
-* Replaced inline stylings for terra-dev-site components with .scss files
 
+3.20.0 - (June 9, 2020)
+----------
 ### Changed
+* Apply themes by context and directly include packaged themes.
+
+3.19.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+3.18.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+3.17.0 - (March 31, 2020)
+----------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+3.16.0 - (March 17, 2020)
+----------
+### Changes
+* Update mdx syntax for docs
+
+3.15.0 - (February 18, 2020)
+----------
+### Added
+* Added clinical-lowlight-theme theming files
+
+3.14.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+3.13.0 - (January 22, 2020)
+----------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+3.12.0 - (January 7, 2020)
+----------
+### Changed
+* Update docs to use mdx syntax
+
+3.11.0 - (October 30, 2019)
+----------
+### Changed
+* Minor dependency updates
+
+3.10.0 - (September 26, 2019)
+----------
+### Changed
+* Minor dependency updates
+
+3.9.0 - (September 19, 2019)
+----------
+### Changed
+* Convert SCSS files to .module.scss
+
+3.8.0 - (September 6, 2019)
+----------
+### Changed
+* Removed inline styles from dev site components.
+* Add comments for ESlint 6
+* Cleaned up imports in examples and test files
+* Removed clinical-item-display as a dependency.
+
+3.7.0 - (August 14, 2019)
+----------
+### Changed
+* Updated package.json test scripts
+
+3.6.0 - (July 16, 2019)
+----------
+### Changed
+* Replaced inline stylings for terra-dev-site components with .scss files
 * Update wdio spec to use Terra.describeViewports
 
 3.5.0 - (June 11, 2019)
@@ -149,23 +226,23 @@ Unreleased
 * Minor dependency updates
 
 1.4.0 - (November 29, 2017)
------------------
+----------
 ### Changed
 * Break long words to wrap when needed
 
 1.3.0 - (September 26, 2017)
------------------
+----------
 ### Changed
 * Remove stylelint-disable selector-class-pattern
 
 1.2.0 - (September 1, 2017)
------------------
+----------
 ### Changed
 * Change dependency on terra-base to v2.0.0
 * Update nightwatch tests and test scripts.
 
 1.1.0 - (July 18, 2017)
------------------
+----------
 ### Changed
 * Converted component to use CSS modules
 * Updated nightwatch test scripts
@@ -174,5 +251,5 @@ Unreleased
 * Removed nightwatch.config file
 
 1.0.0 - (June 28, 2017)
------------------
+----------
 Initial stable release

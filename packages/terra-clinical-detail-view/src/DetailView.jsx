@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import styles from './DetailView.scss';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
+import styles from './DetailView.module.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -79,10 +81,15 @@ const DetailView = (props) => {
     isSmallerTitles,
     ...customProps
   } = props;
-  const attributes = Object.assign({}, customProps);
-  attributes.className = cx(['detail-view',
+  const theme = React.useContext(ThemeContext);
+  const attributes = { ...customProps };
+  attributes.className = classNames(
+    cx(
+      'detail-view',
+      theme.className,
+    ),
     attributes.className,
-  ]);
+  );
 
   const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
   const secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (

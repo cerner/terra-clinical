@@ -1,0 +1,30 @@
+@mixin terra-clinical-result-cell-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+@mixin terra-clinical-result-text-base {
+  font-size: var(--terra-clinical-result-text-base-font-size, 1em);
+  line-height: var(--terra-clinical-result-text-base-line-height, 1.42857);
+}
+
+@mixin terra-clinical-result-text-supporting {
+  font-size: var(--terra-clinical-result-text-supporting-font-size, 0.875em);
+  line-height: var(--terra-clinical-result-text-supporting-line-height, 1.42857);
+}
+
+@mixin terra-clinical-result-visually-hidden-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: 0;
+  min-width: 1px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap; /* Ensures words are not read one at a time on screen readers*/
+  width: 1px;
+}

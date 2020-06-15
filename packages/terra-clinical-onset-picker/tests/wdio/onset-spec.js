@@ -33,32 +33,12 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [month-year granularity] select', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays month and year selects', () => {
       browser.click('#test-granularity-select');
       browser.click('#terra-select-option-month');
     });
 
     Terra.it.validatesElement();
-
-    it('does not show a month before the birth date', () => {
-      browser.click('#test-year-select');
-      browser.click('#terra-select-option-2011');
-      browser.click('#test-month-select');
-      browser.isExisting('#terra-select-option-1').should.equal(false);
-      // close month select dropdown for tiny viewport
-      browser.click('#test-month-select');
-    });
-
-    it('does not show a month in the future', () => {
-      browser.click('#test-year-select');
-      browser.click('#terra-select-option-2016');
-      browser.click('#test-month-select');
-      browser.isExisting('#terra-select-option-9').should.equal(false);
-      // close month select dropdown for tiny viewport
-      browser.click('#test-month-select');
-    });
 
     it('has month options', () => {
       browser.click('#test-year-select');
@@ -78,8 +58,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [date granularity]', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays date input', () => {
       browser.click('#test-granularity-select');
       browser.click('#terra-select-option-date');
@@ -89,8 +67,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [age granularity]', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays age inputs', () => {
       browser.click('#test-granularity-select');
       browser.click('#terra-select-option-age');
@@ -100,8 +76,6 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   });
 
   describe('has [unknown precision]', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
-
     it('displays no onset options', () => {
       browser.click('#test-precision-select');
       browser.click('#terra-select-option-unknown');
@@ -264,5 +238,76 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     });
 
     Terra.it.validatesElement();
+  });
+
+  describe('has age set to [less than one week] ', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/less-week'));
+
+    it('Does not display age granularity', () => {
+      browser.click('#test-granularity-select');
+      browser.isExisting('#terra-select-option-age').should.equal(false);
+    });
+
+    Terra.it.validatesElement('invalid age input', { selector: '#root' });
+  });
+
+  describe('has Age Empty', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/less-month'));
+
+    it('that fires when age is empty', () => {
+      browser.click('#test-precision-select');
+      browser.click('#terra-select-option-before');
+      browser.click('#test-granularity-select');
+      browser.click('#terra-select-option-age');
+      browser.click('#test-age-unit-select');
+      browser.click('#terra-select-option-weeks');
+      browser.click('button[type="submit"]');
+    });
+
+    Terra.it.validatesElement('Age value is empty');
+  });
+
+  describe('has Leap day as birthdate', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/leap-year-birth-date'));
+
+    Terra.it.validatesElement('Defaults to date Granularity');
+
+    it('that fires when age is passed as input', () => {
+      browser.click('#test-precision-select');
+      browser.click('#terra-select-option-before');
+      browser.click('#test-granularity-select');
+      browser.click('#terra-select-option-age');
+      browser.click('#test-age-unit-select');
+      browser.click('#terra-select-option-years');
+      browser.clearElement('#test-age-input');
+      browser.setValue('#test-age-input', 1);
+      browser.click('button[type="submit"]');
+    });
+
+    Terra.it.validatesElement('Onset Date for Leap year birthdate');
+  });
+
+  describe('has 31st of month as birthdate', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/birthdate-31-st'));
+
+    it('that fires when age is passed as input', () => {
+      browser.click('#test-precision-select');
+      browser.click('#terra-select-option-before');
+      browser.click('#test-granularity-select');
+      browser.click('#terra-select-option-age');
+      browser.click('#test-age-unit-select');
+      browser.click('#terra-select-option-months');
+      browser.clearElement('#test-age-input');
+      browser.setValue('#test-age-input', 3);
+      browser.click('button[type="submit"]');
+    });
+
+    Terra.it.validatesElement('Onset Date for 31st as birthdate');
+  });
+
+  describe('has non leap year as birthdate', () => {
+    before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/non-leap-year-birth-date'));
+
+    Terra.it.validatesElement('Default onset date matches expected onset date');
   });
 });

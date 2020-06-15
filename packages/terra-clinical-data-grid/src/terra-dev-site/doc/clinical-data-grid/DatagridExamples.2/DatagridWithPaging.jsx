@@ -1,6 +1,4 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import classNames from 'classnames/bind';
@@ -77,7 +75,6 @@ class DatagridWithPaging extends React.Component {
     return sections;
   }
 
-
   constructor(props) {
     super(props);
 
@@ -110,7 +107,7 @@ class DatagridWithPaging extends React.Component {
             });
           }) : undefined}
         />
-        {<LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('loading-overlay')} />}
+        <LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('loading-overlay')} />
       </div>
     );
   }

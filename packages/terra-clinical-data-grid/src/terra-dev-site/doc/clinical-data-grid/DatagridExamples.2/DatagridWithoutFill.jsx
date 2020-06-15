@@ -1,6 +1,4 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
 
 import ContentCellLayout from './ContentCellLayout';
@@ -137,12 +135,12 @@ class DatagridWithoutFill extends React.Component {
         onColumnSelect={(columnId) => {
           const newColumns = {};
 
-          const columnToSort = Object.assign({}, this.state.columns[columnId]);
+          const columnToSort = { ...this.state.columns[columnId] };
           columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
           newColumns[`${columnId}`] = columnToSort;
 
           if (columnId !== this.state.sortedColumnId) {
-            const previouslySortedColumn = Object.assign({}, this.state.columns[this.state.sortedColumnId]);
+            const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
             if (previouslySortedColumn) {
               previouslySortedColumn.sortIndicator = undefined;
               newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -150,7 +148,7 @@ class DatagridWithoutFill extends React.Component {
           }
 
           this.setState(prevState => ({
-            columns: Object.assign({}, prevState.columns, newColumns),
+            columns: { ...prevState.columns, ...newColumns },
             sortedColumnId: columnId,
             sortedColumnDirection: columnToSort.sortIndicator,
           }));
@@ -177,10 +175,10 @@ class DatagridWithoutFill extends React.Component {
         }}
         hasResizableColumns
         onRequestColumnResize={(columnId, width) => {
-          const columnToUpdate = Object.assign({}, this.state.columns[columnId]);
+          const columnToUpdate = { ...this.state.columns[columnId] };
           columnToUpdate.width = Math.max(width, 50);
           this.setState(prevState => (
-            { columns: Object.assign({}, prevState.columns, { [`${columnId}`]: columnToUpdate }) }
+            { columns: { ...prevState.columns, [`${columnId}`]: columnToUpdate } }
           ));
         }}
         onRequestSectionCollapse={(sectionId) => {

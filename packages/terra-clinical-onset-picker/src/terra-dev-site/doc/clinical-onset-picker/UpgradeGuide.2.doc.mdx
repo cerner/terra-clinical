@@ -1,0 +1,86 @@
+import { Badge } from 'terra-clinical-onset-picker/package.json?dev-site-package';
+
+<Badge />
+
+# Terra Clinical Onset Picker Upgrade Guide
+
+## Changes from 3.0 to 4.0
+
+### Breaking Changes
+* Removed prop `granularitySelectOnChange`
+* Removed prop `precisionSelectOnChange`
+* Removed prop `onsetDateInputOnChange`
+* Condensed onChange function props into a single prop (`onsetOnChange`) that returns an Object for the onsetDate.
+
+### Changes for onsetOnChange
+
+``` diff
+-  this.handleGranularity = this.handleGranularity.bind(this);
+-  this.handlePrecision = this.handlePrecision.bind(this);
+-  handleGranularity(granularity) {
+-    this.setState({ granularity });
+-  }
+
+- handlePrecision(precision) {
+-    this.setState({ precision });
+-  }
+
+-  handleOnset(onsetDate) {
+-    this.setState({ onsetDate });
++  handleOnset(onsetObject) {
++    this.setState({
++      precision: onsetObject.precision,
++      granularity: onsetObject.granularity,
++      onsetDate: onsetObject.onsetDate,
++      ageUnit: onsetObject.ageUnit,
++    });
+        <OnsetPicker
+          birthdate={moment().subtract(6, 'years').format()}
+          granularity={this.state.granularity}
+-         granularitySelectOnChange={this.handleGranularity}
+          id="doogs-supplied"
+          precision={this.state.precision}
+-         precisionSelectOnChange={this.handlePrecision}
+          onsetDate={this.state.onsetDate}
+-         onsetDateInputOnChange={this.handleOnset}
++         onsetOnChange={this.handleOnset}
+        />
+```
+
+### New Feature
+
+* Added support for age units. Use new `ageUnit` prop to pass default age unit values, accepted values are `weeks`, `months`, or `years` 
+
+### New Props
+* New prop `ageUnit`
+* New prop `onsetOnChange`
+
+## Changes from 2.0 to 3.0
+
+### Breaking Changes
+
+* New required prop `id`
+* Removed exported enums `OnsetPicker.Opts.Granularities` and `OnsetPicker.Opts.Precisions`
+* Removed default prop values for `granularity` and `precision`
+* `onChange` functions can now return blank values
+* Visual updates from switching to `terra-form-field`, `terra-form-fieldset`, `terra-form-input`, and `terra-form-select`
+
+### New Features
+
+* CSS themeable variables
+
+### Removed props
+
+* Removed prop `granularitySelectName`
+* Removed prop `precisionSelectName`
+* Removed prop `precisionSelectName`
+
+### CSS Variables
+
+* --terra-clinical-onset-picker-field-margin-right
+* --terra-clinical-onset-picker-field-margin-bottom
+* --terra-clinical-onset-picker-precision-select-min-width
+* --terra-clinical-onset-picker-granularity-select-min-width
+* --terra-clinical-onset-picker-month-select-min-width
+* --terra-clinical-onset-picker-age-granularity-select-min-width
+* --terra-clinical-onset-picker-age-input-width

@@ -1,9 +1,11 @@
 import React from 'react';
-
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
 import DataGrid from 'terra-clinical-data-grid';
+import classNames from 'classnames/bind';
 
 import ContentCellLayout from './ContentCellLayout';
+import styles from './ClinicalDataGridCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const pinnedColumns = [
   {
@@ -69,6 +71,7 @@ class CustomHeightDataGrid extends React.Component {
     const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionId}-${rowIndex}`,
       ariaLabel: `Row ${sectionId}-${rowIndex}`,
+      height: rowIndex % 3 === 0 ? '3rem' : undefined,
       cells: ((new Array(13).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
         columnId: columnKey,
         component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} label={`${sectionId}-${rowIndex}-${columnKey}`} />,
@@ -87,7 +90,7 @@ class CustomHeightDataGrid extends React.Component {
 
   render() {
     return (
-      <div id="custom-height-data-grid" style={{ height: '100%', width: '100%' }}>
+      <div id="custom-height-data-grid" className={cx('content-wrapper')}>
         <DataGrid
           id="custom-height"
           pinnedColumns={pinnedColumns}

@@ -1,7 +1,11 @@
 import React from 'react';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
+import classNames from 'classnames/bind';
 import ItemView from '../../../ItemView';
+import styles from './ItemViewCommon.test.module.scss';
+
+const cx = classNames.bind(styles);
 
 const display1 = <ItemView.Display text="display1display1display1display1display1display1display1display1display1display1display1display1display1display1" key="123" />;
 const display2 = <ItemView.Display text="display2display2display2display2display2display2display2display2display2display2display2display2display2display2" key="124" />;
@@ -16,7 +20,7 @@ const accessoryEnd = id => <IconInformation id={id} />;
 const comment = id => <ItemView.Comment id={id} text="comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1comment1" />;
 
 const views = () => (
-  <div style={{ maxWidth: '900px' }}>
+  <div className={cx('overflow-displays-itemview')}>
     <p>Applied width of 900px to show the default vs truncated styling.</p>
     <br />
     <h2>Full Examples - Default</h2>

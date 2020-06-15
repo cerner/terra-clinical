@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import styles from './Header.scss';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 
-const cx = classNames.bind(styles);
+import styles from './Header.module.scss';
+
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -44,10 +47,7 @@ const defaultProps = {
 const Header = ({
   children, title, startContent, endContent, isSubheader, ...customProps
 }) => {
-  let startElement;
-  if (startContent) {
-    startElement = <div className={cx('flex-end')}>{startContent}</div>;
-  }
+  const theme = useContext(ThemeContext);
 
   let titleElement;
   if (title) {
@@ -60,30 +60,29 @@ const Header = ({
     );
   }
 
-  let endElement;
-  if (endContent) {
-    endElement = <div className={cx('flex-end')}>{endContent}</div>;
-  }
+  const content = React.Children.map(children, child => (
+    React.cloneElement(child, {
+      className: classNames([cx('flex-collapse'), children.props.className]),
+    })
+  ));
 
-  let childElement;
-  if (children) {
-    const childClassNames = cx([
-      'flex-collapse',
-      children.props.className,
-    ]);
-    childElement = React.cloneElement(children, { className: childClassNames });
-  }
-
-  const headerClass = isSubheader ? 'flex-subheader' : 'flex-header';
+  const headerClassNames = classNames([
+    cx([
+      'flex-header',
+      { subheader: isSubheader },
+      theme.className,
+    ]),
+    customProps.className,
+  ]);
 
   return (
-    <header {...customProps} className={cx(headerClass, customProps.className)}>
-      {startElement}
+    <header {...customProps} className={headerClassNames}>
+      {startContent && <div className={cx('flex-end')}>{startContent}</div>}
       <div className={cx('flex-fill')}>
         {titleElement}
       </div>
-      {childElement}
-      {endElement}
+      {content}
+      {endContent && <div className={cx('flex-end')}>{endContent}</div>}
     </header>
   );
 };

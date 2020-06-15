@@ -1,11 +1,12 @@
 {
   "name": "terra-clinical-header",
   "main": "lib/Header.js",
-  "version": "3.5.0",
+  "version": "3.19.0",
   "description": "A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. ",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cerner/terra-clinical.git"
+    "url": "git+https://github.com/cerner/terra-clinical.git",
+    "directory": "packages/terra-clinical-header"
   },
   "keywords": [
     "Cerner",
@@ -29,7 +30,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-button": "^3.0.0",
-    "terra-doc-template": "^2.0.0"
+    "terra-theme-context": "^1.0.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -37,8 +38,11 @@
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
-    "test": "npm run test:jest && npm run test:wdio",
-    "test:jest": "jest --config ../../jestconfig.js",
-    "test:wdio": "../../node_modules/.bin/wdio ../../node_modules/terra-dev-site/config/wdio/wdio.conf.js"
+    "test": "npm run lint && npm run jest && npm run wdio",
+    "jest": "jest --config ../../jestconfig.js",
+    "wdio-default": "cd ../.. && npx wdio",
+    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
+    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
+    "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }

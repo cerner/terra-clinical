@@ -5,6 +5,10 @@ import Utils from './_ItemCollectionUtils';
 
 const propTypes = {
   /**
+   * The string that labels the List for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * The items be rendered as a list item.
    */
   children: PropTypes.node,
@@ -37,7 +41,7 @@ function createListItems(children, onSelect, requiredElements) {
 }
 
 const ListView = ({
-  children, onSelect, isListDivided, requiredElements,
+  ariaLabel, children, onSelect, isListDivided, requiredElements,
 }) => {
   const hasSelectableChild = React.Children.toArray(children).some(child => child.props.isSelectable);
 
@@ -45,7 +49,12 @@ const ListView = ({
   const roleSpread = hasSelectableChild ? { role: 'listbox' } : {};
 
   return (
-    <List data-terra-clinical-item-collection-list-view isDivided={isListDivided} {...roleSpread}>
+    <List
+      data-terra-clinical-item-collection-list-view
+      dividerStyle={isListDivided ? 'standard' : 'none'}
+      aria-label={ariaLabel}
+      {...roleSpread}
+    >
       {listItems}
     </List>
   );

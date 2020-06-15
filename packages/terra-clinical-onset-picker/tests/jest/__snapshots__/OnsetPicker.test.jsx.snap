@@ -1,5 +1,207 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<div
+  id="test"
+>
+  <fieldset
+    class="fieldset orion-fusion-theme fieldset orion-fusion-theme"
+  >
+    <div
+      class="fieldset-children"
+    >
+      <div
+        class="field orion-fusion-theme field-inline precision"
+      >
+        <div
+          class="label-group label-group-hidden"
+        >
+          <label
+            class="label"
+            for="test-precision-select"
+            id="test-precision-select-label"
+          >
+            Select a date precision
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="tui-Icon icon orion-fusion-theme IconError"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-describedby="terra-select-screen-reader-description-69"
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="terra-select-screen-reader-label-66 terra-select-screen-reader-display-67 terra-select-screen-reader-placeholder-68"
+          aria-required="false"
+          class="select default orion-fusion-theme"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
+          id="test-precision-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-66"
+            >
+              Select a date precision
+            </span>
+            <span
+              id="terra-select-screen-reader-description-69"
+            >
+              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
+            aria-label="Select a date precision"
+            class="display"
+            role="textbox"
+          >
+            <div
+              class="placeholder"
+              id="terra-select-screen-reader-placeholder-68"
+            >
+              Precision
+            </div>
+          </div>
+          <div
+            class="toggle"
+            data-terra-form-select-toggle="true"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
+        </div>
+      </div>
+      <div
+        class="field orion-fusion-theme field-inline granularity"
+      >
+        <div
+          class="label-group label-group-hidden"
+        >
+          <label
+            class="label"
+            for="test-granularity-select"
+            id="test-granularity-select-label"
+          >
+            Select a date granularity
+          </label>
+          <div
+            class="error-icon-hidden"
+          >
+            <svg
+              aria-hidden="true"
+              class="tui-Icon icon orion-fusion-theme IconError"
+              focusable="false"
+              height="1em"
+              viewBox="0 0 48 48"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
+                fill="#E50000"
+              />
+              <path
+                d="M7 21.5h34v5H7v-5z"
+                fill="#FFF"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          aria-describedby="terra-select-screen-reader-description-74"
+          aria-disabled="false"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-labelledby="terra-select-screen-reader-label-71 terra-select-screen-reader-display-72 terra-select-screen-reader-placeholder-73"
+          aria-required="false"
+          class="select default orion-fusion-theme"
+          data-terra-select="true"
+          data-terra-select-combobox="true"
+          id="test-granularity-select"
+          role="combobox"
+          tabindex="0"
+        >
+          <div
+            class="visually-hidden-component"
+            hidden=""
+          >
+            <span
+              id="terra-select-screen-reader-label-71"
+            >
+              Select a date granularity
+            </span>
+            <span
+              id="terra-select-screen-reader-description-74"
+            >
+              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+            </span>
+          </div>
+          <div
+            aria-label="Select a date granularity"
+            class="display"
+            role="textbox"
+          >
+            <div
+              class="placeholder"
+              id="terra-select-screen-reader-placeholder-73"
+            >
+              Granularity
+            </div>
+          </div>
+          <div
+            class="toggle"
+            data-terra-form-select-toggle="true"
+          >
+            <span
+              class="arrow-icon"
+            />
+          </div>
+          <span
+            aria-atomic="true"
+            aria-live="assertive"
+            aria-relevant="additions text"
+            class="visually-hidden-component"
+          />
+        </div>
+      </div>
+      <div />
+    </div>
+  </fieldset>
+</div>
+`;
+
 exports[`should render a default onset picker with specified onset date 1`] = `
 <div
   id="test"
@@ -76,6 +278,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
@@ -139,11 +342,11 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-8"
+          aria-describedby="terra-select-screen-reader-description-9"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-5 terra-select-screen-reader-display-6 terra-select-screen-reader-placeholder-7"
+          aria-labelledby="terra-select-screen-reader-label-6 terra-select-screen-reader-display-7 terra-select-screen-reader-placeholder-8"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -157,23 +360,24 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-5"
+              id="terra-select-screen-reader-label-6"
             >
               Select a date granularity
             </span>
             <span
-              id="terra-select-screen-reader-description-8"
+              id="terra-select-screen-reader-description-9"
             >
               List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
-              id="terra-select-screen-reader-placeholder-7"
+              id="terra-select-screen-reader-placeholder-8"
             >
               Granularity
             </div>
@@ -247,11 +451,11 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-12"
+          aria-describedby="terra-select-screen-reader-description-14"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-9 terra-select-screen-reader-display-10 terra-select-screen-reader-placeholder-11"
+          aria-labelledby="terra-select-screen-reader-label-11 terra-select-screen-reader-display-12 terra-select-screen-reader-placeholder-13"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -265,22 +469,23 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-9"
+              id="terra-select-screen-reader-label-11"
             >
               Select a date precision
             </span>
             <span
-              id="terra-select-screen-reader-description-12"
+              id="terra-select-screen-reader-description-14"
             >
               List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
             <span
-              id="terra-select-screen-reader-display-10"
+              id="terra-select-screen-reader-display-12"
             >
               Unknown
             </span>
@@ -353,11 +558,11 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-48"
+          aria-describedby="terra-select-screen-reader-description-59"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-45 terra-select-screen-reader-display-46 terra-select-screen-reader-placeholder-47"
+          aria-labelledby="terra-select-screen-reader-label-56 terra-select-screen-reader-display-57 terra-select-screen-reader-placeholder-58"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -371,23 +576,24 @@ exports[`should render only the supplied precisions 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-45"
+              id="terra-select-screen-reader-label-56"
             >
               Select a date precision
             </span>
             <span
-              id="terra-select-screen-reader-description-48"
+              id="terra-select-screen-reader-description-59"
             >
               List of 3 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
-              id="terra-select-screen-reader-placeholder-47"
+              id="terra-select-screen-reader-placeholder-58"
             >
               Precision
             </div>
@@ -445,11 +651,11 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-52"
+          aria-describedby="terra-select-screen-reader-description-64"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-49 terra-select-screen-reader-display-50 terra-select-screen-reader-placeholder-51"
+          aria-labelledby="terra-select-screen-reader-label-61 terra-select-screen-reader-display-62 terra-select-screen-reader-placeholder-63"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -463,23 +669,24 @@ exports[`should render only the supplied precisions 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-49"
+              id="terra-select-screen-reader-label-61"
             >
               Select a date granularity
             </span>
             <span
-              id="terra-select-screen-reader-description-52"
+              id="terra-select-screen-reader-description-64"
             >
               List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
-              id="terra-select-screen-reader-placeholder-51"
+              id="terra-select-screen-reader-placeholder-63"
             >
               Granularity
             </div>
@@ -553,11 +760,11 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-40"
+          aria-describedby="terra-select-screen-reader-description-49"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-37 terra-select-screen-reader-display-38 terra-select-screen-reader-placeholder-39"
+          aria-labelledby="terra-select-screen-reader-label-46 terra-select-screen-reader-display-47 terra-select-screen-reader-placeholder-48"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -571,23 +778,24 @@ exports[`should render the same when onChange function is supplied 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-37"
+              id="terra-select-screen-reader-label-46"
             >
               Select a date precision
             </span>
             <span
-              id="terra-select-screen-reader-description-40"
+              id="terra-select-screen-reader-description-49"
             >
               List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
-              id="terra-select-screen-reader-placeholder-39"
+              id="terra-select-screen-reader-placeholder-48"
             >
               Precision
             </div>
@@ -645,11 +853,11 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-44"
+          aria-describedby="terra-select-screen-reader-description-54"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-41 terra-select-screen-reader-display-42 terra-select-screen-reader-placeholder-43"
+          aria-labelledby="terra-select-screen-reader-label-51 terra-select-screen-reader-display-52 terra-select-screen-reader-placeholder-53"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -663,23 +871,24 @@ exports[`should render the same when onChange function is supplied 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-41"
+              id="terra-select-screen-reader-label-51"
             >
               Select a date granularity
             </span>
             <span
-              id="terra-select-screen-reader-description-44"
+              id="terra-select-screen-reader-description-54"
             >
               List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
             <div
               class="placeholder"
-              id="terra-select-screen-reader-placeholder-43"
+              id="terra-select-screen-reader-placeholder-53"
             >
               Granularity
             </div>
@@ -753,11 +962,11 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-28"
+          aria-describedby="terra-select-screen-reader-description-34"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-25 terra-select-screen-reader-display-26 terra-select-screen-reader-placeholder-27"
+          aria-labelledby="terra-select-screen-reader-label-31 terra-select-screen-reader-display-32 terra-select-screen-reader-placeholder-33"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -771,22 +980,23 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-25"
+              id="terra-select-screen-reader-label-31"
             >
               Select a date precision
             </span>
             <span
-              id="terra-select-screen-reader-description-28"
+              id="terra-select-screen-reader-description-34"
             >
               List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
             <span
-              id="terra-select-screen-reader-display-26"
+              id="terra-select-screen-reader-display-32"
             >
               Before
             </span>
@@ -844,11 +1054,11 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-32"
+          aria-describedby="terra-select-screen-reader-description-39"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-29 terra-select-screen-reader-display-30 terra-select-screen-reader-placeholder-31"
+          aria-labelledby="terra-select-screen-reader-label-36 terra-select-screen-reader-display-37 terra-select-screen-reader-placeholder-38"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -862,22 +1072,23 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-29"
+              id="terra-select-screen-reader-label-36"
             >
               Select a date granularity
             </span>
             <span
-              id="terra-select-screen-reader-description-32"
+              id="terra-select-screen-reader-description-39"
             >
               List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
             <span
-              id="terra-select-screen-reader-display-30"
+              id="terra-select-screen-reader-display-37"
             >
               Age
             </span>
@@ -983,11 +1194,11 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             </div>
           </div>
           <div
-            aria-describedby="terra-select-screen-reader-description-36"
+            aria-describedby="terra-select-screen-reader-description-44"
             aria-disabled="false"
             aria-expanded="false"
             aria-haspopup="true"
-            aria-labelledby="terra-select-screen-reader-label-33 terra-select-screen-reader-display-34 terra-select-screen-reader-placeholder-35"
+            aria-labelledby="terra-select-screen-reader-label-41 terra-select-screen-reader-display-42 terra-select-screen-reader-placeholder-43"
             aria-required="false"
             class="select default"
             data-terra-select="true"
@@ -1001,22 +1212,23 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               hidden=""
             >
               <span
-                id="terra-select-screen-reader-label-33"
+                id="terra-select-screen-reader-label-41"
               >
                 Select an age precision
               </span>
               <span
-                id="terra-select-screen-reader-description-36"
+                id="terra-select-screen-reader-description-44"
               >
                 List of 3 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
               </span>
             </div>
             <div
+              aria-label="Select an age precision"
               class="display"
               role="textbox"
             >
               <span
-                id="terra-select-screen-reader-display-34"
+                id="terra-select-screen-reader-display-42"
               >
                 Year(s)
               </span>
@@ -1090,11 +1302,11 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-16"
+          aria-describedby="terra-select-screen-reader-description-19"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-13 terra-select-screen-reader-display-14 terra-select-screen-reader-placeholder-15"
+          aria-labelledby="terra-select-screen-reader-label-16 terra-select-screen-reader-display-17 terra-select-screen-reader-placeholder-18"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -1108,22 +1320,23 @@ exports[`should render with non default inputs when supplied 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-13"
+              id="terra-select-screen-reader-label-16"
             >
               Select a date precision
             </span>
             <span
-              id="terra-select-screen-reader-description-16"
+              id="terra-select-screen-reader-description-19"
             >
               List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date precision"
             class="display"
             role="textbox"
           >
             <span
-              id="terra-select-screen-reader-display-14"
+              id="terra-select-screen-reader-display-17"
             >
               Before
             </span>
@@ -1181,11 +1394,11 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
         </div>
         <div
-          aria-describedby="terra-select-screen-reader-description-20"
+          aria-describedby="terra-select-screen-reader-description-24"
           aria-disabled="false"
           aria-expanded="false"
           aria-haspopup="true"
-          aria-labelledby="terra-select-screen-reader-label-17 terra-select-screen-reader-display-18 terra-select-screen-reader-placeholder-19"
+          aria-labelledby="terra-select-screen-reader-label-21 terra-select-screen-reader-display-22 terra-select-screen-reader-placeholder-23"
           aria-required="false"
           class="select default"
           data-terra-select="true"
@@ -1199,22 +1412,23 @@ exports[`should render with non default inputs when supplied 1`] = `
             hidden=""
           >
             <span
-              id="terra-select-screen-reader-label-17"
+              id="terra-select-screen-reader-label-21"
             >
               Select a date granularity
             </span>
             <span
-              id="terra-select-screen-reader-description-20"
+              id="terra-select-screen-reader-description-24"
             >
               List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
+            aria-label="Select a date granularity"
             class="display"
             role="textbox"
           >
             <span
-              id="terra-select-screen-reader-display-18"
+              id="terra-select-screen-reader-display-22"
             >
               Year
             </span>
@@ -1273,11 +1487,11 @@ exports[`should render with non default inputs when supplied 1`] = `
             </div>
           </div>
           <div
-            aria-describedby="terra-select-screen-reader-description-24"
+            aria-describedby="terra-select-screen-reader-description-29"
             aria-disabled="false"
             aria-expanded="false"
             aria-haspopup="true"
-            aria-labelledby="terra-select-screen-reader-label-21 terra-select-screen-reader-display-22 terra-select-screen-reader-placeholder-23"
+            aria-labelledby="terra-select-screen-reader-label-26 terra-select-screen-reader-display-27 terra-select-screen-reader-placeholder-28"
             aria-required="false"
             class="select default"
             data-terra-select="true"
@@ -1291,22 +1505,23 @@ exports[`should render with non default inputs when supplied 1`] = `
               hidden=""
             >
               <span
-                id="terra-select-screen-reader-label-21"
+                id="terra-select-screen-reader-label-26"
               >
                 Select a year
               </span>
               <span
-                id="terra-select-screen-reader-description-24"
+                id="terra-select-screen-reader-description-29"
               >
-                List of 7 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+                List of 6 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
               </span>
             </div>
             <div
+              aria-label="Select a year"
               class="display"
               role="textbox"
             >
               <span
-                id="terra-select-screen-reader-display-22"
+                id="terra-select-screen-reader-display-27"
               >
                 2014
               </span>

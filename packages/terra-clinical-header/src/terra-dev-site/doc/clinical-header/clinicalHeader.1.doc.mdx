@@ -1,0 +1,41 @@
+import { Badge } from 'terra-clinical-header/package.json?dev-site-package';
+
+import HeaderPropsTable from 'terra-clinical-header/src/Header?dev-site-props-table';
+
+import TitleHeader from '../example/TitleHeader?dev-site-example';
+import ContentHeader from '../example/ContentHeader?dev-site-example';
+import HeaderLongText from '../example/HeaderLongText?dev-site-example';
+import HeaderLongTextWithContent from '../example/HeaderLongTextWithContent?dev-site-example';
+import Subheader from '../example/Subheader?dev-site-example';
+
+<Badge />
+
+# Terra Clinical Header
+
+A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-header`
+
+## Usage 
+
+``` jsx
+import Header from 'terra-clinical-header';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+
+## Example 
+<TitleHeader title='Header With Title Only' />
+<ContentHeader title='Header With Content' />
+<HeaderLongText title='Header With Long Title' />
+<HeaderLongTextWithContent title='Header With Long Title, Children, And Content' />
+<Subheader title='Subheader with content' />
+
+## Header Props Table 
+<HeaderPropsTable />

@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SectionHeader Snapshot Tests correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <SectionHeader
+    sectionId="test-section"
+  >
+    <div
+      className="section-header orion-fusion-theme"
+      data-section-header={true}
+      data-terra-clinical-data-grid-section-header-id="test-section"
+    >
+      <div
+        className="content"
+        role="button"
+      >
+        <div
+          className="flex-content"
+        />
+      </div>
+    </div>
+  </SectionHeader>
+</ThemeContextProvider>
+`;
+
 exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed 1`] = `
 <div
   className="section-header"

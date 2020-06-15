@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import KeyCode from 'keycode-js';
 
 import styles from './Cell.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -26,7 +28,7 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   /**
-   * String-formatted width that the Cell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   * String-formatted width that the Cell should be rendered as. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   width: PropTypes.string.isRequired,
   /**
@@ -121,10 +123,12 @@ class Cell extends React.Component {
       ...customProps
     } = this.props;
 
+    /* eslint-disable react/forbid-dom-props */
+    const theme = this.context;
     return (
       <div
         {...customProps}
-        className={cx(['container', customProps.className])}
+        className={classNames(cx('container', theme.className), customProps.className)}
         style={this.getCellStyles(width)}
         aria-selected={isSelected ? true : undefined}
       >
@@ -143,9 +147,11 @@ class Cell extends React.Component {
         </div>
       </div>
     );
+    /* eslint-enable react/forbid-dom-props */
   }
 }
 
 Cell.propTypes = propTypes;
+Cell.contextType = ThemeContext;
 
 export default Cell;

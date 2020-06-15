@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import KeyCode from 'keycode-js';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './SectionHeader.module.scss';
 
@@ -108,10 +109,11 @@ class SectionHeader extends React.Component {
         </React.Fragment>
       );
     }
+    const theme = this.context;
 
     return (
       <div
-        className={cx('section-header')}
+        className={cx('section-header', theme.className)}
         data-section-header
         data-terra-clinical-data-grid-section-header-id={sectionId}
       >
@@ -136,5 +138,6 @@ class SectionHeader extends React.Component {
 }
 
 SectionHeader.propTypes = propTypes;
+SectionHeader.contextType = ThemeContext;
 
 export default SectionHeader;

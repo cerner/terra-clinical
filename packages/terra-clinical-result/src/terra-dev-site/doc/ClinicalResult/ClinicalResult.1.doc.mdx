@@ -1,0 +1,74 @@
+import { Badge } from 'terra-clinical-result/package.json?dev-site-package';
+
+import DefaultResult from '../example/clinical-result/ClinicalResultDefault?dev-site-example';
+import DecoratedResult from '../example/clinical-result/ClinicalResultDecorated?dev-site-example';
+import UnverifiedResult from '../example/clinical-result/ClinicalResultUnverified?dev-site-example';
+import ExtraDisplaysResult from '../example/clinical-result/ClinicalResultExtraDisplays?dev-site-example';
+import TruncatedResult from '../example/clinical-result/ClinicalResultTruncated?dev-site-example';
+import InterpretationResults from '../example/clinical-result/ClinicalResultInterpretation?dev-site-example';
+import SizeChangeResult from '../example/clinical-result/ClinicalResultChangeSize?dev-site-example';
+import KnownNoData from '../example/clinical-result/ClinicalResultKnownNoData?dev-site-example';
+import KnownError from '../example/clinical-result/ClinicalResultKnownError?dev-site-example';
+import AccidentalError from '../example/clinical-result/ClinicalResultAccidentalError?dev-site-example';
+import StatusEnteredInError from '../example/clinical-result/ClinicalResultStatusEnteredInError?dev-site-example';
+
+import ClinicalResultsProps from 'terra-clinical-result/src/ClinicalResult?dev-site-props-table';
+
+<Badge />
+
+# Terra Clinical Result
+
+The Terra Clinical Result package is a collection of standardized views for presenting clinical results documented to a Patient's Medical Chart,
+such as Vital Signs, Laboratory Results, and Discretely Documented Values. It also includes additional supporting views where clinical results
+are commonly displayed like flowsheets, result detail viewers, etc.
+
+This default Clinical Result component is intended for displaying a single result value.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-result`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage Guide
+The clinical result is constructed by providing structured object with a specific construction that follows a similar pattern to the [HL7 FHIR Observation](https://www.hl7.org/fhir/observation.html) standard.
+
+An example of a single clinical result value:
+```jsx
+import ClinicalResult from 'terra-clinical-result/lib/index';
+```
+
+## Component Features
+
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+## Examples
+<DefaultResult title="Default Clinical Result" />
+<DecoratedResult title="Modifiied Clinical Result with Comments" />
+<UnverifiedResult title="Unverified Clinical Result with Hide Unit of Measure" />
+<ExtraDisplaysResult title="Clinical Result with additional displays" />
+<InterpretationResults title="Clinical Results with Intrepretation" />
+<SizeChangeResult title="Changing the Clinical Result Size" />
+<TruncatedResult title="Truncated Clinical Result" />
+<KnownNoData title="Display for 'Known No Result'" />
+<KnownError title="Clinical Result Known Error" />
+<AccidentalError title="Clinical Result Accidental Error" />
+<StatusEnteredInError title="Clinical Result Status Entered In Error" />
+
+## Clinical Result Props Props
+<ClinicalResultsProps />

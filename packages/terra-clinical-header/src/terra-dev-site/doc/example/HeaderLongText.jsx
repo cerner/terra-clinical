@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import Header from 'terra-clinical-header/lib/Header';
+import Header from 'terra-clinical-header';
 
 const LongTextWithButtons = () => (
   <div>

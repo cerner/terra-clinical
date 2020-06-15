@@ -1,7 +1,6 @@
 import React from 'react';
 import LabelValueView from 'terra-clinical-label-value-view';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import DetailView from 'terra-clinical-detail-view/lib/DetailView';
+import DetailView from 'terra-clinical-detail-view';
 import classNames from 'classnames/bind';
 import styles from './DetailViewDivided.module.scss';
 
@@ -16,7 +15,6 @@ const detail2title = 'Hypertension';
 const detail2item1 = (<LabelValueView label="Age of onset" textValue="--" />);
 const detail2item2 = (<LabelValueView label="Reviewed" textValue="07/10/2012 10:00AM" />);
 const detail2item3 = (<LabelValueView label="Comments" textValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. (Hollister MD, David 09/12/2011 11:34:12AM)" />);
-
 
 const DetailViewDivided = () => (
   <div className={cx('detail-view-divided')}>

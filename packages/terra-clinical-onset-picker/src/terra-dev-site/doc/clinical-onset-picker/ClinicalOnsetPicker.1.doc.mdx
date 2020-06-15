@@ -1,0 +1,40 @@
+import { Badge } from 'terra-clinical-onset-picker/package.json?dev-site-package';
+
+import DefaultOnset from '../example/DefaultOnset?dev-site-example';
+import HandledOnset from '../example/HandledOnset?dev-site-example';
+import OnsetWithHiddenLegend from '../example/OnsetWithHiddenLegend?dev-site-example';
+
+import OnsetPickerPropsTable from 'terra-clinical-onset-picker/src/OnsetPicker?dev-site-props-table';
+
+<Badge />
+
+# Terra Clinical Onset Picker
+
+The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for use in onset scenarios. The onset date is limited to occurring after the birth date supplied. For `AGE` granularity, the age input has a maximum of `8` for `Week(s)` unit, and `24` for `Month(s)` unit. The user is expected to use `Month(s)` and `Year(s)` respectively for larger values.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-onset-picker`
+
+## Usage
+```jsx
+import OnsetPicker from 'terra-clinical-onset-picker';
+```
+
+## Component Features
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)**
+* [Localization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+** This component does not support Arabic translations
+
+## Examples
+<DefaultOnset title="Default with initialization" />
+<HandledOnset title="Onset picker with supplied data and handlers" />
+<OnsetWithHiddenLegend title="Onset picker with Hidden legend" />
+
+## Onset Picker Props
+<OnsetPickerPropsTable />

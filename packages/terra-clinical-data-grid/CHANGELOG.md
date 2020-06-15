@@ -3,7 +3,124 @@ Changelog
 
 Unreleased
 ----------
-### Changed 
+
+2.25.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+* Minor file changes to comply with eslint rules
+
+### Removed
+* Removed unnecessary disable eslint rules
+
+2.24.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+2.23.0 - (April 23, 2020)
+----------
+### Changed
+* Minor dependency updates
+
+2.22.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+2.21.0 - (March 31, 2020)
+----------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+2.20.0 - (March 27, 2020)
+----------
+### Changed
+* Minor dependency updates
+
+2.19.0 - (March 24, 2020)
+----------
+### Changed
+* Minor dependency updates
+
+2.18.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use MDX syntax
+
+2.17.0 - (February 18, 2020)
+----------
+### Added
+* Added clinical-lowlight-theme theming files
+
+2.16.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+2.15.0 - (January 22, 2020)
+----------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+2.14.0 - (January 17, 2020)
+----------
+### Added
+* Added `verticalOverflowContainerRefCallback` prop to pass callback ref to `vertical-overflow-container`.
+* Added `horizontalOverflowContainerRefCallback` prop to pass callback ref to `horizontal-overflow-container`.
+
+2.13.0 - (December 10, 2019)
+----------
+### Changed
+* Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
+
+2.12.0 - (September 26, 2019)
+----------
+### Changed
+* Minor dependency updates
+
+### Removed
+* Removed used keycodes file
+
+2.11.0 - (September 19, 2019)
+----------
+### Added
+* Added en-CA translations.
+
+2.10.0 - (September 6, 2019)
+----------
+### Changed
+* Removed inline styles from dev site components.
+* Replaced Object.assign syntax with Object spread syntax
+* Add comments for ESlint 6
+* Cleaned up imports in examples and test files
+
+### Fixed
+* Fixed the 'resizeObserver loop limit exceeded' error with animation frames.
+
+2.9.0 - (August 14, 2019)
+----------
+### Changed
+* Minor dependency updates
+
+2.8.0 - (July 30, 2019)
+----------
+### Added
+* Added option to set a height on specific rows
+
+### Changed
+* Update tests for dev-site v6
+* Updated package.json test scripts
+
+### Removed
+* Removed DEPENDENCIES.md file
+
+2.7.0 - (July 16, 2019)
+----------
+### Changed
 * Replaced inline stylings for terra-dev-site components with .scss files
 
 ### Added
@@ -68,17 +185,17 @@ Unreleased
 * Changelog dev site doc page
 
 1.2.0 - (January 2, 2019)
------------------
+----------
 ### Fixed
 * Fixed paging logic when rows are being removed from the DataGrid
 
 1.1.0 - (November 21, 2018)
------------------
+----------
 ### Changed
 * Updated row striping logic to be more consistent on a per-section basis
 * Removed unnecessary logic when `fill` prop is not provided
 * Added checkmark icons to row selection column
 
 1.0.0 - (October 16, 2018)
------------------
+----------
 Initial stable release

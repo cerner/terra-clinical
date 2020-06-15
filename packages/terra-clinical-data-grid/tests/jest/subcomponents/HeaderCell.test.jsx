@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import HeaderCell from '../../../src/subcomponents/HeaderCell';
 
 describe('HeaderCell Snapshot Tests', () => {
@@ -48,6 +49,18 @@ describe('HeaderCell Snapshot Tests', () => {
       </HeaderCell>
     ));
 
+    expect(cell).toMatchSnapshot();
+  });
+
+  it('correctly applies the theme context className', () => {
+    const cell = mount(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <HeaderCell
+          columnId="column-test"
+          width="123px"
+        />
+      </ThemeContextProvider>,
+    );
     expect(cell).toMatchSnapshot();
   });
 });

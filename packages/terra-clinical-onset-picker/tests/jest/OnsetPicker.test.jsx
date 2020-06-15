@@ -1,14 +1,13 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
 import MockDate from 'mockdate';
 import { IntlProvider } from 'react-intl';
 import selectMessages from 'terra-form-select/translations/en-US.json';
-
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import OnsetPicker from '../../lib/OnsetPicker';
 import onsetMessages from '../../translations/en-US.json';
 
 const locale = 'en-US';
-const messages = Object.assign({}, selectMessages, onsetMessages);
+const messages = { ...selectMessages, ...onsetMessages };
 
 beforeEach(() => {
   MockDate.set('11/15/2017');
@@ -101,17 +100,18 @@ it('should render only the supplied precisions', () => {
   expect(render(onsetPicker)).toMatchSnapshot();
 });
 
-it('throws error on missing locale prop in Base', () => {
-  const onsetPicker = (
-    <OnsetPicker
-      birthdate="2011-08-16"
-      id="test"
-    />
+it('correctly applies the theme context className', () => {
+  const tabs = render(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <IntlProvider locale={locale} messages={messages}>
+        <OnsetPicker
+          birthdate="2011-08-16"
+          id="test"
+          onsetDate="2017-09-10"
+        />
+      </IntlProvider>
+    </ThemeContextProvider>,
   );
-
-  try {
-    shallow(onsetPicker);
-  } catch (e) {
-    expect(e.message).toContain('add locale prop to Base component');
-  }
+  expect(tabs).toMatchSnapshot();
 });
+

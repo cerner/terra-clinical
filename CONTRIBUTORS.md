@@ -35,6 +35,9 @@ Cerner Corporation
 - Lokesh P [@lokesh-0813]
 - Avinash Gupta [@avinashg1994]
 - Pranav Agarwal [@pranav300]
+- Saket Bajaj [@saket2403]
+- Gyandeep Singh [@gyandeeps]
+- Dianna McGinn [@DMcginn]
 
 Community
 
@@ -76,3 +79,5 @@ Community
 [@lokesh-0813]: https://github.com/lokesh-0813
 [@avinashg1994]: https://github.com/avinashg1994
 [@pranav300]: https://github.com/pranav300
+[@saket2403]: https://github.com/saket2403
+[@DMcginn]: https://github.com/DMcginn

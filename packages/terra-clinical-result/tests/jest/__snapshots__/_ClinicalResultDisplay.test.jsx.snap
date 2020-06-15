@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClinicalResultDisplay should pass certain props to Observation  1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={true}
+          interpretation="critical"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a commented result  1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons
+        hasComment={true}
+      />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a default ClinicalResultDisplay 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a entered-in-error status result 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display status-in-error"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={true}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          interpretation={null}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a modified result  1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons
+        isModified={true}
+      />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a result with a concept display 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons />
+    </div>
+  </div>
+  <SecondaryDisplays
+    conceptDisplay="Temperature Oral"
+  />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a result with a date time display 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons />
+    </div>
+  </div>
+  <SecondaryDisplays
+    datetimeDisplay="Nov 23, 2019 13:31:31"
+  />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a result with unit hidden 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          hideUnit={true}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display truncated"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+    <Icons />
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay with icons moved 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display truncated"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+    </div>
+    <Icons
+      isModified={true}
+    />
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render an unverified result  1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={false}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <Observation
+          eventId="111"
+          isUnverified={true}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <Icons
+        isUnverified={true}
+      />
+    </div>
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;

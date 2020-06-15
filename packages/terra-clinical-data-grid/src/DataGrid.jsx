@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
@@ -22,8 +24,8 @@ import sectionDataShape from './proptypes/sectionDataShape';
 import styles from './DataGrid.module.scss';
 import rowStyles from './subcomponents/Row.module.scss';
 
-const cx = classNames.bind(styles);
-const cxRow = classNames.bind(rowStyles);
+const cx = classNamesBind.bind(styles);
+const cxRow = classNamesBind.bind(rowStyles);
 
 const propTypes = {
   /**
@@ -60,11 +62,12 @@ const propTypes = {
    */
   onRequestSectionCollapse: PropTypes.func,
   /**
-   * String that specifies the row height. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * String that specifies the row height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
+   * This value can be overridden for a row by specifying a height on the given row.
    */
   rowHeight: PropTypes.string,
   /**
-   * String that specifies the DataGrid header height. Any valid CSS height value is accepted (i.e. 50px, 3rem, etc.)
+   * String that specifies the DataGrid header height. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   headerHeight: PropTypes.string,
   /**
@@ -97,9 +100,18 @@ const propTypes = {
    */
   fill: PropTypes.bool,
   /**
+   * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: intlShape.isRequired,
+  /**
+   * Callback ref to pass into vertical overflow container.
+   */
+  verticalOverflowContainerRefCallback: PropTypes.func,
+  /**
+   * Callback ref to pass into horizontal overflow container.
+   */
+  horizontalOverflowContainerRefCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -111,7 +123,7 @@ const defaultProps = {
   sections: [],
 };
 
-/* eslint-disable react/sort-comp */
+/* eslint-disable react/sort-comp, react/forbid-dom-props */
 class DataGrid extends React.Component {
   /**
    * Returns a new state object containing the pinned/overflowed section widths based on the incoming props.
@@ -216,6 +228,12 @@ class DataGrid extends React.Component {
     this.renderSectionHeader = this.renderSectionHeader.bind(this);
 
     /**
+     * Animation Frame ID's
+     */
+    this.animationFrameIDPinned = null;
+    this.animationFrameIDVertical = null;
+
+    /**
      * Determining the widths of the pinned and overflow sections requires iterating over the prop arrays. The widths are
      * generated and cached in state to limit the amount of iteration performed by the render functions.
      */
@@ -230,7 +248,11 @@ class DataGrid extends React.Component {
      * A ResizeObserver is used to manage changes to the DataGrid's overall size. The handler will execute once upon the start of
      * observation and on every subsequent resize.
      */
-    this.resizeObserver = new ResizeObserver((entries) => { this.handleDataGridResize(entries[0].contentRect.width, entries[0].contentRect.height); });
+    this.resizeObserver = new ResizeObserver((entries) => {
+      this.animationFrameIDVertical = window.requestAnimationFrame(() => {
+        this.handleDataGridResize(entries[0].contentRect.width, entries[0].contentRect.height);
+      });
+    });
     this.resizeObserver.observe(this.verticalOverflowContainerRef);
 
     /**
@@ -238,11 +260,13 @@ class DataGrid extends React.Component {
      */
     this.pinnedColumnResizeObserver = new ResizeObserver((entries) => {
       if (this.scrollbarRef) {
-        /**
-         * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
-         * want defer to the custom scrollbar that rendered by the DataGrid.
-         */
-        this.overflowedContentContainerRef.style.height = `${entries[0].contentRect.height}px`;
+        this.animationFrameIDPinned = window.requestAnimationFrame(() => {
+          /**
+           * The height of the overflow content region must be set to hide the horizontal scrollbar for that element. It is hidden because we
+           * want defer to the custom scrollbar that rendered by the DataGrid.
+           */
+          this.overflowedContentContainerRef.style.height = `${entries[0].contentRect.height}px`;
+        });
       }
     });
     this.pinnedColumnResizeObserver.observe(this.pinnedContentContainerRef);
@@ -269,7 +293,9 @@ class DataGrid extends React.Component {
   }
 
   componentWillUnmount() {
+    window.cancelAnimationFrame(this.animationFrameIDVertical);
     this.resizeObserver.disconnect(this.verticalOverflowContainerRef);
+    window.cancelAnimationFrame(this.animationFrameIDPinned);
     this.pinnedColumnResizeObserver.disconnect(this.pinnedContentContainerRef);
 
     document.removeEventListener('keydown', this.handleKeyDown);
@@ -284,7 +310,7 @@ class DataGrid extends React.Component {
   }
 
   /**
-   * Accessiblity
+   * Accessibility
    */
   handleLeadingFocusAnchorFocus() {
     if (!this.shiftIsPressed) {
@@ -525,6 +551,9 @@ class DataGrid extends React.Component {
 
   setHorizontalOverflowContainerRef(ref) {
     this.horizontalOverflowContainerRef = ref;
+    if (this.props.horizontalOverflowContainerRefCallback) {
+      this.props.horizontalOverflowContainerRefCallback(ref);
+    }
   }
 
   setLeadingFocusAnchorRef(ref) {
@@ -549,6 +578,9 @@ class DataGrid extends React.Component {
 
   setVerticalOverflowContainerRef(ref) {
     this.verticalOverflowContainerRef = ref;
+    if (this.props.verticalOverflowContainerRefCallback) {
+      this.props.verticalOverflowContainerRefCallback(ref);
+    }
   }
 
   /**
@@ -573,7 +605,7 @@ class DataGrid extends React.Component {
      * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
      */
     for (let i = 0, numberOfSectionHeaders = sectionHeaderContainers.length; i < numberOfSectionHeaders; i += 1) {
-      sectionHeaderContainers[i].style.width = `${width}px`; // eslint-disable-line no-param-reassign
+      sectionHeaderContainers[i].style.width = `${width}px`;
     }
   }
 
@@ -907,7 +939,8 @@ class DataGrid extends React.Component {
   }
 
   renderRow(row, section, columns, width, isPinned, isStriped) {
-    const { rowHeight, id } = this.props;
+    const { id } = this.props;
+    const height = row.height || this.props.rowHeight;
 
     /**
      * Because of the DOM structure necessary to properly render the pinned and overflow sections,
@@ -928,7 +961,7 @@ class DataGrid extends React.Component {
         sectionId={section.id}
         rowId={row.id}
         width={width}
-        height={rowHeight}
+        height={height}
         isSelected={row.isSelected}
         isStriped={isStriped}
         {...ariaStyles}
@@ -1036,11 +1069,21 @@ class DataGrid extends React.Component {
       fill,
       onRequestContent,
       intl,
+      verticalOverflowContainerRefCallback,
+      horizontalOverflowContainerRefCallback,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
+    const theme = this.context;
 
-    const dataGridClassnames = cx(['data-grid-container', { fill }, customProps.className]);
+    const dataGridClassnames = classNames(
+      cx(
+        'data-grid-container',
+        { fill },
+        theme.className,
+      ),
+      customProps.className,
+    );
 
     return (
       <div
@@ -1111,6 +1154,7 @@ class DataGrid extends React.Component {
 
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
+DataGrid.contextType = ThemeContext;
 
 export default injectIntl(DataGrid);
 export { ColumnSortIndicators };

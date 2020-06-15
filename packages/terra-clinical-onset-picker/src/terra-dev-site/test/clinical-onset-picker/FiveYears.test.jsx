@@ -52,14 +52,14 @@ class FiveYears extends React.Component {
             birthdate={moment('2011-09-20').format('YYYY-MM-DD')}
             granularity={this.state.granularity}
             id="test"
-            legend="Date of Birth"
+            legend="Date of Onset"
             precision={this.state.precision}
             onsetDate={this.state.onsetDate}
             onsetOnChange={this.handleOnset}
           />
           <button type="submit">Submit</button>
         </form>
-        <p data-test-json>{JSON.stringify(this.state.submittedData)}</p>
+        <p data-test-json>{JSON.stringify(this.state.submittedData, null, 2)}</p>
       </div>
     );
   }

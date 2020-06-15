@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import LabelValueView from 'terra-clinical-label-value-view/lib/LabelValueView';
+import LabelValueView from 'terra-clinical-label-value-view';
 import classNames from 'classnames/bind';
 import styles from './LabelValueView.module.scss';
 

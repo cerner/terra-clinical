@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 
 import styles from './Row.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -65,11 +67,22 @@ class Row extends React.Component {
       children,
       ...customProps
     } = this.props;
+    const theme = this.context;
 
+    const rowClass = classNames(
+      cx(
+        'row',
+        { selected: isSelected, striped: isStriped },
+        theme.className,
+      ),
+      customProps.className,
+    );
+
+    /* eslint-disable react/forbid-dom-props */
     return (
       <div
         {...customProps}
-        className={cx(['row', { selected: isSelected, striped: isStriped }, customProps.className])}
+        className={rowClass}
         style={this.getRowStyles(width, height)}
         data-row
         data-row-id={rowId}
@@ -78,9 +91,11 @@ class Row extends React.Component {
         {children}
       </div>
     );
+    /* eslint-enable react/forbid-dom-props */
   }
 }
 
 Row.propTypes = propTypes;
+Row.contextType = ThemeContext;
 
 export default Row;

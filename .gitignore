@@ -19,6 +19,7 @@
 .nyc_output
 .repl_history
 .rvmrc
+.vscode
 .sass-cache/
 /.bundle/
 /.config
@@ -59,3 +60,4 @@ target
 **/__snapshots__/latest
 errorScreenshots
 themeable-variables.json
+generated-themes

@@ -1,8 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import moment from 'moment';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import OnsetPicker from 'terra-clinical-onset-picker/lib/OnsetPicker';
+import OnsetPicker from 'terra-clinical-onset-picker';
 
 class HandledOnsetExample extends React.Component {
   constructor(props) {
@@ -57,7 +55,7 @@ class HandledOnsetExample extends React.Component {
             'on/at',
           ]}
           onsetDate={this.state.onsetDate}
-          legend="Date of Birth"
+          legend="Date of Onset"
           onsetOnChange={this.handleOnset}
         />
         <button type="submit">Submit</button>
@@ -65,7 +63,7 @@ class HandledOnsetExample extends React.Component {
           <div>
             <hr />
             <p>Form was submitted with</p>
-            <p>{JSON.stringify(this.state.submittedData)}</p>
+            <p>{JSON.stringify(this.state.submittedData, null, 2)}</p>
           </div>
         )}
       </form>

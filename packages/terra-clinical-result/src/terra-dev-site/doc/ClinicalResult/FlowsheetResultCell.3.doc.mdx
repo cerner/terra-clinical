@@ -1,0 +1,84 @@
+import { Badge } from 'terra-clinical-result/package.json?dev-site-package';
+
+
+import DefaultCell from '../example/flowsheet-result-cell/FlowsheetResultCellDefault?dev-site-example';
+import MultipleResultsCell from '../example/flowsheet-result-cell/FlowsheetResultCellMultipleResults?dev-site-example';
+import BloodPressureCell from '../example/flowsheet-result-cell/FlowsheetResultCellBloodPressure?dev-site-example';
+import MultipleBloodPressuresCell from '../example/flowsheet-result-cell/FlowsheetResultCellMultipleBloodPressures?dev-site-example';
+import UnverifiedResultsCell from '../example/flowsheet-result-cell/FlowsheetResultCellUnverifiedResults?dev-site-example';
+import PaddingStyleCell from '../example/flowsheet-result-cell/FlowsheetResultCellPaddingStyle?dev-site-example';
+import KnownAndPartialNoData from '../example/flowsheet-result-cell/FlowsheetResultCellKnownAndPartialNoData?dev-site-example';
+import KnownErrorAndPartialError from '../example/flowsheet-result-cell/FlowsheetResultCellKnownErrorAndPartialError?dev-site-example';
+import NumericOverflow from '../example/flowsheet-result-cell/FlowsheetResultCellNumericOverflow?dev-site-example';
+import StatusEnteredInError from '../example/flowsheet-result-cell/FlowsheetResultCellStatusEnteredInError?dev-site-example';
+
+import FlowsheetResultCellProps from 'terra-clinical-result/src/flowsheet-result-cell/FlowsheetResultCell?dev-site-props-table';
+
+<Badge />
+
+# Terra Clinical Flowsheet Result Cell
+
+The Clinical Result is a standardized view for single result values added to a Patient's Medical Chart. The flowsheet result cell is specifically for the grid display of a result collection, and can handle displaying an indication of multiple results.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-clinical-result`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage Guide
+
+The flowsheet cell for clinical results is constructed by providing the same structured object as the clinical result in an array, allowing for multiple results to be indicated in the same time cell.
+
+Currently the Flowsheet expects an array of one or more results - and if there are multiple, it will display the first in the array, with an indication of additional results. Updates are in progress to also look at the performedDateTime value if provided to evaluate which result is the most recent to appropriately display, regardless of which order index position in the array it is.
+
+
+```jsx
+import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
+```
+
+## Component Features
+
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#cross-browser-support)
+* [Responsive Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#responsive-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#mobile-support)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#ltr--rtl-support)
+
+## Examples
+<DefaultCell title="Flowsheet Result Cell" />
+<MultipleResultsCell title="Flowsheet Result Cell with Multiple Results" />
+<BloodPressureCell title="Flowsheet Result Cell with Blood Pressure Result" />
+<MultipleBloodPressuresCell title="Flowsheet Result Cell with Multiple Blood Pressure Results" />
+<UnverifiedResultsCell title="Flowsheet Result Cell with Unverified Results" />
+<PaddingStyleCell title="Flowsheet Result Cell Padding Styles" />
+<KnownAndPartialNoData
+  title="Flowsheet Result Cell for 'Known No Result' and Blood Pressure partial 'No Result'"
+  description="Use the 'hasResultNoData' prop to show the 'No Data' display for the Flowsheet Result Cell. For Blood Pressure, Use either the 'resultNoData' property name or ' result: { value: null, }' to show the 'No Data' display for either the Systolic or Diastolic result:"
+/>
+<KnownErrorAndPartialError
+  title="Displays for a full 'Known Error' and for partial missing results"
+  description="Use the 'hasResultError' prop to show the 'Error' display for the full Flowsheet Result Cell. Or if there is a missing part results (e.g. Systolic or Diastolic), that portion will show the error display:"
+/>
+<NumericOverflow
+  title="Flowsheet Result Cell with a numeric result that overflows the container"
+  description="When displaying a result with an overflowed numeric value, instead of truncating the value, shows 'View Results' message."
+/>
+<StatusEnteredInError
+  title="Uncharted Result as 'Entered In Error'"
+  description="Display for when the result status has been set to 'entered-in-error'"
+/>
+
+## Flowsheet Result Cell Props
+<FlowsheetResultCellProps />

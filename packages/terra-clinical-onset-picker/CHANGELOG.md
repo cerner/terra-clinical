@@ -3,6 +3,117 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Updated terra form dependency to next major version.
+
+4.21.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+4.20.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+4.19.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+4.18.0 - (March 31, 2020)
+----------
+### Added
+* Added wdio screenshots for clinical-lowlight-theme
+
+4.17.0 - (March 17, 2020)
+----------
+### Changed
+* Update docs to use mdx syntax.
+
+4.16.0 - (February 18, 2020)
+----------
+### Added
+* Added upgrade guide for `v3` to `v4`.
+* Added clinical-lowlight-theme wdio config file
+
+4.15.0 - (February 11, 2020)
+----------
+### Changed
+* Added logic to show default or `date` granularity initially.
+* Clear existing data when granularity is changed.
+* Set Onset date to first day of `month` or `year` as per chosen granularity.
+* Calculation for leap year corrected.
+
+4.14.0 - (January 28, 2020)
+----------
+### Changed
+* Update copyright to include 2020
+
+4.13.0 - (January 22, 2020)
+----------
+### Added
+* Added orion-fusion-theme and generated the respective reference wdio screenshots.
+
+4.12.0 - (January 7, 2020)
+----------
+### Added
+* Add upgrade guides to dev-site docs
+
+### Fixed
+* Fixed `age-field` misalignment in IE.
+
+4.11.0 - (December 10, 2019)
+----------
+### Changed
+* Increased `min-width` of year dropdown to fit values and scrollbar.
+* Mark `intl` prop as private since it is retrieved from the context automatically by injectIntl.
+
+4.10.0 - (November 7, 2019)
+----------
+### Fixed
+* Removed age granularity from being populated for age less than a week.
+
+4.9.0 - (October 3, 2019)
+----------
+### Fixed
+* Unknown precision fixed to return blank onset date value.
+
+4.8.0 - (September 26, 2019)
+----------
+### Changed
+* Minor dependency updates
+
+### Removed
+* Removed terra-i18n as a dependency since it is not being used.
+
+4.7.0 - (September 19, 2019)
+----------
+### Changed
+* Bump terra-date-picker dependency to 4.0.0.
+
+### Added
+* Added en-CA translations.
+
+4.6.0 - (September 6, 2019)
+----------
+### Changed
+* Blank Age granularity fixed to return a blank onset date value.
+* Replaced Object.assign syntax with Object spread syntax
+* Cleaned up imports in examples and test files
+
+4.5.0 - (August 14, 2019)
+----------
+### Changed
+* Update tests for dev-site v6
+* Updated package.json test scripts
+* Removed react legacy `contexttypes`. Updated to implement `formatMessage` to interface with `injectIntl`.
+
+4.4.0 - (July 16, 2019)
+----------
 ### Added
 * Added enumeration for valid age unit, granularity, precision, and precision set values
 

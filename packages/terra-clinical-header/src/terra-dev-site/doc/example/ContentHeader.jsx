@@ -1,18 +1,13 @@
 import React from 'react';
 import Button from 'terra-button';
-// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions
-import Header from 'terra-clinical-header/lib/Header';
-import classNames from 'classnames/bind';
-import styles from './ContentHeader.module.scss';
-
-const cx = classNames.bind(styles);
+import Header from 'terra-clinical-header';
 
 const TitleHeader = () => (
   <div>
     <Header
-      startContent={<div><Button text="Button" className={cx('header-button')} /></div>}
+      startContent={<Button text="Button" />}
       title="Default Header"
-      endContent={<div><Button text="Button" className={cx('header-button')} /></div>}
+      endContent={<Button text="Button" />}
     />
   </div>
 );

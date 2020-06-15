@@ -1,6 +1,6 @@
 <!-- Logo -->
 <p align="center">
-  <img alt="Terra Logo" height="128" width="128" src="https://github.com/cerner/terra-clinical/raw/master/terra.png">
+  <img alt="Terra Logo" height="128" width="128" src="https://github.com/cerner/terra-clinical/raw/master/terra.png" />
 </p>
 
 <!-- Name -->
@@ -37,7 +37,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (SUBPACKAGELIST) -->
 | Terra Package      | Version | Status | Dependencies |
 |--------------------|---------|--------|--------------|
-| [terra-clinical-application](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-application) | [![NPM version](https://badgen.net/npm/v/terra-clinical-application)](https://www.npmjs.org/package/terra-clinical-application) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-clinical-application](https://badgen.net/david/dep/cerner/terra-clinical/packages/terra-clinical-application)](https://david-dm.org/cerner/terra-clinical?path=packages/terra-clinical-application) |
 | [terra-clinical-data-grid](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-data-grid) | [![NPM version](https://badgen.net/npm/v/terra-clinical-data-grid)](https://www.npmjs.org/package/terra-clinical-data-grid) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-clinical-data-grid](https://badgen.net/david/dep/cerner/terra-clinical/packages/terra-clinical-data-grid)](https://david-dm.org/cerner/terra-clinical?path=packages/terra-clinical-data-grid) |
 | [terra-clinical-detail-view](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-detail-view) | [![NPM version](https://badgen.net/npm/v/terra-clinical-detail-view)](https://www.npmjs.org/package/terra-clinical-detail-view) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-clinical-detail-view](https://badgen.net/david/dep/cerner/terra-clinical/packages/terra-clinical-detail-view)](https://david-dm.org/cerner/terra-clinical?path=packages/terra-clinical-detail-view) |
 | [terra-clinical-header](https://github.com/cerner/terra-clinical/tree/master/packages/terra-clinical-header) | [![NPM version](https://badgen.net/npm/v/terra-clinical-header)](https://www.npmjs.org/package/terra-clinical-header) | ![Stable](https://badgen.net/badge/status/Stable/green) | [![terra-clinical-header](https://badgen.net/david/dep/cerner/terra-clinical/packages/terra-clinical-header)](https://david-dm.org/cerner/terra-clinical?path=packages/terra-clinical-header) |
@@ -87,7 +86,7 @@ npm run test
   LICENSE
 </h2>
 
-Copyright 2017 - 2019 Cerner Innovation, Inc.
+Copyright 2017 - 2020 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

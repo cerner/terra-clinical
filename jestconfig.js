@@ -1,7 +1,15 @@
 module.exports = {
   collectCoverageFrom: [
-    'packages/**/src/*.js',
-    'packages/**/src/*.jsx',
+    'packages/**/src/**/*.js',
+    'packages/**/src/**/*.jsx',
+    '!packages/**/src/**/terra-dev-site/**/*.js',
+    '!packages/**/src/**/terra-dev-site/**/*.jsx',
+  ],
+  coverageReporters: [
+    'html',
+    'lcov',
+    'cobertura',
+    'text-summary',
   ],
   globalSetup: './jestGlobalSetup.js',
   setupFiles: [

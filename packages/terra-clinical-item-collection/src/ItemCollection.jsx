@@ -5,7 +5,7 @@ import ResponsiveElement from 'terra-responsive-element';
 import Item from './Item';
 import ListView from './_ListView';
 import TableView from './_TableView';
-import './ItemCollection.scss';
+import './ItemCollection.module.scss';
 
 const maxDisplays = 8;
 
@@ -18,6 +18,10 @@ const Breakpoints = {
 };
 
 const propTypes = {
+  /**
+   * The string that labels the List/Table for accessibility.
+   */
+  ariaLabel: PropTypes.string,
   /**
    * The breakpoint to switch from a table view to a list view.
    * Breakpoint options are `tiny`, `small`, `medium`, `large`, or `huge`.
@@ -67,6 +71,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  ariaLabel: undefined,
   breakpoint: Breakpoints.SMALL,
   hasStartAccessory: false,
   numberOfDisplays: 0,
@@ -80,6 +85,7 @@ const defaultProps = {
 
 const ItemCollection = (props) => {
   const {
+    ariaLabel,
     children,
     breakpoint,
     onSelect,
@@ -106,6 +112,7 @@ const ItemCollection = (props) => {
       requiredElements={requiredElements}
       onSelect={onSelect}
       isListDivided={isListDivided}
+      ariaLabel={ariaLabel}
     >
       {children}
     </ListView>
@@ -117,6 +124,7 @@ const ItemCollection = (props) => {
       onSelect={onSelect}
       isTablePadded={isTablePadded}
       isTableStriped={isTableStriped}
+      ariaLabel={ariaLabel}
     >
       {children}
     </TableView>

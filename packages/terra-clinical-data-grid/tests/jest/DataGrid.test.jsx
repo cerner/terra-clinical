@@ -1,5 +1,7 @@
 import React from 'react';
-
+/* eslint-disable import/no-extraneous-dependencies */
+import { mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DataGrid from '../../src/DataGrid';
 import dataGridUtils from '../../src/utils/dataGridUtils';
 import messages from '../../translations/en-US.json';
@@ -48,6 +50,7 @@ const testSections = [{
   }, {
     id: 'row-1',
     ariaLabel: 'Row 1',
+    height: '8rem',
     cells: [{
       columnId: 'Column-0',
       component: <div>0</div>,
@@ -290,6 +293,40 @@ it('should render a DataGrid with the fill prop missing', () => {
   expect(dataGrid).toMatchSnapshot();
 });
 
+it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
+  const refCallback = jest.fn();
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+      verticalOverflowContainerRefCallback={refCallback}
+    />
+  );
+
+  mountWithIntl(dataGridComp);
+  expect(refCallback).toBeCalled();
+});
+
+it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
+  const refCallback = jest.fn();
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+      horizontalOverflowContainerRefCallback={refCallback}
+    />
+  );
+
+  mountWithIntl(dataGridComp);
+  expect(refCallback).toBeCalled();
+});
+
 describe('getDerivedStateFromProps', () => {
   let getPinnedColumnsRef;
   let getOverflowColumnsRef;
@@ -327,5 +364,14 @@ describe('getDerivedStateFromProps', () => {
     const result = DataGrid.WrappedComponent.getDerivedStateFromProps({}, 300);
     expect(result.pinnedColumnWidth).toEqual(555);
     expect(result.overflowColumnWidth).toEqual(777);
+  });
+
+  it('correctly applies the theme context className', () => {
+    const dataGrid = mountWithIntl(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <DataGrid.WrappedComponent id="test" intl={mockIntl} />
+      </ThemeContextProvider>,
+    );
+    expect(dataGrid).toMatchSnapshot();
   });
 });

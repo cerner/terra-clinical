@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import IconCaretUp from 'terra-icon/lib/icon/IconCaretUp';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
+import ThemeContext from 'terra-theme-context';
 import Cell from './Cell';
 import ResizeHandle from './ResizeHandle';
 import { SortIndicators } from '../proptypes/columnDataShape';
@@ -18,7 +19,7 @@ const propTypes = {
    */
   columnId: PropTypes.string.isRequired,
   /**
-   * String-formatted width that the HeaderCell should be rendered as. Any valid css width value is supported (i.e. 200px, 3rem).
+   * String-formatted width that the HeaderCell should be rendered as. Values are suggested to be in `rem`s (ex `'5rem'`), but any valid CSS height value is accepted.
    */
   width: PropTypes.string.isRequired,
   /**
@@ -89,6 +90,7 @@ class HeaderCell extends React.Component {
     } = this.props;
 
     let content = children;
+    const theme = this.context;
     if (!content && (text || sortIndicator)) {
       let sortIndicatorComponent;
       if (sortIndicator) {
@@ -112,7 +114,7 @@ class HeaderCell extends React.Component {
 
     return (
       <Cell
-        className={cx('header-cell')}
+        className={cx('header-cell', theme.className)}
         sectionId=""
         rowId=""
         columnId={columnId}
@@ -130,6 +132,7 @@ class HeaderCell extends React.Component {
 }
 
 HeaderCell.propTypes = propTypes;
+HeaderCell.contextType = ThemeContext;
 
 export default HeaderCell;
 export { SortIndicators };
