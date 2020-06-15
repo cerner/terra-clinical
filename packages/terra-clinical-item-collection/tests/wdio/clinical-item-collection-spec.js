@@ -1,5 +1,3 @@
-const { browserName } = browser.desiredCapabilities;
-
 Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
   describe('Displays an item collection with all possible elements', () => {
     before(() => {
@@ -34,8 +32,7 @@ Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 
     });
 
     // TODO: remove disabled color-contrast rule: https://github.com/cerner/terra-clinical/issues/673
-    const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName !== 'firefox' } };
-    Terra.it.validatesElement({ rules: ignoreColorContrastRule });
+    Terra.it.validatesElement({ rules: { 'color-contrast': { enabled: false } } });
 
     after(() => browser.moveToObject('#root', 0, 0));
   });

@@ -1,5 +1,3 @@
-const { browserName } = browser.desiredCapabilities;
-
 Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
   describe('has [year granularity] select', () => {
     before(() => browser.url('/#/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/default'));
@@ -66,8 +64,7 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     });
 
     // TODO: remove disabled color-contrast rule: https://github.com/cerner/terra-core/issues/2992
-    const ignoreColorContrastRule = { 'color-contrast': { enabled: browserName !== 'internet explorer' } };
-    Terra.it.validatesElement({ rules: ignoreColorContrastRule });
+    Terra.it.validatesElement({ rules: { 'color-contrast': { enabled: false } } });
   });
 
   describe('has [age granularity]', () => {
