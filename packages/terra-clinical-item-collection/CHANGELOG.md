@@ -3,6 +3,23 @@ ChangeLog
 
 Unreleased
 ----------
+
+4.22.0 - (June 9, 2020)
+----------
+### Changed
+* Minor file changes to comply with eslint rules
+* Removed unnecessary disable eslint rules
+
+4.21.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+4.20.0 - (April 23, 2020)
+----------
 ### Fixed
 * Allow providing an `aria-label` to support a selectable List with the `listbox` role.
 

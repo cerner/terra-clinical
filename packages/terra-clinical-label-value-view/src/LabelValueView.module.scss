@@ -1,3 +1,8 @@
+
+// Themes
+@import './clinical-lowlight-theme/LabelValueView.module';
+@import './orion-fusion-theme/LabelValueView.module';
+
 :local {
   .label-value-view {
     border: 0;

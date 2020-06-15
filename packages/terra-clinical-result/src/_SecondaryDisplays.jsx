@@ -18,8 +18,8 @@ const propTypes = {
 
 const SecondaryDisplays = ({ conceptDisplay, datetimeDisplay }) => (
   <React.Fragment>
-    {conceptDisplay ? (<div className={cx('concept-display')}>{conceptDisplay}</div>) : null}
-    {datetimeDisplay ? (<div className={cx('datetime-display')}>{datetimeDisplay}</div>) : null}
+    {conceptDisplay && <div className={cx('concept-display')}>{conceptDisplay}</div>}
+    {datetimeDisplay && <div className={cx('datetime-display')}>{datetimeDisplay}</div>}
   </React.Fragment>
 );
 

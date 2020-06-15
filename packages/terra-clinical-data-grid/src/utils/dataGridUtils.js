@@ -1,4 +1,3 @@
-
 /**
  * The PAGED_CONTENT_OFFSET_BUFFER represents the vertical space (in px) remaining in the vertical overflow
  * that will trigger additonal content retrieval (if onRequestContent is provided).

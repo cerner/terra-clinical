@@ -1,5 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Cell Snapshot Tests correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <RowSelectionCell
+    columnId="column-test"
+    rowId="row-test"
+    sectionId="section-test"
+    width="123px"
+  >
+    <Cell
+      aria-hidden={true}
+      className="orion-fusion-theme"
+      columnId="column-test"
+      onSelect={[Function]}
+      rowId="row-test"
+      sectionId="section-test"
+      width="123px"
+    >
+      <div
+        aria-hidden={true}
+        className="container orion-fusion-theme orion-fusion-theme"
+        style={
+          Object {
+            "width": "123px",
+          }
+        }
+      >
+        <div
+          className="content"
+          role="button"
+        >
+          <div
+            className="icon-container"
+          >
+            <div
+              className="icon"
+            />
+          </div>
+        </div>
+      </div>
+    </Cell>
+  </RowSelectionCell>
+</ThemeContextProvider>
+`;
+
 exports[`Cell Snapshot Tests should render a Cell with all provided props 1`] = `
 <Cell
   ariaLabel="test label"

@@ -25,7 +25,7 @@
     "extends browserslist-config-terra"
   ],
   "eslintConfig": {
-    "extends": "terra",
+    "extends": "@cerner/terra",
     "overrides": [
       {
         "files": [
@@ -47,7 +47,8 @@
           "import/no-duplicates": "off"
         }
       }
-    ]
+    ],
+    "parser": "babel-eslint"
   },
   "stylelint": {
     "extends": "stylelint-config-terra",
@@ -97,6 +98,8 @@
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.5.0",
     "@babel/preset-react": "^7.0.0",
+    "@cerner/eslint-config-terra": "^4.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "browserslist-config-terra": "^1.0.0",
     "check-installed-dependencies": "^1.0.0",
@@ -106,7 +109,6 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^6.1.0",
-    "eslint-config-terra": "^3.0.0",
     "gh-pages": "^2.0.1",
     "glob": "^7.1.2",
     "identity-obj-proxy": "^3.0.0",
@@ -125,7 +127,7 @@
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^6.0.0",
+    "terra-toolkit": "^6.2.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"

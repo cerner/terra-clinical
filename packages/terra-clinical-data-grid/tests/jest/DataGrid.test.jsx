@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { mountWithIntl } from 'terra-enzyme-intl';
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DataGrid from '../../src/DataGrid';
 import dataGridUtils from '../../src/utils/dataGridUtils';
 import messages from '../../translations/en-US.json';
@@ -363,5 +364,14 @@ describe('getDerivedStateFromProps', () => {
     const result = DataGrid.WrappedComponent.getDerivedStateFromProps({}, 300);
     expect(result.pinnedColumnWidth).toEqual(555);
     expect(result.overflowColumnWidth).toEqual(777);
+  });
+
+  it('correctly applies the theme context className', () => {
+    const dataGrid = mountWithIntl(
+      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+        <DataGrid.WrappedComponent id="test" intl={mockIntl} />
+      </ThemeContextProvider>,
+    );
+    expect(dataGrid).toMatchSnapshot();
   });
 });

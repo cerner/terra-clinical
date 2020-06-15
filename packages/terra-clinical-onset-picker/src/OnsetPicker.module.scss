@@ -1,4 +1,7 @@
 @import '~terra-breakpoints/lib/media-queries';
+// Themes
+@import './clinical-lowlight-theme/OnsetPicker.module';
+@import './orion-fusion-theme/OnsetPicker.module';
 
 :local {
   @include terra-mq-small-up {

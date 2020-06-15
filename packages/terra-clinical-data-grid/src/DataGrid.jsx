@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
@@ -22,8 +24,8 @@ import sectionDataShape from './proptypes/sectionDataShape';
 import styles from './DataGrid.module.scss';
 import rowStyles from './subcomponents/Row.module.scss';
 
-const cx = classNames.bind(styles);
-const cxRow = classNames.bind(rowStyles);
+const cx = classNamesBind.bind(styles);
+const cxRow = classNamesBind.bind(rowStyles);
 
 const propTypes = {
   /**
@@ -603,7 +605,7 @@ class DataGrid extends React.Component {
      * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
      */
     for (let i = 0, numberOfSectionHeaders = sectionHeaderContainers.length; i < numberOfSectionHeaders; i += 1) {
-      sectionHeaderContainers[i].style.width = `${width}px`; // eslint-disable-line no-param-reassign
+      sectionHeaderContainers[i].style.width = `${width}px`;
     }
   }
 
@@ -1072,8 +1074,16 @@ class DataGrid extends React.Component {
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
+    const theme = this.context;
 
-    const dataGridClassnames = cx(['data-grid-container', { fill }, customProps.className]);
+    const dataGridClassnames = classNames(
+      cx(
+        'data-grid-container',
+        { fill },
+        theme.className,
+      ),
+      customProps.className,
+    );
 
     return (
       <div
@@ -1144,6 +1154,7 @@ class DataGrid extends React.Component {
 
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
+DataGrid.contextType = ThemeContext;
 
 export default injectIntl(DataGrid);
 export { ColumnSortIndicators };

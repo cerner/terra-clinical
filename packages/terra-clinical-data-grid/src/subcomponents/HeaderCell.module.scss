@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/HeaderCell.module';
+@import '../orion-fusion-theme/HeaderCell.module';
+
 :local {
   .header-cell {
     border-right: var(--terra-clinical-data-grid-header-cell-border-right, 1px solid #dedfe0);

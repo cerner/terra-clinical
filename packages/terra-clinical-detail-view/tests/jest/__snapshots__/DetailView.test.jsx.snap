@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<div
+  className="detail-view orion-fusion-theme"
+>
+  <div
+    className="titles-section"
+  />
+  <hr
+    className="divider"
+  />
+</div>
+`;
+
 exports[`should render a default component 1`] = `
 <div
   class="detail-view"

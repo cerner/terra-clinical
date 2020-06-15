@@ -1,3 +1,7 @@
+// Themes
+@import './clinical-lowlight-theme/DataGrid.module';
+@import './orion-fusion-theme/DataGrid.module';
+
 :local {
   .data-grid-container {
     border: var(--terra-clinical-data-grid-border, 1px solid #dedfe0);

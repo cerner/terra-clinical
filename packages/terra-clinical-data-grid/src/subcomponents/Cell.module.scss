@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/Cell.module';
+@import '../orion-fusion-theme/Cell.module';
+
 :local {
   .container {
     border-right: var(--terra-clinical-data-grid-cell-border-right, 1px solid #dedfe0);

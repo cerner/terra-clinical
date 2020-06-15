@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/Row.module';
+@import '../orion-fusion-theme/Row.module';
+
 :local {
   .row {
     background-color: var(--terra-clinical-data-grid-row-background-color, #fff);

@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/SectionHeader.module';
+@import '../orion-fusion-theme/SectionHeader.module';
+
 :local {
   .section-header {
     background-color: var(--terra-clinical-data-grid-section-header-background-color, #e8e9ea);

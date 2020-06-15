@@ -65,10 +65,6 @@ const propTypes = {
   hideAccessoryDisplays: PropTypes.bool,
 };
 
-const defaultProps = {
-  result: {},
-};
-
 const ClinicalResultDisplay = ({
   eventId,
   result,
@@ -117,6 +113,5 @@ const ClinicalResultDisplay = ({
 };
 
 ClinicalResultDisplay.propTypes = propTypes;
-ClinicalResultDisplay.defaultProps = defaultProps;
 
 export default ClinicalResultDisplay;
