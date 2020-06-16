@@ -5,6 +5,7 @@ Unreleased
 ----------
 ### Changed
 * Updated terra form dependency to next major version.
+* Disabled wdio axe color-contrast rule on placeholder examples for IE testing. This will be re-enabled when https://github.com/cerner/terra-core/issues/2992 is resolved.
 
 4.21.0 - (June 9, 2020)
 ----------
