@@ -59,7 +59,7 @@ class StandardDataGrid extends React.Component {
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           sections={[
-            StandardDataGrid.buildSection('section_0', 19),
+            StandardDataGrid.buildSection('section_0', 15),
           ]}
           defaultColumnWidth={250}
           fill
