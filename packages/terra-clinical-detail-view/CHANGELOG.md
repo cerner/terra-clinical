@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.30.0 - (June 16, 2020)
+----------
 ### Changed
 * Specify divider display to prevent global styles from overriding/hiding it
 
