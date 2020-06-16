@@ -28,42 +28,6 @@ const overflowColumns = [
     id: 'Column-3',
     text: 'Column 3',
   },
-  {
-    id: 'Column-4',
-    text: 'Column 4',
-  },
-  {
-    id: 'Column-5',
-    text: 'Column 5',
-  },
-  {
-    id: 'Column-6',
-    text: 'Column 6',
-  },
-  {
-    id: 'Column-7',
-    text: 'Column 7',
-  },
-  {
-    id: 'Column-8',
-    text: 'Column 8',
-  },
-  {
-    id: 'Column-9',
-    text: 'Column 9',
-  },
-  {
-    id: 'Column-10',
-    text: 'Column 10',
-  },
-  {
-    id: 'Column-11',
-    text: 'Column 11',
-  },
-  {
-    id: 'Column-12',
-    text: 'Column 12',
-  },
 ];
 
 class StandardDataGrid extends React.Component {
