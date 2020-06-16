@@ -20,7 +20,7 @@ exports[`should render a default component 1`] = `
   className="item-display"
 >
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   />
 </div>
@@ -32,7 +32,7 @@ exports[`should render a disabled display 1`] = `
   className="item-display is-disabled"
 >
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -60,7 +60,7 @@ exports[`should render a display with the primary textStyle on text 1`] = `
   className="item-display"
 >
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -88,7 +88,7 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
   className="item-display"
 >
   <div
-    className="text strike-through strikeThrough"
+    className="text strike-through"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -116,7 +116,7 @@ exports[`should render a truncated display 1`] = `
   className="item-display"
 >
   <div
-    className="text is-truncated primary"
+    className="text is-truncated"
     data-terra-clinical-item-display-text={true}
   >
     display1display1display1display1display1display1display1display1
@@ -137,7 +137,7 @@ exports[`should render disabled display with text and graphic 1`] = `
     />
   </div>
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -158,7 +158,7 @@ exports[`should render with a graphic 1`] = `
     />
   </div>
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   />
 </div>
@@ -170,7 +170,7 @@ exports[`should render with text 1`] = `
   className="item-display"
 >
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -191,7 +191,7 @@ exports[`should render with text and graphic center aligned 1`] = `
     />
   </div>
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -212,7 +212,7 @@ exports[`should render with text and graphic inline aligned 1`] = `
     />
   </div>
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -233,7 +233,7 @@ exports[`should render with text and graphic top aligned 1`] = `
     />
   </div>
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display

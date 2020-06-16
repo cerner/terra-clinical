@@ -60,9 +60,6 @@
   }
 
   // Text Styles
-  .primary {
-    color: var(--terra-clinical-item-display-primary-color);
-  }
 
   .secondary {
     color: var(--terra-clinical-item-display-secondary-color, rgba(28, 31, 33, 0.65));
@@ -74,12 +71,12 @@
   }
 
   .strong {
-    color: var(--terra-clinical-item-display-strong-color);
+    color: var(--terra-clinical-item-display-strong-color, #1c1f21);
     font-weight: var(--terra-clinical-item-display-strong-font-weight, 700);
   }
 
   .strike-through {
-    color: var(--terra-clinical-item-display-strike-through-color);
+    color: var(--terra-clinical-item-display-strike-through-color, #1c1f21);
     text-decoration: line-through;
   }
 }

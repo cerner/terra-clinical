@@ -16,6 +16,7 @@ exports[`correctly applies the theme context className 1`] = `
   isDisabled={false}
   isTruncated={false}
   text="comment"
+  textStyle="primary"
 />
 `;
 

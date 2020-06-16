@@ -78,7 +78,10 @@ const ItemDisplay = ({
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
-    { 'strike-through': textStyle === TextStyles.STRIKETHROUGH, [`${textStyle}`]: textStyle },
+    { [`${textStyle}`]: textStyle === TextStyles.SECONDARY },
+    { [`${textStyle}`]: textStyle === TextStyles.ATTENTION },
+    { [`${textStyle}`]: textStyle === TextStyles.STRONG },
+    { 'strike-through': textStyle === TextStyles.STRIKETHROUGH },
   ]);
 
   let displayIcon;
