@@ -154,7 +154,7 @@ it('should render an ItemCollection with onSelect', () => {
 
 it('should render an ItemCollection with custom props', () => {
   const itemCollection = (
-    <ItemCollection onSelect={() => { }} id="foo" className="bar">
+    <ItemCollection onSelect={() => { }} id="foo" className="bar" ariaLabel="Item Collection">
       <ItemCollection.Item startAccessory={<p>S</p>} comment={<ItemCollection.Comment text="test comment" />} endAccessory={<p>E</p>}>
         <ItemCollection.Display isSelectable text="Display 1" />
       </ItemCollection.Item>

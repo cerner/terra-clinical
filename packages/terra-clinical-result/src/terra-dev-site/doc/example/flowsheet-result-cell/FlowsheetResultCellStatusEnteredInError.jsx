@@ -92,7 +92,7 @@ export default () => (
         standard result
       </div>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
-      blood pressure: systolic-only
+        blood pressure: systolic-only
       </div>
       <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
         blood pressure: both systolic & diastolic

@@ -1522,6 +1522,162 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
 </div>
 `;
 
+exports[`getDerivedStateFromProps correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <DataGrid
+    defaultColumnWidth={200}
+    headerHeight="2.5rem"
+    id="test"
+    intl={
+      Object {
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "now": [Function],
+      }
+    }
+    overflowColumns={Array []}
+    pinnedColumns={Array []}
+    rowHeight="2.5rem"
+    sections={Array []}
+  >
+    <div
+      className="data-grid-container orion-fusion-theme"
+      id="test"
+    >
+      <FormattedMessage
+        id="Terra.data-grid.navigate"
+        values={Object {}}
+      >
+        <div
+          aria-label="Terra.data-grid.navigate"
+          className="leading-focus-anchor"
+          onFocus={[Function]}
+          role="button"
+          tabIndex="0"
+        />
+      </FormattedMessage>
+      <ContentContainer
+        fill={false}
+      >
+        <div
+          className="content-container-static"
+        >
+          <div
+            className="main"
+          >
+            <Scroll
+              className="normalizer"
+            >
+              <div
+                className="scroll normalizer"
+              >
+                <div
+                  className="vertical-overflow-container"
+                >
+                  <div
+                    className="pinned-content-container"
+                    style={
+                      Object {
+                        "width": "0px",
+                      }
+                    }
+                  >
+                    <div
+                      className="header-container"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                          "width": "0px",
+                        }
+                      }
+                    >
+                      <div
+                        className="pinned-header"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="overflowed-content-container"
+                  >
+                    <div
+                      className="horizontal-overflow-container"
+                    >
+                      <div
+                        className="header-container"
+                        style={
+                          Object {
+                            "height": "2.5rem",
+                            "width": "0px",
+                          }
+                        }
+                      >
+                        <div
+                          className="overflow-header"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Scroll>
+          </div>
+        </div>
+      </ContentContainer>
+      <FormattedMessage
+        id="Terra.data-grid.navigate"
+        values={Object {}}
+      >
+        <div
+          aria-label="Terra.data-grid.navigate"
+          className="terminal-focus-anchor"
+          onFocus={[Function]}
+          role="button"
+          tabIndex="0"
+        />
+      </FormattedMessage>
+    </div>
+  </DataGrid>
+</ThemeContextProvider>
+`;
+
 exports[`should render a DataGrid with the fill prop missing 1`] = `
 <div
   className="data-grid-container"

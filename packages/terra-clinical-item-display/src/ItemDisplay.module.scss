@@ -1,4 +1,7 @@
 @import './mixins';
+// Themes
+@import './clinical-lowlight-theme/ItemDisplay.module';
+@import './orion-fusion-theme/ItemDisplay.module';
 
 :local {
   .item-display {

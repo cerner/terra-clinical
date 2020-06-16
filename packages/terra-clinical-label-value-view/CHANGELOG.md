@@ -4,6 +4,19 @@ ChangeLog
 Unreleased
 ----------
 
+3.20.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+3.19.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 3.18.0 - (April 14, 2020)
 ----------
 ### Changed

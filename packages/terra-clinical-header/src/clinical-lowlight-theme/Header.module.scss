@@ -2,9 +2,28 @@
   .clinical-lowlight-theme {
     // .flex-header
     --terra-clinical-header-background-color: #141719;
-    --terra-clinical-header-border-bottom-color: #08090a;
+    --terra-clinical-header-border-bottom: 1px solid #08090a;
+    // --terra-clinical-header-color
+    --terra-clinical-header-min-height: 2.92857rem;
+    --terra-clinical-header-padding: 0.35714rem 0.35714rem 0.35714rem 0.35714rem;
+
+    // .flex-collapse
+    --terra-clinical-header-flex-collapse-margin: 0;
 
     // .subheader
     --terra-clinical-header-subheader-background-color: #141719;
+    --terra-clinical-header-subheader-min-height: 2.857rem;
+    --terra-clinical-header-subheader-padding: 0.3571rem 0.7143rem;
+
+    // .title
+    --terra-clinical-header-title-font-size: 1.10714rem;
+    --terra-clinical-header-title-font-weight: 500;
+    --terra-clinical-header-title-padding: 0.28571rem 0.71428rem 0 0.71428rem;
+
+    // .flex-end + flex.fill
+    --terra-clinical-header-end-content-plus-title-padding-left: 0.35714rem;
+
+    // .flex-fill + flex.end
+    --terra-clinical-header-title-plus-end-content-padding-right: 0.35714rem;
   }
 }

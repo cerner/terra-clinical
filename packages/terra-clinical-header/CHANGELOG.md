@@ -4,6 +4,26 @@ ChangeLog
 Unreleased
 ----------
 
+3.19.0 - (April 28, 2020)
+----------
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+3.18.0 - (April 23, 2020)
+----------
+### Fixed
+* Fixed lowlight variable that was missing part of its values after variable rename happened.
+
+3.17.0 - (April 22, 2020)
+----------
+### Added
+* Backfilled missing lowlight theme vars
+
+### Fixed
+* Fix terra-clinical-header-border-bottom theme name for low-light
+* Fix start and end content flex alignment
+* Fix left margin style
+
 3.16.0 - (April 14, 2020)
 ----------
 ### Added

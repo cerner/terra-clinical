@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BloodPressureDisplay should hide the unit if data's cleanedUnit is equal to diastolicUnit prop 1`] = `
+<ConditionalWrapper
+  condition={false}
+  key="del-Systolic-111.1"
+  wrapper={[Function]}
+>
+  <Observation
+    eventId="111.1"
+    hideUnit={true}
+    key="Observation-Systolic-111.1"
+    result={
+      Object {
+        "unit": "mmHg",
+        "value": "180",
+      }
+    }
+  />
+</ConditionalWrapper>
+`;
+
+exports[`BloodPressureDisplay should hide the unit if hideUnit is true 1`] = `
+<ConditionalWrapper
+  condition={false}
+  key="del-Systolic-111.1"
+  wrapper={[Function]}
+>
+  <Observation
+    eventId="111.1"
+    hideUnit={true}
+    key="Observation-Systolic-111.1"
+    result={
+      Object {
+        "unit": "mmHg",
+        "value": "180",
+      }
+    }
+  />
+</ConditionalWrapper>
+`;
+
+exports[`BloodPressureDisplay should render a NoData 1`] = `
+<InjectIntl(KnownNoData)
+  key="NoData-Systolic-111"
+/>
+`;
+
+exports[`BloodPressureDisplay should render a ResultError 1`] = `
+<InjectIntl(ResultError)
+  key="Error-Systolic-111"
+/>
+`;
+
+exports[`BloodPressureDisplay should render a default BloodPressureDisplay 1`] = `
+<ConditionalWrapper
+  condition={false}
+  key="del-Systolic-111.1"
+  wrapper={[Function]}
+>
+  <Observation
+    eventId="111.1"
+    hideUnit={false}
+    key="Observation-Systolic-111.1"
+    result={
+      Object {
+        "unit": "mmHg",
+        "value": "180",
+      }
+    }
+  />
+</ConditionalWrapper>
+`;
+
+exports[`BloodPressureDisplay shouldn't hide the unit if data's statusInError is true 1`] = `
+<ConditionalWrapper
+  condition={true}
+  key="del-Systolic-111.1"
+  wrapper={[Function]}
+>
+  <Observation
+    eventId="111.1"
+    hideUnit={false}
+    interpretation={null}
+    key="Observation-Systolic-111.1"
+    result={
+      Object {
+        "unit": "mmHg",
+        "value": "180",
+      }
+    }
+  />
+</ConditionalWrapper>
+`;
+
+exports[`BloodPressureDisplay shouldn't render interpretation if statusInError 1`] = `
+<ConditionalWrapper
+  condition={true}
+  key="del-Systolic-111.1"
+  wrapper={[Function]}
+>
+  <Observation
+    eventId="111.1"
+    hideUnit={false}
+    interpretation={null}
+    key="Observation-Systolic-111.1"
+    result={
+      Object {
+        "unit": "mmHg",
+        "value": "180",
+      }
+    }
+  />
+</ConditionalWrapper>
+`;

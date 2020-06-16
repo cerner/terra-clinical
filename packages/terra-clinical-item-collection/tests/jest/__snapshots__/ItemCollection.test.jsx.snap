@@ -459,6 +459,7 @@ exports[`should render an ItemCollection with custom props 1`] = `
   <ResponsiveElement
     defaultElement={
       <ListView
+        ariaLabel="Item Collection"
         isListDivided={false}
         onSelect={[Function]}
         requiredElements={
@@ -511,6 +512,7 @@ exports[`should render an ItemCollection with custom props 1`] = `
     responsiveTo="parent"
     small={
       <TableView
+        ariaLabel="Item Collection"
         isTablePadded={false}
         isTableStriped={false}
         onSelect={[Function]}

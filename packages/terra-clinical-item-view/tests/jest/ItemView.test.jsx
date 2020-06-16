@@ -175,3 +175,12 @@ it('should render two columns with odd number of displays', () => {
   const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
   expect(itemView).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  jest.spyOn(React, 'useContext')
+    .mockReturnValue({
+      className: 'orion-fusion-theme',
+    });
+  const wrapper = shallow(<ItemView />);
+  expect(wrapper).toMatchSnapshot();
+});

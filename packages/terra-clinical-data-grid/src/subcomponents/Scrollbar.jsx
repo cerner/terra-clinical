@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { DraggableCore } from 'react-draggable';
+import ThemeContext from 'terra-theme-context';
 
 import styles from './Scrollbar.module.scss';
 
@@ -64,10 +65,11 @@ class Scrollbar extends React.Component {
 
   render() {
     const { onMove, refCallback, scrollbarRefCallback } = this.props;
+    const theme = this.context;
 
     return (
       <div
-        className={cx('container')}
+        className={cx('container', theme.className)}
         ref={refCallback}
       >
         <DraggableCore
@@ -90,5 +92,6 @@ class Scrollbar extends React.Component {
 }
 
 Scrollbar.propTypes = propTypes;
+Scrollbar.contextType = ThemeContext;
 
 export default Scrollbar;

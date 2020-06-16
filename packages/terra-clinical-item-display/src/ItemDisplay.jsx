@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './ItemDisplay.module.scss';
 /* eslint-disable-next-line import/no-cycle */
 import ItemComment from './ItemComment';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const TextStyles = {
   PRIMARY: 'primary',
@@ -63,12 +65,16 @@ const ItemDisplay = ({
   iconAlignment,
   ...customProps
 }) => {
-  const componentClassNames = cx([
-    'item-display',
-    { 'is-disabled': isDisabled },
-    { [`icon-${iconAlignment}`]: icon },
+  const theme = React.useContext(ThemeContext);
+  const componentClassNames = classNames(
+    cx(
+      'item-display',
+      { 'is-disabled': isDisabled },
+      { [`icon-${iconAlignment}`]: icon },
+      theme.className,
+    ),
     customProps.className,
-  ]);
+  );
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
@@ -81,7 +87,7 @@ const ItemDisplay = ({
   }
 
   return (
-    <div {...customProps} className={componentClassNames}>
+    <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
       <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
     </div>
