@@ -4,6 +4,12 @@ ChangeLog
 Unreleased
 ----------
 
+4.23.0 - (June 16, 2020)
+----------
+### Changed
+* Updated wdio test to support testing against firefox.
+* Disabled wdio axe color-contrast rule on selectable item view example for firefox testing. This will be re-enabled when https://github.com/cerner/terra-clinical/issues/673 is resolved.
+
 4.22.0 - (June 9, 2020)
 ----------
 ### Changed

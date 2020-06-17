@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-collection",
   "main": "lib/ItemCollection.js",
-  "version": "4.22.0",
+  "version": "4.23.0",
   "description": "Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size.",
   "repository": {
     "type": "git",
@@ -44,8 +44,8 @@
     "test": "npm run lint && npm run jest && npm run wdio",
     "jest": "jest --config ../../jestconfig.js",
     "wdio-default": "cd ../.. && npx wdio",
-    "wdio-lowlight": "cd ../.. && echo 'THEME=clinical-lowlight-theme npx wdio'",
-    "wdio-fusion": "cd ../.. && echo 'THEME=orion-fusion-theme npx wdio'",
+    "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
+    "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   }
 }
