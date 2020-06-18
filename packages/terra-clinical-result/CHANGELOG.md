@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+1.8.0 - (June 16, 2020)
+----------
 ### Changed
 * Changed the description of 'resultNoData' prop for observation prop types
 * Changed 'ClinicalResultBloodPressure' to return early if result has an Error or doesn't have data
