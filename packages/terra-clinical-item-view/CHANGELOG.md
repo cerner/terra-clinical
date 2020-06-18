@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update secondary colors to new rgba values.
 
 3.19.0 - (June 9, 2020)
 ----------
@@ -25,7 +27,6 @@ Unreleased
 3.16.0 - (April 14, 2020)
 ----------
 ### Changed
-* Updated wdio snapshots.
 * Update wdio test configuration to use root wdio config
 
 3.15.0 - (March 31, 2020)

@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Jest and wdio snapshot updated for ItemDisplay's primary textStyle default prop.
 
 4.23.0 - (June 16, 2020)
 ----------
@@ -32,7 +34,6 @@ Unreleased
 4.19.0 - (April 14, 2020)
 ----------
 ### Changed
-* Jest and wdio snapshot updated for ItemDisplay's primary textStyle default prop.
 * Update wdio test configuration to use root wdio config
 
 4.18.0 - (March 31, 2020)
