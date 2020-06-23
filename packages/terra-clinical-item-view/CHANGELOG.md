@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+3.20.1 - (June 23, 2020)
+----------
+### Changed
+* Revert MVB of terra-clinical-item-display
+
 3.20.0 - (June 23, 2020)
 ----------
 ### Changed
