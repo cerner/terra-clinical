@@ -16,6 +16,7 @@ exports[`correctly applies the theme context className 1`] = `
   isDisabled={false}
   isTruncated={false}
   text="comment"
+  textStyle="primary"
 />
 `;
 
@@ -35,6 +36,7 @@ exports[`should render a comment with text 1`] = `
   isDisabled={false}
   isTruncated={false}
   text="comment"
+  textStyle="primary"
 />
 `;
 
@@ -114,6 +116,7 @@ exports[`should render a default component 1`] = `
   isDisabled={false}
   isTruncated={false}
   text=""
+  textStyle="primary"
 />
 `;
 
@@ -133,5 +136,6 @@ exports[`should render a truncated comment 1`] = `
   isDisabled={false}
   isTruncated={true}
   text="comment1comment1comment1comment1comment1comment1comment1comment1"
+  textStyle="primary"
 />
 `;

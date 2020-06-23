@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Update secondary colors to new rgba values.
 
 3.19.0 - (June 9, 2020)
 ----------
@@ -77,6 +79,7 @@ Unreleased
 3.6.0 - (August 14, 2019)
 ----------
 ### Changed
+* Jest snapshot updated for ItemDisplay's primary textStyle default prop.
 * Updated package.json test scripts
 
 3.5.0 - (July 16, 2019)

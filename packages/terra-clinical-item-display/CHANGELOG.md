@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking
+* Changed the text style to primary by default and updated Jest snapshots.
 
 3.18.0 - (June 9, 2020)
 ----------

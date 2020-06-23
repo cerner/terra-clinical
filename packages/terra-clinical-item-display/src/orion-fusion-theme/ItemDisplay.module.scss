@@ -1,14 +1,16 @@
 :local {
   .orion-fusion-theme {
     --terra-clinical-item-display-inline-icon-padding-right: 0.25rem;
-    --terra-clinical-item-display-disabled-inline-icon-color: #9b9fa1;
-    --terra-clinical-item-display-disabled-inline-icon-opacity: 1;
-    --terra-clinical-item-display-primary-color: #1c1f21;
-    --terra-clinical-item-display-secondary-color: #64696c;
+    --terra-clinical-item-display-disabled-icon-color: #9b9fa1;
+    --terra-clinical-item-display-disabled-opacity: 0.3;
+    --terra-clinical-item-display-secondary-color: rgba(28, 35, 40, 0.73);
     --terra-clinical-item-display-attention-color: #c00;
     --terra-clinical-item-display-attention-font-weight: 700;
     --terra-clinical-item-display-strong-color: #1c1f21;
     --terra-clinical-item-display-strong-font-weight: 700;
     --terra-clinical-item-display-strike-through-color: #1c1f21;
+
+    --terra-clinical-item-display-disabled-inline-icon-color: #9b9fa1; // used for v3.18.0 and before
+    --terra-clinical-item-display-disabled-inline-icon-opacity: 0.3; // used for v3.18.0 and before
   }
 }
