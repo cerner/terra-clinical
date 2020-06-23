@@ -68,6 +68,11 @@ class ResizeHandle extends React.Component {
 
   render() {
     const theme = this.context;
+    const resizeHandleClass = cx(
+      'resize-handle',
+      { 'is-touch-device': ('ontouchstart' in window) },
+      theme.className,
+    );
     return (
       /* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
       <DraggableCore
@@ -75,7 +80,7 @@ class ResizeHandle extends React.Component {
         onStop={this.handleDragStop}
         onDrag={this.handleDragMove}
       >
-        <div className={cx('resize-handle', theme.className)} onClick={ResizeHandle.preventClickEvent} />
+        <div className={resizeHandleClass} onClick={ResizeHandle.preventClickEvent} />
       </DraggableCore>
       /* eslint-enable jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
     );

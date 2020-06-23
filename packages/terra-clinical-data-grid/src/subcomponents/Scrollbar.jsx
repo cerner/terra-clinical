@@ -69,7 +69,7 @@ class Scrollbar extends React.Component {
 
     return (
       <div
-        className={cx('container', theme.className)}
+        className={cx('container', { 'is-touch-device': ('ontouchstart' in window) }, theme.className)}
         ref={refCallback}
       >
         <DraggableCore

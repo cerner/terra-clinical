@@ -125,6 +125,11 @@ class Cell extends React.Component {
 
     /* eslint-disable react/forbid-dom-props */
     const theme = this.context;
+    const contentClass = cx(
+      'content',
+      { 'is-touch-device': ('ontouchstart' in window) },
+      { selectable: isSelectable, selected: isSelected },
+    );
     return (
       <div
         {...customProps}
@@ -134,7 +139,7 @@ class Cell extends React.Component {
       >
         <div
           role="button"
-          className={cx(['content', { selectable: isSelectable, selected: isSelected }])}
+          className={contentClass}
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
           onMouseEnter={onHoverStart}

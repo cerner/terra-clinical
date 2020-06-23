@@ -119,7 +119,7 @@ class SectionHeader extends React.Component {
       >
         <div
           role="button"
-          className={cx(['content', { selectable: isCollapsible }])}
+          className={cx(['content', { 'is-touch-device': ('ontouchstart' in window) }, { selectable: isCollapsible }])}
           onClick={isCollapsible ? this.handleClick : undefined}
           onKeyDown={isCollapsible ? this.handleKeyDown : undefined}
           tabIndex={isCollapsible ? '0' : undefined}
