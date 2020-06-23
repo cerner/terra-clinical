@@ -1,7 +1,10 @@
 import React from 'react';
 import {
-  isEmpty, checkIsStatusInError, checkTypeNumeric, ConditionalWrapper,
+  isEmpty, checkIsStatusInError, checkTypeNumeric, ConditionalWrapper, sanitizeResult,
 } from '../../../src/common/utils';
+import {
+  DefaultBloodPressureResult, NoDataResult, EnteredInErrorSysBPResult, ExtraDisplaysBloodPressureResult,
+} from '../../../src/terra-dev-site/test/clinical-result/TestResults';
 
 describe('isEmpty', () => {
   it('returns true when string is falsy', () => {
@@ -80,5 +83,32 @@ describe('ConditionalWrapper', () => {
       </ConditionalWrapper>,
     );
     expect(result).toMatchSnapshot();
+  });
+});
+
+describe('sanitizeResult', () => {
+  it('returns an empty object if given no data', () => {
+    expect(sanitizeResult()).toStrictEqual({});
+  });
+
+  it('returns noData parameter based on inputted resultNoData parameter', () => {
+    expect(sanitizeResult(NoDataResult)).toMatchObject({ noData: true });
+    expect(sanitizeResult(DefaultBloodPressureResult.systolic)).toMatchObject({ noData: false });
+  });
+
+  it('returns with a trimmed unit parameter', () => {
+    expect(sanitizeResult(DefaultBloodPressureResult.systolic)).toMatchObject({ cleanedUnit: 'mmhg' });
+  });
+
+  it('returns with a statusInError parameter', () => {
+    expect(sanitizeResult(EnteredInErrorSysBPResult.systolic)).toMatchObject({ statusInError: true });
+  });
+
+  it('returns with a trimmed conceptDisplay parameter', () => {
+    expect(sanitizeResult(ExtraDisplaysBloodPressureResult.systolic)).toMatchObject({ cleanedConceptDisplay: 'blood pressure systolic' });
+  });
+
+  it('returns with a trimmed datetimeDisplay parameter', () => {
+    expect(sanitizeResult(ExtraDisplaysBloodPressureResult.systolic)).toMatchObject({ cleanedDatetimeDisplay: 'nov 23, 2019 13:31:31' });
   });
 });

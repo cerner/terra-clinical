@@ -47,6 +47,30 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
     Terra.it.validatesElement();
   });
 
+  describe('decorated', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/decorated-flowsheet-result-cell');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('result error', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/has-result-error-flowsheet-result-cell');
+    });
+
+    Terra.it.validatesElement();
+  });
+
+  describe('numeric overflow', () => {
+    before(() => {
+      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/numeric-overflow-flowsheet-result-cell');
+    });
+
+    Terra.it.validatesElement();
+  });
+
   describe('truncation', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/truncated-flowsheet-result-cell');

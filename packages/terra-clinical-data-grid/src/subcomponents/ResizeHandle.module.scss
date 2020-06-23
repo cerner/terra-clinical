@@ -1,3 +1,7 @@
+// Themes
+@import '../clinical-lowlight-theme/ResizeHandle.module';
+@import '../orion-fusion-theme/ResizeHandle.module';
+
 :local {
   .resize-handle {
     cursor: col-resize; /* stylelint-disable-line plugin/no-unsupported-browser-features */ // cursor isn't supported by Android/iOS browsers

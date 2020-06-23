@@ -63,7 +63,8 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
       browser.click('#terra-select-option-date');
     });
 
-    Terra.it.validatesElement();
+    // TODO: remove disabled color-contrast rule: https://github.com/cerner/terra-core/issues/2992
+    Terra.it.validatesElement({ rules: { 'color-contrast': { enabled: false } } });
   });
 
   describe('has [age granularity]', () => {

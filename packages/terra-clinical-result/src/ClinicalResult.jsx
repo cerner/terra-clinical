@@ -78,10 +78,6 @@ const propTypes = {
   intl: intlShape.isRequired,
 };
 
-const defaultProps = {
-  result: {},
-};
-
 const ClinicalResult = (props) => {
   const {
     eventId,
@@ -142,6 +138,5 @@ const ClinicalResult = (props) => {
 };
 
 ClinicalResult.propTypes = propTypes;
-ClinicalResult.defaultProps = defaultProps;
 
 export default injectIntl(ClinicalResult);

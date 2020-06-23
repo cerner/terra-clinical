@@ -4,6 +4,25 @@ ChangeLog
 Unreleased
 ----------
 
+4.22.0 - (June 16, 2020)
+----------
+### Changed
+* Updated terra form dependency to next major version.
+* Disabled wdio axe color-contrast rule on placeholder examples for IE testing. This will be re-enabled when https://github.com/cerner/terra-core/issues/2992 is resolved.
+
+4.21.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+4.20.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 4.19.0 - (April 14, 2020)
 ----------
 ### Changed

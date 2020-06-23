@@ -6,6 +6,28 @@ Unreleased
 ### Added
 * Added an interaction media query to apply `hover` styles only on non-touch devices.
 
+2.25.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+* Minor file changes to comply with eslint rules
+
+### Removed
+* Removed unnecessary disable eslint rules
+
+2.24.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+2.23.0 - (April 23, 2020)
+----------
+### Changed
+* Minor dependency updates
+
 2.22.0 - (April 14, 2020)
 ----------
 ### Changed

@@ -29,7 +29,7 @@ const KnownNoData = (props) => {
       className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
       aria-label={intl.formatMessage({ id: 'Terra.clinicalResult.resultNoData' })}
     >
-    --
+      --
     </span>
   );
 };

@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Row Snapshot Tests correctly applies the theme context className 1`] = `
+<ThemeContextProvider
+  theme={
+    Object {
+      "className": "orion-fusion-theme",
+    }
+  }
+>
+  <Row
+    height="4rem"
+    rowId="row-test"
+    sectionId="section-test"
+    width="123px"
+  >
+    <div
+      className="row orion-fusion-theme"
+      data-row={true}
+      data-row-id="row-test"
+      data-section-id="section-test"
+      style={
+        Object {
+          "height": "4rem",
+          "width": "123px",
+        }
+      }
+    />
+  </Row>
+</ThemeContextProvider>
+`;
+
 exports[`Row Snapshot Tests should render a Row with all provided props 1`] = `
 <div
   className="row selected striped"

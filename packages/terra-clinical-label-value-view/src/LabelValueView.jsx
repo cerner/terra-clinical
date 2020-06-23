@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './LabelValueView.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -29,6 +31,14 @@ const LabelValueView = ({
   label, textValue, children, ...customProps
 }) => {
   let textValueSection;
+  const theme = React.useContext(ThemeContext);
+  const labelValueViewClass = classNames(
+    cx(
+      'label-value-view',
+      theme.className,
+    ),
+    customProps.className,
+  );
   if (!textValue && !children) {
     textValueSection = <div className={cx('value')}>--</div>;
   } else if (textValue) {
@@ -36,7 +46,7 @@ const LabelValueView = ({
   }
 
   return (
-    <div {...customProps} className={cx('label-value-view', customProps.className)}>
+    <div {...customProps} className={labelValueViewClass}>
       <div className={cx('label')}>{label}</div>
       {textValueSection}
       {children}

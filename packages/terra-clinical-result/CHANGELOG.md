@@ -4,6 +4,40 @@ ChangeLog
 Unreleased
 ----------
 
+1.8.0 - (June 16, 2020)
+----------
+### Changed
+* Changed the description of 'resultNoData' prop for observation prop types
+* Changed 'ClinicalResultBloodPressure' to return early if result has an Error or doesn't have data
+
+### Added
+* Added to interpretation Bloodpressure test
+* Added single result bloodpressure test
+* Added Result hasError test
+* Added Result hasNoData test
+* Added Decorated Flowsheet test
+* Added Flowsheet hasError test
+* Added Flowsheet hasNoData test
+* Added Flowsheet numericOverflow test
+* Added '\_BloodPressureDisplay' component to reduce clutter in 'ClinicalResultBloodPressure'
+
+### Removed
+* Removed unused test data
+* Removed default empty object prop from ClinicalResult and Observation.
+
+1.7.0 - (June 9, 2020)
+----------
+### Changed
+* Minor file changes to comply with eslint rules
+
+1.6.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
 1.5.0 - (April 22, 2020)
 ----------
 ### Fixed
