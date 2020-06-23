@@ -3,6 +3,9 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.20.0 - (June 23, 2020)
+----------
 ### Changed
 * Update secondary colors to new rgba values.
 
