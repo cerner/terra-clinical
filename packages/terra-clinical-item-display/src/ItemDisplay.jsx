@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './ItemDisplay.module.scss';
-/* eslint-disable-next-line import/no-cycle */
-import ItemComment from './ItemComment';
 
 const cx = classNamesBind.bind(styles);
 
@@ -99,8 +97,6 @@ const ItemDisplay = ({
 
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
-
-ItemDisplay.Comment = ItemComment;
 
 export default ItemDisplay;
 export { TextStyles };

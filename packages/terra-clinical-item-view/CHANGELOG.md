@@ -12,6 +12,7 @@ Unreleased
 3.20.0 - (June 23, 2020)
 ----------
 ### Changed
+* Updated source file for changes in clinical-item-display
 * Update secondary colors to new rgba values.
 
 3.19.0 - (June 9, 2020)

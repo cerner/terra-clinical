@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import CommentIndicator from 'terra-icon/lib/icon/IconComment';
-/* eslint-disable-next-line import/no-cycle */
 import ItemDisplay from './ItemDisplay';
 import styles from './ItemComment.module.scss';
 
