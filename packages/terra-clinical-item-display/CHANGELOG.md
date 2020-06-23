@@ -4,7 +4,7 @@ ChangeLog
 Unreleased
 ----------
 
-4.0.0 - (June 23, 2020)
+4.0.1 - (June 23, 2020)
 ----------
 ### Breaking
 * Removed `ItemDisplay.Comment`.

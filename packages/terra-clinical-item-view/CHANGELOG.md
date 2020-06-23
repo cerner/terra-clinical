@@ -4,6 +4,11 @@ ChangeLog
 Unreleased
 ----------
 
+4.0.0 - (June 23, 2020)
+----------
+### Breaking
+* This is a breaking change to pull in an MVB of terra-clinical-item-display. Since item view exports item display, this also needs to be an MVB
+
 3.20.1 - (June 23, 2020)
 ----------
 ### Changed
