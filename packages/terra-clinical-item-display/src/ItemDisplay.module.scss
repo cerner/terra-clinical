@@ -19,7 +19,7 @@
   .icon {
     flex: 0 0 auto;
     overflow: hidden;
-    padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.357142857142857rem);
+    padding-right: var(--terra-clinical-item-display-inline-icon-padding-right, 0.35714rem);
   }
 
   .icon > * {
@@ -52,10 +52,10 @@
   }
 
   .is-disabled {
-    opacity: var(--terra-clinical-item-display-disabled-inline-icon-opacity, 0.2);
+    opacity: var(--terra-clinical-item-display-disabled-opacity, 0.2);
 
     .icon {
-      color: var(--terra-clinical-item-display-disabled-inline-icon-color, rgba(117, 118, 125, 1));
+      color: var(--terra-clinical-item-display-disabled-icon-color, rgb(117, 118, 125));
     }
   }
 
