@@ -4,7 +4,11 @@ ChangeLog
 Unreleased
 ----------
 ### Breaking
+* Removed `ItemDisplay.Comment`.
 * Changed the text style to primary by default and updated Jest snapshots.
+
+### Changed
+* Resolved dependency cycle.
 
 3.18.0 - (June 9, 2020)
 ----------
@@ -66,12 +70,6 @@ Unreleased
 
 3.7.0 - (September 6, 2019)
 ----------
-### Changed
-* Resolved dependency cycle.
-
-### Breaking
-* Removed `ItemDisplay.Comment`.
-
 ### Changed
 * Removed inline styles from dev site components.
 * Add comments for ESlint 6
