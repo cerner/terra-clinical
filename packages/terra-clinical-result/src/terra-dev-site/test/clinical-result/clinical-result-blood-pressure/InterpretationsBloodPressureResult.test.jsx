@@ -1,6 +1,6 @@
 import React from 'react';
 import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib/index';
-import { DefaultSystolicResult, DefaultDiastolicResult } from '../TestResults';
+import { DefaultSystolicResult, DefaultDiastolicResult, MixedBPResultValue } from '../TestResults';
 
 const interpretations = [
   'critical',
@@ -35,5 +35,6 @@ const interpretationDivs = interpretations.map((interpretation => (
 export default () => (
   <>
     {interpretationDivs}
+    <ClinicalResultBloodPressure {...MixedBPResultValue} />
   </>
 );

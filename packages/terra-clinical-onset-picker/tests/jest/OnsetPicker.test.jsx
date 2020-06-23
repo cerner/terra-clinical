@@ -2,7 +2,7 @@ import React from 'react';
 import MockDate from 'mockdate';
 import { IntlProvider } from 'react-intl';
 import selectMessages from 'terra-form-select/translations/en-US.json';
-
+import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import OnsetPicker from '../../lib/OnsetPicker';
 import onsetMessages from '../../translations/en-US.json';
 
@@ -99,3 +99,19 @@ it('should render only the supplied precisions', () => {
   );
   expect(render(onsetPicker)).toMatchSnapshot();
 });
+
+it('correctly applies the theme context className', () => {
+  const tabs = render(
+    <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+      <IntlProvider locale={locale} messages={messages}>
+        <OnsetPicker
+          birthdate="2011-08-16"
+          id="test"
+          onsetDate="2017-09-10"
+        />
+      </IntlProvider>
+    </ThemeContextProvider>,
+  );
+  expect(tabs).toMatchSnapshot();
+});
+

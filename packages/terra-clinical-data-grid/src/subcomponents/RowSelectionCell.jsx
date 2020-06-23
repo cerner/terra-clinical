@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
+import ThemeContext from 'terra-theme-context';
 import Cell from './Cell';
 
 import styles from './RowSelectionCell.module.scss';
@@ -86,10 +87,11 @@ class RowSelectionCell extends React.Component {
       onHoverEnd,
       ariaLabel,
     } = this.props;
+    const theme = this.context;
 
     return (
       <Cell
-        className={cx([{ selectable: isSelectable, selected: isSelected }])}
+        className={cx({ selectable: isSelectable, selected: isSelected }, theme.className)}
         sectionId={sectionId}
         rowId={rowId}
         columnId={columnId}
@@ -111,5 +113,6 @@ class RowSelectionCell extends React.Component {
 }
 
 RowSelectionCell.propTypes = propTypes;
+RowSelectionCell.contextType = ThemeContext;
 
 export default RowSelectionCell;

@@ -25,6 +25,42 @@ const checkTypeNumeric = (resultData) => {
   return isNumeric;
 };
 
+/*
+ * Returns a copy of the object with additional parameters with trimmed values and informational booleans
+ * @param {object} observationPropShape
+ * @return {object} is an object with added trimmed values and information.
+ */
+const sanitizeResult = (data) => {
+  if (!data) {
+    return {};
+  }
+  const returnResult = { ...data };
+
+  returnResult.noData = (data.resultNoData === true);
+  if (!returnResult.noData) {
+    const {
+      result,
+      status,
+      conceptDisplay,
+      datetimeDisplay,
+    } = data;
+
+    if (!isEmpty(result.unit)) {
+      returnResult.cleanedUnit = result.unit.trim().toLowerCase();
+    }
+    if (!isEmpty(status)) {
+      returnResult.statusInError = checkIsStatusInError(status);
+    }
+    if (!isEmpty(conceptDisplay)) {
+      returnResult.cleanedConceptDisplay = conceptDisplay.trim().toLowerCase();
+    }
+    if (!isEmpty(datetimeDisplay)) {
+      returnResult.cleanedDatetimeDisplay = datetimeDisplay.trim().toLowerCase();
+    }
+  }
+  return returnResult;
+};
+
 /**
  * Private component to generate a new react.node with wrapper element around children content, dependant on a supplied condition.
  * Credit to Steufken, Olivier. “Conditionally Wrap an Element in React.” Medium, Hackages Blog, 30 Apr. 2019, blog.hackages.io/conditionally-wrap-an-element-in-react-a8b9a47fab2.
@@ -43,9 +79,11 @@ const ClinicalResultUtils = {
 };
 
 export default ClinicalResultUtils;
+
 export {
   isEmpty,
   checkIsStatusInError,
   checkTypeNumeric,
+  sanitizeResult,
   ConditionalWrapper,
 };

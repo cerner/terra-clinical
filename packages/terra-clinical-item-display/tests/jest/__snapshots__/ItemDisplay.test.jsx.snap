@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`correctly applies the theme context className 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display orion-fusion-theme"
+>
+  <div
+    className="text"
+    data-terra-clinical-item-display-text={true}
+  >
+    Display
+  </div>
+</div>
+`;
+
 exports[`should render a default component 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
@@ -13,6 +28,7 @@ exports[`should render a default component 1`] = `
 
 exports[`should render a disabled display 1`] = `
 <div
+  aria-disabled={true}
   className="item-display is-disabled"
 >
   <div
@@ -26,6 +42,7 @@ exports[`should render a disabled display 1`] = `
 
 exports[`should render a display with the attention textStyle on text 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
@@ -39,10 +56,11 @@ exports[`should render a display with the attention textStyle on text 1`] = `
 
 exports[`should render a display with the primary textStyle on text 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
-    className="text primary"
+    className="text"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -52,6 +70,7 @@ exports[`should render a display with the primary textStyle on text 1`] = `
 
 exports[`should render a display with the secondary textStyle on text 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
@@ -65,10 +84,11 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
 
 exports[`should render a display with the strikeThrough textStyle on text 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
-    className="text strike-through strikeThrough"
+    className="text strike-through"
     data-terra-clinical-item-display-text={true}
   >
     Display
@@ -78,6 +98,7 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
 
 exports[`should render a display with the strong textStyle on text 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
@@ -91,6 +112,7 @@ exports[`should render a display with the strong textStyle on text 1`] = `
 
 exports[`should render a truncated display 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
@@ -104,6 +126,7 @@ exports[`should render a truncated display 1`] = `
 
 exports[`should render disabled display with text and graphic 1`] = `
 <div
+  aria-disabled={true}
   className="item-display is-disabled icon-center"
 >
   <div
@@ -124,6 +147,7 @@ exports[`should render disabled display with text and graphic 1`] = `
 
 exports[`should render with a graphic 1`] = `
 <div
+  aria-disabled={false}
   className="item-display icon-center"
 >
   <div
@@ -142,6 +166,7 @@ exports[`should render with a graphic 1`] = `
 
 exports[`should render with text 1`] = `
 <div
+  aria-disabled={false}
   className="item-display"
 >
   <div
@@ -155,6 +180,7 @@ exports[`should render with text 1`] = `
 
 exports[`should render with text and graphic center aligned 1`] = `
 <div
+  aria-disabled={false}
   className="item-display icon-center"
 >
   <div
@@ -175,6 +201,7 @@ exports[`should render with text and graphic center aligned 1`] = `
 
 exports[`should render with text and graphic inline aligned 1`] = `
 <div
+  aria-disabled={false}
   className="item-display icon-inline"
 >
   <div
@@ -195,6 +222,7 @@ exports[`should render with text and graphic inline aligned 1`] = `
 
 exports[`should render with text and graphic top aligned 1`] = `
 <div
+  aria-disabled={false}
   className="item-display icon-top"
 >
   <div

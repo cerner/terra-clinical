@@ -3,6 +3,32 @@ ChangeLog
 
 Unreleased
 ----------
+
+3.21.0 - (June 16, 2020)
+----------
+### Changed
+* Specify divider display to prevent global styles from overriding/hiding it
+
+3.20.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+3.19.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+3.18.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+3.17.0 - (March 31, 2020)
+----------
 ### Added
 * Added wdio screenshots for clinical-lowlight-theme
 
@@ -22,22 +48,22 @@ Unreleased
 * Update copyright to include 2020
 
 3.13.0 - (January 22, 2020)
-------------------
+----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 3.12.0 - (January 7, 2020)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
 3.11.0 - (October 30, 2019)
-------------------
+----------
 ### Changed
 * Update docs to use mdx syntax
 
 3.10.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -222,13 +248,13 @@ Unreleased
 * Remove stylelint-disable selector-class-pattern
 
 1.3.0 - (September 1, 2017)
------------------
+----------
 ### Changed
 * Change dependency on terra-base to v2.0.0
 * Update nightwatch tests and test scripts.
 
 1.2.0 - (August 16, 2017)
------------------
+----------
 ### Changed
 * Change data-class to be name spaced
 
@@ -237,11 +263,11 @@ Unreleased
 * Fixed styling that applied padding-bottom on all children
 
 1.1.1 - (July 27, 2017)
------------------
+----------
 * Updated spacing around react-docgen comments
 
 1.1.0 - (July 18, 2017)
------------------
+----------
 ### Changed
 * Converted component to use CSS modules
 * Updated nightwatch test scripts
@@ -250,5 +276,5 @@ Unreleased
 * Removed nightwatch.config file
 
 1.0.0 - (June 28, 2017)
------------------
+----------
 Initial stable release

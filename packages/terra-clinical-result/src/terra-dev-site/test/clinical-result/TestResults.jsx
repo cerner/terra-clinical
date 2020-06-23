@@ -43,6 +43,12 @@ const BadData = {
   interpretation: 'critical',
 };
 
+const EnteredInErrorResult = {
+  ...DefaultResult,
+  interpretation: 'critical',
+  status: 'entered-in-error',
+};
+
 const DefaultSystolicResult = {
   eventId: '111.1',
   result: {
@@ -158,7 +164,7 @@ const ExtraDisplaysBloodPressureResult = {
   },
 };
 
-const mixedBPResultValue = {
+const MixedBPResultValue = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
@@ -183,61 +189,37 @@ const NoDataResult = {
   resultNoData: true,
 };
 
-const criticalBPResultValue = {
+const EnteredInErrorSysBPResult = {
   id: '111',
   systolic: {
     ...DefaultSystolicResult,
+    status: 'entered-in-error',
     interpretation: 'critical',
+    isModified: false,
+    hasComment: false,
   },
   diastolic: {
     ...DefaultDiastolicResult,
+    isModified: false,
+    hasComment: false,
+  },
+};
+
+const EnteredInErrorDiaBPResult = {
+  id: '111',
+  systolic: {
+    ...DefaultSystolicResult,
+    isModified: false,
+    hasComment: false,
+  },
+  diastolic: {
+    ...DefaultDiastolicResult,
+    status: 'entered-in-error',
     interpretation: 'critical',
+    isModified: false,
+    hasComment: false,
   },
 };
-
-const highBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'high',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'high',
-  },
-};
-
-const lowBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'low',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'low',
-  },
-};
-
-const abnormalBPResultValue = {
-  id: '111',
-  systolic: {
-    ...DefaultSystolicResult,
-    interpretation: 'abnormal',
-  },
-  diastolic: {
-    ...DefaultDiastolicResult,
-    interpretation: 'abnormal',
-  },
-};
-
-const InterpretationBPResultsArray = [
-  mixedBPResultValue,
-  criticalBPResultValue,
-  highBPResultValue,
-  lowBPResultValue,
-  abnormalBPResultValue,
-];
 
 export default DefaultResult;
 export {
@@ -245,17 +227,20 @@ export {
   DecoratedResult,
   UnverifiedResult,
   BadData,
+  EnteredInErrorResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
+  DefaultResultWithNoEventId,
   DefaultBloodPressureResult,
   DecoratedBloodPressureResult1,
   DecoratedBloodPressureResult2,
   UnverifiedBloodPressureResult1,
   UnverifiedBloodPressureResult2,
   ExtraDisplaysBloodPressureResult,
-  InterpretationBPResultsArray,
-  DefaultResultWithNoEventId,
+  MixedBPResultValue,
   DefaultBloodPressureSystolicResultWithNoId,
   DefaultBloodPressureDiastolicResultWithNoId,
   NoDataResult,
+  EnteredInErrorSysBPResult,
+  EnteredInErrorDiaBPResult,
 };

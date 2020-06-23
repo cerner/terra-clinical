@@ -1,6 +1,10 @@
 @import '~terra-mixins/lib/Mixins';
 @import './mixins';
 
+// Themes
+@import './clinical-lowlight-theme/ItemView.module';
+@import './orion-fusion-theme/ItemView.module';
+
 // Temporary until it is added to application.
 :local {
   .item-view {
@@ -58,7 +62,7 @@
 
   .content {
     align-items: flex-start;
-    color: var(--terra-clinical-item-view-content-color, #64696c);
+    color: var(--terra-clinical-item-view-content-color, rgba(28, 31, 33, 0.65));
     display: flex;
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
@@ -109,7 +113,7 @@
   }
 
   .content-secondary-color {
-    color: var(--terra-clinical-item-view-content-secondary-color, #64696c);
+    color: var(--terra-clinical-item-view-content-secondary-color, rgba(28, 31, 33, 0.65));
   }
 
   .content-secondary-size {

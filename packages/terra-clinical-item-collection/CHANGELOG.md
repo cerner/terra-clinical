@@ -3,14 +3,51 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Jest and wdio snapshot updated for ItemDisplay's primary textStyle default prop.
+
+4.23.0 - (June 16, 2020)
+----------
+### Changed
+* Updated wdio test to support testing against firefox.
+* Disabled wdio axe color-contrast rule on selectable item view example for firefox testing. This will be re-enabled when https://github.com/cerner/terra-clinical/issues/673 is resolved.
+
+4.22.0 - (June 9, 2020)
+----------
+### Changed
+* Minor file changes to comply with eslint rules
+* Removed unnecessary disable eslint rules
+
+4.21.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+4.20.0 - (April 23, 2020)
+----------
+### Fixed
+* Allow providing an `aria-label` to support a selectable List with the `listbox` role.
+
+4.19.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+4.18.0 - (March 31, 2020)
+----------
+### Changed
+* Minor dependency updates
 
 4.17.0 - (March 27, 2020)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
 4.16.0 - (March 24, 2020)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -35,12 +72,12 @@ Unreleased
 * Update copyright to include 2020
 
 4.11.0 - (January 22, 2020)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
 4.10.0 - (January 7, 2020)
-------------------
+----------
 ### Added
 * Add upgrade guides to dev-site docs
 
@@ -48,7 +85,7 @@ Unreleased
 * Removed yarn reference in docs
 
 4.9.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -129,7 +166,7 @@ Unreleased
 * Changelog dev site doc page
 
 3.20.0 - (January 2, 2019)
------------------
+----------
 ### Changed
 * Updated readme to have logically nested headers.
 
@@ -139,7 +176,7 @@ Unreleased
 * Minor dependency updates
 
 3.18.0 - (October 16, 2018)
------------------
+----------
 ### Changed
 * Updated prop descriptions in ItemCollections.jsx and Item.jsx.
 
@@ -246,7 +283,7 @@ Unreleased
 * Minor dependency updates
 
 2.3.0 - (January 23, 2018)
------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -259,12 +296,12 @@ Unreleased
 * Remove type check to pass all Item Collection generated properties that are passed to the Item Collection children
 
 2.1.0 - (December 5, 2017)
------------------
+----------
 ### Changed
 * Pass down the Item Collection's view to allow for custom Item Collection components to know when to render as a list item or a table row.
 
 2.0.0 - (November 29, 2017)
------------------
+----------
 * See [Release Notes](https://github.com/cerner/terra-clinical/releases/tag/terra-clinical-item-collection%402.0.0) for Migration Guide
 
 ### Added
@@ -282,29 +319,29 @@ Unreleased
 * Item Collection now initially renders as static. Additional props must be included for selectable Item Collections. See Selectable Readme for more information.
 
 1.4.0 - (September 26, 2017)
------------------
+----------
 ### Changed
 * Fixed visual differences between list and table view
 * Updated nightwatch tests to use expect syntax
 * Remove stylelint-disable selector-class-pattern
 
 1.3.0 - (September 1, 2017)
------------------
+----------
 ### Changed
 * Change dependency on terra-base to v2.0.0
 * Update nightwatch tests and test scripts.
 
 1.2.0 - (August 16, 2017)
------------------
+----------
 ### Changed
 * Change data-class to be name spaced
 
 1.1.1 - (July 27, 2017)
------------------
+----------
 * Updated spacing around react-docgen comments
 
 1.1.0 - (July 18, 2017)
------------------
+----------
 ### Changed
 * Updated nightwatch test scripts
 
@@ -313,5 +350,5 @@ Unreleased
 * Converted component to use CSS modules
 
 1.0.0 - (June 28, 2017)
------------------
+----------
 Initial stable release

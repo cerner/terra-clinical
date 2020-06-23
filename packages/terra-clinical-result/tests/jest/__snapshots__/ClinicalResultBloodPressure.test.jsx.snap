@@ -10,8 +10,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={true}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -19,23 +23,23 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={true}
-          interpretation="critical"
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={true}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "interpretation": "critical",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
@@ -51,8 +55,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -60,22 +68,23 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "hasComment": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
       <IconComment
         className="icon-comment"
         data-name="Layer 1"
@@ -98,8 +107,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -107,24 +120,25 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
       >
         /
       </span>
-      <ConditionalWrapper
-        condition={true}
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          interpretation={null}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "interpretation": "critical",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
+            "status": "entered-in-error",
+            "statusInError": true,
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
@@ -140,8 +154,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -149,22 +167,23 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "isModified": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
       <IconModified
         className="icon-modified"
         viewBox="0 0 48 48"
@@ -185,8 +204,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -194,22 +217,24 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedConceptDisplay": "temperature oral",
+            "cleanedUnit": "mmhg",
+            "conceptDisplay": "Temperature Oral",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
   <div
@@ -230,8 +255,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -239,22 +268,24 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
+            "cleanedUnit": "mmhg",
+            "datetimeDisplay": "Nov 23, 2019 13:31:31",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
   <div
@@ -275,8 +306,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={true}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -284,22 +319,22 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={true}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={true}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
@@ -315,8 +350,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-111"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -324,23 +363,23 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          isUnverified={true}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "isUnverified": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
       <IconDiamond
         className="icon-unverified"
         viewBox="0 0 48 48"
@@ -361,30 +400,45 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with 
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(KnownNoData)
-        key="NoData-Diastolic-undefined"
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "eventId": "",
+            "hasComment": false,
+            "interpretation": "normal",
+            "isModified": false,
+            "isUnverified": false,
+            "noData": true,
+            "result": Object {
+              "unit": "",
+              "value": null,
+            },
+            "resultNoData": true,
+          }
+        }
+        type="Diastolic"
       />
     </div>
   </div>
@@ -401,30 +455,31 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] 
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-undefined"
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={Object {}}
+        type="Diastolic"
       />
     </div>
   </div>
@@ -441,31 +496,34 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={true}
-          interpretation="critical"
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={true}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "interpretation": "critical",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={true}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
     </div>
   </div>
@@ -482,30 +540,34 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "hasComment": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
       <IconComment
         className="icon-comment"
@@ -529,32 +591,36 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        condition={true}
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          interpretation={null}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "interpretation": "critical",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
+            "status": "entered-in-error",
+            "statusInError": true,
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
     </div>
   </div>
@@ -571,30 +637,34 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "isModified": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
       <IconModified
         className="icon-modified"
@@ -616,30 +686,35 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedConceptDisplay": "temperature oral",
+            "cleanedUnit": "mmhg",
+            "conceptDisplay": "Temperature Oral",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
     </div>
   </div>
@@ -661,30 +736,35 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
+            "cleanedUnit": "mmhg",
+            "datetimeDisplay": "Nov 23, 2019 13:31:31",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
     </div>
   </div>
@@ -706,30 +786,33 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={true}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={true}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={true}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
     </div>
   </div>
@@ -746,31 +829,34 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={false}
-          isUnverified={true}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "isUnverified": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <InjectIntl(ResultError)
-        key="Error-Diastolic-111"
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={Object {}}
+        type="Diastolic"
       />
       <IconDiamond
         className="icon-unverified"
@@ -792,8 +878,11 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
     <div
       className="result-display"
     >
-      <InjectIntl(ResultError)
-        key="Error-Systolic-undefined"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        result={Object {}}
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -801,22 +890,21 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
@@ -832,8 +920,25 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
     <div
       className="result-display"
     >
-      <InjectIntl(KnownNoData)
-        key="NoData-Systolic-undefined"
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        result={
+          Object {
+            "eventId": "",
+            "hasComment": false,
+            "interpretation": "normal",
+            "isModified": false,
+            "isUnverified": false,
+            "noData": true,
+            "result": Object {
+              "unit": "",
+              "value": null,
+            },
+            "resultNoData": true,
+          }
+        }
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -841,42 +946,29 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
 `;
 
-exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `
-<div
-  className="clinical-result blood-pressure-result"
->
-  <InjectIntl(KnownNoData) />
-</div>
-`;
+exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `<InjectIntl(KnownNoData) />`;
 
-exports[`ClinicalResultBloodPressure should render a ResultError if hasResultError is true 1`] = `
-<div
-  className="clinical-result blood-pressure-result"
->
-  <InjectIntl(ResultError) />
-</div>
-`;
+exports[`ClinicalResultBloodPressure should render a ResultError if hasResultError is true 1`] = `<InjectIntl(ResultError) />`;
 
 exports[`ClinicalResultBloodPressure should render a default ClinicalResultBloodPressure 1`] = `
 <div
@@ -888,44 +980,45 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={true}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
@@ -941,44 +1034,45 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={true}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
   </div>
 </div>
@@ -994,44 +1088,47 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <ConditionalWrapper
-        key="del-Systolic-111.1"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.1"
-          hideUnit={true}
-          key="Observation-Systolic-111.1"
-          result={
-            Object {
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "isModified": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "180",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Systolic"
+      />
       <span
         className="result-display-separator"
         key="Observation-Separator-111.1"
       >
         /
       </span>
-      <ConditionalWrapper
-        key="del-Diastolic-111.2"
-        wrapper={[Function]}
-      >
-        <Observation
-          eventId="111.2"
-          hideUnit={false}
-          key="Observation-Diastolic-111.2"
-          result={
-            Object {
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "isModified": true,
+            "noData": false,
+            "result": Object {
               "unit": "mmHg",
               "value": "80",
-            }
+            },
           }
-        />
-      </ConditionalWrapper>
+        }
+        type="Diastolic"
+      />
     </div>
     <IconModified
       className="icon-modified"
@@ -1052,8 +1149,24 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
     <div
       className="result-display"
     >
-      <InjectIntl(KnownNoData)
-        key="NoData-Systolic-undefined"
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "eventId": "",
+            "hasComment": false,
+            "interpretation": "normal",
+            "isModified": false,
+            "isUnverified": false,
+            "noData": true,
+            "result": Object {
+              "unit": "",
+              "value": null,
+            },
+            "resultNoData": true,
+          }
+        }
+        type="Systolic"
       />
       <span
         className="result-display-separator"
@@ -1061,8 +1174,24 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
       >
         /
       </span>
-      <InjectIntl(KnownNoData)
-        key="NoData-Diastolic-undefined"
+      <BloodPressureDisplay
+        hideUnit={false}
+        result={
+          Object {
+            "eventId": "",
+            "hasComment": false,
+            "interpretation": "normal",
+            "isModified": false,
+            "isUnverified": false,
+            "noData": true,
+            "result": Object {
+              "unit": "",
+              "value": null,
+            },
+            "resultNoData": true,
+          }
+        }
+        type="Diastolic"
       />
     </div>
   </div>

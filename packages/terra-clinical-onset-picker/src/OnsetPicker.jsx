@@ -8,6 +8,7 @@ import FieldSet from 'terra-form-fieldset';
 import InputField from 'terra-form-input/lib/InputField';
 import SelectField from 'terra-form-select/lib/SelectField';
 import { injectIntl, intlShape } from 'react-intl';
+import ThemeContext from 'terra-theme-context';
 import OnsetUtils from './OnsetUtils';
 import styles from './OnsetPicker.module.scss';
 
@@ -520,10 +521,11 @@ class OnsetPicker extends React.Component {
         </Field>
       );
     }
+    const theme = this.context;
 
     return (
       <div id={this.props.id} {...customProps}>
-        <FieldSet className={cx('fieldset')} legend={legend} isLegendHidden={isLegendHidden}>
+        <FieldSet className={cx('fieldset', theme.className)} legend={legend} isLegendHidden={isLegendHidden}>
           {/* Precision */}
           <SelectField
             className={cx('field-inline', 'precision')}
@@ -563,6 +565,7 @@ class OnsetPicker extends React.Component {
 
 OnsetPicker.propTypes = propTypes;
 OnsetPicker.defaultProps = defaultProps;
+OnsetPicker.contextType = ThemeContext;
 
 export default injectIntl(OnsetPicker);
 export {

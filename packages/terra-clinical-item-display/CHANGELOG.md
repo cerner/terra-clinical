@@ -3,11 +3,39 @@ ChangeLog
 
 Unreleased
 ----------
+### Breaking
+* Changed the text style to primary by default and updated Jest snapshots.
+
+3.18.0 - (June 9, 2020)
+----------
+### Changed
+* Apply themes by context and directly include packaged themes.
+
+3.17.0 - (April 28, 2020)
+----------
+### Added
+* Added `directory` as a sub attribute to the `repository` attribute in package.json
+
+### Removed
+* Removed "View Component Source Code" from docs in favour of source code badge
+
+3.16.0 - (April 23, 2020)
+----------
+### Fixed
+* Set `aria-disabled` for a disabled item display to fix color-contrast axe failure.
+
+3.15.0 - (April 14, 2020)
+----------
+### Changed
+* Update wdio test configuration to use root wdio config
+
+3.14.0 - (March 31, 2020)
+----------
 ### Added
 * Added wdio screenshots for clinical-lowlight-theme
 
 3.13.0 - (March 24, 2020)
-------------------
+----------
 ### Changed
 * Update docs to use MDX syntax
 
@@ -22,12 +50,12 @@ Unreleased
 * Update copyright to include 2020
 
 3.10.0 - (January 22, 2020)
-------------------
+----------
 ### Added
 * Added orion-fusion-theme and generated the respective reference wdio screenshots.
 
 3.9.0 - (September 26, 2019)
-------------------
+----------
 ### Changed
 * Minor dependency updates
 
@@ -198,18 +226,18 @@ Color Contrast Accessibility issue
 * Added `strong` textStyle & `isDisabled` prop.
 
 1.5.0 - (November 29, 2017)
------------------
+----------
 ### Fixed
 * Fix IE10 truncation
 
 1.4.0 - (September 26, 2017)
------------------
+----------
 ### Changed
 * Remove stylelint-disable selector-class-pattern
 * Update class names to follow selector-class-pattern
 
 1.3.0 - (September 1, 2017)
------------------
+----------
 ### Changed
 * Change dependency on terra-base to v2.0.0
 * Update nightwatch tests and test scripts.
@@ -220,7 +248,7 @@ Color Contrast Accessibility issue
 * Fixed icon styling to scale with font-size.
 
 1.1.0 - (July 18, 2017)
------------------
+----------
 ### Changed
 * Converted component to use CSS modules
 * Updated nightwatch test scripts
@@ -229,5 +257,5 @@ Color Contrast Accessibility issue
 * Removed nightwatch.config file
 
 1.0.0 - (June 28, 2017)
------------------
+----------
 Initial stable release

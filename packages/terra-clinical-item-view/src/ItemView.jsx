@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ItemDisplay from 'terra-clinical-item-display';
 import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
 import styles from './ItemView.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const Layouts = {
   ONE_COLUMN: 'oneColumn',
@@ -184,13 +186,17 @@ const ItemView = ({
   refCallback,
   ...customProps
 }) => {
-  const viewClassNames = cx([
-    'item-view',
-    { 'is-truncated': isTruncated },
-    { 'one-column': layout === Layouts.ONE_COLUMN },
-    { 'two-columns': layout === Layouts.TWO_COLUMNS },
+  const theme = React.useContext(ThemeContext);
+  const viewClassNames = classNames(
+    cx(
+      'item-view',
+      { 'is-truncated': isTruncated },
+      { 'one-column': layout === Layouts.ONE_COLUMN },
+      { 'two-columns': layout === Layouts.TWO_COLUMNS },
+      theme.className,
+    ),
     customProps.className,
-  ]);
+  );
 
   return (
     <div {...customProps} className={viewClassNames} ref={refCallback}>

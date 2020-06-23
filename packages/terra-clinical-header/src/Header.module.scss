@@ -1,77 +1,76 @@
+// import themes
+@import './clinical-lowlight-theme/Header.module';
+@import './orion-fusion-theme/Header.module';
+
 :local {
   .flex-header {
-    background-color: var(--terra-clinical-header-background-color, #f4f4f4);
-    border-bottom-color: var(--terra-clinical-header-border-bottom-color, #dedfe0);
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+    align-items: flex-start;
+    background-color: var(--terra-clinical-header-background-color, #f9f9f9);
+    border-bottom: var(--terra-clinical-header-border-bottom, 1px solid #d3d4d5);
+    color: var(--terra-clinical-header-color);
     display: flex;
-    height: var(--terra-clinical-header-height, 3.587rem);
     justify-content: space-between;
-    overflow: hidden;
-    padding: var(--terra-clinical-header-padding, 0.714rem);
+    min-height: var(--terra-clinical-header-min-height, 2.92857rem);
+    padding: var(--terra-clinical-header-padding, 0.35714rem 0.35714rem 0.35714rem 0.35714rem);
     position: relative;
     width: 100%;
 
     .flex-collapse {
-      align-items: center;
       display: flex;
       flex: 0 0 auto;
       height: 100%;
+      margin: var(--terra-clinical-header-flex-collapse-margin);
       max-width: 40%;
       position: relative;
     }
   }
 
+  .subheader {
+    background-color: var(--terra-clinical-header-subheader-background-color, #c8cacb);
+    min-height: var(--terra-clinical-header-subheader-min-height, 2.857rem);
+    padding: var(--terra-clinical-header-subheader-padding, 0.3571rem 0.7143rem);
+  }
+
   .flex-fill {
-    align-self: center;
     flex: 1 1 auto;
-    height: 100%;
-    min-width: 0;
     position: relative;
     width: 100%;
   }
 
   .flex-end {
-    align-items: center;
     display: flex;
     flex: 0 0 auto;
-    height: 100%;
     position: relative;
   }
 
   .title-container {
-    height: 100%;
     position: relative;
     width: 100%;
   }
 
   .title {
-    font-size: var(--terra-clinical-header-title-font-size, 1.285rem);
-    font-weight: normal;
-    height: 100%;
-    line-height: var(--terra-clinical-header-title-line-height, 1.75);
+    font-size: var(--terra-clinical-header-title-font-size, 1.10714rem);
+    font-weight: var(--terra-clinical-header-title-font-weight, 500);
+    hyphens: auto;
     margin-bottom: 0;
     margin-top: 0;
-    overflow: hidden;
-    padding: var(--terra-clinical-header-title-padding, 0);
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow-wrap: break-word; /* Modern browsers */
+    padding: var(--terra-clinical-header-title-padding, 0.28571rem 0.71428rem 0 0.71428rem);
     width: 100%;
-    word-break: normal;
-    word-wrap: normal;
+    word-wrap: break-word; /* For IE 10 and IE 11 */
   }
-
-  .flex-subheader {
-    background-color: var(--terra-clinical-header-subheader-background-color, #c8cacb);
-    border-bottom-color: currentColor;
-    border-bottom-style: none;
-    border-bottom-width: 0;
-    display: flex;
-    height: var(--terra-clinical-header-subheader-height, 2.857rem);
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 0.3571rem 0.7143rem;
-    position: relative;
-    width: 100%;
+  
+  /* stylelint-disable selector-max-compound-selectors */
+  .flex-end + .flex-fill {
+    .title {
+      padding-left: var(--terra-clinical-header-end-content-plus-title-padding-left, 0.35714rem);
+    }
   }
+  
+  .flex-fill + .flex-end {
+    .title {
+      padding-right: var(--terra-clinical-header-title-plus-end-content-padding-right, 0.35714rem);
+    }
+  }
+  /* stylelint-enable selector-max-compound-selectors */
 }
