@@ -23,7 +23,7 @@ const CustomItemCollectionExamples = () => (
       {
         title: 'Custom Table Example',
         example: <CustomTableExample />,
-      source: CustomTableExampleSrc,
+        source: CustomTableExampleSrc,
       },
     ]}
   />

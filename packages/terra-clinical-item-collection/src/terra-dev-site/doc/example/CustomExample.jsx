@@ -8,7 +8,7 @@ import List from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import Table from 'terra-table';
 import classNames from 'classnames/bind';
-import styles from '../../../ItemCollection.scss';
+import styles from '../../../ItemCollection.module.scss';
 
 const display1 = <ItemView.Display icon={<IconPerson />} text="Asif Khan" />;
 const display2 = <ItemView.Display text="Care Position: Primary" />;
