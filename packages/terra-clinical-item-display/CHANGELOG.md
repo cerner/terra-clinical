@@ -4,6 +4,15 @@ ChangeLog
 Unreleased
 ----------
 
+4.0.1 - (June 23, 2020)
+----------
+### Breaking
+* Removed `ItemDisplay.Comment`.
+* Changed the text style to primary by default and updated Jest snapshots.
+
+### Changed
+* Resolved dependency cycle.
+
 3.18.0 - (June 9, 2020)
 ----------
 ### Changed

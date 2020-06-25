@@ -1,10 +1,11 @@
 import React from 'react';
-import ItemDisplay from 'terra-clinical-item-display';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
 
 const component = () => (
   <span>
-    <ItemDisplay.Comment text="Comment" />
-    <ItemDisplay.Comment text="Disabled Comment" isDisabled />
+    <ItemComment text="Comment" />
+    <ItemComment text="Disabled Comment" isDisabled />
   </span>
 );
 

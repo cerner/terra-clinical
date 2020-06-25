@@ -84,6 +84,7 @@ exports[`should render a TableView with children 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
+        textStyle="primary"
       />
        
        
@@ -181,6 +182,7 @@ exports[`should render a TableView with table styles 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
+        textStyle="primary"
       />
        
        
