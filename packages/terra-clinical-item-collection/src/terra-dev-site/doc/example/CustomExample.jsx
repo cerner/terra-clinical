@@ -4,7 +4,7 @@ import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
-import List from 'terra-list';
+import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import Table from 'terra-table';
 import classNames from 'classnames/bind';
@@ -24,7 +24,7 @@ const cx = classNames.bind(styles);
 
 const listDisplay = (
   <List role="listbox">
-    <List.Item
+    <Item
       content={(
         <ItemView
           displays={[
@@ -41,7 +41,7 @@ const listDisplay = (
         />
       )}
     />
-    <List.Item
+    <Item
       content={(
         <ItemView
           displays={[
@@ -59,7 +59,7 @@ const listDisplay = (
         />
       )}
     />
-    <List.Item
+    <Item
       content={(
         <ItemView
           displays={[
@@ -76,7 +76,7 @@ const listDisplay = (
         />
       )}
     />
-    <List.Item
+    <Item
       content={(
         <ItemView
           displays={[
@@ -94,7 +94,7 @@ const listDisplay = (
         />
       )}
     />
-    <List.Item
+    <Item
       content={(
         <ItemView
           displays={[

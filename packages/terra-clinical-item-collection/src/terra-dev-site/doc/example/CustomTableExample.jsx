@@ -4,7 +4,7 @@ import IconPerson from 'terra-icon/lib/icon/IconPerson';
 import IconAlert from 'terra-icon/lib/icon/IconAlert';
 import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
-import List from 'terra-list';
+import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import classNames from 'classnames/bind';
 import styles from './CustomTableExample.scss';
@@ -23,92 +23,82 @@ const cx = classNames.bind(styles);
 
 const listDisplay = (
   <List role="listbox">
-    <List.Item
-      content={(
-        <ItemView
-          displays={[
-            <ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" />,
-            display2,
-            display3,
-            display4,
-            display5,
-            display6,
-          ]}
-          startAccessory={startAccessory}
-          comment={comment}
-          endAccessory={endAccessory}
-        />
-      )}
-    />
-    <List.Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            display3,
-            <ItemView.Display text="Acuity: 5" icon={<IconAttachment />} />,
-            display5,
-            display6,
-          ]}
-          startAccessory={startAccessory}
-          comment={comment}
-          endAccessory={endAccessory}
-          layout="twoColumns"
-        />
-      )}
-    />
-    <List.Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            display3,
-            display4,
-            display5,
-            display6,
-          ]}
-          reserveStartAccessorySpace
-          comment={comment}
-          endAccessory={endAccessory}
-        />
-      )}
-    />
-    <List.Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            <ItemView.Display text="Room 100A" textStyle="strikeThrough" />,
-            display4,
-            display5,
-            display6,
-          ]}
-          reserveStartAccessorySpace
-          comment={comment}
-          endAccessory={endAccessory}
-          layout="twoColumns"
-        />
-      )}
-    />
-    <List.Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            display3,
-            display4,
-            display5,
-            display6,
-          ]}
-          startAccessory={startAccessory}
-          comment={comment}
-        />
-      )}
-    />
+    <Item key="default">
+      <ItemView
+        displays={[
+          <ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" />,
+          display2,
+          display3,
+          display4,
+          display5,
+          display6,
+        ]}
+        startAccessory={startAccessory}
+        comment={comment}
+        endAccessory={endAccessory}
+      />
+    </Item>
+    <Item key="default">
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          display3,
+          <ItemView.Display text="Acuity: 5" icon={<IconAttachment />} />,
+          display5,
+          display6,
+        ]}
+        startAccessory={startAccessory}
+        comment={comment}
+        endAccessory={endAccessory}
+        layout="twoColumns"
+      />
+    </Item>
+    <Item key="default">
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          display3,
+          display4,
+          display5,
+          display6,
+        ]}
+        reserveStartAccessorySpace
+        comment={comment}
+        endAccessory={endAccessory}
+      />
+    </Item>
+    <Item key="default">
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          <ItemView.Display text="Room 100A" textStyle="strikeThrough" />,
+          display4,
+          display5,
+          display6,
+        ]}
+        reserveStartAccessorySpace
+        comment={comment}
+        endAccessory={endAccessory}
+        layout="twoColumns"
+      />
+    </Item>
+    <Item key="default">
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          display3,
+          display4,
+          display5,
+          display6,
+        ]}
+        startAccessory={startAccessory}
+        comment={comment}
+      />
+    </Item>
   </List>
 );
 
