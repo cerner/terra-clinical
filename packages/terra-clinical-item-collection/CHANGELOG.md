@@ -3,6 +3,8 @@ ChangeLog
 
 Unreleased
 ----------
+### Changed
+* Jest snapshot reverted for ItemDisplay's primary textStyle default prop till dependency is updated.
 
 4.24.0 - (June 23, 2020)
 ----------
