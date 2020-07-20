@@ -24,92 +24,82 @@ const cx = classNames.bind(styles);
 
 const listDisplay = (
   <List role="listbox">
-    <Item
-      content={(
-        <ItemView
-          displays={[
-            <ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" />,
-            display2,
-            display3,
-            display4,
-            display5,
-            display6,
-          ]}
-          startAccessory={startAccessory}
-          comment={comment}
-          endAccessory={endAccessory}
-        />
-      )}
-    />
-    <Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            display3,
-            <ItemView.Display text="Acuity: 5" icon={<IconAttachment />} />,
-            display5,
-            display6,
-          ]}
-          startAccessory={startAccessory}
-          comment={comment}
-          endAccessory={endAccessory}
-          layout="twoColumns"
-        />
-      )}
-    />
-    <Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            display3,
-            display4,
-            display5,
-            display6,
-          ]}
-          reserveStartAccessorySpace
-          comment={comment}
-          endAccessory={endAccessory}
-        />
-      )}
-    />
-    <Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            <ItemView.Display text="Room 100A" textStyle="strikeThrough" />,
-            display4,
-            display5,
-            display6,
-          ]}
-          reserveStartAccessorySpace
-          comment={comment}
-          endAccessory={endAccessory}
-          layout="twoColumns"
-        />
-      )}
-    />
-    <Item
-      content={(
-        <ItemView
-          displays={[
-            display1,
-            display2,
-            display3,
-            display4,
-            display5,
-            display6,
-          ]}
-          startAccessory={startAccessory}
-          comment={comment}
-        />
-      )}
-    />
+    <Item>
+      <ItemView
+        displays={[
+          <ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" />,
+          display2,
+          display3,
+          display4,
+          display5,
+          display6,
+        ]}
+        startAccessory={startAccessory}
+        comment={comment}
+        endAccessory={endAccessory}
+      />
+    </Item>
+    <Item>
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          display3,
+          <ItemView.Display text="Acuity: 5" icon={<IconAttachment />} />,
+          display5,
+          display6,
+        ]}
+        startAccessory={startAccessory}
+        comment={comment}
+        endAccessory={endAccessory}
+        layout="twoColumns"
+      />
+    </Item>
+    <Item>
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          display3,
+          display4,
+          display5,
+          display6,
+        ]}
+        reserveStartAccessorySpace
+        comment={comment}
+        endAccessory={endAccessory}
+      />
+    </Item>
+    <Item>
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          <ItemView.Display text="Room 100A" textStyle="strikeThrough" />,
+          display4,
+          display5,
+          display6,
+        ]}
+        reserveStartAccessorySpace
+        comment={comment}
+        endAccessory={endAccessory}
+        layout="twoColumns"
+      />
+    </Item>
+    <Item>
+      <ItemView
+        displays={[
+          display1,
+          display2,
+          display3,
+          display4,
+          display5,
+          display6,
+        ]}
+        startAccessory={startAccessory}
+        comment={comment}
+      />
+    </Item>
   </List>
 );
 
@@ -132,7 +122,7 @@ const tableDisplay = (
     <Table.Rows>
       <Table.Row>
         <Table.Cell content={<IconAlert />} key="start_accessory" className={cx('content-accessory', 'content-accessory-align-center')} />
-        <Table.Cell content={<ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" />} key="display_1" className={cx('content-display')} />
+        <Table.Cell content={<ItemView.Display icon={<IconPerson />} text="Asif Khan LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="attention" />} key="display_1" className={cx('content-display')} />
         <Table.Cell content={display2} key="display_2" className={cx('content-display')} />
         <Table.Cell content={display3} key="display_3" className={cx('content-display')} />
         <Table.Cell content={display4} key="display_4" className={cx('content-display')} />
@@ -146,7 +136,7 @@ const tableDisplay = (
         <Table.Cell content={display1} key="display_1" className={cx('content-display')} />
         <Table.Cell content={display2} key="display_2" className={cx('content-display')} />
         <Table.Cell content={display3} key="display_3" className={cx('content-display')} />
-        <Table.Cell content={<ItemView.Display text="Acuity: 5" icon={<IconAttachment />} />} key="display_4" className={cx('content-display')} />
+        <Table.Cell content={<ItemView.Display text="Acuity: 5 LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" icon={<IconAttachment />} />} key="display_4" className={cx('content-display')} />
         <Table.Cell content={display5} key="display_5" className={cx('content-display')} />
         <Table.Cell content={display6} key="display_6" className={cx('content-display')} />
         <Table.Cell content={comment} key="comment" className={cx('content-comment')} />
@@ -167,7 +157,7 @@ const tableDisplay = (
         <Table.Cell content=" " key="start_accessory" className={cx('content-accessory', 'content-accessory-align-center')} />
         <Table.Cell content={display1} key="display_1" className={cx('content-display')} />
         <Table.Cell content={display2} key="display_2" className={cx('content-display')} />
-        <Table.Cell content={<ItemView.Display text="Room 100A" textStyle="strikeThrough" />} key="display_3" className={cx('content-display')} />
+        <Table.Cell content={<ItemView.Display text="Room 100A LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="strikeThrough" />} key="display_3" className={cx('content-display')} />
         <Table.Cell content={display4} key="display_4" className={cx('content-display')} />
         <Table.Cell content={display5} key="display_5" className={cx('content-display')} />
         <Table.Cell content={display6} key="display_6" className={cx('content-display')} />

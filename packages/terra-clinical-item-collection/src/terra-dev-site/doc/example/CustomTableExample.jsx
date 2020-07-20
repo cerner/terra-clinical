@@ -6,6 +6,7 @@ import IconInformation from 'terra-icon/lib/icon/IconInformation';
 import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
+import CellGrid, { Cell} from 'terra-cell-grid';
 import classNames from 'classnames/bind';
 import styles from './CustomTableExample.scss';
 
@@ -104,61 +105,61 @@ const listDisplay = (
 
 const smallDisplay = (
   <div className={cx('table')}>
-    <div id="row1" className={cx('row')}>
-      <div className={cx('start-accessory')}>{startAccessory}</div>
-      <div className={cx('display')}>{<ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" />}</div>
-      <div className={cx('display')}>{display2}</div>
-      <div className={cx('display')}>{display3}</div>
-      <div className={cx('display')}>{display4}</div>
-      <div className={cx('display')}>{display5}</div>
-      <div className={cx('display')}>{display6}</div>
-      <div className={cx('comment')}>{comment}</div>
-      <div className={cx('end-accessory')}>{endAccessory}</div>
-    </div>
-    <div id="row2" className={cx('row')}>
-      <div className={cx('start-accessory')}>{startAccessory}</div>
-      <div className={cx('display')}>{display1}</div>
-      <div className={cx('display')}>{display2}</div>
-      <div className={cx('display')}>{display3}</div>
-      <div className={cx('display')}>{<ItemView.Display text="Acuity: 5" icon={<IconAttachment />} />}</div>
-      <div className={cx('display')}>{display5}</div>
-      <div className={cx('display')}>{display6}</div>
-      <div className={cx('comment')}>{comment}</div>
-      <div className={cx('end-accessory')}>{endAccessory}</div>
-    </div>
-    <div id="row3" className={cx('row')}>
-      <div className={cx('start-accessory')} />
-      <div className={cx('display')}>{display1}</div>
-      <div className={cx('display')}>{display2}</div>
-      <div className={cx('display')}>{display3}</div>
-      <div className={cx('display')}>{display4}</div>
-      <div className={cx('display')}>{display5}</div>
-      <div className={cx('display')}>{display6}</div>
-      <div className={cx('comment')}>{comment}</div>
-      <div className={cx('end-accessory')}>{endAccessory}</div>
-    </div>
-    <div id="row4" className={cx('row')}>
-      <div className={cx('start-accessory')} />
-      <div className={cx('display')}>{display1}</div>
-      <div className={cx('display')}>{display2}</div>
-      <div className={cx('display')}>{<ItemView.Display text="Room 100A" textStyle="strikeThrough" />}</div>
-      <div className={cx('display')}>{display4}</div>
-      <div className={cx('display')}>{display5}</div>
-      <div className={cx('display')}>{display6}</div>
-      <div className={cx('comment')}>{comment}</div>
-      <div className={cx('end-accessory')}>{endAccessory}</div>
-    </div>
-    <div id="row5" className={cx('row')}>
-      <div className={cx('start-accessory')}>{startAccessory}</div>
-      <div className={cx('display')}>{display1}</div>
-      <div className={cx('display')}>{display2}</div>
-      <div className={cx('display')}>{display3}</div>
-      <div className={cx('display')}>{display4}</div>
-      <div className={cx('display')}>{display5}</div>
-      <div className={cx('display')}>{display6}</div>
-      <div className={cx('comment')}>{comment}</div>
-      <div className={cx('end-accessory')} />
-    </div>
+    <CellGrid>
+      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{<ItemView.Display icon={<IconPerson />} text="Asif Khan LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="attention" />}</Cell>
+      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
+      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
+      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
+      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
+      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
+      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
+      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    </CellGrid>
+    <CellGrid>
+      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
+      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
+      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
+      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{<ItemView.Display text="Acuity: 5 LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" icon={<IconAttachment />} />}</Cell>
+      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
+      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
+      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
+      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    </CellGrid>
+    <CellGrid>
+      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }} />
+      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
+      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
+      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
+      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
+      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
+      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
+      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
+      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    </CellGrid>
+    <CellGrid>
+      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
+      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
+      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{<ItemView.Display text="Room 100A LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="strikeThrough" />}</Cell>
+      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
+      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
+      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
+      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
+      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    </CellGrid>
+    <CellGrid>
+      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
+      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
+      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
+      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
+      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
+      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
+      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
+      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }} />
+    </CellGrid>
   </div>
 );
 

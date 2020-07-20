@@ -29,6 +29,7 @@
     "classnames": "^2.2.5",
     "keycode-js": "^1.0.4",
     "prop-types": "^15.5.8",
+    "terra-cell-grid": "^1.5.0",
     "terra-clinical-item-view": "^3.20.0",
     "terra-icon": "^3.0.0",
     "terra-list": "^4.26.0",

@@ -25,21 +25,19 @@ Start with a Terra `List` component and define two of its attributes. `dividerSt
   </List>);
 ```
 
-Next we build the children that are going into this `<List>`. Each child should be wrapped in two components, `<List.Item>` and `<ItemView>` from `terra-clinical-item-view`.
+Next we build the children that are going into this `<List>`. Each child should be wrapped in `terra-list`'s `<Item>` and as display in an `<ItemView>` from `terra-clinical-item-view`.
 
 ```javascript
   var listChild = (
-    <List.Item
-      content={
-        <ItemView
-          displays={React.Children.toArray(children)}
-        />
-      }
-    />
+    <Item>
+      <ItemView
+        displays={React.Children.toArray(children)}
+      />
+    </Item>
   );
 ```
 
-The props listed in the code examples are the ones set in `terra-clinical-item-collection`, however there are plenty more to be set as needed listed in the `terra-list` documentation. A quirk to pay attention to is if `isSelectable` is used on `<List.Item>`, `tabIndex` should be added to the `<List.Item>` and set to `0`.
+The props listed in the code examples are the ones set in `terra-clinical-item-collection`, however there are plenty more to be set as needed listed in the `terra-list` documentation. A quirk to pay attention to is if `isSelectable` is used on `<Item>`, `tabIndex` should be added to the `<Item>` and set to `0`.
 
 ## Creating the Table version
 

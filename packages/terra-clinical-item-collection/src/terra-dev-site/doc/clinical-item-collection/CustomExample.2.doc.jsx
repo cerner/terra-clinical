@@ -20,15 +20,13 @@ const CustomItemCollectionExamples = () => (
         example: <CustomExample />,
         source: CustomExampleSrc,
       },
+      {
+        title: 'Custom Table Example',
+        example: <CustomTableExample />,
+        source: CustomTableExampleSrc,
+      },
     ]}
   />
 );
-/*
 
-{
-  title: 'Custom Table Example',
-  example: <CustomTableExample />,
-  source: CustomTableExampleSrc,
-},
-*/
 export default CustomItemCollectionExamples;
