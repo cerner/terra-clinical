@@ -7,7 +7,7 @@ import IconAttachment from 'terra-icon/lib/icon/IconAttachment';
 import List, { Item } from 'terra-list';
 import ItemView from 'terra-clinical-item-view';
 import CellGrid, { Cell} from 'terra-cell-grid';
-import classNames from 'classnames/bind';
+import classNames from 'classNames/bind';
 import styles from './CustomTableExample.scss';
 
 const display1 = <ItemView.Display icon={<IconPerson />} text="Asif Khan" />;
@@ -105,60 +105,60 @@ const listDisplay = (
 
 const smallDisplay = (
   <div className={cx('table')}>
-    <CellGrid>
-      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
-      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{<ItemView.Display icon={<IconPerson />} text="Asif Khan LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="attention" />}</Cell>
-      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
-      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
-      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
-      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
-      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
-      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
-      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    <CellGrid className={cx('row')}>
+      <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}>{<ItemView.Display icon={<IconPerson />} text="Asif Khan LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="attention" />}</Cell>
+      <Cell className={cx('display')} key="cell-2" width={{ scalar: 1 }}>{display2}</Cell>
+      <Cell className={cx('display')} key="cell-3" width={{ scalar: 1 }}>{display3}</Cell>
+      <Cell className={cx('display')} key="cell-4" width={{ scalar: 1 }}>{display4}</Cell>
+      <Cell className={cx('display')} key="cell-5" width={{ scalar: 1 }}>{display5}</Cell>
+      <Cell className={cx('display')} key="cell-6" width={{ scalar: 1 }}>{display6}</Cell>
+      <Cell className={cx('comment')} key="cell-7" width={{ scalar: 1 }}>{comment}</Cell>
+      <Cell className={cx('end-accessory')} key="cell-8" width={{ static: { value: 40, unit: 'px' } }}>{endAccessory}</Cell>
     </CellGrid>
-    <CellGrid>
-      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
-      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
-      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
-      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
-      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{<ItemView.Display text="Acuity: 5 LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" icon={<IconAttachment />} />}</Cell>
-      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
-      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
-      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
-      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    <CellGrid className={cx('row')}>
+      <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}>{display1}</Cell>
+      <Cell className={cx('display')} key="cell-2" width={{ scalar: 1 }}>{display2}</Cell>
+      <Cell className={cx('display')} key="cell-3" width={{ scalar: 1 }}>{display3}</Cell>
+      <Cell className={cx('display')} key="cell-4" width={{ scalar: 1 }}>{<ItemView.Display text="Acuity: 5 LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" icon={<IconAttachment />} />}</Cell>
+      <Cell className={cx('display')} key="cell-5" width={{ scalar: 1 }}>{display5}</Cell>
+      <Cell className={cx('display')} key="cell-6" width={{ scalar: 1 }}>{display6}</Cell>
+      <Cell className={cx('comment')} key="cell-7" width={{ scalar: 1 }}>{comment}</Cell>
+      <Cell className={cx('end-accessory')} key="cell-8" width={{ static: { value: 40, unit: 'px' } }}>{endAccessory}</Cell>
     </CellGrid>
-    <CellGrid>
-      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }} />
-      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
-      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
-      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
-      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
-      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
-      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
-      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
-      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    <CellGrid className={cx('row')}>
+      <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }} />
+      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}>{display1}</Cell>
+      <Cell className={cx('display')} key="cell-2" width={{ scalar: 1 }}>{display2}</Cell>
+      <Cell className={cx('display')} key="cell-3" width={{ scalar: 1 }}>{display3}</Cell>
+      <Cell className={cx('display')} key="cell-4" width={{ scalar: 1 }}>{display4}</Cell>
+      <Cell className={cx('display')} key="cell-5" width={{ scalar: 1 }}>{display5}</Cell>
+      <Cell className={cx('display')} key="cell-6" width={{ scalar: 1 }}>{display6}</Cell>
+      <Cell className={cx('comment')} key="cell-7" width={{ scalar: 1 }}>{comment}</Cell>
+      <Cell className={cx('end-accessory')} key="cell-8" width={{ static: { value: 40, unit: 'px' } }}>{endAccessory}</Cell>
     </CellGrid>
-    <CellGrid>
-      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
-      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
-      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
-      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{<ItemView.Display text="Room 100A LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="strikeThrough" />}</Cell>
-      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
-      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
-      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
-      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
-      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }}>{endAccessory}</Cell>
+    <CellGrid className={cx('row')}>
+      <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}>{display1}</Cell>
+      <Cell className={cx('display')} key="cell-2" width={{ scalar: 1 }}>{display2}</Cell>
+      <Cell className={cx('display')} key="cell-3" width={{ scalar: 1 }}>{<ItemView.Display text="Room 100A LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH LENGTH" textStyle="strikeThrough" />}</Cell>
+      <Cell className={cx('display')} key="cell-4" width={{ scalar: 1 }}>{display4}</Cell>
+      <Cell className={cx('display')} key="cell-5" width={{ scalar: 1 }}>{display5}</Cell>
+      <Cell className={cx('display')} key="cell-6" width={{ scalar: 1 }}>{display6}</Cell>
+      <Cell className={cx('comment')} key="cell-7" width={{ scalar: 1 }}>{comment}</Cell>
+      <Cell className={cx('end-accessory')} key="cell-8" width={{ static: { value: 40, unit: 'px' } }}>{endAccessory}</Cell>
     </CellGrid>
-    <CellGrid>
-      <Cell key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
-      <Cell key="cell-1" width={{ static: { value: 106, unit: 'px' } }}>{display1}</Cell>
-      <Cell key="cell-2" width={{ static: { value: 106, unit: 'px' } }}>{display2}</Cell>
-      <Cell key="cell-3" width={{ static: { value: 106, unit: 'px' } }}>{display3}</Cell>
-      <Cell key="cell-4" width={{ static: { value: 106, unit: 'px' } }}>{display4}</Cell>
-      <Cell key="cell-5" width={{ static: { value: 106, unit: 'px' } }}>{display5}</Cell>
-      <Cell key="cell-6" width={{ static: { value: 106, unit: 'px' } }}>{display6}</Cell>
-      <Cell key="cell-7" width={{ static: { value: 106, unit: 'px' } }}>{comment}</Cell>
-      <Cell key="cell-8" width={{ static: { value: 106, unit: 'px' } }} />
+    <CellGrid className={cx('row')}>
+      <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}>{display1}</Cell>
+      <Cell className={cx('display')} key="cell-2" width={{ scalar: 1 }}>{display2}</Cell>
+      <Cell className={cx('display')} key="cell-3" width={{ scalar: 1 }}>{display3}</Cell>
+      <Cell className={cx('display')} key="cell-4" width={{ scalar: 1 }}>{display4}</Cell>
+      <Cell className={cx('display')} key="cell-5" width={{ scalar: 1 }}>{display5}</Cell>
+      <Cell className={cx('display')} key="cell-6" width={{ scalar: 1 }}>{display6}</Cell>
+      <Cell className={cx('comment')} key="cell-7" width={{ scalar: 1 }}>{comment}</Cell>
+      <Cell className={cx('end-accessory')} className={cx('end-accessory')} key="cell-8" width={{ static: { value: 40, unit: 'px' } }} />
     </CellGrid>
   </div>
 );
