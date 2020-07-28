@@ -4,6 +4,22 @@ ChangeLog
 Unreleased
 ----------
 
+4.0.0 - (June 23, 2020)
+----------
+### Breaking
+* This is a breaking change to pull in an MVB of terra-clinical-item-display. Since item view exports item display, this also needs to be an MVB
+
+3.20.1 - (June 23, 2020)
+----------
+### Changed
+* Revert MVB of terra-clinical-item-display
+
+3.20.0 - (June 23, 2020)
+----------
+### Changed
+* Updated source file for changes in clinical-item-display
+* Update secondary colors to new rgba values.
+
 3.19.0 - (June 9, 2020)
 ----------
 ### Changed
@@ -77,6 +93,7 @@ Unreleased
 3.6.0 - (August 14, 2019)
 ----------
 ### Changed
+* Jest snapshot updated for ItemDisplay's primary textStyle default prop.
 * Updated package.json test scripts
 
 3.5.0 - (July 16, 2019)

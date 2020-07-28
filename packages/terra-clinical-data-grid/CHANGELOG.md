@@ -5,6 +5,13 @@ Unreleased
 ----------
 ### Added
 * Added an interaction media query to apply `hover` styles only on non-touch devices.
+### Changed
+* updated `master` references to `main`.
+
+2.26.0 - (June 23, 2020)
+----------
+### Changed
+* Minor dependency updates
 
 2.25.0 - (June 9, 2020)
 ----------

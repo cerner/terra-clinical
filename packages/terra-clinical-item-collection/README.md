@@ -1,7 +1,7 @@
 # Terra Clinical Item Collection
 
 [![NPM version](https://badgen.net/npm/v/terra-clinical-item-collection)](https://www.npmjs.org/package/terra-clinical-item-collection)
-[![Build Status](https://travis-ci.com/cerner/terra-core.svg?branch=master)](https://travis-ci.com/cerner/terra-core)
+[![Build Status](https://travis-ci.com/cerner/terra-core.svg?branch=main)](https://travis-ci.com/cerner/terra-core)
 
 An Item Collection is a wrapper component designed to display data as either a table or list of items dependent on the relative container size. Initially data is displayed in a tabular format that flexes the rendered component, but as the container is resized and the indicated breakpoint is hit, the display changes to show the data as a list of items. The terra-table and terra-clinical-item react components will be utilized for displaying the data in these two ways.
 

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ItemDisplay from 'terra-clinical-item-display';
+import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
 import styles from './ItemView.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -213,7 +214,7 @@ ItemView.propTypes = propTypes;
 ItemView.defaultProps = defaultProps;
 
 ItemView.Display = ItemDisplay;
-ItemView.Comment = ItemDisplay.Comment;
+ItemView.Comment = ItemComment;
 
 export default ItemView;
 export {

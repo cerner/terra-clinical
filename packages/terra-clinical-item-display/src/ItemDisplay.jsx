@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './ItemDisplay.module.scss';
-/* eslint-disable-next-line import/no-cycle */
-import ItemComment from './ItemComment';
 
 const cx = classNamesBind.bind(styles);
 
@@ -49,8 +47,7 @@ const propTypes = {
 
 const defaultProps = {
   text: '',
-  // TODO: textStyle should be set to 'primary' on the next major version bump: https://github.com/cerner/terra-clinical/issues/526
-  textStyle: undefined,
+  textStyle: 'primary',
   isTruncated: false,
   isDisabled: false,
   icon: undefined,
@@ -79,7 +76,10 @@ const ItemDisplay = ({
   const textClassNames = cx([
     'text',
     { 'is-truncated': isTruncated },
-    { 'strike-through': textStyle === TextStyles.STRIKETHROUGH, [`${textStyle}`]: textStyle },
+    { [`${textStyle}`]: textStyle === TextStyles.SECONDARY },
+    { [`${textStyle}`]: textStyle === TextStyles.ATTENTION },
+    { [`${textStyle}`]: textStyle === TextStyles.STRONG },
+    { 'strike-through': textStyle === TextStyles.STRIKETHROUGH },
   ]);
 
   let displayIcon;
@@ -97,8 +97,6 @@ const ItemDisplay = ({
 
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
-
-ItemDisplay.Comment = ItemComment;
 
 export default ItemDisplay;
 export { TextStyles };
