@@ -25,9 +25,11 @@
       box-shadow: var(--terra-clinical-data-grid-cell-active-box-shadow, none);
     }
     
-    &.selectable:hover:not(.is-touch-device) {
-      background-color: var(--terra-clinical-data-grid-cell-hover-background-color, rgba(0, 146, 224, 0.12));
-      cursor: pointer;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+      &.selectable:hover {
+        background-color: var(--terra-clinical-data-grid-cell-hover-background-color, rgba(0, 146, 224, 0.12));
+        cursor: pointer;
+      }
     }
 
     &.selected {
@@ -41,8 +43,10 @@
       }
       
       /* stylelint-disable max-nesting-depth */
-      &:hover:not(.is-touch-device) {
-        background-color: var(--terra-clinical-data-grid-cell-selected-hover-background-color, #b3ddf7);
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--terra-clinical-data-grid-cell-selected-hover-background-color, #b3ddf7);
+        }
       }
     }
   }
