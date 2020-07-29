@@ -1,70 +1,75 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const fs = require('fs');
 const path = require('path');
-const packagePaths = require('../common/getPackagePaths');
-const findAndReplace = require('../common/findAndReplace');
+const { exec } = require('child_process');
 
-// Generate the markdown to display peerDependencies information for each package
-packagePaths.forEach((packagePath) => {
-  const packageFile = path.resolve(packagePath, 'package.json');
-  const changelogFile = path.resolve(packagePath, 'CHANGELOG.md');
-  const releaseDate = new Date().toLocaleString('en-us', { month: 'long', year: 'numeric', day: 'numeric' });
-
-  if (!fs.existsSync(packageFile) || !fs.existsSync(changelogFile)) {
+exec('npx lerna changed', (error, stdout) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
     return;
   }
 
-  // Read package.json and pull out version
-  fs.readFile(packageFile, 'utf8', (err, packageJson) => {
-    if (err) {
-      console.error(`Error reading file ${packageFile} ${err}\n`);
-    } else {
-      const { version } = JSON.parse(packageJson);
+  // Clean up lerna updated output and convert to an array
+  const updatedPackages = stdout.split('\n').map(x => `packages/${x}`);
+  updatedPackages.pop(); // Remove last item as it is an empty string
 
-      // Hard coded for minor updates for now
-      const major = false;
-      const minor = true;
-      const patch = false;
+  // Update release version in changelog files
+  updatedPackages.forEach((packagePath) => {
+    const packageFile = path.resolve(packagePath, 'package.json');
+    const changelogFile = path.resolve(packagePath, 'CHANGELOG.md');
+    const releaseDate = new Date().toLocaleString('en-us', { month: 'long', year: 'numeric', day: 'numeric' });
 
-      if (version) {
-        const majorVersion = version.split('.')[0];
-        const minorVersion = version.split('.')[1];
-        const patchVersion = version.split('.')[2];
-
-        let newVersion;
-
-        if (major) {
-          const updatedMajorVersion = parseInt(majorVersion, 10) + 1;
-          newVersion = `${updatedMajorVersion}.0.0`;
-        }
-
-        if (minor) {
-          const updatedMinorVersion = parseInt(minorVersion, 10) + 1;
-          newVersion = `${majorVersion}.${updatedMinorVersion}.0`;
-        }
-
-        if (patch) {
-          const updatedPatchVersion = parseInt(patchVersion, 10) + 1;
-          newVersion = `${majorVersion}.${minorVersion}.${updatedPatchVersion}`;
-        }
-
-        const changelogDoc = `Unreleased
-----------
-
-${newVersion} - (${releaseDate})
-------------------
-### Changed
-* Minor dependency updates
-`;
-        const regex = /Unreleased\n----------/g;
-
-        // Update CHANGELOG.md
-        findAndReplace({
-          file: changelogFile, regex, content: changelogDoc,
-        });
-      }
+    if (!fs.existsSync(packageFile) || !fs.existsSync(changelogFile)) {
+      return;
     }
+
+    // Read package.json and pull out version
+    fs.readFile(packageFile, 'utf8', (err, packageJson) => {
+      if (err) {
+        console.error(`Error reading file ${packageFile} ${err}\n`);
+      } else {
+        // This is expected to be run after the packages are versioned.
+        const { version } = JSON.parse(packageJson);
+
+        const regex = /## Unreleased\n*([^#]*)/;
+
+        const changelog = fs.readFileSync(changelogFile, 'utf8');
+
+        // Grab any content in the unreleased section until the next heading (#).
+        const unreleasedContent = changelog.match(regex);
+
+        // Default message
+        let releaseContent = [
+          'Changed',
+          '',
+          '* Minor dependency version bump',
+          '',
+          '',
+        ].join('\n');
+
+        const [, captureGroup] = unreleasedContent;
+
+        // If there was content, don't use the default content.
+        if (captureGroup) {
+          releaseContent = captureGroup;
+        }
+
+        // setup change log entry
+        const changelogDoc = [
+          '## Unreleased',
+          '',
+          `## ${version} - (${releaseDate})`,
+          '',
+          releaseContent,
+        ].join('\n');
+
+        // Swap in change log entry
+        const updatedChangelog = changelog.replace(regex, changelogDoc);
+
+        // write out file.
+        fs.writeFileSync(changelogFile, updatedChangelog, { encoding: 'utf8', flag: 'w' });
+      }
+    });
   });
 });
