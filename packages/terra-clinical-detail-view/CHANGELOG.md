@@ -5,6 +5,7 @@
 Changed
 
 * updated `master` references to `main`.
+* Update changelog formatting
 
 ## 3.21.0 - (June 16, 2020)
 
