@@ -2,37 +2,20 @@
 
 This project is hosted on NPM.  You can find the terra packages [here][project-url].
 
-Releasing the project requires these steps:
-- If the package has not been released before, remove the private attribute from the package.json. The private attribute has been set to true in order to prevent accidental publication.
+Below is a guide for releasing packages:
 
-- Verify that the version number in the package.json is correct.
-  - If the package is new, confirm that the version is `0.0.0`.
-  - If the package has been published before, confirm that the version matches the latest released version. The publish script will update the version.
+1. Update the versions of the components via `npm run version`
+2. Update change logs to have the current date for the release of the affected components.
+3. Create a Release PR, Get approvals
+4. Merge PR to `main`
+5. Watch main to ensure releases get pushed to npm and tagged in github appropriately
 
-- Login to npm. You must have the credentials to the `cerner-oss` account.
-  - `npm login` - Make sure to use the `cerner-oss` account.
-  - `npm whoami` - This should return `cerner-oss`.
+If you are publishing a new package, e.g. a v1.0.0 release, the package will be listed with only you as the collaborator.
+You'll need to move the package into the terra-ui team under the Cerner org on npm.
 
-- Execute the npm release script from the root directory. Make sure to follow [semantic versioning][semantic-versioning].
-
-When run, this command does the following:
-
-- Creates a new release of the packages that have been updated.
-- Prompts for a new version.
-- Creates a new git commit/tag in the process of publishing to npm.
-
-More specifically, this command will:
-
-1. Check if the currently installed packages match package.json
-2. Compile `src` to `lib`.
-3. Run the test suite.
-4. Publish each module in `packages` directory that has been updated since the last version to npm with the dist-tag lerna-temp.
-5. Run lerna updated to determine which packages need to be published.
-6. Update the package.json of all updated packages to their new versions.
-7. Update all dependencies of the updated packages with the new versions, specified with a caret (^).
-8. Create a new git commit and tag for the new version.
-9. Publish updated packages to npm.
-10. Once all packages have been published, remove the lerna-temp tags and add the tags to latest.
+- Log into npm's website
+- Navigate to the terra-ui [package page](https://www.npmjs.com/settings/cerner/teams/team/terra-ui/access)
+- At the top of this page, there should be an input labeled, "Package". Type in the full package name and press enter.
+- This will add the package to the terra-ui team's packages under the Cerner org on npm and then all team members on the terra-ui team in npm will have access to publish in future releases.
 
 [project-url]: https://www.npmjs.com/org/cerner
-[semantic-versioning]: http://semver.org/
