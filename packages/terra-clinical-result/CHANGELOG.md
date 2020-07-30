@@ -6,6 +6,10 @@ Changed
 
 * Update changelog formatting
 
+Changed
+
+* Update wdio due to icon changes.
+
 ## 1.8.0 - (June 16, 2020)
 
 Changed
