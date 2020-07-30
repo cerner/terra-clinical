@@ -4,6 +4,10 @@
 
 Changed
 
+* Update jest tests due to theme change in icon.
+
+Changed
+
 * Update changelog formatting
 
 ## 4.22.0 - (June 16, 2020)
