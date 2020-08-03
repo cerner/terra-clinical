@@ -1,4 +1,4 @@
-# Creating a custom Item Collection
+# Creating Item Collection
 
 Start by making a `ResponsiveElement` that will switch between its two sub-components, a `Table` version of the content when above a certain size and a `List` version of the same content as the default display. In this `ResponsiveElement`, we set 3 attributes. The first is the defaultElement which is just the `List` version of the content. The second is the `responsiveTo` attribute, which determines what the component compares itself to in order to resizes itself, its parent or the window. Terra's `ItemCollection` surrounds its `ResponsiveElement` in a `<div>` tag, and sets `responsiveTo` to `parent`. Finally the breakpoint you want to switch at is defined by setting one of the following attributes: `tiny`, `small`, `medium`, `large`, or `huge` to the `Table` version of the content.
 
