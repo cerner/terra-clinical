@@ -16,7 +16,6 @@ exports[`List View Tests should pass customProps to the Item 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
       ]
     }
@@ -72,21 +71,18 @@ exports[`List View Tests should render a Item with a list item chevron 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 2"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 3"
-          textStyle="primary"
         />,
       ]
     }
@@ -123,7 +119,6 @@ exports[`List View Tests should render a Item with a single children 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
       ]
     }
@@ -178,21 +173,18 @@ exports[`List View Tests should render a Item with all elements 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 2"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 3"
-          textStyle="primary"
         />,
       ]
     }
@@ -251,21 +243,18 @@ exports[`List View Tests should render a Item with children 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 2"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 3"
-          textStyle="primary"
         />,
       ]
     }
@@ -298,21 +287,18 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 2"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 3"
-          textStyle="primary"
         />,
       ]
     }
@@ -373,21 +359,18 @@ exports[`List View Tests should render a selectable Item 1`] = `
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 2"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 3"
-          textStyle="primary"
         />,
       ]
     }
@@ -430,7 +413,6 @@ exports[`List View Tests should render a selected Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -443,7 +425,6 @@ exports[`List View Tests should render a selected Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 2"
-        textStyle="primary"
       />
     }
     key="display_2/.1"
@@ -456,7 +437,6 @@ exports[`List View Tests should render a selected Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 3"
-        textStyle="primary"
       />
     }
     key="display_3/.2"
@@ -496,7 +476,6 @@ exports[`Table View Tests should pass customProps to the Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -525,7 +504,6 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -538,7 +516,6 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
         isDisabled={false}
         isTruncated={false}
         text="Display 2"
-        textStyle="primary"
       />
     }
     key="display_2/.1"
@@ -551,7 +528,6 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
         isDisabled={false}
         isTruncated={false}
         text="Display 3"
-        textStyle="primary"
       />
     }
     key="display_3/.2"
@@ -599,21 +575,18 @@ exports[`Table View Tests should render a Item that ignores the list item chevro
           isDisabled={false}
           isTruncated={false}
           text="Display 1"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 2"
-          textStyle="primary"
         />,
         <ItemDisplay
           iconAlignment="center"
           isDisabled={false}
           isTruncated={false}
           text="Display 3"
-          textStyle="primary"
         />,
       ]
     }
@@ -664,7 +637,6 @@ exports[`Table View Tests should render a Item with a single children 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -709,7 +681,6 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -722,7 +693,6 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 2"
-        textStyle="primary"
       />
     }
     key="display_2/.1"
@@ -735,7 +705,6 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 3"
-        textStyle="primary"
       />
     }
     key="display_3/.2"
@@ -790,7 +759,6 @@ exports[`Table View Tests should render a Item with children 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -803,7 +771,6 @@ exports[`Table View Tests should render a Item with children 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 2"
-        textStyle="primary"
       />
     }
     key="display_2/.1"
@@ -816,7 +783,6 @@ exports[`Table View Tests should render a Item with children 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 3"
-        textStyle="primary"
       />
     }
     key="display_3/.2"
@@ -853,7 +819,6 @@ exports[`Table View Tests should render a selectable Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -866,7 +831,6 @@ exports[`Table View Tests should render a selectable Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 2"
-        textStyle="primary"
       />
     }
     key="display_2/.1"
@@ -879,7 +843,6 @@ exports[`Table View Tests should render a selectable Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 3"
-        textStyle="primary"
       />
     }
     key="display_3/.2"
@@ -927,7 +890,6 @@ exports[`Table View Tests should render a selected Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 1"
-        textStyle="primary"
       />
     }
     key="display_1/.0"
@@ -940,7 +902,6 @@ exports[`Table View Tests should render a selected Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 2"
-        textStyle="primary"
       />
     }
     key="display_2/.1"
@@ -953,7 +914,6 @@ exports[`Table View Tests should render a selected Item 1`] = `
         isDisabled={false}
         isTruncated={false}
         text="Display 3"
-        textStyle="primary"
       />
     }
     key="display_3/.2"

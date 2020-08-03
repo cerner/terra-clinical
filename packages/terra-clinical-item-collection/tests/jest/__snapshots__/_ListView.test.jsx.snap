@@ -40,7 +40,6 @@ exports[`should render a ListView with a divided list 1`] = `
       isDisabled={false}
       isTruncated={false}
       text="Display 1"
-      textStyle="primary"
     />
   </Item>
 </List>
@@ -86,7 +85,6 @@ exports[`should render a ListView with children 1`] = `
       isDisabled={false}
       isTruncated={false}
       text="Display 1"
-      textStyle="primary"
     />
   </Item>
 </List>
