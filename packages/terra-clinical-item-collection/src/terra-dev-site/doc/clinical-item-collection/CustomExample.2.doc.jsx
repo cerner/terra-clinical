@@ -5,10 +5,10 @@ import ReadMe from '../../../../docs/CreatingItemCollection.md';
 
 /* eslint-disable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 // Example Files
-import CustomExample from '../example/CustomExample';
-import CustomExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CustomExample';
-import CustomTableExample from '../example/CustomTableExample';
-import CustomTableExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/CustomTableExample';
+import ResponsiveListAndTableExample from '../example/ResponsiveListAndTableExample';
+import ResponsiveListAndTableExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ResponsiveListAndTableExample';
+import ResponsiveListAndCellGridExample from '../example/ResponsiveListAndCellGridExample';
+import ResponsiveListAndCellGridExampleSrc from '!raw-loader!../../../../src/terra-dev-site/doc/example/ResponsiveListAndCellGridExample';
 /* eslint-enable import/no-webpack-loader-syntax, import/first, import/extensions, import/no-unresolved, import/no-duplicates */
 
 const CustomItemCollectionExamples = () => (
@@ -16,14 +16,14 @@ const CustomItemCollectionExamples = () => (
     readme={ReadMe}
     examples={[
       {
-        title: 'Custom Example',
-        example: <CustomExample />,
-        source: CustomExampleSrc,
+        title: 'Responsive List And Table Example',
+        example: <ResponsiveListAndTableExample />,
+        source: ResponsiveListAndTableExampleSrc,
       },
       {
-        title: 'Custom Table Example',
-        example: <CustomTableExample />,
-        source: CustomTableExampleSrc,
+        title: 'Responsive List And Cell Grid Example',
+        example: <ResponsiveListAndCellGridExample />,
+        source: ResponsiveListAndCellGridExampleSrc,
       },
     ]}
   />

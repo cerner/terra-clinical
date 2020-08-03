@@ -82,8 +82,39 @@ Finally `tableRows` contain the actual making of each row of content that looks 
 
 Quick mention is that if `isSelectable` is used on `<Table.Row>`, `tabIndex` should be added to and set to `0`.
 
-## Creating a Table that looks like a List
+## Creating a Cell Grid that looks like a Table
 
-?A list looking table example.?
-series of div/flexs replacing the table, with a css with columned widths
-maybe min-height but flex height,
+Instead of using `<Table>`, you can use `<CellGrid>` to create another version of the default content when over a certain window size. This method requires a little bit of CSS to be put in place to get a closer match to `<Table>`'s default style. The basic content look of it looks like this.
+
+```javascript
+  const cellGridDisplay = (
+    <div className={cx('cellgrid-wrapper')}>
+      <CellGrid className={cx('row')}>
+        <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
+        <Cell className={cx('display')} key="cell-i" width={{ scalar: 1 }}>{display}</Cell>
+        ...
+      </CellGrid>
+      ...
+    </div>
+  );
+```
+
+In this example, the `<CellGrid>` effectively replaces `<Table.Row>` and doesn't require any props other than defining a class for it. The `<Cell>`'s are where the content is placed. In the example provided at the bottom of this page, the content has two accessories on either side of the main information. Setting these accessories `width` prop to `{ static: { value: 40, unit: 'px' } }` allows the accessories to only take up a small amount of space, while the rest of the `Cell`'s use `{ scalar: 1 }` for width to automatically take up an equal percentage of the remaining space.
+
+For the main styles it uses the following CSS.
+
+```css
+.cellgrid-wrapper {
+  border-bottom: 1px solid #c8cacb;
+}
+
+.row {
+  border-top: 1px solid #c8cacb;
+  display: flex;
+  min-height: 60px;
+}
+
+.row:nth-child(even) {
+  background: #f4f4f4;
+}
+```
