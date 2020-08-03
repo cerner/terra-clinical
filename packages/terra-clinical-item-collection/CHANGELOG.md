@@ -7,6 +7,9 @@
   * updated `master` references to `main`.
   * Update changelog formatting
 
+* Added
+    * Added a "Creating Item Collection" guide
+
 ## 4.24.0 - (June 23, 2020)
 
 * Changed
