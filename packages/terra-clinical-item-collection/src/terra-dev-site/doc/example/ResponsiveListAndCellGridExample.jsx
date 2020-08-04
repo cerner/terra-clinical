@@ -107,7 +107,7 @@ const cellGridDisplay = (
   <div className={cx('cellgrid-wrapper')}>
     <CellGrid className={cx('row')}>
       <Cell className={cx('start-accessory')} key="cell-0" width={{ static: { value: 40, unit: 'px' } }}>{startAccessory}</Cell>
-      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}<ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" /></Cell>
+      <Cell className={cx('display')} key="cell-1" width={{ scalar: 1 }}><ItemView.Display icon={<IconPerson />} text="Asif Khan" textStyle="attention" /></Cell>
       <Cell className={cx('display')} key="cell-2" width={{ scalar: 1 }}>{display2}</Cell>
       <Cell className={cx('display')} key="cell-3" width={{ scalar: 1 }}>{display3}</Cell>
       <Cell className={cx('display')} key="cell-4" width={{ scalar: 1 }}>{display4}</Cell>
