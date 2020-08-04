@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.23.0 - (August 4, 2020)
+
 * Changed
   * Update jest tests due to theme change in icon.
 

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.22.0 - (August 4, 2020)
+
 * Changed
   * updated `master` references to `main`.
   * Update changelog formatting
