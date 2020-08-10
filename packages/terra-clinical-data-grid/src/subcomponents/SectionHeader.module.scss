@@ -57,8 +57,10 @@
     outline: none;
   }
 
-  .content.selectable:hover {
-    background-color: var(--terra-clinical-data-grid-section-header-hover-background-color, #d7d8d9);
-    cursor: pointer;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+    .content.selectable:hover {
+      background-color: var(--terra-clinical-data-grid-section-header-hover-background-color, #d7d8d9);
+      cursor: pointer;
+    }
   }
 }

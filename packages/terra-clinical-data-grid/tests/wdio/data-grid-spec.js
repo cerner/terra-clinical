@@ -143,15 +143,6 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     after(() => browser.refresh());
   });
 
-  describe('with cell selection hover', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-      browser.moveToObject('[data-accessibility-id="8"]');
-    });
-
-    Terra.it.validatesElement({ selector: '#selectable-data-grid' });
-  });
-
   describe('with cell selections', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
@@ -161,15 +152,6 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     Terra.it.validatesElement({ selector: '#selectable-data-grid' });
 
     after(() => browser.refresh());
-  });
-
-  describe('with row selection hover', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-      browser.moveToObject('[data-accessibility-id="7"]');
-    });
-
-    Terra.it.validatesElement({ selector: '#selectable-data-grid' });
   });
 
   describe('with row selections', () => {
@@ -182,21 +164,6 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     Terra.it.validatesElement({ selector: '#selectable-data-grid' });
   });
 
-  describe('with selected row hover', () => {
-    // Remove when https://github.com/cerner/terra-clinical/issues/505 is resolved
-    const axeRules = { 'color-contrast': { enabled: false } };
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-      browser.click('[data-accessibility-id="7"]');
-      browser.moveToObject('[data-accessibility-id="8"]');
-      browser.moveToObject('[data-accessibility-id="7"]');
-    });
-
-    Terra.it.validatesElement({ selector: '#selectable-data-grid', axeRules });
-
-    after(() => browser.refresh());
-  });
-
   describe('with column header selections', () => {
     before(() => {
       browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
@@ -204,17 +171,6 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     Terra.it.validatesElement({ selector: '#selectable-data-grid' });
-
-    after(() => browser.moveToObject('#root', 0, 0));
-  });
-
-  describe('with subsection selection hover', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
-      browser.moveToObject('[data-accessibility-id="0"]');
-    });
-
-    Terra.it.validatesElement({ selector: '#subsection-data-grid' });
 
     after(() => browser.moveToObject('#root', 0, 0));
   });
