@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Update browserslist-config-terra to @cerner/browserslist-config-terra v^3
+
 ## 1.9.0 - (August 4, 2020)
 
 * Changed
