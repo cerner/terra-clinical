@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Change label text color to use rgba instead of hex values.
+
 ## 3.21.0 - (August 4, 2020)
 
 * Changed
