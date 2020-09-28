@@ -64,6 +64,8 @@ const propTypes = {
   selectableRefCallback: PropTypes.func,
 };
 
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 class Cell extends React.Component {
   constructor(props) {
     super(props);
@@ -133,7 +135,7 @@ class Cell extends React.Component {
         aria-selected={isSelected ? true : undefined}
       >
         <div
-          role="button"
+          role={isSelectable ? 'button' : undefined}
           className={cx(['content', { selectable: isSelectable, selected: isSelected }])}
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
