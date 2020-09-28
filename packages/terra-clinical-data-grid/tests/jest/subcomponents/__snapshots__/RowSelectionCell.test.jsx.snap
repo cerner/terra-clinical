@@ -34,7 +34,6 @@ exports[`Cell Snapshot Tests correctly applies the theme context className 1`] =
       >
         <div
           className="content"
-          role="button"
         >
           <div
             className="icon-container"
