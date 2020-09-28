@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated role to be `undefined` in `Cell` when is isSelectable is set to false.
+  * Updated role to be `undefined` for empty cell.
 
 ## 2.28.0 - (August 11, 2020)
 
