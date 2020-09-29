@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.24.0 - (September 29, 2020)
+
 * Updated
   * Updated wdio screenshots to fix main build
 
