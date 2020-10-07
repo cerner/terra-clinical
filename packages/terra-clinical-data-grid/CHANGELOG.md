@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed terra-props-table dev dependency.
+
 ## 2.28.0 - (August 11, 2020)
 
 * Added
