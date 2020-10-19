@@ -27,9 +27,6 @@
     "react-dom": "^16.8.5",
     "react-intl": "^2.8.0"
   },
-  "devDependencies": {
-    "terra-props-table": "^2.0.0"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^1.0.4",
