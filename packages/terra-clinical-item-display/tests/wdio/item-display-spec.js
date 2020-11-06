@@ -1,26 +1,26 @@
 Terra.describeViewports('ItemDisplay', ['tiny', 'medium'], () => {
-  describe('default', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/default-item-display'));
-    Terra.it.validatesElement();
+  it('displays a default ItemDisplay', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/default-item-display');
+    Terra.validates.element('default');
   });
 
-  describe('text style', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/text-style-item-display'));
-    Terra.it.validatesElement();
+  it('displays an ItemDisplay with text style', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/text-style-item-display');
+    Terra.validates.element('with text style');
   });
 
-  describe('disabled', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/disabled-item-display'));
-    Terra.it.validatesElement();
+  it('displays a disabled ItemDisplay', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/disabled-item-display');
+    Terra.validates.element('disabled');
   });
 
-  describe('icon', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/icon-item-display'));
-    Terra.it.validatesElement();
+  it('displays a ItemDisplay with an icon', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/icon-item-display');
+    Terra.validates.element('with icon');
   });
 
-  describe('scaling', () => {
-    before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/scaling-icon-item-display'));
-    Terra.it.validatesElement();
+  it('displays an ItemDisplay with a scaled icon', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/scaling-icon-item-display');
+    Terra.validates.element('with scaled icon');
   });
 });
