@@ -1,89 +1,67 @@
 Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
-  describe('default', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/flowsheet-result-cell');
-    });
+  it('displays a default FlowsheetResultCell', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('default');
   });
 
-  describe('no data', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/no-data-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell with no data', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/no-data-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with no data');
   });
 
-  describe('paddingStyles', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/paddingstyle-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell with paddingStyles', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/paddingstyle-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with paddingStyles');
   });
 
-  describe('multiple', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/multiple-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell with multiple', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/multiple-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with multiple');
   });
 
-  describe('interpretations', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/interpretations-result-cell');
-    });
+  it('displays a FlowsheetResultCell with interpretations', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/interpretations-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with interpretations');
   });
 
-  describe('unverified', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/unverified-flowsheet-result-cell');
-    });
+  it('displays a unverified FlowsheetResultCell', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/unverified-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('unverified');
   });
 
-  describe('decorated', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/decorated-flowsheet-result-cell');
-    });
+  it('displays a decorated FlowsheetResultCell', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/decorated-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('decorated');
   });
 
-  describe('result error', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/has-result-error-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell with result error', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/has-result-error-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with result error');
   });
 
-  describe('numeric overflow', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/numeric-overflow-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell with numeric overflow', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/numeric-overflow-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with numeric overflow');
   });
 
-  describe('truncation', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/truncated-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell with truncation', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/truncated-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with truncated');
   });
 
-  describe('entered in error', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/entered-in-error-flowsheet-result-cell');
-    });
+  it('displays a FlowsheetResultCell entered in error', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/entered-in-error-flowsheet-result-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('entered in error');
   });
 });

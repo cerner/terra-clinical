@@ -1,41 +1,31 @@
 Terra.describeViewports('Observation', ['medium'], () => {
-  describe('default', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/observation');
-    });
+  it('displays a default Observation', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/observation');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('default');
   });
 
-  describe('with unit hidden', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/hidden-unit-observation');
-    });
+  it('displays an Observation with unit hidden', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/hidden-unit-observation');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with unit hidden');
   });
 
-  describe('bad data', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/bad-data-observation');
-    });
+  it('displays an Observation with bad data', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/bad-data-observation');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with bad data');
   });
 
-  describe('interpretations', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/interpretations-observation');
-    });
+  it('displays an Observation with interpretations', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/interpretations-observation');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with interpretations');
   });
 
-  describe('is unverified', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/is-unverified-observation');
-    });
+  it('displays an unverified Observation', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/observation/is-unverified-observation');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('unverified');
   });
 });
