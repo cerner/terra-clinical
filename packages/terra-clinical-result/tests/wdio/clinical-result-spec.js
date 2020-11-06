@@ -1,73 +1,55 @@
 Terra.describeViewports('ClinicalResult', ['medium'], () => {
-  describe('default', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/default-result');
-    });
+  it('displays a default ClinicalResult', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/default-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('default');
   });
 
-  describe('with truncated data', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/truncated-result');
-    });
+  it('displays a ClinicalResult with truncated data', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/truncated-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with truncated data');
   });
 
-  describe('with extra displays', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/clinical-result-extra-displays');
-    });
+  it('displays a ClinicalResult with extra displays', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/clinical-result-extra-displays');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with extra displays');
   });
 
-  describe('decorated', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/decorated-clinical-result');
-    });
+  it('displays a decorated ClinicalResult', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/decorated-clinical-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('decorated');
   });
 
-  describe('unverified', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/unverified-clinical-result');
-    });
+  it('displays an unverified ClinicalResult', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/unverified-clinical-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('unverified');
   });
 
-  describe('decorated with hidden unit', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/decorated-clinical-result-hide-unit');
-    });
+  it('displays a ClinicalResult with hidden unit', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/decorated-clinical-result-hide-unit');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with hidden unit');
   });
 
-  describe('interpretations', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/interpretations-result');
-    });
+  it('displays a ClinicalResult with interpretations', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/interpretations-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with interpretations');
   });
 
-  describe('with result error', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/has-result-error-result');
-    });
+  it('displays a ClinicalResult with result error', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/has-result-no-data-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with result error');
   });
 
-  describe('with has result no data', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/has-result-no-data-result');
-    });
+  it('displays a ClinicalResult with no data', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/has-result-no-data-result');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with no data');
   });
 });
