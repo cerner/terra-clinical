@@ -8,7 +8,7 @@ Terra.describeViewports('ResultNameHeaderCell', ['medium'], () => {
   it('displays a ResultNameHeaderCell with paddingStyles', () => {
     browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/padding-style-result-name-header-cell');
 
-    Terra.validates.element('wth paddingStyles');
+    Terra.validates.element('with paddingStyles');
   });
 
   it('displays a ResultNameHeaderCell with typeIndicators', () => {
