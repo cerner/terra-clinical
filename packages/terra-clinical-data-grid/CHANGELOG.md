@@ -5,6 +5,9 @@
 * Changed
   * Removed terra-props-table dev dependency.
 
+* Fixed
+  * Fix new eslint rule error
+
 ## 2.28.0 - (August 11, 2020)
 
 * Added
