@@ -157,6 +157,25 @@ class OnsetPicker extends React.Component {
     }
   }
 
+  /**
+   * Trigger supplied callback function with an object of the current state data
+   */
+  handleOnsetUpdate() {
+    if (this.props.onsetOnChange === undefined) {
+      return;
+    }
+    const onsetObject = {
+      precision: this.state.precision,
+      onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined,
+      granularity: this.state.precision !== PrecisionOptions.UNKNOWN ? this.state.granularity : '',
+    };
+    if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
+      onsetObject.ageUnit = this.state.ageUnit;
+    }
+
+    this.props.onsetOnChange(onsetObject);
+  }
+
   getYearInput(intl, id) {
     return (
       <SelectField
@@ -326,25 +345,6 @@ class OnsetPicker extends React.Component {
     } else {
       this.setState({ onsetDate: moment(date) }, this.handleOnsetUpdate);
     }
-  }
-
-  /**
-   * Trigger supplied callback function with an object of the current state data
-   */
-  handleOnsetUpdate() {
-    if (this.props.onsetOnChange === undefined) {
-      return;
-    }
-    const onsetObject = {
-      precision: this.state.precision,
-      onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined,
-      granularity: this.state.precision !== PrecisionOptions.UNKNOWN ? this.state.granularity : '',
-    };
-    if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
-      onsetObject.ageUnit = this.state.ageUnit;
-    }
-
-    this.props.onsetOnChange(onsetObject);
   }
 
   render() {
