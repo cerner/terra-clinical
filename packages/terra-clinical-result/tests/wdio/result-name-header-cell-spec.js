@@ -1,25 +1,19 @@
 Terra.describeViewports('ResultNameHeaderCell', ['medium'], () => {
-  describe('default', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/result-name-header-cell');
-    });
+  it('displays a default ResultNameHeaderCell', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/result-name-header-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('default');
   });
 
-  describe('paddingStyles', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/padding-style-result-name-header-cell');
-    });
+  it('displays a ResultNameHeaderCell with paddingStyles', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/padding-style-result-name-header-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with paddingStyles');
   });
 
-  describe('typeIndicators', () => {
-    before(() => {
-      browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/type-indicator-result-name-header-cell');
-    });
+  it('displays a ResultNameHeaderCell with typeIndicators', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/type-indicator-result-name-header-cell');
 
-    Terra.it.validatesElement();
+    Terra.validates.element('with typeIndicators');
   });
 });
