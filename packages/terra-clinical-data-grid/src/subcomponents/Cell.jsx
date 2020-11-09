@@ -74,19 +74,6 @@ class Cell extends React.Component {
     this.getCellStyles = memoize(this.getCellStyles);
   }
 
-  /* eslint-disable class-methods-use-this */
-
-  /**
-   * This function is memoized in the constructor so that for a given width value, the same object reference will be returned.
-   * This allows for repeat renders of the Cell to occur more efficiently if the width value has not changed between renders.
-   */
-  getCellStyles(width) {
-    return {
-      width,
-    };
-  }
-  /* eslint-enable class-methods-use-this */
-
   handleKeyDown(event) {
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
       const { onSelect } = this.props;
@@ -105,6 +92,18 @@ class Cell extends React.Component {
       onSelect(this.props.sectionId, this.props.rowId, this.props.columnId);
     }
   }
+
+  /* eslint-disable class-methods-use-this */
+  /**
+   * This function is memoized in the constructor so that for a given width value, the same object reference will be returned.
+   * This allows for repeat renders of the Cell to occur more efficiently if the width value has not changed between renders.
+   */
+  getCellStyles(width) {
+    return {
+      width,
+    };
+  }
+  /* eslint-enable class-methods-use-this */
 
   render() {
     const {

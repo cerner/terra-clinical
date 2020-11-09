@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+* Fixed
+  * Fix new eslint rule error
+
 ## 4.24.0 - (September 29, 2020)
 
-* Updated
+* Changed
   * Updated wdio screenshots to fix main build
 
 ## 4.23.0 - (August 4, 2020)
