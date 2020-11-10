@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.25.0 - (November 10, 2020)
+
 * Fixed
   * Fix new eslint rule error
 
