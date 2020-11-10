@@ -122,8 +122,10 @@ class Cell extends React.Component {
       ...customProps
     } = this.props;
 
-    /* eslint-disable react/forbid-dom-props */
+    /* eslint-disable react/forbid-dom-props, jsx-a11y/no-static-element-interactions */
     const theme = this.context;
+    const role = isSelectable ? 'button' : undefined;
+    const tabIndex = isSelectable ? '0' : undefined;
     return (
       <div
         {...customProps}
@@ -132,13 +134,13 @@ class Cell extends React.Component {
         aria-selected={isSelected ? true : undefined}
       >
         <div
-          role="button"
+          role={role}
           className={cx(['content', { selectable: isSelectable, selected: isSelected }])}
           onClick={isSelectable ? this.handleTargetClick : undefined}
           onKeyDown={isSelectable ? this.handleKeyDown : undefined}
           onMouseEnter={onHoverStart}
           onMouseLeave={onHoverEnd}
-          tabIndex={isSelectable ? '0' : undefined}
+          tabIndex={tabIndex}
           ref={selectableRefCallback}
           aria-label={ariaLabel}
         >
@@ -146,7 +148,7 @@ class Cell extends React.Component {
         </div>
       </div>
     );
-    /* eslint-enable react/forbid-dom-props */
+    /* eslint-enable react/forbid-dom-props, jsx-a11y/no-static-element-interactions */
   }
 }
 

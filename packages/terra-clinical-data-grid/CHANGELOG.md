@@ -3,6 +3,9 @@
 ## Unreleased
 
 * Changed
+  * Updated role to be `undefined` for non interactable cells.
+
+* Changed
   * Removed terra-props-table dev dependency.
 
 * Fixed
