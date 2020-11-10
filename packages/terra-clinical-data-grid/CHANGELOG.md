@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.29.0 - (November 10, 2020)
+
 * Changed
   * Updated role to be `undefined` for non interactable cells.
 
