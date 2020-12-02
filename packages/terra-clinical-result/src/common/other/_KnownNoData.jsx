@@ -1,5 +1,6 @@
 import React from 'react';
-import { injectIntl, intlShape } from 'react-intl';
+import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import styles from './OtherTemplates.module.scss';
 
@@ -10,7 +11,7 @@ const propTypes = {
    * @private
    * The intl object to be injected for translations.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const KnownNoData = (props) => {

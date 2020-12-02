@@ -1443,7 +1443,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           width="240px"
         >
           <RowSelectionCell
-            ariaLabel="Select: {row-description}-{\\"row-description\\":\\"Row 0\\"}"
+            ariaLabel="Select: {rowDescription}-{\\"rowDescription\\":\\"Row 0\\"}"
             columnId="DataGrid-rowSelectionColumn"
             isSelectable={true}
             isSelected={true}

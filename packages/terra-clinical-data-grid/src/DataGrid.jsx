@@ -909,7 +909,7 @@ class DataGrid extends React.Component {
         ariaLabel={this.props.intl.formatMessage({
           id: 'Terra.data-grid.row-selection-template',
         }, {
-          'rowDescription': row.ariaLabel,
+          rowDescription: row.ariaLabel,
         })}
       />
     );

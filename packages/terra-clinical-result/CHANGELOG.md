@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Changed
-  * Removed unused react-intl package and imports.
+  * Removed reference to intlShape as it is no longer provided in later versions of react-intl
+  * Removed unused react-intl imports.
 
 ## 1.11.0 - (November 10, 2020)
 
