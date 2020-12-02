@@ -6,7 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage } from 'react-intl';
 
 import KeyCode from 'keycode-js';
 import Cell from './subcomponents/Cell';
@@ -103,7 +103,7 @@ const propTypes = {
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Callback ref to pass into vertical overflow container.
    */
@@ -909,7 +909,7 @@ class DataGrid extends React.Component {
         ariaLabel={this.props.intl.formatMessage({
           id: 'Terra.data-grid.row-selection-template',
         }, {
-          'row-description': row.ariaLabel,
+          'rowDescription': row.ariaLabel,
         })}
       />
     );

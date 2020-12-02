@@ -1,4 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Selecionar: {row-description}",
+  "Terra.data-grid.row-selection-template": "Selecionar: {rowDescription}",
   "Terra.data-grid.navigate": "Navegar para a grade de dados"
 }

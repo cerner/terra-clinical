@@ -1,4 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Wählen: {row-description}",
+  "Terra.data-grid.row-selection-template": "Wählen: {rowDescription}",
   "Terra.data-grid.navigate": "Zu Datenraster navigieren"
 }

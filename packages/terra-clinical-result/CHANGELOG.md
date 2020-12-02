@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed unused react-intl package and imports.
+
 ## 1.11.0 - (November 10, 2020)
 
 * Changed

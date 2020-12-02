@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import ClinicalResultDisplay from './_ClinicalResultDisplay';
 import ResultError from './common/other/_ResultError';
@@ -71,11 +70,6 @@ const propTypes = {
    * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
    */
   hideAccessoryDisplays: PropTypes.bool,
-  /**
-   * @private
-   * The intl object to be injected for translations.
-   */
-  intl: intlShape.isRequired,
 };
 
 const ClinicalResult = (props) => {
@@ -139,4 +133,4 @@ const ClinicalResult = (props) => {
 
 ClinicalResult.propTypes = propTypes;
 
-export default injectIntl(ClinicalResult);
+export default ClinicalResult;
