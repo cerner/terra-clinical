@@ -317,7 +317,6 @@ const FlowsheetResultCell = (props) => {
     paddingStyle,
     hasResultError,
     hasResultNoData,
-    intl,
     ...customProps
   } = props;
   const containerDiv = useRef(null);
