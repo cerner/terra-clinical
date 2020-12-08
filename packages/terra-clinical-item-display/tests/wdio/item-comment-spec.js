@@ -1,17 +1,11 @@
-Terra.viewports('tiny', 'medium').forEach((viewport) => {
-  describe('ItemComment', () => {
-    before(() => {
-      browser.setViewportSize(viewport);
-    });
+Terra.describeViewports('ItemComment', ['tiny', 'medium'], () => {
+  it('displays a default ItemComment', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/default-item-comment');
+    Terra.validates.element('default');
+  });
 
-    describe('Default', () => {
-      before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/default-item-comment'));
-      Terra.it.validatesElement();
-    });
-
-    describe('Text', () => {
-      before(() => browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/text-item-comment'));
-      Terra.it.validatesElement();
-    });
+  it('displays an ItemComment with text', () => {
+    browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/comment/text-item-comment');
+    Terra.validates.element('with text');
   });
 });

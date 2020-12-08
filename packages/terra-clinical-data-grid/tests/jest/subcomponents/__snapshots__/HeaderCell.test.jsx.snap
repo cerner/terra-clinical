@@ -32,7 +32,6 @@ exports[`HeaderCell Snapshot Tests correctly applies the theme context className
       >
         <div
           className="content"
-          role="button"
         />
       </div>
     </Cell>

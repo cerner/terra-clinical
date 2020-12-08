@@ -2,8 +2,21 @@
 
 ## Unreleased
 
+## 2.30.0 - (December 8, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
+## 2.29.0 - (November 10, 2020)
+
+* Changed
+  * Updated role to be `undefined` for non interactable cells.
+
 * Changed
   * Removed terra-props-table dev dependency.
+
+* Fixed
+  * Fix new eslint rule error
 
 ## 2.28.0 - (August 11, 2020)
 

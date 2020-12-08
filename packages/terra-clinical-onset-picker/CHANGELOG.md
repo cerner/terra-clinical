@@ -2,9 +2,19 @@
 
 ## Unreleased
 
+## 4.26.0 - (December 8, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
+## 4.25.0 - (November 10, 2020)
+
+* Fixed
+  * Fix new eslint rule error
+
 ## 4.24.0 - (September 29, 2020)
 
-* Updated
+* Changed
   * Updated wdio screenshots to fix main build
 
 ## 4.23.0 - (August 4, 2020)
