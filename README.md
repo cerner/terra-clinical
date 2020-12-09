@@ -14,7 +14,7 @@
 [![devDependencies status](https://badgen.net/david/dev/cerner/terra-clinical)](https://david-dm.org/cerner/terra-clinical?type=dev)
 [![lerna](https://badgen.net/badge/maintained%20with/lerna/cc00ff)](https://lerna.js.org/)
 
-- [Supported Browsers](https://github.com/cerner/terra-ui/blob/main/src/terra-dev-site/contributing/ComponentStandards.e.contributing.md#cross-browser-support)
+- [Supported Browsers](https://github.com/cerner/terra-ui/blob/main/src/terra-dev-site/about/ComponentStandards.e.contributing.md#cross-browser-support)
 - [Packages](#packages)
   - [Status](#status)
 - [Internationalization (I18n)](#internationalization-i18n)

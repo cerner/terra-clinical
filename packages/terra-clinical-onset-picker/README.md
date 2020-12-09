@@ -18,7 +18,7 @@ The terra-clinical-onset-picker component provides users a way to enter or selec
 
 This component supports locales defined in the Terra component standards.
 
-* [Internationalization Support](https://engineering.cerner.com/terra-ui/contributing/terra-ui/component-standards#internationalization-i18n-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
 
 ## LICENSE
 
