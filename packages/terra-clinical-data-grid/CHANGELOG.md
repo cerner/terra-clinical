@@ -6,6 +6,14 @@
   * Removed reference to intlShape as it is no longer provided in later versions of react-intl
   * Updated translation placeholder variable to be compatible with later versions of react-intl
 
+* Fixed
+ * Fixed broken links in documentation.
+
+## 2.30.0 - (December 8, 2020)
+
+* Changed
+  * Update wdio tests to remove deprecated Terra.it helpers
+
 ## 2.29.0 - (November 10, 2020)
 
 * Changed

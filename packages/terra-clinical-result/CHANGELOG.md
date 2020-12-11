@@ -6,6 +6,9 @@
   * Removed reference to intlShape as it is no longer provided in later versions of react-intl
   * Removed unused react-intl imports.
 
+* Fixed
+ * Fixed broken links in documentation.
+
 ## 1.11.0 - (November 10, 2020)
 
 * Changed
