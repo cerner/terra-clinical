@@ -6,7 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
-import { injectIntl, FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import KeyCode from 'keycode-js';
 import Cell from './subcomponents/Cell';
@@ -1092,18 +1092,14 @@ class DataGrid extends React.Component {
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
       >
-        <FormattedMessage id="Terra.data-grid.navigate">
-          {label => (
-            <div
-              role="button"
-              aria-label={label}
-              className={cx('leading-focus-anchor')}
-              tabIndex="0"
-              onFocus={this.handleLeadingFocusAnchorFocus}
-              ref={this.setLeadingFocusAnchorRef}
-            />
-          )}
-        </FormattedMessage>
+        <div
+          role="button"
+          aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
+          className={cx('leading-focus-anchor')}
+          tabIndex="0"
+          onFocus={this.handleLeadingFocusAnchorFocus}
+          ref={this.setLeadingFocusAnchorRef}
+        />
         <ContentContainer
           header={fill ? this.renderFixedHeaderRow() : undefined}
           footer={fill ? this.renderScrollbar() : undefined}
@@ -1135,18 +1131,14 @@ class DataGrid extends React.Component {
             </div>
           </div>
         </ContentContainer>
-        <FormattedMessage id="Terra.data-grid.navigate">
-          {label => (
-            <div
-              role="button"
-              aria-label={label}
-              className={cx('terminal-focus-anchor')}
-              tabIndex="0"
-              onFocus={this.handleTerminalFocusAnchorFocus}
-              ref={this.setTerminalFocusAnchorRef}
-            />
-          )}
-        </FormattedMessage>
+        <div
+          role="button"
+          aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
+          className={cx('terminal-focus-anchor')}
+          tabIndex="0"
+          onFocus={this.handleTerminalFocusAnchorFocus}
+          ref={this.setTerminalFocusAnchorRef}
+        />
       </div>
     );
   }
