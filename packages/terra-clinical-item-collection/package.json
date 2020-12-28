@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "keycode-js": "^1.0.4",
+    "keycode-js": "^2.0.1",
     "prop-types": "^15.5.8",
     "terra-clinical-item-view": "^3.20.0",
     "terra-icon": "^3.0.0",

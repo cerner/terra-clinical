@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 
 import styles from './SectionHeader.module.scss';

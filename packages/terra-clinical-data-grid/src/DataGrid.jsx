@@ -8,7 +8,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 import Cell from './subcomponents/Cell';
 import HeaderCell from './subcomponents/HeaderCell';
 import RowSelectionCell from './subcomponents/RowSelectionCell';

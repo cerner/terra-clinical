@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 
 import styles from './Cell.module.scss';
 

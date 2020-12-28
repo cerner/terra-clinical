@@ -1,4 +1,4 @@
-import KeyCode from 'keycode-js';
+import * as KeyCode from 'keycode-js';
 /**
  * This function ensures the correct elements are provided to create a consistent item view layout. To handle a
  * potential missing required accessory element, a boolean is provided to indicate if start accessory space is needed.
