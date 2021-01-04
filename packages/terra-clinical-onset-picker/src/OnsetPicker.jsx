@@ -7,7 +7,7 @@ import Field from 'terra-form-field';
 import FieldSet from 'terra-form-fieldset';
 import InputField from 'terra-form-input/lib/InputField';
 import SelectField from 'terra-form-select/lib/SelectField';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import ThemeContext from 'terra-theme-context';
 import OnsetUtils from './OnsetUtils';
 import styles from './OnsetPicker.module.scss';
@@ -82,7 +82,7 @@ const propTypes = {
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {

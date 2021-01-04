@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames/bind';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
@@ -48,11 +47,6 @@ const propTypes = {
    * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
    */
   hideAccessoryDisplays: PropTypes.bool,
-  /**
-   * @private
-   * The intl object to be injected for translations.
-   */
-  intl: intlShape.isRequired,
 };
 
 const defaultProps = {
@@ -113,7 +107,6 @@ const ClinicalResultBloodPressure = (props) => {
     hasResultError,
     hasResultNoData,
     hideAccessoryDisplays,
-    intl,
     ...customProps
   } = props;
 
@@ -206,4 +199,4 @@ const ClinicalResultBloodPressure = (props) => {
 ClinicalResultBloodPressure.propTypes = propTypes;
 ClinicalResultBloodPressure.defaultProps = defaultProps;
 
-export default injectIntl(ClinicalResultBloodPressure);
+export default ClinicalResultBloodPressure;

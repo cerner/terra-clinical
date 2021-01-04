@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import FlowsheetResultCell from '../../../src/flowsheet-result-cell/FlowsheetResultCell';
 import DefaultResult, {
   DefaultBloodPressureResult, DefaultSystolicResult, DefaultDiastolicResult, DefaultResultWithNoEventId, DefaultBloodPressureDiastolicResultWithNoId, DefaultBloodPressureSystolicResultWithNoId,
@@ -9,17 +7,17 @@ import DefaultResult, {
 // Snapshot Tests
 describe('FlowsheetResultCell', () => {
   it('should render a ResultError if hasResultError is true', () => {
-    const result = shallowWithIntl(<FlowsheetResultCell hasResultError />).dive();
+    const result = shallow(<FlowsheetResultCell hasResultError />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a NoData if hasResultNoData is true', () => {
-    const result = shallowWithIntl(<FlowsheetResultCell hasResultNoData />).dive();
+    const result = shallow(<FlowsheetResultCell hasResultNoData />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render an error with bad data', () => {
-    const result = shallowWithIntl(<FlowsheetResultCell />).dive();
+    const result = shallow(<FlowsheetResultCell />);
     expect(result).toMatchSnapshot();
   });
 
@@ -28,7 +26,7 @@ describe('FlowsheetResultCell', () => {
       DefaultResult,
       DefaultBloodPressureResult,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -36,7 +34,7 @@ describe('FlowsheetResultCell', () => {
     const results = [
       DefaultResultWithNoEventId,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -44,7 +42,7 @@ describe('FlowsheetResultCell', () => {
     const results = [
       DefaultBloodPressureSystolicResultWithNoId,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -52,12 +50,12 @@ describe('FlowsheetResultCell', () => {
     const results = [
       DefaultBloodPressureDiastolicResultWithNoId,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
     expect(cell).toMatchSnapshot();
   });
 
   it('should render an error when given no result data', () => {
-    const cell = shallowWithIntl(<FlowsheetResultCell />);
+    const cell = shallow(<FlowsheetResultCell />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -66,7 +64,7 @@ describe('FlowsheetResultCell', () => {
       DefaultResult,
       DefaultBloodPressureResult,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} hideUnit />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -79,7 +77,7 @@ describe('FlowsheetResultCell', () => {
       },
       DefaultResult,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} hideUnit />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -96,7 +94,7 @@ describe('FlowsheetResultCell', () => {
         interpretation: 'critical',
       },
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} hideUnit />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -115,7 +113,7 @@ describe('FlowsheetResultCell', () => {
       },
       DefaultBloodPressureResult,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} hideUnit />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -136,7 +134,7 @@ describe('FlowsheetResultCell', () => {
       },
       DefaultBloodPressureResult,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} hideUnit />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -158,7 +156,7 @@ describe('FlowsheetResultCell', () => {
       },
       DefaultBloodPressureResult,
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} hideUnit />);
     expect(cell.find('.additional-end-display').hasClass('interpretation-critical')).toBe(false);
   });
 
@@ -191,7 +189,7 @@ describe('FlowsheetResultCell', () => {
         },
       },
     ];
-    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} />).dive();
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
     expect(cell).toMatchSnapshot();
   });
 
@@ -201,7 +199,7 @@ describe('FlowsheetResultCell', () => {
         DefaultResult,
         DefaultBloodPressureResult,
       ];
-      const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="none" />).dive();
+      const cell = shallow(<FlowsheetResultCell resultDataSet={results} paddingStyle="none" />);
       expect(cell).toMatchSnapshot();
     });
 
@@ -210,7 +208,7 @@ describe('FlowsheetResultCell', () => {
         DefaultResult,
         DefaultBloodPressureResult,
       ];
-      const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="standard" />).dive();
+      const cell = shallow(<FlowsheetResultCell resultDataSet={results} paddingStyle="standard" />);
       expect(cell).toMatchSnapshot();
     });
 
@@ -219,7 +217,7 @@ describe('FlowsheetResultCell', () => {
         DefaultResult,
         DefaultBloodPressureResult,
       ];
-      const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} paddingStyle="compact" />).dive();
+      const cell = shallow(<FlowsheetResultCell resultDataSet={results} paddingStyle="compact" />);
       expect(cell).toMatchSnapshot();
     });
   });

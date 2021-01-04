@@ -1,17 +1,15 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import ClinicalResult from '../../src/ClinicalResult';
 import DefaultResult from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
 describe('ClinicalResult', () => {
   it('should render a default ClinicalResult', () => {
-    const result = shallowWithIntl(<ClinicalResult {...DefaultResult} />).dive();
+    const result = shallow(<ClinicalResult {...DefaultResult} />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a truncated ClinicalResult', () => {
-    const result = shallowWithIntl(<ClinicalResult {...DefaultResult} isTruncated />).dive();
+    const result = shallow(<ClinicalResult {...DefaultResult} isTruncated />);
     expect(result).toMatchSnapshot();
   });
 
@@ -19,7 +17,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} isTruncated isModified />).dive();
+    const result = shallow(<ClinicalResult {...resultData} isTruncated isModified />);
     expect(result).toMatchSnapshot();
   });
 
@@ -28,7 +26,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       interpretation: 'critical',
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} hideUnit />).dive();
+    const result = shallow(<ClinicalResult {...resultData} hideUnit />);
     expect(result).toMatchSnapshot();
   });
 
@@ -36,7 +34,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} isModified />).dive();
+    const result = shallow(<ClinicalResult {...resultData} isModified />);
     expect(result).toMatchSnapshot();
   });
 
@@ -44,7 +42,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} hasComment />).dive();
+    const result = shallow(<ClinicalResult {...resultData} hasComment />);
     expect(result).toMatchSnapshot();
   });
 
@@ -52,7 +50,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} isUnverified />).dive();
+    const result = shallow(<ClinicalResult {...resultData} isUnverified />);
     expect(result).toMatchSnapshot();
   });
 
@@ -60,7 +58,7 @@ describe('ClinicalResult', () => {
     const resultData = {
       ...DefaultResult,
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} hideUnit />).dive();
+    const result = shallow(<ClinicalResult {...resultData} hideUnit />);
     expect(result).toMatchSnapshot();
   });
 
@@ -69,7 +67,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       conceptDisplay: 'Temperature Oral',
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} />).dive();
+    const result = shallow(<ClinicalResult {...resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -78,7 +76,7 @@ describe('ClinicalResult', () => {
       ...DefaultResult,
       datetimeDisplay: 'Nov 23, 2019 13:31:31',
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} />).dive();
+    const result = shallow(<ClinicalResult {...resultData} />);
     expect(result).toMatchSnapshot();
   });
 
@@ -88,17 +86,17 @@ describe('ClinicalResult', () => {
       status: 'entered-in-error',
       interpretation: 'critical',
     };
-    const result = shallowWithIntl(<ClinicalResult {...resultData} />).dive();
+    const result = shallow(<ClinicalResult {...resultData} />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a ResultError if hasResultError is true', () => {
-    const result = shallowWithIntl(<ClinicalResult hasResultError />).dive();
+    const result = shallow(<ClinicalResult hasResultError />);
     expect(result).toMatchSnapshot();
   });
 
   it('should render a NoData if hasResultNoData is true', () => {
-    const result = shallowWithIntl(<ClinicalResult hasResultNoData />).dive();
+    const result = shallow(<ClinicalResult hasResultNoData />);
     expect(result).toMatchSnapshot();
   });
 });
