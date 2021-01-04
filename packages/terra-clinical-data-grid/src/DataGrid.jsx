@@ -6,7 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import KeyCode from 'keycode-js';
 import Cell from './subcomponents/Cell';
@@ -103,7 +103,7 @@ const propTypes = {
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
-  intl: intlShape.isRequired,
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
    * Callback ref to pass into vertical overflow container.
    */
@@ -909,7 +909,7 @@ class DataGrid extends React.Component {
         ariaLabel={this.props.intl.formatMessage({
           id: 'Terra.data-grid.row-selection-template',
         }, {
-          'row-description': row.ariaLabel,
+          rowDescription: row.ariaLabel,
         })}
       />
     );
@@ -1092,18 +1092,14 @@ class DataGrid extends React.Component {
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
       >
-        <FormattedMessage id="Terra.data-grid.navigate">
-          {label => (
-            <div
-              role="button"
-              aria-label={label}
-              className={cx('leading-focus-anchor')}
-              tabIndex="0"
-              onFocus={this.handleLeadingFocusAnchorFocus}
-              ref={this.setLeadingFocusAnchorRef}
-            />
-          )}
-        </FormattedMessage>
+        <div
+          role="button"
+          aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
+          className={cx('leading-focus-anchor')}
+          tabIndex="0"
+          onFocus={this.handleLeadingFocusAnchorFocus}
+          ref={this.setLeadingFocusAnchorRef}
+        />
         <ContentContainer
           header={fill ? this.renderFixedHeaderRow() : undefined}
           footer={fill ? this.renderScrollbar() : undefined}
@@ -1135,18 +1131,14 @@ class DataGrid extends React.Component {
             </div>
           </div>
         </ContentContainer>
-        <FormattedMessage id="Terra.data-grid.navigate">
-          {label => (
-            <div
-              role="button"
-              aria-label={label}
-              className={cx('terminal-focus-anchor')}
-              tabIndex="0"
-              onFocus={this.handleTerminalFocusAnchorFocus}
-              ref={this.setTerminalFocusAnchorRef}
-            />
-          )}
-        </FormattedMessage>
+        <div
+          role="button"
+          aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
+          className={cx('terminal-focus-anchor')}
+          tabIndex="0"
+          onFocus={this.handleTerminalFocusAnchorFocus}
+          ref={this.setTerminalFocusAnchorRef}
+        />
       </div>
     );
   }

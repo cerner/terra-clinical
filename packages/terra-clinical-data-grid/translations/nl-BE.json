@@ -1,4 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Selecteer: {rij-omschrijving}",
+  "Terra.data-grid.row-selection-template": "Selecteer: {rowDescription}",
   "Terra.data-grid.navigate": "Navigeer naar gegevensraster"
 }
