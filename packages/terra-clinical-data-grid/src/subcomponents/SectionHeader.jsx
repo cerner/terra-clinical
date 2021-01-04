@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
-import KeyCode from 'keycode-js';
+import { KEY_RETURN, KEY_SPACE } from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 
 import styles from './SectionHeader.module.scss';
@@ -68,7 +68,7 @@ class SectionHeader extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       const { onRequestSectionCollapse, sectionId } = this.props;
 
       if (onRequestSectionCollapse) {

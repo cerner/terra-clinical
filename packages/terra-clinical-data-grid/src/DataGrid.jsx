@@ -8,7 +8,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
 import { injectIntl } from 'react-intl';
 
-import KeyCode from 'keycode-js';
+import { KEY_SHIFT, KEY_TAB } from 'keycode-js';
 import Cell from './subcomponents/Cell';
 import HeaderCell from './subcomponents/HeaderCell';
 import RowSelectionCell from './subcomponents/RowSelectionCell';
@@ -393,11 +393,11 @@ class DataGrid extends React.Component {
    * Keyboard Events
    */
   handleKeyDown(event) {
-    if (event.keyCode === KeyCode.KEY_SHIFT) {
+    if (event.keyCode === KEY_SHIFT) {
       this.shiftIsPressed = true;
     }
 
-    if (event.keyCode === KeyCode.KEY_TAB) {
+    if (event.keyCode === KEY_TAB) {
       const { activeElement } = document;
 
       if (!activeElement) {
@@ -424,7 +424,7 @@ class DataGrid extends React.Component {
   }
 
   handleKeyUp(event) {
-    if (event.keyCode === KeyCode.KEY_SHIFT) {
+    if (event.keyCode === KEY_SHIFT) {
       this.shiftIsPressed = false;
     }
   }

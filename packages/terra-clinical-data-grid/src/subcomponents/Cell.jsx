@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
-import KeyCode from 'keycode-js';
+import { KEY_RETURN, KEY_SPACE } from 'keycode-js';
 
 import styles from './Cell.module.scss';
 
@@ -75,7 +75,7 @@ class Cell extends React.Component {
   }
 
   handleKeyDown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
+    if (event.nativeEvent.keyCode === KEY_RETURN || event.nativeEvent.keyCode === KEY_SPACE) {
       const { onSelect } = this.props;
 
       if (onSelect) {
