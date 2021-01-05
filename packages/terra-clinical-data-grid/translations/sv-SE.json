@@ -1,4 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Välj: {row-description}",
+  "Terra.data-grid.row-selection-template": "Välj: {rowDescription}",
   "Terra.data-grid.navigate": "Gå till datarutnät"
 }

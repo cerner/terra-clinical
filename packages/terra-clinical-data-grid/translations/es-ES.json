@@ -1,4 +1,4 @@
 {
-  "Terra.data-grid.row-selection-template": "Seleccionar: {row-description}",
+  "Terra.data-grid.row-selection-template": "Seleccionar: {rowDescription}",
   "Terra.data-grid.navigate": "Navegar a la cuadrícula de datos"
 }

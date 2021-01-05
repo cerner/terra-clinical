@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Changed
+  * Removed reference to intlShape as it is no longer provided in later versions of react-intl
+
+* Fixed
+ * Fixed broken links in documentation.
+
 ## 4.26.0 - (December 8, 2020)
 
 * Changed

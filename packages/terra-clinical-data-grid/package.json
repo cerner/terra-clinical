@@ -25,11 +25,11 @@
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0"
+    "react-intl": ">=2.8.0, <6.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "keycode-js": "^1.0.4",
+    "keycode-js": "^3.1.0",
     "memoize-one": "^4.0.0",
     "prop-types": "^15.5.8",
     "react-draggable": "^3.0.5",
