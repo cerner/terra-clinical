@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.31.0 - (January 5, 2021)
+
 * Changed
   * Removed reference to intlShape as it is no longer provided in later versions of react-intl
   * Updated translation placeholder variable to be compatible with later versions of react-intl
