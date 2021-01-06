@@ -28,7 +28,7 @@
       "size": "free"
     }
   },
-  "stack": "heroku-16",
+  "stack": "heroku-20",
   "addons": [],
   "buildpacks": []
 }
