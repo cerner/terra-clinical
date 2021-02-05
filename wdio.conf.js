@@ -1,6 +1,6 @@
 const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
-const defaultWdioConfig = require('terra-toolkit/config/wdio/wdio.conf');
+const defaultWdioConfig = require('@cerner/terra-functional-testing/lib/config/wdio.conf');
 
 const wdioConfig = defaultWdioConfig.config;
 
