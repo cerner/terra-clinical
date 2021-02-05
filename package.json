@@ -86,9 +86,9 @@
     "start-static": "npm run compile:prod && terra express-server --site ./build",
     "test": "npm run jest && npm run wdio",
     "update-package-readme": "node scripts/root-readme-updater/index.js",
-    "wdio-default": "echo wdio default test",
-    "wdio-lowlight": "echo wdio lowlight test",
-    "wdio-fusion": "echo wdio fusion test",
+    "wdio-default": "wdio --spec './packages/terra-clinical-data-grid/tests/wdio/data-grid-spec.js' './packages/terra-clinical-detail-view/tests/wdio/*.js' './packages/terra-clinical-header/tests/wdio/*.js' './packages/terra-clinical-item-display/tests/wdio/*.js'",
+    "wdio-lowlight": "THEME=clinical-lowlight-theme wdio --spec './packages/terra-clinical-data-grid/tests/wdio/data-grid-spec.js' './packages/terra-clinical-header/tests/wdio/*.js' './packages/terra-clinical-item-display/tests/wdio/*.js'",
+    "wdio-fusion": "THEME=orion-fusion-theme wdio --spec './packages/terra-clinical-data-grid/tests/wdio/data-grid-spec.js' './packages/terra-clinical-header/tests/wdio/*.js' './packages/terra-clinical-item-display/tests/wdio/*.js'",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   },
   "devDependencies": {

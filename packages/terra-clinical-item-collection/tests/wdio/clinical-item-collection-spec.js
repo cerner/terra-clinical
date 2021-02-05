@@ -17,29 +17,29 @@ Terra.describeViewports('Item Collection', ['tiny', 'small', 'medium', 'large', 
   it('Returns child key for click when onSelect is given to a selectable item collection', () => {
     browser.url('/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
     browser.waitForValue('#item1');
-    browser.leftClick('#item1'); // clicking a table row element in firefox is a bug. browser.leftClick() uses W3C actions.
-    browser.click('#selected-key');
+    $('#item1').click({ button: 'left' }); // clicking a table row element in firefox is a bug. browser.leftClick() uses W3C actions.
+    $('#selected-key').click();
     Terra.validates.element('return child key on click');
-    browser.moveToObject('#root', 0, 0);
+    $('#root').moveTo({ xoffset: 0, yoffset: 0 });
   });
 
   it('Returns child key for ENTER when onSelect is given to a selectable item collection', () => {
     browser.url('/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
-    expect(browser.element('#item2')).to.exist;
+    expect($('#item2')).toExist();
     browser.keys(['Tab', 'Tab', 'Tab', 'Enter']);
-    browser.click('#selected-key');
+    $('#selected-key').click();
     Terra.validates.element('return child key on enter');
 
-    browser.moveToObject('#root', 0, 0);
+    $('#root').moveToObject({ xoffset: 0, yoffset: 0 });
   });
 
   it('Returns child key for SPACE when onSelect is given to a selectable item collection', () => {
     browser.url('/raw/tests/terra-clinical-item-collection/clinical-item-collection/item-collection-selectable');
-    expect(browser.element('#item3')).to.exist;
+    expect($('#item3')).toExist();
     browser.keys(['Tab', 'Tab', 'Tab', 'Tab', 'Tab', ' ']);
-    browser.click('#selected-key');
+    $('#selected-key').click();
     Terra.validates.element('return child key on space');
-    browser.moveToObject('#root', 0, 0);
+    $('#root').moveTo({ xoffset: 0, yoffset: 0 });
   });
 
   it('Displays an item collection with table styles', () => {
