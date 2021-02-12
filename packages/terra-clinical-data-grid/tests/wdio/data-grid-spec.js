@@ -9,13 +9,13 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     it('should display DataGrid with horizontal overflow', () => {
-      browser.click('[data-cell-label="section_0-0-Column-12"]');
+      $('[data-cell-label="section_0-0-Column-12"]').click();
 
       Terra.validates.element('horizontal overflow', { selector: '#standard-data-grid' });
     });
 
     it('should display DataGrid with vertical overflow', () => {
-      browser.click('[data-cell-label="section_0-29-Column-12"]');
+      $('[data-cell-label="section_0-29-Column-12"]').click();
 
       Terra.validates.element('vertical overflow', { selector: '#standard-data-grid' });
     });
@@ -27,19 +27,19 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     it('should display DataGrid with fill disabled', () => {
-      Terra.validates.element('default', { selector: '#no-fill-data-grid' });
+      Terra.validates.element('fill disabled', { selector: '#no-fill-data-grid' });
     });
 
     it('should display DataGrid with horizontal overflow', () => {
-      browser.click('[data-cell-label="section_0-0-Column-12"]');
+      $('[data-cell-label="section_0-0-Column-12"]').click();
 
-      Terra.validates.element('horizontal overflow', { selector: '#no-fill-data-grid' });
+      Terra.validates.element('filled disabled horizontal overflow', { selector: '#no-fill-data-grid' });
     });
 
     it('should display DataGrid with vertical overflow', () => {
-      browser.click('[data-cell-label="section_0-29-Column-12"]');
+      $('[data-cell-label="section_0-29-Column-12"]').click();
 
-      Terra.validates.element('vertical overflow', { selector: '#no-fill-data-grid' });
+      Terra.validates.element('filled disabled vertical overflow', { selector: '#no-fill-data-grid' });
     });
   });
 
@@ -49,19 +49,19 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     it('should display DataGrid with no pinned columns', () => {
-      Terra.validates.element('default', { selector: '#no-pinned-column-data-grid' });
+      Terra.validates.element('pinned columns', { selector: '#no-pinned-column-data-grid' });
     });
 
     it('should display DataGrid with with horizontal overflow', () => {
-      browser.click('[data-cell-label="section_0-0-Column-12"]');
+      $('[data-cell-label="section_0-0-Column-12"]').click();
 
-      Terra.validates.element('horizontal overflow', { selector: '#no-pinned-column-data-grid' });
+      Terra.validates.element('pinned columns horizontal overflow', { selector: '#no-pinned-column-data-grid' });
     });
 
     it('should display DataGrid with with vertical overflow', () => {
-      browser.click('[data-cell-label="section_0-29-Column-12"]');
+      $('[data-cell-label="section_0-29-Column-12"]').click();
 
-      Terra.validates.element('vertical overflow', { selector: '#no-pinned-column-data-grid' });
+      Terra.validates.element('pinned columns vertical overflow', { selector: '#no-pinned-column-data-grid' });
     });
   });
 
@@ -71,13 +71,13 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     it('should display DataGrid with no overflow columns', () => {
-      Terra.validates.element('default', { selector: '#no-overflow-column-data-grid' });
+      Terra.validates.element('no overflow columns', { selector: '#no-overflow-column-data-grid' });
     });
 
     it('should display DataGrid with vertical overflow', () => {
-      browser.click('[data-cell-label="section_0-29-Column-0"]');
+      $('[data-cell-label="section_0-29-Column-0"]').click();
 
-      Terra.validates.element('vertical overflow', { selector: '#no-overflow-column-data-grid' });
+      Terra.validates.element('no overflow columns vertical overflow', { selector: '#no-overflow-column-data-grid' });
     });
   });
 
@@ -115,36 +115,36 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
 
   it('should display DataGrid with cell selections', () => {
     browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    browser.click('[data-cell-label="section_0-0-Column-0"]');
+    $('[data-cell-label="section_0-0-Column-0"]').click();
 
     Terra.validates.element('cell selections', { selector: '#selectable-data-grid' });
   });
 
   it('should display DataGrid with row selections', () => {
     browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    browser.click('#selections-example-Pinned-Row-Row-0-Section-section_0 > *:first-child');
-    browser.moveToObject('#root', 0, 0);
+    $('#selections-example-Pinned-Row-Row-0-Section-section_0 > *:first-child').click();
+    $('#root').moveTo({ xoffset: 0, yoffset: 0 });
 
     Terra.validates.element('row selections', { selector: '#selectable-data-grid' });
   });
 
   it('should display DataGrid with column header selections', () => {
     browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/selectable-data-grid');
-    browser.click('#selectable-data-grid [class*="HeaderCell"]:nth-child(2)');
+    $('#selectable-data-grid [class*="HeaderCell"]:nth-child(2)').click();
 
     Terra.validates.element('column header selections', { selector: '#selectable-data-grid' });
   });
 
   it('should display DataGrid with subsection selections', () => {
     browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/subsection-data-grid');
-    browser.click('#subsection-data-grid [class*="SectionHeader"]');
+    $('#subsection-data-grid [class*="SectionHeader"]').click();
 
     Terra.validates.element('subsection selections', { selector: '#subsection-data-grid' });
   });
 
   it('should display DataGrid with paging', () => {
     browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/paged-content-data-grid');
-    browser.waitForVisible('#paging-example-Pinned-Row-section_1-Row0-Section-section_1');
+    $('#paging-example-Pinned-Row-section_1-Row0-Section-section_1').waitForDisplayed();
 
     Terra.validates.element('paging', { selector: '#paged-data-grid' });
   });
