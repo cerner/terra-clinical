@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed Flowsheet overflow style to better handle truncation
+
 ## 1.12.0 - (January 5, 2021)
 
 * Changed
