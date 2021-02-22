@@ -8,12 +8,6 @@ if (process.env.npm_package_name !== 'terra-clinical') {
   wdioConfig.specs = [path.join(__dirname, 'packages', process.env.npm_package_name, 'tests', 'wdio', '**', '*-spec.js')];
 }
 
-const travis = process.env.TRAVIS;
-
-if (travis) {
-  wdioConfig.host = 'localhost';
-}
-
 wdioConfig.specs = [
   './packages/terra-clinical-data-grid/tests/wdio/data-grid-spec.js',
   './packages/terra-clinical-detail-view/tests/wdio/*.js',
