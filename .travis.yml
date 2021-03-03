@@ -5,7 +5,6 @@ services:
 branches:
   only:
     - main
-    - feature-terra-funtional-testing
 cache:
   directories:
     - travis-build
@@ -35,96 +34,96 @@ jobs:
       install: skip
       script:
         # using the travis env section to set env variables seems to break cache
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/default FORM_FACTOR=tiny npm run wdio-default
+        - terra wdio --formFactor ['tiny'] --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: tiny lowlight-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/lowlight FORM_FACTOR=tiny npm run wdio-lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactor ['tiny'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: tiny fusion-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/fusion FORM_FACTOR=tiny npm run wdio-fusion
+        - terra wdio --themes orion-fusion-theme --formFactor ['tiny'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
     - name: small default-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/default FORM_FACTOR=small npm run wdio-default
+        - terra wdio --formFactor ['small'] --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: small lowlight-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/lowlight FORM_FACTOR=small npm run wdio-lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactor ['small'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: small fusion-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/fusion FORM_FACTOR=small npm run wdio-fusion
+        - terra wdio --themes orion-fusion-theme --formFactor ['small'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
 
     - stage: medium & large
       name: medium default-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/default FORM_FACTOR=medium npm run wdio-default
+        - terra wdio --formFactor ['medium'] --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: medium lowlight-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/lowlight FORM_FACTOR=medium npm run wdio-lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactor ['medium'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: medium fusion-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/fusion FORM_FACTOR=medium npm run wdio-fusion
+        - terra wdio --themes orion-fusion-theme --formFactor ['medium'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
     - name: large default-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/default FORM_FACTOR=large npm run wdio-default
+        - terra wdio --formFactor ['large'] --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: large lowlight-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/lowlight FORM_FACTOR=large npm run wdio-lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactor ['large'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: large fusion-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/fusion FORM_FACTOR=large npm run wdio-fusion
+        - terra wdio --themes orion-fusion-theme --formFactor ['large'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
 
     - stage: huge & enormous
       name: huge default-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/default FORM_FACTOR=huge npm run wdio-default
+        - terra wdio --formFactor ['huge'] --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: huge lowlight-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/lowlight FORM_FACTOR=huge npm run wdio-lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactor ['huge'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: huge fusion-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/fusion FORM_FACTOR=huge npm run wdio-fusion
+        - terra wdio --themes orion-fusion-theme --formFactor ['huge'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
     - name: enormous default-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/default FORM_FACTOR=enormous npm run wdio-default
+        - terra wdio --formFactor ['enormous'] --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: enormous lowlight-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/lowlight FORM_FACTOR=enormous npm run wdio-lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactor ['enormous'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: enormous fusion-theme
       before_install: skip
       install: skip
       script:
-        - SITE=$TRAVIS_BUILD_DIR/travis-build/fusion FORM_FACTOR=enormous npm run wdio-fusion
+        - terra wdio --themes orion-fusion-theme --formFactor ['enormous'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
 
     - stage: publish & deploy
       script:
