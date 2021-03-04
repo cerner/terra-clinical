@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-clinical",
   "engines": {
-    "node": ">=8.9.2 <12"
+    "node": ">=10 <12"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,6 @@
     "compile:fusion": "rm -rf ./build; THEME=orion-fusion-theme webpack -p --env.enableAggregateThemes",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
-    "heroku-prebuild": "npx lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest --config jestconfig.js",
     "jest:coverage": "jest --coverage --config jestconfig.js",
