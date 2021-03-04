@@ -3,12 +3,12 @@
 ## Unreleased
 
 * Changed
-  * Updated to use terra-functional-testing
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
 
 ## 4.3.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.2.0 - (November 10, 2020)
 
