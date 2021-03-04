@@ -34,96 +34,96 @@ jobs:
       install: skip
       script:
         # using the travis env section to set env variables seems to break cache
-        - terra wdio --formFactors ['tiny'] --site $TRAVIS_BUILD_DIR/travis-build/default
+        - terra wdio --formFactors tiny --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: tiny lowlight-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes clinical-lowlight-theme --formFactors ['tiny'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactors tiny --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: tiny fusion-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes orion-fusion-theme --formFactors ['tiny'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
+        - terra wdio --themes orion-fusion-theme --formFactors tiny --site $TRAVIS_BUILD_DIR/travis-build/fusion
     - name: small default-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --formFactors ['small'] --site $TRAVIS_BUILD_DIR/travis-build/default
+        - terra wdio --formFactors small --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: small lowlight-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes clinical-lowlight-theme --formFactors ['small'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactors small --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: small fusion-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes orion-fusion-theme --formFactors ['small'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
+        - terra wdio --themes orion-fusion-theme --formFactors small --site $TRAVIS_BUILD_DIR/travis-build/fusion
 
     - stage: medium & large
       name: medium default-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --formFactors ['medium'] --site $TRAVIS_BUILD_DIR/travis-build/default
+        - terra wdio --formFactors medium --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: medium lowlight-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes clinical-lowlight-theme --formFactors ['medium'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactors medium --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: medium fusion-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes orion-fusion-theme --formFactors ['medium'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
+        - terra wdio --themes orion-fusion-theme --formFactors medium --site $TRAVIS_BUILD_DIR/travis-build/fusion
     - name: large default-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --formFactors ['large'] --site $TRAVIS_BUILD_DIR/travis-build/default
+        - terra wdio --formFactors large --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: large lowlight-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes clinical-lowlight-theme --formFactors ['large'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactors large --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: large fusion-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes orion-fusion-theme --formFactors ['large'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
+        - terra wdio --themes orion-fusion-theme --formFactors large --site $TRAVIS_BUILD_DIR/travis-build/fusion
 
     - stage: huge & enormous
       name: huge default-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --formFactors ['huge'] --site $TRAVIS_BUILD_DIR/travis-build/default
+        - terra wdio --formFactors huge --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: huge lowlight-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes clinical-lowlight-theme --formFactors ['huge'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactors huge --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: huge fusion-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes orion-fusion-theme --formFactors ['huge'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
+        - terra wdio --themes orion-fusion-theme --formFactors huge --site $TRAVIS_BUILD_DIR/travis-build/fusion
     - name: enormous default-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --formFactors ['enormous'] --site $TRAVIS_BUILD_DIR/travis-build/default
+        - terra wdio --formFactors enormous --site $TRAVIS_BUILD_DIR/travis-build/default
     - name: enormous lowlight-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes clinical-lowlight-theme --formFactors ['enormous'] --site $TRAVIS_BUILD_DIR/travis-build/lowlight
+        - terra wdio --themes clinical-lowlight-theme --formFactors enormous --site $TRAVIS_BUILD_DIR/travis-build/lowlight
     - name: enormous fusion-theme
       before_install: skip
       install: skip
       script:
-        - terra wdio --themes orion-fusion-theme --formFactors ['enormous'] --site $TRAVIS_BUILD_DIR/travis-build/fusion
+        - terra wdio --themes orion-fusion-theme --formFactors enormous --site $TRAVIS_BUILD_DIR/travis-build/fusion
 
     - stage: publish & deploy
       script:
