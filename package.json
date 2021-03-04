@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-clinical",
   "engines": {
-    "node": ">=8.9.2 <12"
+    "node": ">=10 <12"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,6 @@
     "compile:fusion": "rm -rf ./build; THEME=orion-fusion-theme webpack -p --env.enableAggregateThemes",
     "danger": "danger ci",
     "deploy": "npm run compile:prod && gh-pages -d build",
-    "heroku-prebuild": "npx lerna init",
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest --config jestconfig.js",
     "jest:coverage": "jest --coverage --config jestconfig.js",
@@ -57,15 +56,15 @@
     "prepare-for-release": "terra prepare-for-release",
     "pretest": "npm run lint",
     "postinstall": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
-    "start": "tt-serve --env.enableAggregateThemes",
-    "start-heroku": "tt-serve-static --port $PORT --site './build' ",
-    "start-prod": "tt-serve --env.disableHotReloading -p --env.enableAggregateThemes",
-    "start-static": "npm run compile:prod && tt-serve-static --site ./build",
+    "start": "webpack-dev-server --env.enableAggregateThemes",
+    "start-heroku": "terra express-server --port $PORT --site build",
+    "start-prod": "webpack-dev-server --env.disableHotReloading -p --env.enableAggregateThemes",
+    "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run jest && npm run wdio",
     "update-package-readme": "node scripts/root-readme-updater/index.js",
-    "wdio-default": "wdio",
-    "wdio-lowlight": "THEME=clinical-lowlight-theme wdio",
-    "wdio-fusion": "THEME=orion-fusion-theme wdio",
+    "wdio-default": "terra wdio",
+    "wdio-lowlight": "terra wdio --themes clinical-lowlight-theme",
+    "wdio-fusion": "terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
   },
   "devDependencies": {
@@ -78,7 +77,8 @@
     "@cerner/browserslist-config-terra": "^3.0.0",
     "@cerner/eslint-config-terra": "^5.0.0",
     "@cerner/stylelint-config-terra": "^4.0.0",
-    "@cerner/terra-cli": "^1.0.0",
+    "@cerner/terra-cli": "^1.6.0",
+    "@cerner/terra-functional-testing": "^1.0.1",
     "@cerner/terra-open-source-scripts": "^1.0.1",
     "@cerner/webpack-config-terra": "^1.2.0",
     "babel-eslint": "^10.0.1",
@@ -108,7 +108,6 @@
     "terra-dev-site": "^6.5.0",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.0.0",
-    "terra-toolkit": "^6.2.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1",
