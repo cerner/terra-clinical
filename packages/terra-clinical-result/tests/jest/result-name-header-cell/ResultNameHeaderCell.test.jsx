@@ -41,4 +41,13 @@ describe('ResultNameHeaderCell', () => {
       expect(cell).toMatchSnapshot();
     });
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const cell = shallow(<ResultNameHeaderCell resultName="Name" unit="Unit" />);
+    expect(cell).toMatchSnapshot();
+  });
 });

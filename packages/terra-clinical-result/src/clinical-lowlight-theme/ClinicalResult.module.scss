@@ -1,0 +1,32 @@
+:local {
+  .clinical-lowlight-theme {
+    --terra-clinical-result-display-status-entered-in-error-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-display-icon-modified-color: #5a81ff;
+    --terra-clinical-result-display-icon-modified-height: 0.875em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-modified-margin-left: 0.125em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-modified-top: 0; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-comment-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-display-icon-comment-height: 0.875em; // 0.9375em; Must use ems for font scaling
+    --terra-clinical-result-display-icon-comment-margin-left: 0.25em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-comment-top: 0.0625em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-unverified-height: 0.85em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-unverified-margin-left: 0.25em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-unverified-top: 0.0625em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-comment-after-modified-margin-left: 0.0625em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-comment-after-modified-top: 0; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-unverified-after-icons-margin-left: 0.4375em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-unverified-after-icons-top: 0; // Must use ems for font scaling
+    --terra-clinical-result-concept-display-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-concept-display-font-size: 0.875em; // Must use ems for font scaling
+    --terra-clinical-result-concept-display-line-height: 1.28571;
+    --terra-clinical-result-concept-display-margin-top: 0.1875em; // Must use ems for font scaling
+    --terra-clinical-result-datetime-display-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-datetime-display-font-size: 0.78571em; // Must use ems for font scaling
+    --terra-clinical-result-datetime-display-line-height: 1.27272;
+    --terra-clinical-result-datetime-display-margin-top: 0.375em; // Must use ems for font scaling
+    --terra-clinical-result-display-separator-color: #b2b5b6;
+    --terra-clinical-result-display-separator-font-weight: normal;
+    --terra-clinical-result-display-separator-margin-left: 0.25em; // Must use ems for font scaling
+    --terra-clinical-result-display-separator-margin-right: 0.25em; // Must use ems for font scaling
+  }
+}

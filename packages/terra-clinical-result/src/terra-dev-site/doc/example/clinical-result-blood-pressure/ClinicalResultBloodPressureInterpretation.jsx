@@ -107,10 +107,10 @@ const abnormalBPResultValue = {
   },
 };
 
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResultBloodPressure {...criticalBPResultValue} /></div>);
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResultBloodPressure {...highBPResultValue} /></div>);
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResultBloodPressure {...lowBPResultValue} /></div>);
-setofResultValues.push(<div className={cx('bottom-space')}><ClinicalResultBloodPressure {...abnormalBPResultValue} /></div>);
-setofResultValues.push(<div><ClinicalResultBloodPressure {...mixedBPResultValue} /></div>);
+setofResultValues.push(<div key="critical-bloodpressure" className={cx('bottom-space')}><ClinicalResultBloodPressure {...criticalBPResultValue} /></div>);
+setofResultValues.push(<div key="high-bloodpressure" className={cx('bottom-space')}><ClinicalResultBloodPressure {...highBPResultValue} /></div>);
+setofResultValues.push(<div key="low-bloodpressure" className={cx('bottom-space')}><ClinicalResultBloodPressure {...lowBPResultValue} /></div>);
+setofResultValues.push(<div key="abnormal-bloodpressure" className={cx('bottom-space')}><ClinicalResultBloodPressure {...abnormalBPResultValue} /></div>);
+setofResultValues.push(<div key="mixed-bloodpressure"><ClinicalResultBloodPressure {...mixedBPResultValue} /></div>);
 
 export default () => setofResultValues;

@@ -1,9 +1,11 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from '../Examples.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const partialStandard = {
   result: {
@@ -85,29 +87,39 @@ const bloodpressureBothInError = [
   },
 ];
 
-export default () => (
-  <React.Fragment>
-    <div className={cx(['mock-flowsheet-resultcolumn', 'double-column'])}>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
-        standard result
+export default () => {
+  const theme = React.useContext(ThemeContext);
+  const mockFlowsheetClassnames = classNames(
+    cx(
+      'mock-flowsheet-example',
+      theme.className,
+    ),
+  );
+
+  return (
+    <div className={mockFlowsheetClassnames}>
+      <div className={cx(['mock-flowsheet-resultcolumn', 'double-column'])}>
+        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
+          standard result
+        </div>
+        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
+          blood pressure: systolic-only
+        </div>
+        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
+          blood pressure: both systolic & diastolic
+        </div>
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
-        blood pressure: systolic-only
-      </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
-        blood pressure: both systolic & diastolic
+      <div className={cx('mock-flowsheet-resultcolumn')}>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={standardInError} hideUnit />
+        </div>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={bloodpressureOneInError} hideUnit />
+        </div>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={bloodpressureBothInError} hideUnit />
+        </div>
       </div>
     </div>
-    <div className={cx('mock-flowsheet-resultcolumn')}>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={standardInError} hideUnit />
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={bloodpressureOneInError} hideUnit />
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={bloodpressureBothInError} hideUnit />
-      </div>
-    </div>
-  </React.Fragment>
-);
+  );
+};

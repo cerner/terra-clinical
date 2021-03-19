@@ -1,9 +1,11 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from '../Examples.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const multipleResultBPValues = [
   {
@@ -75,17 +77,27 @@ const multipleResultBPValues = [
   },
 ];
 
-export default () => (
-  <React.Fragment>
-    <div className={cx('mock-flowsheet-resultcolumn')}>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit />
+export default () => {
+  const theme = React.useContext(ThemeContext);
+  const mockFlowsheetClassnames = classNames(
+    cx(
+      'mock-flowsheet-example',
+      theme.className,
+    ),
+  );
+
+  return (
+    <div className={mockFlowsheetClassnames}>
+      <div className={cx('mock-flowsheet-resultcolumn')}>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit />
+        </div>
+        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
       </div>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
+      <div className={cx('mock-flowsheet-resultcolumn')}>
+        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
+        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
+      </div>
     </div>
-    <div className={cx('mock-flowsheet-resultcolumn')}>
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-      <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-    </div>
-  </React.Fragment>
-);
+  );
+};

@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ResultNameHeaderCell correctly applies the theme context className 1`] = `
+<div
+  className="clinical-result-name-header-cell padding-compact orion-fusion-theme"
+>
+  <div
+    className="name"
+  >
+    Name
+  </div>
+  <div
+    className="unit"
+  >
+    Unit
+  </div>
+</div>
+`;
+
 exports[`ResultNameHeaderCell paddingStyle - should render with compact 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"

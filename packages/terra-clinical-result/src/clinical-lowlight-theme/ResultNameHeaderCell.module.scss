@@ -1,0 +1,13 @@
+:local {
+  .clinical-lowlight-theme {
+    --terra-clinical-result-name-header-cell-name-color: #b2b5b6;
+    --terra-clinical-result-name-header-cell-name-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-name-header-cell-unit-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-name-header-cell-unit-font-size: 0.875em; // Must use ems for font scaling
+    --terra-clinical-result-name-header-cell-unit-margin-left: 0.35714em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-rowindicator-margin-right: 0.25em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-rowindicator-top: 0.15em; // Must use ems for font scaling
+    --terra-clinical-result-name-header-cell-padding-standard-padding: 0.71428rem 0.71428rem;
+    --terra-clinical-result-name-header-cell-padding-compact-padding: 0.35714rem 0.71428rem;
+  }
+}

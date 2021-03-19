@@ -1,0 +1,55 @@
+:local {
+  .clinical-lowlight-theme {
+    --terra-clinical-result-flowsheet-cell-primary-display-height: 1.78571em; // Must use ems for font scaling
+    --terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left: 1.1875em; // Must use ems for font scaling
+    --terra-clinical-result-flowsheet-cell-status-unverified-color: #c270d7;
+    --terra-clinical-result-flowsheet-cell-status-unverified-font-weight: normal;
+    --terra-clinical-result-flowsheet-cell-end-display-height: 1.78571em; // Must use ems for font scaling
+    --terra-clinical-result-flowsheet-cell-end-icons-reserved-space-margin-right: 1em; // Must use ems for font scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-background-color: #2d3539;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-border: 1px solid #6f7477;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-color: #878b8e;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-neutral-font-weight: normal;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-neutral-color: #2d3539;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-high-background-color: #411414;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-high-border: 1px solid #fb4c4c;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-high-color: #b2b5b6;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-high-font-weight: bold;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-high-color: #411414;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-critical-background-color: #fb4c4c;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-critical-border: 1px solid #222a2e;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-critical-color: #1c1f21;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-critical-font-weight: bold;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-critical-color: #fb4c4c;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-critical-left: 0.30769em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-critical-top: -1.30769em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-stack-padding: 0 0.28571em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-background-color: #2d3539;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-border: 1px solid #6f7477;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-color: #878b8e;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-font-size: 0.92857em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-font-weight: normal;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-line-height: 1.53846;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-min-width: 1.07142em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-padding: 0 0.21428em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-color: #2d3539;
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-left: 0.23076em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-2nd-top: -1.38461em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-additional-results-tile-max-value-padding: 0 0.07142em 0 0.14285em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-end-accessory-icon-space-height: 1.78571em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-end-accessory-icon-space-width: 1em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-comment-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-flowsheet-cell-icon-comment-font-size: 0.78571em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-comment-margin-left: 0.27272em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-comment-top: 0; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-modified-color: #5a81ff;
+    --terra-clinical-result-flowsheet-cell-icon-modified-font-size: 0.78571em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-modified-margin-left: 0.27272em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-modified-top: 1.18181em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-unverified-font-size: 0.85em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-unverified-margin-left: 0.16806em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-icon-unverified-top: 0.5042em; // Must use ems for font re-scaling
+    --terra-clinical-result-flowsheet-cell-padding-standard-padding: 0.5rem 0.28571rem;
+    --terra-clinical-result-flowsheet-cell-padding-compact-padding: 0.21428rem 0.28571rem;
+  }
+}

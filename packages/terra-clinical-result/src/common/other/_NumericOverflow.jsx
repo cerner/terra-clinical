@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './OtherTemplates.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -20,14 +22,19 @@ const NumericOverflow = (props) => {
     ...customProps
   } = props;
 
-  const templateClassnames = cx([
-    'numeric-overflow',
-  ]);
+  const theme = React.useContext(ThemeContext);
+  const templateClassnames = classNames(
+    cx(
+      'numeric-overflow',
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   return (
     <span
       {...customProps}
-      className={customProps.className ? `${templateClassnames} ${customProps.className}` : templateClassnames}
+      className={templateClassnames}
     >
       {intl.formatMessage({ id: 'Terra.clinicalResult.viewResults' })}
     </span>
