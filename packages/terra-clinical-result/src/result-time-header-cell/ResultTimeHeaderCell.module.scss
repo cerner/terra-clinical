@@ -1,4 +1,6 @@
 @import '../common/mixins';
+@import '../clinical-lowlight-theme/ResultTimeHeaderCell.module';
+@import '../orion-fusion-theme/ResultTimeHeaderCell.module';
 
 :local {
   .clinical-result-time-header-cell {

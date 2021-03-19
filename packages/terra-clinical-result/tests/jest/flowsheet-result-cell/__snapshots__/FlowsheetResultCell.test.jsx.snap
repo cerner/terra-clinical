@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FlowsheetResultCell correctly applies the theme context className 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact orion-fusion-theme"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <ClinicalResult
+      eventId="111"
+      hideAccessoryDisplays={true}
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] = `
 <div
   className="flowsheet-result-cell padding-compact"

@@ -966,6 +966,60 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
 </div>
 `;
 
+exports[`ClinicalResultBloodPressure correctly applies the theme context className 1`] = `
+<div
+  className="clinical-result blood-pressure-result orion-fusion-theme"
+>
+  <div
+    className="decorated-result-display"
+  >
+    <div
+      className="result-display"
+    >
+      <BloodPressureDisplay
+        diastolicUnit="mmhg"
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.1",
+            "noData": false,
+            "result": Object {
+              "unit": "mmHg",
+              "value": "180",
+            },
+          }
+        }
+        type="Systolic"
+      />
+      <span
+        className="result-display-separator"
+        key="Observation-Separator-111.1"
+      >
+        /
+      </span>
+      <BloodPressureDisplay
+        hideUnit={false}
+        id="111"
+        result={
+          Object {
+            "cleanedUnit": "mmhg",
+            "eventId": "111.2",
+            "noData": false,
+            "result": Object {
+              "unit": "mmHg",
+              "value": "80",
+            },
+          }
+        }
+        type="Diastolic"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `<InjectIntl(KnownNoData) />`;
 
 exports[`ClinicalResultBloodPressure should render a ResultError if hasResultError is true 1`] = `<InjectIntl(ResultError) />`;

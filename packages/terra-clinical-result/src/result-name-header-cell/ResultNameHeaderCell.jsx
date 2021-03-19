@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
-import classNames from 'classnames/bind';
 import styles from './ResultNameHeaderCell.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -46,16 +48,21 @@ const ResultNameHeaderCell = (props) => {
     ...customProps
   } = props;
 
-  const nameHeaderCellClassnames = cx([
-    'clinical-result-name-header-cell',
-    { 'padding-standard': paddingStyle === 'standard' },
-    { 'padding-compact': paddingStyle === 'compact' },
-  ]);
+  const theme = React.useContext(ThemeContext);
+  const nameHeaderCellClassnames = classNames(
+    cx(
+      'clinical-result-name-header-cell',
+      { 'padding-standard': paddingStyle === 'standard' },
+      { 'padding-compact': paddingStyle === 'compact' },
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   return (
     <div
       {...customProps}
-      className={customProps.className ? `${nameHeaderCellClassnames} ${customProps.className}` : nameHeaderCellClassnames}
+      className={nameHeaderCellClassnames}
     >
       <div className={cx('name')}>
         {resultRowIndicators[typeIndicator.toLowerCase()]}

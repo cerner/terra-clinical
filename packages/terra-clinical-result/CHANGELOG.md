@@ -5,6 +5,9 @@
 * Changed
   * Upgrade tests to terra-functional-testing and WebDriverIO v6
 
+* Added
+  * Added packaged themes and applying themes by context
+
 ## 1.12.0 - (January 5, 2021)
 
 * Changed

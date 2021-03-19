@@ -29,4 +29,13 @@ describe('ResultTimeHeaderCell', () => {
       expect(cell).toMatchSnapshot();
     });
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const cell = shallow(<ResultTimeHeaderCell date="December 31st 1999" time="10:00 PM" />);
+    expect(cell).toMatchSnapshot();
+  });
 });

@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
@@ -14,7 +16,7 @@ import NumericOverflow from '../common/other/_NumericOverflow';
 import { isEmpty, checkIsStatusInError, checkTypeNumeric } from '../common/utils';
 import styles from './FlowsheetResultCell.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -352,16 +354,21 @@ const FlowsheetResultCell = (props) => {
     flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv);
   }
 
-  const flowsheetCellClassNames = cx([
-    'flowsheet-result-cell',
-    { 'padding-standard': paddingStyle === 'standard' },
-    { 'padding-compact': paddingStyle === 'compact' },
-  ]);
+  const theme = React.useContext(ThemeContext);
+  const flowsheetCellClassNames = classNames(
+    cx(
+      'flowsheet-result-cell',
+      { 'padding-standard': paddingStyle === 'standard' },
+      { 'padding-compact': paddingStyle === 'compact' },
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   return (
     <div
       {...customProps}
-      className={customProps.className ? `${flowsheetCellClassNames} ${customProps.className}` : flowsheetCellClassNames}
+      className={flowsheetCellClassNames}
     >
       {flowsheetResultCellDisplay}
     </div>

@@ -1,12 +1,14 @@
+@import './clinical-lowlight-theme/Examples.module';
+@import './orion-fusion-theme/Examples.module';
+
 :local {
   .example-description-text {
-    color: #434a4d;
     display: inline-flex;
     margin-bottom: 0.75rem;
   }
 
   .dashed-border-group {
-    border: 2px dashed #333;
+    border: var(--terra-clinical-result-examples-dashed-border-group-border, 2px dashed #333);
   }
 
   .clinical-result-fontsize-16 {
@@ -29,10 +31,15 @@
     margin-bottom: 1.42857rem;
   }
 
+  .mock-flowsheet-example {
+    margin: 0;
+    padding: 0;
+  }
+
   .mock-flowsheet-header {
-    background-color: #f1f1f1;
-    border: 1px solid #dedfe0;
-    border-bottom-color: #868a8c;
+    background-color: var(--terra-clinical-result-examples-mock-flowsheet-header-background-color, #f1f1f1);
+    border: var(--terra-clinical-result-examples-mock-flowsheet-header-border, 1px solid #dedfe0);
+    border-bottom-color: var(--terra-clinical-result-examples-mock-flowsheet-header-border-bottom-color, #868a8c);
     line-height: 0;
     max-width: 1055px;
     overflow: hidden;
@@ -41,21 +48,21 @@
   }
 
   .mock-flowsheet-header-cell {
-    border-left: 1px solid #868a8c;
-    border-right: 1px solid #868a8c;
+    border-left: var(--terra-clinical-result-examples-mock-flowsheet-header-cell-border-left, 1px solid #868a8c);
+    border-right: var(--terra-clinical-result-examples-mock-flowsheet-header-cell-border-right, 1px solid #868a8c);
     display: inline-block;
     margin-right: -1px;
     width: 120px;
     
     &.new-date {
-      border-left: 2px solid #4e5558;
+      border-left: var(--terra-clinical-result-examples-mock-flowsheet-header-cell-new-date-border-left, 2px solid #4e5558);
     }
   }
 
   .mock-flowsheet-firstcolumn {
-    background-color: #f1f1f1;
-    border: 1px solid #dedfe0;
-    border-right: 2px solid #4e5558;
+    background-color: var(--terra-clinical-result-examples-mock-flowsheet-firstcolumn-background-color, #f1f1f1);
+    border: var(--terra-clinical-result-examples-mock-flowsheet-firstcolumn-border, 1px solid #dedfe0);
+    border-right: var(--terra-clinical-result-examples-mock-flowsheet-firstcolumn-border-right, 2px solid #4e5558);
     max-width: 222px;
     overflow: hidden;
     padding-top: 48px;
@@ -63,18 +70,18 @@
   }
 
   .mock-flowsheet-firstcolumn-cell {
-    border-bottom: 1px solid #868a8c;
-    border-top: 1px solid #868a8c;
+    border-bottom: var(--terra-clinical-result-examples-mock-flowsheet-firstcolumn-cell-border-bottom, 1px solid #868a8c);
+    border-top: var(--terra-clinical-result-examples-mock-flowsheet-firstcolumn-cell-border-top, 1px solid #868a8c);
     margin-bottom: -1px;
 
     &.zebra {
-      background-color: #dedfe0;
+      background-color: var(--terra-clinical-result-examples-mock-flowsheet-firstcolumn-cell-zebra-background-color, #dedfe0);
     }
   }
 
   .mock-flowsheet-resultcolumn {
-    background-color: #f1f1f1;
-    border: 1px solid #dedfe0;
+    background-color: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-background-color, #f1f1f1);
+    border: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-border, 1px solid #dedfe0);
     display: inline-block;
     margin-left: -1px;
     overflow: hidden;
@@ -91,7 +98,7 @@
     }
 
     &.triple-column {
-      width: 477px;
+      width: 490px;
     }
 
     &.flexible50-column {
@@ -100,9 +107,9 @@
   }
 
   .mock-flowsheet-resultcolumn-cell {
-    background-color: #fff;
-    border-bottom: 1px solid #dedfe0;
-    border-top: 1px solid #dedfe0;
+    background-color: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-cell-background-color, #fff);
+    border-bottom: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-cell-border-bottom, 1px solid #dedfe0);
+    border-top: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-cell-border-top, 1px solid #dedfe0);
     box-sizing: border-box;
     height: 33px;
     margin-bottom: -1px;
@@ -135,7 +142,7 @@
     }
     
     &.zebra {
-      background-color: #f1f1f1;
+      background-color: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-cell-zebra-background-color, #f1f1f1);
     }
   }
 

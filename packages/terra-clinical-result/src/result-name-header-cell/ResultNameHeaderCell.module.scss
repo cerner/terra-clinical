@@ -1,4 +1,6 @@
 @import '../common/mixins';
+@import '../clinical-lowlight-theme/ResultNameHeaderCell.module';
+@import '../orion-fusion-theme/ResultNameHeaderCell.module';
 
 :local {
   .clinical-result-name-header-cell {

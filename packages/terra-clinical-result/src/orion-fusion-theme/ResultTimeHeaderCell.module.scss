@@ -1,0 +1,18 @@
+:local {
+  .orion-fusion-theme {
+    --terra-clinical-result-time-header-cell-date-color: rgba(28, 35, 40, 0.73);
+    --terra-clinical-result-time-header-cell-date-font-size: 0.92857em; // Must use ems for font scaling
+    --terra-clinical-result-time-header-cell-date-font-weight: 400;
+    --terra-clinical-result-time-header-cell-date-line-height: 1.38461;
+    --terra-clinical-result-time-header-cell-date-min-height: 1.38461em; // Set to same as line-height in ems
+    --terra-clinical-result-time-header-cell-date-min-height: 1.38461em; // Set to same as line-height in ems
+    --terra-clinical-result-time-header-cell-time-color: #1c1f21;
+    --terra-clinical-result-time-header-cell-time-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-time-header-cell-time-font-weight: 400;
+    --terra-clinical-result-time-header-cell-time-line-height: 1.14285;
+    --terra-clinical-result-time-header-cell-time-min-height: 1.14285em; // Set to same as line-height in ems
+    --terra-clinical-result-time-header-cell-time-margin-top: 0.14285em; // Must use ems for font scaling
+    --terra-clinical-result-label-header-cell-padding-standard-padding: 0.42857rem 0.57142rem;
+    --terra-clinical-result-label-header-cell-padding-compact-padding: 0.14285rem 0.42857rem;
+  }
+}
