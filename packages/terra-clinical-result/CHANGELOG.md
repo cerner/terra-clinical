@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Changed Flowsheet overflow style to better handle truncation
   * Upgrade tests to terra-functional-testing and WebDriverIO v6
 
 * Added
