@@ -221,4 +221,17 @@ describe('FlowsheetResultCell', () => {
       expect(cell).toMatchSnapshot();
     });
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const results = [
+      DefaultResult,
+      DefaultBloodPressureResult,
+    ];
+    const cell = shallow(<FlowsheetResultCell resultDataSet={results} />);
+    expect(cell).toMatchSnapshot();
+  });
 });

@@ -1,0 +1,19 @@
+:local {
+  .orion-fusion-theme {
+    --terra-clinical-result-entered-in-error-color: #1c1f21;
+    --terra-clinical-result-entered-in-error-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-entered-in-error-line-height: 1.125;
+    --terra-clinical-result-no-data-color: rgba(28, 35, 40, 0.73);
+    --terra-clinical-result-no-data-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-no-data-letter-spacing: 0.3ch; // Must use ch for font scaling
+    --terra-clinical-result-no-data-line-height: 1.125;
+    --terra-clinical-result-numeric-overflow-color: #1c1f21;
+    --terra-clinical-result-numeric-overflow-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-numeric-overflow-line-height: 1.125;
+    --terra-clinical-result-system-error-color: #1c1f21;
+    --terra-clinical-result-system-error-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-system-error-line-height: 1.125;
+    --terra-clinical-result-system-error-icon-margin-right: 0.1875em; // Must use ems for font scaling;
+    --terra-clinical-result-system-error-icon-top: 0.15em; // Must use ems for font scaling
+  }
+}

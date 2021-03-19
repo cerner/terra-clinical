@@ -1,3 +1,6 @@
+@import './clinical-lowlight-theme/ClinicalResult.module';
+@import './orion-fusion-theme/ClinicalResult.module';
+
 :local {
   .clinical-result {
     max-width: 100%;  // Needed for IE10 truncation
@@ -28,10 +31,16 @@
     max-width: 100%;  // Needed for IE10 truncation
     overflow: hidden; // Needed for IE10
 
-    &.status-in-error del {
+    /* stylelint-disable selector-max-compound-selectors */
+    &.status-in-error del,
+    &.status-in-error del span {
       color: var(--terra-clinical-result-display-status-entered-in-error-color, rgba(28, 31, 33, 0.65));
+    }
+
+    &.status-in-error del {
       text-decoration: line-through;
     }
+    /* stylelint-enable selector-max-compound-selectors */
 
     &.truncated {
       flex-wrap: nowrap;

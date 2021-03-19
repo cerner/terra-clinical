@@ -273,4 +273,13 @@ describe('ClinicalResultBloodPressure', () => {
       expect(result).toMatchSnapshot();
     });
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const result = shallow(<ClinicalResultBloodPressure {...DefaultBloodPressureResult} />);
+    expect(result).toMatchSnapshot();
+  });
 });

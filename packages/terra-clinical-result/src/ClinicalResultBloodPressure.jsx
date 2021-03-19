@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
@@ -11,7 +13,7 @@ import BloodPressureDisplay from './_BloodPressureDisplay';
 import { sanitizeResult } from './common/utils';
 import styles from './ClinicalResult.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -109,6 +111,7 @@ const ClinicalResultBloodPressure = (props) => {
     hideAccessoryDisplays,
     ...customProps
   } = props;
+  const theme = React.useContext(ThemeContext);
 
   if (hasResultError) {
     return <ResultError />;
@@ -180,16 +183,20 @@ const ClinicalResultBloodPressure = (props) => {
     </React.Fragment>
   );
 
-  const clinicalResultClassnames = cx([
-    'clinical-result',
-    'blood-pressure-result',
-    { truncated: isTruncated },
-  ]);
+  const clinicalResultClassnames = classNames(
+    cx(
+      'clinical-result',
+      'blood-pressure-result',
+      { truncated: isTruncated },
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   return (
     <div
       {...customProps}
-      className={customProps.className ? `${clinicalResultClassnames} ${customProps.className}` : clinicalResultClassnames}
+      className={clinicalResultClassnames}
     >
       {clinicalResultBloodPressureDisplay}
     </div>
