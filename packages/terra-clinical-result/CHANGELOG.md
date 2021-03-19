@@ -4,6 +4,7 @@
 
 * Changed
   * Changed Flowsheet overflow style to better handle truncation
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
 
 ## 1.12.0 - (January 5, 2021)
 
@@ -12,7 +13,7 @@
   * Removed unused react-intl imports.
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 1.11.0 - (November 10, 2020)
 

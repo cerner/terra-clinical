@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
+
 ## 2.31.0 - (January 5, 2021)
 
 * Changed
@@ -9,10 +12,10 @@
   * Updated translation placeholder variable to be compatible with later versions of react-intl
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 * Changed
- * Updated the 'keycode-js' version from '^1.0.4' to '^3.1.0'.
+  * Updated the 'keycode-js' version from '^1.0.4' to '^3.1.0'.
 
 ## 2.30.0 - (December 8, 2020)
 
