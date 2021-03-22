@@ -33,7 +33,7 @@
     "terra-icon": "^3.0.0",
     "terra-list": "^4.26.0",
     "terra-responsive-element": "^4.0.0",
-    "terra-table": "^3.3.0"
+    "terra-table": "https://github.com/cerner/terra-core/blob/table-test/packages/terra-table/terra-table-3.30.0.tgz?raw=true"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
