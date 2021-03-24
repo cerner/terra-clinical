@@ -5,6 +5,7 @@
 * Changed
   * Changed Flowsheet overflow style to better handle truncation
   * Upgrade tests to terra-functional-testing and WebDriverIO v6
+  * Updated screenshots with elements that are out of bound
 
 * Added
   * Added packaged themes and applying themes by context
