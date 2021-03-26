@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.23.0 - (March 25, 2021)
+
 * Changed
   * Upgrade tests to terra-functional-testing and WebDriverIO v6
 

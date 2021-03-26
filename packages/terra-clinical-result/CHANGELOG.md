@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.13.0 - (March 25, 2021)
+
 * Changed
   * Changed Flowsheet overflow style to better handle truncation
   * Upgrade tests to terra-functional-testing and WebDriverIO v6
