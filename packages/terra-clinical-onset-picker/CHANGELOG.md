@@ -4,6 +4,7 @@
 
 * Changed
   * Updated Jest command
+  * Updated Jest Snapshots
 
 ## 4.28.0 - (March 25, 2021)
 
