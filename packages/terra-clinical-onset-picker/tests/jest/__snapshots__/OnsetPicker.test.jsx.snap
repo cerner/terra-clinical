@@ -72,7 +72,7 @@ exports[`correctly applies the theme context className 1`] = `
             <span
               id="terra-select-screen-reader-description-69"
             >
-              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -165,7 +165,7 @@ exports[`correctly applies the theme context className 1`] = `
             <span
               id="terra-select-screen-reader-description-74"
             >
-              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -274,7 +274,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             <span
               id="terra-select-screen-reader-description-4"
             >
-              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -367,7 +367,7 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             <span
               id="terra-select-screen-reader-description-9"
             >
-              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -476,7 +476,7 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
             <span
               id="terra-select-screen-reader-description-14"
             >
-              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -583,7 +583,7 @@ exports[`should render only the supplied precisions 1`] = `
             <span
               id="terra-select-screen-reader-description-59"
             >
-              List of 3 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -676,7 +676,7 @@ exports[`should render only the supplied precisions 1`] = `
             <span
               id="terra-select-screen-reader-description-64"
             >
-              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -785,7 +785,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
             <span
               id="terra-select-screen-reader-description-49"
             >
-              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -878,7 +878,7 @@ exports[`should render the same when onChange function is supplied 1`] = `
             <span
               id="terra-select-screen-reader-description-54"
             >
-              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -987,7 +987,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             <span
               id="terra-select-screen-reader-description-34"
             >
-              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -1079,7 +1079,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             <span
               id="terra-select-screen-reader-description-39"
             >
-              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -1219,7 +1219,7 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               <span
                 id="terra-select-screen-reader-description-44"
               >
-                List of 3 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+                List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
               </span>
             </div>
             <div
@@ -1327,7 +1327,7 @@ exports[`should render with non default inputs when supplied 1`] = `
             <span
               id="terra-select-screen-reader-description-19"
             >
-              List of 5 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -1419,7 +1419,7 @@ exports[`should render with non default inputs when supplied 1`] = `
             <span
               id="terra-select-screen-reader-description-24"
             >
-              List of 4 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+              List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
             </span>
           </div>
           <div
@@ -1512,7 +1512,7 @@ exports[`should render with non default inputs when supplied 1`] = `
               <span
                 id="terra-select-screen-reader-description-29"
               >
-                List of 6 options. Use up and down arrow keys to navigate through options. Press enter to select an option.
+                List of options. Use up and down arrow keys to navigate through options. Press enter to select an option.
               </span>
             </div>
             <div
