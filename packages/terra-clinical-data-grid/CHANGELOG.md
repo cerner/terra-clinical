@@ -4,6 +4,7 @@
 
 * Changed
   * Updated Jest command
+  * Updated `terra-clinical-item-view` from `v3.20.0` to `v4.4.0`.
 
 ## 2.32.0 - (March 25, 2021)
 

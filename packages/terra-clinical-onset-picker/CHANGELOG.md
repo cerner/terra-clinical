@@ -5,6 +5,7 @@
 * Changed
   * Updated Jest command
   * Updated Jest Snapshots
+  * Updated `terra-form-input` from `v3.0.0` to `v4.15.0`.
 
 ## 4.28.0 - (March 25, 2021)
 
@@ -46,7 +47,7 @@
 
 * Changed
   * Updated terra form dependency to next major version.
-  * Disabled wdio axe color-contrast rule on placeholder examples for IE testing. This will be re-enabled when https://github.com/cerner/terra-core/issues/2992 is resolved.
+  * Disabled wdio axe color-contrast rule on placeholder examples for IE testing. This will be re-enabled when [issue #2992](https://github.com/cerner/terra-core/issues/2992) is resolved.
 
 ## 4.21.0 - (June 9, 2020)
 
