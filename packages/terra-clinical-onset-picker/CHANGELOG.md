@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.29.0 - (July 21, 2021)
+
 * Changed
   * Updated Jest command
   * Updated Jest Snapshots
