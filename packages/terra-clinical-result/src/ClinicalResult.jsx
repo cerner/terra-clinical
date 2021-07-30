@@ -27,8 +27,9 @@ const propTypes = {
    */
   interpretation: interpretationPropType,
   /**
-   * If Result has not been verified
-   */
+    * Adds indicator if result value has not been verified, typically if it has not been
+    * authenticated and committed to the patient's chart.
+    */
   isUnverified: PropTypes.bool,
   /**
    *  Display to show the full Result Name/Label Concept, e.g. `'Temperature Oral'`.
@@ -47,12 +48,13 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   *  If the Result value has not been authenticated and committed to patient chart.
-   */
+    * Add indicator if the result value has been modified to a different value from its
+    * previously documented value for the same clinical result date & time.
+    */
   isModified: PropTypes.bool,
   /**
-   *  If the Result value has been modified from it's original value for the same clinically documented event & datetime.
-   */
+    * Add indicator if the result value has an additional comment applied to the clinical result value.
+    */
   hasComment: PropTypes.bool,
   /**
    * Override that shows an Error display. Used when there is a known error or problem when retrieving or assembling the clinical result data.
