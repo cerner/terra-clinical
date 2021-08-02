@@ -48,12 +48,12 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-    * Add indicator if the result value has been modified to a different value from its
+    * Adds indicator if the result value has been modified to a different value from its
     * previously documented value for the same clinical result date & time.
     */
   isModified: PropTypes.bool,
   /**
-    * Add indicator if the result value has an additional comment applied to the clinical result value.
+    * Adds indicator if the result value has an additional comment applied to the clinical result value.
     */
   hasComment: PropTypes.bool,
   /**
