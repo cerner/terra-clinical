@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-data-grid",
   "main": "lib/DataGrid.js",
-  "version": "2.31.0",
+  "version": "2.33.0",
   "description": "An organizational component that renders a collection of data in a grid-like format.",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "react-draggable": "^3.0.5",
     "resize-observer-polyfill": "^1.4.1",
     "terra-button": "^3.0.0",
-    "terra-clinical-item-view": "^3.20.0",
+    "terra-clinical-item-view": "^4.5.0",
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.0.0",
     "terra-mixins": "^1.0.0",
@@ -49,7 +49,7 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
-    "jest": "jest --config ../../jestconfig.js",
+    "jest": "jest --config ../../jest.config.js",
     "wdio-default": "cd ../.. && npx wdio",
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",

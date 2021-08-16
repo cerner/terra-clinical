@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-header",
   "main": "lib/Header.js",
-  "version": "3.22.0",
+  "version": "3.24.0",
   "description": "A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. ",
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "lint:scss": "stylelint src/**/*.scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
-    "jest": "jest --config ../../jestconfig.js",
+    "jest": "jest --config ../../jest.config.js",
     "wdio-default": "cd ../.. && npx wdio",
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",

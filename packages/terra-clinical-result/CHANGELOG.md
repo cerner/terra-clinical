@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 1.14.0 - (July 21, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 1.13.0 - (March 25, 2021)
+
+* Changed
+  * Changed Flowsheet overflow style to better handle truncation
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
+  * Updated screenshots with elements that are out of bound
+
+* Added
+  * Added packaged themes and applying themes by context
+
 ## 1.12.0 - (January 5, 2021)
 
 * Changed
@@ -9,7 +24,7 @@
   * Removed unused react-intl imports.
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 1.11.0 - (November 10, 2020)
 

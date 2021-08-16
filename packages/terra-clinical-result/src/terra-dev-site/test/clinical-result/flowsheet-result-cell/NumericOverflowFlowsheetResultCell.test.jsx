@@ -1,9 +1,11 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from '../../../doc/example/Examples.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const multipleResultValues = [
   {
@@ -38,31 +40,41 @@ const multipleResultValues = [
   },
 ];
 
-export default () => (
-  <React.Fragment>
-    <div className={cx('mock-flowsheet-resultcolumn')}>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+export default () => {
+  const theme = React.useContext(ThemeContext);
+  const mockFlowsheetClassnames = classNames(
+    cx(
+      'mock-flowsheet-example',
+      theme.className,
+    ),
+  );
+
+  return (
+    <div className={mockFlowsheetClassnames}>
+      <div className={cx('mock-flowsheet-resultcolumn')}>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        </div>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        </div>
       </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+      <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        </div>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        </div>
+      </div>
+      <div className={cx(['mock-flowsheet-resultcolumn', 'triple-column'])}>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        </div>
+        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
+          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        </div>
       </div>
     </div>
-    <div className={cx(['mock-flowsheet-resultcolumn', 'half-column'])}>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
-      </div>
-    </div>
-    <div className={cx(['mock-flowsheet-resultcolumn', 'triple-column'])}>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
-      </div>
-    </div>
-  </React.Fragment>
-);
+  );
+};

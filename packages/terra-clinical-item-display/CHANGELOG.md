@@ -2,10 +2,20 @@
 
 ## Unreleased
 
+## 4.5.0 - (July 21, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.4.0 - (March 25, 2021)
+
+* Changed
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
+
 ## 4.3.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.2.0 - (November 10, 2020)
 

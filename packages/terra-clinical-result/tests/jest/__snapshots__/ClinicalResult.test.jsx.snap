@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ClinicalResult correctly applies the theme context className 1`] = `
+<div
+  className="clinical-result orion-fusion-theme"
+>
+  <ClinicalResultDisplay
+    eventId="111"
+    result={
+      Object {
+        "unit": "mL",
+        "value": "12345.678",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`ClinicalResult should pass certain props to Observation  1`] = `
 <div
   className="clinical-result"

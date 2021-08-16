@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import styles from './ResultTimeHeaderCell.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -43,16 +45,21 @@ const ResultTimeHeaderCell = (props) => {
     { 'hide-date': hideDate },
   ]);
 
-  const timeHeaderCellClassnames = cx([
-    'clinical-result-time-header-cell',
-    { 'padding-standard': paddingStyle === 'standard' },
-    { 'padding-compact': paddingStyle === 'compact' },
-  ]);
+  const theme = React.useContext(ThemeContext);
+  const timeHeaderCellClassnames = classNames(
+    cx(
+      'clinical-result-time-header-cell',
+      { 'padding-standard': paddingStyle === 'standard' },
+      { 'padding-compact': paddingStyle === 'compact' },
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   return (
     <div
       {...customProps}
-      className={customProps.className ? `${timeHeaderCellClassnames} ${customProps.className}` : timeHeaderCellClassnames}
+      className={timeHeaderCellClassnames}
     >
       <div className={dateClassnames}>{date}</div>
       <div className={cx('time')}>{time}</div>

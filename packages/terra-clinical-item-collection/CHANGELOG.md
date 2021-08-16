@@ -2,13 +2,23 @@
 
 ## Unreleased
 
+## 4.29.0 - (July 21, 2021)
+
+* Changed
+  * Updated Jest command
+
+## 4.28.0 - (March 25, 2021)
+
+* Changed
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
+
 ## 4.27.0 - (January 5, 2021)
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 * Changed
- * Updated the 'keycode-js' version from '^1.0.4' to '^3.1.0'.
+  * Updated the 'keycode-js' version from '^1.0.4' to '^3.1.0'.
  
 ## 4.26.0 - (December 8, 2020)
 

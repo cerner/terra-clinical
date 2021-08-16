@@ -2,13 +2,25 @@
 
 ## Unreleased
 
+## 4.29.0 - (July 21, 2021)
+
+* Changed
+  * Updated Jest command
+  * Updated Jest Snapshots
+  * Updated `terra-form-input` from `v3.0.0` to `v4.15.0`.
+
+## 4.28.0 - (March 25, 2021)
+
+* Changed
+  * Upgrade tests to terra-functional-testing and WebDriverIO v6
+
 ## 4.27.0 - (January 5, 2021)
 
 * Changed
   * Removed reference to intlShape as it is no longer provided in later versions of react-intl
 
 * Fixed
- * Fixed broken links in documentation.
+  * Fixed broken links in documentation.
 
 ## 4.26.0 - (December 8, 2020)
 
@@ -37,7 +49,7 @@
 
 * Changed
   * Updated terra form dependency to next major version.
-  * Disabled wdio axe color-contrast rule on placeholder examples for IE testing. This will be re-enabled when https://github.com/cerner/terra-core/issues/2992 is resolved.
+  * Disabled wdio axe color-contrast rule on placeholder examples for IE testing. This will be re-enabled when [issue #2992](https://github.com/cerner/terra-core/issues/2992) is resolved.
 
 ## 4.21.0 - (June 9, 2020)
 

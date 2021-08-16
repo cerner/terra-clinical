@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ClinicalResultDisplay from './_ClinicalResultDisplay';
 import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
@@ -9,7 +11,7 @@ import interpretationPropType from './proptypes/interpretationPropTypes';
 import valueQuantityPropType from './proptypes/valuePropTypes';
 import styles from './ClinicalResult.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -116,15 +118,20 @@ const ClinicalResult = (props) => {
     );
   }
 
-  const clinicalResultClassnames = cx([
-    'clinical-result',
-    { truncated: isTruncated },
-  ]);
+  const theme = React.useContext(ThemeContext);
+  const clinicalResultClassnames = classNames(
+    cx(
+      'clinical-result',
+      { truncated: isTruncated },
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   return (
     <div
       {...customProps}
-      className={customProps.className ? `${clinicalResultClassnames} ${customProps.className}` : clinicalResultClassnames}
+      className={clinicalResultClassnames}
     >
       {clinicalResultDisplay}
     </div>

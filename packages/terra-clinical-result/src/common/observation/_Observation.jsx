@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
+import classNamesBind from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import IconCritical from 'terra-icon/lib/icon/IconCritical';
 import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
@@ -10,7 +12,7 @@ import valueQuantityPropType from '../../proptypes/valuePropTypes';
 import ResultError from '../other/_ResultError';
 import styles from './Observation.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
@@ -67,15 +69,21 @@ const Observation = (props) => {
 
   const isValidValue = result?.value;
 
-  const valueTextClasses = cx([
-    'value',
-    !isUnverified && interpretationTextClassMap[interpretation],
-    { unverified: isUnverified },
-  ]);
+  const theme = React.useContext(ThemeContext);
+  const valueTextClasses = classNames(
+    cx(
+      'value',
+      !isUnverified && interpretationTextClassMap[interpretation],
+      { unverified: isUnverified },
+      theme.className,
+    ),
+    customProps.className,
+  );
 
   const unitClassNames = cx([
     'unit',
     { 'unit-hidden': hideUnit },
+    theme.className,
   ]);
 
   const observationDisplay = () => {
@@ -84,7 +92,7 @@ const Observation = (props) => {
         <React.Fragment>
           <span
             {...customProps}
-            className={customProps.className ? `${valueTextClasses} ${customProps.className}` : valueTextClasses}
+            className={valueTextClasses}
           >
             {interpretation && !isUnverified && interpretationIndicatorMap[interpretation]}
             {result.value}

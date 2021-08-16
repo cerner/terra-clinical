@@ -99,4 +99,13 @@ describe('ClinicalResult', () => {
     const result = shallow(<ClinicalResult hasResultNoData />);
     expect(result).toMatchSnapshot();
   });
+
+  it('correctly applies the theme context className', () => {
+    jest.spyOn(React, 'useContext')
+      .mockReturnValue({
+        className: 'orion-fusion-theme',
+      });
+    const result = shallow(<ClinicalResult {...DefaultResult} />);
+    expect(result).toMatchSnapshot();
+  });
 });

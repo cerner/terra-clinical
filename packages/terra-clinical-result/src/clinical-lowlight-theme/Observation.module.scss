@@ -1,0 +1,25 @@
+:local {
+  .clinical-lowlight-theme {
+    --terra-clinical-result-display-value-color: #b2b5b6;
+    --terra-clinical-result-display-value-font-size: 1em; // Must use ems for font scaling
+    --terra-clinical-result-display-value-line-height: 1.125;
+    --terra-clinical-result-display-icon-interpretation-margin-right: 0.1875em; // Must use ems for font scaling
+    --terra-clinical-result-display-icon-interpretation-top: 0.15em; // Must use ems for font scaling
+    --terra-clinical-result-display-interpretation-abnormal-color: #b08a74;
+    --terra-clinical-result-display-interpretation-abnormal-font-weight: normal;
+    --terra-clinical-result-display-interpretation-critical-color: #fb4c4c;
+    --terra-clinical-result-display-interpretation-critical-font-weight: bold;
+    --terra-clinical-result-display-interpretation-high-color: #ffb166;
+    --terra-clinical-result-display-interpretation-high-font-weight: normal;
+    --terra-clinical-result-display-interpretation-low-color: #5a81ff;
+    --terra-clinical-result-display-interpretation-low-font-weight: normal;
+    --terra-clinical-result-display-interpretation-positive-color: #fb4c4c;
+    --terra-clinical-result-display-interpretation-positive-font-weight: bold;
+    --terra-clinical-result-display-status-unverified-color: #c270d7;
+    --terra-clinical-result-display-status-unverified-font-weight: normal;
+    --terra-clinical-result-display-unit-color: rgba(221, 224, 225, 0.41);
+    --terra-clinical-result-display-unit-font-size: 0.875em; // Must use ems for font scaling
+    --terra-clinical-result-display-unit-line-height: 1.28571;
+    --terra-clinical-result-display-unit-margin-left: 0.375em; // Must use ems for font scaling
+  }
+}
