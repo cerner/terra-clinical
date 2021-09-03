@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.15.0 - (August 17, 2021)
+
+* Fixed
+  * Fixed incorrect prop descriptions.
+
 ## 1.14.0 - (July 21, 2021)
 
 * Changed
