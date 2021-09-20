@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-* Changed
+* Fixed
+  * Updated several translation files due to feedback from the translations team
   * Added package json lint test.
 
 ## 4.29.0 - (July 21, 2021)
