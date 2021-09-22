@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.30.0 - (September 21, 2021)
+
 * Fixed
   * Updated several translation files due to feedback from the translations team
 
