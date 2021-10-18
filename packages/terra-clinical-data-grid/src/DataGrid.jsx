@@ -610,8 +610,6 @@ class DataGrid extends React.Component {
   }
 
   updateHeaderScrollbarBuffer() {
-    const { pinnedColumnWidth } = this.state;
-
     if (!this.headerScrollbarBufferRef) {
       /**
        * The buffer element will not be rendered if the 'fill' prop is not provided.
@@ -625,7 +623,7 @@ class DataGrid extends React.Component {
      * and content columns can move out of alignment. We need to account for the potential presence of the scrollbar and set the size of the
      * header scrollbar buffer element to equalize any differences in width.
      */
-    const scrollbarOffset = this.dataGridContainerRef.clientWidth - pinnedColumnWidth - this.horizontalOverflowContainerRef.clientWidth;
+    const scrollbarOffset = this.dataGridContainerRef.getBoundingClientRect().width - this.dataGridContainerRef.clientWidth;
     this.headerScrollbarBufferRef.style.width = `${scrollbarOffset}px`;
   }
 
