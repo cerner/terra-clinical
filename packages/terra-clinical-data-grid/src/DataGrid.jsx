@@ -112,6 +112,7 @@ const propTypes = {
    * Callback ref to pass into horizontal overflow container.
    */
   horizontalOverflowContainerRefCallback: PropTypes.func,
+  onScrollbarOffsetWidthChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -618,13 +619,19 @@ class DataGrid extends React.Component {
       return;
     }
 
+    const { onScrollbarOffsetWidthChange } = this.props;
+
     /**
      * If there is a vertical overflow and fixed scrollbars are present (due to the presence of a mouse, etc.), the header columns
      * and content columns can move out of alignment. We need to account for the potential presence of the scrollbar and set the size of the
      * header scrollbar buffer element to equalize any differences in width.
      */
-    const scrollbarOffset = this.dataGridContainerRef.getBoundingClientRect().width - this.dataGridContainerRef.clientWidth;
+    const scrollbarOffset = this.verticalOverflowContainerRef.offsetWidth - this.verticalOverflowContainerRef.clientWidth;
     this.headerScrollbarBufferRef.style.width = `${scrollbarOffset}px`;
+
+    if (onScrollbarOffsetWidthChange) {
+      onScrollbarOffsetWidthChange(scrollbarOffset);
+    }
   }
 
   /**
@@ -1069,6 +1076,7 @@ class DataGrid extends React.Component {
       intl,
       verticalOverflowContainerRefCallback,
       horizontalOverflowContainerRefCallback,
+      onScrollbarOffsetWidthChange,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
