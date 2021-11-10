@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated wdio screenshots.
+
 ## 4.30.0 - (September 21, 2021)
 
 * Fixed
