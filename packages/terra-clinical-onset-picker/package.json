@@ -44,9 +44,8 @@
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
-    "lint": "npm run lint:js && npm run lint:package-json",
+    "lint": "npm run lint:js",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:package-json": "terra package-json-lint",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest && npm run wdio",
     "jest": "jest --config ../../jest.config.js",
