@@ -28,7 +28,8 @@
     "extends": "@cerner/terra"
   },
   "package-json-lint": {
-    "extends": "@cerner/package-json-lint-config-terra"
+    "extends": "@cerner/package-json-lint-config-terra/package-json-lint.config.js",
+    "projectType": "module"
   },
   "stylelint": {
     "extends": "@cerner/stylelint-config-terra",
