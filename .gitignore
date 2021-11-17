@@ -58,6 +58,7 @@ target
 **/__snapshots__/screen
 **/__snapshots__/diff
 **/__snapshots__/latest
+**/__snapshots__/error
 errorScreenshots
 themeable-variables.json
 generated-themes
