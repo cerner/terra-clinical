@@ -2,10 +2,9 @@
 
 ## Unreleased
 
-<<<<<<< HEAD
 * Changed
   * Updated WDIO screenshots due to webpack-config-terra sass upgrade.
-=======
+
 ## 4.31.0 - (November 16, 2021)
 
 * Changed
@@ -15,7 +14,9 @@
 
 * Fixed
   * Updated several translation files due to feedback from the translations team
->>>>>>> f92655a17039da84bcc04dc008c8dd66da7ab5eb
+=======
+  * Updated WDIO screenshots due to webpack-config-terra V2 and terra-functional-testing V2 upgrades.
+>>>>>>> 63b5708c087d07cdc8e34e40042e90b4dd900e44
 
 ## 4.29.0 - (July 21, 2021)
 
