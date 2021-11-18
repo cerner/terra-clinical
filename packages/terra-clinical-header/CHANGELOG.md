@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated Wdio command
+
 ## 3.24.0 - (July 21, 2021)
 
 * Changed
