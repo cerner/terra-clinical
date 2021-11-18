@@ -167,6 +167,7 @@ class OnsetPicker extends React.Component {
     const onsetObject = {
       precision: this.state.precision,
       onsetDate: this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined,
+      onsetDateMetadata: this.state.onsetDateMetadata,
       granularity: this.state.precision !== PrecisionOptions.UNKNOWN ? this.state.granularity : '',
     };
     if (this.state.granularity === GranularityOptions.AGE && this.state.precision !== PrecisionOptions.UNKNOWN) {
@@ -337,13 +338,14 @@ class OnsetPicker extends React.Component {
    * Update onset date when date changes
    *
    * @param {event} - Triggered change event
-   * @param {date} - New date value
+   * @param {string} - New date input
+   * @param {object} - Metadata about date
    */
-  changeDate(event, date) {
-    if (date === '') {
-      this.setState({ onsetDate: undefined }, this.handleOnsetUpdate);
+  changeDate(event, _, metadata) {
+    if (!metadata.isCompleteValue) {
+      this.setState({ onsetDate: undefined, onsetDateMetadata: metadata }, this.handleOnsetUpdate);
     } else {
-      this.setState({ onsetDate: moment(date) }, this.handleOnsetUpdate);
+      this.setState({ onsetDate: moment(metadata.iSO), onsetDateMetadata: metadata }, this.handleOnsetUpdate);
     }
   }
 
@@ -512,7 +514,7 @@ class OnsetPicker extends React.Component {
             inputAttributes={{
               'aria-labelledby': `${this.props.id}-date-input-label`,
             }}
-            onChange={this.changeDate}
+            onChangeRaw={this.changeDate}
             minDate={this.props.birthdate}
             maxDate={moment().format(DATE_FORMAT)}
             selectedDate={this.state.onsetDate ? this.state.onsetDate.format(DATE_FORMAT) : undefined}
