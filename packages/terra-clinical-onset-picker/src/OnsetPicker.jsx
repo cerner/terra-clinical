@@ -66,8 +66,9 @@ const propTypes = {
   onsetDate: PropTypes.string,
   /**
    * A callback function to execute when any value of the onsetDate is changed.
-   * The first parameter is a Object that contains `precision`, `granularity`, `onsetDate`, and `ageUnit`.
+   * The first parameter is a Object that contains `precision`, `granularity`, `onsetDate`, `onsetDateMetadata`, and `ageUnit`.
    * `ageUnit` is only present if the granularity is 'age'.
+   * `onsetDateMetadata` contains additional properties about the state of the onset date.
    */
   onsetOnChange: PropTypes.func,
   /**
