@@ -256,6 +256,11 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     });
   });
 
+  it('has non leap year as birthdate', () => {
+    browser.url('/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/non-leap-year-birth-date');
+    Terra.validates.element('Default onset date matches expected onset date');
+  });
+
   it('that fires when age is passed as input', () => {
     browser.url('/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/birthdate-31-st');
     $('#test-precision-select').click();
@@ -270,8 +275,16 @@ Terra.describeViewports('Onset Picker', ['tiny', 'medium', 'enormous'], () => {
     Terra.validates.element('Onset Date for 31st as birthdate');
   });
 
-  it('has non leap year as birthdate', () => {
-    browser.url('/raw/tests/terra-clinical-onset-picker/clinical-onset-picker/non-leap-year-birth-date');
-    Terra.validates.element('Default onset date matches expected onset date');
+  it('fires onOnsetChange when invalid date is passed, for higher component validation', () => {
+    $('#test-precision-select').click();
+    $('#terra-select-option-before').click();
+    $('#test-granularity-select').click();
+    $('#terra-select-option-date').click();
+    $('input[name="terra-date-month-test-date-input"]').setValue('08');
+    $('input[name="terra-date-day-test-date-input"]').setValue('01');
+    $('input[name="terra-date-year-test-date-input"]').setValue('1899');
+    $('button[type="submit"]').click();
+    browser.pause(2900);
+    Terra.validates.element('onOnsetChange for invalid date', { selector: '#root' });
   });
 });
