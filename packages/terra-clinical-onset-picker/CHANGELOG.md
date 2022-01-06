@@ -2,10 +2,11 @@
 
 ## Unreleased
 
-* Fixed
-  * Updated so that onOnsetChange gets called when a complete invalid date is entered.
 
 ## 4.31.0 - (November 16, 2021)
+
+* Fixed
+  * Updated so that onOnsetChange gets called when a complete invalid date is entered.
 
 * Changed
   * Updated wdio screenshots.
