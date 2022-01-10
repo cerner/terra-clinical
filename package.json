@@ -88,7 +88,7 @@
     "@cerner/terra-cli": "^1.6.0",
     "@cerner/terra-dev-site": "^7.0.0",
     "@cerner/terra-functional-testing": "file:cerner-terra-functional-testing-2.5.0.tgz",
-    "@cerner/terra-open-source-scripts": "^1.0.1",
+    "@cerner/terra-open-source-scripts": "^1.1.0",
     "@cerner/webpack-config-terra": "file:cerner-webpack-config-terra-2.2.0.tgz",
     "babel-eslint": "^10.0.1",
     "check-installed-dependencies": "^1.0.0",
