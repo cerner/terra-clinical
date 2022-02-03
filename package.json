@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "terra-clinical",
   "engines": {
-    "node": ">=10 <13"
+    "node": "^10.0.0 || ^12.0.0 || ^14.0.0"
   },
   "repository": {
     "type": "git",
@@ -87,13 +87,13 @@
     "@cerner/stylelint-config-terra": "^4.0.0",
     "@cerner/terra-cli": "^1.6.0",
     "@cerner/terra-dev-site": "^7.0.0",
-    "@cerner/terra-functional-testing": "^1.0.1",
+    "@cerner/terra-functional-testing": "^2.0.0",
     "@cerner/terra-open-source-scripts": "^1.0.1",
     "@cerner/webpack-config-terra": "^1.2.0",
     "babel-eslint": "^10.0.1",
     "check-installed-dependencies": "^1.0.0",
     "core-js": "^3.1.3",
-    "danger": "^9.1.0",
+    "danger": "^10.7.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
@@ -101,6 +101,7 @@
     "gh-pages": "^2.0.1",
     "glob": "^7.1.2",
     "jest": "^26.6.3",
+    "ky": "^0.12.0",
     "lerna": "^3.20.2",
     "link-parent-bin": "^1.0.0",
     "postcss": "8.3.11",
