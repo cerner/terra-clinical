@@ -9,7 +9,7 @@
     height: 100%;
     position: relative;
   }
-
+  
   .content {
     height: 100%;
     position: relative;
@@ -49,6 +49,20 @@
         }
       }
       /* stylelint-enable max-nesting-depth */
+    }
+  }
+
+  *[data-column-allow-highlight] .highlighted,
+  *[data-column-allow-highlight] .highlighted-selectable:not(:hover):not(:focus):not(:active) {
+    background-color: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-background-color, rgba(250, 203, 170, 0.38));
+    box-shadow: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318);
+      
+    &.first {
+      box-shadow: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-first-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 1px 0 0 #c97318);
+    }
+      
+    &.last {
+      box-shadow: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-last-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 -1px 0 0 #c97318);
     }
   }
 }

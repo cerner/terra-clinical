@@ -154,4 +154,47 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
 
     Terra.validates.element('custom row/header heights', { selector: '#custom-height-data-grid' });
   });
+
+  describe('with highlighted column not selectable', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-not-selectable-data-grid');
+    });
+
+    it('should display highlighted column not selectable cells DataGrid', () => {
+      Terra.validates.element('highlighted column not selectable cells', { selector: '#highlight-column-not-selectable-data-grid' });
+    });
+  });
+
+  describe('with highlighted column selectable', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-selectable-data-grid');
+    });
+
+    it('should display highlighted column selectable cells DataGrid', () => {
+      Terra.validates.element('highlighted column selectable cells', { selector: '#highlight-column-selectable-data-grid' });
+    });
+
+    it('should display highlighted column selectable cells DataGrid with row hover', () => {
+      $('[data-accessibility-id="23"]').moveTo();
+      Terra.validates.element('highlighted column selectable cells row hover', { selector: '#highlight-column-selectable-data-grid' });
+    });
+
+    it('should display highlighted column selectable cells DataGrid with row selection', () => {
+      $('[data-accessibility-id="23"]').click();
+      $('#root').moveTo({ xoffset: 0, yoffset: 0 });
+      Terra.validates.element('highlighted column selectable cells row selection', { selector: '#highlight-column-selectable-data-grid' });
+    });
+
+    it('should display highlighted column selectable cells DataGrid with cell focus', () => {
+      $('[data-accessibility-id="25"]').click();
+      browser.keys(['Tab']);
+      Terra.validates.element('highlighted column selectable cells cell focus', { selector: '#highlight-column-selectable-data-grid' });
+    });
+
+    it('should display highlighted column selectable cells DataGrid with cell selection', () => {
+      $('[data-accessibility-id="26"]').click();
+      $('#root').moveTo({ xoffset: 0, yoffset: 0 });
+      Terra.validates.element('highlighted column selectable cells cell selection', { selector: '#highlight-column-selectable-data-grid' });
+    });
+  });
 });
