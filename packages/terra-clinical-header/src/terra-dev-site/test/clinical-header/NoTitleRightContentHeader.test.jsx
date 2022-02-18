@@ -16,5 +16,6 @@ const content = (
 export default () => (
   <Header
     endContent={content}
+    level={1}
   />
 );

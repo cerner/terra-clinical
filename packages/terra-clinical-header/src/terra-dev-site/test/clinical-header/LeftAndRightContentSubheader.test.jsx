@@ -23,8 +23,9 @@ const endContent = (
 export default () => (
   <Header
     startContent={startContent}
-    title="Subheader with content on the left and right"
+    text="Subheader with content on the left and right"
     endContent={endContent}
     isSubheader
+    level={1}
   />
 );

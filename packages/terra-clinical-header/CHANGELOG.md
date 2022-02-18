@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Changed `title` prop to `text` prop.
+  * Added `level` prop to allow users to render different heading levels.
+  * Added `id` prop. 
+
 ## 3.24.0 - (July 21, 2021)
 
 * Changed

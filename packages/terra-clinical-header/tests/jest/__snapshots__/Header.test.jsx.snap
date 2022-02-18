@@ -78,7 +78,7 @@ exports[`should render a header with content on the right 1`] = `
 </header>
 `;
 
-exports[`should render a header with title only 1`] = `
+exports[`should render a header with title and heading level 1`] = `
 <header
   class="flex-header"
 >
@@ -90,6 +90,7 @@ exports[`should render a header with title only 1`] = `
     >
       <h1
         class="title"
+        id="test-id"
       >
         title
       </h1>
@@ -132,7 +133,7 @@ exports[`should render a subheader with all content 1`] = `
 </header>
 `;
 
-exports[`should render a subheader with title only 1`] = `
+exports[`should render a subheader with title and heading level 1`] = `
 <header
   class="flex-header subheader"
 >

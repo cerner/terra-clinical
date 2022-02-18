@@ -23,7 +23,7 @@ const propTypes = {
   /**
    * Text to be displayed as the title in the header bar
    */
-  title: PropTypes.string,
+  text: PropTypes.string,
 
   /**
    * Content to be displayed at the end of the header
@@ -35,27 +35,41 @@ const propTypes = {
    * A Boolean indicating if element is a subheader.
    */
   isSubheader: PropTypes.bool,
+
+  /**
+   * Sets the heading level. One of `1`, `2`, `3`, `4`, `5`, `6`. This helps screen readers to announce appropriate heading levels.
+   * Changing 'level' will not visually change the style of the content.
+   */
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+
+  /*
+  * IDs should be used with ‘aria-labelledby’ to associate headings with the corresponding page region.
+  */
+  id: PropTypes.string,
 };
 
 const defaultProps = {
-  title: '',
+  text: '',
   startContent: null,
   endContent: null,
   isSubheader: false,
+  level: undefined,
+  id: undefined,
 };
 
 const Header = ({
-  children, title, startContent, endContent, isSubheader, ...customProps
+  children, text, startContent, endContent, isSubheader, level, id, ...customProps
 }) => {
   const theme = useContext(ThemeContext);
 
   let titleElement;
-  if (title) {
+  if (text && level) {
+    const HeaderElement = `h${level}`;
     titleElement = (
       <div className={cx('title-container')}>
-        <h1 className={cx('title')}>
-          {title}
-        </h1>
+        <HeaderElement id={id} className={cx('title')}>
+          {text}
+        </HeaderElement>
       </div>
     );
   }

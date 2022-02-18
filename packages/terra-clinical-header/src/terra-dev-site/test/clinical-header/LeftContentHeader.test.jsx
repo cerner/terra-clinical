@@ -16,6 +16,7 @@ const content = (
 export default () => (
   <Header
     startContent={content}
-    title="Header with content on the left"
+    text="Header with content on the left"
+    level={1}
   />
 );
