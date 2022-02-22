@@ -16,20 +16,15 @@ const propTypes = {
   children: PropTypes.element,
 
   /**
-   * Content to be displayed at the start of the header, placed before the title
-   */
-  startContent: PropTypes.element,
-
-  /**
-   * Text to be displayed as the title in the header bar
-   */
-  text: PropTypes.string,
-
-  /**
    * Content to be displayed at the end of the header
    * The element passed as endContent will be wrapped in a div with flex attributes.
    */
   endContent: PropTypes.element,
+
+  /*
+  * IDs should be used with ‘aria-labelledby’ to associate headings with the corresponding page region.
+  */
+  id: PropTypes.string,
 
   /**
    * A Boolean indicating if element is a subheader.
@@ -42,10 +37,16 @@ const propTypes = {
    */
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 
-  /*
-  * IDs should be used with ‘aria-labelledby’ to associate headings with the corresponding page region.
-  */
-  id: PropTypes.string,
+  /**
+   * Content to be displayed at the start of the header, placed before the title
+   */
+  startContent: PropTypes.element,
+
+  /**
+   * Text to be displayed as the title in the header bar
+   */
+  text: PropTypes.string,
+
 };
 
 const defaultProps = {

@@ -3,9 +3,9 @@
 ## Unreleased
 
 * Breaking Changes
-  * Changed `title` prop to `text` prop.
+  * Changed `title` prop to `text` prop to allow users to spread title HTML Attribute as customProps.
   * Added `level` prop to allow users to render different heading levels.
-  * Added `id` prop. 
+  * Added `id` prop which is to be paired with `aria-labelledby` for labelling page regions.
 
 ## 3.24.0 - (July 21, 2021)
 
