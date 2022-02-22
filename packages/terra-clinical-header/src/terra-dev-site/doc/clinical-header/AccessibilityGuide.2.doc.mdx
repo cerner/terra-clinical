@@ -1,0 +1,36 @@
+import { Badge } from 'terra-clinical-header/package.json?dev-site-package';
+
+<Badge />
+
+# Accessibility Guide for Terra Clinical Header
+
+Clinical Header allows users to organise web pages using the six levels of section heading. Where `level={1} (<h1>)` is the highest and `level={6} (<h6>)` is the lowest heading level.
+
+## Important Considerations:
+
+### Construction of Headings
+
+- For accessibility best practices, it is recommended that consumers should always use **only one** `<h1>` per page or view.
+- Avoid skipping heading levels to be more specific (for example, do not skip from `<h2>` to `<h5>`). However, it is permissible to skip headings in the other direction if it indicates closing a subsection (for example, from `<h5>` to `<h2>`).
+
+### Labeling Section Content
+
+- Sectioning content can be labeled using a combination of the `aria-labelledby` and `id` attributes, with the label concisely describing the purpose of the section. This technique is useful for situations where there is more than one sectioning element on the same page.
+
+
+```diff
++   const header= <Header text="Test-Header" id="Header" level={2} />;
++   <ContentContainer aria-labelledby="Header" id="content-container" header={header}>
+      <div>content</div>;
+    </ContentContainer>
+```
+
+## Support Compliance
+
+### Supported Features & Technology
+- Keyboard Interactions
+- PC: JAWS Support with Chrome (latest)
+- MAC: VoiceOver Support with Chrome (latest), Safari (latest)
+- Mobile Touch Interactions with Screen Reader assistive technology
+- Speech Input Interactions with assistive technology
+- PC: NVDA Support
