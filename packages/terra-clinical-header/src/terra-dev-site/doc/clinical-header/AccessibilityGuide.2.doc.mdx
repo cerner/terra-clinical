@@ -15,13 +15,6 @@ The Primary objective of using Clinical Headers is to provide information on the
 - Nest headings by their level. Headings with an equal or higher level start a new section, headings with a lower level start new subsections that are part of the higher ranked section.
 - Avoid skipping heading levels to be more specific (for example, do not skip from `<h2>` to `<h5>`). However, it is permissible to skip headings in the other direction if it indicates closing a subsection (for example, from `<h5>` to `<h2>`).
 
-By following the above best practices developers need to make sure that the components are in accordance with the following success criteria:
-
-- **1.3.1 Info and Relationships** - The intent of this Success Criterion is to ensure that information and relationships that are implied by visual or auditory formatting are preserved when the presentation format changes. For example, the presentation format changes when the content is read by a screen reader. [More Info](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html).
-- **2.4.1 Bypass Blocks** - Clinical Header provides a mechanism to bypass blocks of content that are repeated on multiple Web pages. It allows people who navigate sequentially through content more direct access to the primary content of the Web page. [More Info](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html).
-- **2.4.6 Headings and Labels** - Clear and descriptive headers allow users to find information they seek easily and it also helps in understanding the relationships between different parts of the content more easily. [More Info](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html). 
-- **2.4.10 Section Headings** - When  a page is organized into sections, they need to have headings that introduce them. This clearly indicates the organization of the content, facilitates navigation within the content, and provides mental "handles" that aid in comprehension of the content. [More Info](https://www.w3.org/WAI/WCAG21/Understanding/section-headings.html).
-
 ## Labeling Section Content
 
 Clinical Header can also be used to provide labels to distinguish two page regions of the same type. Most content on web pages should be organized into sections. When pages are organized into sections, a heading should be present. Developers may choose to use sectioning elements to indicate these sections. When using a sectioning element, a clinical header should generally be the first content within the section to act as a label.
@@ -33,7 +26,7 @@ The objective of this technique is to use section headings to convey the structu
 
 ### Implementation Guide
 
-- Sectioning content can be labeled using a combination of the `aria-labelledby` and `id` attributes, with the label concisely describing the purpose of the section. This technique is useful for situations where there is more than one sectioning element on the same page.
+- Sectioning content can be labeled using a combination of the [`aria-labelledby`](https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby) and `id` attributes, with the label concisely describing the purpose of the section. This technique is useful for situations where there is more than one sectioning element on the same page.
 
 
 ```diff
@@ -44,6 +37,16 @@ The objective of this technique is to use section headings to convey the structu
 ```
 
 ## Support Compliance
+
+### Success Criteria
+
+Terra Clinical Header **must** meet the following success criteria:
+- [**1.3.1 Info and Relationships**](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html). - The intent of this Success Criterion is to ensure that information and relationships that are implied by visual or auditory formatting are preserved when the presentation format changes. For example, the presentation format changes when the content is read by a screen reader.
+- [**2.4.6 Headings and Labels**](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html) - Clear and descriptive headers allow users to find information they seek easily and it also helps in understanding the relationships between different parts of the content more easily.
+
+Apart from the above criteria the clinical header supports the following success criteria:
+- [**2.4.1 Bypass Blocks**](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) - Clinical Header provides a mechanism to bypass blocks of content that are repeated on multiple Web pages. It allows people who navigate sequentially through content more direct access to the primary content of the Web page.
+- [**2.4.10 Section Headings**](https://www.w3.org/WAI/WCAG21/Understanding/section-headings.html) - When  a page is organized into sections, they need to have headings that introduce them. This clearly indicates the organization of the content, facilitates navigation within the content, and provides mental "handles" that aid in comprehension of the content.
 
 ### Supported Features & Technology
 - Keyboard Interactions
