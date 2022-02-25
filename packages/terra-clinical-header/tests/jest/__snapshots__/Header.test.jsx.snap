@@ -78,6 +78,16 @@ exports[`should render a header with content on the right 1`] = `
 </header>
 `;
 
+exports[`should render a header with no text from level not set 1`] = `
+<header
+  class="flex-header"
+>
+  <div
+    class="flex-fill"
+  />
+</header>
+`;
+
 exports[`should render a header with title and heading level 1`] = `
 <header
   class="flex-header"

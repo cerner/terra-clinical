@@ -50,3 +50,8 @@ it('should render a subheader with all content', () => {
   ));
   expect(subheader).toMatchSnapshot();
 });
+
+it('should render a header with no text from level not set', () => {
+  const header = render(<Header text="This title should not render without a provided level" />);
+  expect(header).toMatchSnapshot();
+});
