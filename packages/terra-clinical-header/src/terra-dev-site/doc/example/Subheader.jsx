@@ -9,7 +9,7 @@ const Subheader = () => (
       text="Default Subheader"
       endContent={<Button text="Button" />}
       isSubheader
-      level={4}
+      level={3}
     />
   </div>
 );

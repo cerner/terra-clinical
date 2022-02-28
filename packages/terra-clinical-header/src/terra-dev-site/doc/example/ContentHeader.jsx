@@ -8,7 +8,7 @@ const TitleHeader = () => (
       startContent={<Button text="Button" />}
       text="Default Header"
       endContent={<Button text="Button" />}
-      level={1}
+      level={3}
     />
   </div>
 );
