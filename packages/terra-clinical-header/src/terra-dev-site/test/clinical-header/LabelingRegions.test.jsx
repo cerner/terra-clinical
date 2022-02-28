@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../../../Header';
 
 const tableOfContentsHeadingLabelID = 'terra-clinical-header-test-table-of-contents-heading-label';
-const quickLinksHeadingLabelID = 'terra-clinical-header-test-table-of-contents-heading-label';
+const quickLinksHeadingLabelID = 'terra-clinical-header-test-quick-links-heading-label';
 
 export default () => (
   <>
