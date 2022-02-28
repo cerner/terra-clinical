@@ -1,0 +1,187 @@
+import { Badge } from 'terra-clinical-header/package.json?dev-site-package';
+import { Notice } from '@cerner/terra-docs';
+import Whitespace from '../layout-helpers/Whitespace';
+
+import WebAIMSemanticHeadingContentStructure from '../reference/WebAIMSemanticHeadingContentStructure';
+
+<Badge />
+
+# Accessibility Guide for Terra Clinical Header
+
+<Notice variant="important" ariaLevel="2">
+
+1. **Terra Clinical Headers** are used within the layout of a page to **divide and organize content in meaningful ways**.
+2. Headings communicate the organization of the content on the page. Web browsers, plug-ins, and assistive technologies can use them to provide in-page navigation. [<sub>[1]</sub>](/components/terra-clinical-header/clinical-header/accessibility-guide#linked-references)
+3. It allows authors to organize web pages **using the &lt;h1&gt; to &lt;h6&gt; HTML elements** representing the six levels of section headings, with &lt;h1&gt; being the highest _(using prop `level={1}`)_, and &lt;h6&gt; being the lowest _(using prop `level={6}`)_. [<sub>[2]</sub>](/components/terra-clinical-header/clinical-header/accessibility-guide#linked-references)
+
+</Notice>
+
+<Whitespace />
+
+## Accessibility Considerations:
+
+### Code Considerations
+
+Headings that organize page content have very specific construction considerations for screen readers and assistive technology that are different from what many designers and developers have used them in the past, so special note must be taken when constructing pages to use the new accessibility-based patterns. Previous patterns were to combine size and styling details that help create visual hierarchy to specific `<h1>` through `<h6>` elements, so the _&lt;h1&gt;'s_ were always the largest visual heading on the page, _&lt;h2&gt;'s_ and _&lt;h3&gt;'s_ were typically the next level headings and subheadings,  _&lt;h4&gt;'s_ through _&lt;h6&gt;'s_ were section and panel subheaders. By joining the level with the size styling, pages would often be constructed completely out of proper nesting order required by assistive technologies.
+
+Terra has made sure to prevent this by allowing for appropriate visual styles for specific usages and app locations, to be applied independently of the heading level. For proper accessibility, developers must ensure that all usages of headings on each page follow these two imperatives: 
+- Terra Clinical Headers **must always** follow correct **heading level order and arrangement**.
+- Terra Clinical Headers _may sometimes_ be used for **labeling page regions**, and have additional requirements to associate the corresponding regions.
+
+<Whitespace />
+
+#### 1. Heading Level Order and Arrangement _(always)_
+
+The primary objective of using Clinical Headers is to provide information on the structural hierarchy of a document. It is not only visually apparent, but also helps to navigate the page using screen reader technologies. The following are certain accessibility best practices developers must follow for delivering accessible headers:
+
+- Developers must use the appropriate heading levels (1 to 6) by always providing a value to the **`'level'`** prop. The heading level should match the hierarchical structure of the page.
+- If a value to the **`'level'`** prop is not provided, the heading **`'text'`** will not be rendered.
+- For accessibility best practices, it is recommended that consumers should always use **only one** `<h1>` per page or view. The one `<h1>` should be the page title.
+- Nest headings by their level. Headings with an equal or higher level start a new section, headings with a lower level start new subsections that are part of the higher ranked section.
+- Avoid skipping heading levels to be more specific (for example, do not skip from `<h2>` to `<h5>`). However, it is permissible to skip headings in the other direction if it indicates closing a subsection (for example, from `<h5>` to `<h2>`).
+
+> | _Bad_ [<sub>[3]</sub>](/components/terra-clinical-header/clinical-header/accessibility-guide#linked-references) | _Good_ |
+> |---|---|
+> | `<h1>Heading level 1</h1>`<br />`<h3>Heading level 3</h3>`<br />`<h4>Heading level 4</h4>` | `<h1>Heading level 1</h1>`<br />`<h2>Heading level 2</h2>`<br />`<h3>Heading level 3</h3>` |
+
+<Whitespace />
+
+Headings create an outline for the page, similar to a term paper outline or table of contents. The `<h1>` describes the page as a whole (and should be similar to the page `<title>`). A page should typically have only one `<h1>`. Headings `<h2>` through `<h6>` represent increasing degrees of "indentation" in our conceptual "outline". As such, it does not make sense to skip heading levels, such as from `<h2>` to `<h4>`, going down the page. Here is an example of content hierarchy with corresponding heading levels: [<sub>[4]</sub>](/components/terra-clinical-header/clinical-header/accessibility-guide#linked-references)
+
+> <WebAIMSemanticHeadingContentStructure />
+
+<Whitespace newline={2} />
+
+#### 2. Labeling Page Regions _(as needed)_
+
+Clinical Header can also be used to provide labels to distinguish multiple page regions of the same type. Most content on web pages should be organized into sections. When pages are organized into sections, a heading should be present. Developers may choose to use sectioning elements to indicate these sections. When using a sectioning element, a clinical header should generally be the first content within the section to act as a label. The objective of this technique is to use section headings to convey the structure of the content. Clinical Headers can be used to:
+
+- Indicate start of main content
+- Mark up section headings within the main content area
+- Demarcate different navigational sections like top or main navigation, left or secondary navigation and footer navigation
+- Allow users the ability to navigate a page by sections or skip repeated blocks of information
+
+<Notice variant="important" ariaLevel="5">
+
+**Accessibility Guidance: Label Page Regions**
+
+Sectioning content can be labeled using a combination of the [aria-labelledby](https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby) property and `id` attribute, with the label concisely describing the purpose of the section. This technique is useful for situations where there is more than one sectioning element on the same page.
+
+```diff
+    const clinicalHeader = (
+      <Header
+        text="Quick Links"
++       id="quick-links-heading-label"
+        level={3}
+      />
+    );
+
+    const QuickLinksWidget = () => (
+      <div id="my-app-quick-links-widget">
+        <ContentContainer
+          header={clinicalHeader}
++         aria-labelledby="quick-links-heading-label"
++         role="complementary"
+        >
+          <ul id="quick-links-list">
+            <li><a href="/">Link 1</a></li>
+            <li><a href="/">Link 2</a></li>
+            <li><a href="/">Link 3</a></li>
+          </ul>
+        </ContentContainer>
+      </div>
+    );
+
+    export default QuickLinksWidget;
+```
+
+</Notice>
+
+<Whitespace newline={4} />
+
+### Content Considerations
+
+As authors create text, choosing words and phrases for Terra Clinical Headers — the content itself is also a very important factor in ensuring proper accessibility in addition to the coding techniques listed above.
+
+#### Providing Descriptive Headings [<sub>[5]</sub>](/components/terra-clinical-header/clinical-header/accessibility-guide#linked-references)
+
+> Descriptive headings help users find specific content and orient themselves within the Web page.
+>
+> Authors may also want to consider putting the most important information at the beginning of each heading. This helps users “skim" the headings to locate the specific content they need, and is especially helpful when browsers or assistive technology allow navigation from heading to heading.
+>
+> _&nbsp;&nbsp;&mdash; excerpt from [W3C: Techniques for WCAG 2.1: G130 - Providing descriptive headings](https://www.w3.org/WAI/WCAG21/Techniques/general/G130#description)_
+
+#### Additional Writing Resources and Content Strategies
+
+- [W3C Web Accessibility Initiative (WAI) » Tips: Writing for Web Accessibility](https://www.w3.org/WAI/tips/writing/)
+- [Deque » Blog: Accessibility Strategies for Your Content Team](https://www.deque.com/blog/accessibility-strategies-for-your-content-team/)
+- [Yale University » Usability Best Practices: Headings](https://usability.yale.edu/web-accessibility/articles/headings)
+- [Nielsen Norman Group » Information Scent: How Users Decide Where to Go Next](https://www.nngroup.com/articles/information-scent/)
+
+<Whitespace newline={6} />
+
+## Usability Expectations:
+
+### Keyboard Navigation
+ 
+Terra Clinical Header does not have any keyboard navigation expectations on its own. Any content provided to the `startContent`, `endContent`, or `children` should follow the interaction expectations of those elements.
+ 
+| Key/Sequence | Description |
+|---|---|
+|*none*| has no keyboard navigation unless interactive content is provided |
+
+<Whitespace newline={4} />
+
+## Support Compliance:
+
+### WCAG Resources
+
+#### Success Criteria
+
+_Terra Clinical Header **must** meet the following success criteria:_
+
+- [**1.3.1 Info and Relationships**](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html). - The intent of this Success Criterion is to ensure that information and relationships that are implied by visual or auditory formatting are preserved when the presentation format changes. For example, the presentation format changes when the content is read by a screen reader.
+- [**2.4.6 Headings and Labels**](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels.html) - Clear and descriptive headers allow users to find information they seek easily, and it also helps in understanding the relationships between different parts of the content more easily.
+
+#### Related or Additional Supporting Criteria
+
+_Apart from the above criteria, the following criteria are related or support the primary success criteria:_
+
+- [**2.4.1 Bypass Blocks**](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) - Clinical Header provides a mechanism to bypass blocks of content that are repeated on multiple Web pages. It allows people who navigate sequentially through content more direct access to the primary content of the Web page.
+- [**2.4.10 Section Headings**](https://www.w3.org/WAI/WCAG21/Understanding/section-headings.html) - When  a page is organized into sections, they need to have headings that introduce them. This clearly indicates the organization of the content, facilitates navigation within the content, and provides mental "handles" that aid in comprehension of the content.
+
+<Whitespace />
+
+### Supported Features & Technology
+
+#### Text and &lt;h1&gt;-&lt;h6&gt; headings
+
+- Keyboard Interactions
+- JAWS Support with Chrome (PC)
+- NVDA Support with Chrome (PC)
+- VoiceOver Support with Chrome, Safari (MAC)
+- Mobile Touch Interactions with Screen Reader assistive technology
+- Speech Input Interactions with assistive technology
+
+#### Additional 'startContent' and 'endContent'
+
+- Dependent on the content provided (accessibility support not the responsibility of Terra Clinical Header)
+
+<Whitespace />
+
+### Partial Support & Requiring Further Enhancement
+
+- None identified
+- [Report a problem with this component on **GitHub**](https://github.com/cerner/terra-clinical/issues/new/choose)
+
+_For more information about Accessibility Support with Terra — go to [Component Standards: Accessibility (A11y)](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y)._
+
+<Whitespace newline={4} />
+
+## Linked References:
+
+1. Eggert, Eric; Abou-Zahra, Shadi (27 July 2019). ["Web Accessibility Tutorials: Headings"](https://www.w3.org/WAI/tutorials/page-structure/headings/). World Wide Web Consortium. First published April 2017. Retrieved 24 February 2022.
+2. MDN contributors (02 February 2022). ["&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements). Mozilla. First published 15 September 2020. Retrieved 24 February 2022.
+3. MDN contributors (02 February 2022). ["Accessibility Concerns | &lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#accessibility_concerns). Mozilla. First published 15 September 2020. Retrieved 24 February 2022.
+4. WebAIM staff (01 May 2020). ["Semantic Structure: Regions, Headings, and Lists"](https://webaim.org/techniques/semanticstructure/#headings). WebAIM (Accessibility In Mind). Institute for Disability Research, Policy, and Practice.  Utah State University. Last updated 01 May 2020. Retrieved 24 February 2022.
+5. Accessibility Guidelines Working Group (22 February 2022). ["Technique G130: Providing descriptive headings"](https://www.w3.org/WAI/WCAG21/Techniques/general/G130). World Wide Web Consortium. Last updated 22 February 2022. Retrieved 24 February 2022.
