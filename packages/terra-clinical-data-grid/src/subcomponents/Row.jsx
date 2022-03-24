@@ -35,6 +35,12 @@ const propTypes = {
    */
   isStriped: PropTypes.bool,
   /**
+   * Boolean indicating whether the row is allowed to show the column highlight style when the 'columnHighlightId' has been set.
+   * `columnHighlightId` is used with combination of data attribute 'data-allow-column-highlight'
+   * to allow column highlight only when row is non-interactable.
+   */
+  allowColumnHighlighting: PropTypes.bool,
+  /**
    * Content to render within the Row.
    */
   children: PropTypes.node,
@@ -64,17 +70,18 @@ class Row extends React.Component {
       height,
       isSelected,
       isStriped,
+      allowColumnHighlighting,
       children,
       ...customProps
     } = this.props;
     const theme = this.context;
 
     const rowClass = classNames(
-      cx(
+      cx([
         'row',
         { selected: isSelected, striped: isStriped },
         theme.className,
-      ),
+      ]),
       customProps.className,
     );
 
@@ -87,6 +94,7 @@ class Row extends React.Component {
         data-row
         data-row-id={rowId}
         data-section-id={sectionId}
+        data-allow-column-highlight={allowColumnHighlighting ? true : null}
       >
         {children}
       </div>
