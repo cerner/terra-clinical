@@ -54,7 +54,7 @@ exports[`Row Snapshot Tests should render a Row allowing column highlighting 1`]
 exports[`Row Snapshot Tests should render a Row with all provided props 1`] = `
 <div
   className="row selected striped"
-  data-allow-column-highlight={null}
+  data-allow-column-highlight={true}
   data-row={true}
   data-row-id="row-test"
   data-section-id="section-test"

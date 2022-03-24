@@ -36,8 +36,8 @@ const propTypes = {
   isStriped: PropTypes.bool,
   /**
    * Boolean indicating whether the row is allowed to show the column highlight style when the 'columnHighlightId' has been set.
-   * Applies the attribute 'data-allow-column-highlight' when row is not being interacted with, and will remove the attribute
-   * when the row is being hovered or selected.
+   * `columnHighlightId` is used with combination of data attribute 'data-allow-column-highlight'
+   * to allow column highlight only when row is non-interactable.
    */
   allowColumnHighlighting: PropTypes.bool,
   /**
