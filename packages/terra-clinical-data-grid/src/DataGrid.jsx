@@ -34,8 +34,8 @@ const propTypes = {
    */
   id: PropTypes.string.isRequired,
   /**
-   * String name for a single [column id](/components/terra-clinical-data-grid/clinical-data-grid/clinical-data-grid#columns) unique identifier.
-   * If provided, prop will apply a specific highlighting style for that column in the DataGrid.
+   * A Unique Identifier of the [column](/components/terra-clinical-data-grid/clinical-data-grid/clinical-data-grid#columns).
+   * If provided, column with specified identifier will be highlighted in data-grid.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Design-Standards/blue) The column highlight feature should be limited specifically to
    * time and timeline concepts only, best used with special instruction and guidance from User Experience to ensure proper standards.
@@ -929,7 +929,6 @@ class DataGrid extends React.Component {
     const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
     const cellKey = `${section.id}-${row.id}-${column.id}`;
-    const isColumnHighlighted = (column.id === columnHighlightId);
 
     return (
       <Cell
@@ -942,7 +941,7 @@ class DataGrid extends React.Component {
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
-        isColumnHighlighted={isColumnHighlighted}
+        isColumnHighlighted={column.id === columnHighlightId}
         isFirstRow={isFirstRow}
         isLastRow={isLastRow}
       >

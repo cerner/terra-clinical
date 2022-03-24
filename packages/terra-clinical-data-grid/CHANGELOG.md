@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added new prop to apply column highlighting style intended for timelines
+  * Added new prop `columnHighlightId` to highlight a column with style intended for use in timelines
 
 ## 2.34.0 - (November 16, 2021)
 
