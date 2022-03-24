@@ -36,7 +36,7 @@ const propTypes = {
   isStriped: PropTypes.bool,
   /**
    * Boolean indicating whether the row is allowed to show the column highlight style when the 'columnHighlightId' has been set.
-   * Applies the attribute 'data-column-allow-highlight' when row is not being interacted with, and will remove the attribute
+   * Applies the attribute 'data-allow-column-highlight' when row is not being interacted with, and will remove the attribute
    * when the row is being hovered or selected.
    */
   allowColumnHighlighting: PropTypes.bool,
@@ -94,7 +94,7 @@ class Row extends React.Component {
         data-row
         data-row-id={rowId}
         data-section-id={sectionId}
-        data-column-allow-highlight={(!isSelected && allowColumnHighlighting) ? true : null}
+        data-allow-column-highlight={(!isSelected && allowColumnHighlighting) ? true : null}
       >
         {children}
       </div>

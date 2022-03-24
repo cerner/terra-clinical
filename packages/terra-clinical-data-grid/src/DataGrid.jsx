@@ -903,7 +903,7 @@ class DataGrid extends React.Component {
             const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
             for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
               rowElements[i].classList.add(cxRow('hover'));
-              if (columnHighlightId) { rowElements[i].removeAttribute('data-column-allow-highlight'); }
+              if (columnHighlightId) { rowElements[i].removeAttribute('data-allow-column-highlight'); }
             }
           }
         }
@@ -912,7 +912,7 @@ class DataGrid extends React.Component {
             const rowElements = this.dataGridContainerRef.querySelectorAll(`[data-row][data-row-id="${row.id}"][data-section-id="${section.id}"]`);
             for (let i = 0, numberOfRows = rowElements.length; i < numberOfRows; i += 1) {
               rowElements[i].classList.remove(cxRow('hover'));
-              if (columnHighlightId && !row.isSelected) { rowElements[i].setAttribute('data-column-allow-highlight', true); }
+              if (columnHighlightId && !row.isSelected) { rowElements[i].setAttribute('data-allow-column-highlight', true); }
             }
           }
         }
@@ -929,7 +929,7 @@ class DataGrid extends React.Component {
     const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
     const cellKey = `${section.id}-${row.id}-${column.id}`;
-    const isHighlighted = (column.id === columnHighlightId);
+    const isColumnHighlighted = (column.id === columnHighlightId);
 
     return (
       <Cell
@@ -942,7 +942,7 @@ class DataGrid extends React.Component {
         isSelectable={cell.isSelectable}
         isSelected={cell.isSelected}
         selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
-        isColumnHighlighted={isHighlighted}
+        isColumnHighlighted={isColumnHighlighted}
         isFirstRow={isFirstRow}
         isLastRow={isLastRow}
       >
@@ -951,7 +951,7 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderRow(row, section, columns, width, isPinned, isStriped, isColumnHighlighted, isFirstRow, isLastRow) {
+  renderRow(row, section, columns, width, isPinned, isStriped, isFirstRow, isLastRow) {
     const { id } = this.props;
     const height = row.height || this.props.rowHeight;
     /**
@@ -976,7 +976,7 @@ class DataGrid extends React.Component {
         height={height}
         isSelected={row.isSelected}
         isStriped={isStriped}
-        allowColumnHighlighting={isColumnHighlighted && !row.isSelected}
+        allowColumnHighlighting={this.props.columnHighlightId && !row.isSelected}
         {...ariaStyles}
       >
         {columns.map((column) => {
@@ -995,13 +995,11 @@ class DataGrid extends React.Component {
   }
 
   renderSection(section, columns, width, isFirstSection, isLastSection, isPinned) {
-    const { columnHighlightId } = this.props;
-
     return (
       <React.Fragment key={section.id}>
         {this.renderSectionHeader(section, isPinned)}
         {!section.isCollapsed && section.rows && section.rows.map((row, index) => (
-          this.renderRow(row, section, columns, width, isPinned, !!(index % 2), (columnHighlightId), (isFirstSection && index === 0), (isLastSection && index === section.rows.length - 1))
+          this.renderRow(row, section, columns, width, isPinned, !!(index % 2), (isFirstSection && index === 0), (isLastSection && index === section.rows.length - 1))
         ))}
       </React.Fragment>
     );

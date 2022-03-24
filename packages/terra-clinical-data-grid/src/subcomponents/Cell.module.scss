@@ -52,8 +52,8 @@
     }
   }
 
-  *[data-column-allow-highlight] .highlighted,
-  *[data-column-allow-highlight] .highlighted-selectable:not(:hover):not(:focus):not(:active) {
+  *[data-allow-column-highlight] .highlighted,
+  *[data-allow-column-highlight] .highlighted-selectable:not(:hover):not(:focus):not(:active) {
     background-color: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-background-color, rgba(250, 203, 170, 0.38));
     box-shadow: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318);
       

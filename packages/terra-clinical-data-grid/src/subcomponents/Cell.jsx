@@ -65,7 +65,7 @@ const propTypes = {
   /**
    * Boolean indicating whether the cell should be highlighted with background styling.
    */
-  isColumnHighlighted: PropTypes.string,
+  isColumnHighlighted: PropTypes.bool,
   /**
    * Boolean indicating whether the cell is in the first row, also used with column highlight background styling.
    */
