@@ -2,8 +2,10 @@
 
 ## Unreleased
 
+## 2.35.0 - (March 25, 2022)
+
 * Added
-  * Added new prop `columnHighlightId` to highlight a column with style intended for use in timelines
+  * Added new prop `columnHighlightId` to highlight a column with style intended for use in timelines.
 
 ## 2.34.0 - (November 16, 2021)
 
