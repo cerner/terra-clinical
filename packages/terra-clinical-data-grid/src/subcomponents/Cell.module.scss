@@ -64,5 +64,9 @@
     &.last {
       box-shadow: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-last-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 -1px 0 0 #c97318);
     }
+
+    &.first.last  {
+      box-shadow: var(--terra-clinical-data-grid-cell-highlighted-not-hover-not-focus-not-active-first-last-box-shadow, inset 0 0 0 1px #c97318);
+    }
   }
 }
