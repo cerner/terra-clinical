@@ -165,6 +165,16 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
   });
 
+  describe('with highlighted column with a single row', () => {
+    before(() => {
+      browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-single-row-data-grid');
+    });
+
+    it('should display highlighted column with a single row DataGrid', () => {
+      Terra.validates.element('highlighted column single row', { selector: '#highlight-column-single-row-data-grid' });
+    });
+  });
+
   describe('with highlighted column selectable', () => {
     beforeEach(() => {
       browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-selectable-data-grid');
