@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated column highlight for when a single row.
+
 ## 2.35.0 - (March 25, 2022)
 
 * Added
