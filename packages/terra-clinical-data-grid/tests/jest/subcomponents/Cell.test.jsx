@@ -29,8 +29,29 @@ describe('Cell Snapshot Tests', () => {
         onHoverStart={() => {}}
         onHoverEnd={() => {}}
         selectableRefCallback={() => {}}
+        isColumnHighlighted
+        isFirstRow
+        isLastRow
         data-custom-attribute
         className="custom-class-name"
+      >
+        <div>Child here</div>
+      </Cell>
+    ));
+
+    expect(cell).toMatchSnapshot();
+  });
+
+  it('should render a Cell in a highlighted column', () => {
+    const cell = shallow((
+      <Cell
+        sectionId="section-test"
+        rowId="row-test"
+        columnId="column-test"
+        width="123px"
+        isColumnHighlighted
+        isFirstRow
+        isLastRow
       >
         <div>Child here</div>
       </Cell>

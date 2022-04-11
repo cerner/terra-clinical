@@ -276,6 +276,22 @@ describe('DataGrid Snapshots', () => {
     const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
+
+  it('should render a DataGrid with a highlighted column', () => {
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        columnHighlightId="Column-2"
+        overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        fill
+        intl={mockIntl}
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
 });
 
 it('should render a DataGrid with the fill prop missing', () => {

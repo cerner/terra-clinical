@@ -25,6 +25,23 @@ describe('Row Snapshot Tests', () => {
         height="4rem"
         isSelected
         isStriped
+        allowColumnHighlighting
+      >
+        <div>Row Content</div>
+      </Row>
+    ));
+
+    expect(row).toMatchSnapshot();
+  });
+
+  it('should render a Row allowing column highlighting', () => {
+    const row = shallow((
+      <Row
+        sectionId="section-test"
+        rowId="row-test"
+        width="123px"
+        height="4rem"
+        allowColumnHighlighting
       >
         <div>Row Content</div>
       </Row>
