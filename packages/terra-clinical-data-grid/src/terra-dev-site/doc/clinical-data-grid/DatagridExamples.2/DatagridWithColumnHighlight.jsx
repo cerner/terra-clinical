@@ -16,6 +16,7 @@ class DatagridWithColumnHighlight extends React.Component {
     this.state = {
       selectedRow: undefined,
       selectedCell: undefined,
+      collapsedSectionList: [],
       columns: {
         'Column-0': {
           id: 'Column-0',
@@ -86,6 +87,8 @@ class DatagridWithColumnHighlight extends React.Component {
     return {
       id: sectionId,
       text: sectionName,
+      isCollapsible: true,
+      isCollapsed: this.state.collapsedSectionList.includes(sectionId),
       rows: this.buildRows(sectionId, numberOfRows),
     };
   }
@@ -154,6 +157,20 @@ class DatagridWithColumnHighlight extends React.Component {
                 rowId,
               },
             });
+          }}
+          onRequestSectionCollapse={(sectionId) => {
+            const index = this.state.collapsedSectionList.findIndex(id => sectionId === id);
+            if (index !== -1) {
+              this.setState(prevState => {
+                const collapsedSectionList = prevState.collapsedSectionList.filter(id => sectionId !== id);
+                return { collapsedSectionList };
+              });
+            } else {
+              this.setState(prevState => {
+                const collapsedSectionList = [...prevState.collapsedSectionList, sectionId];
+                return { collapsedSectionList };
+              });
+            }
           }}
         />
       </div>

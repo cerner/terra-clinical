@@ -66,6 +66,7 @@ Rows are provided to sections to be rendered by the DataGrid. The order in which
 |---|---|---|---|---|
 |**id**|string|required|none|An identifier for the row. This identifier should be unique across the set of rows provided to a given section.|
 |**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used to contruct additional labels for internal controls (e.g. row selection cells).|
+|**isDecorative**|bool|optional|none|A boolean to prevent the row from being interactive (selectable + selected), hides the column highlighting style in the row when `columnHighlightId` is valued, and applies role="presentation" and aria-hidden="true" to hide from screen readers. Used for inserted decorative rows like custom dividers.|
 |**isSelectable**|bool|optional|none|A boolean indicating whether or not the row is selectable.|
 |**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
 |**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. The order in which the cells are rendered is determined by the order of the `pinnedColumns` and `overflowColumns` props.|

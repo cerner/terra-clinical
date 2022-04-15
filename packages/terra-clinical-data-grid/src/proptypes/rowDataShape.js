@@ -7,10 +7,15 @@ const rowDataShape = PropTypes.shape({
    */
   id: PropTypes.string.isRequired,
   /**
-   * A string identifier used to describe the row contents. This value will be used to contruct additional labels
+   * A string identifier used to describe the row contents. This value will be used to construct additional labels
    * for internal controls (e.g. row selection cells).
    */
   ariaLabel: PropTypes.string,
+  /**
+   * A boolean to prevent the row from being interactive (selectable + selected), hides the column highlighting style in the row when `columnHighlightId` is valued,
+   * and applies role="presentation" and aria-hidden="true" to hide from screen readers. Used for decorative rows like custom dividers.
+   */
+  isDecorative: PropTypes.bool,
   /**
    * A boolean indicating whether or not the row is selectable.
    */
