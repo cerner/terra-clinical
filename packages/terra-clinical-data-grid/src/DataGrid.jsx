@@ -607,7 +607,7 @@ class DataGrid extends React.Component {
      * The widths are applied directly the nodes (outside of the React rendering lifecycle) to improve performance and limit
      * unnecessary rendering of other components.
      */
-    const sectionHeaderContainers = this.dataGridContainerRef.querySelectorAll(`.${cx('pinned-content-container')} .${cx('section-header-container')}`);
+    const sectionHeaderContainers = this.dataGridContainerRef.querySelectorAll('[data-terra-clinical-data-grid-section-header-container]');
 
     /**
      * querySelectorAll returns a NodeList, which does not support standard iteration functions like forEach in legacy browsers.
@@ -857,6 +857,7 @@ class DataGrid extends React.Component {
         <div
           key={section.id}
           className={cx('section-header-container')}
+          data-terra-clinical-data-grid-section-header-container
         >
           { isPinned ? (
             <SectionHeader

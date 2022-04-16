@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated how section header width resizing is applied. Corrects previous accidental change and incorrect wdio screenshots.
+
 ## 2.35.0 - (March 25, 2022)
 
 * Added
