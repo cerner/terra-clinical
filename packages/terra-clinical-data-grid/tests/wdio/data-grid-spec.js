@@ -155,13 +155,31 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     Terra.validates.element('custom row/header heights', { selector: '#custom-height-data-grid' });
   });
 
-  describe('with highlighted column not selectable', () => {
-    before(() => {
-      browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-not-selectable-data-grid');
+  it('should display highlighted column not selectable cells DataGrid', () => {
+    browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-not-selectable-data-grid');
+
+    Terra.validates.element('highlighted column not selectable cells', { selector: '#highlight-column-not-selectable-data-grid' });
+  });
+
+  it('should display highlighted column with a single row DataGrid', () => {
+    browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-single-row-data-grid');
+
+    Terra.validates.element('highlighted column single row', { selector: '#highlight-column-single-row-data-grid' });
+  });
+
+  describe('with highlighted column empty sections', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/highlight-column-empty-sections-data-grid');
     });
 
-    it('should display highlighted column not selectable cells DataGrid', () => {
-      Terra.validates.element('highlighted column not selectable cells', { selector: '#highlight-column-not-selectable-data-grid' });
+    it('should display highlighted column with a single row visible and collapsed and empty sections DataGrid', () => {
+      Terra.validates.element('highlighted column empty collapsed sections', { selector: '#highlight-column-empty-sections-data-grid' });
+    });
+
+    it('should display highlighted column with a decorative row DataGrid', () => {
+      $('[data-terra-clinical-data-grid-section-header-id="Section-2"] [class*="SectionHeader"]').click();
+
+      Terra.validates.element('highlighted column decorative row', { selector: '#highlight-column-empty-sections-data-grid' });
     });
   });
 

@@ -87,6 +87,67 @@ const getOverflowColumns = (props) => {
 };
 
 /**
+ * Returns an object with the section ids and the row ids of the first row and last row in non-collapsed and non-empty sections.
+ * @param {Object} Object conforming to the state.columnHighlightRowData shape.
+ */
+const getFirstAndLastVisibleRowData = (sections) => {
+  const rowData = {
+    firstRowSectionId: null,
+    firstRowId: null,
+    lastRowSectionId: null,
+    lastRowId: null,
+  };
+
+  if (sections.length < 1) {
+    /**
+     * If the sections prop is empty, there is no work to do here.
+     */
+    return rowData;
+  }
+
+  const findNotEmptyOrCollapsed = section => section.rows.length > 0 && !section.isCollapsed;
+  const visibleSections = sections.filter(findNotEmptyOrCollapsed);
+
+  if (visibleSections.length < 1) {
+    /**
+     * If the filtered list is empty after removing sections that contain no rows,
+     * plus removing sections that are collapsed, there is no more work to do here.
+     */
+    return rowData;
+  }
+
+  rowData.firstRowSectionId = visibleSections.find(section => {
+    const { rows } = section;
+    rowData.firstRowId = rows.find(row => !row.isDecorative).id;
+    return !!rowData.firstRowId;
+  }).id;
+
+  if (!rowData.firstRowId) {
+    /**
+     * If no first row is found after filtering out rows marked as decorative,
+     * no last row will found either. There is no more work to do here.
+     */
+    return rowData;
+  }
+
+  for (let i = visibleSections.length - 1; i >= 0; i -= 1) {
+    const { rows } = visibleSections[i];
+    for (let j = rows.length - 1; j >= 0; j -= 1) {
+      if (!rows[j].isDecorative) {
+        rowData.lastRowId = rows[j].id;
+        break;
+      }
+    }
+    if (rowData.lastRowId) {
+      rowData.lastRowSectionId = visibleSections[i].id;
+      break;
+    }
+  }
+
+  return rowData;
+};
+
+/**
  * Returns true if the given element matches the given selector. Includes support for IE10.
  * @param {Element} element The element to compare against the selector.
  * @param {String} selector The selector string to test.
@@ -192,6 +253,7 @@ const dataGridUtils = {
   getTotalColumnWidth,
   getPinnedColumns,
   getOverflowColumns,
+  getFirstAndLastVisibleRowData,
   matchesSelector,
   generateAccessibleContentIndex,
 };
