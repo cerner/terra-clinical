@@ -4,6 +4,10 @@
 
 * Changed
   * Updated how section header width resizing is applied. Corrects previous accidental change and incorrect wdio screenshots.
+  * Updated column highlight first and last row detection for when a single row, and detecting empty and collapsed sections.
+
+* Added
+  * Added new row prop `isDecorative` to prevent column highlighting and interaction when consumers style rows as dividers.
 
 ## 2.35.0 - (March 25, 2022)
 
