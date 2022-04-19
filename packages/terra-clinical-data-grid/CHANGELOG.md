@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Updated how section header width resizing is applied. Corrects previous accidental change and incorrect wdio screenshots.
   * Updated column highlight first and last row detection for when a single row, and detecting empty and collapsed sections.
 
 * Added
