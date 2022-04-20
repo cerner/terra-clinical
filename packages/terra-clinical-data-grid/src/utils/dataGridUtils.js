@@ -116,11 +116,20 @@ const getFirstAndLastVisibleRowData = (sections) => {
     return rowData;
   }
 
-  rowData.firstRowSectionId = visibleSections.find(section => {
+  const firstVisibleRow = visibleSections.find(section => {
     const { rows } = section;
-    rowData.firstRowId = rows.find(row => !row.isDecorative).id;
+    const firstRow = rows.find(row => !row.isDecorative);
+
+    if (firstRow) {
+      rowData.firstRowId = firstRow.id;
+    }
+
     return !!rowData.firstRowId;
-  }).id;
+  });
+
+  if (firstVisibleRow) {
+    rowData.firstRowSectionId = firstVisibleRow.id;
+  }
 
   if (!rowData.firstRowId) {
     /**
