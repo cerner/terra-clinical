@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed `Cannot read property 'id' of undefined` error in `getFirstAndLastVisibleRowData` when all rows are set `isDecorative`.
+
 ## 2.35.1 - (April 19, 2022)
 
 * Changed

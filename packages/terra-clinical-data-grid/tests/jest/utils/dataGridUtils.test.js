@@ -4,6 +4,7 @@ const {
   VOID_COLUMN,
   ROW_SELECTION_COLUMN,
   getAccessibleContents,
+  getFirstAndLastVisibleRowData,
   getWidthForColumn,
   getTotalColumnWidth,
   getPinnedColumns,
@@ -209,5 +210,97 @@ describe('matchesSelector', () => {
     expect(matchesSelector(element, '.test-class')).toBe(true);
 
     Element.prototype.msMatchesSelector = undefined;
+  });
+});
+
+describe('getFirstAndLastVisibleRowData', () => {
+  it('should return row data with no decorative rows', () => {
+    const expectedRowData = {
+      firstRowSectionId: 'Section-0',
+      firstRowId: 'Section-0-Row-0',
+      lastRowSectionId: 'Section-1',
+      lastRowId: 'Section-1-Row-1',
+    };
+    const sections = [
+      {
+        id: 'Section-0',
+        isCollapsed: false,
+        rows: [
+          {
+            id: 'Section-0-Row-0',
+          },
+          {
+            id: 'Section-0-Row-1',
+          },
+        ],
+      },
+      {
+        id: 'Section-1',
+        isCollapsed: false,
+        rows: [
+          {
+            id: 'Section-1-Row-0',
+          },
+          {
+            id: 'Section-1-Row-1',
+          },
+        ],
+      },
+    ];
+
+    expect(getFirstAndLastVisibleRowData(sections)).toEqual(expectedRowData);
+  });
+
+  it('should return row data when there is a decorative row', () => {
+    const expectedRowData = {
+      firstRowSectionId: 'Section-0',
+      firstRowId: 'Row-1',
+      lastRowSectionId: 'Section-0',
+      lastRowId: 'Row-1',
+    };
+    const sections = [
+      {
+        id: 'Section-0',
+        isCollapsed: false,
+        rows: [
+          {
+            id: 'Row-0',
+            isDecorative: true,
+          },
+          {
+            id: 'Row-1',
+          },
+        ],
+      },
+    ];
+
+    expect(getFirstAndLastVisibleRowData(sections)).toEqual(expectedRowData);
+  });
+
+  it('should return null row data when all rows are decorative', () => {
+    const expectedRowData = {
+      firstRowSectionId: null,
+      firstRowId: null,
+      lastRowSectionId: null,
+      lastRowId: null,
+    };
+    const sections = [
+      {
+        id: 'Section-0',
+        isCollapsed: false,
+        rows: [
+          {
+            id: 'Row-0',
+            isDecorative: true,
+          },
+          {
+            id: 'Row-1',
+            isDecorative: true,
+          },
+        ],
+      },
+    ];
+
+    expect(getFirstAndLastVisibleRowData(sections)).toEqual(expectedRowData);
   });
 });
