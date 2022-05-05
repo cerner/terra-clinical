@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Support react-intl-v5. 
+
 ## 4.31.1 - (April 19, 2022)
 
 * Changed

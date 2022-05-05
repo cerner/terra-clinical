@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fix wdio scripts.
+
 ## 4.5.0 - (July 21, 2021)
 
 * Changed
