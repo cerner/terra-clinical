@@ -1,11 +1,20 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { IntlProvider } from 'react-intl';
 import KnownNoData from '../../../../src/common/other/_KnownNoData';
+import clinicalResultMessages from '../../../../translations/en-US.json';
+
+const locale = 'en-US';
+const messages = { ...clinicalResultMessages };
 
 describe('KnownNoData', () => {
   it('should render a default KnownNoData', () => {
-    const result = shallowWithIntl(<KnownNoData />).dive();
-    expect(result).toMatchSnapshot();
+    const result = (
+      <IntlProvider locale={locale} messages={messages}>
+        <KnownNoData />
+      </IntlProvider>
+    );
+
+    expect(render(result)).toMatchSnapshot();
   });
 });

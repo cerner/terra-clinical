@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
+import { IntlProvider } from 'react-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DataGrid from '../../src/DataGrid';
 import dataGridUtils from '../../src/utils/dataGridUtils';
@@ -78,21 +78,30 @@ const mockIntl = {
   now: () => {},
 };
 
+const locale = 'en-US';
+const dataGridMessages = { ...messages };
+
 describe('DataGrid Snapshots', () => {
   it('should render a DataGrid with missing optional props', () => {
-    const dataGrid = shallow(<DataGrid.WrappedComponent id="test" intl={mockIntl} />);
-    expect(dataGrid).toMatchSnapshot();
+    const dataGrid = (
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent id="test" intl={mockIntl} />
+      </IntlProvider>
+    );
+    expect(mount(dataGrid)).toMatchSnapshot();
   });
 
   it('should render a DataGrid with only overflow columns', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
-        sections={testSections}
-        fill
-        intl={mockIntl}
-      />
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
+          sections={testSections}
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -101,14 +110,16 @@ describe('DataGrid Snapshots', () => {
 
   it('should render a DataGrid with pinned and overflow columns', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-        sections={testSections}
-        fill
-        intl={mockIntl}
-      />
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+          overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+          sections={testSections}
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -117,15 +128,17 @@ describe('DataGrid Snapshots', () => {
 
   it('should render a DataGrid with custom row and header heights', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
-        sections={testSections}
-        rowHeight="5rem"
-        headerHeight="10rem"
-        fill
-        intl={mockIntl}
-      />
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
+          sections={testSections}
+          rowHeight="5rem"
+          headerHeight="10rem"
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -134,54 +147,56 @@ describe('DataGrid Snapshots', () => {
 
   it('should render a DataGrid with selectable rows, columns, and cells', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        pinnedColumns={[{
-          id: 'Column-0',
-          width: 200,
-          text: 'Column 0',
-          isSelectable: true,
-          isResizable: true,
-          sortIndicator: 'ascending',
-        }]}
-        overflowColumns={[{
-          id: 'Column-1',
-          width: 300,
-          text: 'Column 1',
-          isSelectable: true,
-          sortIndicator: 'descending',
-        }]}
-        sections={[{
-          id: 'section-0',
-          isCollapsible: true,
-          isCollapsed: false,
-          text: 'Section 0',
-          startAccessory: <div>Start Accessory</div>,
-          endAccessory: <div>End Accessory</div>,
-          rows: [{
-            id: 'row-0',
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          pinnedColumns={[{
+            id: 'Column-0',
+            width: 200,
+            text: 'Column 0',
             isSelectable: true,
-            isSelected: true,
-            ariaLabel: 'Row 0',
-            cells: [{
-              columnId: 'Column-0',
+            isResizable: true,
+            sortIndicator: 'ascending',
+          }]}
+          overflowColumns={[{
+            id: 'Column-1',
+            width: 300,
+            text: 'Column 1',
+            isSelectable: true,
+            sortIndicator: 'descending',
+          }]}
+          sections={[{
+            id: 'section-0',
+            isCollapsible: true,
+            isCollapsed: false,
+            text: 'Section 0',
+            startAccessory: <div>Start Accessory</div>,
+            endAccessory: <div>End Accessory</div>,
+            rows: [{
+              id: 'row-0',
               isSelectable: true,
               isSelected: true,
-              component: <div>0</div>,
-            }, {
-              columnId: 'Column-1',
-              isSelectable: true,
-              component: <div>1</div>,
+              ariaLabel: 'Row 0',
+              cells: [{
+                columnId: 'Column-0',
+                isSelectable: true,
+                isSelected: true,
+                component: <div>0</div>,
+              }, {
+                columnId: 'Column-1',
+                isSelectable: true,
+                component: <div>1</div>,
+              }],
             }],
-          }],
-        }]}
-        hasSelectableRows
-        onColumnSelect={() => {}}
-        onCellSelect={() => {}}
-        onRowSelect={() => {}}
-        fill
-        intl={mockIntl}
-      />
+          }]}
+          hasSelectableRows
+          onColumnSelect={() => {}}
+          onCellSelect={() => {}}
+          onRowSelect={() => {}}
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -190,43 +205,45 @@ describe('DataGrid Snapshots', () => {
 
   it('should render a DataGrid with custom header cells', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        pinnedColumns={[{
-          id: 'Column-0',
-          width: 200,
-          text: 'Column 0',
-          sortIndicator: 'ascending',
-          component: <div>Custom Header 0</div>,
-        }]}
-        overflowColumns={[{
-          id: 'Column-1',
-          width: 300,
-          text: 'Column 1',
-          sortIndicator: 'descending',
-          component: <div>Custom Header 1</div>,
-        }]}
-        sections={[{
-          id: 'section-0',
-          isCollapsible: true,
-          isCollapsed: false,
-          text: 'Section 0',
-          startAccessory: <div>Start Accessory</div>,
-          endAccessory: <div>End Accessory</div>,
-          rows: [{
-            id: 'row-0',
-            cells: [{
-              columnId: 'Column-0',
-              component: <div>0</div>,
-            }, {
-              columnId: 'Column-1',
-              component: <div>1</div>,
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          pinnedColumns={[{
+            id: 'Column-0',
+            width: 200,
+            text: 'Column 0',
+            sortIndicator: 'ascending',
+            component: <div>Custom Header 0</div>,
+          }]}
+          overflowColumns={[{
+            id: 'Column-1',
+            width: 300,
+            text: 'Column 1',
+            sortIndicator: 'descending',
+            component: <div>Custom Header 1</div>,
+          }]}
+          sections={[{
+            id: 'section-0',
+            isCollapsible: true,
+            isCollapsed: false,
+            text: 'Section 0',
+            startAccessory: <div>Start Accessory</div>,
+            endAccessory: <div>End Accessory</div>,
+            rows: [{
+              id: 'row-0',
+              cells: [{
+                columnId: 'Column-0',
+                component: <div>0</div>,
+              }, {
+                columnId: 'Column-1',
+                component: <div>1</div>,
+              }],
             }],
-          }],
-        }]}
-        fill
-        intl={mockIntl}
-      />
+          }]}
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -235,42 +252,44 @@ describe('DataGrid Snapshots', () => {
 
   it('should render a DataGrid with custom section header', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        pinnedColumns={[{
-          id: 'Column-0',
-          width: 200,
-          text: 'Column 0',
-          sortIndicator: 'ascending',
-        }]}
-        overflowColumns={[{
-          id: 'Column-1',
-          width: 300,
-          text: 'Column 1',
-          sortIndicator: 'descending',
-        }]}
-        sections={[{
-          id: 'section-0',
-          isCollapsible: true,
-          isCollapsed: false,
-          text: 'Section 0',
-          startAccessory: <div>Start Accessory</div>,
-          endAccessory: <div>End Accessory</div>,
-          component: <div>Custom Section Header</div>,
-          rows: [{
-            id: 'row-0',
-            cells: [{
-              columnId: 'Column-0',
-              component: <div>0</div>,
-            }, {
-              columnId: 'Column-1',
-              component: <div>1</div>,
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          pinnedColumns={[{
+            id: 'Column-0',
+            width: 200,
+            text: 'Column 0',
+            sortIndicator: 'ascending',
+          }]}
+          overflowColumns={[{
+            id: 'Column-1',
+            width: 300,
+            text: 'Column 1',
+            sortIndicator: 'descending',
+          }]}
+          sections={[{
+            id: 'section-0',
+            isCollapsible: true,
+            isCollapsed: false,
+            text: 'Section 0',
+            startAccessory: <div>Start Accessory</div>,
+            endAccessory: <div>End Accessory</div>,
+            component: <div>Custom Section Header</div>,
+            rows: [{
+              id: 'row-0',
+              cells: [{
+                columnId: 'Column-0',
+                component: <div>0</div>,
+              }, {
+                columnId: 'Column-1',
+                component: <div>1</div>,
+              }],
             }],
-          }],
-        }]}
-        fill
-        intl={mockIntl}
-      />
+          }]}
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -279,14 +298,16 @@ describe('DataGrid Snapshots', () => {
 
   it('should render a DataGrid with a highlighted column', () => {
     const dataGridComp = (
-      <DataGrid.WrappedComponent
-        id="test"
-        columnHighlightId="Column-2"
-        overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
-        sections={testSections}
-        fill
-        intl={mockIntl}
-      />
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <DataGrid.WrappedComponent
+          id="test"
+          columnHighlightId="Column-2"
+          overflowColumns={[testColumns['Column-0'], testColumns['Column-1'], testColumns['Column-2'], testColumns['Column-3']]}
+          sections={testSections}
+          fill
+          intl={mockIntl}
+        />
+      </IntlProvider>
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -296,50 +317,56 @@ describe('DataGrid Snapshots', () => {
 
 it('should render a DataGrid with the fill prop missing', () => {
   const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-    />
+    <IntlProvider locale={locale} messages={dataGridMessages}>
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+      />
+    </IntlProvider>
   );
 
-  const dataGrid = shallow(dataGridComp);
+  const dataGrid = mount(dataGridComp);
   expect(dataGrid).toMatchSnapshot();
 });
 
 it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
   const refCallback = jest.fn();
   const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-      verticalOverflowContainerRefCallback={refCallback}
-    />
+    <IntlProvider locale={locale} messages={dataGridMessages}>
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        verticalOverflowContainerRefCallback={refCallback}
+      />
+    </IntlProvider>
   );
 
-  mountWithIntl(dataGridComp);
+  mount(dataGridComp);
   expect(refCallback).toBeCalled();
 });
 
 it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
   const refCallback = jest.fn();
   const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-      horizontalOverflowContainerRefCallback={refCallback}
-    />
+    <IntlProvider locale={locale} messages={dataGridMessages}>
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        horizontalOverflowContainerRefCallback={refCallback}
+      />
+    </IntlProvider>
   );
 
-  mountWithIntl(dataGridComp);
+  mount(dataGridComp);
   expect(refCallback).toBeCalled();
 });
 
@@ -383,10 +410,12 @@ describe('getDerivedStateFromProps', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const dataGrid = mountWithIntl(
-      <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
-        <DataGrid.WrappedComponent id="test" intl={mockIntl} />
-      </ThemeContextProvider>,
+    const dataGrid = mount(
+      <IntlProvider locale={locale} messages={dataGridMessages}>
+        <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
+          <DataGrid.WrappedComponent id="test" intl={mockIntl} />
+        </ThemeContextProvider>
+      </IntlProvider>,
     );
     expect(dataGrid).toMatchSnapshot();
   });

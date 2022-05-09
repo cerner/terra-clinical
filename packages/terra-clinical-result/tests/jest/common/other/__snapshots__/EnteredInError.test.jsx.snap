@@ -2,12 +2,12 @@
 
 exports[`EnteredInError should render a default EnteredInError 1`] = `
 <span
-  className="entered-in-error"
+  class="entered-in-error"
 >
   <span
-    aria-label="Terra.clinicalResult.statusInErrorAria"
+    aria-label="Value Uncharted as In Error"
   >
-    Terra.clinicalResult.statusInError
+    In Error
   </span>
 </span>
 `;

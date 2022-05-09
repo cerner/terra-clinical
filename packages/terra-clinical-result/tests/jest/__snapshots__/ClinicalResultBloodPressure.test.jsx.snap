@@ -1020,9 +1020,9 @@ exports[`ClinicalResultBloodPressure correctly applies the theme context classNa
 </div>
 `;
 
-exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `<InjectIntl(KnownNoData) />`;
+exports[`ClinicalResultBloodPressure should render a NoData if hasResultNoData is true 1`] = `<injectIntl(KnownNoData) />`;
 
-exports[`ClinicalResultBloodPressure should render a ResultError if hasResultError is true 1`] = `<InjectIntl(ResultError) />`;
+exports[`ClinicalResultBloodPressure should render a ResultError if hasResultError is true 1`] = `<injectIntl(ResultError) />`;
 
 exports[`ClinicalResultBloodPressure should render a default ClinicalResultBloodPressure 1`] = `
 <div

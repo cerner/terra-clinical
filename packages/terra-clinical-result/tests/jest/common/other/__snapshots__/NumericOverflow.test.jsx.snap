@@ -2,8 +2,8 @@
 
 exports[`NumericOverflow should render a default NumericOverflow 1`] = `
 <span
-  className="numeric-overflow"
+  class="numeric-overflow"
 >
-  Terra.clinicalResult.viewResults
+  View Results
 </span>
 `;
