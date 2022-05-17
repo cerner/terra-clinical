@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed section header resizing error limiting to pinned columns.
+
 ## 2.35.2 - (April 20, 2022)
 
 * Fixed
