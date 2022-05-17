@@ -417,7 +417,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
       >
         <div
           className="section-header-container"
-          data-terra-clinical-data-grid-section-header-container={true}
+          data-terra-clinical-data-grid-section-header-resize={true}
           key="section-0"
         >
           <SectionHeader
@@ -474,7 +474,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         >
           <div
             className="section-header-container"
-            data-terra-clinical-data-grid-section-header-container={null}
             key="section-0"
           />
           <Row
@@ -921,7 +920,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
       >
         <div
           className="section-header-container"
-          data-terra-clinical-data-grid-section-header-container={true}
+          data-terra-clinical-data-grid-section-header-resize={true}
           key="section-0"
         >
           <SectionHeader
@@ -982,7 +981,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         >
           <div
             className="section-header-container"
-            data-terra-clinical-data-grid-section-header-container={null}
             key="section-0"
           />
           <Row
@@ -1814,7 +1812,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
       >
         <div
           className="section-header-container"
-          data-terra-clinical-data-grid-section-header-container={true}
+          data-terra-clinical-data-grid-section-header-resize={true}
           key="section-0"
         >
           <SectionHeader
@@ -1889,7 +1887,6 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         >
           <div
             className="section-header-container"
-            data-terra-clinical-data-grid-section-header-container={null}
             key="section-0"
           />
           <Row
