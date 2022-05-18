@@ -193,24 +193,24 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     it('should display highlighted column selectable cells DataGrid with row hover', () => {
-      $('[data-accessibility-id="23"]').moveTo();
+      $('[data-accessibility-id="24"]').moveTo();
       Terra.validates.element('highlighted column selectable cells row hover', { selector: '#highlight-column-selectable-data-grid' });
     });
 
     it('should display highlighted column selectable cells DataGrid with row selection', () => {
-      $('[data-accessibility-id="23"]').click();
+      $('[data-accessibility-id="24"]').click();
       $('#root').moveTo({ xoffset: 0, yoffset: 0 });
       Terra.validates.element('highlighted column selectable cells row selection', { selector: '#highlight-column-selectable-data-grid' });
     });
 
     it('should display highlighted column selectable cells DataGrid with cell focus', () => {
-      $('[data-accessibility-id="25"]').click();
+      $('[data-accessibility-id="26"]').click();
       browser.keys(['Tab']);
       Terra.validates.element('highlighted column selectable cells cell focus', { selector: '#highlight-column-selectable-data-grid' });
     });
 
     it('should display highlighted column selectable cells DataGrid with cell selection', () => {
-      $('[data-accessibility-id="26"]').click();
+      $('[data-accessibility-id="27"]').click();
       $('#root').moveTo({ xoffset: 0, yoffset: 0 });
       Terra.validates.element('highlighted column selectable cells cell selection', { selector: '#highlight-column-selectable-data-grid' });
     });
