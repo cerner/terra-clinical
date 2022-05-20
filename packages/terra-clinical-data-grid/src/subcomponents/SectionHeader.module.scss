@@ -18,9 +18,20 @@
     display: flex;
     height: 100%;
     overflow: hidden;
-    padding: 5px;
+    padding-bottom: var(--terra-clinical-data-grid-section-header-content-padding-bottom, 0.3571428571rem);
+    padding-left: var(--terra-clinical-data-grid-section-header-content-padding-left, 0.7142857143rem);
+    padding-right: var(--terra-clinical-data-grid-section-header-content-padding-right, 0.3571428571rem);
+    padding-top: var(--terra-clinical-data-grid-section-header-content-padding-top, 0.3571428571rem);
     position: relative;
     width: 100%;
+  }
+
+  .content.selectable {
+    padding-left: var(--terra-clinical-data-grid-section-header-content-selectable-padding-left, 0.5rem);
+  }
+
+  .collapsible-icon {
+    font-size: var(--terra-clinical-data-grid-section-header-collapsible-icon-font-size, 0.8571428571rem);
   }
 
   .collapsible-icon,
@@ -40,7 +51,7 @@
   * + .start-accessory,
   * + .flex-content,
   * + .end-accessory {
-    margin-left: 5px;
+    margin-left: var(--terra-clinical-data-grid-section-header-flex-content-margin-left, 0.3571428571rem);
   }
 
   .text {

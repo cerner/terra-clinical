@@ -1,8 +1,11 @@
+@import '../../../clinical-lowlight-theme/TerraDevSite.module';
+@import '../../../orion-fusion-theme/TerraDevSite.module';
+
 :local {
   .content-cell {
     height: 100%;
     overflow: hidden;
-    padding: 8px;
+    padding: var(--terra-clinical-data-grid-dev-site-tests-content-cell-layout-padding, 8px);
     text-overflow: ellipsis;
     vertical-align: center;
     white-space: nowrap;

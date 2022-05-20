@@ -2,10 +2,17 @@
   .clinical-lowlight-theme {
     --terra-clinical-data-grid-section-header-background-color: #222a2e;
     --terra-clinical-data-grid-section-header-border-bottom: 1px solid #181b1d;
-    --terra-clinical-data-grid-section-header-hover-background-color: none;
     --terra-clinical-data-grid-section-header-border-top: 1px solid #181b1d;
+    --terra-clinical-data-grid-section-header-content-padding-bottom: 0.3571428571rem;
+    --terra-clinical-data-grid-section-header-content-padding-left: 0.7142857143rem;
+    --terra-clinical-data-grid-section-header-content-padding-right: 0.3571428571rem;
+    --terra-clinical-data-grid-section-header-content-padding-top: 0.3571428571rem;
+    --terra-clinical-data-grid-section-header-content-selectable-padding-left: 0.5rem;
+    --terra-clinical-data-grid-section-header-collapsible-icon-font-size: 0.8571428571rem;
     --terra-clinical-data-grid-section-header-collapsible-icon-color: #b2b5b6;
+    --terra-clinical-data-grid-section-header-flex-content-margin-left: 0.3571428571rem;
     --terra-clinical-data-grid-section-header-color: #b2b5b6;
     --terra-clinical-data-grid-section-header-focus-box-shadow: inset 0 0 0 3px #004c76;
+    --terra-clinical-data-grid-section-header-hover-background-color: #273035;
   }
 }
