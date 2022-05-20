@@ -1,7 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
-
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -86,6 +86,8 @@ class PagedContentDataGrid extends React.Component {
   }
 
   render() {
+    const theme = this.context;
+
     return (
       <div id="paged-data-grid" className={cx('content-wrapper')}>
         <DataGrid
@@ -94,6 +96,7 @@ class PagedContentDataGrid extends React.Component {
           overflowColumns={overflowColumns}
           sections={this.state.sections}
           fill
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           onRequestContent={this.state.sectionCount < 2 ? (() => {
             this.setState(prevState => ({ sectionCount: prevState.sectionCount + 1, sections: PagedContentDataGrid.buildSections(prevState.sectionCount + 1) }));
           }) : undefined}
@@ -102,5 +105,7 @@ class PagedContentDataGrid extends React.Component {
     );
   }
 }
+
+PagedContentDataGrid.contextType = ThemeContext;
 
 export default PagedContentDataGrid;

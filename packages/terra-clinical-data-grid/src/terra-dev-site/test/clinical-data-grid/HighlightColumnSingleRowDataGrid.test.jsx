@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import DataGrid from 'terra-clinical-data-grid';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -70,17 +71,24 @@ const sectionWithOneRow = {
   ],
 };
 
-const HighlightColumnSingleRowDataGrid = () => (
-  <div id="highlight-column-single-row-data-grid" className={cx('content-wrapper')}>
-    <DataGrid
-      id="highlight-column-example"
-      columnHighlightId="Column-2"
-      overflowColumns={overflowColumns}
-      sections={[sectionWithOneRow]}
-      defaultColumnWidth={250}
-      fill
-    />
-  </div>
-);
+const HighlightColumnSingleRowDataGrid = () => {
+  const theme = React.useContext(ThemeContext);
+
+  return (
+    <div id="highlight-column-single-row-data-grid" className={cx('content-wrapper')}>
+      <DataGrid
+        id="highlight-column-example"
+        columnHighlightId="Column-2"
+        overflowColumns={overflowColumns}
+        sections={[sectionWithOneRow]}
+        defaultColumnWidth={250}
+        rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
+        fill
+      />
+    </div>
+  );
+};
+
+HighlightColumnSingleRowDataGrid.contextType = ThemeContext;
 
 export default HighlightColumnSingleRowDataGrid;

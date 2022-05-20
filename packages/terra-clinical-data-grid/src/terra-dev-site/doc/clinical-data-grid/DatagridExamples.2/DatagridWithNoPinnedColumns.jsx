@@ -1,6 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
 
@@ -80,6 +81,8 @@ class DatagridWithNoPinnedColumns extends React.Component {
   }
 
   render() {
+    const theme = this.context;
+
     return (
       <div className={cx('data-grid-basic')}>
         <DataGrid
@@ -88,11 +91,14 @@ class DatagridWithNoPinnedColumns extends React.Component {
           sections={[
             DatagridWithNoPinnedColumns.buildSection('section_0', 30),
           ]}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
+
+DatagridWithNoPinnedColumns.contextType = ThemeContext;
 
 export default DatagridWithNoPinnedColumns;

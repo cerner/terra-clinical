@@ -1,7 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
-
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -61,6 +61,8 @@ class HighlightColumnNotSelectableDataGrid extends React.Component {
   }
 
   render() {
+    const theme = this.context;
+
     return (
       <div id="highlight-column-not-selectable-data-grid" className={cx('content-wrapper')}>
         <DataGrid
@@ -71,11 +73,14 @@ class HighlightColumnNotSelectableDataGrid extends React.Component {
             HighlightColumnNotSelectableDataGrid.buildSection('section_0', 19),
           ]}
           defaultColumnWidth={250}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
+
+HighlightColumnNotSelectableDataGrid.contextType = ThemeContext;
 
 export default HighlightColumnNotSelectableDataGrid;
