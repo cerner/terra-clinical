@@ -1,7 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -88,8 +88,6 @@ class NoFillDataGrid extends React.Component {
   }
 
   render() {
-    const theme = this.context;
-
     return (
       <div id="no-fill-data-grid" className={cx(['content-wrapper', 'content-overflow'])}>
         <DataGrid
@@ -100,13 +98,10 @@ class NoFillDataGrid extends React.Component {
             NoFillDataGrid.buildSection('section_0', 30),
           ]}
           defaultColumnWidth={250}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
         />
       </div>
     );
   }
 }
-
-NoFillDataGrid.contextType = ThemeContext;
 
 export default NoFillDataGrid;

@@ -1,7 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -88,8 +88,6 @@ class StandardDataGrid extends React.Component {
   }
 
   render() {
-    const theme = this.context;
-
     return (
       <div id="standard-data-grid" className={cx('content-wrapper')}>
         <DataGrid
@@ -100,14 +98,11 @@ class StandardDataGrid extends React.Component {
             StandardDataGrid.buildSection('section_0', 30),
           ]}
           defaultColumnWidth={250}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
-
-StandardDataGrid.contextType = ThemeContext;
 
 export default StandardDataGrid;

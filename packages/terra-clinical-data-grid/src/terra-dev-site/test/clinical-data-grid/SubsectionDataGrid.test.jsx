@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Button from 'terra-button';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -106,8 +107,6 @@ class SubsectionDataGrid extends React.Component {
   }
 
   render() {
-    const theme = this.context;
-
     return (
       <div id="subsection-data-grid" className={cx('content-wrapper')}>
         <DataGrid
@@ -126,14 +125,11 @@ class SubsectionDataGrid extends React.Component {
               this.setState({ collapsedSectionId: sectionId });
             }
           }}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
-
-SubsectionDataGrid.contextType = ThemeContext;
 
 export default SubsectionDataGrid;

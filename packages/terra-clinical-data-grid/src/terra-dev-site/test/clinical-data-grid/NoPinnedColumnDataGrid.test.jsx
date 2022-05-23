@@ -1,7 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -85,8 +85,6 @@ class NoPinnedColumnDataGrid extends React.Component {
   }
 
   render() {
-    const theme = this.context;
-
     return (
       <div id="no-pinned-column-data-grid" className={cx('content-wrapper')}>
         <DataGrid
@@ -96,14 +94,11 @@ class NoPinnedColumnDataGrid extends React.Component {
             NoPinnedColumnDataGrid.buildSection('section_0', 30),
           ]}
           defaultColumnWidth={250}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
-
-NoPinnedColumnDataGrid.contextType = ThemeContext;
 
 export default NoPinnedColumnDataGrid;

@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import DataGrid from 'terra-clinical-data-grid';
-import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './ClinicalDataGridCommon.test.module.scss';
 
@@ -48,8 +47,6 @@ class HighlightColumnEmptySectionsDataGrid extends React.Component {
   }
 
   render() {
-    const theme = this.context;
-
     const sectionNoRows = {
       id: 'Section-0',
       text: 'Section 0',
@@ -224,14 +221,11 @@ class HighlightColumnEmptySectionsDataGrid extends React.Component {
             }
           }}
           defaultColumnWidth={250}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
-
-HighlightColumnEmptySectionsDataGrid.contextType = ThemeContext;
 
 export default HighlightColumnEmptySectionsDataGrid;
