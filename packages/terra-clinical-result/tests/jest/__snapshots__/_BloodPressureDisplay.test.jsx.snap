@@ -41,13 +41,13 @@ exports[`BloodPressureDisplay should hide the unit if hideUnit is true 1`] = `
 `;
 
 exports[`BloodPressureDisplay should render a NoData 1`] = `
-<injectIntl(KnownNoData)
+<InjectIntl(KnownNoData)
   key="NoData-Systolic-111"
 />
 `;
 
 exports[`BloodPressureDisplay should render a ResultError 1`] = `
-<injectIntl(ResultError)
+<InjectIntl(ResultError)
   key="Error-Systolic-111"
 />
 `;

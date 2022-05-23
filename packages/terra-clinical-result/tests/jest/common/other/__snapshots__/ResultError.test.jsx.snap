@@ -2,26 +2,14 @@
 
 exports[`ResultError should render a default ResultError 1`] = `
 <span
-  class="system-error"
+  className="system-error"
 >
-  <svg
+  <IconError
     aria-hidden="true"
-    class="tui-Icon icon IconError icon-error"
-    focusable="false"
-    height="1em"
+    className="icon-error"
     viewBox="0 0 48 48"
-    width="1em"
     xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
-      fill="#E50000"
-    />
-    <path
-      d="M7 21.5h34v5H7v-5z"
-      fill="#FFF"
-    />
-  </svg>
-  Error
+  />
+  Terra.clinicalResult.resultError
 </span>
 `;
