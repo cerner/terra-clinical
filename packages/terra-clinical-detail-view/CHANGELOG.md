@@ -4,6 +4,7 @@
 
 * Changed
   * Fix wdio scripts.
+  * Update wdio snapshots due to change in chrome driver version.
 
 ## 3.27.0 - (July 21, 2021)
 

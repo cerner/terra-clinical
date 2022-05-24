@@ -5,6 +5,9 @@
 * Breaking Changes
   * Dropped v2-v4 react-intl support 
 
+* Changed
+  * Update wdio snapshots due to change in chrome driver version.
+
 ## 4.31.1 - (April 19, 2022)
 
 * Changed
