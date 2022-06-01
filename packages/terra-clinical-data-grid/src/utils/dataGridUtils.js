@@ -134,7 +134,7 @@ const getFirstAndLastVisibleRowData = (sections) => {
   if (!rowData.firstRowId) {
     /**
      * If no first row is found after filtering out rows marked as decorative,
-     * no last row will found either. There is no more work to do here.
+     * no last row will be found either. There is no more work to do here.
      */
     return rowData;
   }

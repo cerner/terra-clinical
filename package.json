@@ -118,5 +118,8 @@
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.0.0",
     "webpack-merge": "^5.1.4"
+  },
+  "dependencies": {
+    "@cerner/terra-docs": "^1.7.0"
   }
 }

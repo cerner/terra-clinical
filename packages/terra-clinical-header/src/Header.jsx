@@ -10,52 +10,67 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * Child element to be displayed on the right end of the header.
-   * The element passed as children will be decorated with flex attributes.
+   * Child element to be displayed on the right end of the header. The element passed as children will be decorated with flex attributes.
+   * Intended to display a single Terra `Collapsible-Menu-View` (_Not provided by Terra Clinical Header_).
    */
   children: PropTypes.element,
-
   /**
-   * Content to be displayed at the start of the header, placed before the title
-   */
-  startContent: PropTypes.element,
-
-  /**
-   * Text to be displayed as the title in the header bar
-   */
-  title: PropTypes.string,
-
-  /**
-   * Content to be displayed at the end of the header
+   * Content to be displayed at the end of the header.
    * The element passed as endContent will be wrapped in a div with flex attributes.
    */
   endContent: PropTypes.element,
-
+  /**
+   * IDs should be used with 'aria-labelledby' to associate headings with the corresponding page area when needing to label regions.
+   *
+   * For an example, read [Accessibility Guide: Labeling Section Content](/components/terra-clinical-header/clinical-header/accessibility-guide#labeling-section-content) for additional information.
+   */
+  id: PropTypes.string,
   /**
    * A Boolean indicating if element is a subheader.
    */
   isSubheader: PropTypes.bool,
+  /**
+   * Sets the heading level &lt;h1&gt;-&lt;h6&gt;. One of `1`, `2`, `3`, `4`, `5`, `6`. This helps screen readers to announce appropriate heading levels.
+   * Changing `level` will not visually change the style of the content.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) If `level` is not set, the `text` prop will not display. It is required to be set in order for the text to have proper accessibility.
+   * _Note: the prop is not set to be required by default allowing Terra Clinical Header to be used without the `level` or `text` being provided._
+   *
+   * See the [Accessibility Guide](/components/terra-clinical-header/clinical-header/accessibility-guide) for additional information.
+   */
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  /**
+   * Content to be displayed at the start of the header, placed before the title.
+   */
+  startContent: PropTypes.element,
+  /**
+   * Text to be displayed as the title in the header bar.
+   */
+  text: PropTypes.string,
 };
 
 const defaultProps = {
-  title: '',
+  text: '',
   startContent: null,
   endContent: null,
   isSubheader: false,
+  level: undefined,
+  id: undefined,
 };
 
 const Header = ({
-  children, title, startContent, endContent, isSubheader, ...customProps
+  children, text, startContent, endContent, isSubheader, level, id, ...customProps
 }) => {
   const theme = useContext(ThemeContext);
 
   let titleElement;
-  if (title) {
+  if (text && level) {
+    const HeaderElement = `h${level}`;
     titleElement = (
       <div className={cx('title-container')}>
-        <h1 className={cx('title')}>
-          {title}
-        </h1>
+        <HeaderElement id={id} className={cx('title')}>
+          {text}
+        </HeaderElement>
       </div>
     );
   }

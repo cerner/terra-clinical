@@ -3,6 +3,13 @@ import { Badge } from 'terra-clinical-header/package.json?dev-site-package';
 <Badge />
 
 # Terra Clinical Header Upgrade Guide
+## Changes from 3.0 to 4.0
+
+### Breaking Changes
+* Changed prop `title` to `text` to avoid confusion with HTML attribute `title`.
+* Removed default `h2` heading level and **Added** `level` prop so that users can render different heading levels.
+* Added `id` prop which is to be paired with `aria-labelledby` for labelling page regions.
+
 ## Changes from version 2 to version 3
 ### Changes to CSS Custom Properties
 
