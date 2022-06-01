@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed section header resizing error limiting to pinned columns.
+
+## 2.35.2 - (April 20, 2022)
+
+* Fixed
+  * Fixed `Cannot read property 'id' of undefined` error in `getFirstAndLastVisibleRowData` when all rows are set to `isDecorative`.
+
+## 2.35.1 - (April 19, 2022)
+
+* Changed
+  * Updated how section header width resizing is applied. Corrects previous accidental change and incorrect wdio screenshots.
+  * Updated column highlight first and last row detection for when a single row, and detecting empty and collapsed sections.
+
+* Added
+  * Added new row prop `isDecorative` to prevent column highlighting and interaction when consumers style rows as dividers.
+
 ## 2.35.0 - (March 25, 2022)
 
 * Added

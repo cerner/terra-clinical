@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 4.31.1 - (April 19, 2022)
+
+* Changed
+  * Bump terra-date-picker dependency to 4.73.1 to ensure onChangeRaw gets called when date is selected from calendar.
 
 ## 4.31.0 - (November 16, 2021)
 

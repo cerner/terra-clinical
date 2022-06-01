@@ -417,6 +417,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
       >
         <div
           className="section-header-container"
+          data-terra-clinical-data-grid-section-header-resize={true}
           key="section-0"
         >
           <SectionHeader
@@ -450,8 +451,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
           <Cell
             columnId="Column-0"
             isColumnHighlighted={false}
-            isFirstRow={true}
-            isLastRow={true}
+            isFirstRow={false}
+            isLastRow={false}
             key="section-0-row-0-Column-0"
             rowId="row-0"
             sectionId="section-0"
@@ -487,8 +488,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
             <Cell
               columnId="Column-1"
               isColumnHighlighted={false}
-              isFirstRow={true}
-              isLastRow={true}
+              isFirstRow={false}
+              isLastRow={false}
               key="section-0-row-0-Column-1"
               rowId="row-0"
               sectionId="section-0"
@@ -670,7 +671,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             <Cell
               columnId="Column-0"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-0"
               rowId="row-0"
@@ -685,7 +686,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             <Cell
               columnId="Column-1"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-1"
               rowId="row-0"
@@ -700,7 +701,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             <Cell
               columnId="Column-2"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-2"
               rowId="row-0"
@@ -715,7 +716,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
             <Cell
               columnId="Column-3"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-3"
               rowId="row-0"
@@ -741,7 +742,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
               columnId="Column-0"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-0"
               rowId="row-1"
               sectionId="section-0"
@@ -756,7 +757,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
               columnId="Column-1"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-1"
               rowId="row-1"
               sectionId="section-0"
@@ -771,7 +772,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
               columnId="Column-2"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-2"
               rowId="row-1"
               sectionId="section-0"
@@ -786,7 +787,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
               columnId="Column-3"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-3"
               rowId="row-1"
               sectionId="section-0"
@@ -919,6 +920,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
       >
         <div
           className="section-header-container"
+          data-terra-clinical-data-grid-section-header-resize={true}
           key="section-0"
         >
           <SectionHeader
@@ -956,8 +958,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
           <Cell
             columnId="Column-0"
             isColumnHighlighted={false}
-            isFirstRow={true}
-            isLastRow={true}
+            isFirstRow={false}
+            isLastRow={false}
             key="section-0-row-0-Column-0"
             rowId="row-0"
             sectionId="section-0"
@@ -993,8 +995,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
             <Cell
               columnId="Column-1"
               isColumnHighlighted={false}
-              isFirstRow={true}
-              isLastRow={true}
+              isFirstRow={false}
+              isLastRow={false}
               key="section-0-row-0-Column-1"
               rowId="row-0"
               sectionId="section-0"
@@ -1249,7 +1251,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             <Cell
               columnId="Column-0"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-0"
               rowId="row-0"
@@ -1264,7 +1266,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             <Cell
               columnId="Column-1"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-1"
               rowId="row-0"
@@ -1279,7 +1281,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             <Cell
               columnId="Column-2"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-2"
               rowId="row-0"
@@ -1294,7 +1296,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
             <Cell
               columnId="Column-3"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-3"
               rowId="row-0"
@@ -1320,7 +1322,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
               columnId="Column-0"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-0"
               rowId="row-1"
               sectionId="section-0"
@@ -1335,7 +1337,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
               columnId="Column-1"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-1"
               rowId="row-1"
               sectionId="section-0"
@@ -1350,7 +1352,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
               columnId="Column-2"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-2"
               rowId="row-1"
               sectionId="section-0"
@@ -1365,7 +1367,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
               columnId="Column-3"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-3"
               rowId="row-1"
               sectionId="section-0"
@@ -1521,7 +1523,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
           <Cell
             columnId="Column-0"
             isColumnHighlighted={false}
-            isFirstRow={true}
+            isFirstRow={false}
             isLastRow={false}
             key="section-0-row-0-Column-0"
             rowId="row-0"
@@ -1536,7 +1538,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
           <Cell
             columnId="Column-1"
             isColumnHighlighted={false}
-            isFirstRow={true}
+            isFirstRow={false}
             isLastRow={false}
             key="section-0-row-0-Column-1"
             rowId="row-0"
@@ -1563,7 +1565,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             columnId="Column-0"
             isColumnHighlighted={false}
             isFirstRow={false}
-            isLastRow={true}
+            isLastRow={false}
             key="section-0-row-1-Column-0"
             rowId="row-1"
             sectionId="section-0"
@@ -1578,7 +1580,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             columnId="Column-1"
             isColumnHighlighted={false}
             isFirstRow={false}
-            isLastRow={true}
+            isLastRow={false}
             key="section-0-row-1-Column-1"
             rowId="row-1"
             sectionId="section-0"
@@ -1610,7 +1612,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             <Cell
               columnId="Column-2"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-2"
               rowId="row-0"
@@ -1625,7 +1627,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
             <Cell
               columnId="Column-3"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-3"
               rowId="row-0"
@@ -1651,7 +1653,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
               columnId="Column-2"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-2"
               rowId="row-1"
               sectionId="section-0"
@@ -1666,7 +1668,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
               columnId="Column-3"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-3"
               rowId="row-1"
               sectionId="section-0"
@@ -1810,6 +1812,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
       >
         <div
           className="section-header-container"
+          data-terra-clinical-data-grid-section-header-resize={true}
           key="section-0"
         >
           <SectionHeader
@@ -1858,8 +1861,8 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           <Cell
             columnId="Column-0"
             isColumnHighlighted={false}
-            isFirstRow={true}
-            isLastRow={true}
+            isFirstRow={false}
+            isLastRow={false}
             isSelectable={true}
             isSelected={true}
             key="section-0-row-0-Column-0"
@@ -1899,8 +1902,8 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
             <Cell
               columnId="Column-1"
               isColumnHighlighted={false}
-              isFirstRow={true}
-              isLastRow={true}
+              isFirstRow={false}
+              isLastRow={false}
               isSelectable={true}
               key="section-0-row-0-Column-1"
               onSelect={[Function]}
@@ -2143,7 +2146,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
           <Cell
             columnId="Column-0"
             isColumnHighlighted={false}
-            isFirstRow={true}
+            isFirstRow={false}
             isLastRow={false}
             key="section-0-row-0-Column-0"
             rowId="row-0"
@@ -2158,7 +2161,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
           <Cell
             columnId="Column-1"
             isColumnHighlighted={false}
-            isFirstRow={true}
+            isFirstRow={false}
             isLastRow={false}
             key="section-0-row-0-Column-1"
             rowId="row-0"
@@ -2185,7 +2188,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
             columnId="Column-0"
             isColumnHighlighted={false}
             isFirstRow={false}
-            isLastRow={true}
+            isLastRow={false}
             key="section-0-row-1-Column-0"
             rowId="row-1"
             sectionId="section-0"
@@ -2200,7 +2203,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
             columnId="Column-1"
             isColumnHighlighted={false}
             isFirstRow={false}
-            isLastRow={true}
+            isLastRow={false}
             key="section-0-row-1-Column-1"
             rowId="row-1"
             sectionId="section-0"
@@ -2261,7 +2264,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
             <Cell
               columnId="Column-2"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-2"
               rowId="row-0"
@@ -2276,7 +2279,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
             <Cell
               columnId="Column-3"
               isColumnHighlighted={false}
-              isFirstRow={true}
+              isFirstRow={false}
               isLastRow={false}
               key="section-0-row-0-Column-3"
               rowId="row-0"
@@ -2302,7 +2305,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
               columnId="Column-2"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-2"
               rowId="row-1"
               sectionId="section-0"
@@ -2317,7 +2320,7 @@ exports[`should render a DataGrid with the fill prop missing 1`] = `
               columnId="Column-3"
               isColumnHighlighted={false}
               isFirstRow={false}
-              isLastRow={true}
+              isLastRow={false}
               key="section-0-row-1-Column-3"
               rowId="row-1"
               sectionId="section-0"
