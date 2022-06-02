@@ -5,6 +5,7 @@
 * Changed
   * Fix wdio scripts.
   * Update wdio snapshots due to change in chrome driver version.
+
 * Breaking Changes
   * Changed `title` prop to `text` prop to allow users to spread title HTML Attribute as customProps.
   * Added `level` prop to allow users to render different heading levels.
