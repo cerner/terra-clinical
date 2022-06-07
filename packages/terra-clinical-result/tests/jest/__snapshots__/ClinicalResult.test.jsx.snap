@@ -38,7 +38,7 @@ exports[`ClinicalResult should render a NoData if hasResultNoData is true 1`] = 
 <div
   className="clinical-result"
 >
-  <InjectIntl(KnownNoData) />
+  <injectIntl(KnownNoData) />
 </div>
 `;
 
@@ -46,7 +46,7 @@ exports[`ClinicalResult should render a ResultError if hasResultError is true 1`
 <div
   className="clinical-result"
 >
-  <InjectIntl(ResultError) />
+  <injectIntl(ResultError) />
 </div>
 `;
 

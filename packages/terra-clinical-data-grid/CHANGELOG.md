@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Dropped v2-v4 react-intl support
+
 * Fixed
   * Fixed section header resizing error limiting to pinned columns.
 

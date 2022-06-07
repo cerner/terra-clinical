@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Changed
+  * Fix wdio scripts.
+  * Update wdio snapshots due to change in chrome driver version.
+
 ## 4.29.0 - (July 21, 2021)
 
 * Changed

@@ -224,7 +224,7 @@ exports[`FlowsheetResultCell should render a NoData if hasResultNoData is true 1
     className="primary-display"
     key="ClinicalResultDisplay-NoData"
   >
-    <InjectIntl(KnownNoData) />
+    <injectIntl(KnownNoData) />
   </div>
 </div>
 `;
@@ -237,7 +237,7 @@ exports[`FlowsheetResultCell should render a ResultError if hasResultError is tr
     className="primary-display error"
     key="ClinicalResultDisplay-Error"
   >
-    <InjectIntl(ResultError) />
+    <injectIntl(ResultError) />
   </div>
 </div>
 `;
@@ -250,7 +250,7 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
     className="primary-display"
     key="ClinicalResultDisplay-111"
   >
-    <InjectIntl(EnteredInError) />
+    <injectIntl(EnteredInError) />
   </div>
   <div
     className="additional-end-display no-accessory-icons"
@@ -282,7 +282,7 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
     className="primary-display error"
     key="ClinicalResultDisplay-Error"
   >
-    <InjectIntl(ResultError) />
+    <injectIntl(ResultError) />
   </div>
 </div>
 `;
@@ -295,7 +295,7 @@ exports[`FlowsheetResultCell should render an error with bad data 1`] = `
     className="primary-display error"
     key="ClinicalResultDisplay-Error"
   >
-    <InjectIntl(ResultError) />
+    <injectIntl(ResultError) />
   </div>
 </div>
 `;
@@ -383,7 +383,7 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
     className="primary-display"
     key="ClinicalResultDisplay-111"
   >
-    <InjectIntl(EnteredInError) />
+    <injectIntl(EnteredInError) />
   </div>
   <div
     className="additional-end-display no-accessory-icons"
@@ -475,7 +475,7 @@ exports[`FlowsheetResultCell should render systolic entered-in-error status bloo
     className="primary-display"
     key="ClinicalResultDisplay-111"
   >
-    <InjectIntl(EnteredInError) />
+    <injectIntl(EnteredInError) />
   </div>
   <div
     className="additional-end-display no-accessory-icons"

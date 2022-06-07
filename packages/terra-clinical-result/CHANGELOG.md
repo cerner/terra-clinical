@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Dropped v2-v4 react-intl support 
+
+* Changed
+  * Update wdio snapshots due to change in chrome driver version.
+
 ## 1.15.0 - (August 17, 2021)
 
 * Fixed

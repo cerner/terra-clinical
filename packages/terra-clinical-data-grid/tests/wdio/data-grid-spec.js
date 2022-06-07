@@ -193,6 +193,7 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
     });
 
     it('should display highlighted column selectable cells DataGrid with row hover', () => {
+      $('[data-accessibility-id="24"]').scrollIntoView();
       $('[data-accessibility-id="24"]').moveTo();
       Terra.validates.element('highlighted column selectable cells row hover', { selector: '#highlight-column-selectable-data-grid' });
     });
