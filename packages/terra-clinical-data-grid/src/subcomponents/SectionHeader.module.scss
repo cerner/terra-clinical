@@ -31,6 +31,7 @@
   }
 
   .collapsible-icon {
+    align-self: middle;
     font-size: var(--terra-clinical-data-grid-section-header-collapsible-icon-font-size, 0.8571428571rem);
   }
 
@@ -55,6 +56,8 @@
   }
 
   .text {
+    font-size: var(--terra-clinical-data-grid-section-header-text-font-size, 1rem);
+    line-height: var(--terra-clinical-data-grid-section-header-text-line-height, 1.8571428571);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
