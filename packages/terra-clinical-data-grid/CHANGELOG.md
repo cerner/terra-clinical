@@ -2,10 +2,12 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed section header caret icon size and position to match terra-section-header.
+
 ## 2.36.0 - (June 7, 2022)
 
 * Fixed
-  * Fixed section header caret icon size and position to match terra-section-header.
   * Fixed section header resizing error limiting to pinned columns.
 
 ## 2.35.2 - (April 20, 2022)
