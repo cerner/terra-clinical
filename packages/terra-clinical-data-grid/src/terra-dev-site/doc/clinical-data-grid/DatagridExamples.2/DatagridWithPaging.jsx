@@ -2,6 +2,7 @@ import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import LoadingOverlay from 'terra-overlay/lib/LoadingOverlay';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
 
@@ -90,6 +91,8 @@ class DatagridWithPaging extends React.Component {
   }
 
   render() {
+    const theme = this.context;
+
     return (
       <div className={cx('data-grid-paging')}>
         <DataGrid
@@ -106,11 +109,14 @@ class DatagridWithPaging extends React.Component {
               }, 2000);
             });
           }) : undefined}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
         />
         <LoadingOverlay isOpen={this.state.isLoading} isRelativeToContainer isAnimated className={cx('loading-overlay')} />
       </div>
     );
   }
 }
+
+DatagridWithPaging.contextType = ThemeContext;
 
 export default DatagridWithPaging;

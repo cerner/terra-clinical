@@ -1,6 +1,6 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
-
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 
 class DatagridWithoutFill extends React.Component {
@@ -111,6 +111,7 @@ class DatagridWithoutFill extends React.Component {
 
   render() {
     const { columns } = this.state;
+    const theme = this.context;
 
     return (
       <DataGrid
@@ -188,9 +189,12 @@ class DatagridWithoutFill extends React.Component {
             this.setState({ collapsedSectionId: sectionId });
           }
         }}
+        rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
       />
     );
   }
 }
+
+DatagridWithoutFill.contextType = ThemeContext;
 
 export default DatagridWithoutFill;

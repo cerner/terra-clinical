@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'terra-button';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
 
@@ -92,8 +93,9 @@ class DatagridWithSubsections extends React.Component {
       text: sectionName,
       endAccessory: (sectionId === 'section_1') ? (
         <span>
-          <Button text="Button 1" isCompact data-accessible-data-grid-content />
-          <Button text="Button 2" isCompact data-accessible-data-grid-content />
+          <Button text="Button 1" isCompact data-accessible-data-grid-content variant="ghost" className={cx('spacer-right-medium')} />
+          <Button text="Button 2" isCompact data-accessible-data-grid-content variant="ghost" className={cx('spacer-right-medium')} />
+          <Button text="Button 3" isCompact data-accessible-data-grid-content variant="emphasis" />
         </span>
       ) : null,
       isCollapsible: sectionId === 'section_0',
@@ -103,6 +105,8 @@ class DatagridWithSubsections extends React.Component {
   }
 
   render() {
+    const theme = this.context;
+
     return (
       <div className={cx('data-grid-basic')}>
         <DataGrid
@@ -121,11 +125,14 @@ class DatagridWithSubsections extends React.Component {
               this.setState({ collapsedSectionId: sectionId });
             }
           }}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           fill
         />
       </div>
     );
   }
 }
+
+DatagridWithSubsections.contextType = ThemeContext;
 
 export default DatagridWithSubsections;

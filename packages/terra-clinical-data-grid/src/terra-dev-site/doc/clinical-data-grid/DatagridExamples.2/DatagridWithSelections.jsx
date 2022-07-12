@@ -1,6 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
 
@@ -92,6 +93,7 @@ class DatagridWithSelections extends React.Component {
 
   render() {
     const { columns } = this.state;
+    const theme = this.context;
 
     return (
       <div className={cx('data-grid-basic')}>
@@ -154,10 +156,13 @@ class DatagridWithSelections extends React.Component {
               },
             });
           }}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
         />
       </div>
     );
   }
 }
+
+DatagridWithSelections.contextType = ThemeContext;
 
 export default DatagridWithSelections;

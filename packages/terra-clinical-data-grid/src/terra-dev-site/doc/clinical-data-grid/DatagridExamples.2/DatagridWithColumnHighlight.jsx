@@ -1,6 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
 
@@ -95,6 +96,7 @@ class DatagridWithColumnHighlight extends React.Component {
 
   render() {
     const { columns } = this.state;
+    const theme = this.context;
 
     return (
       <div className={cx('data-grid-basic')}>
@@ -172,10 +174,13 @@ class DatagridWithColumnHighlight extends React.Component {
               });
             }
           }}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
         />
       </div>
     );
   }
 }
+
+DatagridWithColumnHighlight.contextType = ThemeContext;
 
 export default DatagridWithColumnHighlight;

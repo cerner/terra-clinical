@@ -95,8 +95,9 @@ class SubsectionDataGrid extends React.Component {
       text: sectionName,
       endAccessory: (sectionId === 'section_1') ? (
         <span>
-          <Button text="Button 1" data-accessible-data-grid-content />
-          <Button text="Button 2" data-accessible-data-grid-content />
+          <Button text="Button 1" isCompact data-accessible-data-grid-content variant="ghost" className={cx('spacer-right-medium')} />
+          <Button text="Button 2" isCompact data-accessible-data-grid-content variant="ghost" className={cx('spacer-right-medium')} />
+          <Button text="Button 3" isCompact data-accessible-data-grid-content variant="emphasis" />
         </span>
       ) : null,
       isCollapsible: sectionId === 'section_0',

@@ -1,6 +1,7 @@
 import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
+import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
 
@@ -92,6 +93,7 @@ class DatagridWithColumnResizing extends React.Component {
 
   render() {
     const { columns } = this.state;
+    const theme = this.context;
 
     return (
       <div className={cx('data-grid-basic')}>
@@ -123,10 +125,13 @@ class DatagridWithColumnResizing extends React.Component {
               { columns: { ...prevState.columns, [`${columnId}`]: columnToUpdate } }
             ));
           }}
+          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
         />
       </div>
     );
   }
 }
+
+DatagridWithColumnResizing.contextType = ThemeContext;
 
 export default DatagridWithColumnResizing;
