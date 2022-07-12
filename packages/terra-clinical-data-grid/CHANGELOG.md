@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.37.0 - (July 12, 2022)
+
 * Fixed
   * Fixed section header caret icon size and position to match terra-section-header.
 
