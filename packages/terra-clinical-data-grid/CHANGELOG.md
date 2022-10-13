@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed staircasing issue due to precision loss in IE.
+
 ## 2.37.0 - (July 12, 2022)
 
 * Fixed
