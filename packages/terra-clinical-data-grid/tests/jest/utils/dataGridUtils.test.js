@@ -114,6 +114,21 @@ describe('getTotalColumnWidth', () => {
   it('should return 0 if no columns are provided', () => {
     expect(getTotalColumnWidth()).toEqual(0);
   });
+
+  it('should round off total width to the next integer', () => {
+    const columns = [{
+      id: 'test1',
+      width: 10.04,
+    }, {
+      id: 'test2',
+      width: 20.06,
+    }, {
+      id: 'test3',
+      width: 30.08,
+    }];
+
+    expect(getTotalColumnWidth(columns)).toEqual(61);
+  });
 });
 
 describe('getPinnedColumns', () => {

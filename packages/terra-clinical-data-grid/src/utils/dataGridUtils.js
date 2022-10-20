@@ -54,7 +54,7 @@ const getTotalColumnWidth = (columns, defaultColumnWidth) => {
     return 0;
   }
 
-  return columns.reduce((totalWidth, column) => totalWidth + getWidthForColumn(column, defaultColumnWidth), 0);
+  return Math.ceil(columns.reduce((totalWidth, column) => totalWidth + getWidthForColumn(column, defaultColumnWidth), 0));
 };
 
 /**
