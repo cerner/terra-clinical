@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.38.0 - (October 27, 2022)
+
 * Fixed
   * Fixed staircasing issue due to precision loss in IE.
 
