@@ -260,6 +260,12 @@ class DataGrid extends React.Component {
         }
         : dataGridUtils.getFirstAndLastVisibleRowData(props.sections),
     };
+
+    /**
+     * Data Accessibility ID attribute name per data grid. This appends the unique grid ID to accessibility-id attribute name so that
+     * cells in the grid can be tabbed through sequencially without conflicts in case of multiple grids on a single page.
+     */
+    const accessibilityId = 'data-accessibility-id-' + props.id;
   }
 
   componentDidMount() {
@@ -443,7 +449,6 @@ class DataGrid extends React.Component {
       if (!activeElement) {
         return;
       }
-      const accessibilityId = 'data-accessibility-id-' + this.props.id
 
       if (dataGridUtils.matchesSelector(activeElement, '[${accessibilityId}]')) {
         const currentAccessibilityId = activeElement.getAttribute('${accessibilityId}');
