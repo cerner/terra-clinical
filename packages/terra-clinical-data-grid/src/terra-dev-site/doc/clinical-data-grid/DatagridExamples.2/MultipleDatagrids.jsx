@@ -78,129 +78,128 @@ class MultipleDatagrids extends React.Component {
     const theme = this.context;
 
     return (
-        <div>
-      <div className={cx('data-grid-basic')}>
-        <DataGrid
-          id="selections-example"
-          pinnedColumns={[
-            columns['Column-0'],
-            columns['Column-1']
-          ]}
-          overflowColumns={[
-            columns['Column-2'],
-            columns['Column-3']
-          ]}
-          sections={[
-            this.buildSection('Section-0', 'Section 0', 4),
-            this.buildSection('Section-1', 'Section 1', 4),
-          ]}
-          fill
-          onColumnSelect={(columnId) => {
-            const newColumns = {};
+      <div>
+        <div className={cx('data-grid-small')}>
+          <DataGrid
+            id="Grid-1"
+            pinnedColumns={[
+              columns['Column-0'],
+              columns['Column-1']
+            ]}
+            overflowColumns={[
+              columns['Column-2'],
+              columns['Column-3']
+            ]}
+            sections={[
+              this.buildSection('Grid-1-Section-0', 'Grid 1 Section 0', 4),
+              this.buildSection('Grid-1-Section-1', 'Grid 1 Section 1', 4),
+            ]}
+            fill
+            onColumnSelect={(columnId) => {
+              const newColumns = {};
 
-            const columnToSort = { ...this.state.columns[columnId] };
-            columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
-            newColumns[`${columnId}`] = columnToSort;
+              const columnToSort = { ...this.state.columns[columnId] };
+              columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
+              newColumns[`${columnId}`] = columnToSort;
 
-            if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
-              if (previouslySortedColumn) {
-                previouslySortedColumn.sortIndicator = undefined;
-                newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
+              if (columnId !== this.state.sortedColumnId) {
+                const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
+                if (previouslySortedColumn) {
+                  previouslySortedColumn.sortIndicator = undefined;
+                  newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
+                }
               }
-            }
 
-            this.setState(prevState => ({
-              columns: { ...prevState.columns, ...newColumns },
-              sortedColumnId: columnId,
-              sortedColumnDirection: columnToSort.sortIndicator,
-            }));
-          }}
-          onCellSelect={(sectionId, rowId, columnId) => {
-            this.setState({
-              selectedRow: undefined,
-              selectedCell: {
-                sectionId,
-                rowId,
-                columnId,
-              },
-            });
-          }}
-          hasSelectableRows
-          onRowSelect={(sectionId, rowId) => {
-            this.setState({
-              selectedCell: undefined,
-              selectedRow: {
-                sectionId,
-                rowId,
-              },
-            });
-          }}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
-        />
-      </div>
+              this.setState(prevState => ({
+                columns: { ...prevState.columns, ...newColumns },
+                sortedColumnId: columnId,
+                sortedColumnDirection: columnToSort.sortIndicator,
+              }));
+            }}
+            onCellSelect={(sectionId, rowId, columnId) => {
+              this.setState({
+                selectedRow: undefined,
+                selectedCell: {
+                  sectionId,
+                  rowId,
+                  columnId,
+                },
+              });
+            }}
+            hasSelectableRows
+            onRowSelect={(sectionId, rowId) => {
+              this.setState({
+                selectedCell: undefined,
+                selectedRow: {
+                  sectionId,
+                  rowId,
+                },
+              });
+            }}
+            rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
+          />
+        </div>
 
-      <div className={cx('data-grid-basic')}>
-        <DataGrid
-          id="selections-example"
-          pinnedColumns={[
-            columns['Column-0'],
-            columns['Column-1']
-          ]}
-          overflowColumns={[
-            columns['Column-2'],
-            columns['Column-3']
-          ]}
-          sections={[
-            this.buildSection('Section-0', 'Section 0', 4),
-            this.buildSection('Section-1', 'Section 1', 4),
-          ]}
-          fill
-          onColumnSelect={(columnId) => {
-            const newColumns = {};
+        <div className={cx('data-grid-basic')}>
+          <DataGrid
+            id="Grid-2"
+            pinnedColumns={[
+              columns['Column-0'],
+              columns['Column-1']
+            ]}
+            overflowColumns={[
+              columns['Column-2'],
+              columns['Column-3']
+            ]}
+            sections={[
+              this.buildSection('Grid-2-Section-0', 'Grid 2 Section 0', 4),
+              this.buildSection('Grid-2-Section-1', 'Grid 2 Section 1', 4),
+            ]}
+            fill
+            onColumnSelect={(columnId) => {
+              const newColumns = {};
 
-            const columnToSort = { ...this.state.columns[columnId] };
-            columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
-            newColumns[`${columnId}`] = columnToSort;
+              const columnToSort = { ...this.state.columns[columnId] };
+              columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
+              newColumns[`${columnId}`] = columnToSort;
 
-            if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
-              if (previouslySortedColumn) {
-                previouslySortedColumn.sortIndicator = undefined;
-                newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
+              if (columnId !== this.state.sortedColumnId) {
+                const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
+                if (previouslySortedColumn) {
+                  previouslySortedColumn.sortIndicator = undefined;
+                  newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
+                }
               }
-            }
 
-            this.setState(prevState => ({
-              columns: { ...prevState.columns, ...newColumns },
-              sortedColumnId: columnId,
-              sortedColumnDirection: columnToSort.sortIndicator,
-            }));
-          }}
-          onCellSelect={(sectionId, rowId, columnId) => {
-            this.setState({
-              selectedRow: undefined,
-              selectedCell: {
-                sectionId,
-                rowId,
-                columnId,
-              },
-            });
-          }}
-          hasSelectableRows
-          onRowSelect={(sectionId, rowId) => {
-            this.setState({
-              selectedCell: undefined,
-              selectedRow: {
-                sectionId,
-                rowId,
-              },
-            });
-          }}
-          rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
-        />
-      </div>
-      
+              this.setState(prevState => ({
+                columns: { ...prevState.columns, ...newColumns },
+                sortedColumnId: columnId,
+                sortedColumnDirection: columnToSort.sortIndicator,
+              }));
+            }}
+            onCellSelect={(sectionId, rowId, columnId) => {
+              this.setState({
+                selectedRow: undefined,
+                selectedCell: {
+                  sectionId,
+                  rowId,
+                  columnId,
+                },
+              });
+            }}
+            hasSelectableRows
+            onRowSelect={(sectionId, rowId) => {
+              this.setState({
+                selectedCell: undefined,
+                selectedRow: {
+                  sectionId,
+                  rowId,
+                },
+              });
+            }}
+            rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
+          />
+        </div>
       </div>
     );
   }
