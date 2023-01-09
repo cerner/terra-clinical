@@ -445,11 +445,16 @@ class DataGrid extends React.Component {
       }
 
       if (dataGridUtils.matchesSelector(activeElement, '[data-accessibility-id]')) {
+        // const currentDataGridId = activeElement.getAttribute('data-grid-id');
+        // const numOfDataGrids = document.querySelectorAll('data-grid-id');
+
         const currentAccessibilityId = activeElement.getAttribute('data-accessibility-id');
         const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
 
         if (nextAccessibilityId >= 0 && nextAccessibilityId < this.accessibilityStack.length) {
           const nextFocusElement = this.dataGridContainerRef.querySelector(`[data-accessibility-id="${nextAccessibilityId}"]`);
+          //const nextFocusElement = this.dataGridContainerRef.querySelector(`[data-grid-id="${currentDataGridId}"]`, `[data-accessibility-id="${nextAccessibilityId}"]`);
+
           if (nextFocusElement) {
             event.preventDefault();
             nextFocusElement.focus();
