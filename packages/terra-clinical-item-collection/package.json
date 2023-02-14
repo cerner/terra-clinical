@@ -32,7 +32,7 @@
     "terra-clinical-item-view": "^3.20.0",
     "terra-icon": "^3.0.0",
     "terra-list": "^4.26.0",
-    "terra-responsive-element": "^4.0.0",
+    "terra-responsive-element": "^5.36.0",
     "terra-table": "^3.3.0"
   },
   "scripts": {
