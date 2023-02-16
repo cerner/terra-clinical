@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Updated 
-  * Updated `terra-responsive-element` in package.json
+  * Updated `terra-responsive-element` to v5
 
 ## 4.29.0 - (July 21, 2021)
 

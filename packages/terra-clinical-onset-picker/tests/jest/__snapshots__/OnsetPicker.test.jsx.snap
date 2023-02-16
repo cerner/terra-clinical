@@ -27,10 +27,10 @@ exports[`correctly applies the theme context className 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError orion-fusion-theme"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -120,10 +120,10 @@ exports[`correctly applies the theme context className 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError orion-fusion-theme"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -229,10 +229,10 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -322,10 +322,10 @@ exports[`should render a default onset picker with specified onset date 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -431,10 +431,10 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -538,10 +538,10 @@ exports[`should render only the supplied precisions 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -631,10 +631,10 @@ exports[`should render only the supplied precisions 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -740,10 +740,10 @@ exports[`should render the same when onChange function is supplied 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -833,10 +833,10 @@ exports[`should render the same when onChange function is supplied 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -942,10 +942,10 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -1034,10 +1034,10 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -1127,10 +1127,10 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               class="error-icon-hidden"
             >
               <svg
-                aria-hidden="true"
                 class="tui-Icon icon IconError"
                 focusable="false"
                 height="1em"
+                role="presentation"
                 viewBox="0 0 48 48"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1174,10 +1174,10 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               class="error-icon-hidden"
             >
               <svg
-                aria-hidden="true"
                 class="tui-Icon icon IconError"
                 focusable="false"
                 height="1em"
+                role="presentation"
                 viewBox="0 0 48 48"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1282,10 +1282,10 @@ exports[`should render with non default inputs when supplied 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -1374,10 +1374,10 @@ exports[`should render with non default inputs when supplied 1`] = `
             class="error-icon-hidden"
           >
             <svg
-              aria-hidden="true"
               class="tui-Icon icon IconError"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -1467,10 +1467,10 @@ exports[`should render with non default inputs when supplied 1`] = `
               class="error-icon-hidden"
             >
               <svg
-                aria-hidden="true"
                 class="tui-Icon icon IconError"
                 focusable="false"
                 height="1em"
+                role="presentation"
                 viewBox="0 0 48 48"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
