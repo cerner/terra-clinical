@@ -10,7 +10,7 @@
 
 [![Cerner OSS](https://badgen.net/badge/Cerner/OSS/blue)](http://engineering.cerner.com/2014/01/cerner-and-open-source/)
 [![License](https://badgen.net/github/license/cerner/terra-clinical)](https://github.com/cerner/terra-clinical/blob/main/LICENSE)
-[![Build Status](https://badgen.net/travis/cerner/terra-clinical)](https://travis-ci.com/cerner/terra-clinical)
+[![Build Status](https://github.com/cerner/terra-clinical/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/cerner/terra-clinical/actions/workflows/ci-cd.yml)
 [![devDependencies status](https://badgen.net/david/dev/cerner/terra-clinical)](https://david-dm.org/cerner/terra-clinical?type=dev)
 [![lerna](https://badgen.net/badge/maintained%20with/lerna/cc00ff)](https://lerna.js.org/)
 
