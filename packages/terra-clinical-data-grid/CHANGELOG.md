@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated wdio screenshots.
+
 ## 2.38.0 - (October 27, 2022)
 
 * Fixed

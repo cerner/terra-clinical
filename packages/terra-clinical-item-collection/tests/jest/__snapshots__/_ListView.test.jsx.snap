@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render a ListView with a divided list 1`] = `
-<List
+<InjectIntl(List)
   data-terra-clinical-item-collection-list-view={true}
   dividerStyle="standard"
-  paddingStyle="none"
-  role="none"
 >
   <Item
     accessoryAlignment="alignCenter"
@@ -43,15 +41,13 @@ exports[`should render a ListView with a divided list 1`] = `
       textStyle="primary"
     />
   </Item>
-</List>
+</InjectIntl(List)>
 `;
 
 exports[`should render a ListView with children 1`] = `
-<List
+<InjectIntl(List)
   data-terra-clinical-item-collection-list-view={true}
   dividerStyle="none"
-  paddingStyle="none"
-  role="none"
 >
   <Item
     accessoryAlignment="alignCenter"
@@ -89,14 +85,12 @@ exports[`should render a ListView with children 1`] = `
       textStyle="primary"
     />
   </Item>
-</List>
+</InjectIntl(List)>
 `;
 
 exports[`should render a default ListView 1`] = `
-<List
+<InjectIntl(List)
   data-terra-clinical-item-collection-list-view={true}
   dividerStyle="none"
-  paddingStyle="none"
-  role="none"
 />
 `;
