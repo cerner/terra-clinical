@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import Header from '../../../Header';
-import styles from './ClinicalHeaderCommon.test.module.scss';
+import styles from './ClinicalHeaderCommontest.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +16,7 @@ const content = (
 export default () => (
   <Header
     startContent={content}
-    title="Header with content on the left"
+    text="Header with content on the left"
+    level={1}
   />
 );

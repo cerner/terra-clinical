@@ -6,9 +6,10 @@ const Subheader = () => (
   <div>
     <Header
       startContent={<Button text="Consult" />}
-      title="Dr. Carl"
+      text="Dr. Carl"
       endContent={<Button text="Information" />}
       isSubheader
+      level={3}
     />
   </div>
 );

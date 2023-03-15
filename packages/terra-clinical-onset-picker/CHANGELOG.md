@@ -18,7 +18,6 @@
 * Changed
   * Updated jest snapshots terra-icon A11y updatess.
 
-
 ## 4.31.1 - (April 19, 2022)
 
 * Changed

@@ -2,14 +2,15 @@ import React from 'react';
 import Button from 'terra-button';
 import Header from 'terra-clinical-header';
 
-const TitleHeader = () => (
+const ContenteHeader = () => (
   <div>
     <Header
-      startContent={<Button text="Back" />}
-      title="Patient Information"
-      endContent={<Button text="Prescription" />}
+      startContent={<Button text="Button" />}
+      text="Default Header"
+      endContent={<Button text="Button" />}
+      level={3}
     />
   </div>
 );
 
-export default TitleHeader;
+export default ContenteHeader;

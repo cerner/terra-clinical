@@ -78,7 +78,27 @@ exports[`should render a header with content on the right 1`] = `
 </header>
 `;
 
-exports[`should render a header with title only 1`] = `
+exports[`should render a header with no text from level not set 1`] = `
+<header
+  class="flex-header"
+>
+  <div
+    class="flex-fill"
+  >
+    <div
+      class="title-container"
+    >
+      <h1
+        class="title"
+      >
+        This title should not render without a provided level
+      </h1>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`should render a header with title and heading level 1`] = `
 <header
   class="flex-header"
 >
@@ -132,7 +152,7 @@ exports[`should render a subheader with all content 1`] = `
 </header>
 `;
 
-exports[`should render a subheader with title only 1`] = `
+exports[`should render a subheader with title and heading level 1`] = `
 <header
   class="flex-header subheader"
 >

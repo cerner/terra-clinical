@@ -52,4 +52,22 @@ Terra.describeViewports('Clinical header', ['tiny', 'small', 'medium', 'large', 
 
     Terra.validates.element('no title with content on right');
   });
+
+  it('Header used to label different regions', () => {
+    browser.url('/raw/tests/terra-clinical-header/clinical-header/labeling-regions');
+
+    Terra.validates.element('labeling regions');
+  });
+
+  it('Header with long title and children', () => {
+    browser.url('/raw/tests/terra-clinical-header/clinical-header/long-title-and-children-header');
+
+    Terra.validates.element('long title with children');
+  });
+
+  it('Header with no level and no title', () => {
+    browser.url('/raw/tests/terra-clinical-header/clinical-header/no-level-header');
+
+    Terra.validates.element('no level and no title');
+  });
 });
