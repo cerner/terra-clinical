@@ -12,6 +12,10 @@ const rowDataShape = PropTypes.shape({
    */
   ariaLabel: PropTypes.string,
   /**
+   * A component to render within the header cell as the header.
+   */
+  headerCell: PropTypes.node,
+  /**
    * A boolean to prevent the row from being interactive (selectable + selected), hides the column highlighting style in the row when `columnHighlightId` is valued,
    * and applies role="presentation" and aria-hidden="true" to hide from screen readers. Used for decorative rows like custom dividers.
    */

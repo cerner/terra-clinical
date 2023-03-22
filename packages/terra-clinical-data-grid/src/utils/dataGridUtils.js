@@ -62,9 +62,16 @@ const getTotalColumnWidth = (columns, defaultColumnWidth) => {
  * @param {Object} props Object conforming to DataGrid's prop types.
  */
 const getPinnedColumns = (props) => {
-  const { pinnedColumns, hasSelectableRows } = props;
+  const { pinnedColumns, hasSelectableRows, hasRowHeaders, rowHeaderWidth } = props;
 
   let updatedPinnedColumns = pinnedColumns;
+  if (hasRowHeaders) {
+    let rowHeaderColumn = {
+      id: 'DataGrid-rowHeaderColumn',
+      width: rowHeaderWidth,
+    };
+    updatedPinnedColumns = [rowHeaderColumn].concat(updatedPinnedColumns);
+  }
   if (hasSelectableRows) {
     updatedPinnedColumns = [ROW_SELECTION_COLUMN].concat(updatedPinnedColumns);
   }

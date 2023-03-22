@@ -79,6 +79,15 @@ const propTypes = {
    */
   headerHeight: PropTypes.string,
   /**
+   * Boolean indicating whether or not the DataGrid has Row headers cells. An additional column will be
+   * rendered to allow for these Cells to occur.
+   */
+  hasRowHeaders: PropTypes.bool,
+  /**
+   * A number (in px) specifying the width of the row header column. If not provided, the DataGrid's default column width will be used.
+   */
+  rowHeaderWidth: PropTypes.number,
+  /**
    * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
@@ -961,6 +970,30 @@ class DataGrid extends React.Component {
     );
   }
 
+  renderRowHeaderCell(section, row, column, isFirstRow, isLastRow) {
+    const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
+    const cellKey = `${section.id}-${row.id}-${column.id}`;
+
+    return (
+      <Cell
+        key={cellKey}
+        sectionId={section.id}
+        rowId={row.id}
+        columnId={column.id}
+        width={`${dataGridUtils.getWidthForColumn(column, defaultColumnWidth)}px`}
+        onSelect={onCellSelect}
+        isSelectable={row.isSelectable && !row.isDecorative}
+        isSelected={row.isSelected && !row.isDecorative}
+        selectableRefCallback={(ref) => { this.cellRefs[cellKey] = ref; }}
+        isColumnHighlighted={column.id === columnHighlightId}
+        isFirstRow={isFirstRow}
+        isLastRow={isLastRow}
+      >
+        {row.headerCell}
+      </Cell>
+    );
+  }
+
   renderCell(section, row, column, isFirstRow, isLastRow) {
     const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
@@ -1020,6 +1053,10 @@ class DataGrid extends React.Component {
         {columns.map((column) => {
           if (column.id === 'DataGrid-rowSelectionColumn') {
             return this.renderRowSelectionCell(section, row, column);
+          }
+
+          if (column.id === 'DataGrid-rowHeaderColumn') {
+            return this.renderRowHeaderCell(section, row, column, isFirstRow, isLastRow);
           }
 
           if (column.id === 'DataGrid-voidColumn') {
@@ -1120,6 +1157,8 @@ class DataGrid extends React.Component {
       headerHeight,
       hasSelectableRows,
       onRowSelect,
+      hasRowHeaders,
+      rowHeaderWidth,
       hasResizableColumns,
       defaultColumnWidth,
       fill,
