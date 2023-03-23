@@ -118,7 +118,7 @@ npm run test
 7. To terminate a dev container:
     - Use command line or Rancher/Docker Desktop OR
     - Using Visual Studio Code
-      -  Select the Remote Explorer icon in the Activity Bar or View -> Command Palette and run **Remote Explorer: Focus on Containers View**
+      - Select the Remote Explorer icon in the Activity Bar or View -> Command Palette and run **Remote Explorer: Focus on Containers View**
       - Locate the **terra-clinical_devcontainer** or currently running dev container under "Dev Containers"
       - Right click and select **Stop Container** and close the workspace
         - You can also select **Rebuild Container** to restart the dev container
