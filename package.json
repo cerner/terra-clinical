@@ -65,11 +65,13 @@
     "start-prod": "webpack serve --env disableHotReloading --mode=production --env enableAggregateThemes",
     "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run jest && npm run wdio",
+    "test:docker": "npm run lint && npm run jest && npm run wdio:docker",
     "update-package-readme": "node scripts/root-readme-updater/index.js",
     "wdio-default": "terra wdio",
     "wdio-lowlight": "terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "terra wdio --themes orion-fusion-theme",
-    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme"
+    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
+    "wdio:docker": "terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -89,6 +91,9 @@
     "@cerner/terra-functional-testing": "^3.3.0",
     "@cerner/terra-open-source-scripts": "^1.0.1",
     "@cerner/webpack-config-terra": "^3.0.1",
+    "@cerner/terra-functional-testing": "^3.0.0",
+    "@cerner/terra-open-source-scripts": "^1.0.1",
+    "@cerner/webpack-config-terra": "^3.0.0",
     "babel-eslint": "^10.0.1",
     "core-js": "^3.1.3",
     "danger": "^11.2.3",

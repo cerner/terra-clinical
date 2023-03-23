@@ -4,6 +4,10 @@
 
 * Updated 
   * Updated `terra-responsive-element` to v5
+  
+* Changed
+  * Updated wdio screenshots.
+  * Updated jest snapshots
 
 ## 4.29.0 - (July 21, 2021)
 
