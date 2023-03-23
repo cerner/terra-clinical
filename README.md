@@ -119,7 +119,7 @@ npm run test
     - Use command line or Rancher/Docker Desktop OR
     - Using Visual Studio Code
       -  Select the Remote Explorer icon in the Activity Bar or View -> Command Palette and run **Remote Explorer: Focus on Containers View**
-      - Locate the **terra-core_devcontainer** or currently running dev container under "Dev Containers"
+      - Locate the **terra-clinical_devcontainer** or currently running dev container under "Dev Containers"
       - Right click and select **Stop Container** and close the workspace
         - You can also select **Rebuild Container** to restart the dev container
 8. To reopen a dev container:
@@ -130,7 +130,7 @@ npm run test
     - Isolated dev container volume (for Option 2)
       - Open Visual Studio Code
       - Use the Remote Explorer icon in the Activity Bar or View -> Command Palette and run **Remote Explorer: Focus on Containers View** to view containers
-      - Locate the **terra-core_devcontainer** under "Dev Containers"
+      - Locate the **terra-clinical_devcontainer** under "Dev Containers"
       - Hover over the dev container and click the Folder icon labelled **Open Folder in Container** or by right clicking and selecting **Open Folder in Container**
 
 
