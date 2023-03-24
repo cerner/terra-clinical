@@ -17,11 +17,11 @@ class DatagridWithNoPinnedColumns extends React.Component {
   static buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
     const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
       id: `${sectionData.section.id}-Row${rowIndex}`,
-      height: (rowIndex+1) % 5 === 0 ? '7rem' : undefined,
+      height: (rowIndex + 1) % 5 === 0 ? '7rem' : undefined,
       cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
         columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
-        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />
-      }))
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
+      })),
     }));
 
     return rows;
@@ -30,18 +30,18 @@ class DatagridWithNoPinnedColumns extends React.Component {
   static buildSection(sectionData, numberOfRows) {
     return {
       id: sectionData.section.id,
-      rows: DatagridWithNoPinnedColumns.buildRows(sectionData, numColumnsDisplayed, numberOfRows)
+      rows: DatagridWithNoPinnedColumns.buildRows(sectionData, numColumnsDisplayed, numberOfRows),
     };
   }
 
-  static buildColumns(data, start, end){
-    let col = (new Array(end-start));
-    for (let columnIndex = start, currentElementIndex=0; columnIndex <= end; columnIndex++, currentElementIndex++) { 
-        col[currentElementIndex] = {
-          id: data.allColumnIds[columnIndex].id,
-          text: data.allColumnIds[columnIndex].displayName,
-          ...(columnIndex==0) && {width:firstColumnWidth}
-        }
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      col[currentElementIndex] = {
+        id: data.allColumnIds[columnIndex].id,
+        text: data.allColumnIds[columnIndex].displayName,
+        ...(columnIndex === 0) && { width: firstColumnWidth },
+      };
     }
     return col;
   }
@@ -53,9 +53,9 @@ class DatagridWithNoPinnedColumns extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="no-pinning-example"
-          overflowColumns={DatagridWithNoPinnedColumns.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed-1)}
+          overflowColumns={DatagridWithNoPinnedColumns.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
           sections={[
-            DatagridWithNoPinnedColumns.buildSection(gridDataJSON.sections[0], numRowsPerSection)
+            DatagridWithNoPinnedColumns.buildSection(gridDataJSON.sections[0], numRowsPerSection),
           ]}
           rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
           defaultColumnWidth={defaultColumnWidth}

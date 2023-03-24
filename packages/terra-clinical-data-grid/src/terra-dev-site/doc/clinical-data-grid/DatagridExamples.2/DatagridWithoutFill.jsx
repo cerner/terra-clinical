@@ -9,6 +9,21 @@ const pinnedColumnsCount = 3;
 const numRowsPerSection = 15;
 
 class DatagridWithoutFill extends React.Component {
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        ...(columnIndex === 1 ? { width: 250 } : { width: 200 }),
+        isResizable: true,
+        isSelectable: true,
+      };
+    }
+    return col;
+  }
+
   constructor(props) {
     super(props);
 
@@ -18,25 +33,10 @@ class DatagridWithoutFill extends React.Component {
     this.state = {
       selectedRow: undefined,
       selectedCell: undefined,
-      columns: this.buildColumns(gridDataJSON, 0, pinnedColumnsCount-1).concat(this.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed-1)),
+      columns: this.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(this.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)),
       sortedColumnId: gridDataJSON.allColumnIds[0].id,
       sortedColumnDirection: 'ascending',
     };
-  }
-
-  buildColumns(data, start, end){
-    let col = (new Array(end-start));
-    for (let columnIndex = start, currentElementIndex=0; columnIndex <= end; columnIndex++, currentElementIndex++) { 
-      let columnHeaderInfo = data.allColumnIds[columnIndex];
-      col[currentElementIndex] = {
-              id: columnHeaderInfo.id,
-              text: columnHeaderInfo.displayName,
-             ...(columnIndex == 1 ? {width:250}: {width:200}),
-              isResizable: true,
-              isSelectable: true,
-            }
-    }
-    return col;
   }
 
   buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
@@ -54,7 +54,7 @@ class DatagridWithoutFill extends React.Component {
 
     return this.state.sortedColumnId && this.state.sortedColumnDirection === 'ascending' ? rows : rows.reverse();
   }
-  
+
   buildSection(sectionData, numberOfRows) {
     return {
       id: sectionData.section.id,
@@ -75,18 +75,18 @@ class DatagridWithoutFill extends React.Component {
         pinnedColumns={columns.slice(0, pinnedColumnsCount)}
         overflowColumns={columns.slice(pinnedColumnsCount, numColumnsDisplayed)}
         sections={[
-            this.buildSection(gridDataJSON.sections[0], numRowsPerSection),
-            this.buildSection(gridDataJSON.sections[1], numRowsPerSection)
+          DatagridWithoutFill.buildSection(gridDataJSON.sections[0], numRowsPerSection),
+          DatagridWithoutFill.buildSection(gridDataJSON.sections[1], numRowsPerSection),
         ]}
         onColumnSelect={(columnId) => {
           const newColumns = {};
 
-          const columnToSort = {...columns.find(element => element.id === columnId)};
+          const columnToSort = { ...columns.find(element => element.id === columnId) };
           columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
           newColumns[`${columnId}`] = columnToSort;
 
           if (columnId !== this.state.sortedColumnId) {
-            const previouslySortedColumn = {...columns.find(element => element.id === this.state.sortedColumnId)};
+            const previouslySortedColumn = { ...columns.find(element => element.id === this.state.sortedColumnId) };
             if (previouslySortedColumn) {
               previouslySortedColumn.sortIndicator = undefined;
               newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -94,7 +94,7 @@ class DatagridWithoutFill extends React.Component {
           }
 
           this.setState(prevState => ({
-            columns: [...prevState.columns].map(val => newColumns[val.id] ? newColumns[val.id]: val),
+            columns: [...prevState.columns].map(val => (newColumns[val.id] ? newColumns[val.id] : val)),
             sortedColumnId: columnId,
             sortedColumnDirection: columnToSort.sortIndicator,
           }));
@@ -121,12 +121,12 @@ class DatagridWithoutFill extends React.Component {
         }}
         hasResizableColumns
         onRequestColumnResize={(columnId, width) => {
-          const columnToResize = {...columns.find(element => element.id === columnId)}
+          const columnToResize = { ...columns.find(element => element.id === columnId) };
           columnToResize.width = Math.max(width, 50);
           this.setState(prevState => (
-            { columns: [...prevState.columns].map(val => columnToResize.id === val.id ? columnToResize: val) }
+            { columns: [...prevState.columns].map(val => (columnToResize.id === val.id ? columnToResize : val)) }
           ));
-        }}        
+        }}
         onRequestSectionCollapse={(sectionId) => {
           if (this.state.collapsedSectionId === sectionId) {
             this.setState({ collapsedSectionId: undefined });

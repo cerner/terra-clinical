@@ -9,6 +9,21 @@ import gridDataJSON from './Datagrid.json';
 const cx = classNames.bind(styles);
 
 class DatagridWithColumnHighlight extends React.Component {
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        width: 200.04,
+        isSelectable: true,
+        ...(columnIndex === 0) && { sortIndicator: 'ascending' },
+      };
+    }
+    return col;
+  }
+
   constructor(props) {
     super(props);
 
@@ -19,7 +34,7 @@ class DatagridWithColumnHighlight extends React.Component {
       selectedRow: undefined,
       selectedCell: undefined,
       collapsedSectionList: [],
-      columns: this.buildColumns(gridDataJSON, 0, 2).concat(this.buildColumns(gridDataJSON, 3, 7)),
+      columns: DatagridWithColumnHighlight.buildColumns(gridDataJSON, 0, 2).concat(DatagridWithColumnHighlight.buildColumns(gridDataJSON, 3, 7)),
       sortedColumnId: gridDataJSON.allColumnIds[0].id,
       sortedColumnDirection: 'ascending',
     };
@@ -51,21 +66,6 @@ class DatagridWithColumnHighlight extends React.Component {
     };
   }
 
-  buildColumns(data, start, end){
-    let col = (new Array(end-start));
-    for (let columnIndex = start, currentElementIndex=0; columnIndex <= end; columnIndex++, currentElementIndex++) { 
-      let columnHeaderInfo = data.allColumnIds[columnIndex];
-      col[currentElementIndex] = {
-              id: columnHeaderInfo.id,
-              text: columnHeaderInfo.displayName,
-              width:200.04,
-              isSelectable: true,
-              ...(columnIndex == 0) && {sortIndicator: 'ascending'}
-            }
-    }
-    return col;
-  }
-
   render() {
     const { columns } = this.state;
     const theme = this.context;
@@ -75,22 +75,22 @@ class DatagridWithColumnHighlight extends React.Component {
         <DataGrid
           id="selections-example"
           columnHighlightId={columns[4].id}
-          pinnedColumns={columns.slice(0,3)}
-          overflowColumns={columns.slice(3,8)}
+          pinnedColumns={columns.slice(0, 3)}
+          overflowColumns={columns.slice(3, 8)}
           sections={[
             this.buildSection(gridDataJSON.sections[0], 15),
-            this.buildSection(gridDataJSON.sections[1], 15)
+            this.buildSection(gridDataJSON.sections[1], 15),
           ]}
           fill
           onColumnSelect={(columnId) => {
             const newColumns = {};
 
-            const columnToSort = {...columns.find(element => element.id == columnId)}
+            const columnToSort = { ...columns.find(element => element.id === columnId) };
             columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
             newColumns[`${columnId}`] = columnToSort;
 
             if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = {...columns.find(element => element.id == this.state.sortedColumnId)};
+              const previouslySortedColumn = { ...columns.find(element => element.id === this.state.sortedColumnId) };
               if (previouslySortedColumn) {
                 previouslySortedColumn.sortIndicator = undefined;
                 newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -98,7 +98,7 @@ class DatagridWithColumnHighlight extends React.Component {
             }
 
             this.setState(prevState => ({
-              columns: [...prevState.columns].map(val => newColumns[val.id] ? newColumns[val.id]: val),
+              columns: [...prevState.columns].map(val => (newColumns[val.id] ? newColumns[val.id] : val)),
               sortedColumnId: columnId,
               sortedColumnDirection: columnToSort.sortIndicator,
             }));

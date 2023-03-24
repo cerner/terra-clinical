@@ -13,6 +13,21 @@ const numColumnsDisplayed = 8;
 const numberOfRowsPerSectionToDisplay = 15;
 
 class DatagridWithSelections extends React.Component {
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        width: 200,
+        isSelectable: true,
+        ...(columnIndex === 0) && { sortIndicator: 'ascending' },
+      };
+    }
+    return col;
+  }
+
   constructor(props) {
     super(props);
 
@@ -22,7 +37,7 @@ class DatagridWithSelections extends React.Component {
     this.state = {
       selectedRow: undefined,
       selectedCell: undefined,
-      columns: this.buildColumns(gridDataJSON, 0, pinnedColumnsCount-1).concat(this.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed)),
+      columns: this.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(this.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed)),
       sortedColumnId: gridDataJSON.allColumnIds[0].id,
       sortedColumnDirection: 'ascending',
     };
@@ -52,21 +67,6 @@ class DatagridWithSelections extends React.Component {
     };
   }
 
-  buildColumns(data, start, end){
-    let col = (new Array(end-start));
-    for (let columnIndex = start, currentElementIndex=0; columnIndex <= end; columnIndex++, currentElementIndex++) { 
-      let columnHeaderInfo = data.allColumnIds[columnIndex];
-      col[currentElementIndex] = {
-              id: columnHeaderInfo.id,
-              text: columnHeaderInfo.displayName,
-              width:200,
-              isSelectable: true,
-              ...(columnIndex == 0) && {sortIndicator: 'ascending'}
-            }
-    }
-    return col;
-  }
-
   render() {
     const { columns } = this.state;
     const theme = this.context;
@@ -74,23 +74,22 @@ class DatagridWithSelections extends React.Component {
     return (
       <div className={cx('data-grid-basic')}>
         <DataGrid
-          id="selections-example"          
+          id="selections-example"
           pinnedColumns={columns.slice(0, pinnedColumnsCount)}
           overflowColumns={columns.slice(3, numColumnsDisplayed)}
           sections={[
             this.buildSection(gridDataJSON.sections[0], numberOfRowsPerSectionToDisplay),
-            this.buildSection(gridDataJSON.sections[1], numberOfRowsPerSectionToDisplay)
+            this.buildSection(gridDataJSON.sections[1], numberOfRowsPerSectionToDisplay),
           ]}
           fill
           onColumnSelect={(columnId) => {
             const newColumns = {};
-            
-            const columnToSort = {...columns.find(element => element.id === columnId)};
+            const columnToSort = { ...columns.find(element => element.id === columnId) };
             columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
             newColumns[`${columnId}`] = columnToSort;
 
             if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = {...columns.find(element => element.id === this.state.sortedColumnId)};
+              const previouslySortedColumn = { ...columns.find(element => element.id === this.state.sortedColumnId) };
               if (previouslySortedColumn) {
                 previouslySortedColumn.sortIndicator = undefined;
                 newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -98,7 +97,7 @@ class DatagridWithSelections extends React.Component {
             }
 
             this.setState(prevState => ({
-              columns: [...prevState.columns].map(val => newColumns[val.id] ? newColumns[val.id]: val),
+              columns: [...prevState.columns].map(val => (newColumns[val.id] ? newColumns[val.id] : val)),
               sortedColumnId: columnId,
               sortedColumnDirection: columnToSort.sortIndicator,
             }));

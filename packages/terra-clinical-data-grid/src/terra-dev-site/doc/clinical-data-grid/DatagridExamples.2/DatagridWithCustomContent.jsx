@@ -22,33 +22,32 @@ class DatagridWithCustomContent extends React.Component {
             displays={[
               <ItemView.Display isTruncated text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
               <ItemView.Display isTruncated text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent2} />,
-              <ItemView.Display isTruncated {...(sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent2 == '' ? {}: {text: sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent3})} />,
+              <ItemView.Display isTruncated {...(sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent2 === '' ? {} : { text: sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent3 })} />,
             ]}
             className={cx('data-grid-row-style')}
           />
-        )
+        ),
       })),
     }));
-    
     return rows;
   }
 
   static buildSection(sectionData, numberOfRows) {
     return {
       id: sectionData.section.id,
-      rows: DatagridWithCustomContent.buildRows(sectionData, numColumnsDisplayed, numberOfRows)
+      rows: DatagridWithCustomContent.buildRows(sectionData, numColumnsDisplayed, numberOfRows),
     };
   }
 
-  static buildColumns(data, start, end){
-    let col = (new Array(end-start));
-    for (let columnIndex = start, currentElementIndex=0; columnIndex <= end; columnIndex++, currentElementIndex++) { 
-      let columnHeaderInfo = data.allColumnIds[columnIndex];
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
       col[currentElementIndex] = {
-             id: columnHeaderInfo.id,
-             width:200,
-             component: (<CustomHeaderCellLayout primaryText={columnHeaderInfo.displayName} secondaryText={gridDataJSON.secondayColumnHeadings[columnIndex]} />)
-            }
+        id: columnHeaderInfo.id,
+        width: 200,
+        component: (<CustomHeaderCellLayout primaryText={columnHeaderInfo.displayName} secondaryText={gridDataJSON.secondayColumnHeadings[columnIndex]} />),
+      };
     }
     return col;
   }
@@ -58,10 +57,10 @@ class DatagridWithCustomContent extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="basic-example"
-          pinnedColumns={DatagridWithCustomContent.buildColumns(gridDataJSON, 0, pinnedColumnsCount-1)}
-          overflowColumns={DatagridWithCustomContent.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed-1)}
+          pinnedColumns={DatagridWithCustomContent.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1)}
+          overflowColumns={DatagridWithCustomContent.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
           sections={[
-            DatagridWithCustomContent.buildSection(gridDataJSON.sections[0], numRowsPerSection)
+            DatagridWithCustomContent.buildSection(gridDataJSON.sections[0], numRowsPerSection),
           ]}
           rowHeight="5rem"
           headerHeight="4rem"
