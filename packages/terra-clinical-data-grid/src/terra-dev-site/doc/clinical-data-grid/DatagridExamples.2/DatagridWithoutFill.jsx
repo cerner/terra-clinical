@@ -33,7 +33,7 @@ class DatagridWithoutFill extends React.Component {
     this.state = {
       selectedRow: undefined,
       selectedCell: undefined,
-      columns: this.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(this.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)),
+      columns: DatagridWithoutFill.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(DatagridWithoutFill.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)),
       sortedColumnId: gridDataJSON.allColumnIds[0].id,
       sortedColumnDirection: 'ascending',
     };
@@ -75,8 +75,8 @@ class DatagridWithoutFill extends React.Component {
         pinnedColumns={columns.slice(0, pinnedColumnsCount)}
         overflowColumns={columns.slice(pinnedColumnsCount, numColumnsDisplayed)}
         sections={[
-          DatagridWithoutFill.buildSection(gridDataJSON.sections[0], numRowsPerSection),
-          DatagridWithoutFill.buildSection(gridDataJSON.sections[1], numRowsPerSection),
+          this.buildSection(gridDataJSON.sections[0], numRowsPerSection),
+          this.buildSection(gridDataJSON.sections[1], numRowsPerSection),
         ]}
         onColumnSelect={(columnId) => {
           const newColumns = {};

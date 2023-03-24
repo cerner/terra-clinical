@@ -37,7 +37,7 @@ class DatagridWithSelections extends React.Component {
     this.state = {
       selectedRow: undefined,
       selectedCell: undefined,
-      columns: this.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(this.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed)),
+      columns: DatagridWithSelections.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(DatagridWithSelections.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed)),
       sortedColumnId: gridDataJSON.allColumnIds[0].id,
       sortedColumnDirection: 'ascending',
     };
