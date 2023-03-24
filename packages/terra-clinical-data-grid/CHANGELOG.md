@@ -4,6 +4,7 @@
 
 * Changed
   * Updated wdio screenshots.
+  * Updated the examples for clinical-data-grid.
 
 ## 2.38.0 - (October 27, 2022)
 
