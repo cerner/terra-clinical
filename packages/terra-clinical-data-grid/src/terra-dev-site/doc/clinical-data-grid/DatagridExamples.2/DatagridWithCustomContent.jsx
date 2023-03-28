@@ -4,111 +4,52 @@ import ItemView from 'terra-clinical-item-view';
 import classNames from 'classnames/bind';
 import CustomHeaderCellLayout from './CustomHeaderCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
-const pinnedColumns = [
-  {
-    id: 'Column-0',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 0" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-1',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 1" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-2',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 2" secondaryText="Custom Header Cell" />
-    ),
-  },
-];
-
-const overflowColumns = [
-  {
-    id: 'Column-3',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 3" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-4',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 4" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-5',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 5" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-6',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 6" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-7',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 7" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-8',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 8" secondaryText="Custom Header Cell" />
-    ),
-  },
-  {
-    id: 'Column-9',
-    width: 200,
-    component: (
-      <CustomHeaderCellLayout primaryText="Column 9" secondaryText="Custom Header Cell" />
-    ),
-  },
-];
+const numColumnsDisplayed = 10;
+const pinnedColumnsCount = 3;
+const numRowsPerSection = 15;
 
 class DatagridWithCustomContent extends React.Component {
-  static buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `${sectionId}-Row${rowIndex}`,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
+  static buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
+    const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex}`,
+      cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
         component: (
           <ItemView
             displays={[
-              <ItemView.Display isTruncated text={`Row-${rowIndex}, ${columnKey}`} />,
-              <ItemView.Display isTruncated text="Item View" />,
-              <ItemView.Display isTruncated text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae." />,
+              <ItemView.Display isTruncated text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
+              <ItemView.Display isTruncated text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent2} />,
+              <ItemView.Display isTruncated {...(sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent2 === '' ? {} : { text: sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent3 })} />,
             ]}
             className={cx('data-grid-row-style')}
           />
         ),
       })),
     }));
-
     return rows;
   }
 
-  static buildSection(sectionId, numberOfRows) {
+  static buildSection(sectionData, numberOfRows) {
     return {
-      id: sectionId,
-      rows: DatagridWithCustomContent.buildRows(sectionId, numberOfRows),
+      id: sectionData.section.id,
+      rows: DatagridWithCustomContent.buildRows(sectionData, numColumnsDisplayed, numberOfRows),
     };
+  }
+
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        width: 200,
+        component: (<CustomHeaderCellLayout primaryText={columnHeaderInfo.displayName} secondaryText={gridDataJSON.secondayColumnHeadings[columnIndex]} />),
+      };
+    }
+    return col;
   }
 
   render() {
@@ -116,10 +57,10 @@ class DatagridWithCustomContent extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="basic-example"
-          pinnedColumns={pinnedColumns}
-          overflowColumns={overflowColumns}
+          pinnedColumns={DatagridWithCustomContent.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1)}
+          overflowColumns={DatagridWithCustomContent.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
           sections={[
-            DatagridWithCustomContent.buildSection('section_0', 30),
+            DatagridWithCustomContent.buildSection(gridDataJSON.sections[0], numRowsPerSection),
           ]}
           rowHeight="5rem"
           headerHeight="4rem"

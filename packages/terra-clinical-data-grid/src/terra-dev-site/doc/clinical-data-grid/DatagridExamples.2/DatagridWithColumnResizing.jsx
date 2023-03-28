@@ -4,90 +4,52 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
+const numColumnsDisplayed = 9;
+const pinnedColumnsCount = 3;
+const numRowsPerSection = 15;
 
 class DatagridWithColumnResizing extends React.Component {
-  static buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `Row-${rowIndex}`,
-      cells: ((new Array(9).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
+  static buildRows(sectionData, numberOfRowsToDisplay) {
+    const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex}`,
+      cells: (new Array(numColumnsDisplayed).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
       })),
     }));
 
     return rows;
   }
 
-  static buildSection(sectionId, sectionName, numberOfRows) {
+  static buildSection(sectionData, numberOfRows) {
     return {
-      id: sectionId,
-      text: sectionName,
-      rows: DatagridWithColumnResizing.buildRows(sectionId, numberOfRows),
+      id: sectionData.section.id,
+      text: sectionData.section.text,
+      rows: DatagridWithColumnResizing.buildRows(sectionData, numberOfRows),
     };
+  }
+
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnIndex !== 1 ? columnHeaderInfo.displayName : `${columnHeaderInfo.displayName} - Not resizable`,
+        width: 200,
+        ...(columnIndex !== 1) && { isResizable: true }, // The second column is not resizable in this example.
+      };
+    }
+    return col;
   }
 
   constructor(props) {
     super(props);
-
     this.state = {
-      columns: {
-        'Column-0': {
-          id: 'Column-0',
-          width: 200,
-          text: 'Column 0',
-          isResizable: true,
-        },
-        'Column-1': {
-          id: 'Column-1',
-          width: 250,
-          text: 'Column 1 (Not Resizable)',
-          isResizable: false,
-        },
-        'Column-2': {
-          id: 'Column-2',
-          width: 200,
-          text: 'Column 2',
-          isResizable: true,
-        },
-        'Column-3': {
-          id: 'Column-3',
-          width: 200,
-          text: 'Column 3',
-          isResizable: true,
-        },
-        'Column-4': {
-          id: 'Column-4',
-          width: 200,
-          text: 'Column 4',
-          isResizable: true,
-        },
-        'Column-5': {
-          id: 'Column-5',
-          width: 200,
-          text: 'Column 5',
-          isResizable: true,
-        },
-        'Column-6': {
-          id: 'Column-6',
-          width: 200,
-          text: 'Column 6',
-          isResizable: true,
-        },
-        'Column-7': {
-          id: 'Column-7',
-          width: 200,
-          text: 'Column 7',
-          isResizable: true,
-        },
-        'Column-8': {
-          id: 'Column-8',
-          width: 200,
-          text: 'Column 8',
-          isResizable: true,
-        },
-      },
+      columns: DatagridWithColumnResizing.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(DatagridWithColumnResizing.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)),
     };
   }
 
@@ -99,30 +61,19 @@ class DatagridWithColumnResizing extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="column-resize-example"
-          pinnedColumns={[
-            columns['Column-0'],
-            columns['Column-1'],
-            columns['Column-2'],
-          ]}
-          overflowColumns={[
-            columns['Column-3'],
-            columns['Column-4'],
-            columns['Column-5'],
-            columns['Column-6'],
-            columns['Column-7'],
-            columns['Column-8'],
-          ]}
+          pinnedColumns={columns.slice(0, pinnedColumnsCount)}
+          overflowColumns={columns.slice(pinnedColumnsCount, numColumnsDisplayed)}
           sections={[
-            DatagridWithColumnResizing.buildSection('Section-0', 'Section 0', 15),
-            DatagridWithColumnResizing.buildSection('Section-1', 'Section 1', 15),
+            DatagridWithColumnResizing.buildSection(gridDataJSON.sections[0], numRowsPerSection),
+            DatagridWithColumnResizing.buildSection(gridDataJSON.sections[1], numRowsPerSection),
           ]}
           hasResizableColumns
           fill
           onRequestColumnResize={(columnId, width) => {
-            const columnToUpdate = { ...this.state.columns[columnId] };
+            const columnToUpdate = { ...columns.find(element => element.id === columnId) };
             columnToUpdate.width = Math.max(width, 50);
             this.setState(prevState => (
-              { columns: { ...prevState.columns, [`${columnId}`]: columnToUpdate } }
+              { columns: [...prevState.columns].map(val => (columnToUpdate.id === val.id ? columnToUpdate : val)) }
             ));
           }}
           rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}

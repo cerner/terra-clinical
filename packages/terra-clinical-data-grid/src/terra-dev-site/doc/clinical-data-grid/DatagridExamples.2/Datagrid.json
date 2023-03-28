@@ -1,0 +1,1096 @@
+{
+  "allColumnIds": [
+    { "id": "Column-0", "displayName": " Vitals"},
+    { "id": "Column-1", "displayName": "March 16" },
+    { "id": "Column-2", "displayName": "March 17" },
+    { "id": "Column-3", "displayName": "March 18" },
+    { "id": "Column-4", "displayName": "March 19" },
+    { "id": "Column-5", "displayName": "March 20" },
+    { "id": "Column-6", "displayName": "March 21" },
+    { "id": "Column-7", "displayName": "March 22" },
+    { "id": "Column-8", "displayName": "March 23" },
+    { "id": "Column-9", "displayName": "March 24" }
+  ],
+  "secondayColumnHeadings": ["Assessment", "Sample 1", "Sample 2", "Sample 3", "Sample 4", "Sample 5", "Sample 6", "Sample 7", "Sample 8", "Sample 8", "Sample 9"],
+  "sections": [{
+      "section": {
+        "id": "section_0",
+        "text": "Vitals"
+      },
+      "sectionRows": [
+        {
+          "cells": [
+            {
+              "columnId": "Column-0", "cellContent": "Heart Rate Monitored (bpm)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"},
+            { "columnId": "Column-1", "cellContent": "68", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-2", "cellContent": "66", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-3", "cellContent": "67", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-4", "cellContent": "120", "cellContent2": "HIGH", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-5", "cellContent": "69", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-6", "cellContent": "52", "cellContent2": "LOW", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-7", "cellContent": "67", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-8", "cellContent": "72", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-9", "cellContent": "70", "cellContent2": "Normal", "cellContent3": "The normal range is between 60 and 100."}
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Temperature Oral (degC)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "36.7" },
+            { "columnId": "Column-2", "cellContent": "36.9" },
+            { "columnId": "Column-3", "cellContent": "37" },
+            { "columnId": "Column-4", "cellContent": "35.2" },
+            { "columnId": "Column-5", "cellContent": "35" },
+            { "columnId": "Column-6", "cellContent": "36" },
+            { "columnId": "Column-7", "cellContent": "35.8" },
+            { "columnId": "Column-8", "cellContent": "36.7" },
+            { "columnId": "Column-9", "cellContent": "35.6" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Cardiac Index (L/min/m2)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "2.25" },
+            { "columnId": "Column-2", "cellContent": "2.28" },
+            { "columnId": "Column-3", "cellContent": "2.8" },
+            { "columnId": "Column-4", "cellContent": "3.0" },
+            { "columnId": "Column-5", "cellContent": "2.25" },
+            { "columnId": "Column-6", "cellContent": "3.1" },
+            { "columnId": "Column-7", "cellContent": "2.9" },
+            { "columnId": "Column-8", "cellContent": "2.8" },
+            { "columnId": "Column-9", "cellContent": "3.1" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "ICP (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "11" },
+            { "columnId": "Column-2", "cellContent": "11" },
+            { "columnId": "Column-3", "cellContent": "12" },
+            { "columnId": "Column-4", "cellContent": "13" },
+            { "columnId": "Column-5", "cellContent": "14" },
+            { "columnId": "Column-6", "cellContent": "12.5" },
+            { "columnId": "Column-7", "cellContent": "11.2" },
+            { "columnId": "Column-8", "cellContent": "12.8" },
+            { "columnId": "Column-9", "cellContent": "10.9" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "CPP (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "63" },
+            { "columnId": "Column-2", "cellContent": "47" },
+            { "columnId": "Column-3", "cellContent": "48" },
+            { "columnId": "Column-4", "cellContent": "49" },
+            { "columnId": "Column-5", "cellContent": "50" },
+            { "columnId": "Column-6", "cellContent": "51" },
+            { "columnId": "Column-7", "cellContent": "51" },
+            { "columnId": "Column-8", "cellContent": "53" },
+            { "columnId": "Column-9", "cellContent": "54" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Oxygen Flow Rate (L/min)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "2.0" , "cellContent2": "Low", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-2", "cellContent": "6.5" , "cellContent2": "Normal", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-3", "cellContent": "7.2" , "cellContent2": "Normal", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-4", "cellContent": "2.3" , "cellContent2": "Low", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-5", "cellContent": "8.4" , "cellContent2": "Normal", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-6", "cellContent": "--"  , "cellContent2": "", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-7", "cellContent": "9.9" , "cellContent2": "Normal", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-8", "cellContent": "11.0" , "cellContent2": "High", "cellContent3": "The normal range is between 6 and 10."},
+            { "columnId": "Column-9", "cellContent": "2.5" , "cellContent2": "Low", "cellContent3": "The normal range is between 6 and 10."}
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "SpO2 (%)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "97" },
+            { "columnId": "Column-2", "cellContent": "97.2" },
+            { "columnId": "Column-3", "cellContent": "96.3" },
+            { "columnId": "Column-4", "cellContent": "97.4" },
+            { "columnId": "Column-5", "cellContent": "98.5" },
+            { "columnId": "Column-6", "cellContent": "97.6" },
+            { "columnId": "Column-7", "cellContent": "96.7" },
+            { "columnId": "Column-8", "cellContent": "97.8" },
+            { "columnId": "Column-9", "cellContent": "96.9" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "FIO2 (%)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "45" },
+            { "columnId": "Column-2", "cellContent": "43" },
+            { "columnId": "Column-3", "cellContent": "44" },
+            { "columnId": "Column-4", "cellContent": "45" },
+            { "columnId": "Column-5", "cellContent": "44" },
+            { "columnId": "Column-6", "cellContent": "43" },
+            { "columnId": "Column-7", "cellContent": "42" },
+            { "columnId": "Column-8", "cellContent": "44" },
+            { "columnId": "Column-9", "cellContent": "45" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "pO2 Arterial (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "92.3" },
+            { "columnId": "Column-2", "cellContent": "91.5" },
+            { "columnId": "Column-3", "cellContent": "92.4" },
+            { "columnId": "Column-4", "cellContent": "93.5" },
+            { "columnId": "Column-5", "cellContent": "92.6" },
+            { "columnId": "Column-6", "cellContent": "91.5" },
+            { "columnId": "Column-7", "cellContent": "92.5" },
+            { "columnId": "Column-8", "cellContent": "91.6" },
+            { "columnId": "Column-9", "cellContent": "92.5" }
+          ]
+        },
+        {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "pCO2 Arterial(mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "48.3" },
+              { "columnId": "Column-2", "cellContent": "44.7" },
+              { "columnId": "Column-3", "cellContent": "43.1" },
+              { "columnId": "Column-4", "cellContent": "46.4" },
+              { "columnId": "Column-5", "cellContent": "49.1" },
+              { "columnId": "Column-6", "cellContent": "42.7" },
+              { "columnId": "Column-7", "cellContent": "45.8" },
+              { "columnId": "Column-8", "cellContent": "48.4" },
+              { "columnId": "Column-9", "cellContent": "45.3" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "pH Arterial(mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "7.33" },
+              { "columnId": "Column-2", "cellContent": "7.36" },
+              { "columnId": "Column-3", "cellContent": "7.24" },
+              { "columnId": "Column-4", "cellContent": "7.47" },
+              { "columnId": "Column-5", "cellContent": "7.89" },
+              { "columnId": "Column-6", "cellContent": "7.56" },
+              { "columnId": "Column-7", "cellContent": "7.37" },
+              { "columnId": "Column-8", "cellContent": "7.43" },
+              { "columnId": "Column-9", "cellContent": "7.59" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Bicarbonate(mEq/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "34.8" },
+              { "columnId": "Column-2", "cellContent": "-27.6" },
+              { "columnId": "Column-3", "cellContent": "32.3" },
+              { "columnId": "Column-4", "cellContent": "31.8" },
+              { "columnId": "Column-5", "cellContent": "33.5" },
+              { "columnId": "Column-6", "cellContent": "34.4" },
+              { "columnId": "Column-7", "cellContent": "35.9" },
+              { "columnId": "Column-8", "cellContent": "33.7" },
+              { "columnId": "Column-9", "cellContent": "32.8" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Lactate (mmol/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "0.1" },
+              { "columnId": "Column-2", "cellContent": "0.3" },
+              { "columnId": "Column-3", "cellContent": "0.7" },
+              { "columnId": "Column-4", "cellContent": "0.2" },
+              { "columnId": "Column-5", "cellContent": "0.5" },
+              { "columnId": "Column-6", "cellContent": "0.9" },
+              { "columnId": "Column-7", "cellContent": "0.3" },
+              { "columnId": "Column-8", "cellContent": "0.6" },
+              { "columnId": "Column-9", "cellContent": "0.8" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Weight (kg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "58.8" },
+              { "columnId": "Column-2", "cellContent": "59" },
+              { "columnId": "Column-3", "cellContent": "55.1" },
+              { "columnId": "Column-4", "cellContent": "52.6" },
+              { "columnId": "Column-5", "cellContent": "57" },
+              { "columnId": "Column-6", "cellContent": "59.5" },
+              { "columnId": "Column-7", "cellContent": "53.2" },
+              { "columnId": "Column-8", "cellContent": "56" },
+              { "columnId": "Column-9", "cellContent": "55.7" }
+            ]
+          },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Hemoglobin (g/dL)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "18" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "19" },
+            { "columnId": "Column-5", "cellContent": "17" },
+            { "columnId": "Column-6", "cellContent": "21" },
+            { "columnId": "Column-7", "cellContent": "18" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "20" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Platelets (billion/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "461" },
+            { "columnId": "Column-2", "cellContent": "475" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "412" },
+            { "columnId": "Column-5", "cellContent": "392" },
+            { "columnId": "Column-6", "cellContent": "421" },
+            { "columnId": "Column-7", "cellContent": "418" },
+            { "columnId": "Column-8", "cellContent": "428" },
+            { "columnId": "Column-9", "cellContent": "418" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "WBCs (billion/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "12.2" },
+            { "columnId": "Column-2", "cellContent": "11.9" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "12" },
+            { "columnId": "Column-5", "cellContent": "10.8" },
+            { "columnId": "Column-6", "cellContent": "11.2" },
+            { "columnId": "Column-7", "cellContent": "12.1" },
+            { "columnId": "Column-8", "cellContent": "11.7" },
+            { "columnId": "Column-9", "cellContent": "12.1" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "C-Reactive Protein  (mg/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "120" },
+            { "columnId": "Column-2", "cellContent": "98" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "108" },
+            { "columnId": "Column-5", "cellContent": "103" },
+            { "columnId": "Column-6", "cellContent": "112" },
+            { "columnId": "Column-7", "cellContent": "121" },
+            { "columnId": "Column-8", "cellContent": "117" },
+            { "columnId": "Column-9", "cellContent": "121" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Activated PTT  (seconds)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "101" },
+            { "columnId": "Column-2", "cellContent": "97" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "94" },
+            { "columnId": "Column-5", "cellContent": "85" },
+            { "columnId": "Column-6", "cellContent": "100" },
+            { "columnId": "Column-7", "cellContent": "95" },
+            { "columnId": "Column-8", "cellContent": "98" },
+            { "columnId": "Column-9", "cellContent": "102" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "INR", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "1.97" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "2.34" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "2.09" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "1.95" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Creatinine mg/dL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "0.76" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "0.78" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "0.73" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "0/85" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Potassium mEq/L", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "4.5" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "4.5" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "4.9" },
+            { "columnId": "Column-7", "cellContent": "--" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "4.6" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Troponin ng/mL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "0.03" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "0.04" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "0.04" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "0.03" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Glucose mg/dL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "161" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "162" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "179" },
+            { "columnId": "Column-7", "cellContent": "--" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "176" }
+          ]
+        }
+      ]
+    },
+    {
+      "section": {
+        "id": "section_1",
+        "text": "Assessments"
+      },
+      "sectionRows": [
+        {
+          "cells": [
+            {
+              "columnId": "Column-0", "cellContent": "Heart Rate Monitored (bpm)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"},
+            { "columnId": "Column-1", "cellContent": "68", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-2", "cellContent": "66", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-3", "cellContent": "67", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-4", "cellContent": "120", "cellContent2": "HIGH", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-5", "cellContent": "69", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-6", "cellContent": "52", "cellContent2": "LOW", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-7", "cellContent": "67", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-8", "cellContent": "72", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-9", "cellContent": "70", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."}
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Temperature Oral (degC)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "36.7" },
+            { "columnId": "Column-2", "cellContent": "36.9" },
+            { "columnId": "Column-3", "cellContent": "37" },
+            { "columnId": "Column-4", "cellContent": "35.2" },
+            { "columnId": "Column-5", "cellContent": "35" },
+            { "columnId": "Column-6", "cellContent": "36" },
+            { "columnId": "Column-7", "cellContent": "35.8" },
+            { "columnId": "Column-8", "cellContent": "36.7" },
+            { "columnId": "Column-9", "cellContent": "35.6" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Cardiac Index (L/min/m2)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "2.25" },
+            { "columnId": "Column-2", "cellContent": "2.28" },
+            { "columnId": "Column-3", "cellContent": "2.8" },
+            { "columnId": "Column-4", "cellContent": "3.0" },
+            { "columnId": "Column-5", "cellContent": "2.25" },
+            { "columnId": "Column-6", "cellContent": "3.1" },
+            { "columnId": "Column-7", "cellContent": "2.9" },
+            { "columnId": "Column-8", "cellContent": "2.8" },
+            { "columnId": "Column-9", "cellContent": "3.1" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "ICP (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "11" },
+            { "columnId": "Column-2", "cellContent": "11" },
+            { "columnId": "Column-3", "cellContent": "12" },
+            { "columnId": "Column-4", "cellContent": "13" },
+            { "columnId": "Column-5", "cellContent": "14" },
+            { "columnId": "Column-6", "cellContent": "12.5" },
+            { "columnId": "Column-7", "cellContent": "11.2" },
+            { "columnId": "Column-8", "cellContent": "12.8" },
+            { "columnId": "Column-9", "cellContent": "10.9" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "CPP (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "63" },
+            { "columnId": "Column-2", "cellContent": "47" },
+            { "columnId": "Column-3", "cellContent": "48" },
+            { "columnId": "Column-4", "cellContent": "49" },
+            { "columnId": "Column-5", "cellContent": "50" },
+            { "columnId": "Column-6", "cellContent": "51" },
+            { "columnId": "Column-7", "cellContent": "51" },
+            { "columnId": "Column-8", "cellContent": "53" },
+            { "columnId": "Column-9", "cellContent": "54" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Oxygen Flow Rate (L/min)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "2" },
+            { "columnId": "Column-2", "cellContent": "3" },
+            { "columnId": "Column-3", "cellContent": "3.2" },
+            { "columnId": "Column-4", "cellContent": "2.3" },
+            { "columnId": "Column-5", "cellContent": "2.4" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "3.9" },
+            { "columnId": "Column-8", "cellContent": "4" },
+            { "columnId": "Column-9", "cellContent": "2.5" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "SpO2 (%)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "97" },
+            { "columnId": "Column-2", "cellContent": "97.2" },
+            { "columnId": "Column-3", "cellContent": "96.3" },
+            { "columnId": "Column-4", "cellContent": "97.4" },
+            { "columnId": "Column-5", "cellContent": "98.5" },
+            { "columnId": "Column-6", "cellContent": "97.6" },
+            { "columnId": "Column-7", "cellContent": "96.7" },
+            { "columnId": "Column-8", "cellContent": "97.8" },
+            { "columnId": "Column-9", "cellContent": "96.9" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "FIO2 (%)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "45" },
+            { "columnId": "Column-2", "cellContent": "43" },
+            { "columnId": "Column-3", "cellContent": "44" },
+            { "columnId": "Column-4", "cellContent": "45" },
+            { "columnId": "Column-5", "cellContent": "44" },
+            { "columnId": "Column-6", "cellContent": "43" },
+            { "columnId": "Column-7", "cellContent": "42" },
+            { "columnId": "Column-8", "cellContent": "44" },
+            { "columnId": "Column-9", "cellContent": "45" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "pO2 Arterial (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "92.3" },
+            { "columnId": "Column-2", "cellContent": "91.5" },
+            { "columnId": "Column-3", "cellContent": "92.4" },
+            { "columnId": "Column-4", "cellContent": "93.5" },
+            { "columnId": "Column-5", "cellContent": "92.6" },
+            { "columnId": "Column-6", "cellContent": "91.5" },
+            { "columnId": "Column-7", "cellContent": "92.5" },
+            { "columnId": "Column-8", "cellContent": "91.6" },
+            { "columnId": "Column-9", "cellContent": "92.5" }
+          ]
+        },
+        {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "pCO2 Arterial(mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "48.3" },
+              { "columnId": "Column-2", "cellContent": "44.7" },
+              { "columnId": "Column-3", "cellContent": "43.1" },
+              { "columnId": "Column-4", "cellContent": "46.4" },
+              { "columnId": "Column-5", "cellContent": "49.1" },
+              { "columnId": "Column-6", "cellContent": "42.7" },
+              { "columnId": "Column-7", "cellContent": "45.8" },
+              { "columnId": "Column-8", "cellContent": "48.4" },
+              { "columnId": "Column-9", "cellContent": "45.3" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "pH Arterial(mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "7.33" },
+              { "columnId": "Column-2", "cellContent": "7.36" },
+              { "columnId": "Column-3", "cellContent": "7.24" },
+              { "columnId": "Column-4", "cellContent": "7.47" },
+              { "columnId": "Column-5", "cellContent": "7.89" },
+              { "columnId": "Column-6", "cellContent": "7.56" },
+              { "columnId": "Column-7", "cellContent": "7.37" },
+              { "columnId": "Column-8", "cellContent": "7.43" },
+              { "columnId": "Column-9", "cellContent": "7.59" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Bicarbonate(mEq/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "34.8" },
+              { "columnId": "Column-2", "cellContent": "-27.6" },
+              { "columnId": "Column-3", "cellContent": "32.3" },
+              { "columnId": "Column-4", "cellContent": "31.8" },
+              { "columnId": "Column-5", "cellContent": "33.5" },
+              { "columnId": "Column-6", "cellContent": "34.4" },
+              { "columnId": "Column-7", "cellContent": "35.9" },
+              { "columnId": "Column-8", "cellContent": "33.7" },
+              { "columnId": "Column-9", "cellContent": "32.8" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Lactate (mmol/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "0.1" },
+              { "columnId": "Column-2", "cellContent": "0.3" },
+              { "columnId": "Column-3", "cellContent": "0.7" },
+              { "columnId": "Column-4", "cellContent": "0.2" },
+              { "columnId": "Column-5", "cellContent": "0.5" },
+              { "columnId": "Column-6", "cellContent": "0.9" },
+              { "columnId": "Column-7", "cellContent": "0.3" },
+              { "columnId": "Column-8", "cellContent": "0.6" },
+              { "columnId": "Column-9", "cellContent": "0.8" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Weight (kg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "58.8" },
+              { "columnId": "Column-2", "cellContent": "59" },
+              { "columnId": "Column-3", "cellContent": "55.1" },
+              { "columnId": "Column-4", "cellContent": "52.6" },
+              { "columnId": "Column-5", "cellContent": "57" },
+              { "columnId": "Column-6", "cellContent": "59.5" },
+              { "columnId": "Column-7", "cellContent": "53.2" },
+              { "columnId": "Column-8", "cellContent": "56" },
+              { "columnId": "Column-9", "cellContent": "55.7" }
+            ]
+          },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Hemoglobin (g/dL)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "18" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "19" },
+            { "columnId": "Column-5", "cellContent": "17" },
+            { "columnId": "Column-6", "cellContent": "21" },
+            { "columnId": "Column-7", "cellContent": "18" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "20" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Platelets (billion/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "461" },
+            { "columnId": "Column-2", "cellContent": "475" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "412" },
+            { "columnId": "Column-5", "cellContent": "392" },
+            { "columnId": "Column-6", "cellContent": "421" },
+            { "columnId": "Column-7", "cellContent": "418" },
+            { "columnId": "Column-8", "cellContent": "428" },
+            { "columnId": "Column-9", "cellContent": "418" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "WBCs (billion/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "12.2" },
+            { "columnId": "Column-2", "cellContent": "11.9" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "12" },
+            { "columnId": "Column-5", "cellContent": "10.8" },
+            { "columnId": "Column-6", "cellContent": "11.2" },
+            { "columnId": "Column-7", "cellContent": "12.1" },
+            { "columnId": "Column-8", "cellContent": "11.7" },
+            { "columnId": "Column-9", "cellContent": "12.1" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "C-Reactive Protein  (mg/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "120" },
+            { "columnId": "Column-2", "cellContent": "98" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "108" },
+            { "columnId": "Column-5", "cellContent": "103" },
+            { "columnId": "Column-6", "cellContent": "112" },
+            { "columnId": "Column-7", "cellContent": "121" },
+            { "columnId": "Column-8", "cellContent": "117" },
+            { "columnId": "Column-9", "cellContent": "121" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Activated PTT  (seconds)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "101" },
+            { "columnId": "Column-2", "cellContent": "97" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "94" },
+            { "columnId": "Column-5", "cellContent": "85" },
+            { "columnId": "Column-6", "cellContent": "100" },
+            { "columnId": "Column-7", "cellContent": "95" },
+            { "columnId": "Column-8", "cellContent": "98" },
+            { "columnId": "Column-9", "cellContent": "102" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "INR", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "1.97" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "2.34" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "2.09" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "1.95" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Creatinine mg/dL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "0.76" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "0.78" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "0.73" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "0/85" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Potassium mEq/L", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "4.5" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "4.5" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "4.9" },
+            { "columnId": "Column-7", "cellContent": "--" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "4.6" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Troponin ng/mL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "0.03" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "0.04" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "0.04" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "0.03" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Glucose mg/dL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "161" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "162" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "179" },
+            { "columnId": "Column-7", "cellContent": "--" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "176" }
+          ]
+        }
+      ]
+    },
+    {
+      "section": {
+        "id": "section_2",
+        "text": "Labs"
+      },
+      "sectionRows": [
+        {
+          "cells": [
+            {
+              "columnId": "Column-0", "cellContent": "Heart Rate Monitored (bpm)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"},
+            { "columnId": "Column-1", "cellContent": "68", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-2", "cellContent": "66", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-3", "cellContent": "67", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-4", "cellContent": "120", "cellContent2": "HIGH", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-5", "cellContent": "69", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-6", "cellContent": "52", "cellContent2": "LOW", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-7", "cellContent": "67", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-8", "cellContent": "72", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."},
+            { "columnId": "Column-9", "cellContent": "70", "cellContent2": "", "cellContent3": "The normal range is between 60 and 100."}
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Temperature Oral (degC)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "36.7" },
+            { "columnId": "Column-2", "cellContent": "36.9" },
+            { "columnId": "Column-3", "cellContent": "37" },
+            { "columnId": "Column-4", "cellContent": "35.2" },
+            { "columnId": "Column-5", "cellContent": "35" },
+            { "columnId": "Column-6", "cellContent": "36" },
+            { "columnId": "Column-7", "cellContent": "35.8" },
+            { "columnId": "Column-8", "cellContent": "36.7" },
+            { "columnId": "Column-9", "cellContent": "35.6" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Cardiac Index (L/min/m2)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "2.25" },
+            { "columnId": "Column-2", "cellContent": "2.28" },
+            { "columnId": "Column-3", "cellContent": "2.8" },
+            { "columnId": "Column-4", "cellContent": "3.0" },
+            { "columnId": "Column-5", "cellContent": "2.25" },
+            { "columnId": "Column-6", "cellContent": "3.1" },
+            { "columnId": "Column-7", "cellContent": "2.9" },
+            { "columnId": "Column-8", "cellContent": "2.8" },
+            { "columnId": "Column-9", "cellContent": "3.1" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "ICP (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "11" },
+            { "columnId": "Column-2", "cellContent": "11" },
+            { "columnId": "Column-3", "cellContent": "12" },
+            { "columnId": "Column-4", "cellContent": "13" },
+            { "columnId": "Column-5", "cellContent": "14" },
+            { "columnId": "Column-6", "cellContent": "12.5" },
+            { "columnId": "Column-7", "cellContent": "11.2" },
+            { "columnId": "Column-8", "cellContent": "12.8" },
+            { "columnId": "Column-9", "cellContent": "10.9" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "CPP (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "63" },
+            { "columnId": "Column-2", "cellContent": "47" },
+            { "columnId": "Column-3", "cellContent": "48" },
+            { "columnId": "Column-4", "cellContent": "49" },
+            { "columnId": "Column-5", "cellContent": "50" },
+            { "columnId": "Column-6", "cellContent": "51" },
+            { "columnId": "Column-7", "cellContent": "51" },
+            { "columnId": "Column-8", "cellContent": "53" },
+            { "columnId": "Column-9", "cellContent": "54" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Oxygen Flow Rate (L/min)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "2" },
+            { "columnId": "Column-2", "cellContent": "3" },
+            { "columnId": "Column-3", "cellContent": "3.2" },
+            { "columnId": "Column-4", "cellContent": "2.3" },
+            { "columnId": "Column-5", "cellContent": "2.4" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "3.9" },
+            { "columnId": "Column-8", "cellContent": "4" },
+            { "columnId": "Column-9", "cellContent": "2.5" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "SpO2 (%)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "97" },
+            { "columnId": "Column-2", "cellContent": "97.2" },
+            { "columnId": "Column-3", "cellContent": "96.3" },
+            { "columnId": "Column-4", "cellContent": "97.4" },
+            { "columnId": "Column-5", "cellContent": "98.5" },
+            { "columnId": "Column-6", "cellContent": "97.6" },
+            { "columnId": "Column-7", "cellContent": "96.7" },
+            { "columnId": "Column-8", "cellContent": "97.8" },
+            { "columnId": "Column-9", "cellContent": "96.9" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "FIO2 (%)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "45" },
+            { "columnId": "Column-2", "cellContent": "43" },
+            { "columnId": "Column-3", "cellContent": "44" },
+            { "columnId": "Column-4", "cellContent": "45" },
+            { "columnId": "Column-5", "cellContent": "44" },
+            { "columnId": "Column-6", "cellContent": "43" },
+            { "columnId": "Column-7", "cellContent": "42" },
+            { "columnId": "Column-8", "cellContent": "44" },
+            { "columnId": "Column-9", "cellContent": "45" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "pO2 Arterial (mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "92.3" },
+            { "columnId": "Column-2", "cellContent": "91.5" },
+            { "columnId": "Column-3", "cellContent": "92.4" },
+            { "columnId": "Column-4", "cellContent": "93.5" },
+            { "columnId": "Column-5", "cellContent": "92.6" },
+            { "columnId": "Column-6", "cellContent": "91.5" },
+            { "columnId": "Column-7", "cellContent": "92.5" },
+            { "columnId": "Column-8", "cellContent": "91.6" },
+            { "columnId": "Column-9", "cellContent": "92.5" }
+          ]
+        },
+        {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "pCO2 Arterial(mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "48.3" },
+              { "columnId": "Column-2", "cellContent": "44.7" },
+              { "columnId": "Column-3", "cellContent": "43.1" },
+              { "columnId": "Column-4", "cellContent": "46.4" },
+              { "columnId": "Column-5", "cellContent": "49.1" },
+              { "columnId": "Column-6", "cellContent": "42.7" },
+              { "columnId": "Column-7", "cellContent": "45.8" },
+              { "columnId": "Column-8", "cellContent": "48.4" },
+              { "columnId": "Column-9", "cellContent": "45.3" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "pH Arterial(mmHg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "7.33" },
+              { "columnId": "Column-2", "cellContent": "7.36" },
+              { "columnId": "Column-3", "cellContent": "7.24" },
+              { "columnId": "Column-4", "cellContent": "7.47" },
+              { "columnId": "Column-5", "cellContent": "7.89" },
+              { "columnId": "Column-6", "cellContent": "7.56" },
+              { "columnId": "Column-7", "cellContent": "7.37" },
+              { "columnId": "Column-8", "cellContent": "7.43" },
+              { "columnId": "Column-9", "cellContent": "7.59" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Bicarbonate(mEq/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "34.8" },
+              { "columnId": "Column-2", "cellContent": "-27.6" },
+              { "columnId": "Column-3", "cellContent": "32.3" },
+              { "columnId": "Column-4", "cellContent": "31.8" },
+              { "columnId": "Column-5", "cellContent": "33.5" },
+              { "columnId": "Column-6", "cellContent": "34.4" },
+              { "columnId": "Column-7", "cellContent": "35.9" },
+              { "columnId": "Column-8", "cellContent": "33.7" },
+              { "columnId": "Column-9", "cellContent": "32.8" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Lactate (mmol/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "0.1" },
+              { "columnId": "Column-2", "cellContent": "0.3" },
+              { "columnId": "Column-3", "cellContent": "0.7" },
+              { "columnId": "Column-4", "cellContent": "0.2" },
+              { "columnId": "Column-5", "cellContent": "0.5" },
+              { "columnId": "Column-6", "cellContent": "0.9" },
+              { "columnId": "Column-7", "cellContent": "0.3" },
+              { "columnId": "Column-8", "cellContent": "0.6" },
+              { "columnId": "Column-9", "cellContent": "0.8" }
+            ]
+          },
+          {
+            "cells": [
+              { "columnId": "Column-0", "cellContent": "Weight (kg)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+              { "columnId": "Column-1", "cellContent": "58.8" },
+              { "columnId": "Column-2", "cellContent": "59" },
+              { "columnId": "Column-3", "cellContent": "55.1" },
+              { "columnId": "Column-4", "cellContent": "52.6" },
+              { "columnId": "Column-5", "cellContent": "57" },
+              { "columnId": "Column-6", "cellContent": "59.5" },
+              { "columnId": "Column-7", "cellContent": "53.2" },
+              { "columnId": "Column-8", "cellContent": "56" },
+              { "columnId": "Column-9", "cellContent": "55.7" }
+            ]
+          },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Hemoglobin (g/dL)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "18" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "19" },
+            { "columnId": "Column-5", "cellContent": "17" },
+            { "columnId": "Column-6", "cellContent": "21" },
+            { "columnId": "Column-7", "cellContent": "18" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "20" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Platelets (billion/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "461" },
+            { "columnId": "Column-2", "cellContent": "475" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "412" },
+            { "columnId": "Column-5", "cellContent": "392" },
+            { "columnId": "Column-6", "cellContent": "421" },
+            { "columnId": "Column-7", "cellContent": "418" },
+            { "columnId": "Column-8", "cellContent": "428" },
+            { "columnId": "Column-9", "cellContent": "418" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "WBCs (billion/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "12.2" },
+            { "columnId": "Column-2", "cellContent": "11.9" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "12" },
+            { "columnId": "Column-5", "cellContent": "10.8" },
+            { "columnId": "Column-6", "cellContent": "11.2" },
+            { "columnId": "Column-7", "cellContent": "12.1" },
+            { "columnId": "Column-8", "cellContent": "11.7" },
+            { "columnId": "Column-9", "cellContent": "12.1" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "C-Reactive Protein  (mg/L)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "120" },
+            { "columnId": "Column-2", "cellContent": "98" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "108" },
+            { "columnId": "Column-5", "cellContent": "103" },
+            { "columnId": "Column-6", "cellContent": "112" },
+            { "columnId": "Column-7", "cellContent": "121" },
+            { "columnId": "Column-8", "cellContent": "117" },
+            { "columnId": "Column-9", "cellContent": "121" }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "columnId": "Column-0",
+              "cellContent": "Activated PTT  (seconds)", "cellContent2": "High/Normal/Low", "cellContent3": "Range"
+            },
+            { "columnId": "Column-1", "cellContent": "101" },
+            { "columnId": "Column-2", "cellContent": "97" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "94" },
+            { "columnId": "Column-5", "cellContent": "85" },
+            { "columnId": "Column-6", "cellContent": "100" },
+            { "columnId": "Column-7", "cellContent": "95" },
+            { "columnId": "Column-8", "cellContent": "98" },
+            { "columnId": "Column-9", "cellContent": "102" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "INR", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "1.97" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "2.34" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "2.09" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "1.95" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Creatinine mg/dL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "0.76" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "0.78" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "0.73" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "0/85" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Potassium mEq/L", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "4.5" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "4.5" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "4.9" },
+            { "columnId": "Column-7", "cellContent": "--" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "4.6" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Troponin ng/mL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "0.03" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "0.04" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "--" },
+            { "columnId": "Column-7", "cellContent": "0.04" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "0.03" }
+          ]
+        },
+        {
+          "cells": [
+            { "columnId": "Column-0", "cellContent": "Glucose mg/dL", "cellContent2": "High/Normal/Low", "cellContent3": "Range" },
+            { "columnId": "Column-1", "cellContent": "161" },
+            { "columnId": "Column-2", "cellContent": "--" },
+            { "columnId": "Column-3", "cellContent": "--" },
+            { "columnId": "Column-4", "cellContent": "162" },
+            { "columnId": "Column-5", "cellContent": "--" },
+            { "columnId": "Column-6", "cellContent": "179" },
+            { "columnId": "Column-7", "cellContent": "--" },
+            { "columnId": "Column-8", "cellContent": "--" },
+            { "columnId": "Column-9", "cellContent": "176" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -4,10 +4,30 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
 
+const pinnedColumnsCount = 3;
+const numColumnsDisplayed = 8;
+const numberOfRowsPerSectionToDisplay = 15;
+
 class DatagridWithSelections extends React.Component {
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        width: 200,
+        isSelectable: true,
+        ...(columnIndex === 0) && { sortIndicator: 'ascending' },
+      };
+    }
+    return col;
+  }
+
   constructor(props) {
     super(props);
 
@@ -17,77 +37,33 @@ class DatagridWithSelections extends React.Component {
     this.state = {
       selectedRow: undefined,
       selectedCell: undefined,
-      columns: {
-        'Column-0': {
-          id: 'Column-0',
-          width: 200,
-          text: 'Column 0',
-          isSelectable: true,
-          sortIndicator: 'ascending',
-        },
-        'Column-1': {
-          id: 'Column-1',
-          width: 200,
-          text: 'Column 1',
-          isSelectable: true,
-        },
-        'Column-2': {
-          id: 'Column-2',
-          width: 200,
-          text: 'Column 2',
-          isSelectable: true,
-        },
-        'Column-3': {
-          id: 'Column-3',
-          width: 200,
-          text: 'Column 3',
-          isSelectable: true,
-        },
-        'Column-4': {
-          id: 'Column-4',
-          width: 200,
-          text: 'Column 4',
-          isSelectable: true,
-        },
-        'Column-5': {
-          id: 'Column-5',
-          width: 200,
-          text: 'Column 5',
-          isSelectable: true,
-        },
-        'Column-6': {
-          id: 'Column-6',
-          width: 200,
-          text: 'Column 6',
-          isSelectable: true,
-        },
-      },
-      sortedColumnId: 'Column-0',
+      columns: DatagridWithSelections.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1).concat(DatagridWithSelections.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed)),
+      sortedColumnId: gridDataJSON.allColumnIds[0].id,
       sortedColumnDirection: 'ascending',
     };
   }
 
-  buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `Row-${rowIndex}`,
+  buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
+    const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex}`,
       isSelectable: true,
-      isSelected: this.state.selectedRow && this.state.selectedRow.sectionId === sectionId && this.state.selectedRow.rowId === `Row-${rowIndex}`,
-      cells: ((new Array(7).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
+      isSelected: this.state.selectedRow && this.state.selectedRow.sectionId === sectionData.section.id && this.state.selectedRow.rowId === `${sectionData.section.id}-Row${rowIndex}`,
+      cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
         isSelectable: true,
-        isSelected: this.state.selectedCell && this.state.selectedCell.sectionId === sectionId && this.state.selectedCell.rowId === `Row-${rowIndex}` && this.state.selectedCell.columnId === columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
+        isSelected: this.state.selectedCell && this.state.selectedCell.sectionId === sectionData.section.id && this.state.selectedCell.rowId === `${sectionData.section.id}-Row${rowIndex}` && this.state.selectedCell.columnId === sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
       })),
     }));
 
     return this.state.sortedColumnId && this.state.sortedColumnDirection === 'ascending' ? rows : rows.reverse();
   }
 
-  buildSection(sectionId, sectionName, numberOfRows) {
+  buildSection(sectionData, numberOfRows) {
     return {
-      id: sectionId,
-      text: sectionName,
-      rows: this.buildRows(sectionId, numberOfRows),
+      id: sectionData.section.id,
+      text: sectionData.section.text,
+      rows: this.buildRows(sectionData, this.state.columns.length, numberOfRows),
     };
   }
 
@@ -99,31 +75,21 @@ class DatagridWithSelections extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="selections-example"
-          pinnedColumns={[
-            columns['Column-0'],
-            columns['Column-1'],
-            columns['Column-2'],
-          ]}
-          overflowColumns={[
-            columns['Column-3'],
-            columns['Column-4'],
-            columns['Column-5'],
-            columns['Column-6'],
-          ]}
+          pinnedColumns={columns.slice(0, pinnedColumnsCount)}
+          overflowColumns={columns.slice(3, numColumnsDisplayed)}
           sections={[
-            this.buildSection('Section-0', 'Section 0', 15),
-            this.buildSection('Section-1', 'Section 1', 15),
+            this.buildSection(gridDataJSON.sections[0], numberOfRowsPerSectionToDisplay),
+            this.buildSection(gridDataJSON.sections[1], numberOfRowsPerSectionToDisplay),
           ]}
           fill
           onColumnSelect={(columnId) => {
             const newColumns = {};
-
-            const columnToSort = { ...this.state.columns[columnId] };
+            const columnToSort = { ...columns.find(element => element.id === columnId) };
             columnToSort.sortIndicator = columnToSort.sortIndicator === 'ascending' ? 'descending' : 'ascending';
             newColumns[`${columnId}`] = columnToSort;
 
             if (columnId !== this.state.sortedColumnId) {
-              const previouslySortedColumn = { ...this.state.columns[this.state.sortedColumnId] };
+              const previouslySortedColumn = { ...columns.find(element => element.id === this.state.sortedColumnId) };
               if (previouslySortedColumn) {
                 previouslySortedColumn.sortIndicator = undefined;
                 newColumns[`${this.state.sortedColumnId}`] = previouslySortedColumn;
@@ -131,7 +97,7 @@ class DatagridWithSelections extends React.Component {
             }
 
             this.setState(prevState => ({
-              columns: { ...prevState.columns, ...newColumns },
+              columns: [...prevState.columns].map(val => (newColumns[val.id] ? newColumns[val.id] : val)),
               sortedColumnId: columnId,
               sortedColumnDirection: columnToSort.sortIndicator,
             }));

@@ -4,80 +4,46 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
-
-const overflowColumns = [
-  {
-    id: 'Column-0',
-    width: 200,
-    text: 'Column 0',
-  },
-  {
-    id: 'Column-1',
-    width: 200,
-    text: 'Column 1',
-  },
-  {
-    id: 'Column-2',
-    width: 200,
-    text: 'Column 2',
-  },
-  {
-    id: 'Column-3',
-    width: 200,
-    text: 'Column 3',
-  },
-  {
-    id: 'Column-4',
-    width: 200,
-    text: 'Column 4',
-  },
-  {
-    id: 'Column-5',
-    width: 200,
-    text: 'Column 5',
-  },
-  {
-    id: 'Column-6',
-    width: 200,
-    text: 'Column 6',
-  },
-  {
-    id: 'Column-7',
-    width: 200,
-    text: 'Column 7',
-  },
-  {
-    id: 'Column-8',
-    width: 200,
-    text: 'Column 8',
-  },
-  {
-    id: 'Column-9',
-    width: 200,
-    text: 'Column 9',
-  },
-];
+const defaultColumnWidth = 200;
+const firstColumnWidth = 200;
+const numColumnsDisplayed = 10;
+const pinnedColumnsCount = 0;
+const numRowsPerSection = 15;
 
 class DatagridWithNoPinnedColumns extends React.Component {
-  static buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `${sectionId}-Row${rowIndex}`,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
+  static buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
+    const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex}`,
+      height: (rowIndex + 1) % 5 === 0 ? '7rem' : undefined,
+      cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
       })),
     }));
 
     return rows;
   }
 
-  static buildSection(sectionId, numberOfRows) {
+  static buildSection(sectionData, numberOfRows) {
     return {
-      id: sectionId,
-      rows: DatagridWithNoPinnedColumns.buildRows(sectionId, numberOfRows),
+      id: sectionData.section.id,
+      rows: DatagridWithNoPinnedColumns.buildRows(sectionData, numColumnsDisplayed, numberOfRows),
     };
+  }
+
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      col[currentElementIndex] = {
+        id: data.allColumnIds[columnIndex].id,
+        text: data.allColumnIds[columnIndex].displayName,
+        ...(columnIndex === 0) && { width: firstColumnWidth },
+      };
+    }
+    return col;
   }
 
   render() {
@@ -87,11 +53,12 @@ class DatagridWithNoPinnedColumns extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="no-pinning-example"
-          overflowColumns={overflowColumns}
+          overflowColumns={DatagridWithNoPinnedColumns.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
           sections={[
-            DatagridWithNoPinnedColumns.buildSection('section_0', 30),
+            DatagridWithNoPinnedColumns.buildSection(gridDataJSON.sections[0], numRowsPerSection),
           ]}
           rowHeight={theme.className === 'orion-fusion-theme' ? '2.2rem' : undefined}
+          defaultColumnWidth={defaultColumnWidth}
           fill
         />
       </div>
