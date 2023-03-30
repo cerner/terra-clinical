@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.16.0 - (March 29, 2023)
+
 * Changed
   * Updated wdio screenshots.
 
