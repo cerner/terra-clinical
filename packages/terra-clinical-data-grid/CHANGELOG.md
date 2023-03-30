@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Fixed
+  * Fixed section id to include datagrid id for supporting multiple grids on the same page.
 
 ## 2.39.0 - (March 29, 2023)
 
