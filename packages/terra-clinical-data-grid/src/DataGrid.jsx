@@ -120,6 +120,20 @@ const propTypes = {
    * Callback ref to pass into horizontal overflow container.
    */
   horizontalOverflowContainerRefCallback: PropTypes.func,
+  /**
+   * A label ref to provide context for screen readers. This can be a ref to a textual DOM element or a string.
+   */
+  labelRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
+  /**
+   * A description ref to provide context for screen readers. This can be a ref to a textual DOM element or a string.
+   */
+  descriptionRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
 };
 
 const defaultProps = {
@@ -968,7 +982,7 @@ class DataGrid extends React.Component {
     const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
     const cellKey = `${section.id}-${row.id}-${column.id}`;
-    const role = isRowHeader ? "rowheader" : "gridcell";
+    const role = isRowHeader ? 'rowheader' : 'gridcell';
 
     return (
       <Cell
@@ -1032,7 +1046,7 @@ class DataGrid extends React.Component {
           if (column.id === 'DataGrid-voidColumn') {
             return undefined;
           }
-          
+
           let isRowHeader = false;
 
           if ((hasSelectableRows && column.id === allColumns[1].id) || (!hasSelectableRows && column.id === allColumns[0].id)) {
@@ -1119,6 +1133,19 @@ class DataGrid extends React.Component {
     );
   }
 
+  getA11yText = (ref) => {
+    if (!ref) {
+      return undefined;
+    }
+    if (typeof ref === 'string') {
+      return ref;
+    }
+    if (typeof ref === 'function') {
+      return (ref() && ref().innerHTML);
+    }
+    return undefined;
+  }
+
   render() {
     const {
       id,
@@ -1141,6 +1168,8 @@ class DataGrid extends React.Component {
       verticalOverflowContainerRefCallback,
       horizontalOverflowContainerRefCallback,
       columnHighlightId,
+      labelRef,
+      descriptionRef,
       ...customProps
     } = this.props;
     const { pinnedColumnWidth } = this.state;
@@ -1156,63 +1185,69 @@ class DataGrid extends React.Component {
     );
 
     return (
-      <div
-        {...customProps}
-        id={id}
-        className={dataGridClassnames}
-        ref={this.setDataGridContainerRef}
-        role="grid"
-      >
+      <React.Fragment>
+        {labelRef ? <span id={`${id}-hiddenlabel`} className={cx('hidden-info')} tabIndex="-1">{this.getA11yText(labelRef)}</span> : null}
+        {descriptionRef ? <span id={`${id}-hiddendescription`} className={cx('hidden-info')} tabIndex="-1">{this.getA11yText(descriptionRef)}</span> : null}
         <div
-          role="button"
-          aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
-          className={cx('leading-focus-anchor')}
-          tabIndex="0"
-          onFocus={this.handleLeadingFocusAnchorFocus}
-          ref={this.setLeadingFocusAnchorRef}
-        />
-        <ContentContainer
-          header={fill ? this.renderFixedHeaderRow() : undefined}
-          footer={fill ? this.renderScrollbar() : undefined}
-          fill={fill}
+          {...customProps}
+          id={id}
+          className={dataGridClassnames}
+          ref={this.setDataGridContainerRef}
+          role="grid"
+          aria-labelledby={labelRef ? `${id}-hiddenlabel` : undefined}
+          aria-describedby={descriptionRef ? `${id}-hiddendescription` : undefined}
         >
           <div
-            className={cx('vertical-overflow-container')}
-            ref={this.setVerticalOverflowContainerRef}
-            onScroll={onRequestContent ? this.checkForMoreContent : undefined}
+            role="button"
+            aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
+            className={cx('leading-focus-anchor')}
+            tabIndex="0"
+            onFocus={this.handleLeadingFocusAnchorFocus}
+            ref={this.setLeadingFocusAnchorRef}
+          />
+          <ContentContainer
+            header={fill ? this.renderFixedHeaderRow() : undefined}
+            footer={fill ? this.renderScrollbar() : undefined}
+            fill={fill}
           >
             <div
-              className={cx('pinned-content-container')}
-              ref={this.setPinnedContentContainerRef}
-              style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
-              role="rowgroup"
-            >
-              {this.renderPinnedContent()}
-            </div>
-            <div
-              className={cx('overflowed-content-container')}
-              ref={this.setOverflowedContentContainerRef}
-              role="rowgroup"
+              className={cx('vertical-overflow-container')}
+              ref={this.setVerticalOverflowContainerRef}
+              onScroll={onRequestContent ? this.checkForMoreContent : undefined}
             >
               <div
-                className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
-                ref={this.setHorizontalOverflowContainerRef}
-                onScroll={fill ? this.synchronizeContentScroll : undefined}
+                className={cx('pinned-content-container')}
+                ref={this.setPinnedContentContainerRef}
+                style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
+                role="rowgroup"
               >
-                {this.renderOverflowContent()}
+                {this.renderPinnedContent()}
+              </div>
+              <div
+                className={cx('overflowed-content-container')}
+                ref={this.setOverflowedContentContainerRef}
+                role="rowgroup"
+              >
+                <div
+                  className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
+                  ref={this.setHorizontalOverflowContainerRef}
+                  onScroll={fill ? this.synchronizeContentScroll : undefined}
+                >
+                  {this.renderOverflowContent()}
+                </div>
               </div>
             </div>
-          </div>
-        </ContentContainer>
-        <div
-          role="button"
-          aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
-          className={cx('terminal-focus-anchor')}
-          tabIndex="0"
-          onFocus={this.handleTerminalFocusAnchorFocus}
-          ref={this.setTerminalFocusAnchorRef}
-        />
-      </div>
+          </ContentContainer>
+          <div
+            role="button"
+            aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
+            className={cx('terminal-focus-anchor')}
+            tabIndex="0"
+            onFocus={this.handleTerminalFocusAnchorFocus}
+            ref={this.setTerminalFocusAnchorRef}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }

@@ -292,55 +292,107 @@ describe('DataGrid Snapshots', () => {
     const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
-});
 
-it('should render a DataGrid with the fill prop missing', () => {
-  const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-    />
-  );
+  it('should render a DataGrid with the fill prop missing', () => {
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+      />
+    );
 
-  const dataGrid = shallow(dataGridComp);
-  expect(dataGrid).toMatchSnapshot();
-});
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
 
-it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
-  const refCallback = jest.fn();
-  const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-      verticalOverflowContainerRefCallback={refCallback}
-    />
-  );
+  it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
+    const refCallback = jest.fn();
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        verticalOverflowContainerRefCallback={refCallback}
+      />
+    );
 
-  mountWithIntl(dataGridComp);
-  expect(refCallback).toBeCalled();
-});
+    mountWithIntl(dataGridComp);
+    expect(refCallback).toBeCalled();
+  });
 
-it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
-  const refCallback = jest.fn();
-  const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-      horizontalOverflowContainerRefCallback={refCallback}
-    />
-  );
+  it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
+    const refCallback = jest.fn();
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        horizontalOverflowContainerRefCallback={refCallback}
+      />
+    );
 
-  mountWithIntl(dataGridComp);
-  expect(refCallback).toBeCalled();
+    mountWithIntl(dataGridComp);
+    expect(refCallback).toBeCalled();
+  });
+
+  it('should render a DataGrid with label and description ref props that are strings', () => {
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        fill
+        labelRef="label"
+        descriptionRef="description"
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with label and description ref props that are refs', () => {
+    const setLabelRef = (node) => {
+      this.labelNode = node;
+    };
+
+    const getLabelRef = () => this.labelNode;
+
+    const setDescriptionRef = (node) => {
+      this.descriptionNode = node;
+    };
+
+    const getDescriptionRef = () => this.descriptionNode;
+
+    const dataGridComp = (
+      <div>
+        <span ref={setLabelRef}>My Label</span>
+        <span ref={setDescriptionRef}>My Description</span>
+        <DataGrid.WrappedComponent
+          id="test"
+          pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+          overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+          sections={testSections}
+          intl={mockIntl}
+          fill
+          labelRef={getLabelRef}
+          descriptionRef={getDescriptionRef}
+        />
+      </div>
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
 });
 
 describe('getDerivedStateFromProps', () => {
@@ -390,4 +442,8 @@ describe('getDerivedStateFromProps', () => {
     );
     expect(dataGrid).toMatchSnapshot();
   });
+});
+
+describe('rendering label and description', () => {
+
 });
