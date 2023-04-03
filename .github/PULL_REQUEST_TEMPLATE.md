@@ -5,10 +5,6 @@
 <!--- Example: Closes #45 -->
 Closes #
 
-### Deployment Link
-<!---Include the deployment link, if applicable. -->
-<!--- Example: https://terra-clinical-deployed-pr-45.herokuapp.com/ -->
-https://terra-clinical-deployed-pr-#.herokuapp.com/
 
 ### Testing
 <!-- Demonstrate that these changes are stable. How have these changes been verified? -->
