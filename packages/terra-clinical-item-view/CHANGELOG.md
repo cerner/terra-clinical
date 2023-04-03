@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.6.0 - (March 29, 2023)
+
 * Changed
   * Updated wdio screenshots.
 

@@ -5,6 +5,8 @@
 * Updated
   * Updated Jest Snapshots
 
+## 4.32.0 - (March 29, 2023)
+
 * Changed
   * Updated wdio screenshots.
   * Updated jest snapshots

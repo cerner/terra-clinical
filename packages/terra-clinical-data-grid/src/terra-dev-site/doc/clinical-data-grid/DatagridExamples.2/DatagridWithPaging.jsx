@@ -5,89 +5,92 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
 
-const pinnedColumns = [
-  {
-    id: 'Column-0',
-    width: 200,
-    text: 'Column 0',
-  },
-  {
-    id: 'Column-1',
-    width: 200,
-    text: 'Column 1',
-  },
-  {
-    id: 'Column-2',
-    width: 200,
-    text: 'Column 2',
-  },
-];
-
-const overflowColumns = [
-  {
-    id: 'Column-3',
-    width: 200,
-    text: 'Column 3',
-  },
-  {
-    id: 'Column-4',
-    width: 200,
-    text: 'Column 4',
-  },
-  {
-    id: 'Column-5',
-    width: 200,
-    text: 'Column 5',
-  },
-  {
-    id: 'Column-6',
-    width: 200,
-    text: 'Column 6',
-  },
-];
+const pinnedColumnsCount = 3;
+const numColumnsDisplayed = 7;
+const fetchRowSize = 6;
+const numberOfRowsPerSectionToDisplay = 9;
+const numSectionInSourceData = 3;
 
 class DatagridWithPaging extends React.Component {
-  static buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `${sectionId}-Row${rowIndex}`,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, Column ${columnKey}`} />,
+  static buildRows(sectionData, numOfColumns, startingRow) {
+    const availableRows = Math.min(sectionData.sectionRows.length - startingRow, fetchRowSize, numberOfRowsPerSectionToDisplay - startingRow);
+    const rows = (new Array(availableRows)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex + startingRow}`,
+      cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex + startingRow].cells[cellIndex].columnId,
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex + startingRow].cells[cellIndex].cellContent} />,
       })),
     }));
-
     return rows;
   }
 
-  static buildSections(sectionCount) {
-    const sections = [];
-    for (let i = 0, length = sectionCount; i < length; i += 1) {
-      const sectionId = `section_${i}`;
-      sections.push({
-        id: sectionId,
-        text: `Section ${i}`,
-        rows: DatagridWithPaging.buildRows(sectionId, 3),
-      });
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        width: 200,
+      };
     }
+    return col;
+  }
 
-    return sections;
+  static buildSection(sectionData) {
+    return {
+      id: sectionData.section.id,
+      text: sectionData.section.text,
+      rows: DatagridWithPaging.buildRows(sectionData, numColumnsDisplayed, 0),
+    };
   }
 
   constructor(props) {
     super(props);
-
     this.state = {
       sectionCount: 1,
+      rowcount: fetchRowSize,
+      hasMoreData: true,
       isLoading: false,
-      sections: DatagridWithPaging.buildSections(1),
+      sections: [DatagridWithPaging.buildSection(gridDataJSON.sections[0])],
     };
   }
 
   componentWillUnmount() {
     clearTimeout(this.pagingTimeout);
+  }
+
+  getStateAfterFetchingMoreData() {
+    return (prevState) => {
+      let rowsAdded = [];
+      const sectionData = gridDataJSON.sections[this.state.sectionCount - 1];
+      let modifiedSections = [...prevState.sections];
+
+      if (this.state.rowcount < numberOfRowsPerSectionToDisplay) {
+        // Add more rows to the existing section if there are additional rows for that section in the source data.
+        rowsAdded = DatagridWithPaging.buildRows(sectionData, numColumnsDisplayed, this.state.rowcount);
+        modifiedSections[this.state.sectionCount - 1].rows = modifiedSections[this.state.sectionCount - 1].rows.concat(rowsAdded);
+      } else if (this.state.sectionCount < gridDataJSON.sections.length) {
+        // Add a new section if there are additional sections in the source data.
+        this.state.sectionCount += 1;
+        this.state.rowcount = fetchRowSize;
+        modifiedSections = modifiedSections.concat(DatagridWithPaging.buildSection(gridDataJSON.sections[this.state.sectionCount - 1]));
+      } else {
+        // Done fetching all sections/rows from the source data.
+        this.state.hasMoreData = false;
+      }
+      return {
+        sectionCount: this.state.sectionCount,
+        isLoading: false,
+        hasMoreData: this.state.hasMoreData,
+        rowcount: this.state.rowcount + rowsAdded.length,
+        sections: modifiedSections,
+      };
+    };
   }
 
   render() {
@@ -97,15 +100,15 @@ class DatagridWithPaging extends React.Component {
       <div className={cx('data-grid-paging')}>
         <DataGrid
           id="paging-example"
-          pinnedColumns={pinnedColumns}
-          overflowColumns={overflowColumns}
+          pinnedColumns={DatagridWithPaging.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1)}
+          overflowColumns={DatagridWithPaging.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
           sections={this.state.sections}
           fill
-          onRequestContent={this.state.sectionCount < 10 ? (() => {
+          onRequestContent={this.state.sectionCount <= numSectionInSourceData && this.state.hasMoreData ? (() => {
             this.setState({ isLoading: true }, () => {
               clearTimeout(this.pagingTimeout);
               this.pagingTimeout = setTimeout(() => {
-                this.setState(prevState => ({ sectionCount: prevState.sectionCount + 1, isLoading: false, sections: DatagridWithPaging.buildSections(prevState.sectionCount + 1) }));
+                this.setState(this.getStateAfterFetchingMoreData());
               }, 2000);
             });
           }) : undefined}

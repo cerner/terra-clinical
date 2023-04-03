@@ -5,72 +5,33 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
 
-const pinnedColumns = [
-  {
-    id: 'Column-0',
-    width: 200,
-    text: 'Column 0',
-  },
-  {
-    id: 'Column-1',
-    width: 200,
-    text: 'Column 1',
-  },
-  {
-    id: 'Column-2',
-    width: 200,
-    text: 'Column 2',
-  },
-];
-
-const overflowColumns = [
-  {
-    id: 'Column-3',
-    width: 200,
-    text: 'Column 3',
-  },
-  {
-    id: 'Column-4',
-    width: 200,
-    text: 'Column 4',
-  },
-  {
-    id: 'Column-5',
-    width: 200,
-    text: 'Column 5',
-  },
-  {
-    id: 'Column-6',
-    width: 200,
-    text: 'Column 6',
-  },
-  {
-    id: 'Column-7',
-    width: 200,
-    text: 'Column 7',
-  },
-  {
-    id: 'Column-8',
-    width: 200,
-    text: 'Column 8',
-  },
-  {
-    id: 'Column-9',
-    width: 200,
-    text: 'Column 9',
-  },
-];
-
+const numColumnsDisplayed = 10;
+const pinnedColumnsCount = 3;
+const numRowsPerSection = 15;
 class DatagridWithSubsections extends React.Component {
-  static buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `${sectionId}-Row${rowIndex}`,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, Column ${columnKey}`} />,
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        width: 200,
+      };
+    }
+    return col;
+  }
+
+  static buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
+    const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex}`,
+      cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
       })),
     }));
 
@@ -80,28 +41,28 @@ class DatagridWithSubsections extends React.Component {
   constructor(props) {
     super(props);
 
-    this.buildSection = this.buildSection.bind(this);
+    this.buildSection = this.buildSections.bind(this);
 
     this.state = {
       collapsedSectionId: undefined,
     };
   }
 
-  buildSection(sectionId, sectionName, numberOfRows) {
-    return {
-      id: sectionId,
-      text: sectionName,
-      endAccessory: (sectionId === 'section_1') ? (
+  buildSections(data, numberOfRowsToDisplay) {
+    return new Array(data.sections.length).fill(0).map((sectionVal, sectionIndex) => ({
+      id: data.sections[sectionIndex].section.id,
+      text: data.sections[sectionIndex].section.text,
+      endAccessory: (data.sections[sectionIndex].section.id === 'section_1') ? (
         <span>
           <Button text="Button 1" isCompact data-accessible-data-grid-content variant="ghost" className={cx('spacer-right-medium')} />
           <Button text="Button 2" isCompact data-accessible-data-grid-content variant="ghost" className={cx('spacer-right-medium')} />
           <Button text="Button 3" isCompact data-accessible-data-grid-content variant="emphasis" />
         </span>
       ) : null,
-      isCollapsible: sectionId === 'section_0',
-      isCollapsed: this.state.collapsedSectionId === sectionId,
-      rows: DatagridWithSubsections.buildRows(sectionId, numberOfRows),
-    };
+      isCollapsible: data.sections[sectionIndex].section.id === 'section_0',
+      isCollapsed: this.state.collapsedSectionId === data.sections[sectionIndex].section.id,
+      rows: DatagridWithSubsections.buildRows(data.sections[sectionIndex], data.allColumnIds.length, numberOfRowsToDisplay),
+    }));
   }
 
   render() {
@@ -111,13 +72,9 @@ class DatagridWithSubsections extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="subsections-example"
-          pinnedColumns={pinnedColumns}
-          overflowColumns={overflowColumns}
-          sections={[
-            this.buildSection('section_0', 'Section 0', 15),
-            this.buildSection('section_1', 'Section 1', 15),
-            this.buildSection('section_2', 'Section 2', 15),
-          ]}
+          pinnedColumns={DatagridWithSubsections.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1)}
+          overflowColumns={DatagridWithSubsections.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
+          sections={this.buildSections(gridDataJSON, numRowsPerSection)}
           onRequestSectionCollapse={(sectionId) => {
             if (this.state.collapsedSectionId === sectionId) {
               this.setState({ collapsedSectionId: undefined });
