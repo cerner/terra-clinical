@@ -155,7 +155,6 @@ class Cell extends React.Component {
         className={classNames(cx('container', theme.className), customProps.className)}
         style={this.getCellStyles(width)}
         aria-selected={isSelected ? true : undefined}
-        role="gridcell"
       >
         <div
           role={role}

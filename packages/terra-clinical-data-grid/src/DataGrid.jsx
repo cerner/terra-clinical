@@ -851,10 +851,12 @@ class DataGrid extends React.Component {
       <div
         className={cx(['header-container', 'fixed'])}
         style={this.generateHeaderContainerStyle(headerHeight)}
+        role="rowgroup"
       >
         <div
           className={cx('pinned-header')}
           style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}
+          role="row"
         >
           {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
         </div>
@@ -866,6 +868,7 @@ class DataGrid extends React.Component {
           <div
             className={cx('overflow-header')}
             style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}
+            role="row"
           >
             {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
           </div>
@@ -961,10 +964,11 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderCell(section, row, column, isFirstRow, isLastRow) {
+  renderCell(section, row, column, isFirstRow, isLastRow, isRowHeader) {
     const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
     const cellKey = `${section.id}-${row.id}-${column.id}`;
+    const role = isRowHeader ? "rowheader" : "gridcell";
 
     return (
       <Cell
@@ -980,6 +984,7 @@ class DataGrid extends React.Component {
         isColumnHighlighted={column.id === columnHighlightId}
         isFirstRow={isFirstRow}
         isLastRow={isLastRow}
+        role={role}
       >
         {cell.component}
       </Cell>
@@ -987,7 +992,7 @@ class DataGrid extends React.Component {
   }
 
   renderRow(row, section, columns, width, isPinned, isStriped, isFirstRow, isLastRow) {
-    const { id } = this.props;
+    const { id, hasSelectableRows } = this.props;
     const height = row.height || this.props.rowHeight;
     /**
      * Because of the DOM structure necessary to properly render the pinned and overflow sections,
@@ -1004,6 +1009,8 @@ class DataGrid extends React.Component {
     } else {
       ariaStyles.id = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
     }
+    const pinnedColumns = dataGridUtils.getPinnedColumns(this.props);
+    const allColumns = pinnedColumns.concat(dataGridUtils.getOverflowColumns(this.props));
 
     return (
       <Row
@@ -1025,8 +1032,14 @@ class DataGrid extends React.Component {
           if (column.id === 'DataGrid-voidColumn') {
             return undefined;
           }
+          
+          let isRowHeader = false;
 
-          return this.renderCell(section, row, column, isFirstRow, isLastRow);
+          if ((hasSelectableRows && column.id === allColumns[1].id) || (!hasSelectableRows && column.id === allColumns[0].id)) {
+            isRowHeader = true;
+          }
+
+          return this.renderCell(section, row, column, isFirstRow, isLastRow, isRowHeader);
         })}
       </Row>
     );
@@ -1148,6 +1161,7 @@ class DataGrid extends React.Component {
         id={id}
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
+        role="grid"
       >
         <div
           role="button"
@@ -1171,12 +1185,14 @@ class DataGrid extends React.Component {
               className={cx('pinned-content-container')}
               ref={this.setPinnedContentContainerRef}
               style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
+              role="rowgroup"
             >
               {this.renderPinnedContent()}
             </div>
             <div
               className={cx('overflowed-content-container')}
               ref={this.setOverflowedContentContainerRef}
+              role="rowgroup"
             >
               <div
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
