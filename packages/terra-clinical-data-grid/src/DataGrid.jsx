@@ -259,13 +259,12 @@ class DataGrid extends React.Component {
           firstRowSectionId: null, firstRowId: null, lastRowSectionId: null, lastRowId: null,
         }
         : dataGridUtils.getFirstAndLastVisibleRowData(props.sections),
+      /**
+       * Data Accessibility ID attribute name per data grid. This appends the unique grid ID to accessibility-id attribute name so that
+       * cells in the grid can be tabbed through sequencially without conflicts in case of multiple grids on a single page.
+       */
+      accessibilityId: `data-accessibility-id-${props.id}`,
     };
-
-    /**
-     * Data Accessibility ID attribute name per data grid. This appends the unique grid ID to accessibility-id attribute name so that
-     * cells in the grid can be tabbed through sequencially without conflicts in case of multiple grids on a single page.
-     */
-    const accessibilityId = 'data-accessibility-id-' + props.id;
   }
 
   componentDidMount() {
@@ -340,7 +339,7 @@ class DataGrid extends React.Component {
    */
   handleLeadingFocusAnchorFocus() {
     if (!this.shiftIsPressed) {
-      const firstAccessibleElement = this.dataGridContainerRef.querySelector('[${accessibilityId}="0"]');
+      const firstAccessibleElement = this.dataGridContainerRef.querySelector(`[${this.state.accessibilityId}="0"]`);
       if (firstAccessibleElement) {
         firstAccessibleElement.focus();
       }
@@ -349,7 +348,7 @@ class DataGrid extends React.Component {
 
   handleTerminalFocusAnchorFocus() {
     if (this.shiftIsPressed) {
-      const lastAccessibleElement = this.dataGridContainerRef.querySelector(`[${accessibilityId}="${this.accessibilityStack.length - 1}"]`);
+      const lastAccessibleElement = this.dataGridContainerRef.querySelector(`[${this.state.accessibilityId}="${this.accessibilityStack.length - 1}"]`);
 
       if (lastAccessibleElement) {
         lastAccessibleElement.focus();
@@ -450,12 +449,12 @@ class DataGrid extends React.Component {
         return;
       }
 
-      if (dataGridUtils.matchesSelector(activeElement, '[${accessibilityId}]')) {
-        const currentAccessibilityId = activeElement.getAttribute('${accessibilityId}');
+      if (dataGridUtils.matchesSelector(activeElement, `[${this.state.accessibilityId}]`)) {
+        const currentAccessibilityId = activeElement.getAttribute(`${this.state.accessibilityId}`);
         const nextAccessibilityId = this.shiftIsPressed ? parseInt(currentAccessibilityId, 10) - 1 : parseInt(currentAccessibilityId, 10) + 1;
 
         if (nextAccessibilityId >= 0 && nextAccessibilityId < this.accessibilityStack.length) {
-          const nextFocusElement = this.dataGridContainerRef.querySelector(`[${accessibilityId}="${nextAccessibilityId}"]`);
+          const nextFocusElement = this.dataGridContainerRef.querySelector(`[${this.state.accessibilityId}="${nextAccessibilityId}"]`);
 
           if (nextFocusElement) {
             event.preventDefault();
@@ -540,9 +539,7 @@ class DataGrid extends React.Component {
      * The DOM is parsed after rendering to generate the accessibility identifiers used by the DataGrid's custom
      * focus implementation.
      */
-      this.accessibilityStack = dataGridUtils.generateAccessibleContentIndex(this.props, this.headerCellRefs, this.sectionRefs, this.cellRefs);
-    
-    
+    this.accessibilityStack = dataGridUtils.generateAccessibleContentIndex(this.props, this.headerCellRefs, this.sectionRefs, this.cellRefs);
 
     /**
      * The previous animation frame is canceled if it is still pending.

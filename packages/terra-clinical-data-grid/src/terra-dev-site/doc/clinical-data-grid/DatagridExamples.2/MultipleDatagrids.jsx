@@ -84,11 +84,11 @@ class MultipleDatagrids extends React.Component {
             id="Grid-1"
             pinnedColumns={[
               columns['Column-0'],
-              columns['Column-1']
+              columns['Column-1'],
             ]}
             overflowColumns={[
               columns['Column-2'],
-              columns['Column-3']
+              columns['Column-3'],
             ]}
             sections={[
               this.buildSection('Grid-1-Section-0', 'Grid 1 Section 0', 4),
@@ -145,11 +145,11 @@ class MultipleDatagrids extends React.Component {
             id="Grid-2"
             pinnedColumns={[
               columns['Column-0'],
-              columns['Column-1']
+              columns['Column-1'],
             ]}
             overflowColumns={[
               columns['Column-2'],
-              columns['Column-3']
+              columns['Column-3'],
             ]}
             sections={[
               this.buildSection('Grid-2-Section-0', 'Grid 2 Section 0', 4),
