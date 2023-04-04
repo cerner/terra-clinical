@@ -3,75 +3,48 @@ import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 import ContentCellLayout from './ContentCellLayout';
 import styles from './Datagrid.module.scss';
+import gridDataJSON from './Datagrid.json';
 
 const cx = classNames.bind(styles);
 
-const pinnedColumns = [
-  {
-    id: 'Column-0',
-    text: 'Column 0',
-    width: 100,
-  },
-  {
-    id: 'Column-1',
-    text: 'Column 1',
-  },
-  {
-    id: 'Column-2',
-    text: 'Column 2',
-  },
-];
-
-const overflowColumns = [
-  {
-    id: 'Column-3',
-    text: 'Column 3',
-  },
-  {
-    id: 'Column-4',
-    text: 'Column 4',
-  },
-  {
-    id: 'Column-5',
-    text: 'Column 5',
-  },
-  {
-    id: 'Column-6',
-    text: 'Column 6',
-  },
-  {
-    id: 'Column-7',
-    text: 'Column 7',
-  },
-  {
-    id: 'Column-8',
-    text: 'Column 8',
-  },
-  {
-    id: 'Column-9',
-    text: 'Column 9',
-  },
-];
+const defaultColumnWidth = 250;
+const firstColumnWidth = 400;
+const numColumnsDisplayed = 10;
+const pinnedColumnsCount = 3;
+const numRowsPerSection = 15;
 
 class StaticDataGrid extends React.Component {
-  static buildRows(sectionId, num) {
-    const rows = (new Array(num)).fill().map((rowVal, rowIndex) => ({
-      id: `${sectionId}-Row${rowIndex}`,
-      height: rowIndex % 5 === 0 ? '7rem' : undefined,
-      cells: ((new Array(10).fill(0)).map((cellVal, cellIndex) => (`Column-${cellIndex}`))).map(columnKey => ({
-        columnId: columnKey,
-        component: <ContentCellLayout text={`Row-${rowIndex}, ${columnKey}`} />,
+  static buildRows(sectionData, numOfColumns, numberOfRowsToDisplay) {
+    const rows = (new Array(numberOfRowsToDisplay)).fill().map((rowVal, rowIndex) => ({
+      id: `${sectionData.section.id}-Row${rowIndex}`,
+      height: (rowIndex + 1) % 5 === 0 ? '7rem' : undefined,
+      cells: (new Array(numOfColumns).fill(0)).map((cellVal, cellIndex) => ({
+        columnId: sectionData.sectionRows[rowIndex].cells[cellIndex].columnId,
+        component: <ContentCellLayout text={sectionData.sectionRows[rowIndex].cells[cellIndex].cellContent} />,
       })),
     }));
 
     return rows;
   }
 
-  static buildSection(sectionId, numberOfRows) {
+  static buildSection(sectionData, numberOfRows) {
     return {
-      id: sectionId,
-      rows: StaticDataGrid.buildRows(sectionId, numberOfRows),
+      id: sectionData.section.id,
+      rows: StaticDataGrid.buildRows(sectionData, numColumnsDisplayed, numberOfRows),
     };
+  }
+
+  static buildColumns(data, start, end) {
+    const col = (new Array(end - start));
+    for (let columnIndex = start, currentElementIndex = 0; columnIndex <= end; columnIndex += 1, currentElementIndex += 1) {
+      const columnHeaderInfo = data.allColumnIds[columnIndex];
+      col[currentElementIndex] = {
+        id: columnHeaderInfo.id,
+        text: columnHeaderInfo.displayName,
+        ...(columnIndex === 0) && { width: firstColumnWidth },
+      };
+    }
+    return col;
   }
 
   render() {
@@ -79,12 +52,12 @@ class StaticDataGrid extends React.Component {
       <div className={cx('data-grid-basic')}>
         <DataGrid
           id="basic-example"
-          pinnedColumns={pinnedColumns}
-          overflowColumns={overflowColumns}
+          pinnedColumns={StaticDataGrid.buildColumns(gridDataJSON, 0, pinnedColumnsCount - 1)}
+          overflowColumns={StaticDataGrid.buildColumns(gridDataJSON, pinnedColumnsCount, numColumnsDisplayed - 1)}
           sections={[
-            StaticDataGrid.buildSection('section_0', 30),
+            StaticDataGrid.buildSection(gridDataJSON.sections[0], numRowsPerSection),
           ]}
-          defaultColumnWidth={250}
+          defaultColumnWidth={defaultColumnWidth}
           fill
         />
       </div>

@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-item-view",
   "main": "lib/ItemView.js",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "description": "The Item View component allows displays to be organized into rows and column and themed, while providing means to add accessory elements and a comment.",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-clinical-item-display": "^4.5.0",
+    "terra-clinical-item-display": "^4.6.0",
     "terra-icon": "^3.0.0",
     "terra-mixins": "^1.0.0",
     "terra-theme-context": "^1.0.0"
