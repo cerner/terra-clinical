@@ -4,8 +4,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 
-// test changes
-
 import styles from './Header.module.scss';
 
 const cx = classNamesBind.bind(styles);

@@ -1,8 +1,6 @@
 import React from 'react';
 import Item from '../../src/Item';
 
-// test changes
-
 const listItemStyles = {
   listItemLayout: 'twoColumns',
   listItemTextEmphasis: 'start',
