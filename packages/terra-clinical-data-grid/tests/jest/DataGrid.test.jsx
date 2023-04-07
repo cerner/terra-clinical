@@ -342,7 +342,7 @@ describe('DataGrid Snapshots', () => {
     expect(refCallback).toBeCalled();
   });
 
-  it('should render a DataGrid with label and description ref props that are strings', () => {
+  it('should render a DataGrid with a label and description when the provided props are strings', () => {
     const dataGridComp = (
       <DataGrid.WrappedComponent
         id="test"
@@ -360,34 +360,47 @@ describe('DataGrid Snapshots', () => {
     expect(dataGrid).toMatchSnapshot();
   });
 
-  it('should render a DataGrid with label and description ref props that are refs', () => {
-    const setLabelRef = (node) => {
-      this.labelNode = node;
-    };
+  it('should render a DataGrid with a label and description when the provided props are refs', () => {
+    const mockLabelRef = jest.fn();
+    const mockDescriptionRef = jest.fn();
 
-    const getLabelRef = () => this.labelNode;
+    const label = document.createElement('span');
+    label.innerHTML = 'My Label';
+    const description = document.createElement('span');
+    description.innerHTML = 'My Description';
 
-    const setDescriptionRef = (node) => {
-      this.descriptionNode = node;
-    };
-
-    const getDescriptionRef = () => this.descriptionNode;
+    mockLabelRef.mockReturnValue({ current: label });
+    mockDescriptionRef.mockReturnValue(description);
 
     const dataGridComp = (
-      <div>
-        <span ref={setLabelRef}>My Label</span>
-        <span ref={setDescriptionRef}>My Description</span>
-        <DataGrid.WrappedComponent
-          id="test"
-          pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-          overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-          sections={testSections}
-          intl={mockIntl}
-          fill
-          labelRef={getLabelRef}
-          descriptionRef={getDescriptionRef}
-        />
-      </div>
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        fill
+        labelRef={mockLabelRef}
+        descriptionRef={mockDescriptionRef}
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid without a label and description when the provided props are not strings or functions', () => {
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        fill
+        labelRef={{ mock: 'invalid type' }}
+        descriptionRef={{ mock: 'invalid type' }}
+      />
     );
 
     const dataGrid = shallow(dataGridComp);
@@ -442,8 +455,4 @@ describe('getDerivedStateFromProps', () => {
     );
     expect(dataGrid).toMatchSnapshot();
   });
-});
-
-describe('rendering label and description', () => {
-
 });

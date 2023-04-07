@@ -60,23 +60,17 @@ class LabelExternalDataGrid extends React.Component {
     };
   }
 
-  setLabelRef = (node) => {
-    this.labelNode = node;
+  constructor(props) {
+    super(props);
+    this.labelNode = React.createRef();
+    this.descriptionNode = React.createRef();
   }
-
-  getLabelRef = () => this.labelNode;
-
-  setDescriptionRef = (node) => {
-    this.descriptionNode = node;
-  }
-
-  getDescriptionRef = () => this.descriptionNode;
 
   render() {
     return (
       <div id="label-external-data-grid" className={cx('content-wrapper')}>
-        <h3 ref={this.setLabelRef}>Example Label</h3>
-        <p ref={this.setDescriptionRef}>Example Description</p>
+        <h3 ref={this.labelNode}>Example Label</h3>
+        <p ref={this.descriptionNode}>Example Description</p>
         <DataGrid
           id="label-external"
           pinnedColumns={pinnedColumns}
@@ -85,8 +79,8 @@ class LabelExternalDataGrid extends React.Component {
             LabelExternalDataGrid.buildSection('section_0', 3),
           ]}
           fill
-          labelRef={this.getLabelRef}
-          descriptionRef={this.getDescriptionRef}
+          labelRef={() => this.labelNode}
+          descriptionRef={() => this.descriptionNode}
         />
       </div>
     );
