@@ -2,6 +2,8 @@
 
 exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1`] = `
 <div
+  aria-colcount={4}
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -42,7 +44,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -51,7 +53,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -65,7 +66,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -113,6 +113,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={true}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -123,7 +124,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
       >
         <Row
           allowColumnHighlighting={true}
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -134,7 +134,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         />
         <Row
           allowColumnHighlighting={true}
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -145,6 +144,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         />
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -318,8 +318,10 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
 
 exports[`DataGrid Snapshots should render a DataGrid with a label and description when the provided props are refs 1`] = `
 <div
+  aria-colcount={4}
   aria-describedby="test-hiddendescription"
   aria-labelledby="test-hiddenlabel"
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -374,7 +376,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -383,7 +385,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -412,7 +413,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -446,6 +446,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -455,7 +456,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         }
       >
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -498,7 +498,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
           </Cell>
         </Row>
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -542,6 +541,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -649,8 +649,10 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
 
 exports[`DataGrid Snapshots should render a DataGrid with a label and description when the provided props are strings 1`] = `
 <div
+  aria-colcount={4}
   aria-describedby="test-hiddendescription"
   aria-labelledby="test-hiddenlabel"
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -705,7 +707,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -714,7 +716,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -743,7 +744,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -777,6 +777,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -786,7 +787,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         }
       >
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -829,7 +829,6 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
           </Cell>
         </Row>
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -873,6 +872,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -980,6 +980,8 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
 
 exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`] = `
 <div
+  aria-colcount={2}
+  aria-rowcount={1}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -1020,7 +1022,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -1029,7 +1031,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -1056,7 +1057,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -1088,6 +1088,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -1120,7 +1121,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
           />
         </div>
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -1148,6 +1148,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -1201,6 +1202,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
 
 exports[`DataGrid Snapshots should render a DataGrid with custom row and header heights 1`] = `
 <div
+  aria-colcount={4}
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -1241,7 +1244,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "10rem",
@@ -1250,7 +1253,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "10rem",
@@ -1264,7 +1266,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "10rem",
@@ -1312,6 +1313,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={true}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -1321,7 +1323,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         }
       >
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -1331,7 +1332,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
           width="0px"
         />
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -1342,6 +1342,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         />
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -1513,6 +1514,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
 
 exports[`DataGrid Snapshots should render a DataGrid with custom section header 1`] = `
 <div
+  aria-colcount={2}
+  aria-rowcount={1}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -1553,7 +1556,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -1562,7 +1565,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -1585,7 +1587,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -1613,6 +1614,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -1649,7 +1651,6 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
           </SectionHeader>
         </div>
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -1677,6 +1678,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -1730,6 +1732,8 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
 
 exports[`DataGrid Snapshots should render a DataGrid with missing optional props 1`] = `
 <div
+  aria-colcount={0}
+  aria-rowcount={0}
   className="data-grid-container"
   id="test"
   role="grid"
@@ -1748,6 +1752,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={true}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -1758,6 +1763,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
       >
         <div
           className="header-container"
+          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -1771,6 +1777,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
         </div>
       </div>
       <div
+        aria-hidden={true}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -1779,6 +1786,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
         >
           <div
             className="header-container"
+            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -1806,6 +1814,8 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
 
 exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 1`] = `
 <div
+  aria-colcount={4}
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -1846,7 +1856,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -1855,7 +1865,6 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -1869,7 +1878,6 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -1917,6 +1925,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={true}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -1926,7 +1935,6 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         }
       >
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -1936,7 +1944,6 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
           width="0px"
         />
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -1947,6 +1954,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         />
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -2118,6 +2126,8 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
 
 exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow columns 1`] = `
 <div
+  aria-colcount={4}
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -2158,7 +2168,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -2167,7 +2177,6 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -2196,7 +2205,6 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -2230,6 +2238,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -2239,7 +2248,6 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         }
       >
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -2282,7 +2290,6 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
           </Cell>
         </Row>
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -2326,6 +2333,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -2433,6 +2441,8 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
 
 exports[`DataGrid Snapshots should render a DataGrid with selectable rows, columns, and cells 1`] = `
 <div
+  aria-colcount={3}
+  aria-rowcount={1}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -2473,7 +2483,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -2482,7 +2492,6 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -2514,7 +2523,6 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -2544,6 +2552,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -2576,7 +2585,6 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           />
         </div>
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isSelected={true}
@@ -2622,6 +2630,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -2678,6 +2687,8 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
 
 exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 1`] = `
 <div
+  aria-colcount={4}
+  aria-rowcount={2}
   className="data-grid-container"
   id="test"
   role="grid"
@@ -2696,6 +2707,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -2706,6 +2718,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
       >
         <div
           className="header-container"
+          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -2735,7 +2748,6 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
           </div>
         </div>
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -2778,7 +2790,6 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
           </Cell>
         </Row>
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -2822,6 +2833,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -2830,6 +2842,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
         >
           <div
             className="header-container"
+            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -2958,6 +2971,8 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
 
 exports[`DataGrid Snapshots should render a DataGrid without a label and description when the provided props are not strings or functions 1`] = `
 <div
+  aria-colcount={4}
+  aria-rowcount={2}
   className="data-grid-container fill"
   id="test"
   role="grid"
@@ -2998,7 +3013,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
     header={
       <div
         className="header-container fixed"
-        role="rowgroup"
+        role="row"
         style={
           Object {
             "height": "2.5rem",
@@ -3007,7 +3022,6 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
       >
         <div
           className="pinned-header"
-          role="row"
           style={
             Object {
               "height": "2.5rem",
@@ -3036,7 +3050,6 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         >
           <div
             className="overflow-header"
-            role="row"
             style={
               Object {
                 "height": "2.5rem",
@@ -3070,6 +3083,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
       className="vertical-overflow-container"
     >
       <div
+        aria-hidden={false}
         className="pinned-content-container"
         role="rowgroup"
         style={
@@ -3079,7 +3093,6 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         }
       >
         <Row
-          aria-owns="test-Overflow-Row-row-0-Section-section-0"
           height="2.5rem"
           id="test-Pinned-Row-row-0-Section-section-0"
           isStriped={false}
@@ -3122,7 +3135,6 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
           </Cell>
         </Row>
         <Row
-          aria-owns="test-Overflow-Row-row-1-Section-section-0"
           height="8rem"
           id="test-Pinned-Row-row-1-Section-section-0"
           isStriped={true}
@@ -3166,6 +3178,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         </Row>
       </div>
       <div
+        aria-hidden={false}
         className="overflowed-content-container"
         role="rowgroup"
       >
@@ -3328,6 +3341,8 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
     sections={Array []}
   >
     <div
+      aria-colcount={0}
+      aria-rowcount={0}
       className="data-grid-container orion-fusion-theme"
       id="test"
       role="grid"
@@ -3358,6 +3373,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                   className="vertical-overflow-container"
                 >
                   <div
+                    aria-hidden={true}
                     className="pinned-content-container"
                     role="rowgroup"
                     style={
@@ -3368,6 +3384,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                   >
                     <div
                       className="header-container"
+                      role="row"
                       style={
                         Object {
                           "height": "2.5rem",
@@ -3381,6 +3398,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                     </div>
                   </div>
                   <div
+                    aria-hidden={true}
                     className="overflowed-content-container"
                     role="rowgroup"
                   >
@@ -3389,6 +3407,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                     >
                       <div
                         className="header-container"
+                        role="row"
                         style={
                           Object {
                             "height": "2.5rem",

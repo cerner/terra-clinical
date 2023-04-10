@@ -103,6 +103,7 @@ class RowSelectionCell extends React.Component {
         onHoverStart={onHoverStart}
         onHoverEnd={onHoverEnd}
         ariaLabel={ariaLabel}
+        role="gridcell"
       >
         <div className={cx('icon-container')}>
           <div className={cx('icon')} />

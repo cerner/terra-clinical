@@ -872,12 +872,11 @@ class DataGrid extends React.Component {
       <div
         className={cx(['header-container', 'fixed'])}
         style={this.generateHeaderContainerStyle(headerHeight)}
-        role="rowgroup"
+        role="row"
       >
         <div
           className={cx('pinned-header')}
           style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}
-          role="row"
         >
           {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
         </div>
@@ -889,7 +888,6 @@ class DataGrid extends React.Component {
           <div
             className={cx('overflow-header')}
             style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}
-            role="row"
           >
             {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
           </div>
@@ -1026,7 +1024,7 @@ class DataGrid extends React.Component {
       ariaStyles['aria-hidden'] = true;
     } else if (isPinned) {
       ariaStyles.id = `${id}-Pinned-Row-${row.id}-Section-${section.id}`;
-      ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
+      // ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
     } else {
       ariaStyles.id = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
     }
@@ -1086,7 +1084,7 @@ class DataGrid extends React.Component {
     return (
       <React.Fragment>
         {!fill && (
-          <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}>
+          <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)} role="row">
             <div className={cx('pinned-header')}>
               {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
             </div>
@@ -1106,7 +1104,7 @@ class DataGrid extends React.Component {
     return (
       <React.Fragment>
         {!fill && (
-          <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}>
+          <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)} role="row">
             <div className={cx('overflow-header')}>
               {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
             </div>
@@ -1209,6 +1207,12 @@ class DataGrid extends React.Component {
       ),
       customProps.className,
     );
+    const allColumns = dataGridUtils.getPinnedColumns(this.props).concat(dataGridUtils.getOverflowColumns(this.props));
+    const allColumnsCount = allColumns.length;
+    let rowCount = 0;
+    sections.forEach(section => {
+      rowCount += section.rows.length;
+    });
 
     return (
       <div
@@ -1217,6 +1221,8 @@ class DataGrid extends React.Component {
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
         role="grid"
+        aria-rowcount={rowCount}
+        aria-colcount={allColumnsCount}
         aria-labelledby={labelText ? `${id}-hiddenlabel` : undefined}
         aria-describedby={descriptionText ? `${id}-hiddendescription` : undefined}
       >
@@ -1245,6 +1251,7 @@ class DataGrid extends React.Component {
               ref={this.setPinnedContentContainerRef}
               style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
               role="rowgroup"
+              aria-hidden={dataGridUtils.getPinnedColumns(this.props).length === 0}
             >
               {this.renderPinnedContent()}
             </div>
@@ -1252,6 +1259,7 @@ class DataGrid extends React.Component {
               className={cx('overflowed-content-container')}
               ref={this.setOverflowedContentContainerRef}
               role="rowgroup"
+              aria-hidden={dataGridUtils.getOverflowColumns(this.props).length === 0}
             >
               <div
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}
