@@ -10,7 +10,7 @@ const LabelValueViewNodeCustom = () => (
     <LabelValueView label="Label">
       <div className={cx('label-value-view-content')}>
         <h3>Custom H3 for the Value</h3>
-        <p>Custom paragraph of text for the Value. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Custom paragraph of text for the Value.</p>
       </div>
     </LabelValueView>
   </div>

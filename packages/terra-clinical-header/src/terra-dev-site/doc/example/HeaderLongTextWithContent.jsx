@@ -6,7 +6,7 @@ const LongTextWithContent = () => (
   <div>
     <Header
       startContent={<Button text="Button" />}
-      title="Lorem ipsum dolor sit amet, sea meis iisque petentium an. Vero copiosae eu eos. Usu ocurreret definiebas eu, vim esse duis habemus at, vix at alii ubique. Nobis meliore principes te cum. Ei quando eirmod oportere eum, ei nonumy eruditi eum. In qui odio euripidis, habeo mundi praesent vim et."
+      title="This is a header with long text and content.This is an element provides a customizable header and content layout with a prominent options for the elements.This component saves time and effort in designing a header and content from scratch and ensures consistency across a website's pages."
       endContent={<Button text="Button" />}
     >
       <Button text="Custom 1" />
