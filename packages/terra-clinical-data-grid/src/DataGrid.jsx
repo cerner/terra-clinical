@@ -121,14 +121,14 @@ const propTypes = {
    */
   horizontalOverflowContainerRefCallback: PropTypes.func,
   /**
-   * A label ref to provide context for screen readers. This can be a ref to a textual DOM element or a string.
+   * A ref to the element containing the visual name/label of the grid to provide context for screen readers. This can be a ref to a textual DOM element or a string, but a ref is recommended. Necessary to meet a11y standards.
    */
   labelRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,
   ]),
   /**
-   * A description ref to provide context for screen readers. This can be a ref to a textual DOM element or a string.
+   * A ref to an element containing description, helper text, or instructions for using the grid to provide context for screen readers. This can be a ref to a textual DOM element or a string. This information should be made visible as well outside of the grid when possible.
    */
   descriptionRef: PropTypes.oneOfType([
     PropTypes.func,
