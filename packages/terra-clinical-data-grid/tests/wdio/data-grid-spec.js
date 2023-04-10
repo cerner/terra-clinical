@@ -216,4 +216,51 @@ Terra.describeViewports('DataGrid', ['medium', 'huge'], () => {
       Terra.validates.element('highlighted column selectable cells cell selection', { selector: '#highlight-column-selectable-data-grid' });
     });
   });
+
+  describe('with two grids on the page', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/terra-clinical-data-grid/clinical-data-grid/multiple-data-grids');
+    });
+
+    it('should be able to tab across grids', () => {
+      browser.keys(new Array(49).fill('Tab'));
+
+      Terra.validates.element('multiple-grids-tab', { selector: '#multiple-data-grids' });
+    });
+
+    it('should be able sort grid data independently', () => {
+      browser.keys((new Array(3).fill('Tab')).concat(new Array(2).fill('Space')));
+
+      Terra.validates.element('multiple-grids-sort', { selector: '#multiple-data-grids' });
+    });
+
+    it('should be able select grid rows independently', () => {
+      browser.keys((new Array(6).fill('Tab'))
+        .concat(['Space'])
+        .concat(new Array(49).fill('Tab'))
+        .concat(['Space']));
+
+      Terra.validates.element('multiple-grids-select-rows', { selector: '#multiple-data-grids' });
+    });
+
+    it('should be able select grid cells independently', () => {
+      browser.keys((new Array(7).fill('Tab'))
+        .concat(['Space'])
+        .concat(new Array(50).fill('Tab'))
+        .concat(['Space']));
+
+      Terra.validates.element('multiple-grids-select-cells', { selector: '#multiple-data-grids' });
+    });
+
+    it('should be able close grid sections independently', () => {
+      browser.keys((new Array(5).fill('Tab'))
+        .concat(['Space'])
+        .concat(new Array(42).fill('Tab'))
+        .concat(['Space']));
+
+      Terra.validates.element('multiple-grids-close-sections', { selector: '#multiple-data-grids' });
+    });
+
+    after(() => browser.refresh());
+  });
 });
