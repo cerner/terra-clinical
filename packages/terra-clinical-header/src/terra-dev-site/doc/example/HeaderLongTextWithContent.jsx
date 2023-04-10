@@ -5,11 +5,11 @@ import Header from 'terra-clinical-header';
 const LongTextWithContent = () => (
   <div>
     <Header
-      startContent={<Button text="Button" />}
-      title="This is a header with long text and content.This is an element provides a customizable header and content layout with a prominent options for the elements.This component saves time and effort in designing a header and content from scratch and ensures consistency across a website's pages."
-      endContent={<Button text="Button" />}
+      startContent={<Button text="Back" />}
+      title="Patient Information for Individual Diagnosed with a Chronic Disease in the past or currently suffering: Comprehensive Medical History,Treatment Plan,and Prognosis Report"
+      endContent={<Button text="Prescription" />}
     >
-      <Button text="Custom 1" />
+      <Button text="Medical History" />
     </Header>
   </div>
 );

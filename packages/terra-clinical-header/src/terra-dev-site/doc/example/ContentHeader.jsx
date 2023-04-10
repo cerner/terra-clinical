@@ -5,9 +5,9 @@ import Header from 'terra-clinical-header';
 const TitleHeader = () => (
   <div>
     <Header
-      startContent={<Button text="Button" />}
-      title="Default Header"
-      endContent={<Button text="Button" />}
+      startContent={<Button text="Back" />}
+      title="Patient Information"
+      endContent={<Button text="Prescription" />}
     />
   </div>
 );

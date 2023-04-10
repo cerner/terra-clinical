@@ -8,13 +8,13 @@ const cx = classNames.bind(styles);
 
 const LabelValueViewNode = () => (
   <div>
-    <LabelValueView label="Label">
+    <LabelValueView label="Alert">
       <div className={cx('container')}>
         <div className={cx('icon')}>
           <IconCritical />
         </div>
         <div className={cx('text')}>
-          Clinical-Item-Display as Value
+          Critical Alert: Blood Pressure is high.
         </div>
       </div>
     </LabelValueView>

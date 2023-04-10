@@ -5,9 +5,9 @@ import Header from 'terra-clinical-header';
 const Subheader = () => (
   <div>
     <Header
-      startContent={<Button text="Button" />}
-      title="Default Subheader"
-      endContent={<Button text="Button" />}
+      startContent={<Button text="Consult" />}
+      title="Dr. Carl"
+      endContent={<Button text="Information" />}
       isSubheader
     />
   </div>
