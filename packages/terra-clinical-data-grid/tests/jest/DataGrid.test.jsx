@@ -417,6 +417,30 @@ describe('DataGrid Snapshots', () => {
   });
 });
 
+it('should render a DataGrid without a label and description when the provided ref is a function returning null or undefined', () => {
+  const mockLabelRef = jest.fn();
+  const mockDescriptionRef = jest.fn();
+
+  mockLabelRef.mockReturnValue(null);
+  mockDescriptionRef.mockReturnValue(undefined);
+
+  const dataGridComp = (
+    <DataGrid.WrappedComponent
+      id="test"
+      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+      sections={testSections}
+      intl={mockIntl}
+      fill
+      labelRef={mockLabelRef}
+      descriptionRef={mockDescriptionRef}
+    />
+  );
+
+  const dataGrid = shallow(dataGridComp);
+  expect(dataGrid).toMatchSnapshot();
+});
+
 describe('getDerivedStateFromProps', () => {
   let getPinnedColumnsRef;
   let getOverflowColumnsRef;

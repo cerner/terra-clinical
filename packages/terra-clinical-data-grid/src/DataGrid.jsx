@@ -389,7 +389,7 @@ class DataGrid extends React.Component {
 
   getA11yText = (ref) => {
     if (!ref) {
-      return undefined;
+      return null;
     }
     if (typeof ref === 'string') {
       return ref;
@@ -398,9 +398,9 @@ class DataGrid extends React.Component {
       /**
        * React.createRef/useRef use 'current' property while callback ref can be accessed directly.
        */
-      return (ref() && ((ref().current && ref().current.textContent) || ref().textContent));
+      return (ref() && ((ref().current && ref().current.textContent) || ref().textContent)) || null;
     }
-    return undefined;
+    return null;
   }
 
   getLabelText() {
