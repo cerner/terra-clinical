@@ -334,8 +334,13 @@ class DataGrid extends React.Component {
     /**
      * Get the label and description text from labelRef and descriptionRef props.
      */
-    this.getLabelText();
-    this.getDescriptionText();
+    if (this.props.labelRef) {
+      this.getLabelText();
+    }
+
+    if (this.props.descriptionRef) {
+      this.getDescriptionText();
+    }
 
     this.postRenderUpdate();
   }
@@ -406,17 +411,13 @@ class DataGrid extends React.Component {
   getLabelText() {
     const { labelRef } = this.props;
 
-    if (labelRef) {
-      this.setState({ labelText: getA11yText(labelRef) });
-    }
+    this.setState({ labelText: getA11yText(labelRef) });
   }
 
   getDescriptionText() {
     const { descriptionRef } = this.props;
 
-    if (descriptionRef) {
-      this.setState({ descriptionText: getA11yText(descriptionRef) });
-    }
+    this.setState({ descriptionText: getA11yText(descriptionRef) });
   }
 
   /**
