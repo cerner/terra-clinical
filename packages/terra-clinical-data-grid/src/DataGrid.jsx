@@ -146,6 +146,22 @@ const defaultProps = {
   sections: [],
 };
 
+function getA11yText(ref) {
+  if (!ref) {
+    return null;
+  }
+  if (typeof ref === 'string') {
+    return ref;
+  }
+  if (typeof ref === 'function') {
+    /**
+     * React.createRef/useRef use 'current' property while callback ref can be accessed directly.
+     */
+    return (ref() && ((ref().current && ref().current.textContent) || ref().textContent)) || null;
+  }
+  return null;
+}
+
 /* eslint-disable react/sort-comp, react/forbid-dom-props */
 class DataGrid extends React.Component {
   /**
@@ -387,27 +403,11 @@ class DataGrid extends React.Component {
     }
   }
 
-  getA11yText = (ref) => {
-    if (!ref) {
-      return null;
-    }
-    if (typeof ref === 'string') {
-      return ref;
-    }
-    if (typeof ref === 'function') {
-      /**
-       * React.createRef/useRef use 'current' property while callback ref can be accessed directly.
-       */
-      return (ref() && ((ref().current && ref().current.textContent) || ref().textContent)) || null;
-    }
-    return null;
-  }
-
   getLabelText() {
     const { labelRef } = this.props;
 
     if (labelRef) {
-      this.setState({ labelText: this.getA11yText(labelRef) });
+      this.setState({ labelText: getA11yText(labelRef) });
     }
   }
 
@@ -415,7 +415,7 @@ class DataGrid extends React.Component {
     const { descriptionRef } = this.props;
 
     if (descriptionRef) {
-      this.setState({ descriptionText: this.getA11yText(descriptionRef) });
+      this.setState({ descriptionText: getA11yText(descriptionRef) });
     }
   }
 
