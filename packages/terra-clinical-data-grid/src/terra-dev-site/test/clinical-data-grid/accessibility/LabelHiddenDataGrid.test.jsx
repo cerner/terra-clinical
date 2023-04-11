@@ -2,8 +2,8 @@ import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 
-import ContentCellLayout from './ContentCellLayout';
-import styles from './ClinicalDataGridCommon.test.module.scss';
+import ContentCellLayout from '../ContentCellLayout';
+import styles from '../ClinicalDataGridCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -71,8 +71,8 @@ class LabeledDataGrid extends React.Component {
             LabeledDataGrid.buildSection('section_0', 3),
           ]}
           fill
-          labelRef="Example Label"
-          descriptionRef="Example Description"
+          labelRef="Patient Data Grid Label"
+          descriptionRef="This is a description for a data grid with patient information"
         />
       </div>
     );

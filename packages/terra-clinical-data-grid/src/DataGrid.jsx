@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 
 import { KEY_SHIFT, KEY_TAB } from 'keycode-js';
@@ -314,6 +315,9 @@ class DataGrid extends React.Component {
     document.addEventListener('keydown', this.handleKeyDown);
     document.addEventListener('keyup', this.handleKeyUp);
 
+    /**
+     * Get the label and description text from labelRef and descriptionRef props.
+     */
     this.getLabelText();
     this.getDescriptionText();
 
@@ -328,6 +332,17 @@ class DataGrid extends React.Component {
     if (prevProps.sections !== this.props.sections) {
       this.hasRequestedContent = false;
       this.updateColumnHighlightRowData();
+    }
+
+    /**
+     * If labelRef or descriptionRef props are updated, set the new text for the label and description.
+     */
+    if (prevProps.labelRef !== this.props.labelRef) {
+      this.getLabelText();
+    }
+
+    if (prevProps.descriptionRef !== this.props.descriptionRef) {
+      this.getDescriptionText();
     }
 
     this.postRenderUpdate();
@@ -369,6 +384,38 @@ class DataGrid extends React.Component {
       if (lastAccessibleElement) {
         lastAccessibleElement.focus();
       }
+    }
+  }
+
+  getA11yText = (ref) => {
+    if (!ref) {
+      return undefined;
+    }
+    if (typeof ref === 'string') {
+      return ref;
+    }
+    if (typeof ref === 'function') {
+      /**
+       * React.createRef/useRef use 'current' property while callback ref can be accessed directly.
+       */
+      return (ref() && ((ref().current && ref().current.textContent) || ref().textContent));
+    }
+    return undefined;
+  }
+
+  getLabelText() {
+    const { labelRef } = this.props;
+
+    if (labelRef) {
+      this.setState({ labelText: this.getA11yText(labelRef) });
+    }
+  }
+
+  getDescriptionText() {
+    const { descriptionRef } = this.props;
+
+    if (descriptionRef) {
+      this.setState({ descriptionText: this.getA11yText(descriptionRef) });
     }
   }
 
@@ -1138,38 +1185,6 @@ class DataGrid extends React.Component {
     );
   }
 
-  getA11yText = (ref) => {
-    if (!ref) {
-      return undefined;
-    }
-    if (typeof ref === 'string') {
-      return ref;
-    }
-    if (typeof ref === 'function') {
-      /**
-       * React.createRef/useRef use 'current' property while callback ref can be accessed directly.
-       */
-      return (ref() && ((ref().current && ref().current.textContent) || ref().textContent));
-    }
-    return undefined;
-  }
-
-  getLabelText() {
-    const { labelRef } = this.props;
-
-    if (labelRef && !this.state.labelText) {
-      this.setState({ labelText: this.getA11yText(labelRef) });
-    }
-  }
-
-  getDescriptionText() {
-    const { descriptionRef } = this.props;
-
-    if (descriptionRef && !this.state.descriptionText) {
-      this.setState({ descriptionText: this.getA11yText(descriptionRef) });
-    }
-  }
-
   render() {
     const {
       id,
@@ -1226,8 +1241,8 @@ class DataGrid extends React.Component {
         aria-labelledby={labelText ? `${id}-hiddenlabel` : undefined}
         aria-describedby={descriptionText ? `${id}-hiddendescription` : undefined}
       >
-        {labelText ? <span id={`${id}-hiddenlabel`} className={cx('hidden-info')} tabIndex="-1">{labelText}</span> : null}
-        {descriptionText ? <span id={`${id}-hiddendescription`} className={cx('hidden-info')} tabIndex="-1">{descriptionText}</span> : null}
+        {labelText ? <VisuallyHiddenText id={`${id}-hiddenlabel`} tabIndex="-1" text={labelText} /> : null}
+        {descriptionText ? <VisuallyHiddenText id={`${id}-hiddendescription`} tabIndex="-1" text={descriptionText} /> : null}
         <div
           role="button"
           aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}

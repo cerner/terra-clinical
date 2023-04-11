@@ -326,20 +326,16 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
   id="test"
   role="grid"
 >
-  <span
-    className="hidden-info"
+  <VisuallyHiddenText
     id="test-hiddenlabel"
     tabIndex="-1"
-  >
-    My Label
-  </span>
-  <span
-    className="hidden-info"
+    text="My Label"
+  />
+  <VisuallyHiddenText
     id="test-hiddendescription"
     tabIndex="-1"
-  >
-    My Description
-  </span>
+    text="My Description"
+  />
   <div
     aria-label="Navigate to data grid-undefined"
     className="leading-focus-anchor"
@@ -657,20 +653,16 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
   id="test"
   role="grid"
 >
-  <span
-    className="hidden-info"
+  <VisuallyHiddenText
     id="test-hiddenlabel"
     tabIndex="-1"
-  >
-    label
-  </span>
-  <span
-    className="hidden-info"
+    text="label"
+  />
+  <VisuallyHiddenText
     id="test-hiddendescription"
     tabIndex="-1"
-  >
-    description
-  </span>
+    text="description"
+  />
   <div
     aria-label="Navigate to data grid-undefined"
     className="leading-focus-anchor"

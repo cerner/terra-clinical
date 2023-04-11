@@ -390,6 +390,10 @@ describe('DataGrid Snapshots', () => {
   });
 
   it('should render a DataGrid without a label and description when the provided props are not strings or functions', () => {
+    /* eslint-disable no-console */
+    const consoleError = console.error;
+    console.error = jest.fn();
+
     const dataGridComp = (
       <DataGrid.WrappedComponent
         id="test"
@@ -404,7 +408,12 @@ describe('DataGrid Snapshots', () => {
     );
 
     const dataGrid = shallow(dataGridComp);
+
+    expect(console.error).toHaveBeenCalled();
     expect(dataGrid).toMatchSnapshot();
+
+    console.error = consoleError;
+    /* eslint-enable no-console */
   });
 });
 

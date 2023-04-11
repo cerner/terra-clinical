@@ -2,8 +2,8 @@ import React from 'react';
 import DataGrid from 'terra-clinical-data-grid';
 import classNames from 'classnames/bind';
 
-import ContentCellLayout from './ContentCellLayout';
-import styles from './ClinicalDataGridCommon.test.module.scss';
+import ContentCellLayout from '../ContentCellLayout';
+import styles from '../ClinicalDataGridCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -69,8 +69,8 @@ class LabelExternalDataGrid extends React.Component {
   render() {
     return (
       <div id="label-external-data-grid" className={cx('content-wrapper')}>
-        <h3 ref={this.labelNode}>Example Label</h3>
-        <p ref={this.descriptionNode}>Example Description</p>
+        <h3 ref={this.labelNode}>Patient Data Grid Label</h3>
+        <p ref={this.descriptionNode}>This is a description for a data grid with patient information</p>
         <DataGrid
           id="label-external"
           pinnedColumns={pinnedColumns}
