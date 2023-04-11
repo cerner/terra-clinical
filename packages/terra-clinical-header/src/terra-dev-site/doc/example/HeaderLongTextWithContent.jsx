@@ -7,7 +7,7 @@ const LongTextWithContent = () => (
     <Header
       startContent={<Button text="Back" />}
       title="Patient Information for Individual Diagnosed with a Chronic Disease in the past or currently suffering: Comprehensive Medical History,Treatment Plan,and Prognosis Report"
-      endContent={<Button text="Prescription" />}
+      endContent={<Button text="print" />}
     >
       <Button text="Medical History" />
     </Header>
