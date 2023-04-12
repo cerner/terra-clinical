@@ -38,6 +38,7 @@ Cerner Corporation
 - Saket Bajaj [@saket2403]
 - Gyandeep Singh [@gyandeeps]
 - Dianna McGinn [@DMcginn]
+- Ashish kumbhare [@ashishkcerner]
 
 Community
 
@@ -81,3 +82,4 @@ Community
 [@pranav300]: https://github.com/pranav300
 [@saket2403]: https://github.com/saket2403
 [@DMcginn]: https://github.com/DMcginn
+[@ashishkcerner]: https://github.com/ashishkcerner

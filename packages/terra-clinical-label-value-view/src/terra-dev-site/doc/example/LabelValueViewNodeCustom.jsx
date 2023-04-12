@@ -7,10 +7,10 @@ const cx = classNames.bind(styles);
 
 const LabelValueViewNodeCustom = () => (
   <div>
-    <LabelValueView label="Label">
+    <LabelValueView label="Daily Feeds">
       <div className={cx('label-value-view-content')}>
-        <h3>Custom H3 for the Value</h3>
-        <p>Custom paragraph of text for the Value. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>Critical Alert: Covid-19 Outbreak</h3>
+        <p>Due to recent Covid-19 outbreakm out healthcare facility has implemented strict protocals to ensure the safety and well-being of our patients and staff.</p>
       </div>
     </LabelValueView>
   </div>
