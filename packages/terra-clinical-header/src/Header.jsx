@@ -39,7 +39,7 @@ const propTypes = {
 
   /**
    * ![IMPORTANT](https://badgen.net/badge/prop/deprecated/red)
-   * title prop has been deperecated and will be removed on next major version relase. Replace the `title` prop with `text` prop.
+   * The `title` prop has been deprecated and will be removed in next major version release. Use the `text` prop instead.
    */
   title: PropTypes.string,
 
