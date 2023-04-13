@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import memoize from 'memoize-one';
 import ResizeObserver from 'resize-observer-polyfill';
 import ContentContainer from 'terra-content-container';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 
 import { KEY_SHIFT, KEY_TAB } from 'keycode-js';
@@ -120,6 +121,20 @@ const propTypes = {
    * Callback ref to pass into horizontal overflow container.
    */
   horizontalOverflowContainerRefCallback: PropTypes.func,
+  /**
+   * A ref to the element containing the visual name/label of the grid to provide context for screen readers. This can be a ref to a textual DOM element or a string, but a ref is recommended. Necessary to meet a11y standards.
+   */
+  labelRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
+  /**
+   * A ref to an element containing description, helper text, or instructions for using the grid to provide context for screen readers. This can be a ref to a textual DOM element or a string. This information should be made visible as well outside of the grid when possible.
+   */
+  descriptionRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+  ]),
 };
 
 const defaultProps = {
@@ -130,6 +145,22 @@ const defaultProps = {
   defaultColumnWidth: 200,
   sections: [],
 };
+
+function getA11yText(ref) {
+  if (!ref) {
+    return null;
+  }
+  if (typeof ref === 'string') {
+    return ref;
+  }
+  if (typeof ref === 'function') {
+    /**
+     * React.createRef/useRef use 'current' property while callback ref can be accessed directly.
+     */
+    return (ref() && ((ref().current && ref().current.textContent) || ref().textContent)) || null;
+  }
+  return null;
+}
 
 /* eslint-disable react/sort-comp, react/forbid-dom-props */
 class DataGrid extends React.Component {
@@ -152,6 +183,8 @@ class DataGrid extends React.Component {
      */
     this.handleLeadingFocusAnchorFocus = this.handleLeadingFocusAnchorFocus.bind(this);
     this.handleTerminalFocusAnchorFocus = this.handleTerminalFocusAnchorFocus.bind(this);
+    this.getLabelText = this.getLabelText.bind(this);
+    this.getDescriptionText = this.getDescriptionText.bind(this);
 
     /**
      * Column Sizing
@@ -259,6 +292,8 @@ class DataGrid extends React.Component {
           firstRowSectionId: null, firstRowId: null, lastRowSectionId: null, lastRowId: null,
         }
         : dataGridUtils.getFirstAndLastVisibleRowData(props.sections),
+      labelText: null,
+      descriptionText: null,
     };
   }
 
@@ -296,6 +331,17 @@ class DataGrid extends React.Component {
     document.addEventListener('keydown', this.handleKeyDown);
     document.addEventListener('keyup', this.handleKeyUp);
 
+    /**
+     * Get the label and description text from labelRef and descriptionRef props.
+     */
+    if (this.props.labelRef) {
+      this.getLabelText();
+    }
+
+    if (this.props.descriptionRef) {
+      this.getDescriptionText();
+    }
+
     this.postRenderUpdate();
   }
 
@@ -307,6 +353,17 @@ class DataGrid extends React.Component {
     if (prevProps.sections !== this.props.sections) {
       this.hasRequestedContent = false;
       this.updateColumnHighlightRowData();
+    }
+
+    /**
+     * If labelRef or descriptionRef props are updated, set the new text for the label and description.
+     */
+    if (prevProps.labelRef !== this.props.labelRef) {
+      this.getLabelText();
+    }
+
+    if (prevProps.descriptionRef !== this.props.descriptionRef) {
+      this.getDescriptionText();
     }
 
     this.postRenderUpdate();
@@ -349,6 +406,18 @@ class DataGrid extends React.Component {
         lastAccessibleElement.focus();
       }
     }
+  }
+
+  getLabelText() {
+    const { labelRef } = this.props;
+
+    this.setState({ labelText: getA11yText(labelRef) });
+  }
+
+  getDescriptionText() {
+    const { descriptionRef } = this.props;
+
+    this.setState({ descriptionText: getA11yText(descriptionRef) });
   }
 
   /**
@@ -851,6 +920,7 @@ class DataGrid extends React.Component {
       <div
         className={cx(['header-container', 'fixed'])}
         style={this.generateHeaderContainerStyle(headerHeight)}
+        role="row"
       >
         <div
           className={cx('pinned-header')}
@@ -961,10 +1031,11 @@ class DataGrid extends React.Component {
     );
   }
 
-  renderCell(section, row, column, isFirstRow, isLastRow) {
+  renderCell(section, row, column, isFirstRow, isLastRow, isRowHeader) {
     const { onCellSelect, defaultColumnWidth, columnHighlightId } = this.props;
     const cell = (row.cells && row.cells.find(searchCell => searchCell.columnId === column.id)) || {};
     const cellKey = `${section.id}-${row.id}-${column.id}`;
+    const role = isRowHeader ? 'rowheader' : 'gridcell';
 
     return (
       <Cell
@@ -980,6 +1051,7 @@ class DataGrid extends React.Component {
         isColumnHighlighted={column.id === columnHighlightId}
         isFirstRow={isFirstRow}
         isLastRow={isLastRow}
+        role={role}
       >
         {cell.component}
       </Cell>
@@ -987,7 +1059,7 @@ class DataGrid extends React.Component {
   }
 
   renderRow(row, section, columns, width, isPinned, isStriped, isFirstRow, isLastRow) {
-    const { id } = this.props;
+    const { id, hasSelectableRows } = this.props;
     const height = row.height || this.props.rowHeight;
     /**
      * Because of the DOM structure necessary to properly render the pinned and overflow sections,
@@ -1000,10 +1072,12 @@ class DataGrid extends React.Component {
       ariaStyles['aria-hidden'] = true;
     } else if (isPinned) {
       ariaStyles.id = `${id}-Pinned-Row-${row.id}-Section-${section.id}`;
-      ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
+      // ariaStyles['aria-owns'] = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
     } else {
       ariaStyles.id = `${id}-Overflow-Row-${row.id}-Section-${section.id}`;
     }
+    const pinnedColumns = dataGridUtils.getPinnedColumns(this.props);
+    const allColumns = pinnedColumns.concat(dataGridUtils.getOverflowColumns(this.props));
 
     return (
       <Row
@@ -1026,7 +1100,13 @@ class DataGrid extends React.Component {
             return undefined;
           }
 
-          return this.renderCell(section, row, column, isFirstRow, isLastRow);
+          let isRowHeader = false;
+
+          if ((hasSelectableRows && column.id === allColumns[1].id) || (!hasSelectableRows && column.id === allColumns[0].id)) {
+            isRowHeader = true;
+          }
+
+          return this.renderCell(section, row, column, isFirstRow, isLastRow, isRowHeader);
         })}
       </Row>
     );
@@ -1052,7 +1132,7 @@ class DataGrid extends React.Component {
     return (
       <React.Fragment>
         {!fill && (
-          <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)}>
+          <div className={cx('header-container')} style={this.generatePinnedColumnHeaderStyle(pinnedColumnWidth, headerHeight)} role="row">
             <div className={cx('pinned-header')}>
               {dataGridUtils.getPinnedColumns(this.props).map(column => this.renderHeaderCell(column))}
             </div>
@@ -1072,7 +1152,7 @@ class DataGrid extends React.Component {
     return (
       <React.Fragment>
         {!fill && (
-          <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)}>
+          <div className={cx('header-container')} style={this.generateOverflowColumnHeaderStyle(overflowColumnWidth, headerHeight)} role="row">
             <div className={cx('overflow-header')}>
               {dataGridUtils.getOverflowColumns(this.props).map(column => this.renderHeaderCell(column))}
             </div>
@@ -1128,9 +1208,11 @@ class DataGrid extends React.Component {
       verticalOverflowContainerRefCallback,
       horizontalOverflowContainerRefCallback,
       columnHighlightId,
+      labelRef,
+      descriptionRef,
       ...customProps
     } = this.props;
-    const { pinnedColumnWidth } = this.state;
+    const { pinnedColumnWidth, labelText, descriptionText } = this.state;
     const theme = this.context;
 
     const dataGridClassnames = classNames(
@@ -1141,6 +1223,12 @@ class DataGrid extends React.Component {
       ),
       customProps.className,
     );
+    const allColumns = dataGridUtils.getPinnedColumns(this.props).concat(dataGridUtils.getOverflowColumns(this.props));
+    const allColumnsCount = allColumns.length;
+    let rowCount = 0;
+    sections.forEach(section => {
+      rowCount += section.rows.length;
+    });
 
     return (
       <div
@@ -1148,7 +1236,14 @@ class DataGrid extends React.Component {
         id={id}
         className={dataGridClassnames}
         ref={this.setDataGridContainerRef}
+        role="grid"
+        aria-rowcount={rowCount}
+        aria-colcount={allColumnsCount}
+        aria-labelledby={labelText ? `${id}-hiddenlabel` : undefined}
+        aria-describedby={descriptionText ? `${id}-hiddendescription` : undefined}
       >
+        {labelText ? <VisuallyHiddenText id={`${id}-hiddenlabel`} tabIndex="-1" text={labelText} /> : null}
+        {descriptionText ? <VisuallyHiddenText id={`${id}-hiddendescription`} tabIndex="-1" text={descriptionText} /> : null}
         <div
           role="button"
           aria-label={intl.formatMessage({ id: 'Terra.data-grid.navigate' })}
@@ -1171,12 +1266,16 @@ class DataGrid extends React.Component {
               className={cx('pinned-content-container')}
               ref={this.setPinnedContentContainerRef}
               style={this.generatePinnedContainerWidthStyle(pinnedColumnWidth)}
+              role="rowgroup"
+              aria-hidden={dataGridUtils.getPinnedColumns(this.props).length === 0}
             >
               {this.renderPinnedContent()}
             </div>
             <div
               className={cx('overflowed-content-container')}
               ref={this.setOverflowedContentContainerRef}
+              role="rowgroup"
+              aria-hidden={dataGridUtils.getOverflowColumns(this.props).length === 0}
             >
               <div
                 className={cx(['horizontal-overflow-container', { 'padded-container': fill }])}

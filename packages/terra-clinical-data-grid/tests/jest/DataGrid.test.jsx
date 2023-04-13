@@ -292,9 +292,138 @@ describe('DataGrid Snapshots', () => {
     const dataGrid = shallow(dataGridComp);
     expect(dataGrid).toMatchSnapshot();
   });
+
+  it('should render a DataGrid with the fill prop missing', () => {
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
+    const refCallback = jest.fn();
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        verticalOverflowContainerRefCallback={refCallback}
+      />
+    );
+
+    mountWithIntl(dataGridComp);
+    expect(refCallback).toBeCalled();
+  });
+
+  it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
+    const refCallback = jest.fn();
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        horizontalOverflowContainerRefCallback={refCallback}
+      />
+    );
+
+    mountWithIntl(dataGridComp);
+    expect(refCallback).toBeCalled();
+  });
+
+  it('should render a DataGrid with a label and description when the provided props are strings', () => {
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        fill
+        labelRef="label"
+        descriptionRef="description"
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid with a label and description when the provided props are refs', () => {
+    const mockLabelRef = jest.fn();
+    const mockDescriptionRef = jest.fn();
+
+    const label = document.createElement('span');
+    label.innerHTML = 'My Label';
+    const description = document.createElement('span');
+    description.innerHTML = 'My Description';
+
+    mockLabelRef.mockReturnValue({ current: label });
+    mockDescriptionRef.mockReturnValue(description);
+
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        fill
+        labelRef={mockLabelRef}
+        descriptionRef={mockDescriptionRef}
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+    expect(dataGrid).toMatchSnapshot();
+  });
+
+  it('should render a DataGrid without a label and description when the provided props are not strings or functions', () => {
+    /* eslint-disable no-console */
+    const consoleError = console.error;
+    console.error = jest.fn();
+
+    const dataGridComp = (
+      <DataGrid.WrappedComponent
+        id="test"
+        pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
+        overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
+        sections={testSections}
+        intl={mockIntl}
+        fill
+        labelRef={{ mock: 'invalid type' }}
+        descriptionRef={{ mock: 'invalid type' }}
+      />
+    );
+
+    const dataGrid = shallow(dataGridComp);
+
+    expect(console.error).toHaveBeenCalled();
+    expect(dataGrid).toMatchSnapshot();
+
+    console.error = consoleError;
+    /* eslint-enable no-console */
+  });
 });
 
-it('should render a DataGrid with the fill prop missing', () => {
+it('should render a DataGrid without a label and description when the provided ref is a function returning null or undefined', () => {
+  const mockLabelRef = jest.fn();
+  const mockDescriptionRef = jest.fn();
+
+  mockLabelRef.mockReturnValue(null);
+  mockDescriptionRef.mockReturnValue(undefined);
+
   const dataGridComp = (
     <DataGrid.WrappedComponent
       id="test"
@@ -302,45 +431,14 @@ it('should render a DataGrid with the fill prop missing', () => {
       overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
       sections={testSections}
       intl={mockIntl}
+      fill
+      labelRef={mockLabelRef}
+      descriptionRef={mockDescriptionRef}
     />
   );
 
   const dataGrid = shallow(dataGridComp);
   expect(dataGrid).toMatchSnapshot();
-});
-
-it('should pass in refCallback as the ref prop of the vertical overflow container element', () => {
-  const refCallback = jest.fn();
-  const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-      verticalOverflowContainerRefCallback={refCallback}
-    />
-  );
-
-  mountWithIntl(dataGridComp);
-  expect(refCallback).toBeCalled();
-});
-
-it('should pass in refCallback as the ref prop of the horizontal overflow container element', () => {
-  const refCallback = jest.fn();
-  const dataGridComp = (
-    <DataGrid.WrappedComponent
-      id="test"
-      pinnedColumns={[testColumns['Column-0'], testColumns['Column-1']]}
-      overflowColumns={[testColumns['Column-2'], testColumns['Column-3']]}
-      sections={testSections}
-      intl={mockIntl}
-      horizontalOverflowContainerRefCallback={refCallback}
-    />
-  );
-
-  mountWithIntl(dataGridComp);
-  expect(refCallback).toBeCalled();
 });
 
 describe('getDerivedStateFromProps', () => {

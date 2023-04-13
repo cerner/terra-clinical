@@ -20,6 +20,7 @@ exports[`Row Snapshot Tests correctly applies the theme context className 1`] = 
       data-row={true}
       data-row-id="row-test"
       data-section-id="section-test"
+      role="row"
       style={
         Object {
           "height": "4rem",
@@ -38,6 +39,7 @@ exports[`Row Snapshot Tests should render a Row allowing column highlighting 1`]
   data-row={true}
   data-row-id="row-test"
   data-section-id="section-test"
+  role="row"
   style={
     Object {
       "height": "4rem",
@@ -58,6 +60,7 @@ exports[`Row Snapshot Tests should render a Row with all provided props 1`] = `
   data-row={true}
   data-row-id="row-test"
   data-section-id="section-test"
+  role="row"
   style={
     Object {
       "height": "4rem",
@@ -78,6 +81,7 @@ exports[`Row Snapshot Tests should render a Row with minimal props 1`] = `
   data-row={true}
   data-row-id="row-test"
   data-section-id="section-test"
+  role="row"
   style={
     Object {
       "height": "4rem",

@@ -19,6 +19,7 @@ exports[`Cell Snapshot Tests correctly applies the theme context className 1`] =
       className="orion-fusion-theme"
       columnId="column-test"
       onSelect={[Function]}
+      role="gridcell"
       rowId="row-test"
       sectionId="section-test"
       width="123px"
@@ -26,6 +27,7 @@ exports[`Cell Snapshot Tests correctly applies the theme context className 1`] =
       <div
         aria-hidden={true}
         className="container orion-fusion-theme orion-fusion-theme"
+        role="gridcell"
         style={
           Object {
             "width": "123px",
@@ -58,6 +60,7 @@ exports[`Cell Snapshot Tests should render a Cell with all provided props 1`] = 
   onHoverEnd={[Function]}
   onHoverStart={[Function]}
   onSelect={[Function]}
+  role="gridcell"
   rowId="row-test"
   sectionId="section-test"
   selectableRefCallback={[Function]}
@@ -79,6 +82,7 @@ exports[`Cell Snapshot Tests should render a Cell with minimal props 1`] = `
   className=""
   columnId="column-test"
   onSelect={[Function]}
+  role="gridcell"
   rowId="row-test"
   sectionId="section-test"
   width="123px"

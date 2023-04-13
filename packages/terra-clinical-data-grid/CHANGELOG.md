@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Defined roles for better screen reader experience
+  * New `labelRef` and `descriptionRef` props for allowing a consumer to define label and description of data-grid
+
 ## 2.39.0 - (March 29, 2023)
 
 * Changed
