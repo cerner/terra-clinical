@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added tabbing support for multiple grids on the same page.
 
 * Added
   * Defined roles for better screen reader experience

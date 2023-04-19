@@ -247,7 +247,8 @@ const generateAccessibleContentIndex = (props, headerCellRefs, sectionRefs, cell
   });
 
   accessibilityStack.forEach((element, index) => {
-    element.setAttribute('data-accessibility-id', index);
+    const accessibilityId = `data-accessibility-id-${props.id}`;
+    element.setAttribute(accessibilityId, index);
   });
 
   return accessibilityStack;
