@@ -95,6 +95,7 @@ class Row extends React.Component {
         data-row-id={rowId}
         data-section-id={sectionId}
         data-allow-column-highlight={allowColumnHighlighting ? true : null}
+        role="row"
       >
         {children}
       </div>
