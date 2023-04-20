@@ -110,6 +110,7 @@ exports[`should render a header with title and heading level 1`] = `
     >
       <h1
         class="title"
+        id="test-id"
       >
         title
       </h1>

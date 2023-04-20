@@ -99,7 +99,7 @@ const Header = ({
 
   const content = React.Children.map(children, child => (
     React.cloneElement(child, {
-      className: classNames([cx('flex-collapse'), children.props.className]),
+      className: classNames([cx('flex-collapse'), child.props.className]),
     })
   ));
 
