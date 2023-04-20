@@ -4,6 +4,8 @@
 
 * Changed
   * Updated jest snapshots terra-icon A11y updatess.
+  * Updated wdio screenshots.
+  * Updated jest snapshots
 
 ## 4.29.0 - (July 21, 2021)
 

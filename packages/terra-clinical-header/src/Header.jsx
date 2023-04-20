@@ -75,12 +75,14 @@ const Header = ({
 }) => {
   const theme = useContext(ThemeContext);
   if (title) {
+    // TODO: remove on the next major version bump
     // eslint-disable-next-line no-console
-    console.warn('`title` prop has been renamed to `text`. please update all the refernces of `title` prop to use prop `text`.'); // to be removed on next major version release.
+    console.warn('The `title` prop has been renamed to `text`. Please update all references of `title` prop to `text`.');
   }
   if (!level) {
+    // TODO: remove on the next major version bump
     // eslint-disable-next-line no-console
-    console.warn('Default heading level may not appropriate has it would fail to convey context of heading in a site / application where it is used. Heading level should be set explicitly depending on the position of header in site / application to allow screen readers to identify headers consistently.'); // to be removed on next major version release.
+    console.warn('Default heading level may not appropriate has it would fail to convey context of heading in a site / application where it is used. Heading level should be set explicitly depending on the position of header in site / application to allow screen readers to identify headers consistently.');
   }
 
   let titleElement;
@@ -88,7 +90,7 @@ const Header = ({
     const HeaderElement = (level) ? `h${level}` : 'h1';
     titleElement = (
       <div className={cx('title-container')}>
-        <HeaderElement className={cx('title')}>
+        <HeaderElement id={id} className={cx('title')}>
           {title || text}
         </HeaderElement>
       </div>
