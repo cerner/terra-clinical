@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-label-value-view",
   "main": "lib/LabelValueView.js",
-  "version": "3.27.0",
+  "version": "3.28.0",
   "description": "The label value view component displays a label and the associated value or list of values underneath the label.",
   "repository": {
     "type": "git",
