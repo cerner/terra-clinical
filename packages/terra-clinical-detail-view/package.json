@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-detail-view",
   "main": "lib/DetailView.js",
-  "version": "3.28.0",
+  "version": "3.29.0",
   "description": "Detail Views allows you to create a view with text at different levels of importance. A detail view can contain a title, subtitles, a graph, a footer and a list of elements that can display information at a more detailed level. A Detail List is a structural subcomponent of Detail View indented to be used within the details prop. A Detail List accepts and arranges DetailListItem elements in a flexbox layout that wraps the list of items by row. Detail List Items are the elements to be placed within a Detail List. A Detail List Item accepts one element item and applies a minimum width of 50% so that the element spans at minimum half of the Detail List. This allows the Detail List to have either one or two items per row depending on the width of the item content in each item.",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-clinical-label-value-view": "^3.27.0",
+    "terra-clinical-label-value-view": "^3.28.0",
     "terra-icon": "^3.0.0",
     "terra-theme-context": "^1.0.0"
   },

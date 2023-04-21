@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 2.40.0 - (April 21, 2023)
+
 * Added
   * Added tabbing support for multiple grids on the same page.
 

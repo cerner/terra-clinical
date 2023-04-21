@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-data-grid",
   "main": "lib/DataGrid.js",
-  "version": "2.39.0",
+  "version": "2.40.0",
   "description": "An organizational component that renders a collection of data in a grid-like format.",
   "repository": {
     "type": "git",
