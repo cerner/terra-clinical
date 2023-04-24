@@ -2,9 +2,6 @@ import { Badge } from 'terra-clinical-header/package.json?dev-site-package';
 import { Notice } from '@cerner/terra-docs';
 
 
-import Whitespace from '/packages/terra-clinical-header/lib/terra-dev-site/doc/layout-helpers/WhiteSpace.js';
-import WebAIMSemanticHeadingContentStructure from '/packages/terra-clinical-header/lib/terra-dev-site/doc/reference/WebAIMSemanticHeadingContentStructure';
-
 <Badge />
 
 # Accessibility Guide for Terra Clinical Header
@@ -17,7 +14,6 @@ import WebAIMSemanticHeadingContentStructure from '/packages/terra-clinical-head
 
 </Notice>
 
-<Whitespace />
 
 ## Accessibility Considerations:
 
@@ -29,7 +25,6 @@ Terra has made sure to prevent this by allowing for appropriate visual styles fo
 - Terra Clinical Headers **must always** follow correct **heading level order and arrangement**.
 - Terra Clinical Headers _may sometimes_ be used for **labeling page regions**, and have additional requirements to associate the corresponding regions.
 
-<Whitespace />
 
 #### 1. Heading Level Order and Arrangement _(always)_
 
@@ -45,13 +40,10 @@ The primary objective of using Clinical Headers is to provide information on the
 > |---|---|
 > | `<h1>Heading level 1</h1>`<br />`<h3>Heading level 3</h3>`<br />`<h4>Heading level 4</h4>` | `<h1>Heading level 1</h1>`<br />`<h2>Heading level 2</h2>`<br />`<h3>Heading level 3</h3>` |
 
-<Whitespace />
 
 Headings create an outline for the page, similar to a term paper outline or table of contents. The `<h1>` describes the page as a whole (and should be similar to the page `<title>`). A page should typically have only one `<h1>`. Headings `<h2>` through `<h6>` represent increasing degrees of "indentation" in our conceptual "outline". As such, it does not make sense to skip heading levels, such as from `<h2>` to `<h4>`, going down the page. Here is an example of content hierarchy with corresponding heading levels: [<sub>[4]</sub>](/components/terra-clinical-header/clinical-header/accessibility-guide#linked-references)
 
-> <WebAIMSemanticHeadingContentStructure />
 
-<Whitespace newline={2} />
 
 #### 2. Labeling Page Regions _(as needed)_
 
@@ -98,7 +90,6 @@ Sectioning content can be labeled using a combination of the [aria-labelledby](h
 
 </Notice>
 
-<Whitespace newline={4} />
 
 ### Content Considerations
 
@@ -119,7 +110,6 @@ As authors create text, choosing words and phrases for Terra Clinical Headers �
 - [Yale University » Usability Best Practices: Headings](https://usability.yale.edu/web-accessibility/articles/headings)
 - [Nielsen Norman Group » Information Scent: How Users Decide Where to Go Next](https://www.nngroup.com/articles/information-scent/)
 
-<Whitespace newline={6} />
 
 ## Usability Expectations:
 
@@ -131,7 +121,6 @@ Terra Clinical Header does not have any keyboard navigation expectations on its 
 |---|---|
 |*none*| has no keyboard navigation unless interactive content is provided |
 
-<Whitespace newline={4} />
 
 ## Support Compliance:
 
@@ -151,7 +140,6 @@ _Apart from the above criteria, the following criteria are related or support th
 - [**2.4.1 Bypass Blocks**](https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html) - Clinical Header provides a mechanism to bypass blocks of content that are repeated on multiple Web pages. It allows people who navigate sequentially through content more direct access to the primary content of the Web page.
 - [**2.4.10 Section Headings**](https://www.w3.org/WAI/WCAG21/Understanding/section-headings.html) - When  a page is organized into sections, they need to have headings that introduce them. This clearly indicates the organization of the content, facilitates navigation within the content, and provides mental "handles" that aid in comprehension of the content.
 
-<Whitespace />
 
 ### Supported Features & Technology
 
@@ -168,7 +156,6 @@ _Apart from the above criteria, the following criteria are related or support th
 
 - Dependent on the content provided (accessibility support not the responsibility of Terra Clinical Header)
 
-<Whitespace />
 
 ### Partial Support & Requiring Further Enhancement
 
@@ -177,7 +164,6 @@ _Apart from the above criteria, the following criteria are related or support th
 
 _For more information about Accessibility Support with Terra — go to [Component Standards: Accessibility (A11y)](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y)._
 
-<Whitespace newline={4} />
 
 ## Linked References:
 
