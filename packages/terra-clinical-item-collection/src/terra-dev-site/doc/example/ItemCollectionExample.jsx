@@ -14,8 +14,8 @@ const display5 = <ItemCollection.Display text="Start Time: 08-05-2016 12:00:00" 
 const display6 = <ItemCollection.Display text="End Time: 08-05-2016 16:00:00" />;
 const comment = <ItemCollection.Comment text="Faint red rash appeared at 08-05-2016 13:24:00" />;
 
-const startAccessory = <IconAlert />;
-const endAccessory = <IconInformation />;
+const startAccessory = <IconAlert a11yLabel="Alert" />;
+const endAccessory = <IconInformation a11yLabel="Information" />;
 
 const DefaultItemCollection = () => (
   <ItemCollection
@@ -47,7 +47,7 @@ const DefaultItemCollection = () => (
       {display1}
       {display2}
       {display3}
-      <ItemCollection.Display text="Acuity: 5" icon={<IconAttachment />} />
+      <ItemCollection.Display text="Acuity: 5" icon={<IconAttachment a11yLabel="Attachment" />} />
       {display5}
       {display6}
     </ItemCollection.Item>
