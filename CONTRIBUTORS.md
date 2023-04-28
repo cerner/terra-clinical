@@ -39,6 +39,7 @@ Cerner Corporation
 - Gyandeep Singh [@gyandeeps]
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
+- Jonathan Satinger[@JonathanSatinger]
 
 Community
 
