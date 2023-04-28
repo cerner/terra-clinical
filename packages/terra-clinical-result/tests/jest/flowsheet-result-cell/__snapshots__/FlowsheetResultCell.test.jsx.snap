@@ -308,7 +308,7 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
     className="primary-display"
     key="ClinicalResultDisplay-111"
   >
-    <ClinicalResultBloodPressure
+    <InjectIntl(ClinicalResultBloodPressure)
       diastolic={
         Object {
           "eventId": "111.2",
@@ -320,10 +320,7 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
           },
         }
       }
-      hasResultError={false}
-      hasResultNoData={false}
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111"
       systolic={
@@ -507,7 +504,7 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
     className="primary-display"
     key="ClinicalResultDisplay-111.2"
   >
-    <ClinicalResultBloodPressure
+    <InjectIntl(ClinicalResultBloodPressure)
       diastolic={
         Object {
           "eventId": "111.2",
@@ -517,10 +514,7 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
           },
         }
       }
-      hasResultError={false}
-      hasResultNoData={false}
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.2"
     />
@@ -536,11 +530,8 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
     className="primary-display"
     key="ClinicalResultDisplay-111.1"
   >
-    <ClinicalResultBloodPressure
-      hasResultError={false}
-      hasResultNoData={false}
+    <InjectIntl(ClinicalResultBloodPressure)
       hideAccessoryDisplays={true}
-      hideUnit={false}
       isTruncated={true}
       key="ClinicalResultBloodPressure-111.1"
       systolic={

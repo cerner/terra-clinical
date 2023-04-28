@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
+import { injectIntl } from 'react-intl';
 import observationPropShape from './proptypes/observationPropTypes';
 import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
@@ -49,6 +50,10 @@ const propTypes = {
    * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
    */
   hideAccessoryDisplays: PropTypes.bool,
+  /**
+  * Internationalization object with translation APIs. Provided by `injectIntl`.
+  */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -109,6 +114,7 @@ const ClinicalResultBloodPressure = (props) => {
     hasResultError,
     hasResultNoData,
     hideAccessoryDisplays,
+    intl,
     ...customProps
   } = props;
   const theme = React.useContext(ThemeContext);
@@ -149,9 +155,9 @@ const ClinicalResultBloodPressure = (props) => {
     </>
   );
 
-  const modifiedIconElement = hasModifiedIcon && !hasUnverifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null;
-  const commentIconElement = hasCommentIcon && !hasUnverifiedIcon ? (<IconComment className={cx('icon-comment')} />) : null;
-  const unverifiedIconElement = hasUnverifiedIcon ? (<IconUnverified className={cx('icon-unverified')} />) : null;
+  const modifiedIconElement = hasModifiedIcon && !hasUnverifiedIcon ? (<IconModified className={cx('icon-modified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultModified' })} />) : null;
+  const commentIconElement = hasCommentIcon && !hasUnverifiedIcon ? (<IconComment className={cx('icon-comment')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultComment' })} />) : null;
+  const unverifiedIconElement = hasUnverifiedIcon ? (<IconUnverified className={cx('icon-unverified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultUnverified' })} />) : null;
   let iconGroupDisplayElement = null;
   if (hasModifiedIcon || hasCommentIcon || hasUnverifiedIcon) {
     iconGroupDisplayElement = (
@@ -206,4 +212,4 @@ const ClinicalResultBloodPressure = (props) => {
 ClinicalResultBloodPressure.propTypes = propTypes;
 ClinicalResultBloodPressure.defaultProps = defaultProps;
 
-export default ClinicalResultBloodPressure;
+export default injectIntl(ClinicalResultBloodPressure);

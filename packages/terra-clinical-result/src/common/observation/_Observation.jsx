@@ -7,6 +7,7 @@ import IconCritical from 'terra-icon/lib/icon/IconCritical';
 import IconHigh from 'terra-icon/lib/icon/IconHigh';
 import IconLow from 'terra-icon/lib/icon/IconLow';
 import IconAbnormal from 'terra-icon/lib/icon/IconAbnormal';
+import { injectIntl } from 'react-intl';
 import interpretationPropType from '../../proptypes/interpretationPropTypes';
 import valueQuantityPropType from '../../proptypes/valuePropTypes';
 import ResultError from '../other/_ResultError';
@@ -35,16 +36,10 @@ const propTypes = {
    * Visually hides the unit of measure when presented in a series of side-by-side columns of the same unit.
    */
   hideUnit: PropTypes.bool,
-};
-
-const interpretationIndicatorMap = {
-  critical: <IconCritical className={cx('icon-interpretation')} />,
-  'critical-high': <IconCritical className={cx('icon-interpretation')} />,
-  'critical-low': <IconCritical className={cx('icon-interpretation')} />,
-  positive: <IconCritical className={cx('icon-interpretation')} />,
-  abnormal: <IconAbnormal className={cx('icon-interpretation')} />,
-  high: <IconHigh className={cx('icon-interpretation')} />,
-  low: <IconLow className={cx('icon-interpretation')} />,
+  /**
+  * Internationalization object with translation APIs. Provided by `injectIntl`.
+  */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const interpretationTextClassMap = {
@@ -64,8 +59,19 @@ const Observation = (props) => {
     interpretation,
     isUnverified,
     hideUnit,
+    intl,
     ...customProps
   } = props;
+
+  const interpretationIndicatorMap = {
+    critical: <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCritical' })} />,
+    'critical-high': <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalHigh' })} />,
+    'critical-low': <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalLow' })} />,
+    positive: <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationPositive' })} />,
+    abnormal: <IconAbnormal className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalAbnormal' })} />,
+    high: <IconHigh className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationHigh' })} />,
+    low: <IconLow className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationLow' })} />,
+  };
 
   const isValidValue = result?.value;
 
@@ -109,4 +115,4 @@ const Observation = (props) => {
 
 Observation.propTypes = propTypes;
 
-export default Observation;
+export default injectIntl(Observation);

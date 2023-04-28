@@ -6,7 +6,7 @@ exports[`BloodPressureDisplay should hide the unit if data's cleanedUnit is equa
   key="del-Systolic-111.1"
   wrapper={[Function]}
 >
-  <Observation
+  <InjectIntl(Observation)
     eventId="111.1"
     hideUnit={true}
     key="Observation-Systolic-111.1"
@@ -26,7 +26,7 @@ exports[`BloodPressureDisplay should hide the unit if hideUnit is true 1`] = `
   key="del-Systolic-111.1"
   wrapper={[Function]}
 >
-  <Observation
+  <InjectIntl(Observation)
     eventId="111.1"
     hideUnit={true}
     key="Observation-Systolic-111.1"
@@ -58,7 +58,7 @@ exports[`BloodPressureDisplay should render a default BloodPressureDisplay 1`] =
   key="del-Systolic-111.1"
   wrapper={[Function]}
 >
-  <Observation
+  <InjectIntl(Observation)
     eventId="111.1"
     hideUnit={false}
     key="Observation-Systolic-111.1"
@@ -78,7 +78,7 @@ exports[`BloodPressureDisplay shouldn't hide the unit if data's statusInError is
   key="del-Systolic-111.1"
   wrapper={[Function]}
 >
-  <Observation
+  <InjectIntl(Observation)
     eventId="111.1"
     hideUnit={false}
     interpretation={null}
@@ -99,7 +99,7 @@ exports[`BloodPressureDisplay shouldn't render interpretation if statusInError 1
   key="del-Systolic-111.1"
   wrapper={[Function]}
 >
-  <Observation
+  <InjectIntl(Observation)
     eventId="111.1"
     hideUnit={false}
     interpretation={null}
