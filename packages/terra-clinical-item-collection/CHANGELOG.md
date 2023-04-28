@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated ItemCollectionExample.jsx for documentation purposes
+
 ## 4.30.0 - (March 29, 2023)
 
 * Changed
