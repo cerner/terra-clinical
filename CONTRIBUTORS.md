@@ -39,7 +39,7 @@ Cerner Corporation
 - Gyandeep Singh [@gyandeeps]
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
-- Jonathan Satinger[@JonathanSatinger]
+- Jonathan Satinger [@JonathanSatinger]
 
 Community
 
@@ -84,3 +84,4 @@ Community
 [@saket2403]: https://github.com/saket2403
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
+[@JonathanSatinger]: https://github.com/JonathanSatinger
