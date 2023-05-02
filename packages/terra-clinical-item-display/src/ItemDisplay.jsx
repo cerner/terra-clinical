@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import styles from './ItemDisplay.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -43,6 +45,16 @@ const propTypes = {
    * One of `'center'`, `'top'`, `'inline'`.
    */
   iconAlignment: PropTypes.oneOf(['center', 'top', 'inline']),
+  /**
+   * The meaning of the text based on styling, used by screen readers.
+   * Changing `meaning` will not visually change the style of the content.
+   */
+  meaning: PropTypes.string,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -61,6 +73,8 @@ const ItemDisplay = ({
   isDisabled,
   icon,
   iconAlignment,
+  meaning,
+  intl,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -87,10 +101,22 @@ const ItemDisplay = ({
     displayIcon = <div className={cx('icon')}>{icon}</div>;
   }
 
+  let meaningStart = null;
+  let meaningEnd = null;
+  if (meaning) {
+    meaningStart = <VisuallyHiddenText text={meaning} />;
+    meaningEnd = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })} />;
+  } else if (textStyle === TextStyles.STRIKETHROUGH) {
+    meaningStart = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })} />;
+    meaningEnd = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })} />;
+  }
+
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
+      {meaningStart}
       <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
+      {meaningEnd}
     </div>
   );
 };
@@ -98,5 +124,5 @@ const ItemDisplay = ({
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
 
-export default ItemDisplay;
+export default injectIntl(ItemDisplay);
 export { TextStyles };
