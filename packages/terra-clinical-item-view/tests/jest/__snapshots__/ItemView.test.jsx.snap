@@ -28,12 +28,8 @@ exports[`should render 1 start theme display 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -60,12 +56,8 @@ exports[`should render 2 start theme displays 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -77,12 +69,8 @@ exports[`should render 2 start theme displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -109,12 +97,8 @@ exports[`should render 3 start theme displays 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -126,12 +110,8 @@ exports[`should render 3 start theme displays 1`] = `
           className="content content-secondary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -143,12 +123,8 @@ exports[`should render 3 start theme displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 3"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -269,12 +245,8 @@ exports[`should render one column 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -286,12 +258,8 @@ exports[`should render one column 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -331,12 +299,9 @@ exports[`should render truncated display 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
+          <InjectIntl(ItemDisplay)
             isTruncated={true}
             text="display1display1display1display1display1display1display1display1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -363,24 +328,16 @@ exports[`should render two columns with 8 displays 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
         <div
           className="content content-primary-size content-primary-color"
           key="1"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -392,24 +349,16 @@ exports[`should render two columns with 8 displays 1`] = `
           className="content content-secondary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 3"
-            textStyle="primary"
           />
         </div>
         <div
           className="content content-secondary-size content-primary-color"
           key="1"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 4"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -421,24 +370,16 @@ exports[`should render two columns with 8 displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 5"
-            textStyle="primary"
           />
         </div>
         <div
           className="content content-secondary-size content-secondary-color"
           key="1"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 6"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -450,24 +391,16 @@ exports[`should render two columns with 8 displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 7"
-            textStyle="primary"
           />
         </div>
         <div
           className="content content-secondary-size content-secondary-color"
           key="1"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 8"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -494,24 +427,16 @@ exports[`should render two columns with odd number of displays 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
         <div
           className="content content-primary-size content-primary-color"
           key="1"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -523,12 +448,8 @@ exports[`should render two columns with odd number of displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 3"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -555,12 +476,8 @@ exports[`should render with 1 display 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -587,12 +504,8 @@ exports[`should render with 2 displays 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -604,12 +517,8 @@ exports[`should render with 2 displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -636,12 +545,8 @@ exports[`should render with 3 displays 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -653,12 +558,8 @@ exports[`should render with 3 displays 1`] = `
           className="content content-secondary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 2"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -670,12 +571,8 @@ exports[`should render with 3 displays 1`] = `
           className="content content-secondary-size content-secondary-color"
           key="0"
         >
-          <ItemDisplay
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
+          <InjectIntl(ItemDisplay)
             text="display 3"
-            textStyle="primary"
           />
         </div>
       </div>
@@ -702,17 +599,13 @@ exports[`should render with a display and graphic 1`] = `
           className="content content-primary-size content-primary-color"
           key="0"
         >
-          <ItemDisplay
+          <InjectIntl(ItemDisplay)
             icon={
               <img
                 alt="Graphic"
               />
             }
-            iconAlignment="center"
-            isDisabled={false}
-            isTruncated={false}
             text="display 1"
-            textStyle="primary"
           />
         </div>
       </div>

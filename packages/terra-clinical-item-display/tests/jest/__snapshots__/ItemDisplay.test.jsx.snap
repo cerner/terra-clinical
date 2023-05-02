@@ -40,6 +40,26 @@ exports[`should render a disabled display 1`] = `
 </div>
 `;
 
+exports[`should render a display with a non-strikeThrough textStyle on text and hidden text based on provided meaning prop 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display"
+>
+  <VisuallyHiddenText
+    text="Important"
+  />
+  <div
+    className="text attention"
+    data-terra-clinical-item-display-text={true}
+  >
+    Display
+  </div>
+  <VisuallyHiddenText
+    text="Terra.item-display.meaningEnd"
+  />
+</div>
+`;
+
 exports[`should render a display with the attention textStyle on text 1`] = `
 <div
   aria-disabled={false}
@@ -82,17 +102,43 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
 </div>
 `;
 
-exports[`should render a display with the strikeThrough textStyle on text 1`] = `
+exports[`should render a display with the strikeThrough textStyle on text and default hidden text 1`] = `
 <div
   aria-disabled={false}
   className="item-display"
 >
+  <VisuallyHiddenText
+    text="Terra.item-display.meaningStrikethrough"
+  />
   <div
     className="text strike-through"
     data-terra-clinical-item-display-text={true}
   >
     Display
   </div>
+  <VisuallyHiddenText
+    text="Terra.item-display.meaningStrikethroughEnd"
+  />
+</div>
+`;
+
+exports[`should render a display with the strikeThrough textStyle on text and hidden text based on provided meaning prop 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display"
+>
+  <VisuallyHiddenText
+    text="Update"
+  />
+  <div
+    className="text strike-through"
+    data-terra-clinical-item-display-text={true}
+  >
+    Display
+  </div>
+  <VisuallyHiddenText
+    text="Terra.item-display.meaningEnd"
+  />
 </div>
 `;
 
