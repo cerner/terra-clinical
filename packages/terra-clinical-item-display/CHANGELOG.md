@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `meaning` prop to allow defining a meaning for styled text to be read by screen readers.
+
 ## 4.6.0 - (March 29, 2023)
 
 * Changed
