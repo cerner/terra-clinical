@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the LabelValueView to be a definition list instead of a div.
+
 ## 3.28.0 - (April 21, 2023)
 
 * Changed

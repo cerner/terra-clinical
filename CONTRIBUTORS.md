@@ -39,6 +39,7 @@ Cerner Corporation
 - Gyandeep Singh [@gyandeeps]
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
+- Madalina Stelea [@MadalinaStelea]
 
 Community
 
