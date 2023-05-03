@@ -48,7 +48,7 @@ const LabelValueView = ({
   return (
     <dl {...customProps} className={labelValueViewClass}>
       <dt className={cx('label')}>{label}</dt>
-      <dd className={cx('valueWrapper')}>
+      <dd className={cx('value-wrapper')}>
         {textValueSection}
         {children}
       </dd>
