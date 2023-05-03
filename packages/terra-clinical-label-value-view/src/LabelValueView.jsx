@@ -46,11 +46,13 @@ const LabelValueView = ({
   }
 
   return (
-    <div {...customProps} className={labelValueViewClass}>
-      <div className={cx('label')}>{label}</div>
-      {textValueSection}
-      {children}
-    </div>
+    <dl {...customProps} className={labelValueViewClass}>
+      <dt className={cx('label')}>{label}</dt>
+      <dd className={cx('valueWrapper')}>
+        {textValueSection}
+        {children}
+      </dd>
+    </dl>
   );
 };
 
