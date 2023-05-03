@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased
-
+* Changed
+  * Updated the DetailViewDividedSmallerTitles example to include Icon A11yLabel
 ## 3.29.0 - (April 21, 2023)
 
 * Changed
