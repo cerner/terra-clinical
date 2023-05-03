@@ -24,7 +24,7 @@ const detail1item1 = (
 const detail1item2 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconPharmacyReview a11yLabel="Pharmacy Review"/>
+      <IconPharmacyReview a11yLabel="Pharmacy Review" />
     </div>
     <div className={cx('text')}>
       Pharmacy Review
@@ -34,7 +34,7 @@ const detail1item2 = (
 const detail1item3 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconGlasses a11yLabel="Nurse review"/>
+      <IconGlasses a11yLabel="Nurse review" />
     </div>
     <div className={cx('text')}>
       Nurse Review
@@ -44,7 +44,7 @@ const detail1item3 = (
 const detail1item4 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconPharmacyReject a11yLabel="Pharmacy Reject"/>
+      <IconPharmacyReject a11yLabel="Pharmacy Reject" />
     </div>
     <div className={cx('text')}>
       Pharmacy Reject
