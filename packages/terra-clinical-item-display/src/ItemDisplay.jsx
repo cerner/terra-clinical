@@ -86,11 +86,17 @@ const ItemDisplay = ({
   if (icon) {
     displayIcon = <div className={cx('icon')}>{icon}</div>;
   }
+  let textWrapper = <span>{text}</span>;
+  if (textStyle === TextStyles.STRONG) {
+    textWrapper = <strong>{text}</strong>;
+  }
 
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
+      <div data-terra-clinical-item-display-text className={textClassNames}>
+        {textWrapper}
+      </div>
     </div>
   );
 };

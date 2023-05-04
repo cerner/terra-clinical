@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Strong tag around strong style text
+  * Span tag around non-strong style text
+
 ## 4.6.0 - (March 29, 2023)
 
 * Changed
