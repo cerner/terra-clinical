@@ -4,6 +4,7 @@
 
 * Changed
   * Updated the LabelValueView to be a definition list instead of a div.
+  * Changed the component examples.
 
 ## 3.28.0 - (April 21, 2023)
 
