@@ -11,7 +11,7 @@ exports[`correctly applies the theme context className 1`] = `
       class="fieldset-children"
     >
       <div
-        class="field field-inline precision"
+        class="field orion-fusion-theme field-inline precision"
       >
         <div
           class="label-group label-group-hidden"
@@ -104,7 +104,7 @@ exports[`correctly applies the theme context className 1`] = `
         </div>
       </div>
       <div
-        class="field field-inline granularity"
+        class="field orion-fusion-theme field-inline granularity"
       >
         <div
           class="label-group label-group-hidden"
