@@ -1,87 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LabelValueView correctly applies the theme context className 1`] = `
-<div
+<dl
   className="label-value-view orion-fusion-theme"
 >
-  <div
+  <dt
     className="label"
   >
     Label
-  </div>
-  <div
-    className="value"
+  </dt>
+  <dd
+    className="value-wrapper"
   >
-    --
-  </div>
-</div>
+    <div
+      className="value"
+    >
+      --
+    </div>
+  </dd>
+</dl>
 `;
 
 exports[`LabelValueView should render LabelValueView for an node input 1`] = `
-<div
+<dl
   className="label-value-view"
 >
-  <div
+  <dt
     className="label"
   >
     Label
-  </div>
-  <div>
-    More Sample Text
-  </div>
-</div>
+  </dt>
+  <dd
+    className="value-wrapper"
+  >
+    <div>
+      More Sample Text
+    </div>
+  </dd>
+</dl>
 `;
 
 exports[`LabelValueView should render LabelValueView for text and node inputs 1`] = `
-<div
+<dl
   className="label-value-view"
 >
-  <div
+  <dt
     className="label"
   >
     Label
-  </div>
-  <div
-    className="value"
+  </dt>
+  <dd
+    className="value-wrapper"
   >
-    Sample Text 1
-  </div>
-  <div>
-    More Sample Text
-  </div>
-</div>
+    <div
+      className="value"
+    >
+      Sample Text 1
+    </div>
+    <div>
+      More Sample Text
+    </div>
+  </dd>
+</dl>
 `;
 
 exports[`LabelValueView should render a LabelValueView for text input 1`] = `
-<div
+<dl
   className="label-value-view"
 >
-  <div
+  <dt
     className="label"
   >
     Label
-  </div>
-  <div
-    className="value"
+  </dt>
+  <dd
+    className="value-wrapper"
   >
-    Sample Text
-  </div>
-</div>
+    <div
+      className="value"
+    >
+      Sample Text
+    </div>
+  </dd>
+</dl>
 `;
 
 exports[`LabelValueView should render a default LabelValueView 1`] = `
-<div
+<dl
   className="label-value-view"
 >
-  <div
+  <dt
     className="label"
   >
     Label
-  </div>
-  <div
-    className="value"
+  </dt>
+  <dd
+    className="value-wrapper"
   >
-    --
-  </div>
-</div>
+    <div
+      className="value"
+    >
+      --
+    </div>
+  </dd>
+</dl>
 `;
