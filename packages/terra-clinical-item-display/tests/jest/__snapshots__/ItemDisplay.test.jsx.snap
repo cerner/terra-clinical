@@ -40,14 +40,13 @@ exports[`should render a disabled display 1`] = `
 </div>
 `;
 
-exports[`should render a display with a non-strikeThrough textStyle on text and hidden text based on provided meaning prop 1`] = `
+exports[`should render a display with a non-strikeThrough textStyle on text and aria label based on provided meaning prop 1`] = `
 <div
   aria-disabled={false}
   className="item-display"
 >
   <span
     aria-label="Important: Display, Terra.item-display.meaningEnd"
-    role="text"
   >
     <div
       aria-hidden="true"
@@ -102,14 +101,13 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
 </div>
 `;
 
-exports[`should render a display with the strikeThrough textStyle on text and default hidden text 1`] = `
+exports[`should render a display with the strikeThrough textStyle on text and aria label based on provided meaning prop 1`] = `
 <div
   aria-disabled={false}
   className="item-display"
 >
   <span
-    aria-label="Terra.item-display.meaningStrikethrough: Display, Terra.item-display.meaningStrikethroughEnd"
-    role="text"
+    aria-label="Update: Display, Terra.item-display.meaningEnd"
   >
     <div
       aria-hidden="true"
@@ -122,14 +120,13 @@ exports[`should render a display with the strikeThrough textStyle on text and de
 </div>
 `;
 
-exports[`should render a display with the strikeThrough textStyle on text and hidden text based on provided meaning prop 1`] = `
+exports[`should render a display with the strikeThrough textStyle on text and default meaning provided 1`] = `
 <div
   aria-disabled={false}
   className="item-display"
 >
   <span
-    aria-label="Update: Display, Terra.item-display.meaningEnd"
-    role="text"
+    aria-label="Terra.item-display.meaningStrikethrough: Display, Terra.item-display.meaningStrikethroughEnd"
   >
     <div
       aria-hidden="true"
