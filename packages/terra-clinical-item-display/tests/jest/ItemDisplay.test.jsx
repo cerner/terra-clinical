@@ -84,23 +84,26 @@ it('should render a display with the strikeThrough textStyle on text and default
   const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" />).shallow();
   expect(itemDisplay.find('.text').prop('className')).toContain('strike-through');
   expect(itemDisplay.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Terra.item-display.meaningStrikethrough');
-  expect(itemDisplay.find('VisuallyHiddenText').at(1).prop('text')).toEqual('Terra.item-display.meaningStrikethroughEnd');
+  expect(itemDisplay.find('VisuallyHiddenText').at(1).prop('text')).toEqual(',');
+  expect(itemDisplay.find('VisuallyHiddenText').at(2).prop('text')).toEqual('Terra.item-display.meaningStrikethroughEnd');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the strikeThrough textStyle on text and hidden text based on provided meaning prop', () => {
   const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" meaning="Update" />).shallow();
   expect(itemDisplay.find('.text').prop('className')).toContain('strike-through');
-  expect(itemDisplay.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Update');
-  expect(itemDisplay.find('VisuallyHiddenText').at(1).prop('text')).toEqual('Terra.item-display.meaningEnd');
+  expect(itemDisplay.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Update:');
+  expect(itemDisplay.find('VisuallyHiddenText').at(1).prop('text')).toEqual(',');
+  expect(itemDisplay.find('VisuallyHiddenText').at(2).prop('text')).toEqual('Terra.item-display.meaningEnd');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with a non-strikeThrough textStyle on text and hidden text based on provided meaning prop', () => {
   const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="attention" meaning="Important" />).shallow();
   expect(itemDisplay.find('.text').prop('className')).toContain('attention');
-  expect(itemDisplay.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Important');
-  expect(itemDisplay.find('VisuallyHiddenText').at(1).prop('text')).toEqual('Terra.item-display.meaningEnd');
+  expect(itemDisplay.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Important:');
+  expect(itemDisplay.find('VisuallyHiddenText').at(1).prop('text')).toEqual(',');
+  expect(itemDisplay.find('VisuallyHiddenText').at(2).prop('text')).toEqual('Terra.item-display.meaningEnd');
   expect(itemDisplay).toMatchSnapshot();
 });
 

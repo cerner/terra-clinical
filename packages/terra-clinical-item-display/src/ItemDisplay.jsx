@@ -104,7 +104,7 @@ const ItemDisplay = ({
   let meaningStart = null;
   let meaningEnd = null;
   if (meaning) {
-    meaningStart = <VisuallyHiddenText text={meaning} />;
+    meaningStart = <VisuallyHiddenText text={`${meaning}:`} />;
     meaningEnd = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })} />;
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
     meaningStart = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })} />;
@@ -116,6 +116,7 @@ const ItemDisplay = ({
       {displayIcon}
       {meaningStart}
       <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
+      {meaningEnd ? <VisuallyHiddenText text="," /> : null}
       {meaningEnd}
     </div>
   );

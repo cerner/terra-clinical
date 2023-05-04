@@ -46,7 +46,7 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
   className="item-display"
 >
   <VisuallyHiddenText
-    text="Important"
+    text="Important:"
   />
   <div
     className="text attention"
@@ -54,6 +54,9 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
   >
     Display
   </div>
+  <VisuallyHiddenText
+    text=","
+  />
   <VisuallyHiddenText
     text="Terra.item-display.meaningEnd"
   />
@@ -117,6 +120,9 @@ exports[`should render a display with the strikeThrough textStyle on text and de
     Display
   </div>
   <VisuallyHiddenText
+    text=","
+  />
+  <VisuallyHiddenText
     text="Terra.item-display.meaningStrikethroughEnd"
   />
 </div>
@@ -128,7 +134,7 @@ exports[`should render a display with the strikeThrough textStyle on text and hi
   className="item-display"
 >
   <VisuallyHiddenText
-    text="Update"
+    text="Update:"
   />
   <div
     className="text strike-through"
@@ -136,6 +142,9 @@ exports[`should render a display with the strikeThrough textStyle on text and hi
   >
     Display
   </div>
+  <VisuallyHiddenText
+    text=","
+  />
   <VisuallyHiddenText
     text="Terra.item-display.meaningEnd"
   />

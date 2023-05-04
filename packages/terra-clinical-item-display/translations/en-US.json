@@ -1,5 +1,5 @@
 {
   "Terra.item-display.meaningEnd": "{meaning} end",
-  "Terra.item-display.meaningStrikethrough": "deletion",
+  "Terra.item-display.meaningStrikethrough": "deletion:",
   "Terra.item-display.meaningStrikethroughEnd": "deletion end"
 }
