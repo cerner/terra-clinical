@@ -9,7 +9,9 @@ exports[`correctly applies the theme context className 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -22,7 +24,9 @@ exports[`should render a default component 1`] = `
   <div
     className="text"
     data-terra-clinical-item-display-text={true}
-  />
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -35,7 +39,9 @@ exports[`should render a disabled display 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -49,7 +55,9 @@ exports[`should render a display with the attention textStyle on text 1`] = `
     className="text attention"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -63,7 +71,9 @@ exports[`should render a display with the primary textStyle on text 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -77,7 +87,9 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
     className="text secondary"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -91,7 +103,9 @@ exports[`should render a display with the strikeThrough textStyle on text 1`] = 
     className="text strike-through"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -105,7 +119,9 @@ exports[`should render a display with the strong textStyle on text 1`] = `
     className="text strong"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <strong>
+      Display
+    </strong>
   </div>
 </div>
 `;
@@ -119,7 +135,9 @@ exports[`should render a truncated display 1`] = `
     className="text is-truncated"
     data-terra-clinical-item-display-text={true}
   >
-    display1display1display1display1display1display1display1display1
+    <span>
+      display1display1display1display1display1display1display1display1
+    </span>
   </div>
 </div>
 `;
@@ -140,7 +158,9 @@ exports[`should render disabled display with text and graphic 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -160,7 +180,9 @@ exports[`should render with a graphic 1`] = `
   <div
     className="text"
     data-terra-clinical-item-display-text={true}
-  />
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -173,7 +195,9 @@ exports[`should render with text 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -194,7 +218,9 @@ exports[`should render with text and graphic center aligned 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -215,7 +241,9 @@ exports[`should render with text and graphic inline aligned 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -236,7 +264,9 @@ exports[`should render with text and graphic top aligned 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
