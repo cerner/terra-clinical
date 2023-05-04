@@ -45,18 +45,18 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
   aria-disabled={false}
   className="item-display"
 >
-  <VisuallyHiddenText
-    text="Important"
-  />
-  <div
-    className="text attention"
-    data-terra-clinical-item-display-text={true}
+  <span
+    aria-label="Important: Display, Terra.item-display.meaningEnd"
+    role="text"
   >
-    Display
-  </div>
-  <VisuallyHiddenText
-    text="Terra.item-display.meaningEnd"
-  />
+    <div
+      aria-hidden="true"
+      className="text attention"
+      data-terra-clinical-item-display-text={true}
+    >
+      Display
+    </div>
+  </span>
 </div>
 `;
 
@@ -107,18 +107,18 @@ exports[`should render a display with the strikeThrough textStyle on text and de
   aria-disabled={false}
   className="item-display"
 >
-  <VisuallyHiddenText
-    text="Terra.item-display.meaningStrikethrough"
-  />
-  <div
-    className="text strike-through"
-    data-terra-clinical-item-display-text={true}
+  <span
+    aria-label="Terra.item-display.meaningStrikethrough: Display, Terra.item-display.meaningStrikethroughEnd"
+    role="text"
   >
-    Display
-  </div>
-  <VisuallyHiddenText
-    text="Terra.item-display.meaningStrikethroughEnd"
-  />
+    <div
+      aria-hidden="true"
+      className="text strike-through"
+      data-terra-clinical-item-display-text={true}
+    >
+      Display
+    </div>
+  </span>
 </div>
 `;
 
@@ -127,18 +127,18 @@ exports[`should render a display with the strikeThrough textStyle on text and hi
   aria-disabled={false}
   className="item-display"
 >
-  <VisuallyHiddenText
-    text="Update"
-  />
-  <div
-    className="text strike-through"
-    data-terra-clinical-item-display-text={true}
+  <span
+    aria-label="Update: Display, Terra.item-display.meaningEnd"
+    role="text"
   >
-    Display
-  </div>
-  <VisuallyHiddenText
-    text="Terra.item-display.meaningEnd"
-  />
+    <div
+      aria-hidden="true"
+      className="text strike-through"
+      data-terra-clinical-item-display-text={true}
+    >
+      Display
+    </div>
+  </span>
 </div>
 `;
 

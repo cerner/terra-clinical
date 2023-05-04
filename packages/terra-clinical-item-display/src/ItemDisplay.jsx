@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 import styles from './ItemDisplay.module.scss';
 
@@ -101,24 +100,27 @@ const ItemDisplay = ({
     displayIcon = <div className={cx('icon')}>{icon}</div>;
   }
 
-  let meaningStart = null;
-  let meaningEnd = null;
+  let ariaLabel;
   if (meaning) {
-    meaningStart = <VisuallyHiddenText text={meaning} />;
-    meaningEnd = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })} />;
+    ariaLabel = `${meaning}: ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })}`;
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
-    meaningStart = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })} />;
-    meaningEnd = <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })} />;
+    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })}: ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })}`;
   }
 
+  /* eslint-disable jsx-a11y/aria-role */
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      {meaningStart}
-      <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
-      {meaningEnd}
+      {ariaLabel ? (
+        <span aria-label={ariaLabel} role="text">
+          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">{text}</div>
+        </span>
+      ) : (
+        <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
+      )}
     </div>
   );
+  /* eslint-enable jsx-a11y/aria-role */
 };
 
 ItemDisplay.propTypes = propTypes;
