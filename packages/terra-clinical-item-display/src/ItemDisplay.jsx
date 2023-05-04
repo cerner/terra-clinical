@@ -102,9 +102,9 @@ const ItemDisplay = ({
 
   let ariaLabel;
   if (meaning) {
-    ariaLabel = `${meaning}: ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })}`;
+    ariaLabel = `${meaning}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })}`;
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
-    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })}: ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })}`;
+    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })}`;
   }
 
   return (

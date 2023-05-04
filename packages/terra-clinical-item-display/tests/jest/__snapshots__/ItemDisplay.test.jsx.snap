@@ -46,7 +46,7 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
   className="item-display"
 >
   <span
-    aria-label="Important: Display, Terra.item-display.meaningEnd"
+    aria-label="Important, Display, Terra.item-display.meaningEnd"
   >
     <div
       aria-hidden="true"
@@ -107,7 +107,7 @@ exports[`should render a display with the strikeThrough textStyle on text and ar
   className="item-display"
 >
   <span
-    aria-label="Update: Display, Terra.item-display.meaningEnd"
+    aria-label="Update, Display, Terra.item-display.meaningEnd"
   >
     <div
       aria-hidden="true"
@@ -126,7 +126,7 @@ exports[`should render a display with the strikeThrough textStyle on text and de
   className="item-display"
 >
   <span
-    aria-label="Terra.item-display.meaningStrikethrough: Display, Terra.item-display.meaningStrikethroughEnd"
+    aria-label="Terra.item-display.meaningStrikethrough, Display, Terra.item-display.meaningStrikethroughEnd"
   >
     <div
       aria-hidden="true"
