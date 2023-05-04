@@ -107,12 +107,11 @@ const ItemDisplay = ({
     ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })}: ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })}`;
   }
 
-  /* eslint-disable jsx-a11y/aria-role */
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
       {ariaLabel ? (
-        <span aria-label={ariaLabel} role="text">
+        <span aria-label={ariaLabel}>
           <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">{text}</div>
         </span>
       ) : (
@@ -120,7 +119,6 @@ const ItemDisplay = ({
       )}
     </div>
   );
-  /* eslint-enable jsx-a11y/aria-role */
 };
 
 ItemDisplay.propTypes = propTypes;
