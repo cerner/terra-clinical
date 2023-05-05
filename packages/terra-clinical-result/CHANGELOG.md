@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Added a11yLabel attribute to clinical-result
 
 ## 1.16.0 - (March 29, 2023)
 

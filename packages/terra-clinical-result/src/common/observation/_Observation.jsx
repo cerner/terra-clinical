@@ -64,13 +64,13 @@ const Observation = (props) => {
   } = props;
 
   const interpretationIndicatorMap = {
-    critical: <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCritical' })} />,
-    'critical-high': <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalHigh' })} />,
-    'critical-low': <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalLow' })} />,
-    positive: <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationPositive' })} />,
-    abnormal: <IconAbnormal className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalAbnormal' })} />,
-    high: <IconHigh className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationHigh' })} />,
-    low: <IconLow className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationLow' })} />,
+    critical: <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCritical' })} role="img" focusable="true" />,
+    'critical-high': <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalHigh' })} role="img" focusable="true" />,
+    'critical-low': <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalLow' })} role="img" focusable="true" />,
+    positive: <IconCritical className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationPositive' })} role="img" focusable="true" />,
+    abnormal: <IconAbnormal className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationCriticalAbnormal' })} role="img" focusable="true" />,
+    high: <IconHigh className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationHigh' })} role="img" focusable="true" />,
+    low: <IconLow className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationLow' })} role="img" focusable="true" />,
   };
 
   const isValidValue = result?.value;

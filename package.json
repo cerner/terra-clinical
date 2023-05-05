@@ -73,7 +73,8 @@
     "wdio-lowlight": "terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "terra wdio --themes orion-fusion-theme",
     "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
-    "wdio:docker": "terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme"
+    "wdio:docker": "WDIO_EXTERNAL_HOST='10.189.160.191' terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme --browsers chrome --gridUrl grid314.test.devcernerpowerchart.com",
+    "wdio:flowsheet": "WDIO_EXTERNAL_HOST='10.189.160.191' terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme --spec /packages/terra-clinical-result/tests/wdio/flowsheet-result-cell-spec.js --browsers chrome --gridUrl grid314.test.devcernerpowerchart.com"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",

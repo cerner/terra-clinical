@@ -89,7 +89,9 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
         a11yLabel="Terra.clinicalResult.resultComment"
         className="icon-comment"
         data-name="Layer 1"
+        focusable="true"
         isBidi={true}
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -188,6 +190,8 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
       <IconModified
         a11yLabel="Terra.clinicalResult.resultModified"
         className="icon-modified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -385,6 +389,8 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
       <IconDiamond
         a11yLabel="Terra.clinicalResult.resultUnverified"
         className="icon-unverified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -576,7 +582,9 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
         a11yLabel="Terra.clinicalResult.resultComment"
         className="icon-comment"
         data-name="Layer 1"
+        focusable="true"
         isBidi={true}
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -673,6 +681,8 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
       <IconModified
         a11yLabel="Terra.clinicalResult.resultModified"
         className="icon-modified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -866,6 +876,8 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
       <IconDiamond
         a11yLabel="Terra.clinicalResult.resultUnverified"
         className="icon-unverified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -1193,6 +1205,8 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <IconModified
       a11yLabel="Terra.clinicalResult.resultModified"
       className="icon-modified"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
