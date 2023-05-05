@@ -83,8 +83,8 @@ const ItemDisplay = ({
     { 'strike-through': textStyle === TextStyles.STRIKETHROUGH },
   ]);
 
-// TODO: remove this warning in the next major release.
-  if(isDisabled){
+  // TODO: remove this warning in the next major release.
+  if (isDisabled) {
     console.warn('The isDisabled prop does not meet a11y standards and should not be used. It will be removed in the next major release.');
   }
 
