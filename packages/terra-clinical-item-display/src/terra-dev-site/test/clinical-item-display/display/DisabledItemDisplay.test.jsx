@@ -1,3 +1,5 @@
+// TODO: remove this test in the next major version.
+
 import React from 'react';
 import IconCheckmark from 'terra-icon/lib/icon/IconCheckmark';
 
