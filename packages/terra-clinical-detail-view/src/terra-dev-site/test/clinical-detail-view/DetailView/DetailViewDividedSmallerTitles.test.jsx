@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import IconCritical from 'terra-icon/lib/icon/IconCritical';
 import DetailView from '../../../../DetailView';
 import styles from './DetailViewCommon.test.module.scss';
 
@@ -17,8 +18,8 @@ const DetailViewDividedSmallerTitles = () => (
     graph={(
       <div className={cx('graph-content')}>
         <div className={cx('icon')}>
-      <IconCritical a11yLabel="Critical Icon" />
-    </div>
+          <IconCritical a11yLabel="Critical Icon" />
+        </div>
       </div>
 )}
     accessory={accessoryElement}
