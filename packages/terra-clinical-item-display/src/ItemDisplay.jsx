@@ -45,10 +45,12 @@ const propTypes = {
    */
   iconAlignment: PropTypes.oneOf(['center', 'top', 'inline']),
   /**
-   * The meaning of the text based on styling, used by screen readers.
-   * Changing `meaning` will not visually change the style of the content.
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
+   * The meaning of the text styling, for use by screen readers.
+   * Changing `textStyleMeaning` will not visually change the style of the content.
+   * Defaults to "deletion" for `textStyle` of `'strikeThrough'`.
    */
-  meaning: PropTypes.string,
+  textStyleMeaning: PropTypes.string,
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -72,7 +74,7 @@ const ItemDisplay = ({
   isDisabled,
   icon,
   iconAlignment,
-  meaning,
+  textStyleMeaning,
   intl,
   ...customProps
 }) => {
@@ -101,10 +103,10 @@ const ItemDisplay = ({
   }
 
   let ariaLabel;
-  if (meaning) {
-    ariaLabel = `${meaning}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningEnd' }, { meaning })}`;
+  if (textStyleMeaning) {
+    ariaLabel = `${textStyleMeaning}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningEnd' }, { textStyleMeaning })}`;
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
-    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethrough' })}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.meaningStrikethroughEnd' })}`;
+    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethrough' })}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethroughEnd' })}`;
   }
 
   return (

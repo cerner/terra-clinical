@@ -80,23 +80,23 @@ it('should render a display with the secondary textStyle on text', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render a display with the strikeThrough textStyle on text and default meaning provided', () => {
+it('should render a display with the strikeThrough textStyle on text and default textStyleMeaning provided', () => {
   const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" />).shallow();
-  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Terra.item-display.meaningStrikethrough, Display, Terra.item-display.meaningStrikethroughEnd');
+  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Terra.item-display.textStyleMeaningStrikethrough, Display, Terra.item-display.textStyleMeaningStrikethroughEnd');
   expect(itemDisplay.find('.text').prop('className')).toContain('strike-through');
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render a display with the strikeThrough textStyle on text and aria label based on provided meaning prop', () => {
-  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" meaning="Update" />).shallow();
-  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Update, Display, Terra.item-display.meaningEnd');
+it('should render a display with the strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop', () => {
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" textStyleMeaning="Update" />).shallow();
+  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Update, Display, Terra.item-display.textStyleMeaningEnd');
   expect(itemDisplay.find('.text').prop('className')).toContain('strike-through');
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render a display with a non-strikeThrough textStyle on text and aria label based on provided meaning prop', () => {
-  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="attention" meaning="Important" />).shallow();
-  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Important, Display, Terra.item-display.meaningEnd');
+it('should render a display with a non-strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop', () => {
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="attention" textStyleMeaning="Important" />).shallow();
+  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Important, Display, Terra.item-display.textStyleMeaningEnd');
   expect(itemDisplay.find('.text').prop('className')).toContain('attention');
   expect(itemDisplay).toMatchSnapshot();
 });
