@@ -3,8 +3,8 @@
 ## Unreleased
 
 * Added
-  * `strong` tag around strong style text
-  * `span` tag around non-strong style text
+  * `strong` tag around strong style text.
+  * `span` tag around non-strong style text.
 
 ## 4.6.0 - (March 29, 2023)
 
