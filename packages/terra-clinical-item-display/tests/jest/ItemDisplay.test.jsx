@@ -9,6 +9,7 @@ it('should render a default component', () => {
 
 it('should render with text', () => {
   const itemDisplay = shallow(<Display text="Display" />);
+  expect(itemDisplay.contains(<span>Display</span>)).toBe(true);
   expect(itemDisplay).toMatchSnapshot();
 });
 
@@ -54,26 +55,31 @@ it('should render a disabled display', () => {
 
 it('should render a display with the primary textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="primary" />);
+  expect(itemDisplay.contains(<span>Display</span>)).toBe(true);
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the attention textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="attention" />);
+  expect(itemDisplay.contains(<span>Display</span>)).toBe(true);
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the secondary textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="secondary" />);
+  expect(itemDisplay.contains(<span>Display</span>)).toBe(true);
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the strikeThrough textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="strikeThrough" />);
+  expect(itemDisplay.contains(<span>Display</span>)).toBe(true);
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the strong textStyle on text', () => {
   const itemDisplay = shallow(<Display text="Display" textStyle="strong" />);
+  expect(itemDisplay.contains(<strong>Display</strong>)).toBe(true);
   expect(itemDisplay).toMatchSnapshot();
 });
 
