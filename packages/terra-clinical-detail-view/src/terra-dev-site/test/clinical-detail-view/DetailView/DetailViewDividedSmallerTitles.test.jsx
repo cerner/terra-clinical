@@ -16,7 +16,9 @@ const DetailViewDividedSmallerTitles = () => (
     subtitles={['subtitle1', 'subTitle2']}
     graph={(
       <div className={cx('graph-content')}>
-        This is where any visualizations would go
+        <div className={cx('icon')}>
+      <IconCritical a11yLabel="Critical Icon" />
+    </div>
       </div>
 )}
     accessory={accessoryElement}
