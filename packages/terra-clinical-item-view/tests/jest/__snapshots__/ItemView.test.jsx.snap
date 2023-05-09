@@ -140,7 +140,7 @@ exports[`should render a comment 1`] = `
   <div
     className="body"
   >
-    <ItemComment
+    <InjectIntl(ItemComment)
       isTruncated={false}
       text="comment"
       textStyle="attention"

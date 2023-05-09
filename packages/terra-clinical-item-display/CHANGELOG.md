@@ -6,6 +6,9 @@
   * `strong` tag around strong style text.
   * `span` tag around non-strong style text.
 
+* Changed
+  * Added A11yLabel to ItemComment.
+
 ## 4.7.0 - (May 15, 2023)
 
 * Deprecated
