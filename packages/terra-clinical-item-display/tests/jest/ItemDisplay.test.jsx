@@ -36,6 +36,7 @@ it('should render with text and graphic inline aligned', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
+// TODO: remove this test in the next major release.
 it('should render disabled display with text and graphic', () => {
   const graphic = <img alt="Graphic" />;
   const itemDisplay = shallow(<Display text="Display" icon={graphic} isDisabled />);
@@ -47,6 +48,7 @@ it('should render a truncated display', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
+// TODO: remove this test in the next major release.
 it('should render a disabled display', () => {
   const itemDisplay = shallow(<Display text="Display" isDisabled />);
   expect(itemDisplay).toMatchSnapshot();

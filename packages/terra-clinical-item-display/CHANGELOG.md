@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Deprecated
+  * Deprecated `isDisabled` prop as the feature does not meet a11y standards.
+
 ## 4.6.0 - (March 29, 2023)
 
 * Changed
