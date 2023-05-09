@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Deprecated
+  * Deprecated `isDisabled` prop as the feature does not meet a11y standards.
+
 * Added
   * Added `textStyleMeaning` prop to allow defining a meaning for styled text to be read by screen readers.
 

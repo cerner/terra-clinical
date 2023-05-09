@@ -43,6 +43,7 @@ it('should render with text and graphic inline aligned', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
+// TODO: remove this test in the next major release.
 it('should render disabled display with text and graphic', () => {
   const graphic = <img alt="Graphic" />;
   const itemDisplay = shallowWithIntl(<Display text="Display" icon={graphic} isDisabled />).shallow();
@@ -56,6 +57,7 @@ it('should render a truncated display', () => {
   expect(itemDisplay).toMatchSnapshot();
 });
 
+// TODO: remove this test in the next major release.
 it('should render a disabled display', () => {
   const itemDisplay = shallowWithIntl(<Display text="Display" isDisabled />).shallow();
   expect(itemDisplay.prop('className')).toContain('is-disabled');

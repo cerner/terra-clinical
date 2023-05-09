@@ -1,3 +1,5 @@
+// TODO: remove this example in the next major version.
+
 import React from 'react';
 import ItemDisplay from 'terra-clinical-item-display';
 

@@ -5,7 +5,6 @@ import ItemComment from 'terra-clinical-item-display/lib/ItemComment';
 const component = () => (
   <span>
     <ItemComment text="Comment" />
-    <ItemComment text="Disabled Comment" isDisabled />
   </span>
 );
 
