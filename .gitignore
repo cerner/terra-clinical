@@ -63,3 +63,4 @@ errorScreenshots
 themeable-variables.json
 generated-themes
 .idea
+packages/terra-clinical-result/tests/jest/flowsheet-result-cell/.DS_Store
