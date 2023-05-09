@@ -37,8 +37,7 @@ exports[`List View Tests should render a Item with a comment 1`] = `
   <ItemView
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -60,8 +59,7 @@ exports[`List View Tests should render a Item with a list item chevron 1`] = `
   <ItemView
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -166,8 +164,7 @@ exports[`List View Tests should render a Item with all elements 1`] = `
   <ItemView
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -286,8 +283,7 @@ exports[`List View Tests should render a Item with list item styles 1`] = `
   <ItemView
     accessoryAlignment="alignTop"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -361,8 +357,7 @@ exports[`List View Tests should render a selectable Item 1`] = `
   <ItemView
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -464,8 +459,7 @@ exports[`List View Tests should render a selected Item 1`] = `
   <TableCell
     className="content-comment"
     content={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -559,8 +553,7 @@ exports[`Table View Tests should render a Item that ignores list item styles 1`]
   <TableCell
     className="content-comment"
     content={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -587,8 +580,7 @@ exports[`Table View Tests should render a Item that ignores the list item chevro
   <ItemView
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -642,8 +634,7 @@ exports[`Table View Tests should render a Item with a comment 1`] = `
   <TableCell
     className="content-comment"
     content={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -743,8 +734,7 @@ exports[`Table View Tests should render a Item with all elements 1`] = `
   <TableCell
     className="content-comment"
     content={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -887,8 +877,7 @@ exports[`Table View Tests should render a selectable Item 1`] = `
   <TableCell
     className="content-comment"
     content={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }
@@ -961,8 +950,7 @@ exports[`Table View Tests should render a selected Item 1`] = `
   <TableCell
     className="content-comment"
     content={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="comment"
       />
     }

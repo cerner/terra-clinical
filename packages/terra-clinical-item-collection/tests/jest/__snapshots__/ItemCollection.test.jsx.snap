@@ -18,8 +18,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -83,8 +82,7 @@ exports[`should render an ItemCollection with a breakpoint 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -153,8 +151,7 @@ exports[`should render an ItemCollection with a comment 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -186,8 +183,7 @@ exports[`should render an ItemCollection with a comment 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -293,8 +289,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -344,8 +339,7 @@ exports[`should render an ItemCollection with all elements 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -474,8 +468,7 @@ exports[`should render an ItemCollection with custom props 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -528,8 +521,7 @@ exports[`should render an ItemCollection with custom props 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -585,8 +577,7 @@ exports[`should render an ItemCollection with displays 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -636,8 +627,7 @@ exports[`should render an ItemCollection with displays 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -692,8 +682,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -757,8 +746,7 @@ exports[`should render an ItemCollection with list styles 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -828,8 +816,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -881,8 +868,7 @@ exports[`should render an ItemCollection with onSelect 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -938,8 +924,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }
@@ -1003,8 +988,7 @@ exports[`should render an ItemCollection with table styles 1`] = `
         <Item
           accessoryAlignment="alignCenter"
           comment={
-            <ItemComment
-              isTruncated={false}
+            <InjectIntl(ItemComment)
               text="test comment"
             />
           }

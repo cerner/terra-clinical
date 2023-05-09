@@ -54,8 +54,7 @@ exports[`should render a TableView with children 1`] = `
     <Item
       accessoryAlignment="alignCenter"
       comment={
-        <ItemComment
-          isTruncated={false}
+        <InjectIntl(ItemComment)
           text="test comment"
         />
       }
@@ -152,8 +151,7 @@ exports[`should render a TableView with table styles 1`] = `
     <Item
       accessoryAlignment="alignCenter"
       comment={
-        <ItemComment
-          isTruncated={false}
+        <InjectIntl(ItemComment)
           text="test comment"
         />
       }

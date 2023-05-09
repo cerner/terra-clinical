@@ -8,8 +8,7 @@ exports[`should render a ListView with a divided list 1`] = `
   <Item
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="test comment"
       />
     }
@@ -52,8 +51,7 @@ exports[`should render a ListView with children 1`] = `
   <Item
     accessoryAlignment="alignCenter"
     comment={
-      <ItemComment
-        isTruncated={false}
+      <InjectIntl(ItemComment)
         text="test comment"
       />
     }
