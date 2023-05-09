@@ -1,81 +1,111 @@
 import React from 'react';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import Display from '../../src/ItemDisplay';
 
 // Snapshot Tests
 it('should render a default component', () => {
-  const itemDisplay = shallow(<Display />);
+  const itemDisplay = shallowWithIntl(<Display />).shallow();
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render with text', () => {
-  const itemDisplay = shallow(<Display text="Display" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" />).shallow();
+  expect(itemDisplay.find('.text').prop('children')).toEqual('Display');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render with a graphic', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display icon={graphic} />);
+  const itemDisplay = shallowWithIntl(<Display icon={graphic} />).shallow();
+  expect(itemDisplay.find('.icon').find('img').prop('alt')).toEqual('Graphic');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render with text and graphic center aligned', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display text="Display" icon={graphic} iconAlignment="center" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" icon={graphic} iconAlignment="center" />).shallow();
+  expect(itemDisplay.prop('className')).toContain('icon-center');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render with text and graphic top aligned', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display text="Display" icon={graphic} iconAlignment="top" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" icon={graphic} iconAlignment="top" />).shallow();
+  expect(itemDisplay.prop('className')).toContain('icon-top');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render with text and graphic inline aligned', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display text="Display" icon={graphic} iconAlignment="inline" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" icon={graphic} iconAlignment="inline" />).shallow();
+  expect(itemDisplay.prop('className')).toContain('icon-inline');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 // TODO: remove this test in the next major release.
 it('should render disabled display with text and graphic', () => {
   const graphic = <img alt="Graphic" />;
-  const itemDisplay = shallow(<Display text="Display" icon={graphic} isDisabled />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" icon={graphic} isDisabled />).shallow();
+  expect(itemDisplay.prop('className')).toContain('is-disabled');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a truncated display', () => {
-  const itemDisplay = shallow(<Display text="display1display1display1display1display1display1display1display1" isTruncated />);
+  const itemDisplay = shallowWithIntl(<Display text="display1display1display1display1display1display1display1display1" isTruncated />).shallow();
+  expect(itemDisplay.find('.text').prop('className')).toContain('is-truncated');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 // TODO: remove this test in the next major release.
 it('should render a disabled display', () => {
-  const itemDisplay = shallow(<Display text="Display" isDisabled />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" isDisabled />).shallow();
+  expect(itemDisplay.prop('className')).toContain('is-disabled');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the primary textStyle on text', () => {
-  const itemDisplay = shallow(<Display text="Display" textStyle="primary" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="primary" />).shallow();
+  expect(itemDisplay.find('.text').prop('className')).toEqual('text');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the attention textStyle on text', () => {
-  const itemDisplay = shallow(<Display text="Display" textStyle="attention" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="attention" />).shallow();
+  expect(itemDisplay.find('.text').prop('className')).toContain('attention');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the secondary textStyle on text', () => {
-  const itemDisplay = shallow(<Display text="Display" textStyle="secondary" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="secondary" />).shallow();
+  expect(itemDisplay.find('.text').prop('className')).toContain('secondary');
   expect(itemDisplay).toMatchSnapshot();
 });
 
-it('should render a display with the strikeThrough textStyle on text', () => {
-  const itemDisplay = shallow(<Display text="Display" textStyle="strikeThrough" />);
+it('should render a display with the strikeThrough textStyle on text and default textStyleMeaning provided', () => {
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" />).shallow();
+  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Terra.item-display.textStyleMeaningStrikethrough, Display, Terra.item-display.textStyleMeaningStrikethroughEnd');
+  expect(itemDisplay.find('.text').prop('className')).toContain('strike-through');
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render a display with the strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop', () => {
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strikeThrough" textStyleMeaning="Update" />).shallow();
+  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Update, Display, Terra.item-display.textStyleMeaningEnd');
+  expect(itemDisplay.find('.text').prop('className')).toContain('strike-through');
+  expect(itemDisplay).toMatchSnapshot();
+});
+
+it('should render a display with a non-strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop', () => {
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="attention" textStyleMeaning="Important" />).shallow();
+  expect(itemDisplay.find('span').prop('aria-label')).toEqual('Important, Display, Terra.item-display.textStyleMeaningEnd');
+  expect(itemDisplay.find('.text').prop('className')).toContain('attention');
   expect(itemDisplay).toMatchSnapshot();
 });
 
 it('should render a display with the strong textStyle on text', () => {
-  const itemDisplay = shallow(<Display text="Display" textStyle="strong" />);
+  const itemDisplay = shallowWithIntl(<Display text="Display" textStyle="strong" />).shallow();
+  expect(itemDisplay.find('.text').prop('className')).toContain('strong');
   expect(itemDisplay).toMatchSnapshot();
 });
 
@@ -84,6 +114,7 @@ it('correctly applies the theme context className', () => {
     .mockReturnValue({
       className: 'orion-fusion-theme',
     });
-  const wrapper = shallow(<Display text="Display" />);
+  const wrapper = shallowWithIntl(<Display text="Display" />).shallow();
+  expect(wrapper.prop('className')).toContain('orion-fusion-theme');
   expect(wrapper).toMatchSnapshot();
 });
