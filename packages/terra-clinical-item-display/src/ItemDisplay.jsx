@@ -29,8 +29,9 @@ const propTypes = {
    * Whether or not the text should be truncated.
    */
   isTruncated: PropTypes.bool,
+  //  TODO: remove isDisabled in the next major release.
   /**
-   * Whether or not the display is disabled.
+   * (Deprecated) Whether or not the display is disabled.
    */
   isDisabled: PropTypes.bool,
   /**
@@ -81,6 +82,12 @@ const ItemDisplay = ({
     { [`${textStyle}`]: textStyle === TextStyles.STRONG },
     { 'strike-through': textStyle === TextStyles.STRIKETHROUGH },
   ]);
+
+  // TODO: remove this warning in the next major release.
+  if (isDisabled) {
+    // eslint-disable-next-line no-console
+    console.warn('The isDisabled prop does not meet a11y standards and should not be used. It will be removed in the next major release.');
+  }
 
   let displayIcon;
   if (icon) {

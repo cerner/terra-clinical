@@ -9,6 +9,7 @@ Terra.describeViewports('ItemDisplay', ['tiny', 'medium'], () => {
     Terra.validates.element('with text style');
   });
 
+  // TODO: remove this test and corresponding snapshots in the next major release.
   it('displays a disabled ItemDisplay', () => {
     browser.url('/#/raw/tests/terra-clinical-item-display/clinical-item-display/display/disabled-item-display');
     Terra.validates.element('disabled');
