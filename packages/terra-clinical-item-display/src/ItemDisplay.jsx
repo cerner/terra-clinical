@@ -85,6 +85,7 @@ const ItemDisplay = ({
 
   // TODO: remove this warning in the next major release.
   if (isDisabled) {
+    // eslint-disable-next-line no-console
     console.warn('The isDisabled prop does not meet a11y standards and should not be used. It will be removed in the next major release.');
   }
 
