@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -20,6 +21,15 @@ const propTypes = {
    * so that it is accessible to keyboard users.
    */
   isTruncated: PropTypes.bool,
+  /**
+   * When true, will disable the comment.
+   */
+  isDisabled: PropTypes.bool,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -30,6 +40,8 @@ const defaultProps = {
 const ItemComment = ({
   text,
   isTruncated,
+  isDisabled,
+  intl,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -40,11 +52,13 @@ const ItemComment = ({
     ),
     customProps.className,
   );
+  const commentIcon = isDisabled ? intl.formatMessage({ id: 'Terra.itemDisplay.disabledComment' }) : intl.formatMessage({ id: 'Terra.itemDisplay.comment' });
   return (
     <ItemDisplay
       text={text}
       isTruncated={isTruncated}
-      icon={<CommentIndicator className={cx('inline-icon')} />}
+      isDisabled={isDisabled}
+      icon={<CommentIndicator a11yLabel={commentIcon} className={cx('inline-icon')} />}
       {...customProps}
       className={commentClass}
     />
@@ -54,4 +68,4 @@ const ItemComment = ({
 ItemComment.propTypes = propTypes;
 ItemComment.defaultProps = defaultProps;
 
-export default ItemComment;
+export default injectIntl(ItemComment);

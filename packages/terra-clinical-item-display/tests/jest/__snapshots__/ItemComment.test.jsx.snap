@@ -5,6 +5,7 @@ exports[`correctly applies the theme context className 1`] = `
   className="item-comment orion-fusion-theme"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
@@ -22,6 +23,7 @@ exports[`should render a comment with text 1`] = `
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
@@ -39,6 +41,7 @@ exports[`should render a comment with the attention textStyle on text 1`] = `
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
@@ -57,6 +60,7 @@ exports[`should render a comment with the secondary textStyle on text 1`] = `
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
@@ -75,6 +79,7 @@ exports[`should render a comment with the strikeThrough textStyle on text 1`] = 
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
@@ -93,6 +98,7 @@ exports[`should render a default component 1`] = `
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
@@ -110,6 +116,7 @@ exports[`should render a truncated comment 1`] = `
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
       isBidi={true}
