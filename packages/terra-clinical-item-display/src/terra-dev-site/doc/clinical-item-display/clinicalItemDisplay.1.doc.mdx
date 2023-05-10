@@ -1,4 +1,5 @@
 import { Badge } from 'terra-clinical-item-display/package.json?dev-site-package';
+import { Notice } from "@cerner/terra-docs";
 
 import ItemDisplayPropsTable from 'terra-clinical-item-display/src/ItemDisplay?dev-site-props-table';
 import CommentPropsTable from 'terra-clinical-item-display/src/ItemComment?dev-site-props-table';
@@ -9,6 +10,7 @@ import Icon from '../example/Icon?dev-site-example';
 import IconText from '../example/IconText?dev-site-example';
 import DefaultComment from '../example/DefaultComment?dev-site-example';
 import TextStyleMeaning from '../example/TextStyleMeaning?dev-site-example';
+import TruncatedText from '../example/TruncatedText?dev-site-example';
 
 <Badge />
 
@@ -51,6 +53,17 @@ import ItemDisplay from 'terra-clinical-item-display';
 <IconText title="Item Display: Icon and Text" />
 <DefaultComment title="Comment Item Display" />
 <TextStyleMeaning title="Item Display: Text Style Meaning for Assistive Technology" />
+
+<Notice variant="important" ariaLevel="3">
+
+#### Accessibility Guidance: Truncated Text
+
+When using `isTruncated`, consumers are responsible for providing a pattern to disclose the full Item Display text
+in order to ensure that it is accessible for keyboard navigation users.
+
+</Notice>
+
+<TruncatedText title="Item Display: Truncated Text" />
 
 ## Item Display Props Table 
 <ItemDisplayPropsTable />
