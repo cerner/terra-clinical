@@ -16,7 +16,7 @@ const propTypes = {
   text: PropTypes.string,
   /**
    * Whether or not the text should be truncated in display. Note: To ensure keyboard accessibility,
-   * if this prop is used, consumers will need to provide a pattern to disclose the rest of the text
+   * if this prop is used, consumers will need to provide a method to disclose the rest of the text
    * so that it is accessible to keyboard users.
    */
   isTruncated: PropTypes.bool,
