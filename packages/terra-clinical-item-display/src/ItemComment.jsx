@@ -22,10 +22,6 @@ const propTypes = {
    */
   isTruncated: PropTypes.bool,
   /**
-   * When true, will disable the comment.
-   */
-  isDisabled: PropTypes.bool,
-  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -40,7 +36,6 @@ const defaultProps = {
 const ItemComment = ({
   text,
   isTruncated,
-  isDisabled,
   intl,
   ...customProps
 }) => {
@@ -52,12 +47,11 @@ const ItemComment = ({
     ),
     customProps.className,
   );
-  const commentIcon = isDisabled ? intl.formatMessage({ id: 'Terra.itemDisplay.disabledComment' }) : intl.formatMessage({ id: 'Terra.itemDisplay.comment' });
+  const commentIcon = intl.formatMessage({ id: 'Terra.itemDisplay.comment' });
   return (
     <ItemDisplay
       text={text}
       isTruncated={isTruncated}
-      isDisabled={isDisabled}
       icon={<CommentIndicator a11yLabel={commentIcon} className={cx('inline-icon')} />}
       {...customProps}
       className={commentClass}
