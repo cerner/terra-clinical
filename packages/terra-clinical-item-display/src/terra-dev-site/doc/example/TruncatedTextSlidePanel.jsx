@@ -62,7 +62,7 @@ const ContentComponent = () => {
                 content: {
                   key: details.key,
                   component: (
-                    <DisclosureComponent text={details.text}/>
+                    <DisclosureComponent text={details.text} />
                   ),
                 },
               });
