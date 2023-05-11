@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { injectIntl } from 'react-intl';
 import styles from './ItemDisplay.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -29,8 +30,9 @@ const propTypes = {
    * Whether or not the text should be truncated.
    */
   isTruncated: PropTypes.bool,
+  //  TODO: remove isDisabled in the next major release.
   /**
-   * Whether or not the display is disabled.
+   * (Deprecated) Whether or not the display is disabled.
    */
   isDisabled: PropTypes.bool,
   /**
@@ -43,6 +45,18 @@ const propTypes = {
    * One of `'center'`, `'top'`, `'inline'`.
    */
   iconAlignment: PropTypes.oneOf(['center', 'top', 'inline']),
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
+   * The meaning of the text styling, for use by screen readers.
+   * Changing `textStyleMeaning` will not visually change the style of the content.
+   * Defaults to "deletion" for `textStyle` of `'strikeThrough'`.
+   */
+  textStyleMeaning: PropTypes.string,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -61,6 +75,8 @@ const ItemDisplay = ({
   isDisabled,
   icon,
   iconAlignment,
+  textStyleMeaning,
+  intl,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -82,6 +98,12 @@ const ItemDisplay = ({
     { 'strike-through': textStyle === TextStyles.STRIKETHROUGH },
   ]);
 
+  // TODO: remove this warning in the next major release.
+  if (isDisabled) {
+    // eslint-disable-next-line no-console
+    console.warn('The isDisabled prop does not meet a11y standards and should not be used. It will be removed in the next major release.');
+  }
+
   let displayIcon;
   if (icon) {
     displayIcon = <div className={cx('icon')}>{icon}</div>;
@@ -91,12 +113,25 @@ const ItemDisplay = ({
     textWrapper = <strong>{text}</strong>;
   }
 
+  let ariaLabel;
+  if (textStyleMeaning) {
+    ariaLabel = `${textStyleMeaning}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningEnd' }, { textStyleMeaning })}`;
+  } else if (textStyle === TextStyles.STRIKETHROUGH) {
+    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethrough' })}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethroughEnd' })}`;
+  }
+
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      <div data-terra-clinical-item-display-text className={textClassNames}>
-        {textWrapper}
-      </div>
+      {ariaLabel ? (
+        <span aria-label={ariaLabel}>
+          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">{text}</div>
+        </span>
+      ) : (
+        <div data-terra-clinical-item-display-text className={textClassNames}>
+          {textWrapper}
+        </div>
+      )}
     </div>
   );
 };
@@ -104,5 +139,5 @@ const ItemDisplay = ({
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
 
-export default ItemDisplay;
+export default injectIntl(ItemDisplay);
 export { TextStyles };

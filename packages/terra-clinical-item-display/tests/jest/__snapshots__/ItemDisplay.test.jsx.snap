@@ -46,6 +46,25 @@ exports[`should render a disabled display 1`] = `
 </div>
 `;
 
+exports[`should render a display with a non-strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display"
+>
+  <span
+    aria-label="Important, Display, Terra.item-display.textStyleMeaningEnd"
+  >
+    <div
+      aria-hidden="true"
+      className="text attention"
+      data-terra-clinical-item-display-text={true}
+    >
+      Display
+    </div>
+  </span>
+</div>
+`;
+
 exports[`should render a display with the attention textStyle on text 1`] = `
 <div
   aria-disabled={false}
@@ -94,19 +113,45 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
 </div>
 `;
 
-exports[`should render a display with the strikeThrough textStyle on text 1`] = `
+exports[`should render a display with the strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop 1`] = `
 <div
   aria-disabled={false}
   className="item-display"
 >
-  <div
-    className="text strike-through"
-    data-terra-clinical-item-display-text={true}
+  <span
+    aria-label="Update, Display, Terra.item-display.textStyleMeaningEnd"
   >
-    <span>
-      Display
-    </span>
-  </div>
+    <div
+      aria-hidden="true"
+      className="text strike-through"
+      data-terra-clinical-item-display-text={true}
+    >
+      <span>
+        Display
+      </span>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`should render a display with the strikeThrough textStyle on text and default textStyleMeaning provided 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display"
+>
+  <span
+    aria-label="Terra.item-display.textStyleMeaningStrikethrough, Display, Terra.item-display.textStyleMeaningStrikethroughEnd"
+  >
+    <div
+      aria-hidden="true"
+      className="text strike-through"
+      data-terra-clinical-item-display-text={true}
+    >
+      <span>
+        Display
+      </span>
+    </div>
+  </span>
 </div>
 `;
 
