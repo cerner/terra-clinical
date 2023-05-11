@@ -42,6 +42,34 @@ This component requires the following peer dependencies be installed in your app
 import ItemDisplay from 'terra-clinical-item-display';
 ```
 
+## Accessibility
+
+<Notice variant="important" ariaLevel="3">
+
+#### Accessibility Guidance: Truncated Text
+
+Truncation of text can pose an accessibility concern if no method of disclosing the full text is available
+to the user. When using `isTruncated`, consumers are responsible for providing a progressive disclosure pattern
+ to disclose the full Item Display text in order to ensure that it is accessible for keyboard navigation users.
+
+**There should always be a method of accessing the truncated information. If there is no way to progressively
+diclose the full content of the truncated information, then truncation should not be used.**
+
+Some examples of progressive disclosure patterns that may be used to disclose truncated information include:
+- Accordions
+- Dialogs
+- Popovers
+- Show/Hide
+- Split Views
+- Toasts
+
+The method of disclosure **must** be accessible via keyboard interactions.
+
+Truncation should be avoided where it is not necessary. Certain content should **never** be truncated (i.e. 
+medication names and dosages in menus where  the user is selecting from a  list of choices).
+
+</Notice>
+
 ## Component Features
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
 * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
@@ -53,16 +81,6 @@ import ItemDisplay from 'terra-clinical-item-display';
 <IconText title="Item Display: Icon and Text" />
 <DefaultComment title="Comment Item Display" />
 <TextStyleMeaning title="Item Display: Text Style Meaning for Assistive Technology" />
-
-<Notice variant="important" ariaLevel="3">
-
-#### Accessibility Guidance: Truncated Text
-
-When using `isTruncated`, consumers are responsible for providing a method to disclose the full Item Display text
-in order to ensure that it is accessible for keyboard navigation users.
-
-</Notice>
-
 <TruncatedText title="Item Display: Truncated Text with Show/Hide Button" />
 
 ## Item Display Props Table 
