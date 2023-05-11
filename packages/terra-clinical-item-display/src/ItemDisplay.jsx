@@ -125,7 +125,9 @@ const ItemDisplay = ({
       {displayIcon}
       {ariaLabel ? (
         <span aria-label={ariaLabel}>
-          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">{text}</div>
+          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">
+            {textWrapper}
+          </div>
         </span>
       ) : (
         <div data-terra-clinical-item-display-text className={textClassNames}>

@@ -59,7 +59,9 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
       className="text attention"
       data-terra-clinical-item-display-text={true}
     >
-      Display
+      <span>
+        Display
+      </span>
     </div>
   </span>
 </div>
