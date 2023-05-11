@@ -9,12 +9,12 @@ const TruncatedTextExample = () => {
 
   const handleClick = () => {
     setTruncated(!truncated);
-  }
+  };
 
-  return(
+  return (
     <>
       <ItemDisplay text={sampleText} isTruncated={truncated} />
-      <br/>
+      <br />
       <Button text="Show/Hide" onClick={handleClick} />
     </>
   );

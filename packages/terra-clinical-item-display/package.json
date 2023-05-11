@@ -31,8 +31,13 @@
     "@cerner/terra-docs": "^1.9.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-action-header": "^2.78.0",
     "terra-button": "^3.65.0",
+    "terra-content-container": "^3.38.0",
+    "terra-disclosure-manager": "^4.42.0",
     "terra-icon": "^3.0.0",
+    "terra-list": "^4.57.0",
+    "terra-slide-panel-manager": "^5.69.0",
     "terra-theme-context": "^1.0.0"
   },
   "scripts": {
