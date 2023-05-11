@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import ActionHeader from 'terra-action-header/lib/ActionHeader';
 import ContentContainer from 'terra-content-container/lib/ContentContainer';
-import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-disclosure-manager';
+import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-application/lib/disclosure-manager';
 import List, { Item } from 'terra-list/lib/index';
-import SlidePanelManager from 'terra-slide-panel-manager';
+import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
 import ItemDisplay from 'terra-clinical-item-display';
 import PropTypes from 'prop-types';
 
