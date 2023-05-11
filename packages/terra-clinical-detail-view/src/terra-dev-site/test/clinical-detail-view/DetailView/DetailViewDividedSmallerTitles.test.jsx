@@ -6,7 +6,16 @@ import styles from './DetailViewCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
 
-const item = (<p>A Detail List Item</p>);
+const item = (
+  <div className={cx('indicator-container')}>
+    <div className={cx('icon')}>
+      <IconCritical a11yLabel="Critical Icon" />
+      <div className={cx('text')}>
+        Immediate Priority
+      </div>
+    </div>
+  </div>
+);
 const item2 = (<p>A Detail List Item to prove float concept when screen readjusts smaller.</p>);
 const accessoryElement = (<p> A sample accessory container </p>);
 
@@ -17,9 +26,7 @@ const DetailViewDividedSmallerTitles = () => (
     subtitles={['subtitle1', 'subTitle2']}
     graph={(
       <div className={cx('graph-content')}>
-        <div className={cx('icon')}>
-          <IconCritical a11yLabel="Critical Icon" />
-        </div>
+        This is where any visualizations would go
       </div>
 )}
     accessory={accessoryElement}
