@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+
 * Changed
   * Added screenreader support for icons.
 
