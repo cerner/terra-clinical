@@ -54,6 +54,11 @@ const propTypes = {
    * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
    */
   isSmallerTitles: PropTypes.bool,
+
+  /**
+   * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
+   */
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 };
 
 const defaultProps = {
@@ -66,6 +71,7 @@ const defaultProps = {
   footer: undefined,
   isDivided: true,
   isSmallerTitles: false,
+  level: 2,
 };
 
 const DetailView = (props) => {
@@ -79,6 +85,7 @@ const DetailView = (props) => {
     footer,
     isDivided,
     isSmallerTitles,
+    level,
     ...customProps
   } = props;
   const theme = React.useContext(ThemeContext);
@@ -91,10 +98,13 @@ const DetailView = (props) => {
     attributes.className,
   );
 
-  const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
+  const HeaderLevel = `h${level}`;
+  const SecondaryHeaderLevel = `h${level + 1}`;
+  // const secondaryTitleHeadinglevel = (level) ? `h${level - 1}` : 'h1';
+  const titleElement = title ? (<HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>) : null;
   const secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</div>
+    <SecondaryHeaderLevel className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</SecondaryHeaderLevel>
   ));
   const subtitleElements = subtitles.map((subTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key

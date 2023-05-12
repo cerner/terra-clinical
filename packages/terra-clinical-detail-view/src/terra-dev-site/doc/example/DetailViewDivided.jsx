@@ -20,6 +20,7 @@ const DetailViewDivided = () => (
   <div className={cx('detail-view-divided')}>
     <DetailView
       title="Mother"
+      level="3"
       subtitles={['Martha (58 years)', '[second line for subtitles]']}
       details={[
         (
