@@ -1,5 +1,11 @@
 # Terra Clinical Item Collection
 
+## Deprecation Note
+
+This package is no longer supported as it was too limited to meet the varied needs of all consumers. Consumers are instead recommonded to create their own flexible list/table component as per their needs instead.
+
+---
+
 [![NPM version](https://badgen.net/npm/v/terra-clinical-item-collection)](https://www.npmjs.org/package/terra-clinical-item-collection)
 [![Build Status](https://travis-ci.com/cerner/terra-core.svg?branch=main)](https://travis-ci.com/cerner/terra-core)
 
@@ -17,7 +23,7 @@ Ultimately, the Item Collection component allows consumers to organize tabular d
 
 ## LICENSE
 
-Copyright 2017 - 2020 Cerner Innovation, Inc.
+Copyright 2017 - 2023 Cerner Innovation, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
