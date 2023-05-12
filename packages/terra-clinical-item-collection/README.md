@@ -1,8 +1,10 @@
-# Terra Clinical Item Collection
+# Terra Clinical Item Collection (Deprecated)
 
 ## Deprecation Note
 
-This package is no longer supported as it was too limited to meet the varied needs of all consumers. Consumers are instead recommonded to create their own flexible list/table component as per their needs instead.
+This package is no longer supported as it was too limited to meet the varied needs of all consumers. Consumers are instead recommonded to create their own flexible list/table component as per their needs instead.   
+
+For more information on how to build your own item collection, please check out [this guide](https://engineering.cerner.com/terra-ui/guides/terra-ui/component-guides/building-an-item-collection).
 
 ---
 
