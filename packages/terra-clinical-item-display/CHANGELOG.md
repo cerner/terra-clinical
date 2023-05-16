@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * `strong` tag around strong style text.
+  * `span` tag around non-strong style text.
+
 ## 4.7.0 - (May 15, 2023)
 
 * Deprecated

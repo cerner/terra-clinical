@@ -108,6 +108,10 @@ const ItemDisplay = ({
   if (icon) {
     displayIcon = <div className={cx('icon')}>{icon}</div>;
   }
+  let textWrapper = <span>{text}</span>;
+  if (textStyle === TextStyles.STRONG) {
+    textWrapper = <strong>{text}</strong>;
+  }
 
   let ariaLabel;
   if (textStyleMeaning) {
@@ -121,10 +125,14 @@ const ItemDisplay = ({
       {displayIcon}
       {ariaLabel ? (
         <span aria-label={ariaLabel}>
-          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">{text}</div>
+          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">
+            {textWrapper}
+          </div>
         </span>
       ) : (
-        <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
+        <div data-terra-clinical-item-display-text className={textClassNames}>
+          {textWrapper}
+        </div>
       )}
     </div>
   );
