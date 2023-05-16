@@ -5,10 +5,14 @@
 * Added
   * `strong` tag around strong style text.
   * `span` tag around non-strong style text.
-  * Added `textStyleMeaning` prop to allow defining a meaning for styled text to be read by screen readers.
- 
+
+## 4.7.0 - (May 15, 2023)
+
 * Deprecated
   * Deprecated `isDisabled` prop as the feature does not meet a11y standards.
+
+* Added
+  * Added `textStyleMeaning` prop to allow defining a meaning for styled text to be read by screen readers.
 
 ## 4.6.0 - (March 29, 2023)
 

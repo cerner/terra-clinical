@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 4.30.1 - (May 15, 2023)
+
+* Added deprecation notice to `README`.
+
 ## 4.30.0 - (March 29, 2023)
 
 * Changed
