@@ -39,6 +39,7 @@ Cerner Corporation
 - Gyandeep Singh [@gyandeeps]
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
+- Razvan Luca [@razvanluca]
 
 Community
 
@@ -83,3 +84,4 @@ Community
 [@saket2403]: https://github.com/saket2403
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
+[@razvanluca] https://github.com/razvanluca

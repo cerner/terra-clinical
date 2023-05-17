@@ -13,7 +13,7 @@ exports[`ClinicalResultDisplay should pass certain props to Observation  1`] = `
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           hideUnit={true}
           interpretation="critical"
@@ -26,7 +26,7 @@ exports[`ClinicalResultDisplay should pass certain props to Observation  1`] = `
           }
         />
       </ConditionalWrapper>
-      <Icons />
+      <InjectIntl(Icons) />
     </div>
   </div>
   <SecondaryDisplays />
@@ -46,7 +46,7 @@ exports[`ClinicalResultDisplay should render a commented result  1`] = `
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -57,7 +57,7 @@ exports[`ClinicalResultDisplay should render a commented result  1`] = `
           }
         />
       </ConditionalWrapper>
-      <Icons
+      <InjectIntl(Icons)
         hasComment={true}
       />
     </div>
@@ -79,7 +79,7 @@ exports[`ClinicalResultDisplay should render a default ClinicalResultDisplay 1`]
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -90,7 +90,7 @@ exports[`ClinicalResultDisplay should render a default ClinicalResultDisplay 1`]
           }
         />
       </ConditionalWrapper>
-      <Icons />
+      <InjectIntl(Icons) />
     </div>
   </div>
   <SecondaryDisplays />
@@ -110,7 +110,7 @@ exports[`ClinicalResultDisplay should render a entered-in-error status result 1`
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           interpretation={null}
           key="Observation-111"
@@ -122,7 +122,7 @@ exports[`ClinicalResultDisplay should render a entered-in-error status result 1`
           }
         />
       </ConditionalWrapper>
-      <Icons />
+      <InjectIntl(Icons) />
     </div>
   </div>
   <SecondaryDisplays />
@@ -142,7 +142,7 @@ exports[`ClinicalResultDisplay should render a modified result  1`] = `
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -153,7 +153,7 @@ exports[`ClinicalResultDisplay should render a modified result  1`] = `
           }
         />
       </ConditionalWrapper>
-      <Icons
+      <InjectIntl(Icons)
         isModified={true}
       />
     </div>
@@ -175,7 +175,7 @@ exports[`ClinicalResultDisplay should render a result with a concept display 1`]
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -186,7 +186,7 @@ exports[`ClinicalResultDisplay should render a result with a concept display 1`]
           }
         />
       </ConditionalWrapper>
-      <Icons />
+      <InjectIntl(Icons) />
     </div>
   </div>
   <SecondaryDisplays
@@ -208,7 +208,7 @@ exports[`ClinicalResultDisplay should render a result with a date time display 1
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -219,7 +219,7 @@ exports[`ClinicalResultDisplay should render a result with a date time display 1
           }
         />
       </ConditionalWrapper>
-      <Icons />
+      <InjectIntl(Icons) />
     </div>
   </div>
   <SecondaryDisplays
@@ -241,7 +241,7 @@ exports[`ClinicalResultDisplay should render a result with unit hidden 1`] = `
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           hideUnit={true}
           key="Observation-111"
@@ -253,7 +253,7 @@ exports[`ClinicalResultDisplay should render a result with unit hidden 1`] = `
           }
         />
       </ConditionalWrapper>
-      <Icons />
+      <InjectIntl(Icons) />
     </div>
   </div>
   <SecondaryDisplays />
@@ -273,7 +273,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -285,7 +285,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1
         />
       </ConditionalWrapper>
     </div>
-    <Icons />
+    <InjectIntl(Icons) />
   </div>
   <SecondaryDisplays />
 </Fragment>
@@ -304,7 +304,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay w
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           key="Observation-111"
           result={
@@ -316,7 +316,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay w
         />
       </ConditionalWrapper>
     </div>
-    <Icons
+    <InjectIntl(Icons)
       isModified={true}
     />
   </div>
@@ -337,7 +337,7 @@ exports[`ClinicalResultDisplay should render an unverified result  1`] = `
         key="del-Observation-111"
         wrapper={[Function]}
       >
-        <Observation
+        <InjectIntl(Observation)
           eventId="111"
           isUnverified={true}
           key="Observation-111"
@@ -349,7 +349,7 @@ exports[`ClinicalResultDisplay should render an unverified result  1`] = `
           }
         />
       </ConditionalWrapper>
-      <Icons
+      <InjectIntl(Icons)
         isUnverified={true}
       />
     </div>

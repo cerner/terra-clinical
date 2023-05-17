@@ -86,9 +86,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
         type="Diastolic"
       />
       <IconComment
+        a11yLabel="Terra.clinicalResult.resultComment"
         className="icon-comment"
         data-name="Layer 1"
+        focusable="true"
         isBidi={true}
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -185,7 +188,10 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
         type="Diastolic"
       />
       <IconModified
+        a11yLabel="Terra.clinicalResult.resultModified"
         className="icon-modified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -381,7 +387,10 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
         type="Diastolic"
       />
       <IconDiamond
+        a11yLabel="Terra.clinicalResult.resultUnverified"
         className="icon-unverified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -570,9 +579,12 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
         type="Diastolic"
       />
       <IconComment
+        a11yLabel="Terra.clinicalResult.resultComment"
         className="icon-comment"
         data-name="Layer 1"
+        focusable="true"
         isBidi={true}
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -667,7 +679,10 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
         type="Diastolic"
       />
       <IconModified
+        a11yLabel="Terra.clinicalResult.resultModified"
         className="icon-modified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -859,7 +874,10 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
         type="Diastolic"
       />
       <IconDiamond
+        a11yLabel="Terra.clinicalResult.resultUnverified"
         className="icon-unverified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -1185,7 +1203,10 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       />
     </div>
     <IconModified
+      a11yLabel="Terra.clinicalResult.resultModified"
       className="icon-modified"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
