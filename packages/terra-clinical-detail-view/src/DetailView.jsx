@@ -103,20 +103,24 @@ const DetailView = (props) => {
     attributes.className,
   );
 
+  function createHeaderLevel(headerLevel) {
+    return `h${headerLevel}`;
+  }
+
   let titleElement;
-  let nextLevel = Number(level);
-  let HeaderLevel = `h${nextLevel}`;
+  let nextLevel = level;
+  let HeaderLevel = createHeaderLevel(nextLevel);
   let secondaryTitlesElements = [];
 
   if (title) {
     titleElement = <HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>;
     nextLevel += 1;
-    HeaderLevel = `h${nextLevel}`;
   } else {
     titleElement = null;
   }
 
   if (secondaryTitles.length !== 0) {
+    HeaderLevel = createHeaderLevel(nextLevel);
     secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
       // eslint-disable-next-line react/no-array-index-key
       <HeaderLevel className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</HeaderLevel>
