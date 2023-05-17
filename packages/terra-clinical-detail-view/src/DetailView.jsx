@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import styles from './DetailView.module.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
+import { LevelContext } from './LevelContext';
 
 const cx = classNamesBind.bind(styles);
 
@@ -98,14 +99,27 @@ const DetailView = (props) => {
     attributes.className,
   );
 
-  const HeaderLevel = `h${level}`;
-  const SecondaryHeaderLevel = `h${level + 1}`;
-  // const secondaryTitleHeadinglevel = (level) ? `h${level - 1}` : 'h1';
-  const titleElement = title ? (<HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>) : null;
-  const secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <SecondaryHeaderLevel className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</SecondaryHeaderLevel>
-  ));
+  let titleElement;
+  let nextLevel = Number(level);
+  let HeaderLevel = `h${nextLevel}`;
+  let secondaryTitlesElements = [];
+
+  if (title) {
+    titleElement = <HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>;
+    nextLevel += 1;
+    HeaderLevel = `h${nextLevel}`;
+  } else {
+    titleElement = null;
+  }
+
+  if (secondaryTitles.length !== 0) {
+    secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <HeaderLevel className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</HeaderLevel>
+    ));
+    nextLevel += 1;
+  }
+
   const subtitleElements = subtitles.map((subTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
     <div className={cx('subtitle')} key={`${i}`}>{subTitle}</div>
@@ -138,7 +152,9 @@ const DetailView = (props) => {
       {graph && divider}
       {graph}
       {divider}
-      {dividedDetails}
+      <LevelContext.Provider value={nextLevel}>
+        {dividedDetails}
+      </LevelContext.Provider>
       {footerElement}
     </div>
   );
