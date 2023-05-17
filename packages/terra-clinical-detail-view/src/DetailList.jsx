@@ -39,13 +39,9 @@ const DetailList = ({ title, children, ...customProps }) => {
   return (
     <div {...customProps} data-terra-clincial-detail-list className={customProps.className}>
       {titleContent}
-      <ul>
-        {children.map((name) => (
-          <li className={cx('list')} key={name.id}>
-            {name}
-          </li>
-        ))}
-      </ul>
+      <div className={cx('list')}>
+        {children}
+      </div>
     </div>
   );
 };

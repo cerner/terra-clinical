@@ -131,9 +131,9 @@ const DetailView = (props) => {
   let dividedDetails = [];
 
   if (isDivided) {
-    divider = (<hr className={cx('divider')} />);
-
     for (let i = 0; i < details.length; i += 1) {
+      divider = (<hr key={`${i}`} className={cx('divider')} />);
+
       dividedDetails.push(details[i]);
       dividedDetails.push(divider);
     }
