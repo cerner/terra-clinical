@@ -57,7 +57,11 @@ const propTypes = {
   isSmallerTitles: PropTypes.bool,
 
   /**
-   * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
+   * Sets the heading level &lt;h1&gt;-&lt;h6&gt;. One of `1`, `2`, `3`, `4`, `5`, `6`. This helps screen readers to announce appropriate heading levels.
+   * Changing `level` will not visually change the style of the content.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is required to be set in order for the header text to have proper accessibility.
+   * _Note: if the prop is not set level 2 by default. this would result in incorrect context of header in application._
    */
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 };
