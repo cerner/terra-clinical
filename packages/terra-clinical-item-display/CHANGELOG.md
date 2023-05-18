@@ -6,6 +6,9 @@
   * `strong` tag around strong style text.
   * `span` tag around non-strong style text.
 
+* Changed
+  * Make screen reader support for text styling more robust by using terra-visually-hidden-text.
+
 ## 4.7.0 - (May 15, 2023)
 
 * Deprecated
