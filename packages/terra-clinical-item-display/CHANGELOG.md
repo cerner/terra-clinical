@@ -13,6 +13,7 @@
 
 * Added
   * Added `textStyleMeaning` prop to allow defining a meaning for styled text to be read by screen readers.
+  * Added accessibility guidance for using `isTruncated` prop.
 
 ## 4.6.0 - (March 29, 2023)
 
