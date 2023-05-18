@@ -30,18 +30,40 @@ const defaultProps = {
 
 const DetailList = ({ title, children, ...customProps }) => {
   let titleContent;
+  let listContent;
   const level = useContext(LevelContext);
   const HeaderLevel = `h${level}`;
   if (title) {
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
+  if (children[0].props.useItem) {
+    listContent = (
+      <ul className={cx('list')}>
+        {children.map((name) => (
+          <li key={name.id}>
+            {name}
+          </li>
+        ))}
+      </ul>
+    );
+  } else {
+    listContent = (
+      <dl className={cx('list')}>
+        {children.map((name) => (
+          <React.Fragment>
+            <dt>{name.props.label}</dt>
+            <dd>{name.props.textValue}</dd>
+          </React.Fragment>
+        ))}
+      </dl>
+    );
+  }
+
   return (
-    <div {...customProps} data-terra-clincial-detail-list className={customProps.className}>
+    <div {...customProps} data-terra-clinical-detail-list className={customProps.className}>
       {titleContent}
-      <div className={cx('list')}>
-        {children}
-      </div>
+      {listContent}
     </div>
   );
 };

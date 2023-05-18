@@ -9,13 +9,31 @@ const propTypes = {
   /**
    * The detail view list item to be displayed.
    */
-  item: PropTypes.element.isRequired,
+  item: PropTypes.element,
+  /**
+   * The label of the detail view list item.
+   */
+  label: PropTypes.string,
+  /**
+  * The text to be displayed underneath the label with the provided styling.
+  */
+  textValue: PropTypes.string,
+  /**
+  * Boolean that indicates whether or not the item or label and textValue should be displayed.
+  */
+  useItem: PropTypes.bool,
 };
 
 const defaultProps = {
+  item: undefined,
+  label: undefined,
+  textValue: undefined,
+  useItem: true,
 };
 
-const DetailListItem = ({ item, ...customProps }) => {
+const DetailListItem = ({
+  item, label, textValue, useItem, ...customProps
+}) => {
   const detailListItemClassNames = cx([
     'detail-list-item',
     customProps.className,

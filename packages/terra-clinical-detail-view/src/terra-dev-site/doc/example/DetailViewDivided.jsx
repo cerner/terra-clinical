@@ -25,16 +25,16 @@ const DetailViewDivided = () => (
       details={[
         (
           <DetailView.DetailList title={detail1title} key="order-info-1">
-            <DetailView.DetailListItem item={detail1item1} />
-            <DetailView.DetailListItem item={detail1item2} />
-            <DetailView.DetailListItem item={detail1item3} />
+            <DetailView.DetailListItem item={detail1item1} label="Age of onset" textValue="38 years" useItem={false} />
+            <DetailView.DetailListItem item={detail1item2} label="Reviewed" textValue="07/10/2012 10:00AM" useItem={false} />
+            <DetailView.DetailListItem item={detail1item3} label="Comments" textValue="Based on patient's blood glucose levels and medical history, I recommend that they continue to monitor their glucose levels regularly and adhere to a healty diet and exercise regimen.It's important for the patient to attend regular follow-up appointments and communicate any concerns in symptoms." useItem={false} />
           </DetailView.DetailList>
         ),
         (
           <DetailView.DetailList title={detail2title} key="order-info-2">
-            <DetailView.DetailListItem item={detail2item1} />
-            <DetailView.DetailListItem item={detail2item2} />
-            <DetailView.DetailListItem item={detail2item3} />
+            <DetailView.DetailListItem item={detail2item1} label="Age of onset" textValue="38years" />
+            <DetailView.DetailListItem item={detail2item2} label="Reviewed" textValue="07/10/2012 10:00AM" />
+            <DetailView.DetailListItem item={detail2item3} label="Comments" textValue="Based on the patient's blood pressure readings and medical history ,I recommend that they make lifestyle modifications such as reducing their salt intake ,increasing physical activity,adn losing weight if necessary.It's important for the patient to continue monitoring their blood pressure at the home and attending regular follow-up appointment to assess the effectiveness of their treatment plan" />
           </DetailView.DetailList>
         ),
       ]}
