@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 import styles from './ItemDisplay.module.scss';
 
@@ -113,27 +114,24 @@ const ItemDisplay = ({
     textWrapper = <strong>{text}</strong>;
   }
 
-  let ariaLabel;
+  let hiddenStyleMeaning;
+  let hiddenStyleMeaningEnd;
   if (textStyleMeaning) {
-    ariaLabel = `${textStyleMeaning}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningEnd' }, { textStyleMeaning })}`;
+    hiddenStyleMeaning = textStyleMeaning;
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningEnd' }, { textStyleMeaning });
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
-    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethrough' })}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethroughEnd' })}`;
+    hiddenStyleMeaning = intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethrough' });
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethroughEnd' });
   }
 
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      {ariaLabel ? (
-        <span aria-label={ariaLabel}>
-          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">
-            {textWrapper}
-          </div>
-        </span>
-      ) : (
-        <div data-terra-clinical-item-display-text className={textClassNames}>
-          {textWrapper}
-        </div>
-      )}
+      {hiddenStyleMeaning ? <VisuallyHiddenText text={hiddenStyleMeaning} /> : null}
+      <div data-terra-clinical-item-display-text className={textClassNames}>
+        {textWrapper}
+      </div>
+      {hiddenStyleMeaningEnd ? <VisuallyHiddenText text={hiddenStyleMeaningEnd} /> : null}
     </div>
   );
 };
