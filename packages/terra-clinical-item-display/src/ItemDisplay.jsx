@@ -28,7 +28,9 @@ const propTypes = {
    */
   textStyle: PropTypes.oneOf(Object.values(TextStyles)),
   /**
-   * Whether or not the text should be truncated.
+   * Whether or not the text should be truncated. Note: To ensure keyboard accessibility, if this prop
+   * is used, consumers will need to provide a method to disclose the rest of the text so that it is
+   * accessible to keyboard users.
    */
   isTruncated: PropTypes.bool,
   //  TODO: remove isDisabled in the next major release.
