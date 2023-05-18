@@ -1,7 +1,7 @@
 import React from 'react';
-import ItemView from '../../lib/ItemView';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
+import ItemView from '../../lib/ItemView';
 
 // Snapshot Tests
 it('should render a default component', () => {
@@ -69,7 +69,6 @@ it('should render a comment', () => {
 });
 
 it('should render 1 start theme display', () => {
-  
   const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
   const displays = [display1];
   const itemView = shallow(<ItemView textEmphasis="start" displays={displays} />);
