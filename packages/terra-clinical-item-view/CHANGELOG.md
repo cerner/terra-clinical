@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Changed
-  * Updated Jest tests
-
 ## 4.7.0 - (May 15, 2023)
 
 * Changed
