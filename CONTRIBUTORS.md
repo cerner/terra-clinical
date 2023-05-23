@@ -40,6 +40,7 @@ Cerner Corporation
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
+- Madalina Stelea [@MadalinaStelea]
 
 Community
 
