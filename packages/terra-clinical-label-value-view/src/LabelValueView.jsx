@@ -78,6 +78,18 @@ const LabelValueView = ({
     );
   }
 
+  if (customProps.childOfDescriptionList == "true") {
+    return (
+      <React.Fragment>
+        <dt className={cx('label')}>{label}</dt>
+        <dd className={cx('value-wrapper')}>
+          {textValueSection}
+          {children}
+        </dd>
+      </React.Fragment>
+    );
+  }
+
   return (
     <dl {...customProps} className={labelValueViewClass} aria-labelledby={ariaLabelledby}>
       {termDefinition}
