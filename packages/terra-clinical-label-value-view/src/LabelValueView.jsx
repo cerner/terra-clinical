@@ -78,7 +78,7 @@ const LabelValueView = ({
     );
   }
 
-  if (customProps.childOfDescriptionList === "true") {
+  if (customProps.childOfDescriptionList === 'true') {
     return (
       <React.Fragment>
         <dt className={cx('label')}>{label}</dt>
