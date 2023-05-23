@@ -45,12 +45,26 @@ const LabelValueView = ({
     textValueSection = <div className={cx('value')}>{textValue}</div>;
   }
 
+  if (customProps.childOfDescriptionList == "true") {
+    return (
+      <React.Fragment>
+        <dt className={cx('label')}>{label}</dt>
+        <dd className={cx('value-wrapper')}>
+          {textValueSection}
+          {children}
+        </dd>
+      </React.Fragment>
+    );
+  }
+
   return (
-    <div {...customProps} className={labelValueViewClass}>
-      <div className={cx('label')}>{label}</div>
-      {textValueSection}
-      {children}
-    </div>
+    <dl {...customProps} className={labelValueViewClass}>
+      <dt className={cx('label')}>{label}</dt>
+      <dd className={cx('value-wrapper')}>
+        {textValueSection}
+        {children}
+      </dd>
+    </dl>
   );
 };
 
