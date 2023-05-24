@@ -3,6 +3,9 @@
 ## Unreleased
 
 * Added
+  * a11ylabel prop to ItemComment icon.
+
+* Added
   * `strong` tag around strong style text.
   * `span` tag around non-strong style text.
 
