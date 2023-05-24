@@ -6,6 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import styles from './DetailView.module.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
+import { LevelContext } from './LevelContext';
 
 const cx = classNamesBind.bind(styles);
 
@@ -54,6 +55,15 @@ const propTypes = {
    * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
    */
   isSmallerTitles: PropTypes.bool,
+
+  /**
+   * Sets the heading level &lt;h1&gt;-&lt;h6&gt;. One of `1`, `2`, `3`, `4`, `5`, `6`. This helps screen readers to announce appropriate heading levels.
+   * Changing `level` will not visually change the style of the content.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is required to be set in order for the header text to have proper accessibility.
+   * _Note: if the prop is not set level 2 by default. this would result in incorrect context of header in application._
+   */
+  level: PropTypes.oneOf([2, 3, 4]),
 };
 
 const defaultProps = {
@@ -66,6 +76,7 @@ const defaultProps = {
   footer: undefined,
   isDivided: true,
   isSmallerTitles: false,
+  level: 2,
 };
 
 const DetailView = (props) => {
@@ -79,6 +90,7 @@ const DetailView = (props) => {
     footer,
     isDivided,
     isSmallerTitles,
+    level,
     ...customProps
   } = props;
   const theme = React.useContext(ThemeContext);
@@ -91,11 +103,28 @@ const DetailView = (props) => {
     attributes.className,
   );
 
-  const titleElement = title ? (<h1 className={cx('primary-text')}>{title}</h1>) : null;
-  const secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</div>
-  ));
+  function createHeaderLevel(headerLevel) {
+    return `h${headerLevel}`;
+  }
+
+  let titleElement = null;
+  let secondaryTitlesElements = [];
+  let nextLevel = level;
+  let HeaderLevel = createHeaderLevel(nextLevel);
+
+  if (title) {
+    titleElement = <HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>;
+    nextLevel += 1;
+  }
+
+  if (secondaryTitles.length !== 0) {
+    HeaderLevel = createHeaderLevel(nextLevel);
+    secondaryTitlesElements = secondaryTitles.map((secondaryTitle, i) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <HeaderLevel className={cx('secondary-text')} key={`${i}`}>{secondaryTitle}</HeaderLevel>
+    ));
+    nextLevel += 1;
+  }
   const subtitleElements = subtitles.map((subTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
     <div className={cx('subtitle')} key={`${i}`}>{subTitle}</div>
@@ -107,12 +136,12 @@ const DetailView = (props) => {
   let dividedDetails = [];
 
   if (isDivided) {
-    divider = (<hr className={cx('divider')} />);
-
     for (let i = 0; i < details.length; i += 1) {
+      divider = (<hr key={`${i}`} className={cx('divider')} />);
       dividedDetails.push(details[i]);
       dividedDetails.push(divider);
     }
+    divider = (<hr className={cx('divider')} />);
   } else {
     dividedDetails = details;
   }
@@ -128,7 +157,9 @@ const DetailView = (props) => {
       {graph && divider}
       {graph}
       {divider}
-      {dividedDetails}
+      <LevelContext.Provider value={nextLevel}>
+        {dividedDetails}
+      </LevelContext.Provider>
       {footerElement}
     </div>
   );

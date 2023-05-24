@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './DetailList.module.scss';
 import DetailListItem from './DetailListItem';
+import { LevelContext } from './LevelContext';
 
 const cx = classNames.bind(styles);
 
@@ -29,8 +30,10 @@ const defaultProps = {
 
 const DetailList = ({ title, children, ...customProps }) => {
   let titleContent;
+  const level = useContext(LevelContext);
+  const HeaderLevel = `h${level}`;
   if (title) {
-    titleContent = (<div className={cx('title')}>{title}</div>);
+    titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
   return (

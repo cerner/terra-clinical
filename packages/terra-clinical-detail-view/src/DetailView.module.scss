@@ -31,7 +31,12 @@
 
   .secondary-text {
     font-size: 1.2857rem;
+    font-weight: normal;
+    margin-block-end: auto;
+    margin-block-start: inherit;
     margin-bottom: 0.7142857143rem;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
     word-wrap: break-word;
 
     ~ .subtitle {

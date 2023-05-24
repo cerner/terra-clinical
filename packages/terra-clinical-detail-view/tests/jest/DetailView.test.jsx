@@ -21,6 +21,16 @@ it('should render a title', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should set the default heading level of the title to h2', () => {
+  const wrapper = shallow(<DetailView title="Title" />);
+  expect(wrapper.html('.primary-text')).toContain('<h2 class="primary-text">Title</h2>');
+});
+
+it('should set the heading level for the title', () => {
+  const wrapper = shallow(<DetailView level={3} title="Title" />);
+  expect(wrapper.html('.primary-text')).toContain('<h3 class="primary-text">Title</h3>');
+});
+
 it('should render a smaller title', () => {
   const detailView = <DetailView title="Header" isSmallerTitles />;
   const wrapper = render(detailView);
@@ -36,6 +46,18 @@ it('should render secondaryTitles', () => {
   );
   const wrapper = render(detailView);
   expect(wrapper).toMatchSnapshot();
+});
+
+it('should set the appropriate heading level for the secondary titles', () => {
+  const wrapper = shallow(
+    <DetailView
+      title="Header"
+      secondaryTitles={['SecondaryTitle1', 'SecondaryTitle2']}
+      level={2}
+    />,
+  );
+  expect(wrapper.html('.secondary-text')).toContain('<h3 class="secondary-text">SecondaryTitle1</h3>');
+  expect(wrapper.html('.secondary-text')).toContain('<h3 class="secondary-text">SecondaryTitle2</h3>');
 });
 
 it('should render subtitles', () => {
