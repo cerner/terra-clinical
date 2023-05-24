@@ -129,11 +129,11 @@ const ItemDisplay = ({
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      {hiddenStyleMeaning ? <VisuallyHiddenText text={hiddenStyleMeaning} /> : null}
+      {hiddenStyleMeaning && <VisuallyHiddenText text={hiddenStyleMeaning} />}
       <div data-terra-clinical-item-display-text className={textClassNames}>
         {textWrapper}
       </div>
-      {hiddenStyleMeaningEnd ? <VisuallyHiddenText text={hiddenStyleMeaningEnd} /> : null}
+      {hiddenStyleMeaningEnd && <VisuallyHiddenText text={hiddenStyleMeaningEnd} />}
     </div>
   );
 };
