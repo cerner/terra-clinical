@@ -6,6 +6,7 @@
 
 * Changed
   * Updated the component examples.
+  * Allow users to select a heading level for title elements
 
 ## 3.28.0 - (March 29, 2023)
 
