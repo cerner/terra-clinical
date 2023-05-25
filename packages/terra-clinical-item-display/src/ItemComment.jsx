@@ -52,7 +52,7 @@ const ItemComment = ({
     <ItemDisplay
       text={text}
       isTruncated={isTruncated}
-      icon={<CommentIndicator a11yLabel={commentIcon} className={cx('inline-icon')} />}
+      icon={<CommentIndicator a11yLabel={commentIcon} className={cx('inline-icon')} role="img" focusable="true" />}
       {...customProps}
       className={commentClass}
     />
