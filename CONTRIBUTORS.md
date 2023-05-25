@@ -40,6 +40,7 @@ Cerner Corporation
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
+- Reagan Young [@rayguny]
 
 Community
 
@@ -84,4 +85,5 @@ Community
 [@saket2403]: https://github.com/saket2403
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
-[@razvanluca] https://github.com/razvanluca
+[@razvanluca]: https://github.com/razvanluca
+[@rayguny]: https://github.com/rayguny

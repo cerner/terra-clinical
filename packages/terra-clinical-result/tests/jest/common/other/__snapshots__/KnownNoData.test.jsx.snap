@@ -2,9 +2,15 @@
 
 exports[`KnownNoData should render a default KnownNoData 1`] = `
 <span
-  aria-label="Terra.clinicalResult.resultNoData"
   className="no-data"
 >
-  --
+  <span
+    aria-hidden={true}
+  >
+    --
+  </span>
+  <VisuallyHiddenText
+    text="Terra.clinicalResult.resultNoData"
+  />
 </span>
 `;
