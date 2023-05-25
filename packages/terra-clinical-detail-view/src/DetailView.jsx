@@ -126,10 +126,11 @@ const DetailView = (props) => {
   }
   const subtitleElements = subtitles.map((subTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('subtitle')} key={`${i}`}>{subTitle}</div>
+    <p className={cx('subtitle')} key={`${i}`}>{subTitle}</p>
   ));
   const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
-  const footerElement = footer ? (<div className={cx('footer-text')}>{footer}</div>) : null;
+  const footerElement = footer ? (<p role="note" className={cx('footer-text')}>{footer}</p>) : null;
+  const graphElement = graph ? (<figure>{graph}</figure>) : null;
 
   let divider = null;
   let dividedDetails = [];
@@ -146,7 +147,7 @@ const DetailView = (props) => {
   }
 
   return (
-    <div {...attributes}>
+    <section {...attributes}>
       <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}
@@ -154,13 +155,13 @@ const DetailView = (props) => {
         {accessoryElement}
       </div>
       {graph && divider}
-      {graph}
+      {graphElement}
       {divider}
       <HeadingLevelContext.Provider value={nextLevel}>
         {dividedDetails}
       </HeadingLevelContext.Provider>
       {footerElement}
-    </div>
+    </section>
   );
 };
 
