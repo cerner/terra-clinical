@@ -56,7 +56,7 @@ it('should render truncated display', () => {
 });
 
 it('should render a comment', () => {
-  const comment = <ItemView.Comment text="comment" textStyle="attention" isTruncated={false} />;
+  const comment = shallowWithIntl(<ItemView.Comment text="comment" textStyle="attention" isTruncated={false} />);
   const params = {
     layout: 'oneColumn',
     textEmphasis: 'default',
