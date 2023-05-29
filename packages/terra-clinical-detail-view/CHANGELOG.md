@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
+
 * Changed
   * Updated `terra-icon` dependency to `^3.52.0`.
+
 ## 3.29.0 - (April 21, 2023)
 
 * Changed
