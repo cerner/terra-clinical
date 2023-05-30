@@ -1,12 +1,13 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Added `level` prop to allow users to render different heading levels.
 
 ## 3.29.0 - (April 21, 2023)
 
 * Changed
   * Updated the component examples.
-  * Added `level` prop to allow users to render different heading levels.
 
 ## 3.28.0 - (March 29, 2023)
 
