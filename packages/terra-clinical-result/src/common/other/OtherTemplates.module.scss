@@ -51,5 +51,7 @@
 
   .visually-hidden {
     @include terra-clinical-result-visually-hidden-text;
+    margin: -1px;
+    position: absolute;
   }
 }
