@@ -2,11 +2,11 @@
 
 ## Unreleased
 * Changed
-  * Created a new attribute on the LabelValueView component - childOfDescriptionList
-  * Updated the LabelValueView to be 
+  * Created a new prop `childOfDescriptionList` on the LabelValueView component.
+  * Updated the LabelValueView to be:
   *     - a React.Fragment with a term and a definition when the LabelValueView is already inside a description list (when childOfDescriptionList is sent with a "true" value)
   *     - a description list when childOfDescriptionList is not sent (undefined) or sent as "false"
-  * Changed the component examples.
+  * Updated the component examples for new prop `childOfDescriptionList`.
 
 ## 3.28.0 - (April 21, 2023)
 
