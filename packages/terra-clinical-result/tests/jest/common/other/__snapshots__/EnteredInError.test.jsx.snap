@@ -11,10 +11,8 @@ exports[`EnteredInError should render a default EnteredInError 1`] = `
       Terra.clinicalResult.statusInError
     </span>
   </span>
-  <span
-    className="visually-hidden"
-  >
-    Terra.clinicalResult.statusInErrorAria
-  </span>
+  <VisuallyHiddenText
+    text="Terra.clinicalResult.statusInErrorAria"
+  />
 </Fragment>
 `;

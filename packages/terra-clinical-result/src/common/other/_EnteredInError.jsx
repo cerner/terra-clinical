@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './OtherTemplates.module.scss';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 const cx = classNamesBind.bind(styles);
 
@@ -41,9 +42,7 @@ const EnteredInError = (props) => {
           {intl.formatMessage({ id: 'Terra.clinicalResult.statusInError' })}
         </span>
       </span>
-      <span className={cx('visually-hidden')}>
-        {intl.formatMessage({ id: 'Terra.clinicalResult.statusInErrorAria' })}
-      </span>
+      <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.clinicalResult.statusInErrorAria' })} />
     </>
   );
 };

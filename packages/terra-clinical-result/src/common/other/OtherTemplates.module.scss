@@ -1,4 +1,3 @@
-@import '../mixins';
 @import '../../clinical-lowlight-theme/OtherTemplates.module';
 @import '../../orion-fusion-theme/OtherTemplates.module';
 
@@ -47,11 +46,5 @@
     white-space: nowrap;
     word-break: normal;
     word-wrap: normal;
-  }
-
-  .visually-hidden {
-    @include terra-clinical-result-visually-hidden-text;
-    margin: -1px;
-    position: absolute;
   }
 }
