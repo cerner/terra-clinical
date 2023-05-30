@@ -55,6 +55,15 @@ const LabelValueView = ({
   } else if (textValue) {
     textValueSection = <div className={cx('value')}>{textValue}</div>;
   }
+  const termDefinition = (
+    <React.Fragment>
+      <dt className={cx('label')}>{label}</dt>
+      <dd className={cx('value-wrapper')}>
+        {textValueSection}
+        {children}
+      </dd>
+    </React.Fragment>
+  );
 
   /**
    * If LabelValueView is a child of a description list (<dl>), then just the term and definition are returned.
