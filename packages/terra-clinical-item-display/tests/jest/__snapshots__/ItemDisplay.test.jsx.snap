@@ -63,7 +63,7 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
     </span>
   </div>
   <VisuallyHiddenText
-    text="Terra.item-display.textStyleMeaningEnd"
+    text="Terra.itemDisplay.textStyleMeaningEnd"
   />
 </div>
 `;
@@ -133,7 +133,7 @@ exports[`should render a display with the strikeThrough textStyle on text and ar
     </span>
   </div>
   <VisuallyHiddenText
-    text="Terra.item-display.textStyleMeaningEnd"
+    text="Terra.itemDisplay.textStyleMeaningEnd"
   />
 </div>
 `;
@@ -144,7 +144,7 @@ exports[`should render a display with the strikeThrough textStyle on text and de
   className="item-display"
 >
   <VisuallyHiddenText
-    text="Terra.item-display.textStyleMeaningStrikethrough"
+    text="Terra.itemDisplay.textStyleMeaningStrikethrough"
   />
   <div
     className="text strike-through"
@@ -155,7 +155,7 @@ exports[`should render a display with the strikeThrough textStyle on text and de
     </span>
   </div>
   <VisuallyHiddenText
-    text="Terra.item-display.textStyleMeaningStrikethroughEnd"
+    text="Terra.itemDisplay.textStyleMeaningStrikethroughEnd"
   />
 </div>
 `;
