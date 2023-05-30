@@ -40,6 +40,7 @@ Cerner Corporation
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
+- Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
 
 Community
 
@@ -85,3 +86,4 @@ Community
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
 [@razvanluca] https://github.com/razvanluca
+[@vinaybhargavar]: https://github.com/vinaybhargavar
