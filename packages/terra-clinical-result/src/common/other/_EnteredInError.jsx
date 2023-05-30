@@ -4,8 +4,8 @@ import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import styles from './OtherTemplates.module.scss';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import styles from './OtherTemplates.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
