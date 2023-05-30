@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+
 * Changed
   * Added `level` prop to allow users to render different heading levels.
 
