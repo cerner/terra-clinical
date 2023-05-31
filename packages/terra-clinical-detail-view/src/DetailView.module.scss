@@ -49,6 +49,11 @@
     font-size: 1.1428571429rem;
     line-height: 1.4285714286;
     word-wrap: break-word;
+    font-weight: normal;
+    margin-block-end: auto;
+    margin-block-start: auto;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
 
     ~ .subtitle {
       margin-top: 0;
@@ -95,8 +100,8 @@
     margin: 0;
     margin-bottom: 0.7142857143rem;
   }
- 
- .graph-figure {
+
+  .graph-figure {
     margin: 0;
- }
+  }
 }
