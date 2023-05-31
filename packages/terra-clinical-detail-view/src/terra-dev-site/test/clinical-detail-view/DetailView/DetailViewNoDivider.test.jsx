@@ -19,7 +19,7 @@ const DetailViewNoDivider = () => (
       <div className={cx('graph-content')}>
         This is where any visualizations would go
       </div>
-)}
+    )}
     accessory={accessoryElement}
     details={[
       (
