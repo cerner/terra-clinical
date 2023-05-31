@@ -130,7 +130,7 @@ const DetailView = (props) => {
   ));
   const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
   const footerElement = footer ? (<p role="note" className={cx('footer-text')}>{footer}</p>) : null;
-  const graphElement = graph ? (<figure>{graph}</figure>) : null;
+  const graphElement = graph ? (<figure className={cx('graph-figure')}>{graph}</figure>) : null;
 
   let divider = null;
   let dividedDetails = [];
