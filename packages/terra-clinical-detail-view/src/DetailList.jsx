@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './DetailList.module.scss';
 import DetailListItem from './DetailListItem';
-import { LevelContext } from './LevelContext';
+import { HeadingLevelContext } from './HeadingLevelContext';
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +30,7 @@ const defaultProps = {
 
 const DetailList = ({ title, children, ...customProps }) => {
   let titleContent;
-  const level = useContext(LevelContext);
+  const level = useContext(HeadingLevelContext);
   const HeaderLevel = `h${level}`;
   if (title) {
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);

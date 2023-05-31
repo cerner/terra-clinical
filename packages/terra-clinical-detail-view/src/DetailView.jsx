@@ -6,7 +6,7 @@ import ThemeContext from 'terra-theme-context';
 import styles from './DetailView.module.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
-import { LevelContext } from './LevelContext';
+import { HeadingLevelContext } from './HeadingLevelContext';
 
 const cx = classNamesBind.bind(styles);
 
@@ -103,9 +103,7 @@ const DetailView = (props) => {
     attributes.className,
   );
 
-  function createHeaderLevel(headerLevel) {
-    return `h${headerLevel}`;
-  }
+  const createHeaderLevel = (headerLevel) => `h${headerLevel}`;
 
   let titleElement = null;
   let secondaryTitlesElements = [];
@@ -157,9 +155,9 @@ const DetailView = (props) => {
       {graph && divider}
       {graph}
       {divider}
-      <LevelContext.Provider value={nextLevel}>
+      <HeadingLevelContext.Provider value={nextLevel}>
         {dividedDetails}
-      </LevelContext.Provider>
+      </HeadingLevelContext.Provider>
       {footerElement}
     </div>
   );

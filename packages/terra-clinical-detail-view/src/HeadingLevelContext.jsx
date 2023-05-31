@@ -1,4 +1,4 @@
 import { createContext } from 'react';
 
 // eslint-disable-next-line import/prefer-default-export
-export const LevelContext = createContext(2);
+export const HeadingLevelContext = createContext(2);
