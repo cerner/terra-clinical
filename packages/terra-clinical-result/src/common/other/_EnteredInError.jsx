@@ -33,17 +33,15 @@ const EnteredInError = (props) => {
   );
 
   return (
-    <>
-      <span
-        {...customProps}
-        className={templateClassnames}
-      >
-        <span aria-hidden="true">
-          {intl.formatMessage({ id: 'Terra.clinicalResult.statusInError' })}
-        </span>
+    <span
+      {...customProps}
+      className={templateClassnames}
+    >
+      <span aria-hidden="true">
+        {intl.formatMessage({ id: 'Terra.clinicalResult.statusInError' })}
       </span>
       <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.clinicalResult.statusInErrorAria' })} />
-    </>
+    </span>
   );
 };
 
