@@ -45,6 +45,9 @@ Cerner Corporation
 - Yixuan Chen [@chenyixuan625]
 - Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
 - Kol Kheang [@kolkheang]
+- Reagan Young [@rayguny]
+- Yixuan Chen [@chenyixuan625]
+- Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
 
 Community
 
