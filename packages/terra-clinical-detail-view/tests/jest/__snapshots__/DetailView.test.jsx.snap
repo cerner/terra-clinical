@@ -192,7 +192,9 @@ exports[`should render graph 1`] = `
   <hr
     class="divider"
   />
-  <figure>
+  <figure
+    class="graph-figure"
+  >
     <div>
        This is where a graph would go
     </div>
