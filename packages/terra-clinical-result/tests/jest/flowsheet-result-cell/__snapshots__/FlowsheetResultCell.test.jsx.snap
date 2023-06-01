@@ -26,6 +26,7 @@ exports[`FlowsheetResultCell correctly applies the theme context className 1`] =
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -39,6 +40,9 @@ exports[`FlowsheetResultCell correctly applies the theme context className 1`] =
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -69,6 +73,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -82,6 +87,9 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -112,6 +120,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -125,6 +134,9 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -155,6 +167,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -168,6 +181,9 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -199,6 +215,7 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -212,6 +229,9 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -257,6 +277,7 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -270,6 +291,9 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -341,6 +365,7 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -354,6 +379,9 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
   <div
     className="end-accessory-icons"
@@ -387,6 +415,7 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -400,6 +429,58 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render correctly with all normal results 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display"
+    key="ClinicalResultDisplay-111"
+  >
+    <ClinicalResult
+      eventId="111"
+      hideAccessoryDisplays={true}
+      hideUnit={true}
+      interpretation="normal"
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      aria-hidden="true"
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -433,6 +514,7 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -446,6 +528,9 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
   <div
     className="end-accessory-icons"
@@ -460,6 +545,55 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
         xmlns="http://www.w3.org/2000/svg"
       />
     </div>
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render correctly with at least 1 critical or out of range result 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display interpretation"
+    key="ClinicalResultDisplay-111"
+  >
+    <ClinicalResult
+      eventId="111"
+      hideAccessoryDisplays={true}
+      hideUnit={true}
+      interpretation="critical"
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display no-accessory-icons interpretation-critical"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      aria-hidden="true"
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleResults"
+    />
   </div>
 </div>
 `;
@@ -479,6 +613,7 @@ exports[`FlowsheetResultCell should render systolic entered-in-error status bloo
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -492,6 +627,9 @@ exports[`FlowsheetResultCell should render systolic entered-in-error status bloo
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;
@@ -574,6 +712,7 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
     key="AdditionalResultsDisplay-111"
   >
     <div
+      aria-hidden="true"
       className="additional-results-stack"
     >
       <span
@@ -587,6 +726,9 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
         2
       </span>
     </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
   </div>
 </div>
 `;

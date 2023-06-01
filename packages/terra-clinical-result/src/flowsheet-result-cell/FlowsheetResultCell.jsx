@@ -6,6 +6,8 @@ import ThemeContext from 'terra-theme-context';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import ClinicalResult from '../ClinicalResult';
 import ClinicalResultBloodPressure from '../ClinicalResultBloodPressure';
 import observationPropShape from '../proptypes/observationPropTypes';
@@ -49,6 +51,11 @@ const propTypes = {
    * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -90,12 +97,13 @@ const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resu
   );
 };
 
-const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessoryIcons, resultKeyID) => {
+const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessoryIcons, resultKeyID, intl) => {
   const displayCount = count;
   if (displayCount < 1) {
     return null;
   }
   let additionalResultInterpretationIndicator;
+  let criticality;
   if ([
     'critical',
     'critical-high',
@@ -103,12 +111,16 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
     'positive',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'critical';
+    criticality = 'critical';
   } else if ([
     'abnormal',
     'high',
     'low',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'high';
+    criticality = 'out of range';
+  } else {
+    criticality = 'normal';
   }
   const additionalResultClassNames = cx([
     'additional-end-display',
@@ -119,12 +131,16 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
   const additionalCountDisplayValue = (displayCount > 99)
     ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
     : (<span className={cx('additional-results-value')}>{displayCount}</span>);
+  const text = (criticality === 'normal')
+    ? intl.formatMessage({ id: 'Terra.clinicalResult.multipleNormalResults' }, { count })
+    : intl.formatMessage({ id: 'Terra.clinicalResult.multipleResults' }, { count, criticality });
   return (
     <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
-      <div className={cx('additional-results-stack')}>
+      <div className={cx('additional-results-stack')} aria-hidden="true">
         {additionalCountDisplayValue}
         {additionalCountDisplayValue}
       </div>
+      <VisuallyHiddenText text={text} />
     </div>
   );
 };
@@ -258,7 +274,7 @@ const unpackResultDataSet = (resultDataSet) => {
   };
 };
 
-const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverflow, containerDivRef) => {
+const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverflow, containerDivRef, intl) => {
   const {
     isfirstSingleResult,
     isfirstPairedResult,
@@ -303,7 +319,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     });
     const displayCount = additionalResultCount + 1;
     const hasAccessoryIcons = (firstResultAttributes.comment || firstResultAttributes.modified || firstResultAttributes.unverified);
-    const additionalResultsStackDisplay = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID);
+    const additionalResultsStackDisplay = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID, intl);
     compositeCell.push(additionalResultsStackDisplay);
   }
   const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
@@ -319,6 +335,7 @@ const FlowsheetResultCell = (props) => {
     paddingStyle,
     hasResultError,
     hasResultNoData,
+    intl,
     ...customProps
   } = props;
   const containerDiv = useRef(null);
@@ -351,7 +368,7 @@ const FlowsheetResultCell = (props) => {
   } else if (!resultDataSet || !resultDataSet.length) {
     flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-Error" className={cx(['primary-display', 'error'])}><ResultError /></div>;
   } else {
-    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv);
+    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv, intl);
   }
 
   const theme = React.useContext(ThemeContext);
@@ -378,4 +395,4 @@ const FlowsheetResultCell = (props) => {
 FlowsheetResultCell.propTypes = propTypes;
 FlowsheetResultCell.defaultProps = defaultProps;
 
-export default FlowsheetResultCell;
+export default injectIntl(FlowsheetResultCell);
