@@ -85,5 +85,5 @@ Community
 [@saket2403]: https://github.com/saket2403
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
-[@razvanluca] https://github.com/razvanluca
-[@chenyixuan625] https://github.com/chenyixuan625
+[@razvanluca]: https://github.com/razvanluca
+[@chenyixuan625]: https://github.com/chenyixuan625
