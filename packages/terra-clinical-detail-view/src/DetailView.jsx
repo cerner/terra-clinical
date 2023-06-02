@@ -57,11 +57,11 @@ const propTypes = {
   isSmallerTitles: PropTypes.bool,
 
   /**
-   * Sets the heading level &lt;h2&gt;-&lt;h4&gt;. One of `2`, `3`, `4`. This helps screen readers to announce appropriate heading levels.
+   * Sets the heading level to one of &lt;h2&gt;-&lt;h4&gt;. One of `2`, `3`, `4`. This helps screen readers to announce appropriate heading levels.
    * Changing `level` will not visually change the style of the content.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is required to be set in order for the header text to have proper accessibility.
-   * _Note: if the prop is not set level 2 by default. this would result in incorrect context of header in application._
+   * _Note: If the prop is not set, then level 2 will be used by default. This would result in incorrect context of header in application._
    */
   level: PropTypes.oneOf([2, 3, 4]),
 };
