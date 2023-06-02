@@ -154,7 +154,7 @@ const DetailView = (props) => {
         {subtitleElements}
         {accessoryElement}
       </div>
-      {graph && divider}
+      {graphElement && divider}
       {graphElement}
       {divider}
       <HeadingLevelContext.Provider value={nextLevel}>
