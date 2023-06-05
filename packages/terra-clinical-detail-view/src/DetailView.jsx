@@ -42,7 +42,9 @@ const propTypes = {
   accessory: PropTypes.element,
 
   /**
-   * Display for visualization of data.
+   * Sets visualization content such as image, graph, or text based on the input elements. This `graph` prop is wrapped in a `<figure>` element. It is recommended to include `<figcaption>` as the first, or the last element to provide figure's caption. Please see `<figure>` docs on [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) for more information.
+   *
+   * Note: When using `<figcaption>` element, which requires a parent element, it is necessary to wrap the elements within a `<React.Fragment>` block.
    */
   graph: PropTypes.element,
 
