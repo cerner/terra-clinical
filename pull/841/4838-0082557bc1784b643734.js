@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkterra_clinical=self.webpackChunkterra_clinical||[]).push([[4838],{28316:function(e,t,l){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a,u=(a=l(67294))&&a.__esModule?a:{default:a},r=l(21860);var c=function(){return u.default.createElement(r.ResultTimeHeaderCell,{date:"Dec 21, 2010",time:"23:59"})};t.default=c}}]);
