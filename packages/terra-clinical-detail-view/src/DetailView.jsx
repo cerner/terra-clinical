@@ -12,17 +12,27 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * The primary title to display.
+   * Sets the text to display for the main heading.
    */
   title: PropTypes.string,
 
   /**
-   * Additional list of title strings to display.
+   * Sets the appropriate heading level of Title on the page.
+   * The Level prop will also set the SecondaryTitles and other heading structures to the appropriate heading level to ensure a hierarchical content structure.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the Level prop be appropriately set to a value that best represents the placement of the main Clinical Detail View heading on the page.
+   * Think about headings as creating the outline of a page. Each heading level should be set to represent that outline structure.
+   * Screen reader users rely on the heading levels to understand the structure of information on the page
+   */
+  level: PropTypes.oneOf([2, 3, 4]),
+
+  /**
+   * Sets the text for black subheadings underneath the Title.
    */
   secondaryTitles: PropTypes.arrayOf(PropTypes.string),
 
   /**
-   * List of subtitle strings.
+   * Sets the text for the gray text underneath the Title and SecondaryTitles.
    */
   subtitles: PropTypes.arrayOf(PropTypes.string),
 
@@ -55,15 +65,6 @@ const propTypes = {
    * Sets title sizes to be smaller than default sizes, good for longer titles like medication names.
    */
   isSmallerTitles: PropTypes.bool,
-
-  /**
-   * Sets the heading level to one of &lt;h2&gt;-&lt;h4&gt;. One of `2`, `3`, `4`. This helps screen readers to announce appropriate heading levels.
-   * Changing `level` will not visually change the style of the content.
-   *
-   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is required to be set in order for the header text to have proper accessibility.
-   * _Note: If the prop is not set, then level 2 will be used by default. This would result in incorrect context of header in application._
-   */
-  level: PropTypes.oneOf([2, 3, 4]),
 };
 
 const defaultProps = {
