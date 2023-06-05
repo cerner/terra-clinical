@@ -2,9 +2,9 @@
 
 exports[`should render a default component 1`] = `
 <div
-  data-terra-clincial-detail-list="true"
+  data-terra-clinical-detail-list="true"
 >
-  <div
+  <ul
     class="list"
   />
 </div>
@@ -12,39 +12,47 @@ exports[`should render a default component 1`] = `
 
 exports[`should render a list 1`] = `
 <div
-  data-terra-clincial-detail-list="true"
+  data-terra-clinical-detail-list="true"
 >
-  <div
+  <ul
     class="list"
   >
-    <div
-      class="detail-list-item"
+    <li
+      class="list-item"
     >
-      <p>
-        Test
-      </p>
-    </div>
-    <div
-      class="detail-list-item"
+      <div
+        class="detail-list-item"
+      >
+        <p>
+          Test
+        </p>
+      </div>
+    </li>
+    <li
+      class="list-item"
     >
-      <p>
-        Test
-      </p>
-    </div>
-  </div>
+      <div
+        class="detail-list-item"
+      >
+        <p>
+          Test
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>
 `;
 
 exports[`should render a title 1`] = `
 <div
-  data-terra-clincial-detail-list="true"
+  data-terra-clinical-detail-list="true"
 >
   <h2
     class="title"
   >
     Title
   </h2>
-  <div
+  <ul
     class="list"
   />
 </div>
@@ -52,23 +60,27 @@ exports[`should render a title 1`] = `
 
 exports[`should render a title and a list 1`] = `
 <div
-  data-terra-clincial-detail-list="true"
+  data-terra-clinical-detail-list="true"
 >
   <h2
     class="title"
   >
     Title
   </h2>
-  <div
+  <ul
     class="list"
   >
-    <div
-      class="detail-list-item"
+    <li
+      class="list-item"
     >
-      <p>
-        Test
-      </p>
-    </div>
-  </div>
+      <div
+        class="detail-list-item"
+      >
+        <p>
+          Test
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>
 `;

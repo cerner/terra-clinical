@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Children, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './DetailList.module.scss';
@@ -21,27 +21,50 @@ const propTypes = {
     PropTypes.objectOf(DetailListItem),
     PropTypes.arrayOf(PropTypes.objectOf(DetailListItem)),
   ]),
+
+  /**
+   * Indicates if the DetailList should be a description list for label-value pairs.
+   */
+  isDescriptionList: PropTypes.bool,
 };
 
 const defaultProps = {
   title: undefined,
   children: undefined,
+  isDescriptionList: false,
 };
 
-const DetailList = ({ title, children, ...customProps }) => {
+const DetailList = ({
+  title, children, isDescriptionList, ...customProps
+}) => {
   let titleContent;
+  let listContent;
+
   const level = useContext(HeadingLevelContext);
   const HeaderLevel = `h${level}`;
+
   if (title) {
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
+  if (isDescriptionList) {
+    listContent = (<dl className={cx('list')}>{children}</dl>);
+  } else {
+    listContent = (
+      <ul className={cx('list')}>
+        {Children.map(children, child => (
+          <li key={child.id} className={cx('list-item')}>
+            {child}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   return (
-    <div {...customProps} data-terra-clincial-detail-list className={customProps.className}>
+    <div {...customProps} data-terra-clinical-detail-list className={customProps.className}>
       {titleContent}
-      <div className={cx('list')}>
-        {children}
-      </div>
+      {listContent}
     </div>
   );
 };

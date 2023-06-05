@@ -10,6 +10,12 @@
 * Changed
   * Update DetailView component to use semantic html elements.
 
+* Changed
+  * Updated the DetailList component to be an unordered HTML list.
+
+* Added
+  * Added `isDescriptionList` prop to DetailList component to support using a description list for label-value pairs.
+
 ## 3.29.0 - (April 21, 2023)
 
 * Changed
