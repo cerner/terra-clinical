@@ -51,19 +51,20 @@ exports[`should render a display with a non-strikeThrough textStyle on text and 
   aria-disabled={false}
   className="item-display"
 >
-  <span
-    aria-label="Important, Display, Terra.item-display.textStyleMeaningEnd"
+  <VisuallyHiddenText
+    text="Important"
+  />
+  <div
+    className="text attention"
+    data-terra-clinical-item-display-text={true}
   >
-    <div
-      aria-hidden="true"
-      className="text attention"
-      data-terra-clinical-item-display-text={true}
-    >
-      <span>
-        Display
-      </span>
-    </div>
-  </span>
+    <span>
+      Display
+    </span>
+  </div>
+  <VisuallyHiddenText
+    text="Terra.item-display.textStyleMeaningEnd"
+  />
 </div>
 `;
 
@@ -120,19 +121,20 @@ exports[`should render a display with the strikeThrough textStyle on text and ar
   aria-disabled={false}
   className="item-display"
 >
-  <span
-    aria-label="Update, Display, Terra.item-display.textStyleMeaningEnd"
+  <VisuallyHiddenText
+    text="Update"
+  />
+  <div
+    className="text strike-through"
+    data-terra-clinical-item-display-text={true}
   >
-    <div
-      aria-hidden="true"
-      className="text strike-through"
-      data-terra-clinical-item-display-text={true}
-    >
-      <span>
-        Display
-      </span>
-    </div>
-  </span>
+    <span>
+      Display
+    </span>
+  </div>
+  <VisuallyHiddenText
+    text="Terra.item-display.textStyleMeaningEnd"
+  />
 </div>
 `;
 
@@ -141,19 +143,20 @@ exports[`should render a display with the strikeThrough textStyle on text and de
   aria-disabled={false}
   className="item-display"
 >
-  <span
-    aria-label="Terra.item-display.textStyleMeaningStrikethrough, Display, Terra.item-display.textStyleMeaningStrikethroughEnd"
+  <VisuallyHiddenText
+    text="Terra.item-display.textStyleMeaningStrikethrough"
+  />
+  <div
+    className="text strike-through"
+    data-terra-clinical-item-display-text={true}
   >
-    <div
-      aria-hidden="true"
-      className="text strike-through"
-      data-terra-clinical-item-display-text={true}
-    >
-      <span>
-        Display
-      </span>
-    </div>
-  </span>
+    <span>
+      Display
+    </span>
+  </div>
+  <VisuallyHiddenText
+    text="Terra.item-display.textStyleMeaningStrikethroughEnd"
+  />
 </div>
 `;
 
