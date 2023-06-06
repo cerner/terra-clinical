@@ -77,7 +77,7 @@ const LabelValueView = ({
       </React.Fragment>
     );
   }
-  
+
   return (
     <dl {...customProps} className={labelValueViewClass} aria-labelledby={ariaLabelledby}>
       {termDefinition}
