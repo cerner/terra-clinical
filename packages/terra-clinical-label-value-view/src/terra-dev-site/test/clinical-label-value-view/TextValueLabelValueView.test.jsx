@@ -27,7 +27,7 @@ const examples = () => (
     <h3>LabelValueView returned as a description list (childOfDescriptionList=&apos;false&apos;):</h3>
     <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList="false" />
     <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList="false" />
-    <h3>LabelValueView returned as a description list (childOfDescriptionList is undefined - not sent):</h3>
+    <h3>LabelValueView returned as a description list (childOfDescriptionList is not given - will take the default value false):</h3>
     <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" />
     <LabelValueView label="Temperature" textValue="97 F" />
     <LabelValueView label="Heart Rate" textValue="80 BPM" />
