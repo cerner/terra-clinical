@@ -86,3 +86,4 @@ Community
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
 [@razvanluca] https://github.com/razvanluca
+[@MadalinaStelea] https://github.com/MadalinaStelea

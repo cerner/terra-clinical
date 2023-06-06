@@ -20,7 +20,7 @@ const propTypes = {
   * Indicates if the LabelValueView is created inside a description list or not.
   * If it is not valued, it will take false as a default, meaning that is is not a child of a description list.
   */
-  childOfDescriptionList: PropTypes.string,
+  childOfDescriptionList: PropTypes.bool,
   /**
    *  Child component(s) to display underneath the label.
    */
@@ -30,10 +30,11 @@ const propTypes = {
 const defaultProps = {
   textValue: '',
   children: undefined,
+  childOfDescriptionList: false
 };
 
 const LabelValueView = ({
-  label, textValue, childOfDescriptionList = 'false', children, ...customProps
+  label, textValue, childOfDescriptionList, children, ...customProps
 }) => {
   let textValueSection;
   const theme = React.useContext(ThemeContext);
@@ -59,7 +60,7 @@ const LabelValueView = ({
     </React.Fragment>
   );
 
-  if (childOfDescriptionList === 'true') {
+  if (childOfDescriptionList) {
     return (
       <React.Fragment>
         {termDefinition}
