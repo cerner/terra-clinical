@@ -41,6 +41,8 @@ Cerner Corporation
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
 - Yixuan Chen [@chenyixuan625]
+- Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
+
 
 Community
 
@@ -87,3 +89,4 @@ Community
 [@ashishkcerner]: https://github.com/ashishkcerner
 [@razvanluca]: https://github.com/razvanluca
 [@chenyixuan625]: https://github.com/chenyixuan625
+[@vinaybhargavar]: https://github.com/vinaybhargavar

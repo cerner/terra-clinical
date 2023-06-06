@@ -3,8 +3,13 @@
 ## Unreleased
 
 * Added
+  * Added `a11ylabel` prop to ItemComment icon.
   * `strong` tag around strong style text.
   * `span` tag around non-strong style text.
+  * Added translations for hidden text styling.
+
+* Changed
+  * Improved screen reader support for text styling by utilizing terra-visually-hidden-text.
 
 ## 4.7.0 - (May 15, 2023)
 
@@ -13,6 +18,7 @@
 
 * Added
   * Added `textStyleMeaning` prop to allow defining a meaning for styled text to be read by screen readers.
+  * Added accessibility guidance for using `isTruncated` prop.
 
 ## 4.6.0 - (March 29, 2023)
 

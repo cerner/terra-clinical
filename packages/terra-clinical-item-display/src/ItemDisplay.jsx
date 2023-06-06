@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
 import styles from './ItemDisplay.module.scss';
 
@@ -27,7 +28,9 @@ const propTypes = {
    */
   textStyle: PropTypes.oneOf(Object.values(TextStyles)),
   /**
-   * Whether or not the text should be truncated.
+   * Whether or not the text should be truncated. Note: To ensure keyboard accessibility, if this prop
+   * is used, consumers will need to provide a method to disclose the rest of the text so that it is
+   * accessible to keyboard users.
    */
   isTruncated: PropTypes.bool,
   //  TODO: remove isDisabled in the next major release.
@@ -113,27 +116,24 @@ const ItemDisplay = ({
     textWrapper = <strong>{text}</strong>;
   }
 
-  let ariaLabel;
+  let hiddenStyleMeaning;
+  let hiddenStyleMeaningEnd;
   if (textStyleMeaning) {
-    ariaLabel = `${textStyleMeaning}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningEnd' }, { textStyleMeaning })}`;
+    hiddenStyleMeaning = textStyleMeaning;
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningEnd' }, { textStyleMeaning });
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
-    ariaLabel = `${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethrough' })}, ${text}, ${intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethroughEnd' })}`;
+    hiddenStyleMeaning = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningStrikethrough' });
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningStrikethroughEnd' });
   }
 
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      {ariaLabel ? (
-        <span aria-label={ariaLabel}>
-          <div data-terra-clinical-item-display-text className={textClassNames} aria-hidden="true">
-            {textWrapper}
-          </div>
-        </span>
-      ) : (
-        <div data-terra-clinical-item-display-text className={textClassNames}>
-          {textWrapper}
-        </div>
-      )}
+      {hiddenStyleMeaning && <VisuallyHiddenText text={hiddenStyleMeaning} />}
+      <div data-terra-clinical-item-display-text className={textClassNames}>
+        {textWrapper}
+      </div>
+      {hiddenStyleMeaningEnd && <VisuallyHiddenText text={hiddenStyleMeaningEnd} />}
     </div>
   );
 };

@@ -39,11 +39,11 @@ exports[`should render a title 1`] = `
 <div
   data-terra-clincial-detail-list="true"
 >
-  <div
+  <h2
     class="title"
   >
     Title
-  </div>
+  </h2>
   <div
     class="list"
   />
@@ -54,11 +54,11 @@ exports[`should render a title and a list 1`] = `
 <div
   data-terra-clincial-detail-list="true"
 >
-  <div
+  <h2
     class="title"
   >
     Title
-  </div>
+  </h2>
   <div
     class="list"
   >
