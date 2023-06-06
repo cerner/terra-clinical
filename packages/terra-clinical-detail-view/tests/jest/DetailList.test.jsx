@@ -42,6 +42,11 @@ it('should set the title text', () => {
   expect(wrapper.find('.title').text()).toEqual('Title');
 });
 
+it('should set the heading level for the title', () => {
+  const wrapper = shallow(defaultVariety);
+  expect(wrapper.html('.title')).toContain('<h2 class="title">Title</h2>');
+});
+
 // Structure Tests
 it('should have the class title when title is provided', () => {
   const wrapper = shallow(defaultVariety);
