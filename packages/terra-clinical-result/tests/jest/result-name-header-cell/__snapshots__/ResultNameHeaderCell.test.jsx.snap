@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ResultNameHeaderCell correctly applies the theme context className 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact orion-fusion-theme"
 >
   <div
@@ -14,11 +14,11 @@ exports[`ResultNameHeaderCell correctly applies the theme context className 1`] 
   >
     Unit
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell paddingStyle - should render with compact 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -26,11 +26,11 @@ exports[`ResultNameHeaderCell paddingStyle - should render with compact 1`] = `
   >
     Name
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell paddingStyle - should render with none 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell"
 >
   <div
@@ -38,11 +38,11 @@ exports[`ResultNameHeaderCell paddingStyle - should render with none 1`] = `
   >
     Name
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell paddingStyle - should render with standard 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-standard"
 >
   <div
@@ -50,11 +50,11 @@ exports[`ResultNameHeaderCell paddingStyle - should render with standard 1`] = `
   >
     Name
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell should render a result name 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -62,11 +62,11 @@ exports[`ResultNameHeaderCell should render a result name 1`] = `
   >
     Name
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell should render a unit 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -79,11 +79,11 @@ exports[`ResultNameHeaderCell should render a unit 1`] = `
   >
     Unit
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell should render correctly when a full result name is provided 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -95,11 +95,11 @@ exports[`ResultNameHeaderCell should render correctly when a full result name is
   <VisuallyHiddenText
     text="Full result name"
   />
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell should render correctly when a full unit name is provided 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -116,11 +116,11 @@ exports[`ResultNameHeaderCell should render correctly when a full unit name is p
   <VisuallyHiddenText
     text="Full unit name"
   />
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell typeIndicator - should render with calculated 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -134,11 +134,11 @@ exports[`ResultNameHeaderCell typeIndicator - should render with calculated 1`] 
     />
     Name
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultNameHeaderCell typeIndicator - should render with none 1`] = `
-<div
+<th
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
@@ -146,5 +146,5 @@ exports[`ResultNameHeaderCell typeIndicator - should render with none 1`] = `
   >
     Name
   </div>
-</div>
+</th>
 `;

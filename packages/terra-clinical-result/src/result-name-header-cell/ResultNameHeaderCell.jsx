@@ -99,13 +99,13 @@ const ResultNameHeaderCell = (props) => {
     : <div className={cx('unit')}>{unit}</div>;
 
   return (
-    <div
+    <th
       {...customProps}
       className={nameHeaderCellClassnames}
     >
       {resultNameDisplay}
       {unit && unitDisplay}
-    </div>
+    </th>
   );
 };
 
