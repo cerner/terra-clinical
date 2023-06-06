@@ -10,11 +10,11 @@ const examples = () => (
   <div>
     <h3>LabelValueView returned as a term and a definition (childOfDescriptionList=&apos;true&apos;):</h3>
     <dl>
-      <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList={true} />
-      <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList={true} />
-      <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" childOfDescriptionList={true}/>
-      <LabelValueView label="Temperature" textValue="97 F" childOfDescriptionList={true} />
-      <LabelValueView label="Heart Rate" textValue="80 BPM" childOfDescriptionList={true} />
+      <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList />
+      <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList />
+      <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" childOfDescriptionList />
+      <LabelValueView label="Temperature" textValue="97 F" childOfDescriptionList />
+      <LabelValueView label="Heart Rate" textValue="80 BPM" childOfDescriptionList />
     </dl>
     <h3>LabelValueView returned as a description list (childOfDescriptionList=&apos;false&apos;):</h3>
     <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList={false} />

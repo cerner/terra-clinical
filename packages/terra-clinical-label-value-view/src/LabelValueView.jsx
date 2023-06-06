@@ -30,7 +30,7 @@ const propTypes = {
 const defaultProps = {
   textValue: '',
   children: undefined,
-  childOfDescriptionList: false
+  childOfDescriptionList: false,
 };
 
 const LabelValueView = ({
