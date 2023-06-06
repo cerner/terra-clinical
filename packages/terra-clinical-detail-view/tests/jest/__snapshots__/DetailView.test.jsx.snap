@@ -10,6 +10,9 @@ exports[`correctly applies the theme context className 1`] = `
   <hr
     className="divider"
   />
+  <ContextProvider
+    value={2}
+  />
 </div>
 `;
 
@@ -33,11 +36,11 @@ exports[`should render a smaller title 1`] = `
   <div
     class="titles-section titles-smaller"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
   </div>
   <hr
     class="divider"
@@ -52,11 +55,11 @@ exports[`should render a title 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
   </div>
   <hr
     class="divider"
@@ -71,11 +74,11 @@ exports[`should render accessory 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
     <div
       class="accessory"
     >
@@ -97,11 +100,11 @@ exports[`should render details 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
     <div
       class="subtitle"
     >
@@ -132,11 +135,11 @@ exports[`should render footer 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
     <div
       class="subtitle"
     >
@@ -172,11 +175,11 @@ exports[`should render graph 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
     <div
       class="subtitle"
     >
@@ -207,21 +210,21 @@ exports[`should render secondaryTitles 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
-    <div
+    </h2>
+    <h3
       class="secondary-text"
     >
       SecondaryTitle1
-    </div>
-    <div
+    </h3>
+    <h3
       class="secondary-text"
     >
       SecondaryTitle2
-    </div>
+    </h3>
   </div>
   <hr
     class="divider"
@@ -236,11 +239,11 @@ exports[`should render subtitles 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
     <div
       class="subtitle"
     >
@@ -265,11 +268,11 @@ exports[`should render without a divider when indicated 1`] = `
   <div
     class="titles-section"
   >
-    <h1
+    <h2
       class="primary-text"
     >
       Header
-    </h1>
+    </h2>
     <div
       class="subtitle"
     >

@@ -41,6 +41,7 @@ Cerner Corporation
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
 - Reagan Young [@rayguny]
+- Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
 
 Community
 
@@ -87,3 +88,4 @@ Community
 [@ashishkcerner]: https://github.com/ashishkcerner
 [@razvanluca]: https://github.com/razvanluca
 [@rayguny]: https://github.com/rayguny
+[@vinaybhargavar]: https://github.com/vinaybhargavar

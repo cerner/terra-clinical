@@ -120,10 +120,10 @@ const ItemDisplay = ({
   let hiddenStyleMeaningEnd;
   if (textStyleMeaning) {
     hiddenStyleMeaning = textStyleMeaning;
-    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningEnd' }, { textStyleMeaning });
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningEnd' }, { textStyleMeaning });
   } else if (textStyle === TextStyles.STRIKETHROUGH) {
-    hiddenStyleMeaning = intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethrough' });
-    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.item-display.textStyleMeaningStrikethroughEnd' });
+    hiddenStyleMeaning = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningStrikethrough' });
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningStrikethroughEnd' });
   }
 
   return (

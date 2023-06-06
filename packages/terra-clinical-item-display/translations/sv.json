@@ -1,3 +1,6 @@
 {
-  "Terra.itemDisplay.comment": "Kommentar"
+  "Terra.itemDisplay.comment": "Kommentar",
+  "Terra.itemDisplay.textStyleMeaningEnd": "{textStyleMeaning} slut",
+  "Terra.itemDisplay.textStyleMeaningStrikethrough": "borttagning",
+  "Terra.itemDisplay.textStyleMeaningStrikethroughEnd": "slut på borttagning"
 }
