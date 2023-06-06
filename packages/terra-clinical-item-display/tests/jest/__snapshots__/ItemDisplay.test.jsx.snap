@@ -9,7 +9,9 @@ exports[`correctly applies the theme context className 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -22,7 +24,9 @@ exports[`should render a default component 1`] = `
   <div
     className="text"
     data-terra-clinical-item-display-text={true}
-  />
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -35,8 +39,32 @@ exports[`should render a disabled display 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
+</div>
+`;
+
+exports[`should render a display with a non-strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display"
+>
+  <VisuallyHiddenText
+    text="Important"
+  />
+  <div
+    className="text attention"
+    data-terra-clinical-item-display-text={true}
+  >
+    <span>
+      Display
+    </span>
+  </div>
+  <VisuallyHiddenText
+    text="Terra.itemDisplay.textStyleMeaningEnd"
+  />
 </div>
 `;
 
@@ -49,7 +77,9 @@ exports[`should render a display with the attention textStyle on text 1`] = `
     className="text attention"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -63,7 +93,9 @@ exports[`should render a display with the primary textStyle on text 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -77,22 +109,54 @@ exports[`should render a display with the secondary textStyle on text 1`] = `
     className="text secondary"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
 
-exports[`should render a display with the strikeThrough textStyle on text 1`] = `
+exports[`should render a display with the strikeThrough textStyle on text and aria label based on provided textStyleMeaning prop 1`] = `
 <div
   aria-disabled={false}
   className="item-display"
 >
+  <VisuallyHiddenText
+    text="Update"
+  />
   <div
     className="text strike-through"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
+  <VisuallyHiddenText
+    text="Terra.itemDisplay.textStyleMeaningEnd"
+  />
+</div>
+`;
+
+exports[`should render a display with the strikeThrough textStyle on text and default textStyleMeaning provided 1`] = `
+<div
+  aria-disabled={false}
+  className="item-display"
+>
+  <VisuallyHiddenText
+    text="Terra.itemDisplay.textStyleMeaningStrikethrough"
+  />
+  <div
+    className="text strike-through"
+    data-terra-clinical-item-display-text={true}
+  >
+    <span>
+      Display
+    </span>
+  </div>
+  <VisuallyHiddenText
+    text="Terra.itemDisplay.textStyleMeaningStrikethroughEnd"
+  />
 </div>
 `;
 
@@ -105,7 +169,9 @@ exports[`should render a display with the strong textStyle on text 1`] = `
     className="text strong"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <strong>
+      Display
+    </strong>
   </div>
 </div>
 `;
@@ -119,7 +185,9 @@ exports[`should render a truncated display 1`] = `
     className="text is-truncated"
     data-terra-clinical-item-display-text={true}
   >
-    display1display1display1display1display1display1display1display1
+    <span>
+      display1display1display1display1display1display1display1display1
+    </span>
   </div>
 </div>
 `;
@@ -140,7 +208,9 @@ exports[`should render disabled display with text and graphic 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -160,7 +230,9 @@ exports[`should render with a graphic 1`] = `
   <div
     className="text"
     data-terra-clinical-item-display-text={true}
-  />
+  >
+    <span />
+  </div>
 </div>
 `;
 
@@ -173,7 +245,9 @@ exports[`should render with text 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -194,7 +268,9 @@ exports[`should render with text and graphic center aligned 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -215,7 +291,9 @@ exports[`should render with text and graphic inline aligned 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;
@@ -236,7 +314,9 @@ exports[`should render with text and graphic top aligned 1`] = `
     className="text"
     data-terra-clinical-item-display-text={true}
   >
-    Display
+    <span>
+      Display
+    </span>
   </div>
 </div>
 `;

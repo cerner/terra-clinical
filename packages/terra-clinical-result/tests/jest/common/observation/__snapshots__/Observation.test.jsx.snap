@@ -6,7 +6,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value abnormal"
   >
     <IconAbnormal
+      a11yLabel="Terra.clinicalResult.interpretationCriticalAbnormal"
       className="icon-interpretation"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -26,7 +29,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value critical"
   >
     <IconCritical
+      a11yLabel="Terra.clinicalResult.interpretationCritical"
       className="icon-interpretation"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -46,7 +52,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value critical"
   >
     <IconCritical
+      a11yLabel="Terra.clinicalResult.interpretationCriticalHigh"
       className="icon-interpretation"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -66,7 +75,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value critical"
   >
     <IconCritical
+      a11yLabel="Terra.clinicalResult.interpretationCriticalLow"
       className="icon-interpretation"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -86,8 +98,11 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value high"
   >
     <IconHigh
+      a11yLabel="Terra.clinicalResult.interpretationHigh"
       className="icon-interpretation"
       data-name="Layer 1"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -107,7 +122,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value low"
   >
     <IconLow
+      a11yLabel="Terra.clinicalResult.interpretationLow"
       className="icon-interpretation"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
@@ -142,7 +160,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value positive"
   >
     <IconCritical
+      a11yLabel="Terra.clinicalResult.interpretationPositive"
       className="icon-interpretation"
+      focusable="true"
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 4.33.0 - (May 15, 2023)
+
+* Changed
+  * Updated `terra-form-field` dependency to `^4.25.0`.
+  * Updated `terra-form-input` dependency to `^4.22.0`.
+  * Updated `terra-form-select` dependency to `^6.40.0`.
+
 ## 4.32.0 - (March 29, 2023)
 
 * Changed

@@ -1,59 +1,60 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`correctly applies the theme context className 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment orion-fusion-theme"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={false}
   text="comment"
-  textStyle="primary"
 />
 `;
 
 exports[`should render a comment with text 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={false}
   text="comment"
-  textStyle="primary"
 />
 `;
 
 exports[`should render a comment with the attention textStyle on text 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={false}
   text="ItemComment"
   textStyle="attention"
@@ -61,19 +62,20 @@ exports[`should render a comment with the attention textStyle on text 1`] = `
 `;
 
 exports[`should render a comment with the secondary textStyle on text 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={false}
   text="ItemComment"
   textStyle="secondary"
@@ -81,19 +83,20 @@ exports[`should render a comment with the secondary textStyle on text 1`] = `
 `;
 
 exports[`should render a comment with the strikeThrough textStyle on text 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={false}
   text="ItemComment"
   textStyle="strikeThrough"
@@ -101,41 +104,41 @@ exports[`should render a comment with the strikeThrough textStyle on text 1`] = 
 `;
 
 exports[`should render a default component 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={false}
   text=""
-  textStyle="primary"
 />
 `;
 
 exports[`should render a truncated comment 1`] = `
-<ItemDisplay
+<InjectIntl(ItemDisplay)
   className="item-comment"
   icon={
     <IconComment
+      a11yLabel="Terra.itemDisplay.comment"
       className="inline-icon"
       data-name="Layer 1"
+      focusable="true"
       isBidi={true}
+      role="img"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
   }
-  iconAlignment="center"
-  isDisabled={false}
   isTruncated={true}
   text="comment1comment1comment1comment1comment1comment1comment1comment1"
-  textStyle="primary"
 />
 `;

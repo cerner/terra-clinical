@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import styles from './ItemDisplay.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -26,11 +28,14 @@ const propTypes = {
    */
   textStyle: PropTypes.oneOf(Object.values(TextStyles)),
   /**
-   * Whether or not the text should be truncated.
+   * Whether or not the text should be truncated. Note: To ensure keyboard accessibility, if this prop
+   * is used, consumers will need to provide a method to disclose the rest of the text so that it is
+   * accessible to keyboard users.
    */
   isTruncated: PropTypes.bool,
+  //  TODO: remove isDisabled in the next major release.
   /**
-   * Whether or not the display is disabled.
+   * (Deprecated) Whether or not the display is disabled.
    */
   isDisabled: PropTypes.bool,
   /**
@@ -43,6 +48,18 @@ const propTypes = {
    * One of `'center'`, `'top'`, `'inline'`.
    */
   iconAlignment: PropTypes.oneOf(['center', 'top', 'inline']),
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue)
+   * The meaning of the text styling, for use by screen readers.
+   * Changing `textStyleMeaning` will not visually change the style of the content.
+   * Defaults to "deletion" for `textStyle` of `'strikeThrough'`.
+   */
+  textStyleMeaning: PropTypes.string,
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -61,6 +78,8 @@ const ItemDisplay = ({
   isDisabled,
   icon,
   iconAlignment,
+  textStyleMeaning,
+  intl,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -82,15 +101,39 @@ const ItemDisplay = ({
     { 'strike-through': textStyle === TextStyles.STRIKETHROUGH },
   ]);
 
+  // TODO: remove this warning in the next major release.
+  if (isDisabled) {
+    // eslint-disable-next-line no-console
+    console.warn('The isDisabled prop does not meet a11y standards and should not be used. It will be removed in the next major release.');
+  }
+
   let displayIcon;
   if (icon) {
     displayIcon = <div className={cx('icon')}>{icon}</div>;
+  }
+  let textWrapper = <span>{text}</span>;
+  if (textStyle === TextStyles.STRONG) {
+    textWrapper = <strong>{text}</strong>;
+  }
+
+  let hiddenStyleMeaning;
+  let hiddenStyleMeaningEnd;
+  if (textStyleMeaning) {
+    hiddenStyleMeaning = textStyleMeaning;
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningEnd' }, { textStyleMeaning });
+  } else if (textStyle === TextStyles.STRIKETHROUGH) {
+    hiddenStyleMeaning = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningStrikethrough' });
+    hiddenStyleMeaningEnd = intl.formatMessage({ id: 'Terra.itemDisplay.textStyleMeaningStrikethroughEnd' });
   }
 
   return (
     <div {...customProps} className={componentClassNames} aria-disabled={isDisabled}>
       {displayIcon}
-      <div data-terra-clinical-item-display-text className={textClassNames}>{text}</div>
+      {hiddenStyleMeaning && <VisuallyHiddenText text={hiddenStyleMeaning} />}
+      <div data-terra-clinical-item-display-text className={textClassNames}>
+        {textWrapper}
+      </div>
+      {hiddenStyleMeaningEnd && <VisuallyHiddenText text={hiddenStyleMeaningEnd} />}
     </div>
   );
 };
@@ -98,5 +141,5 @@ const ItemDisplay = ({
 ItemDisplay.propTypes = propTypes;
 ItemDisplay.defaultProps = defaultProps;
 
-export default ItemDisplay;
+export default injectIntl(ItemDisplay);
 export { TextStyles };

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import styles from './ClinicalResult.module.scss';
 
@@ -21,18 +22,24 @@ const propTypes = {
    * If Result has not been verified
    */
   isUnverified: PropTypes.bool,
+  /**
+  * Internationalization object with translation APIs. Provided by `injectIntl`.
+  */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
-const Icons = ({ isUnverified, isModified, hasComment }) => (
-  isUnverified ? (<IconUnverified className={cx('icon-unverified')} />)
+const Icons = ({
+  isUnverified, isModified, hasComment, intl,
+}) => (
+  isUnverified ? (<IconUnverified className={cx('icon-unverified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultUnverified' })} role="img" focusable="true" />)
     : (
       <React.Fragment>
-        {isModified ? (<IconModified className={cx('icon-modified')} />) : null}
-        {hasComment ? (<IconComment className={cx('icon-comment')} />) : null}
+        {isModified ? (<IconModified className={cx('icon-modified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultModified' })} role="img" focusable="true" />) : null}
+        {hasComment ? (<IconComment className={cx('icon-comment')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultComment' })} role="img" focusable="true" />) : null}
       </React.Fragment>
     )
 );
 
 Icons.propTypes = propTypes;
 
-export default Icons;
+export default injectIntl(Icons);

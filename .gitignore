@@ -63,3 +63,4 @@ errorScreenshots
 themeable-variables.json
 generated-themes
 .idea
+.DS_Store

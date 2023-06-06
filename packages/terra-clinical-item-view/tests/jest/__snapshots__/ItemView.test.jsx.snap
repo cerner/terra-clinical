@@ -30,6 +30,33 @@ exports[`should render 1 start theme display 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -62,6 +89,33 @@ exports[`should render 2 start theme displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -79,6 +133,33 @@ exports[`should render 2 start theme displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -111,6 +192,33 @@ exports[`should render 3 start theme displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -128,6 +236,33 @@ exports[`should render 3 start theme displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -145,6 +280,33 @@ exports[`should render 3 start theme displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 3"
@@ -165,6 +327,33 @@ exports[`should render a comment 1`] = `
     className="body"
   >
     <ItemComment
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
       isTruncated={false}
       text="comment"
       textStyle="attention"
@@ -271,6 +460,33 @@ exports[`should render one column 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -288,6 +504,33 @@ exports[`should render one column 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -333,6 +576,33 @@ exports[`should render truncated display 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={true}
             text="display1display1display1display1display1display1display1display1"
@@ -365,6 +635,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -377,6 +674,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -394,6 +718,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 3"
@@ -406,6 +757,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 4"
@@ -423,6 +801,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 5"
@@ -435,6 +840,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 6"
@@ -452,6 +884,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 7"
@@ -464,6 +923,33 @@ exports[`should render two columns with 8 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 8"
@@ -496,6 +982,33 @@ exports[`should render two columns with odd number of displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -508,6 +1021,33 @@ exports[`should render two columns with odd number of displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -525,6 +1065,33 @@ exports[`should render two columns with odd number of displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 3"
@@ -557,6 +1124,33 @@ exports[`should render with 1 display 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -589,6 +1183,33 @@ exports[`should render with 2 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -606,6 +1227,33 @@ exports[`should render with 2 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -638,6 +1286,33 @@ exports[`should render with 3 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
@@ -655,6 +1330,33 @@ exports[`should render with 3 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 2"
@@ -672,6 +1374,33 @@ exports[`should render with 3 displays 1`] = `
         >
           <ItemDisplay
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 3"
@@ -709,6 +1438,33 @@ exports[`should render with a display and graphic 1`] = `
               />
             }
             iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
             isDisabled={false}
             isTruncated={false}
             text="display 1"
