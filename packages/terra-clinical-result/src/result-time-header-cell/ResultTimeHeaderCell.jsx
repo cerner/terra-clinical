@@ -57,13 +57,13 @@ const ResultTimeHeaderCell = (props) => {
   );
 
   return (
-    <div
+    <th
       {...customProps}
       className={timeHeaderCellClassnames}
     >
       <div className={dateClassnames}>{date}</div>
       <div className={cx('time')}>{time}</div>
-    </div>
+    </th>
   );
 };
 

@@ -70,6 +70,7 @@ const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resu
   if (!hasCommentIcon && !hasModifiedIcon && !hasUnverifiedIcon) {
     return null;
   }
+
   let iconElements;
   if (hasUnverifiedIcon) {
     iconElements = <IconUnverified className={cx('icon-unverified')} />;
@@ -81,6 +82,7 @@ const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resu
       </React.Fragment>
     );
   }
+
   return (
     <div key={(`EndAccessoryIcons-${resultKeyID}`)} className={cx('end-accessory-icons')}>
       <div className={cx('end-accessory-stack')}>
@@ -95,6 +97,7 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
   if (displayCount < 1) {
     return null;
   }
+
   let additionalResultInterpretationIndicator;
   if ([
     'critical',
@@ -110,6 +113,7 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'high';
   }
+
   const additionalResultClassNames = cx([
     'additional-end-display',
     { 'no-accessory-icons': !hasAccessoryIcons },
@@ -119,6 +123,7 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
   const additionalCountDisplayValue = (displayCount > 99)
     ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
     : (<span className={cx('additional-results-value')}>{displayCount}</span>);
+
   return (
     <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
       <div className={cx('additional-results-stack')}>
@@ -134,6 +139,7 @@ const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretat
     'primary-display',
     { interpretation: hasInterpretationIcon && !hasUnverifiedIcon },
   ]);
+
   return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
 };
 
@@ -146,7 +152,9 @@ const createStandardResultDisplay = (resultDataItem, resultAttributes, hideUnit,
   } else {
     resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} {...resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={resultAttributes.unverified} hideAccessoryDisplays />;
   }
+
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, resultAttributes.unverified, resultAttributes.interpretationIcon, containerDivRef, resultKeyID);
+
   return clinicalResultDisplay;
 };
 
@@ -161,7 +169,9 @@ const createBloodPressureResultDisplay = (resultDataItem, resultAttributes, hide
   } else {
     resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} systolic={systolic} diastolic={diastolic} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
   }
+
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, resultAttributes.unverified, resultAttributes.interpretationIcon, containerDivRef, resultKeyID);
+
   return clinicalResultDisplay;
 };
 
@@ -184,6 +194,7 @@ const setResultKeyID = (isBloodPressureResult, resultData) => {
       return resultData.eventId;
     }
   }
+
   return null;
 };
 
@@ -192,9 +203,11 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
   if (isSingleResult) {
     return { isSingleResult, isPairedResult: false };
   }
+
   const hasSystolicData = !isEmpty(resultDataItem.systolic) ? resultDataItem.systolic.result : false;
   const hasDiastolicData = !isEmpty(resultDataItem.diastolic) ? resultDataItem.diastolic.result : false;
   const isPairedResult = (hasSystolicData || hasDiastolicData) || false;
+
   return { isSingleResult, isPairedResult };
 };
 
@@ -220,6 +233,7 @@ const unpackResultAttributes = (resultDataItem) => {
   itemAttributes.comment = hasComment;
   itemAttributes.modified = isModified;
   itemAttributes.unverified = isUnverified;
+
   return itemAttributes;
 };
 
@@ -246,9 +260,11 @@ const unpackResultDataSet = (resultDataSet) => {
       (bpAttribute.systolic.unverified || bpAttribute.diastolic.unverified),
     );
   }
+
   const isfirstSingleResult = isSingleResult;
   const isfirstPairedResult = isPairedResult;
   const resultKeyID = setResultKeyID(isfirstPairedResult, firstResultData);
+
   return {
     isfirstSingleResult,
     isfirstPairedResult,
@@ -266,6 +282,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     firstResultData,
     resultKeyID,
   } = unpackResultDataSet(resultDataSet);
+  const hasAccessoryIcons = (firstResultAttributes.comment || firstResultAttributes.modified || firstResultAttributes.unverified);
   const compositeCell = [];
   if (!isfirstSingleResult && !isfirstPairedResult) {
     compositeCell.push(<ResultError />);
@@ -276,6 +293,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes, hideUnit, resultKeyID, containerDivRef);
     compositeCell.push(firstResultDisplay);
   }
+
   const additionalResultCount = resultDataSet.length - 1;
   if (additionalResultCount > 0) {
     const additionalResultInterpretations = [];
@@ -301,13 +319,47 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
         }
       }
     });
+
     const displayCount = additionalResultCount + 1;
-    const hasAccessoryIcons = (firstResultAttributes.comment || firstResultAttributes.modified || firstResultAttributes.unverified);
-    const additionalResultsStackDisplay = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID);
+    const additionalResultsStack = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID);
+
+    // This handles the case for when additional results exist and accessory icons exist
+    if (hasAccessoryIcons) {
+      const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
+
+      // Here the additional results stack and accessory icons are being wrapped in a parent container
+      // They need to be grouped together for styling purposes, otherwise the order they appear in will be flipped
+      // To keep them in the proper order this parent container gets floated in the css to the right instead of the additional results stack and accessory icons individually
+      const endDisplay = (
+        <div key="EndDisplay-AdditionalResultsAndIcons" className={cx('end-display')}>
+          {additionalResultsStack}
+          {endAccessoryIcons}
+        </div>
+      );
+      compositeCell.push(endDisplay);
+
+      return compositeCell;
+    }
+
+    const additionalResultsStackDisplay = (
+      <div key="EndDisplay-AdditionalResults" className={cx('end-display')}>
+        {additionalResultsStack}
+      </div>
+    );
     compositeCell.push(additionalResultsStackDisplay);
+
+    return compositeCell;
   }
-  const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
-  compositeCell.push(endAccessoryIcons);
+
+  if (hasAccessoryIcons) {
+    const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
+    const endAccessoryIconsDisplay = (
+      <div key="EndDisplay-Icons" className={cx('end-display')}>
+        {endAccessoryIcons}
+      </div>
+    );
+    compositeCell.push(endAccessoryIconsDisplay);
+  }
 
   return compositeCell;
 };
@@ -329,10 +381,12 @@ const FlowsheetResultCell = (props) => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
+
     if (checkTypeNumeric(resultDataSet[0])) {
       if (!contentWidth) {
         setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
       }
+
       const containerWidth = containerDiv.current.getBoundingClientRect().width;
       if (containerWidth <= contentWidth && !numericOverflow) {
         setNumericOverflow(true);
@@ -366,12 +420,12 @@ const FlowsheetResultCell = (props) => {
   );
 
   return (
-    <div
+    <td
       {...customProps}
       className={flowsheetCellClassNames}
     >
       {flowsheetResultCellDisplay}
-    </div>
+    </td>
   );
 };
 
