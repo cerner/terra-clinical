@@ -9,7 +9,14 @@ const cx = classNames.bind(styles);
 const examples = () => (
   <div>
     <h3>LabelValueView returned as a term and a definition (childOfDescriptionList=&apos;true&apos;):</h3>
-    <dl>
+    <style>
+      {`
+        #dl-wrapper > dd {
+          margin-bottom: 14px;
+        }
+      `}
+    </style>
+    <dl id="dl-wrapper">
       <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList />
       <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList />
       <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" childOfDescriptionList />
