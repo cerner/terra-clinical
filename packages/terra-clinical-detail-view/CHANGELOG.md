@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Changed
-  * Updated `terra-icon` dependency to `^3.52.0`.
+* Added
+  * Added `level` prop to the DetailView component to allow users to render different heading levels.
 
 ## 3.29.0 - (April 21, 2023)
 
