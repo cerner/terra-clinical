@@ -1,7 +1,9 @@
 # Changelog
 
 ## Unreleased
-
+* Changed
+  * Updated the component examples.
+  
 * Added
   * Added `level` prop to the DetailView component to allow users to render different heading levels.
 
