@@ -41,6 +41,7 @@ Cerner Corporation
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
 - Madalina Stelea [@MadalinaStelea]
+- Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
 
 Community
 
@@ -87,3 +88,4 @@ Community
 [@ashishkcerner]: https://github.com/ashishkcerner
 [@razvanluca]: https://github.com/razvanluca
 [@MadalinaStelea]: https://github.com/MadalinaStelea
+[@vinaybhargavar]: https://github.com/vinaybhargavar

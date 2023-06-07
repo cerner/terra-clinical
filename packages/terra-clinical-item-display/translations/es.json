@@ -1,3 +1,6 @@
 {
-  "Terra.itemDisplay.comment": "Comentario"
+  "Terra.itemDisplay.comment": "Comentario",
+  "Terra.itemDisplay.textStyleMeaningEnd": "fin de {textStyleMeaning}",
+  "Terra.itemDisplay.textStyleMeaningStrikethrough": "eliminación",
+  "Terra.itemDisplay.textStyleMeaningStrikethroughEnd": "fin de la eliminación"
 }
