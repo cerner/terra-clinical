@@ -83,7 +83,7 @@ exports[`should render accessory 1`] = `
       class="accessory"
     >
       <div>
-         This is where an accessory would go
+         This is where an accessory would go 
       </div>
     </div>
   </div>
@@ -115,11 +115,12 @@ exports[`should render details 1`] = `
     >
       Subtitle 2
     </p>
+  </div>
   <hr
     class="divider"
   />
   <p>
-     Detail information
+     Detail information 
   </p>
   <hr
     class="divider"
@@ -149,11 +150,12 @@ exports[`should render footer 1`] = `
     >
       Subtitle 2
     </p>
+  </div>
   <hr
     class="divider"
   />
   <p>
-     Detail information
+     Detail information 
   </p>
   <hr
     class="divider"
@@ -189,6 +191,7 @@ exports[`should render graph 1`] = `
     >
       Subtitle 2
     </p>
+  </div>
   <hr
     class="divider"
   />
@@ -196,7 +199,7 @@ exports[`should render graph 1`] = `
     class="graph-figure"
   >
     <div>
-       This is where a graph would go
+       This is where a graph would go 
     </div>
   </figure>
   <hr
@@ -256,6 +259,7 @@ exports[`should render subtitles 1`] = `
     >
       Subtitle 2
     </p>
+  </div>
   <hr
     class="divider"
   />
@@ -284,8 +288,9 @@ exports[`should render without a divider when indicated 1`] = `
     >
       Subtitle 2
     </p>
+  </div>
   <p>
-     Detail information
+     Detail information 
   </p>
   <p
     class="footer-text"
