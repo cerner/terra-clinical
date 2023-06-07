@@ -5,9 +5,12 @@ exports[`EnteredInError should render a default EnteredInError 1`] = `
   className="entered-in-error"
 >
   <span
-    aria-label="Terra.clinicalResult.statusInErrorAria"
+    aria-hidden="true"
   >
     Terra.clinicalResult.statusInError
   </span>
+  <VisuallyHiddenText
+    text="Terra.clinicalResult.statusInErrorAria"
+  />
 </span>
 `;
