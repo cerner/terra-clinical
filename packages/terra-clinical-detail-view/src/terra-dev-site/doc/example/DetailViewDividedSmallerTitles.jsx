@@ -72,6 +72,9 @@ const DetailViewDivided = () => (
           </div>
         </div>
       )}
+      graph={(
+        <p>This area is where graph, image, visualization content, and text can optionally be displayed.</p>
+      )}
       details={[
         (
           <DetailView.DetailList title={detail1title} key="Indicators">

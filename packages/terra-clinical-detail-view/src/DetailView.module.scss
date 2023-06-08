@@ -47,7 +47,12 @@
   .subtitle {
     color: var(--terra-clinical-detail-view-subtitle-color, #75767d);
     font-size: 1.1428571429rem;
+    font-weight: normal;
     line-height: 1.4285714286;
+    margin-block-end: auto;
+    margin-block-start: auto;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
     word-wrap: break-word;
 
     ~ .subtitle {
@@ -84,6 +89,10 @@
     color: var(--terra-clinical-detail-view-footer-text-color, #75767d);
     font-size: 0.8571428571rem;
     line-height: 1.4285714286;
+    margin-block-end: auto;
+    margin-block-start: auto;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
     text-align: center;
   }
 
@@ -94,5 +103,9 @@
     display: block;
     margin: 0;
     margin-bottom: 0.7142857143rem;
+  }
+
+  .graph-figure {
+    margin: 0;
   }
 }
