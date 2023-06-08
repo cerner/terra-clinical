@@ -105,7 +105,7 @@ const ResultNameHeaderCell = (props) => {
       unitDisplay = <div className={cx('unit')}>{unit}</div>;
     }
   } else {
-    return null;
+    unitDisplay = null;
   }
 
   return (

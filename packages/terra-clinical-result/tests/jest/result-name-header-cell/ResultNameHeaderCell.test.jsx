@@ -13,6 +13,16 @@ describe('ResultNameHeaderCell', () => {
     expect(cell).toMatchSnapshot();
   });
 
+  it('should render correctly when a full result name is provided', () => {
+    const cell = shallow(<ResultNameHeaderCell resultName="Name" fullResultName="Full result name" />);
+    expect(cell).toMatchSnapshot();
+  });
+
+  it('should render correctly when a full unit name is provided', () => {
+    const cell = shallow(<ResultNameHeaderCell resultName="Name" fullResultName="Full result name" unit="Unit" fullUnit="Full unit name" />);
+    expect(cell).toMatchSnapshot();
+  });
+
   describe('paddingStyle -', () => {
     it('should render with none', () => {
       const cell = shallow(<ResultNameHeaderCell resultName="Name" paddingStyle="none" />);

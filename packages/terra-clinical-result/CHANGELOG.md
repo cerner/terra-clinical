@@ -6,6 +6,7 @@
   * Added screen-reader support for clinical-result icons. (Requires Jest test updates on consuming applications)
   * Added screen-reader support for alternative text for when no results are returned.
   * Added screen-reader support for clinical-result FlowsheetResultCell EnteredInError.
+  * Added screen-reader support for clinical-result ResultNameHeaderCell. Two new optional props are added for providing a full name of the result name and unit respectively.
 
 ## 1.16.0 - (March 29, 2023)
 

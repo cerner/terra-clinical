@@ -82,6 +82,47 @@ exports[`ResultNameHeaderCell should render a unit 1`] = `
 </div>
 `;
 
+exports[`ResultNameHeaderCell should render correctly when a full result name is provided 1`] = `
+<div
+  className="clinical-result-name-header-cell padding-compact"
+>
+  <div
+    aria-hidden="true"
+    className="name"
+  >
+    Name
+  </div>
+  <VisuallyHiddenText
+    text="Full result name"
+  />
+</div>
+`;
+
+exports[`ResultNameHeaderCell should render correctly when a full unit name is provided 1`] = `
+<div
+  className="clinical-result-name-header-cell padding-compact"
+>
+  <div
+    aria-hidden="true"
+    className="name"
+  >
+    Name
+  </div>
+  <VisuallyHiddenText
+    text="Full result name"
+  />
+  <div
+    aria-hidden="true"
+    className="unit"
+  >
+    Unit
+  </div>
+  <VisuallyHiddenText
+    text="Full unit name"
+  />
+</div>
+`;
+
 exports[`ResultNameHeaderCell typeIndicator - should render with calculated 1`] = `
 <div
   className="clinical-result-name-header-cell padding-compact"
