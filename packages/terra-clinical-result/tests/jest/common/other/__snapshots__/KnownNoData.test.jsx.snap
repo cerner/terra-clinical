@@ -5,7 +5,7 @@ exports[`KnownNoData should render a default KnownNoData 1`] = `
   className="no-data"
 >
   <span
-    aria-hidden="true"
+    aria-hidden={true}
   >
     --
   </span>

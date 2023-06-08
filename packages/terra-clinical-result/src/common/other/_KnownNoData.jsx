@@ -37,7 +37,7 @@ const KnownNoData = (props) => {
       {...customProps}
       className={templateClassnames}
     >
-      <span aria-hidden="true">
+      <span aria-hidden>
         --
       </span>
       <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.clinicalResult.resultNoData' })} />
