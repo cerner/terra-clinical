@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import IconCalculator from 'terra-icon/lib/icon/IconCalculator';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './ResultNameHeaderCell.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -17,6 +18,14 @@ const propTypes = {
    * Content to be displayed as the supporting Unit of Measure row label.
    */
   unit: PropTypes.string,
+  /**
+   * Full name of the Result Name for accessibility toolings.
+   */
+  fullResultName: PropTypes.string,
+  /**
+   * Full name of the unit for accessibility toolings.
+   */
+  fullUnit: PropTypes.string,
   /**
    * The padding styling to apply to the Result Name row header cell.
    * One of `'none'`, `'compact'`, or `'standard'`.
@@ -43,6 +52,8 @@ const ResultNameHeaderCell = (props) => {
   const {
     resultName,
     unit,
+    fullResultName,
+    fullUnit,
     paddingStyle,
     typeIndicator,
     ...customProps
@@ -59,16 +70,51 @@ const ResultNameHeaderCell = (props) => {
     customProps.className,
   );
 
+  let resultNameDisplay;
+  if (fullResultName) {
+    resultNameDisplay = (
+      <>
+        <div className={cx('name')} aria-hidden="true">
+          {resultRowIndicators[typeIndicator.toLowerCase()]}
+          {resultName}
+        </div>
+        <VisuallyHiddenText text={fullResultName} />
+      </>
+    );
+  } else {
+    resultNameDisplay = (
+      <div className={cx('name')}>
+        {resultRowIndicators[typeIndicator.toLowerCase()]}
+        {resultName}
+      </div>
+    );
+  }
+
+  let unitDisplay;
+  if (unit) {
+    if (fullUnit) {
+      unitDisplay = (
+        <>
+          <div className={cx('unit')} aria-hidden="true">
+            {unit}
+          </div>
+          <VisuallyHiddenText text={fullUnit} />
+        </>
+      );
+    } else {
+      unitDisplay = <div className={cx('unit')}>{unit}</div>;
+    }
+  } else {
+    return null;
+  }
+
   return (
     <div
       {...customProps}
       className={nameHeaderCellClassnames}
     >
-      <div className={cx('name')}>
-        {resultRowIndicators[typeIndicator.toLowerCase()]}
-        {resultName}
-      </div>
-      {unit && <div className={cx('unit')}>{unit}</div> }
+      {resultNameDisplay}
+      {unitDisplay}
     </div>
   );
 };
