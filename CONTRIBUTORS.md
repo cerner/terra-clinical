@@ -40,14 +40,10 @@ Cerner Corporation
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
-<<<<<<< HEAD
 - Reagan Young [@rayguny]
 - Yixuan Chen [@chenyixuan625]
 - Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
 
-=======
-- Yixuan Chen [@chenyixuan625]
->>>>>>> 6a4ed314 (Update change log and contributors)
 
 Community
 
