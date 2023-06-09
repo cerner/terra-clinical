@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import uuidv4 from 'uuid/v4';
 import styles from './DetailView.module.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
@@ -107,6 +108,7 @@ const DetailView = (props) => {
   );
 
   const createHeaderLevel = (headerLevel) => `h${headerLevel}`;
+  const titleId = title ? `title-id-${uuidv4()}` : null;
 
   let titleElement = null;
   let secondaryTitlesElements = [];
@@ -114,7 +116,7 @@ const DetailView = (props) => {
   let HeaderLevel = createHeaderLevel(nextLevel);
 
   if (title) {
-    titleElement = <HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>;
+    titleElement = <HeaderLevel className={cx('primary-text')} id={titleId}>{title}</HeaderLevel>;
     nextLevel += 1;
   }
 
@@ -149,7 +151,7 @@ const DetailView = (props) => {
   }
 
   return (
-    <section {...attributes}>
+    <section {...attributes} aria-labelledby={titleId}>
       <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}
