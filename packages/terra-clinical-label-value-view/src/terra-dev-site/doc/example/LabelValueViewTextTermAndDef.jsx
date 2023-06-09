@@ -11,11 +11,11 @@ const LabelValueViewText = () => (
       `}
     </style>
     <dl id="dl-wrapper">
-      <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList />
-      <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList />
-      <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" childOfDescriptionList />
-      <LabelValueView label="Temperature" textValue="97 F" childOfDescriptionList />
-      <LabelValueView label="Heart Rate" textValue="80 BPM" childOfDescriptionList />
+      <LabelValueView label="Collected By" textValue="Noah Brown" isChildOfDescriptionList />
+      <LabelValueView label="Date" textValue="12/12/12 00:00AM" isChildOfDescriptionList />
+      <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" isChildOfDescriptionList />
+      <LabelValueView label="Temperature" textValue="97 F" isChildOfDescriptionList />
+      <LabelValueView label="Heart Rate" textValue="80 BPM" isChildOfDescriptionList />
     </dl>
   </div>
 );

@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 const examples = () => (
   <div>
-    <h3>LabelValueView returned as a term and a definition (childOfDescriptionList=&apos;true&apos;):</h3>
+    <h3>LabelValueView returned as a term and a definition (isChildOfDescriptionList=&apos;true&apos;):</h3>
     <style>
       {`
         #dl-wrapper > dd {
@@ -17,16 +17,16 @@ const examples = () => (
       `}
     </style>
     <dl id="dl-wrapper">
-      <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList />
-      <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList />
-      <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" childOfDescriptionList />
-      <LabelValueView label="Temperature" textValue="97 F" childOfDescriptionList />
-      <LabelValueView label="Heart Rate" textValue="80 BPM" childOfDescriptionList />
+      <LabelValueView label="Collected By" textValue="Noah Brown" isChildOfDescriptionList />
+      <LabelValueView label="Date" textValue="12/12/12 00:00AM" isChildOfDescriptionList />
+      <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" isChildOfDescriptionList />
+      <LabelValueView label="Temperature" textValue="97 F" isChildOfDescriptionList />
+      <LabelValueView label="Heart Rate" textValue="80 BPM" isChildOfDescriptionList />
     </dl>
-    <h3>LabelValueView returned as a description list (childOfDescriptionList=&apos;false&apos;):</h3>
-    <LabelValueView label="Collected By" textValue="Noah Brown" childOfDescriptionList={false} />
-    <LabelValueView label="Date" textValue="12/12/12 00:00AM" childOfDescriptionList={false} />
-    <h3>LabelValueView returned as a description list (childOfDescriptionList is not given - will take the default value false):</h3>
+    <h3>LabelValueView returned as a description list (isChildOfDescriptionList=&apos;false&apos;):</h3>
+    <LabelValueView label="Collected By" textValue="Noah Brown" isChildOfDescriptionList={false} />
+    <LabelValueView label="Date" textValue="12/12/12 00:00AM" isChildOfDescriptionList={false} />
+    <h3>LabelValueView returned as a description list (isChildOfDescriptionList is not given - will take the default value false):</h3>
     <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" />
     <LabelValueView label="Temperature" textValue="97 F" />
     <LabelValueView label="Heart Rate" textValue="80 BPM" />
