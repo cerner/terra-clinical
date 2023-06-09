@@ -73,18 +73,18 @@ const interpretationsWithIcons = [
   'low',
 ];
 
-const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID) => {
+const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID, intl) => {
   if (!hasCommentIcon && !hasModifiedIcon && !hasUnverifiedIcon) {
     return null;
   }
   let iconElements;
   if (hasUnverifiedIcon) {
-    iconElements = <IconUnverified className={cx('icon-unverified')} />;
+    iconElements = <IconUnverified className={cx('icon-unverified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultUnverified' })} role="img" focusable="true" />;
   } else {
     iconElements = (
       <React.Fragment>
-        {hasCommentIcon ? (<IconComment className={cx('icon-comment')} />) : null}
-        {hasModifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null}
+        {hasCommentIcon ? (<IconComment className={cx('icon-comment')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultComment' })} role="img" focusable="true" />) : null}
+        {hasModifiedIcon ? (<IconModified className={cx('icon-modified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultModified' })} role="img" focusable="true" />) : null}
       </React.Fragment>
     );
   }
@@ -322,7 +322,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     const additionalResultsStackDisplay = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID, intl);
     compositeCell.push(additionalResultsStackDisplay);
   }
-  const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
+  const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID, intl);
   compositeCell.push(endAccessoryIcons);
 
   return compositeCell;

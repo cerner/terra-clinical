@@ -391,7 +391,10 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
       className="end-accessory-stack"
     >
       <IconDiamond
+        a11yLabel="Terra.clinicalResult.resultUnverified"
         className="icon-unverified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -432,6 +435,75 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
+  </div>
+</div>
+`;
+
+exports[`FlowsheetResultCell should render correctly when a multiple results cell contains icons 1`] = `
+<div
+  className="flowsheet-result-cell padding-compact"
+>
+  <div
+    className="primary-display interpretation"
+    key="ClinicalResultDisplay-111"
+  >
+    <ClinicalResult
+      eventId="111"
+      hasComment={true}
+      hideAccessoryDisplays={true}
+      hideUnit={true}
+      interpretation="critical"
+      isTruncated={true}
+      key="ClinicalResult-111"
+      result={
+        Object {
+          "unit": "mL",
+          "value": "12345.678",
+        }
+      }
+    />
+  </div>
+  <div
+    className="additional-end-display"
+    key="AdditionalResultsDisplay-111"
+  >
+    <div
+      aria-hidden="true"
+      className="additional-results-stack"
+    >
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+      <span
+        className="additional-results-value"
+      >
+        2
+      </span>
+    </div>
+    <VisuallyHiddenText
+      text="Terra.clinicalResult.multipleNormalResults"
+    />
+  </div>
+  <div
+    className="end-accessory-icons"
+    key="EndAccessoryIcons-111"
+  >
+    <div
+      className="end-accessory-stack"
+    >
+      <IconComment
+        a11yLabel="Terra.clinicalResult.resultComment"
+        className="icon-comment"
+        data-name="Layer 1"
+        focusable="true"
+        isBidi={true}
+        role="img"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -540,7 +612,10 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
       className="end-accessory-stack"
     >
       <IconDiamond
+        a11yLabel="Terra.clinicalResult.resultUnverified"
         className="icon-unverified"
+        focusable="true"
+        role="img"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />

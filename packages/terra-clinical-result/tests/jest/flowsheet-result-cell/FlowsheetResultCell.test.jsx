@@ -226,6 +226,23 @@ describe('FlowsheetResultCell', () => {
     expect(cell).toMatchSnapshot();
   });
 
+  it('should render correctly when a multiple results cell contains icons', () => {
+    const results = [
+      {
+        ...DefaultResult,
+        hasComment: true,
+        interpretation: 'critical',
+      },
+      {
+        ...DefaultResult,
+        isModified: true,
+        interpretation: 'normal',
+      },
+    ];
+    const cell = shallowWithIntl(<FlowsheetResultCell resultDataSet={results} hideUnit />).dive();
+    expect(cell).toMatchSnapshot();
+  });
+
   describe('paddingStyle', () => {
     it('should render when given none', () => {
       const results = [
