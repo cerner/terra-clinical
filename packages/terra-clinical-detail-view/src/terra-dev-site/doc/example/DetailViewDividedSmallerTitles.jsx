@@ -14,7 +14,7 @@ const detail1title = 'Indicators';
 const detail1item1 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconCritical />
+      <IconCritical a11yLabel="Critical Icon" />
     </div>
     <div className={cx('text')}>
       Immediate Priority
@@ -24,7 +24,7 @@ const detail1item1 = (
 const detail1item2 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconPharmacyReview />
+      <IconPharmacyReview a11yLabel="Pharmacy Review" />
     </div>
     <div className={cx('text')}>
       Pharmacy Review
@@ -34,7 +34,7 @@ const detail1item2 = (
 const detail1item3 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconGlasses />
+      <IconGlasses a11yLabel="Nurse review" />
     </div>
     <div className={cx('text')}>
       Nurse Review
@@ -44,7 +44,7 @@ const detail1item3 = (
 const detail1item4 = (
   <div className={cx('indicator-container')}>
     <div className={cx('icon')}>
-      <IconPharmacyReject />
+      <IconPharmacyReject a11yLabel="Pharmacy Reject" />
     </div>
     <div className={cx('text')}>
       Pharmacy Reject
@@ -71,6 +71,9 @@ const DetailViewDivided = () => (
             Ordered
           </div>
         </div>
+      )}
+      graph={(
+        <p>This area is where graph, image, visualization content, and text can optionally be displayed.</p>
       )}
       details={[
         (

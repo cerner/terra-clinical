@@ -4,6 +4,7 @@ import { injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './OtherTemplates.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -35,9 +36,11 @@ const KnownNoData = (props) => {
     <span
       {...customProps}
       className={templateClassnames}
-      aria-label={intl.formatMessage({ id: 'Terra.clinicalResult.resultNoData' })}
     >
-      --
+      <span aria-hidden="true">
+        --
+      </span>
+      <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.clinicalResult.resultNoData' })} />
     </span>
   );
 };

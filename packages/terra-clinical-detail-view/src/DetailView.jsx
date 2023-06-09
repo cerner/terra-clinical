@@ -42,7 +42,9 @@ const propTypes = {
   accessory: PropTypes.element,
 
   /**
-   * Display for visualization of data.
+   * Sets visualization content such as image, graph, or text based on the input elements. This `graph` prop is wrapped in a `<figure>` element. It is recommended to include `<figcaption>` as the first, or the last element to provide figure's caption. Please see `<figure>` docs on [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) for more information.
+   *
+   * Note: When using `<figcaption>` element, which requires a parent element, it is necessary to wrap the elements within a `<React.Fragment>` block.
    */
   graph: PropTypes.element,
 
@@ -126,10 +128,11 @@ const DetailView = (props) => {
   }
   const subtitleElements = subtitles.map((subTitle, i) => (
     // eslint-disable-next-line react/no-array-index-key
-    <div className={cx('subtitle')} key={`${i}`}>{subTitle}</div>
+    <p className={cx('subtitle')} key={`${i}`}>{subTitle}</p>
   ));
   const accessoryElement = accessory ? (<div className={cx('accessory')}>{accessory}</div>) : null;
-  const footerElement = footer ? (<div className={cx('footer-text')}>{footer}</div>) : null;
+  const footerElement = footer ? (<p role="note" className={cx('footer-text')}>{footer}</p>) : null;
+  const graphElement = graph ? (<figure className={cx('graph-figure')}>{graph}</figure>) : null;
 
   let divider = null;
   let dividedDetails = [];
@@ -146,21 +149,21 @@ const DetailView = (props) => {
   }
 
   return (
-    <div {...attributes}>
+    <section {...attributes}>
       <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}
         {subtitleElements}
         {accessoryElement}
       </div>
-      {graph && divider}
-      {graph}
+      {graphElement && divider}
+      {graphElement}
       {divider}
       <HeadingLevelContext.Provider value={nextLevel}>
         {dividedDetails}
       </HeadingLevelContext.Provider>
       {footerElement}
-    </div>
+    </section>
   );
 };
 

@@ -1,9 +1,14 @@
 # Changelog
 
 ## Unreleased
-
+* Changed
+  * Updated the component examples.
+  
 * Added
   * Added `level` prop to the DetailView component to allow users to render different heading levels.
+
+* Changed
+  * Update DetailView component to use semantic html elements.
 
 ## 3.29.0 - (April 21, 2023)
 
