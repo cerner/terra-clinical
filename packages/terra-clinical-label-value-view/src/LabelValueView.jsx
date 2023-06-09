@@ -60,6 +60,10 @@ const LabelValueView = ({
     </React.Fragment>
   );
 
+  /**
+   * If the LabelValueView is included by the consummer into a description list, then we just return the term and the definition.
+   * Otherwise, we are sending the whole description list for the consumer to use.
+   */
   if (isChildOfDescriptionList) {
     return (
       <React.Fragment>
