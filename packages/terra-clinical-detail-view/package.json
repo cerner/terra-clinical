@@ -45,5 +45,8 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
+  },
+  "devDependencies": {
+    "@cerner/carbon-graphs": "^2.23.0"
   }
 }
