@@ -17,6 +17,11 @@ const propTypes = {
   */
   textValue: PropTypes.string,
   /**
+  * Indicates if the LabelValueView is created inside a description list or not.
+  * If it is not valued, it will take false as a default, meaning that is is not a child of a description list.
+  */
+  isChildOfDescriptionList: PropTypes.bool,
+  /**
    *  Child component(s) to display underneath the label.
    */
   children: PropTypes.node,
@@ -25,10 +30,11 @@ const propTypes = {
 const defaultProps = {
   textValue: '',
   children: undefined,
+  isChildOfDescriptionList: false,
 };
 
 const LabelValueView = ({
-  label, textValue, children, ...customProps
+  label, textValue, isChildOfDescriptionList, children, ...customProps
 }) => {
   let textValueSection;
   const theme = React.useContext(ThemeContext);
@@ -44,13 +50,33 @@ const LabelValueView = ({
   } else if (textValue) {
     textValueSection = <div className={cx('value')}>{textValue}</div>;
   }
+  const termDefinition = (
+    <React.Fragment>
+      <dt className={cx('label')}>{label}</dt>
+      <dd className={cx('value-wrapper')}>
+        {textValueSection}
+        {children}
+      </dd>
+    </React.Fragment>
+  );
+
+  /**
+   * If LabelValueView is a child of a description list (<dl>), then just the term and definition are returned.
+   * Otherwise, a description list encapsulating the term and definition is returned.
+   * The reason for this is that <dt> and <dd> tags must always be children of a <dl> to be valid html.
+   */
+  if (isChildOfDescriptionList) {
+    return (
+      <React.Fragment>
+        {termDefinition}
+      </React.Fragment>
+    );
+  }
 
   return (
-    <div {...customProps} className={labelValueViewClass}>
-      <div className={cx('label')}>{label}</div>
-      {textValueSection}
-      {children}
-    </div>
+    <dl {...customProps} className={labelValueViewClass}>
+      {termDefinition}
+    </dl>
   );
 };
 
