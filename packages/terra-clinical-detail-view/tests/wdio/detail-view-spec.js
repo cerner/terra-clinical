@@ -24,4 +24,10 @@ Terra.describeViewports('Detail View', ['tiny', 'small', 'medium', 'large', 'hug
 
     Terra.validates.element('with overflowed title', { selector });
   });
+
+  it('Displays a Detail View with graph content', () => {
+    browser.url('/raw/tests/terra-clinical-detail-view/clinical-detail-view/detail-view/detail-view-graph-content');
+
+    Terra.validates.element('with graph content', { selector });
+  });
 });

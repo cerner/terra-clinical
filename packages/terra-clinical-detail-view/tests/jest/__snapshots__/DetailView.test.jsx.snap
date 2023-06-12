@@ -2,7 +2,7 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <section
-  aria-labelledby="title-id-dacd01de-e7d0-4e1a-a8f1-eba662631b7d"
+  aria-labelledby={null}
   className="detail-view orion-fusion-theme"
 >
   <div
@@ -19,7 +19,6 @@ exports[`correctly applies the theme context className 1`] = `
 
 exports[`should render a default component 1`] = `
 <section
-  aria-labelledby="title-id-dacd01de-e7d0-4e1a-a8f1-eba662631b7d"
   class="detail-view"
 >
   <div

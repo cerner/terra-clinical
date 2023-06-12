@@ -21,4 +21,11 @@
     flex: 1 1 auto;
     min-width: 10px; // Need min-width, as IE10 will completely squish display
   }
+
+  .caption-text {
+    font-weight: normal;
+    min-width: 10px; // Need min-width, as IE10 will completely squish display
+    text-align: center;
+    word-wrap: break-word;
+  }
 }

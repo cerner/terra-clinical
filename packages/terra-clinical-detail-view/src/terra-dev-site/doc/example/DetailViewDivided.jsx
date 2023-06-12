@@ -88,8 +88,13 @@ const DetailViewDivided = () => {
         ]}
         graph={(
           <>
-            {/* Sets the caption for the graph. The <figcaption> tag has to be the first element or the last element. */}
-            <figcaption>Oral Temperature</figcaption>
+            {/* Sets the caption for the graph. The `<figcaption>` tag has to be the first element or the last element of `<figure>` element.
+              Inside `DetailView` component, the `<figure>` tag wraps the graph prop like this `<figure>{graph}</figure>`.
+            */}
+            <figcaption className={cx('caption-text')}>Oral Temperature Graph - Degrees Fahrenheit (Y axis) vs Time (X axis)</figcaption>
+
+            {/* This div with the ID attribute is used by the graph config in `graphConfiguration` as well as
+              the APIs in `React.useEffect` above to insert in the graph content at run time. */}
             <div id="graph-id" />
           </>
         )}
