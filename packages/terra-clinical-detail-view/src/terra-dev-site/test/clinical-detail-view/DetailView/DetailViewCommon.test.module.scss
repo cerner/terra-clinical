@@ -5,11 +5,4 @@
     margin-bottom: 0.714rem;
     width: 25em;
   }
-
-  .caption-text {
-    font-weight: normal;
-    min-width: 10px; // Need min-width, as IE10 will completely squish display
-    text-align: center;
-    word-wrap: break-word;
-  }
 }
