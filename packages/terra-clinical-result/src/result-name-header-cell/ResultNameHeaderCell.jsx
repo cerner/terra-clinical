@@ -19,11 +19,11 @@ const propTypes = {
    */
   unit: PropTypes.string,
   /**
-   * Full name of the displayed Result Name row label for accessibility tooling's usage, e.g. `'Temperature'`.
+   * Full name of the displayed Result Name for accessibility tooling's usage, e.g. `'Temperature'`.
    */
   fullResultName: PropTypes.string,
   /**
-   * Full name of the displayed Unit of Measure row label for accessibility tooling's usage, e.g. `'Degrees Celsius'`.
+   * Full name of the displayed Unit of Measure for accessibility tooling's usage, e.g. `'Degrees Celsius'`.
    */
   fullUnit: PropTypes.string,
   /**
