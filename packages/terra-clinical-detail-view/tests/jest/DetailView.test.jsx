@@ -1,7 +1,7 @@
 import React from 'react';
 import DetailView from '../../src/DetailView';
 
-jest.mock('uuid/v4', () => () => 'dacd01de-e7d0-4e1a-a8f1-eba662631b7d');
+jest.mock('uuid', () => ({ v4: () => 'dacd01de-e7d0-4e1a-a8f1-eba662631b7d' }));
 
 const defaultVariety = <DetailView />;
 
