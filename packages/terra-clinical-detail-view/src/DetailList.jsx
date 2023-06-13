@@ -23,33 +23,36 @@ const propTypes = {
   ]),
 
   /**
-   * Indicates if the DetailList should be a description list for label-value pairs.
+   * The list type based on whether the list items are single HTML elements or label-value pairs.
+   * Label-value pairs should be provided using the `<dt>` element for the label and the `<dd>` element for the value.
+   * The `terra-clinical-label-value-view` component with `isChildOfDescriptionList={true}` can also be used as it will
+   * return the label and value using the appropriate `<dt>` and `<dd>` elements.
+   * One of `'singleItem'` or `'labelValuePair'`.
    */
-  isDescriptionList: PropTypes.bool,
+  type: PropTypes.oneOf(['singleItem', 'labelValuePair']),
 };
 
 const defaultProps = {
   title: undefined,
   children: undefined,
-  isDescriptionList: false,
+  type: 'singleItem',
 };
 
 const DetailList = ({
-  title, children, isDescriptionList, ...customProps
+  title, children, type, ...customProps
 }) => {
-  let titleContent;
-  let listContent;
-
   const level = useContext(HeadingLevelContext);
   const HeaderLevel = `h${level}`;
+  let titleContent;
+  let listContent;
 
   if (title) {
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
-  if (isDescriptionList) {
+  if (type === 'labelValuePair') {
     listContent = (<dl className={cx('list')}>{children}</dl>);
-  } else {
+  } else if (type === 'singleItem') {
     listContent = (
       <ul className={cx('list')}>
         {Children.map(children, child => (

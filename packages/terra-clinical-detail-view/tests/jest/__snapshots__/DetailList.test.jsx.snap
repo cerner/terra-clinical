@@ -10,6 +10,27 @@ exports[`should render a default component 1`] = `
 </div>
 `;
 
+exports[`should render a description list when type is labelValuePair 1`] = `
+<div
+  data-terra-clinical-detail-list="true"
+>
+  <dl
+    class="list"
+  >
+    <div
+      class="detail-list-item"
+    >
+      <dt>
+        label
+      </dt>
+      <dd>
+        value
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
+
 exports[`should render a list 1`] = `
 <div
   data-terra-clinical-detail-list="true"
