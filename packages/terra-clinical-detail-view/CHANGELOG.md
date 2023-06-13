@@ -3,14 +3,10 @@
 ## Unreleased
 * Changed
   * Updated the component examples.
-
-* Added
-  * Added `level` prop to the DetailView component to allow users to render different heading levels.
-
-* Changed
   * Update DetailView component to use semantic html elements.
 
 * Added
+  * Added `level` prop to the DetailView component to allow users to render different heading levels.
   * Added `type` prop to the DetailList component.
   * Updated the DetailList component to be:
   *     - an unordered list when `type` is not provided or is set to "singleItem"
