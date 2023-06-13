@@ -14,6 +14,9 @@ const cx = classNamesBind.bind(styles);
 const propTypes = {
   /**
    * Sets the text to display for the main heading.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the title prop be set to a value that best represents the region which groups the details in section within in the page.
+   * Screen reader users rely on the title to know the begin and end of a region, and to navigate to the specific region on the page.
    */
   title: PropTypes.string,
 
@@ -43,7 +46,9 @@ const propTypes = {
   accessory: PropTypes.element,
 
   /**
-   * Sets visualization content such as image, graph, or text based on the input elements. This `graph` prop is wrapped in a `<figure>` element. It is recommended to include `<figcaption>` as the first, or the last element to provide figure's caption. Please see `<figure>` docs on [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) for more information.
+   * Sets visualization content such as graph, or image based on the data in the `graph` prop. This `graph` prop is wrapped in a `<figure>` element.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that caption be set with `<figcaption>` element as the first, or the last element to provide the caption for the figure. Please see `<figure>` docs on [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) for more information.
    *
    * Note: When using `<figcaption>` element, which requires a parent element, it is necessary to wrap the elements within a `<React.Fragment>` block.
    */
