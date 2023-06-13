@@ -53,10 +53,10 @@ const detail1item4 = (
 );
 
 const detail2title = 'Comments';
-const detail2item1 = (<LabelValueView label="Order Comment" textValue="To be taken after lunch" />);
-const detail2item2 = (<LabelValueView label="Mar Notes" textValue="Using the med from last 2 months" />);
-const detail2item3 = (<LabelValueView label="Special Instructions" textValue="Never to be taken without eating" />);
-const detail2item4 = (<LabelValueView label="Admin Notes" textValue="Try med for 2 more months" />);
+const detail2item1 = (<LabelValueView label="Order Comment" textValue="To be taken after lunch" isChildOfDescriptionList />);
+const detail2item2 = (<LabelValueView label="Mar Notes" textValue="Using the med from last 2 months" isChildOfDescriptionList />);
+const detail2item3 = (<LabelValueView label="Special Instructions" textValue="Never to be taken without eating" isChildOfDescriptionList />);
+const detail2item4 = (<LabelValueView label="Admin Notes" textValue="Try med for 2 more months" isChildOfDescriptionList />);
 
 const DetailViewDivided = () => (
   <div className={cx('detail-view-divided')}>
@@ -77,7 +77,7 @@ const DetailViewDivided = () => (
       )}
       details={[
         (
-          <DetailView.DetailList title={detail1title} key="Indicators">
+          <DetailView.DetailList title={detail1title} type="singleItem" key="Indicators">
             <DetailView.DetailListItem item={detail1item1} />
             <DetailView.DetailListItem item={detail1item2} />
             <DetailView.DetailListItem item={detail1item3} />
@@ -85,7 +85,7 @@ const DetailViewDivided = () => (
           </DetailView.DetailList>
         ),
         (
-          <DetailView.DetailList title={detail2title} key="Comments">
+          <DetailView.DetailList title={detail2title} type="labelValuePair" key="Comments">
             <DetailView.DetailListItem item={detail2item1} />
             <DetailView.DetailListItem item={detail2item2} />
             <DetailView.DetailListItem item={detail2item3} />
