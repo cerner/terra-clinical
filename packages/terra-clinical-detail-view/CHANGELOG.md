@@ -3,18 +3,18 @@
 ## Unreleased
 * Changed
   * Updated the component examples.
-  
+
 * Added
   * Added `level` prop to the DetailView component to allow users to render different heading levels.
 
 * Changed
   * Update DetailView component to use semantic html elements.
 
-* Changed
-  * Updated the DetailList component to be an unordered HTML list.
-
 * Added
-  * Added `isDescriptionList` prop to DetailList component to support using a description list for label-value pairs.
+  * Added `type` prop to the DetailList component.
+  * Updated the DetailList component to be:
+  *     - an unordered list when `type` is not provided or is set to "singleItem"
+  *     - a description list when `type` is set to "labelValuePair"
 
 ## 3.29.0 - (April 21, 2023)
 
