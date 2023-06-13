@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import observationPropShape from './proptypes/observationPropTypes';
 import Observation from './common/observation/_Observation';
 import ResultError from './common/other/_ResultError';
@@ -27,6 +29,11 @@ const propTypes = {
    * The cleaned unit of the diastolic display.
    */
   diastolicUnit: PropTypes.string,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const BloodPressureDisplay = ({
@@ -35,7 +42,10 @@ const BloodPressureDisplay = ({
   id,
   type,
   diastolicUnit,
+  intl,
 }) => {
+  const isValidValue = result?.result?.value;
+
   if (!result) {
     return <ResultError key={`Error-${type}-${id}`} />;
   }
@@ -46,7 +56,20 @@ const BloodPressureDisplay = ({
     <ConditionalWrapper
       key={`del-${type}-${result.eventId}`}
       condition={result.statusInError}
-      wrapper={children => <del>{children}</del>}
+      wrapper={children => (
+        <span>
+          <s aria-hidden="true">{children}</s>
+          {isValidValue
+            ? (
+              <VisuallyHiddenText text={intl.formatMessage(
+                { id: 'Terra.clinicalResult.statusInErrorStrikethrough' },
+                { strikethroughResult: `${result.result.value} ${!hideUnit && result.result.unit ? result.result.unit : ''}` },
+              )}
+              />
+            )
+            : null}
+        </span>
+      )}
     >
       <Observation
         key={`Observation-${type}-${result.eventId}`}
@@ -62,4 +85,4 @@ const BloodPressureDisplay = ({
 
 BloodPressureDisplay.propTypes = propTypes;
 
-export default BloodPressureDisplay;
+export default injectIntl(BloodPressureDisplay);
