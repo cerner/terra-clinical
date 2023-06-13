@@ -2,15 +2,18 @@
 
 ## Unreleased
 
+* Added
+  * Added `isLabelValuePairList` prop to the DetailList component to support using a description list for label-value pairs.
+  * Added aria-labelledby attribute to DetailView `<section>` using title's id attribute.
+  * Added an example terra-graphs for `graph` prop to terra-clinical-detail-view dev site
+
 ## 3.30.0 - (June 14, 2023)
 
 * Changed
-  * Updated the component examples.
   * Updated the DetailView component to use semantic html elements.
 
 * Added
   * Added `level` prop to the DetailView component to allow users to render different heading levels.
-  * Added `isLabelValuePairList` prop to the DetailList component to support using a description list for label-value pairs.
 
 ## 3.29.0 - (April 21, 2023)
 
