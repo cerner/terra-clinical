@@ -6,6 +6,7 @@ const resultData = {
     eventId: '111.1',
     result: {
       value: '180',
+      unit: 'mmHg',
     },
     status: 'entered-in-error',
   },
@@ -13,13 +14,14 @@ const resultData = {
     eventId: '111.1',
     result: {
       value: '80',
+      unit: 'mmHg',
     },
     status: 'entered-in-error',
   },
 };
 
 const ClinicalResultBloodPressureExample = () => (
-  <ClinicalResultBloodPressure {...resultData} />
+  <ClinicalResultBloodPressure {...resultData} hideUnit />
 );
 
 export default ClinicalResultBloodPressureExample;
