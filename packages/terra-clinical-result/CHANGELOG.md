@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.17.0 - (June 14, 2023)
+
 * Added
   * Added screen-reader support for clinical-result icons. (Requires Jest test updates on consuming applications)
   * Added screen-reader support for alternative text for when no results are returned.

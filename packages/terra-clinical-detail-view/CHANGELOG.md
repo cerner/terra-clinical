@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 3.30.0 - (June 14, 2023)
+
 * Changed
   * Updated the component examples.
   
