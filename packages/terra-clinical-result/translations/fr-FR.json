@@ -1,7 +1,7 @@
 {
   "Terra.clinicalResult.resultError": "Erreur",
   "Terra.clinicalResult.statusInError": "En erreur",
-  "Terra.clinicalResult.statusInErrorAria": "Valeur archivée avec le statut En erreur ",
+  "Terra.clinicalResult.statusInErrorHiddenText": "Valeur archivée avec le statut En erreur ",
   "Terra.clinicalResult.selectToViewAria": "Sélectionnez pour afficher plus de détails.",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Le résultat inclut des valeurs supplémentaires.",
   "Terra.clinicalResult.viewResults": "Afficher les résultats",
