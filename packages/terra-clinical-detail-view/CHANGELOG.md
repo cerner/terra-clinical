@@ -5,7 +5,7 @@
 * Added
   * Added `isLabelValuePairList` prop to the DetailList component to support using a description list for label-value pairs.
   * Added aria-labelledby attribute to DetailView `<section>` using title's id attribute.
-  * Added an example terra-graphs for `graph` prop to terra-clinical-detail-view dev site
+  * Added an example terra-graphs for `graph` prop to terra-clinical-detail-view dev site.
 
 ## 3.30.0 - (June 14, 2023)
 
