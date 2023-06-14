@@ -88,6 +88,7 @@ const ClinicalResultDisplay = ({
   intl,
 }) => {
   const isValidValue = result?.value;
+  const isUnitPresent = !hideUnit && result.unit;
   const isStatusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
   const decoratedResultClassnames = cx([
     'decorated-result-display',
@@ -108,7 +109,7 @@ const ClinicalResultDisplay = ({
                   ? (
                     <VisuallyHiddenText text={intl.formatMessage(
                       { id: 'Terra.clinicalResult.statusInErrorStrikethrough' },
-                      { strikethroughResult: `${result.value} ${!hideUnit && result.unit ? result.unit : ''}` },
+                      { strikethroughResult: `${result.value} ${isUnitPresent ? result.unit : ''}` },
                     )}
                     />
                   )

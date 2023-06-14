@@ -45,6 +45,7 @@ const BloodPressureDisplay = ({
   intl,
 }) => {
   const isValidValue = result?.result?.value;
+  const isUnitPresent = !hideUnit && result.result.unit;
 
   if (!result) {
     return <ResultError key={`Error-${type}-${id}`} />;
@@ -63,7 +64,7 @@ const BloodPressureDisplay = ({
             ? (
               <VisuallyHiddenText text={intl.formatMessage(
                 { id: 'Terra.clinicalResult.statusInErrorStrikethrough' },
-                { strikethroughResult: `${result.result.value} ${!hideUnit && result.result.unit ? result.result.unit : ''}` },
+                { strikethroughResult: `${result.result.value} ${isUnitPresent ? result.result.unit : ''}` },
               )}
               />
             )
