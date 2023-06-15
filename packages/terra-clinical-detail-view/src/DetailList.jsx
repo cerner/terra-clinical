@@ -27,6 +27,7 @@ const propTypes = {
    * Label-value pairs should be provided using the `<dt>` element for the label and the `<dd>` element for the value.
    * The `terra-clinical-label-value-view` component with `isChildOfDescriptionList={true}` can also be used as it will
    * return the label and value using the appropriate `<dt>` and `<dd>` elements.
+   *
    * One of `'singleItem'` or `'labelValuePair'`.
    */
   type: PropTypes.oneOf(['singleItem', 'labelValuePair']),
