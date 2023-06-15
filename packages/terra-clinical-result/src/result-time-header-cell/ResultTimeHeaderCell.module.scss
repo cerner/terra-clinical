@@ -34,14 +34,10 @@
       font-size: var(--terra-clinical-result-time-header-cell-time-font-size, 1em); // Must use ems for font scaling
       font-weight: var(--terra-clinical-result-time-header-cell-time-font-weight, 400);
       line-height: var(--terra-clinical-result-time-header-cell-time-line-height, 1.14285);
+      margin-top: var(--terra-clinical-result-time-header-cell-time-margin-top, 0.14285em); // Must use ems for font scaling
       max-width: 100%;
       min-height: var(--terra-clinical-result-time-header-cell-time-min-height, 1.14285em); // Set to same as line-height in ems
       min-width: 10px; // Needed for IE10
-    }
-
-    /* stylelint-disable-next-line selector-max-compound-selectors */
-    .hidden-space + .time {
-      margin-top: var(--terra-clinical-result-time-header-cell-time-margin-top, 0.14285em); // Must use ems for font scaling
     }
   }
 

@@ -63,7 +63,7 @@ const ResultTimeHeaderCell = (props) => {
       className={timeHeaderCellClassnames}
     >
       <time className={dateClassnames}>{date}</time>
-      <VisuallyHiddenText className={cx('hidden-space')} text={'\u00A0'} />
+      <VisuallyHiddenText text={'\u00A0'} />
       <time className={cx('time')}>{time}</time>
     </th>
   );
