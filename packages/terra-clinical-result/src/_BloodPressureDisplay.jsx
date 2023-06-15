@@ -45,7 +45,7 @@ const BloodPressureDisplay = ({
   intl,
 }) => {
   const isValidValue = result?.result?.value;
-  const isUnitPresent = !hideUnit && result.result.unit;
+  const isUnitPresent = !hideUnit && result?.result?.unit;
 
   if (!result) {
     return <ResultError key={`Error-${type}-${id}`} />;
