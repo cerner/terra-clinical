@@ -367,7 +367,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
   }
 
   if (hasAccessoryIcons) {
-    const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
+    const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID, intl);
     const endAccessoryIconsDisplay = (
       <div key="EndDisplay-Icons" className={cx('end-display')}>
         {endAccessoryIcons}
