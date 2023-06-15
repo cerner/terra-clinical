@@ -9,7 +9,7 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * Content to be displayed on the first line, typically abbrivated date, e.g. `Dec 12, 2010`
+   * Content to be displayed on the first line, typically abbreviated date, e.g. `Dec 12, 2010`
    */
   date: PropTypes.string.isRequired,
   /**
@@ -61,8 +61,8 @@ const ResultTimeHeaderCell = (props) => {
       {...customProps}
       className={timeHeaderCellClassnames}
     >
-      <div className={dateClassnames}>{date}</div>
-      <div className={cx('time')}>{time}</div>
+      <time className={dateClassnames}>{date}</time>
+      <time className={cx('time')}>{time}</time>
     </th>
   );
 };
