@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FlowsheetResultCell correctly applies the theme context className 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact orion-fusion-theme"
 >
   <div
@@ -22,33 +22,37 @@ exports[`FlowsheetResultCell correctly applies the theme context className 1`] =
     />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -69,33 +73,37 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
     />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
-<div
+<td
   className="flowsheet-result-cell"
 >
   <div
@@ -116,33 +124,37 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
     />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-standard"
 >
   <div
@@ -163,33 +175,37 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
     />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -211,33 +227,37 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
     />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render a NoData if hasResultNoData is true 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -246,11 +266,11 @@ exports[`FlowsheetResultCell should render a NoData if hasResultNoData is true 1
   >
     <InjectIntl(KnownNoData) />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render a ResultError if hasResultError is true 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -259,11 +279,11 @@ exports[`FlowsheetResultCell should render a ResultError if hasResultError is tr
   >
     <InjectIntl(ResultError) />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render a entered-in-error status standard result 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -273,33 +293,37 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
     <InjectIntl(EnteredInError) />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render an error when given no result data 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -308,11 +332,11 @@ exports[`FlowsheetResultCell should render an error when given no result data 1`
   >
     <InjectIntl(ResultError) />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render an error with bad data 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -321,11 +345,11 @@ exports[`FlowsheetResultCell should render an error with bad data 1`] = `
   >
     <InjectIntl(ResultError) />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render blood pressure correctly with an interpretation and unverified result 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -361,50 +385,48 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
     />
   </div>
   <div
-    className="additional-end-display"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResultsAndIcons"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
-    <VisuallyHiddenText
-      text="Terra.clinicalResult.multipleNormalResults"
-    />
-  </div>
-  <div
-    className="end-accessory-icons"
-    key="EndAccessoryIcons-111"
-  >
     <div
-      className="end-accessory-stack"
+      className="end-accessory-icons"
+      key="EndAccessoryIcons-111"
     >
-      <IconDiamond
-        a11yLabel="Terra.clinicalResult.resultUnverified"
-        className="icon-unverified"
-        focusable="true"
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+      <div
+        className="end-accessory-stack"
+      >
+        <IconDiamond
+          className="icon-unverified"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render both entered-in-error status bloodpressure result 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -414,23 +436,27 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
     <InjectIntl(EnteredInError) />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
@@ -554,11 +580,11 @@ exports[`FlowsheetResultCell should render correctly with all normal results 1`]
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render correctly with an interpretation and unverified result 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -582,46 +608,44 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
     />
   </div>
   <div
-    className="additional-end-display"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResultsAndIcons"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
-    <VisuallyHiddenText
-      text="Terra.clinicalResult.multipleNormalResults"
-    />
-  </div>
-  <div
-    className="end-accessory-icons"
-    key="EndAccessoryIcons-111"
-  >
     <div
-      className="end-accessory-stack"
+      className="end-accessory-icons"
+      key="EndAccessoryIcons-111"
     >
-      <IconDiamond
-        a11yLabel="Terra.clinicalResult.resultUnverified"
-        className="icon-unverified"
-        focusable="true"
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+      <div
+        className="end-accessory-stack"
+      >
+        <IconDiamond
+          className="icon-unverified"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render correctly with at least 1 critical or out of range result 1`] = `
@@ -674,7 +698,7 @@ exports[`FlowsheetResultCell should render correctly with at least 1 critical or
 `;
 
 exports[`FlowsheetResultCell should render systolic entered-in-error status bloodpressure result 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -684,33 +708,37 @@ exports[`FlowsheetResultCell should render systolic entered-in-error status bloo
     <InjectIntl(EnteredInError) />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render when given blood pressure diastolic result data with no id 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -732,11 +760,11 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
       key="ClinicalResultBloodPressure-111.2"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render when given blood pressure systolic result data with no id 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -758,11 +786,11 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
       }
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render when given result data 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -783,33 +811,37 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
     />
   </div>
   <div
-    className="additional-end-display no-accessory-icons"
-    key="AdditionalResultsDisplay-111"
+    className="end-display"
+    key="EndDisplay-AdditionalResults"
   >
     <div
-      aria-hidden="true"
-      className="additional-results-stack"
+      className="additional-end-display no-accessory-icons"
+      key="AdditionalResultsDisplay-111"
     >
-      <span
-        className="additional-results-value"
+      <div
+        className="additional-results-stack"
       >
-        2
-      </span>
-      <span
-        className="additional-results-value"
-      >
-        2
-      </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+        <span
+          className="additional-results-value"
+        >
+          2
+        </span>
+      </div>
     </div>
     <VisuallyHiddenText
       text="Terra.clinicalResult.multipleNormalResults"
     />
   </div>
-</div>
+</td>
 `;
 
 exports[`FlowsheetResultCell should render when given result data with no event id 1`] = `
-<div
+<td
   className="flowsheet-result-cell padding-compact"
 >
   <div
@@ -829,5 +861,5 @@ exports[`FlowsheetResultCell should render when given result data with no event 
       }
     />
   </div>
-</div>
+</td>
 `;
