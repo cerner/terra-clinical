@@ -9,6 +9,11 @@ exports[`ResultTimeHeaderCell correctly applies the theme context className 1`] 
   >
     December 31st 1999
   </time>
+  <p
+    className="hidden-space"
+  >
+     
+  </p>
   <time
     className="time"
   >
@@ -26,6 +31,11 @@ exports[`ResultTimeHeaderCell paddingStyle - should render with compact 1`] = `
   >
     December 31st 1999
   </time>
+  <p
+    className="hidden-space"
+  >
+     
+  </p>
   <time
     className="time"
   >
@@ -43,6 +53,11 @@ exports[`ResultTimeHeaderCell paddingStyle - should render with none 1`] = `
   >
     December 31st 1999
   </time>
+  <p
+    className="hidden-space"
+  >
+     
+  </p>
   <time
     className="time"
   >
@@ -60,6 +75,11 @@ exports[`ResultTimeHeaderCell paddingStyle - should render with standard 1`] = `
   >
     December 31st 1999
   </time>
+  <p
+    className="hidden-space"
+  >
+     
+  </p>
   <time
     className="time"
   >
@@ -77,6 +97,11 @@ exports[`ResultTimeHeaderCell should hide date 1`] = `
   >
     December 31st 1999
   </time>
+  <p
+    className="hidden-space"
+  >
+     
+  </p>
   <time
     className="time"
   >
@@ -94,6 +119,11 @@ exports[`ResultTimeHeaderCell should render a date and time 1`] = `
   >
     December 31st 1999
   </time>
+  <p
+    className="hidden-space"
+  >
+     
+  </p>
   <time
     className="time"
   >

@@ -39,8 +39,12 @@
       min-width: 10px; // Needed for IE10
     }
 
+    .hidden-space {
+      display: none;
+    }
+
     /* stylelint-disable-next-line selector-max-compound-selectors */
-    .date + .time {
+    .hidden-space + .time {
       margin-top: var(--terra-clinical-result-time-header-cell-time-margin-top, 0.14285em); // Must use ems for font scaling
     }
   }
