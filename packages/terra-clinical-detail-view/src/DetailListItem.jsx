@@ -8,6 +8,12 @@ const cx = classNames.bind(styles);
 const propTypes = {
   /**
    * The detail view list item to be displayed.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
+   * DetailList type prop is set to the value that matches the items in the list. Label-value pairs should be provided
+   * using the `<dt>` element for the label and the `<dd>` element for the value. The `terra-clinical-label-value-view`
+   * component with `isChildOfDescriptionList={true}` can also be used as it will return the label and value using the
+   * appropriate `<dt>` and `<dd>` elements.
    */
   item: PropTypes.element.isRequired,
 };
