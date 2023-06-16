@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 3.29.0 - (June 14, 2023)
+
 * Changed
   * Created a new prop `isChildOfDescriptionList` on the LabelValueView component.
   * Updated the LabelValueView to be:

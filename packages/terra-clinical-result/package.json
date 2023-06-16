@@ -1,7 +1,7 @@
 {
   "name": "terra-clinical-result",
   "main": "lib/ClincalResult.js",
-  "version": "1.16.0",
+  "version": "1.17.0",
   "description": "The Terra Clinical Result package is a collection of standardized views for presenting clinical results documented to a Patient's Medical Chart, such as Vital Signs, Laboratory Results, and Discretely Documented Values",
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
+    "terra-enzyme-intl": "^3.0.0",
     "terra-icon": "^3.53.0",
     "terra-mixins": "^1.0.0",
     "terra-theme-context": "^1.0.0",
