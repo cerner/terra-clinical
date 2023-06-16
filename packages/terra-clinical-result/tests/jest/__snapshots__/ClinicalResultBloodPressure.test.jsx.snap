@@ -10,7 +10,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={true}
         id="111"
@@ -23,7 +23,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={true}
         id="111"
         result={
@@ -55,7 +55,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -68,7 +68,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -110,7 +110,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -123,7 +123,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -157,7 +157,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -170,7 +170,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -210,7 +210,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -223,7 +223,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -261,7 +261,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -274,7 +274,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -312,7 +312,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={true}
         id="111"
@@ -325,7 +325,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={true}
         id="111"
         result={
@@ -356,7 +356,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -369,7 +369,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -409,7 +409,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with 
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {
@@ -430,7 +430,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with 
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {
@@ -464,7 +464,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] 
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {
@@ -485,7 +485,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] 
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={Object {}}
         type="Diastolic"
@@ -505,7 +505,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={true}
         id="111"
         result={
@@ -528,7 +528,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={true}
         id="111"
         result={Object {}}
@@ -549,7 +549,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -572,7 +572,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={Object {}}
@@ -603,7 +603,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -628,7 +628,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={Object {}}
@@ -649,7 +649,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -672,7 +672,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={Object {}}
@@ -701,7 +701,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -725,7 +725,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={Object {}}
@@ -751,7 +751,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -775,7 +775,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={Object {}}
@@ -801,7 +801,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={true}
         id="111"
         result={
@@ -823,7 +823,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={true}
         id="111"
         result={Object {}}
@@ -844,7 +844,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -867,7 +867,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={Object {}}
@@ -896,7 +896,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         result={Object {}}
@@ -908,7 +908,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {
@@ -938,7 +938,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         result={
@@ -964,7 +964,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {
@@ -994,7 +994,7 @@ exports[`ClinicalResultBloodPressure correctly applies the theme context classNa
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -1017,7 +1017,7 @@ exports[`ClinicalResultBloodPressure correctly applies the theme context classNa
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -1052,7 +1052,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -1075,7 +1075,7 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -1106,7 +1106,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -1129,7 +1129,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -1160,7 +1160,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         diastolicUnit="mmhg"
         hideUnit={false}
         id="111"
@@ -1184,7 +1184,7 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         id="111"
         result={
@@ -1224,7 +1224,7 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
     <div
       className="result-display"
     >
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {
@@ -1249,7 +1249,7 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
       >
         /
       </span>
-      <BloodPressureDisplay
+      <InjectIntl(BloodPressureDisplay)
         hideUnit={false}
         result={
           Object {

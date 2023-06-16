@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added screen-reader support for strikethroughs to convey an entered in error status.
+
 ## 1.17.0 - (June 14, 2023)
 
 * Added

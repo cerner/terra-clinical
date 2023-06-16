@@ -40,7 +40,7 @@ const EnteredInError = (props) => {
       <span aria-hidden="true">
         {intl.formatMessage({ id: 'Terra.clinicalResult.statusInError' })}
       </span>
-      <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.clinicalResult.statusInErrorAria' })} />
+      <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.clinicalResult.statusInErrorHiddenText' })} />
     </span>
   );
 };

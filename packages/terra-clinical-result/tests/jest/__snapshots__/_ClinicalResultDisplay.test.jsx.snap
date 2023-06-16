@@ -97,38 +97,6 @@ exports[`ClinicalResultDisplay should render a default ClinicalResultDisplay 1`]
 </Fragment>
 `;
 
-exports[`ClinicalResultDisplay should render a entered-in-error status result 1`] = `
-<Fragment>
-  <div
-    className="decorated-result-display status-in-error"
-  >
-    <div
-      className="result-display"
-    >
-      <ConditionalWrapper
-        condition={true}
-        key="del-Observation-111"
-        wrapper={[Function]}
-      >
-        <InjectIntl(Observation)
-          eventId="111"
-          interpretation={null}
-          key="Observation-111"
-          result={
-            Object {
-              "unit": "mL",
-              "value": "12345.678",
-            }
-          }
-        />
-      </ConditionalWrapper>
-      <InjectIntl(Icons) />
-    </div>
-  </div>
-  <SecondaryDisplays />
-</Fragment>
-`;
-
 exports[`ClinicalResultDisplay should render a modified result  1`] = `
 <Fragment>
   <div
@@ -319,6 +287,38 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay w
     <InjectIntl(Icons)
       isModified={true}
     />
+  </div>
+  <SecondaryDisplays />
+</Fragment>
+`;
+
+exports[`ClinicalResultDisplay should render an entered-in-error status result 1`] = `
+<Fragment>
+  <div
+    className="decorated-result-display status-in-error"
+  >
+    <div
+      className="result-display"
+    >
+      <ConditionalWrapper
+        condition={true}
+        key="del-Observation-111"
+        wrapper={[Function]}
+      >
+        <InjectIntl(Observation)
+          eventId="111"
+          interpretation={null}
+          key="Observation-111"
+          result={
+            Object {
+              "unit": "mL",
+              "value": "12345.678",
+            }
+          }
+        />
+      </ConditionalWrapper>
+      <InjectIntl(Icons) />
+    </div>
   </div>
   <SecondaryDisplays />
 </Fragment>
