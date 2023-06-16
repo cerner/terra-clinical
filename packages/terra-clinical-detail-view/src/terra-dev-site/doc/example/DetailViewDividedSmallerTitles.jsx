@@ -77,7 +77,7 @@ const DetailViewDivided = () => (
       )}
       details={[
         (
-          <DetailView.DetailList title={detail1title} type="singleItem" key="Indicators">
+          <DetailView.DetailList title={detail1title} key="Indicators">
             <DetailView.DetailListItem item={detail1item1} />
             <DetailView.DetailListItem item={detail1item2} />
             <DetailView.DetailListItem item={detail1item3} />
@@ -85,7 +85,7 @@ const DetailViewDivided = () => (
           </DetailView.DetailList>
         ),
         (
-          <DetailView.DetailList title={detail2title} type="labelValuePair" key="Comments">
+          <DetailView.DetailList title={detail2title} key="Comments" isLabelValuePairList>
             <DetailView.DetailListItem item={detail2item1} />
             <DetailView.DetailListItem item={detail2item2} />
             <DetailView.DetailListItem item={detail2item3} />

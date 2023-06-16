@@ -18,7 +18,7 @@ const DetailViewDivided = () => (
       subtitles={['Accession', '239493849']}
       details={[
         (
-          <DetailView.DetailList title="Collection Details" type="labelValuePair" key="order-info-2">
+          <DetailView.DetailList title="Collection Details" key="order-info-2" isLabelValuePairList>
             <DetailView.DetailListItem item={item1} />
             <DetailView.DetailListItem item={item2} />
             <DetailView.DetailListItem item={item3} />

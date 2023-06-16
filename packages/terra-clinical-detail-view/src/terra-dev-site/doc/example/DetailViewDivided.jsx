@@ -24,14 +24,14 @@ const DetailViewDivided = () => (
       subtitles={['Martha (58 years)', '[second line for subtitles]']}
       details={[
         (
-          <DetailView.DetailList title={detail1title} type="labelValuePair" key="order-info-1">
+          <DetailView.DetailList title={detail1title} key="order-info-1" isLabelValuePairList>
             <DetailView.DetailListItem item={detail1item1} />
             <DetailView.DetailListItem item={detail1item2} />
             <DetailView.DetailListItem item={detail1item3} />
           </DetailView.DetailList>
         ),
         (
-          <DetailView.DetailList title={detail2title} type="labelValuePair" key="order-info-2">
+          <DetailView.DetailList title={detail2title} key="order-info-2" isLabelValuePairList>
             <DetailView.DetailListItem item={detail2item1} />
             <DetailView.DetailListItem item={detail2item2} />
             <DetailView.DetailListItem item={detail2item3} />

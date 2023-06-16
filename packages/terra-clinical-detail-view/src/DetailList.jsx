@@ -23,27 +23,25 @@ const propTypes = {
   ]),
 
   /**
-   * The list type based on whether the list items are single HTML elements or label-value pairs.
+   * Whether or not the Detail List is a list of label-value pairs.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
-   * DetailList type prop is set to the value that matches the items in the list. Label-value pairs should be provided
-   * using the `<dt>` element for the label and the `<dd>` element for the value. The `terra-clinical-label-value-view`
-   * component with `isChildOfDescriptionList={true}` can also be used as it will return the label and value using the
-   * appropriate `<dt>` and `<dd>` elements.
-   *
-   * One of `'singleItem'` or `'labelValuePair'`.
+   * isLabelValuePairList prop is set to true when the list contains label-value pairs. Label-value pairs should be
+   * provided using the `<dt>` element for the label and the `<dd>` element for the value. The
+   * `terra-clinical-label-value-view` component with `isChildOfDescriptionList={true}` can also be used as it will
+   * return the label and value using the appropriate `<dt>` and `<dd>` elements.
    */
-  type: PropTypes.oneOf(['singleItem', 'labelValuePair']),
+  isLabelValuePairList: PropTypes.bool,
 };
 
 const defaultProps = {
   title: undefined,
   children: undefined,
-  type: 'singleItem',
+  isLabelValuePairList: false,
 };
 
 const DetailList = ({
-  title, children, type, ...customProps
+  title, children, isLabelValuePairList, ...customProps
 }) => {
   const level = useContext(HeadingLevelContext);
   const HeaderLevel = `h${level}`;
@@ -54,9 +52,9 @@ const DetailList = ({
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
-  if (type === 'labelValuePair') {
+  if (isLabelValuePairList) {
     listContent = (<dl className={cx('list')}>{children}</dl>);
-  } else if (type === 'singleItem') {
+  } else {
     listContent = (
       <ul className={cx('list')}>
         {Children.map(children, child => (

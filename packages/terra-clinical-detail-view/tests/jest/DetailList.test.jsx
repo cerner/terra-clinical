@@ -47,9 +47,9 @@ it('should set the heading level for the title', () => {
   expect(wrapper.html('.title')).toContain('<h2 class="title">Title</h2>');
 });
 
-it('should render a description list when type is labelValuePair', () => {
+it('should render a description list when isLabelValuePairList is true', () => {
   const detailList = (
-    <DetailView.DetailList type="labelValuePair">
+    <DetailView.DetailList isLabelValuePairList>
       <DetailView.DetailListItem item={(
         <>
           <dt>label</dt>
