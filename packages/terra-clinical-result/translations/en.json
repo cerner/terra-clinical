@@ -10,6 +10,8 @@
   "Terra.clinicalResult.resultModified": "Modified Result",
   "Terra.clinicalResult.resultUnverified": "Unverified Result",
   "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} additional results",
+  "Terra.clinicalResult.multipleResults": "A total of {count} results are available with at least 1 {criticality} result.",
+  "Terra.clinicalResult.multipleNormalResults": "A total of {count} results are available.",
   "Terra.clinicalResult.interpretationCritical": "Critical",
   "Terra.clinicalResult.interpretationCriticalHigh": "Critical High",
   "Terra.clinicalResult.interpretationCriticalLow": "Critical Low",

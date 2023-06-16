@@ -8,6 +8,7 @@
   * Added screen-reader support for clinical-result icons. (Requires Jest test updates on consuming applications)
   * Added screen-reader support for alternative text for when no results are returned.
   * Added screen-reader support for clinical-result FlowsheetResultCell EnteredInError.
+  * Added screen-reader support for clinical-result FlowsheetResultCell with multiple results.
 
 ## 1.16.0 - (March 29, 2023)
 
