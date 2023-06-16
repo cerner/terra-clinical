@@ -26,7 +26,7 @@ const propTypes = {
    * Whether or not the Detail List is a list of label-value pairs.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
-   * isLabelValuePairList prop is set to true when the list contains label-value pairs. Label-value pairs should be
+   * isLabelValuePairList prop is set to `true` when the list contains label-value pairs. Label-value pairs should be
    * provided using the `<dt>` element for the label and the `<dd>` element for the value. The
    * `terra-clinical-label-value-view` component with `isChildOfDescriptionList={true}` can also be used as it will
    * return the label and value using the appropriate `<dt>` and `<dd>` elements.
@@ -46,16 +46,14 @@ const DetailList = ({
   const level = useContext(HeadingLevelContext);
   const HeaderLevel = `h${level}`;
   let titleContent;
-  let listContent;
 
   if (title) {
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
-  if (isLabelValuePairList) {
-    listContent = (<dl className={cx('list')}>{children}</dl>);
-  } else {
-    listContent = (
+  const listContent = isLabelValuePairList
+    ? <dl className={cx('list')}>{children}</dl>
+    : (
       <ul className={cx('list')}>
         {Children.map(children, child => (
           <li key={child.id} className={cx('list-item')}>
@@ -64,7 +62,6 @@ const DetailList = ({
         ))}
       </ul>
     );
-  }
 
   return (
     <div {...customProps} data-terra-clinical-detail-list className={customProps.className}>

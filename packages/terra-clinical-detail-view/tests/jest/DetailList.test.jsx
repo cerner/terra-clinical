@@ -59,6 +59,8 @@ it('should render a description list when isLabelValuePairList is true', () => {
     </DetailView.DetailList>
   );
   const wrapper = render(detailList);
+  const shallowWrapper = shallow(detailList);
+  expect(shallowWrapper.find('.list').last().type()).toEqual('dl');
   expect(wrapper).toMatchSnapshot();
 });
 
