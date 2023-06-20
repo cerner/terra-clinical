@@ -20,10 +20,10 @@ const ResultNameColumnFlowsheetExample = () => {
     <div className={mockFlowsheetClassnames}>
       <div className={cx('mock-flowsheet-firstcolumn')}>
         <div className={cx('mock-flowsheet-firstcolumn-cell')}>
-          <ResultNameHeaderCell resultName="Temp" unit="degC" />
+          <ResultNameHeaderCell resultName="Temp" fullResultName="Temperature" unit="degC" fullUnit="Degrees Celsius" />
         </div>
         <div className={cx(['mock-flowsheet-firstcolumn-cell', 'zebra'])}>
-          <ResultNameHeaderCell resultName="HR" unit="bpm" />
+          <ResultNameHeaderCell resultName="HR" unit="bpm" fullUnit="beats per minute" />
         </div>
         <div className={cx('mock-flowsheet-firstcolumn-cell')}>
           <ResultNameHeaderCell resultName="BP" unit="mmHg" />
