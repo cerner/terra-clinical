@@ -152,6 +152,21 @@ exports[`ClinicalResult should render a result with a date time display 1`] = `
 </div>
 `;
 
+exports[`ClinicalResult should render a result with no unit 1`] = `
+<div
+  className="clinical-result"
+>
+  <InjectIntl(ClinicalResultDisplay)
+    eventId="111"
+    result={
+      Object {
+        "value": "12345.678",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`ClinicalResult should render a result with unit hidden 1`] = `
 <div
   className="clinical-result"

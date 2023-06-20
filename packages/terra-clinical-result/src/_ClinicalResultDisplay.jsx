@@ -88,7 +88,7 @@ const ClinicalResultDisplay = ({
   intl,
 }) => {
   const isValidValue = result?.value;
-  const isUnitPresent = !hideUnit && result.unit;
+  const isUnitPresent = !hideUnit && result?.unit;
   const isStatusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
   const decoratedResultClassnames = cx([
     'decorated-result-display',

@@ -2,6 +2,7 @@
   "Terra.clinicalResult.resultError": "Fel",
   "Terra.clinicalResult.statusInError": "Felaktig",
   "Terra.clinicalResult.statusInErrorHiddenText": "Värdet togs bort eftersom det var felaktigt",
+  "Terra.clinicalResult.statusInErrorStrikethrough": "Resultatet {strikethroughResult} har angetts felaktigt",
   "Terra.clinicalResult.selectToViewAria": "Välj för att visa fler uppgifter.",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Resultatet innehåller fler värden",
   "Terra.clinicalResult.viewResults": "Visa resultat",

@@ -62,6 +62,17 @@ describe('ClinicalResult', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should render a result with no unit', () => {
+    const resultData = {
+      eventId: '111',
+      result: {
+        value: '12345.678',
+      },
+    };
+    const result = shallow(<ClinicalResult {...resultData} />);
+    expect(result).toMatchSnapshot();
+  });
+
   it('should render a result with a concept display', () => {
     const resultData = {
       ...DefaultResult,

@@ -2,6 +2,7 @@
   "Terra.clinicalResult.resultError": "Fehler",
   "Terra.clinicalResult.statusInError": "Ungültig",
   "Terra.clinicalResult.statusInErrorHiddenText": "Wert für ungültig erklärt ",
+  "Terra.clinicalResult.statusInErrorStrikethrough": "Ergebnis {strikethroughResult} versehentlich eingegeben",
   "Terra.clinicalResult.selectToViewAria": "Zum Anzeigen weiterer Details auswählen",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Ergebnis enthält weitere Werte",
   "Terra.clinicalResult.viewResults": "Ergebnisse anzeigen",
