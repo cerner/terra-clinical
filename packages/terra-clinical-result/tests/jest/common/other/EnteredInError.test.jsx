@@ -6,7 +6,7 @@ import EnteredInError from '../../../../src/common/other/_EnteredInError';
 describe('EnteredInError', () => {
   it('should render a default EnteredInError', () => {
     const result = shallowWithIntl(<EnteredInError />).dive();
-    expect(result.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Terra.clinicalResult.statusInErrorAria');
+    expect(result.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Terra.clinicalResult.statusInErrorHiddenText');
     expect(result).toMatchSnapshot();
   });
 });

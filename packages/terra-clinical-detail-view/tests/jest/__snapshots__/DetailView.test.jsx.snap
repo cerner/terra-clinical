@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`correctly applies the theme context className 1`] = `
-<div
+<section
   className="detail-view orion-fusion-theme"
 >
   <div
@@ -13,11 +13,11 @@ exports[`correctly applies the theme context className 1`] = `
   <ContextProvider
     value={2}
   />
-</div>
+</section>
 `;
 
 exports[`should render a default component 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -26,11 +26,11 @@ exports[`should render a default component 1`] = `
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render a smaller title 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -45,11 +45,11 @@ exports[`should render a smaller title 1`] = `
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render a title 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -64,11 +64,11 @@ exports[`should render a title 1`] = `
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render accessory 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -90,11 +90,11 @@ exports[`should render accessory 1`] = `
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render details 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -105,16 +105,16 @@ exports[`should render details 1`] = `
     >
       Header
     </h2>
-    <div
+    <p
       class="subtitle"
     >
       Subtitle 1
-    </div>
-    <div
+    </p>
+    <p
       class="subtitle"
     >
       Subtitle 2
-    </div>
+    </p>
   </div>
   <hr
     class="divider"
@@ -125,11 +125,11 @@ exports[`should render details 1`] = `
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render footer 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -140,16 +140,16 @@ exports[`should render footer 1`] = `
     >
       Header
     </h2>
-    <div
+    <p
       class="subtitle"
     >
       Subtitle 1
-    </div>
-    <div
+    </p>
+    <p
       class="subtitle"
     >
       Subtitle 2
-    </div>
+    </p>
   </div>
   <hr
     class="divider"
@@ -160,16 +160,17 @@ exports[`should render footer 1`] = `
   <hr
     class="divider"
   />
-  <div
+  <p
     class="footer-text"
+    role="note"
   >
     Footer text
-  </div>
-</div>
+  </p>
+</section>
 `;
 
 exports[`should render graph 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -180,31 +181,35 @@ exports[`should render graph 1`] = `
     >
       Header
     </h2>
-    <div
+    <p
       class="subtitle"
     >
       Subtitle 1
-    </div>
-    <div
+    </p>
+    <p
       class="subtitle"
     >
       Subtitle 2
+    </p>
+  </div>
+  <hr
+    class="divider"
+  />
+  <figure
+    class="graph-figure"
+  >
+    <div>
+       This is where a graph would go 
     </div>
-  </div>
+  </figure>
   <hr
     class="divider"
   />
-  <div>
-     This is where a graph would go 
-  </div>
-  <hr
-    class="divider"
-  />
-</div>
+</section>
 `;
 
 exports[`should render secondaryTitles 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -229,11 +234,11 @@ exports[`should render secondaryTitles 1`] = `
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render subtitles 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -244,25 +249,25 @@ exports[`should render subtitles 1`] = `
     >
       Header
     </h2>
-    <div
+    <p
       class="subtitle"
     >
       Subtitle 1
-    </div>
-    <div
+    </p>
+    <p
       class="subtitle"
     >
       Subtitle 2
-    </div>
+    </p>
   </div>
   <hr
     class="divider"
   />
-</div>
+</section>
 `;
 
 exports[`should render without a divider when indicated 1`] = `
-<div
+<section
   class="detail-view"
 >
   <div
@@ -273,24 +278,25 @@ exports[`should render without a divider when indicated 1`] = `
     >
       Header
     </h2>
-    <div
+    <p
       class="subtitle"
     >
       Subtitle 1
-    </div>
-    <div
+    </p>
+    <p
       class="subtitle"
     >
       Subtitle 2
-    </div>
+    </p>
   </div>
   <p>
      Detail information 
   </p>
-  <div
+  <p
     class="footer-text"
+    role="note"
   >
     Footer text
-  </div>
-</div>
+  </p>
+</section>
 `;

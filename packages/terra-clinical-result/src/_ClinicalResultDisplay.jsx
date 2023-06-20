@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl } from 'react-intl';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import statusPropType from './proptypes/statusPropTypes';
 import interpretationPropType from './proptypes/interpretationPropTypes';
 import valueQuantityPropType from './proptypes/valuePropTypes';
@@ -63,6 +65,11 @@ const propTypes = {
    * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
    */
   hideAccessoryDisplays: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const ClinicalResultDisplay = ({
@@ -78,7 +85,10 @@ const ClinicalResultDisplay = ({
   hasComment,
   conceptDisplay,
   datetimeDisplay,
+  intl,
 }) => {
+  const isValidValue = result?.value;
+  const isUnitPresent = !hideUnit && result.unit;
   const isStatusInError = !isEmpty(status) ? checkIsStatusInError(status) : false;
   const decoratedResultClassnames = cx([
     'decorated-result-display',
@@ -92,7 +102,20 @@ const ClinicalResultDisplay = ({
           <ConditionalWrapper
             key={`del-Observation-${eventId}`}
             condition={isStatusInError}
-            wrapper={children => <del>{children}</del>}
+            wrapper={children => (
+              <span>
+                <s aria-hidden="true">{children}</s>
+                {isValidValue
+                  ? (
+                    <VisuallyHiddenText text={intl.formatMessage(
+                      { id: 'Terra.clinicalResult.statusInErrorStrikethrough' },
+                      { strikethroughResult: `${result.value} ${isUnitPresent ? result.unit : ''}` },
+                    )}
+                    />
+                  )
+                  : null}
+              </span>
+            )}
           >
             <Observation
               key={`Observation-${eventId}`}
@@ -114,4 +137,4 @@ const ClinicalResultDisplay = ({
 
 ClinicalResultDisplay.propTypes = propTypes;
 
-export default ClinicalResultDisplay;
+export default injectIntl(ClinicalResultDisplay);

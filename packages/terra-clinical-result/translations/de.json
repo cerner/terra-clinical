@@ -1,7 +1,7 @@
 {
   "Terra.clinicalResult.resultError": "Fehler",
   "Terra.clinicalResult.statusInError": "Ungültig",
-  "Terra.clinicalResult.statusInErrorAria": "Wert für ungültig erklärt ",
+  "Terra.clinicalResult.statusInErrorHiddenText": "Wert für ungültig erklärt ",
   "Terra.clinicalResult.selectToViewAria": "Zum Anzeigen weiterer Details auswählen",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Ergebnis enthält weitere Werte",
   "Terra.clinicalResult.viewResults": "Ergebnisse anzeigen",

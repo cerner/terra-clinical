@@ -40,10 +40,11 @@ Cerner Corporation
 - Dianna McGinn [@DMcginn]
 - Ashish kumbhare [@ashishkcerner]
 - Razvan Luca [@razvanluca]
+- Madalina Stelea [@MadalinaStelea]
 - Reagan Young [@rayguny]
 - Yixuan Chen [@chenyixuan625]
 - Vinay Bhargav Arni Ragunathan [@vinaybhargavar]
-
+- Kol Kheang [@kolkheang]
 
 Community
 
@@ -89,6 +90,9 @@ Community
 [@DMcginn]: https://github.com/DMcginn
 [@ashishkcerner]: https://github.com/ashishkcerner
 [@razvanluca]: https://github.com/razvanluca
+[@MadalinaStelea]: https://github.com/MadalinaStelea
+[@vinaybhargavar]: https://github.com/vinaybhargavar
 [@rayguny]: https://github.com/rayguny
 [@chenyixuan625]: https://github.com/chenyixuan625
 [@vinaybhargavar]: https://github.com/vinaybhargavar
+[@kolkheang]: https://github.com/kolkheang

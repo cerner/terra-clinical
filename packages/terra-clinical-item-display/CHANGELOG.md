@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.8.0 - (June 14, 2023)
+
 * Added
   * Added `a11ylabel` prop to ItemComment icon.
   * `strong` tag around strong style text.
