@@ -1,7 +1,7 @@
 import React from 'react';
 import DetailView from '../../src/DetailView';
 
-jest.mock('uuid', () => ({ v4: () => 'dacd01de-e7d0-4e1a-a8f1-eba662631b7d' }));
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
 const defaultVariety = <DetailView />;
 
@@ -25,12 +25,12 @@ it('should render a title', () => {
 
 it('should set the default heading level of the title to h2', () => {
   const wrapper = shallow(<DetailView title="Title" />);
-  expect(wrapper.html('.primary-text')).toContain('<h2 class="primary-text" id="title-id-dacd01de-e7d0-4e1a-a8f1-eba662631b7d">Title</h2>');
+  expect(wrapper.html('.primary-text')).toContain('<h2 class="primary-text" id="title-id-00000000-0000-0000-0000-000000000000">Title</h2>');
 });
 
 it('should set the heading level for the title', () => {
   const wrapper = shallow(<DetailView level={3} title="Title" />);
-  expect(wrapper.html('.primary-text')).toContain('<h3 class="primary-text" id="title-id-dacd01de-e7d0-4e1a-a8f1-eba662631b7d">Title</h3>');
+  expect(wrapper.html('.primary-text')).toContain('<h3 class="primary-text" id="title-id-00000000-0000-0000-0000-000000000000">Title</h3>');
 });
 
 it('should render a smaller title', () => {

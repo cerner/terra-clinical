@@ -16,7 +16,7 @@ const propTypes = {
    * Sets the text to display for the main heading.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the title prop be set to a value that best represents the region which groups the details in section within in the page.
-   * Screen reader users rely on the title to know the begin and end of a region, and to navigate to the specific region on the page.
+   * Screen reader users rely on the title to know the beginning and end of a region, and to navigate to the specific region on the page.
    */
   title: PropTypes.string,
 
