@@ -20,5 +20,6 @@
   "Terra.clinicalResult.interpretationPositive": "Positive",
   "Terra.clinicalResult.interpretationAbnormal": "Abnormal",
   "Terra.clinicalResult.interpretationHigh": "High",
-  "Terra.clinicalResult.interpretationLow": "Low"
+  "Terra.clinicalResult.interpretationLow": "Low",
+  "Terra.clinicalResult.bloodPressure": "Blood Pressure"
 }

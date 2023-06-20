@@ -17,5 +17,6 @@
   "Terra.clinicalResult.interpretationPositive": "Positief",
   "Terra.clinicalResult.interpretationAbnormal": "Afwijkend",
   "Terra.clinicalResult.interpretationHigh": "Hoog",
-  "Terra.clinicalResult.interpretationLow": "Laag"
+  "Terra.clinicalResult.interpretationLow": "Laag",
+  "Terra.clinicalResult.bloodPressure": "Bloeddruk"
 }

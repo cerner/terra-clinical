@@ -162,6 +162,7 @@ const ExtraDisplaysBloodPressureResult = {
     conceptDisplay: 'Blood Pressure Diastolic',
     datetimeDisplay: 'Nov 23, 2019 13:31:44',
   },
+  isBloodPressureGrouped: true,
 };
 
 const MixedBPResultValue = {
