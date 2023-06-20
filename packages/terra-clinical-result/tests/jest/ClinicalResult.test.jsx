@@ -106,6 +106,13 @@ describe('ClinicalResult', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should not render visually hidden alt text for strikethroughs when result is undefined', () => {
+    const resultData = undefined;
+    const result = shallow(<ClinicalResult {...resultData} />);
+    expect(result.find('VisuallyHiddenText').exists()).toBeFalsy();
+    expect(result).toMatchSnapshot();
+  });
+
   it('should render a NoData if hasResultNoData is true', () => {
     const result = shallow(<ClinicalResult hasResultNoData />);
     expect(result).toMatchSnapshot();

@@ -16,6 +16,14 @@ exports[`ClinicalResult correctly applies the theme context className 1`] = `
 </div>
 `;
 
+exports[`ClinicalResult should not render visually hidden alt text for strikethroughs when result is undefined 1`] = `
+<div
+  className="clinical-result"
+>
+  <InjectIntl(ClinicalResultDisplay) />
+</div>
+`;
+
 exports[`ClinicalResult should pass certain props to Observation  1`] = `
 <div
   className="clinical-result"
