@@ -7,7 +7,7 @@
   * Added additonal translations for strikethrough alt text.
 
 * Fixed
-  * Fixed the clincial result display check for if the unit is valid when reading alt text for strikethroughs.
+  * Fixed a check related to Clinical Result strikethrough alt text for if a result unit exists or not.
 
 ## 1.17.0 - (June 14, 2023)
 
