@@ -47,6 +47,23 @@ it('should set the heading level for the title', () => {
   expect(wrapper.html('.title')).toContain('<h2 class="title">Title</h2>');
 });
 
+it('should render a description list when isLabelValuePairList is true', () => {
+  const detailList = (
+    <DetailView.DetailList isLabelValuePairList>
+      <DetailView.DetailListItem item={(
+        <>
+          <dt>label</dt>
+          <dd>value</dd>
+        </>
+   )} />
+    </DetailView.DetailList>
+  );
+  const wrapper = render(detailList);
+  const shallowWrapper = shallow(detailList);
+  expect(shallowWrapper.find('.list').last().type()).toEqual('dl');
+  expect(wrapper).toMatchSnapshot();
+});
+
 // Structure Tests
 it('should have the class title when title is provided', () => {
   const wrapper = shallow(defaultVariety);

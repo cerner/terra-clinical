@@ -6,12 +6,11 @@
 
 * Changed
   * Updated the component examples.
-  
+  * Updated the DetailView component to use semantic html elements.
+
 * Added
   * Added `level` prop to the DetailView component to allow users to render different heading levels.
-
-* Changed
-  * Update DetailView component to use semantic html elements.
+  * Added `isLabelValuePairList` prop to the DetailList component to support using a description list for label-value pairs.
 
 ## 3.29.0 - (April 21, 2023)
 
