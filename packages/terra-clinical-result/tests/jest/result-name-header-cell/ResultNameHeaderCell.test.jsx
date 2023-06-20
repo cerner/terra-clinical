@@ -15,11 +15,13 @@ describe('ResultNameHeaderCell', () => {
 
   it('should render correctly when a full result name is provided', () => {
     const cell = shallow(<ResultNameHeaderCell resultName="Name" fullResultName="Full result name" />);
+    expect(cell.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Full result name');
     expect(cell).toMatchSnapshot();
   });
 
   it('should render correctly when a full unit name is provided', () => {
-    const cell = shallow(<ResultNameHeaderCell resultName="Name" fullResultName="Full result name" unit="Unit" fullUnit="Full unit name" />);
+    const cell = shallow(<ResultNameHeaderCell resultName="Name" unit="Unit" fullUnit="Full unit name" />);
+    expect(cell.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Full unit name');
     expect(cell).toMatchSnapshot();
   });
 

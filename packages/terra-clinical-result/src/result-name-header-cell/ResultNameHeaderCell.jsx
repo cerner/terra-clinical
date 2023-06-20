@@ -70,9 +70,8 @@ const ResultNameHeaderCell = (props) => {
     customProps.className,
   );
 
-  let resultNameDisplay;
-  if (fullResultName) {
-    resultNameDisplay = (
+  const resultNameDisplay = fullResultName
+    ? (
       <>
         <div className={cx('name')} aria-hidden="true">
           {resultRowIndicators[typeIndicator.toLowerCase()]}
@@ -80,33 +79,24 @@ const ResultNameHeaderCell = (props) => {
         </div>
         <VisuallyHiddenText text={fullResultName} />
       </>
-    );
-  } else {
-    resultNameDisplay = (
+    )
+    : (
       <div className={cx('name')}>
         {resultRowIndicators[typeIndicator.toLowerCase()]}
         {resultName}
       </div>
     );
-  }
 
-  let unitDisplay;
-  if (unit) {
-    if (fullUnit) {
-      unitDisplay = (
-        <>
-          <div className={cx('unit')} aria-hidden="true">
-            {unit}
-          </div>
-          <VisuallyHiddenText text={fullUnit} />
-        </>
-      );
-    } else {
-      unitDisplay = <div className={cx('unit')}>{unit}</div>;
-    }
-  } else {
-    unitDisplay = null;
-  }
+  const unitDisplay = fullUnit
+    ? (
+      <>
+        <div className={cx('unit')} aria-hidden="true">
+          {unit}
+        </div>
+        <VisuallyHiddenText text={fullUnit} />
+      </>
+    )
+    : <div className={cx('unit')}>{unit}</div>;
 
   return (
     <div
@@ -114,7 +104,7 @@ const ResultNameHeaderCell = (props) => {
       className={nameHeaderCellClassnames}
     >
       {resultNameDisplay}
-      {unitDisplay}
+      {unit && unitDisplay}
     </div>
   );
 };

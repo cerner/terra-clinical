@@ -103,14 +103,10 @@ exports[`ResultNameHeaderCell should render correctly when a full unit name is p
   className="clinical-result-name-header-cell padding-compact"
 >
   <div
-    aria-hidden="true"
     className="name"
   >
     Name
   </div>
-  <VisuallyHiddenText
-    text="Full result name"
-  />
   <div
     aria-hidden="true"
     className="unit"
