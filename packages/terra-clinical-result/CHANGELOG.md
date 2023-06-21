@@ -4,6 +4,10 @@
 
 * Added
   * Added screen-reader support for strikethroughs to convey an entered in error status.
+  * Added additonal translations for strikethrough alt text.
+
+* Fixed
+  * Fixed a check related to Clinical Result strikethrough alt text for if a result unit exists or not.
 
 ## 1.17.0 - (June 14, 2023)
 

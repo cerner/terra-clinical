@@ -2,6 +2,7 @@
   "Terra.clinicalResult.resultError": "Fout",
   "Terra.clinicalResult.statusInError": "Fout",
   "Terra.clinicalResult.statusInErrorHiddenText": "Geschrapt als Fout beschouwen",
+  "Terra.clinicalResult.statusInErrorStrikethrough": "Het resultaat {strikethroughResult} is per ongeluk ingevoerd",
   "Terra.clinicalResult.selectToViewAria": "Selecteer om meer details te bekijken",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Resultaat bevat aanvullende waarden",
   "Terra.clinicalResult.viewResults": "Resultaten weergeven",
