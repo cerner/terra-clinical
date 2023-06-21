@@ -17,5 +17,6 @@
   "Terra.clinicalResult.interpretationPositive": "Positiv",
   "Terra.clinicalResult.interpretationAbnormal": "Onormalt",
   "Terra.clinicalResult.interpretationHigh": "Högt",
-  "Terra.clinicalResult.interpretationLow": "Lågt"
+  "Terra.clinicalResult.interpretationLow": "Lågt",
+  "Terra.clinicalResult.bloodPressure": "Blodtryck"
 }

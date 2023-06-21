@@ -13,6 +13,7 @@
   * Added screen-reader support for clinical-result FlowsheetResultCell EnteredInError.
   * Added screen-reader support for clinical-result FlowsheetResultCell with multiple results.
   * Added screen-reader support for clinical-result ResultNameHeaderCell. Two new optional props are added for providing a full name of the result name and unit respectively.
+  * Added screen-reader support for Blood Pressure with additional displays as a group. An additional prop is added for making the blood pressure results a group.
 
 ## 1.16.0 - (March 29, 2023)
 

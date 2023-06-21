@@ -6,7 +6,9 @@ import ThemeContext from 'terra-theme-context';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { injectIntl } from 'react-intl';
+import { v4 as uuidv4 } from 'uuid';
 import observationPropShape from './proptypes/observationPropTypes';
 import ResultError from './common/other/_ResultError';
 import NoData from './common/other/_KnownNoData';
@@ -46,6 +48,10 @@ const propTypes = {
    */
   hasResultNoData: PropTypes.bool,
   /**
+   * Whether or not the result should be a group.
+   */
+  isBloodPressureGrouped: PropTypes.bool,
+  /**
    * @private
    * Used by Flowsheet Result Cell to hide icons because it displays them in different positions.
    */
@@ -61,6 +67,7 @@ const defaultProps = {
   isTruncated: false,
   hasResultError: false,
   hasResultNoData: false,
+  isBloodPressureGrouped: false,
   hideAccessoryDisplays: false,
 };
 
@@ -84,13 +91,14 @@ const createConceptDisplays = (compareConceptDisplays) => {
   return null;
 };
 
+const idForDatetimeDisplays = `${uuidv4()}-datetimeDisplay`;
 const createDatetimeDisplays = (compareDatetimeDisplays) => {
   if (compareDatetimeDisplays.systolic && compareDatetimeDisplays.diastolic) {
     if (compareDatetimeDisplays.systolic === compareDatetimeDisplays.diastolic) {
-      return <div className={cx('datetime-display')}>{compareDatetimeDisplays.originalSystolic}</div>;
+      return <div className={cx('datetime-display')} id={idForDatetimeDisplays}>{compareDatetimeDisplays.originalSystolic}</div>;
     }
     return (
-      <div className={cx('datetime-display')}>
+      <div className={cx('datetime-display')} id={idForDatetimeDisplays}>
         {compareDatetimeDisplays.originalSystolic}
         {' / '}
         {compareDatetimeDisplays.originalDiastolic}
@@ -99,7 +107,7 @@ const createDatetimeDisplays = (compareDatetimeDisplays) => {
   }
   if (compareDatetimeDisplays.systolic || compareDatetimeDisplays.diastolic) {
     const conceptDisplayValue1 = compareDatetimeDisplays.originalSystolic || compareDatetimeDisplays.originalDiastolic;
-    return <div className={cx('datetime-display')}>{conceptDisplayValue1}</div>;
+    return <div className={cx('datetime-display')} id={idForDatetimeDisplays}>{conceptDisplayValue1}</div>;
   }
   return null;
 };
@@ -113,6 +121,7 @@ const ClinicalResultBloodPressure = (props) => {
     isTruncated,
     hasResultError,
     hasResultNoData,
+    isBloodPressureGrouped,
     hideAccessoryDisplays,
     intl,
     ...customProps
@@ -175,10 +184,16 @@ const ClinicalResultBloodPressure = (props) => {
     { 'status-in-error': systolicResult.statusInError || diastolicResult.statusInError },
   ]);
 
+  const idForHiddenText = ((isBloodPressureGrouped) ? `${uuidv4()}-hiddenText` : undefined);
+
   const clinicalResultBloodPressureDisplay = (
-    <React.Fragment>
+    <span
+      role={isBloodPressureGrouped ? 'group' : undefined}
+      aria-labelledby={isBloodPressureGrouped ? `${idForHiddenText} ${idForDatetimeDisplays}` : undefined}
+    >
       <div className={decoratedResultClassnames}>
         <div className={cx('result-display')}>
+          {isBloodPressureGrouped && <VisuallyHiddenText id={idForHiddenText} aria-hidden="true" text={intl.formatMessage({ id: 'Terra.clinicalResult.bloodPressure' })} />}
           {decoratedResultDisplay}
           {isTruncated ? null : !hideAccessoryDisplays && iconGroupDisplayElement}
         </div>
@@ -186,7 +201,7 @@ const ClinicalResultBloodPressure = (props) => {
       </div>
       {!hideAccessoryDisplays && conceptDisplayElement}
       {!hideAccessoryDisplays && datetimeDisplayElement}
-    </React.Fragment>
+    </span>
   );
 
   const clinicalResultClassnames = classNames(
