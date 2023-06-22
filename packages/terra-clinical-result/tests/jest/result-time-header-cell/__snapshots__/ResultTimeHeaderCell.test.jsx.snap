@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ResultTimeHeaderCell correctly applies the theme context className 1`] = `
-<div
+<th
   className="clinical-result-time-header-cell padding-compact orion-fusion-theme"
 >
   <div
@@ -14,11 +14,11 @@ exports[`ResultTimeHeaderCell correctly applies the theme context className 1`] 
   >
     10:00 PM
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultTimeHeaderCell paddingStyle - should render with compact 1`] = `
-<div
+<th
   className="clinical-result-time-header-cell padding-compact"
 >
   <div
@@ -31,11 +31,11 @@ exports[`ResultTimeHeaderCell paddingStyle - should render with compact 1`] = `
   >
     10:00 PM
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultTimeHeaderCell paddingStyle - should render with none 1`] = `
-<div
+<th
   className="clinical-result-time-header-cell"
 >
   <div
@@ -48,11 +48,11 @@ exports[`ResultTimeHeaderCell paddingStyle - should render with none 1`] = `
   >
     10:00 PM
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultTimeHeaderCell paddingStyle - should render with standard 1`] = `
-<div
+<th
   className="clinical-result-time-header-cell padding-standard"
 >
   <div
@@ -65,11 +65,11 @@ exports[`ResultTimeHeaderCell paddingStyle - should render with standard 1`] = `
   >
     10:00 PM
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultTimeHeaderCell should hide date 1`] = `
-<div
+<th
   className="clinical-result-time-header-cell padding-compact"
 >
   <div
@@ -82,11 +82,11 @@ exports[`ResultTimeHeaderCell should hide date 1`] = `
   >
     10:00 PM
   </div>
-</div>
+</th>
 `;
 
 exports[`ResultTimeHeaderCell should render a date and time 1`] = `
-<div
+<th
   className="clinical-result-time-header-cell padding-compact"
 >
   <div
@@ -99,5 +99,5 @@ exports[`ResultTimeHeaderCell should render a date and time 1`] = `
   >
     10:00 PM
   </div>
-</div>
+</th>
 `;
