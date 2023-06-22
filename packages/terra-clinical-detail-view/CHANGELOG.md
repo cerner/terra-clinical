@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.31.0 - (June 22, 2023)
+
 * Added
   * Added `isLabelValuePairList` prop to the DetailList component to support using a description list for label-value pairs.
   * Added aria-labelledby attribute to DetailView `<section>` using title's id attribute.
