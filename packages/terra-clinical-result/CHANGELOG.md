@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.18.0 - (June 22, 2023)
+
 * Added
   * Added screen-reader support for strikethroughs to convey an entered in error status.
   * Added additional translations for strikethrough alt text.
