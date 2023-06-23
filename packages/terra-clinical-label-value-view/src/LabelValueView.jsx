@@ -22,6 +22,10 @@ const propTypes = {
   */
   isChildOfDescriptionList: PropTypes.bool,
   /**
+  * A text to explain the topic of the LabelValueView.
+  */
+  topicTextId: PropTypes.string,
+  /**
    *  Child component(s) to display underneath the label.
    */
   children: PropTypes.node,
@@ -31,10 +35,11 @@ const defaultProps = {
   textValue: '',
   children: undefined,
   isChildOfDescriptionList: false,
+  topicTextId: undefined,
 };
 
 const LabelValueView = ({
-  label, textValue, isChildOfDescriptionList, children, ...customProps
+  label, textValue, isChildOfDescriptionList, topicTextId, children, ...customProps
 }) => {
   let textValueSection;
   const theme = React.useContext(ThemeContext);
@@ -69,6 +74,14 @@ const LabelValueView = ({
       <React.Fragment>
         {termDefinition}
       </React.Fragment>
+    );
+  }
+
+  if (topicTextId) {
+    return (
+      <dl {...customProps} className={labelValueViewClass} aria-labelledby={topicTextId}>
+        {termDefinition}
+      </dl>
     );
   }
 
