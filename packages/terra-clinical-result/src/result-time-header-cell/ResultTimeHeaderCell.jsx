@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './ResultTimeHeaderCell.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * Content to be displayed on the first line, typically abbrivated date, e.g. `Dec 12, 2010`
+   * Content to be displayed on the first line, typically abbreviated date, e.g. `Dec 12, 2010`
    */
   date: PropTypes.string.isRequired,
   /**
@@ -57,13 +58,14 @@ const ResultTimeHeaderCell = (props) => {
   );
 
   return (
-    <div
+    <th
       {...customProps}
       className={timeHeaderCellClassnames}
     >
-      <div className={dateClassnames}>{date}</div>
-      <div className={cx('time')}>{time}</div>
-    </div>
+      <time className={dateClassnames}>{date}</time>
+      <VisuallyHiddenText text={'\u00A0'} />
+      <time className={cx('time')}>{time}</time>
+    </th>
   );
 };
 

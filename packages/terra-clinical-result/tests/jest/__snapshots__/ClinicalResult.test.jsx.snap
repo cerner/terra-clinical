@@ -4,7 +4,7 @@ exports[`ClinicalResult correctly applies the theme context className 1`] = `
 <div
   className="clinical-result orion-fusion-theme"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     result={
       Object {
@@ -16,11 +16,19 @@ exports[`ClinicalResult correctly applies the theme context className 1`] = `
 </div>
 `;
 
+exports[`ClinicalResult should not render visually hidden alt text for strikethroughs when result is undefined 1`] = `
+<div
+  className="clinical-result"
+>
+  <InjectIntl(ClinicalResultDisplay) />
+</div>
+`;
+
 exports[`ClinicalResult should pass certain props to Observation  1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     hideUnit={true}
     interpretation="critical"
@@ -54,7 +62,7 @@ exports[`ClinicalResult should render a commented result  1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     hasComment={true}
     result={
@@ -71,7 +79,7 @@ exports[`ClinicalResult should render a default ClinicalResult 1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     result={
       Object {
@@ -87,7 +95,7 @@ exports[`ClinicalResult should render a entered-in-error status result 1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     interpretation="critical"
     result={
@@ -105,7 +113,7 @@ exports[`ClinicalResult should render a modified result  1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     isModified={true}
     result={
@@ -122,7 +130,7 @@ exports[`ClinicalResult should render a result with a concept display 1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     conceptDisplay="Temperature Oral"
     eventId="111"
     result={
@@ -139,7 +147,7 @@ exports[`ClinicalResult should render a result with a date time display 1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     datetimeDisplay="Nov 23, 2019 13:31:31"
     eventId="111"
     result={
@@ -152,11 +160,26 @@ exports[`ClinicalResult should render a result with a date time display 1`] = `
 </div>
 `;
 
+exports[`ClinicalResult should render a result with no unit 1`] = `
+<div
+  className="clinical-result"
+>
+  <InjectIntl(ClinicalResultDisplay)
+    eventId="111"
+    result={
+      Object {
+        "value": "12345.678",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`ClinicalResult should render a result with unit hidden 1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     hideUnit={true}
     result={
@@ -173,7 +196,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
 <div
   className="clinical-result truncated"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     isTruncated={true}
     result={
@@ -190,7 +213,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult with icons move
 <div
   className="clinical-result truncated"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     isModified={true}
     isTruncated={true}
@@ -208,7 +231,7 @@ exports[`ClinicalResult should render an unverified result  1`] = `
 <div
   className="clinical-result"
 >
-  <ClinicalResultDisplay
+  <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     isUnverified={true}
     result={

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Children, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './DetailList.module.scss';
@@ -21,27 +21,52 @@ const propTypes = {
     PropTypes.objectOf(DetailListItem),
     PropTypes.arrayOf(PropTypes.objectOf(DetailListItem)),
   ]),
+
+  /**
+   * Whether or not the Detail List is a list of label-value pairs.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
+   * isLabelValuePairList prop is set to `true` when the list contains label-value pairs. Label-value pairs should be
+   * provided using the `<dt>` element for the label and the `<dd>` element for the value. The
+   * `terra-clinical-label-value-view` component with `isChildOfDescriptionList={true}` can also be used as it will
+   * return the label and value using the appropriate `<dt>` and `<dd>` elements.
+   */
+  isLabelValuePairList: PropTypes.bool,
 };
 
 const defaultProps = {
   title: undefined,
   children: undefined,
+  isLabelValuePairList: false,
 };
 
-const DetailList = ({ title, children, ...customProps }) => {
-  let titleContent;
+const DetailList = ({
+  title, children, isLabelValuePairList, ...customProps
+}) => {
   const level = useContext(HeadingLevelContext);
   const HeaderLevel = `h${level}`;
+  let titleContent;
+
   if (title) {
     titleContent = (<HeaderLevel className={cx('title')}>{title}</HeaderLevel>);
   }
 
+  const listContent = isLabelValuePairList
+    ? <dl className={cx('list')}>{children}</dl>
+    : (
+      <ul className={cx('list')}>
+        {Children.map(children, child => (
+          <li key={child.id} className={cx('list-item')}>
+            {child}
+          </li>
+        ))}
+      </ul>
+    );
+
   return (
-    <div {...customProps} data-terra-clincial-detail-list className={customProps.className}>
+    <div {...customProps} data-terra-clinical-detail-list className={customProps.className}>
       {titleContent}
-      <div className={cx('list')}>
-        {children}
-      </div>
+      {listContent}
     </div>
   );
 };

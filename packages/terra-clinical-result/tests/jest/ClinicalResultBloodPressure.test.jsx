@@ -6,8 +6,11 @@ import {
   DefaultBloodPressureResult,
   DefaultSystolicResult,
   DefaultDiastolicResult,
+  ExtraDisplaysBloodPressureResult,
   NoDataResult,
 } from '../../src/terra-dev-site/test/clinical-result/TestResults';
+
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
 
 describe('ClinicalResultBloodPressure', () => {
   it('should render a ResultError if hasResultError is true', () => {
@@ -18,6 +21,22 @@ describe('ClinicalResultBloodPressure', () => {
   it('should render a NoData if hasResultNoData is true', () => {
     const result = shallowWithIntl(<ClinicalResultBloodPressure hasResultNoData />).dive();
     expect(result).toMatchSnapshot();
+  });
+
+  it('should render ClinicalResultBloodPressure if isBloodPressureGrouped is true', () => {
+    const result = shallowWithIntl(<ClinicalResultBloodPressure {...DefaultBloodPressureResult} isBloodPressureGrouped />).dive();
+    expect(result.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Terra.clinicalResult.bloodPressure');
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should set the hidden text ID', () => {
+    const result = shallowWithIntl(<ClinicalResultBloodPressure {...DefaultBloodPressureResult} isBloodPressureGrouped />).dive();
+    expect(result.find('VisuallyHiddenText').prop('id')).toEqual('00000000-0000-0000-0000-000000000000-hiddenText');
+  });
+
+  it('should set the dateTime display ID', () => {
+    const result = shallowWithIntl(<ClinicalResultBloodPressure {...ExtraDisplaysBloodPressureResult} />).dive();
+    expect(result.find('.datetime-display').prop('id')).toEqual('00000000-0000-0000-0000-000000000000-datetimeDisplay');
   });
 
   it('should render a default ClinicalResultBloodPressure', () => {

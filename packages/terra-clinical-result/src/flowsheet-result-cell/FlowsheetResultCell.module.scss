@@ -10,13 +10,13 @@
     max-width: 100%;  // Needed for IE10 truncation
     overflow-x: hidden;
     padding: 0;
-    width: 100%;
   }
 
   .primary-display {
     align-items: center;
     display: flex;
     flex: 1 1 100%;
+    float: left;
     height: var(--terra-clinical-result-flowsheet-cell-primary-display-height, 1.78571em); // Must use ems for font scaling
     margin: 0;
     margin-left: var(--terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left, 1.1875em); // Must use ems for font scaling
@@ -33,6 +33,14 @@
     &.error {
       margin-left: 0;
     }
+  }
+
+  .end-display {
+    display: flex;
+    flex: 0 0 auto;
+    float: right;
+    height: var(--terra-clinical-result-flowsheet-cell-end-display-height, 1.78571em); // Must use ems for font scaling
+    min-width: 0;
   }
 
   .additional-end-display {

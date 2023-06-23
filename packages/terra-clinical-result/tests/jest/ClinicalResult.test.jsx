@@ -62,6 +62,17 @@ describe('ClinicalResult', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should render a result with no unit', () => {
+    const resultData = {
+      eventId: '111',
+      result: {
+        value: '12345.678',
+      },
+    };
+    const result = shallow(<ClinicalResult {...resultData} />);
+    expect(result).toMatchSnapshot();
+  });
+
   it('should render a result with a concept display', () => {
     const resultData = {
       ...DefaultResult,
@@ -92,6 +103,13 @@ describe('ClinicalResult', () => {
 
   it('should render a ResultError if hasResultError is true', () => {
     const result = shallow(<ClinicalResult hasResultError />);
+    expect(result).toMatchSnapshot();
+  });
+
+  it('should not render visually hidden alt text for strikethroughs when result is undefined', () => {
+    const resultData = undefined;
+    const result = shallow(<ClinicalResult {...resultData} />);
+    expect(result.find('VisuallyHiddenText').exists()).toBeFalsy();
     expect(result).toMatchSnapshot();
   });
 

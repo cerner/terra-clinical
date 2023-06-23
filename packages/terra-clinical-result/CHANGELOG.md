@@ -2,10 +2,29 @@
 
 ## Unreleased
 
+## 1.18.0 - (June 22, 2023)
+
+* Added
+  * Added screen-reader support for strikethroughs to convey an entered in error status.
+  * Added additional translations for strikethrough alt text.
+
+* Fixed
+  * Fixed a check related to Clinical Result strikethrough alt text for if a result unit exists or not.
+
+* Changed
+  * Changed FlowsheetResultCell, ResultNameHeaderCell and ResultTimeHeaderCell in clinical-result to use proper semantic html.
+  * Updated ResultTimeHeaderCell component to use `<time>` html tags for the date and time.
+
+## 1.17.0 - (June 14, 2023)
+
 * Added
   * Added screen-reader support for clinical-result icons. (Requires Jest test updates on consuming applications)
   * Added screen-reader support for alternative text for when no results are returned.
   * Added screen-reader support for clinical-result FlowsheetResultCell EnteredInError.
+  * Added screen-reader support for clinical-result FlowsheetResultCell with multiple results.
+  * Added screen-reader support for clinical-result ResultNameHeaderCell. Two new optional props are added for providing a full name of the result name and unit respectively.
+  * Added screen-reader support for Blood Pressure with additional displays as a group. An additional prop is added for making the blood pressure results a group.
+
 
 ## 1.16.0 - (March 29, 2023)
 

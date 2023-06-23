@@ -1,7 +1,8 @@
 {
   "Terra.clinicalResult.resultError": "Error",
   "Terra.clinicalResult.statusInError": "In Error",
-  "Terra.clinicalResult.statusInErrorAria": "Value Uncharted as In Error",
+  "Terra.clinicalResult.statusInErrorHiddenText": "Value Uncharted as In Error",
+  "Terra.clinicalResult.statusInErrorStrikethrough": "Result {strikethroughResult} Entered In Error",
   "Terra.clinicalResult.selectToViewAria": "Select to view more details",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Result includes additional values",
   "Terra.clinicalResult.viewResults": "View Results",
@@ -17,5 +18,6 @@
   "Terra.clinicalResult.interpretationPositive": "Positive",
   "Terra.clinicalResult.interpretationAbnormal": "Abnormal",
   "Terra.clinicalResult.interpretationHigh": "High",
-  "Terra.clinicalResult.interpretationLow": "Low"
+  "Terra.clinicalResult.interpretationLow": "Low",
+  "Terra.clinicalResult.bloodPressure": "Blood Pressure"
 }

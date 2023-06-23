@@ -1,7 +1,8 @@
 {
   "Terra.clinicalResult.resultError": "Fehler",
   "Terra.clinicalResult.statusInError": "Ungültig",
-  "Terra.clinicalResult.statusInErrorAria": "Wert für ungültig erklärt ",
+  "Terra.clinicalResult.statusInErrorHiddenText": "Wert für ungültig erklärt ",
+  "Terra.clinicalResult.statusInErrorStrikethrough": "Ergebnis {strikethroughResult} versehentlich eingegeben",
   "Terra.clinicalResult.selectToViewAria": "Zum Anzeigen weiterer Details auswählen",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Ergebnis enthält weitere Werte",
   "Terra.clinicalResult.viewResults": "Ergebnisse anzeigen",
@@ -17,5 +18,6 @@
   "Terra.clinicalResult.interpretationPositive": "Positiv",
   "Terra.clinicalResult.interpretationAbnormal": "Abnorm",
   "Terra.clinicalResult.interpretationHigh": "Hoch",
-  "Terra.clinicalResult.interpretationLow": "Niedrig"
+  "Terra.clinicalResult.interpretationLow": "Niedrig",
+  "Terra.clinicalResult.bloodPressure": "Blutdruck"
 }

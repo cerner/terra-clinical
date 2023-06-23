@@ -4,44 +4,46 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={true}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={true}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "interpretation": "critical",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={true}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={true}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "interpretation": "critical",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -49,54 +51,56 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "hasComment": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "hasComment": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
-      <IconComment
-        a11yLabel="Terra.clinicalResult.resultComment"
-        className="icon-comment"
-        data-name="Layer 1"
-        focusable="true"
-        isBidi={true}
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+          type="Diastolic"
+        />
+        <IconComment
+          a11yLabel="Terra.clinicalResult.resultComment"
+          className="icon-comment"
+          data-name="Layer 1"
+          focusable="true"
+          isBidi={true}
+          role="img"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -104,46 +108,48 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display status-in-error"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display status-in-error"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "interpretation": "critical",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
-            "status": "entered-in-error",
-            "statusInError": true,
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "interpretation": "critical",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+              "status": "entered-in-error",
+              "statusInError": true,
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -151,52 +157,54 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "isModified": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "isModified": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
-      <IconModified
-        a11yLabel="Terra.clinicalResult.resultModified"
-        className="icon-modified"
-        focusable="true"
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+          type="Diastolic"
+        />
+        <IconModified
+          a11yLabel="Terra.clinicalResult.resultModified"
+          className="icon-modified"
+          focusable="true"
+          role="img"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -204,50 +212,52 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedConceptDisplay": "temperature oral",
-            "cleanedUnit": "mmhg",
-            "conceptDisplay": "Temperature Oral",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedConceptDisplay": "temperature oral",
+              "cleanedUnit": "mmhg",
+              "conceptDisplay": "Temperature Oral",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="concept-display"
-  >
-    Temperature Oral
-  </div>
+    <div
+      className="concept-display"
+    >
+      Temperature Oral
+    </div>
+  </span>
 </div>
 `;
 
@@ -255,50 +265,53 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
-            "cleanedUnit": "mmhg",
-            "datetimeDisplay": "Nov 23, 2019 13:31:31",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
+              "cleanedUnit": "mmhg",
+              "datetimeDisplay": "Nov 23, 2019 13:31:31",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="datetime-display"
-  >
-    Nov 23, 2019 13:31:31
-  </div>
+    <div
+      className="datetime-display"
+      id="00000000-0000-0000-0000-000000000000-datetimeDisplay"
+    >
+      Nov 23, 2019 13:31:31
+    </div>
+  </span>
 </div>
 `;
 
@@ -306,43 +319,45 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={true}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={true}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={true}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={true}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -350,52 +365,54 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "isUnverified": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "isUnverified": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
-      <IconDiamond
-        a11yLabel="Terra.clinicalResult.resultUnverified"
-        className="icon-unverified"
-        focusable="true"
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+          type="Diastolic"
+        />
+        <IconDiamond
+          a11yLabel="Terra.clinicalResult.resultUnverified"
+          className="icon-unverified"
+          focusable="true"
+          role="img"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -403,54 +420,56 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with 
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "eventId": "",
-            "hasComment": false,
-            "interpretation": "normal",
-            "isModified": false,
-            "isUnverified": false,
-            "noData": true,
-            "result": Object {
-              "unit": "",
-              "value": null,
-            },
-            "resultNoData": true,
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "eventId": "",
+              "hasComment": false,
+              "interpretation": "normal",
+              "isModified": false,
+              "isUnverified": false,
+              "noData": true,
+              "result": Object {
+                "unit": "",
+                "value": null,
+              },
+              "resultNoData": true,
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -458,40 +477,42 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] 
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={Object {}}
-        type="Diastolic"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={Object {}}
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -499,43 +520,45 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={true}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "interpretation": "critical",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={true}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={true}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "interpretation": "critical",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={true}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -543,53 +566,55 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "hasComment": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
-      <IconComment
-        a11yLabel="Terra.clinicalResult.resultComment"
-        className="icon-comment"
-        data-name="Layer 1"
-        focusable="true"
-        isBidi={true}
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "hasComment": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+        <IconComment
+          a11yLabel="Terra.clinicalResult.resultComment"
+          className="icon-comment"
+          data-name="Layer 1"
+          focusable="true"
+          isBidi={true}
+          role="img"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -597,45 +622,47 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display status-in-error"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display status-in-error"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "interpretation": "critical",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-            "status": "entered-in-error",
-            "statusInError": true,
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "interpretation": "critical",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+              "status": "entered-in-error",
+              "statusInError": true,
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -643,51 +670,53 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "isModified": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
-      <IconModified
-        a11yLabel="Terra.clinicalResult.resultModified"
-        className="icon-modified"
-        focusable="true"
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "isModified": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+        <IconModified
+          a11yLabel="Terra.clinicalResult.resultModified"
+          className="icon-modified"
+          focusable="true"
+          role="img"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -695,49 +724,51 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedConceptDisplay": "temperature oral",
-            "cleanedUnit": "mmhg",
-            "conceptDisplay": "Temperature Oral",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedConceptDisplay": "temperature oral",
+              "cleanedUnit": "mmhg",
+              "conceptDisplay": "Temperature Oral",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="concept-display"
-  >
-    Temperature Oral
-  </div>
+    <div
+      className="concept-display"
+    >
+      Temperature Oral
+    </div>
+  </span>
 </div>
 `;
 
@@ -745,49 +776,52 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
-            "cleanedUnit": "mmhg",
-            "datetimeDisplay": "Nov 23, 2019 13:31:31",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
+              "cleanedUnit": "mmhg",
+              "datetimeDisplay": "Nov 23, 2019 13:31:31",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="datetime-display"
-  >
-    Nov 23, 2019 13:31:31
-  </div>
+    <div
+      className="datetime-display"
+      id="00000000-0000-0000-0000-000000000000-datetimeDisplay"
+    >
+      Nov 23, 2019 13:31:31
+    </div>
+  </span>
 </div>
 `;
 
@@ -795,42 +829,44 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={true}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={true}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={true}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={true}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -838,51 +874,53 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "isUnverified": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={Object {}}
-        type="Diastolic"
-      />
-      <IconDiamond
-        a11yLabel="Terra.clinicalResult.resultUnverified"
-        className="icon-unverified"
-        focusable="true"
-        role="img"
-        viewBox="0 0 48 48"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "isUnverified": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={Object {}}
+          type="Diastolic"
+        />
+        <IconDiamond
+          a11yLabel="Terra.clinicalResult.resultUnverified"
+          className="icon-unverified"
+          focusable="true"
+          role="img"
+          viewBox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -890,41 +928,43 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        result={Object {}}
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.2"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          result={Object {}}
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.2"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -932,55 +972,57 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        result={
-          Object {
-            "eventId": "",
-            "hasComment": false,
-            "interpretation": "normal",
-            "isModified": false,
-            "isUnverified": false,
-            "noData": true,
-            "result": Object {
-              "unit": "",
-              "value": null,
-            },
-            "resultNoData": true,
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          result={
+            Object {
+              "eventId": "",
+              "hasComment": false,
+              "interpretation": "normal",
+              "isModified": false,
+              "isUnverified": false,
+              "noData": true,
+              "result": Object {
+                "unit": "",
+                "value": null,
+              },
+              "resultNoData": true,
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -988,53 +1030,119 @@ exports[`ClinicalResultBloodPressure correctly applies the theme context classNa
 <div
   className="clinical-result blood-pressure-result orion-fusion-theme"
 >
-  <div
-    className="decorated-result-display"
+  <span>
+    <div
+      className="decorated-result-display"
+    >
+      <div
+        className="result-display"
+      >
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
+          }
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`ClinicalResultBloodPressure should render ClinicalResultBloodPressure if isBloodPressureGrouped is true 1`] = `
+<div
+  className="clinical-result blood-pressure-result"
+>
+  <span
+    aria-labelledby="00000000-0000-0000-0000-000000000000-hiddenText 00000000-0000-0000-0000-000000000000-datetimeDisplay"
+    role="group"
   >
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <VisuallyHiddenText
+          aria-hidden="true"
+          id="00000000-0000-0000-0000-000000000000-hiddenText"
+          text="Terra.clinicalResult.bloodPressure"
+        />
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -1046,53 +1154,55 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -1100,53 +1210,55 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
 <div
   className="clinical-result blood-pressure-result truncated"
 >
-  <div
-    className="decorated-result-display truncated"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display truncated"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;
 
@@ -1154,63 +1266,65 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
 <div
   className="clinical-result blood-pressure-result truncated"
 >
-  <div
-    className="decorated-result-display truncated"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display truncated"
     >
-      <BloodPressureDisplay
-        diastolicUnit="mmhg"
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.1",
-            "isModified": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "180",
-            },
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-111.1"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        id="111"
-        result={
-          Object {
-            "cleanedUnit": "mmhg",
-            "eventId": "111.2",
-            "isModified": true,
-            "noData": false,
-            "result": Object {
-              "unit": "mmHg",
-              "value": "80",
-            },
+        <InjectIntl(BloodPressureDisplay)
+          diastolicUnit="mmhg"
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.1",
+              "isModified": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "180",
+              },
+            }
           }
-        }
-        type="Diastolic"
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-111.1"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          id="111"
+          result={
+            Object {
+              "cleanedUnit": "mmhg",
+              "eventId": "111.2",
+              "isModified": true,
+              "noData": false,
+              "result": Object {
+                "unit": "mmHg",
+                "value": "80",
+              },
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
+      <IconModified
+        a11yLabel="Terra.clinicalResult.resultModified"
+        className="icon-modified"
+        focusable="true"
+        role="img"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
       />
     </div>
-    <IconModified
-      a11yLabel="Terra.clinicalResult.resultModified"
-      className="icon-modified"
-      focusable="true"
-      role="img"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
+  </span>
 </div>
 `;
 
@@ -1218,57 +1332,59 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
 <div
   className="clinical-result blood-pressure-result"
 >
-  <div
-    className="decorated-result-display"
-  >
+  <span>
     <div
-      className="result-display"
+      className="decorated-result-display"
     >
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "eventId": "",
-            "hasComment": false,
-            "interpretation": "normal",
-            "isModified": false,
-            "isUnverified": false,
-            "noData": true,
-            "result": Object {
-              "unit": "",
-              "value": null,
-            },
-            "resultNoData": true,
-          }
-        }
-        type="Systolic"
-      />
-      <span
-        className="result-display-separator"
-        key="Observation-Separator-"
+      <div
+        className="result-display"
       >
-        /
-      </span>
-      <BloodPressureDisplay
-        hideUnit={false}
-        result={
-          Object {
-            "eventId": "",
-            "hasComment": false,
-            "interpretation": "normal",
-            "isModified": false,
-            "isUnverified": false,
-            "noData": true,
-            "result": Object {
-              "unit": "",
-              "value": null,
-            },
-            "resultNoData": true,
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "eventId": "",
+              "hasComment": false,
+              "interpretation": "normal",
+              "isModified": false,
+              "isUnverified": false,
+              "noData": true,
+              "result": Object {
+                "unit": "",
+                "value": null,
+              },
+              "resultNoData": true,
+            }
           }
-        }
-        type="Diastolic"
-      />
+          type="Systolic"
+        />
+        <span
+          className="result-display-separator"
+          key="Observation-Separator-"
+        >
+          /
+        </span>
+        <InjectIntl(BloodPressureDisplay)
+          hideUnit={false}
+          result={
+            Object {
+              "eventId": "",
+              "hasComment": false,
+              "interpretation": "normal",
+              "isModified": false,
+              "isUnverified": false,
+              "noData": true,
+              "result": Object {
+                "unit": "",
+                "value": null,
+              },
+              "resultNoData": true,
+            }
+          }
+          type="Diastolic"
+        />
+      </div>
     </div>
-  </div>
+  </span>
 </div>
 `;

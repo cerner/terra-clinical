@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './DetailView.module.scss';
 import DetailList from './DetailList';
 import DetailListItem from './DetailListItem';
@@ -13,6 +14,9 @@ const cx = classNamesBind.bind(styles);
 const propTypes = {
   /**
    * Sets the text to display for the main heading.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the title prop be set to a value that best represents the region which groups the details in section within in the page.
+   * Screen reader users rely on the title to know the beginning and end of a region, and to navigate to the specific region on the page.
    */
   title: PropTypes.string,
 
@@ -42,7 +46,9 @@ const propTypes = {
   accessory: PropTypes.element,
 
   /**
-   * Sets visualization content such as image, graph, or text based on the input elements. This `graph` prop is wrapped in a `<figure>` element. It is recommended to include `<figcaption>` as the first, or the last element to provide figure's caption. Please see `<figure>` docs on [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) for more information.
+   * Sets visualization content such as graph, or image based on the data in the `graph` prop. This `graph` prop is wrapped in a `<figure>` element.
+   *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that caption be set with `<figcaption>` element as the first, or the last element to provide the caption for the figure. Please see `<figure>` docs on [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) for more information.
    *
    * Note: When using `<figcaption>` element, which requires a parent element, it is necessary to wrap the elements within a `<React.Fragment>` block.
    */
@@ -107,6 +113,7 @@ const DetailView = (props) => {
   );
 
   const createHeaderLevel = (headerLevel) => `h${headerLevel}`;
+  const titleId = title ? `title-id-${uuidv4()}` : null;
 
   let titleElement = null;
   let secondaryTitlesElements = [];
@@ -114,7 +121,7 @@ const DetailView = (props) => {
   let HeaderLevel = createHeaderLevel(nextLevel);
 
   if (title) {
-    titleElement = <HeaderLevel className={cx('primary-text')}>{title}</HeaderLevel>;
+    titleElement = <HeaderLevel className={cx('primary-text')} id={titleId}>{title}</HeaderLevel>;
     nextLevel += 1;
   }
 
@@ -149,7 +156,7 @@ const DetailView = (props) => {
   }
 
   return (
-    <section {...attributes}>
+    <section {...attributes} aria-labelledby={titleId}>
       <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}

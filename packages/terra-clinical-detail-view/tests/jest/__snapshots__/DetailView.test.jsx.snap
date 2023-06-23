@@ -2,6 +2,7 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <section
+  aria-labelledby={null}
   className="detail-view orion-fusion-theme"
 >
   <div
@@ -31,6 +32,7 @@ exports[`should render a default component 1`] = `
 
 exports[`should render a smaller title 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -38,6 +40,7 @@ exports[`should render a smaller title 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -50,6 +53,7 @@ exports[`should render a smaller title 1`] = `
 
 exports[`should render a title 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -57,6 +61,7 @@ exports[`should render a title 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -69,6 +74,7 @@ exports[`should render a title 1`] = `
 
 exports[`should render accessory 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -76,6 +82,7 @@ exports[`should render accessory 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -95,6 +102,7 @@ exports[`should render accessory 1`] = `
 
 exports[`should render details 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -102,6 +110,7 @@ exports[`should render details 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -130,6 +139,7 @@ exports[`should render details 1`] = `
 
 exports[`should render footer 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -137,6 +147,7 @@ exports[`should render footer 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -171,6 +182,7 @@ exports[`should render footer 1`] = `
 
 exports[`should render graph 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -178,6 +190,7 @@ exports[`should render graph 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -210,6 +223,7 @@ exports[`should render graph 1`] = `
 
 exports[`should render secondaryTitles 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -217,6 +231,7 @@ exports[`should render secondaryTitles 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -239,6 +254,7 @@ exports[`should render secondaryTitles 1`] = `
 
 exports[`should render subtitles 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -246,6 +262,7 @@ exports[`should render subtitles 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>
@@ -268,6 +285,7 @@ exports[`should render subtitles 1`] = `
 
 exports[`should render without a divider when indicated 1`] = `
 <section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
   class="detail-view"
 >
   <div
@@ -275,6 +293,7 @@ exports[`should render without a divider when indicated 1`] = `
   >
     <h2
       class="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
     >
       Header
     </h2>

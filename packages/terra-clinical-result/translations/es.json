@@ -1,7 +1,8 @@
 {
   "Terra.clinicalResult.resultError": "Error",
   "Terra.clinicalResult.statusInError": "Con errores",
-  "Terra.clinicalResult.statusInErrorAria": "El valor no se ha documentado como Con errores",
+  "Terra.clinicalResult.statusInErrorHiddenText": "El valor no se ha documentado como Con errores",
+  "Terra.clinicalResult.statusInErrorStrikethrough": "Resultado {strikethroughResult} escrito Con errores",
   "Terra.clinicalResult.selectToViewAria": "Seleccione para ver más detalles",
   "Terra.clinicalResult.includesAdditionalValuesAria": "El resultado incluye valores adicionales",
   "Terra.clinicalResult.viewResults": "Ver resultados",
@@ -17,5 +18,6 @@
   "Terra.clinicalResult.interpretationPositive": "Positivo",
   "Terra.clinicalResult.interpretationAbnormal": "Anómalo",
   "Terra.clinicalResult.interpretationHigh": "Alto",
-  "Terra.clinicalResult.interpretationLow": "Bajo"
+  "Terra.clinicalResult.interpretationLow": "Bajo",
+  "Terra.clinicalResult.bloodPressure": "Presión arterial"
 }

@@ -6,6 +6,8 @@ import ThemeContext from 'terra-theme-context';
 import IconComment from 'terra-icon/lib/icon/IconComment';
 import IconModified from 'terra-icon/lib/icon/IconModified';
 import IconUnverified from 'terra-icon/lib/icon/IconDiamond';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import ClinicalResult from '../ClinicalResult';
 import ClinicalResultBloodPressure from '../ClinicalResultBloodPressure';
 import observationPropShape from '../proptypes/observationPropTypes';
@@ -49,6 +51,11 @@ const propTypes = {
    * Override that shows a known "No Data" display. Used when there is known to be no value for a given clinical result concept at a specific datetime.
    */
   hasResultNoData: PropTypes.bool,
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }),
 };
 
 const defaultProps = {
@@ -66,21 +73,23 @@ const interpretationsWithIcons = [
   'low',
 ];
 
-const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID) => {
+const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resultKeyID, intl) => {
   if (!hasCommentIcon && !hasModifiedIcon && !hasUnverifiedIcon) {
     return null;
   }
+
   let iconElements;
   if (hasUnverifiedIcon) {
-    iconElements = <IconUnverified className={cx('icon-unverified')} />;
+    iconElements = <IconUnverified className={cx('icon-unverified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultUnverified' })} role="img" focusable="true" />;
   } else {
     iconElements = (
       <React.Fragment>
-        {hasCommentIcon ? (<IconComment className={cx('icon-comment')} />) : null}
-        {hasModifiedIcon ? (<IconModified className={cx('icon-modified')} />) : null}
+        {hasCommentIcon ? (<IconComment className={cx('icon-comment')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultComment' })} role="img" focusable="true" />) : null}
+        {hasModifiedIcon ? (<IconModified className={cx('icon-modified')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.resultModified' })} role="img" focusable="true" />) : null}
       </React.Fragment>
     );
   }
+
   return (
     <div key={(`EndAccessoryIcons-${resultKeyID}`)} className={cx('end-accessory-icons')}>
       <div className={cx('end-accessory-stack')}>
@@ -90,12 +99,14 @@ const createEndIcons = (hasCommentIcon, hasModifiedIcon, hasUnverifiedIcon, resu
   );
 };
 
-const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessoryIcons, resultKeyID) => {
+const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessoryIcons, resultKeyID, intl) => {
   const displayCount = count;
   if (displayCount < 1) {
     return null;
   }
+
   let additionalResultInterpretationIndicator;
+  let criticality;
   if ([
     'critical',
     'critical-high',
@@ -103,13 +114,18 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
     'positive',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'critical';
+    criticality = 'critical';
   } else if ([
     'abnormal',
     'high',
     'low',
   ].some(r => interpretationsArr.indexOf(r) >= 0)) {
     additionalResultInterpretationIndicator = 'high';
+    criticality = 'out of range';
+  } else {
+    criticality = 'normal';
   }
+
   const additionalResultClassNames = cx([
     'additional-end-display',
     { 'no-accessory-icons': !hasAccessoryIcons },
@@ -119,12 +135,17 @@ const createEndAdditionalResultsStack = (count, interpretationsArr, hasAccessory
   const additionalCountDisplayValue = (displayCount > 99)
     ? (<span className={cx(['additional-results-value', 'additional-results-max-value'])}>99+</span>)
     : (<span className={cx('additional-results-value')}>{displayCount}</span>);
+  const text = (criticality === 'normal')
+    ? intl.formatMessage({ id: 'Terra.clinicalResult.multipleNormalResults' }, { count })
+    : intl.formatMessage({ id: 'Terra.clinicalResult.multipleResults' }, { count, criticality });
+
   return (
     <div key={(`AdditionalResultsDisplay-${resultKeyID}`)} className={additionalResultClassNames}>
-      <div className={cx('additional-results-stack')}>
+      <div className={cx('additional-results-stack')} aria-hidden="true">
         {additionalCountDisplayValue}
         {additionalCountDisplayValue}
       </div>
+      <VisuallyHiddenText text={text} />
     </div>
   );
 };
@@ -134,6 +155,7 @@ const createClinicalResultDisplay = (children, hasUnverifiedIcon, hasInterpretat
     'primary-display',
     { interpretation: hasInterpretationIcon && !hasUnverifiedIcon },
   ]);
+
   return (<div key={(`ClinicalResultDisplay-${resultKeyID}`)} className={primaryResultClassnames} ref={containerDivRef}>{children}</div>);
 };
 
@@ -146,7 +168,9 @@ const createStandardResultDisplay = (resultDataItem, resultAttributes, hideUnit,
   } else {
     resultsInnerDisplay = <ClinicalResult key={(`ClinicalResult-${resultKeyID}`)} {...resultDataItem} hideUnit={hideUnit} isTruncated isUnverified={resultAttributes.unverified} hideAccessoryDisplays />;
   }
+
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, resultAttributes.unverified, resultAttributes.interpretationIcon, containerDivRef, resultKeyID);
+
   return clinicalResultDisplay;
 };
 
@@ -161,7 +185,9 @@ const createBloodPressureResultDisplay = (resultDataItem, resultAttributes, hide
   } else {
     resultsInnerDisplay = (<ClinicalResultBloodPressure key={(`ClinicalResultBloodPressure-${resultKeyID}`)} systolic={systolic} diastolic={diastolic} hideUnit={hideUnit} isTruncated hideAccessoryDisplays />);
   }
+
   const clinicalResultDisplay = createClinicalResultDisplay(resultsInnerDisplay, resultAttributes.unverified, resultAttributes.interpretationIcon, containerDivRef, resultKeyID);
+
   return clinicalResultDisplay;
 };
 
@@ -184,6 +210,7 @@ const setResultKeyID = (isBloodPressureResult, resultData) => {
       return resultData.eventId;
     }
   }
+
   return null;
 };
 
@@ -192,9 +219,11 @@ const checkIfSingleOrPairedResult = (resultDataItem) => {
   if (isSingleResult) {
     return { isSingleResult, isPairedResult: false };
   }
+
   const hasSystolicData = !isEmpty(resultDataItem.systolic) ? resultDataItem.systolic.result : false;
   const hasDiastolicData = !isEmpty(resultDataItem.diastolic) ? resultDataItem.diastolic.result : false;
   const isPairedResult = (hasSystolicData || hasDiastolicData) || false;
+
   return { isSingleResult, isPairedResult };
 };
 
@@ -220,6 +249,7 @@ const unpackResultAttributes = (resultDataItem) => {
   itemAttributes.comment = hasComment;
   itemAttributes.modified = isModified;
   itemAttributes.unverified = isUnverified;
+
   return itemAttributes;
 };
 
@@ -246,9 +276,11 @@ const unpackResultDataSet = (resultDataSet) => {
       (bpAttribute.systolic.unverified || bpAttribute.diastolic.unverified),
     );
   }
+
   const isfirstSingleResult = isSingleResult;
   const isfirstPairedResult = isPairedResult;
   const resultKeyID = setResultKeyID(isfirstPairedResult, firstResultData);
+
   return {
     isfirstSingleResult,
     isfirstPairedResult,
@@ -258,7 +290,7 @@ const unpackResultDataSet = (resultDataSet) => {
   };
 };
 
-const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverflow, containerDivRef) => {
+const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverflow, containerDivRef, intl) => {
   const {
     isfirstSingleResult,
     isfirstPairedResult,
@@ -266,6 +298,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     firstResultData,
     resultKeyID,
   } = unpackResultDataSet(resultDataSet);
+  const hasAccessoryIcons = (firstResultAttributes.comment || firstResultAttributes.modified || firstResultAttributes.unverified);
   const compositeCell = [];
   if (!isfirstSingleResult && !isfirstPairedResult) {
     compositeCell.push(<ResultError />);
@@ -276,6 +309,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     const firstResultDisplay = createBloodPressureResultDisplay(firstResultData, firstResultAttributes, hideUnit, resultKeyID, containerDivRef);
     compositeCell.push(firstResultDisplay);
   }
+
   const additionalResultCount = resultDataSet.length - 1;
   if (additionalResultCount > 0) {
     const additionalResultInterpretations = [];
@@ -301,13 +335,47 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
         }
       }
     });
+
     const displayCount = additionalResultCount + 1;
-    const hasAccessoryIcons = (firstResultAttributes.comment || firstResultAttributes.modified || firstResultAttributes.unverified);
-    const additionalResultsStackDisplay = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID);
+    const additionalResultsStack = createEndAdditionalResultsStack(displayCount, additionalResultInterpretations, hasAccessoryIcons, resultKeyID, intl);
+
+    // This handles the case for when additional results exist and accessory icons exist
+    if (hasAccessoryIcons) {
+      const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID, intl);
+
+      // Here the additional results stack and accessory icons are being wrapped in a parent container
+      // They need to be grouped together for styling purposes, otherwise the order they appear in will be flipped
+      // To keep them in the proper order this parent container gets floated in the css to the right instead of the additional results stack and accessory icons individually
+      const endDisplay = (
+        <div key="EndDisplay-AdditionalResultsAndIcons" className={cx('end-display')}>
+          {additionalResultsStack}
+          {endAccessoryIcons}
+        </div>
+      );
+      compositeCell.push(endDisplay);
+
+      return compositeCell;
+    }
+
+    const additionalResultsStackDisplay = (
+      <div key="EndDisplay-AdditionalResults" className={cx('end-display')}>
+        {additionalResultsStack}
+      </div>
+    );
     compositeCell.push(additionalResultsStackDisplay);
+
+    return compositeCell;
   }
-  const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID);
-  compositeCell.push(endAccessoryIcons);
+
+  if (hasAccessoryIcons) {
+    const endAccessoryIcons = createEndIcons(firstResultAttributes.comment, firstResultAttributes.modified, firstResultAttributes.unverified, resultKeyID, intl);
+    const endAccessoryIconsDisplay = (
+      <div key="EndDisplay-Icons" className={cx('end-display')}>
+        {endAccessoryIcons}
+      </div>
+    );
+    compositeCell.push(endAccessoryIconsDisplay);
+  }
 
   return compositeCell;
 };
@@ -319,6 +387,7 @@ const FlowsheetResultCell = (props) => {
     paddingStyle,
     hasResultError,
     hasResultNoData,
+    intl,
     ...customProps
   } = props;
   const containerDiv = useRef(null);
@@ -329,10 +398,12 @@ const FlowsheetResultCell = (props) => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
+
     if (checkTypeNumeric(resultDataSet[0])) {
       if (!contentWidth) {
         setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
       }
+
       const containerWidth = containerDiv.current.getBoundingClientRect().width;
       if (containerWidth <= contentWidth && !numericOverflow) {
         setNumericOverflow(true);
@@ -351,7 +422,7 @@ const FlowsheetResultCell = (props) => {
   } else if (!resultDataSet || !resultDataSet.length) {
     flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-Error" className={cx(['primary-display', 'error'])}><ResultError /></div>;
   } else {
-    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv);
+    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv, intl);
   }
 
   const theme = React.useContext(ThemeContext);
@@ -366,16 +437,16 @@ const FlowsheetResultCell = (props) => {
   );
 
   return (
-    <div
+    <td
       {...customProps}
       className={flowsheetCellClassNames}
     >
       {flowsheetResultCellDisplay}
-    </div>
+    </td>
   );
 };
 
 FlowsheetResultCell.propTypes = propTypes;
 FlowsheetResultCell.defaultProps = defaultProps;
 
-export default FlowsheetResultCell;
+export default injectIntl(FlowsheetResultCell);
