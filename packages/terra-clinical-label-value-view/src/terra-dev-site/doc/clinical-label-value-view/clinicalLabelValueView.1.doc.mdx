@@ -11,8 +11,17 @@ import LabelValueViewPropsTable from 'terra-clinical-label-value-view/src/LabelV
 
 # Terra Clinical Label Value View
 
-The label value view component displays a label and the associated value or list of values underneath the label.
+The LabelValueView component should be used to create a visual and programmatic association of a label and value pair. An HTML description list is used to create the programmatic structure of the label (a term) to a value (a definition). This semantic structure is critical to support users of assistive technology. 
 
+The LabelValueView can be used as a single description list with one label value pair or a group of related label value pairs can be created.
+- To use as a description list with a single label value pair, ensure the `isChildOfDescriptionList` prop to `false`
+- If you have a group of related label value pairs all related to a single topic, creating one description list `<DL>` to enclose all of the related label value pairs is the best practice. The LabelValueView can be included in an already existing description list by setting the `isChildOfDescriptionList` prop to `true` in which case the parent `<DL>` tag must be provided in another component that consumes LabelValueView or added separately.
+
+It is highly recommended that the consumer add text on the page, often set as a heading, to explain the topic of the description.
+
+LabelValueViews and the description lists that enclose them are often visually associated with a topic on the page. It is best practice to programmatically associate the LabelValueView with the ID of the topic on the page using one of the following methods:
+- If the `isChildOfDescriptionList` prop is set to `false`, associate the list by setting the `topicTextId` prop to the ID of the topic.
+- If the `isChildOfDescriptionList` prop is set to `true` please associate the description list with the topic text using the `aria-labelledby` attribute on the description list that points to the ID of the topic.
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):

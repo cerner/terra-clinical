@@ -10,7 +10,8 @@ const LabelValueViewText = () => (
         }
       `}
     </style>
-    <dl id="dl-wrapper">
+    <h4 id="topicText">Vitals Topic Text</h4>
+    <dl id="dl-wrapper" aria-labelledby="topicText">
       <LabelValueView label="Collected By" textValue="Noah Brown" isChildOfDescriptionList />
       <LabelValueView label="Date" textValue="12/12/12 00:00AM" isChildOfDescriptionList />
       <LabelValueView label="Blood Pressure" textValue="110/60 mmHg" isChildOfDescriptionList />

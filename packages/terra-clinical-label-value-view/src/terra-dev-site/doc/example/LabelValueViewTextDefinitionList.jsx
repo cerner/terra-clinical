@@ -3,7 +3,8 @@ import LabelValueView from 'terra-clinical-label-value-view';
 
 const LabelValueViewText = () => (
   <div>
-    <LabelValueView label="Label" textValue="Sample Text as Value" />
+    <h4 id="topicText">Topic text for the LabelValueView</h4>
+    <LabelValueView label="Label" textValue="Sample Text as Value" topicTextId="topicText" />
   </div>
 );
 
