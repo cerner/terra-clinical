@@ -66,8 +66,6 @@ const LabelValueView = ({
   );
 
   /**
-   * If the LabelValueView is included by the consummer into a description list, then we just return the term and the definition.
-   * Otherwise, we are sending the whole description list for the consumer to use.
    * If LabelValueView is a child of a description list (<dl>), then just the term and definition are returned.
    * Otherwise, a description list encapsulating the term and definition is returned.
    * The reason for this is that <dt> and <dd> tags must always be children of a <dl> to be valid html.
