@@ -78,6 +78,14 @@ const LabelValueView = ({
     );
   }
 
+  if (topicTextId) {
+    return (
+      <dl {...customProps} className={labelValueViewClass} aria-labelledby={topicTextId}>
+        {termDefinition}
+      </dl>
+    );
+  }
+
   return (
     <dl {...customProps} className={labelValueViewClass} aria-labelledby={ariaLabelledby}>
       {termDefinition}
