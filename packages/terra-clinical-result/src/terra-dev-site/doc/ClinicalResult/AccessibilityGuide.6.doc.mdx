@@ -1,0 +1,199 @@
+import { Badge } from 'terra-clinical-result/package.json?dev-site-package';
+import { Notice } from "@cerner/terra-docs";
+import ClinicalResultBloodPressureExtraDisplays from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureExtraDisplays';
+import ClinicalResultKnownError from '../example/clinical-result/ClinicalResultKnownError';
+import FlowsheetResultCellMultipleResultsSymbols from '../example/flowsheet-result-cell/FlowsheetResultCellMultipleResultsSymbols?dev-site-example';
+import ResultNameHeaderCellAccessibleNamesExample from '../example/result-name-header-cell/ResultNameHeaderCellAccessibleNamesExample';
+
+<Badge />
+
+# Accessibility Guide for Terra Clinical Result
+
+## Why is this important?
+
+Terra Clinical Result is a collection of standardized views for single result values added to a patient's medical chart. As there are many patients who rely on assistive technologies to interact with their chart, it is critical that any information conveyed by a clinical result to sighted users is also conveyed to screen reader users in a meaningful way.
+
+## Accessibility Considerations
+
+Terra Clinical Result has several variants designed to either display specific results or for use within a flowsheet. The table below lists each variant and its use:
+
+| Variant | Use |
+| --- | --- |
+| Clinical Result | The default Clinical Result component intended for displaying a single result value |
+| Clinical Result Blood Pressure | Intended for displaying Blood Pressure Vital Sign results |
+| Flowsheet Result Cell | Specifically for the grid display of a result collection |
+| Result Name Header Cell | Standardized view for the Result Name and Unit of Measure in the row header for each row within a flowsheet |
+| Result Time Header Cell | Standardized view for the Date/Time Header cells for each bucketed time column within a flowsheet |
+
+The following sections go into more detail on accessibility considerations for each variant.
+
+----
+
+### Code Considerations
+
+#### Clinical Result Blood Pressure with Additional Displays
+
+Clinical Result Blood Pressure creates a standardized view for single result values added to a patient's medical chart. Along with the blood pressure results, we have the option to display additional details like concept names (Systolic, Diastolic) and the date and time of the results. Visually we can see that this information is related but it is possible that screen reader users may not understand the whole cell as a group.
+
+<Notice variant="important" ariaLevel="5">
+
+It is highly recommended to set the `isBloodPressureGrouped` [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-result/clinical-result/clinical-result-blood-pressure#clinical-result-blood-pressure-props) to true when additional information is displayed with the blood pressure results. This will semantically relate the blood pressure results and additional displays as a group context.
+
+**Code Example:**
+
+<div aria-label="Example demo">
+  <ClinicalResultBloodPressureExtraDisplays />
+</div>
+<div aria-label="Example code">
+
+    import React from 'react';
+    import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib';
+
+    const bloodpressureResultValue = {
+      id: '111',
+      systolic: {
+        eventId: '111.1',
+        result: {
+          value: '120',
+          unit: 'mmHg',
+        },
+        conceptDisplay: 'Systolic',
+        datetimeDisplay: 'Nov 23, 2019 13:31:31',
+      },
+      diastolic: {
+        eventId: '111.2',
+        result: {
+          value: '80',
+          unit: 'mmHg',
+        },
+        conceptDisplay: 'Diastolic',
+        datetimeDisplay: 'Nov 23, 2019 13:31:31',
+      },
+      isBloodPressureGrouped: true,
+    };
+
+    export default () => <ClinicalResultBloodPressure {...bloodpressureResultValue} />;
+
+</div>
+
+This example shows how to set up the optional `isBloodPressureGrouped` prop in order to group the Blood Pressure results with additional displays.
+
+</Notice>
+
+#### Result Name Header Cell Accessible Names
+
+Result Name Header Cell creates a standardized view for the Result Name and Unit of Measure pair within a flowsheet. In many cases, the displayed result name or displayed unit of measure is an abbreviation. Reading out these abbreviations is not very helpful for screen reader users.
+
+<Notice variant="important" ariaLevel="5">
+
+In order to provide better accessible names for the result name and unit of measure, the `fullResultName` and `fullUnit` [props](https://engineering.cerner.com/terra-ui/components/terra-clinical-result/clinical-result/result-name-header-cell#result-name-header-cell-props) can be used to set the full name of the result name and unit when consuming the Result Name Header Cell component.
+
+**Code Example:**
+
+<div aria-label="Example demo">
+  <ResultNameHeaderCellAccessibleNamesExample />
+</div>
+<div aria-label="Example code">
+
+    import React from 'react';
+    import { ResultNameHeaderCell } from 'terra-clinical-result/lib/index';
+    import classNames from 'classnames';
+    import classNamesBind from 'classnames/bind';
+    import ThemeContext from 'terra-theme-context';
+    import styles from '../Examples.module.scss';
+
+    const cx = classNamesBind.bind(styles);
+
+    const ResultNameHeaderCellAccessibleNamesExample = () => {
+      const theme = React.useContext(ThemeContext);
+      const mockFlowsheetClassnames = classNames(
+        cx(
+          'mock-flowsheet-example',
+          theme.className,
+        ),
+      );
+
+      return (
+        <div className={mockFlowsheetClassnames}>
+          <div className={cx('mock-flowsheet-firstcolumn')}>
+            <div className={cx('mock-flowsheet-firstcolumn-cell')}>
+              <ResultNameHeaderCell resultName="Temp" fullResultName="Temperature" unit="degC" fullUnit="Degrees Celsius" />
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    export default ResultNameHeaderCellAccessibleNamesExample;
+
+</div>
+
+This example shows how to set up the optional `fullResultName` and `fullUnit` props in order to provide accessible names for the displayed result name and unit.
+
+</Notice>
+
+### Other Considerations
+
+#### Flowsheet Result Cell with Multiple Results
+
+Flowsheet Result Cell is used for the grid display of a result collection and can handle displaying an indication of multiple results. When there are multiple results, the first result is displayed along with a custom symbol that is used to communicate information about the remaining results:
+
+<FlowsheetResultCellMultipleResultsSymbols />
+
+The number represents how many additional results exist and the color of the result stack indicates the severity of the **most** serious result in the side panel.
+
+Alternative text has been added to communicate the number of additional results and the severity:
+
+| Severity Color | Meaning | Text to be Read |
+| --- | --- | --- |
+| Gray | Normal | "A total of [number] results are available." |
+| Light Red | Out of range (high or low) but not critical | "A total of [number] results are available with at least 1 out of range result." |
+| Dark Red | Critical | "A total of [number] results are available with at least 1 critical result." |
+
+e.g. if we have a dark red box with 3 results the screenreader will read out:
+
+“A total of 3 results are available with at least 1 critical result.”
+
+#### Usage of Visually Hidden Text
+
+There are a few cases in which we leverage visually hidden text to give greater context to certain styling on the front end - or related to statuses of certain results. These cases are as follows:
+
+##### No Results:
+
+When the `hasResultNoData` prop is used the display will show: '--'
+
+Hidden text has been added to read out "No Results" when the `hasResultNoData` prop is used.
+
+##### Entered In Error:
+
+When the `hasResultError` prop is used the display will show: <ClinicalResultKnownError style={{display: 'inline'}}/>
+
+Hidden text has been added to read out "Value Uncharted as In Error" to convey this has a status of `entered-in-error`.
+
+##### Strikethrough Result Entered In Error:
+
+When a result is shown on the front end with a strikethrough, that means it has been entered in error. The result is important enough to be shown visually and as such, needs to be read by the screen reader while also giving some context that it has a status of `entered-in-error`.
+
+Hidden text has been added to read out "Result {strikethroughResult} Entered In Error" when we have a strikethrough result.
+
+## Support Compliance
+
+Terra is committed to ensuring its components provide maximum possible accessibility. However, simply using Terra components will not automatically make a product accessible.
+
+Final responsibility lies with the consumers of Terra components &mdash; ensuring proper usage, engineers following correct implementation patterns, and authors crafting content that follows best practice guidance &mdash; to make a product fully accessible.
+
+### WCAG Resources
+
+#### Success Criteria
+
+- [**1.1.1 Non-text Content**](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content) - All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.
+- [**1.3.1 Info and Relationships**](https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships) - Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level A)
+- [**3.2.4 Consistent Identification**](https://www.w3.org/WAI/WCAG21/Understanding/consistent-identification) - Components that have the same functionality within a set of Web pages are identified consistently.
+- [**4.1.2 Name, Role, Value**](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value) - For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.
+
+### Partial Support & Requiring Further Enhancement
+
+- None identified
+- [Report a problem with this component on **GitHub**](https://github.com/cerner/terra-clinical/issues/new/choose)
+
+_For more information about Accessibility Support with Terra — go to [Component Standards: Accessibility (A11y)](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#accessibility-a11y)._
