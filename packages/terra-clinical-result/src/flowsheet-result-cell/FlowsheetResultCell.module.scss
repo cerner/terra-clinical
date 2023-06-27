@@ -16,7 +16,7 @@
     align-items: center;
     display: flex;
     flex: 1 1 100%;
-    float: left;
+    // float: left;
     height: var(--terra-clinical-result-flowsheet-cell-primary-display-height, 1.78571em); // Must use ems for font scaling
     margin: 0;
     margin-left: var(--terra-clinical-result-flowsheet-cell-interpretation-icon-reserved-space-margin-left, 1.1875em); // Must use ems for font scaling
