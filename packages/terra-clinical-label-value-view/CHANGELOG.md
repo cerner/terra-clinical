@@ -1,10 +1,10 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added a new prop `topicTextId` on the LabelValueView component.
 * Changed
-  * Created a new prop `topicTextId` on the LabelValueView component.
   * Applied the aria-labelledby attribute on the definition list returned by the LabelValueView, to link it to a topic text defined by the consumer.
-  * Updated the component and tests examples for the new prop `topicTextId`.
 
 ## 3.29.0 - (June 14, 2023)
 

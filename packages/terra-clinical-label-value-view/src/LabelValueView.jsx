@@ -22,7 +22,7 @@ const propTypes = {
   */
   isChildOfDescriptionList: PropTypes.bool,
   /**
-  * A text to explain the topic of the LabelValueView.
+  * The id of the text explaining the topic of the LabelValueView.
   */
   topicTextId: PropTypes.string,
   /**
