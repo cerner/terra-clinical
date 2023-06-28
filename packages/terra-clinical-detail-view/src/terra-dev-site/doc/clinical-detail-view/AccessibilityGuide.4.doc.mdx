@@ -8,7 +8,7 @@ import DetailViewDivided from '../example/DetailViewDivided?dev-site-example';
 
 ## Why is this important?
 
-> The Terra Clinical Detail Views allows you to create a view with text at different levels of importance. Using the terra-clinical-detail-view improperly may prevent some of your users from understanding content and necessary context to interact with the page. 
+The Terra Clinical Detail Views allows you to create a view with text at different levels of importance. Using the terra-clinical-detail-view improperly may prevent some of your users from understanding content and necessary context to interact with the page. 
 > 
 > Pages with well-structured content are essential for many web users, for example:
 > - **People with cognitive and learning disabilities** can more easily find and prioritize content on the page.
@@ -24,8 +24,6 @@ import DetailViewDivided from '../example/DetailViewDivided?dev-site-example';
 
 ## Accessibility Considerations:
 
-### Code Considerations
-
 #### Maintaining a hierarchical content structure on the page:
 > Sighted users perceive structure and relationships through various visual cues — headings are often in a larger, bold font separated from the content they represent.
 > 
@@ -35,7 +33,7 @@ import DetailViewDivided from '../example/DetailViewDivided?dev-site-example';
 >
 > _&nbsp;&nbsp;&mdash; excerpt from [Accessibility and Usability at Penn State: Heading tags](https://accessibility.psu.edu/headingshtml/)_
 
-The DetailView component creates a view with text at different levels of importance. The HTML heading tag is used to create the structure of the page. It is critical to screen reader users that the level prop be appropriately set to a value that best represents the placement of the main Clinical Detail View heading in the existing structure of the page. Think about headings as creating the outline of a page. Each heading level should be set to represent that outline structure. Screen reader users rely on the heading levels to understand the structure of information on the page.
+The DetailView component creates a view with text at different levels of importance. The HTML heading tag is used to create the structure of the page. It is critical to screen reader users that the `level` prop be appropriately set to a value that best represents the placement of the main Clinical Detail View heading in the existing structure of the page. Think about headings as creating the outline of a page. Each heading level should be set to represent that outline structure. Screen reader users rely on the heading levels to understand the structure of information on the page.
 
 It is highly recommended to utilize the `level` prop to set the appropriate heading level of the Title to match the hierarchical structure of the page. The level prop will also set the SecondaryTitles and the title of the Detail List structures to the appropriate heading level to ensure a hierarchical content structure.
 
@@ -50,7 +48,7 @@ const item1 = (<LabelValueView label="Start Date" textValue="12/12/12 00:00AM" i
   details={[
     (
       <DetailView.DetailList title={detail1title} key="Indicators">
-        <DetailView.DetailListItem item={detail1item1} />
+        <DetailView.DetailListItem item={item1} />
       </DetailView.DetailList>
     ),
   ]}
@@ -61,7 +59,7 @@ const item1 = (<LabelValueView label="Start Date" textValue="12/12/12 00:00AM" i
 
 All of the content related to the Detail View should be understood as a section and the `title` prop is used to programmatically create a label for the region.  It is critical to screen reader users that the title prop be set to a value that best represents the region that groups the details in the section within the page. Screen reader users rely on the title to know the beginning and end of a region, and to navigate to the specific region on the page. Leaving the title off of the section hurts the accessibility of the component by removing the programmatic indication of the region on the page. The region/section won't be announced by Assistive Technology (AT) if there is no programmatically associated label. 
 
-#### Accessibility Considerations: Caption for graphs:
+#### Caption for graphs:
 
 The graph prop is used to set visualization content such as graphs, or images based on the data. This graph prop is wrapped in an [`<figure>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) element. 
 Figure captions help the users understand and correctly interpret the visualization. 
@@ -71,17 +69,17 @@ It is critical to screen reader users that the caption be set with [`<figcaption
 Note: figcaption content is not a replacement for the alt text that needs to be supplied for images in the figure element.
 ```
 
-When using figcaption element, which requires a parent element, it is necessary to wrap the elements within a `React.Fragment` block.
+When using figcaption element, which requires a parent element, it is necessary to wrap the elements within a `<React.Fragment>` block.
 
 **Example:**
 
 <DetailViewDivided />
 
-#### Accessibility Considerations: Associate label-value pairs:
+#### Associate label-value pairs:
 
 The DetailList sub-component is often used to create a list of items associated together. An HTML unordered list or a description list is used to create the visual and programmatic association of the list. Content that is supplied for description lists includes `<dt>` list item content and `<dd>` list item content. `<dt>` and `<dd>` content must be logically connected. With label-value pairs in description lists, the `<dt>` holds the “label” and the `<dd>` holds the “value” associated with the label.  The two are always together.  
 
-It is highly recommended that the `isLabelValuePairList` prop is set to true when the list contains label-value pairs. By setting this prop to true, we use the HTML description list to create the programmatic structure of the label (a term) to a value (a definition). This semantic structure is critical to support users of assistive technology so that they can properly relate information in the list together. The DetailList should be understood as a description list when it contains label-value pairs and the DetailList should be understood as an unordered list when it contains other HTML elements passed in by the consumer. The terra-clinical-label-value-view component with isChildOfDescriptionList=true can also be used as it will return the label and value using the appropriate `<dt>` and `<dd>` elements. 
+It is highly recommended that the `isLabelValuePairList` prop is set to true when the list contains label-value pairs. By setting this prop to true, we use the HTML description list to create the programmatic structure of the label (a term) to a value (a definition). This semantic structure is critical to support users of assistive technology so that they can properly relate information in the list together. The DetailList should be understood as a description list when it contains label-value pairs and the DetailList should be understood as an unordered list when it contains other HTML elements passed in by the consumer.
 
 Code Example:
 ```jsx
