@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import styles from './ResultTimeHeaderCell.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -62,9 +61,8 @@ const ResultTimeHeaderCell = (props) => {
       {...customProps}
       className={timeHeaderCellClassnames}
     >
-      <time className={dateClassnames}>{date}</time>
-      <VisuallyHiddenText text={'\u00A0'} />
-      <time className={cx('time')}>{time}</time>
+      <div className={dateClassnames}>{date}</div>
+      <div className={cx('time')}>{time}</div>
     </th>
   );
 };
