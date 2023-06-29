@@ -6,7 +6,7 @@
   * Update Detail List to accept null as children
 
 * Added
-  * Added accessibility guide
+  * Added accessibility guide.
 
 ## 3.31.0 - (June 22, 2023)
 
