@@ -21,7 +21,7 @@ It is highly recommended to add an element that describes the topic of the descr
 
 LabelValueViews and the description lists that enclose them are often visually associated with a topic on the page. It is best practice to programmatically associate the LabelValueView with the ID of the topic on the page using one of the following methods:
 - If the `isChildOfDescriptionList` prop is set to `false`, associate the list by setting the `topicTextId` prop to the ID of the topic.
-- If the `isChildOfDescriptionList` prop is set to `true` please associate the description list with the topic text using the `aria-labelledby` attribute on the description list that points to the ID of the topic.
+- If the `isChildOfDescriptionList` prop is set to `true` associate the description list with the label using the `aria-labelledby` attribute on the description list that points to the ID of the topic.
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
