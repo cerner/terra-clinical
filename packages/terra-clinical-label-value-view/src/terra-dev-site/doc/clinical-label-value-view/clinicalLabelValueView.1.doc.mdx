@@ -15,7 +15,7 @@ The LabelValueView component creates a visual and programmatic association of a 
 
 LabelValueView can be used as a single description list with one label-value pair or as a group of related label-value pairs.
 - To use LabelValueView as a description list with a single label-value pair, ensure the `isChildOfDescriptionList` prop is `false`.
-- If you have a group of related label value pairs all related to a single topic, creating one description list `<DL>` to enclose all of the related label value pairs is the best practice. The LabelValueView can be included in an already existing description list by setting the `isChildOfDescriptionList` prop to `true` in which case the parent `<DL>` tag must be provided in another component that consumes LabelValueView or added separately.
+- If multiple LabelValueViews are used as a group, then the best practice is to encapsulate them within a single description list `<dl>` element. LabelValueView does not need a dedicated description list and can be added to an existing one. To use LabelValueView as a child of a description list, the `isChildOfDescriptionList` prop needs to be set to `true` .
 
 It is highly recommended that the consumer add text on the page, often set as a heading, to explain the topic of the description.
 
