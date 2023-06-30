@@ -4,7 +4,7 @@ import LabelValueView from '../../src/LabelValueView';
 describe('LabelValueView', () => {
   const defaultView = <LabelValueView label="Label" />;
   const topicText = <h4 id="topicText">Topic Text</h4>;
-  const viewWithTopicTextId = <LabelValueView label="Label" topicTextId="topicText" />;
+  const viewWithTopicTextId = <LabelValueView label="Label" ariaLabelledby="topicText" />;
   const viewAsChildOfDescriptionLIst = <LabelValueView label="Label" isChildOfDescriptionList />;
 
   // Snapshot Tests
@@ -80,12 +80,12 @@ describe('LabelValueView', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('correctly applies the aria-labelledby attribute when a topicTextId is provided', () => {
+  it('correctly applies the aria-labelledby attribute when a ariaLabelledBy is provided', () => {
     const wrapper = shallow(viewWithTopicTextId);
     expect(wrapper.prop('aria-labelledby')).toEqual(topicText.props.id);
   });
 
-  it('does not apply the aria-labelledby attribute when a topicTextId is not provided', () => {
+  it('does not apply the aria-labelledby attribute when a ariaLabelledBy is not provided', () => {
     const wrapper = shallow(defaultView);
     expect(wrapper.prop('aria-labelledby')).toEqual(undefined);
   });
