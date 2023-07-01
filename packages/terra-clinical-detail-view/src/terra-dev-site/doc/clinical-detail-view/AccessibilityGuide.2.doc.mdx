@@ -67,7 +67,7 @@ All of the content related to the Detail View should be understood as a section 
 
 #### Caption for graphs:
 
-The graph [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-detail-view/clinical-detail-view/clinical-detail-view#detail-view-props-table) is used to set visualization content such as graphs, or images based on the data. This graph [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-detail-view/clinical-detail-view/clinical-detail-view#detail-view-props-table) is wrapped in an [`<figure>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) element. 
+The `graph` [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-detail-view/clinical-detail-view/clinical-detail-view#detail-view-props-table) is used to set visualization content such as graphs, or images based on the data. This graph [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-detail-view/clinical-detail-view/clinical-detail-view#detail-view-props-table) is wrapped in an [`<figure>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) element. 
 Figure captions help the users understand and correctly interpret the visualization. 
 It is critical to screen reader users that the caption be set with [`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption) element as the first, or the last element to provide the caption for the figure.
 
@@ -85,7 +85,11 @@ When using figcaption element, which requires a parent element, it is necessary 
 
 The DetailList sub-component is often used to create a list of items associated together. An HTML unordered list or a description list is used to create the visual and programmatic association of the list. Content that is supplied for description lists includes `<dt>` list item content and `<dd>` list item content. `<dt>` and `<dd>` content must be logically connected. With label-value pairs in description lists, the `<dt>` holds the “label” and the `<dd>` holds the “value” associated with the label.  The two are always together.  
 
+<Notice variant="important" ariaLevel="5">
+
 It is highly recommended that the `isLabelValuePairList` [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-detail-view/clinical-detail-view/clinical-detail-view#detail-view-props-table) is set to true when the list contains label-value pairs. By setting this prop to true, we use the HTML description list to create the programmatic structure of the label (a term) to a value (a definition). This semantic structure is critical to support users of assistive technology so that they can properly relate information in the list together. The DetailList should be understood as a description list when it contains label-value pairs and the DetailList should be understood as an unordered list when it contains other HTML elements passed in by the consumer.
+
+</Notice>
 
 Code Example:
 ```jsx
