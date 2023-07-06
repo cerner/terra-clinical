@@ -64,6 +64,28 @@ exports[`should render a list 1`] = `
 </div>
 `;
 
+exports[`should render a list when null is passed 1`] = `
+<div
+  data-terra-clinical-detail-list="true"
+>
+  <ul
+    class="list"
+  >
+    <li
+      class="list-item"
+    >
+      <div
+        class="detail-list-item"
+      >
+        <p>
+          Test
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`should render a title 1`] = `
 <div
   data-terra-clinical-detail-list="true"
