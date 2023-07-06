@@ -354,7 +354,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
       );
       compositeCell.push(endDisplay);
 
-      return compositeCell;
+      return <div className={cx('combined-display')}>{compositeCell}</div>;
     }
 
     const additionalResultsStackDisplay = (
@@ -364,7 +364,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     );
     compositeCell.push(additionalResultsStackDisplay);
 
-    return compositeCell;
+    return <div className={cx('combined-display')}>{compositeCell}</div>;
   }
 
   if (hasAccessoryIcons) {
@@ -377,7 +377,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     compositeCell.push(endAccessoryIconsDisplay);
   }
 
-  return compositeCell;
+  return <div className={cx('combined-display')}>{compositeCell}</div>;
 };
 
 const FlowsheetResultCell = (props) => {
