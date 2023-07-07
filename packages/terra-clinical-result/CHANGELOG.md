@@ -11,6 +11,9 @@
 * Added
   * Added site documentation for Flowsheet, Time Header, and Name Header cells usage.
 
+* Fixed
+  * Fixed flickering issue related to numeric overflow in FlowsheetResultCell.
+
 ## 1.18.0 - (June 22, 2023)
 
 * Added
