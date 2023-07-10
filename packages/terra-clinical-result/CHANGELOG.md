@@ -3,7 +3,9 @@
 ## Unreleased
 
 * Changed
-  * Changed ResultTimeHeaderCell to remove the `<time>` html tag for the date and time. This was causing issues and technically does not have full screen reader support.
+  * Changed ResultTimeHeaderCell to remove the `<time>` html tag for the date and time. This was causing issues and technically does not have full screen reader support.    
+  * Changed 3 translation keys (added 2 new keys and reused 1 existing)
+
 
 ## 1.18.0 - (June 22, 2023)
 
