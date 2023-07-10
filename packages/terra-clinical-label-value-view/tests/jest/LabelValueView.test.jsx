@@ -4,7 +4,7 @@ import LabelValueView from '../../src/LabelValueView';
 describe('LabelValueView', () => {
   const defaultView = <LabelValueView label="Label" />;
   const topicText = <h4 id="topicText">Topic Text</h4>;
-  const viewWithTopicTextId = <LabelValueView label="Label" ariaLabelledby="topicText" />;
+  const viewWithTopicTextId = <LabelValueView label="Label" ariaLabelledBy="topicText" />;
   const viewAsChildOfDescriptionLIst = <LabelValueView label="Label" isChildOfDescriptionList />;
 
   // Snapshot Tests
