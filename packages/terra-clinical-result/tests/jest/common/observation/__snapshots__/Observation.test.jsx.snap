@@ -6,7 +6,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value abnormal"
   >
     <IconAbnormal
-      a11yLabel="Terra.clinicalResult.interpretationCriticalAbnormal"
+      a11yLabel="Terra.clinicalResult.interpretationAbnormal"
       className="icon-interpretation"
       focusable="true"
       role="img"
@@ -98,7 +98,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value high"
   >
     <IconHigh
-      a11yLabel="Terra.clinicalResult.interpretationHigh"
+      a11yLabel="Terra.clinicalResult.interpretationOutOfRangeHigh"
       className="icon-interpretation"
       data-name="Layer 1"
       focusable="true"
@@ -122,7 +122,7 @@ exports[`Observation - Interpretaion should render an Observation with interpret
     className="value low"
   >
     <IconLow
-      a11yLabel="Terra.clinicalResult.interpretationLow"
+      a11yLabel="Terra.clinicalResult.interpretationOutOfRangeLow"
       className="icon-interpretation"
       focusable="true"
       role="img"
