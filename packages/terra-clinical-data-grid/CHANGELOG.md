@@ -4,6 +4,7 @@
 
 * Changed
   * Updated jest snapshots.
+  * Changed 3 translation keys (2 new keys and reused 1 existing)
 
 ## 2.42.0 - (June 14, 2023)
 
