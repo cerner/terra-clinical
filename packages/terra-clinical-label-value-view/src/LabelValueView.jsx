@@ -24,7 +24,7 @@ const propTypes = {
   /**
   * The id of the element to be used as the accessible label for LabelValueView.
   */
-  ariaLabelledby: PropTypes.string,
+  ariaLabelledBy: PropTypes.string,
   /**
    *  Child component(s) to display underneath the label.
    */
@@ -35,11 +35,11 @@ const defaultProps = {
   textValue: '',
   children: undefined,
   isChildOfDescriptionList: false,
-  ariaLabelledby: undefined,
+  ariaLabelledBy: undefined,
 };
 
 const LabelValueView = ({
-  label, textValue, isChildOfDescriptionList, ariaLabelledby, children, ...customProps
+  label, textValue, isChildOfDescriptionList, ariaLabelledBy, children, ...customProps
 }) => {
   let textValueSection;
   const theme = React.useContext(ThemeContext);
@@ -79,7 +79,7 @@ const LabelValueView = ({
   }
 
   return (
-    <dl {...customProps} className={labelValueViewClass} aria-labelledby={ariaLabelledby}>
+    <dl {...customProps} className={labelValueViewClass} aria-labelledby={ariaLabelledBy}>
       {termDefinition}
     </dl>
   );

@@ -26,10 +26,10 @@ const examples = () => (
     </dl>
     <h3>LabelValueView returned as a description list (isChildOfDescriptionList=&apos;false&apos;):</h3>
     <h4 id="collectedByTopic">Collected By Topic Text</h4>
-    <LabelValueView label="Collected By" textValue="Noah Brown" isChildOfDescriptionList={false} ariaLabelledby="collectedByTopic" />
+    <LabelValueView label="Collected By" textValue="Noah Brown" isChildOfDescriptionList={false} ariaLabelledBy="collectedByTopic" />
     <h3>LabelValueView returned as a description list (isChildOfDescriptionList is not given - will take the default value false):</h3>
     <h4 id="temperatureTopic">Temperature Topic Text</h4>
-    <LabelValueView label="Temperature" textValue="97 F" ariaLabelledby="temperatureTopic" />
+    <LabelValueView label="Temperature" textValue="97 F" ariaLabelledBy="temperatureTopic" />
     <h3>Applied max-width of 200px to show word wrapping:</h3>
     <div className={cx('labelvalueview-wrapper')}>
       <LabelValueView id="LongLabelValueView" label="supercalifragilisticexpialidocious" textValue="supercalifragilisticexpialidocious" />
