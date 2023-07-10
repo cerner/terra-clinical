@@ -10,6 +10,7 @@ const DefaultDetailList = () => (
     <DetailView.DetailListItem item={item} />
     <DetailView.DetailListItem item={item} />
     <DetailView.DetailListItem item={item2} />
+    {null}
     <DetailView.DetailListItem item={item} />
     <DetailView.DetailListItem item={item} />
   </DetailView.DetailList>

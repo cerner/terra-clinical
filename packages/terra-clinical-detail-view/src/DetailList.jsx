@@ -56,9 +56,11 @@ const DetailList = ({
     : (
       <ul className={cx('list')}>
         {Children.map(children, child => (
-          <li key={child.id} className={cx('list-item')}>
-            {child}
-          </li>
+          child ? (
+            <li key={child.id} className={cx('list-item')}>
+              {child}
+            </li>
+          ) : null
         ))}
       </ul>
     );
