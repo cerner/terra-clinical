@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Changed
-  * Update Detail List to accept null as children
+  * Updated *DetailList* to accept null as children.
+  * Locked `uuid` dependency to `7.0.3` for consistency across Terra packages. 
 
 * Added
   * Added accessibility guide.
