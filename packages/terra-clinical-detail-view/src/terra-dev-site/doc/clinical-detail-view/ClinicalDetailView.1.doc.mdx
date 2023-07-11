@@ -47,13 +47,3 @@ import DetailView from 'terra-clinical-detail-view';
 
 ## Detail List Item Props Table
 <DetailListItemPropsTable />
-
-## Testing
-
-Menu uses `uuid` which changes the component's description id dynamically. To mock it with the Jest testing library, `jest.mock` can be used.
-
-If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then `uuid` should be mocked as shown below:
-
-```js
-// using a variable may result in failures. For best results, hardcode the mock return value.
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
