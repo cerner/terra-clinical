@@ -4,6 +4,7 @@
 
 * Changed
   * Changed ResultTimeHeaderCell to remove the `<time>` html tag for the date and time. This was causing issues and technically does not have full screen reader support.
+  * Locked `uuid` to `7.0.3` for consistency across Terra repos.
 
 ## 1.18.0 - (June 22, 2023)
 
