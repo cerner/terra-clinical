@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.32.0 - (July 11, 2023)
+
 * Changed
   * Update Detail List to accept null as children
 
