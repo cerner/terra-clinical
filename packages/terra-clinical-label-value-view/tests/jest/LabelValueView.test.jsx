@@ -5,7 +5,7 @@ describe('LabelValueView', () => {
   const defaultView = <LabelValueView label="Label" />;
   const topicText = <h4 id="topicText">Topic Text</h4>;
   const viewWithTopicTextId = <LabelValueView label="Label" ariaLabelledBy="topicText" />;
-  const viewAsChildOfDescriptionLIst = <LabelValueView label="Label" isChildOfDescriptionList />;
+  const viewAsChildOfDescriptionList = <LabelValueView label="Label" isChildOfDescriptionList />;
 
   // Snapshot Tests
   it('should render a default LabelValueView', () => {
@@ -91,7 +91,7 @@ describe('LabelValueView', () => {
   });
 
   it('returns a React Fragment with a term and a definition when isChildOfDescriptionList = true', () => {
-    const wrapper = shallow(viewAsChildOfDescriptionLIst);
+    const wrapper = shallow(viewAsChildOfDescriptionList);
     expect(wrapper.type().toString()).toEqual('Symbol(react.fragment)');
     expect((wrapper.childAt(0).type())).toEqual('dt');
     expect(wrapper.childAt(1).type()).toEqual('dd');
