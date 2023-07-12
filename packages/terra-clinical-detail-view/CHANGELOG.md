@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.32.0 - (July 12, 2023)
+
 * Changed
   * Updated *DetailList* to accept null as children.
   * Locked `uuid` dependency to `7.0.3` for consistency across Terra packages. 
