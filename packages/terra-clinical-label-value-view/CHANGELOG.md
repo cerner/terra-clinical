@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added a new prop `ariaLabelledBy` on the LabelValueView component.
 
 ## 3.29.0 - (June 14, 2023)
 

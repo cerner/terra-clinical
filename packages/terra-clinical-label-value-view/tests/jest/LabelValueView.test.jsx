@@ -3,6 +3,9 @@ import LabelValueView from '../../src/LabelValueView';
 
 describe('LabelValueView', () => {
   const defaultView = <LabelValueView label="Label" />;
+  const topicText = <h4 id="topicText">Topic Text</h4>;
+  const viewWithTopicTextId = <LabelValueView label="Label" ariaLabelledBy="topicText" />;
+  const viewAsChildOfDescriptionList = <LabelValueView label="Label" isChildOfDescriptionList />;
 
   // Snapshot Tests
   it('should render a default LabelValueView', () => {
@@ -75,5 +78,29 @@ describe('LabelValueView', () => {
       });
     const wrapper = shallow(defaultView);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('correctly applies the aria-labelledby attribute when a ariaLabelledBy is provided', () => {
+    const wrapper = shallow(viewWithTopicTextId);
+    expect(wrapper.prop('aria-labelledby')).toEqual(topicText.props.id);
+  });
+
+  it('does not apply the aria-labelledby attribute when a ariaLabelledBy is not provided', () => {
+    const wrapper = shallow(defaultView);
+    expect(wrapper.prop('aria-labelledby')).toEqual(undefined);
+  });
+
+  it('returns a React Fragment with a term and a definition when isChildOfDescriptionList = true', () => {
+    const wrapper = shallow(viewAsChildOfDescriptionList);
+    expect(wrapper.type().toString()).toEqual('Symbol(react.fragment)');
+    expect((wrapper.childAt(0).type())).toEqual('dt');
+    expect(wrapper.childAt(1).type()).toEqual('dd');
+  });
+
+  it('returns a description list when isChildOfDescriptionList is not given', () => {
+    const wrapper = shallow(defaultView);
+    expect(wrapper.type()).toEqual('dl');
+    expect((wrapper.childAt(0).type())).toEqual('dt');
+    expect(wrapper.childAt(1).type()).toEqual('dd');
   });
 });

@@ -11,7 +11,17 @@ import LabelValueViewPropsTable from 'terra-clinical-label-value-view/src/LabelV
 
 # Terra Clinical Label Value View
 
-The label value view component displays a label and the associated value or list of values underneath the label.
+The LabelValueView component creates a visual and programmatic association of a label-value pair. An HTML description list is used to create the programmatic structure of the label to a value. This semantic structure is critical to support users of assistive technology. 
+
+LabelValueView can be used as a single description list with one label-value pair or as a group of related label-value pairs.
+- To use LabelValueView as a description list with a single label-value pair, ensure the `isChildOfDescriptionList` prop is `false`.
+- If multiple LabelValueViews are used as a group, then the best practice is to encapsulate them within a single description list `<dl>` element. LabelValueView does not need a dedicated description list and can be added to an existing one. To use LabelValueView as a child of a description list, the `isChildOfDescriptionList` prop needs to be set to `true` .
+
+It is highly recommended to add an element that describes the topic of the description list, such as a heading.
+
+LabelValueViews and the encapsulating description lists are often visually associated with a topic on the page. It is best practice to programmatically associate the LabelValueView with the ID of the element that labels it on the page by using one of the following methods:
+- If the `isChildOfDescriptionList` prop is set to `false`, associate the list by setting the `ariaLabelledBy` prop to the ID of the topic.
+- If the `isChildOfDescriptionList` prop is set to `true` associate the description list with the label using the `aria-labelledby` attribute on the description list that points to the ID of the topic.
 
 ## Getting Started
 
