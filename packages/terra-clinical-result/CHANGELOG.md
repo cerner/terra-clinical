@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 1.19.0 - (July 11, 2023)
-
 * Changed
   * Changed ResultTimeHeaderCell to remove the `<time>` html tag for the date and time. This was causing issues and technically does not have full screen reader support.
 

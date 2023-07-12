@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 2.43.0 - (July 11, 2023)
-
 * Changed
   * Updated jest snapshots.
 
