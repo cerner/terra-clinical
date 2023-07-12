@@ -132,6 +132,10 @@ This example shows how to set up the optional `fullResultName` and `fullUnit` pr
 
 </Notice>
 
+#### Accessibility of Cell Components
+
+Flowsheet Result Cell, Result Name Header Cell, and Result Time Header Cell all return their content using HTML table elements. Flowsheet Result Cell utilizes the `<td>` element while both of the header cell components utilize the `<th>` element. As such, the best way to consume these components for true accessibility is in a semantic HTML table. Otherwise, the context of being a cell/header cell will not be understood by screen reader users. The [Terra HTML Table](https://engineering.cerner.com/terra-ui/components/cerner-terra-core-docs/html-table/about) component can be used to create a semantic HTML table for this purpose.
+
 ### Other Considerations
 
 #### Flowsheet Result Cell with Multiple Results
@@ -166,7 +170,7 @@ Hidden text has been added to read out "No Results" when the `hasResultNoData` p
 
 ##### Entered In Error:
 
-When the `hasResultError` prop is used the display will show: <ClinicalResultKnownError style={{display: 'inline'}}/>
+When a result inside a Flowsheet Result Cell has a status of `entered-in-error`, the display will show: 'In Error'
 
 Hidden text has been added to read out "Value Uncharted as In Error" to convey this has a status of `entered-in-error`.
 
