@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -394,7 +394,7 @@ const FlowsheetResultCell = (props) => {
   const [contentWidth, setContentWidth] = useState(null);
   const [numericOverflow, setNumericOverflow] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
