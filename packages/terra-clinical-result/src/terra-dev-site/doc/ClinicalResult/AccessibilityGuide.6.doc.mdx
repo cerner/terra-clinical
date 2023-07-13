@@ -1,9 +1,8 @@
 import { Badge } from 'terra-clinical-result/package.json?dev-site-package';
 import { Notice } from "@cerner/terra-docs";
-import ClinicalResultBloodPressureExtraDisplays from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureExtraDisplays';
-import ClinicalResultKnownError from '../example/clinical-result/ClinicalResultKnownError';
+import ClinicalResultBloodPressureExtraDisplays from '../example/clinical-result-blood-pressure/ClinicalResultBloodPressureExtraDisplays?dev-site-example';
 import FlowsheetResultCellMultipleResultsSymbols from '../example/flowsheet-result-cell/FlowsheetResultCellMultipleResultsSymbols?dev-site-example';
-import ResultNameHeaderCellAccessibleNamesExample from '../example/result-name-header-cell/ResultNameHeaderCellAccessibleNamesExample';
+import ResultNameHeaderCellAccessibleNamesExample from '../example/result-name-header-cell/ResultNameHeaderCellAccessibleNamesExample?dev-site-example';
 
 <Badge />
 
@@ -39,46 +38,13 @@ Clinical Result Blood Pressure creates a standardized view for single result val
 
 It is highly recommended to set the optional `isBloodPressureGrouped` [prop](https://engineering.cerner.com/terra-ui/components/terra-clinical-result/clinical-result/clinical-result-blood-pressure#clinical-result-blood-pressure-props) to true when additional information is displayed with the blood pressure results. This will semantically relate the blood pressure results and additional displays as a group context.
 
-**Code Example:**
-
-<div aria-label="Example demo">
-  <ClinicalResultBloodPressureExtraDisplays />
-</div>
-<div aria-label="Example code">
-
-    import React from 'react';
-    import { ClinicalResultBloodPressure } from 'terra-clinical-result/lib';
-
-    const bloodpressureResultValue = {
-      id: '111',
-      systolic: {
-        eventId: '111.1',
-        result: {
-          value: '120',
-          unit: 'mmHg',
-        },
-        conceptDisplay: 'Systolic',
-        datetimeDisplay: 'Nov 23, 2019 13:31:31',
-      },
-      diastolic: {
-        eventId: '111.2',
-        result: {
-          value: '80',
-          unit: 'mmHg',
-        },
-        conceptDisplay: 'Diastolic',
-        datetimeDisplay: 'Nov 23, 2019 13:31:31',
-      },
-      isBloodPressureGrouped: true,
-    };
-
-    export default () => <ClinicalResultBloodPressure {...bloodpressureResultValue} />;
-
-</div>
-
-This example shows how to set up the optional `isBloodPressureGrouped` prop in order to group the Blood Pressure results with additional displays.
-
 </Notice>
+
+##### Code Example:
+
+This example shows how to set up the optional `isBloodPressureGrouped` prop in order to group the blood pressure results with additional displays:
+
+<ClinicalResultBloodPressureExtraDisplays title="Clinical Result Blood Pressure with Additional Displays" />
 
 #### Result Name Header Cell Accessible Names
 
@@ -88,49 +54,13 @@ Result Name Header Cell creates a standardized view for the Result Name and Unit
 
 In order to provide better accessible names for the result name and unit of measure, the optional `fullResultName` and `fullUnit` [props](https://engineering.cerner.com/terra-ui/components/terra-clinical-result/clinical-result/result-name-header-cell#result-name-header-cell-props) can be used to set the full name of the result name and unit when consuming the Result Name Header Cell component.
 
-**Code Example:**
-
-<div aria-label="Example demo">
-  <ResultNameHeaderCellAccessibleNamesExample />
-</div>
-<div aria-label="Example code">
-
-    import React from 'react';
-    import { ResultNameHeaderCell } from 'terra-clinical-result/lib/index';
-    import classNames from 'classnames';
-    import classNamesBind from 'classnames/bind';
-    import ThemeContext from 'terra-theme-context';
-    import styles from '../Examples.module.scss';
-
-    const cx = classNamesBind.bind(styles);
-
-    const ResultNameHeaderCellAccessibleNamesExample = () => {
-      const theme = React.useContext(ThemeContext);
-      const mockFlowsheetClassnames = classNames(
-        cx(
-          'mock-flowsheet-example',
-          theme.className,
-        ),
-      );
-
-      return (
-        <div className={mockFlowsheetClassnames}>
-          <div className={cx('mock-flowsheet-firstcolumn')}>
-            <div className={cx('mock-flowsheet-firstcolumn-cell')}>
-              <ResultNameHeaderCell resultName="Temp" fullResultName="Temperature" unit="degC" fullUnit="Degrees Celsius" />
-            </div>
-          </div>
-        </div>
-      );
-    };
-
-    export default ResultNameHeaderCellAccessibleNamesExample;
-
-</div>
-
-This example shows how to set up the optional `fullResultName` and `fullUnit` props in order to provide accessible names for the displayed result name and unit.
-
 </Notice>
+
+##### Code Example:
+
+This example shows how to set up the optional `fullResultName` and `fullUnit` props in order to provide accessible names for the displayed result name and unit:
+
+<ResultNameHeaderCellAccessibleNamesExample title="Result Name Header Cell Accessible Names" />
 
 #### Accessibility of Cell Components
 
