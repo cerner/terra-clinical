@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -354,7 +354,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
       );
       compositeCell.push(endDisplay);
 
-      return compositeCell;
+      return <div className={cx('combined-display')}>{compositeCell}</div>;
     }
 
     const additionalResultsStackDisplay = (
@@ -364,7 +364,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     );
     compositeCell.push(additionalResultsStackDisplay);
 
-    return compositeCell;
+    return <div className={cx('combined-display')}>{compositeCell}</div>;
   }
 
   if (hasAccessoryIcons) {
@@ -377,7 +377,7 @@ const createFlowsheetResultCellDisplay = (resultDataSet, hideUnit, numericOverfl
     compositeCell.push(endAccessoryIconsDisplay);
   }
 
-  return compositeCell;
+  return <div className={cx('combined-display')}>{compositeCell}</div>;
 };
 
 const FlowsheetResultCell = (props) => {
@@ -394,7 +394,7 @@ const FlowsheetResultCell = (props) => {
   const [contentWidth, setContentWidth] = useState(null);
   const [numericOverflow, setNumericOverflow] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
