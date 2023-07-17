@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added accessibility guide.
+
 ## 1.19.0 - (July 12, 2023)
 
 * Changed
