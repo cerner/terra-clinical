@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.20.0 - (July 17, 2023)
+
 * Added
   * Added accessibility guide.
 
