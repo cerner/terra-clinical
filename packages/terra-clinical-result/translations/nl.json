@@ -1,7 +1,7 @@
 {
   "Terra.clinicalResult.resultError": "Fout",
   "Terra.clinicalResult.statusInError": "Fout",
-  "Terra.clinicalResult.statusInErrorHiddenText": "Geschrapt als Fout beschouwen",
+  "Terra.clinicalResult.statusInErrorHiddenText": "Waarde geschrapt als Fout",
   "Terra.clinicalResult.statusInErrorStrikethrough": "Het resultaat {strikethroughResult} is per ongeluk ingevoerd",
   "Terra.clinicalResult.selectToViewAria": "Selecteer om meer details te bekijken",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Resultaat bevat aanvullende waarden",
@@ -19,5 +19,7 @@
   "Terra.clinicalResult.interpretationAbnormal": "Afwijkend",
   "Terra.clinicalResult.interpretationHigh": "Hoog",
   "Terra.clinicalResult.interpretationLow": "Laag",
-  "Terra.clinicalResult.bloodPressure": "Bloeddruk"
+  "Terra.clinicalResult.bloodPressure": "Bloeddruk",
+  "Terra.clinicalResult.interpretationOutOfRangeHigh": "Buiten bereik, te hoog",
+  "Terra.clinicalResult.interpretationOutOfRangeLow": "Buiten bereik, te laag"
 }

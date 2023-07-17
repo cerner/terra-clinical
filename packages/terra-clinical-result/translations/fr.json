@@ -1,7 +1,7 @@
 {
   "Terra.clinicalResult.resultError": "Erreur",
-  "Terra.clinicalResult.statusInError": "En erreur",
-  "Terra.clinicalResult.statusInErrorHiddenText": "Valeur archivée avec le statut En erreur ",
+  "Terra.clinicalResult.statusInError": "Erroné",
+  "Terra.clinicalResult.statusInErrorHiddenText": "La valeur a été supprimée car elle est erronée.",
   "Terra.clinicalResult.statusInErrorStrikethrough": "Saisie erronée du résultat {strikethroughResult}",
   "Terra.clinicalResult.selectToViewAria": "Sélectionnez pour afficher plus de détails.",
   "Terra.clinicalResult.includesAdditionalValuesAria": "Le résultat inclut des valeurs supplémentaires.",
@@ -12,12 +12,14 @@
   "Terra.clinicalResult.resultUnverified": "Résultat non vérifié.",
   "Terra.clinicalResult.additionalResults": "{numberOfAdditionalResults} résultats supplémentaires.",
   "Terra.clinicalResult.interpretationCritical": "Critique",
-  "Terra.clinicalResult.interpretationCriticalHigh": "Valeur critique si <",
-  "Terra.clinicalResult.interpretationCriticalLow": "Valeur critique si >",
+  "Terra.clinicalResult.interpretationCriticalHigh": "Critique haut",
+  "Terra.clinicalResult.interpretationCriticalLow": "Critique bas",
   "Terra.clinicalResult.interpretationCriticalAbnormal": "Critique/Anormal",
   "Terra.clinicalResult.interpretationPositive": "Positif",
   "Terra.clinicalResult.interpretationAbnormal": "Anormal",
-  "Terra.clinicalResult.interpretationHigh": "Élevée",
-  "Terra.clinicalResult.interpretationLow": "Faible",
-  "Terra.clinicalResult.bloodPressure": "Pression artérielle"
+  "Terra.clinicalResult.interpretationHigh": "Haut",
+  "Terra.clinicalResult.interpretationLow": "Bas",
+  "Terra.clinicalResult.bloodPressure": "Pression artérielle",
+  "Terra.clinicalResult.interpretationOutOfRangeHigh": "Hors limites haut",
+  "Terra.clinicalResult.interpretationOutOfRangeLow": "Hors limites bas"
 }
