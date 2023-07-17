@@ -3369,12 +3369,10 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
             className="main"
           >
             <Scroll
-              className="normalizer light"
-              tabIndex="-1"
+              className="normalizer"
             >
               <div
-                className="scroll normalizer light"
-                tabIndex="-1"
+                className="scroll normalizer"
               >
                 <div
                   className="vertical-overflow-container"
