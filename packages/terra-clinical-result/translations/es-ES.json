@@ -19,5 +19,7 @@
   "Terra.clinicalResult.interpretationAbnormal": "Anómalo",
   "Terra.clinicalResult.interpretationHigh": "Alto",
   "Terra.clinicalResult.interpretationLow": "Bajo",
-  "Terra.clinicalResult.bloodPressure": "Presión arterial"
+  "Terra.clinicalResult.bloodPressure": "Presión arterial",
+  "Terra.clinicalResult.interpretationOutOfRangeHigh": "Fuera del intervalo Alto",
+  "Terra.clinicalResult.interpretationOutOfRangeLow": "Fuera del intervalo Bajo"
 }
