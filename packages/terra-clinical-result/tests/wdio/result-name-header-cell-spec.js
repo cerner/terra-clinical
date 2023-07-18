@@ -16,4 +16,10 @@ Terra.describeViewports('ResultNameHeaderCell', ['medium'], () => {
 
     Terra.validates.element('with typeIndicators');
   });
+
+  it('displays within a semantic table', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/result-name-header-cell/semantic-table-with-result-name-header-cell');
+
+    Terra.validates.element('with semantic table');
+  });
 });

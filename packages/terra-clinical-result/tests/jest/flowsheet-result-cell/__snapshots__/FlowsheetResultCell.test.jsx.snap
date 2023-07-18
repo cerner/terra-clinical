@@ -5,48 +5,52 @@ exports[`FlowsheetResultCell correctly applies the theme context className 1`] =
   className="flowsheet-result-cell padding-compact orion-fusion-theme"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -57,48 +61,52 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -109,48 +117,52 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
   className="flowsheet-result-cell"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -161,48 +173,52 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
   className="flowsheet-result-cell padding-standard"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -213,49 +229,53 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      hideUnit={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        hideUnit={true}
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -292,37 +312,41 @@ exports[`FlowsheetResultCell should render a entered-in-error status standard re
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <InjectIntl(EnteredInError) />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <InjectIntl(EnteredInError) />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -359,79 +383,83 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <InjectIntl(ClinicalResultBloodPressure)
-      diastolic={
-        Object {
-          "eventId": "111.2",
-          "interpretation": "critical",
-          "isUnverified": true,
-          "result": Object {
-            "unit": "mmHg",
-            "value": "80",
-          },
-        }
-      }
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResultBloodPressure-111"
-      systolic={
-        Object {
-          "eventId": "111.1",
-          "interpretation": "critical",
-          "isUnverified": true,
-          "result": Object {
-            "unit": "mmHg",
-            "value": "180",
-          },
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResultsAndIcons"
+    className="combined-display"
   >
     <div
-      className="additional-end-display"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
     >
-      <div
-        aria-hidden="true"
-        className="additional-results-stack"
-      >
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
-      </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
+      <InjectIntl(ClinicalResultBloodPressure)
+        diastolic={
+          Object {
+            "eventId": "111.2",
+            "interpretation": "critical",
+            "isUnverified": true,
+            "result": Object {
+              "unit": "mmHg",
+              "value": "80",
+            },
+          }
+        }
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResultBloodPressure-111"
+        systolic={
+          Object {
+            "eventId": "111.1",
+            "interpretation": "critical",
+            "isUnverified": true,
+            "result": Object {
+              "unit": "mmHg",
+              "value": "180",
+            },
+          }
+        }
       />
     </div>
     <div
-      className="end-accessory-icons"
-      key="EndAccessoryIcons-111"
+      className="end-display"
+      key="EndDisplay-AdditionalResultsAndIcons"
     >
       <div
-        className="end-accessory-stack"
+        className="additional-end-display"
+        key="AdditionalResultsDisplay-111"
       >
-        <IconDiamond
-          a11yLabel="Terra.clinicalResult.resultUnverified"
-          className="icon-unverified"
-          focusable="true"
-          role="img"
-          viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
+        >
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
         />
+      </div>
+      <div
+        className="end-accessory-icons"
+        key="EndAccessoryIcons-111"
+      >
+        <div
+          className="end-accessory-stack"
+        >
+          <IconDiamond
+            a11yLabel="Terra.clinicalResult.resultUnverified"
+            className="icon-unverified"
+            focusable="true"
+            role="img"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -443,37 +471,41 @@ exports[`FlowsheetResultCell should render both entered-in-error status bloodpre
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <InjectIntl(EnteredInError) />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <InjectIntl(EnteredInError) />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -484,69 +516,73 @@ exports[`FlowsheetResultCell should render correctly when a multiple results cel
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display interpretation"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hasComment={true}
-      hideAccessoryDisplays={true}
-      hideUnit={true}
-      interpretation="critical"
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResultsAndIcons"
+    className="combined-display"
   >
     <div
-      className="additional-end-display"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display interpretation"
+      key="ClinicalResultDisplay-111"
     >
-      <div
-        aria-hidden="true"
-        className="additional-results-stack"
-      >
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
-      </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
+      <ClinicalResult
+        eventId="111"
+        hasComment={true}
+        hideAccessoryDisplays={true}
+        hideUnit={true}
+        interpretation="critical"
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
       />
     </div>
     <div
-      className="end-accessory-icons"
-      key="EndAccessoryIcons-111"
+      className="end-display"
+      key="EndDisplay-AdditionalResultsAndIcons"
     >
       <div
-        className="end-accessory-stack"
+        className="additional-end-display"
+        key="AdditionalResultsDisplay-111"
       >
-        <IconComment
-          a11yLabel="Terra.clinicalResult.resultComment"
-          className="icon-comment"
-          data-name="Layer 1"
-          focusable="true"
-          isBidi={true}
-          role="img"
-          viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
+        >
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
         />
+      </div>
+      <div
+        className="end-accessory-icons"
+        key="EndAccessoryIcons-111"
+      >
+        <div
+          className="end-accessory-stack"
+        >
+          <IconComment
+            a11yLabel="Terra.clinicalResult.resultComment"
+            className="icon-comment"
+            data-name="Layer 1"
+            focusable="true"
+            isBidi={true}
+            role="img"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -558,50 +594,54 @@ exports[`FlowsheetResultCell should render correctly with all normal results 1`]
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      hideUnit={true}
-      interpretation="normal"
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        hideUnit={true}
+        interpretation="normal"
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -612,67 +652,71 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      hideUnit={true}
-      interpretation="critical"
-      isTruncated={true}
-      isUnverified={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResultsAndIcons"
+    className="combined-display"
   >
     <div
-      className="additional-end-display"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
     >
-      <div
-        aria-hidden="true"
-        className="additional-results-stack"
-      >
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
-      </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        hideUnit={true}
+        interpretation="critical"
+        isTruncated={true}
+        isUnverified={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
       />
     </div>
     <div
-      className="end-accessory-icons"
-      key="EndAccessoryIcons-111"
+      className="end-display"
+      key="EndDisplay-AdditionalResultsAndIcons"
     >
       <div
-        className="end-accessory-stack"
+        className="additional-end-display"
+        key="AdditionalResultsDisplay-111"
       >
-        <IconDiamond
-          a11yLabel="Terra.clinicalResult.resultUnverified"
-          className="icon-unverified"
-          focusable="true"
-          role="img"
-          viewBox="0 0 48 48"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
+        >
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
         />
+      </div>
+      <div
+        className="end-accessory-icons"
+        key="EndAccessoryIcons-111"
+      >
+        <div
+          className="end-accessory-stack"
+        >
+          <IconDiamond
+            a11yLabel="Terra.clinicalResult.resultUnverified"
+            className="icon-unverified"
+            focusable="true"
+            role="img"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -684,50 +728,54 @@ exports[`FlowsheetResultCell should render correctly with at least 1 critical or
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display interpretation"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      hideUnit={true}
-      interpretation="critical"
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons interpretation-critical"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display interpretation"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        hideUnit={true}
+        interpretation="critical"
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons interpretation-critical"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleResults"
-      />
     </div>
   </div>
 </td>
@@ -738,37 +786,41 @@ exports[`FlowsheetResultCell should render systolic entered-in-error status bloo
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <InjectIntl(EnteredInError) />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <InjectIntl(EnteredInError) />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -779,23 +831,27 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111.2"
+    className="combined-display"
   >
-    <InjectIntl(ClinicalResultBloodPressure)
-      diastolic={
-        Object {
-          "eventId": "111.2",
-          "result": Object {
-            "unit": "mmHg",
-            "value": "80",
-          },
+    <div
+      className="primary-display"
+      key="ClinicalResultDisplay-111.2"
+    >
+      <InjectIntl(ClinicalResultBloodPressure)
+        diastolic={
+          Object {
+            "eventId": "111.2",
+            "result": Object {
+              "unit": "mmHg",
+              "value": "80",
+            },
+          }
         }
-      }
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResultBloodPressure-111.2"
-    />
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResultBloodPressure-111.2"
+      />
+    </div>
   </div>
 </td>
 `;
@@ -805,23 +861,27 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111.1"
+    className="combined-display"
   >
-    <InjectIntl(ClinicalResultBloodPressure)
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResultBloodPressure-111.1"
-      systolic={
-        Object {
-          "eventId": "111.1",
-          "result": Object {
-            "unit": "mmHg",
-            "value": "180",
-          },
+    <div
+      className="primary-display"
+      key="ClinicalResultDisplay-111.1"
+    >
+      <InjectIntl(ClinicalResultBloodPressure)
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResultBloodPressure-111.1"
+        systolic={
+          Object {
+            "eventId": "111.1",
+            "result": Object {
+              "unit": "mmHg",
+              "value": "180",
+            },
+          }
         }
-      }
-    />
+      />
+    </div>
   </div>
 </td>
 `;
@@ -831,48 +891,52 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
-  >
-    <ClinicalResult
-      eventId="111"
-      hideAccessoryDisplays={true}
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
-        }
-      }
-    />
-  </div>
-  <div
-    className="end-display"
-    key="EndDisplay-AdditionalResults"
+    className="combined-display"
   >
     <div
-      className="additional-end-display no-accessory-icons"
-      key="AdditionalResultsDisplay-111"
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        eventId="111"
+        hideAccessoryDisplays={true}
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
+        }
+      />
+    </div>
+    <div
+      className="end-display"
+      key="EndDisplay-AdditionalResults"
     >
       <div
-        aria-hidden="true"
-        className="additional-results-stack"
+        className="additional-end-display no-accessory-icons"
+        key="AdditionalResultsDisplay-111"
       >
-        <span
-          className="additional-results-value"
+        <div
+          aria-hidden="true"
+          className="additional-results-stack"
         >
-          2
-        </span>
-        <span
-          className="additional-results-value"
-        >
-          2
-        </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+          <span
+            className="additional-results-value"
+          >
+            2
+          </span>
+        </div>
+        <VisuallyHiddenText
+          text="Terra.clinicalResult.multipleNormalResults"
+        />
       </div>
-      <VisuallyHiddenText
-        text="Terra.clinicalResult.multipleNormalResults"
-      />
     </div>
   </div>
 </td>
@@ -883,21 +947,25 @@ exports[`FlowsheetResultCell should render when given result data with no event 
   className="flowsheet-result-cell padding-compact"
 >
   <div
-    className="primary-display"
-    key="ClinicalResultDisplay-111"
+    className="combined-display"
   >
-    <ClinicalResult
-      hideAccessoryDisplays={true}
-      id="111"
-      isTruncated={true}
-      key="ClinicalResult-111"
-      result={
-        Object {
-          "unit": "mL",
-          "value": "12345.678",
+    <div
+      className="primary-display"
+      key="ClinicalResultDisplay-111"
+    >
+      <ClinicalResult
+        hideAccessoryDisplays={true}
+        id="111"
+        isTruncated={true}
+        key="ClinicalResult-111"
+        result={
+          Object {
+            "unit": "mL",
+            "value": "12345.678",
+          }
         }
-      }
-    />
+      />
+    </div>
   </div>
 </td>
 `;

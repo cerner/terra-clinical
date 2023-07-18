@@ -6,6 +6,19 @@
   * Changed ResultTimeHeaderCell to remove the `<time>` html tag for the date and time. This was causing issues and technically does not have full screen reader support.    
   * Updated translations.
 
+## 1.20.0 - (July 17, 2023)
+
+* Added
+  * Added accessibility guide.
+  * Added site documentation for Flowsheet, Time Header, and Name Header cells usage.
+
+* Fixed
+  * Fixed flickering issue related to numeric overflow in FlowsheetResultCell.
+
+## 1.19.0 - (July 12, 2023)
+
+* Changed
+  * Locked `uuid` dependency to `7.0.3` for consistency across Terra packages.
 
 ## 1.18.0 - (June 22, 2023)
 

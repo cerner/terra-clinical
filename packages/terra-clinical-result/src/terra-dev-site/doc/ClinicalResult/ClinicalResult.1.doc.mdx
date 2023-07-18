@@ -59,7 +59,7 @@ import ClinicalResult from 'terra-clinical-result/lib/index';
 
 ## Examples
 <DefaultResult title="Default Clinical Result" />
-<DecoratedResult title="Modifiied Clinical Result with Comments" />
+<DecoratedResult title="Modified Clinical Result with Comments" />
 <UnverifiedResult title="Unverified Clinical Result with Hide Unit of Measure" />
 <ExtraDisplaysResult title="Clinical Result with additional displays" />
 <InterpretationResults title="Clinical Results with Intrepretation" />
@@ -72,3 +72,15 @@ import ClinicalResult from 'terra-clinical-result/lib/index';
 
 ## Clinical Result Props Props
 <ClinicalResultsProps />
+
+
+## Testing
+
+Menu uses `uuid` which changes the component's description id dynamically. To mock it with the Jest testing library, `jest.mock` can be used.
+
+If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then `uuid` should be mocked as shown below:
+
+```js
+// using a variable may result in failures. For best results, hardcode the mock return value.
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+```
