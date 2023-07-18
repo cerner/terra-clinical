@@ -19,5 +19,7 @@
   "Terra.clinicalResult.interpretationAbnormal": "Abnormal",
   "Terra.clinicalResult.interpretationHigh": "High",
   "Terra.clinicalResult.interpretationLow": "Low",
-  "Terra.clinicalResult.bloodPressure": "Blood Pressure"
+  "Terra.clinicalResult.bloodPressure": "Blood Pressure",
+  "Terra.clinicalResult.interpretationOutOfRangeHigh": "Out of Range High",
+  "Terra.clinicalResult.interpretationOutOfRangeLow": "Out of Range Low"
 }
