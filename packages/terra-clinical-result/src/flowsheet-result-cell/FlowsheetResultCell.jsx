@@ -391,7 +391,6 @@ const FlowsheetResultCell = (props) => {
     ...customProps
   } = props;
   const containerDiv = useRef(null);
-  const [contentWidth, setContentWidth] = useState(null);
   const [numericOverflow, setNumericOverflow] = useState(false);
 
   useLayoutEffect(() => {
@@ -400,18 +399,18 @@ const FlowsheetResultCell = (props) => {
     }
 
     if (checkTypeNumeric(resultDataSet[0])) {
-      if (!contentWidth) {
-        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
-      }
-
+      // just set content width, we don't need to check if it already exists, right? We don't use it anywhere else
+      const contentWidth = containerDiv.current.children[0].getBoundingClientRect().width;
       const containerWidth = containerDiv.current.getBoundingClientRect().width;
-      if (containerWidth <= contentWidth && !numericOverflow) {
+
+      // again do we even need to check if numeric overflow is set or not?
+      if (containerWidth <= contentWidth) {
         setNumericOverflow(true);
       } else if (containerWidth > contentWidth) {
         setNumericOverflow(false);
       }
     }
-  }, [resultDataSet, contentWidth, numericOverflow]);
+  }, [resultDataSet]); // remove the dependencies
 
   let flowsheetResultCellDisplay;
 
