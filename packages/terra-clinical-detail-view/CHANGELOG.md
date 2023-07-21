@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added aria-labelledby attribute to *DetailList* using the list title's id attribute.
+
 ## 3.33.0 - (July 17, 2023)
 
 * Changed

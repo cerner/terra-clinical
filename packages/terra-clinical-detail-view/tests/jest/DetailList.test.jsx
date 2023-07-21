@@ -1,6 +1,8 @@
 import React from 'react';
 import DetailView from '../../src/DetailView';
 
+jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+
 const defaultVariety = (
   <DetailView.DetailList title="Title">
     <DetailView.DetailListItem item={<p>Test</p>} />
@@ -55,12 +57,12 @@ it('should set the title text', () => {
 
 it('should set the heading level for the title', () => {
   const wrapper = shallow(defaultVariety);
-  expect(wrapper.html('.title')).toContain('<h2 class="title">Title</h2>');
+  expect(wrapper.html('.title')).toContain('<h2 class="title" id="list-title-id-00000000-0000-0000-0000-000000000000">Title</h2>');
 });
 
 it('should render a description list when isLabelValuePairList is true', () => {
   const detailList = (
-    <DetailView.DetailList isLabelValuePairList>
+    <DetailView.DetailList title="Title" isLabelValuePairList>
       <DetailView.DetailListItem item={(
         <>
           <dt>label</dt>
