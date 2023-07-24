@@ -9,6 +9,17 @@ const defaultVariety = (
   </DetailView.DetailList>
 );
 
+const labelValuePairList = (
+  <DetailView.DetailList title="Title" isLabelValuePairList>
+    <DetailView.DetailListItem item={(
+      <>
+        <dt>label</dt>
+        <dd>value</dd>
+      </>
+ )} />
+  </DetailView.DetailList>
+);
+
 // Snapshot Tests
 it('should render a default component', () => {
   const detailList = <DetailView.DetailList />;
@@ -61,18 +72,8 @@ it('should set the heading level for the title', () => {
 });
 
 it('should render a description list when isLabelValuePairList is true', () => {
-  const detailList = (
-    <DetailView.DetailList title="Title" isLabelValuePairList>
-      <DetailView.DetailListItem item={(
-        <>
-          <dt>label</dt>
-          <dd>value</dd>
-        </>
-   )} />
-    </DetailView.DetailList>
-  );
-  const wrapper = render(detailList);
-  const shallowWrapper = shallow(detailList);
+  const wrapper = render(labelValuePairList);
+  const shallowWrapper = shallow(labelValuePairList);
   expect(shallowWrapper.find('.list').last().type()).toEqual('dl');
   expect(wrapper).toMatchSnapshot();
 });
@@ -86,4 +87,14 @@ it('should have the class title when title is provided', () => {
 it('should have the class list', () => {
   const wrapper = shallow(defaultVariety);
   expect(wrapper.childAt(1).prop('className')).toContain('list');
+});
+
+it('should have the appropriate aria-labelledby value when title is provided and isLabelValuePairList is false', () => {
+  const wrapper = shallow(defaultVariety);
+  expect(wrapper.childAt(1).prop('aria-labelledby')).toEqual('list-title-id-00000000-0000-0000-0000-000000000000');
+});
+
+it('should have the appropriate aria-labelledby value when title is provided and isLabelValuePairList is true', () => {
+  const wrapper = shallow(labelValuePairList);
+  expect(wrapper.childAt(1).prop('aria-labelledby')).toEqual('list-title-id-00000000-0000-0000-0000-000000000000');
 });
