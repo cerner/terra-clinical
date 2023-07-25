@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed issue related to flexing in *DetailList*.
+
 ## 3.33.0 - (July 17, 2023)
 
 * Changed
@@ -11,7 +14,7 @@
 
 * Changed
   * Updated *DetailList* to accept null as children.
-  * Locked `uuid` dependency to `7.0.3` for consistency across Terra packages. 
+  * Locked `uuid` dependency to `7.0.3` for consistency across Terra packages.
 
 * Added
   * Added accessibility guide.
