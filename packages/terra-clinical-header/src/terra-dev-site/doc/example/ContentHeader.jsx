@@ -7,7 +7,7 @@ const ContenteHeader = () => (
     <Header
       startContent={<Button text="Button" />}
       text="Default Header"
-      endContent={<Button text="Button" />}
+      endContent={<Button aria-label="Button, Default Header" text="Button" />}
       level={3}
     />
   </div>

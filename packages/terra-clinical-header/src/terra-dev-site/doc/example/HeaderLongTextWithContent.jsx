@@ -10,9 +10,9 @@ const cx = classNamesBind.bind(styles);
 const LongTextWithContent = () => (
   <div>
     <Header
-      startContent={<Button text="Back" />}
+      startContent={<Button aria-label="Back, Patient Information for Individual Diagnosed with a Chronic Disease" text="Back" />}
       text="Patient Information for Individual Diagnosed with a Chronic Disease in the past or currently suffering: Comprehensive Medical History,Treatment Plan,and Prognosis Report"
-      endContent={<Button text="print" />}
+      endContent={<Button aria-label="print, Patient Information for Individual Diagnosed with a Chronic Disease" text="print" />}
       level={3}
     >
       <Button text="Medical History" />
