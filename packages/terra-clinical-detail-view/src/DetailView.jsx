@@ -155,14 +155,17 @@ const DetailView = (props) => {
     dividedDetails = details;
   }
 
+  const showTitleSection = (titleElement || secondaryTitlesElements.length || subtitleElements.length || accessoryElement);
   return (
     <section {...attributes} aria-labelledby={titleId}>
+      {showTitleSection && (
       <div className={cx('titles-section', { 'titles-smaller': isSmallerTitles })}>
         {titleElement}
         {secondaryTitlesElements}
         {subtitleElements}
         {accessoryElement}
       </div>
+      )}
       {graphElement && divider}
       {graphElement}
       {divider}

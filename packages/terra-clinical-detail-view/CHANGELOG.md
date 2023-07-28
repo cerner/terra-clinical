@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Fixed
+  * Fixed issue of empty space when no elements specified for title section.
   * Fixed issue related to flexing in *DetailList*.
 
 ## 3.33.0 - (July 17, 2023)
