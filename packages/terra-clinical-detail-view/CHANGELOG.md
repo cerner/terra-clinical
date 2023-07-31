@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added aria-labelledby attribute to *DetailList* using the list title's id attribute.
+
 * Fixed
   * Fixed issue related to flexing in *DetailList*.
 

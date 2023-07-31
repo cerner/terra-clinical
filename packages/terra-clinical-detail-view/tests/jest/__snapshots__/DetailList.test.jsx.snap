@@ -14,7 +14,14 @@ exports[`should render a description list when isLabelValuePairList is true 1`] 
 <div
   data-terra-clinical-detail-list="true"
 >
+  <h2
+    class="title"
+    id="list-title-id-00000000-0000-0000-0000-000000000000"
+  >
+    Title
+  </h2>
   <dl
+    aria-labelledby="list-title-id-00000000-0000-0000-0000-000000000000"
     class="list"
   >
     <div
@@ -92,10 +99,12 @@ exports[`should render a title 1`] = `
 >
   <h2
     class="title"
+    id="list-title-id-00000000-0000-0000-0000-000000000000"
   >
     Title
   </h2>
   <ul
+    aria-labelledby="list-title-id-00000000-0000-0000-0000-000000000000"
     class="list"
   />
 </div>
@@ -107,10 +116,12 @@ exports[`should render a title and a list 1`] = `
 >
   <h2
     class="title"
+    id="list-title-id-00000000-0000-0000-0000-000000000000"
   >
     Title
   </h2>
   <ul
+    aria-labelledby="list-title-id-00000000-0000-0000-0000-000000000000"
     class="list"
   >
     <li
