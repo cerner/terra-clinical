@@ -24,6 +24,111 @@ exports[`should render a default component 1`] = `
 </section>
 `;
 
+exports[`should render a detail-view component with accessory 1`] = `
+<section
+  aria-labelledby={null}
+  className="detail-view"
+>
+  <div
+    className="titles-section"
+  >
+    <div
+      className="accessory"
+    >
+      <div
+        className="text-aceesory"
+      >
+        Ordered
+      </div>
+    </div>
+  </div>
+  <hr
+    className="divider"
+  />
+  <ContextProvider
+    value={2}
+  />
+</section>
+`;
+
+exports[`should render a detail-view component with secondaryTitle 1`] = `
+<section
+  aria-labelledby={null}
+  className="detail-view"
+>
+  <div
+    className="titles-section"
+  >
+    <h2
+      className="secondary-text"
+      key="0"
+    >
+      Sodium bicarbonate 8.4% 50 mL
+    </h2>
+    <h2
+      className="secondary-text"
+      key="1"
+    >
+      Dextrose 5% in Water 1000 mL
+    </h2>
+  </div>
+  <hr
+    className="divider"
+  />
+  <ContextProvider
+    value={3}
+  />
+</section>
+`;
+
+exports[`should render a detail-view component with subTitle 1`] = `
+<section
+  aria-labelledby={null}
+  className="detail-view"
+>
+  <div
+    className="titles-section"
+  >
+    <p
+      className="subtitle"
+      key="0"
+    >
+      30 mg, Oral
+    </p>
+  </div>
+  <hr
+    className="divider"
+  />
+  <ContextProvider
+    value={2}
+  />
+</section>
+`;
+
+exports[`should render a detail-view component with title 1`] = `
+<section
+  aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"
+  className="detail-view"
+>
+  <div
+    className="titles-section"
+  >
+    <h2
+      className="primary-text"
+      id="title-id-00000000-0000-0000-0000-000000000000"
+    >
+      Detail view with Title
+    </h2>
+  </div>
+  <hr
+    className="divider"
+  />
+  <ContextProvider
+    value={3}
+  />
+</section>
+`;
+
 exports[`should render a smaller title 1`] = `
 <section
   aria-labelledby="title-id-00000000-0000-0000-0000-000000000000"

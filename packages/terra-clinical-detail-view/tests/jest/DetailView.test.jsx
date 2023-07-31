@@ -11,6 +11,35 @@ it('should render a default component', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render a detail-view component with title', () => {
+  const wrapper = shallow(<DetailView title="Detail view with Title" />);
+  expect(wrapper.html('.titles-section')).toContain('<h2 class="primary-text" id="title-id-00000000-0000-0000-0000-000000000000">Detail view with Title</h2>');
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a detail-view component with secondaryTitle', () => {
+  const wrapper = shallow(<DetailView secondaryTitles={['Sodium bicarbonate 8.4% 50 mL', 'Dextrose 5% in Water 1000 mL']} />);
+  expect(wrapper.html('.titles-section')).toContain('<h2 class="secondary-text">Sodium bicarbonate 8.4% 50 mL</h2><h2 class="secondary-text">Dextrose 5% in Water 1000 mL</h2>');
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a detail-view component with subTitle', () => {
+  const wrapper = shallow(<DetailView subtitles={['30 mg, Oral']} />);
+  expect(wrapper.html('.titles-section')).toContain('<p class="subtitle">30 mg, Oral</p>');
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render a detail-view component with accessory', () => {
+  const wrapper = shallow(<DetailView accessory={(
+    <div className="text-aceesory">
+      Ordered
+    </div>
+  )}
+  />);
+  expect(wrapper.html('.titles-section')).toContain('<div class="accessory"><div class="text-aceesory">Ordered</div></div>');
+  expect(wrapper).toMatchSnapshot();
+});
+
 // Prop Tests
 it('should have the class detail-view', () => {
   const wrapper = shallow(defaultVariety);

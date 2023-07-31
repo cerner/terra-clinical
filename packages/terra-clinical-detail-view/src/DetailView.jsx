@@ -155,7 +155,7 @@ const DetailView = (props) => {
     dividedDetails = details;
   }
 
-  const showTitleSection = (titleElement || secondaryTitlesElements.length || subtitleElements.length || accessoryElement);
+  const showTitleSection = titleElement || secondaryTitlesElements.length || subtitleElements.length || accessoryElement;
   return (
     <section {...attributes} aria-labelledby={titleId}>
       {showTitleSection && (
