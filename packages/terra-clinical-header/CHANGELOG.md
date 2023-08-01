@@ -3,9 +3,12 @@
 ## Unreleased
 
 * Changed
-  * Replaced `title` prop to `text` prop to allow users to spread title HTML Attribute as customProps.
+  * Deprecated `title` prop. This will be replaced by the`text` prop in the next major version.
+
+* Added
   * Added `level` prop to allow users to render different heading levels.
   * Added `id` prop which is to be paired with `aria-labelledby` for labelling page regions.
+  * Added `text` prop to allow users to spread title HTML Attribute as customProps. This will replace the `title` prop in the next major release.
 
 ## 3.26.0 - (April 21, 2023)
 

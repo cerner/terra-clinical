@@ -78,7 +78,7 @@ exports[`should render a header with content on the right 1`] = `
 </header>
 `;
 
-exports[`should render a header with no text from level not set 1`] = `
+exports[`should render a header with default heading level when level not set 1`] = `
 <header
   class="flex-header"
 >
@@ -91,7 +91,7 @@ exports[`should render a header with no text from level not set 1`] = `
       <h1
         class="title"
       >
-        This title should not render without a provided level
+        This title should render with a default level
       </h1>
     </div>
   </div>

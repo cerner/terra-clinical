@@ -10,6 +10,12 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
+   * IDs should be used with 'aria-labelledby' to associate headings with the corresponding page area when needing to label regions.
+   * For an example, read [Accessibility Guide: Labeling Section Content](/components/terra-clinical-header/clinical-header/accessibility-guide#labeling-section-content) for additional information.
+   */
+  id: PropTypes.string,
+
+  /**
    * Child element to be displayed on the right end of the header.
    * The element passed as children will be decorated with flex attributes.
    */
@@ -53,13 +59,6 @@ const propTypes = {
    * A Boolean indicating if element is a subheader.
    */
   isSubheader: PropTypes.bool,
-
-  /**
-   * IDs should be used with 'aria-labelledby' to associate headings with the corresponding page area when needing to label regions.
-   *
-   * For an example, read [Accessibility Guide: Labeling Section Content](/components/terra-clinical-header/clinical-header/accessibility-guide#labeling-section-content) for additional information.
-   */
-  id: PropTypes.string,
 };
 
 const defaultProps = {
