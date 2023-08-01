@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Locked `uuid` dependency to `3.4.0` for maximum consistency across Terra packages.
+
 * Added
   * Added aria-labelledby attribute to *DetailList* using the list title's id attribute.
 
