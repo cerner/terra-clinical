@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.21.0 - (August 2, 2023)
+
 * Changed  
   * Locked `uuid` dependency to `3.4.0` for maximum consistency across Terra packages.
   * Updated translations.
