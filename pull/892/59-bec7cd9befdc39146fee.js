@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkterra_clinical=self.webpackChunkterra_clinical||[]).push([[59],{87997:function(e,l,t){Object.defineProperty(l,"__esModule",{value:!0}),l.default=void 0;var a,u=(a=t(67294))&&a.__esModule?a:{default:a},r=t(21860);var c=function(){return u.default.createElement(r.FlowsheetResultCell,{hasResultNoData:!0})};l.default=c}}]);
