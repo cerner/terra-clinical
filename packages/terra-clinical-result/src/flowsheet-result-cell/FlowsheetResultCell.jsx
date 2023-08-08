@@ -395,23 +395,27 @@ const FlowsheetResultCell = (props) => {
   const [numericOverflow, setNumericOverflow] = useState(false);
 
   useLayoutEffect(() => {
+    console.log('temp');
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
-
     if (checkTypeNumeric(resultDataSet[0])) {
       if (!contentWidth) {
+        console.log('contentWidth');
         setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
       }
 
       const containerWidth = containerDiv.current.getBoundingClientRect().width;
+      console.log(resultDataSet, contentWidth, numericOverflow);
       if (containerWidth <= contentWidth && !numericOverflow) {
         setNumericOverflow(true);
+        console.log('setNumericOverflow(true)');
       } else if (containerWidth > contentWidth) {
         setNumericOverflow(false);
+        console.log('setNumericOverflow(false)');
       }
     }
-  }, [resultDataSet, contentWidth, numericOverflow]);
+  }, [resultDataSet, contentWidth]);
 
   let flowsheetResultCellDisplay;
 
