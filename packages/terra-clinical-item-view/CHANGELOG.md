@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fixed the readout order for two column layout to read by column and not by row. 
+
 ## 4.9.0 - (August 2, 2023)
 
 * Changed

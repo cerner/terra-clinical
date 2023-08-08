@@ -18,10 +18,10 @@ exports[`should render 1 start theme display 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -77,10 +77,10 @@ exports[`should render 2 start theme displays 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -122,14 +122,9 @@ exports[`should render 2 start theme displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="1"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -180,10 +175,10 @@ exports[`should render 3 start theme displays 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -225,14 +220,9 @@ exports[`should render 3 start theme displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="1"
-      >
         <div
           className="content content-secondary-size content-primary-color"
-          key="0"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -269,14 +259,9 @@ exports[`should render 3 start theme displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="2"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
+          key="2"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -448,10 +433,10 @@ exports[`should render one column 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -493,14 +478,9 @@ exports[`should render one column 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="1"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -564,10 +544,10 @@ exports[`should render truncated display 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -623,10 +603,10 @@ exports[`should render two columns with 8 displays 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -669,7 +649,7 @@ exports[`should render two columns with 8 displays 1`] = `
           />
         </div>
         <div
-          className="content content-primary-size content-primary-color"
+          className="content content-secondary-size content-primary-color"
           key="1"
         >
           <ItemDisplay
@@ -703,17 +683,95 @@ exports[`should render two columns with 8 displays 1`] = `
             }
             isDisabled={false}
             isTruncated={false}
-            text="display 2"
+            text="display 3"
+            textStyle="primary"
+          />
+        </div>
+        <div
+          className="content content-secondary-size content-secondary-color"
+          key="2"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 5"
+            textStyle="primary"
+          />
+        </div>
+        <div
+          className="content content-secondary-size content-secondary-color"
+          key="3"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 7"
             textStyle="primary"
           />
         </div>
       </div>
       <div
-        className="row"
+        className="secondary-column"
         key="1"
       >
         <div
-          className="content content-secondary-size content-primary-color"
+          className="content content-primary-size content-primary-color"
           key="0"
         >
           <ItemDisplay
@@ -747,7 +805,7 @@ exports[`should render two columns with 8 displays 1`] = `
             }
             isDisabled={false}
             isTruncated={false}
-            text="display 3"
+            text="display 2"
             textStyle="primary"
           />
         </div>
@@ -790,53 +848,9 @@ exports[`should render two columns with 8 displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="2"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
-        >
-          <ItemDisplay
-            iconAlignment="center"
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isDisabled={false}
-            isTruncated={false}
-            text="display 5"
-            textStyle="primary"
-          />
-        </div>
-        <div
-          className="content content-secondary-size content-secondary-color"
-          key="1"
+          key="2"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -873,53 +887,9 @@ exports[`should render two columns with 8 displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="3"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
-        >
-          <ItemDisplay
-            iconAlignment="center"
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isDisabled={false}
-            isTruncated={false}
-            text="display 7"
-            textStyle="primary"
-          />
-        </div>
-        <div
-          className="content content-secondary-size content-secondary-color"
-          key="1"
+          key="3"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -970,10 +940,10 @@ exports[`should render two columns with odd number of displays 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -1016,52 +986,8 @@ exports[`should render two columns with odd number of displays 1`] = `
           />
         </div>
         <div
-          className="content content-primary-size content-primary-color"
-          key="1"
-        >
-          <ItemDisplay
-            iconAlignment="center"
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isDisabled={false}
-            isTruncated={false}
-            text="display 2"
-            textStyle="primary"
-          />
-        </div>
-      </div>
-      <div
-        className="row"
-        key="1"
-      >
-        <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -1099,6 +1025,50 @@ exports[`should render two columns with odd number of displays 1`] = `
           />
         </div>
       </div>
+      <div
+        className="secondary-column"
+        key="1"
+      >
+        <div
+          className="content content-primary-size content-primary-color"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 2"
+            textStyle="primary"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1112,10 +1082,10 @@ exports[`should render with 1 display 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -1171,10 +1141,10 @@ exports[`should render with 2 displays 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -1216,14 +1186,9 @@ exports[`should render with 2 displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="1"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -1274,10 +1239,10 @@ exports[`should render with 3 displays 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
@@ -1319,14 +1284,9 @@ exports[`should render with 3 displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="1"
-      >
         <div
           className="content content-secondary-size content-primary-color"
-          key="0"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -1363,14 +1323,9 @@ exports[`should render with 3 displays 1`] = `
             textStyle="primary"
           />
         </div>
-      </div>
-      <div
-        className="row"
-        key="2"
-      >
         <div
           className="content content-secondary-size content-secondary-color"
-          key="0"
+          key="2"
         >
           <ItemDisplay
             iconAlignment="center"
@@ -1421,10 +1376,10 @@ exports[`should render with a display and graphic 1`] = `
     className="body"
   >
     <div
-      className="row-container"
+      className="column-container"
     >
       <div
-        className="row"
+        className="primary-column"
         key="0"
       >
         <div
