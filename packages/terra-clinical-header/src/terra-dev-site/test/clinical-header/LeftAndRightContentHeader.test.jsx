@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 
 import Header from '../../../Header';
-import styles from './ClinicalHeaderCommon.test.module.scss';
+import styles from './ClinicalHeaderCommontest.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +23,7 @@ const endContent = (
 export default () => (
   <Header
     startContent={startContent}
-    title="Header with content on the left and right"
+    text="Header with content on the left and right"
     endContent={endContent}
   />
 );
