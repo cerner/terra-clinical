@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.34.0 - (August 2, 2023)
+
 * Changed
   * Locked `uuid` dependency to `3.4.0` for maximum consistency across Terra packages.
 
@@ -9,6 +11,7 @@
   * Added aria-labelledby attribute to *DetailList* using the list title's id attribute.
 
 * Fixed
+  * Fixed extra empty space showing when no elements are specified for title section.
   * Fixed issue related to flexing in *DetailList*.
 
 ## 3.33.0 - (July 17, 2023)
