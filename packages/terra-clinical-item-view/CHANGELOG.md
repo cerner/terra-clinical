@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Fixed the readout order for two column layout to read by column and not by row. 
+  * Fixed the readout order for two column layout to read by column and not by row. Created true columns instead of split rows.
 
 ## 4.9.0 - (August 2, 2023)
 

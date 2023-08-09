@@ -108,7 +108,7 @@ const defaultEmphasisContentClassesFromIndexes = (rowIndex, rowCount) => {
     contentSize = 'content-secondary-size';
   }
 
-  if ((rowCount === 2 && rowIndex === 1) || rowIndex >= 2) {
+  if (rowIndex >= 2 || (rowCount === 2 && rowIndex === 1)) {
     contentColor = 'content-secondary-color';
   }
 
@@ -223,7 +223,8 @@ const ItemView = ({
       'item-view',
       { 'is-truncated': isTruncated },
       { 'one-column': layout === Layouts.ONE_COLUMN },
-      { 'two-columns': layout === Layouts.TWO_COLUMNS },
+      { 'two-columns': (layout === Layouts.TWO_COLUMNS && !isTruncated) },
+      { 'truncated-two-columns': (layout === Layouts.TWO_COLUMNS && isTruncated) },
       theme.className,
     ),
     customProps.className,

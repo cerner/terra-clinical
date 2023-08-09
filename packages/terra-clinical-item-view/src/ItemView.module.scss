@@ -57,8 +57,7 @@
 
   .column-container {
     display: flex;
-    flex-flow: row wrap;
-    width: 100%;
+    flex-flow: row nowrap;
   }
 
   .content {
@@ -68,15 +67,10 @@
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
 
-  .primary-column {
-    flex-direction: column;
-    width: 100%;
-  }
-
   .secondary-column {
-    flex-direction: column;
+    flex: 1 0 auto;
     float: right;
-    width: 60%;
+    max-width: 60%;
 
     .content {
       @include terra-text-align-end();
@@ -93,7 +87,7 @@
   // Layouts
   /* stylelint-disable selector-max-compound-selectors */
   .one-column {
-    .content {
+    .primary-column {
       width: 100%;
     }
   }
@@ -101,8 +95,18 @@
 
   .two-columns {
     .primary-column {
+      flex: 1 1 auto;
       float: left;
-      width: 40%;
+    }
+  }
+
+  .truncated-two-columns {
+    .primary-column {
+      flex: 1 1 auto;
+      float: left;
+      // Without a max width set below, the content within the primary column won't truncate properly
+      // Width isn't set for primary-column anywhere else because it will mess up the column spacing when isTruncated is false
+      max-width: 40%;
     }
   }
 
