@@ -190,9 +190,6 @@ class OnsetPicker extends React.Component {
         isLabelHidden
         onChange={this.changeYear}
         placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
-        selectAttrs={{
-          'aria-labelledby': `${id}-year-select-label`,
-        }}
         selectId={`${id}-year-select`}
       >
         {OnsetUtils.allowedYears(this.state.granularity, this.state.month, this.props.birthdate)
@@ -408,9 +405,6 @@ class OnsetPicker extends React.Component {
           }}
           onChange={this.changeGranularity}
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.granularity' })}
-          selectAttrs={{
-            'aria-labelledby': `${this.props.id}-granularity-select-label`,
-          }}
           selectId={`${this.props.id}-granularity-select`}
         >
           {granularityOptions}
@@ -435,7 +429,6 @@ class OnsetPicker extends React.Component {
             min: 0,
             max: OnsetUtils.allowedAge(this.props.birthdate, this.state.ageUnit),
             step: 1,
-            'aria-labelledby': `${this.props.id}-age-input-label`,
           }}
           inputId={`${this.props.id}-age-input`}
           isLabelHidden
@@ -458,9 +451,6 @@ class OnsetPicker extends React.Component {
           }}
           onChange={this.changeAgeUnit}
           placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.agePrecision' })}
-          selectAttrs={{
-            'aria-labelledby': `${this.props.id}-age-unit-select-label`,
-          }}
           selectId={`${this.props.id}-age-unit-select`}
         >
           {OnsetUtils.allowedAgeUnits(this.props.birthdate, intl)
@@ -483,9 +473,6 @@ class OnsetPicker extends React.Component {
             isLabelHidden
             onChange={this.changeMonth}
             placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.month' })}
-            selectAttrs={{
-              'aria-labelledby': `${this.props.id}-month-select-label`,
-            }}
             selectId={`${this.props.id}-month-select`}
           >
             {OnsetUtils.allowedMonths(intl, this.props.birthdate, this.state.year)
@@ -508,13 +495,11 @@ class OnsetPicker extends React.Component {
           isLabelHidden
           label={intl.formatMessage({ id: 'Terra.onsetPicker.dateLabel' })}
           labelAttrs={{
+            'aria-hidden': 'true',
             id: `${this.props.id}-date-input-label`,
           }}
         >
           <DatePicker
-            inputAttributes={{
-              'aria-labelledby': `${this.props.id}-date-input-label`,
-            }}
             onChangeRaw={this.changeDate}
             minDate={this.props.birthdate}
             maxDate={moment().format(DATE_FORMAT)}
@@ -540,9 +525,6 @@ class OnsetPicker extends React.Component {
             isLabelHidden
             onChange={this.changePrecision}
             placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.precision' })}
-            selectAttrs={{
-              'aria-labelledby': `${this.props.id}-precision-select-label`,
-            }}
             selectId={`${this.props.id}-precision-select`}
           >
             {OnsetUtils.allowedPrecisions(intl, this.props.precisionSet)
