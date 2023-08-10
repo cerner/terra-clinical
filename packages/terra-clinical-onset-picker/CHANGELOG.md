@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Updated
-  * Updated `[terra-clinical-onset-picker]` to announce state and chosen/selected item in the combo box.
+* Added
+  * Added screenreader support to announce state and chosen/selected item in the combo box.
 
 ## 4.34.0 - (August 2, 2023)
 
