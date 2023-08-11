@@ -1,6 +1,8 @@
 import React from 'react';
 import MockDate from 'mockdate';
 import { IntlProvider } from 'react-intl';
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { shallowWithIntl } from 'terra-enzyme-intl';
 import selectMessages from 'terra-form-select/translations/en-US.json';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import OnsetPicker from '../../lib/OnsetPicker';
@@ -98,6 +100,56 @@ it('should render only the supplied precisions', () => {
     </IntlProvider>
   );
   expect(render(onsetPicker)).toMatchSnapshot();
+});
+
+it('should render Clinical Onset picker with the correct label for precision, granularity and age', () => {
+  const wrapper = shallowWithIntl(
+    <OnsetPicker
+      ageUnit="years"
+      birthdate="2011-08-16"
+      granularity="age"
+      id="test"
+      precision="before"
+      onsetDate="2014-08-16"
+    />,
+  ).dive();
+
+  expect(wrapper.find('.precision').prop('label')).toEqual('Terra.onsetPicker.precision');
+  expect(wrapper.find('.granularity').prop('label')).toEqual('Terra.onsetPicker.granularity');
+  expect(wrapper.find('.age').prop('label')).toEqual('Terra.onsetPicker.age');
+  expect(wrapper.find('.age-unit').prop('label')).toEqual('Terra.onsetPicker.agePrecision');
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render Clinical Onset picker with the correct label for month and year', () => {
+  const wrapper = shallowWithIntl(
+    <OnsetPicker
+      birthdate="2011-08-16"
+      granularity="month"
+      id="test"
+      precision="before"
+    />,
+  ).dive();
+
+  expect(wrapper.find('.month').prop('label')).toEqual('Terra.onsetPicker.month');
+  expect(wrapper.find('.year').prop('label')).toEqual('Terra.onsetPicker.year');
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('should render Clinical Onset picker with the correct label for date', () => {
+  const wrapper = shallowWithIntl(
+    <OnsetPicker
+      birthdate="2011-08-16"
+      granularity="date"
+      id="test"
+      precision="before"
+      onsetDate="2014-08-16"
+    />,
+  ).dive();
+
+  expect(wrapper.find('.date').prop('label')).toEqual('Terra.onsetPicker.date');
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('correctly applies the theme context className', () => {

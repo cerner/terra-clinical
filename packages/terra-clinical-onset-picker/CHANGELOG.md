@@ -5,6 +5,9 @@
 * Added
   * Added screenreader support to announce state and chosen/selected item in the combo box.
 
+* Changed
+  * Change labels to be shown for all fields.
+
 ## 4.34.0 - (August 2, 2023)
 
 * Changed
