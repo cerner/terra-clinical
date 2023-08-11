@@ -295,8 +295,8 @@ const numericResultsOverflow = [
 ];
 
 const SemanticTableWithFlowsheetResultCell = () => (
-  <Table>
-    <Header>
+  <Table style={{ width: '100%', tableLayout: 'fixed' }}>
+    <Header style={{ width: 'auto' }}>
       <ResultNameHeaderCell key="notes" resultName="Notes" />
       <ResultNameHeaderCell key="result" resultName="Clinical Results" />
       <ResultNameHeaderCell key="date" resultName="Date" />

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react';
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -392,7 +392,8 @@ const FlowsheetResultCell = (props) => {
   } = props;
   const containerDiv = useRef(null);
   const [contentWidth, setContentWidth] = useState(null);
-  const [numericOverflow, setNumericOverflow] = useState(false);
+  const numericOverflow = useRef(false);
+  // const [numericOverflow, setNumericOverflow] = useState(false);
 
   useLayoutEffect(() => {
     console.log('temp');
@@ -404,18 +405,22 @@ const FlowsheetResultCell = (props) => {
         console.log('contentWidth');
         setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
       }
-
+      // console.log(numericOverflow.current);
       const containerWidth = containerDiv.current.getBoundingClientRect().width;
-      console.log(resultDataSet, contentWidth, numericOverflow);
-      if (containerWidth <= contentWidth && !numericOverflow) {
-        setNumericOverflow(true);
-        console.log('setNumericOverflow(true)');
+      console.log(containerWidth, contentWidth, numericOverflow);
+      if (containerWidth <= contentWidth && !numericOverflow.current) {
+        numericOverflow.current = true;
+        // setNumericOverflow(true);
+        // setNumericOverflow((prev) => prev ? prev : true);
+        // console.log(numericOverflow.current);
       } else if (containerWidth > contentWidth) {
-        setNumericOverflow(false);
-        console.log('setNumericOverflow(false)');
+        numericOverflow.current = false;
+        // setNumericOverflow(false);
+        // setNumericOverflow((prev) => prev ? false : prev);
+        // console.log(numericOverflow.current);
       }
     }
-  }, [resultDataSet, contentWidth]);
+  }, [resultDataSet, contentWidth, numericOverflow]);
 
   let flowsheetResultCellDisplay;
 
@@ -426,7 +431,7 @@ const FlowsheetResultCell = (props) => {
   } else if (!resultDataSet || !resultDataSet.length) {
     flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-Error" className={cx(['primary-display', 'error'])}><ResultError /></div>;
   } else {
-    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv, intl);
+    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow.current, containerDiv, intl);
   }
 
   const theme = React.useContext(ThemeContext);
