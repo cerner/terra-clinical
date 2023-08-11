@@ -26,6 +26,12 @@ Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large
     Terra.validates.element('with word wrap in one column', { selector: '#ItemView-one-wrap' });
     Terra.validates.element('with word wrap in two columns', { selector: '#ItemView-two-wrap' });
   });
+
+  it('with override default styling', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/styling-override-item-view');
+
+    Terra.validates.element('with override styling');
+  });
 });
 
 Terra.describeViewports('Clinical Item View', ['enormous'], () => {

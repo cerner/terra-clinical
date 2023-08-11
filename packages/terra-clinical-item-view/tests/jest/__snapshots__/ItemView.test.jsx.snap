@@ -357,23 +357,6 @@ exports[`should render a default component 1`] = `
 </div>
 `;
 
-exports[`should render a end accessory 1`] = `
-<div
-  className="item-view one-column"
->
-  <div
-    className="body"
-  />
-  <div
-    className="accessory end-accessory accessory-align-center"
-  >
-    <img
-      alt="Graphic"
-    />
-  </div>
-</div>
-`;
-
 exports[`should render a start accessory 1`] = `
 <div
   className="item-view one-column"
@@ -422,6 +405,199 @@ exports[`should render an accessory top aligned 1`] = `
   <div
     className="body"
   />
+</div>
+`;
+
+exports[`should render an end accessory 1`] = `
+<div
+  className="item-view one-column"
+>
+  <div
+    className="body"
+  />
+  <div
+    className="accessory end-accessory accessory-align-center"
+  >
+    <img
+      alt="Graphic"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render displays with original styling when overrideDefaultStyling prop is true 1`] = `
+<div
+  className="item-view one-column"
+>
+  <div
+    className="body"
+  >
+    <div
+      className="column-container"
+    >
+      <div
+        className="primary-column"
+        key="0"
+      >
+        <div
+          className="content"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 1"
+            textStyle="strong"
+          />
+        </div>
+        <div
+          className="content"
+          key="1"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 2"
+            textStyle="attention"
+          />
+        </div>
+        <div
+          className="content"
+          key="2"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 3"
+            textStyle="secondary"
+          />
+        </div>
+        <div
+          className="content"
+          key="3"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 4"
+            textStyle="strikeThrough"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -932,7 +1108,7 @@ exports[`should render two columns with 8 displays 1`] = `
 </div>
 `;
 
-exports[`should render two columns with odd number of displays 1`] = `
+exports[`should render two columns with an odd number of displays 1`] = `
 <div
   className="item-view two-columns"
 >

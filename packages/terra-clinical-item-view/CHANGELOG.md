@@ -5,6 +5,9 @@
 * Changed
   * Fixed the readout order for two column layout to read by column and not by row. Created true columns instead of split rows.
 
+* Added
+  * Added `overrideDefaultStyling` prop so consumers can choose whether to use their original item display styling instead of the default styling item view applies.
+
 ## 4.9.0 - (August 2, 2023)
 
 * Changed

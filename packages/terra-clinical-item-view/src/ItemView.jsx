@@ -34,6 +34,10 @@ const propTypes = {
    */
   textEmphasis: PropTypes.oneOf(['default', 'start']),
   /**
+   * Option to override the item view default styling so the original styling for item display is shown.
+   */
+  overrideDefaultStyling: PropTypes.bool,
+  /**
    * Whether or not all text on the view should be truncated.
    */
   isTruncated: PropTypes.bool,
@@ -70,6 +74,7 @@ const propTypes = {
 const defaultProps = {
   layout: Layouts.ONE_COLUMN,
   textEmphasis: TextEmphasisTypes.DEFAULT,
+  overrideDefaultStyling: false,
   isTruncated: false,
   accessoryAlignment: AccessoryAlignments.ALIGN_CENTER,
   startAccessory: undefined,
@@ -135,7 +140,7 @@ const classesForContent = (rowIndex, rowCount, columnIndex, emphasis) => {
   return ['content'].concat(classes);
 };
 
-const renderColumn = (displayGroup, displayGroupIndex, emphasis) => {
+const renderColumn = (displayGroup, displayGroupIndex, emphasis, overrideDefaultStyling) => {
   const columnKey = displayGroupIndex;
   const displayCount = displayGroup.length;
   let containerStyling;
@@ -150,7 +155,14 @@ const renderColumn = (displayGroup, displayGroupIndex, emphasis) => {
     <div className={cx(containerStyling)} key={columnKey}>
       {displayGroup.map((display, contentIndex) => {
         const contentKey = contentIndex;
-        const contentClasses = classesForContent(contentIndex, displayCount, displayGroupIndex, emphasis);
+        let contentClasses;
+
+        if (overrideDefaultStyling) {
+          contentClasses = 'content';
+        } else {
+          contentClasses = classesForContent(contentIndex, displayCount, displayGroupIndex, emphasis);
+        }
+
         return (
           <div className={cx(contentClasses)} key={contentKey}>
             {display}
@@ -161,7 +173,7 @@ const renderColumn = (displayGroup, displayGroupIndex, emphasis) => {
   );
 };
 
-const renderView = (displays, layout, emphasis) => {
+const renderView = (displays, layout, emphasis, overrideDefaultStyling) => {
   if (displays === null || displays === undefined || !displays.length) {
     return undefined;
   }
@@ -197,7 +209,7 @@ const renderView = (displays, layout, emphasis) => {
   return (
     <div className={cx('column-container')}>
       {displayGroups.map((group, index) => {
-        const column = renderColumn(group, index, emphasis);
+        const column = renderColumn(group, index, emphasis, overrideDefaultStyling);
         return column;
       })}
     </div>
@@ -207,6 +219,7 @@ const renderView = (displays, layout, emphasis) => {
 const ItemView = ({
   layout,
   textEmphasis,
+  overrideDefaultStyling,
   isTruncated,
   accessoryAlignment,
   startAccessory,
@@ -234,7 +247,7 @@ const ItemView = ({
     <div {...customProps} className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>
-        {renderView(displays, layout, textEmphasis)}
+        {renderView(displays, layout, textEmphasis, overrideDefaultStyling)}
         {comment}
       </div>
       {renderAccessory(endAccessory, false, accessoryAlignment, 'end')}
