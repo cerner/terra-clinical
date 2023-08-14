@@ -55,9 +55,9 @@
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
 
-  .row {
+  .column-container {
     display: flex;
-    width: 100%;
+    flex-flow: row nowrap;
   }
 
   .content {
@@ -65,6 +65,18 @@
     color: var(--terra-clinical-item-view-content-color, rgba(28, 31, 33, 0.65));
     display: flex;
     overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .secondary-column {
+    flex: 1 0 auto;
+    float: right;
+    max-width: 60%;
+
+    .content {
+      @include terra-text-align-end();
+      justify-content: flex-end;
+      padding-left: 5px;
+    }
   }
 
   .is-truncated,
@@ -75,31 +87,26 @@
   // Layouts
   /* stylelint-disable selector-max-compound-selectors */
   .one-column {
-    .row-container {
-      display: flex;
-      flex-flow: row wrap;
-
-      .content {
-        width: 100%;
-      }
+    .primary-column {
+      width: 100%;
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
 
   .two-columns {
-    .content:nth-child(odd) {
+    .primary-column {
       flex: 1 1 auto;
-      justify-content: flex-start;
+      float: left;
     }
+  }
 
-    .content:nth-child(even) {
-      @include terra-text-align-end();
-      flex: 1 0 auto;
-      justify-content: flex-end;
-      // Set a max-width and disable flexbox-squishing on the right-most displays. This will ensure that they aren't
-      // prematurely squished and maximize the available space for all labels.
-      max-width: 60%;
-      padding-left: 5px;
+  .truncated-two-columns {
+    .primary-column {
+      flex: 1 1 auto;
+      float: left;
+      // Without a max width set below, the content within the primary column won't truncate properly
+      // Width isn't set for primary-column anywhere else because it will mess up the column spacing when isTruncated is false
+      max-width: 40%;
     }
   }
 
