@@ -190,7 +190,9 @@ exports[`correctly applies the theme context className 1`] = `
           />
         </div>
       </div>
-      <div />
+      <div
+        aria-live="polite"
+      />
     </div>
   </fieldset>
 </div>
@@ -288,7 +290,9 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
         value="date"
       />
     </InjectIntl(SelectField)>
-    <div>
+    <div
+      aria-live="polite"
+    >
       <Field
         className="field-inline date"
         error={null}
@@ -418,7 +422,9 @@ exports[`should render Clinical Onset picker with the correct label for month an
         value="date"
       />
     </InjectIntl(SelectField)>
-    <div>
+    <div
+      aria-live="polite"
+    >
       <InjectIntl(SelectField)
         className="field-inline month"
         label="Terra.onsetPicker.month"
@@ -656,7 +662,9 @@ exports[`should render Clinical Onset picker with the correct label for precisio
         value="date"
       />
     </InjectIntl(SelectField)>
-    <div>
+    <div
+      aria-live="polite"
+    >
       <InputField
         className="field-inline age"
         defaultValue={3}
@@ -920,7 +928,9 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           />
         </div>
       </div>
-      <div />
+      <div
+        aria-live="polite"
+      />
     </div>
   </fieldset>
 </div>
@@ -1220,7 +1230,9 @@ exports[`should render only the supplied precisions 1`] = `
           />
         </div>
       </div>
-      <div />
+      <div
+        aria-live="polite"
+      />
     </div>
   </fieldset>
 </div>
@@ -1416,7 +1428,9 @@ exports[`should render the same when onChange function is supplied 1`] = `
           />
         </div>
       </div>
-      <div />
+      <div
+        aria-live="polite"
+      />
     </div>
   </fieldset>
 </div>
@@ -1610,7 +1624,9 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           />
         </div>
       </div>
-      <div>
+      <div
+        aria-live="polite"
+      >
         <div
           class="field field-inline age"
         >
@@ -1940,7 +1956,9 @@ exports[`should render with non default inputs when supplied 1`] = `
           />
         </div>
       </div>
-      <div>
+      <div
+        aria-live="polite"
+      >
         <div
           class="field field-inline year"
         >

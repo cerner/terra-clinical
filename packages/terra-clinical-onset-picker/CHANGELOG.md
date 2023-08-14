@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added screenreader support to announce dynamic content.
+
 ## 4.35.0 - (August 14, 2023)
 
 * Added
