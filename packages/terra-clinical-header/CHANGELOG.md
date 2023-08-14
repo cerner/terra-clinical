@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.28.0 - (August 14, 2023)
+
 * Changed
   * Deprecated `title` prop. This will be replaced by the`text` prop in the next major version.
 
