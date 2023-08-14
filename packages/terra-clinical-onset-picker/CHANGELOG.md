@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.35.0 - (August 14, 2023)
+
 * Added
   * Added screenreader support to announce state and chosen/selected item in the combo box.
 
