@@ -391,36 +391,23 @@ const FlowsheetResultCell = (props) => {
     ...customProps
   } = props;
   const containerDiv = useRef(null);
-  const [contentWidth, setContentWidth] = useState(null);
-  const numericOverflow = useRef(false);
-  // const [numericOverflow, setNumericOverflow] = useState(false);
+  const [numericOverflow, setNumericOverflow] = useState(false);
 
-  useLayoutEffect(() => {
-    console.log('temp');
+  useEffect(() => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
+    const contentWidthTemp = containerDiv.current.children[0].getBoundingClientRect().width;
+    const containerWidthTemp = containerDiv.current.getBoundingClientRect().width;
+
     if (checkTypeNumeric(resultDataSet[0])) {
-      if (!contentWidth) {
-        console.log('contentWidth');
-        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
-      }
-      // console.log(numericOverflow.current);
-      const containerWidth = containerDiv.current.getBoundingClientRect().width;
-      console.log(containerWidth, contentWidth, numericOverflow);
-      if (containerWidth <= contentWidth && !numericOverflow.current) {
-        numericOverflow.current = true;
-        // setNumericOverflow(true);
-        // setNumericOverflow((prev) => prev ? prev : true);
-        // console.log(numericOverflow.current);
-      } else if (containerWidth > contentWidth) {
-        numericOverflow.current = false;
-        // setNumericOverflow(false);
-        // setNumericOverflow((prev) => prev ? false : prev);
-        // console.log(numericOverflow.current);
+      if (containerWidthTemp <= contentWidthTemp) {
+        setNumericOverflow(true);
+      } else if (containerWidthTemp > contentWidthTemp) {
+        setNumericOverflow(false);
       }
     }
-  }, [resultDataSet, contentWidth, numericOverflow]);
+  }, [resultDataSet]);
 
   let flowsheetResultCellDisplay;
 
@@ -431,7 +418,7 @@ const FlowsheetResultCell = (props) => {
   } else if (!resultDataSet || !resultDataSet.length) {
     flowsheetResultCellDisplay = <div key="ClinicalResultDisplay-Error" className={cx(['primary-display', 'error'])}><ResultError /></div>;
   } else {
-    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow.current, containerDiv, intl);
+    flowsheetResultCellDisplay = createFlowsheetResultCellDisplay(resultDataSet, hideUnit, numericOverflow, containerDiv, intl);
   }
 
   const theme = React.useContext(ThemeContext);
