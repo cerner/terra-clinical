@@ -397,13 +397,13 @@ const FlowsheetResultCell = (props) => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
-    const contentWidthTemp = containerDiv.current.children[0].getBoundingClientRect().width;
-    const containerWidthTemp = containerDiv.current.getBoundingClientRect().width;
+    const contentWidth = containerDiv.current.children[0].getBoundingClientRect().width;
+    const containerWidth = containerDiv.current.getBoundingClientRect().width;
 
     if (checkTypeNumeric(resultDataSet[0])) {
-      if (containerWidthTemp <= contentWidthTemp) {
+      if (containerWidth <= contentWidth) {
         setNumericOverflow(true);
-      } else if (containerWidthTemp > contentWidthTemp) {
+      } else if (containerWidth > contentWidth) {
         setNumericOverflow(false);
       }
     }
@@ -432,13 +432,23 @@ const FlowsheetResultCell = (props) => {
     customProps.className,
   );
 
+  const isInsideTable = (element) => {
+    let currentElement = element.current;
+    while (currentElement && currentElement.tagName !== 'TABLE') {
+      currentElement = currentElement.parentElement;
+    }
+    return currentElement !== null;
+  };
+
+  const Element = isInsideTable(containerDiv) ? 'td' : 'React.Fragment';
+
   return (
-    <td
+    <Element
       {...customProps}
       className={flowsheetCellClassNames}
     >
       {flowsheetResultCellDisplay}
-    </td>
+    </Element>
   );
 };
 

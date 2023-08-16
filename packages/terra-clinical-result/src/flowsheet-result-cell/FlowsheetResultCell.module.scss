@@ -10,6 +10,9 @@
     max-width: 100%;  // Needed for IE10 truncation
     overflow-x: hidden;
     padding: 0;
+  }
+
+  .flowsheet-result-cell:not(td) {
     width: 100%;
   }
 
