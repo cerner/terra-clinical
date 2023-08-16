@@ -152,6 +152,22 @@ it('should render Clinical Onset picker with the correct label for date', () => 
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render Clinical Onset picker with the aria-live region', () => {
+  const wrapper = shallowWithIntl(
+    <OnsetPicker
+      ageUnit="years"
+      birthdate="2011-08-16"
+      granularity="age"
+      id="test"
+      precision="before"
+      onsetDate="2014-08-16"
+    />,
+  ).dive();
+
+  expect(wrapper.find('#dynamic_content').prop('aria-live')).toEqual('polite');
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('correctly applies the theme context className', () => {
   const tabs = render(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
