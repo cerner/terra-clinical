@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.35.0 - (August 16, 2023)
+
 * Fixed
   * Fixed extra empty space showing when no elements are specified for title section.
 
