@@ -13,6 +13,11 @@ const examples = () => (
         #dl-wrapper > dd {
           margin-bottom: 14px;
         }
+
+        #dl-wrapper {
+          margin-block-end: 0;
+          margin-block-start: 0;
+        }
       `}
     </style>
     <h3>LabelValueView returned as a term and a definition (isChildOfDescriptionList=&apos;true&apos;):</h3>
