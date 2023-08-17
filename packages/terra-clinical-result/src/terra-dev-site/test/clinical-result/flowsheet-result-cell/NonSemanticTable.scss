@@ -1,7 +1,7 @@
 .table {
+  border: 1px solid #4d4c4c;
   display: table;
   width: 100%;
-  border: 1px solid #666666;
 }
 
 .table-header {
@@ -9,23 +9,24 @@
 }
 
 .table-row {
+  clear: both;
   display: table-row;
   width: 100%;
-  clear: both;
 }
 
 .table-col {
+  border: 1px solid #adadad;
   display: table-cell;
-  width: auto;
-  border: 1px solid #ccc;
-  margin: auto;
   flex-grow: 1;
+  margin: auto;
+  max-width: 1px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 1px;
+  width: auto;
 }
 
 .center-text-container {
   display: flex;
+  width: 100%;
 }
