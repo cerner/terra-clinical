@@ -74,6 +74,12 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
   //   Terra.validates.element('with semantic table');
   // });
 
+  it('displays a FlowsheetResultCell in a non semantic table', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/non-semantic-table-with-flowsheet-result-cell');
+
+    Terra.validates.element('with non semantic table');
+  });
+
   it('displays a FlowsheetResultCell in a semantic table with multiple padding styles', () => {
     browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/semantic-paddingstyle-with-flowsheet-result-cell');
 
