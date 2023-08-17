@@ -68,11 +68,11 @@ Terra.describeViewports('FlowsheetResultCell', ['medium'], () => {
   // This test is causing issues when generating the snapshot, commenting out for now so we can cicle back
   // More details can be found in the UXPLATFORM-9327 Jira
   //
-  // it('displays a FlowsheetResultCell in a semantic table', () => {
-  //   browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/semantic-table-with-flowsheet-result-cell');
+  it('displays a FlowsheetResultCell in a semantic table', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/semantic-table-with-flowsheet-result-cell');
 
-  //   Terra.validates.element('with semantic table');
-  // });
+    Terra.validates.element('with semantic table');
+  });
 
   it('displays a FlowsheetResultCell in a non semantic table', () => {
     browser.url('/#/raw/tests/terra-clinical-result/clinical-result/flowsheet-result-cell/non-semantic-table-with-flowsheet-result-cell');
