@@ -29,7 +29,8 @@ const defaultBloodPressureResult = [
 ];
 
 const SemanticTableWithResultTimeHeaderCell = () => (
-  <Table>
+  // eslint-disable-next-line react/forbid-component-props
+  <Table style={{ tableLayout: 'fixed' }}>
     <Header>
       <ResultTimeHeaderCell key="time1" date="Dec 21, 2010" time="20:59" />
       <ResultTimeHeaderCell key="time2" date="Dec 22, 2010" time="22:00" />

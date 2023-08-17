@@ -1,0 +1,31 @@
+.table {
+  display: table;
+  width: 100%;
+  border: 1px solid #666666;
+}
+
+.table-header {
+  display: table-header-group;
+}
+
+.table-row {
+  display: table-row;
+  width: 100%;
+  clear: both;
+}
+
+.table-col {
+  display: table-cell;
+  width: auto;
+  border: 1px solid #ccc;
+  margin: auto;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 1px;
+}
+
+.center-text-container {
+  display: flex;
+}

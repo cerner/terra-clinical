@@ -432,23 +432,13 @@ const FlowsheetResultCell = (props) => {
     customProps.className,
   );
 
-  const isInsideTable = (element) => {
-    let currentElement = element.current;
-    while (currentElement && currentElement.tagName !== 'TABLE') {
-      currentElement = currentElement.parentElement;
-    }
-    return currentElement !== null;
-  };
-
-  const Element = isInsideTable(containerDiv) ? 'td' : 'React.Fragment';
-
   return (
-    <Element
+    <td
       {...customProps}
       className={flowsheetCellClassNames}
     >
       {flowsheetResultCellDisplay}
-    </Element>
+    </td>
   );
 };
 

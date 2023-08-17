@@ -89,7 +89,8 @@ const unverifiedResultValue = [
 ];
 
 const SemanticPaddingstyleFlowsheetResultCell = () => (
-  <Table>
+  // eslint-disable-next-line react/forbid-component-props
+  <Table style={{ tableLayout: 'fixed' }}>
     <Header>
       <ResultNameHeaderCell key="padding" resultName="Padding Type" />
       <ResultNameHeaderCell key="bp" resultName="Blood Pressure Result" />
