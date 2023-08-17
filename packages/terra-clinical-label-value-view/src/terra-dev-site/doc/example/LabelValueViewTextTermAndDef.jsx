@@ -8,6 +8,11 @@ const LabelValueViewText = () => (
         #dl-wrapper > dd {
           margin-bottom: 14px;
         }
+
+        #dl-wrapper {
+          margin-block-end: 0;
+          margin-block-start: 0;
+        }
       `}
     </style>
     <h4 id="topicText">Vitals</h4>
