@@ -5,7 +5,7 @@
 * Added
   * Added back `width: 100%` to flowsheet result cell styles removed in 1.17.0.
 
-* Fixed:
+* Fixed
   * Fixed infinite re-render bug.
 
 ## 1.21.0 - (August 2, 2023)
