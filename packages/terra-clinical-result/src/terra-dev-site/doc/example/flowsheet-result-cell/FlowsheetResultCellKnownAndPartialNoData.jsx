@@ -56,8 +56,11 @@ export default () => (
     </Header>
     <Body>
       <Row>
+        {/* This example cell shows a standard result with the `hasResultNoData` prop or `result: { value: null, }` */}
         <FlowsheetResultCell hasResultNoData />
+        {/* This example cell shows a partial Blood Pressure no data display using the `resultNoData` property name */}
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropSystolic} hideUnit />
+        {/* This example cell shows a partial Blood Pressure no data display using `result: { value: null, }` */}
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropDiastolic} hideUnit />
       </Row>
     </Body>

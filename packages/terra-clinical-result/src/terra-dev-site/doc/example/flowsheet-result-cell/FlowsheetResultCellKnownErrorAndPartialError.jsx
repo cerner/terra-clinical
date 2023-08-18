@@ -48,8 +48,11 @@ export default () => (
     </Header>
     <Body>
       <Row>
+        {/* This example cell shows how to use the `hasResultError` prop */}
         <FlowsheetResultCell hasResultError />
+        {/* This example cell shows the error display when the Systolic property name is not present */}
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoSystolic} hideUnit />
+        {/* This example cell shows the error display when the Diastolic property name is not present */}
         <FlowsheetResultCell resultDataSet={partialResultValueWithNoDiastolic} hideUnit />
       </Row>
     </Body>
