@@ -36,6 +36,11 @@
     padding: 0;
   }
 
+  .mock-flowsheet-table {
+    table-layout: fixed;
+    width: 40%;
+  }
+
   .mock-flowsheet-header {
     background-color: var(--terra-clinical-result-examples-mock-flowsheet-header-background-color, #f1f1f1);
     border: var(--terra-clinical-result-examples-mock-flowsheet-header-border, 1px solid #dedfe0);

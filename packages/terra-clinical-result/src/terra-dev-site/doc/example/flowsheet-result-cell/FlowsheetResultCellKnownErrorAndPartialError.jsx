@@ -1,8 +1,12 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+import Table, {
+  Header,
+  Row,
+  Body,
+  HeaderCell,
+} from 'terra-html-table';
 import styles from '../Examples.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -35,35 +39,19 @@ const partialResultValueWithNoDiastolic = [
   },
 ];
 
-export default () => {
-  const theme = React.useContext(ThemeContext);
-  const mockFlowsheetClassnames = classNames(
-    cx(
-      'mock-flowsheet-example',
-      theme.className,
-    ),
-  );
-
-  return (
-    <div className={mockFlowsheetClassnames}>
-      {/* This example column shows how to use the `hasResultError` prop */}
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell hasResultError />
-        </div>
-      </div>
-      {/* This example column shows the error display when the Systolic property name is not present */}
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={partialResultValueWithNoSystolic} hideUnit />
-        </div>
-      </div>
-      {/* This example column shows the error display when the Diastolic property name is not present */}
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={partialResultValueWithNoDiastolic} hideUnit />
-        </div>
-      </div>
-    </div>
-  );
-};
+export default () => (
+  <Table className={cx('mock-flowsheet-table')}>
+    <Header>
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+    </Header>
+    <Body>
+      <Row>
+        <FlowsheetResultCell hasResultError />
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoSystolic} hideUnit />
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoDiastolic} hideUnit />
+      </Row>
+    </Body>
+  </Table>
+);
