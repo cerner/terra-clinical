@@ -32,8 +32,7 @@ const bloodpressureResultValue = [
 ];
 
 export default () => (
-  // eslint-disable-next-line react/forbid-component-props
-  <Table style={{ tableLayout: 'fixed', width: '600px' }}>
+  <Table className={cx('mock-flowsheet-table')}>
     <Header>
       <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} resultName="" />
       <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} resultName="" />
