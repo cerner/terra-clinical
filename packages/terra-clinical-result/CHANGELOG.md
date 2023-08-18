@@ -3,11 +3,11 @@
 ## Unreleased
 
 * Added
-  * Added `width: 100%` to flowsheet result cell styles
+  * Added back `width: 100%` to flowsheet result cell styles removed in 1.17.0.
 
 * Changed
-  * Updated useLayoutEffect to useEffect
-  * Removed unnecessary dependencies and component states from useEffect
+  * Updated FlowsheetResultCell useLayoutEffect to useEffect.
+  * Updated FlowsheetResultCell  dependencies and component states from useEffect.
 
 ## 1.21.0 - (August 2, 2023)
 
