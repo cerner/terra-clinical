@@ -1,8 +1,11 @@
 import React from 'react';
-import { FlowsheetResultCell } from 'terra-clinical-result/lib';
-import classNames from 'classnames';
+import { FlowsheetResultCell, ResultNameHeaderCell } from 'terra-clinical-result/lib';
+import Table, {
+  Header,
+  Row,
+  Body,
+} from 'terra-html-table';
 import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
 import styles from '../Examples.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -40,27 +43,18 @@ const multipleResultValues = [
   },
 ];
 
-export default () => {
-  const theme = React.useContext(ThemeContext);
-  const mockFlowsheetClassnames = classNames(
-    cx(
-      'mock-flowsheet-example',
-      theme.className,
-    ),
-  );
-
-  return (
-    <div className={mockFlowsheetClassnames}>
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'empty'])} />
-      </div>
-    </div>
-  );
-};
+export default () => (
+  // eslint-disable-next-line react/forbid-component-props
+  <Table style={{ tableLayout: 'fixed', width: '600px' }}>
+    <Header>
+      <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} resultName="" />
+      <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} resultName="" />
+    </Header>
+    <Body>
+      <Row>
+        <FlowsheetResultCell resultDataSet={multipleResultValues} hideUnit />
+        <></>
+      </Row>
+    </Body>
+  </Table>
+);

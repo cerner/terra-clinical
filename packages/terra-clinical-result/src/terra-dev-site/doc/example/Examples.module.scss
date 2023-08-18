@@ -58,7 +58,7 @@
     display: inline-block;
     margin-right: -1px;
     width: 120px;
-    
+
     &.new-date {
       border-left: var(--terra-clinical-result-examples-mock-flowsheet-header-cell-new-date-border-left, 2px solid #4e5558);
     }
@@ -124,7 +124,7 @@
       overflow: auto;
       white-space: normal;
       word-wrap: normal;
-    }  
+    }
 
     &.empty {
       height: 33px;

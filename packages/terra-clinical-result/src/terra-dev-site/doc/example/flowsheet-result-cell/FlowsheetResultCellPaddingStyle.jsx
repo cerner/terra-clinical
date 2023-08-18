@@ -1,8 +1,11 @@
 import React from 'react';
-import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames';
+import { FlowsheetResultCell, ResultNameHeaderCell } from 'terra-clinical-result/lib';
+import Table, {
+  Header,
+  Row,
+  Body,
+} from 'terra-html-table';
 import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
 import styles from '../Examples.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -89,50 +92,30 @@ const unverifiedResultValue = [
   },
 ];
 
-export default () => {
-  const theme = React.useContext(ThemeContext);
-  const mockFlowsheetClassnames = classNames(
-    cx(
-      'mock-flowsheet-example',
-      theme.className,
-    ),
-  );
-
-  return (
-    <div className={mockFlowsheetClassnames}>
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
-          none
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
-          compact
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding', 'medium'])}>
-          standard
-        </div>
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
-          <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="none" />
-        </div>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="compact" />
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'medium'])}>
-          <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="standard" />
-        </div>
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'short'])}>
-          <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="none" />
-        </div>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="compact" />
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'medium'])}>
-          <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="standard" />
-        </div>
-      </div>
-    </div>
-  );
-};
+export default () => (
+  // eslint-disable-next-line react/forbid-component-props
+  <Table style={{ tableLayout: 'fixed', width: '600px' }} className={mockFlowsheetClassnames}>
+    <Header>
+      <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} key="notes" resultName="" />
+      <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} key="notes" resultName="" />
+      <ResultNameHeaderCell className={cx('mock-flowsheet-resultcolumn')} key="notes" resultName="" />
+    </Header>
+    <Body>
+      <Row>
+        <>none</>
+        <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="none" />
+        <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="none" />
+      </Row>
+      <Row>
+        <>compact</>
+        <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="compact" />
+        <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="compact" />
+      </Row>
+      <Row>
+        <>standard</>
+        <FlowsheetResultCell resultDataSet={multipleResultBPValues} hideUnit paddingStyle="standard" />
+        <FlowsheetResultCell resultDataSet={unverifiedResultValue} hideUnit paddingStyle="standard" />
+      </Row>
+    </Body>
+  </Table>
+);
