@@ -10,9 +10,8 @@ runs:
     - name: Setup NPM v9
       shell: bash
       run: npm install -g npm@9
-    - name: Check Node & NPM versions
+    - name: Check NPM version
       shell: bash
-      run: node -v
       run: npm -v
     - name: Clean Environment
       shell: bash
