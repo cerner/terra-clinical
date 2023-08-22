@@ -397,10 +397,11 @@ const FlowsheetResultCell = (props) => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
-    const contentWidth = containerDiv.current.children[0].getBoundingClientRect().width;
-    const containerWidth = containerDiv.current.getBoundingClientRect().width;
 
     if (checkTypeNumeric(resultDataSet[0])) {
+      const contentWidth = containerDiv.current.children[0].getBoundingClientRect().width;
+      const containerWidth = containerDiv.current.getBoundingClientRect().width;
+
       if (containerWidth <= contentWidth) {
         setNumericOverflow(true);
       } else if (containerWidth > contentWidth) {
