@@ -73,7 +73,7 @@ const Observation = (props) => {
     low: <IconLow className={cx('icon-interpretation')} a11yLabel={intl.formatMessage({ id: 'Terra.clinicalResult.interpretationOutOfRangeLow' })} role="img" focusable="true" />,
   };
 
-  const isValidValue = result?.value && (!Array.isArray(result.value) || result.value.length !== 0);
+  const isValidValue = result && result.value && (!Array.isArray(result.value) || result.value.length !== 0);
 
   const theme = React.useContext(ThemeContext);
   const valueTextClasses = classNames(
