@@ -15,8 +15,8 @@ const examples = () => (
         }
 
         #dl-wrapper {
-          margin-block-end: 0;
-          margin-block-start: 0;
+          margin-bottom: 0;
+          margin-top: 0;
         }
       `}
     </style>
