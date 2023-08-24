@@ -10,6 +10,7 @@
 
 * Changed
   * Updated testing recommendations to use `jest.spyOn` instead of `jest.mock`.
+  * Updated invalid result value check to display error state for empty results.
 
 ## 1.21.0 - (August 2, 2023)
 
