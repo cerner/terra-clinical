@@ -527,7 +527,7 @@ class OnsetPicker extends React.Component {
           {granularitySelect}
 
           {(this.state.precision !== PrecisionOptions.UNKNOWN) && (
-            <div>
+            <div id="dynamic_content" aria-live="polite">
               {ageInput}
               {ageUnitSelect}
               {monthSelect}
