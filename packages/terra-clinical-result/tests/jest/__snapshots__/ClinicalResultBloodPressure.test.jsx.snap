@@ -93,7 +93,6 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
           className="icon-comment"
           data-name="Layer 1"
           focusable="true"
-          isBidi={true}
           role="img"
           viewBox="0 0 48 48"
           xmlns="http://www.w3.org/2000/svg"
@@ -607,7 +606,6 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
           className="icon-comment"
           data-name="Layer 1"
           focusable="true"
-          isBidi={true}
           role="img"
           viewBox="0 0 48 48"
           xmlns="http://www.w3.org/2000/svg"

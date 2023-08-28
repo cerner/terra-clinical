@@ -65,8 +65,6 @@ exports[`HeaderCell Snapshot Tests should render a Cell with all provided props 
       className="sort-indicator"
     >
       <IconCaretUp
-        className=""
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
