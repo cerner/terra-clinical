@@ -1,8 +1,12 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+import Table, {
+  Header,
+  Row,
+  Body,
+  HeaderCell,
+} from 'terra-html-table';
 import styles from '../Examples.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -43,35 +47,22 @@ const partialResultValueWithNoDataPropDiastolic = [
   },
 ];
 
-export default () => {
-  const theme = React.useContext(ThemeContext);
-  const mockFlowsheetClassnames = classNames(
-    cx(
-      'mock-flowsheet-example',
-      theme.className,
-    ),
-  );
-
-  return (
-    <div className={mockFlowsheetClassnames}>
-      {/* This example column shows a standard result with the `hasResultNoData` prop or `result: { value: null, }` */}
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell hasResultNoData />
-        </div>
-      </div>
-      {/* This example column shows a partial Blood Pressure no data display using the `resultNoData` property name */}
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropSystolic} hideUnit />
-        </div>
-      </div>
-      {/* This example column shows a partial Blood Pressure no data display using `result: { value: null, }` */}
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropDiastolic} hideUnit />
-        </div>
-      </div>
-    </div>
-  );
-};
+export default () => (
+  <Table className={cx('mock-flowsheet-table')}>
+    <Header>
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+    </Header>
+    <Body>
+      <Row>
+        {/* This example cell shows a standard result with the `hasResultNoData` prop or `result: { value: null, }` */}
+        <FlowsheetResultCell hasResultNoData />
+        {/* This example cell shows a partial Blood Pressure no data display using the `resultNoData` property name */}
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropSystolic} hideUnit />
+        {/* This example cell shows a partial Blood Pressure no data display using `result: { value: null, }` */}
+        <FlowsheetResultCell resultDataSet={partialResultValueWithNoDataPropDiastolic} hideUnit />
+      </Row>
+    </Body>
+  </Table>
+);

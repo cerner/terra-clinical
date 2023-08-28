@@ -5,6 +5,10 @@ import Table, {
   Row,
   Body,
 } from 'terra-html-table';
+import classNamesBind from 'classnames/bind';
+import styles from '../Examples.module.scss';
+
+const cx = classNamesBind.bind(styles);
 
 const multipleResultBPValues = [
   {
@@ -89,7 +93,7 @@ const unverifiedResultValue = [
 ];
 
 export default () => (
-  <Table>
+  <Table className={cx('mock-flowsheet-table-full')}>
     <Header>
       <ResultNameHeaderCell key="padding" resultName="Padding Type" />
       <ResultNameHeaderCell key="bp" resultName="Blood Pressure Result" />

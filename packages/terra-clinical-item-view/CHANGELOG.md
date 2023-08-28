@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.10.0 - (August 16, 2023)
+
 * Changed
   * Fixed the readout order for two column layout to read by column and not by row. Created true columns instead of split rows.
 

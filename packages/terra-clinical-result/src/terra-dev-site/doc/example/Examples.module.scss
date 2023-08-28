@@ -36,6 +36,16 @@
     padding: 0;
   }
 
+  .mock-flowsheet-table {
+    table-layout: fixed;
+    width: 40%;
+  }
+
+  .mock-flowsheet-table-full {
+    table-layout: fixed;
+    width: 100%;
+  }
+
   .mock-flowsheet-header {
     background-color: var(--terra-clinical-result-examples-mock-flowsheet-header-background-color, #f1f1f1);
     border: var(--terra-clinical-result-examples-mock-flowsheet-header-border, 1px solid #dedfe0);
@@ -53,7 +63,7 @@
     display: inline-block;
     margin-right: -1px;
     width: 120px;
-    
+
     &.new-date {
       border-left: var(--terra-clinical-result-examples-mock-flowsheet-header-cell-new-date-border-left, 2px solid #4e5558);
     }
@@ -119,7 +129,7 @@
       overflow: auto;
       white-space: normal;
       word-wrap: normal;
-    }  
+    }
 
     &.empty {
       height: 33px;
@@ -140,7 +150,7 @@
     &.with-padding {
       padding: 7px 7px 0;
     }
-    
+
     &.zebra {
       background-color: var(--terra-clinical-result-examples-mock-flowsheet-resultcolumn-cell-zebra-background-color, #f1f1f1);
     }
