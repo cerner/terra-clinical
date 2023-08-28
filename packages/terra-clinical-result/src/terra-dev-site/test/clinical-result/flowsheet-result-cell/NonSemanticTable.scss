@@ -1,0 +1,32 @@
+.table {
+  border: 1px solid #4d4c4c;
+  display: table;
+  width: 100%;
+}
+
+.table-header {
+  display: table-header-group;
+}
+
+.table-row {
+  clear: both;
+  display: table-row;
+  width: 100%;
+}
+
+.table-col {
+  border: 1px solid #adadad;
+  display: table-cell;
+  flex-grow: 1;
+  margin: auto;
+  max-width: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: auto;
+}
+
+.center-text-container {
+  display: flex;
+  width: 100%;
+}

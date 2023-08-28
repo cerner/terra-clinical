@@ -295,7 +295,8 @@ const numericResultsOverflow = [
 ];
 
 const SemanticTableWithFlowsheetResultCell = () => (
-  <Table>
+  // eslint-disable-next-line react/forbid-component-props
+  <Table style={{ tableLayout: 'fixed' }}>
     <Header>
       <ResultNameHeaderCell key="notes" resultName="Notes" />
       <ResultNameHeaderCell key="result" resultName="Clinical Results" />

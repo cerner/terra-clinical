@@ -29,7 +29,8 @@ const defaultBloodPressureResult = [
 ];
 
 const SemanticTableWithResultNameHeaderCell = () => (
-  <Table>
+  // eslint-disable-next-line react/forbid-component-props
+  <Table style={{ tableLayout: 'fixed' }}>
     <Header>
       <ResultNameHeaderCell key="temp" resultName="Temp" unit="degC" />
       <ResultNameHeaderCell key="bp" resultName="BP" unit="mmHg" />

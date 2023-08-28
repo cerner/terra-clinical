@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
@@ -391,27 +391,24 @@ const FlowsheetResultCell = (props) => {
     ...customProps
   } = props;
   const containerDiv = useRef(null);
-  const [contentWidth, setContentWidth] = useState(null);
   const [numericOverflow, setNumericOverflow] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!containerDiv.current || !resultDataSet[0]) {
       return;
     }
 
     if (checkTypeNumeric(resultDataSet[0])) {
-      if (!contentWidth) {
-        setContentWidth(containerDiv.current.children[0].getBoundingClientRect().width);
-      }
-
+      const contentWidth = containerDiv.current.children[0].getBoundingClientRect().width;
       const containerWidth = containerDiv.current.getBoundingClientRect().width;
-      if (containerWidth <= contentWidth && !numericOverflow) {
+
+      if (containerWidth <= contentWidth) {
         setNumericOverflow(true);
       } else if (containerWidth > contentWidth) {
         setNumericOverflow(false);
       }
     }
-  }, [resultDataSet, contentWidth, numericOverflow]);
+  }, [resultDataSet]);
 
   let flowsheetResultCellDisplay;
 

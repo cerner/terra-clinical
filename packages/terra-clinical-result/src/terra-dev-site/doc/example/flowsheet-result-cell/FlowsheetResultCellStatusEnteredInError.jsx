@@ -1,8 +1,13 @@
 import React from 'react';
 import { FlowsheetResultCell } from 'terra-clinical-result/lib/index';
-import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
-import ThemeContext from 'terra-theme-context';
+import Table, {
+  Header,
+  Row,
+  Body,
+  HeaderCell,
+  Cell,
+} from 'terra-html-table';
 import styles from '../Examples.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -87,39 +92,25 @@ const bloodpressureBothInError = [
   },
 ];
 
-export default () => {
-  const theme = React.useContext(ThemeContext);
-  const mockFlowsheetClassnames = classNames(
-    cx(
-      'mock-flowsheet-example',
-      theme.className,
-    ),
-  );
-
-  return (
-    <div className={mockFlowsheetClassnames}>
-      <div className={cx(['mock-flowsheet-resultcolumn', 'double-column'])}>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'with-padding'])}>
-          standard result
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
-          blood pressure: systolic-only
-        </div>
-        <div className={cx(['mock-flowsheet-resultcolumn-cell', 'wide', 'with-padding'])}>
-          blood pressure: both systolic & diastolic
-        </div>
-      </div>
-      <div className={cx('mock-flowsheet-resultcolumn')}>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={standardInError} hideUnit />
-        </div>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={bloodpressureOneInError} hideUnit />
-        </div>
-        <div className={cx('mock-flowsheet-resultcolumn-cell')}>
-          <FlowsheetResultCell resultDataSet={bloodpressureBothInError} hideUnit />
-        </div>
-      </div>
-    </div>
-  );
-};
+export default () => (
+  <Table className={cx('mock-flowsheet-table')}>
+    <Header>
+      <HeaderCell className={cx(['mock-flowsheet-resultcolumn', 'double-column'])} />
+      <HeaderCell className={cx('mock-flowsheet-resultcolumn')} />
+    </Header>
+    <Body>
+      <Row>
+        <Cell>standard result</Cell>
+        <FlowsheetResultCell resultDataSet={standardInError} hideUnit />
+      </Row>
+      <Row>
+        <Cell>blood pressure: systolic-only</Cell>
+        <FlowsheetResultCell resultDataSet={bloodpressureOneInError} hideUnit />
+      </Row>
+      <Row>
+        <Cell>blood pressure: both systolic & diastolic</Cell>
+        <FlowsheetResultCell resultDataSet={bloodpressureBothInError} hideUnit />
+      </Row>
+    </Body>
+  </Table>
+);
