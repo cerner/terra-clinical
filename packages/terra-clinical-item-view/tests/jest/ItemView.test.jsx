@@ -46,6 +46,17 @@ it('should render with a display and graphic', () => {
   expect(itemView).toMatchSnapshot();
 });
 
+it('should render displays with original styling when overrideDefaultStyling prop is true', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display 1" textStyle="strong" />);
+  const display2 = shallowWithIntl(<ItemView.Display text="display 2" textStyle="attention" />);
+  const display3 = shallowWithIntl(<ItemView.Display text="display 3" textStyle="secondary" />);
+  const display4 = shallowWithIntl(<ItemView.Display text="display 4" textStyle="strikeThrough" />);
+  const displays = [display1, display2, display3, display4];
+  const itemView = shallow(<ItemView displays={displays} overrideDefaultStyling />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(4);
+  expect(itemView).toMatchSnapshot();
+});
+
 it('should render truncated display', () => {
   const display1 = shallowWithIntl(<ItemView.Display text="display1display1display1display1display1display1display1display1" isTruncated />);
   const displays = [display1];
@@ -120,7 +131,7 @@ it('should render start accessory space reserved', () => {
   expect(itemView).toMatchSnapshot();
 });
 
-it('should render a end accessory', () => {
+it('should render an end accessory', () => {
   const testElement = <img alt="Graphic" />;
   const params = {
     layout: 'oneColumn',
@@ -188,7 +199,7 @@ it('should render two columns with 8 displays', () => {
   expect(itemView).toMatchSnapshot();
 });
 
-it('should render two columns with odd number of displays', () => {
+it('should render two columns with an odd number of displays', () => {
   const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
   const display2 = shallowWithIntl(<ItemView.Display text="display 2" />);
   const display3 = shallowWithIntl(<ItemView.Display text="display 3" />);
