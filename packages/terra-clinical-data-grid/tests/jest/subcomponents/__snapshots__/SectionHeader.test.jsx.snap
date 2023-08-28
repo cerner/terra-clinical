@@ -46,8 +46,6 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader as collapsed
       className="collapsible-icon"
     >
       <IconCaretRight
-        className=""
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -96,8 +94,6 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with child c
       className="collapsible-icon"
     >
       <IconCaretDown
-        className=""
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />
@@ -130,8 +126,6 @@ exports[`SectionHeader Snapshot Tests should render a SectionHeader with default
       className="collapsible-icon"
     >
       <IconCaretDown
-        className=""
-        isBidi={true}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
       />

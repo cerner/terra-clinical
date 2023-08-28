@@ -577,7 +577,6 @@ exports[`FlowsheetResultCell should render correctly when a multiple results cel
             className="icon-comment"
             data-name="Layer 1"
             focusable="true"
-            isBidi={true}
             role="img"
             viewBox="0 0 48 48"
             xmlns="http://www.w3.org/2000/svg"
