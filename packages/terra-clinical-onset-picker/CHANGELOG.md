@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added blurb about having visible labels for the form fields.
+
 ## 4.35.0 - (August 14, 2023)
 
 * Added
