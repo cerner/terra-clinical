@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Removed extra top and bottom margins from LabelValueView description list.
+
 ## 3.31.0 - (August 2, 2023)
 
 * Changed
