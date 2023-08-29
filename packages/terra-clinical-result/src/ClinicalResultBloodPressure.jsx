@@ -91,8 +91,7 @@ const createConceptDisplays = (compareConceptDisplays) => {
   return null;
 };
 
-const idForDatetimeDisplays = `${uuidv4()}-datetimeDisplay`;
-const createDatetimeDisplays = (compareDatetimeDisplays) => {
+const createDatetimeDisplays = (compareDatetimeDisplays, idForDatetimeDisplays) => {
   if (compareDatetimeDisplays.systolic && compareDatetimeDisplays.diastolic) {
     if (compareDatetimeDisplays.systolic === compareDatetimeDisplays.diastolic) {
       return <div className={cx('datetime-display')} id={idForDatetimeDisplays}>{compareDatetimeDisplays.originalSystolic}</div>;
@@ -145,12 +144,13 @@ const ClinicalResultBloodPressure = (props) => {
     diastolic: diastolicResult.cleanedConceptDisplay,
   });
 
+  const idForDatetimeDisplays = `${uuidv4()}-datetimeDisplay`;
   const datetimeDisplayElement = createDatetimeDisplays({
     originalSystolic: systolicResult.datetimeDisplay,
     originalDiastolic: diastolicResult.datetimeDisplay,
     systolic: systolicResult.cleanedDatetimeDisplay,
     diastolic: diastolicResult.cleanedDatetimeDisplay,
-  });
+  }, idForDatetimeDisplays);
 
   const hasModifiedIcon = (systolicResult.isModified) || (diastolicResult.isModified);
   const hasCommentIcon = (systolicResult.hasComment) || (diastolicResult.hasComment);

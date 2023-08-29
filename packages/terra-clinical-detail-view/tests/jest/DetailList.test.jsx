@@ -1,7 +1,17 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { v4 as uuidv4 } from 'uuid';
 import DetailView from '../../src/DetailView';
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
+let mockSpyUuid;
+
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockImplementation(() => '00000000-0000-0000-0000-000000000000');
+});
+
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
 
 const defaultVariety = (
   <DetailView.DetailList title="Title">
