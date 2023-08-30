@@ -3,6 +3,7 @@ import { Badge } from 'terra-clinical-item-view/package.json?dev-site-package';
 import ItemViewStandard from '../example/ItemViewStandard?dev-site-example';
 import ItemViewTwoColumn from '../example/ItemViewTwoColumn?dev-site-example';
 import ItemViewTwoColumnStart from '../example/ItemViewTwoColumnStart?dev-site-example';
+import ItemViewTwoColumnByRow from '../example/ItemViewTwoColumnByRow?dev-site-example';
 import ItemViewComment from '../example/ItemViewComment?dev-site-example';
 import ItemViewAll from '../example/ItemViewAll?dev-site-example';
 import ItemViewAllTopAligned from '../example/ItemViewAllTopAligned?dev-site-example';
@@ -36,6 +37,10 @@ import ItemView from 'terra-clinical-item-view';
 <ItemViewTwoColumn
     title="ItemView - Two Column Layout"
     description="When including icons as part of an '<ItemView.Display />'', it is recommended to use the iconAlignment='inline' prop for best alignment and wrapping with the text."
+/>
+<ItemViewTwoColumnByRow
+    title="ItemView - Two Column Layout By Row"
+    description="When the `trueColumn` prop is set to `false` the displays are split two at a time into rows which are stylized to look like columns instead of true columns. So the ItemView is formatted to look like columns but programmatically it's handled by row."
 />
 <ItemViewTwoColumnStart title="ItemView - Start Emphasis" />
 <ItemViewComment title="ItemView - Comment" />

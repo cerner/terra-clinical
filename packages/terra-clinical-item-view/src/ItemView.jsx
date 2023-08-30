@@ -26,9 +26,15 @@ const AccessoryAlignments = {
 
 const propTypes = {
   /**
-   * The column layout in which to present the displays. One of `oneColumn`, `twoColumn`.
+   * The visual column layout in which to present the displays. One of `oneColumn`, `twoColumn`.
    */
   layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
+  /**
+  * Determines whether the displays are programmatically separated by row or as true columns when layout is set to `twoColumns`.
+  * Screenreaders will read `trueColumn` displays from top to bottom, one column at a time.
+  * When this prop is set to false the screenreader will read the displays in both columns together, left to right, one row at a time.
+  */
+  trueColumn: PropTypes.bool,
   /**
    * The text color emphasis when using two columns. One of `default`, `start`.
    */
@@ -73,6 +79,7 @@ const propTypes = {
 
 const defaultProps = {
   layout: Layouts.ONE_COLUMN,
+  trueColumn: true,
   textEmphasis: TextEmphasisTypes.DEFAULT,
   overrideDefaultStyling: false,
   isTruncated: false,
@@ -120,24 +127,64 @@ const defaultEmphasisContentClassesFromIndexes = (rowIndex, rowCount) => {
   return [contentSize, contentColor];
 };
 
-const startEmphasisContentClassesFromIndexes = (rowIndex, rowCount, columnIndex) => {
-  if (columnIndex > 0 || rowIndex >= 2) {
+const startEmphasisContentClassesFromIndexes = (rowIndex, rowCount, contentIndex) => {
+  if (contentIndex > 0 || rowIndex >= 2) {
     return ['content-secondary-size', 'content-secondary-color'];
   }
 
   return defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
 };
 
-const classesForContent = (rowIndex, rowCount, columnIndex, emphasis) => {
+const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
   let classes;
 
   if (emphasis === TextEmphasisTypes.START) {
-    classes = startEmphasisContentClassesFromIndexes(rowIndex, rowCount, columnIndex);
+    classes = startEmphasisContentClassesFromIndexes(rowIndex, rowCount, contentIndex);
   } else {
     classes = defaultEmphasisContentClassesFromIndexes(rowIndex, rowCount);
   }
 
   return ['content'].concat(classes);
+};
+
+const twoColumnGrouping = (displays) => {
+  let count = 0;
+  const displayGroups = [];
+  const primaryColumn = [];
+  const secondaryColumn = [];
+
+  while (displays.length) {
+    count += 1;
+
+    if (count % 2 === 0) {
+      secondaryColumn.push(displays.splice(0, 1));
+    } else {
+      primaryColumn.push(displays.splice(0, 1));
+    }
+  }
+
+  displayGroups.push(primaryColumn);
+  displayGroups.push(secondaryColumn);
+
+  return displayGroups;
+};
+
+const renderRow = (row, rowIndex, rowCount, emphasis) => {
+  const rowKey = rowIndex;
+  return (
+    <div className={cx('row')} key={rowKey}>
+      {row.map((display, displayIndex) => {
+        const displayKey = displayIndex;
+        const contentClasses = classesForContent(rowIndex, rowCount, displayIndex, emphasis);
+
+        return (
+          <div className={cx(contentClasses)} key={displayKey}>
+            {display}
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 const renderColumn = (displayGroup, displayGroupIndex, emphasis, overrideDefaultStyling) => {
@@ -173,31 +220,32 @@ const renderColumn = (displayGroup, displayGroupIndex, emphasis, overrideDefault
   );
 };
 
-const renderView = (displays, layout, emphasis, overrideDefaultStyling) => {
+const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColumn) => {
   if (displays === null || displays === undefined || !displays.length) {
     return undefined;
   }
 
-  const primaryColumn = [];
-  const displayGroups = [];
+  let displayGroups = [];
   const displaysSlice = displays.slice(0, 8);
+  const primaryColumn = [];
 
   if (layout === Layouts.TWO_COLUMNS) {
-    let count = 0;
-    const secondaryColumn = [];
-
-    while (displaysSlice.length) {
-      count += 1;
-
-      if (count % 2 === 0) {
-        secondaryColumn.push(displaysSlice.splice(0, 1));
-      } else {
-        primaryColumn.push(displaysSlice.splice(0, 1));
+    if (trueColumn) {
+      displayGroups = twoColumnGrouping(displaysSlice);
+    } else {
+      while (displaysSlice.length) {
+        displayGroups.push(displaysSlice.splice(0, 2));
       }
-    }
 
-    displayGroups.push(primaryColumn);
-    displayGroups.push(secondaryColumn);
+      return (
+        <div className={cx('row-container')}>
+          {displayGroups.map((displayRow, rowIndex) => {
+            const row = renderRow(displayRow, rowIndex, displayGroups.length, emphasis);
+            return row;
+          })}
+        </div>
+      );
+    }
   } else {
     while (displaysSlice.length) {
       primaryColumn.push(displaysSlice.splice(0, 1));
@@ -216,8 +264,21 @@ const renderView = (displays, layout, emphasis, overrideDefaultStyling) => {
   );
 };
 
+const isDisplaysTruncated = (displays) => {
+  const displaysSlice = displays.slice(0, 8);
+
+  for (let i = 0; i < displaysSlice.length; i += 1) {
+    if (displaysSlice[i].props.isTruncated === true) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 const ItemView = ({
   layout,
+  trueColumn,
   textEmphasis,
   overrideDefaultStyling,
   isTruncated,
@@ -231,13 +292,16 @@ const ItemView = ({
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
+  const isTrueTwoColumnView = layout === Layouts.TWO_COLUMNS && trueColumn;
+  const isTruncatedDisplay = isTruncated || isDisplaysTruncated(displays);
   const viewClassNames = classNames(
     cx(
       'item-view',
       { 'is-truncated': isTruncated },
       { 'one-column': layout === Layouts.ONE_COLUMN },
-      { 'two-columns': (layout === Layouts.TWO_COLUMNS && !isTruncated) },
-      { 'truncated-two-columns': (layout === Layouts.TWO_COLUMNS && isTruncated) },
+      { 'two-columns': isTrueTwoColumnView && !isTruncatedDisplay },
+      { 'truncated-two-columns': isTrueTwoColumnView && isTruncatedDisplay },
+      { 'two-columns-by-row': layout === Layouts.TWO_COLUMNS && !trueColumn },
       theme.className,
     ),
     customProps.className,
@@ -247,7 +311,7 @@ const ItemView = ({
     <div {...customProps} className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>
-        {renderView(displays, layout, textEmphasis, overrideDefaultStyling)}
+        {renderView(displays, layout, textEmphasis, overrideDefaultStyling, trueColumn)}
         {comment}
       </div>
       {renderAccessory(endAccessory, false, accessoryAlignment, 'end')}

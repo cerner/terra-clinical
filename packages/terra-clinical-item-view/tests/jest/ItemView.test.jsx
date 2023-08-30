@@ -58,11 +58,29 @@ it('should render displays with original styling when overrideDefaultStyling pro
 });
 
 it('should render truncated display', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display1display1display1display1display1display1display1display1" />);
+  const displays = [display1];
+  const itemView = shallow(<ItemView displays={displays} isTruncated />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(1);
+  expect(itemView.find('div.is-truncated')).toHaveLength(1);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render truncated display when isTruncated is only set on the display', () => {
   const display1 = shallowWithIntl(<ItemView.Display text="display1display1display1display1display1display1display1display1" isTruncated />);
   const displays = [display1];
   const itemView = shallow(<ItemView displays={displays} />);
   expect(itemView.find('ItemDisplay')).toHaveLength(1);
   expect(itemView.find('ItemDisplay').first().prop('isTruncated')).toBe(true);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render truncated two column displays when isTruncated is only set on the display', () => {
+  const display1 = (<ItemView.Display text="display1display1display1display1display1display1display1display1" isTruncated />);
+  const display2 = (<ItemView.Display text="display2display2display2display2display2display2display2display2" />);
+  const displays = [display1, display2];
+  const itemView = shallow(<ItemView displays={displays} layout="twoColumns" />);
+  expect(itemView.find('div.truncated-two-columns')).toHaveLength(1);
   expect(itemView).toMatchSnapshot();
 });
 
@@ -207,6 +225,24 @@ it('should render two columns with an odd number of displays', () => {
   const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
   expect(itemView.find('ItemDisplay')).toHaveLength(3);
   expect(itemView.find('div.two-columns')).toHaveLength(1);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render two columns with 8 displays when trueColumn is false', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
+  const display2 = shallowWithIntl(<ItemView.Display text="display 2" />);
+  const display3 = shallowWithIntl(<ItemView.Display text="display 3" />);
+  const display4 = shallowWithIntl(<ItemView.Display text="display 4" />);
+  const display5 = shallowWithIntl(<ItemView.Display text="display 5" />);
+  const display6 = shallowWithIntl(<ItemView.Display text="display 6" />);
+  const display7 = shallowWithIntl(<ItemView.Display text="display 7" />);
+  const display8 = shallowWithIntl(<ItemView.Display text="display 8" />);
+  const display9 = shallowWithIntl(<ItemView.Display text="display 9" />);
+
+  const displays = [display1, display2, display3, display4, display5, display6, display7, display8, display9];
+  const itemView = shallow(<ItemView layout="twoColumns" trueColumn={false} displays={displays} />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(8);
+  expect(itemView.find('div.two-columns-by-row')).toHaveLength(1);
   expect(itemView).toMatchSnapshot();
 });
 

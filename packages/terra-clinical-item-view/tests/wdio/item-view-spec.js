@@ -1,10 +1,17 @@
 Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
-  it('with one column displays', () => {
+  it('with displays', () => {
     browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
 
     Terra.validates.element('with one column', { selector: '#test-displays' });
     Terra.validates.element('with two columns', { selector: '#test-displays-two' });
     Terra.validates.element('with two column and start displays', { selector: '#test-displays-two-start' });
+  });
+
+  it('with displays by row', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view-by-row');
+
+    Terra.validates.element('with two columns by row', { selector: '#test-displays-two-row' });
+    Terra.validates.element('with two columns and start displays by row', { selector: '#test-displays-two-row-start' });
   });
 
   it('with accessories', () => {
@@ -20,11 +27,17 @@ Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large
     Terra.validates.element('truncated comment', { selector: '#ItemView2' });
   });
 
-  it('with the full example word wrap', () => {
+  it('with word wrap', () => {
     browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
 
     Terra.validates.element('with word wrap in one column', { selector: '#ItemView-one-wrap' });
     Terra.validates.element('with word wrap in two columns', { selector: '#ItemView-two-wrap' });
+  });
+
+  it('with word wrap by row', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view-by-row');
+
+    Terra.validates.element('with word wrap in two columns by row', { selector: '#ItemView-by-row-two-wrap' });
   });
 
   it('with override default styling', () => {
@@ -35,10 +48,19 @@ Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large
 });
 
 Terra.describeViewports('Clinical Item View', ['enormous'], () => {
-  it('with the full example truncated - one truncated', () => {
+  it('with truncation', () => {
     browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view');
 
-    Terra.validates.element('with truncation in one column', { selector: '#ItemView-one-wrap' });
-    Terra.validates.element('with truncation in two columns', { selector: '#ItemView-two-wrap' });
+    Terra.validates.element('with truncation in one column', { selector: '#ItemView-one-truncate' });
+    Terra.validates.element('with truncation in two columns', { selector: '#ItemView-two-truncate' });
   });
 });
+
+Terra.describeViewports('Clinical Item View', ['enormous'], () => {
+  it('with by row truncation', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/overflow-displays-item-view-by-row');
+
+    Terra.validates.element('with truncation in two columns by row', { selector: '#ItemView-by-row-two-truncate' });
+  });
+});
+

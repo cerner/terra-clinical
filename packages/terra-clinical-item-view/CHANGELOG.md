@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `trueColumn` prop so consumers can choose whether to separate displays in the two column layout by row or by column.
+
 ## 4.11.0 - (September 21, 2023)
 
 * Changed
