@@ -8,6 +8,9 @@
 * Fixed
   * Fixed infinite re-render bug.
 
+* Changed
+  * Updated testing recommendations to use `jest.spyOn` instead of `jest.mock`.
+
 ## 1.21.0 - (August 2, 2023)
 
 * Changed

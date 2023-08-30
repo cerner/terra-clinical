@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 import ClinicalResultBloodPressure from '../../src/ClinicalResultBloodPressure';
 import {
   DefaultBloodPressureResult,
@@ -10,9 +11,20 @@ import {
   NoDataResult,
 } from '../../src/terra-dev-site/test/clinical-result/TestResults';
 
-jest.mock('uuid', () => ({ v4: () => '00000000-0000-0000-0000-000000000000' }));
-
 describe('ClinicalResultBloodPressure', () => {
+  let mockSpyUuid;
+  // eslint-disable-next-line no-unused-vars
+  let idForDatetimeDisplays;
+
+  beforeAll(() => {
+    mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+    idForDatetimeDisplays = `${uuidv4()}-datetimeDisplay`;
+  });
+
+  afterAll(() => {
+    mockSpyUuid.mockRestore();
+  });
+
   it('should render a ResultError if hasResultError is true', () => {
     const result = shallowWithIntl(<ClinicalResultBloodPressure hasResultError />).dive();
     expect(result).toMatchSnapshot();
