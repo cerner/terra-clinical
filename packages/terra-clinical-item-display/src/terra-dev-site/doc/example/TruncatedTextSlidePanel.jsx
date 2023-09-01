@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import classNamesBind from 'classnames/bind';
 import ActionHeader from 'terra-action-header/lib/ActionHeader';
 import ContentContainer from 'terra-content-container/lib/ContentContainer';
 import { DisclosureManagerContext, DisclosureManagerHeaderAdapter } from 'terra-application/lib/disclosure-manager';
@@ -7,25 +6,22 @@ import List, { Item } from 'terra-list/lib/index';
 import SlidePanelManager from 'terra-application/lib/slide-panel-manager';
 import ItemDisplay from 'terra-clinical-item-display';
 import PropTypes from 'prop-types';
-import styles from './Example.module.scss';
-
-const cx = classNamesBind.bind(styles);
 
 const patientDetails = [
   {
     key: 'mr-james-1',
-    previewText: 'Mr. James is currently receiving outpatient treatment.',
-    text: 'Mr. James is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg.',
+    previewText: 'Mr. James is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg.',
+    text: 'Mr. James is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg. His treatment may have potential side effects such as dizziness and headaches. His symptoms have been manageable, if any side effects or concerns come up, consult with the doctor immediately.',
   },
   {
     key: 'mr-smith-2',
-    previewText: 'Mr. Smith is currently receiving outpatient treatment.',
-    text: 'Mr. Smith is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg.',
+    previewText: 'Mr. Smith is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg.',
+    text: 'Mr. Smith is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg. His treatment may have potential side effects such as dizziness and headaches. His symptoms have been manageable, if any side effects or concerns come up, consult with the doctor immediately.',
   },
   {
     key: 'mr-jones-3',
-    previewText: 'Mr. Jones is currently receiving outpatient treatment.',
-    text: 'Mr. Jones is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg.',
+    previewText: 'Mr. Jones is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg.',
+    text: 'Mr. Jones is currently receiving outpatient treatment. He has been diagnosed with an Axis I diagnosis of Psychosis NOS, ruled out Schizoaffective Disorder and Post Traumatic Stress Disorder, and is being treated with Haldol 5mg and Cogentin 1mg. His treatment may have potential side effects such as dizziness and headaches. His symptoms have been manageable, if any side effects or concerns come up, consult with the doctor immediately.',
   },
 ];
 
@@ -75,7 +71,7 @@ const ContentComponent = () => {
               });
             }}
           >
-            <p><ItemDisplay className={cx('item-display')} text={details.previewText} isTruncated /></p>
+            <p><ItemDisplay text={details.previewText} isTruncated /></p>
           </Item>
         ))}
       </List>
