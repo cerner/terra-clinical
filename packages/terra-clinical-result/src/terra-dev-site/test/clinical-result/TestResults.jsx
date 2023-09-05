@@ -200,7 +200,6 @@ const EmptyStringResult = {
   isModified: false,
   hasComment: false,
   isUnverified: false,
-  resultNoData: true,
 };
 
 const EmptyArrayResult = {
@@ -213,7 +212,6 @@ const EmptyArrayResult = {
   isModified: false,
   hasComment: false,
   isUnverified: false,
-  resultNoData: true,
 };
 
 const EnteredInErrorSysBPResult = {
