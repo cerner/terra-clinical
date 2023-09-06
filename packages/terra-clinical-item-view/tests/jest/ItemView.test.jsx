@@ -246,6 +246,38 @@ it('should render two columns with 8 displays when trueColumn is false', () => {
   expect(itemView).toMatchSnapshot();
 });
 
+it('should render a singular display not in an unordered list', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
+  const displays = [display1];
+  const itemView = shallow(<ItemView displays={displays} />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(1);
+  expect(itemView.find('div.single-result-column-container')).toHaveLength(1);
+  expect(itemView.find('ul.column-list-container')).toHaveLength(0);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render several displays in an unordered list for one column layout', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
+  const display2 = shallowWithIntl(<ItemView.Display text="display 2" />);
+  const display3 = shallowWithIntl(<ItemView.Display text="display 3" />);
+  const displays = [display1, display2, display3];
+  const itemView = shallow(<ItemView displays={displays} />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(3);
+  expect(itemView.find('ul.column-list-container')).toHaveLength(1);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render each column as an unordered list within a primary unordered list for two column layout', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
+  const display2 = shallowWithIntl(<ItemView.Display text="display 2" />);
+  const display3 = shallowWithIntl(<ItemView.Display text="display 3" />);
+  const displays = [display1, display2, display3];
+  const itemView = shallow(<ItemView displays={displays} layout="twoColumns" />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(3);
+  expect(itemView.find('ul.column-list')).toHaveLength(2);
+  expect(itemView).toMatchSnapshot();
+});
+
 it('correctly applies the theme context className', () => {
   jest.spyOn(React, 'useContext')
     .mockReturnValue({
