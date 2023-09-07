@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated LabelValueViewNodeCustom.jsx to correct spellings/typos.
+
 * Fixed
   * Removed extra top and bottom margins from LabelValueView description list.
 

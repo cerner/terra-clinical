@@ -47,6 +47,7 @@ Cerner Corporation
 - Kol Kheang [@kolkheang]
 - Aaron Johnson [@zxeleven]
 - Art Parkeenvincha [@artpark]
+- Jonathan Satinger [@JonathanSatinger]
 
 Community
 
@@ -99,3 +100,4 @@ Community
 [@kolkheang]: https://github.com/kolkheang
 [@zxeleven]: https://github.com/zxeleven
 [@artpark]: https://github.com/artpark
+[@JonathanSatinger]: https://github.com/JonathanSatinger
