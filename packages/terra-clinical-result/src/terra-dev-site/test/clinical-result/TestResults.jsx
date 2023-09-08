@@ -200,7 +200,6 @@ const EmptyStringResult = {
   isModified: false,
   hasComment: false,
   isUnverified: false,
-  noData: true,
 };
 
 const EmptyArrayResult = {
