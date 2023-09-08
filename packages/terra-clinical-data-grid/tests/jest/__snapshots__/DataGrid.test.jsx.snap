@@ -3369,10 +3369,10 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
             className="main"
           >
             <Scroll
-              className="normalizer"
+              className="normalizer orion-fusion-theme"
             >
               <div
-                className="scroll normalizer"
+                className="scroll normalizer orion-fusion-theme"
               >
                 <div
                   className="vertical-overflow-container"
