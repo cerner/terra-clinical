@@ -52,4 +52,16 @@ Terra.describeViewports('ClinicalResult', ['medium'], () => {
 
     Terra.validates.element('with no data');
   });
+
+  it('displays an error ClinicalResult with empty string', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/empty-result');
+
+    Terra.validates.element('empty string with result error');
+  });
+
+  it('displays an error ClinicalResult with empty array', () => {
+    browser.url('/#/raw/tests/terra-clinical-result/clinical-result/clinical-result/empty-result-array');
+
+    Terra.validates.element('empty string with result array');
+  });
 });

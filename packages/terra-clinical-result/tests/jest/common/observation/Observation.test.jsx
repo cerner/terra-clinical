@@ -2,7 +2,7 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl } from 'terra-enzyme-intl';
 import Observation from '../../../../src/common/observation/_Observation';
-import DefaultResult from '../../../../src/terra-dev-site/test/clinical-result/TestResults';
+import DefaultResult, { EmptyArrayResult, EmptyStringResult } from '../../../../src/terra-dev-site/test/clinical-result/TestResults';
 
 // Snapshot Tests
 describe('Observation', () => {
@@ -65,6 +65,16 @@ describe('Observation', () => {
     it('should render an Observation with interpretation normal', () => {
       const nameHeaderCell = shallowWithIntl(<Observation result={DefaultResult.result} interpretation="normal" />).dive();
       expect(nameHeaderCell).toMatchSnapshot();
+    });
+
+    it('should render an error with empty array result', () => {
+      const observation = shallowWithIntl(<Observation result={EmptyArrayResult.result} />).dive();
+      expect(observation).toMatchSnapshot();
+    });
+
+    it('should render an error with empty string result', () => {
+      const observation = shallowWithIntl(<Observation result={EmptyStringResult.result} />).dive();
+      expect(observation).toMatchSnapshot();
     });
   });
 });
