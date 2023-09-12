@@ -190,6 +190,30 @@ const NoDataResult = {
   resultNoData: true,
 };
 
+const EmptyStringResult = {
+  eventId: '',
+  result: {
+    value: '',
+    unit: '',
+  },
+  interpretation: 'normal',
+  isModified: false,
+  hasComment: false,
+  isUnverified: false,
+};
+
+const EmptyArrayResult = {
+  eventId: '',
+  result: {
+    value: [],
+    unit: '',
+  },
+  interpretation: 'normal',
+  isModified: false,
+  hasComment: false,
+  isUnverified: false,
+};
+
 const EnteredInErrorSysBPResult = {
   id: '111',
   systolic: {
@@ -244,4 +268,6 @@ export {
   NoDataResult,
   EnteredInErrorSysBPResult,
   EnteredInErrorDiaBPResult,
+  EmptyArrayResult,
+  EmptyStringResult,
 };

@@ -177,6 +177,10 @@ exports[`Observation - Interpretaion should render an Observation with interpret
 </Fragment>
 `;
 
+exports[`Observation - Interpretaion should render an error with empty array result 1`] = `<InjectIntl(ResultError) />`;
+
+exports[`Observation - Interpretaion should render an error with empty string result 1`] = `<InjectIntl(ResultError) />`;
+
 exports[`Observation should render a default Observation 1`] = `<InjectIntl(ResultError) />`;
 
 exports[`Observation should render an Observation with eventId 1`] = `
