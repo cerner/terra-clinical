@@ -11,7 +11,6 @@ const fullText = 'Mr. James is currently receiving outpatient treatment. He has 
 
 const TruncatedTextExample = () => {
   const [popupOpen, setPopupOpen] = useState(false);
-  const [showFullText, setShowFulText] = useState(false);
   const popupRef = useRef(null);
 
   const setButtonNode = (node) => {
