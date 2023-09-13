@@ -86,41 +86,25 @@ const TruncatedTextExample = () => {
     </Item>
   );
 
-  const showFullTextToggleExample = (
-    <Item isSelectable hasChevron>
-      <ItemDisplay text="Toggle Truncation Example" textStyle="strong" isTruncated />
-      {showFullText ? (
-        <ItemDisplay text={fullText} textStyle="secondary" />
-      ) : (
-        <ItemDisplay text={fullText} textStyle="secondary" isTruncated />
-      )}
-      <Button
-        onClick={() => setShowFulText(!showFullText)}
-        text="Show full text"
-        variant="de-emphasis"
-      />
-    </Item>
-  );
-
   const buttonToggleExample = (
-    <Item isSelectable hasChevron>
-      <ItemDisplay text="Toggle button example" textStyle="strong" isTruncated />
-      <ItemDisplay text={fullText} textStyle="secondary" isTruncated />
+    <>
+      <Item isSelectable hasChevron>
+        <ItemDisplay text="Toggle button example" textStyle="strong" isTruncated />
+        <ItemDisplay text={fullText} textStyle="secondary" isTruncated />
+      </Item>
+      {/* ToggleButton moved outside Item so ItemDisplay text is navigable */}
       <ToggleButton closedButtonText="Toggle full text">
         <ItemDisplay text={fullText} textStyle="secondary" />
       </ToggleButton>
-    </Item>
+    </>
   );
 
   return (
-    <>
-      <List>
-        {popupExample}
-        {modalExample}
-        {showFullTextToggleExample}
-        {buttonToggleExample}
-      </List>
-    </>
+    <List>
+      {buttonToggleExample}
+      {modalExample}
+      {popupExample}
+    </List>
   );
 };
 
