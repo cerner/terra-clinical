@@ -5,12 +5,15 @@
   "description": "terra-clinical",
   "engines": {
     "node": "10 || 12 || 14",
-    "npm": "6 || 9"
+    "npm": "9"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "Cerner",
     "Terra",
@@ -39,14 +42,13 @@
     }
   },
   "scripts": {
-    "bootstrap:hoist": "lerna bootstrap --hoist",
     "clean": "npm run clean:root && npm run clean:lib",
     "clean:install": "npm run clean && time npm install",
     "clean:lib": "rm -rf packages/**/lib",
     "clean:root": "$(lerna clean --yes || true) && echo 'removing ./node_modules' && rm -rf node_modules && echo 'removed ./node_modules'",
     "clean:obsolete-snapshots": "npm test -- -u",
     "compile": "npm run clean:lib && npm run compile:build",
-    "compile:build": "lerna run compile --parallel",
+    "compile:build": "lerna run compile",
     "compile:prod": "rm -rf ./build; webpack --mode=production --env enableAggregateThemes",
     "compile:lowlight": "rm -rf ./build; THEME=clinical-lowlight-theme webpack --mode=production --env enableAggregateThemes",
     "compile:fusion": "rm -rf ./build; THEME=orion-fusion-theme webpack --mode=production --env enableAggregateThemes",
@@ -55,14 +57,13 @@
     "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
     "jest": "jest",
     "jest:coverage": "jest --coverage",
-    "link-parent-bin": "link-parent-bin",
     "lint": "npm run lint:js && npm run lint:scss && npm run lint:package-json",
     "lint:js": "eslint --ext .js,.jsx . --max-warnings 0",
     "lint:js:fix": "eslint --fix --ext .js,.jsx .",
     "lint:scss": "stylelint 'packages/**/src/**/*.scss' --syntax scss",
     "lint:package-json": "terra package-json-lint",
     "prepare-for-release": "terra prepare-for-release",
-    "postinstall": "link-parent-bin && npm run compile && npm run bootstrap:hoist",
+    "postinstall": "npm run compile",
     "start": "webpack serve --env enableAggregateThemes",
     "start-heroku": "terra express-server --port $PORT --site build",
     "start-prod": "webpack serve --env disableHotReloading --mode=production --env enableAggregateThemes",
@@ -106,8 +107,7 @@
     "glob": "^7.1.2",
     "jest": "^26.6.3",
     "ky": "^0.12.0",
-    "lerna": "^3.20.2",
-    "link-parent-bin": "^1.0.0",
+    "lerna": "^6.4.1",
     "postcss": "8.3.11",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
