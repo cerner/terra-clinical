@@ -11,7 +11,6 @@ import IconText from '../example/IconText?dev-site-example';
 import DefaultComment from '../example/DefaultComment?dev-site-example';
 import TextStyleMeaning from '../example/TextStyleMeaning?dev-site-example';
 import TruncatedText from '../example/TruncatedText?dev-site-example';
-import TruncatedTextSlidePanel from '../example/TruncatedTextSlidePanel?dev-site-example';
 
 <Badge />
 
@@ -49,9 +48,9 @@ import ItemDisplay from 'terra-clinical-item-display';
 
 #### Accessibility Guidance: Truncated Text
 
-Truncation of text can pose an accessibility concern if no method of disclosing the full text is available
-to the user. When using `isTruncated`, consumers are responsible for providing a progressive disclosure pattern
- to disclose the full Item Display text in order to ensure that it is accessible for keyboard navigation users.
+Truncation of text can pose an accessibility concern if no method of disclosing the full text is available to the user.
+When using `isTruncated`, consumers are responsible for providing a progressive disclosure pattern
+to disclose the full Item Display text in order to ensure that it is accessible for keyboard navigation users.
 
 **There should always be a method of accessing the truncated information. If there is no way to progressively
 disclose the full content of the truncated information, then truncation should not be used.**
@@ -60,14 +59,14 @@ Some examples of progressive disclosure patterns that may be used to disclose tr
 - Accordions
 - Dialogs
 - Popovers
-- Show/Hide
 - Split Views
 - Toasts
 
 The method of disclosure **must** be accessible via keyboard interactions.
 
-Truncation should be avoided where it is not necessary. Certain content should **never** be truncated (i.e. 
-medication names and dosages in menus where the user is selecting from a list of choices).
+Truncation should be avoided where it is not necessary.
+Certain content should **never** be truncated (i.e. medication names and dosages in menus where the user is selecting from a list of choices).
+Providing a shorter preview text with a method to disclose the full text provides a more equitable experience for all users.
 
 </Notice>
 
@@ -76,16 +75,15 @@ medication names and dosages in menus where the user is selecting from a list of
 * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
 * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
 
-## Example 
+## Example
 <TextStyles title="Item Display: Text styles"  />
 <Icon title="Item Display: Icon" />
 <IconText title="Item Display: Icon and Text" />
 <DefaultComment title="Comment Item Display" />
 <TextStyleMeaning title="Item Display: Text Style Meaning for Assistive Technology" />
-<TruncatedText title="Item Display: Truncated Text with Show/Hide" />
-<TruncatedTextSlidePanel title="Item Display: Truncated Text with Slide Panel Disclosure" />
+<TruncatedText title="Item Display: Truncated Text" />
 
-## Item Display Props Table 
+## Item Display Props Table
 <ItemDisplayPropsTable />
 
 ## Item Comment Props Table
