@@ -27,6 +27,7 @@ const AccessoryAlignments = {
 const propTypes = {
   /**
    * The visual column layout in which to present the displays. One of `oneColumn`, `twoColumn`.
+   * When using the `twoColumn` layout, the displays are split between the columns by placing every other display into the second column.
    */
   layout: PropTypes.oneOf(['oneColumn', 'twoColumns']),
   /**
@@ -65,7 +66,8 @@ const propTypes = {
    */
   endAccessory: PropTypes.node,
   /**
-   * An array of terra-clinical-item-display's to be presented.
+   * An array of terra-clinical-item-displays to be presented.
+   * The Item View can only have 8 displays at a time, any additional displays passed in will be ignored.
    */
   displays: PropTypes.arrayOf(PropTypes.element),
   /**
