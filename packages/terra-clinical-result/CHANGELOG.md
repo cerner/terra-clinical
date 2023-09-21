@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.22.0 - (September 21, 2023)
+
 * Added
   * Added back `width: 100%` to flowsheet result cell styles removed in 1.17.0.
 

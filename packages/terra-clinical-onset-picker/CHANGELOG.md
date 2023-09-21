@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.36.0 - (September 21, 2023)
+
 * Added
   * Added screenreader support to announce dynamic content.
   * Added blurb about having visible labels for the form fields.
