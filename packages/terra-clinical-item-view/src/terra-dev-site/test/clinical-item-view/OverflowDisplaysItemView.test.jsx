@@ -31,12 +31,12 @@ const views = () => (
     <h2>Full Examples - Default</h2>
     <ItemView comment={comment(1)} startAccessory={accessoryStart(9)} endAccessory={accessoryEnd(17)} displays={displays} id="ItemView-one-wrap" />
     <br />
-    <ItemView comment={comment(2)} startAccessory={accessoryStart(10)} endAccessory={accessoryEnd(18)} displays={displays} layout="twoColumns" id="ItemView-two-wrap" />
+    <ItemView comment={comment(2)} startAccessory={accessoryStart(10)} endAccessory={accessoryEnd(18)} displays={displays} layout="twoColumns" trueColumn id="ItemView-two-wrap" />
     <br />
     <h2>Full Examples - Truncated</h2>
     <ItemView displays={displays} isTruncated comment={comment(3)} startAccessory={accessoryStart(11)} endAccessory={accessoryEnd(19)} textEmphasis="start" id="ItemView-one-truncate" />
     <br />
-    <ItemView displays={displays} isTruncated comment={comment(4)} startAccessory={accessoryStart(12)} endAccessory={accessoryEnd(20)} layout="twoColumns" textEmphasis="start" id="ItemView-two-truncate" />
+    <ItemView displays={displays} isTruncated comment={comment(4)} startAccessory={accessoryStart(12)} endAccessory={accessoryEnd(20)} layout="twoColumns" trueColumn textEmphasis="start" id="ItemView-two-truncate" />
     <br />
     <h2>Partial Truncation Examples - Single Column</h2>
     <ItemView displays={leftPartialTruncatedDisplays} comment={comment(5)} startAccessory={accessoryStart(13)} endAccessory={accessoryEnd(21)} textEmphasis="start" id="ItemView-one-partial-truncate" />
