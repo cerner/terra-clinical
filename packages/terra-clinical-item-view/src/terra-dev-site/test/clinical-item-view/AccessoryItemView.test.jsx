@@ -31,6 +31,7 @@ const views = () => (
       layout="twoColumns"
       accessoryAlignment="alignTop"
       id="test-both-accessory-top"
+      trueColumn
     />
     <h2>Reserve Start Acessory Space</h2>
     <ItemView
@@ -39,6 +40,7 @@ const views = () => (
       endAccessory={<button type="button" id="EndAccessory3" size="medium">Disclose</button>}
       layout="twoColumns"
       id="test-reserve-start-accessory"
+      trueColumn
     />
     <h2>Start Accessory with Font Size 100px</h2>
     <ul><li><h3>The max-height and max-width of 40px is maintained</h3></li></ul>

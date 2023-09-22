@@ -29,19 +29,19 @@ const views = () => (
     <p>Applied width of 900px to show the default vs truncated styling.</p>
     <br />
     <h2>Default ItemView</h2>
-    <ItemView trueColumn={false} comment={comment(2)} startAccessory={accessoryStart(10)} endAccessory={accessoryEnd(18)} displays={displays} layout="twoColumns" id="ItemView-by-row-two-wrap" />
+    <ItemView comment={comment(2)} startAccessory={accessoryStart(10)} endAccessory={accessoryEnd(18)} displays={displays} layout="twoColumns" id="ItemView-by-row-two-wrap" />
     <br />
     <h2>Truncated ItemView</h2>
-    <ItemView trueColumn={false} displays={displays} isTruncated comment={comment(4)} startAccessory={accessoryStart(12)} endAccessory={accessoryEnd(20)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-truncate" />
+    <ItemView displays={displays} isTruncated comment={comment(4)} startAccessory={accessoryStart(12)} endAccessory={accessoryEnd(20)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-truncate" />
     <br />
     <h2>Left and Right Displays Truncated</h2>
-    <ItemView trueColumn={false} displays={partialTruncatedDisplays} comment={comment(6)} startAccessory={accessoryStart(14)} endAccessory={accessoryEnd(22)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-partial-truncate" />
+    <ItemView displays={partialTruncatedDisplays} comment={comment(6)} startAccessory={accessoryStart(14)} endAccessory={accessoryEnd(22)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-partial-truncate" />
     <br />
     <h2>Left Display Truncated</h2>
-    <ItemView trueColumn={false} displays={leftPartialTruncatedDisplays} comment={comment(7)} startAccessory={accessoryStart(15)} endAccessory={accessoryEnd(23)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-partial-left-truncate" />
+    <ItemView displays={leftPartialTruncatedDisplays} comment={comment(7)} startAccessory={accessoryStart(15)} endAccessory={accessoryEnd(23)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-partial-left-truncate" />
     <br />
     <h2>Right Display Truncated</h2>
-    <ItemView trueColumn={false} displays={rightPartialTruncatedDisplays} comment={comment(8)} startAccessory={accessoryStart(16)} endAccessory={accessoryEnd(24)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-partial-right-truncate" />
+    <ItemView displays={rightPartialTruncatedDisplays} comment={comment(8)} startAccessory={accessoryStart(16)} endAccessory={accessoryEnd(24)} layout="twoColumns" textEmphasis="start" id="ItemView-by-row-two-partial-right-truncate" />
   </div>
 );
 

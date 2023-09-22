@@ -27,5 +27,6 @@ export default () => (
     startAccessory={accessoryStart}
     endAccessory={accessoryEnd}
     comment={comment}
+    trueColumn
   />
 );

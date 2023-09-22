@@ -13,10 +13,10 @@ const displays = [display1, display2, display3, display4, display5, display6];
 const views = () => (
   <div>
     <h2>Two Column Layout by Row </h2>
-    <ItemView displays={displays} trueColumn={false} layout="twoColumns" id="test-displays-two-row" />
+    <ItemView displays={displays} layout="twoColumns" id="test-displays-two-row" />
     <br />
     <h2>Two Column Layout by Row with Start TextEmphasis </h2>
-    <ItemView displays={displays} trueColumn={false} layout="twoColumns" textEmphasis="start" id="test-displays-two-row-start" />
+    <ItemView displays={displays} layout="twoColumns" textEmphasis="start" id="test-displays-two-row-start" />
   </div>
 );
 

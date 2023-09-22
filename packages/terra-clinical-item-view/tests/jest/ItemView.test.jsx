@@ -79,7 +79,7 @@ it('should render truncated two column displays when isTruncated is only set on 
   const display1 = (<ItemView.Display text="display1display1display1display1display1display1display1display1" isTruncated />);
   const display2 = (<ItemView.Display text="display2display2display2display2display2display2display2display2" />);
   const displays = [display1, display2];
-  const itemView = shallow(<ItemView displays={displays} layout="twoColumns" />);
+  const itemView = shallow(<ItemView displays={displays} layout="twoColumns" trueColumn />);
   expect(itemView.find('div.truncated-two-columns')).toHaveLength(1);
   expect(itemView).toMatchSnapshot();
 });
@@ -211,7 +211,7 @@ it('should render two columns with 8 displays', () => {
   const display9 = shallowWithIntl(<ItemView.Display text="display 9" />);
 
   const displays = [display1, display2, display3, display4, display5, display6, display7, display8, display9];
-  const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
+  const itemView = shallow(<ItemView layout="twoColumns" trueColumn displays={displays} />);
   expect(itemView.find('ItemDisplay')).toHaveLength(8);
   expect(itemView.find('div.two-columns')).toHaveLength(1);
   expect(itemView).toMatchSnapshot();
@@ -222,7 +222,7 @@ it('should render two columns with an odd number of displays', () => {
   const display2 = shallowWithIntl(<ItemView.Display text="display 2" />);
   const display3 = shallowWithIntl(<ItemView.Display text="display 3" />);
   const displays = [display1, display2, display3];
-  const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
+  const itemView = shallow(<ItemView layout="twoColumns" trueColumn displays={displays} />);
   expect(itemView.find('ItemDisplay')).toHaveLength(3);
   expect(itemView.find('div.two-columns')).toHaveLength(1);
   expect(itemView).toMatchSnapshot();
@@ -240,7 +240,7 @@ it('should render two columns with 8 displays when trueColumn is false', () => {
   const display9 = shallowWithIntl(<ItemView.Display text="display 9" />);
 
   const displays = [display1, display2, display3, display4, display5, display6, display7, display8, display9];
-  const itemView = shallow(<ItemView layout="twoColumns" trueColumn={false} displays={displays} />);
+  const itemView = shallow(<ItemView layout="twoColumns" displays={displays} />);
   expect(itemView.find('ItemDisplay')).toHaveLength(8);
   expect(itemView.find('div.two-columns-by-row')).toHaveLength(1);
   expect(itemView).toMatchSnapshot();
