@@ -16,10 +16,10 @@ const views = () => (
     <ItemView displays={displays} id="test-displays" />
     <br />
     <h2>Two Column Layout </h2>
-    <ItemView displays={displays} layout="twoColumns" id="test-displays-two" />
+    <ItemView displays={displays} layout="twoColumns" id="test-displays-two" trueColumn />
     <br />
     <h2>Two Column Layout with Start TextEmphasis</h2>
-    <ItemView displays={displays} layout="twoColumns" textEmphasis="start" id="test-displays-two-start" />
+    <ItemView displays={displays} layout="twoColumns" textEmphasis="start" id="test-displays-two-start" trueColumn />
   </div>
 );
 

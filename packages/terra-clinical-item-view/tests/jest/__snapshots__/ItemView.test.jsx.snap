@@ -714,6 +714,65 @@ exports[`should render start accessory space reserved 1`] = `
 
 exports[`should render truncated display 1`] = `
 <div
+  className="item-view is-truncated one-column"
+>
+  <div
+    className="body"
+  >
+    <div
+      className="column-container"
+    >
+      <div
+        className="primary-column"
+        key="0"
+      >
+        <div
+          className="content content-primary-size content-primary-color"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display1display1display1display1display1display1display1display1"
+            textStyle="primary"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render truncated display when isTruncated is only set on the display 1`] = `
+<div
   className="item-view one-column"
 >
   <div
@@ -763,6 +822,48 @@ exports[`should render truncated display 1`] = `
             isTruncated={true}
             text="display1display1display1display1display1display1display1display1"
             textStyle="primary"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render truncated two column displays when isTruncated is only set on the display 1`] = `
+<div
+  className="item-view truncated-two-columns"
+>
+  <div
+    className="body"
+  >
+    <div
+      className="column-container"
+    >
+      <div
+        className="primary-column"
+        key="0"
+      >
+        <div
+          className="content content-primary-size content-primary-color"
+          key="0"
+        >
+          <InjectIntl(ItemDisplay)
+            isTruncated={true}
+            text="display1display1display1display1display1display1display1display1"
+          />
+        </div>
+      </div>
+      <div
+        className="secondary-column"
+        key="1"
+      >
+        <div
+          className="content content-primary-size content-primary-color"
+          key="0"
+        >
+          <InjectIntl(ItemDisplay)
+            text="display2display2display2display2display2display2display2display2"
           />
         </div>
       </div>
@@ -1066,6 +1167,353 @@ exports[`should render two columns with 8 displays 1`] = `
         <div
           className="content content-secondary-size content-secondary-color"
           key="3"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 8"
+            textStyle="primary"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render two columns with 8 displays when trueColumn is false 1`] = `
+<div
+  className="item-view two-columns-by-row"
+>
+  <div
+    className="body"
+  >
+    <div
+      className="row-container"
+    >
+      <div
+        className="row"
+        key="0"
+      >
+        <div
+          className="content content-primary-size content-primary-color"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 1"
+            textStyle="primary"
+          />
+        </div>
+        <div
+          className="content content-primary-size content-primary-color"
+          key="1"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 2"
+            textStyle="primary"
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+        key="1"
+      >
+        <div
+          className="content content-secondary-size content-primary-color"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 3"
+            textStyle="primary"
+          />
+        </div>
+        <div
+          className="content content-secondary-size content-primary-color"
+          key="1"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 4"
+            textStyle="primary"
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+        key="2"
+      >
+        <div
+          className="content content-secondary-size content-secondary-color"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 5"
+            textStyle="primary"
+          />
+        </div>
+        <div
+          className="content content-secondary-size content-secondary-color"
+          key="1"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 6"
+            textStyle="primary"
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+        key="3"
+      >
+        <div
+          className="content content-secondary-size content-secondary-color"
+          key="0"
+        >
+          <ItemDisplay
+            iconAlignment="center"
+            intl={
+              Object {
+                "defaultFormats": Object {},
+                "defaultLocale": "en",
+                "formatDate": [Function],
+                "formatHTMLMessage": [Function],
+                "formatMessage": [Function],
+                "formatNumber": [Function],
+                "formatPlural": [Function],
+                "formatRelative": [Function],
+                "formatTime": [Function],
+                "formats": Object {},
+                "formatters": Object {
+                  "getDateTimeFormat": [Function],
+                  "getMessageFormat": [Function],
+                  "getNumberFormat": [Function],
+                  "getPluralFormat": [Function],
+                  "getRelativeFormat": [Function],
+                },
+                "locale": "en",
+                "messages": null,
+                "now": [Function],
+                "onError": [Function],
+                "textComponent": "span",
+                "timeZone": null,
+              }
+            }
+            isDisabled={false}
+            isTruncated={false}
+            text="display 7"
+            textStyle="primary"
+          />
+        </div>
+        <div
+          className="content content-secondary-size content-secondary-color"
+          key="1"
         >
           <ItemDisplay
             iconAlignment="center"

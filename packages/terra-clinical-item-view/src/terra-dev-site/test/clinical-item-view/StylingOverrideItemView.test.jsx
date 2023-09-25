@@ -21,7 +21,7 @@ const views = () => (
     <ItemView displays={displays} overrideDefaultStyling comment={comment(1)} id="test-displays-override" />
     <br />
     <h2>Override Default Styling Two Column Layout </h2>
-    <ItemView displays={displays} layout="twoColumns" overrideDefaultStyling comment={comment(2)} id="test-displays-override-two" />
+    <ItemView displays={displays} layout="twoColumns" trueColumn overrideDefaultStyling comment={comment(2)} id="test-displays-override-two" />
     <br />
     <h2>Override Default Styling with TextEmphasis</h2>
     <p>This test is just showing that even if TextEmphasis has been explicitly set to start, it will be ignored when the override prop is set to true.</p>
