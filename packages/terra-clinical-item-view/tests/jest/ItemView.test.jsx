@@ -272,8 +272,9 @@ it('should render each column as an unordered list within a primary unordered li
   const display2 = shallowWithIntl(<ItemView.Display text="display 2" />);
   const display3 = shallowWithIntl(<ItemView.Display text="display 3" />);
   const displays = [display1, display2, display3];
-  const itemView = shallow(<ItemView displays={displays} layout="twoColumns" />);
+  const itemView = shallow(<ItemView displays={displays} layout="twoColumns" trueColumn />);
   expect(itemView.find('ItemDisplay')).toHaveLength(3);
+  expect(itemView.find('ul.column-list-container')).toHaveLength(1);
   expect(itemView.find('ul.column-list')).toHaveLength(2);
   expect(itemView).toMatchSnapshot();
 });
