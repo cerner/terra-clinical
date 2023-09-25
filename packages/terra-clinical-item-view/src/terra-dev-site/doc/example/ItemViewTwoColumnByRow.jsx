@@ -1,6 +1,5 @@
 import React from 'react';
-import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
-import IconPerson from 'terra-icon/lib/icon/IconPerson';
+import { IconBriefcase, IconPerson } from 'terra-icon';
 import ItemView from 'terra-clinical-item-view';
 
 const display1 = <ItemView.Display icon={<IconPerson />} iconAlignment="inline" text="Asif Khan" />;

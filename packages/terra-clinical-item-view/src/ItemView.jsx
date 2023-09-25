@@ -32,8 +32,8 @@ const propTypes = {
   /**
   * Determines whether the displays are programmatically separated by row or as true columns when layout is set to `twoColumns`.
   * Screenreaders will read `trueColumn` displays from top to bottom, one column at a time.
-  * However, this prop defaults to false and therefore the screenreader will read the displays in both columns together, left to right, one row at a time.
-  * For accessibility purposes it is recommended to set trueColumn to true.
+  * However, this prop defaults to `false` and therefore the screenreader will read the displays in both columns together, left to right, one row at a time.
+  * For accessibility purposes it is recommended to set trueColumn to `true`.
   */
   trueColumn: PropTypes.bool,
   /**
