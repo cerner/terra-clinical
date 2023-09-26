@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.12.0 - (September 26, 2023)
+
 * Added
   * Added `trueColumn` prop to toggle between displaying in a two column layout by row or by column.
 
