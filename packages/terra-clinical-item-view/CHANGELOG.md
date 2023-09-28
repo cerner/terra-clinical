@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added a min-height attribute to item view content so blank displays keep their line height and show as an empty line.
+
 ## 4.12.0 - (September 26, 2023)
 
 * Added
