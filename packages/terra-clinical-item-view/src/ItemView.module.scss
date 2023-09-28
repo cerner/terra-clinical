@@ -63,8 +63,8 @@
   .content {
     align-items: flex-start;
     display: flex;
+    min-height: 1em; // Setting a line height so when a blank display is passed in the content maintains it's height instead of shrinking
     overflow: hidden; // VERY IMPORTANT FOR IE10
-    min-height: 1em; // Setting a min height so when a blank display is passed in the content maintains its height instead of shrinking
   }
 
   .secondary-column {
