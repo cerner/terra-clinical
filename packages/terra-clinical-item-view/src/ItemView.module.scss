@@ -55,15 +55,55 @@
     overflow: hidden; // VERY IMPORTANT FOR IE10
   }
 
-  .column-container {
-    display: flex;
-    flex-flow: row nowrap;
-  }
-
   .content {
     align-items: flex-start;
     display: flex;
     overflow: hidden; // VERY IMPORTANT FOR IE10
+  }
+
+  .single-result-column-container {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .column-list-container {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .column-list {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .row-list-container {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+  }
+
+  .row-list {
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+    width: 100%;
   }
 
   .secondary-column {
@@ -78,31 +118,30 @@
     }
   }
 
-  .row {
-    display: flex;
-    width: 100%;
-  }
-
   .is-truncated,
   .is-truncated [data-terra-clinical-item-display-text] {
     @include terra-clinical-text-truncate;
   }
 
   // Layouts
-  /* stylelint-disable selector-max-compound-selectors */
   .one-column {
-    .primary-column {
-      width: 100%;
+    .column-list-container {
+      flex-flow: column nowrap;
+    }
+  }
+
+  /* stylelint-disable selector-max-compound-selectors */
+  .two-columns {
+    .column-list-container {
+      flex-flow: row nowrap;
+
+      .primary-column {
+        flex: 1 1 auto;
+        float: left;
+      }
     }
   }
   /* stylelint-enable selector-max-compound-selectors */
-
-  .two-columns {
-    .primary-column {
-      flex: 1 1 auto;
-      float: left;
-    }
-  }
 
   .two-columns-by-row {
     .content:nth-child(odd) {

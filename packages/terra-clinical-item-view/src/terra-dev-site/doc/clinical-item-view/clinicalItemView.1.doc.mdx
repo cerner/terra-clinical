@@ -1,4 +1,5 @@
 import { Badge } from 'terra-clinical-item-view/package.json?dev-site-package';
+import { Notice } from "@cerner/terra-docs";
 
 import ItemViewStandard from '../example/ItemViewStandard?dev-site-example';
 import ItemViewTwoColumn from '../example/ItemViewTwoColumn?dev-site-example';
@@ -8,6 +9,8 @@ import ItemViewComment from '../example/ItemViewComment?dev-site-example';
 import ItemViewAll from '../example/ItemViewAll?dev-site-example';
 import ItemViewAllTopAligned from '../example/ItemViewAllTopAligned?dev-site-example';
 import ItemViewOverrideDefaultStyling from '../example/ItemViewOverrideDefaultStyling?dev-site-example';
+import ItemViewWithHeader from '../example/ItemViewWithHeader?dev-site-example';
+import ItemViewTwoColumnWithHeader from '../example/ItemViewTwoColumnWithHeader?dev-site-example';
 
 import ItemViewProps from 'terra-clinical-item-view/src/ItemView.jsx?dev-site-props-table';
 
@@ -31,6 +34,57 @@ import ItemView from 'terra-clinical-item-view';
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
 * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
 * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+
+## Accessibility
+
+<Notice variant="important" ariaLevel="3">
+
+#### Accessibility Guidance: Headers
+
+For the purposes of accessibility compliance, it is **strongly** suggested to include a header element directly above
+the Clinical Item View during implementation. This ensures that the list of displays in the view have proper context.
+**The header not only acts as the main label for what the view contains, but also helps with page navigation.**
+
+Consumers can use the Terra Core Heading component found [here](https://engineering.cerner.com/terra-ui/components/cerner-terra-core-docs/heading/about)
+or the Clincial Header component found [here](https://engineering.cerner.com/terra-clinical/components/terra-clinical-header/clinical-header/clinical-header).
+Refer to A11y standards for how to properly implement headings in the context of your webpage. Further information can be found on the Clinical Item View accessibility guide.
+
+The following are two examples of how to implement a header for the one column and two column layouts. 
+
+</Notice>
+
+<ItemViewWithHeader
+    title="ItemView - With Header"
+/>
+<ItemViewTwoColumnWithHeader
+    title="ItemView - Two Column Layout With Header"
+/>
+
+<Notice variant="important" ariaLevel="3">
+
+#### Accessibility Guidance: Truncated Text
+
+Truncation of text can pose an accessibility concern if no method of disclosing the full text is available
+to the user. When using `isTruncated`, consumers are responsible for providing a progressive disclosure pattern
+ to disclose the full Item Display text in order to ensure that it is accessible for keyboard navigation users.
+
+**There should always be a method of accessing the truncated information. If there is no way to progressively
+disclose the full content of the truncated information, then truncation should not be used.**
+
+Some examples of progressive disclosure patterns that may be used to disclose truncated information include:
+- Accordions
+- Dialogs
+- Popovers
+- Show/Hide
+- Split Views
+- Toasts
+
+The method of disclosure **must** be accessible via keyboard interactions.
+
+Truncation should be avoided where it is not necessary. Certain content should **never** be truncated (i.e. 
+medication names and dosages in menus where the user is selecting from a list of choices).
+
+</Notice>
 
 ## Examples
 <ItemViewStandard title="ItemView - Default" />

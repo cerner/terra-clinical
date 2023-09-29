@@ -150,6 +150,110 @@ const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
   return ['content'].concat(classes);
 };
 
+const renderRow = (row, rowIndex, rowCount, emphasis, overrideDefaultStyling) => {
+  const rowKey = rowIndex;
+
+  return (
+    <li className={cx('row')} key={rowKey}>
+      <ul className={cx('row-list')} key={rowKey}>
+        {row.map((display, displayIndex) => {
+          const displayKey = displayIndex;
+          const contentClasses = overrideDefaultStyling ? 'content' : classesForContent(rowIndex, rowCount, displayIndex, emphasis);
+
+          return (
+            <li className={cx(contentClasses)} key={displayKey}>
+              {display}
+            </li>
+          );
+        })}
+      </ul>
+    </li>
+  );
+};
+
+const renderTwoColumns = (displayGroup, displayGroupIndex, emphasis, overrideDefaultStyling) => {
+  const columnKey = displayGroupIndex;
+  const displayCount = displayGroup.length;
+  const containerStyling = displayGroupIndex === 0 ? 'primary-column' : 'secondary-column';
+
+  return (
+    <li className={cx(containerStyling)} key={columnKey}>
+      <ul className={cx('column-list')} key={columnKey}>
+        {displayGroup.map((display, contentIndex) => {
+          const contentKey = contentIndex;
+          const contentClasses = overrideDefaultStyling ? 'content' : classesForContent(contentIndex, displayCount, displayGroupIndex, emphasis);
+
+          return (
+            <li className={cx(contentClasses)} key={contentKey}>
+              {display}
+            </li>
+          );
+        })}
+      </ul>
+    </li>
+  );
+};
+
+const renderColumn = (displays, emphasis, overrideDefaultStyling) => {
+  const displayCount = displays.length;
+
+  return (
+    <div>
+      <ul className={cx('column-list-container')}>
+        {displays.map((display, displayIndex) => {
+          const contentKey = displayIndex;
+          /**
+           * We are only ever rendering one column so zero is being passed into classesForContent for the contentIndex variable.
+           * classesForContent would usually take in an index for that but in this case we don't have one explicitly.
+           */
+          const contentClasses = overrideDefaultStyling ? 'content' : classesForContent(displayIndex, displayCount, 0, emphasis);
+
+          return (
+            <li className={cx(contentClasses)} key={contentKey}>
+              {display}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const renderByRowView = (displays, emphasis, overrideDefaultStyling) => {
+  const displayGroups = [];
+
+  while (displays.length) {
+    displayGroups.push(displays.splice(0, 2));
+  }
+
+  return (
+    <div>
+      <ul className={cx('row-list-container')}>
+        {displayGroups.map((displayRow, rowIndex) => {
+          const row = renderRow(displayRow, rowIndex, displayGroups.length, emphasis, overrideDefaultStyling);
+          return row;
+        })}
+      </ul>
+    </div>
+  );
+};
+
+const renderSingleDisplayView = (singleDisplay, overrideDefaultStyling) => {
+  /**
+   * Since this is always a singular display, the content styling will be the primary defaults if they are not overridden.
+   * We don't have to call into the classesForContent method and instead can just set the primary size and color here.
+   */
+  const contentClass = overrideDefaultStyling ? 'content' : ['content', 'content-primary-size', 'content-primary-color'];
+
+  return (
+    <div className={cx('single-result-column-container')}>
+      <div className={cx(contentClass)}>
+        {singleDisplay}
+      </div>
+    </div>
+  );
+};
+
 const twoColumnGrouping = (displays) => {
   let count = 0;
   const displayGroups = [];
@@ -172,97 +276,39 @@ const twoColumnGrouping = (displays) => {
   return displayGroups;
 };
 
-const renderRow = (row, rowIndex, rowCount, emphasis) => {
-  const rowKey = rowIndex;
-  return (
-    <div className={cx('row')} key={rowKey}>
-      {row.map((display, displayIndex) => {
-        const displayKey = displayIndex;
-        const contentClasses = classesForContent(rowIndex, rowCount, displayIndex, emphasis);
-
-        return (
-          <div className={cx(contentClasses)} key={displayKey}>
-            {display}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
-const renderColumn = (displayGroup, displayGroupIndex, emphasis, overrideDefaultStyling) => {
-  const columnKey = displayGroupIndex;
-  const displayCount = displayGroup.length;
-  let containerStyling;
-
-  if (displayGroupIndex === 0) {
-    containerStyling = 'primary-column';
-  } else {
-    containerStyling = 'secondary-column';
-  }
-
-  return (
-    <div className={cx(containerStyling)} key={columnKey}>
-      {displayGroup.map((display, contentIndex) => {
-        const contentKey = contentIndex;
-        let contentClasses;
-
-        if (overrideDefaultStyling) {
-          contentClasses = 'content';
-        } else {
-          contentClasses = classesForContent(contentIndex, displayCount, displayGroupIndex, emphasis);
-        }
-
-        return (
-          <div className={cx(contentClasses)} key={contentKey}>
-            {display}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
-
 const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColumn) => {
   if (displays === null || displays === undefined || !displays.length) {
     return undefined;
   }
 
-  let displayGroups = [];
   const displaysSlice = displays.slice(0, 8);
-  const primaryColumn = [];
+
+  /**
+   * If there is only one display we don't want to return it as an item in a list.
+   * The method renderSingleDisplayView here takes in the single display and returns it within simple divs instead.
+   */
+  if (displaysSlice.length === 1) { return renderSingleDisplayView(displaysSlice, overrideDefaultStyling); }
 
   if (layout === Layouts.TWO_COLUMNS) {
-    if (trueColumn) {
-      displayGroups = twoColumnGrouping(displaysSlice);
-    } else {
-      while (displaysSlice.length) {
-        displayGroups.push(displaysSlice.splice(0, 2));
-      }
+    if (!trueColumn) { return renderByRowView(displaysSlice, emphasis, overrideDefaultStyling); }
 
-      return (
-        <div className={cx('row-container')}>
-          {displayGroups.map((displayRow, rowIndex) => {
-            const row = renderRow(displayRow, rowIndex, displayGroups.length, emphasis);
-            return row;
+    const displayGroups = twoColumnGrouping(displaysSlice);
+
+    return (
+      <div>
+        <ul className={cx('column-list-container')}>
+          {displayGroups.map((group, index) => {
+            const column = renderTwoColumns(group, index, emphasis, overrideDefaultStyling);
+            return column;
           })}
-        </div>
-      );
-    }
-  } else {
-    while (displaysSlice.length) {
-      primaryColumn.push(displaysSlice.splice(0, 1));
-    }
-
-    displayGroups.push(primaryColumn);
+        </ul>
+      </div>
+    );
   }
 
   return (
-    <div className={cx('column-container')}>
-      {displayGroups.map((group, index) => {
-        const column = renderColumn(group, index, emphasis, overrideDefaultStyling);
-        return column;
-      })}
+    <div>
+      {renderColumn(displaysSlice, emphasis, overrideDefaultStyling)}
     </div>
   );
 };

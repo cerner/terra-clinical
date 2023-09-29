@@ -7,6 +7,12 @@ Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large
     Terra.validates.element('with two column and start displays', { selector: '#test-displays-two-start' });
   });
 
+  it('renders with a singular display', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/single-display-item-view');
+
+    Terra.validates.element('with a singular display', { selector: '#test-single-display' });
+  });
+
   it('renders with displays by row', () => {
     browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view-by-row');
 
