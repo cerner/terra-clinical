@@ -103,17 +103,6 @@
       float: left;
     }
 
-    // .content:blank {
-    //   min-height: 1.3em; // Setting a line height so when a blank display is passed in the content maintains it's height instead of shrinking
-    // }
-
-    // .content:empty {
-    //   &::before {
-    //     min-height: 1.3em; // Setting a line height so when a blank display is passed in the content maintains it's height instead of shrinking
-    //   }
-    // }
-
-    // ideally we only want to apply this when the content is blank/empty but I haven't been able to get that to work
     .content {
       min-height: 1.25em; // Setting a line height so when a blank display is passed in the content maintains it's height instead of shrinking
     }

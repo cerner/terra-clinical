@@ -39,7 +39,8 @@ const views = () => (
     <h2>Two Column Layout By Row - Left and Right Column with Blank Displays on Different Lines </h2>
     <p>
       This should have what appears to be a newline when there is a blank display on one side of a `row` - that was the previous behavior for two column layout.
-      That is because when one column has a display and the other in the same row has an empty display, the height from the populated display spans the entire row and therefore the column with the empty display still has the same height as the other.
+      That is because when one column has a display and the other in the same row has an empty display, the height from the populated display spans the entire row.
+      Therefore, the column with the empty display still has the same height as the other.
       This means the side with the empty display appears to be an blank newline.
       No additonal changes to the css is needed for this, just want an example to show the behavior.
     </p>
@@ -48,7 +49,8 @@ const views = () => (
     <h2>Two Column Layout By Row - Left and Right Column with Blank Displays on Same Line </h2>
     <p>
       This should **not** have what appears to be a newline when there are two blank displays in the same row.
-      That is because this formatting spans the entire row and therefore if the two blank displays are in the same row, they both have no height and therefore no newline is shown where those would usually be.
+      That is because this formatting spans the entire row and therefore if the two blank displays are in the same row,
+      they both have no height and therefore no newline is shown where those would usually be.
     </p>
     <ItemView displays={bothColumnsBlankDisplaysSameRow} layout="twoColumns" id="test-blank-displays-by-row-same-line" />
     <br />
