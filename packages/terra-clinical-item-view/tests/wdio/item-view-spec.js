@@ -23,8 +23,8 @@ Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large
   it('renders with blank lines', () => {
     browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/blank-display-item-view');
 
-    Terra.validates.element('with blank line in one column', { selector: '#test-blank-displays' });
-    Terra.validates.element('with blank lines in two columns', { selector: '#test-blank-displays-two' });
+    Terra.validates.element('with blank displays in two columns', { selector: '#test-blank-displays-two' });
+    Terra.validates.element('with blank displays in two column and same line', { selector: '#test-blank-displays-two-same-line' });
   });
 
   it('renders with default comment set', () => {
