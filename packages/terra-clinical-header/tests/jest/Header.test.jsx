@@ -1,6 +1,9 @@
 import React from 'react';
+import { shallowWithIntl } from 'terra-enzyme-intl';
+
 import Header from '../../src/Header';
 
+const mockFunc = jest.fn();
 afterEach(() => {
   // restore the spy created with spyOn
   jest.restoreAllMocks();
@@ -66,3 +69,13 @@ it('should render a header with default heading level when level not set', () =>
   expect(consoleSpy).toHaveBeenCalledWith(levelWarningMessage);
   expect(header).toMatchSnapshot();
 });
+
+it('should render a header with hyperlink title', () => {
+  const header = shallowWithIntl(<Header onClick={mockFunc} text="Title" />);
+
+  const hyperlinkButton = header.find('InjectIntl(Hyperlink)');
+  expect(hyperlinkButton.prop('onClick')).toEqual(mockFunc);
+  expect(hyperlinkButton.prop('text')).toEqual('Title');
+  expect(header).toMatchSnapshot();
+});
+

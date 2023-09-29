@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
+
+import HyperlinkButton from 'terra-hyperlink';
 import ThemeContext from 'terra-theme-context';
 
 import styles from './Header.module.scss';
@@ -59,6 +61,8 @@ const propTypes = {
    * A Boolean indicating if element is a subheader.
    */
   isSubheader: PropTypes.bool,
+
+  onClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -70,7 +74,16 @@ const defaultProps = {
 };
 
 const Header = ({
-  children, title, startContent, endContent, text, level, id, isSubheader, ...customProps
+  children,
+  title,
+  startContent,
+  endContent,
+  text,
+  level,
+  id,
+  isSubheader,
+  onClick,
+  ...customProps
 }) => {
   const theme = useContext(ThemeContext);
   if (title) {
@@ -90,7 +103,11 @@ const Header = ({
     titleElement = (
       <div className={cx('title-container')}>
         <HeaderElement id={id} className={cx('title')}>
-          {title || text}
+          {onClick ? (
+            <HyperlinkButton onClick={onClick} text={title || text} />
+          ) : (
+            title || text
+          )}
         </HeaderElement>
       </div>
     );

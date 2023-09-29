@@ -98,6 +98,56 @@ exports[`should render a header with default heading level when level not set 1`
 </header>
 `;
 
+exports[`should render a header with hyperlink title 1`] = `
+<header
+  className="flex-header"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <div
+    className="flex-fill"
+  >
+    <div
+      className="title-container"
+    >
+      <h1
+        className="title"
+      >
+        <InjectIntl(Hyperlink)
+          onClick={[MockFunction]}
+          text="Title"
+        />
+      </h1>
+    </div>
+  </div>
+</header>
+`;
+
 exports[`should render a header with title and heading level 1`] = `
 <header
   class="flex-header"

@@ -59,14 +59,14 @@
     width: 100%;
     word-wrap: break-word; /* For IE 10 and IE 11 */
   }
-  
+
   /* stylelint-disable selector-max-compound-selectors */
   .flex-end + .flex-fill {
     .title {
       padding-left: var(--terra-clinical-header-end-content-plus-title-padding-left, 0.35714rem);
     }
   }
-  
+
   .flex-fill + .flex-end {
     .title {
       padding-right: var(--terra-clinical-header-title-plus-end-content-padding-right, 0.35714rem);
