@@ -70,4 +70,10 @@ Terra.describeViewports('Clinical header', ['tiny', 'small', 'medium', 'large', 
 
     Terra.validates.element('no level and no title');
   });
+
+  it('header with hyperlink title', () => {
+    browser.url('/raw/tests/terra-clinical-header/clinical-header/hyperlink-title-header');
+
+    Terra.validates.element('has hyperlink title');
+  });
 });

@@ -73,6 +73,7 @@ it('should render a header with default heading level when level not set', () =>
 it('should render a header with hyperlink title', () => {
   const header = shallowWithIntl(<Header onClick={mockFunc} text="Title" />);
 
+  expect(header.find('h1').length).toEqual(1);
   const hyperlinkButton = header.find('InjectIntl(Hyperlink)');
   expect(hyperlinkButton.prop('onClick')).toEqual(mockFunc);
   expect(hyperlinkButton.prop('text')).toEqual('Title');
