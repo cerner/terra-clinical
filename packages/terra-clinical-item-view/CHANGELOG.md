@@ -5,16 +5,13 @@
 ## 4.13.0 - (October 3, 2023)
 
 * Changed
-  * Minor dependency version bump
+  * Changed the structure of how displays in an item view are returned, now they exist in an unordered list as list items.
 
 ## 4.12.0 - (September 26, 2023)
 
 * Added
   * Added `trueColumn` prop to toggle between displaying in a two column layout by row or by column.
   * Added accessibility guide.
-
-* Changed
-  * Changed the structure of how displays in an item view are returned, now they exist in an unordered list as list items.
 
 ## 4.11.0 - (September 21, 2023)
 
