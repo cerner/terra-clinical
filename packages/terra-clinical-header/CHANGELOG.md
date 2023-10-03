@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `onTextClick` and support for hyperlink button header titles.
+
 ## 3.28.0 - (August 14, 2023)
 
 * Changed
