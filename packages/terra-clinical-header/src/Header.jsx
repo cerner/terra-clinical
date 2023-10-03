@@ -62,7 +62,10 @@ const propTypes = {
    */
   isSubheader: PropTypes.bool,
 
-  onClick: PropTypes.func,
+  /**
+   * Callback function triggered via hyperlink button title.
+   */
+  onTextClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -82,7 +85,7 @@ const Header = ({
   level,
   id,
   isSubheader,
-  onClick,
+  onTextClick,
   ...customProps
 }) => {
   const theme = useContext(ThemeContext);
@@ -103,8 +106,8 @@ const Header = ({
     titleElement = (
       <div className={cx('title-container')}>
         <HeaderElement id={id} className={cx('title')}>
-          {onClick ? (
-            <HyperlinkButton onClick={onClick} text={title || text} />
+          {onTextClick ? (
+            <HyperlinkButton onClick={onTextClick} text={title || text} />
           ) : (
             title || text
           )}
