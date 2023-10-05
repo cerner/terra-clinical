@@ -101,15 +101,16 @@ const Header = ({
   }
 
   let titleElement;
-  if (title || text) {
-    const HeaderElement = (level) ? `h${level}` : 'h1';
+  const titleContent = title || text;
+  if (titleContent) {
+    const HeaderElement = level ? `h${level}` : 'h1';
     titleElement = (
       <div className={cx('title-container')}>
         <HeaderElement id={id} className={cx('title')}>
           {onTextClick ? (
-            <HyperlinkButton onClick={onTextClick} text={title || text} />
+            <HyperlinkButton onClick={onTextClick} text={titleContent} />
           ) : (
-            title || text
+            titleContent
           )}
         </HeaderElement>
       </div>
