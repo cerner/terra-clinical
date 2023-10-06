@@ -1,4 +1,10 @@
 Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large', 'huge', 'enormous'], () => {
+  it('renders with a null display', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/null-item-view');
+
+    Terra.validates.element('with a null display');
+  });
+
   it('renders with displays', () => {
     browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/displays-item-view');
 

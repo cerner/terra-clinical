@@ -9,6 +9,13 @@ it('should render a default component', () => {
   expect(itemView).toMatchSnapshot();
 });
 
+it('should render with null display', () => {
+  const itemView = shallow(<ItemView displays={null} />);
+
+  expect(itemView.find('.body').props().children).toEqual([undefined, undefined]);
+  expect(itemView).toMatchSnapshot();
+});
+
 it('should render with 1 display', () => {
   const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
   const displays = [display1];

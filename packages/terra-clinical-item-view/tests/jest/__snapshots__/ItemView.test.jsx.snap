@@ -2420,3 +2420,13 @@ exports[`should render with a display and graphic 1`] = `
   </div>
 </div>
 `;
+
+exports[`should render with null display 1`] = `
+<div
+  className="item-view one-column"
+>
+  <div
+    className="body"
+  />
+</div>
+`;
