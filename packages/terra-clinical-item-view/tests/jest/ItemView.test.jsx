@@ -9,10 +9,18 @@ it('should render a default component', () => {
   expect(itemView).toMatchSnapshot();
 });
 
-it('should render with null display', () => {
+it('should render with null displays prop', () => {
   const itemView = shallow(<ItemView displays={null} />);
 
+  expect(itemView.find('ItemDisplay')).toHaveLength(0);
   expect(itemView.find('.body').props().children).toEqual([undefined, undefined]);
+  expect(itemView).toMatchSnapshot();
+});
+
+it('should render with null display item', () => {
+  const itemView = shallow(<ItemView displays={[null]} />);
+
+  expect(itemView.find('ItemDisplay')).toHaveLength(0);
   expect(itemView).toMatchSnapshot();
 });
 
