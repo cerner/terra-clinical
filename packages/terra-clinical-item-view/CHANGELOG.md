@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed error for null `displays` prop.
+
 ## 4.13.0 - (October 3, 2023)
 
 * Added
