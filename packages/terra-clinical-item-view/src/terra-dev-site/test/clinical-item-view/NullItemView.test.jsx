@@ -7,11 +7,13 @@ const cx = classNames.bind(styles);
 
 const DefaultItemView = () => (
   <div>
-    <p>Given null item display prop, the div is created, but there is no content to show. The ItemView is outlined below.</p>
+    <p>Given null displays prop, the div is created, but there is no content to show. The ItemView is outlined below.</p>
     <div className={cx('itemview-wrapper')}>
       <ItemView id="ItemView" displays={null} />
-      <ItemView id="ItemViewInputs" displays={[null]} />
-      <ItemView id="ItemViewInputs" displays={[undefined]} />
+    </div>
+    <p>Given null display item, the div is created, but there is no content to show. The ItemView is outlined below.</p>
+    <div className={cx('itemview-wrapper')}>
+      <ItemView id="ItemViewNullInput" displays={[null]} />
     </div>
   </div>
 );
