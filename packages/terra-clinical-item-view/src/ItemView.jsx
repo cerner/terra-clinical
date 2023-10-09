@@ -314,11 +314,13 @@ const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColu
 };
 
 const isDisplaysTruncated = (displays) => {
-  const displaysSlice = displays.slice(0, 8);
+  if (displays) {
+    const displaysSlice = displays.slice(0, 8);
 
-  for (let i = 0; i < displaysSlice.length; i += 1) {
-    if (displaysSlice[i].props.isTruncated === true) {
-      return true;
+    for (let i = 0; i < displaysSlice.length; i += 1) {
+      if (displaysSlice[i]?.props.isTruncated === true) {
+        return true;
+      }
     }
   }
 
