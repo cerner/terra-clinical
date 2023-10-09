@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 
-import HyperlinkButton from 'terra-hyperlink';
+import Hyperlink from 'terra-hyperlink';
 import ThemeContext from 'terra-theme-context';
 
 import styles from './Header.module.scss';
@@ -108,7 +108,7 @@ const Header = ({
       <div className={cx('title-container')}>
         <HeaderElement id={id} className={cx('title')}>
           {onTextClick ? (
-            <HyperlinkButton onClick={onTextClick} text={titleContent} />
+            <Hyperlink onClick={onTextClick} text={titleContent} />
           ) : (
             titleContent
           )}
