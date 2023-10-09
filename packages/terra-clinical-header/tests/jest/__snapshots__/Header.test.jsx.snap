@@ -2,42 +2,46 @@
 
 exports[`should render a default component 1`] = `
 <header
-  class="flex-header"
+  className="flex-header"
 >
   <div
-    class="flex-fill"
+    className="flex-fill"
   />
 </header>
 `;
 
 exports[`should render a header with all content 1`] = `
 <header
-  class="flex-header"
+  className="flex-header"
 >
   <div
-    class="flex-end"
+    className="flex-end"
   >
-    <div>
+    <div
+      id="start-id"
+    >
       start content
     </div>
   </div>
   <div
-    class="flex-fill"
+    className="flex-fill"
   >
     <div
-      class="title-container"
+      className="title-container"
     >
       <h1
-        class="title"
+        className="title"
       >
         Title
       </h1>
     </div>
   </div>
   <div
-    class="flex-end"
+    className="flex-end"
   >
-    <div>
+    <div
+      id="end-id"
+    >
       end content
     </div>
   </div>
@@ -46,32 +50,36 @@ exports[`should render a header with all content 1`] = `
 
 exports[`should render a header with content on the left 1`] = `
 <header
-  class="flex-header"
+  className="flex-header"
 >
   <div
-    class="flex-end"
+    className="flex-end"
   >
-    <div>
+    <div
+      id="start-id"
+    >
       start content
     </div>
   </div>
   <div
-    class="flex-fill"
+    className="flex-fill"
   />
 </header>
 `;
 
 exports[`should render a header with content on the right 1`] = `
 <header
-  class="flex-header"
+  className="flex-header"
 >
   <div
-    class="flex-fill"
+    className="flex-fill"
   />
   <div
-    class="flex-end"
+    className="flex-end"
   >
-    <div>
+    <div
+      id="end-id"
+    >
       end content
     </div>
   </div>
@@ -80,16 +88,16 @@ exports[`should render a header with content on the right 1`] = `
 
 exports[`should render a header with default heading level when level not set 1`] = `
 <header
-  class="flex-header"
+  className="flex-header"
 >
   <div
-    class="flex-fill"
+    className="flex-fill"
   >
     <div
-      class="title-container"
+      className="title-container"
     >
       <h1
-        class="title"
+        className="title"
       >
         This title should render with a default level
       </h1>
@@ -98,19 +106,109 @@ exports[`should render a header with default heading level when level not set 1`
 </header>
 `;
 
-exports[`should render a header with title and heading level 1`] = `
+exports[`should render a header with heading level 1`] = `
 <header
-  class="flex-header"
+  className="flex-header"
 >
   <div
-    class="flex-fill"
+    className="flex-fill"
   >
     <div
-      class="title-container"
+      className="title-container"
+    >
+      <h2
+        className="title"
+      >
+        title
+      </h2>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`should render a header with hyperlink title 1`] = `
+<header
+  className="flex-header"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <div
+    className="flex-fill"
+  >
+    <div
+      className="title-container"
     >
       <h1
-        class="title"
+        className="title"
+      >
+        <InjectIntl(Hyperlink)
+          onClick={[MockFunction]}
+          text="Title"
+        />
+      </h1>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`should render a header with id 1`] = `
+<header
+  className="flex-header"
+>
+  <div
+    className="flex-fill"
+  >
+    <div
+      className="title-container"
+    >
+      <h1
+        className="title"
         id="test-id"
+      >
+        title
+      </h1>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`should render a header with title 1`] = `
+<header
+  className="flex-header"
+>
+  <div
+    className="flex-fill"
+  >
+    <div
+      className="title-container"
+    >
+      <h1
+        className="title"
       >
         title
       </h1>
@@ -121,30 +219,30 @@ exports[`should render a header with title and heading level 1`] = `
 
 exports[`should render a subheader with all content 1`] = `
 <header
-  class="flex-header subheader"
+  className="flex-header subheader"
 >
   <div
-    class="flex-end"
+    className="flex-end"
   >
     <div>
       start content
     </div>
   </div>
   <div
-    class="flex-fill"
+    className="flex-fill"
   >
     <div
-      class="title-container"
+      className="title-container"
     >
       <h1
-        class="title"
+        className="title"
       >
         Title
       </h1>
     </div>
   </div>
   <div
-    class="flex-end"
+    className="flex-end"
   >
     <div>
       end content
@@ -155,16 +253,16 @@ exports[`should render a subheader with all content 1`] = `
 
 exports[`should render a subheader with title and heading level 1`] = `
 <header
-  class="flex-header subheader"
+  className="flex-header subheader"
 >
   <div
-    class="flex-fill"
+    className="flex-fill"
   >
     <div
-      class="title-container"
+      className="title-container"
     >
       <h1
-        class="title"
+        className="title"
       >
         title
       </h1>
