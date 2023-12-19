@@ -84,11 +84,16 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * Whether the field is required.
+   */
+  required: PropTypes.bool,
 };
 
 const defaultProps = {
   precisionSet: ['on/at', 'about', 'before', 'after', 'unknown'],
   isLegendHidden: false,
+  required: false,
 };
 
 class OnsetPicker extends React.Component {
@@ -181,6 +186,7 @@ class OnsetPicker extends React.Component {
   getYearInput(intl, id) {
     return (
       <SelectField
+        required={this.props.required}
         className={cx('field-inline', 'year')}
         value={this.state.onsetDate ? this.state.onsetDate.year().toString() : undefined}
         label={intl.formatMessage({ id: 'Terra.onsetPicker.year' })}
@@ -358,6 +364,7 @@ class OnsetPicker extends React.Component {
       legend,
       intl,
       isLegendHidden,
+      required,
       ...customProps
     } = this.props;
 
@@ -420,6 +427,7 @@ class OnsetPicker extends React.Component {
     if (this.state.granularity === GranularityOptions.AGE) {
       ageInput = (
         <InputField
+          required={required}
           className={cx('field-inline', 'age')}
           defaultValue={this.state.age}
           inputAttrs={{
@@ -439,6 +447,7 @@ class OnsetPicker extends React.Component {
 
       ageUnitSelect = (
         <SelectField
+          required={required}
           className={cx('field-inline', 'age-unit')}
           defaultValue={this.state.ageUnit}
           label={intl.formatMessage({ id: 'Terra.onsetPicker.agePrecision' })}
@@ -460,6 +469,7 @@ class OnsetPicker extends React.Component {
       monthSelect = (
         <React.Fragment>
           <SelectField
+            required={required}
             className={cx('field-inline', 'month')}
             value={this.state.onsetDate ? this.state.onsetDate.month().toString() : undefined}
             label={intl.formatMessage({ id: 'Terra.onsetPicker.month' })}
@@ -494,6 +504,7 @@ class OnsetPicker extends React.Component {
           }}
         >
           <DatePicker
+            required={required}
             onChangeRaw={this.changeDate}
             minDate={this.props.birthdate}
             maxDate={moment().format(DATE_FORMAT)}

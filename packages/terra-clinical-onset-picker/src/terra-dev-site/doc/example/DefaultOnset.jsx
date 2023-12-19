@@ -7,6 +7,7 @@ const picker = () => (
   <div>
     <p>{`Birthdate: ${birthdate.format('MM-DD-YYYY')}`}</p>
     <OnsetPicker
+      required
       legend="Onset of symptoms"
       birthdate={birthdate.format('YYYY-MM-DD')}
       id="doogs"
