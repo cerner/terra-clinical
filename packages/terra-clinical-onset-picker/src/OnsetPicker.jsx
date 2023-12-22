@@ -530,7 +530,6 @@ class OnsetPicker extends React.Component {
             onChange={this.changePrecision}
             placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.precision' })}
             selectId={`${this.props.id}-precision-select`}
-            help={legend}
           >
             {OnsetUtils.allowedPrecisions(intl, this.props.precisionSet)
               .map(precisionEntry => <SelectField.Option value={precisionEntry.value} display={precisionEntry.display} key={precisionEntry.value} />)}
