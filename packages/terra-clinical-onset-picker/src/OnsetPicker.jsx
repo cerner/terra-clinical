@@ -518,7 +518,7 @@ class OnsetPicker extends React.Component {
 
     return (
       <div id={this.props.id} {...customProps}>
-        <FieldSet className={cx('fieldset', theme.className)} legend={legend} isLegendHidden={isLegendHidden}>
+        <FieldSet className={cx('fieldset', theme.className)} legend={legend} isLegendHidden={isLegendHidden} legendAttrs={{ 'aria-hidden': 'true' }}>
           {/* Precision */}
           <SelectField
             className={cx('field-inline', 'precision')}
@@ -530,6 +530,7 @@ class OnsetPicker extends React.Component {
             onChange={this.changePrecision}
             placeholder={intl.formatMessage({ id: 'Terra.onsetPicker.precision' })}
             selectId={`${this.props.id}-precision-select`}
+            help={legend}
           >
             {OnsetUtils.allowedPrecisions(intl, this.props.precisionSet)
               .map(precisionEntry => <SelectField.Option value={precisionEntry.value} display={precisionEntry.display} key={precisionEntry.value} />)}
@@ -538,7 +539,7 @@ class OnsetPicker extends React.Component {
           {granularitySelect}
 
           {(this.state.precision !== PrecisionOptions.UNKNOWN) && (
-            <div id="dynamic_content" aria-live="polite">
+            <div id="dynamic_content">
               {ageInput}
               {ageUnitSelect}
               {monthSelect}

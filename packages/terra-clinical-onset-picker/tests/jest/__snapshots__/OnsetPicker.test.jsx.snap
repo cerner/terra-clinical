@@ -201,181 +201,10 @@ exports[`correctly applies the theme context className 1`] = `
         </div>
       </div>
       <div
-        aria-live="polite"
         id="dynamic_content"
       />
     </div>
   </fieldset>
-</div>
-`;
-
-exports[`should render Clinical Onset picker with the aria-live region 1`] = `
-<div
-  id="test"
->
-  <Fieldset
-    className="fieldset"
-    isLegendHidden={false}
-    legendAttrs={Object {}}
-    required={false}
-  >
-    <InjectIntl(SelectField)
-      className="field-inline precision"
-      defaultValue="before"
-      label="Terra.onsetPicker.precision"
-      labelAttrs={
-        Object {
-          "id": "test-precision-select-label",
-        }
-      }
-      onChange={[Function]}
-      placeholder="Terra.onsetPicker.precision"
-      selectId="test-precision-select"
-    >
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.precisionOnAt"
-        key="on/at"
-        value="on/at"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.precisionAbout"
-        key="about"
-        value="about"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.precisionBefore"
-        key="before"
-        value="before"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.precisionAfter"
-        key="after"
-        value="after"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.precisionUnknown"
-        key="unknown"
-        value="unknown"
-      />
-    </InjectIntl(SelectField)>
-    <InjectIntl(SelectField)
-      className="field-inline granularity"
-      label="Terra.onsetPicker.granularity"
-      labelAttrs={
-        Object {
-          "id": "test-granularity-select-label",
-        }
-      }
-      onChange={[Function]}
-      placeholder="Terra.onsetPicker.granularity"
-      selectId="test-granularity-select"
-      value="age"
-    >
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.age"
-        key="age"
-        value="age"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.year"
-        key="year"
-        value="year"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.month"
-        key="month"
-        value="month"
-      />
-      <Option
-        disabled={false}
-        display="Terra.onsetPicker.date"
-        key="date"
-        value="date"
-      />
-    </InjectIntl(SelectField)>
-    <div
-      aria-live="polite"
-      id="dynamic_content"
-    >
-      <InputField
-        className="field-inline age"
-        defaultValue={3}
-        disabled={false}
-        error={null}
-        errorIcon={
-          <IconError
-            viewBox="0 0 48 48"
-            xmlns="http://www.w3.org/2000/svg"
-          />
-        }
-        help={null}
-        hideRequired={false}
-        inputAttrs={
-          Object {
-            "max": 6,
-            "min": 0,
-            "step": 1,
-            "type": "number",
-          }
-        }
-        inputId="test-age-input"
-        isIncomplete={false}
-        isInline={false}
-        isInvalid={false}
-        isLabelHidden={false}
-        label="Terra.onsetPicker.age"
-        labelAttrs={
-          Object {
-            "id": "test-age-input-label",
-          }
-        }
-        onChange={[Function]}
-        required={false}
-        showOptional={false}
-      />
-      <InjectIntl(SelectField)
-        className="field-inline age-unit"
-        defaultValue="years"
-        label="Terra.onsetPicker.agePrecision"
-        labelAttrs={
-          Object {
-            "id": "test-age-unit-select-label",
-          }
-        }
-        onChange={[Function]}
-        placeholder="Terra.onsetPicker.agePrecision"
-        required={false}
-        selectId="test-age-unit-select"
-      >
-        <Option
-          disabled={false}
-          display="Terra.onsetPicker.agePrecisionWeek"
-          key="weeks"
-          value="weeks"
-        />
-        <Option
-          disabled={false}
-          display="Terra.onsetPicker.agePrecisionMonth"
-          key="months"
-          value="months"
-        />
-        <Option
-          disabled={false}
-          display="Terra.onsetPicker.agePrecisionYear"
-          key="years"
-          value="years"
-        />
-      </InjectIntl(SelectField)>
-    </div>
-  </Fieldset>
 </div>
 `;
 
@@ -386,7 +215,11 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={Object {}}
+    legendAttrs={
+      Object {
+        "aria-hidden": "true",
+      }
+    }
     required={false}
   >
     <InjectIntl(SelectField)
@@ -472,7 +305,6 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
       />
     </InjectIntl(SelectField)>
     <div
-      aria-live="polite"
       id="dynamic_content"
     >
       <Field
@@ -520,7 +352,11 @@ exports[`should render Clinical Onset picker with the correct label for month an
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={Object {}}
+    legendAttrs={
+      Object {
+        "aria-hidden": "true",
+      }
+    }
     required={false}
   >
     <InjectIntl(SelectField)
@@ -606,7 +442,6 @@ exports[`should render Clinical Onset picker with the correct label for month an
       />
     </InjectIntl(SelectField)>
     <div
-      aria-live="polite"
       id="dynamic_content"
     >
       <InjectIntl(SelectField)
@@ -763,7 +598,11 @@ exports[`should render Clinical Onset picker with the correct label for precisio
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={Object {}}
+    legendAttrs={
+      Object {
+        "aria-hidden": "true",
+      }
+    }
     required={false}
   >
     <InjectIntl(SelectField)
@@ -849,7 +688,6 @@ exports[`should render Clinical Onset picker with the correct label for precisio
       />
     </InjectIntl(SelectField)>
     <div
-      aria-live="polite"
       id="dynamic_content"
     >
       <InputField
@@ -1127,7 +965,6 @@ exports[`should render a default onset picker with specified onset date 1`] = `
         </div>
       </div>
       <div
-        aria-live="polite"
         id="dynamic_content"
       />
     </div>
@@ -1445,7 +1282,6 @@ exports[`should render only the supplied precisions 1`] = `
         </div>
       </div>
       <div
-        aria-live="polite"
         id="dynamic_content"
       />
     </div>
@@ -1654,7 +1490,6 @@ exports[`should render the same when onChange function is supplied 1`] = `
         </div>
       </div>
       <div
-        aria-live="polite"
         id="dynamic_content"
       />
     </div>
@@ -1861,7 +1696,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
         </div>
       </div>
       <div
-        aria-live="polite"
         id="dynamic_content"
       >
         <div
@@ -2209,7 +2043,6 @@ exports[`should render with non default inputs when supplied 1`] = `
         </div>
       </div>
       <div
-        aria-live="polite"
         id="dynamic_content"
       >
         <div
