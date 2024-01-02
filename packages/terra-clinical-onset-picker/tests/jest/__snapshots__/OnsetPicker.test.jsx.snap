@@ -215,11 +215,7 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={
-      Object {
-        "aria-hidden": "true",
-      }
-    }
+    legendAttrs={Object {}}
     required={false}
   >
     <InjectIntl(SelectField)
@@ -352,11 +348,7 @@ exports[`should render Clinical Onset picker with the correct label for month an
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={
-      Object {
-        "aria-hidden": "true",
-      }
-    }
+    legendAttrs={Object {}}
     required={false}
   >
     <InjectIntl(SelectField)
@@ -598,11 +590,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={
-      Object {
-        "aria-hidden": "true",
-      }
-    }
+    legendAttrs={Object {}}
     required={false}
   >
     <InjectIntl(SelectField)

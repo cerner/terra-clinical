@@ -518,7 +518,7 @@ class OnsetPicker extends React.Component {
 
     return (
       <div id={this.props.id} {...customProps}>
-        <FieldSet className={cx('fieldset', theme.className)} legend={legend} isLegendHidden={isLegendHidden} legendAttrs={{ 'aria-hidden': 'true' }}>
+        <FieldSet className={cx('fieldset', theme.className)} legend={legend} isLegendHidden={isLegendHidden}>
           {/* Precision */}
           <SelectField
             className={cx('field-inline', 'precision')}
