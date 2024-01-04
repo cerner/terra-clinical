@@ -6,7 +6,7 @@
   * Added required prop to mark fields as required based on granularity.
 
 * Fixed
-  * Fixed screen reader issues related to repetitive announcements
+  * Fixed screen reader issues related to repetitive announcements.
 
 ## 4.36.0 - (September 21, 2023)
 

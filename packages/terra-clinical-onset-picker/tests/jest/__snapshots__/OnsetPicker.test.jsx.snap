@@ -80,7 +80,6 @@ exports[`correctly applies the theme context className 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <div
@@ -99,10 +98,6 @@ exports[`correctly applies the theme context className 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -175,7 +170,6 @@ exports[`correctly applies the theme context className 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Granularity"
             class="display"
           >
             <div
@@ -194,10 +188,6 @@ exports[`correctly applies the theme context className 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -832,7 +822,6 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <div
@@ -851,10 +840,6 @@ exports[`should render a default onset picker with specified onset date 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -927,7 +912,6 @@ exports[`should render a default onset picker with specified onset date 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Granularity"
             class="display"
           >
             <div
@@ -946,10 +930,6 @@ exports[`should render a default onset picker with specified onset date 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1040,7 +1020,6 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <span
@@ -1058,10 +1037,6 @@ exports[`should render only a select when supplied with the UNKNOWN precision 1`
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
     </div>
@@ -1149,7 +1124,6 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <div
@@ -1168,10 +1142,6 @@ exports[`should render only the supplied precisions 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1244,7 +1214,6 @@ exports[`should render only the supplied precisions 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Granularity"
             class="display"
           >
             <div
@@ -1263,10 +1232,6 @@ exports[`should render only the supplied precisions 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1357,7 +1322,6 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <div
@@ -1376,10 +1340,6 @@ exports[`should render the same when onChange function is supplied 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1452,7 +1412,6 @@ exports[`should render the same when onChange function is supplied 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Granularity"
             class="display"
           >
             <div
@@ -1471,10 +1430,6 @@ exports[`should render the same when onChange function is supplied 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1565,7 +1520,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <span
@@ -1583,10 +1537,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1659,7 +1609,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Granularity"
             class="display"
           >
             <span
@@ -1677,10 +1626,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -1802,7 +1747,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
             </div>
             <div
               aria-hidden="false"
-              aria-label="Age Precision"
               class="display"
             >
               <span
@@ -1820,10 +1764,6 @@ exports[`should render with age inputs filled in when supplied 1`] = `
                 class="arrow-icon"
               />
             </div>
-            <span
-              aria-live="off"
-              class="visually-hidden-component"
-            />
           </div>
         </div>
       </div>
@@ -1912,7 +1852,6 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Precision"
             class="display"
           >
             <span
@@ -1930,10 +1869,6 @@ exports[`should render with non default inputs when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -2006,7 +1941,6 @@ exports[`should render with non default inputs when supplied 1`] = `
           </div>
           <div
             aria-hidden="false"
-            aria-label="Granularity"
             class="display"
           >
             <span
@@ -2024,10 +1958,6 @@ exports[`should render with non default inputs when supplied 1`] = `
               class="arrow-icon"
             />
           </div>
-          <span
-            aria-live="off"
-            class="visually-hidden-component"
-          />
         </div>
       </div>
       <div
@@ -2103,7 +2033,6 @@ exports[`should render with non default inputs when supplied 1`] = `
             </div>
             <div
               aria-hidden="false"
-              aria-label="Year"
               class="display"
             >
               <span
@@ -2121,10 +2050,6 @@ exports[`should render with non default inputs when supplied 1`] = `
                 class="arrow-icon"
               />
             </div>
-            <span
-              aria-live="off"
-              class="visually-hidden-component"
-            />
           </div>
         </div>
       </div>
