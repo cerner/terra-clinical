@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.37.0 - (January 4, 2024)
+
 * Added
   * Added required prop to mark fields as required based on granularity.
 
