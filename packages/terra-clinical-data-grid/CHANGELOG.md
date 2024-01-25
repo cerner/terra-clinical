@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added deprecation notice and badge for `terra-clinical-data-grid`
+
 ## 2.49.0 - (October 11, 2023)
 
 * Changed
