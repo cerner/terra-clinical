@@ -48,5 +48,13 @@
   },
   "devDependencies": {
     "@cerner/carbon-graphs": "^2.23.0"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }
