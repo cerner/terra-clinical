@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.38.0 - (March 1, 2024)
+
 * Fixed
   * Fixed wdio failing due to date picker changes.
 

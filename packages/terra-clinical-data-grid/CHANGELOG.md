@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.50.0 - (March 1, 2024)
+
 * Fixed
   * Fixed wdio failing due to button changes.
 
