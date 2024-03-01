@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed wdio failing due to button changes.
+
 * Changed
   * Added deprecation notice and badge for `terra-clinical-data-grid`
 
