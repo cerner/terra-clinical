@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `No Results` to `No Result` in translations.
+
 ## 1.22.0 - (September 21, 2023)
 
 * Added
