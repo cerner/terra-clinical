@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed wdio failing due to date picker changes.
+
 ## 4.37.0 - (January 4, 2024)
 
 * Added
