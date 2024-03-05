@@ -470,6 +470,64 @@ exports[`should render an end accessory 1`] = `
 </div>
 `;
 
+exports[`should render display with contentWidth 1`] = `
+<div
+  className="item-view one-column"
+>
+  <div
+    className="body"
+  >
+    <div
+      className="single-result-column-container"
+    >
+      <div
+        className="content content-primary-size content-primary-color"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <ItemDisplay
+          iconAlignment="center"
+          intl={
+            Object {
+              "defaultFormats": Object {},
+              "defaultLocale": "en",
+              "formatDate": [Function],
+              "formatHTMLMessage": [Function],
+              "formatMessage": [Function],
+              "formatNumber": [Function],
+              "formatPlural": [Function],
+              "formatRelative": [Function],
+              "formatTime": [Function],
+              "formats": Object {},
+              "formatters": Object {
+                "getDateTimeFormat": [Function],
+                "getMessageFormat": [Function],
+                "getNumberFormat": [Function],
+                "getPluralFormat": [Function],
+                "getRelativeFormat": [Function],
+              },
+              "locale": "en",
+              "messages": null,
+              "now": [Function],
+              "onError": [Function],
+              "textComponent": "span",
+              "timeZone": null,
+            }
+          }
+          isDisabled={false}
+          isTruncated={false}
+          text="display 1"
+          textStyle="primary"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render displays with original styling when overrideDefaultStyling prop is true 1`] = `
 <div
   className="item-view one-column"

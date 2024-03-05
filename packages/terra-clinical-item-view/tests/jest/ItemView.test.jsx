@@ -294,6 +294,14 @@ it('should render each column as an unordered list within a primary unordered li
   expect(itemView).toMatchSnapshot();
 });
 
+it('should render display with contentWidth', () => {
+  const display1 = shallowWithIntl(<ItemView.Display text="display 1" />);
+  const displays = [display1];
+  const itemView = shallow(<ItemView contentWidth="100%" displays={displays} />);
+  expect(itemView.find('ItemDisplay')).toHaveLength(1);
+  expect(itemView).toMatchSnapshot();
+});
+
 it('correctly applies the theme context className', () => {
   jest.spyOn(React, 'useContext')
     .mockReturnValue({

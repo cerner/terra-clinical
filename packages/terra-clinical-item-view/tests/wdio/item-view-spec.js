@@ -57,6 +57,12 @@ Terra.describeViewports('Clinical Item View', ['tiny', 'small', 'medium', 'large
 
     Terra.validates.element('with override styling');
   });
+
+  it('renders with a custom content width', () => {
+    browser.url('/raw/tests/terra-clinical-item-view/clinical-item-view/content-width-item-view');
+
+    Terra.validates.element('with custom content width', { selector: '#test-displays' });
+  });
 });
 
 Terra.describeViewports('Clinical Item View', ['enormous'], () => {
