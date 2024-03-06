@@ -78,6 +78,10 @@ const propTypes = {
    * Function callback for the ref of the outer most div.
    */
   refCallback: PropTypes.func,
+  /**
+   * A string for content's width. Any valid css string.
+   */
+  contentWidth: PropTypes.string,
 };
 
 const defaultProps = {
@@ -92,6 +96,7 @@ const defaultProps = {
   endAccessory: undefined,
   displays: [],
   comment: undefined,
+  contentWidth: undefined,
 };
 
 const renderAccessory = (accessory, reserveSpace, accessoryAlignment, type) => {
@@ -150,8 +155,9 @@ const classesForContent = (rowIndex, rowCount, contentIndex, emphasis) => {
   return ['content'].concat(classes);
 };
 
-const renderRow = (row, rowIndex, rowCount, emphasis, overrideDefaultStyling) => {
+const renderRow = (row, rowIndex, rowCount, emphasis, overrideDefaultStyling, contentWidth) => {
   const rowKey = rowIndex;
+  const style = contentWidth && { width: contentWidth };
 
   return (
     <li className={cx('row')} key={rowKey}>
@@ -161,7 +167,8 @@ const renderRow = (row, rowIndex, rowCount, emphasis, overrideDefaultStyling) =>
           const contentClasses = overrideDefaultStyling ? 'content' : classesForContent(rowIndex, rowCount, displayIndex, emphasis);
 
           return (
-            <li className={cx(contentClasses)} key={displayKey}>
+            // eslint-disable-next-line react/forbid-dom-props
+            <li style={style} className={cx(contentClasses)} key={displayKey}>
               {display}
             </li>
           );
@@ -171,10 +178,11 @@ const renderRow = (row, rowIndex, rowCount, emphasis, overrideDefaultStyling) =>
   );
 };
 
-const renderTwoColumns = (displayGroup, displayGroupIndex, emphasis, overrideDefaultStyling) => {
+const renderTwoColumns = (displayGroup, displayGroupIndex, emphasis, overrideDefaultStyling, contentWidth) => {
   const columnKey = displayGroupIndex;
   const displayCount = displayGroup.length;
   const containerStyling = displayGroupIndex === 0 ? 'primary-column' : 'secondary-column';
+  const style = contentWidth && { width: contentWidth };
 
   return (
     <li className={cx(containerStyling)} key={columnKey}>
@@ -184,7 +192,8 @@ const renderTwoColumns = (displayGroup, displayGroupIndex, emphasis, overrideDef
           const contentClasses = overrideDefaultStyling ? 'content' : classesForContent(contentIndex, displayCount, displayGroupIndex, emphasis);
 
           return (
-            <li className={cx(contentClasses)} key={contentKey}>
+            // eslint-disable-next-line react/forbid-dom-props
+            <li style={style} className={cx(contentClasses)} key={contentKey}>
               {display}
             </li>
           );
@@ -194,8 +203,9 @@ const renderTwoColumns = (displayGroup, displayGroupIndex, emphasis, overrideDef
   );
 };
 
-const renderColumn = (displays, emphasis, overrideDefaultStyling) => {
+const renderColumn = (displays, emphasis, overrideDefaultStyling, contentWidth) => {
   const displayCount = displays.length;
+  const style = contentWidth && { width: contentWidth };
 
   return (
     <div>
@@ -209,7 +219,8 @@ const renderColumn = (displays, emphasis, overrideDefaultStyling) => {
           const contentClasses = overrideDefaultStyling ? 'content' : classesForContent(displayIndex, displayCount, 0, emphasis);
 
           return (
-            <li className={cx(contentClasses)} key={contentKey}>
+            // eslint-disable-next-line react/forbid-dom-props
+            <li style={style} className={cx(contentClasses)} key={contentKey}>
               {display}
             </li>
           );
@@ -219,7 +230,7 @@ const renderColumn = (displays, emphasis, overrideDefaultStyling) => {
   );
 };
 
-const renderByRowView = (displays, emphasis, overrideDefaultStyling) => {
+const renderByRowView = (displays, emphasis, overrideDefaultStyling, contentWidth) => {
   const displayGroups = [];
 
   while (displays.length) {
@@ -230,7 +241,7 @@ const renderByRowView = (displays, emphasis, overrideDefaultStyling) => {
     <div>
       <ul className={cx('row-list-container')}>
         {displayGroups.map((displayRow, rowIndex) => {
-          const row = renderRow(displayRow, rowIndex, displayGroups.length, emphasis, overrideDefaultStyling);
+          const row = renderRow(displayRow, rowIndex, displayGroups.length, emphasis, overrideDefaultStyling, contentWidth);
           return row;
         })}
       </ul>
@@ -238,16 +249,18 @@ const renderByRowView = (displays, emphasis, overrideDefaultStyling) => {
   );
 };
 
-const renderSingleDisplayView = (singleDisplay, overrideDefaultStyling) => {
+const renderSingleDisplayView = (singleDisplay, overrideDefaultStyling, contentWidth) => {
   /**
    * Since this is always a singular display, the content styling will be the primary defaults if they are not overridden.
    * We don't have to call into the classesForContent method and instead can just set the primary size and color here.
    */
   const contentClass = overrideDefaultStyling ? 'content' : ['content', 'content-primary-size', 'content-primary-color'];
+  const style = contentWidth && { width: contentWidth };
 
   return (
     <div className={cx('single-result-column-container')}>
-      <div className={cx(contentClass)}>
+      {/* eslint-disable-next-line react/forbid-dom-props */}
+      <div style={style} className={cx(contentClass)}>
         {singleDisplay}
       </div>
     </div>
@@ -276,7 +289,7 @@ const twoColumnGrouping = (displays) => {
   return displayGroups;
 };
 
-const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColumn) => {
+const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColumn, contentWidth) => {
   if (displays === null || displays === undefined || !displays.length) {
     return undefined;
   }
@@ -287,10 +300,10 @@ const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColu
    * If there is only one display we don't want to return it as an item in a list.
    * The method renderSingleDisplayView here takes in the single display and returns it within simple divs instead.
    */
-  if (displaysSlice.length === 1) { return renderSingleDisplayView(displaysSlice, overrideDefaultStyling); }
+  if (displaysSlice.length === 1) { return renderSingleDisplayView(displaysSlice, overrideDefaultStyling, contentWidth); }
 
   if (layout === Layouts.TWO_COLUMNS) {
-    if (!trueColumn) { return renderByRowView(displaysSlice, emphasis, overrideDefaultStyling); }
+    if (!trueColumn) { return renderByRowView(displaysSlice, emphasis, overrideDefaultStyling, contentWidth); }
 
     const displayGroups = twoColumnGrouping(displaysSlice);
 
@@ -298,7 +311,7 @@ const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColu
       <div>
         <ul className={cx('column-list-container')}>
           {displayGroups.map((group, index) => {
-            const column = renderTwoColumns(group, index, emphasis, overrideDefaultStyling);
+            const column = renderTwoColumns(group, index, emphasis, overrideDefaultStyling, contentWidth);
             return column;
           })}
         </ul>
@@ -308,7 +321,7 @@ const renderView = (displays, layout, emphasis, overrideDefaultStyling, trueColu
 
   return (
     <div>
-      {renderColumn(displaysSlice, emphasis, overrideDefaultStyling)}
+      {renderColumn(displaysSlice, emphasis, overrideDefaultStyling, contentWidth)}
     </div>
   );
 };
@@ -340,6 +353,7 @@ const ItemView = ({
   displays,
   comment,
   refCallback,
+  contentWidth,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -362,7 +376,7 @@ const ItemView = ({
     <div {...customProps} className={viewClassNames} ref={refCallback}>
       {renderAccessory(startAccessory, reserveStartAccessorySpace, accessoryAlignment, 'start')}
       <div className={cx('body')}>
-        {renderView(displays, layout, textEmphasis, overrideDefaultStyling, trueColumn)}
+        {renderView(displays, layout, textEmphasis, overrideDefaultStyling, trueColumn, contentWidth)}
         {comment}
       </div>
       {renderAccessory(endAccessory, false, accessoryAlignment, 'end')}
