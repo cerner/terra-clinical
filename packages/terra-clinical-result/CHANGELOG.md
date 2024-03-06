@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.24.0 - (March 6, 2024)
+
 * Changed
   * Updated `No Results` to `No Result` in translations except english.
 
