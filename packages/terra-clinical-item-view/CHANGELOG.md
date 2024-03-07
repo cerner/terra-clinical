@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.15.0 - (March 6, 2024)
+
 * Added
   * Added `contentWidth` prop for applying custom width to item views.
 
