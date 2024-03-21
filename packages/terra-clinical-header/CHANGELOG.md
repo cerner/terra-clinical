@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.31.0 - (March 21, 2024)
+
 * Changed
   * Changed styles to allow wrapping of start and end content.
 
