@@ -91,6 +91,23 @@ it('should render a header with all content', () => {
   expect(header).toMatchSnapshot();
 });
 
+it('should render a header with start and end content and no title', () => {
+  const startContent = <div id="start-id">start content</div>;
+  const endContent = <div id="end-id">end content</div>;
+  const flexEndStart = <div className="flex-end">{startContent}</div>;
+  const flexEndEnd = <div className="flex-end">{endContent}</div>;
+  const header = shallow((
+    <Header
+      startContent={startContent}
+      endContent={endContent}
+    />
+  ));
+
+  expect(header.find('.flex-header').props().children[0]).toEqual(flexEndStart);
+  expect(header.find('.flex-header').props().children[3]).toEqual(flexEndEnd);
+  expect(header).toMatchSnapshot();
+});
+
 it('should render a subheader with title and heading level', () => {
   const consoleSpy = jest.spyOn(global.console, 'warn');
   const subheader = shallow(<Header title="title" isSubheader />);
