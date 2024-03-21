@@ -197,6 +197,31 @@ exports[`should render a header with id 1`] = `
 </header>
 `;
 
+exports[`should render a header with start and end content and no title 1`] = `
+<header
+  className="flex-header"
+>
+  <div
+    className="flex-end"
+  >
+    <div
+      id="start-id"
+    >
+      start content
+    </div>
+  </div>
+  <div
+    className="flex-end"
+  >
+    <div
+      id="end-id"
+    >
+      end content
+    </div>
+  </div>
+</header>
+`;
+
 exports[`should render a header with title 1`] = `
 <header
   className="flex-header"
