@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Changed styles to allow wrapping o start and end content.
+  * Changed styles to allow wrapping of start and end content.
 
 ## 3.30.0 - (March 1, 2024)
 
