@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed flex direction of start and end content.
+
 ## 3.31.0 - (March 21, 2024)
 
 * Changed
