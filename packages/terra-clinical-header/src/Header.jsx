@@ -67,6 +67,11 @@ const propTypes = {
    * Sets the header title to be a hyperlink.
    */
   onClick: PropTypes.func,
+
+  /**
+   * A Boolean indicating if start and end content should be wrapped.
+   */
+  wrapContent: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -75,6 +80,7 @@ const defaultProps = {
   endContent: null,
   isSubheader: false,
   text: '',
+  wrapContent: false,
 };
 
 const Header = ({
@@ -87,6 +93,7 @@ const Header = ({
   id,
   isSubheader,
   onClick,
+  wrapContent,
   ...customProps
 }) => {
   const theme = useContext(ThemeContext);
@@ -134,17 +141,18 @@ const Header = ({
   ]);
 
   const renderTitle = !(!titleContent && startContent && endContent);
+  const contentClassNames = wrapContent ? cx('flex-end-wrap') : cx('flex-end');
 
   return (
     <header {...customProps} className={headerClassNames}>
-      {startContent && <div className={cx('flex-end')}>{startContent}</div>}
+      {startContent && <div className={contentClassNames}>{startContent}</div>}
       {renderTitle && (
       <div className={cx('flex-fill')}>
         {titleElement}
       </div>
       )}
       {content}
-      {endContent && <div className={cx('flex-end')}>{endContent}</div>}
+      {endContent && <div className={contentClassNames}>{endContent}</div>}
     </header>
   );
 };

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Added `wrapContent` prop to make content wrapping optional.
+
 ## 3.31.1 - (March 26, 2024)
 
 * Fixed

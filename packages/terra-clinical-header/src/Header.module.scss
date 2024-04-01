@@ -37,12 +37,18 @@
     width: 100%;
   }
 
-  .flex-end {
+  .flex-end-wrap {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
+  }
+
+  .flex-end{
+    display:flex;
+    flex: 0 0 auto;
+    position: relative;
   }
 
   .title-container {
