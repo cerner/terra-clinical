@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.40.0 - (April 11, 2024)
+
 * Changed
   * Renamed year select min-width css variable for the fusion theme to not be overridden by the same name variable coming from deprecated orion-fusion-theme package.
 
