@@ -3,11 +3,7 @@
 exports[`should render a default component 1`] = `
 <header
   className="flex-header"
->
-  <div
-    className="flex-fill"
-  />
-</header>
+/>
 `;
 
 exports[`should render a header with all content 1`] = `
@@ -37,7 +33,7 @@ exports[`should render a header with all content 1`] = `
     </div>
   </div>
   <div
-    className="flex-end"
+    className="flex-end end-content"
   >
     <div
       id="end-id"
@@ -61,9 +57,6 @@ exports[`should render a header with content on the left 1`] = `
       start content
     </div>
   </div>
-  <div
-    className="flex-fill"
-  />
 </header>
 `;
 
@@ -72,10 +65,7 @@ exports[`should render a header with content on the right 1`] = `
   className="flex-header"
 >
   <div
-    className="flex-fill"
-  />
-  <div
-    className="flex-end"
+    className="flex-end end-content"
   >
     <div
       id="end-id"
@@ -211,7 +201,7 @@ exports[`should render a header with start and end content and no title 1`] = `
     </div>
   </div>
   <div
-    className="flex-end"
+    className="flex-end end-content"
   >
     <div
       id="end-id"
@@ -267,7 +257,7 @@ exports[`should render a subheader with all content 1`] = `
     </div>
   </div>
   <div
-    className="flex-end"
+    className="flex-end end-content"
   >
     <div>
       end content
