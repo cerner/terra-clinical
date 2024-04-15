@@ -41,23 +41,21 @@ it('should render a header with heading level', () => {
 
 it('should render a header with content on the left', () => {
   const startContent = <div id="start-id">start content</div>;
-  const flexFill = <div className="flex-fill" />;
   const flexEnd = <div className="flex-end">{startContent}</div>;
   const header = shallow(<Header startContent={startContent} />);
 
   // ensure flex-fill title container is after start content
   expect(header.find('.flex-header').props().children[0]).toEqual(flexEnd);
-  expect(header.find('.flex-header').props().children[1]).toEqual(flexFill);
   expect(header).toMatchSnapshot();
 });
 
 it('should render a header with content on the right', () => {
   const endContent = <div id="end-id">end content</div>;
-  const flexFill = <div className="flex-fill" />;
-  const flexEnd = <div className="flex-end">{endContent}</div>;
+  const flexFill = '';
+  const flexEnd = <div className="flex-end end-content">{endContent}</div>;
   const header = shallow(<Header endContent={endContent} />);
 
-  // ensure flex-fill title container is before end content
+  // ensure flex-fill title container is not rendered if no title is provided
   expect(header.find('.flex-header').props().children[1]).toEqual(flexFill);
   expect(header.find('.flex-header').props().children[3]).toEqual(flexEnd);
   expect(header).toMatchSnapshot();
@@ -74,7 +72,7 @@ it('should render a header with all content', () => {
     </div>
   );
   const flexEndStart = <div className="flex-end">{startContent}</div>;
-  const flexEndEnd = <div className="flex-end">{endContent}</div>;
+  const flexEndEnd = <div className="flex-end end-content">{endContent}</div>;
   const header = shallow((
     <Header
       startContent={startContent}
@@ -95,7 +93,7 @@ it('should render a header with start and end content and no title', () => {
   const startContent = <div id="start-id">start content</div>;
   const endContent = <div id="end-id">end content</div>;
   const flexEndStart = <div className="flex-end">{startContent}</div>;
-  const flexEndEnd = <div className="flex-end">{endContent}</div>;
+  const flexEndEnd = <div className="flex-end end-content">{endContent}</div>;
   const header = shallow((
     <Header
       startContent={startContent}

@@ -140,19 +140,19 @@ const Header = ({
     customProps.className,
   ]);
 
-  const renderTitle = !(!titleContent && startContent && endContent);
   const contentClassNames = wrapContent ? cx('flex-end-wrap') : cx('flex-end');
+  const endClassNames = cx({ 'end-content': !title });
 
   return (
     <header {...customProps} className={headerClassNames}>
       {startContent && <div className={contentClassNames}>{startContent}</div>}
-      {renderTitle && (
+      {titleContent && (
       <div className={cx('flex-fill')}>
         {titleElement}
       </div>
       )}
       {content}
-      {endContent && <div className={contentClassNames}>{endContent}</div>}
+      {endContent && <div className={`${contentClassNames} ${endClassNames}`}>{endContent}</div>}
     </header>
   );
 };

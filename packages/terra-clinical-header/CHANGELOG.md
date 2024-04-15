@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed title div when value is not provided for text prop.
+
 ## 3.31.2 - (April 2, 2024)
 
 * Fixed
