@@ -21,7 +21,7 @@ const endContent = (
 export default () => (
   <Header
     id="Header"
-    text="Lorem ipsum dolor sit amet "
+    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla orci dolor, dignissim vitae risus vel, tristique egestas sapien. Vivamus blandit augue justo, id tincidunt justo luctus et. Morbi lacinia porttitor lacus, ac fermentum mauris tempus dapibus. Donec fringilla est ut ullamcorper consequat."
     endContent={endContent}
     wrapContent
   />
