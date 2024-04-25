@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.33.0 - (April 25, 2024)
+
 * Changed
   * Changed width of title container to fit content.
 
