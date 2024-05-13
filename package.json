@@ -22,7 +22,7 @@
     "packages/*"
   ],
   "engines": {
-    "node": "10 || 12 || 14",
+    "node": "14",
     "npm": "9"
   },
   "browserslist": [
@@ -41,10 +41,14 @@
       "scss/at-mixin-pattern": "^(terra-)[a-z]+([a-z0-9-]+[a-z0-9]+)?$"
     }
   },
+  "peerDependencies": {
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2"
+  },
   "devDependencies": {
     "@babel/cli": "7",
     "@babel/core": "7",
-    "@babel/plugin-proposal-object-rest-spread": "7",
     "@babel/plugin-transform-object-assign": "7",
     "@babel/preset-env": "7",
     "@babel/preset-react": "7",
@@ -54,34 +58,23 @@
     "@cerner/package-json-lint": "1",
     "@cerner/package-json-lint-config-terra": "1",
     "@cerner/stylelint-config-terra": "5",
+    "@cerner/terra-aggregate-translations": "2",
     "@cerner/terra-cli": "1",
     "@cerner/terra-dev-site": "7",
     "@cerner/terra-functional-testing": "4",
     "@cerner/terra-open-source-scripts": "1",
     "@cerner/webpack-config-terra": "3",
-    "babel-eslint": "10",
-    "check-installed-dependencies": "1",
-    "core-js": "3",
     "danger": "10",
     "enzyme": "3",
     "enzyme-adapter-react-16": "1",
     "enzyme-to-json": "3",
     "eslint": "7",
-    "gh-pages": "2",
+    "gh-pages": "5",
     "glob": "7",
     "jest": "27",
-    "ky": "^0.12.0",
     "lerna": "6",
     "postcss": "8",
-    "react": "16",
-    "react-dom": "16",
-    "react-intl": "2",
-    "regenerator-runtime": "^0.13.2",
     "stylelint": "15",
-    "terra-aggregate-translations": "1",
-    "terra-application": "1",
-    "terra-base": "5",
-    "terra-disclosure-manager": "4",
     "terra-enzyme-intl": "3",
     "webpack": "5",
     "webpack-cli": "4",
