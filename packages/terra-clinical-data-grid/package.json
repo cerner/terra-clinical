@@ -1,39 +1,48 @@
 {
   "name": "terra-clinical-data-grid",
-  "main": "lib/DataGrid.js",
   "version": "2.51.0",
   "description": "An organizational component that renders a collection of data in a grid-like format.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git",
     "directory": "packages/terra-clinical-data-grid"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Clinical",
-    "terra-clinical-data-grid",
-    "DataGrid",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Clinical",
+    "DataGrid",
+    "Terra",
+    "terra-clinical-data-grid",
+    "UI"
+  ],
+  "main": "lib/DataGrid.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "16",
+    "react-dom": "16",
     "react-intl": ">=2.8.0, <6.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "keycode-js": "^3.1.0",
-    "memoize-one": "^4.0.0",
-    "prop-types": "^15.5.8",
-    "react-draggable": "^3.0.5",
-    "resize-observer-polyfill": "^1.4.1",
+    "classnames": "2",
+    "keycode-js": "3",
+    "memoize-one": "4",
+    "prop-types": "15",
+    "react-draggable": "3",
+    "resize-observer-polyfill": "1",
     "terra-button": "^3.0.0",
     "terra-clinical-item-view": "^4.15.0",
     "terra-content-container": "^3.0.0",
@@ -55,14 +64,5 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

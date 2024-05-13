@@ -1,36 +1,45 @@
 {
   "name": "terra-clinical-item-display",
-  "main": "lib/ItemDisplay.js",
   "version": "4.11.0",
   "description": "The Item Display component creates an display for text and an optional graphic. The Comment subcomponent creates a display for text with a comment icon.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git",
     "directory": "packages/terra-clinical-item-display"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Clinical",
-    "terra-clinical-item-display",
-    "ItemDisplay",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Clinical",
+    "ItemDisplay",
+    "Terra",
+    "terra-clinical-item-display",
+    "UI"
+  ],
+  "main": "lib/ItemDisplay.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "16",
+    "react-dom": "16",
     "react-intl": ">=2.8.0, <6.0.0"
   },
   "dependencies": {
     "@cerner/terra-docs": "^1.9.0",
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
+    "classnames": "2",
+    "prop-types": "15",
     "terra-action-header": "^2.78.0",
     "terra-content-container": "^3.38.0",
     "terra-icon": "^3.0.0",
@@ -52,14 +61,5 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

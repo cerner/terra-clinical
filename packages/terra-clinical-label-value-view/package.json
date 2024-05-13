@@ -1,34 +1,42 @@
 {
   "name": "terra-clinical-label-value-view",
-  "main": "lib/LabelValueView.js",
   "version": "3.32.0",
   "description": "The label value view component displays a label and the associated value or list of values underneath the label.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git",
     "directory": "packages/terra-clinical-label-value-view"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Clinical",
-    "terra-clinical-label-value-view",
-    "LabelValueView",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Clinical",
+    "LabelValueView",
+    "Terra",
+    "terra-clinical-label-value-view",
+    "UI"
+  ],
+  "main": "lib/LabelValueView.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "16",
+    "react-dom": "16"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
+    "classnames": "2",
+    "prop-types": "15",
     "terra-icon": "^3.0.0",
     "terra-theme-context": "^1.0.0"
   },
@@ -44,13 +52,5 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

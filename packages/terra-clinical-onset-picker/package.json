@@ -2,38 +2,47 @@
   "name": "terra-clinical-onset-picker",
   "version": "4.40.0",
   "description": "The terra-clinical-onset-picker component provides users a way to enter or select an approximate date for use in onset scenarios.",
-  "main": "lib/OnsetPicker.js",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git",
     "directory": "packages/terra-clinical-onset-picker"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Clinical",
-    "Form",
-    "UI",
-    "terra-clinical-onset-picker",
-    "Date",
-    "onset"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Clinical",
+    "Date",
+    "Form",
+    "onset",
+    "Terra",
+    "terra-clinical-onset-picker",
+    "UI"
+  ],
+  "main": "lib/OnsetPicker.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "16",
+    "react-dom": "16",
     "react-intl": ">=2.8.0, <6.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "mockdate": "^2.0.2",
-    "moment": "^2.22.2",
-    "prop-types": "^15.5.8",
+    "classnames": "2",
+    "mockdate": "2",
+    "moment": "2",
+    "prop-types": "15",
     "terra-breakpoints": "^2.0.0",
     "terra-date-picker": "^4.73.1",
     "terra-form-field": "^4.25.0",
@@ -53,14 +62,5 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

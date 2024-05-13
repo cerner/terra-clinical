@@ -1,34 +1,42 @@
 {
   "name": "terra-clinical-header",
-  "main": "lib/Header.js",
   "version": "3.33.0",
   "description": "A Header component that allows elements to be placed on the left and right ends of the header with a left aligned title in the center. ",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-clinical.git",
     "directory": "packages/terra-clinical-header"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Clinical",
-    "terra-clinical-header",
-    "Header",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-clinical/issues"
   },
   "homepage": "https://github.com/cerner/terra-clinical#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Clinical",
+    "Header",
+    "Terra",
+    "terra-clinical-header",
+    "UI"
+  ],
+  "main": "lib/Header.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "16",
+    "react-dom": "16"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
+    "classnames": "2",
+    "prop-types": "15",
     "terra-button": "^3.0.0",
     "terra-enzyme-intl": "^3.4.0",
     "terra-hyperlink": "^2.63.0",
@@ -46,13 +54,5 @@
     "wdio-lowlight": "cd ../.. && THEME=clinical-lowlight-theme npx wdio",
     "wdio-fusion": "cd ../.. && THEME=orion-fusion-theme npx wdio",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }
