@@ -1,66 +1,21 @@
-# From https://github.com/github/gitignore
-#  - Node.gitignore
-#  - Ruby.gitignore
-#  - Sass.gitignore
-
-*.bridgesupport
-*.css.map
-*.gem
+# local-files
 *.log
-*.pid
-*.pid.lock
-*.rbc
-*.seed
-.dat*
-.grunt
-.lock-wscript
-.node_repl_history
-.npm
-.nyc_output
-.repl_history
-.rvmrc
+*.tgz
+packages/**/package-lock.json
+
+# local folders
+.fleet
+.idea
 .vscode
-.sass-cache/
-/.bundle/
-/.config
-/.yardoc/
-/_yardoc/
-/coverage/
-/doc/
-/InstalledFiles
-/lib/bundler/man/
-/pkg/
-/rdoc/
-/spec/examples.txt
-/spec/reports/
-/test/tmp/
-/test/version_tmp/
-/tmp/
-/vendor/bundle
-build-iPhoneOS/
-build-iPhoneSimulator/
-build/
-build/Release
-coverage
-jspm_packages
+.DS_Store
+
+# generated folders
+aggregated-translations
+build
+generated-themes
 lib
-lib-cov
-logs
 node_modules
-npm-debug.log*
-package-lock.json
-pids
-props-table
 reports
-screenshots
-target
-**/aggregated-translations/*.*
-**/__snapshots__/screen
-**/__snapshots__/diff
 **/__snapshots__/latest
 **/__snapshots__/error
-errorScreenshots
-themeable-variables.json
-generated-themes
-.idea
-.DS_Store
+**/__snapshots__/diff
