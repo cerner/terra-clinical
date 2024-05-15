@@ -3,7 +3,7 @@
 exports[`Scrollbar Snapshot Tests correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -33,7 +33,7 @@ exports[`Scrollbar Snapshot Tests correctly applies the theme context className 
           onTouchEnd={[Function]}
           onTouchStart={[Function]}
           style={
-            Object {
+            {
               "touchAction": "none",
             }
           }

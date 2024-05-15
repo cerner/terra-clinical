@@ -19,7 +19,7 @@ exports[`ClinicalResultDisplay should pass certain props to Observation  1`] = `
           interpretation="critical"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -50,7 +50,7 @@ exports[`ClinicalResultDisplay should render a commented result  1`] = `
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -83,7 +83,7 @@ exports[`ClinicalResultDisplay should render a default ClinicalResultDisplay 1`]
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -114,7 +114,7 @@ exports[`ClinicalResultDisplay should render a modified result  1`] = `
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -147,7 +147,7 @@ exports[`ClinicalResultDisplay should render a result with a concept display 1`]
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -180,7 +180,7 @@ exports[`ClinicalResultDisplay should render a result with a date time display 1
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -214,7 +214,7 @@ exports[`ClinicalResultDisplay should render a result with unit hidden 1`] = `
           hideUnit={true}
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -245,7 +245,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay 1
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -276,7 +276,7 @@ exports[`ClinicalResultDisplay should render a truncated ClinicalResultDisplay w
           eventId="111"
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -310,7 +310,7 @@ exports[`ClinicalResultDisplay should render an entered-in-error status result 1
           interpretation={null}
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }
@@ -342,7 +342,7 @@ exports[`ClinicalResultDisplay should render an unverified result  1`] = `
           isUnverified={true}
           key="Observation-111"
           result={
-            Object {
+            {
               "unit": "mL",
               "value": "12345.678",
             }

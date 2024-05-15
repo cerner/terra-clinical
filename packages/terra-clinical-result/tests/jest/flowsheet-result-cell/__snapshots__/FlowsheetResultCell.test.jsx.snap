@@ -17,7 +17,7 @@ exports[`FlowsheetResultCell correctly applies the theme context className 1`] =
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -73,7 +73,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given compact 1`] =
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -129,7 +129,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given none 1`] = `
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -185,7 +185,7 @@ exports[`FlowsheetResultCell paddingStyle should render when given standard 1`] 
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -242,7 +242,7 @@ exports[`FlowsheetResultCell should pass hideUnit down 1`] = `
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -391,11 +391,11 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
     >
       <InjectIntl(ClinicalResultBloodPressure)
         diastolic={
-          Object {
+          {
             "eventId": "111.2",
             "interpretation": "critical",
             "isUnverified": true,
-            "result": Object {
+            "result": {
               "unit": "mmHg",
               "value": "80",
             },
@@ -405,11 +405,11 @@ exports[`FlowsheetResultCell should render blood pressure correctly with an inte
         isTruncated={true}
         key="ClinicalResultBloodPressure-111"
         systolic={
-          Object {
+          {
             "eventId": "111.1",
             "interpretation": "critical",
             "isUnverified": true,
-            "result": Object {
+            "result": {
               "unit": "mmHg",
               "value": "180",
             },
@@ -531,7 +531,7 @@ exports[`FlowsheetResultCell should render correctly when a multiple results cel
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -607,7 +607,7 @@ exports[`FlowsheetResultCell should render correctly with all normal results 1`]
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -666,7 +666,7 @@ exports[`FlowsheetResultCell should render correctly with an interpretation and 
         isUnverified={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -741,7 +741,7 @@ exports[`FlowsheetResultCell should render correctly with at least 1 critical or
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -838,9 +838,9 @@ exports[`FlowsheetResultCell should render when given blood pressure diastolic r
     >
       <InjectIntl(ClinicalResultBloodPressure)
         diastolic={
-          Object {
+          {
             "eventId": "111.2",
-            "result": Object {
+            "result": {
               "unit": "mmHg",
               "value": "80",
             },
@@ -871,9 +871,9 @@ exports[`FlowsheetResultCell should render when given blood pressure systolic re
         isTruncated={true}
         key="ClinicalResultBloodPressure-111.1"
         systolic={
-          Object {
+          {
             "eventId": "111.1",
-            "result": Object {
+            "result": {
               "unit": "mmHg",
               "value": "180",
             },
@@ -902,7 +902,7 @@ exports[`FlowsheetResultCell should render when given result data 1`] = `
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }
@@ -958,7 +958,7 @@ exports[`FlowsheetResultCell should render when given result data with no event 
         isTruncated={true}
         key="ClinicalResult-111"
         result={
-          Object {
+          {
             "unit": "mL",
             "value": "12345.678",
           }

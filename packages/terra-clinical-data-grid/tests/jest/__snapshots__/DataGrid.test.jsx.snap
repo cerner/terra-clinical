@@ -24,7 +24,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "0px",
             }
           }
@@ -46,7 +46,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -54,7 +54,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "0px",
             }
@@ -67,7 +67,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "800px",
               }
@@ -118,7 +118,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a highlighted column 1
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "0px",
           }
         }
@@ -353,7 +353,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "400px",
             }
           }
@@ -375,7 +375,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -383,7 +383,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "400px",
             }
@@ -411,7 +411,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "400px",
               }
@@ -448,7 +448,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "400px",
           }
         }
@@ -681,7 +681,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "400px",
             }
           }
@@ -703,7 +703,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -711,7 +711,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "400px",
             }
@@ -739,7 +739,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "400px",
               }
@@ -776,7 +776,7 @@ exports[`DataGrid Snapshots should render a DataGrid with a label and descriptio
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "400px",
           }
         }
@@ -997,7 +997,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "200px",
             }
           }
@@ -1019,7 +1019,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -1027,7 +1027,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "200px",
             }
@@ -1053,7 +1053,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "300px",
               }
@@ -1088,7 +1088,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom header cells 1`
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "200px",
           }
         }
@@ -1220,7 +1220,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "0px",
             }
           }
@@ -1242,7 +1242,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "10rem",
           }
         }
@@ -1250,7 +1250,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "10rem",
               "width": "0px",
             }
@@ -1263,7 +1263,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "10rem",
                 "width": "800px",
               }
@@ -1314,7 +1314,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom row and header 
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "0px",
           }
         }
@@ -1533,7 +1533,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "200px",
             }
           }
@@ -1555,7 +1555,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -1563,7 +1563,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "200px",
             }
@@ -1585,7 +1585,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "300px",
               }
@@ -1616,7 +1616,7 @@ exports[`DataGrid Snapshots should render a DataGrid with custom section header 
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "200px",
           }
         }
@@ -1755,7 +1755,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "0px",
           }
         }
@@ -1764,7 +1764,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
           className="header-container"
           role="row"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "0px",
             }
@@ -1787,7 +1787,7 @@ exports[`DataGrid Snapshots should render a DataGrid with missing optional props
             className="header-container"
             role="row"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "0px",
               }
@@ -1835,7 +1835,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "0px",
             }
           }
@@ -1857,7 +1857,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -1865,7 +1865,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "0px",
             }
@@ -1878,7 +1878,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "800px",
               }
@@ -1929,7 +1929,7 @@ exports[`DataGrid Snapshots should render a DataGrid with only overflow columns 
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "0px",
           }
         }
@@ -2148,7 +2148,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "400px",
             }
           }
@@ -2170,7 +2170,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -2178,7 +2178,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "400px",
             }
@@ -2206,7 +2206,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "400px",
               }
@@ -2243,7 +2243,7 @@ exports[`DataGrid Snapshots should render a DataGrid with pinned and overflow co
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "400px",
           }
         }
@@ -2464,7 +2464,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "240px",
             }
           }
@@ -2486,7 +2486,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -2494,7 +2494,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "240px",
             }
@@ -2525,7 +2525,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "300px",
               }
@@ -2558,7 +2558,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "240px",
           }
         }
@@ -2597,7 +2597,7 @@ exports[`DataGrid Snapshots should render a DataGrid with selectable rows, colum
           width="240px"
         >
           <RowSelectionCell
-            ariaLabel="Select: {rowDescription}-{\\"rowDescription\\":\\"Row 0\\"}"
+            ariaLabel="Select: {rowDescription}-{"rowDescription":"Row 0"}"
             columnId="DataGrid-rowSelectionColumn"
             isSelectable={true}
             isSelected={true}
@@ -2714,7 +2714,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "400px",
           }
         }
@@ -2723,7 +2723,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
           className="header-container"
           role="row"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "400px",
             }
@@ -2847,7 +2847,7 @@ exports[`DataGrid Snapshots should render a DataGrid with the fill prop missing 
             className="header-container"
             role="row"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "400px",
               }
@@ -2996,7 +2996,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "400px",
             }
           }
@@ -3018,7 +3018,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -3026,7 +3026,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "400px",
             }
@@ -3054,7 +3054,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "400px",
               }
@@ -3091,7 +3091,7 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "400px",
           }
         }
@@ -3291,8 +3291,8 @@ exports[`DataGrid Snapshots should render a DataGrid without a label and descrip
 exports[`getDerivedStateFromProps correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -3301,8 +3301,8 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -3318,7 +3318,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -3328,7 +3328,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
     headerHeight="2.5rem"
     id="test"
     intl={
-      Object {
+      {
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
         "formatMessage": [Function],
@@ -3339,10 +3339,10 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
         "now": [Function],
       }
     }
-    overflowColumns={Array []}
-    pinnedColumns={Array []}
+    overflowColumns={[]}
+    pinnedColumns={[]}
     rowHeight="2.5rem"
-    sections={Array []}
+    sections={[]}
   >
     <div
       aria-colcount={0}
@@ -3382,7 +3382,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                     className="pinned-content-container"
                     role="rowgroup"
                     style={
-                      Object {
+                      {
                         "width": "0px",
                       }
                     }
@@ -3391,7 +3391,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                       className="header-container"
                       role="row"
                       style={
-                        Object {
+                        {
                           "height": "2.5rem",
                           "width": "0px",
                         }
@@ -3414,7 +3414,7 @@ exports[`getDerivedStateFromProps correctly applies the theme context className 
                         className="header-container"
                         role="row"
                         style={
-                          Object {
+                          {
                             "height": "2.5rem",
                             "width": "0px",
                           }
@@ -3468,7 +3468,7 @@ exports[`should render a DataGrid without a label and description when the provi
         <div
           className="pinned-column-buffer"
           style={
-            Object {
+            {
               "width": "400px",
             }
           }
@@ -3490,7 +3490,7 @@ exports[`should render a DataGrid without a label and description when the provi
         className="header-container fixed"
         role="row"
         style={
-          Object {
+          {
             "height": "2.5rem",
           }
         }
@@ -3498,7 +3498,7 @@ exports[`should render a DataGrid without a label and description when the provi
         <div
           className="pinned-header"
           style={
-            Object {
+            {
               "height": "2.5rem",
               "width": "400px",
             }
@@ -3526,7 +3526,7 @@ exports[`should render a DataGrid without a label and description when the provi
           <div
             className="overflow-header"
             style={
-              Object {
+              {
                 "height": "2.5rem",
                 "width": "400px",
               }
@@ -3563,7 +3563,7 @@ exports[`should render a DataGrid without a label and description when the provi
         className="pinned-content-container"
         role="rowgroup"
         style={
-          Object {
+          {
             "width": "400px",
           }
         }
