@@ -64,7 +64,7 @@
     "@cerner/terra-functional-testing": "4",
     "@cerner/terra-open-source-scripts": "1",
     "@cerner/webpack-config-terra": "3",
-    "danger": "10",
+    "danger": "12",
     "enzyme": "3",
     "enzyme-adapter-react-16": "1",
     "enzyme-to-json": "3",
