@@ -205,7 +205,7 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={Object {}}
+    legendAttrs={{}}
     required={false}
   >
     <InjectIntl(SelectField)
@@ -213,7 +213,7 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
       defaultValue="before"
       label="Terra.onsetPicker.precision"
       labelAttrs={
-        Object {
+        {
           "id": "test-precision-select-label",
         }
       }
@@ -256,7 +256,7 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
       className="field-inline granularity"
       label="Terra.onsetPicker.granularity"
       labelAttrs={
-        Object {
+        {
           "id": "test-granularity-select-label",
         }
       }
@@ -309,7 +309,7 @@ exports[`should render Clinical Onset picker with the correct label for date 1`]
         isLabelHidden={false}
         label="Terra.onsetPicker.date"
         labelAttrs={
-          Object {
+          {
             "aria-hidden": "true",
             "id": "test-date-input-label",
           }
@@ -338,7 +338,7 @@ exports[`should render Clinical Onset picker with the correct label for month an
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={Object {}}
+    legendAttrs={{}}
     required={false}
   >
     <InjectIntl(SelectField)
@@ -346,7 +346,7 @@ exports[`should render Clinical Onset picker with the correct label for month an
       defaultValue="before"
       label="Terra.onsetPicker.precision"
       labelAttrs={
-        Object {
+        {
           "id": "test-precision-select-label",
         }
       }
@@ -389,7 +389,7 @@ exports[`should render Clinical Onset picker with the correct label for month an
       className="field-inline granularity"
       label="Terra.onsetPicker.granularity"
       labelAttrs={
-        Object {
+        {
           "id": "test-granularity-select-label",
         }
       }
@@ -430,7 +430,7 @@ exports[`should render Clinical Onset picker with the correct label for month an
         className="field-inline month"
         label="Terra.onsetPicker.month"
         labelAttrs={
-          Object {
+          {
             "id": "test-month-select-label",
           }
         }
@@ -516,7 +516,7 @@ exports[`should render Clinical Onset picker with the correct label for month an
         className="field-inline year"
         label="Terra.onsetPicker.year"
         labelAttrs={
-          Object {
+          {
             "id": "test-year-select-label",
           }
         }
@@ -580,7 +580,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
   <Fieldset
     className="fieldset"
     isLegendHidden={false}
-    legendAttrs={Object {}}
+    legendAttrs={{}}
     required={false}
   >
     <InjectIntl(SelectField)
@@ -588,7 +588,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
       defaultValue="before"
       label="Terra.onsetPicker.precision"
       labelAttrs={
-        Object {
+        {
           "id": "test-precision-select-label",
         }
       }
@@ -631,7 +631,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
       className="field-inline granularity"
       label="Terra.onsetPicker.granularity"
       labelAttrs={
-        Object {
+        {
           "id": "test-granularity-select-label",
         }
       }
@@ -682,7 +682,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
         help={null}
         hideRequired={false}
         inputAttrs={
-          Object {
+          {
             "max": 6,
             "min": 0,
             "step": 1,
@@ -696,7 +696,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
         isLabelHidden={false}
         label="Terra.onsetPicker.age"
         labelAttrs={
-          Object {
+          {
             "id": "test-age-input-label",
           }
         }
@@ -709,7 +709,7 @@ exports[`should render Clinical Onset picker with the correct label for precisio
         defaultValue="years"
         label="Terra.onsetPicker.agePrecision"
         labelAttrs={
-          Object {
+          {
             "id": "test-age-unit-select-label",
           }
         }

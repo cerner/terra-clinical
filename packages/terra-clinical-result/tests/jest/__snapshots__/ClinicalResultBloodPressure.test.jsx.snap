@@ -15,7 +15,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
           diastolicUnit="mmhg"
           hideUnit={true}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -28,12 +28,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should pass certain props to 
           hideUnit={true}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "interpretation": "critical",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -62,7 +62,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
           diastolicUnit="mmhg"
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -75,12 +75,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a commented res
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "hasComment": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -118,7 +118,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
           diastolicUnit="mmhg"
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -131,12 +131,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a entered-in-er
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "interpretation": "critical",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -167,7 +167,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
           diastolicUnit="mmhg"
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -180,12 +180,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a modified resu
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "isModified": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -222,7 +222,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
           diastolicUnit="mmhg"
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -235,13 +235,13 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedConceptDisplay": "temperature oral",
               "cleanedUnit": "mmhg",
               "conceptDisplay": "Temperature Oral",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -275,7 +275,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
           diastolicUnit="mmhg"
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -288,13 +288,13 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with a
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
               "cleanedUnit": "mmhg",
               "datetimeDisplay": "Nov 23, 2019 13:31:31",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -329,7 +329,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
           diastolicUnit="mmhg"
           hideUnit={true}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -342,11 +342,11 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render a result with u
           hideUnit={true}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -375,7 +375,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
           diastolicUnit="mmhg"
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -388,12 +388,12 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render an unverified r
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "isUnverified": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -429,11 +429,11 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with 
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -450,14 +450,14 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render diastolic with 
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "eventId": "",
               "hasComment": false,
               "interpretation": "normal",
               "isModified": false,
               "isUnverified": false,
               "noData": true,
-              "result": Object {
+              "result": {
                 "unit": "",
                 "value": null,
               },
@@ -486,11 +486,11 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] 
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -506,7 +506,7 @@ exports[`ClinicalResultBloodPressure - Diastolic - should render with error 1`] 
         </span>
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
       </div>
@@ -530,12 +530,12 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
           hideUnit={true}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "interpretation": "critical",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -552,7 +552,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should pass certain props to O
         <InjectIntl(BloodPressureDisplay)
           hideUnit={true}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
       </div>
@@ -576,12 +576,12 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "hasComment": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -598,7 +598,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a commented resu
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
         <IconComment
@@ -631,12 +631,12 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "interpretation": "critical",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -655,7 +655,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a entered-in-err
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
       </div>
@@ -679,12 +679,12 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "isModified": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -701,7 +701,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a modified resul
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
         <IconModified
@@ -733,13 +733,13 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedConceptDisplay": "temperature oral",
               "cleanedUnit": "mmhg",
               "conceptDisplay": "Temperature Oral",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -756,7 +756,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
       </div>
@@ -785,13 +785,13 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedDatetimeDisplay": "nov 23, 2019 13:31:31",
               "cleanedUnit": "mmhg",
               "datetimeDisplay": "Nov 23, 2019 13:31:31",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -808,7 +808,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with a 
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
       </div>
@@ -838,11 +838,11 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
           hideUnit={true}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -859,7 +859,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render a result with un
         <InjectIntl(BloodPressureDisplay)
           hideUnit={true}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
       </div>
@@ -883,12 +883,12 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "isUnverified": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -905,7 +905,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render an unverified re
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           id="111"
-          result={Object {}}
+          result={{}}
           type="Diastolic"
         />
         <IconDiamond
@@ -936,7 +936,7 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
         <InjectIntl(BloodPressureDisplay)
           diastolicUnit="mmhg"
           hideUnit={false}
-          result={Object {}}
+          result={{}}
           type="Systolic"
         />
         <span
@@ -948,11 +948,11 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with error 1`] =
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -981,14 +981,14 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
           diastolicUnit="mmhg"
           hideUnit={false}
           result={
-            Object {
+            {
               "eventId": "",
               "hasComment": false,
               "interpretation": "normal",
               "isModified": false,
               "isUnverified": false,
               "noData": true,
-              "result": Object {
+              "result": {
                 "unit": "",
                 "value": null,
               },
@@ -1006,11 +1006,11 @@ exports[`ClinicalResultBloodPressure - Systolic - should render with no data 1`]
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -1040,11 +1040,11 @@ exports[`ClinicalResultBloodPressure correctly applies the theme context classNa
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -1062,11 +1062,11 @@ exports[`ClinicalResultBloodPressure correctly applies the theme context classNa
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -1104,11 +1104,11 @@ exports[`ClinicalResultBloodPressure should render ClinicalResultBloodPressure i
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -1126,11 +1126,11 @@ exports[`ClinicalResultBloodPressure should render ClinicalResultBloodPressure i
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -1164,11 +1164,11 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -1186,11 +1186,11 @@ exports[`ClinicalResultBloodPressure should render a default ClinicalResultBlood
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -1220,11 +1220,11 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -1242,11 +1242,11 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -1276,12 +1276,12 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.1",
               "isModified": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "180",
               },
@@ -1299,12 +1299,12 @@ exports[`ClinicalResultBloodPressure should render a truncated ClinicalResultBlo
           hideUnit={false}
           id="111"
           result={
-            Object {
+            {
               "cleanedUnit": "mmhg",
               "eventId": "111.2",
               "isModified": true,
               "noData": false,
-              "result": Object {
+              "result": {
                 "unit": "mmHg",
                 "value": "80",
               },
@@ -1340,14 +1340,14 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "eventId": "",
               "hasComment": false,
               "interpretation": "normal",
               "isModified": false,
               "isUnverified": false,
               "noData": true,
-              "result": Object {
+              "result": {
                 "unit": "",
                 "value": null,
               },
@@ -1365,14 +1365,14 @@ exports[`ClinicalResultBloodPressure should render systolic and diastolic with n
         <InjectIntl(BloodPressureDisplay)
           hideUnit={false}
           result={
-            Object {
+            {
               "eventId": "",
               "hasComment": false,
               "interpretation": "normal",
               "isModified": false,
               "isUnverified": false,
               "noData": true,
-              "result": Object {
+              "result": {
                 "unit": "",
                 "value": null,
               },

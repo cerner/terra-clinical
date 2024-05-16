@@ -7,7 +7,7 @@ exports[`ClinicalResult correctly applies the theme context className 1`] = `
   <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -33,7 +33,7 @@ exports[`ClinicalResult should pass certain props to Observation  1`] = `
     hideUnit={true}
     interpretation="critical"
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -66,7 +66,7 @@ exports[`ClinicalResult should render a commented result  1`] = `
     eventId="111"
     hasComment={true}
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -82,7 +82,7 @@ exports[`ClinicalResult should render a default ClinicalResult 1`] = `
   <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -99,7 +99,7 @@ exports[`ClinicalResult should render a entered-in-error status result 1`] = `
     eventId="111"
     interpretation="critical"
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -117,7 +117,7 @@ exports[`ClinicalResult should render a modified result  1`] = `
     eventId="111"
     isModified={true}
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -134,7 +134,7 @@ exports[`ClinicalResult should render a result with a concept display 1`] = `
     conceptDisplay="Temperature Oral"
     eventId="111"
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -151,7 +151,7 @@ exports[`ClinicalResult should render a result with a date time display 1`] = `
     datetimeDisplay="Nov 23, 2019 13:31:31"
     eventId="111"
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -167,7 +167,7 @@ exports[`ClinicalResult should render a result with no unit 1`] = `
   <InjectIntl(ClinicalResultDisplay)
     eventId="111"
     result={
-      Object {
+      {
         "value": "12345.678",
       }
     }
@@ -183,7 +183,7 @@ exports[`ClinicalResult should render a result with unit hidden 1`] = `
     eventId="111"
     hideUnit={true}
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -200,7 +200,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult 1`] = `
     eventId="111"
     isTruncated={true}
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -218,7 +218,7 @@ exports[`ClinicalResult should render a truncated ClinicalResult with icons move
     isModified={true}
     isTruncated={true}
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }
@@ -235,7 +235,7 @@ exports[`ClinicalResult should render an unverified result  1`] = `
     eventId="111"
     isUnverified={true}
     result={
-      Object {
+      {
         "unit": "mL",
         "value": "12345.678",
       }

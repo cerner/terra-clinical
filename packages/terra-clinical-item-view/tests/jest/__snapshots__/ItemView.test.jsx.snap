@@ -26,8 +26,8 @@ exports[`should render 1 start theme display 1`] = `
         <ItemDisplay
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -36,8 +36,8 @@ exports[`should render 1 start theme display 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -82,8 +82,8 @@ exports[`should render 2 start theme displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -92,8 +92,8 @@ exports[`should render 2 start theme displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -121,8 +121,8 @@ exports[`should render 2 start theme displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -131,8 +131,8 @@ exports[`should render 2 start theme displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -179,8 +179,8 @@ exports[`should render 3 start theme displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -189,8 +189,8 @@ exports[`should render 3 start theme displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -218,8 +218,8 @@ exports[`should render 3 start theme displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -228,8 +228,8 @@ exports[`should render 3 start theme displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -257,8 +257,8 @@ exports[`should render 3 start theme displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -267,8 +267,8 @@ exports[`should render 3 start theme displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -305,8 +305,8 @@ exports[`should render a comment 1`] = `
   >
     <ItemComment
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -315,8 +315,8 @@ exports[`should render a comment 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -365,8 +365,8 @@ exports[`should render a singular display not in an unordered list 1`] = `
         <ItemDisplay
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -375,8 +375,8 @@ exports[`should render a singular display not in an unordered list 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -483,7 +483,7 @@ exports[`should render display with contentWidth 1`] = `
       <div
         className="content content-primary-size content-primary-color"
         style={
-          Object {
+          {
             "width": "100%",
           }
         }
@@ -491,8 +491,8 @@ exports[`should render display with contentWidth 1`] = `
         <ItemDisplay
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -501,8 +501,8 @@ exports[`should render display with contentWidth 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -547,8 +547,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -557,8 +557,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -586,8 +586,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -596,8 +596,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -625,8 +625,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -635,8 +635,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -664,8 +664,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -674,8 +674,8 @@ exports[`should render displays with original styling when overrideDefaultStylin
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -729,8 +729,8 @@ exports[`should render each column as an unordered list within a primary unorder
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -739,8 +739,8 @@ exports[`should render each column as an unordered list within a primary unorder
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -768,8 +768,8 @@ exports[`should render each column as an unordered list within a primary unorder
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -778,8 +778,8 @@ exports[`should render each column as an unordered list within a primary unorder
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -817,8 +817,8 @@ exports[`should render each column as an unordered list within a primary unorder
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -827,8 +827,8 @@ exports[`should render each column as an unordered list within a primary unorder
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -876,8 +876,8 @@ exports[`should render one column 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -886,8 +886,8 @@ exports[`should render one column 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -915,8 +915,8 @@ exports[`should render one column 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -925,8 +925,8 @@ exports[`should render one column 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -973,8 +973,8 @@ exports[`should render several displays in an unordered list for one column layo
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -983,8 +983,8 @@ exports[`should render several displays in an unordered list for one column layo
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1012,8 +1012,8 @@ exports[`should render several displays in an unordered list for one column layo
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1022,8 +1022,8 @@ exports[`should render several displays in an unordered list for one column layo
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1051,8 +1051,8 @@ exports[`should render several displays in an unordered list for one column layo
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1061,8 +1061,8 @@ exports[`should render several displays in an unordered list for one column layo
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1119,8 +1119,8 @@ exports[`should render truncated display 1`] = `
         <ItemDisplay
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -1129,8 +1129,8 @@ exports[`should render truncated display 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -1172,8 +1172,8 @@ exports[`should render truncated display when isTruncated is only set on the dis
         <ItemDisplay
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -1182,8 +1182,8 @@ exports[`should render truncated display when isTruncated is only set on the dis
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -1289,8 +1289,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1299,8 +1299,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1328,8 +1328,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1338,8 +1338,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1367,8 +1367,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1377,8 +1377,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1406,8 +1406,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1416,8 +1416,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1455,8 +1455,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1465,8 +1465,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1494,8 +1494,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1504,8 +1504,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1533,8 +1533,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1543,8 +1543,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1572,8 +1572,8 @@ exports[`should render two columns with 8 displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1582,8 +1582,8 @@ exports[`should render two columns with 8 displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1638,8 +1638,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1648,8 +1648,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1677,8 +1677,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1687,8 +1687,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1726,8 +1726,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1736,8 +1736,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1765,8 +1765,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1775,8 +1775,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1814,8 +1814,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1824,8 +1824,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1853,8 +1853,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1863,8 +1863,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1902,8 +1902,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1912,8 +1912,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -1941,8 +1941,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -1951,8 +1951,8 @@ exports[`should render two columns with 8 displays when trueColumn is false 1`] 
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -2007,8 +2007,8 @@ exports[`should render two columns with an odd number of displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -2017,8 +2017,8 @@ exports[`should render two columns with an odd number of displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -2046,8 +2046,8 @@ exports[`should render two columns with an odd number of displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -2056,8 +2056,8 @@ exports[`should render two columns with an odd number of displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -2095,8 +2095,8 @@ exports[`should render two columns with an odd number of displays 1`] = `
               <ItemDisplay
                 iconAlignment="center"
                 intl={
-                  Object {
-                    "defaultFormats": Object {},
+                  {
+                    "defaultFormats": {},
                     "defaultLocale": "en",
                     "formatDate": [Function],
                     "formatHTMLMessage": [Function],
@@ -2105,8 +2105,8 @@ exports[`should render two columns with an odd number of displays 1`] = `
                     "formatPlural": [Function],
                     "formatRelative": [Function],
                     "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
+                    "formats": {},
+                    "formatters": {
                       "getDateTimeFormat": [Function],
                       "getMessageFormat": [Function],
                       "getNumberFormat": [Function],
@@ -2151,8 +2151,8 @@ exports[`should render with 1 display 1`] = `
         <ItemDisplay
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -2161,8 +2161,8 @@ exports[`should render with 1 display 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -2207,8 +2207,8 @@ exports[`should render with 2 displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2217,8 +2217,8 @@ exports[`should render with 2 displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2246,8 +2246,8 @@ exports[`should render with 2 displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2256,8 +2256,8 @@ exports[`should render with 2 displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2304,8 +2304,8 @@ exports[`should render with 3 displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2314,8 +2314,8 @@ exports[`should render with 3 displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2343,8 +2343,8 @@ exports[`should render with 3 displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2353,8 +2353,8 @@ exports[`should render with 3 displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2382,8 +2382,8 @@ exports[`should render with 3 displays 1`] = `
             <ItemDisplay
               iconAlignment="center"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2392,8 +2392,8 @@ exports[`should render with 3 displays 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2442,8 +2442,8 @@ exports[`should render with a display and graphic 1`] = `
           }
           iconAlignment="center"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -2452,8 +2452,8 @@ exports[`should render with a display and graphic 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],

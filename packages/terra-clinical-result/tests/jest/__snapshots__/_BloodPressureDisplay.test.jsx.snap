@@ -11,7 +11,7 @@ exports[`BloodPressureDisplay should hide the unit if data's cleanedUnit is equa
     hideUnit={true}
     key="Observation-Systolic-111.1"
     result={
-      Object {
+      {
         "unit": "mmHg",
         "value": "180",
       }
@@ -31,7 +31,7 @@ exports[`BloodPressureDisplay should hide the unit if hideUnit is true 1`] = `
     hideUnit={true}
     key="Observation-Systolic-111.1"
     result={
-      Object {
+      {
         "unit": "mmHg",
         "value": "180",
       }
@@ -63,7 +63,7 @@ exports[`BloodPressureDisplay should render a default BloodPressureDisplay 1`] =
     hideUnit={false}
     key="Observation-Systolic-111.1"
     result={
-      Object {
+      {
         "unit": "mmHg",
         "value": "180",
       }
@@ -84,7 +84,7 @@ exports[`BloodPressureDisplay shouldn't hide the unit if data's statusInError is
     interpretation={null}
     key="Observation-Systolic-111.1"
     result={
-      Object {
+      {
         "unit": "mmHg",
         "value": "180",
       }
@@ -105,7 +105,7 @@ exports[`BloodPressureDisplay shouldn't render interpretation if statusInError 1
     interpretation={null}
     key="Observation-Systolic-111.1"
     result={
-      Object {
+      {
         "unit": "mmHg",
         "value": "180",
       }
